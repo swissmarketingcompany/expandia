@@ -80,8 +80,8 @@
                 </div>
                 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#demo" class="btn btn-primary btn-lg">Try Demo</a>
-                    <a href="#pricing" class="btn btn-outline btn-lg">View Pricing</a>
+                    <a href="#demo" class="btn btn-primary btn-lg">Try a Coding Challenge</a>
+                    <a href="contact.html" class="btn btn-outline btn-lg">Contact for Pricing</a>
                 </div>
             </div>
         </div>
@@ -457,136 +457,98 @@ def create_user(username, password):
         </div>
     </section>
 
-    <!-- Pricing Section -->
+    <!-- Integration Section -->
+    <section class="py-20 bg-base-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-4">Integrates with Your Learning Platform</h2>
+            <p class="text-xl text-base-content/70 max-w-3xl mx-auto mb-12">
+                CodeTutor AI offers a flexible API that can be easily integrated into your existing LMS, IDEs, or educational platforms.
+            </p>
+            <div class="text-2xl text-base-content/60 space-x-8">
+                <i class="fas fa-graduation-cap" title="LMS Platforms"></i>
+                <i class="fas fa-code" title="IDEs"></i>
+                <i class="fab fa-js-square" title="JavaScript"></i>
+                <i class="fab fa-python" title="Python"></i>
+                <i class="fab fa-java" title="Java"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact for Pricing Section -->
     <section id="pricing" class="py-20 bg-base-200">
         <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold mb-4">Flexible Pricing for Education</h2>
+                <p class="text-xl text-base-content/70 mb-8">
+                    We offer customized pricing plans for individuals, educational institutions, and corporate training programs. Contact us to find the best plan for your needs.
+                </p>
+                <a href="contact.html" class="btn btn-primary btn-lg">Get a Custom Plan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">Choose Your Plan</h2>
+                <h2 class="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
                 <p class="text-xl text-base-content/70">
-                    Flexible pricing options based on your team size and development needs.
+                    Find answers to common questions about CodeTutor AI.
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Individual Plan -->
-                <div class="card bg-base-100 shadow-lg">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card bg-base-200 shadow-lg">
                     <div class="card-body">
-                        <h3 class="card-title text-2xl mb-2">Individual</h3>
-                        <div class="mb-6">
-                            <span class="text-4xl font-bold">$19</span>
-                            <span class="text-base-content/70">/month</span>
-                        </div>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-primary"></i>
-                                <span>Up to 100 code reviews/month</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-primary"></i>
-                                <span>Basic bug detection</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-primary"></i>
-                                <span>Security vulnerability scanning</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-primary"></i>
-                                <span>5 programming languages</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-primary"></i>
-                                <span>Basic learning recommendations</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-primary"></i>
-                                <span>Email support</span>
-                            </li>
-                        </ul>
-                        <button class="btn btn-outline btn-primary w-full">Get Started</button>
+                        <h3 class="card-title text-lg">How does CodeTutor AI work?</h3>
+                        <p class="text-base-content/70">
+                            CodeTutor AI uses advanced AI algorithms to analyze code, identify bugs, and provide personalized learning recommendations.
+                        </p>
                     </div>
                 </div>
                 
-                <!-- Team Plan */
-                <div class="card bg-primary text-primary-content shadow-xl scale-105">
+                <div class="card bg-base-200 shadow-lg">
                     <div class="card-body">
-                        <div class="badge badge-secondary mb-2">Most Popular</div>
-                        <h3 class="card-title text-2xl mb-2">Team</h3>
-                        <div class="mb-6">
-                            <span class="text-4xl font-bold">$79</span>
-                            <span class="text-primary-content/70">/month</span>
-                        </div>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-secondary"></i>
-                                <span>Up to 1,000 code reviews/month</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-secondary"></i>
-                                <span>Advanced AI analysis</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-secondary"></i>
-                                <span>Performance optimization</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-secondary"></i>
-                                <span>25+ programming languages</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-secondary"></i>
-                                <span>Team collaboration features</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-secondary"></i>
-                                <span>CI/CD integrations</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-secondary"></i>
-                                <span>Priority support</span>
-                            </li>
-                        </ul>
-                        <button class="btn btn-secondary w-full">Get Started</button>
+                        <h3 class="card-title text-lg">What programming languages does CodeTutor AI support?</h3>
+                        <p class="text-base-content/70">
+                            CodeTutor AI supports a wide range of programming languages, including Python, Java, JavaScript, and more.
+                        </p>
                     </div>
                 </div>
                 
-                <!-- Enterprise Plan -->
-                <div class="card bg-base-100 shadow-lg">
+                <div class="card bg-base-200 shadow-lg">
                     <div class="card-body">
-                        <h3 class="card-title text-2xl mb-2">Enterprise</h3>
-                        <div class="mb-6">
-                            <span class="text-4xl font-bold">Custom</span>
-                        </div>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-primary"></i>
-                                <span>Unlimited code reviews</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-primary"></i>
-                                <span>Custom AI model training</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-primary"></i>
-                                <span>On-premise deployment</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-primary"></i>
-                                <span>Advanced security compliance</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-primary"></i>
-                                <span>Dedicated account manager</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-primary"></i>
-                                <span>SLA guarantees</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-primary"></i>
-                                <span>24/7 support</span>
-                            </li>
-                        </ul>
-                        <button class="btn btn-outline btn-primary w-full">Contact Sales</button>
+                        <h3 class="card-title text-lg">Is CodeTutor AI suitable for beginners?</h3>
+                        <p class="text-base-content/70">
+                            Yes, CodeTutor AI is designed to be accessible to beginners. It provides personalized learning paths and interactive code challenges.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg">
+                    <div class="card-body">
+                        <h3 class="card-title text-lg">How long is the learning curve for CodeTutor AI?</h3>
+                        <p class="text-base-content/70">
+                            The learning curve depends on your experience level. Beginners can start with basic features, while more experienced developers can leverage advanced features.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg">
+                    <div class="card-body">
+                        <h3 class="card-title text-lg">Can I use CodeTutor AI for commercial projects?</h3>
+                        <p class="text-base-content/70">
+                            Yes, CodeTutor AI is designed for both personal and commercial use. You can use it for your own projects or for clients.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg">
+                    <div class="card-body">
+                        <h3 class="card-title text-lg">How secure is my data when using CodeTutor AI?</h3>
+                        <p class="text-base-content/70">
+                            CodeTutor AI takes data security seriously. We use industry-standard encryption and follow strict data handling practices.
+                        </p>
                     </div>
                 </div>
             </div>
