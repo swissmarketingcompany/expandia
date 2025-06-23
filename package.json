@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
-    "heroku-postbuild": "echo 'Build completed successfully'",
+    "build:css": "tailwindcss -i ./src/css/input.css -o ./dist/css/output.css",
+    "heroku-postbuild": "npm run build:css",
     "test": "echo 'No tests specified'"
   },
   "engines": {
