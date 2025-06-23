@@ -1,0 +1,20 @@
+# AI Video Generation API Keys Setup
+# Copy this file to .env and add your actual API keys
+
+# Get your ElevenLabs API key from: https://elevenlabs.io/
+ELEVENLABS_API_KEY=your_elevenlabs_api_key_here
+
+# Get your OpenAI API key from: https://platform.openai.com/api-keys
+OPENAI_API_KEY=your_openai_api_key_here
+
+# Get your Segmind API key from: https://www.segmind.com/
+SEGMIND_API_KEY=your_segmind_api_key_here
+
+# Instructions:
+# 1. Sign up for ElevenLabs at https://elevenlabs.io/
+# 2. Get your API key from the profile section
+# 3. Sign up for OpenAI at https://platform.openai.com/
+# 4. Create an API key in the API keys section
+# 5. Sign up for Segmind at https://www.segmind.com/
+# 6. Get your API key from the dashboard
+# 7. Copy this file to .env and replace the placeholder values 

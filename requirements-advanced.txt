@@ -1,0 +1,36 @@
+# Advanced AI Course Video Generation Requirements
+# Enhanced dependencies for professional video and voice generation
+
+# Core dependencies
+requests>=2.31.0
+pathlib
+Pillow>=10.0.0
+
+# Advanced image processing
+Pillow[webp,jpeg]>=10.0.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+
+# Optional: For enhanced visual effects
+imageio>=2.31.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Optional: For better text rendering
+fonttools>=4.40.0
+
+# Optional: For advanced image generation (if using local models)
+torch>=2.0.0
+torchvision>=0.15.0
+diffusers>=0.20.0
+transformers>=4.30.0
+
+# API clients
+openai>=1.0.0
+elevenlabs>=0.2.0
+
+# Video processing (system dependencies)
+# Note: ffmpeg must be installed separately via:
+# brew install ffmpeg (macOS)
+# apt install ffmpeg (Ubuntu)
+# choco install ffmpeg (Windows) 

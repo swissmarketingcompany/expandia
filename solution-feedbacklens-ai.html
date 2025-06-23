@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bumblebee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeedbackLens AI - Intelligent Review Analysis | Expandia</title>
+    <meta name="description" content="Transform customer reviews into actionable insights with FeedbackLens AI. Sentiment analysis, trend detection, and automated response generation.">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar bg-base-100 shadow-lg">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
+                    </svg>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <a href="index.html" class="btn btn-ghost text-xl">
+                <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8">
+            </a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="solutions.html" class="hover:text-primary">Solutions</a></li>
+                <li><a href="industries.html" class="hover:text-primary">Industries</a></li>
+                <li><a href="case-studies.html" class="hover:text-primary">Case Studies</a></li>
+                <li><a href="about.html" class="hover:text-primary">About</a></li>
+                <li><a href="contact.html" class="hover:text-primary">Contact</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <a href="contact.html" class="btn btn-primary">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero min-h-[60vh] bg-gradient-to-br from-primary/10 to-secondary/10">
+        <div class="hero-content text-center">
+            <div class="max-w-4xl">
+                <div class="mb-8">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-primary/20 rounded-full flex items-center justify-center">
+                        <i class="fas fa-search text-3xl text-primary"></i>
+                    </div>
+                    <h1 class="text-5xl font-bold text-base-content mb-6">FeedbackLens AI</h1>
+                    <h2 class="text-2xl font-semibold text-primary mb-4">Intelligent Review & Feedback Analysis</h2>
+                    <p class="text-xl text-base-content/80 mb-8 max-w-3xl mx-auto">
+                        Transform customer reviews into actionable business insights. Advanced sentiment analysis, 
+                        trend detection, and automated response generation to improve your products and services.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Analysis Speed</div>
+                        <div class="stat-value text-primary">1000+</div>
+                        <div class="stat-desc">Reviews per minute</div>
+                    </div>
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Sentiment Accuracy</div>
+                        <div class="stat-value text-secondary">96%</div>
+                        <div class="stat-desc">Classification rate</div>
+                    </div>
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Languages</div>
+                        <div class="stat-value text-accent">40+</div>
+                        <div class="stat-desc">Supported languages</div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#demo" class="btn btn-primary btn-lg">Try Demo</a>
+                    <a href="#pricing" class="btn btn-outline btn-lg">View Pricing</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Advanced Review Intelligence</h2>
+                <p class="text-xl text-base-content/70 max-w-3xl mx-auto">
+                    Leverage cutting-edge NLP and machine learning to extract meaningful insights from customer feedback across all platforms.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-heart text-primary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Advanced Sentiment Analysis</h3>
+                        <p class="text-base-content/70">
+                            Multi-dimensional sentiment analysis detecting emotions, satisfaction levels, and intent beyond simple positive/negative.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-tags text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Topic Extraction</h3>
+                        <p class="text-base-content/70">
+                            Automatically identify and categorize key topics, features, and issues mentioned in customer feedback.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-chart-line text-accent text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Trend Detection</h3>
+                        <p class="text-base-content/70">
+                            Identify emerging trends, recurring complaints, and satisfaction patterns over time with predictive insights.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-robot text-primary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Automated Response Generation</h3>
+                        <p class="text-base-content/70">
+                            Generate personalized, contextual responses to customer reviews that match your brand voice and tone.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-exclamation-triangle text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Priority Alert System</h3>
+                        <p class="text-base-content/70">
+                            Real-time alerts for negative reviews, urgent issues, and potential crisis situations requiring immediate attention.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-chart-pie text-accent text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Comprehensive Analytics</h3>
+                        <p class="text-base-content/70">
+                            Interactive dashboards with detailed analytics, competitor comparisons, and actionable business insights.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="py-20 bg-base-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Who Benefits from FeedbackLens AI</h2>
+                <p class="text-xl text-base-content/70">
+                    Essential for businesses that want to leverage customer feedback for continuous improvement and growth.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-store text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">E-commerce Businesses</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Monitor product satisfaction trends</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Identify top customer pain points</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Automate review responses at scale</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-utensils text-secondary text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">Hospitality & Restaurants</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>Track service quality metrics</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>Identify staff training opportunities</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>Manage online reputation effectively</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-mobile-alt text-accent text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">SaaS & App Developers</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Prioritize feature development</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Monitor app store sentiment</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Improve user experience based on feedback</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">See FeedbackLens AI in Action</h2>
+                <p class="text-xl text-base-content/70">
+                    Watch how FeedbackLens AI analyzes restaurant reviews and provides actionable insights.
+                </p>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Review Input -->
+                    <div class="card bg-base-200 shadow-lg">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">
+                                <i class="fas fa-comments text-primary"></i>
+                                Customer Reviews Input
+                            </h3>
+                            <div class="bg-base-100 p-4 rounded-lg max-h-96 overflow-y-auto">
+                                <div class="space-y-4">
+                                    <div class="bg-base-200 p-3 rounded-lg">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="badge badge-primary">⭐⭐⭐⭐⭐</span>
+                                            <span class="text-sm font-semibold">Sarah M.</span>
+                                        </div>
+                                        <p class="text-sm">
+                                            "Amazing experience! The pasta was perfectly cooked and the service was exceptional. 
+                                            Our waiter John was very attentive. Will definitely come back!"
+                                        </p>
+                                    </div>
+                                    
+                                    <div class="bg-base-200 p-3 rounded-lg">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="badge badge-warning">⭐⭐⭐</span>
+                                            <span class="text-sm font-semibold">Mike R.</span>
+                                        </div>
+                                        <p class="text-sm">
+                                            "Food was good but we waited 45 minutes for our appetizers. The restaurant was busy 
+                                            but the wait time was excessive. Staff seemed overwhelmed."
+                                        </p>
+                                    </div>
+                                    
+                                    <div class="bg-base-200 p-3 rounded-lg">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="badge badge-error">⭐⭐</span>
+                                            <span class="text-sm font-semibold">Lisa K.</span>
+                                        </div>
+                                        <p class="text-sm">
+                                            "Very disappointed. My steak was overcooked and cold when it arrived. 
+                                            Asked for medium-rare but got well-done. Server was rude when we complained."
+                                        </p>
+                                    </div>
+                                    
+                                    <div class="bg-base-200 p-3 rounded-lg">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="badge badge-primary">⭐⭐⭐⭐⭐</span>
+                                            <span class="text-sm font-semibold">David L.</span>
+                                        </div>
+                                        <p class="text-sm">
+                                            "Outstanding ambiance and delicious food! The wine selection is impressive. 
+                                            Perfect for date night. Highly recommend the seafood risotto."
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-4">
+                                    <span class="text-xs text-base-content/70">Analyzing 247 reviews...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Analysis Results -->
+                    <div class="card bg-base-200 shadow-lg">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">
+                                <i class="fas fa-chart-bar text-secondary"></i>
+                                FeedbackLens Analysis
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="bg-base-100 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-3">Overall Sentiment</h4>
+                                    <div class="flex items-center gap-4">
+                                        <div class="radial-progress text-success" style="--value:68;" role="progressbar">68%</div>
+                                        <div class="text-sm">
+                                            <p><span class="text-success">●</span> Positive: 68%</p>
+                                            <p><span class="text-warning">●</span> Neutral: 18%</p>
+                                            <p><span class="text-error">●</span> Negative: 14%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-base-100 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-3">Top Topics</h4>
+                                    <div class="space-y-2">
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm">Food Quality</span>
+                                            <div class="flex items-center gap-2">
+                                                <progress class="progress progress-success w-20" value="85" max="100"></progress>
+                                                <span class="text-xs">85%</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm">Service Speed</span>
+                                            <div class="flex items-center gap-2">
+                                                <progress class="progress progress-warning w-20" value="45" max="100"></progress>
+                                                <span class="text-xs">45%</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm">Staff Friendliness</span>
+                                            <div class="flex items-center gap-2">
+                                                <progress class="progress progress-success w-20" value="78" max="100"></progress>
+                                                <span class="text-xs">78%</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm">Ambiance</span>
+                                            <div class="flex items-center gap-2">
+                                                <progress class="progress progress-success w-20" value="92" max="100"></progress>
+                                                <span class="text-xs">92%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-warning/20 p-3 rounded-lg">
+                                    <h4 class="font-semibold mb-2 text-warning">Priority Issues</h4>
+                                    <ul class="text-sm space-y-1">
+                                        <li>• Long wait times (mentioned 23 times)</li>
+                                        <li>• Food temperature inconsistency (8 times)</li>
+                                        <li>• Staff training needed (5 times)</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-success/20 p-3 rounded-lg">
+                                    <h4 class="font-semibold mb-2 text-success">Strengths</h4>
+                                    <ul class="text-sm space-y-1">
+                                        <li>• Excellent pasta dishes (highly praised)</li>
+                                        <li>• Great ambiance for dates</li>
+                                        <li>• Impressive wine selection</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-info/20 p-3 rounded-lg">
+                                    <h4 class="font-semibold mb-1 text-info">Suggested Response</h4>
+                                    <p class="text-sm">
+                                        "Thank you for your feedback! We're working on reducing wait times and have scheduled 
+                                        additional staff training. We're proud of our pasta and ambiance - hope to see you again!"
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-base-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Choose Your Plan</h2>
+                <p class="text-xl text-base-content/70">
+                    Flexible pricing options based on your review volume and analysis needs.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Starter Plan -->
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl mb-2">Starter</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$59</span>
+                            <span class="text-base-content/70">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Up to 1,000 reviews/month</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Basic sentiment analysis</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Topic extraction</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Standard reporting</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Email alerts</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>5 languages</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline btn-primary w-full">Get Started</button>
+                    </div>
+                </div>
+                
+                <!-- Professional Plan -->
+                <div class="card bg-primary text-primary-content shadow-xl scale-105">
+                    <div class="card-body">
+                        <div class="badge badge-secondary mb-2">Most Popular</div>
+                        <h3 class="card-title text-2xl mb-2">Professional</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$179</span>
+                            <span class="text-primary-content/70">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Up to 10,000 reviews/month</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Advanced sentiment analysis</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Trend detection & prediction</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Automated response generation</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Priority alerts system</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>40+ languages</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>API access</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-secondary w-full">Get Started</button>
+                    </div>
+                </div>
+                
+                <!-- Enterprise Plan -->
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl mb-2">Enterprise</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">Custom</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Unlimited review analysis</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Custom sentiment models</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>White-label deployment</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Advanced integrations</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Dedicated account manager</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>SLA guarantees</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>24/7 support</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline btn-primary w-full">Contact Sales</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary text-primary-content">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">Transform Customer Feedback into Growth</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                Join thousands of businesses using FeedbackLens AI to turn customer reviews into actionable insights and competitive advantages.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="btn btn-secondary btn-lg">Start Free Trial</a>
+                <a href="contact.html" class="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-primary">Schedule Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer footer-center p-10 bg-base-200 text-base-content">
+        <div>
+            <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-12 mb-4">
+            <p class="font-bold">Expandia - AI Solutions for Business Growth</p>
+            <p>Transforming businesses with intelligent automation</p>
+        </div>
+        <div>
+            <div class="grid grid-flow-col gap-4">
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div>
+            <p>© 2024 Expandia. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 

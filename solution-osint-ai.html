@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bumblebee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSINT AI - Open Source Intelligence Analysis | Expandia</title>
+    <meta name="description" content="Advanced open source intelligence with OSINT AI. Automated data collection, threat analysis, and intelligence reporting for security professionals.">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar bg-base-100 shadow-lg">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
+                    </svg>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <a href="index.html" class="btn btn-ghost text-xl">
+                <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8">
+            </a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="solutions.html" class="hover:text-primary">Solutions</a></li>
+                <li><a href="industries.html" class="hover:text-primary">Industries</a></li>
+                <li><a href="case-studies.html" class="hover:text-primary">Case Studies</a></li>
+                <li><a href="about.html" class="hover:text-primary">About</a></li>
+                <li><a href="contact.html" class="hover:text-primary">Contact</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <a href="contact.html" class="btn btn-primary">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero min-h-[60vh] bg-gradient-to-br from-primary/10 to-secondary/10">
+        <div class="hero-content text-center">
+            <div class="max-w-4xl">
+                <div class="mb-8">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-primary/20 rounded-full flex items-center justify-center">
+                        <i class="fas fa-search-location text-3xl text-primary"></i>
+                    </div>
+                    <h1 class="text-5xl font-bold text-base-content mb-6">OSINT AI</h1>
+                    <h2 class="text-2xl font-semibold text-primary mb-4">Advanced Open Source Intelligence Platform</h2>
+                    <p class="text-xl text-base-content/80 mb-8 max-w-3xl mx-auto">
+                        Transform intelligence gathering with AI-powered OSINT analysis. Automated data collection, 
+                        threat detection, and comprehensive reporting for security and investigation professionals.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Data Sources</div>
+                        <div class="stat-value text-primary">10K+</div>
+                        <div class="stat-desc">Monitored platforms</div>
+                    </div>
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Analysis Speed</div>
+                        <div class="stat-value text-secondary">95%</div>
+                        <div class="stat-desc">Faster than manual</div>
+                    </div>
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Accuracy Rate</div>
+                        <div class="stat-value text-accent">96%</div>
+                        <div class="stat-desc">Threat detection</div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#demo" class="btn btn-primary btn-lg">Try Demo</a>
+                    <a href="#pricing" class="btn btn-outline btn-lg">View Pricing</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Comprehensive Intelligence Gathering</h2>
+                <p class="text-xl text-base-content/70 max-w-3xl mx-auto">
+                    Advanced AI technology that monitors, analyzes, and correlates information from thousands of open sources for actionable intelligence.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-spider text-primary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Automated Data Collection</h3>
+                        <p class="text-base-content/70">
+                            Intelligent web crawling and data extraction from social media, forums, news sites, and dark web sources.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-brain text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">AI-Powered Analysis</h3>
+                        <p class="text-base-content/70">
+                            Advanced NLP and machine learning to identify patterns, connections, and anomalies in collected data.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-exclamation-triangle text-accent text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Threat Detection</h3>
+                        <p class="text-base-content/70">
+                            Real-time monitoring for security threats, cyber attacks, and potential risks with automated alerting.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-project-diagram text-primary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Entity Relationship Mapping</h3>
+                        <p class="text-base-content/70">
+                            Visualize connections between people, organizations, locations, and events with interactive network graphs.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-language text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Multi-Language Support</h3>
+                        <p class="text-base-content/70">
+                            Process and analyze content in 50+ languages with automatic translation and sentiment analysis.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-file-export text-accent text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Intelligence Reporting</h3>
+                        <p class="text-base-content/70">
+                            Generate comprehensive reports with executive summaries, detailed findings, and actionable recommendations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="py-20 bg-base-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Who Benefits from OSINT AI</h2>
+                <p class="text-xl text-base-content/70">
+                    Essential for organizations that need comprehensive intelligence gathering and threat monitoring capabilities.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-shield-alt text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">Security Agencies</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Monitor emerging threats</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Track criminal organizations</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Investigate cyber incidents</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-building text-secondary text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">Corporate Security</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>Brand reputation monitoring</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>Executive protection intelligence</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>Competitive intelligence gathering</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-search text-accent text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">Investigation Firms</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Digital forensics support</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Background verification</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Asset discovery and tracking</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">See OSINT AI in Action</h2>
+                <p class="text-xl text-base-content/70">
+                    Watch how OSINT AI investigates a cybersecurity threat with automated data collection and analysis.
+                </p>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Investigation Parameters -->
+                    <div class="card bg-base-200 shadow-lg">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">
+                                <i class="fas fa-clipboard-list text-primary"></i>
+                                Investigation Parameters
+                            </h3>
+                            <div class="bg-base-100 p-4 rounded-lg">
+                                <div class="mb-4">
+                                    <h4 class="font-semibold mb-2">Case: Suspected Data Breach</h4>
+                                    <div class="text-sm space-y-2">
+                                        <p><strong>Target Organization:</strong> TechCorp Industries</p>
+                                        <p><strong>Incident Type:</strong> Potential data exfiltration</p>
+                                        <p><strong>Timeline:</strong> Last 30 days</p>
+                                        <p><strong>Priority:</strong> High</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <h4 class="font-semibold mb-2">Search Parameters:</h4>
+                                    <div class="space-y-2 text-sm">
+                                        <div class="bg-base-200 p-2 rounded">
+                                            <p><strong>Keywords:</strong> "TechCorp", "data leak", "employee database"</p>
+                                        </div>
+                                        <div class="bg-base-200 p-2 rounded">
+                                            <p><strong>Domains:</strong> Dark web forums, paste sites, social media</p>
+                                        </div>
+                                        <div class="bg-base-200 p-2 rounded">
+                                            <p><strong>File Types:</strong> .sql, .csv, .xlsx, .txt</p>
+                                        </div>
+                                        <div class="bg-base-200 p-2 rounded">
+                                            <p><strong>Languages:</strong> English, Russian, Chinese</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <h4 class="font-semibold mb-2">Monitoring Sources:</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="badge badge-outline">Dark Web</span>
+                                        <span class="badge badge-outline">Telegram</span>
+                                        <span class="badge badge-outline">Discord</span>
+                                        <span class="badge badge-outline">Pastebin</span>
+                                        <span class="badge badge-outline">GitHub</span>
+                                        <span class="badge badge-outline">Twitter</span>
+                                    </div>
+                                </div>
+                                
+                                <button class="btn btn-primary btn-sm w-full">Start Investigation</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Investigation Results -->
+                    <div class="card bg-base-200 shadow-lg">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">
+                                <i class="fas fa-chart-network text-secondary"></i>
+                                OSINT AI Investigation Results
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="bg-error/20 p-3 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <i class="fas fa-exclamation-triangle text-error"></i>
+                                        <span class="font-semibold">Critical Findings Detected</span>
+                                    </div>
+                                    <p class="text-sm">5 high-confidence matches found</p>
+                                </div>
+                                
+                                <div class="bg-base-100 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-3">Threat Intelligence</h4>
+                                    <div class="space-y-3">
+                                        <div class="border-l-4 border-error pl-3">
+                                            <div class="flex justify-between items-start mb-1">
+                                                <h5 class="text-sm font-semibold">Data Leak Confirmed</h5>
+                                                <span class="badge badge-error">Critical</span>
+                                            </div>
+                                            <p class="text-xs text-base-content/70 mb-1">
+                                                Found: 50,000 employee records on dark web forum
+                                            </p>
+                                            <p class="text-xs">
+                                                Source: DeepPaste.onion | Posted: 3 days ago
+                                            </p>
+                                        </div>
+                                        
+                                        <div class="border-l-4 border-warning pl-3">
+                                            <div class="flex justify-between items-start mb-1">
+                                                <h5 class="text-sm font-semibold">Insider Threat Indicators</h5>
+                                                <span class="badge badge-warning">High</span>
+                                            </div>
+                                            <p class="text-xs text-base-content/70 mb-1">
+                                                Social media activity from former employee
+                                            </p>
+                                            <p class="text-xs">
+                                                Pattern: Disgruntled posts, access timeline correlation
+                                            </p>
+                                        </div>
+                                        
+                                        <div class="border-l-4 border-info pl-3">
+                                            <div class="flex justify-between items-start mb-1">
+                                                <h5 class="text-sm font-semibold">Credential Sales</h5>
+                                                <span class="badge badge-info">Medium</span>
+                                            </div>
+                                            <p class="text-xs text-base-content/70 mb-1">
+                                                Admin credentials offered for sale
+                                            </p>
+                                            <p class="text-xs">
+                                                Location: Telegram channel | Price: $5,000
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-base-100 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-2">Entity Relationships</h4>
+                                    <div class="space-y-2 text-sm">
+                                        <div class="flex items-center gap-2">
+                                            <i class="fas fa-user text-primary text-sm"></i>
+                                            <span>John_Doe_2024 → Former IT Admin</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <i class="fas fa-comments text-secondary text-sm"></i>
+                                            <span>DarkMarket_Forum → Data Broker Network</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <i class="fas fa-link text-accent text-sm"></i>
+                                            <span>Bitcoin Wallet → Payment Trail</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <i class="fas fa-clock text-warning text-sm"></i>
+                                            <span>Timeline: Termination → Leak (7 days)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-base-100 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-2">Data Exposure Assessment</h4>
+                                    <div class="grid grid-cols-2 gap-4 text-sm">
+                                        <div>
+                                            <p><strong>Records Exposed:</strong> 50,247</p>
+                                            <p><strong>Data Types:</strong> PII, Passwords</p>
+                                        </div>
+                                        <div>
+                                            <p><strong>Threat Actor:</strong> Insider</p>
+                                            <p><strong>Confidence:</strong> 94%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-base-100 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-2">Recommended Actions</h4>
+                                    <ul class="text-sm space-y-1">
+                                        <li>• Immediate password reset for all employees</li>
+                                        <li>• Contact law enforcement regarding insider threat</li>
+                                        <li>• Monitor for additional data sales</li>
+                                        <li>• Implement enhanced access controls</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-error/20 p-3 rounded-lg">
+                                    <h4 class="font-semibold mb-1 text-error">Alert Status</h4>
+                                    <p class="text-sm">
+                                        Active data breach confirmed. Immediate incident response required. 
+                                        Continuous monitoring activated for related threats.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-base-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Choose Your Plan</h2>
+                <p class="text-xl text-base-content/70">
+                    Flexible pricing options based on your intelligence gathering needs and organization size.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Professional Plan -->
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl mb-2">Professional</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$499</span>
+                            <span class="text-base-content/70">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Up to 100 investigations/month</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Basic data collection</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Surface & deep web monitoring</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Standard reporting</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>10 data sources</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Email support</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline btn-primary w-full">Get Started</button>
+                    </div>
+                </div>
+                
+                <!-- Enterprise Plan */
+                <div class="card bg-primary text-primary-content shadow-xl scale-105">
+                    <div class="card-body">
+                        <div class="badge badge-secondary mb-2">Most Popular</div>
+                        <h3 class="card-title text-2xl mb-2">Enterprise</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$1,499</span>
+                            <span class="text-primary-content/70">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Unlimited investigations</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Advanced AI analysis</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Dark web monitoring</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Threat intelligence feeds</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>10,000+ data sources</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>API integration</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Priority support</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-secondary w-full">Get Started</button>
+                    </div>
+                </div>
+                
+                <!-- Government Plan -->
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl mb-2">Government</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">Custom</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Unlimited investigations</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Classified data handling</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>On-premise deployment</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Custom intelligence feeds</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Dedicated analyst team</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Security clearance required</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>24/7 support</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline btn-primary w-full">Contact Sales</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary text-primary-content">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">Enhance Your Intelligence Capabilities</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                Join security professionals worldwide using OSINT AI to gather actionable intelligence, detect threats, and protect their organizations.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="btn btn-secondary btn-lg">Request Demo</a>
+                <a href="contact.html" class="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-primary">Contact Sales</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer footer-center p-10 bg-base-200 text-base-content">
+        <div>
+            <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-12 mb-4">
+            <p class="font-bold">Expandia - AI Solutions for Business Growth</p>
+            <p>Transforming businesses with intelligent automation</p>
+        </div>
+        <div>
+            <div class="grid grid-flow-col gap-4">
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div>
+            <p>© 2024 Expandia. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 

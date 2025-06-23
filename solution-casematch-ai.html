@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bumblebee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaseMatch AI - US Court Precedent Search | Expandia</title>
+    <meta name="description" content="Find relevant US court precedents instantly with CaseMatch AI. Semantic search through millions of legal cases with AI-powered relevance scoring.">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar bg-base-100 shadow-lg">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
+                    </svg>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <a href="index.html" class="btn btn-ghost text-xl">
+                <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8">
+            </a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="solutions.html" class="hover:text-primary">Solutions</a></li>
+                <li><a href="industries.html" class="hover:text-primary">Industries</a></li>
+                <li><a href="case-studies.html" class="hover:text-primary">Case Studies</a></li>
+                <li><a href="about.html" class="hover:text-primary">About</a></li>
+                <li><a href="contact.html" class="hover:text-primary">Contact</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <a href="contact.html" class="btn btn-primary">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero min-h-[60vh] bg-gradient-to-br from-primary/10 to-secondary/10">
+        <div class="hero-content text-center">
+            <div class="max-w-4xl">
+                <div class="mb-8">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-primary/20 rounded-full flex items-center justify-center">
+                        <i class="fas fa-gavel text-3xl text-primary"></i>
+                    </div>
+                    <h1 class="text-5xl font-bold text-base-content mb-6">CaseMatch AI</h1>
+                    <h2 class="text-2xl font-semibold text-primary mb-4">Intelligent US Court Precedent Search</h2>
+                    <p class="text-xl text-base-content/80 mb-8 max-w-3xl mx-auto">
+                        Find relevant court precedents instantly with AI-powered semantic search. 
+                        Search through millions of US legal cases with intelligent relevance scoring and natural language queries.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Cases Database</div>
+                        <div class="stat-value text-primary">2.8M+</div>
+                        <div class="stat-desc">US court cases indexed</div>
+                    </div>
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Search Speed</div>
+                        <div class="stat-value text-secondary">1.2s</div>
+                        <div class="stat-desc">Average response time</div>
+                    </div>
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Relevance Score</div>
+                        <div class="stat-value text-accent">96%</div>
+                        <div class="stat-desc">Accuracy rate</div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#demo" class="btn btn-primary btn-lg">Try Demo</a>
+                    <a href="#pricing" class="btn btn-outline btn-lg">View Pricing</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Advanced Legal Research Technology</h2>
+                <p class="text-xl text-base-content/70 max-w-3xl mx-auto">
+                    Leverage cutting-edge AI to revolutionize your legal research process with intelligent case discovery and analysis.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-search text-primary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Semantic Case Search</h3>
+                        <p class="text-base-content/70">
+                            Search using natural language queries to find cases based on legal concepts, not just keywords.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-chart-bar text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Relevance Scoring</h3>
+                        <p class="text-base-content/70">
+                            AI-powered relevance scoring ranks cases by legal similarity and precedential value to your query.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-filter text-accent text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Advanced Filtering</h3>
+                        <p class="text-base-content/70">
+                            Filter by jurisdiction, court level, date range, case type, and legal topics for precise results.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-quote-right text-primary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Key Quote Extraction</h3>
+                        <p class="text-base-content/70">
+                            Automatically extract and highlight the most relevant quotes and holdings from case opinions.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-sitemap text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Citation Network Analysis</h3>
+                        <p class="text-base-content/70">
+                            Visualize citation networks to understand case relationships and precedential strength.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-download text-accent text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Export & Integration</h3>
+                        <p class="text-base-content/70">
+                            Export results to legal research platforms or integrate via API with existing legal software.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="py-20 bg-base-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Who Benefits from CaseMatch AI</h2>
+                <p class="text-xl text-base-content/70">
+                    Essential for legal professionals who need fast, accurate access to relevant case precedents.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-balance-scale text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">Law Firms</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Reduce research time by 70%</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Find overlooked precedents</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Strengthen legal arguments</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-university text-secondary text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">Legal Academics</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>Comprehensive case analysis</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>Track legal trend evolution</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>Research publication support</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-building text-accent text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">Corporate Legal Teams</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Risk assessment and compliance</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Contract precedent analysis</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Litigation strategy support</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">See CaseMatch AI in Action</h2>
+                <p class="text-xl text-base-content/70">
+                    Experience how CaseMatch AI transforms complex legal queries into precise case recommendations.
+                </p>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Search Query -->
+                    <div class="card bg-base-200 shadow-lg">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">
+                                <i class="fas fa-search text-primary"></i>
+                                Legal Query
+                            </h3>
+                            <div class="bg-base-100 p-4 rounded-lg">
+                                <div class="mb-4">
+                                    <label class="label">
+                                        <span class="label-text font-semibold">Natural Language Query</span>
+                                    </label>
+                                    <textarea class="textarea textarea-bordered w-full" readonly>
+"Employer liability for employee actions outside normal work hours when using company vehicle"
+                                    </textarea>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="label">
+                                            <span class="label-text">Jurisdiction</span>
+                                        </label>
+                                        <select class="select select-bordered w-full" disabled>
+                                            <option>Federal + All States</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="label">
+                                            <span class="label-text">Date Range</span>
+                                        </label>
+                                        <select class="select select-bordered w-full" disabled>
+                                            <option>Last 10 years</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary w-full mt-4">Search Cases</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Search Results -->
+                    <div class="card bg-base-200 shadow-lg">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">
+                                <i class="fas fa-list-alt text-secondary"></i>
+                                Top Precedents Found
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="bg-base-100 p-4 rounded-lg border-l-4 border-primary">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="font-semibold text-sm">Christensen v. Swenson (9th Cir. 2019)</h4>
+                                        <span class="badge badge-primary">98% Match</span>
+                                    </div>
+                                    <p class="text-xs text-base-content/70 mb-2">
+                                        "Employer held liable for employee's negligent driving during personal errand 
+                                        when using company vehicle, as vehicle use created apparent agency relationship..."
+                                    </p>
+                                    <div class="flex gap-2">
+                                        <span class="badge badge-outline badge-xs">Employment Law</span>
+                                        <span class="badge badge-outline badge-xs">Vicarious Liability</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-base-100 p-4 rounded-lg border-l-4 border-secondary">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="font-semibold text-sm">Manning v. Twin Falls Clinic (Idaho 2021)</h4>
+                                        <span class="badge badge-secondary">94% Match</span>
+                                    </div>
+                                    <p class="text-xs text-base-content/70 mb-2">
+                                        "Hospital not liable for nurse's accident during lunch break, despite using 
+                                        hospital parking, as activity was purely personal..."
+                                    </p>
+                                    <div class="flex gap-2">
+                                        <span class="badge badge-outline badge-xs">Scope of Employment</span>
+                                        <span class="badge badge-outline badge-xs">Healthcare</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-base-100 p-4 rounded-lg border-l-4 border-accent">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="font-semibold text-sm">Rodriguez v. Metro Transit (Cal. 2020)</h4>
+                                        <span class="badge badge-accent">91% Match</span>
+                                    </div>
+                                    <p class="text-xs text-base-content/70 mb-2">
+                                        "Transit authority liable for bus driver's collision during unauthorized 
+                                        detour, applying 'foreseeability' test for scope of employment..."
+                                    </p>
+                                    <div class="flex gap-2">
+                                        <span class="badge badge-outline badge-xs">Public Entity</span>
+                                        <span class="badge badge-outline badge-xs">Foreseeability</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-center mt-4">
+                                    <span class="text-sm text-base-content/70">Showing 3 of 247 relevant cases</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-base-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Choose Your Plan</h2>
+                <p class="text-xl text-base-content/70">
+                    Flexible pricing options for legal professionals and organizations of all sizes.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Solo Plan -->
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl mb-2">Solo Practitioner</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$89</span>
+                            <span class="text-base-content/70">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Up to 200 searches/month</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>All US jurisdictions</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Semantic search</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Basic filtering</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>PDF exports</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Email support</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline btn-primary w-full">Get Started</button>
+                    </div>
+                </div>
+                
+                <!-- Firm Plan -->
+                <div class="card bg-primary text-primary-content shadow-xl scale-105">
+                    <div class="card-body">
+                        <div class="badge badge-secondary mb-2">Most Popular</div>
+                        <h3 class="card-title text-2xl mb-2">Law Firm</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$299</span>
+                            <span class="text-primary-content/70">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Up to 1,000 searches/month</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>All features from Solo</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Advanced filtering & analytics</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Citation network analysis</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Team collaboration tools</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>API access</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Priority support</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-secondary w-full">Get Started</button>
+                    </div>
+                </div>
+                
+                <!-- Enterprise Plan -->
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl mb-2">Enterprise</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">Custom</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Unlimited searches</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Custom integrations</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>White-label options</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Advanced analytics dashboard</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Dedicated account manager</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>SLA guarantees</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>24/7 support</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline btn-primary w-full">Contact Sales</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary text-primary-content">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">Transform Your Legal Research Today</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                Join thousands of legal professionals using CaseMatch AI to find relevant precedents faster and build stronger arguments.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="btn btn-secondary btn-lg">Start Free Trial</a>
+                <a href="contact.html" class="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-primary">Schedule Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer footer-center p-10 bg-base-200 text-base-content">
+        <div>
+            <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-12 mb-4">
+            <p class="font-bold">Expandia - AI Solutions for Business Growth</p>
+            <p>Transforming businesses with intelligent automation</p>
+        </div>
+        <div>
+            <div class="grid grid-flow-col gap-4">
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div>
+            <p>© 2024 Expandia. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 

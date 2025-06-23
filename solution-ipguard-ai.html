@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bumblebee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPGuard AI - Patent Similarity Analysis | Expandia</title>
+    <meta name="description" content="Protect your intellectual property with IPGuard AI. Advanced patent similarity analysis, prior art search, and infringement detection powered by AI.">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar bg-base-100 shadow-lg">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
+                    </svg>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <a href="index.html" class="btn btn-ghost text-xl">
+                <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8">
+            </a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="solutions.html" class="hover:text-primary">Solutions</a></li>
+                <li><a href="industries.html" class="hover:text-primary">Industries</a></li>
+                <li><a href="case-studies.html" class="hover:text-primary">Case Studies</a></li>
+                <li><a href="about.html" class="hover:text-primary">About</a></li>
+                <li><a href="contact.html" class="hover:text-primary">Contact</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <a href="contact.html" class="btn btn-primary">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero min-h-[60vh] bg-gradient-to-br from-primary/10 to-secondary/10">
+        <div class="hero-content text-center">
+            <div class="max-w-4xl">
+                <div class="mb-8">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-primary/20 rounded-full flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-3xl text-primary"></i>
+                    </div>
+                    <h1 class="text-5xl font-bold text-base-content mb-6">IPGuard AI</h1>
+                    <h2 class="text-2xl font-semibold text-primary mb-4">Advanced Patent Similarity Analysis</h2>
+                    <p class="text-xl text-base-content/80 mb-8 max-w-3xl mx-auto">
+                        Protect your intellectual property with AI-powered patent analysis. Advanced similarity detection, 
+                        prior art search, and infringement analysis to safeguard your innovations.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Patent Database</div>
+                        <div class="stat-value text-primary">120M+</div>
+                        <div class="stat-desc">Global patents indexed</div>
+                    </div>
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Analysis Speed</div>
+                        <div class="stat-value text-secondary">3min</div>
+                        <div class="stat-desc">Average search time</div>
+                    </div>
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Accuracy Rate</div>
+                        <div class="stat-value text-accent">97%</div>
+                        <div class="stat-desc">Similarity detection</div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#demo" class="btn btn-primary btn-lg">Try Demo</a>
+                    <a href="#pricing" class="btn btn-outline btn-lg">View Pricing</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Comprehensive IP Protection</h2>
+                <p class="text-xl text-base-content/70 max-w-3xl mx-auto">
+                    Advanced AI technology that analyzes patent documents, detects similarities, and provides comprehensive IP intelligence for informed decision-making.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-search text-primary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Semantic Patent Search</h3>
+                        <p class="text-base-content/70">
+                            Advanced NLP algorithms understand patent language and concepts to find similar inventions beyond keyword matching.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-percentage text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Similarity Scoring</h3>
+                        <p class="text-base-content/70">
+                            Precise similarity scores with detailed explanations of overlapping claims, technical features, and innovation areas.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-history text-accent text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Prior Art Discovery</h3>
+                        <p class="text-base-content/70">
+                            Comprehensive prior art search across global patent databases, scientific literature, and technical publications.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-exclamation-triangle text-primary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Infringement Detection</h3>
+                        <p class="text-base-content/70">
+                            AI-powered analysis to identify potential patent infringement risks and freedom-to-operate issues.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-chart-line text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Patent Landscape Analysis</h3>
+                        <p class="text-base-content/70">
+                            Visualize patent landscapes, technology trends, and competitive intelligence in your innovation domain.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-bell text-accent text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Monitoring & Alerts</h3>
+                        <p class="text-base-content/70">
+                            Continuous monitoring of new patent filings with automated alerts for potential conflicts or opportunities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="py-20 bg-base-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Who Benefits from IPGuard AI</h2>
+                <p class="text-xl text-base-content/70">
+                    Essential for organizations that need to protect their intellectual property and navigate complex patent landscapes.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-flask text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">R&D Departments</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Validate innovation uniqueness</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Identify white space opportunities</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Avoid costly patent conflicts</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-gavel text-secondary text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">IP Law Firms</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>Accelerate prior art searches</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>Strengthen patent applications</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>Support litigation strategies</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-rocket text-accent text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">Technology Companies</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Monitor competitive patents</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Ensure freedom to operate</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Strategic IP portfolio management</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">See IPGuard AI in Action</h2>
+                <p class="text-xl text-base-content/70">
+                    Watch how IPGuard AI analyzes a smartphone camera patent for similarity and prior art.
+                </p>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Patent Input -->
+                    <div class="card bg-base-200 shadow-lg">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">
+                                <i class="fas fa-file-alt text-primary"></i>
+                                Patent Document Input
+                            </h3>
+                            <div class="bg-base-100 p-4 rounded-lg">
+                                <div class="mb-4">
+                                    <span class="badge badge-primary mb-2">Patent Application</span>
+                                    <div class="text-sm space-y-2">
+                                        <p><strong>Title:</strong> Multi-lens Camera System with AI Image Processing</p>
+                                        <p><strong>Inventor:</strong> TechCorp R&D Team</p>
+                                        <p><strong>Application Date:</strong> March 2024</p>
+                                        <p><strong>Classification:</strong> H04N 5/232 (Camera systems)</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <h4 class="font-semibold mb-2">Key Claims:</h4>
+                                    <div class="text-xs space-y-2 bg-base-200 p-3 rounded">
+                                        <p><strong>Claim 1:</strong> A camera system comprising multiple lenses with different focal lengths, an AI processor for image enhancement, and automatic scene detection.</p>
+                                        <p><strong>Claim 2:</strong> The system of claim 1, wherein the AI processor uses machine learning algorithms to optimize image quality based on detected scene types.</p>
+                                        <p><strong>Claim 3:</strong> The system of claim 1, further comprising a depth sensor for bokeh effect generation.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <h4 class="font-semibold mb-2">Technical Description:</h4>
+                                    <p class="text-xs">
+                                        The invention relates to smartphone camera systems that combine multiple lenses 
+                                        (wide, ultra-wide, telephoto) with artificial intelligence processing to automatically 
+                                        enhance image quality, detect scenes, and apply appropriate filters...
+                                    </p>
+                                </div>
+                                
+                                <button class="btn btn-primary btn-sm w-full">Analyze Patent</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Analysis Results -->
+                    <div class="card bg-base-200 shadow-lg">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">
+                                <i class="fas fa-chart-bar text-secondary"></i>
+                                IPGuard Analysis Results
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="bg-warning/20 p-3 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <i class="fas fa-exclamation-triangle text-warning"></i>
+                                        <span class="font-semibold">High Similarity Detected</span>
+                                    </div>
+                                    <p class="text-sm">Found 3 patents with significant overlap</p>
+                                </div>
+                                
+                                <div class="bg-base-100 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-3">Similar Patents Found</h4>
+                                    <div class="space-y-3">
+                                        <div class="border-l-4 border-error pl-3">
+                                            <div class="flex justify-between items-start mb-1">
+                                                <h5 class="text-sm font-semibold">US Patent 11,234,567</h5>
+                                                <span class="badge badge-error">89% Similar</span>
+                                            </div>
+                                            <p class="text-xs text-base-content/70 mb-1">
+                                                "Multi-camera smartphone with AI processing" - Apple Inc. (2022)
+                                            </p>
+                                            <p class="text-xs">
+                                                <strong>Overlap:</strong> Multi-lens system, AI image enhancement, scene detection
+                                            </p>
+                                        </div>
+                                        
+                                        <div class="border-l-4 border-warning pl-3">
+                                            <div class="flex justify-between items-start mb-1">
+                                                <h5 class="text-sm font-semibold">US Patent 10,987,654</h5>
+                                                <span class="badge badge-warning">76% Similar</span>
+                                            </div>
+                                            <p class="text-xs text-base-content/70 mb-1">
+                                                "Intelligent camera array with depth sensing" - Samsung (2021)
+                                            </p>
+                                            <p class="text-xs">
+                                                <strong>Overlap:</strong> Depth sensor integration, bokeh effect generation
+                                            </p>
+                                        </div>
+                                        
+                                        <div class="border-l-4 border-info pl-3">
+                                            <div class="flex justify-between items-start mb-1">
+                                                <h5 class="text-sm font-semibold">US Patent 10,555,123</h5>
+                                                <span class="badge badge-info">65% Similar</span>
+                                            </div>
+                                            <p class="text-xs text-base-content/70 mb-1">
+                                                "Machine learning camera optimization" - Google (2020)
+                                            </p>
+                                            <p class="text-xs">
+                                                <strong>Overlap:</strong> ML algorithms for image optimization
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-base-100 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-2">Risk Assessment</h4>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center gap-2">
+                                            <i class="fas fa-times text-error text-sm"></i>
+                                            <span class="text-sm">High infringement risk (Claims 1-2)</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <i class="fas fa-exclamation text-warning text-sm"></i>
+                                            <span class="text-sm">Moderate risk (Claim 3)</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <i class="fas fa-info text-info text-sm"></i>
+                                            <span class="text-sm">Prior art found: 15 relevant documents</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-error/20 p-3 rounded-lg">
+                                    <h4 class="font-semibold mb-1 text-error">Recommendation</h4>
+                                    <p class="text-sm">
+                                        Significant patent conflicts detected. Recommend detailed freedom-to-operate analysis 
+                                        and potential claim modifications before proceeding.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-base-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Choose Your Plan</h2>
+                <p class="text-xl text-base-content/70">
+                    Flexible pricing options based on your patent analysis needs and organization size.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Starter Plan -->
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl mb-2">Researcher</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$199</span>
+                            <span class="text-base-content/70">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Up to 50 patent analyses/month</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Basic similarity analysis</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Prior art search</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Global patent database access</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Standard reporting</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Email support</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline btn-primary w-full">Get Started</button>
+                    </div>
+                </div>
+                
+                <!-- Professional Plan -->
+                <div class="card bg-primary text-primary-content shadow-xl scale-105">
+                    <div class="card-body">
+                        <div class="badge badge-secondary mb-2">Most Popular</div>
+                        <h3 class="card-title text-2xl mb-2">Professional</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$599</span>
+                            <span class="text-primary-content/70">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Up to 200 patent analyses/month</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Advanced similarity scoring</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Infringement risk assessment</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Patent landscape analysis</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Monitoring & alerts</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>API access</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Priority support</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-secondary w-full">Get Started</button>
+                    </div>
+                </div>
+                
+                <!-- Enterprise Plan -->
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl mb-2">Enterprise</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">Custom</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Unlimited patent analyses</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Custom AI model training</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>White-label deployment</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Advanced integrations</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Dedicated IP analyst</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>SLA guarantees</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>24/7 support</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline btn-primary w-full">Contact Sales</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary text-primary-content">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">Protect Your Innovation Today</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                Join leading R&D teams and IP professionals using IPGuard AI to navigate complex patent landscapes and protect valuable intellectual property.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="btn btn-secondary btn-lg">Start Free Trial</a>
+                <a href="contact.html" class="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-primary">Schedule Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer footer-center p-10 bg-base-200 text-base-content">
+        <div>
+            <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-12 mb-4">
+            <p class="font-bold">Expandia - AI Solutions for Business Growth</p>
+            <p>Transforming businesses with intelligent automation</p>
+        </div>
+        <div>
+            <div class="grid grid-flow-col gap-4">
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div>
+            <p>© 2024 Expandia. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 

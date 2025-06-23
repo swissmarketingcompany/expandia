@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bumblebee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MilLogi AI - Military Logistics Simulation | Expandia</title>
+    <meta name="description" content="Advanced military logistics simulation with MilLogi AI. Strategic planning, supply chain optimization, and mission readiness for defense operations.">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar bg-base-100 shadow-lg">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
+                    </svg>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <a href="index.html" class="btn btn-ghost text-xl">
+                <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8">
+            </a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="solutions.html" class="hover:text-primary">Solutions</a></li>
+                <li><a href="industries.html" class="hover:text-primary">Industries</a></li>
+                <li><a href="case-studies.html" class="hover:text-primary">Case Studies</a></li>
+                <li><a href="about.html" class="hover:text-primary">About</a></li>
+                <li><a href="contact.html" class="hover:text-primary">Contact</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <a href="contact.html" class="btn btn-primary">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero min-h-[60vh] bg-gradient-to-br from-primary/10 to-secondary/10">
+        <div class="hero-content text-center">
+            <div class="max-w-4xl">
+                <div class="mb-8">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-primary/20 rounded-full flex items-center justify-center">
+                        <i class="fas fa-chess-knight text-3xl text-primary"></i>
+                    </div>
+                    <h1 class="text-5xl font-bold text-base-content mb-6">MilLogi AI</h1>
+                    <h2 class="text-2xl font-semibold text-primary mb-4">Advanced Military Logistics Simulation</h2>
+                    <p class="text-xl text-base-content/80 mb-8 max-w-3xl mx-auto">
+                        Enhance military readiness with AI-powered logistics simulation. Strategic planning, supply chain optimization, 
+                        and mission scenario modeling for defense operations and training.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Mission Success</div>
+                        <div class="stat-value text-primary">94%</div>
+                        <div class="stat-desc">Improved planning accuracy</div>
+                    </div>
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Resource Efficiency</div>
+                        <div class="stat-value text-secondary">40%</div>
+                        <div class="stat-desc">Logistics optimization</div>
+                    </div>
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Training Scenarios</div>
+                        <div class="stat-value text-accent">1000+</div>
+                        <div class="stat-desc">Simulation models</div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#demo" class="btn btn-primary btn-lg">Try Demo</a>
+                    <a href="#pricing" class="btn btn-outline btn-lg">View Pricing</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Advanced Defense Intelligence</h2>
+                <p class="text-xl text-base-content/70 max-w-3xl mx-auto">
+                    Sophisticated AI simulation technology designed specifically for military logistics with real-world operational constraints and security protocols.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-map-marked-alt text-primary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Mission Planning Simulation</h3>
+                        <p class="text-base-content/70">
+                            Comprehensive mission planning with terrain analysis, resource allocation, and contingency modeling for complex operations.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-truck text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Supply Chain Optimization</h3>
+                        <p class="text-base-content/70">
+                            Advanced logistics modeling for ammunition, fuel, food, and equipment distribution across multiple theaters of operation.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-shield-alt text-accent text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Threat Response Modeling</h3>
+                        <p class="text-base-content/70">
+                            Simulate response scenarios to various threat levels with dynamic resource reallocation and emergency protocols.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-users text-primary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Personnel & Equipment Tracking</h3>
+                        <p class="text-base-content/70">
+                            Real-time tracking and predictive modeling for personnel deployment, equipment maintenance, and readiness status.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-chart-network text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Multi-Domain Operations</h3>
+                        <p class="text-base-content/70">
+                            Integrated simulation across land, sea, air, space, and cyber domains with joint force coordination.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-lock text-accent text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Secure Cloud Infrastructure</h3>
+                        <p class="text-base-content/70">
+                            Military-grade security with classified data handling, encrypted communications, and audit trail compliance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="py-20 bg-base-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Who Benefits from MilLogi AI</h2>
+                <p class="text-xl text-base-content/70">
+                    Essential for defense organizations that require advanced logistics planning and operational readiness.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-flag-usa text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">Defense Departments</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Strategic mission planning</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Resource allocation optimization</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Multi-theater coordination</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-graduation-cap text-secondary text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">Military Academies</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>Officer training simulations</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>Logistics education programs</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>War gaming exercises</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-handshake text-accent text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">Defense Contractors</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Contract logistics support</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Equipment maintenance planning</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Supply chain risk assessment</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">See MilLogi AI in Action</h2>
+                <p class="text-xl text-base-content/70">
+                    Watch how MilLogi AI simulates a multi-unit deployment with logistics optimization and threat response.
+                </p>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Mission Parameters -->
+                    <div class="card bg-base-200 shadow-lg">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">
+                                <i class="fas fa-clipboard-list text-primary"></i>
+                                Mission Parameters
+                            </h3>
+                            <div class="bg-base-100 p-4 rounded-lg">
+                                <div class="mb-4">
+                                    <h4 class="font-semibold mb-2">Operation: Desert Shield Training</h4>
+                                    <div class="text-sm space-y-2">
+                                        <p><strong>Mission Type:</strong> Multi-unit deployment exercise</p>
+                                        <p><strong>Duration:</strong> 30 days</p>
+                                        <p><strong>Theater:</strong> Middle East Region</p>
+                                        <p><strong>Classification:</strong> Training Exercise</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <h4 class="font-semibold mb-2">Force Structure:</h4>
+                                    <div class="space-y-2 text-sm">
+                                        <div class="bg-base-200 p-2 rounded">
+                                            <p><strong>Infantry Brigade:</strong> 3,500 personnel</p>
+                                            <p>Equipment: 120 vehicles, 45 armored units</p>
+                                        </div>
+                                        <div class="bg-base-200 p-2 rounded">
+                                            <p><strong>Artillery Battalion:</strong> 800 personnel</p>
+                                            <p>Equipment: 24 howitzers, 36 support vehicles</p>
+                                        </div>
+                                        <div class="bg-base-200 p-2 rounded">
+                                            <p><strong>Logistics Support:</strong> 1,200 personnel</p>
+                                            <p>Equipment: 200 cargo vehicles, field hospitals</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <h4 class="font-semibold mb-2">Supply Requirements:</h4>
+                                    <div class="grid grid-cols-2 gap-2 text-xs">
+                                        <div>Fuel: 50,000 gallons/day</div>
+                                        <div>Ammunition: 200 tons</div>
+                                        <div>Food: 15,000 meals/day</div>
+                                        <div>Water: 100,000 gallons/day</div>
+                                        <div>Medical: Field hospital</div>
+                                        <div>Maintenance: 24/7 support</div>
+                                    </div>
+                                </div>
+                                
+                                <button class="btn btn-primary btn-sm w-full">Run Simulation</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Simulation Results -->
+                    <div class="card bg-base-200 shadow-lg">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">
+                                <i class="fas fa-chart-area text-secondary"></i>
+                                MilLogi Simulation Results
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="bg-success/20 p-3 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        <span class="font-semibold">Mission Feasibility: High</span>
+                                    </div>
+                                    <p class="text-sm">Optimal deployment strategy identified</p>
+                                </div>
+                                
+                                <div class="bg-base-100 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-3">Logistics Optimization</h4>
+                                    <div class="space-y-2">
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm">Supply Efficiency</span>
+                                            <div class="flex items-center gap-2">
+                                                <progress class="progress progress-success w-20" value="92" max="100"></progress>
+                                                <span class="text-xs">92%</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm">Transport Optimization</span>
+                                            <div class="flex items-center gap-2">
+                                                <progress class="progress progress-success w-20" value="88" max="100"></progress>
+                                                <span class="text-xs">88%</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm">Resource Allocation</span>
+                                            <div class="flex items-center gap-2">
+                                                <progress class="progress progress-success w-20" value="95" max="100"></progress>
+                                                <span class="text-xs">95%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-base-100 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-2">Deployment Timeline</h4>
+                                    <div class="space-y-2 text-sm">
+                                        <div class="flex justify-between">
+                                            <span>Phase 1 - Advance Team:</span>
+                                            <span class="badge badge-success">Day 1-3</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Phase 2 - Main Force:</span>
+                                            <span class="badge badge-info">Day 4-7</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Phase 3 - Heavy Equipment:</span>
+                                            <span class="badge badge-warning">Day 8-12</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Phase 4 - Full Operational:</span>
+                                            <span class="badge badge-primary">Day 13</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-base-100 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-2">Risk Assessment</h4>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center gap-2">
+                                            <i class="fas fa-check text-success text-sm"></i>
+                                            <span class="text-sm">Supply lines secured</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <i class="fas fa-check text-success text-sm"></i>
+                                            <span class="text-sm">Alternative routes identified</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <i class="fas fa-exclamation text-warning text-sm"></i>
+                                            <span class="text-sm">Weather contingency required</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <i class="fas fa-info text-info text-sm"></i>
+                                            <span class="text-sm">Medical evacuation plan ready</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-base-100 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-2">Resource Savings</h4>
+                                    <div class="grid grid-cols-2 gap-4 text-sm">
+                                        <div>
+                                            <p><strong>Fuel Savings:</strong> 15%</p>
+                                            <p><strong>Transport Efficiency:</strong> 28%</p>
+                                        </div>
+                                        <div>
+                                            <p><strong>Time Reduction:</strong> 22%</p>
+                                            <p><strong>Cost Optimization:</strong> $2.3M</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-success/20 p-3 rounded-lg">
+                                    <h4 class="font-semibold mb-1 text-success">Recommendation</h4>
+                                    <p class="text-sm">
+                                        Proceed with optimized deployment plan. Enhanced logistics efficiency 
+                                        ensures mission success with reduced resource requirements.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-base-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Choose Your Plan</h2>
+                <p class="text-xl text-base-content/70">
+                    Flexible pricing options based on your organization size and simulation requirements.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Training Plan -->
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl mb-2">Training Unit</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$2,499</span>
+                            <span class="text-base-content/70">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Up to 50 simulation scenarios</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Basic mission planning</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Supply chain modeling</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Standard reporting</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Training materials included</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Email support</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline btn-primary w-full">Get Started</button>
+                    </div>
+                </div>
+                
+                <!-- Operational Plan */
+                <div class="card bg-primary text-primary-content shadow-xl scale-105">
+                    <div class="card-body">
+                        <div class="badge badge-secondary mb-2">Most Popular</div>
+                        <h3 class="card-title text-2xl mb-2">Operational</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$7,999</span>
+                            <span class="text-primary-content/70">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Unlimited simulation scenarios</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Advanced mission planning</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Multi-domain operations</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Threat response modeling</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Real-time analytics</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>API integration</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Priority support</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-secondary w-full">Get Started</button>
+                    </div>
+                </div>
+                
+                <!-- Strategic Plan -->
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl mb-2">Strategic</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">Custom</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Custom simulation environments</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Classified data handling</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>On-premise deployment</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Advanced security protocols</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Dedicated project team</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>SLA guarantees</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>24/7 support</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline btn-primary w-full">Contact Sales</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary text-primary-content">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">Enhance Military Readiness Today</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                Join defense organizations worldwide using MilLogi AI to optimize logistics, improve mission planning, and enhance operational readiness.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="btn btn-secondary btn-lg">Request Demo</a>
+                <a href="contact.html" class="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-primary">Contact Sales</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer footer-center p-10 bg-base-200 text-base-content">
+        <div>
+            <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-12 mb-4">
+            <p class="font-bold">Expandia - AI Solutions for Business Growth</p>
+            <p>Transforming businesses with intelligent automation</p>
+        </div>
+        <div>
+            <div class="grid grid-flow-col gap-4">
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div>
+            <p>© 2024 Expandia. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 

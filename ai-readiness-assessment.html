@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bumblebee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Readiness Assessment | Expandia - AI Solution Partner</title>
+    <meta name="description" content="Assess your organization's readiness for AI implementation.">
+    <link href="./dist/css/output.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
+                    </svg>
+                </div>
+                <!-- Mobile Menu -->
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-72">
+                    <li>
+                        <details>
+                            <summary class="font-semibold">Solutions</summary>
+                            <ul class="p-2">
+                                <li><a href="solutions.html" >Our AI Solutions</a></li>
+                                <li><a href="industries.html" >Industries We Serve</a></li>
+                                <li><a href="how-we-work.html" >How We Work</a></li>
+                                <li><a href="case-studies.html" >Success Stories</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary class="font-semibold">Resources</summary>
+                            <ul class="p-2">
+                                <li><a href="roi-calculator.html" >ROI Calculator</a></li>
+                                <li><a href="ai-readiness-assessment.html" class="text-primary font-semibold">AI Assessment</a></li>
+                                <li><a href="cost-estimator.html" >Cost Estimator</a></li>
+                                <li><a href="competitor-analysis.html" >AI Benchmark</a></li>
+                                <li><a href="resources.html" >Free Downloads</a></li>
+                                <li><a href="blog.html" >AI Insights Blog</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary class="font-semibold">Company</summary>
+                            <ul class="p-2">
+                                <li><a href="about.html" >About Us</a></li>
+                                <li><a href="contact.html" >Contact Us</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </div>
+            <a href="index.html" class="btn btn-ghost hover:bg-transparent">
+                <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 md:h-10 w-auto transition-all duration-300 hover:scale-105 logo-bumblebee">
+            </a>
+        </div>
+        
+        <!-- Desktop Mega Menu -->
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <!-- Solutions Mega Menu -->
+                <li class="dropdown dropdown-hover">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold ">
+                        Solutions
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div tabindex="0" class="dropdown-content z-[1] card card-compact w-80 p-4 shadow-xl bg-base-100 border border-base-300">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary mb-3">AI Solutions & Services</h3>
+                            <div class="grid gap-2">
+                                <a href="solutions.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">🤖</span>
+                                    <div>
+                                        <div class="font-semibold">Our AI Solutions</div>
+                                        <div class="text-sm text-base-content/60">AI Agents, Automation & More</div>
+                                    </div>
+                                </a>
+                                <a href="industries.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">🏢</span>
+                                    <div>
+                                        <div class="font-semibold">Industries We Serve</div>
+                                        <div class="text-sm text-base-content/60">Healthcare, Finance, Retail & More</div>
+                                    </div>
+                                </a>
+                                <a href="how-we-work.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">⚙️</span>
+                                    <div>
+                                        <div class="font-semibold">How We Work</div>
+                                        <div class="text-sm text-base-content/60">Our Proven 5-Step Process</div>
+                                    </div>
+                                </a>
+                                <a href="case-studies.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">📈</span>
+                                    <div>
+                                        <div class="font-semibold">Success Stories</div>
+                                        <div class="text-sm text-base-content/60">Real Results from Real Companies</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Resources Mega Menu -->
+                <li class="dropdown dropdown-hover">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold text-primary">
+                        Resources
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div tabindex="0" class="dropdown-content z-[1] card card-compact w-96 p-4 shadow-xl bg-base-100 border border-base-300">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary mb-3">Tools & Resources</h3>
+                            <div class="grid md:grid-cols-2 gap-2">
+                                <a href="roi-calculator.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">💰</span>
+                                    <div>
+                                        <div class="font-semibold">ROI Calculator</div>
+                                        <div class="text-sm text-base-content/60">Calculate AI Returns</div>
+                                    </div>
+                                </a>
+                                <a href="ai-readiness-assessment.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors bg-primary/10 border border-primary/20">
+                                    <span class="text-xl">🎯</span>
+                                    <div>
+                                        <div class="font-semibold">AI Assessment</div>
+                                        <div class="text-sm text-base-content/60">Check Your Readiness</div>
+                                    </div>
+                                </a>
+                                <a href="cost-estimator.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">📊</span>
+                                    <div>
+                                        <div class="font-semibold">Cost Estimator</div>
+                                        <div class="text-sm text-base-content/60">Project Cost Analysis</div>
+                                    </div>
+                                </a>
+                                <a href="competitor-analysis.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">🏆</span>
+                                    <div>
+                                        <div class="font-semibold">AI Benchmark</div>
+                                        <div class="text-sm text-base-content/60">Competitive Analysis</div>
+                                    </div>
+                                </a>
+                                <a href="resources.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">📚</span>
+                                    <div>
+                                        <div class="font-semibold">Free Downloads</div>
+                                        <div class="text-sm text-base-content/60">Guides & Templates</div>
+                                    </div>
+                                </a>
+                                <a href="blog.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">✍️</span>
+                                    <div>
+                                        <div class="font-semibold">AI Insights Blog</div>
+                                        <div class="text-sm text-base-content/60">Latest Trends & Tips</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Company Mega Menu -->
+                <li class="dropdown dropdown-hover">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold ">
+                        Company
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div tabindex="0" class="dropdown-content z-[1] card card-compact w-72 p-4 shadow-xl bg-base-100 border border-base-300">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary mb-3">About Expandia</h3>
+                            <div class="grid gap-2">
+                                <a href="about.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">👥</span>
+                                    <div>
+                                        <div class="font-semibold">About Us</div>
+                                        <div class="text-sm text-base-content/60">Our Mission & Team</div>
+                                    </div>
+                                </a>
+                                <a href="contact.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">📞</span>
+                                    <div>
+                                        <div class="font-semibold">Contact Us</div>
+                                        <div class="text-sm text-base-content/60">Let's Start Your AI Journey</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="border-t border-base-300 mt-4 pt-4">
+                                <a href="contact.html" class="btn btn-primary btn-sm w-full buzz-button">
+                                    Book Free Consultation
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <a href="contact.html" class="btn btn-primary buzz-button">Get Started</a>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="section-spacing bg-gradient-to-br from-buzz-warm via-base-100 to-buzz-light">
+        <div class="container mx-auto container-padding">
+            <div class="text-center max-w-4xl mx-auto animate-fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                    <span class="gradient-header">AI Readiness</span><br>
+                    <span class="text-base-content">Assessment</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-base-content/80 mb-12 leading-relaxed">
+                    Evaluate your organization's readiness for AI implementation across 5 critical dimensions. 
+                    Get <span class="font-semibold text-primary">personalized recommendations</span> and a roadmap.
+                </p>
+                <div class="grid md:grid-cols-4 gap-6 text-center">
+                    <div class="buzz-card p-6">
+                        <div class="text-3xl font-bold text-primary mb-2">15 Min</div>
+                        <div class="text-sm text-base-content/60">Assessment time</div>
+                    </div>
+                    <div class="buzz-card p-6">
+                        <div class="text-3xl font-bold text-secondary mb-2">5 Areas</div>
+                        <div class="text-sm text-base-content/60">Key dimensions</div>
+                    </div>
+                    <div class="buzz-card p-6">
+                        <div class="text-3xl font-bold text-accent mb-2">Custom</div>
+                        <div class="text-sm text-base-content/60">Recommendations</div>
+                    </div>
+                    <div class="buzz-card p-6">
+                        <div class="text-3xl font-bold text-primary mb-2">Free</div>
+                        <div class="text-sm text-base-content/60">Detailed report</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Start Assessment Button -->
+    <section class="section-spacing bg-base-100">
+        <div class="container mx-auto container-padding">
+            <div class="text-center">
+                <button id="start-assessment" class="btn btn-primary btn-lg buzz-button text-xl px-12 py-4">
+                    Start AI Readiness Assessment 🚀
+                </button>
+                <p class="text-base-content/70 mt-4">Takes about 15 minutes • Get instant results</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Tool (Hidden Initially) -->
+    <section id="assessment-section" class="section-spacing bg-base-100" style="display: none;">
+        <div class="container mx-auto container-padding">
+            <div class="max-w-4xl mx-auto">
+                
+                <!-- Progress Bar -->
+                <div class="mb-8">
+                    <div class="flex justify-between text-sm text-base-content/60 mb-2">
+                        <span id="progress-text">Question 1 of 25</span>
+                        <span id="progress-percentage">4% Complete</span>
+                    </div>
+                    <progress id="progress-bar" class="progress progress-primary w-full" value="1" max="25"></progress>
+                </div>
+
+                <!-- Question Container -->
+                <div id="question-container" class="buzz-card p-8 mb-8">
+                    <div id="question-content">
+                        <!-- Questions will be dynamically inserted here -->
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="flex justify-between">
+                    <button id="prev-btn" class="btn btn-ghost btn-lg" style="display: none;">
+                        ← Previous
+                    </button>
+                    <div class="flex-1"></div>
+                    <button id="next-btn" class="btn btn-primary btn-lg buzz-button" disabled>
+                        Next Question →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Container (Hidden Initially) -->
+    <section id="results-section" class="section-spacing bg-base-100" style="display: none;">
+        <div class="container mx-auto container-padding">
+            <div class="max-w-6xl mx-auto">
+                <div class="buzz-card p-8 bg-gradient-to-br from-primary/5 to-secondary/5">
+                    <h2 class="text-3xl font-bold mb-6 gradient-header text-center">Your AI Readiness Report</h2>
+                    
+                    <!-- Overall Score -->
+                    <div class="text-center mb-8">
+                        <div class="text-6xl mb-4" id="readiness-emoji">🚀</div>
+                        <h3 class="text-2xl font-bold mb-2" id="readiness-level">High Readiness</h3>
+                        <div class="text-4xl font-bold text-primary mb-2" id="overall-score">85%</div>
+                        <div class="text-base-content/60">Overall Readiness Score</div>
+                    </div>
+
+                    <!-- Dimension Scores -->
+                    <div class="grid md:grid-cols-5 gap-4 mb-8">
+                        <div class="text-center p-4 bg-white rounded-lg">
+                            <div class="text-2xl font-bold text-primary mb-1" id="data-score">85%</div>
+                            <div class="text-sm text-base-content/60">Data Quality</div>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg">
+                            <div class="text-2xl font-bold text-secondary mb-1" id="tech-score">75%</div>
+                            <div class="text-sm text-base-content/60">Technology</div>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg">
+                            <div class="text-2xl font-bold text-accent mb-1" id="team-score">80%</div>
+                            <div class="text-sm text-base-content/60">Team Skills</div>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg">
+                            <div class="text-2xl font-bold text-info mb-1" id="culture-score">70%</div>
+                            <div class="text-sm text-base-content/60">Culture</div>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg">
+                            <div class="text-2xl font-bold text-warning mb-1" id="budget-score">90%</div>
+                            <div class="text-sm text-base-content/60">Budget</div>
+                        </div>
+                    </div>
+
+                    <!-- Radar Chart -->
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-4 text-center">Readiness Breakdown</h3>
+                        <div class="max-w-md mx-auto">
+                            <canvas id="readiness-radar" width="400" height="400"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Recommendations -->
+                    <div id="recommendations-section" class="mb-8">
+                        <h3 class="text-xl font-bold mb-4">Personalized Recommendations</h3>
+                        <div id="recommendations-list" class="space-y-4">
+                            <!-- Dynamic recommendations -->
+                        </div>
+                    </div>
+
+                    <!-- Next Steps -->
+                    <div class="border-t border-base-300 pt-6">
+                        <h3 class="text-xl font-bold mb-4">Your AI Implementation Roadmap</h3>
+                        <div id="roadmap-timeline" class="space-y-4">
+                            <!-- Dynamic roadmap -->
+                        </div>
+                        
+                        <div class="text-center mt-8">
+                            <button id="get-consultation" class="btn btn-primary btn-lg buzz-button mr-4">
+                                Schedule Free Consultation
+                            </button>
+                            <button id="download-report" class="btn btn-outline btn-lg buzz-button">
+                                Download Full Report
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-buzz-neutral text-white">
+        <div class="container mx-auto container-padding py-16">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold gradient-header mb-4">Expandia</h3>
+                    <p class="text-white/80 mb-4">
+                        Your Partner in Building Practical, Scalable AI Solutions.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-white/60 hover:text-primary transition-colors">LinkedIn</a>
+                        <a href="#" class="text-white/60 hover:text-primary transition-colors">Twitter</a>
+                        <a href="#" class="text-white/60 hover:text-primary transition-colors">GitHub</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Solutions</h4>
+                    <ul class="space-y-2 text-white/80">
+                        <li><a href="solutions.html" class="hover:text-primary transition-colors">AI Agents</a></li>
+                        <li><a href="solutions.html" class="hover:text-primary transition-colors">Automation</a></li>
+                        <li><a href="solutions.html" class="hover:text-primary transition-colors">Predictive Analytics</a></li>
+                        <li><a href="solutions.html" class="hover:text-primary transition-colors">Content AI</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Tools</h4>
+                    <ul class="space-y-2 text-white/80">
+                        <li><a href="roi-calculator.html" class="hover:text-primary transition-colors">ROI Calculator</a></li>
+                        <li><a href="ai-readiness-assessment.html" class="hover:text-primary transition-colors">AI Assessment</a></li>
+                        <li><a href="cost-estimator.html" class="hover:text-primary transition-colors">Cost Estimator</a></li>
+                        <li><a href="competitor-analysis.html" class="hover:text-primary transition-colors">AI Benchmark</a></li>
+                        <li><a href="resources.html" class="hover:text-primary transition-colors">Free Resources</a></li>
+                        <li><a href="blog.html" class="hover:text-primary transition-colors">AI Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-white/80">
+                        <li><a href="about.html" class="hover:text-primary transition-colors">About</a></li>
+                        <li><a href="industries.html" class="hover:text-primary transition-colors">Industries</a></li>
+                        <li><a href="case-studies.html" class="hover:text-primary transition-colors">Case Studies</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                        <li><a href="how-we-work.html" class="hover:text-primary transition-colors">How We Work</a></li>
+                    </ul>
+                    <div class="mt-6">
+                        <h5 class="font-semibold mb-2">Get Started</h5>
+                        <p class="text-white/80 mb-3 text-sm">Ready to transform your business with AI?</p>
+                        <a href="contact.html" class="btn btn-primary btn-sm w-full buzz-button">Book Consultation</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 mt-12 pt-8 text-center text-white/60">
+                <p>&copy; 2025 Expandia. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for interactive tools -->
+    <script src="src/js/tools.js"></script>
+    
+    <!-- JavaScript for smooth interactions -->
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation classes when elements come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all service cards and animated elements
+        document.querySelectorAll('.service-card, .buzz-card, .animate-slide-up').forEach(card => {
+            observer.observe(card);
+        });
+
+        
+    </script>
+</body>
+</html>

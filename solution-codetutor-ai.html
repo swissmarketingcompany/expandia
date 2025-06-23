@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bumblebee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeTutor AI - Intelligent Code Review & Learning | Expandia</title>
+    <meta name="description" content="Enhance code quality with CodeTutor AI. Automated code review, bug detection, and personalized learning for developers and development teams.">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar bg-base-100 shadow-lg">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
+                    </svg>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <a href="index.html" class="btn btn-ghost text-xl">
+                <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8">
+            </a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="solutions.html" class="hover:text-primary">Solutions</a></li>
+                <li><a href="industries.html" class="hover:text-primary">Industries</a></li>
+                <li><a href="case-studies.html" class="hover:text-primary">Case Studies</a></li>
+                <li><a href="about.html" class="hover:text-primary">About</a></li>
+                <li><a href="contact.html" class="hover:text-primary">Contact</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <a href="contact.html" class="btn btn-primary">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero min-h-[60vh] bg-gradient-to-br from-primary/10 to-secondary/10">
+        <div class="hero-content text-center">
+            <div class="max-w-4xl">
+                <div class="mb-8">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-primary/20 rounded-full flex items-center justify-center">
+                        <i class="fas fa-code text-3xl text-primary"></i>
+                    </div>
+                    <h1 class="text-5xl font-bold text-base-content mb-6">CodeTutor AI</h1>
+                    <h2 class="text-2xl font-semibold text-primary mb-4">Intelligent Code Review & Learning Platform</h2>
+                    <p class="text-xl text-base-content/80 mb-8 max-w-3xl mx-auto">
+                        Elevate your development process with AI-powered code review. Automated bug detection, 
+                        security analysis, and personalized learning to improve code quality and developer skills.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Bug Detection</div>
+                        <div class="stat-value text-primary">97%</div>
+                        <div class="stat-desc">Accuracy rate</div>
+                    </div>
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Review Speed</div>
+                        <div class="stat-value text-secondary">80%</div>
+                        <div class="stat-desc">Faster than manual</div>
+                    </div>
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Languages</div>
+                        <div class="stat-value text-accent">25+</div>
+                        <div class="stat-desc">Programming languages</div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#demo" class="btn btn-primary btn-lg">Try Demo</a>
+                    <a href="#pricing" class="btn btn-outline btn-lg">View Pricing</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Advanced Code Intelligence</h2>
+                <p class="text-xl text-base-content/70 max-w-3xl mx-auto">
+                    Cutting-edge AI technology that understands code context, patterns, and best practices across multiple programming languages.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-bug text-primary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Automated Bug Detection</h3>
+                        <p class="text-base-content/70">
+                            Advanced static analysis to identify bugs, logic errors, and potential runtime issues before they reach production.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-shield-alt text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Security Vulnerability Scanning</h3>
+                        <p class="text-base-content/70">
+                            Comprehensive security analysis detecting OWASP Top 10 vulnerabilities and secure coding violations.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-chart-line text-accent text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Performance Optimization</h3>
+                        <p class="text-base-content/70">
+                            Identify performance bottlenecks, memory leaks, and optimization opportunities for faster applications.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-graduation-cap text-primary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Personalized Learning</h3>
+                        <p class="text-base-content/70">
+                            AI-powered learning recommendations based on code patterns and skill gaps to improve developer capabilities.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-users text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Team Collaboration</h3>
+                        <p class="text-base-content/70">
+                            Collaborative code review with team insights, coding standards enforcement, and knowledge sharing.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-code-branch text-accent text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">CI/CD Integration</h3>
+                        <p class="text-base-content/70">
+                            Seamless integration with GitHub, GitLab, Jenkins, and other development tools for automated workflows.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="py-20 bg-base-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Who Benefits from CodeTutor AI</h2>
+                <p class="text-xl text-base-content/70">
+                    Essential for development teams that want to improve code quality, reduce bugs, and accelerate learning.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-laptop-code text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">Development Teams</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Maintain consistent code quality</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Reduce code review time</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Catch bugs before production</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-user-graduate text-secondary text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">Junior Developers</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>Learn best practices faster</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>Get instant feedback on code</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>Improve coding skills systematically</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-building text-accent text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">Enterprise Organizations</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Enforce coding standards at scale</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Reduce security vulnerabilities</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Accelerate developer onboarding</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">See CodeTutor AI in Action</h2>
+                <p class="text-xl text-base-content/70">
+                    Watch how CodeTutor AI reviews a Python function and provides detailed feedback and suggestions.
+                </p>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Code Input -->
+                    <div class="card bg-base-200 shadow-lg">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">
+                                <i class="fas fa-file-code text-primary"></i>
+                                Code Submission
+                            </h3>
+                            <div class="bg-base-100 p-4 rounded-lg">
+                                <div class="mb-4">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <h4 class="font-semibold">user_authentication.py</h4>
+                                        <span class="badge badge-primary">Python</span>
+                                    </div>
+                                    <div class="text-sm text-base-content/70">
+                                        <p><strong>Developer:</strong> Alex Chen</p>
+                                        <p><strong>Lines:</strong> 45</p>
+                                        <p><strong>Last Modified:</strong> 30 minutes ago</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <h4 class="font-semibold mb-2">Code:</h4>
+                                    <div class="bg-gray-900 text-green-400 p-4 rounded text-sm font-mono max-h-80 overflow-y-auto">
+                                        <pre><code>import hashlib
+import sqlite3
+
+def authenticate_user(username, password):
+    # Connect to database
+    conn = sqlite3.connect('users.db')
+    cursor = conn.cursor()
+    
+    # Get user from database
+    query = "SELECT * FROM users WHERE username = '" + username + "'"
+    cursor.execute(query)
+    user = cursor.fetchone()
+    
+    if user:
+        # Check password
+        stored_password = user[2]
+        if password == stored_password:
+            conn.close()
+            return True
+        else:
+            conn.close()
+            return False
+    else:
+        conn.close()
+        return False
+
+def hash_password(password):
+    return hashlib.md5(password.encode()).hexdigest()
+
+def create_user(username, password):
+    conn = sqlite3.connect('users.db')
+    cursor = conn.cursor()
+    
+    hashed_pw = hash_password(password)
+    
+    query = "INSERT INTO users VALUES (NULL, '" + username + "', '" + hashed_pw + "')"
+    cursor.execute(query)
+    conn.commit()
+    conn.close()
+    
+    return "User created successfully"</code></pre>
+                                    </div>
+                                </div>
+                                
+                                <button class="btn btn-primary btn-sm w-full">Review Code</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Review Results -->
+                    <div class="card bg-base-200 shadow-lg">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">
+                                <i class="fas fa-chart-bar text-secondary"></i>
+                                CodeTutor AI Review
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="bg-error/20 p-3 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <i class="fas fa-exclamation-triangle text-error"></i>
+                                        <span class="font-semibold">Critical Issues Found</span>
+                                    </div>
+                                    <p class="text-sm">5 security vulnerabilities detected</p>
+                                </div>
+                                
+                                <div class="bg-base-100 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-3">Security Issues</h4>
+                                    <div class="space-y-3">
+                                        <div class="border-l-4 border-error pl-3">
+                                            <div class="flex justify-between items-start mb-1">
+                                                <h5 class="text-sm font-semibold">SQL Injection</h5>
+                                                <span class="badge badge-error">Critical</span>
+                                            </div>
+                                            <p class="text-xs text-base-content/70 mb-1">
+                                                Line 9: String concatenation in SQL query allows injection attacks
+                                            </p>
+                                            <p class="text-xs text-info">
+                                                Fix: Use parameterized queries with ? placeholders
+                                            </p>
+                                        </div>
+                                        
+                                        <div class="border-l-4 border-error pl-3">
+                                            <div class="flex justify-between items-start mb-1">
+                                                <h5 class="text-sm font-semibold">Weak Password Hashing</h5>
+                                                <span class="badge badge-error">Critical</span>
+                                            </div>
+                                            <p class="text-xs text-base-content/70 mb-1">
+                                                Line 25: MD5 is cryptographically broken and unsuitable for passwords
+                                            </p>
+                                            <p class="text-xs text-info">
+                                                Fix: Use bcrypt, scrypt, or Argon2 for password hashing
+                                            </p>
+                                        </div>
+                                        
+                                        <div class="border-l-4 border-warning pl-3">
+                                            <div class="flex justify-between items-start mb-1">
+                                                <h5 class="text-sm font-semibold">Plain Text Password Storage</h5>
+                                                <span class="badge badge-warning">High</span>
+                                            </div>
+                                            <p class="text-xs text-base-content/70 mb-1">
+                                                Line 12: Password comparison suggests plain text storage
+                                            </p>
+                                            <p class="text-xs text-info">
+                                                Fix: Hash password before comparison
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-base-100 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-2">Code Quality Issues</h4>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center gap-2">
+                                            <i class="fas fa-exclamation text-warning text-sm"></i>
+                                            <span class="text-sm">No error handling for database operations</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <i class="fas fa-exclamation text-warning text-sm"></i>
+                                            <span class="text-sm">Database connections not properly closed</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <i class="fas fa-info text-info text-sm"></i>
+                                            <span class="text-sm">Consider using context managers (with statement)</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <i class="fas fa-info text-info text-sm"></i>
+                                            <span class="text-sm">Add input validation for username/password</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-base-100 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-2">Performance Suggestions</h4>
+                                    <ul class="text-sm space-y-1">
+                                        <li>• Use connection pooling for database access</li>
+                                        <li>• Add database indexing on username column</li>
+                                        <li>• Consider caching for frequently accessed users</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-info/20 p-3 rounded-lg">
+                                    <h4 class="font-semibold mb-1 text-info">Learning Recommendation</h4>
+                                    <p class="text-sm">
+                                        Focus on secure coding practices. Recommended reading: OWASP Top 10, 
+                                        Python Security Best Practices, and SQL Injection Prevention.
+                                    </p>
+                                </div>
+                                
+                                <div class="bg-base-100 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-2">Overall Score</h4>
+                                    <div class="flex items-center gap-4">
+                                        <div class="radial-progress text-error" style="--value:35;" role="progressbar">35%</div>
+                                        <div class="text-sm">
+                                            <p class="font-semibold text-error">Needs Improvement</p>
+                                            <p>Critical security issues must be addressed</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-base-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Choose Your Plan</h2>
+                <p class="text-xl text-base-content/70">
+                    Flexible pricing options based on your team size and development needs.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Individual Plan -->
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl mb-2">Individual</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$19</span>
+                            <span class="text-base-content/70">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Up to 100 code reviews/month</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Basic bug detection</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Security vulnerability scanning</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>5 programming languages</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Basic learning recommendations</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Email support</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline btn-primary w-full">Get Started</button>
+                    </div>
+                </div>
+                
+                <!-- Team Plan */
+                <div class="card bg-primary text-primary-content shadow-xl scale-105">
+                    <div class="card-body">
+                        <div class="badge badge-secondary mb-2">Most Popular</div>
+                        <h3 class="card-title text-2xl mb-2">Team</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$79</span>
+                            <span class="text-primary-content/70">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Up to 1,000 code reviews/month</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Advanced AI analysis</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Performance optimization</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>25+ programming languages</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Team collaboration features</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>CI/CD integrations</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Priority support</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-secondary w-full">Get Started</button>
+                    </div>
+                </div>
+                
+                <!-- Enterprise Plan -->
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl mb-2">Enterprise</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">Custom</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Unlimited code reviews</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Custom AI model training</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>On-premise deployment</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Advanced security compliance</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Dedicated account manager</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>SLA guarantees</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>24/7 support</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline btn-primary w-full">Contact Sales</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary text-primary-content">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">Elevate Your Code Quality Today</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                Join thousands of developers using CodeTutor AI to write better code, learn faster, and build more secure applications.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="btn btn-secondary btn-lg">Start Free Trial</a>
+                <a href="contact.html" class="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-primary">Schedule Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer footer-center p-10 bg-base-200 text-base-content">
+        <div>
+            <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-12 mb-4">
+            <p class="font-bold">Expandia - AI Solutions for Business Growth</p>
+            <p>Transforming businesses with intelligent automation</p>
+        </div>
+        <div>
+            <div class="grid grid-flow-col gap-4">
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div>
+            <p>© 2024 Expandia. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 

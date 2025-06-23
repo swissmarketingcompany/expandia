@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Golden Buzz Custom Components */
+@layer components {
+  .gradient-header {
+    @apply bg-gradient-to-r from-buzz-primary to-buzz-secondary bg-clip-text text-transparent;
+  }
+  
+  .credit-badge {
+    @apply bg-buzz-gradient shadow-buzz hover:shadow-buzz-lg transition-all duration-300 transform hover:scale-105;
+  }
+  
+  .buzz-button {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:scale-105;
+  }
+  
+  .buzz-card {
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-buzz transition-all duration-300 hover:-translate-y-2;
+  }
+  
+  .buzz-input {
+    @apply border-2 border-gray-200 focus:border-buzz-primary focus:ring-buzz-primary focus:ring-opacity-50 rounded-lg px-4 py-3 transition-all duration-300;
+  }
+  
+  .section-spacing {
+    @apply py-16 md:py-24;
+  }
+  
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .buzz-hero {
+    @apply bg-buzz-gradient min-h-screen flex items-center justify-center;
+  }
+  
+  .icon-feature {
+    @apply w-16 h-16 mx-auto mb-6 p-4 bg-buzz-primary bg-opacity-10 rounded-2xl flex items-center justify-center;
+  }
+  
+  .service-card {
+    @apply buzz-card p-8 text-center h-full flex flex-col;
+  }
+  
+  .testimonial-card {
+    @apply buzz-card p-6 relative;
+  }
+  
+  /* Logo Color Styling for Bumblebee Theme */
+  .logo-bumblebee {
+    filter: hue-rotate(45deg) saturate(1.2) brightness(1.1);
+    transition: filter 0.3s ease;
+  }
+  
+  .logo-bumblebee:hover {
+    filter: hue-rotate(45deg) saturate(1.4) brightness(1.2) drop-shadow(0 4px 8px rgba(249, 194, 60, 0.3));
+  }
+}
+
+/* Custom animations */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes progressGrow {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 87%;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f9c23c;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e86100;
+}
+
+/* Mega Menu Fixes - Ultra Specific to Override DaisyUI */
+.navbar .dropdown .dropdown-content,
+.dropdown.dropdown-hover .dropdown-content,
+.dropdown:hover .dropdown-content,
+.dropdown:focus .dropdown-content,
+.dropdown:focus-within .dropdown-content,
+.dropdown-open .dropdown-content {
+    background-color: white !important;
+    background: white !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+    border-radius: 0.75rem !important;
+    z-index: 9999 !important;
+}
+
+/* Force white background for all dropdown cards */
+.dropdown-content .card,
+.dropdown-content > div,
+.dropdown-content .grid,
+.dropdown-content .p-6 {
+    background-color: white !important;
+    background: white !important;
+}
+
+/* Specific fixes for mega menu structure */
+.navbar .dropdown .dropdown-content .grid {
+    background-color: white !important;
+}
+
+.navbar .dropdown .dropdown-content .card {
+    background-color: white !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Navigation Enhancements */
+.navbar {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    z-index: 1000;
+}
+
+/* Mobile Menu Styling */
+.menu details summary {
+    font-weight: 600;
+    color: hsl(var(--bc));
+}
+
+.menu details[open] summary {
+    color: hsl(var(--p));
+}
+
+/* Hover Effects for Mega Menu Items */
+.dropdown-content a:hover {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+}
+
+/* Active State Styling */
+.dropdown-content a.bg-primary\/10 {
+    background-color: rgba(249, 194, 60, 0.1) !important;
+    border-color: rgba(249, 194, 60, 0.2) !important;
+}
+
+/* Force visibility and opacity */
+.dropdown:hover .dropdown-content,
+.dropdown-hover:hover .dropdown-content,
+.dropdown:focus .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+} 

@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bumblebee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal AI - B2B Proposal Generator | Expandia</title>
+    <meta name="description" content="Create custom proposals from client briefs with pricing, timeline, and deliverables. Perfect for agencies, consultants, and freelancers.">
+    <link href="./dist/css/output.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
+                    </svg>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-72">
+                    <li><a href="solutions.html">← Back to Solutions</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <a href="index.html" class="btn btn-ghost hover:bg-transparent">
+                <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 md:h-10 w-auto transition-all duration-300 hover:scale-105 logo-bumblebee">
+            </a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="solutions.html" class="btn btn-ghost">← Back to Solutions</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <a href="contact.html" class="btn btn-secondary buzz-button">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="section-spacing bg-gradient-to-br from-buzz-warm via-base-100 to-buzz-light">
+        <div class="container mx-auto container-padding">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center">
+                            <span class="text-4xl">📋</span>
+                        </div>
+                        <div>
+                            <h1 class="text-4xl md:text-5xl font-bold gradient-header">Proposal AI</h1>
+                            <p class="text-xl text-secondary font-semibold">B2B Proposal Generator</p>
+                        </div>
+                    </div>
+                    <p class="text-xl text-base-content/80 mb-8 leading-relaxed">
+                        Create winning proposals in minutes, not hours. Transform client briefs into professional, 
+                        branded proposals with accurate pricing, timelines, and deliverables.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="contact.html" class="btn btn-secondary btn-lg buzz-button">
+                            Start Free Trial
+                        </a>
+                        <a href="#demo" class="btn btn-outline btn-lg">
+                            See Demo
+                        </a>
+                    </div>
+                </div>
+                <div class="buzz-card p-8 bg-gradient-to-br from-secondary/5 to-accent/5">
+                    <h3 class="text-2xl font-bold mb-6 text-center">Business Impact</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white text-sm font-bold">80%</span>
+                            <span class="text-base-content/80">Faster proposal creation</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 bg-accent rounded-full flex items-center justify-center text-white text-sm font-bold">45%</span>
+                            <span class="text-base-content/80">Higher win rates</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-sm font-bold">3x</span>
+                            <span class="text-base-content/80">More proposals sent</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white text-sm font-bold">95%</span>
+                            <span class="text-base-content/80">Client satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section-spacing bg-base-100">
+        <div class="container mx-auto container-padding">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">
+                    <span class="gradient-header">Smart Proposal Generation</span>
+                </h2>
+                <p class="text-xl text-base-content/80 max-w-3xl mx-auto">
+                    AI-powered system that understands your business, learns from past proposals, and creates compelling, accurate proposals.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="buzz-card p-6">
+                    <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mb-4">
+                        <span class="text-2xl">📝</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Template Filling</h3>
+                    <p class="text-base-content/70">
+                        Automatically populates proposal templates with client-specific information, 
+                        services, and customized messaging based on brief analysis.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="buzz-card p-6">
+                    <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                        <span class="text-2xl">🎯</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Client-Specific Tailoring</h3>
+                    <p class="text-base-content/70">
+                        Analyzes client industry, size, and requirements to customize tone, 
+                        approach, and solution recommendations for maximum relevance.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="buzz-card p-6">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                        <span class="text-2xl">💰</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Smart Pricing</h3>
+                    <p class="text-base-content/70">
+                        Suggests competitive pricing based on project scope, market rates, 
+                        and your historical data with built-in profit margin optimization.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="buzz-card p-6">
+                    <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mb-4">
+                        <span class="text-2xl">📅</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Timeline Generation</h3>
+                    <p class="text-base-content/70">
+                        Creates realistic project timelines with milestones, deliverables, 
+                        and dependencies based on project complexity and team capacity.
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="buzz-card p-6">
+                    <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                        <span class="text-2xl">🎨</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Branded PDF Export</h3>
+                    <p class="text-base-content/70">
+                        Exports professional, branded PDF proposals with your logo, colors, 
+                        and formatting that's ready to send immediately.
+                    </p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="buzz-card p-6">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                        <span class="text-2xl">📊</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Win Rate Analytics</h3>
+                    <p class="text-base-content/70">
+                        Tracks proposal performance, identifies winning patterns, 
+                        and provides insights to improve future proposal success rates.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="section-spacing bg-buzz-light">
+        <div class="container mx-auto container-padding">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">
+                    <span class="gradient-header">Perfect For Service Providers</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Use Case 1 -->
+                <div class="buzz-card p-8 bg-white">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🏢</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-secondary">Digital Agencies</h3>
+                    </div>
+                    <ul class="space-y-3 text-base-content/70">
+                        <li class="flex items-start gap-2">
+                            <span class="text-secondary font-bold">✓</span>
+                            <span>Scale proposal generation</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-secondary font-bold">✓</span>
+                            <span>Consistent pricing strategies</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-secondary font-bold">✓</span>
+                            <span>Faster response to RFPs</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-secondary font-bold">✓</span>
+                            <span>Professional presentation</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Use Case 2 -->
+                <div class="buzz-card p-8 bg-white">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">👨‍💼</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-accent">Consultants</h3>
+                    </div>
+                    <ul class="space-y-3 text-base-content/70">
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent font-bold">✓</span>
+                            <span>Focus on client work, not admin</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent font-bold">✓</span>
+                            <span>Standardize proposal quality</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent font-bold">✓</span>
+                            <span>Optimize pricing confidence</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent font-bold">✓</span>
+                            <span>Track success patterns</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Use Case 3 -->
+                <div class="buzz-card p-8 bg-white">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">💼</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary">Freelancers</h3>
+                    </div>
+                    <ul class="space-y-3 text-base-content/70">
+                        <li class="flex items-start gap-2">
+                            <span class="text-primary font-bold">✓</span>
+                            <span>Compete with larger agencies</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-primary font-bold">✓</span>
+                            <span>Professional brand image</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-primary font-bold">✓</span>
+                            <span>Win higher-value projects</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-primary font-bold">✓</span>
+                            <span>Save time for billable work</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="section-spacing bg-base-100">
+        <div class="container mx-auto container-padding">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">
+                    <span class="gradient-header">From Brief to Proposal in Minutes</span>
+                </h2>
+                <p class="text-xl text-base-content/80">
+                    See how Proposal AI transforms a client brief into a winning proposal
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div class="buzz-card p-8">
+                    <h3 class="text-2xl font-bold mb-6">Input: Client Brief</h3>
+                    <div class="bg-base-200 p-6 rounded-lg text-sm">
+                        <div class="mb-4">
+                            <strong>Company:</strong> TechStart Inc. (50 employees)
+                        </div>
+                        <div class="mb-4">
+                            <strong>Industry:</strong> B2B SaaS
+                        </div>
+                        <div class="mb-4">
+                            <strong>Project:</strong> Complete website redesign and development
+                        </div>
+                        <div class="mb-4">
+                            <strong>Requirements:</strong>
+                            <ul class="ml-4 mt-2 list-disc">
+                                <li>Modern, professional design</li>
+                                <li>Mobile-responsive</li>
+                                <li>SEO optimization</li>
+                                <li>CMS integration</li>
+                                <li>Lead generation forms</li>
+                            </ul>
+                        </div>
+                        <div class="mb-4">
+                            <strong>Timeline:</strong> 8-10 weeks
+                        </div>
+                        <div>
+                            <strong>Budget:</strong> $25,000 - $35,000
+                        </div>
+                    </div>
+                </div>
+
+                <div class="buzz-card p-8 bg-gradient-to-br from-secondary/5 to-accent/5">
+                    <h3 class="text-2xl font-bold mb-6">Generated Proposal Sections</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-lg font-semibold mb-3 text-secondary">📋 Executive Summary</h4>
+                            <div class="p-3 bg-white rounded-lg border text-sm">
+                                <p>
+                                    We understand TechStart Inc. needs a modern website that reflects your 
+                                    innovative SaaS solutions while driving lead generation. Our proposal 
+                                    outlines a comprehensive redesign that will position you as an industry leader.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-lg font-semibold mb-3 text-accent">🎯 Proposed Solution</h4>
+                            <div class="space-y-2">
+                                <div class="p-3 bg-white rounded-lg border text-sm">
+                                    <strong>Phase 1:</strong> Discovery & Strategy (Week 1-2)
+                                    <div class="text-xs text-base-content/60 mt-1">User research, competitor analysis, wireframing</div>
+                                </div>
+                                <div class="p-3 bg-white rounded-lg border text-sm">
+                                    <strong>Phase 2:</strong> Design & Development (Week 3-7)
+                                    <div class="text-xs text-base-content/60 mt-1">UI/UX design, frontend/backend development, CMS setup</div>
+                                </div>
+                                <div class="p-3 bg-white rounded-lg border text-sm">
+                                    <strong>Phase 3:</strong> Testing & Launch (Week 8-9)
+                                    <div class="text-xs text-base-content/60 mt-1">QA testing, SEO optimization, deployment</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-lg font-semibold mb-3 text-primary">💰 Investment</h4>
+                            <div class="p-4 bg-white rounded-lg border">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-semibold">Total Project Cost:</span>
+                                    <span class="text-2xl font-bold text-primary">$32,500</span>
+                                </div>
+                                <div class="text-xs text-base-content/60">
+                                    Includes design, development, CMS, SEO setup, and 30 days post-launch support
+                                </div>
+                                <div class="mt-3 p-2 bg-green-50 rounded text-xs">
+                                    <strong>Payment Terms:</strong> 50% upfront, 30% at milestone, 20% on completion
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-lg font-semibold mb-3 text-secondary">⏱️ Timeline</h4>
+                            <div class="p-3 bg-white rounded-lg border text-center">
+                                <div class="text-2xl font-bold text-secondary">9 weeks</div>
+                                <div class="text-sm text-base-content/60">From project start to launch</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section-spacing bg-buzz-light">
+        <div class="container mx-auto container-padding">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">
+                    <span class="gradient-header">Simple, Value-Based Pricing</span>
+                </h2>
+                <p class="text-xl text-base-content/80">
+                    Choose the plan that fits your proposal volume and business size
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Freelancer Plan -->
+                <div class="buzz-card p-8 bg-white">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Freelancer</h3>
+                        <div class="text-4xl font-bold text-secondary mb-2">$29</div>
+                        <div class="text-base-content/60">per month</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2">
+                            <span class="text-secondary">✓</span>
+                            <span>Up to 10 proposals/month</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-secondary">✓</span>
+                            <span>5 custom templates</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-secondary">✓</span>
+                            <span>Basic branding</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-secondary">✓</span>
+                            <span>PDF export</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-secondary">✓</span>
+                            <span>Email support</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-outline btn-secondary w-full">Get Started</a>
+                </div>
+
+                <!-- Agency Plan -->
+                <div class="buzz-card p-8 bg-gradient-to-br from-secondary/10 to-accent/10 border-2 border-secondary relative">
+                    <div class="badge badge-secondary absolute -top-3 left-1/2 transform -translate-x-1/2">Most Popular</div>
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Agency</h3>
+                        <div class="text-4xl font-bold text-secondary mb-2">$99</div>
+                        <div class="text-base-content/60">per month</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2">
+                            <span class="text-secondary">✓</span>
+                            <span>Up to 50 proposals/month</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-secondary">✓</span>
+                            <span>Unlimited templates</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-secondary">✓</span>
+                            <span>Full brand customization</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-secondary">✓</span>
+                            <span>Team collaboration</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-secondary">✓</span>
+                            <span>Analytics dashboard</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-secondary">✓</span>
+                            <span>Priority support</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-secondary w-full">Get Started</a>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="buzz-card p-8 bg-white">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
+                        <div class="text-4xl font-bold text-secondary mb-2">Custom</div>
+                        <div class="text-base-content/60">pricing</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2">
+                            <span class="text-secondary">✓</span>
+                            <span>Unlimited proposals</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-secondary">✓</span>
+                            <span>Custom AI training</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-secondary">✓</span>
+                            <span>API integration</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-secondary">✓</span>
+                            <span>Advanced analytics</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-secondary">✓</span>
+                            <span>Dedicated support</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-secondary">✓</span>
+                            <span>SLA guarantees</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-outline btn-secondary w-full">Contact Sales</a>
+                </div>
+            </div>
+
+            <!-- Freemium Note -->
+            <div class="text-center mt-12">
+                <div class="buzz-card p-6 bg-gradient-to-r from-secondary/10 to-accent/10 max-w-2xl mx-auto">
+                    <h3 class="text-xl font-bold mb-3">🎉 Freemium Available</h3>
+                    <p class="text-base-content/80">
+                        Start with 3 free proposals per month with branded PDF watermark. 
+                        Upgrade anytime to remove watermark and unlock full features.
+                    </p>
+                    <a href="contact.html" class="btn btn-secondary btn-sm mt-4">Start Free</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-spacing bg-gradient-to-r from-secondary to-accent">
+        <div class="container mx-auto container-padding text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Win More Business With Better Proposals
+            </h2>
+            <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                Stop spending hours on proposals. Start winning more clients with AI-powered proposal generation.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="btn btn-base-100 btn-lg text-secondary font-bold px-8 buzz-button">
+                    Start Free Trial
+                </a>
+                <a href="contact.html" class="btn btn-outline btn-base-100 btn-lg px-8 buzz-button">
+                    Schedule Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-buzz-neutral text-white">
+        <div class="container mx-auto container-padding py-16">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold gradient-header mb-4">Expandia</h3>
+                    <p class="text-white/80 mb-4">
+                        Your Partner in Building Practical, Scalable AI Solutions.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Proposal AI</h4>
+                    <ul class="space-y-2 text-white/80">
+                        <li><a href="#features" class="hover:text-primary transition-colors">Features</a></li>
+                        <li><a href="#demo" class="hover:text-primary transition-colors">Demo</a></li>
+                        <li><a href="#pricing" class="hover:text-primary transition-colors">Pricing</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Free Trial</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Solutions</h4>
+                    <ul class="space-y-2 text-white/80">
+                        <li><a href="solutions.html" class="hover:text-primary transition-colors">All Solutions</a></li>
+                        <li><a href="solution-medcode-ai.html" class="hover:text-primary transition-colors">MedCode AI</a></li>
+                        <li><a href="solution-legaldoc-ai.html" class="hover:text-primary transition-colors">LegalDoc AI</a></li>
+                        <li><a href="solution-edumini-ai.html" class="hover:text-primary transition-colors">EduMini AI</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-white/80">
+                        <li><a href="about.html" class="hover:text-primary transition-colors">About</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                        <li><a href="blog.html" class="hover:text-primary transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 mt-12 pt-8 text-center text-white/60">
+                <p>&copy; 2025 Expandia. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

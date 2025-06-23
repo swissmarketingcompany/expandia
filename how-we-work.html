@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bumblebee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How We Work | Expandia - AI Solution Partner</title>
+    <meta name="description" content="Our proven 5-step process: Discovery, Strategy, MVP, Deploy, and Scale.">
+    <link href="./dist/css/output.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
+                    </svg>
+                </div>
+                <!-- Mobile Menu -->
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-72">
+                    <li>
+                        <details>
+                            <summary class="font-semibold">Solutions</summary>
+                            <ul class="p-2">
+                                <li><a href="solutions.html" >Our AI Solutions</a></li>
+                                <li><a href="industries.html" >Industries We Serve</a></li>
+                                <li><a href="how-we-work.html" class="text-primary font-semibold">How We Work</a></li>
+                                <li><a href="case-studies.html" >Success Stories</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary class="font-semibold">Resources</summary>
+                            <ul class="p-2">
+                                <li><a href="roi-calculator.html" >ROI Calculator</a></li>
+                                <li><a href="ai-readiness-assessment.html" >AI Assessment</a></li>
+                                <li><a href="cost-estimator.html" >Cost Estimator</a></li>
+                                <li><a href="competitor-analysis.html" >AI Benchmark</a></li>
+                                <li><a href="resources.html" >Free Downloads</a></li>
+                                <li><a href="blog.html" >AI Insights Blog</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary class="font-semibold">Company</summary>
+                            <ul class="p-2">
+                                <li><a href="about.html" >About Us</a></li>
+                                <li><a href="contact.html" >Contact Us</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </div>
+            <a href="index.html" class="btn btn-ghost hover:bg-transparent">
+                <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 md:h-10 w-auto transition-all duration-300 hover:scale-105 logo-bumblebee">
+            </a>
+        </div>
+        
+        <!-- Desktop Mega Menu -->
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <!-- Solutions Mega Menu -->
+                <li class="dropdown dropdown-hover">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold text-primary">
+                        Solutions
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div tabindex="0" class="dropdown-content z-[1] card card-compact w-80 p-4 shadow-xl bg-base-100 border border-base-300">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary mb-3">AI Solutions & Services</h3>
+                            <div class="grid gap-2">
+                                <a href="solutions.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">🤖</span>
+                                    <div>
+                                        <div class="font-semibold">Our AI Solutions</div>
+                                        <div class="text-sm text-base-content/60">AI Agents, Automation & More</div>
+                                    </div>
+                                </a>
+                                <a href="industries.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">🏢</span>
+                                    <div>
+                                        <div class="font-semibold">Industries We Serve</div>
+                                        <div class="text-sm text-base-content/60">Healthcare, Finance, Retail & More</div>
+                                    </div>
+                                </a>
+                                <a href="how-we-work.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors bg-primary/10 border border-primary/20">
+                                    <span class="text-xl">⚙️</span>
+                                    <div>
+                                        <div class="font-semibold">How We Work</div>
+                                        <div class="text-sm text-base-content/60">Our Proven 5-Step Process</div>
+                                    </div>
+                                </a>
+                                <a href="case-studies.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">📈</span>
+                                    <div>
+                                        <div class="font-semibold">Success Stories</div>
+                                        <div class="text-sm text-base-content/60">Real Results from Real Companies</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Resources Mega Menu -->
+                <li class="dropdown dropdown-hover">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold ">
+                        Resources
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div tabindex="0" class="dropdown-content z-[1] card card-compact w-96 p-4 shadow-xl bg-base-100 border border-base-300">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary mb-3">Tools & Resources</h3>
+                            <div class="grid md:grid-cols-2 gap-2">
+                                <a href="roi-calculator.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">💰</span>
+                                    <div>
+                                        <div class="font-semibold">ROI Calculator</div>
+                                        <div class="text-sm text-base-content/60">Calculate AI Returns</div>
+                                    </div>
+                                </a>
+                                <a href="ai-readiness-assessment.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">🎯</span>
+                                    <div>
+                                        <div class="font-semibold">AI Assessment</div>
+                                        <div class="text-sm text-base-content/60">Check Your Readiness</div>
+                                    </div>
+                                </a>
+                                <a href="cost-estimator.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">📊</span>
+                                    <div>
+                                        <div class="font-semibold">Cost Estimator</div>
+                                        <div class="text-sm text-base-content/60">Project Cost Analysis</div>
+                                    </div>
+                                </a>
+                                <a href="competitor-analysis.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">🏆</span>
+                                    <div>
+                                        <div class="font-semibold">AI Benchmark</div>
+                                        <div class="text-sm text-base-content/60">Competitive Analysis</div>
+                                    </div>
+                                </a>
+                                <a href="resources.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">📚</span>
+                                    <div>
+                                        <div class="font-semibold">Free Downloads</div>
+                                        <div class="text-sm text-base-content/60">Guides & Templates</div>
+                                    </div>
+                                </a>
+                                <a href="blog.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">✍️</span>
+                                    <div>
+                                        <div class="font-semibold">AI Insights Blog</div>
+                                        <div class="text-sm text-base-content/60">Latest Trends & Tips</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Company Mega Menu -->
+                <li class="dropdown dropdown-hover">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold ">
+                        Company
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div tabindex="0" class="dropdown-content z-[1] card card-compact w-72 p-4 shadow-xl bg-base-100 border border-base-300">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary mb-3">About Expandia</h3>
+                            <div class="grid gap-2">
+                                <a href="about.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">👥</span>
+                                    <div>
+                                        <div class="font-semibold">About Us</div>
+                                        <div class="text-sm text-base-content/60">Our Mission & Team</div>
+                                    </div>
+                                </a>
+                                <a href="contact.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">📞</span>
+                                    <div>
+                                        <div class="font-semibold">Contact Us</div>
+                                        <div class="text-sm text-base-content/60">Let's Start Your AI Journey</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="border-t border-base-300 mt-4 pt-4">
+                                <a href="contact.html" class="btn btn-primary btn-sm w-full buzz-button">
+                                    Book Free Consultation
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <a href="contact.html" class="btn btn-primary buzz-button">Get Started</a>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="section-spacing bg-gradient-to-br from-buzz-warm via-base-100 to-buzz-light">
+        <div class="container mx-auto container-padding">
+            <div class="text-center max-w-4xl mx-auto animate-fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                    <span class="gradient-header">Our Proven</span><br>
+                    <span class="text-base-content">AI Implementation Process</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-base-content/80 mb-12 leading-relaxed">
+                    A systematic approach that turns AI possibilities into 
+                    <span class="font-semibold text-primary">measurable business results</span> in weeks, not months.
+                </p>
+                <div class="grid md:grid-cols-3 gap-6 text-center">
+                    <div class="buzz-card p-6">
+                        <div class="text-3xl font-bold text-primary mb-2">2-8 Weeks</div>
+                        <div class="text-sm text-base-content/60">Time to deployment</div>
+                    </div>
+                    <div class="buzz-card p-6">
+                        <div class="text-3xl font-bold text-secondary mb-2">100%</div>
+                        <div class="text-sm text-base-content/60">Success rate</div>
+                    </div>
+                    <div class="buzz-card p-6">
+                        <div class="text-3xl font-bold text-accent mb-2">30 Days</div>
+                        <div class="text-sm text-base-content/60">Average ROI timeline</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Steps -->
+    <section class="section-spacing bg-base-100">
+        <div class="container mx-auto container-padding">
+            <div class="space-y-20">
+                <!-- Step 1: Discovery -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="animate-slide-up">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                                1
+                            </div>
+                            <h2 class="text-4xl font-bold gradient-header">Discovery & Assessment</h2>
+                        </div>
+                        <p class="text-xl text-base-content/80 mb-8 leading-relaxed">
+                            We start with a deep understanding of your business challenges, goals, and existing processes. 
+                            This isn't just a sales call - it's a strategic assessment that identifies the highest-impact AI opportunities.
+                        </p>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start gap-3">
+                                <span class="text-primary font-bold">📋</span>
+                                <span class="text-base-content/70">Business process analysis and pain point identification</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-primary font-bold">📊</span>
+                                <span class="text-base-content/70">Data audit and feasibility assessment</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-primary font-bold">🎯</span>
+                                <span class="text-base-content/70">ROI projection and success metrics definition</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-primary font-bold">⚡</span>
+                                <span class="text-base-content/70">Quick win identification for immediate impact</span>
+                            </div>
+                        </div>
+                        <div class="bg-primary/10 p-6 rounded-2xl">
+                            <h3 class="font-semibold mb-2">📞 Free Discovery Call</h3>
+                            <p class="text-sm text-base-content/70">30-minute consultation to understand your needs and explore AI opportunities</p>
+                        </div>
+                    </div>
+                    <div class="buzz-card p-8 bg-gradient-to-br from-primary/5 to-secondary/5">
+                        <h3 class="text-2xl font-bold mb-6">What We Evaluate</h3>
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-primary pl-4">
+                                <h4 class="font-semibold">Current Processes</h4>
+                                <p class="text-sm text-base-content/70">Workflow analysis and bottleneck identification</p>
+                            </div>
+                            <div class="border-l-4 border-secondary pl-4">
+                                <h4 class="font-semibold">Data Readiness</h4>
+                                <p class="text-sm text-base-content/70">Quality, volume, and accessibility assessment</p>
+                            </div>
+                            <div class="border-l-4 border-accent pl-4">
+                                <h4 class="font-semibold">Technical Infrastructure</h4>
+                                <p class="text-sm text-base-content/70">Integration requirements and capabilities</p>
+                            </div>
+                            <div class="border-l-4 border-primary pl-4">
+                                <h4 class="font-semibold">Team Readiness</h4>
+                                <p class="text-sm text-base-content/70">Change management and training needs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Strategy Design -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="buzz-card p-8 bg-gradient-to-br from-secondary/5 to-accent/5 order-2 lg:order-1">
+                        <h3 class="text-2xl font-bold mb-6">Strategy Deliverables</h3>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-white rounded-lg">
+                                <h4 class="font-semibold text-secondary">📋 Implementation Roadmap</h4>
+                                <p class="text-sm text-base-content/70">Phased approach with clear milestones and timelines</p>
+                            </div>
+                            <div class="p-4 bg-white rounded-lg">
+                                <h4 class="font-semibold text-secondary">💰 Cost-Benefit Analysis</h4>
+                                <p class="text-sm text-base-content/70">Detailed ROI projections and investment requirements</p>
+                            </div>
+                            <div class="p-4 bg-white rounded-lg">
+                                <h4 class="font-semibold text-secondary">🏗️ Technical Architecture</h4>
+                                <p class="text-sm text-base-content/70">System design and integration specifications</p>
+                            </div>
+                            <div class="p-4 bg-white rounded-lg">
+                                <h4 class="font-semibold text-secondary">📈 Success Metrics</h4>
+                                <p class="text-sm text-base-content/70">KPIs and measurement framework</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="animate-slide-up order-1 lg:order-2">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                                2
+                            </div>
+                            <h2 class="text-4xl font-bold gradient-header">Strategy Design</h2>
+                        </div>
+                        <p class="text-xl text-base-content/80 mb-8 leading-relaxed">
+                            Based on our discovery findings, we create a comprehensive AI strategy tailored to your business. 
+                            This includes technology selection, implementation timeline, and clear ROI projections.
+                        </p>
+                        <div class="bg-buzz-warm p-6 rounded-2xl mb-8">
+                            <h3 class="text-lg font-semibold mb-4">⏱️ Timeline Example</h3>
+                            <div class="grid grid-cols-3 gap-4 text-center">
+                                <div>
+                                    <div class="text-lg font-bold text-secondary">Week 1</div>
+                                    <div class="text-xs text-base-content/60">Discovery</div>
+                                </div>
+                                <div>
+                                    <div class="text-lg font-bold text-accent">Week 2</div>
+                                    <div class="text-xs text-base-content/60">Strategy</div>
+                                </div>
+                                <div>
+                                    <div class="text-lg font-bold text-primary">Week 3+</div>
+                                    <div class="text-xs text-base-content/60">Build & Deploy</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-secondary/10 p-6 rounded-2xl">
+                            <h3 class="font-semibold mb-2">🎯 Fixed-Price Proposal</h3>
+                            <p class="text-sm text-base-content/70">Clear scope, timeline, and investment with no surprises</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: MVP Development -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="animate-slide-up">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                                3
+                            </div>
+                            <h2 class="text-4xl font-bold gradient-header">MVP Development</h2>
+                        </div>
+                        <p class="text-xl text-base-content/80 mb-8 leading-relaxed">
+                            We build a Minimum Viable Product first to validate the concept and demonstrate value quickly. 
+                            This approach reduces risk and allows for rapid iteration based on real user feedback.
+                        </p>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start gap-3">
+                                <span class="text-accent font-bold">⚡</span>
+                                <span class="text-base-content/70">Core functionality built in 1-3 weeks</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-accent font-bold">🧪</span>
+                                <span class="text-base-content/70">Iterative testing and refinement</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-accent font-bold">📊</span>
+                                <span class="text-base-content/70">Performance monitoring and optimization</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-accent font-bold">👥</span>
+                                <span class="text-base-content/70">User feedback integration</span>
+                            </div>
+                        </div>
+                        <div class="bg-accent/10 p-6 rounded-2xl">
+                            <h3 class="font-semibold mb-2">🚀 Rapid Prototyping</h3>
+                            <p class="text-sm text-base-content/70">Show working results within days, not months</p>
+                        </div>
+                    </div>
+                    <div class="buzz-card p-8 bg-gradient-to-br from-accent/5 to-primary/5">
+                        <h3 class="text-2xl font-bold mb-6">Development Approach</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold text-sm">A</div>
+                                <div>
+                                    <h4 class="font-semibold">Agile Methodology</h4>
+                                    <p class="text-sm text-base-content/70">Weekly sprints with continuous delivery</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">B</div>
+                                <div>
+                                    <h4 class="font-semibold">Test-Driven Development</h4>
+                                    <p class="text-sm text-base-content/70">Quality assurance from day one</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-sm">C</div>
+                                <div>
+                                    <h4 class="font-semibold">Regular Demos</h4>
+                                    <p class="text-sm text-base-content/70">Progress updates and feedback sessions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Deploy & Train -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="buzz-card p-8 bg-gradient-to-br from-primary/5 to-secondary/5 order-2 lg:order-1">
+                        <h3 class="text-2xl font-bold mb-6">Training & Support</h3>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-white rounded-lg border-l-4 border-primary">
+                                <h4 class="font-semibold text-primary">👥 Team Training</h4>
+                                <p class="text-sm text-base-content/70">Hands-on workshops for end users and administrators</p>
+                            </div>
+                            <div class="p-4 bg-white rounded-lg border-l-4 border-secondary">
+                                <h4 class="font-semibold text-secondary">📚 Documentation</h4>
+                                <p class="text-sm text-base-content/70">Comprehensive guides and best practices</p>
+                            </div>
+                            <div class="p-4 bg-white rounded-lg border-l-4 border-accent">
+                                <h4 class="font-semibold text-accent">🛠️ Technical Handover</h4>
+                                <p class="text-sm text-base-content/70">Complete system knowledge transfer</p>
+                            </div>
+                            <div class="p-4 bg-white rounded-lg border-l-4 border-primary">
+                                <h4 class="font-semibold text-primary">📞 Ongoing Support</h4>
+                                <p class="text-sm text-base-content/70">Dedicated support channel for questions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="animate-slide-up order-1 lg:order-2">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                                4
+                            </div>
+                            <h2 class="text-4xl font-bold gradient-header">Deploy & Train</h2>
+                        </div>
+                        <p class="text-xl text-base-content/80 mb-8 leading-relaxed">
+                            Production deployment with comprehensive team training ensures smooth adoption. 
+                            We don't just hand over the technology - we ensure your team is confident and capable.
+                        </p>
+                        <div class="bg-gradient-to-r from-primary/10 to-secondary/10 p-6 rounded-2xl mb-8">
+                            <h3 class="text-lg font-semibold mb-4">📈 Deployment Success Rate</h3>
+                            <div class="flex items-center gap-4">
+                                <div class="text-3xl font-bold text-primary">100%</div>
+                                <div class="text-sm text-base-content/70">
+                                    All our deployments go live successfully on the first try, 
+                                    thanks to thorough testing and preparation.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-primary/10 p-6 rounded-2xl">
+                            <h3 class="font-semibold mb-2">🎓 Training Included</h3>
+                            <p class="text-sm text-base-content/70">Every project includes comprehensive team training at no extra cost</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: Scale & Optimize -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="animate-slide-up">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                                5
+                            </div>
+                            <h2 class="text-4xl font-bold gradient-header">Scale & Optimize</h2>
+                        </div>
+                        <p class="text-xl text-base-content/80 mb-8 leading-relaxed">
+                            Once your AI solution is live and delivering results, we help you scale and optimize for even greater impact. 
+                            This includes performance monitoring, feature enhancements, and expansion to new use cases.
+                        </p>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start gap-3">
+                                <span class="text-secondary font-bold">📊</span>
+                                <span class="text-base-content/70">Performance monitoring and analytics</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-secondary font-bold">🔧</span>
+                                <span class="text-base-content/70">Continuous optimization and tuning</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-secondary font-bold">⬆️</span>
+                                <span class="text-base-content/70">Scaling to handle increased volume</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-secondary font-bold">🆕</span>
+                                <span class="text-base-content/70">New feature development and expansion</span>
+                            </div>
+                        </div>
+                        <div class="bg-secondary/10 p-6 rounded-2xl">
+                            <h3 class="font-semibold mb-2">🚀 Long-term Partnership</h3>
+                            <p class="text-sm text-base-content/70">We're here for the long haul, helping you maximize AI ROI over time</p>
+                        </div>
+                    </div>
+                    <div class="buzz-card p-8 bg-gradient-to-br from-secondary/5 to-accent/5">
+                        <h3 class="text-2xl font-bold mb-6">Ongoing Value</h3>
+                        <div class="space-y-6">
+                            <div class="text-center p-4 bg-white rounded-lg">
+                                <div class="text-2xl font-bold text-secondary mb-2">3 Months</div>
+                                <div class="text-sm text-base-content/60 mb-2">Post-Launch Support</div>
+                                <div class="text-xs text-base-content/50">Included with every project</div>
+                            </div>
+                            <div class="text-center p-4 bg-white rounded-lg">
+                                <div class="text-2xl font-bold text-accent mb-2">24/7</div>
+                                <div class="text-sm text-base-content/60 mb-2">System Monitoring</div>
+                                <div class="text-xs text-base-content/50">Proactive issue detection</div>
+                            </div>
+                            <div class="text-center p-4 bg-white rounded-lg">
+                                <div class="text-2xl font-bold text-primary mb-2">Monthly</div>
+                                <div class="text-sm text-base-content/60 mb-2">Performance Reviews</div>
+                                <div class="text-xs text-base-content/50">Optimization opportunities</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Timeline -->
+    <section class="section-spacing bg-buzz-warm">
+        <div class="container mx-auto container-padding">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-header">Typical Project Timeline</h2>
+                <p class="text-xl text-base-content/80 max-w-3xl mx-auto">
+                    From initial contact to full deployment, here's what you can expect at each stage.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-5 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-primary rounded-full flex items-center justify-center text-white text-lg font-bold">
+                        Day 1
+                    </div>
+                    <h3 class="text-lg font-bold mb-4">Initial Contact</h3>
+                    <p class="text-sm text-base-content/70 leading-relaxed">
+                        Free consultation call to understand your needs and assess fit.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-secondary rounded-full flex items-center justify-center text-white text-lg font-bold">
+                        Week 1
+                    </div>
+                    <h3 class="text-lg font-bold mb-4">Deep Discovery</h3>
+                    <p class="text-sm text-base-content/70 leading-relaxed">
+                        Comprehensive analysis of processes, data, and requirements.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-accent rounded-full flex items-center justify-center text-white text-lg font-bold">
+                        Week 2
+                    </div>
+                    <h3 class="text-lg font-bold mb-4">Strategy & Proposal</h3>
+                    <p class="text-sm text-base-content/70 leading-relaxed">
+                        Detailed implementation plan with fixed pricing and timeline.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-primary rounded-full flex items-center justify-center text-white text-lg font-bold">
+                        2-6 Weeks
+                    </div>
+                    <h3 class="text-lg font-bold mb-4">Build & Test</h3>
+                    <p class="text-sm text-base-content/70 leading-relaxed">
+                        MVP development with weekly progress updates and demos.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-secondary rounded-full flex items-center justify-center text-white text-lg font-bold">
+                        Go Live
+                    </div>
+                    <h3 class="text-lg font-bold mb-4">Deploy & Support</h3>
+                    <p class="text-sm text-base-content/70 leading-relaxed">
+                        Production deployment, training, and ongoing optimization.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-spacing bg-gradient-to-r from-primary to-secondary">
+        <div class="container mx-auto container-padding text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Start Your AI Journey?
+            </h2>
+            <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                Let's discuss your specific challenges and create a custom AI strategy that delivers measurable results.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="btn btn-base-100 btn-lg text-primary font-bold px-8 buzz-button">
+                    Schedule Free Discovery Call
+                </a>
+                <a href="case-studies.html" class="btn btn-outline btn-base-100 btn-lg px-8 buzz-button">
+                    See Success Stories
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-buzz-neutral text-white">
+        <div class="container mx-auto container-padding py-16">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold gradient-header mb-4">Expandia</h3>
+                    <p class="text-white/80 mb-4">
+                        Your Partner in Building Practical, Scalable AI Solutions.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-white/60 hover:text-primary transition-colors">LinkedIn</a>
+                        <a href="#" class="text-white/60 hover:text-primary transition-colors">Twitter</a>
+                        <a href="#" class="text-white/60 hover:text-primary transition-colors">GitHub</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Solutions</h4>
+                    <ul class="space-y-2 text-white/80">
+                        <li><a href="solutions.html" class="hover:text-primary transition-colors">AI Agents</a></li>
+                        <li><a href="solutions.html" class="hover:text-primary transition-colors">Automation</a></li>
+                        <li><a href="solutions.html" class="hover:text-primary transition-colors">Predictive Analytics</a></li>
+                        <li><a href="solutions.html" class="hover:text-primary transition-colors">Content AI</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Tools</h4>
+                    <ul class="space-y-2 text-white/80">
+                        <li><a href="roi-calculator.html" class="hover:text-primary transition-colors">ROI Calculator</a></li>
+                        <li><a href="ai-readiness-assessment.html" class="hover:text-primary transition-colors">AI Assessment</a></li>
+                        <li><a href="cost-estimator.html" class="hover:text-primary transition-colors">Cost Estimator</a></li>
+                        <li><a href="competitor-analysis.html" class="hover:text-primary transition-colors">AI Benchmark</a></li>
+                        <li><a href="resources.html" class="hover:text-primary transition-colors">Free Resources</a></li>
+                        <li><a href="blog.html" class="hover:text-primary transition-colors">AI Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-white/80">
+                        <li><a href="about.html" class="hover:text-primary transition-colors">About</a></li>
+                        <li><a href="industries.html" class="hover:text-primary transition-colors">Industries</a></li>
+                        <li><a href="case-studies.html" class="hover:text-primary transition-colors">Case Studies</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                        <li><a href="how-we-work.html" class="hover:text-primary transition-colors">How We Work</a></li>
+                    </ul>
+                    <div class="mt-6">
+                        <h5 class="font-semibold mb-2">Get Started</h5>
+                        <p class="text-white/80 mb-3 text-sm">Ready to transform your business with AI?</p>
+                        <a href="contact.html" class="btn btn-primary btn-sm w-full buzz-button">Book Consultation</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 mt-12 pt-8 text-center text-white/60">
+                <p>&copy; 2025 Expandia. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for smooth interactions -->
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation classes when elements come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all service cards and animated elements
+        document.querySelectorAll('.service-card, .buzz-card, .animate-slide-up').forEach(card => {
+            observer.observe(card);
+        });
+
+        
+    </script>
+</body>
+</html>

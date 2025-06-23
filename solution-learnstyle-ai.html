@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bumblebee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnStyle AI - Adaptive Learning Platform | Expandia</title>
+    <meta name="description" content="Personalize education with LearnStyle AI. Adaptive learning paths, individual progress tracking, and optimized content delivery for enhanced learning outcomes.">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar bg-base-100 shadow-lg">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
+                    </svg>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <a href="index.html" class="btn btn-ghost text-xl">
+                <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8">
+            </a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="solutions.html" class="hover:text-primary">Solutions</a></li>
+                <li><a href="industries.html" class="hover:text-primary">Industries</a></li>
+                <li><a href="case-studies.html" class="hover:text-primary">Case Studies</a></li>
+                <li><a href="about.html" class="hover:text-primary">About</a></li>
+                <li><a href="contact.html" class="hover:text-primary">Contact</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <a href="contact.html" class="btn btn-primary">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero min-h-[60vh] bg-gradient-to-br from-primary/10 to-secondary/10">
+        <div class="hero-content text-center">
+            <div class="max-w-4xl">
+                <div class="mb-8">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-primary/20 rounded-full flex items-center justify-center">
+                        <i class="fas fa-brain text-3xl text-primary"></i>
+                    </div>
+                    <h1 class="text-5xl font-bold text-base-content mb-6">LearnStyle AI</h1>
+                    <h2 class="text-2xl font-semibold text-primary mb-4">Adaptive Learning Platform</h2>
+                    <p class="text-xl text-base-content/80 mb-8 max-w-3xl mx-auto">
+                        Transform education with personalized AI-driven learning. Adaptive content delivery, 
+                        individual progress tracking, and optimized learning paths for every student's unique style.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Learning Improvement</div>
+                        <div class="stat-value text-primary">67%</div>
+                        <div class="stat-desc">Better outcomes</div>
+                    </div>
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Engagement Rate</div>
+                        <div class="stat-value text-secondary">89%</div>
+                        <div class="stat-desc">Student participation</div>
+                    </div>
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Learning Styles</div>
+                        <div class="stat-value text-accent">12+</div>
+                        <div class="stat-desc">Adaptation models</div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#demo" class="btn btn-primary btn-lg">Try Demo</a>
+                    <a href="#pricing" class="btn btn-outline btn-lg">View Pricing</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Personalized Learning Intelligence</h2>
+                <p class="text-xl text-base-content/70 max-w-3xl mx-auto">
+                    Advanced AI technology that understands individual learning patterns and adapts content delivery for optimal educational outcomes.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-route text-primary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Adaptive Learning Paths</h3>
+                        <p class="text-base-content/70">
+                            AI-generated personalized learning journeys that adapt in real-time based on student performance and preferences.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-user-circle text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Learning Style Detection</h3>
+                        <p class="text-base-content/70">
+                            Automatically identify individual learning preferences including visual, auditory, kinesthetic, and reading styles.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-chart-line text-accent text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Real-Time Progress Analytics</h3>
+                        <p class="text-base-content/70">
+                            Comprehensive analytics dashboard tracking learning velocity, comprehension rates, and skill development.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-puzzle-piece text-primary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Content Adaptation</h3>
+                        <p class="text-base-content/70">
+                            Dynamic content modification including difficulty adjustment, format changes, and pacing optimization.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-lightbulb text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Knowledge Gap Detection</h3>
+                        <p class="text-base-content/70">
+                            Intelligent identification of learning gaps with targeted remediation recommendations and practice exercises.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-graduation-cap text-accent text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Predictive Learning Outcomes</h3>
+                        <p class="text-base-content/70">
+                            AI-powered predictions for learning success with early intervention recommendations for at-risk students.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="py-20 bg-base-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Who Benefits from LearnStyle AI</h2>
+                <p class="text-xl text-base-content/70">
+                    Essential for educational institutions that want to maximize learning outcomes through personalized education.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-school text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">K-12 Schools</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Personalize learning for diverse students</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Improve standardized test scores</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Support special needs education</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-university text-secondary text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">Higher Education</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>Reduce dropout rates</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>Optimize course completion</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>Support diverse learning backgrounds</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-briefcase text-accent text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">Corporate Training</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Accelerate employee onboarding</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Improve skill development ROI</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Personalize professional development</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">See LearnStyle AI in Action</h2>
+                <p class="text-xl text-base-content/70">
+                    Watch how LearnStyle AI adapts a mathematics lesson for different learning styles and tracks progress.
+                </p>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Student Profile -->
+                    <div class="card bg-base-200 shadow-lg">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">
+                                <i class="fas fa-user-graduate text-primary"></i>
+                                Student Learning Profile
+                            </h3>
+                            <div class="bg-base-100 p-4 rounded-lg">
+                                <div class="mb-4">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <div class="avatar">
+                                            <div class="w-12 rounded-full bg-primary/20 flex items-center justify-center">
+                                                <i class="fas fa-user text-primary"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold">Emma Rodriguez</h4>
+                                            <p class="text-sm text-base-content/70">Grade 8 • Mathematics</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <h4 class="font-semibold mb-2">Learning Style Analysis:</h4>
+                                    <div class="space-y-2">
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm">Visual Learning</span>
+                                            <div class="flex items-center gap-2">
+                                                <progress class="progress progress-primary w-20" value="85" max="100"></progress>
+                                                <span class="text-xs">85%</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm">Kinesthetic Learning</span>
+                                            <div class="flex items-center gap-2">
+                                                <progress class="progress progress-secondary w-20" value="70" max="100"></progress>
+                                                <span class="text-xs">70%</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm">Auditory Learning</span>
+                                            <div class="flex items-center gap-2">
+                                                <progress class="progress progress-accent w-20" value="45" max="100"></progress>
+                                                <span class="text-xs">45%</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm">Reading/Writing</span>
+                                            <div class="flex items-center gap-2">
+                                                <progress class="progress progress-warning w-20" value="60" max="100"></progress>
+                                                <span class="text-xs">60%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <h4 class="font-semibold mb-2">Current Topic: Quadratic Equations</h4>
+                                    <div class="bg-base-200 p-3 rounded">
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="text-sm">Progress</span>
+                                            <span class="text-sm font-semibold">67%</span>
+                                        </div>
+                                        <progress class="progress progress-success w-full" value="67" max="100"></progress>
+                                        <div class="text-xs text-base-content/70 mt-1">
+                                            Completed: 8/12 lessons
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <h4 class="font-semibold mb-2">Learning Preferences:</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="badge badge-primary">Visual Diagrams</span>
+                                        <span class="badge badge-secondary">Interactive Exercises</span>
+                                        <span class="badge badge-accent">Step-by-Step</span>
+                                        <span class="badge badge-warning">Real-world Examples</span>
+                                    </div>
+                                </div>
+                                
+                                <button class="btn btn-primary btn-sm w-full">Generate Adaptive Content</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Adaptive Content -->
+                    <div class="card bg-base-200 shadow-lg">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">
+                                <i class="fas fa-magic text-secondary"></i>
+                                LearnStyle AI Adaptation
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="bg-success/20 p-3 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        <span class="font-semibold">Content Optimized for Emma</span>
+                                    </div>
+                                    <p class="text-sm">Visual-kinesthetic approach selected</p>
+                                </div>
+                                
+                                <div class="bg-base-100 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-3">Adapted Lesson: Quadratic Factoring</h4>
+                                    
+                                    <!-- Visual Component -->
+                                    <div class="border-l-4 border-primary pl-3 mb-3">
+                                        <h5 class="text-sm font-semibold text-primary mb-1">Visual Component (85% match)</h5>
+                                        <div class="bg-primary/10 p-2 rounded text-xs">
+                                            📊 Interactive graph showing parabola transformation<br/>
+                                            🎯 Color-coded coefficient effects<br/>
+                                            📐 Geometric representation of factoring
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Interactive Component -->
+                                    <div class="border-l-4 border-secondary pl-3 mb-3">
+                                        <h5 class="text-sm font-semibold text-secondary mb-1">Interactive Component (70% match)</h5>
+                                        <div class="bg-secondary/10 p-2 rounded text-xs">
+                                            🎮 Drag-and-drop factoring puzzle<br/>
+                                            ⚡ Real-time feedback on steps<br/>
+                                            🏆 Achievement badges for milestones
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Practice Exercises -->
+                                    <div class="border-l-4 border-accent pl-3">
+                                        <h5 class="text-sm font-semibold text-accent mb-1">Practice Exercises</h5>
+                                        <div class="bg-accent/10 p-2 rounded text-xs">
+                                            📝 5 adaptive problems (difficulty: medium)<br/>
+                                            🔄 Instant retry with hints<br/>
+                                            📈 Progress tracking per concept
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-base-100 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-2">Predicted Learning Outcomes</h4>
+                                    <div class="space-y-2">
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm">Concept Mastery</span>
+                                            <div class="flex items-center gap-2">
+                                                <progress class="progress progress-success w-20" value="88" max="100"></progress>
+                                                <span class="text-xs">88%</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm">Retention Rate</span>
+                                            <div class="flex items-center gap-2">
+                                                <progress class="progress progress-info w-20" value="92" max="100"></progress>
+                                                <span class="text-xs">92%</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm">Engagement Score</span>
+                                            <div class="flex items-center gap-2">
+                                                <progress class="progress progress-warning w-20" value="95" max="100"></progress>
+                                                <span class="text-xs">95%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-base-100 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-2">Adaptive Recommendations</h4>
+                                    <ul class="text-sm space-y-1">
+                                        <li>• Increase visual diagrams by 20%</li>
+                                        <li>• Add more interactive problem-solving</li>
+                                        <li>• Reduce text-heavy explanations</li>
+                                        <li>• Include real-world applications</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-base-100 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-2">Next Learning Path</h4>
+                                    <div class="space-y-2 text-sm">
+                                        <div class="flex justify-between">
+                                            <span>Current: Quadratic Factoring</span>
+                                            <span class="badge badge-success">In Progress</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Next: Completing the Square</span>
+                                            <span class="badge badge-info">Ready</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Future: Quadratic Formula</span>
+                                            <span class="badge badge-warning">Scheduled</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-info/20 p-3 rounded-lg">
+                                    <h4 class="font-semibold mb-1 text-info">AI Insight</h4>
+                                    <p class="text-sm">
+                                        Emma learns best with visual representations and hands-on activities. 
+                                        Predicted to master this concept 40% faster with adaptive approach.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-base-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Choose Your Plan</h2>
+                <p class="text-xl text-base-content/70">
+                    Flexible pricing options based on your institution size and number of learners.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Classroom Plan -->
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl mb-2">Classroom</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$39</span>
+                            <span class="text-base-content/70">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Up to 30 students</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Basic learning style detection</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Adaptive content delivery</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Progress tracking</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Basic analytics</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Email support</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline btn-primary w-full">Get Started</button>
+                    </div>
+                </div>
+                
+                <!-- School Plan */
+                <div class="card bg-primary text-primary-content shadow-xl scale-105">
+                    <div class="card-body">
+                        <div class="badge badge-secondary mb-2">Most Popular</div>
+                        <h3 class="card-title text-2xl mb-2">School</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$199</span>
+                            <span class="text-primary-content/70">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Up to 500 students</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Advanced AI adaptation</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Predictive analytics</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Knowledge gap detection</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Teacher dashboard</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>LMS integration</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Priority support</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-secondary w-full">Get Started</button>
+                    </div>
+                </div>
+                
+                <!-- District Plan -->
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl mb-2">District</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">Custom</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Unlimited students</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Custom AI model training</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Advanced reporting suite</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Multi-school management</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>API access</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Dedicated account manager</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>24/7 support</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline btn-primary w-full">Contact Sales</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary text-primary-content">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">Transform Learning Outcomes Today</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                Join educators worldwide using LearnStyle AI to personalize education, improve student engagement, and maximize learning potential.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="btn btn-secondary btn-lg">Start Free Trial</a>
+                <a href="contact.html" class="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-primary">Schedule Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer footer-center p-10 bg-base-200 text-base-content">
+        <div>
+            <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-12 mb-4">
+            <p class="font-bold">Expandia - AI Solutions for Business Growth</p>
+            <p>Transforming businesses with intelligent automation</p>
+        </div>
+        <div>
+            <div class="grid grid-flow-col gap-4">
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div>
+            <p>© 2024 Expandia. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bumblebee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI ROI Calculator | Expandia - AI Solution Partner</title>
+    <meta name="description" content="Calculate the potential return on investment for your AI initiatives.">
+    <link href="./dist/css/output.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
+                    </svg>
+                </div>
+                <!-- Mobile Menu -->
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-72">
+                    <li>
+                        <details>
+                            <summary class="font-semibold">Solutions</summary>
+                            <ul class="p-2">
+                                <li><a href="solutions.html" >Our AI Solutions</a></li>
+                                <li><a href="industries.html" >Industries We Serve</a></li>
+                                <li><a href="how-we-work.html" >How We Work</a></li>
+                                <li><a href="case-studies.html" >Success Stories</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary class="font-semibold">Resources</summary>
+                            <ul class="p-2">
+                                <li><a href="roi-calculator.html" class="text-primary font-semibold">ROI Calculator</a></li>
+                                <li><a href="ai-readiness-assessment.html" >AI Assessment</a></li>
+                                <li><a href="cost-estimator.html" >Cost Estimator</a></li>
+                                <li><a href="competitor-analysis.html" >AI Benchmark</a></li>
+                                <li><a href="resources.html" >Free Downloads</a></li>
+                                <li><a href="blog.html" >AI Insights Blog</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary class="font-semibold">Company</summary>
+                            <ul class="p-2">
+                                <li><a href="about.html" >About Us</a></li>
+                                <li><a href="contact.html" >Contact Us</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </div>
+            <a href="index.html" class="btn btn-ghost hover:bg-transparent">
+                <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 md:h-10 w-auto transition-all duration-300 hover:scale-105 logo-bumblebee">
+            </a>
+        </div>
+        
+        <!-- Desktop Mega Menu -->
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <!-- Solutions Mega Menu -->
+                <li class="dropdown dropdown-hover">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold ">
+                        Solutions
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div tabindex="0" class="dropdown-content z-[1] card card-compact w-80 p-4 shadow-xl bg-base-100 border border-base-300">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary mb-3">AI Solutions & Services</h3>
+                            <div class="grid gap-2">
+                                <a href="solutions.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">🤖</span>
+                                    <div>
+                                        <div class="font-semibold">Our AI Solutions</div>
+                                        <div class="text-sm text-base-content/60">AI Agents, Automation & More</div>
+                                    </div>
+                                </a>
+                                <a href="industries.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">🏢</span>
+                                    <div>
+                                        <div class="font-semibold">Industries We Serve</div>
+                                        <div class="text-sm text-base-content/60">Healthcare, Finance, Retail & More</div>
+                                    </div>
+                                </a>
+                                <a href="how-we-work.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">⚙️</span>
+                                    <div>
+                                        <div class="font-semibold">How We Work</div>
+                                        <div class="text-sm text-base-content/60">Our Proven 5-Step Process</div>
+                                    </div>
+                                </a>
+                                <a href="case-studies.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">📈</span>
+                                    <div>
+                                        <div class="font-semibold">Success Stories</div>
+                                        <div class="text-sm text-base-content/60">Real Results from Real Companies</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Resources Mega Menu -->
+                <li class="dropdown dropdown-hover">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold text-primary">
+                        Resources
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div tabindex="0" class="dropdown-content z-[1] card card-compact w-96 p-4 shadow-xl bg-base-100 border border-base-300">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary mb-3">Tools & Resources</h3>
+                            <div class="grid md:grid-cols-2 gap-2">
+                                <a href="roi-calculator.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors bg-primary/10 border border-primary/20">
+                                    <span class="text-xl">💰</span>
+                                    <div>
+                                        <div class="font-semibold">ROI Calculator</div>
+                                        <div class="text-sm text-base-content/60">Calculate AI Returns</div>
+                                    </div>
+                                </a>
+                                <a href="ai-readiness-assessment.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">🎯</span>
+                                    <div>
+                                        <div class="font-semibold">AI Assessment</div>
+                                        <div class="text-sm text-base-content/60">Check Your Readiness</div>
+                                    </div>
+                                </a>
+                                <a href="cost-estimator.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">📊</span>
+                                    <div>
+                                        <div class="font-semibold">Cost Estimator</div>
+                                        <div class="text-sm text-base-content/60">Project Cost Analysis</div>
+                                    </div>
+                                </a>
+                                <a href="competitor-analysis.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">🏆</span>
+                                    <div>
+                                        <div class="font-semibold">AI Benchmark</div>
+                                        <div class="text-sm text-base-content/60">Competitive Analysis</div>
+                                    </div>
+                                </a>
+                                <a href="resources.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">📚</span>
+                                    <div>
+                                        <div class="font-semibold">Free Downloads</div>
+                                        <div class="text-sm text-base-content/60">Guides & Templates</div>
+                                    </div>
+                                </a>
+                                <a href="blog.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">✍️</span>
+                                    <div>
+                                        <div class="font-semibold">AI Insights Blog</div>
+                                        <div class="text-sm text-base-content/60">Latest Trends & Tips</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Company Mega Menu -->
+                <li class="dropdown dropdown-hover">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold ">
+                        Company
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div tabindex="0" class="dropdown-content z-[1] card card-compact w-72 p-4 shadow-xl bg-base-100 border border-base-300">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary mb-3">About Expandia</h3>
+                            <div class="grid gap-2">
+                                <a href="about.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">👥</span>
+                                    <div>
+                                        <div class="font-semibold">About Us</div>
+                                        <div class="text-sm text-base-content/60">Our Mission & Team</div>
+                                    </div>
+                                </a>
+                                <a href="contact.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">📞</span>
+                                    <div>
+                                        <div class="font-semibold">Contact Us</div>
+                                        <div class="text-sm text-base-content/60">Let's Start Your AI Journey</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="border-t border-base-300 mt-4 pt-4">
+                                <a href="contact.html" class="btn btn-primary btn-sm w-full buzz-button">
+                                    Book Free Consultation
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <a href="contact.html" class="btn btn-primary buzz-button">Get Started</a>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="section-spacing bg-gradient-to-br from-buzz-warm via-base-100 to-buzz-light">
+        <div class="container mx-auto container-padding">
+            <div class="text-center max-w-4xl mx-auto animate-fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                    <span class="gradient-header">AI ROI</span><br>
+                    <span class="text-base-content">Calculator</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-base-content/80 mb-12 leading-relaxed">
+                    Discover the potential return on investment for AI solutions in your business. 
+                    Get <span class="font-semibold text-primary">instant estimates</span> and custom recommendations.
+                </p>
+                <div class="grid md:grid-cols-3 gap-6 text-center">
+                    <div class="buzz-card p-6">
+                        <div class="text-3xl font-bold text-primary mb-2">3 Minutes</div>
+                        <div class="text-sm text-base-content/60">Quick assessment</div>
+                    </div>
+                    <div class="buzz-card p-6">
+                        <div class="text-3xl font-bold text-secondary mb-2">Real Data</div>
+                        <div class="text-sm text-base-content/60">Based on 50+ projects</div>
+                    </div>
+                    <div class="buzz-card p-6">
+                        <div class="text-3xl font-bold text-accent mb-2">Free Report</div>
+                        <div class="text-sm text-base-content/60">Detailed recommendations</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="section-spacing bg-base-100">
+        <div class="container mx-auto container-padding">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Calculator Form -->
+                <div class="space-y-8">
+                    <div class="buzz-card p-8">
+                        <h2 class="text-3xl font-bold mb-6 gradient-header">Tell Us About Your Business</h2>
+                        
+                        <!-- Company Size -->
+                        <div class="mb-6">
+                            <label class="block text-lg font-semibold mb-3">Company Size</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <button class="company-size-btn p-4 border-2 border-base-300 rounded-lg hover:border-primary transition-colors" data-employees="25">
+                                    <div class="font-semibold">Small</div>
+                                    <div class="text-sm text-base-content/60">1-50 employees</div>
+                                </button>
+                                <button class="company-size-btn p-4 border-2 border-base-300 rounded-lg hover:border-primary transition-colors" data-employees="200">
+                                    <div class="font-semibold">Medium</div>
+                                    <div class="text-sm text-base-content/60">51-500 employees</div>
+                                </button>
+                                <button class="company-size-btn p-4 border-2 border-base-300 rounded-lg hover:border-primary transition-colors" data-employees="1000">
+                                    <div class="font-semibold">Large</div>
+                                    <div class="text-sm text-base-content/60">501-2000 employees</div>
+                                </button>
+                                <button class="company-size-btn p-4 border-2 border-base-300 rounded-lg hover:border-primary transition-colors" data-employees="5000">
+                                    <div class="font-semibold">Enterprise</div>
+                                    <div class="text-sm text-base-content/60">2000+ employees</div>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Industry -->
+                        <div class="mb-6">
+                            <label class="block text-lg font-semibold mb-3">Industry</label>
+                            <select id="industry" class="select select-bordered w-full text-lg">
+                                <option value="" disabled selected>Select your industry</option>
+                                <option value="healthcare">Healthcare</option>
+                                <option value="finance">Financial Services</option>
+                                <option value="retail">Retail & E-commerce</option>
+                                <option value="manufacturing">Manufacturing</option>
+                                <option value="technology">Technology</option>
+                                <option value="education">Education</option>
+                                <option value="legal">Legal Services</option>
+                                <option value="logistics">Logistics & Transportation</option>
+                                <option value="real-estate">Real Estate</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Current Challenges -->
+                        <div class="mb-6">
+                            <label class="block text-lg font-semibold mb-3">Current Challenges (Select all that apply)</label>
+                            <div class="space-y-3">
+                                <label class="flex items-center gap-3 challenge-checkbox">
+                                    <input type="checkbox" class="checkbox checkbox-primary" data-savings="15000" data-challenge="customer-service">
+                                    <span>High customer service costs</span>
+                                </label>
+                                <label class="flex items-center gap-3 challenge-checkbox">
+                                    <input type="checkbox" class="checkbox checkbox-primary" data-savings="25000" data-challenge="manual-processes">
+                                    <span>Manual, repetitive processes</span>
+                                </label>
+                                <label class="flex items-center gap-3 challenge-checkbox">
+                                    <input type="checkbox" class="checkbox checkbox-primary" data-savings="35000" data-challenge="data-analysis">
+                                    <span>Slow data analysis and reporting</span>
+                                </label>
+                                <label class="flex items-center gap-3 challenge-checkbox">
+                                    <input type="checkbox" class="checkbox checkbox-primary" data-savings="20000" data-challenge="lead-qualification">
+                                    <span>Poor lead qualification</span>
+                                </label>
+                                <label class="flex items-center gap-3 challenge-checkbox">
+                                    <input type="checkbox" class="checkbox checkbox-primary" data-savings="30000" data-challenge="content-creation">
+                                    <span>Expensive content creation</span>
+                                </label>
+                                <label class="flex items-center gap-3 challenge-checkbox">
+                                    <input type="checkbox" class="checkbox checkbox-primary" data-savings="40000" data-challenge="inventory-management">
+                                    <span>Inventory management issues</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Current Spend -->
+                        <div class="mb-6">
+                            <label class="block text-lg font-semibold mb-3">Current Monthly Spend on Problem Areas</label>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="text-sm text-base-content/70">Staff Time (hours/month)</label>
+                                    <input type="range" id="staff-hours" min="0" max="500" value="100" class="range range-primary w-full" oninput="updateStaffHours(this.value)">
+                                    <div class="text-center text-sm text-primary font-semibold">
+                                        <span id="staff-hours-display">100</span> hours
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="text-sm text-base-content/70">Average Hourly Cost ($)</label>
+                                    <input type="range" id="hourly-cost" min="25" max="150" value="75" class="range range-secondary w-full" oninput="updateHourlyCost(this.value)">
+                                    <div class="text-center text-sm text-secondary font-semibold">
+                                        $<span id="hourly-cost-display">75</span>/hour
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button id="calculate-roi" class="btn btn-primary btn-lg w-full buzz-button text-xl">
+                            Calculate My AI ROI 🚀
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Results Panel -->
+                <div class="space-y-8">
+                    <div id="results-panel" class="buzz-card p-8 bg-gradient-to-br from-primary/5 to-secondary/5" style="display: none;">
+                        <h2 class="text-3xl font-bold mb-6 gradient-header">Your AI ROI Projection</h2>
+                        
+                        <!-- Key Metrics -->
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="text-center p-4 bg-white rounded-lg">
+                                <div class="text-3xl font-bold text-primary mb-2" id="annual-savings">$0</div>
+                                <div class="text-sm text-base-content/60">Annual Savings</div>
+                            </div>
+                            <div class="text-center p-4 bg-white rounded-lg">
+                                <div class="text-3xl font-bold text-secondary mb-2" id="roi-percentage">0%</div>
+                                <div class="text-sm text-base-content/60">ROI in Year 1</div>
+                            </div>
+                            <div class="text-center p-4 bg-white rounded-lg">
+                                <div class="text-3xl font-bold text-accent mb-2" id="payback-period">0</div>
+                                <div class="text-sm text-base-content/60">Months to Payback</div>
+                            </div>
+                            <div class="text-center p-4 bg-white rounded-lg">
+                                <div class="text-3xl font-bold text-primary mb-2" id="time-saved">0</div>
+                                <div class="text-sm text-base-content/60">Hours Saved/Month</div>
+                            </div>
+                        </div>
+
+                        <!-- ROI Chart -->
+                        <div class="mb-8">
+                            <h3 class="text-xl font-bold mb-4">3-Year ROI Projection</h3>
+                            <canvas id="roi-chart" width="400" height="200"></canvas>
+                        </div>
+
+                        <!-- Recommendations -->
+                        <div id="recommendations" class="mb-8">
+                            <h3 class="text-xl font-bold mb-4">Recommended AI Solutions</h3>
+                            <div id="solution-recommendations" class="space-y-3">
+                                <!-- Dynamic recommendations will be inserted here -->
+                            </div>
+                        </div>
+
+                        <!-- Lead Capture -->
+                        <div class="border-t border-base-300 pt-6">
+                            <h3 class="text-xl font-bold mb-4">Get Your Detailed AI Strategy Report</h3>
+                            <p class="text-base-content/70 mb-4">
+                                Receive a comprehensive 10-page report with specific recommendations for your business.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <input type="email" id="user-email" placeholder="Your business email" class="input input-bordered w-full">
+                                <input type="text" id="user-company" placeholder="Company name" class="input input-bordered w-full">
+                            </div>
+                            <button id="get-report" class="btn btn-secondary btn-lg w-full mt-4 buzz-button">
+                                Get Free Detailed Report 📊
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Default State -->
+                    <div id="default-panel" class="buzz-card p-8 text-center">
+                        <div class="text-6xl mb-6">🤖</div>
+                        <h3 class="text-2xl font-bold mb-4">AI ROI Calculator</h3>
+                        <p class="text-base-content/70 mb-6">
+                            Fill out the form to see your potential AI return on investment. 
+                            Our calculator uses real data from 50+ successful implementations.
+                        </p>
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <div class="text-2xl font-bold text-primary">320%</div>
+                                <div class="text-xs text-base-content/60">Average ROI</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-secondary">6 Weeks</div>
+                                <div class="text-xs text-base-content/60">Time to Value</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-accent">85%</div>
+                                <div class="text-xs text-base-content/60">Time Savings</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="section-spacing bg-buzz-warm">
+        <div class="container mx-auto container-padding">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-header">Real ROI Examples</h2>
+                <p class="text-xl text-base-content/80 max-w-3xl mx-auto">
+                    See how similar businesses achieved significant returns with AI implementation.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="buzz-card p-6 text-center">
+                    <div class="text-4xl mb-4">🏥</div>
+                    <h3 class="text-xl font-bold mb-2">Healthcare Clinic</h3>
+                    <div class="text-3xl font-bold text-primary mb-2">480%</div>
+                    <div class="text-sm text-base-content/60 mb-4">ROI in 8 months</div>
+                    <p class="text-sm text-base-content/70">
+                        AI patient intake system reduced processing time by 65%, saving $480K annually.
+                    </p>
+                </div>
+
+                <div class="buzz-card p-6 text-center">
+                    <div class="text-4xl mb-4">🛍️</div>
+                    <h3 class="text-xl font-bold mb-2">E-commerce Store</h3>
+                    <div class="text-3xl font-bold text-secondary mb-2">420%</div>
+                    <div class="text-sm text-base-content/60 mb-4">ROI in 6 months</div>
+                    <p class="text-sm text-base-content/70">
+                        AI recommendations increased revenue by $3.2M with personalized product suggestions.
+                    </p>
+                </div>
+
+                <div class="buzz-card p-6 text-center">
+                    <div class="text-4xl mb-4">🏭</div>
+                    <h3 class="text-xl font-bold mb-2">Manufacturing</h3>
+                    <div class="text-3xl font-bold text-accent mb-2">350%</div>
+                    <div class="text-sm text-base-content/60 mb-4">ROI in 10 months</div>
+                    <p class="text-sm text-base-content/70">
+                        Predictive maintenance prevented $1.2M in downtime costs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-spacing bg-gradient-to-r from-primary to-secondary">
+        <div class="container mx-auto container-padding text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Turn Your ROI Into Reality?
+            </h2>
+            <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                Schedule a free consultation to discuss your specific AI opportunities and create a custom implementation plan.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="btn btn-base-100 btn-lg text-primary font-bold px-8 buzz-button">
+                    Schedule Free Consultation
+                </a>
+                <a href="case-studies.html" class="btn btn-outline btn-base-100 btn-lg px-8 buzz-button">
+                    View More Case Studies
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-buzz-neutral text-white">
+        <div class="container mx-auto container-padding py-16">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold gradient-header mb-4">Expandia</h3>
+                    <p class="text-white/80 mb-4">
+                        Your Partner in Building Practical, Scalable AI Solutions.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-white/60 hover:text-primary transition-colors">LinkedIn</a>
+                        <a href="#" class="text-white/60 hover:text-primary transition-colors">Twitter</a>
+                        <a href="#" class="text-white/60 hover:text-primary transition-colors">GitHub</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Solutions</h4>
+                    <ul class="space-y-2 text-white/80">
+                        <li><a href="solutions.html" class="hover:text-primary transition-colors">AI Agents</a></li>
+                        <li><a href="solutions.html" class="hover:text-primary transition-colors">Automation</a></li>
+                        <li><a href="solutions.html" class="hover:text-primary transition-colors">Predictive Analytics</a></li>
+                        <li><a href="solutions.html" class="hover:text-primary transition-colors">Content AI</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Tools</h4>
+                    <ul class="space-y-2 text-white/80">
+                        <li><a href="roi-calculator.html" class="hover:text-primary transition-colors">ROI Calculator</a></li>
+                        <li><a href="ai-readiness-assessment.html" class="hover:text-primary transition-colors">AI Assessment</a></li>
+                        <li><a href="cost-estimator.html" class="hover:text-primary transition-colors">Cost Estimator</a></li>
+                        <li><a href="competitor-analysis.html" class="hover:text-primary transition-colors">AI Benchmark</a></li>
+                        <li><a href="resources.html" class="hover:text-primary transition-colors">Free Resources</a></li>
+                        <li><a href="blog.html" class="hover:text-primary transition-colors">AI Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-white/80">
+                        <li><a href="about.html" class="hover:text-primary transition-colors">About</a></li>
+                        <li><a href="industries.html" class="hover:text-primary transition-colors">Industries</a></li>
+                        <li><a href="case-studies.html" class="hover:text-primary transition-colors">Case Studies</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                        <li><a href="how-we-work.html" class="hover:text-primary transition-colors">How We Work</a></li>
+                    </ul>
+                    <div class="mt-6">
+                        <h5 class="font-semibold mb-2">Get Started</h5>
+                        <p class="text-white/80 mb-3 text-sm">Ready to transform your business with AI?</p>
+                        <a href="contact.html" class="btn btn-primary btn-sm w-full buzz-button">Book Consultation</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 mt-12 pt-8 text-center text-white/60">
+                <p>&copy; 2025 Expandia. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for interactive tools -->
+    <script src="src/js/tools.js"></script>
+    
+    <!-- JavaScript for smooth interactions -->
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation classes when elements come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all service cards and animated elements
+        document.querySelectorAll('.service-card, .buzz-card, .animate-slide-up').forEach(card => {
+            observer.observe(card);
+        });
+
+        
+    </script>
+</body>
+</html>

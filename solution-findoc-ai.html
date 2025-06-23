@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bumblebee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinDoc AI - Intelligent Financial Document Analysis | Expandia</title>
+    <meta name="description" content="Streamline financial document processing with FinDoc AI. Automated data extraction, compliance checking, and risk analysis for financial institutions.">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar bg-base-100 shadow-lg">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
+                    </svg>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <a href="index.html" class="btn btn-ghost text-xl">
+                <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8">
+            </a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="solutions.html" class="hover:text-primary">Solutions</a></li>
+                <li><a href="industries.html" class="hover:text-primary">Industries</a></li>
+                <li><a href="case-studies.html" class="hover:text-primary">Case Studies</a></li>
+                <li><a href="about.html" class="hover:text-primary">About</a></li>
+                <li><a href="contact.html" class="hover:text-primary">Contact</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <a href="contact.html" class="btn btn-primary">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero min-h-[60vh] bg-gradient-to-br from-primary/10 to-secondary/10">
+        <div class="hero-content text-center">
+            <div class="max-w-4xl">
+                <div class="mb-8">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-primary/20 rounded-full flex items-center justify-center">
+                        <i class="fas fa-file-invoice-dollar text-3xl text-primary"></i>
+                    </div>
+                    <h1 class="text-5xl font-bold text-base-content mb-6">FinDoc AI</h1>
+                    <h2 class="text-2xl font-semibold text-primary mb-4">Intelligent Financial Document Analysis</h2>
+                    <p class="text-xl text-base-content/80 mb-8 max-w-3xl mx-auto">
+                        Transform financial document processing with AI-powered analysis. Automated data extraction, 
+                        compliance verification, and risk assessment for banks, insurance, and financial institutions.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Processing Speed</div>
+                        <div class="stat-value text-primary">95%</div>
+                        <div class="stat-desc">Faster than manual review</div>
+                    </div>
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Accuracy Rate</div>
+                        <div class="stat-value text-secondary">99.2%</div>
+                        <div class="stat-desc">Data extraction accuracy</div>
+                    </div>
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Compliance</div>
+                        <div class="stat-value text-accent">100%</div>
+                        <div class="stat-desc">Regulatory adherence</div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#demo" class="btn btn-primary btn-lg">Try Demo</a>
+                    <a href="#pricing" class="btn btn-outline btn-lg">View Pricing</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Advanced Financial Intelligence</h2>
+                <p class="text-xl text-base-content/70 max-w-3xl mx-auto">
+                    Sophisticated AI technology designed specifically for financial document processing with enterprise-grade security and compliance.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-eye text-primary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Intelligent OCR & Data Extraction</h3>
+                        <p class="text-base-content/70">
+                            Advanced optical character recognition with context-aware extraction of financial data, numbers, and key information.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-shield-alt text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Compliance Verification</h3>
+                        <p class="text-base-content/70">
+                            Automated compliance checking against regulatory requirements including KYC, AML, and financial reporting standards.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-chart-line text-accent text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Risk Assessment</h3>
+                        <p class="text-base-content/70">
+                            AI-powered risk analysis identifying potential fraud, inconsistencies, and red flags in financial documents.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-file-alt text-primary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Document Classification</h3>
+                        <p class="text-base-content/70">
+                            Automatically categorize and route financial documents including statements, invoices, contracts, and reports.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-calculator text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Financial Analysis</h3>
+                        <p class="text-base-content/70">
+                            Comprehensive financial ratio analysis, trend detection, and performance metrics extraction from documents.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-history text-accent text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Audit Trail & Reporting</h3>
+                        <p class="text-base-content/70">
+                            Complete audit trail with detailed reporting for regulatory compliance and internal governance requirements.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="py-20 bg-base-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Who Benefits from FinDoc AI</h2>
+                <p class="text-xl text-base-content/70">
+                    Essential for financial institutions that need to process large volumes of documents while maintaining compliance and accuracy.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-university text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">Banks & Credit Unions</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Automate loan application processing</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Streamline KYC/AML compliance</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Accelerate account opening process</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-umbrella text-secondary text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">Insurance Companies</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>Process claims documentation faster</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>Detect fraudulent claims automatically</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>Streamline underwriting process</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-chart-pie text-accent text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">Investment Firms</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Analyze financial statements efficiently</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Extract key investment metrics</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Automate due diligence reporting</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">See FinDoc AI in Action</h2>
+                <p class="text-xl text-base-content/70">
+                    Watch how FinDoc AI processes a loan application with financial statements and risk assessment.
+                </p>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Document Input -->
+                    <div class="card bg-base-200 shadow-lg">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">
+                                <i class="fas fa-file-upload text-primary"></i>
+                                Financial Documents Input
+                            </h3>
+                            <div class="bg-base-100 p-4 rounded-lg">
+                                <div class="mb-4">
+                                    <h4 class="font-semibold mb-2">Loan Application #LA-2024-8901</h4>
+                                    <div class="text-sm space-y-2">
+                                        <p><strong>Applicant:</strong> TechStart Solutions LLC</p>
+                                        <p><strong>Loan Amount:</strong> $500,000</p>
+                                        <p><strong>Purpose:</strong> Business expansion</p>
+                                        <p><strong>Documents Submitted:</strong> 8 files</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <h4 class="font-semibold mb-2">Document List:</h4>
+                                    <div class="space-y-2 text-sm">
+                                        <div class="flex items-center gap-2 bg-base-200 p-2 rounded">
+                                            <i class="fas fa-file-pdf text-error"></i>
+                                            <span>Balance Sheet 2023.pdf</span>
+                                            <span class="badge badge-success badge-sm">Processed</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 bg-base-200 p-2 rounded">
+                                            <i class="fas fa-file-pdf text-error"></i>
+                                            <span>Income Statement 2023.pdf</span>
+                                            <span class="badge badge-success badge-sm">Processed</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 bg-base-200 p-2 rounded">
+                                            <i class="fas fa-file-pdf text-error"></i>
+                                            <span>Cash Flow Statement.pdf</span>
+                                            <span class="badge badge-success badge-sm">Processed</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 bg-base-200 p-2 rounded">
+                                            <i class="fas fa-file-pdf text-error"></i>
+                                            <span>Tax Returns 2022-2023.pdf</span>
+                                            <span class="badge badge-success badge-sm">Processed</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 bg-base-200 p-2 rounded">
+                                            <i class="fas fa-file-pdf text-error"></i>
+                                            <span>Bank Statements (6 months).pdf</span>
+                                            <span class="badge badge-warning badge-sm">Processing</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <span class="loading loading-spinner loading-sm"></span>
+                                    <span class="text-sm ml-2">Analyzing documents...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Analysis Results -->
+                    <div class="card bg-base-200 shadow-lg">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">
+                                <i class="fas fa-chart-bar text-secondary"></i>
+                                FinDoc Analysis Results
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="bg-success/20 p-3 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        <span class="font-semibold">Analysis Complete</span>
+                                    </div>
+                                    <p class="text-sm">All documents processed successfully</p>
+                                </div>
+                                
+                                <div class="bg-base-100 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-3">Financial Health Score</h4>
+                                    <div class="flex items-center gap-4">
+                                        <div class="radial-progress text-success" style="--value:78;" role="progressbar">78%</div>
+                                        <div class="text-sm">
+                                            <p class="font-semibold text-success">Good Financial Health</p>
+                                            <p>Recommended for approval</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-base-100 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-3">Key Financial Metrics</h4>
+                                    <div class="grid grid-cols-2 gap-4 text-sm">
+                                        <div>
+                                            <p><strong>Revenue (2023):</strong> $2.4M</p>
+                                            <p><strong>Net Profit:</strong> $312K</p>
+                                            <p><strong>Current Ratio:</strong> 2.1</p>
+                                        </div>
+                                        <div>
+                                            <p><strong>Debt-to-Equity:</strong> 0.45</p>
+                                            <p><strong>Cash Flow:</strong> Positive</p>
+                                            <p><strong>Growth Rate:</strong> 28%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-base-100 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-2">Risk Assessment</h4>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center gap-2">
+                                            <i class="fas fa-check text-success text-sm"></i>
+                                            <span class="text-sm">Strong cash flow</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <i class="fas fa-check text-success text-sm"></i>
+                                            <span class="text-sm">Low debt levels</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <i class="fas fa-check text-success text-sm"></i>
+                                            <span class="text-sm">Consistent revenue growth</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <i class="fas fa-exclamation text-warning text-sm"></i>
+                                            <span class="text-sm">Industry volatility (Tech)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-base-100 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-2">Compliance Check</h4>
+                                    <div class="space-y-1 text-sm">
+                                        <div class="flex justify-between">
+                                            <span>KYC Documentation:</span>
+                                            <span class="text-success">✓ Complete</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Financial Statements:</span>
+                                            <span class="text-success">✓ Verified</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Tax Compliance:</span>
+                                            <span class="text-success">✓ Current</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>AML Screening:</span>
+                                            <span class="text-success">✓ Clear</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-success/20 p-3 rounded-lg">
+                                    <h4 class="font-semibold mb-1 text-success">Recommendation</h4>
+                                    <p class="text-sm">
+                                        Approve loan with standard terms. Strong financials and low risk profile. 
+                                        Suggested interest rate: 6.5% - 7.0%
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-base-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Choose Your Plan</h2>
+                <p class="text-xl text-base-content/70">
+                    Flexible pricing options based on your document processing volume and compliance requirements.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Starter Plan -->
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl mb-2">Professional</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$299</span>
+                            <span class="text-base-content/70">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Up to 500 documents/month</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Basic OCR & data extraction</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Document classification</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Standard compliance checks</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Basic reporting</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Email support</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline btn-primary w-full">Get Started</button>
+                    </div>
+                </div>
+                
+                <!-- Professional Plan -->
+                <div class="card bg-primary text-primary-content shadow-xl scale-105">
+                    <div class="card-body">
+                        <div class="badge badge-secondary mb-2">Most Popular</div>
+                        <h3 class="card-title text-2xl mb-2">Enterprise</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$899</span>
+                            <span class="text-primary-content/70">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Up to 5,000 documents/month</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Advanced AI analysis</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Risk assessment & scoring</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Full compliance suite</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Advanced reporting & analytics</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>API integration</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Priority support</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-secondary w-full">Get Started</button>
+                    </div>
+                </div>
+                
+                <!-- Enterprise Plan -->
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl mb-2">Financial Institution</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">Custom</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Unlimited document processing</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Custom AI model training</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>White-label deployment</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Advanced security & encryption</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Dedicated compliance officer</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>SLA guarantees</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>24/7 support</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline btn-primary w-full">Contact Sales</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary text-primary-content">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">Modernize Your Financial Document Processing</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                Join leading financial institutions using FinDoc AI to streamline operations, ensure compliance, and reduce processing costs by up to 95%.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="btn btn-secondary btn-lg">Start Free Trial</a>
+                <a href="contact.html" class="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-primary">Schedule Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer footer-center p-10 bg-base-200 text-base-content">
+        <div>
+            <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-12 mb-4">
+            <p class="font-bold">Expandia - AI Solutions for Business Growth</p>
+            <p>Transforming businesses with intelligent automation</p>
+        </div>
+        <div>
+            <div class="grid grid-flow-col gap-4">
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div>
+            <p>© 2024 Expandia. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 

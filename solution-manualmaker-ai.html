@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bumblebee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ManualMaker AI - Technical Manual Generation | Expandia</title>
+    <meta name="description" content="Generate comprehensive technical manuals from product specs with ManualMaker AI. Create user guides, installation manuals, and technical documentation automatically.">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar bg-base-100 shadow-lg">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
+                    </svg>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <a href="index.html" class="btn btn-ghost text-xl">
+                <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8">
+            </a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="solutions.html" class="hover:text-primary">Solutions</a></li>
+                <li><a href="industries.html" class="hover:text-primary">Industries</a></li>
+                <li><a href="case-studies.html" class="hover:text-primary">Case Studies</a></li>
+                <li><a href="about.html" class="hover:text-primary">About</a></li>
+                <li><a href="contact.html" class="hover:text-primary">Contact</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <a href="contact.html" class="btn btn-primary">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero min-h-[60vh] bg-gradient-to-br from-primary/10 to-secondary/10">
+        <div class="hero-content text-center">
+            <div class="max-w-4xl">
+                <div class="mb-8">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-primary/20 rounded-full flex items-center justify-center">
+                        <i class="fas fa-book text-3xl text-primary"></i>
+                    </div>
+                    <h1 class="text-5xl font-bold text-base-content mb-6">ManualMaker AI</h1>
+                    <h2 class="text-2xl font-semibold text-primary mb-4">Automated Technical Manual Generation</h2>
+                    <p class="text-xl text-base-content/80 mb-8 max-w-3xl mx-auto">
+                        Transform product specifications into comprehensive technical manuals instantly. 
+                        Generate user guides, installation manuals, and technical documentation with AI precision.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Generation Speed</div>
+                        <div class="stat-value text-primary">5min</div>
+                        <div class="stat-desc">Average manual creation</div>
+                    </div>
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Accuracy Rate</div>
+                        <div class="stat-value text-secondary">97%</div>
+                        <div class="stat-desc">Technical accuracy</div>
+                    </div>
+                    <div class="stat bg-base-100/50 rounded-lg">
+                        <div class="stat-title">Languages</div>
+                        <div class="stat-value text-accent">25+</div>
+                        <div class="stat-desc">Supported languages</div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#demo" class="btn btn-primary btn-lg">Try Demo</a>
+                    <a href="#pricing" class="btn btn-outline btn-lg">View Pricing</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Comprehensive Manual Generation</h2>
+                <p class="text-xl text-base-content/70 max-w-3xl mx-auto">
+                    Advanced AI technology that understands technical specifications and creates clear, structured documentation for any product or system.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-magic text-primary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Intelligent Content Generation</h3>
+                        <p class="text-base-content/70">
+                            AI analyzes product specs and automatically generates structured manuals with proper sections and hierarchy.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-list-ol text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Step-by-Step Procedures</h3>
+                        <p class="text-base-content/70">
+                            Automatically break down complex processes into clear, numbered steps with safety warnings and tips.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-images text-accent text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Visual Integration</h3>
+                        <p class="text-base-content/70">
+                            Seamlessly integrate diagrams, photos, and technical illustrations with relevant manual sections.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-globe text-primary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Multi-Language Support</h3>
+                        <p class="text-base-content/70">
+                            Generate manuals in 25+ languages while maintaining technical accuracy and cultural appropriateness.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-palette text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Brand Customization</h3>
+                        <p class="text-base-content/70">
+                            Apply your brand colors, fonts, logos, and style guidelines to create professional-looking manuals.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="card-body">
+                        <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-file-export text-accent text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-lg">Multiple Export Formats</h3>
+                        <p class="text-base-content/70">
+                            Export to PDF, HTML, Word, or interactive web manuals with search functionality and responsive design.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="py-20 bg-base-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Who Benefits from ManualMaker AI</h2>
+                <p class="text-xl text-base-content/70">
+                    Perfect for any organization that needs to create technical documentation quickly and accurately.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-industry text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">Manufacturing Companies</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Equipment operation manuals</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Safety procedure documentation</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1 text-sm"></i>
+                                <span>Maintenance and repair guides</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-laptop-code text-secondary text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">Software Companies</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>User guides and tutorials</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>API documentation</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-secondary mt-1 text-sm"></i>
+                                <span>Installation and setup guides</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-tools text-accent text-2xl"></i>
+                        </div>
+                        <h3 class="card-title text-center mb-4">Product Designers</h3>
+                        <ul class="space-y-2 text-base-content/70">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Assembly instructions</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Product specification sheets</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1 text-sm"></i>
+                                <span>Troubleshooting guides</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">See ManualMaker AI in Action</h2>
+                <p class="text-xl text-base-content/70">
+                    Watch how product specifications are transformed into comprehensive technical manuals.
+                </p>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Input Specifications -->
+                    <div class="card bg-base-200 shadow-lg">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">
+                                <i class="fas fa-file-alt text-primary"></i>
+                                Product Specifications Input
+                            </h3>
+                            <div class="bg-base-100 p-4 rounded-lg">
+                                <div class="mb-4">
+                                    <span class="badge badge-primary mb-2">Smart Thermostat X1</span>
+                                    <div class="text-sm space-y-2">
+                                        <p><strong>Model:</strong> ST-X1-2024</p>
+                                        <p><strong>Power:</strong> 24V AC/DC, 3A max</p>
+                                        <p><strong>Connectivity:</strong> WiFi 802.11b/g/n, Bluetooth 5.0</p>
+                                        <p><strong>Display:</strong> 3.5" LCD touchscreen</p>
+                                        <p><strong>Temperature Range:</strong> 45-95°F (7-35°C)</p>
+                                        <p><strong>Mounting:</strong> Standard wall plate, 3 screws</p>
+                                        <p><strong>Compatibility:</strong> HVAC systems, heat pumps</p>
+                                        <p><strong>Sensors:</strong> Temperature, humidity, occupancy</p>
+                                        <p><strong>App:</strong> iOS/Android mobile app</p>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <span class="badge badge-secondary mb-2">Additional Files</span>
+                                    <div class="text-xs space-y-1">
+                                        <p>📄 Wiring_Diagram.pdf</p>
+                                        <p>📄 Component_List.xlsx</p>
+                                        <p>🖼️ Product_Photos.zip</p>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary btn-sm w-full">Generate Manual</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Generated Manual Preview -->
+                    <div class="card bg-base-200 shadow-lg">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">
+                                <i class="fas fa-book-open text-secondary"></i>
+                                Generated Manual Preview
+                            </h3>
+                            <div class="bg-base-100 p-4 rounded-lg max-h-96 overflow-y-auto">
+                                <div class="prose prose-sm max-w-none">
+                                    <h4 class="text-lg font-bold mb-3">Smart Thermostat X1 User Manual</h4>
+                                    
+                                    <h5 class="font-semibold text-primary">Table of Contents</h5>
+                                    <ul class="text-xs space-y-1 mb-4">
+                                        <li>1. Safety Information</li>
+                                        <li>2. Package Contents</li>
+                                        <li>3. Installation</li>
+                                        <li>4. Initial Setup</li>
+                                        <li>5. Operation</li>
+                                        <li>6. Troubleshooting</li>
+                                    </ul>
+                                    
+                                    <h5 class="font-semibold text-primary">1. Safety Information</h5>
+                                    <div class="alert alert-warning text-xs mb-3">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        <span>⚠️ Turn off power at circuit breaker before installation</span>
+                                    </div>
+                                    
+                                    <h5 class="font-semibold text-primary">3. Installation Steps</h5>
+                                    <ol class="text-xs space-y-2 mb-4">
+                                        <li><strong>Step 1:</strong> Remove old thermostat and label wires</li>
+                                        <li><strong>Step 2:</strong> Install mounting plate using provided screws</li>
+                                        <li><strong>Step 3:</strong> Connect wires according to diagram:
+                                            <ul class="ml-4 mt-1">
+                                                <li>Red (R) → 24V AC power</li>
+                                                <li>White (W) → Heat control</li>
+                                                <li>Yellow (Y) → Cool control</li>
+                                                <li>Green (G) → Fan control</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Step 4:</strong> Attach thermostat to mounting plate</li>
+                                        <li><strong>Step 5:</strong> Restore power and verify display</li>
+                                    </ol>
+                                    
+                                    <h5 class="font-semibold text-primary">4. WiFi Setup</h5>
+                                    <p class="text-xs mb-2">Download the ThermoSmart app and follow these steps:</p>
+                                    <ol class="text-xs space-y-1">
+                                        <li>Press Menu → Settings → WiFi</li>
+                                        <li>Select your network and enter password</li>
+                                        <li>Wait for connection confirmation</li>
+                                    </ol>
+                                    
+                                    <div class="text-center mt-4">
+                                        <span class="text-xs text-base-content/70">Page 1 of 24 - Full manual generated</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-base-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Choose Your Plan</h2>
+                <p class="text-xl text-base-content/70">
+                    Flexible pricing options for businesses of all sizes needing technical documentation.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Starter Plan -->
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl mb-2">Starter</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$79</span>
+                            <span class="text-base-content/70">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Up to 10 manuals/month</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Basic templates</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>PDF export</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>5 languages</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Basic customization</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Email support</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline btn-primary w-full">Get Started</button>
+                    </div>
+                </div>
+                
+                <!-- Professional Plan -->
+                <div class="card bg-primary text-primary-content shadow-xl scale-105">
+                    <div class="card-body">
+                        <div class="badge badge-secondary mb-2">Most Popular</div>
+                        <h3 class="card-title text-2xl mb-2">Professional</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$199</span>
+                            <span class="text-primary-content/70">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Up to 50 manuals/month</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Advanced templates</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Multiple export formats</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>25+ languages</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Full brand customization</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Visual integration</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Priority support</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-secondary w-full">Get Started</button>
+                    </div>
+                </div>
+                
+                <!-- Enterprise Plan -->
+                <div class="card bg-base-100 shadow-lg">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl mb-2">Enterprise</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">Custom</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Unlimited manuals</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Custom templates</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>API integration</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>White-label options</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Custom workflows</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>Dedicated account manager</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-primary"></i>
+                                <span>24/7 support</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline btn-primary w-full">Contact Sales</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary text-primary-content">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to Automate Your Documentation?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                Join hundreds of companies using ManualMaker AI to create professional technical manuals in minutes, not weeks.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="btn btn-secondary btn-lg">Start Free Trial</a>
+                <a href="contact.html" class="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-primary">Schedule Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer footer-center p-10 bg-base-200 text-base-content">
+        <div>
+            <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-12 mb-4">
+            <p class="font-bold">Expandia - AI Solutions for Business Growth</p>
+            <p>Transforming businesses with intelligent automation</p>
+        </div>
+        <div>
+            <div class="grid grid-flow-col gap-4">
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div>
+            <p>© 2024 Expandia. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 
