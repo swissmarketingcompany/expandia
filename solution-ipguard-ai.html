@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPGuard AI - Patent Similarity Analysis | Expandia</title>
+    <title>IPGuard AI - Patent Similarity Analysis | Expandia | Expandia - AI Solution Partner</title>
     <meta name="description" content="Protect your intellectual property with IPGuard AI. Advanced patent similarity analysis, prior art search, and infringement detection powered by AI.">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="./dist/css/output.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
 </head>
 <body>
     <!-- Header -->
-    <header class="navbar bg-base-100 shadow-lg">
+    <nav class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
         <div class="navbar-start">
             <div class="dropdown">
                 <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -19,31 +18,196 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
                     </svg>
                 </div>
-                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                    <li><a href="solutions.html">Solutions</a></li>
-                    <li><a href="industries.html">Industries</a></li>
-                    <li><a href="case-studies.html">Case Studies</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                <!-- Mobile Menu -->
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-72">
+                    <li>
+                        <details>
+                            <summary class="font-semibold">Solutions</summary>
+                            <ul class="p-2">
+                                <li><a href="solutions.html">Our AI Solutions</a></li>
+                                <li><a href="industries.html">Industries We Serve</a></li>
+                                <li><a href="how-we-work.html">How We Work</a></li>
+                                <li><a href="case-studies.html">Success Stories</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary class="font-semibold">Resources</summary>
+                            <ul class="p-2">
+                                <li><a href="roi-calculator.html">ROI Calculator</a></li>
+                                <li><a href="ai-readiness-assessment.html">AI Assessment</a></li>
+                                <li><a href="cost-estimator.html">Cost Estimator</a></li>
+                                <li><a href="competitor-analysis.html">AI Benchmark</a></li>
+                                <li><a href="resources.html">Free Downloads</a></li>
+                                <li><a href="blog.html">AI Insights Blog</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary class="font-semibold">Company</summary>
+                            <ul class="p-2">
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </details>
+                    </li>
                 </ul>
             </div>
-            <a href="index.html" class="btn btn-ghost text-xl">
-                <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8">
+            <a href="index.html" class="btn btn-ghost hover:bg-transparent">
+                <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 md:h-10 w-auto transition-all duration-300 hover:scale-105 logo-bumblebee">
             </a>
         </div>
+        
+        <!-- Desktop Mega Menu -->
         <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1">
-                <li><a href="solutions.html" class="hover:text-primary">Solutions</a></li>
-                <li><a href="industries.html" class="hover:text-primary">Industries</a></li>
-                <li><a href="case-studies.html" class="hover:text-primary">Case Studies</a></li>
-                <li><a href="about.html" class="hover:text-primary">About</a></li>
-                <li><a href="contact.html" class="hover:text-primary">Contact</a></li>
+                <!-- Solutions Mega Menu -->
+                <li class="dropdown dropdown-hover">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold {{SOLUTIONS_ACTIVE}}">
+                        Solutions
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div tabindex="0" class="dropdown-content z-[1] card card-compact w-80 p-4 shadow-xl bg-base-100 border border-base-300" style="background-color: white !important; background: white !important;">
+                        <div class="card-body" style="background-color: white !important;">
+                            <h3 class="card-title text-primary mb-3">AI Solutions & Services</h3>
+                            <div class="grid gap-2">
+                                <a href="solutions.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{SOLUTIONS_ITEM_ACTIVE}}">
+                                    <span class="text-xl">🤖</span>
+                                    <div>
+                                        <div class="font-semibold">Our AI Solutions</div>
+                                        <div class="text-sm text-base-content/60">AI Agents, Automation & More</div>
+                                    </div>
+                                </a>
+                                <a href="industries.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{INDUSTRIES_ITEM_ACTIVE}}">
+                                    <span class="text-xl">🏢</span>
+                                    <div>
+                                        <div class="font-semibold">Industries We Serve</div>
+                                        <div class="text-sm text-base-content/60">Healthcare, Finance, Retail & More</div>
+                                    </div>
+                                </a>
+                                <a href="how-we-work.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{HOWWEWORK_ITEM_ACTIVE}}">
+                                    <span class="text-xl">⚙️</span>
+                                    <div>
+                                        <div class="font-semibold">How We Work</div>
+                                        <div class="text-sm text-base-content/60">Our Proven 5-Step Process</div>
+                                    </div>
+                                </a>
+                                <a href="case-studies.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{CASESTUDIES_ITEM_ACTIVE}}">
+                                    <span class="text-xl">📈</span>
+                                    <div>
+                                        <div class="font-semibold">Success Stories</div>
+                                        <div class="text-sm text-base-content/60">Real Results from Real Companies</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Resources Mega Menu -->
+                <li class="dropdown dropdown-hover">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold {{RESOURCES_ACTIVE}}">
+                        Resources
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div tabindex="0" class="dropdown-content z-[1] card card-compact w-96 p-4 shadow-xl bg-base-100 border border-base-300" style="background-color: white !important; background: white !important;">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary mb-3">Tools & Resources</h3>
+                            <div class="grid md:grid-cols-2 gap-2">
+                                <a href="roi-calculator.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{ROI_ITEM_ACTIVE}}">
+                                    <span class="text-xl">💰</span>
+                                    <div>
+                                        <div class="font-semibold">ROI Calculator</div>
+                                        <div class="text-sm text-base-content/60">Calculate AI Returns</div>
+                                    </div>
+                                </a>
+                                <a href="ai-readiness-assessment.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{ASSESSMENT_ITEM_ACTIVE}}">
+                                    <span class="text-xl">🎯</span>
+                                    <div>
+                                        <div class="font-semibold">AI Assessment</div>
+                                        <div class="text-sm text-base-content/60">Check Your Readiness</div>
+                                    </div>
+                                </a>
+                                <a href="cost-estimator.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{COST_ITEM_ACTIVE}}">
+                                    <span class="text-xl">📊</span>
+                                    <div>
+                                        <div class="font-semibold">Cost Estimator</div>
+                                        <div class="text-sm text-base-content/60">Project Cost Analysis</div>
+                                    </div>
+                                </a>
+                                <a href="competitor-analysis.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{COMPETITOR_ITEM_ACTIVE}}">
+                                    <span class="text-xl">🏆</span>
+                                    <div>
+                                        <div class="font-semibold">AI Benchmark</div>
+                                        <div class="text-sm text-base-content/60">Competitive Analysis</div>
+                                    </div>
+                                </a>
+                                <a href="resources.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{RESOURCES_ITEM_ACTIVE}}">
+                                    <span class="text-xl">📚</span>
+                                    <div>
+                                        <div class="font-semibold">Free Downloads</div>
+                                        <div class="text-sm text-base-content/60">Guides & Templates</div>
+                                    </div>
+                                </a>
+                                <a href="blog.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{BLOG_ITEM_ACTIVE}}">
+                                    <span class="text-xl">✍️</span>
+                                    <div>
+                                        <div class="font-semibold">AI Insights Blog</div>
+                                        <div class="text-sm text-base-content/60">Latest Trends & Tips</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Company Mega Menu -->
+                <li class="dropdown dropdown-hover">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold {{COMPANY_ACTIVE}}">
+                        Company
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div tabindex="0" class="dropdown-content z-[1] card card-compact w-72 p-4 shadow-xl bg-base-100 border border-base-300" style="background-color: white !important; background: white !important;">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary mb-3">About Expandia</h3>
+                            <div class="grid gap-2">
+                                <a href="about.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{ABOUT_ITEM_ACTIVE}}">
+                                    <span class="text-xl">👥</span>
+                                    <div>
+                                        <div class="font-semibold">About Us</div>
+                                        <div class="text-sm text-base-content/60">Our Mission & Team</div>
+                                    </div>
+                                </a>
+                                <a href="contact.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{CONTACT_ITEM_ACTIVE}}">
+                                    <span class="text-xl">📞</span>
+                                    <div>
+                                        <div class="font-semibold">Contact Us</div>
+                                        <div class="text-sm text-base-content/60">Let's Start Your AI Journey</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="border-t border-base-300 mt-4 pt-4">
+                                <a href="contact.html" class="btn btn-primary btn-sm w-full buzz-button">
+                                    Book Free Consultation
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
         <div class="navbar-end">
-            <a href="contact.html" class="btn btn-primary">Get Started</a>
+            <a href="contact.html" class="btn btn-primary buzz-button">Get Started</a>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero min-h-[60vh] bg-gradient-to-br from-primary/10 to-secondary/10">
