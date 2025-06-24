@@ -561,4 +561,74 @@ Object.keys(pageConfigs).forEach(filename => {
 });
 
 console.log('\n✨ Page updates completed!');
-console.log('🔧 Run "npm run build && npm run serve" to see the changes.'); 
+console.log('🔧 Run "npm run build && npm run serve" to see the changes.');
+
+// Function to read footer include
+function getFooterInclude() {
+    return fs.readFileSync('includes/footer.html', 'utf8');
+}
+
+// Function to get all HTML files
+function getHtmlFiles() {
+    const files = fs.readdirSync('.')
+        .filter(file => file.endsWith('.html') && file !== 'base-template.html')
+        .filter(file => !file.startsWith('.'));
+    
+    return files;
+}
+
+// Function to replace footer in a file
+function replaceFooterInFile(filename) {
+    console.log(`Processing ${filename}...`);
+    
+    let content = fs.readFileSync(filename, 'utf8');
+    
+    // Pattern to match the footer section - looking for the footer tag and everything until closing body tag
+    const footerPattern = /    <!-- Footer -->\s*<footer[\s\S]*?<\/footer>\s*(?=    <!-- JavaScript|<script|<\/body>)/;
+    
+    // Alternative pattern for simpler footers
+    const simpleFooterPattern = /<footer[\s\S]*?<\/footer>/;
+    
+    // Check if file has a footer
+    if (footerPattern.test(content) || simpleFooterPattern.test(content)) {
+        // Replace with include placeholder
+        content = content.replace(footerPattern, '{{FOOTER_INCLUDE}}');
+        content = content.replace(simpleFooterPattern, '{{FOOTER_INCLUDE}}');
+        
+        // Now replace the placeholder with the actual include content
+        const footerInclude = getFooterInclude();
+        content = content.replace('{{FOOTER_INCLUDE}}', footerInclude);
+        
+        // Write back to file
+        fs.writeFileSync(filename, content, 'utf8');
+        console.log(`✓ Updated footer in ${filename}`);
+        return true;
+    } else {
+        console.log(`⚠ No footer found in ${filename}`);
+        return false;
+    }
+}
+
+// Main function
+function main() {
+    console.log('Starting footer standardization...\n');
+    
+    const htmlFiles = getHtmlFiles();
+    let updatedCount = 0;
+    
+    for (const file of htmlFiles) {
+        try {
+            if (replaceFooterInFile(file)) {
+                updatedCount++;
+            }
+        } catch (error) {
+            console.error(`Error processing ${file}:`, error.message);
+        }
+    }
+    
+    console.log(`\nFooter standardization complete!`);
+    console.log(`Updated ${updatedCount} out of ${htmlFiles.length} files.`);
+}
+
+// Run the script
+main(); 

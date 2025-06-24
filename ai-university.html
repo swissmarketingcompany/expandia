@@ -578,23 +578,23 @@
                 </div>
                 
                 <div>
-                    <h4 class="font-semibold mb-4">AI University</h4>
+                    <h4 class="font-semibold mb-4">Solutions</h4>
                     <ul class="space-y-2 text-white/80">
-                        <li><a href="#courses" class="hover:text-primary transition-colors">All Courses</a></li>
-                        <li><a href="#learning-paths" class="hover:text-primary transition-colors">Learning Paths</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Interactive Labs</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Project Gallery</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Community</a></li>
+                        <li><a href="solutions.html" class="hover:text-primary transition-colors">AI Agents</a></li>
+                        <li><a href="solutions.html" class="hover:text-primary transition-colors">Automation</a></li>
+                        <li><a href="solutions.html" class="hover:text-primary transition-colors">Predictive Analytics</a></li>
+                        <li><a href="solutions.html" class="hover:text-primary transition-colors">Content AI</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="font-semibold mb-4">Learning Resources</h4>
+                    <h4 class="font-semibold mb-4">Tools</h4>
                     <ul class="space-y-2 text-white/80">
-                        <li><a href="#" class="hover:text-primary transition-colors">AI Tools Directory</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Tutorials</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Downloads</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Certificates</a></li>
+                        <li><a href="roi-calculator.html" class="hover:text-primary transition-colors">ROI Calculator</a></li>
+                        <li><a href="ai-readiness-assessment.html" class="hover:text-primary transition-colors">AI Assessment</a></li>
+                        <li><a href="cost-estimator.html" class="hover:text-primary transition-colors">Cost Estimator</a></li>
+                        <li><a href="competitor-analysis.html" class="hover:text-primary transition-colors">AI Benchmark</a></li>
+                        <li><a href="resources.html" class="hover:text-primary transition-colors">Free Resources</a></li>
                         <li><a href="blog.html" class="hover:text-primary transition-colors">AI Blog</a></li>
                     </ul>
                 </div>
@@ -603,25 +603,64 @@
                     <h4 class="font-semibold mb-4">Company</h4>
                     <ul class="space-y-2 text-white/80">
                         <li><a href="about.html" class="hover:text-primary transition-colors">About</a></li>
-                        <li><a href="solutions.html" class="hover:text-primary transition-colors">AI Solutions</a></li>
-                        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                        <li><a href="industries.html" class="hover:text-primary transition-colors">Industries</a></li>
                         <li><a href="case-studies.html" class="hover:text-primary transition-colors">Case Studies</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                        <li><a href="how-we-work.html" class="hover:text-primary transition-colors">How We Work</a></li>
                     </ul>
                     <div class="mt-6">
-                        <h5 class="font-semibold mb-2">Need AI Help?</h5>
-                        <p class="text-white/80 mb-3 text-sm">Get professional AI consulting</p>
-                        <a href="contact.html" class="btn btn-primary btn-sm w-full buzz-button">Contact Us</a>
+                        <h5 class="font-semibold mb-2">Get Started</h5>
+                        <p class="text-white/80 mb-3 text-sm">Ready to transform your business with AI?</p>
+                        <a href="contact.html" class="btn btn-primary btn-sm w-full buzz-button">Book Consultation</a>
                     </div>
                 </div>
             </div>
             
             <div class="border-t border-white/20 mt-12 pt-8 text-center text-white/60">
-                <p>&copy; 2025 Expandia AI University. All rights reserved. | Privacy Policy | Terms of Service</p>
+                <p>&copy; 2025 Expandia. All rights reserved. | Privacy Policy | Terms of Service</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- JavaScript for smooth interactions -->
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation classes when elements come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all service cards and animated elements
+        document.querySelectorAll('.service-card, .buzz-card, .animate-slide-up').forEach(card => {
+            observer.observe(card);
+        });
+
+        {{CUSTOM_JS}}
+    </script>
+</body>
+</html>     <!-- JavaScript -->
     <script>
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
