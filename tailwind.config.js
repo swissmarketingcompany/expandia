@@ -13,6 +13,7 @@ module.exports = {
         'buzz-secondary': '#e86100',
         'buzz-accent': '#1fb2a6',
         'buzz-neutral': '#3d4451',
+        'buzz-neutral-dark': '#2d3440',
         'buzz-warm': '#fff9e6',
         'buzz-light': '#f8fafc',
       },

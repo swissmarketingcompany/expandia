@@ -313,4 +313,42 @@ function navigateToSection(sectionId) {
 function trackButtonClick(buttonName) {
     console.log(`Button clicked: ${buttonName}`);
     // Here you could add analytics tracking
-} 
+}
+
+// Logo Carousel Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('.logo-carousel');
+    const track = document.querySelector('.logo-track');
+    
+    if (carousel && track) {
+        // Pause animation on hover
+        carousel.addEventListener('mouseenter', () => {
+            track.style.animationPlayState = 'paused';
+        });
+        
+        carousel.addEventListener('mouseleave', () => {
+            track.style.animationPlayState = 'running';
+        });
+        
+        // Touch handling
+        let startX;
+        let scrollLeft;
+        
+        carousel.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].pageX - carousel.offsetLeft;
+            scrollLeft = carousel.scrollLeft;
+            track.style.animationPlayState = 'paused';
+        });
+        
+        carousel.addEventListener('touchend', () => {
+            track.style.animationPlayState = 'running';
+        });
+        
+        carousel.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+            const x = e.touches[0].pageX - carousel.offsetLeft;
+            const walk = (x - startX) * 2;
+            carousel.scrollLeft = scrollLeft - walk;
+        });
+    }
+}); 
