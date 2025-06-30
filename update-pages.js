@@ -28,23 +28,8 @@ const headerTemplate = `<!DOCTYPE html>
                         <details>
                             <summary class="font-semibold">Solutions</summary>
                             <ul class="p-2">
-                                <li><a href="solutions.html" {{SOLUTIONS_MOBILE_ACTIVE}}>Our AI Solutions</a></li>
-                                <li><a href="industries.html" {{INDUSTRIES_MOBILE_ACTIVE}}>Industries We Serve</a></li>
-                                <li><a href="how-we-work.html" {{HOWWEWORK_MOBILE_ACTIVE}}>How We Work</a></li>
+                                <li><a href="solutions.html" {{SOLUTIONS_MOBILE_ACTIVE}}>Our Sales Solutions</a></li>
                                 <li><a href="case-studies.html" {{CASESTUDIES_MOBILE_ACTIVE}}>Success Stories</a></li>
-                            </ul>
-                        </details>
-                    </li>
-                    <li>
-                        <details>
-                            <summary class="font-semibold">Resources</summary>
-                            <ul class="p-2">
-                                <li><a href="roi-calculator.html" {{ROI_MOBILE_ACTIVE}}>ROI Calculator</a></li>
-                                <li><a href="ai-readiness-assessment.html" {{ASSESSMENT_MOBILE_ACTIVE}}>AI Assessment</a></li>
-                                <li><a href="cost-estimator.html" {{COST_MOBILE_ACTIVE}}>Cost Estimator</a></li>
-                                <li><a href="competitor-analysis.html" {{COMPETITOR_MOBILE_ACTIVE}}>AI Benchmark</a></li>
-                                <li><a href="resources.html" {{RESOURCES_MOBILE_ACTIVE}}>Free Downloads</a></li>
-                                <li><a href="blog.html" {{BLOG_MOBILE_ACTIVE}}>AI Insights Blog</a></li>
                             </ul>
                         </details>
                     </li>
@@ -59,7 +44,9 @@ const headerTemplate = `<!DOCTYPE html>
                     </li>
                 </ul>
             </div>
-            <a href="index.html" class="btn btn-ghost text-2xl font-bold gradient-header">Expandia</a>
+            <a href="index.html" class="btn btn-ghost hover:bg-transparent">
+                <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 md:h-10 w-auto transition-all duration-300 hover:scale-105 logo-bumblebee">
+            </a>
         </div>
         
         <!-- Desktop Mega Menu -->
@@ -73,29 +60,22 @@ const headerTemplate = `<!DOCTYPE html>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </div>
-                    <div tabindex="0" class="dropdown-content z-[1] card card-compact w-80 p-4 shadow-xl bg-base-100 border border-base-300">
-                        <div class="card-body">
-                            <h3 class="card-title text-primary mb-3">AI Solutions & Services</h3>
+                    <div tabindex="0" class="dropdown-content z-[1] card card-compact w-80 p-4 shadow-xl bg-base-100 border border-base-300" style="background-color: white !important; background: white !important;">
+                        <div class="card-body" style="background-color: white !important;">
+                            <h3 class="card-title text-primary mb-3">Sales Solutions & Services</h3>
                             <div class="grid gap-2">
                                 <a href="solutions.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{SOLUTIONS_ITEM_ACTIVE}}">
+                                    <span class="text-xl">📞</span>
+                                    <div>
+                                        <div class="font-semibold">Sales as a Service</div>
+                                        <div class="text-sm text-base-content/60">Complete Sales Management</div>
+                                    </div>
+                                </a>
+                                <a href="solutions.html#ai-solutions" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
                                     <span class="text-xl">🤖</span>
                                     <div>
-                                        <div class="font-semibold">Our AI Solutions</div>
-                                        <div class="text-sm text-base-content/60">AI Agents, Automation & More</div>
-                                    </div>
-                                </a>
-                                <a href="industries.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{INDUSTRIES_ITEM_ACTIVE}}">
-                                    <span class="text-xl">🏢</span>
-                                    <div>
-                                        <div class="font-semibold">Industries We Serve</div>
-                                        <div class="text-sm text-base-content/60">Healthcare, Finance, Retail & More</div>
-                                    </div>
-                                </a>
-                                <a href="how-we-work.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{HOWWEWORK_ITEM_ACTIVE}}">
-                                    <span class="text-xl">⚙️</span>
-                                    <div>
-                                        <div class="font-semibold">How We Work</div>
-                                        <div class="text-sm text-base-content/60">Our Proven 5-Step Process</div>
+                                        <div class="font-semibold">Sales AI Solutions</div>
+                                        <div class="text-sm text-base-content/60">BuffSend & AI Tools</div>
                                     </div>
                                 </a>
                                 <a href="case-studies.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{CASESTUDIES_ITEM_ACTIVE}}">
@@ -103,65 +83,6 @@ const headerTemplate = `<!DOCTYPE html>
                                     <div>
                                         <div class="font-semibold">Success Stories</div>
                                         <div class="text-sm text-base-content/60">Real Results from Real Companies</div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-
-                <!-- Resources Mega Menu -->
-                <li class="dropdown dropdown-hover">
-                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold {{RESOURCES_ACTIVE}}">
-                        Resources
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </div>
-                    <div tabindex="0" class="dropdown-content z-[1] card card-compact w-96 p-4 shadow-xl bg-base-100 border border-base-300">
-                        <div class="card-body">
-                            <h3 class="card-title text-primary mb-3">Tools & Resources</h3>
-                            <div class="grid md:grid-cols-2 gap-2">
-                                <a href="roi-calculator.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{ROI_ITEM_ACTIVE}}">
-                                    <span class="text-xl">💰</span>
-                                    <div>
-                                        <div class="font-semibold">ROI Calculator</div>
-                                        <div class="text-sm text-base-content/60">Calculate AI Returns</div>
-                                    </div>
-                                </a>
-                                <a href="ai-readiness-assessment.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{ASSESSMENT_ITEM_ACTIVE}}">
-                                    <span class="text-xl">🎯</span>
-                                    <div>
-                                        <div class="font-semibold">AI Assessment</div>
-                                        <div class="text-sm text-base-content/60">Check Your Readiness</div>
-                                    </div>
-                                </a>
-                                <a href="cost-estimator.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{COST_ITEM_ACTIVE}}">
-                                    <span class="text-xl">📊</span>
-                                    <div>
-                                        <div class="font-semibold">Cost Estimator</div>
-                                        <div class="text-sm text-base-content/60">Project Cost Analysis</div>
-                                    </div>
-                                </a>
-                                <a href="competitor-analysis.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{COMPETITOR_ITEM_ACTIVE}}">
-                                    <span class="text-xl">🏆</span>
-                                    <div>
-                                        <div class="font-semibold">AI Benchmark</div>
-                                        <div class="text-sm text-base-content/60">Competitive Analysis</div>
-                                    </div>
-                                </a>
-                                <a href="resources.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{RESOURCES_ITEM_ACTIVE}}">
-                                    <span class="text-xl">📚</span>
-                                    <div>
-                                        <div class="font-semibold">Free Downloads</div>
-                                        <div class="text-sm text-base-content/60">Guides & Templates</div>
-                                    </div>
-                                </a>
-                                <a href="blog.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{BLOG_ITEM_ACTIVE}}">
-                                    <span class="text-xl">✍️</span>
-                                    <div>
-                                        <div class="font-semibold">AI Insights Blog</div>
-                                        <div class="text-sm text-base-content/60">Latest Trends & Tips</div>
                                     </div>
                                 </a>
                             </div>
@@ -177,7 +98,7 @@ const headerTemplate = `<!DOCTYPE html>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </div>
-                    <div tabindex="0" class="dropdown-content z-[1] card card-compact w-72 p-4 shadow-xl bg-base-100 border border-base-300">
+                    <div tabindex="0" class="dropdown-content z-[1] card card-compact w-72 p-4 shadow-xl bg-base-100 border border-base-300" style="background-color: white !important; background: white !important;">
                         <div class="card-body">
                             <h3 class="card-title text-primary mb-3">About Expandia</h3>
                             <div class="grid gap-2">
@@ -192,13 +113,13 @@ const headerTemplate = `<!DOCTYPE html>
                                     <span class="text-xl">📞</span>
                                     <div>
                                         <div class="font-semibold">Contact Us</div>
-                                        <div class="text-sm text-base-content/60">Let's Start Your AI Journey</div>
+                                        <div class="text-sm text-base-content/60">Boost Your Sales</div>
                                     </div>
                                 </a>
                             </div>
                             <div class="border-t border-base-300 mt-4 pt-4">
                                 <a href="contact.html" class="btn btn-primary btn-sm w-full buzz-button">
-                                    Book Free Consultation
+                                    Get Free Consultation
                                 </a>
                             </div>
                         </div>
@@ -390,31 +311,14 @@ const pageConfigs = {
 function getActiveStates(activeSection) {
     const states = {
         SOLUTIONS_ACTIVE: '',
-        RESOURCES_ACTIVE: '',
         COMPANY_ACTIVE: '',
         SOLUTIONS_ITEM_ACTIVE: '',
-        INDUSTRIES_ITEM_ACTIVE: '',
-        HOWWEWORK_ITEM_ACTIVE: '',
         CASESTUDIES_ITEM_ACTIVE: '',
-        ROI_ITEM_ACTIVE: '',
-        ASSESSMENT_ITEM_ACTIVE: '',
-        COST_ITEM_ACTIVE: '',
-        COMPETITOR_ITEM_ACTIVE: '',
-        RESOURCES_ITEM_ACTIVE: '',
-        BLOG_ITEM_ACTIVE: '',
         ABOUT_ITEM_ACTIVE: '',
         CONTACT_ITEM_ACTIVE: '',
         // Mobile states
         SOLUTIONS_MOBILE_ACTIVE: '',
-        INDUSTRIES_MOBILE_ACTIVE: '',
-        HOWWEWORK_MOBILE_ACTIVE: '',
         CASESTUDIES_MOBILE_ACTIVE: '',
-        ROI_MOBILE_ACTIVE: '',
-        ASSESSMENT_MOBILE_ACTIVE: '',
-        COST_MOBILE_ACTIVE: '',
-        COMPETITOR_MOBILE_ACTIVE: '',
-        RESOURCES_MOBILE_ACTIVE: '',
-        BLOG_MOBILE_ACTIVE: '',
         ABOUT_MOBILE_ACTIVE: '',
         CONTACT_MOBILE_ACTIVE: ''
     };
@@ -426,50 +330,10 @@ function getActiveStates(activeSection) {
             states.SOLUTIONS_ITEM_ACTIVE = 'bg-primary/10 border border-primary/20';
             states.SOLUTIONS_MOBILE_ACTIVE = 'class="text-primary font-semibold"';
             break;
-        case 'industries':
-            states.SOLUTIONS_ACTIVE = 'text-primary';
-            states.INDUSTRIES_ITEM_ACTIVE = 'bg-primary/10 border border-primary/20';
-            states.INDUSTRIES_MOBILE_ACTIVE = 'class="text-primary font-semibold"';
-            break;
-        case 'howwework':
-            states.SOLUTIONS_ACTIVE = 'text-primary';
-            states.HOWWEWORK_ITEM_ACTIVE = 'bg-primary/10 border border-primary/20';
-            states.HOWWEWORK_MOBILE_ACTIVE = 'class="text-primary font-semibold"';
-            break;
         case 'casestudies':
             states.SOLUTIONS_ACTIVE = 'text-primary';
             states.CASESTUDIES_ITEM_ACTIVE = 'bg-primary/10 border border-primary/20';
             states.CASESTUDIES_MOBILE_ACTIVE = 'class="text-primary font-semibold"';
-            break;
-        case 'roi':
-            states.RESOURCES_ACTIVE = 'text-primary';
-            states.ROI_ITEM_ACTIVE = 'bg-primary/10 border border-primary/20';
-            states.ROI_MOBILE_ACTIVE = 'class="text-primary font-semibold"';
-            break;
-        case 'assessment':
-            states.RESOURCES_ACTIVE = 'text-primary';
-            states.ASSESSMENT_ITEM_ACTIVE = 'bg-primary/10 border border-primary/20';
-            states.ASSESSMENT_MOBILE_ACTIVE = 'class="text-primary font-semibold"';
-            break;
-        case 'cost':
-            states.RESOURCES_ACTIVE = 'text-primary';
-            states.COST_ITEM_ACTIVE = 'bg-primary/10 border border-primary/20';
-            states.COST_MOBILE_ACTIVE = 'class="text-primary font-semibold"';
-            break;
-        case 'competitor':
-            states.RESOURCES_ACTIVE = 'text-primary';
-            states.COMPETITOR_ITEM_ACTIVE = 'bg-primary/10 border border-primary/20';
-            states.COMPETITOR_MOBILE_ACTIVE = 'class="text-primary font-semibold"';
-            break;
-        case 'resources':
-            states.RESOURCES_ACTIVE = 'text-primary';
-            states.RESOURCES_ITEM_ACTIVE = 'bg-primary/10 border border-primary/20';
-            states.RESOURCES_MOBILE_ACTIVE = 'class="text-primary font-semibold"';
-            break;
-        case 'blog':
-            states.RESOURCES_ACTIVE = 'text-primary';
-            states.BLOG_ITEM_ACTIVE = 'bg-primary/10 border border-primary/20';
-            states.BLOG_MOBILE_ACTIVE = 'class="text-primary font-semibold"';
             break;
         case 'about':
             states.COMPANY_ACTIVE = 'text-primary';
