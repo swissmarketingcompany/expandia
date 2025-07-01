@@ -1,10 +1,17 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const languageSelector = document.getElementById('language-selector');
-    if (!languageSelector) {
-        console.error('Language selector not found!');
-        return;
-    }
+// Language change function for flag-based selector
+window.changeLanguage = (language) => {
+    setLanguage(language);
+    updateFlag(language);
+};
 
+const updateFlag = (language) => {
+    const currentFlag = document.getElementById('current-flag');
+    if (currentFlag) {
+        currentFlag.textContent = language === 'en' ? '🇺🇸' : '🇹🇷';
+    }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
     const setLanguage = async (language) => {
         try {
             console.log(`Fetching translations for ${language}...`);
@@ -46,12 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    languageSelector.addEventListener('change', (event) => {
-        setLanguage(event.target.value);
-    });
-
     // Set initial language
     const initialLanguage = localStorage.getItem('language') || 'en';
-    languageSelector.value = initialLanguage;
+    updateFlag(initialLanguage);
     setLanguage(initialLanguage);
 }); 
