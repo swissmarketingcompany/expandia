@@ -50,7 +50,7 @@
             <ul class="menu menu-horizontal px-1">
                 <!-- Solutions Mega Menu -->
                 <li class="dropdown dropdown-hover">
-                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold text-primary">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold text-primary" data-i18n="header.solutions">
                         Solutions
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -88,7 +88,7 @@
 
                 <!-- Company Mega Menu -->
                 <li class="dropdown dropdown-hover">
-                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold ">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold " data-i18n="header.company">
                         Company
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -124,10 +124,18 @@
             </ul>
         </div>
         <div class="navbar-end">
-            <a href="contact.html" class="btn btn-primary buzz-button">Get Started</a>
+            <select id="language-selector" class="select select-bordered select-sm mr-4">
+                <option value="en">English</option>
+                <option value="tr">Türkçe</option>
+            </select>
+            <a href="contact.html" class="btn btn-primary buzz-button" data-i18n="header.get_started">Get Started</a>
         </div>
     </nav>
 
+    <!-- MAIN CONTENT PLACEHOLDER -->
+    <!-- MAIN CONTENT PLACEHOLDER -->
+    <!-- MAIN CONTENT PLACEHOLDER -->
+    <!-- MAIN CONTENT PLACEHOLDER -->
     <!-- MAIN CONTENT PLACEHOLDER -->
     <!-- MAIN CONTENT PLACEHOLDER -->
     <!-- Hero Section -->
@@ -161,151 +169,99 @@
         </div>
     </section>
 
+    <!-- Page Header -->
+    <section class="section-spacing bg-gradient-to-br from-buzz-warm to-base-100 text-center">
+        <div class="container mx-auto container-padding">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4" data-i18n="case_studies.title">Success Stories</h1>
+            <p class="text-lg md:text-xl text-base-content/80 max-w-3xl mx-auto" data-i18n="case_studies.subtitle">
+                Discover how businesses have transformed their sales performance with our 
+                expert strategies and AI-powered solutions.
+            </p>
+        </div>
+    </section>
+
     <!-- Case Studies -->
     <section class="section-spacing bg-base-100">
         <div class="container mx-auto container-padding">
             <div class="space-y-16">
-                <!-- Case Study 1: SaaS Company -->
-                <div class="buzz-card p-8 lg:p-12">
-                    <div class="grid lg:grid-cols-3 gap-8 items-center">
-                        <div class="lg:col-span-2">
-                            <div class="mb-4">
-                                <span class="badge badge-primary mb-2">Sales as a Service</span>
-                                <h3 class="text-3xl font-bold mb-4">SaaS Startup Scales to $1M ARR</h3>
-                            </div>
-                            <blockquote class="text-xl leading-relaxed mb-6 text-base-content/80">
-                                "Expandia took over our entire sales process when we had zero sales infrastructure. 
-                                Within 6 months, we went from struggling to get meetings to closing $1M in annual 
-                                recurring revenue. Their team became our sales department."
-                            </blockquote>
-                            <div class="flex items-center gap-4 mb-6">
-                                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold">
-                                    JS
-                                </div>
-                                <div>
-                                    <div class="font-semibold">John Smith</div>
-                                    <div class="text-base-content/60">CEO, TechFlow Solutions</div>
-                                </div>
-                            </div>
-                            <div class="grid grid-cols-2 gap-4 text-sm">
-                                <div><strong>Industry:</strong> SaaS/Technology</div>
-                                <div><strong>Company Size:</strong> 15 employees</div>
-                                <div><strong>Timeline:</strong> 6 months</div>
-                                <div><strong>Solution:</strong> Sales as a Service</div>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <div class="grid grid-cols-1 gap-4">
-                                <div class="buzz-card p-4 bg-primary/5">
-                                    <div class="text-3xl font-bold text-primary">425%</div>
-                                    <div class="text-sm text-base-content/60">Lead Increase</div>
-                                </div>
-                                <div class="buzz-card p-4 bg-secondary/5">
-                                    <div class="text-3xl font-bold text-secondary">$1M</div>
-                                    <div class="text-sm text-base-content/60">ARR Achieved</div>
-                                </div>
-                                <div class="buzz-card p-4 bg-accent/5">
-                                    <div class="text-3xl font-bold text-accent">6 Months</div>
-                                    <div class="text-sm text-base-content/60">To $1M ARR</div>
-                                </div>
-                            </div>
-                        </div>
+                <!-- Case Study 1 -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="buzz-card p-8 bg-base-200">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4" data-i18n="case_studies.case_1_title">
+                            Tech Startup Increases Qualified Leads by 300% in 60 Days
+                        </h3>
+                        <p class="font-semibold text-primary mb-6" data-i18n="case_studies.case_1_client">Client: SaaS Innovators Inc.</p>
+                        
+                        <p class="mb-4 text-base-content/80">
+                            <strong class="text-base-content" data-i18n="case_studies.case_1_challenge_title">Challenge:</strong>
+                            <span data-i18n="case_studies.case_1_challenge">A promising SaaS startup had a groundbreaking product but struggled to generate a consistent flow of qualified leads. Their small sales team was overwhelmed with prospecting and couldn't focus on closing deals.</span>
+                        </p>
+                        <p class="text-base-content/80">
+                            <strong class="text-base-content" data-i18n="case_studies.case_1_solution_title">Solution:</strong>
+                            <span data-i18n="case_studies.case_1_solution">We implemented our full Sales as a Service model. Our team took over lead generation, using a multi-channel approach to identify and qualify prospects. We also optimized their CRM to manage the new influx of leads efficiently.</span>
+                        </p>
+                    </div>
+                    <div class="prose lg:prose-xl">
+                        <h4 class="font-bold" data-i18n="case_studies.case_1_results">Results:</h4>
+                        <ul>
+                            <li data-i18n="case_studies.case_1_result_1"><strong>300% increase</strong> in qualified leads within 60 days.</li>
+                            <li data-i18n="case_studies.case_1_result_2"><strong>45% reduction</strong> in sales cycle length.</li>
+                            <li data-i18n="case_studies.case_1_result_3"><strong>$1.2M</strong> in new pipeline revenue.</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Case Study 2: Manufacturing Company -->
-                <div class="buzz-card p-8 lg:p-12">
-                    <div class="grid lg:grid-cols-3 gap-8 items-center">
-                        <div class="text-center order-2 lg:order-1">
-                            <div class="grid grid-cols-1 gap-4">
-                                <div class="buzz-card p-4 bg-primary/5">
-                                    <div class="text-3xl font-bold text-primary">180%</div>
-                                    <div class="text-sm text-base-content/60">Sales Increase</div>
-                                </div>
-                                <div class="buzz-card p-4 bg-secondary/5">
-                                    <div class="text-3xl font-bold text-secondary">65%</div>
-                                    <div class="text-sm text-base-content/60">Better Close Rate</div>
-                                </div>
-                                <div class="buzz-card p-4 bg-accent/5">
-                                    <div class="text-3xl font-bold text-accent">$3.2M</div>
-                                    <div class="text-sm text-base-content/60">Additional Revenue</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lg:col-span-2 order-1 lg:order-2">
-                            <div class="mb-4">
-                                <span class="badge badge-secondary mb-2">Sales AI Solutions</span>
-                                <h3 class="text-3xl font-bold mb-4">Manufacturing Giant Enhances Sales Team with AI</h3>
-                            </div>
-                            <blockquote class="text-xl leading-relaxed mb-6 text-base-content/80">
-                                "Our sales team was good, but Expandia's AI tools made them great. The lead scoring 
-                                and automated follow-ups helped us identify better prospects and never miss an opportunity. 
-                                We're now closing deals we would have lost before."
-                            </blockquote>
-                            <div class="flex items-center gap-4 mb-6">
-                                <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold">
-                                    MJ
-                                </div>
-                                <div>
-                                    <div class="font-semibold">Maria Johnson</div>
-                                    <div class="text-base-content/60">VP Sales, Industrial Pro Inc.</div>
-                                </div>
-                            </div>
-                            <div class="grid grid-cols-2 gap-4 text-sm">
-                                <div><strong>Industry:</strong> Manufacturing</div>
-                                <div><strong>Company Size:</strong> 500+ employees</div>
-                                <div><strong>Timeline:</strong> 4 months</div>
-                                <div><strong>Solution:</strong> BuffSend AI + Custom Tools</div>
-                            </div>
-                        </div>
+                <!-- Case Study 2 -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="buzz-card p-8 bg-base-200 lg:order-last">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4" data-i18n="case_studies.case_2_title">
+                            Manufacturing Firm Boosts Sales Team Efficiency with AI
+                        </h3>
+                        <p class="font-semibold text-secondary mb-6" data-i18n="case_studies.case_2_client">Client: Global Manufacturing Co.</p>
+                        
+                        <p class="mb-4 text-base-content/80">
+                            <strong class="text-base-content" data-i18n="case_studies.case_2_challenge_title">Challenge:</strong>
+                            <span data-i18n="case_studies.case_2_challenge">A large manufacturing company's sales team was spending too much time on manual data entry and follow-ups, leading to missed opportunities and burnout.</span>
+                        </p>
+                        <p class="text-base-content/80">
+                            <strong class="text-base-content" data-i18n="case_studies.case_2_solution_title">Solution:</strong>
+                            <span data-i18n="case_studies.case_2_solution">We deployed custom AI sales agents to automate lead nurturing and follow-up sequences. We also integrated the BuffSend platform to provide predictive analytics, helping the team prioritize high-potential leads.</span>
+                        </p>
+                    </div>
+                    <div class="prose lg:prose-xl lg:order-first">
+                        <h4 class="font-bold" data-i18n="case_studies.case_2_results">Results:</h4>
+                        <ul>
+                            <li data-i18n="case_studies.case_2_result_1"><strong>50% reduction</strong> in time spent on manual tasks.</li>
+                            <li data-i18n="case_studies.case_2_result_2"><strong>25% increase</strong> in appointments set per week.</li>
+                            <li data-i18n="case_studies.case_2_result_3">Improved team morale and focus on strategic selling.</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Case Study 3: Consulting Firm -->
-                <div class="buzz-card p-8 lg:p-12">
-                    <div class="grid lg:grid-cols-3 gap-8 items-center">
-                        <div class="lg:col-span-2">
-                            <div class="mb-4">
-                                <span class="badge badge-accent mb-2">Sales as a Service</span>
-                                <h3 class="text-3xl font-bold mb-4">Consulting Firm Doubles Client Base</h3>
-                            </div>
-                            <blockquote class="text-xl leading-relaxed mb-6 text-base-content/80">
-                                "As consultants, we're great at serving clients but terrible at finding them. Expandia 
-                                completely transformed our business development. They handle all the prospecting and 
-                                initial outreach, so we can focus on what we do best - consulting."
-                            </blockquote>
-                            <div class="flex items-center gap-4 mb-6">
-                                <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold">
-                                    RW
-                                </div>
-                                <div>
-                                    <div class="font-semibold">Robert Wilson</div>
-                                    <div class="text-base-content/60">Managing Partner, Strategic Advisors LLC</div>
-                                </div>
-                            </div>
-                            <div class="grid grid-cols-2 gap-4 text-sm">
-                                <div><strong>Industry:</strong> Professional Services</div>
-                                <div><strong>Company Size:</strong> 25 employees</div>
-                                <div><strong>Timeline:</strong> 8 months</div>
-                                <div><strong>Solution:</strong> Full Sales Management</div>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <div class="grid grid-cols-1 gap-4">
-                                <div class="buzz-card p-4 bg-primary/5">
-                                    <div class="text-3xl font-bold text-primary">200%</div>
-                                    <div class="text-sm text-base-content/60">Client Increase</div>
-                                </div>
-                                <div class="buzz-card p-4 bg-secondary/5">
-                                    <div class="text-3xl font-bold text-secondary">450</div>
-                                    <div class="text-sm text-base-content/60">New Leads/Month</div>
-                                </div>
-                                <div class="buzz-card p-4 bg-accent/5">
-                                    <div class="text-3xl font-bold text-accent">85%</div>
-                                    <div class="text-sm text-base-content/60">Time Saved</div>
-                                </div>
-                            </div>
-                        </div>
+                <!-- Case Study 3 -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="buzz-card p-8 bg-base-200">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4" data-i18n="case_studies.case_3_title">
+                            E-commerce Brand Scales Revenue with Automated Campaigns
+                        </h3>
+                        <p class="font-semibold text-accent mb-6" data-i18n="case_studies.case_3_client">Client: Urban Style Collective</p>
+                        
+                        <p class="mb-4 text-base-content/80">
+                            <strong class="text-base-content" data-i18n="case_studies.case_3_challenge_title">Challenge:</strong>
+                            <span data-i18n="case_studies.case_3_challenge">A growing e-commerce brand needed to scale its marketing and sales efforts to compete with larger retailers but lacked the resources for a large-scale hiring push.</span>
+                        </p>
+                        <p class="text-base-content/80">
+                            <strong class="text-base-content" data-i18n="case_studies.case_3_solution_title">Solution:</strong>
+                            <span data-i18n="case_studies.case_3_solution">We used the BuffSend AI platform to create and manage hyper-personalized, automated email campaigns. The AI analyzed customer data to send the right message at the right time, nurturing leads from initial contact to purchase.</span>
+                        </p>
+                    </div>
+                    <div class="prose lg:prose-xl">
+                        <h4 class="font-bold" data-i18n="case_studies.case_3_results">Results:</h4>
+                        <ul>
+                            <li data-i18n="case_studies.case_3_result_1"><strong>60% increase</strong> in marketing-driven revenue.</li>
+                            <li data-i18n="case_studies.case_3_result_2"><strong>35% higher</strong> email open and click-through rates.</li>
+                            <li data-i18n="case_studies.case_3_result_3">Successfully scaled operations without a major increase in headcount.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -385,12 +341,12 @@
             <div class="container mx-auto container-padding py-12">
                 <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
                     <div class="text-center lg:text-left">
-                        <h3 class="text-2xl md:text-3xl font-bold mb-2">Stay Updated with Sales Insights</h3>
-                        <p class="text-white/80">Get the latest sales strategies and industry updates.</p>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-2" data-i18n="footer.newsletter_title">Stay Updated with Sales Insights</h3>
+                        <p class="text-white/80" data-i18n="footer.newsletter_subtitle">Get the latest sales strategies and industry updates.</p>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
                         <input type="email" placeholder="Enter your email" class="footer-newsletter-input">
-                        <button class="btn btn-primary">Subscribe</button>
+                        <button class="btn btn-primary" data-i18n="footer.subscribe">Subscribe</button>
                     </div>
                 </div>
             </div>
@@ -403,9 +359,9 @@
                 <div class="md:col-span-4">
                     <div class="flex items-center gap-3 mb-6">
                         <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 w-auto brightness-0 invert">
-                        <h3 class="text-2xl font-bold">Expandia</h3>
+                        <h3 class="text-2xl font-bold" data-i18n="footer.company_info_title">Expandia</h3>
                     </div>
-                    <p class="text-white/80 mb-6 text-lg">
+                    <p class="text-white/80 mb-6 text-lg" data-i18n="footer.company_info_subtitle">
                         Your Partner in Sales Growth and Revenue Acceleration. We help businesses scale their sales operations with proven strategies and cutting-edge solutions.
                     </p>
                     <div class="flex gap-4">
@@ -429,7 +385,7 @@
 
                 <!-- Quick Links -->
                 <div class="md:col-span-2">
-                    <h4 class="text-lg font-bold mb-6">Solutions</h4>
+                    <h4 class="text-lg font-bold mb-6" data-i18n="footer.quick_links_title">Solutions</h4>
                     <ul class="space-y-4 text-white/80">
                         <li><a href="solutions.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
                             <span class="footer-link-dot"></span>
@@ -452,7 +408,7 @@
 
                 <!-- Resources -->
                 <div class="md:col-span-2">
-                    <h4 class="text-lg font-bold mb-6">Company</h4>
+                    <h4 class="text-lg font-bold mb-6" data-i18n="footer.resources_title">Company</h4>
                     <ul class="space-y-4 text-white/80">
                         <li><a href="case-studies.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
                             <span class="footer-link-dot"></span>
@@ -471,10 +427,10 @@
 
                 <!-- Contact -->
                 <div class="md:col-span-4">
-                    <h4 class="text-lg font-bold mb-6">Get in Touch</h4>
+                    <h4 class="text-lg font-bold mb-6" data-i18n="footer.contact_title">Get in Touch</h4>
                     <div class="footer-contact-card">
-                        <p class="text-white/80 mb-6">Ready to accelerate your sales growth? Let's discuss how we can help.</p>
-                        <a href="contact.html" class="btn btn-primary w-full mb-6">Get Free Consultation</a>
+                        <p class="text-white/80 mb-6" data-i18n="footer.contact_subtitle">Ready to accelerate your sales growth? Let's discuss how we can help.</p>
+                        <a href="contact.html" class="btn btn-primary w-full mb-6" data-i18n="footer.get_free_consultation">Get Free Consultation</a>
                         <div class="space-y-4">
                             <a href="mailto:hello@expandia.ch" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -482,7 +438,7 @@
                                 </svg>
                                 hello@expandia.ch
                             </a>
-                            <a href="#" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
+                            <a href="#" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors" data-i18n="footer.schedule_call">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                 </svg>
@@ -495,13 +451,13 @@
 
             <!-- Bottom Bar -->
             <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/60">
-                <div class="text-sm">
+                <div class="text-sm" data-i18n="footer.copyright">
                     &copy; 2024 Expandia. All rights reserved.
                 </div>
                 <div class="flex gap-6 text-sm">
-                    <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
-                    <a href="#" class="hover:text-primary transition-colors">Cookie Policy</a>
+                    <a href="#" class="hover:text-primary transition-colors" data-i18n="footer.privacy_policy">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary transition-colors" data-i18n="footer.terms_of_service">Terms of Service</a>
+                    <a href="#" class="hover:text-primary transition-colors" data-i18n="footer.cookie_policy">Cookie Policy</a>
                 </div>
             </div>
         </div>
@@ -509,42 +465,9 @@
 
     <script src="./dist/js/index.js"></script>
 </body>
-</html>     <!-- JavaScript for smooth interactions -->
-    <script>
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add animation classes when elements come into view
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all service cards and animated elements
-        document.querySelectorAll('.service-card, .buzz-card, .animate-slide-up').forEach(card => {
-            observer.observe(card);
-        });
-
-        
-    </script>
+</html>     <!-- JavaScript for translations and functionality -->
+    <script src="./dist/js/i18n.js"></script>
+    <script src="./dist/js/tools.js"></script>
+    <script src="./dist/js/index.js"></script>
 </body>
 </html>

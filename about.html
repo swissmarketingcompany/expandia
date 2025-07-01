@@ -50,7 +50,7 @@
             <ul class="menu menu-horizontal px-1">
                 <!-- Solutions Mega Menu -->
                 <li class="dropdown dropdown-hover">
-                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold ">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold " data-i18n="header.solutions">
                         Solutions
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -88,7 +88,7 @@
 
                 <!-- Company Mega Menu -->
                 <li class="dropdown dropdown-hover">
-                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold text-primary">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold text-primary" data-i18n="header.company">
                         Company
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -124,10 +124,18 @@
             </ul>
         </div>
         <div class="navbar-end">
-            <a href="contact.html" class="btn btn-primary buzz-button">Get Started</a>
+            <select id="language-selector" class="select select-bordered select-sm mr-4">
+                <option value="en">English</option>
+                <option value="tr">Türkçe</option>
+            </select>
+            <a href="contact.html" class="btn btn-primary buzz-button" data-i18n="header.get_started">Get Started</a>
         </div>
     </nav>
 
+    <!-- MAIN CONTENT PLACEHOLDER -->
+    <!-- MAIN CONTENT PLACEHOLDER -->
+    <!-- MAIN CONTENT PLACEHOLDER -->
+    <!-- MAIN CONTENT PLACEHOLDER -->
     <!-- MAIN CONTENT PLACEHOLDER -->
     <!-- MAIN CONTENT PLACEHOLDER -->
     <!-- Hero Section -->
@@ -161,56 +169,114 @@
         </div>
     </section>
 
-    <!-- Our Mission -->
+    <!-- Page Header -->
+    <section class="section-spacing bg-gradient-to-br from-buzz-warm to-base-100 text-center">
+        <div class="container mx-auto container-padding">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4" data-i18n="about.title">We're Building the Future of Sales</h1>
+            <p class="text-lg md:text-xl text-base-content/80 max-w-3xl mx-auto" data-i18n="about.subtitle">
+                Expandia was founded on a simple principle: sales should be a catalyst for growth, not a bottleneck. 
+                We combine human expertise with artificial intelligence to create a new breed of sales solutions.
+            </p>
+        </div>
+    </section>
+
+    <!-- Our Mission Section -->
     <section class="section-spacing bg-base-100">
         <div class="container mx-auto container-padding">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="animate-slide-up">
-                    <h2 class="text-4xl font-bold mb-6 gradient-header">Our Mission</h2>
-                    <p class="text-xl text-base-content/80 mb-8 leading-relaxed">
-                        We exist to solve the #1 challenge every business faces: <strong>generating consistent, 
-                        high-quality leads and converting them into revenue.</strong>
-                        </p>
-                        <p class="text-lg text-base-content/70 mb-8 leading-relaxed">
-                        Whether you need a complete sales team through our Sales as a Service offering, 
-                        or want to enhance your existing team with AI-powered tools, we provide the 
-                        expertise and technology to accelerate your sales growth.
+                <div class="prose lg:prose-xl">
+                    <h2 data-i18n="about.mission_title">Our Mission</h2>
+                    <p data-i18n="about.mission_subtitle">
+                        To empower businesses of all sizes to achieve their full revenue potential. We believe that by 
+                        providing a combination of expert-led sales services and intelligent automation, we can level 
+                        the playing field and make high-performance sales accessible to everyone.
                     </p>
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-3">
-                            <span class="text-primary font-bold text-xl">🎯</span>
-                            <span class="text-base-content/70">Generate more qualified leads for your business</span>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <span class="text-primary font-bold text-xl">📈</span>
-                            <span class="text-base-content/70">Increase your sales conversion rates and deal velocity</span>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <span class="text-primary font-bold text-xl">🚀</span>
-                            <span class="text-base-content/70">Scale your revenue with proven systems and AI technology</span>
-                        </div>
-                    </div>
                 </div>
-                <div class="buzz-card p-8 bg-gradient-to-br from-primary/5 to-secondary/5">
-                    <h3 class="text-2xl font-bold mb-6">What Makes Us Different</h3>
-                <div class="space-y-6">
-                        <div class="border-l-4 border-primary pl-4">
-                            <h4 class="font-semibold text-lg">Results-Driven Approach</h4>
-                            <p class="text-sm text-base-content/70 mt-2">We measure success by your revenue growth, not just activity metrics.</p>
-                        </div>
-                        <div class="border-l-4 border-secondary pl-4">
-                            <h4 class="font-semibold text-lg">Full-Service Solutions</h4>
-                            <p class="text-sm text-base-content/70 mt-2">From lead generation to deal closure, we handle the entire sales process.</p>
-                        </div>
-                        <div class="border-l-4 border-accent pl-4">
-                            <h4 class="font-semibold text-lg">AI-Enhanced Performance</h4>
-                            <p class="text-sm text-base-content/70 mt-2">Cutting-edge AI tools that multiply your sales team's effectiveness.</p>
-                    </div>
-                        <div class="border-l-4 border-primary pl-4">
-                            <h4 class="font-semibold text-lg">Transparent Partnership</h4>
-                            <p class="text-sm text-base-content/70 mt-2">Clear reporting, regular communication, and shared success metrics.</p>
-                    </div>
-                    </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1974&auto=format&fit=crop" 
+                         alt="Sales team collaborating" class="rounded-lg shadow-lg w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Our Story Section -->
+    <section class="section-spacing bg-buzz-light">
+        <div class="container mx-auto container-padding">
+            <div class="max-w-4xl mx-auto prose lg:prose-xl text-center">
+                <h2 data-i18n="about.story_title">Our Story</h2>
+            </div>
+            <div class="max-w-4xl mx-auto mt-8 space-y-6 text-base-content/80">
+                <p data-i18n="about.story_p1">
+                    Founded by a team of veteran sales leaders and AI engineers, Expandia was born out of a shared 
+                    frustration with the traditional sales model. We saw firsthand how much time and talent was 
+                    wasted on repetitive tasks, inefficient processes, and guesswork. We knew there had to be a better way.
+                </p>
+                <p data-i18n="about.story_p2">
+                    We started by offering our sales expertise as a service, building and managing high-performing 
+                    sales teams for our clients. But we didn't stop there. We began developing our own AI-powered 
+                    tools and partnering with leading platforms like BuffSend to bring the power of automation and 
+                    data analytics to our clients.
+                </p>
+                <p data-i18n="about.story_p3">
+                    Today, Expandia is a leading provider of hybrid sales solutions, offering the best of both worlds: 
+                    the strategic guidance and closing power of experienced sales professionals, combined with the speed, 
+                    efficiency, and scale of artificial intelligence.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section-spacing bg-base-100">
+        <div class="container mx-auto container-padding">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-5xl font-bold" data-i18n="about.team_title">Meet the (Sample) Leadership</h2>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="buzz-card p-6 text-center">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop" 
+                         alt="Jane Doe" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md">
+                    <h4 class="text-xl font-bold" data-i18n="about.team_member_1_name">Jane Doe</h4>
+                    <p class="text-primary mb-3" data-i18n="about.team_member_1_title">Co-Founder & CEO</p>
+                    <p class="text-sm text-base-content/70" data-i18n="about.team_member_1_bio">
+                        With over 15 years in B2B sales leadership, Jane is passionate about building data-driven 
+                        sales engines that deliver predictable revenue growth.
+                    </p>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="buzz-card p-6 text-center">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1887&auto=format&fit=crop" 
+                         alt="John Smith" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md">
+                    <h4 class="text-xl font-bold" data-i18n="about.team_member_2_name">John Smith</h4>
+                    <p class="text-secondary mb-3" data-i18n="about.team_member_2_title">Co-Founder & CTO</p>
+                    <p class="text-sm text-base-content/70" data-i18n="about.team_member_2_bio">
+                        A seasoned AI engineer, John leads the development of our proprietary sales tools 
+                        and ensures our clients have a technological edge.
+                    </p>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="buzz-card p-6 text-center">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop" 
+                         alt="Emily White" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md">
+                    <h4 class="text-xl font-bold" data-i18n="about.team_member_3_name">Emily White</h4>
+                    <p class="text-accent mb-3" data-i18n="about.team_member_3_title">VP of Sales Operations</p>
+                    <p class="text-sm text-base-content/70" data-i18n="about.team_member_3_bio">
+                        Emily is an expert in sales process optimization. She ensures our clients' sales 
+                        operations run smoothly and efficiently, from lead to close.
+                    </p>
+                </div>
+                <!-- Team Member 4 -->
+                <div class="buzz-card p-6 text-center">
+                    <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=2070&auto=format&fit=crop" 
+                         alt="Michael Brown" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md">
+                    <h4 class="text-xl font-bold" data-i18n="about.team_member_4_name">Michael Brown</h4>
+                    <p class="text-primary mb-3" data-i18n="about.team_member_4_title">Head of AI Solutions</p>
+                    <p class="text-sm text-base-content/70" data-i18n="about.team_member_4_bio">
+                        Michael specializes in deploying AI solutions that solve real-world sales challenges. 
+                        He is our go-to expert for BuffSend and custom AI integrations.
+                    </p>
                 </div>
             </div>
         </div>
@@ -410,12 +476,12 @@
             <div class="container mx-auto container-padding py-12">
                 <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
                     <div class="text-center lg:text-left">
-                        <h3 class="text-2xl md:text-3xl font-bold mb-2">Stay Updated with Sales Insights</h3>
-                        <p class="text-white/80">Get the latest sales strategies and industry updates.</p>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-2" data-i18n="footer.newsletter_title">Stay Updated with Sales Insights</h3>
+                        <p class="text-white/80" data-i18n="footer.newsletter_subtitle">Get the latest sales strategies and industry updates.</p>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
                         <input type="email" placeholder="Enter your email" class="footer-newsletter-input">
-                        <button class="btn btn-primary">Subscribe</button>
+                        <button class="btn btn-primary" data-i18n="footer.subscribe">Subscribe</button>
                     </div>
                 </div>
             </div>
@@ -428,9 +494,9 @@
                 <div class="md:col-span-4">
                     <div class="flex items-center gap-3 mb-6">
                         <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 w-auto brightness-0 invert">
-                        <h3 class="text-2xl font-bold">Expandia</h3>
+                        <h3 class="text-2xl font-bold" data-i18n="footer.company_info_title">Expandia</h3>
                     </div>
-                    <p class="text-white/80 mb-6 text-lg">
+                    <p class="text-white/80 mb-6 text-lg" data-i18n="footer.company_info_subtitle">
                         Your Partner in Sales Growth and Revenue Acceleration. We help businesses scale their sales operations with proven strategies and cutting-edge solutions.
                     </p>
                     <div class="flex gap-4">
@@ -454,7 +520,7 @@
 
                 <!-- Quick Links -->
                 <div class="md:col-span-2">
-                    <h4 class="text-lg font-bold mb-6">Solutions</h4>
+                    <h4 class="text-lg font-bold mb-6" data-i18n="footer.quick_links_title">Solutions</h4>
                     <ul class="space-y-4 text-white/80">
                         <li><a href="solutions.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
                             <span class="footer-link-dot"></span>
@@ -477,7 +543,7 @@
 
                 <!-- Resources -->
                 <div class="md:col-span-2">
-                    <h4 class="text-lg font-bold mb-6">Company</h4>
+                    <h4 class="text-lg font-bold mb-6" data-i18n="footer.resources_title">Company</h4>
                     <ul class="space-y-4 text-white/80">
                         <li><a href="case-studies.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
                             <span class="footer-link-dot"></span>
@@ -496,10 +562,10 @@
 
                 <!-- Contact -->
                 <div class="md:col-span-4">
-                    <h4 class="text-lg font-bold mb-6">Get in Touch</h4>
+                    <h4 class="text-lg font-bold mb-6" data-i18n="footer.contact_title">Get in Touch</h4>
                     <div class="footer-contact-card">
-                        <p class="text-white/80 mb-6">Ready to accelerate your sales growth? Let's discuss how we can help.</p>
-                        <a href="contact.html" class="btn btn-primary w-full mb-6">Get Free Consultation</a>
+                        <p class="text-white/80 mb-6" data-i18n="footer.contact_subtitle">Ready to accelerate your sales growth? Let's discuss how we can help.</p>
+                        <a href="contact.html" class="btn btn-primary w-full mb-6" data-i18n="footer.get_free_consultation">Get Free Consultation</a>
                         <div class="space-y-4">
                             <a href="mailto:hello@expandia.ch" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -507,7 +573,7 @@
                                 </svg>
                                 hello@expandia.ch
                             </a>
-                            <a href="#" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
+                            <a href="#" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors" data-i18n="footer.schedule_call">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                 </svg>
@@ -520,13 +586,13 @@
 
             <!-- Bottom Bar -->
             <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/60">
-                <div class="text-sm">
+                <div class="text-sm" data-i18n="footer.copyright">
                     &copy; 2024 Expandia. All rights reserved.
                 </div>
                 <div class="flex gap-6 text-sm">
-                    <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
-                    <a href="#" class="hover:text-primary transition-colors">Cookie Policy</a>
+                    <a href="#" class="hover:text-primary transition-colors" data-i18n="footer.privacy_policy">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary transition-colors" data-i18n="footer.terms_of_service">Terms of Service</a>
+                    <a href="#" class="hover:text-primary transition-colors" data-i18n="footer.cookie_policy">Cookie Policy</a>
                 </div>
             </div>
         </div>
@@ -534,42 +600,9 @@
 
     <script src="./dist/js/index.js"></script>
 </body>
-</html>     <!-- JavaScript for smooth interactions -->
-    <script>
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add animation classes when elements come into view
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all service cards and animated elements
-        document.querySelectorAll('.service-card, .buzz-card, .animate-slide-up').forEach(card => {
-            observer.observe(card);
-        });
-
-        
-    </script>
+</html>     <!-- JavaScript for translations and functionality -->
+    <script src="./dist/js/i18n.js"></script>
+    <script src="./dist/js/tools.js"></script>
+    <script src="./dist/js/index.js"></script>
 </body>
 </html>

@@ -50,7 +50,7 @@
             <ul class="menu menu-horizontal px-1">
                 <!-- Solutions Mega Menu -->
                 <li class="dropdown dropdown-hover">
-                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold ">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold " data-i18n="header.solutions">
                         Solutions
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -88,7 +88,7 @@
 
                 <!-- Company Mega Menu -->
                 <li class="dropdown dropdown-hover">
-                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold ">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold " data-i18n="header.company">
                         Company
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -124,10 +124,18 @@
             </ul>
         </div>
         <div class="navbar-end">
-            <a href="contact.html" class="btn btn-primary buzz-button">Get Started</a>
+            <select id="language-selector" class="select select-bordered select-sm mr-4">
+                <option value="en">English</option>
+                <option value="tr">Türkçe</option>
+            </select>
+            <a href="contact.html" class="btn btn-primary buzz-button" data-i18n="header.get_started">Get Started</a>
         </div>
     </nav>
 
+    <!-- MAIN CONTENT PLACEHOLDER -->
+    <!-- MAIN CONTENT PLACEHOLDER -->
+    <!-- MAIN CONTENT PLACEHOLDER -->
+    <!-- MAIN CONTENT PLACEHOLDER -->
     <!-- MAIN CONTENT PLACEHOLDER -->
     <!-- MAIN CONTENT PLACEHOLDER -->
     <!-- Hero Section -->
@@ -135,35 +143,35 @@
         <div class="container mx-auto container-padding">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="animate-fade-in">
-                    <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6" data-i18n="index.hero_title_1">
                         <span class="gradient-header">Accelerate Your</span><br>
                         <span class="text-base-content">Sales Growth</span>
                     </h1>
-                    <p class="text-xl md:text-2xl text-base-content/80 mb-8 leading-relaxed">
+                    <p class="text-xl md:text-2xl text-base-content/80 mb-8 leading-relaxed" data-i18n="index.hero_subtitle">
                         We handle your sales operations and provide AI-powered tools to 
                         <span class="font-semibold text-primary">generate more leads, close more deals,</span> 
                         and scale your revenue faster.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 mb-8">
-                        <a href="contact.html" class="btn btn-primary btn-lg buzz-button">
+                        <a href="contact.html" class="btn btn-primary btn-lg buzz-button" data-i18n="index.hero_cta_1">
                             Start Growing Today
                         </a>
-                        <a href="solutions.html" class="btn btn-outline btn-lg">
+                        <a href="solutions.html" class="btn btn-outline btn-lg" data-i18n="index.hero_cta_2">
                             View Our Solutions
                         </a>
                     </div>
                     <div class="grid grid-cols-3 gap-6 text-center">
                         <div>
                             <div class="text-2xl font-bold text-primary">300%</div>
-                            <div class="text-sm text-base-content/60">Average Lead Increase</div>
+                            <div class="text-sm text-base-content/60" data-i18n="index.hero_stat_1">Average Lead Increase</div>
                         </div>
                         <div>
                             <div class="text-2xl font-bold text-secondary">45%</div>
-                            <div class="text-sm text-base-content/60">Higher Close Rate</div>
+                            <div class="text-sm text-base-content/60" data-i18n="index.hero_stat_2">Higher Close Rate</div>
                         </div>
                         <div>
                             <div class="text-2xl font-bold text-accent">2-4 Weeks</div>
-                            <div class="text-sm text-base-content/60">Time to See Results</div>
+                            <div class="text-sm text-base-content/60" data-i18n="index.hero_stat_3">Time to See Results</div>
                         </div>
                     </div>
                 </div>
@@ -203,42 +211,42 @@
             </div>
             <div class="logo-slide">
                 <img src="src/assets/client-logos/client7.png" alt="Client 2" class="client-logo">
-                    </div>
+            </div>
             <div class="logo-slide">
-                <img src="src/assets/client-logos/client17.png" alt="Client 3" class="client-logo">
-                </div>
+                <img src="src/assets/client-logos/client3.png" alt="Client 3" class="client-logo">
+            </div>
             <div class="logo-slide">
                 <img src="src/assets/client-logos/client20.png" alt="Client 4" class="client-logo">
-                    </div>
+            </div>
             <div class="logo-slide">
                 <img src="src/assets/client-logos/client31.png" alt="Client 5" class="client-logo">
-                </div>
+            </div>
             <div class="logo-slide">
                 <img src="src/assets/client-logos/client34.png" alt="Client 6" class="client-logo">
-                    </div>
+            </div>
             <div class="logo-slide">
                 <img src="src/assets/client-logos/client18.png" alt="Client 7" class="client-logo">
-                </div>
+            </div>
             <div class="logo-slide">
-                <img src="src/assets/client-logos/client2.png" alt="Client 8" class="client-logo">
-                    </div>
+                <img src="src/assets/client-logos/client8.png" alt="Client 8" class="client-logo">
+            </div>
             <div class="logo-slide">
-                <img src="src/assets/client-logos/client3.png" alt="Client 9" class="client-logo">
-                </div>
+                <img src="src/assets/client-logos/client5.png" alt="Client 9" class="client-logo">
+            </div>
             <div class="logo-slide">
-                <img src="src/assets/client-logos/client4.png" alt="Client 10" class="client-logo">
-                    </div>
+                <img src="src/assets/client-logos/client6.png" alt="Client 10" class="client-logo">
+            </div>
             <div class="logo-slide">
-                <img src="src/assets/client-logos/client8.png" alt="Client 11" class="client-logo">
-                </div>
+                <img src="src/assets/client-logos/client12.png" alt="Client 11" class="client-logo">
+            </div>
             <div class="logo-slide">
-                <img src="src/assets/client-logos/client12.png" alt="Client 12" class="client-logo">
-                    </div>
+                <img src="src/assets/client-logos/client26.png" alt="Client 12" class="client-logo">
+            </div>
             <div class="logo-slide">
-                <img src="src/assets/client-logos/client26.png" alt="Client 13" class="client-logo">
-                </div>
+                <img src="src/assets/client-logos/client30.png" alt="Client 13" class="client-logo">
+            </div>
             <div class="logo-slide">
-                <img src="src/assets/client-logos/client30.png" alt="Client 14" class="client-logo">
+                <img src="src/assets/client-logos/client2.jpg" alt="Client 14" class="client-logo">
             </div>
             <!-- Duplicate logos for seamless loop -->
             <div class="logo-slide">
@@ -246,16 +254,16 @@
             </div>
             <div class="logo-slide">
                 <img src="src/assets/client-logos/client7.png" alt="Client 2" class="client-logo">
-        </div>
+            </div>
             <div class="logo-slide">
-                <img src="src/assets/client-logos/client17.png" alt="Client 3" class="client-logo">
+                <img src="src/assets/client-logos/client3.png" alt="Client 3" class="client-logo">
             </div>
             <div class="logo-slide">
                 <img src="src/assets/client-logos/client20.png" alt="Client 4" class="client-logo">
-                    </div>
+            </div>
             <div class="logo-slide">
                 <img src="src/assets/client-logos/client31.png" alt="Client 5" class="client-logo">
-                </div>
+            </div>
             <div class="logo-slide">
                 <img src="src/assets/client-logos/client34.png" alt="Client 6" class="client-logo">
             </div>
@@ -263,25 +271,95 @@
                 <img src="src/assets/client-logos/client18.png" alt="Client 7" class="client-logo">
             </div>
             <div class="logo-slide">
-                <img src="src/assets/client-logos/client2.png" alt="Client 8" class="client-logo">
+                <img src="src/assets/client-logos/client8.png" alt="Client 8" class="client-logo">
             </div>
             <div class="logo-slide">
-                <img src="src/assets/client-logos/client3.png" alt="Client 9" class="client-logo">
+                <img src="src/assets/client-logos/client5.png" alt="Client 9" class="client-logo">
             </div>
             <div class="logo-slide">
-                <img src="src/assets/client-logos/client4.png" alt="Client 10" class="client-logo">
+                <img src="src/assets/client-logos/client6.png" alt="Client 10" class="client-logo">
             </div>
             <div class="logo-slide">
-                <img src="src/assets/client-logos/client8.png" alt="Client 11" class="client-logo">
+                <img src="src/assets/client-logos/client12.png" alt="Client 11" class="client-logo">
             </div>
             <div class="logo-slide">
-                <img src="src/assets/client-logos/client12.png" alt="Client 12" class="client-logo">
+                <img src="src/assets/client-logos/client26.png" alt="Client 12" class="client-logo">
             </div>
             <div class="logo-slide">
-                <img src="src/assets/client-logos/client26.png" alt="Client 13" class="client-logo">
+                <img src="src/assets/client-logos/client30.png" alt="Client 13" class="client-logo">
             </div>
             <div class="logo-slide">
-                <img src="src/assets/client-logos/client30.png" alt="Client 14" class="client-logo">
+                <img src="src/assets/client-logos/client2.jpg" alt="Client 14" class="client-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Success Section -->
+    <section class="section-spacing bg-white">
+        <div class="container mx-auto container-padding">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-base-content">
+                    Our work created business with
+                </h2>
+                <div class="client-success-carousel">
+                    <!-- First Row - Moving Right -->
+                    <div class="client-success-track client-success-track-right">
+                        <div class="client-success-slide">
+                            <img src="https://www.stellantis.com/content/dam/stellantis-corporate/logos/stellantis-logo.svg" alt="Stellantis" class="client-success-logo">
+                        </div>
+                        <div class="client-success-slide">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/MAN_logo.svg/1200px-MAN_logo.svg.png" alt="MAN" class="client-success-logo">
+                        </div>
+                        <div class="client-success-slide">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/ASELSAN_logo.svg/1200px-ASELSAN_logo.svg.png" alt="Aselsan" class="client-success-logo">
+                        </div>
+                        <div class="client-success-slide">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1024px-Microsoft_logo.svg.png" alt="Microsoft" class="client-success-logo">
+                        </div>
+                        <!-- Duplicates for seamless loop -->
+                        <div class="client-success-slide">
+                            <img src="https://www.stellantis.com/content/dam/stellantis-corporate/logos/stellantis-logo.svg" alt="Stellantis" class="client-success-logo">
+                        </div>
+                        <div class="client-success-slide">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/MAN_logo.svg/1200px-MAN_logo.svg.png" alt="MAN" class="client-success-logo">
+                        </div>
+                        <div class="client-success-slide">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/ASELSAN_logo.svg/1200px-ASELSAN_logo.svg.png" alt="Aselsan" class="client-success-logo">
+                        </div>
+                        <div class="client-success-slide">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1024px-Microsoft_logo.svg.png" alt="Microsoft" class="client-success-logo">
+                        </div>
+                    </div>
+
+                    <!-- Second Row - Moving Left -->
+                    <div class="client-success-track client-success-track-left">
+                        <div class="client-success-slide">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1200px-Starbucks_Corporation_Logo_2011.svg.png" alt="Starbucks" class="client-success-logo">
+                        </div>
+                        <div class="client-success-slide">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/1200px-Flag_of_Ukraine.svg.png" alt="Ukraine Government" class="client-success-logo">
+                        </div>
+                        <div class="client-success-slide">
+                            <div class="text-lg font-bold text-gray-600">Techovo SRL</div>
+                        </div>
+                        <div class="client-success-slide">
+                            <img src="https://www.worldofsweets.de/out/flow/img/logo.png" alt="World of Sweets" class="client-success-logo">
+                        </div>
+                        <!-- Duplicates for seamless loop -->
+                        <div class="client-success-slide">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1200px-Starbucks_Corporation_Logo_2011.svg.png" alt="Starbucks" class="client-success-logo">
+                        </div>
+                        <div class="client-success-slide">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/1200px-Flag_of_Ukraine.svg.png" alt="Ukraine Government" class="client-success-logo">
+                        </div>
+                        <div class="client-success-slide">
+                            <div class="text-lg font-bold text-gray-600">Techovo SRL</div>
+                        </div>
+                        <div class="client-success-slide">
+                            <img src="https://www.worldofsweets.de/out/flow/img/logo.png" alt="World of Sweets" class="client-success-logo">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -290,11 +368,11 @@
     <section class="section-spacing bg-base-100">
         <div class="container mx-auto container-padding">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-6xl font-bold mb-6">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6" data-i18n="index.solutions_title">
                     <span class="gradient-header">Two Ways to</span><br>
                     <span class="text-base-content">Supercharge Your Sales</span>
                 </h2>
-                <p class="text-xl text-base-content/80 max-w-3xl mx-auto">
+                <p class="text-xl text-base-content/80 max-w-3xl mx-auto" data-i18n="index.solutions_subtitle">
                     Whether you need a complete sales team or cutting-edge AI tools, 
                     we have the solution to scale your revenue.
                 </p>
@@ -307,35 +385,35 @@
                         <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl">
                             📞
                         </div>
-                        <h3 class="text-3xl font-bold">Sales as a Service</h3>
+                        <h3 class="text-3xl font-bold" data-i18n="index.saas_title">Sales as a Service</h3>
                     </div>
-                    <p class="text-lg text-base-content/80 mb-8">
+                    <p class="text-lg text-base-content/80 mb-8" data-i18n="index.saas_subtitle">
                         Complete lead generation and sales management solution. 
                         We handle everything from finding prospects to closing deals.
                     </p>
                     <div class="space-y-4 mb-8">
                         <div class="flex items-start gap-3">
                             <span class="text-primary font-bold">✉️</span>
-                            <span>Bulk personalized email campaigns</span>
+                            <span data-i18n="index.saas_item_1">Bulk personalized email campaigns</span>
                 </div>
                         <div class="flex items-start gap-3">
                             <span class="text-primary font-bold">📊</span>
-                            <span>Contact data provision and management</span>
+                            <span data-i18n="index.saas_item_2">Contact data provision and management</span>
                     </div>
                         <div class="flex items-start gap-3">
                             <span class="text-primary font-bold">📱</span>
-                            <span>Lead calling and qualification</span>
+                            <span data-i18n="index.saas_item_3">Lead calling and qualification</span>
                         </div>
                         <div class="flex items-start gap-3">
                             <span class="text-primary font-bold">🔧</span>
-                            <span>Complete CRM management</span>
+                            <span data-i18n="index.saas_item_4">Complete CRM management</span>
                     </div>
                         <div class="flex items-start gap-3">
                             <span class="text-primary font-bold">🎯</span>
-                            <span>New lead discovery and nurturing</span>
+                            <span data-i18n="index.saas_item_5">New lead discovery and nurturing</span>
                         </div>
                     </div>
-                    <a href="solutions.html" class="btn btn-primary w-full">Learn More</a>
+                    <a href="solutions.html" class="btn btn-primary w-full" data-i18n="index.saas_cta">Learn More</a>
                 </div>
                 
                 <!-- Sales AI Solutions -->
@@ -344,35 +422,35 @@
                         <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center text-white text-2xl">
                             🤖
                         </div>
-                        <h3 class="text-3xl font-bold">Sales AI Solutions</h3>
+                        <h3 class="text-3xl font-bold" data-i18n="index.ai_title">Sales AI Solutions</h3>
                     </div>
-                    <p class="text-lg text-base-content/80 mb-8">
+                    <p class="text-lg text-base-content/80 mb-8" data-i18n="index.ai_subtitle">
                         AI-powered sales tools and agents to enhance your team's productivity. 
                         We're an authorized BuffSend reseller with additional custom solutions.
                     </p>
                     <div class="space-y-4 mb-8">
                         <div class="flex items-start gap-3">
                             <span class="text-secondary font-bold">🚀</span>
-                            <span>BuffSend AI sales platform (Official Reseller)</span>
+                            <span data-i18n="index.ai_item_1">BuffSend AI sales platform (Official Reseller)</span>
                 </div>
                         <div class="flex items-start gap-3">
                             <span class="text-secondary font-bold">🎯</span>
-                            <span>Lead generation AI agents</span>
+                            <span data-i18n="index.ai_item_2">Lead generation AI agents</span>
             </div>
                         <div class="flex items-start gap-3">
                             <span class="text-secondary font-bold">💬</span>
-                            <span>AI-powered sales assistants</span>
+                            <span data-i18n="index.ai_item_3">AI-powered sales assistants</span>
                         </div>
                         <div class="flex items-start gap-3">
                             <span class="text-secondary font-bold">📈</span>
-                            <span>Sales analytics and insights</span>
+                            <span data-i18n="index.ai_item_4">Sales analytics and insights</span>
                         </div>
                         <div class="flex items-start gap-3">
                             <span class="text-secondary font-bold">⚙️</span>
-                            <span>Custom AI sales automation</span>
+                            <span data-i18n="index.ai_item_5">Custom AI sales automation</span>
                         </div>
                     </div>
-                    <a href="solutions.html#ai-solutions" class="btn btn-secondary w-full">Explore AI Tools</a>
+                    <a href="solutions.html#ai-solutions" class="btn btn-secondary w-full" data-i18n="index.ai_cta">Explore AI Tools</a>
                 </div>
             </div>
         </div>
@@ -382,7 +460,7 @@
     <section class="section-spacing bg-gradient-to-br from-buzz-light to-base-100">
         <div class="container mx-auto container-padding">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-6xl font-bold mb-6">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6" data-i18n="index.why_us_title">
                     <span class="gradient-header">Why Companies</span><br>
                     <span class="text-base-content">Choose Expandia</span>
                 </h2>
@@ -393,29 +471,29 @@
                     <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-4">
                         ⚡
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Fast Results</h3>
-                    <p class="text-base-content/70">See increased leads and sales within 2-4 weeks of starting.</p>
+                    <h3 class="text-xl font-bold mb-3" data-i18n="index.why_us_1_title">Fast Results</h3>
+                    <p class="text-base-content/70" data-i18n="index.why_us_1_subtitle">See increased leads and sales within 2-4 weeks of starting.</p>
                         </div>
                 <div class="text-center">
                     <div class="w-20 h-20 bg-secondary rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-4">
                         📊
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Proven Process</h3>
-                    <p class="text-base-content/70">Data-driven strategies that consistently deliver results.</p>
+                    <h3 class="text-xl font-bold mb-3" data-i18n="index.why_us_2_title">Proven Process</h3>
+                    <p class="text-base-content/70" data-i18n="index.why_us_2_subtitle">Data-driven strategies that consistently deliver results.</p>
                 </div>
                 <div class="text-center">
                     <div class="w-20 h-20 bg-accent rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-4">
                         🔧
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Full Service</h3>
-                    <p class="text-base-content/70">From lead generation to deal closure - we handle it all.</p>
+                    <h3 class="text-xl font-bold mb-3" data-i18n="index.why_us_3_title">Full Service</h3>
+                    <p class="text-base-content/70" data-i18n="index.why_us_3_subtitle">From lead generation to deal closure - we handle it all.</p>
                 </div>
                 <div class="text-center">
                     <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-4">
                         💡
                     </div>
-                    <h3 class="text-xl font-bold mb-3">AI-Powered</h3>
-                    <p class="text-base-content/70">Cutting-edge technology to optimize every aspect of sales.</p>
+                    <h3 class="text-xl font-bold mb-3" data-i18n="index.why_us_4_title">AI-Powered</h3>
+                    <p class="text-base-content/70" data-i18n="index.why_us_4_subtitle">Cutting-edge technology to optimize every aspect of sales.</p>
                 </div>
             </div>
         </div>
@@ -424,18 +502,18 @@
     <!-- CTA Section -->
     <section class="section-spacing bg-primary text-white">
         <div class="container mx-auto container-padding text-center">
-            <h2 class="text-4xl md:text-6xl font-bold mb-6">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6" data-i18n="index.cta_title">
                 Ready to Accelerate Your Sales?
             </h2>
-            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90" data-i18n="index.cta_subtitle">
                 Let's discuss how our sales solutions can help you generate more leads, 
                 close more deals, and scale your revenue faster.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="contact.html" class="btn btn-secondary btn-lg">
+                <a href="contact.html" class="btn btn-secondary btn-lg" data-i18n="index.cta_button_1">
                     Get Free Consultation
                 </a>
-                <a href="solutions.html" class="btn btn-outline btn-lg border-white text-white hover:bg-white hover:text-primary">
+                <a href="solutions.html" class="btn btn-outline btn-lg border-white text-white hover:bg-white hover:text-primary" data-i18n="index.cta_button_2">
                     View Solutions
                 </a>
             </div>
@@ -448,12 +526,12 @@
             <div class="container mx-auto container-padding py-12">
                 <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
                     <div class="text-center lg:text-left">
-                        <h3 class="text-2xl md:text-3xl font-bold mb-2">Stay Updated with Sales Insights</h3>
-                        <p class="text-white/80">Get the latest sales strategies and industry updates.</p>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-2" data-i18n="footer.newsletter_title">Stay Updated with Sales Insights</h3>
+                        <p class="text-white/80" data-i18n="footer.newsletter_subtitle">Get the latest sales strategies and industry updates.</p>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
                         <input type="email" placeholder="Enter your email" class="footer-newsletter-input">
-                        <button class="btn btn-primary">Subscribe</button>
+                        <button class="btn btn-primary" data-i18n="footer.subscribe">Subscribe</button>
                     </div>
                 </div>
             </div>
@@ -466,25 +544,29 @@
                 <div class="md:col-span-4">
                     <div class="flex items-center gap-3 mb-6">
                         <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 w-auto brightness-0 invert">
-                        <h3 class="text-2xl font-bold">Expandia</h3>
                     </div>
-                    <p class="text-white/80 mb-6 text-lg">
+                    <p class="text-white/80 mb-6 text-lg" data-i18n="footer.company_info_subtitle">
                         Your Partner in Sales Growth and Revenue Acceleration. We help businesses scale their sales operations with proven strategies and cutting-edge solutions.
                     </p>
                     <div class="flex gap-4">
-                        <a href="#" class="footer-social-icon group">
+                        <a href="https://www.linkedin.com/company/expandia" target="_blank" class="footer-social-icon group">
                             <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                             </svg>
                         </a>
-                        <a href="#" class="footer-social-icon group">
-                            <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        <a href="tel:+1234567890" class="footer-social-icon group">
+                            <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                             </svg>
                         </a>
-                        <a href="#" class="footer-social-icon group">
-                            <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.239 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                        <a href="mailto:hello@expandia.ch" class="footer-social-icon group">
+                            <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </a>
+                        <a href="https://meetings-eu1.hubspot.com/oocak" target="_blank" class="footer-social-icon group">
+                            <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                             </svg>
                         </a>
                     </div>
@@ -492,7 +574,7 @@
 
                 <!-- Quick Links -->
                 <div class="md:col-span-2">
-                    <h4 class="text-lg font-bold mb-6">Solutions</h4>
+                    <h4 class="text-lg font-bold mb-6" data-i18n="footer.quick_links_title">Solutions</h4>
                     <ul class="space-y-4 text-white/80">
                         <li><a href="solutions.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
                             <span class="footer-link-dot"></span>
@@ -515,7 +597,7 @@
 
                 <!-- Resources -->
                 <div class="md:col-span-2">
-                    <h4 class="text-lg font-bold mb-6">Company</h4>
+                    <h4 class="text-lg font-bold mb-6" data-i18n="footer.resources_title">Company</h4>
                     <ul class="space-y-4 text-white/80">
                         <li><a href="case-studies.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
                             <span class="footer-link-dot"></span>
@@ -534,10 +616,10 @@
 
                 <!-- Contact -->
                 <div class="md:col-span-4">
-                    <h4 class="text-lg font-bold mb-6">Get in Touch</h4>
+                    <h4 class="text-lg font-bold mb-6" data-i18n="footer.contact_title">Get in Touch</h4>
                     <div class="footer-contact-card">
-                        <p class="text-white/80 mb-6">Ready to accelerate your sales growth? Let's discuss how we can help.</p>
-                        <a href="contact.html" class="btn btn-primary w-full mb-6">Get Free Consultation</a>
+                        <p class="text-white/80 mb-6" data-i18n="footer.contact_subtitle">Ready to accelerate your sales growth? Let's discuss how we can help.</p>
+                        <a href="https://meetings-eu1.hubspot.com/oocak" target="_blank" class="btn btn-primary w-full mb-6" data-i18n="footer.get_free_consultation">Get Free Consultation</a>
                         <div class="space-y-4">
                             <a href="mailto:hello@expandia.ch" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -545,7 +627,7 @@
                                 </svg>
                                 hello@expandia.ch
                             </a>
-                            <a href="#" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
+                            <a href="https://meetings-eu1.hubspot.com/oocak" target="_blank" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors" data-i18n="footer.schedule_call">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                 </svg>
@@ -558,13 +640,13 @@
 
             <!-- Bottom Bar -->
             <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/60">
-                <div class="text-sm">
+                <div class="text-sm" data-i18n="footer.copyright">
                     &copy; 2024 Expandia. All rights reserved.
                 </div>
                 <div class="flex gap-6 text-sm">
-                    <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
-                    <a href="#" class="hover:text-primary transition-colors">Cookie Policy</a>
+                    <a href="#" class="hover:text-primary transition-colors" data-i18n="footer.privacy_policy">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary transition-colors" data-i18n="footer.terms_of_service">Terms of Service</a>
+                    <a href="#" class="hover:text-primary transition-colors" data-i18n="footer.cookie_policy">Cookie Policy</a>
                 </div>
             </div>
         </div>
@@ -572,42 +654,9 @@
 
     <script src="./dist/js/index.js"></script>
 </body>
-</html>     <!-- JavaScript for smooth interactions -->
-    <script>
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add animation classes when elements come into view
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all service cards and animated elements
-        document.querySelectorAll('.service-card, .buzz-card, .animate-slide-up').forEach(card => {
-            observer.observe(card);
-        });
-
-        
-    </script>
+</html>     <!-- JavaScript for translations and functionality -->
+    <script src="./dist/js/i18n.js"></script>
+    <script src="./dist/js/tools.js"></script>
+    <script src="./dist/js/index.js"></script>
 </body>
 </html>

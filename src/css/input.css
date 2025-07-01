@@ -211,12 +211,16 @@ html {
 }
 
 .logo-slide {
-    @apply flex-none mx-12;
+    @apply flex-none mx-8 flex items-center justify-center;
+    min-width: 140px;
 }
 
 .client-logo {
-    @apply h-16 w-auto object-contain grayscale opacity-70 transition-all duration-300 hover:grayscale-0 hover:opacity-100;
-    max-width: 200px;
+    @apply object-contain grayscale opacity-70 transition-all duration-300 hover:grayscale-0 hover:opacity-100;
+    height: 60px;
+    width: 120px;
+    max-width: 120px;
+    max-height: 60px;
 }
 
 @keyframes scroll {
@@ -224,7 +228,7 @@ html {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-280px * 14));
+        transform: translateX(calc(-156px * 14));
     }
 }
 
@@ -272,4 +276,68 @@ body > footer.footer-gradient {
     @apply text-white;
     background: linear-gradient(to bottom right, #3d4451, #2d3440) !important;
     color: white !important;
+}
+
+/* Client Success Carousel Styles */
+.client-success-carousel {
+    @apply overflow-hidden relative;
+}
+
+.client-success-track {
+    @apply flex items-center mb-8;
+    gap: 3rem;
+}
+
+.client-success-track-right {
+    animation: scrollRight 40s linear infinite;
+}
+
+.client-success-track-left {
+    animation: scrollLeft 40s linear infinite;
+}
+
+.client-success-slide {
+    @apply flex-none flex items-center justify-center;
+    min-width: 180px;
+    height: 80px;
+}
+
+.client-success-logo {
+    @apply object-contain grayscale opacity-70 transition-all duration-300 hover:grayscale-0 hover:opacity-100;
+    height: 50px;
+    width: 120px;
+    max-width: 120px;
+    max-height: 50px;
+}
+
+@keyframes scrollRight {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-212px * 4));
+    }
+}
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(calc(-212px * 4));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Gradient overlays for smooth edges */
+.client-success-carousel::before,
+.client-success-carousel::after {
+    @apply absolute top-0 h-full w-32 z-10 content-[''];
+}
+
+.client-success-carousel::before {
+    @apply left-0 bg-gradient-to-r from-white to-transparent;
+}
+
+.client-success-carousel::after {
+    @apply right-0 bg-gradient-to-l from-white to-transparent;
 } 

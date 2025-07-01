@@ -54,7 +54,7 @@ const headerTemplate = `<!DOCTYPE html>
             <ul class="menu menu-horizontal px-1">
                 <!-- Solutions Mega Menu -->
                 <li class="dropdown dropdown-hover">
-                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold {{SOLUTIONS_ACTIVE}}">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold {{SOLUTIONS_ACTIVE}}" data-i18n="header.solutions">
                         Solutions
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -92,7 +92,7 @@ const headerTemplate = `<!DOCTYPE html>
 
                 <!-- Company Mega Menu -->
                 <li class="dropdown dropdown-hover">
-                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold {{COMPANY_ACTIVE}}">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold {{COMPANY_ACTIVE}}" data-i18n="header.company">
                         Company
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -128,7 +128,11 @@ const headerTemplate = `<!DOCTYPE html>
             </ul>
         </div>
         <div class="navbar-end">
-            <a href="contact.html" class="btn btn-primary buzz-button">Get Started</a>
+            <select id="language-selector" class="select select-bordered select-sm mr-4">
+                <option value="en">English</option>
+                <option value="tr">Türkçe</option>
+            </select>
+            <a href="contact.html" class="btn btn-primary buzz-button" data-i18n="header.get_started">Get Started</a>
         </div>
     </nav>
 
@@ -198,43 +202,10 @@ const footerTemplate = `
         </div>
     </footer>
 
-    <!-- JavaScript for smooth interactions -->
-    <script>
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add animation classes when elements come into view
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all service cards and animated elements
-        document.querySelectorAll('.service-card, .buzz-card, .animate-slide-up').forEach(card => {
-            observer.observe(card);
-        });
-
-        {{CUSTOM_JS}}
-    </script>
+    <!-- JavaScript for translations and functionality -->
+    <script src="./dist/js/i18n.js"></script>
+    <script src="./dist/js/tools.js"></script>
+    <script src="./dist/js/index.js"></script>
 </body>
 </html>`;
 
