@@ -11,46 +11,47 @@
 <body class="font-sans">
     <!-- Navigation -->
     <nav class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
-        <div class="navbar-start">
-            <div class="dropdown">
-                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
-                    </svg>
+        <div class="container mx-auto">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
+                        </svg>
+                    </div>
+                    <!-- Mobile Menu -->
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-72">
+                        <li>
+                            <details>
+                                <summary class="font-semibold">Solutions</summary>
+                                <ul class="p-2">
+                                    <li><a href="solutions.html">Our Sales Solutions</a></li>
+                                    <li><a href="case-studies.html">Success Stories</a></li>
+                                </ul>
+                            </details>
+                        </li>
+                        <li>
+                            <details>
+                                <summary class="font-semibold">Company</summary>
+                                <ul class="p-2">
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                </ul>
+                            </details>
+                        </li>
+                    </ul>
                 </div>
-                <!-- Mobile Menu -->
-                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-72">
-                    <li>
-                        <details>
-                            <summary class="font-semibold">Solutions</summary>
-                            <ul class="p-2">
-                                <li><a href="solutions.html" >Our Sales Solutions</a></li>
-                                <li><a href="case-studies.html" >Success Stories</a></li>
-                            </ul>
-                        </details>
-                    </li>
-                    <li>
-                        <details>
-                            <summary class="font-semibold">Company</summary>
-                            <ul class="p-2">
-                                <li><a href="about.html" >About Us</a></li>
-                                <li><a href="contact.html" >Contact Us</a></li>
-                            </ul>
-                        </details>
-                    </li>
-                </ul>
+                <a href="index.html" class="btn btn-ghost hover:bg-transparent ml-0">
+                    <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 md:h-10 w-auto transition-all duration-300 hover:scale-105 logo-bumblebee">
+                </a>
             </div>
-            <a href="index.html" class="btn btn-ghost hover:bg-transparent">
-                <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 md:h-10 w-auto transition-all duration-300 hover:scale-105 logo-bumblebee">
-            </a>
-        </div>
         
         <!-- Desktop Mega Menu -->
         <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1">
                 <!-- Solutions Mega Menu -->
                 <li class="dropdown dropdown-hover">
-                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold " data-i18n="header.solutions">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold">
                         Solutions
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -60,7 +61,7 @@
                         <div class="card-body" style="background-color: white !important;">
                             <h3 class="card-title text-primary mb-3">Sales Solutions & Services</h3>
                             <div class="grid gap-2">
-                                <a href="solutions.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                <a href="solutions.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
                                     <span class="text-xl">📞</span>
                                     <div>
                                         <div class="font-semibold">Sales as a Service</div>
@@ -74,7 +75,7 @@
                                         <div class="text-sm text-base-content/60">BuffSend & AI Tools</div>
                                     </div>
                                 </a>
-                                <a href="case-studies.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                <a href="case-studies.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
                                     <span class="text-xl">📈</span>
                                     <div>
                                         <div class="font-semibold">Success Stories</div>
@@ -88,7 +89,7 @@
 
                 <!-- Company Mega Menu -->
                 <li class="dropdown dropdown-hover">
-                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold " data-i18n="header.company">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold">
                         Company
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -98,14 +99,14 @@
                         <div class="card-body">
                             <h3 class="card-title text-primary mb-3">About Expandia</h3>
                             <div class="grid gap-2">
-                                <a href="about.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                <a href="about.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
                                     <span class="text-xl">👥</span>
                                     <div>
                                         <div class="font-semibold">About Us</div>
                                         <div class="text-sm text-base-content/60">Our Mission & Team</div>
                                     </div>
                                 </a>
-                                <a href="contact.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                <a href="contact.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
                                     <span class="text-xl">📞</span>
                                     <div>
                                         <div class="font-semibold">Contact Us</div>
@@ -123,12 +124,31 @@
                 </li>
             </ul>
         </div>
-        <div class="navbar-end">
-            <select id="language-selector" class="select select-bordered select-sm mr-4">
-                <option value="en">English</option>
-                <option value="tr">Türkçe</option>
-            </select>
-            <a href="contact.html" class="btn btn-primary buzz-button" data-i18n="header.get_started">Get Started</a>
+            <div class="navbar-end">
+                <div class="dropdown dropdown-end mr-4">
+                    <div tabindex="0" role="button" class="btn btn-ghost btn-sm">
+                        <span id="current-flag">🇺🇸</span>
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-32">
+                        <li>
+                            <a href="#" onclick="changeLanguage('en')" class="flex items-center gap-2">
+                                <span>🇺🇸</span>
+                                <span>English</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="changeLanguage('tr')" class="flex items-center gap-2">
+                                <span>🇹🇷</span>
+                                <span>Türkçe</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="contact.html" class="btn btn-primary buzz-button">Get Started</a>
+            </div>
         </div>
     </nav>
 
