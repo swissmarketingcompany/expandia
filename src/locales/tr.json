@@ -5,7 +5,7 @@
         "get_started": "Başlayın"
     },
     "footer": {
-        "newsletter_title": "Satış Bilgileriyle Güncel Kalın",
+        "newsletter_title": "Satış İçgörüleriyle Gündemi Yakalayın",
         "newsletter_subtitle": "En son satış stratejilerini ve sektör güncellemelerini alın.",
         "subscribe": "Abone Ol",
         "company_info_title": "Expandia",
@@ -32,12 +32,12 @@
         "solutions_title": "<span class='gradient-header'>Satışlarınızı Güçlendirmenin</span><br>İki Yolu",
         "solutions_subtitle": "İster eksiksiz bir satış ekibine, ister en yeni yapay zeka araçlarına ihtiyacınız olsun, gelirinizi ölçeklendirecek çözüme sahibiz.",
         "saas_title": "Hizmet Olarak Satış",
-        "saas_subtitle": "Eksiksiz potansiyel müşteri yaratma ve satış yönetimi çözümü. Potansiyel müşterileri bulmaktan anlaşmaları kapatmaya kadar her şeyi biz hallederiz.",
+        "saas_subtitle": "Eksiksiz potansiyel müşteri bulma ve satış yönetimi çözümü. Potansiyel müşterilerinizi bulup satışlarınızı yapana kadar tüm süreci biz hallederiz.",
         "saas_item_1": "Toplu kişiselleştirilmiş e-posta kampanyaları",
         "saas_item_2": "İletişim verilerinin sağlanması ve yönetimi",
         "saas_item_3": "Potansiyel müşteri arama ve niteleme",
         "saas_item_4": "Eksiksiz CRM yönetimi",
-        "saas_item_5": "Yeni potansiyel müşteri keşfi ve beslenmesi",
+        "saas_item_5": "Yeni potansiyel müşterilerin bulunması ve müşteri portföyüne katılması",
         "saas_cta": "Daha Fazla Bilgi Edinin",
         "ai_title": "Yapay Zeka Satış Çözümleri",
         "ai_subtitle": "Ekibinizin üretkenliğini artırmak için yapay zeka destekli satış araçları ve temsilcileri. Ek özel çözümlere sahip yetkili bir BuffSend satıcısıyız.",
@@ -57,7 +57,7 @@
         "why_us_4_title": "Yapay Zeka Destekli",
         "why_us_4_subtitle": "Satışların her yönünü optimize etmek için en son teknoloji.",
         "cta_title": "Satışlarınızı Hızlandırmaya Hazır mısınız?",
-        "cta_subtitle": "Satış çözümlerimizin daha fazla potansiyel müşteri yaratmanıza, daha fazla anlaşma yapmanıza ve gelirinizi daha hızlı ölçeklendirmenize nasıl yardımcı olabileceğini tartışalım.",
+        "cta_subtitle": "Satış çözümlerimizin size daha fazla potansiyel müşteri kazandırma, daha fazla satış anlaşması yapma ve gelirinizi daha hızlı ölçeklendirme konusunda nasıl yardımcı olabileceğini birlikte değerlendirelim.",
         "cta_button_1": "Ücretsiz Danışmanlık Alın",
         "cta_button_2": "Çözümleri Görüntüle"
     },
