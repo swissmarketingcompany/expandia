@@ -4786,14 +4786,14 @@ details.collapse summary::-webkit-details-marker{
   --tw-gradient-stops: var(--tw-gradient-from), var(--fallback-b1,oklch(var(--b1)/1)) var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
-.via-secondary{
-  --tw-gradient-to: var(--fallback-s,oklch(var(--s)/0))  var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--fallback-s,oklch(var(--s)/1)) var(--tw-gradient-via-position), var(--tw-gradient-to);
-}
-
 .via-orange-50{
   --tw-gradient-to: rgb(255 247 237 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #fff7ed var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
+.via-secondary{
+  --tw-gradient-to: var(--fallback-s,oklch(var(--s)/0))  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--fallback-s,oklch(var(--s)/1)) var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
 .to-accent{
@@ -4802,6 +4802,10 @@ details.collapse summary::-webkit-details-marker{
 
 .to-accent\/10{
   --tw-gradient-to: var(--fallback-a,oklch(var(--a)/0.1)) var(--tw-gradient-to-position);
+}
+
+.to-amber-50{
+  --tw-gradient-to: #fffbeb var(--tw-gradient-to-position);
 }
 
 .to-base-100{
@@ -4836,8 +4840,8 @@ details.collapse summary::-webkit-details-marker{
   --tw-gradient-to: var(--fallback-s,oklch(var(--s)/0.05)) var(--tw-gradient-to-position);
 }
 
-.to-amber-50{
-  --tw-gradient-to: #fffbeb var(--tw-gradient-to-position);
+.p-0{
+  padding: 0px;
 }
 
 .p-12{
@@ -4862,10 +4866,6 @@ details.collapse summary::-webkit-details-marker{
 
 .p-8{
   padding: 2rem;
-}
-
-.p-0{
-  padding: 0px;
 }
 
 .px-1{
@@ -5085,6 +5085,12 @@ details.collapse summary::-webkit-details-marker{
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-2xl{
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .shadow-lg{
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
@@ -5100,12 +5106,6 @@ details.collapse summary::-webkit-details-marker{
 .shadow-xl{
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-2xl{
-  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -5711,6 +5711,37 @@ body > footer.footer-gradient{
   justify-content: center;
   min-width: 180px;
   height: 80px;
+}
+
+.client-success-slide .text-lg{
+  border-radius: 0.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.client-success-slide .text-lg:hover{
+  border-color: var(--fallback-p,oklch(var(--p)/0.3));
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.client-success-slide .text-lg {
+  text-align: center;
+  min-width: 140px;
 }
 
 .client-success-logo{
