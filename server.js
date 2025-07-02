@@ -1,12 +1,181 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const nodemailer = require('nodemailer');
+const rateLimit = require('express-rate-limit');
+const helmet = require('helmet');
+const { body, validationResult } = require('express-validator');
 const app = express();
 
-// Get port from environment variable or default to 3000
-const PORT = process.env.PORT || 3000;
+// Get port from environment variable or default to 6161 for dev
+const PORT = process.env.PORT || 6161;
+
+// Security middleware
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            defaultSrc: ["'self'"],
+            styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+            fontSrc: ["'self'", "https://fonts.gstatic.com"],
+            scriptSrc: ["'self'", "'unsafe-inline'"],
+            imgSrc: ["'self'", "data:", "https:"],
+        },
+    },
+}));
+
+// Rate limiting for contact form
+const contactLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 5, // Limit each IP to 5 contact form submissions per windowMs
+    message: {
+        success: false,
+        error: 'Too many contact form submissions. Please try again in 15 minutes.'
+    },
+    standardHeaders: true,
+    legacyHeaders: false,
+});
+
+// General rate limiting
+const generalLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // Limit each IP to 100 requests per windowMs
+    standardHeaders: true,
+    legacyHeaders: false,
+});
+
+// Apply rate limiting
+app.use(generalLimiter);
+
+// Middleware
+app.use(cors({
+    origin: process.env.NODE_ENV === 'production' 
+        ? ['https://expandia.ch'] // Replace with your actual domain
+        : true, // Allow all origins in development
+    credentials: true
+}));
+app.use(bodyParser.json({ limit: '10mb' }));
+app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
 
 // Serve static files from the current directory
 app.use(express.static(__dirname));
+
+// Email configuration
+const createEmailTransporter = () => {
+    // For development, we'll use a simple Gmail configuration
+    // In production, you should use environment variables for credentials
+    return nodemailer.createTransporter({
+        service: 'gmail',
+        auth: {
+            user: process.env.EMAIL_USER || 'your-email@gmail.com', // Replace with your email
+            pass: process.env.EMAIL_PASS || 'your-app-password'     // Replace with your app password
+        }
+    });
+};
+
+// Input validation rules
+const contactValidation = [
+    body('name')
+        .trim()
+        .isLength({ min: 2, max: 100 })
+        .escape()
+        .withMessage('Name must be between 2 and 100 characters'),
+    body('company')
+        .trim()
+        .isLength({ min: 2, max: 100 })
+        .escape()
+        .withMessage('Company name must be between 2 and 100 characters'),
+    body('email')
+        .trim()
+        .isEmail()
+        .normalizeEmail()
+        .withMessage('Please enter a valid email address'),
+    body('service')
+        .optional()
+        .trim()
+        .isLength({ max: 200 })
+        .escape(),
+    body('message')
+        .optional()
+        .trim()
+        .isLength({ max: 2000 })
+        .escape()
+        .withMessage('Message cannot exceed 2000 characters')
+];
+
+// Contact form submission endpoint
+app.post('/api/contact', contactLimiter, contactValidation, async (req, res) => {
+    try {
+        // Check validation results
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({
+                success: false,
+                error: 'Please check your input: ' + errors.array().map(err => err.msg).join(', ')
+            });
+        }
+        
+        const { name, company, email, service, message, website } = req.body;
+        
+        // Honeypot check (if 'website' field is filled, it's likely a bot)
+        if (website) {
+            console.log(`🤖 Bot submission blocked from IP: ${req.ip}`);
+            return res.status(400).json({
+                success: false,
+                error: 'Submission failed. Please try again.'
+            });
+        }
+        
+        // Create email content
+        const emailContent = `
+        New Contact Form Submission from Expandia Website
+        
+        Name: ${name}
+        Company: ${company}
+        Email: ${email}
+        Service Interest: ${service || 'Not specified'}
+        
+        Message:
+        ${message || 'No additional message provided'}
+        
+        ---
+        Submitted from: ${req.get('host')}
+        User Agent: ${req.get('user-agent')}
+        IP: ${req.ip}
+        Time: ${new Date().toISOString()}
+        `;
+        
+        // For now, we'll just log the submission (you can enable email later)
+        console.log('=== NEW CONTACT FORM SUBMISSION ===');
+        console.log(emailContent);
+        console.log('=====================================');
+        
+        // Uncomment this section when you have email credentials configured:
+        /*
+        const transporter = createEmailTransporter();
+        
+        await transporter.sendMail({
+            from: process.env.EMAIL_USER || 'your-email@gmail.com',
+            to: 'hello@expandia.ch', // Your business email
+            subject: `New Contact Form Submission from ${name} (${company})`,
+            text: emailContent,
+            replyTo: email
+        });
+        */
+        
+        res.json({ 
+            success: true, 
+            message: 'Thank you for your submission! We\'ll get back to you within 24 hours.' 
+        });
+        
+    } catch (error) {
+        console.error('Contact form error:', error);
+        res.status(500).json({ 
+            success: false, 
+            error: 'Server error. Please try again later or contact us directly at hello@expandia.ch' 
+        });
+    }
+});
 
 // Handle all routes by serving the appropriate HTML file
 app.get('/', (req, res) => {

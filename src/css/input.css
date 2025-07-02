@@ -33,6 +33,15 @@
     @apply px-4 sm:px-6 lg:px-8;
   }
   
+  /* Form error styles */
+  .input-error {
+    @apply border-error focus:border-error;
+  }
+  
+  .input-error:focus {
+    @apply ring-error;
+  }
+  
   .buzz-hero {
     @apply bg-buzz-gradient min-h-screen flex items-center justify-center;
   }

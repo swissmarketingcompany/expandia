@@ -75,6 +75,12 @@ function buildPage(pageConfig) {
         .replace(/{{CASE_STUDIES_FOOTER_ACTIVE}}/g, pageConfig.name === 'case-studies' ? 'text-primary' : '')
         .replace(/{{BLOG_FOOTER_ACTIVE}}/g, pageConfig.name === 'blog' ? 'text-primary' : '');
     
+    // Add page-specific scripts
+    let pageSpecificScripts = '';
+    if (pageConfig.name === 'contact') {
+        pageSpecificScripts = '<script src="./src/js/contact.js"></script>';
+    }
+    
     // Build the final HTML
     const finalHTML = `<!DOCTYPE html>
 <html lang="en" data-theme="bumblebee">
@@ -96,6 +102,7 @@ ${processedFooter}
     <!-- JavaScript for smooth interactions -->
     <script src="./dist/js/index.js"></script>
     <script src="./src/js/i18n.js"></script>
+    ${pageSpecificScripts}
     <script>
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
