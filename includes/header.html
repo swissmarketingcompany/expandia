@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="bumblebee">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{PAGE_TITLE}} | Expandia - Sales Solutions Partner</title>
-    <meta name="description" content="{{PAGE_DESCRIPTION}}">
-    <link href="./dist/css/output.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
-</head>
-<body class="font-sans">
-    <!-- Navigation -->
+<!-- Navigation -->
     <nav class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto">
+        <div class="container mx-auto container-padding">
             <div class="navbar-start">
                 <div class="dropdown">
                     <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -25,8 +14,8 @@
                             <details>
                                 <summary class="font-semibold">Solutions</summary>
                                 <ul class="p-2">
-                                    <li><a href="solutions.html">Our Sales Solutions</a></li>
-                                    <li><a href="case-studies.html">Success Stories</a></li>
+                                    <li><a href="solutions.html" {{SOLUTIONS_MOBILE_ACTIVE}}>Our Sales Solutions</a></li>
+                                    <li><a href="case-studies.html" {{CASESTUDIES_MOBILE_ACTIVE}}>Success Stories</a></li>
                                 </ul>
                             </details>
                         </li>
@@ -34,8 +23,8 @@
                             <details>
                                 <summary class="font-semibold">Company</summary>
                                 <ul class="p-2">
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="about.html" {{ABOUT_MOBILE_ACTIVE}}>About Us</a></li>
+                                    <li><a href="contact.html" {{CONTACT_MOBILE_ACTIVE}}>Contact Us</a></li>
                                 </ul>
                             </details>
                         </li>
@@ -124,7 +113,7 @@
                 </li>
             </ul>
         </div>
-            <div class="navbar-end">
+            <div class="navbar-end" style="margin-right: 110px;">
                 <div class="dropdown dropdown-end mr-4">
                     <div tabindex="0" role="button" class="btn btn-ghost btn-sm">
                         <span id="current-flag">🇺🇸</span>
@@ -150,6 +139,4 @@
                 <a href="contact.html" class="btn btn-primary buzz-button">Get Started</a>
             </div>
         </div>
-    </nav>
-</body>
-</html> 
+    </nav> 

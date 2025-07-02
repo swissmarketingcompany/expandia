@@ -9,9 +9,9 @@
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
 </head>
 <body class="font-sans">
-    <!-- Navigation -->
+<!-- Navigation -->
     <nav class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto">
+        <div class="container mx-auto container-padding">
             <div class="navbar-start">
                 <div class="dropdown">
                     <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -25,8 +25,8 @@
                             <details>
                                 <summary class="font-semibold">Solutions</summary>
                                 <ul class="p-2">
-                                    <li><a href="solutions.html">Our Sales Solutions</a></li>
-                                    <li><a href="case-studies.html">Success Stories</a></li>
+                                    <li><a href="solutions.html" {{SOLUTIONS_MOBILE_ACTIVE}}>Our Sales Solutions</a></li>
+                                    <li><a href="case-studies.html" {{CASESTUDIES_MOBILE_ACTIVE}}>Success Stories</a></li>
                                 </ul>
                             </details>
                         </li>
@@ -34,8 +34,8 @@
                             <details>
                                 <summary class="font-semibold">Company</summary>
                                 <ul class="p-2">
-                                    <li><a href="about.html" class="text-primary font-semibold">About Us</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="about.html" {{ABOUT_MOBILE_ACTIVE}}>About Us</a></li>
+                                    <li><a href="contact.html" {{CONTACT_MOBILE_ACTIVE}}>Contact Us</a></li>
                                 </ul>
                             </details>
                         </li>
@@ -51,7 +51,7 @@
             <ul class="menu menu-horizontal px-1">
                 <!-- Solutions Mega Menu -->
                 <li class="dropdown dropdown-hover">
-                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold ">
                         Solutions
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -61,7 +61,7 @@
                         <div class="card-body" style="background-color: white !important;">
                             <h3 class="card-title text-primary mb-3">Sales Solutions & Services</h3>
                             <div class="grid gap-2">
-                                <a href="solutions.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
+                                <a href="solutions.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
                                     <span class="text-xl">📞</span>
                                     <div>
                                         <div class="font-semibold">Sales as a Service</div>
@@ -75,7 +75,7 @@
                                         <div class="text-sm text-base-content/60">BuffSend & AI Tools</div>
                                     </div>
                                 </a>
-                                <a href="case-studies.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
+                                <a href="case-studies.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
                                     <span class="text-xl">📈</span>
                                     <div>
                                         <div class="font-semibold">Success Stories</div>
@@ -106,7 +106,7 @@
                                         <div class="text-sm text-base-content/60">Our Mission & Team</div>
                                     </div>
                                 </a>
-                                <a href="contact.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
+                                <a href="contact.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors bg-primary/10 border border-primary/20">
                                     <span class="text-xl">📞</span>
                                     <div>
                                         <div class="font-semibold">Contact Us</div>
@@ -124,7 +124,7 @@
                 </li>
             </ul>
         </div>
-            <div class="navbar-end">
+            <div class="navbar-end" style="margin-right: 110px;">
                 <div class="dropdown dropdown-end mr-4">
                     <div tabindex="0" role="button" class="btn btn-ghost btn-sm">
                         <span id="current-flag">🇺🇸</span>
@@ -150,14 +150,8 @@
                 <a href="contact.html" class="btn btn-primary buzz-button">Get Started</a>
             </div>
         </div>
-    </nav>
+    </nav> 
 
-    <!-- MAIN CONTENT PLACEHOLDER -->
-    <!-- MAIN CONTENT PLACEHOLDER -->
-    <!-- MAIN CONTENT PLACEHOLDER -->
-    <!-- MAIN CONTENT PLACEHOLDER -->
-    <!-- MAIN CONTENT PLACEHOLDER -->
-    <!-- MAIN CONTENT PLACEHOLDER -->
     <!-- Hero Section -->
     <section class="section-spacing bg-gradient-to-br from-buzz-warm via-base-100 to-buzz-light">
         <div class="container mx-auto container-padding">
@@ -489,6 +483,7 @@
             </div>
         </div>
     </section>
+
     <!-- Footer -->
     <footer class="footer-gradient text-white">
         <!-- Newsletter Section -->
@@ -542,7 +537,7 @@
                 <div class="md:col-span-2">
                     <h4 class="text-lg font-bold mb-6" data-i18n="footer.quick_links_title">Solutions</h4>
                     <ul class="space-y-4 text-white/80">
-                        <li><a href="solutions.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                        <li><a href="solutions.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2 ">
                             <span class="footer-link-dot"></span>
                             Sales as a Service
                         </a></li>
@@ -565,17 +560,21 @@
                 <div class="md:col-span-2">
                     <h4 class="text-lg font-bold mb-6" data-i18n="footer.resources_title">Company</h4>
                     <ul class="space-y-4 text-white/80">
-                        <li><a href="case-studies.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                        <li><a href="case-studies.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2 ">
                             <span class="footer-link-dot"></span>
                             Success Stories
                         </a></li>
-                        <li><a href="about.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                        <li><a href="about.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2 text-primary">
                             <span class="footer-link-dot"></span>
                             About Us
                         </a></li>
-                        <li><a href="contact.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                        <li><a href="contact.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2 ">
                             <span class="footer-link-dot"></span>
                             Contact Us
+                        </a></li>
+                        <li><a href="blog/index.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2 ">
+                            <span class="footer-link-dot"></span>
+                            Blog
                         </a></li>
                     </ul>
                 </div>
@@ -593,7 +592,7 @@
                                 </svg>
                                 hello@expandia.ch
                             </a>
-                            <a href="#" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors" data-i18n="footer.schedule_call">
+                            <a href="https://meetings-eu1.hubspot.com/oocak" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors" data-i18n="footer.schedule_call">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                 </svg>
@@ -616,13 +615,44 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> 
 
+    <!-- JavaScript for smooth interactions -->
     <script src="./dist/js/index.js"></script>
-</body>
-</html>     <!-- JavaScript for translations and functionality -->
-    <script src="./dist/js/i18n.js"></script>
-    <script src="./dist/js/tools.js"></script>
-    <script src="./dist/js/index.js"></script>
+    <script src="./src/js/i18n.js"></script>
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation classes when elements come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all service cards and animated elements
+        document.querySelectorAll('.service-card, .buzz-card, .animate-slide-up').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>

@@ -1,6 +1,11 @@
+// Global function to set language
+let setLanguage;
+
 // Language change function for flag-based selector
 window.changeLanguage = (language) => {
-    setLanguage(language);
+    if (setLanguage) {
+        setLanguage(language);
+    }
     updateFlag(language);
 };
 
@@ -12,10 +17,13 @@ const updateFlag = (language) => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    const setLanguage = async (language) => {
+    setLanguage = async (language) => {
         try {
             console.log(`Fetching translations for ${language}...`);
-            const response = await fetch(`src/locales/${language}.json`);
+            // Adjust path for blog pages
+            const basePath = window.location.pathname.includes('/blog/') ? '../' : '';
+            const response = await fetch(`${basePath}src/locales/${language}.json`);
+            
             if (!response.ok) {
                 throw new Error(`Failed to fetch ${language} translations: ${response.status}`);
             }

@@ -8,7 +8,8 @@
     "dev": "node server.js",
     "build:css": "tailwindcss -i ./src/css/input.css -o ./dist/css/output.css",
     "build:js": "mkdir -p dist/js && cp src/js/*.js dist/js/",
-    "build": "npm run build:css && npm run build:js",
+    "build:pages": "node build-pages.js",
+    "build": "npm run build:css && npm run build:js && npm run build:pages",
     "heroku-postbuild": "npm run build",
     "test": "echo 'No tests specified'"
   },
