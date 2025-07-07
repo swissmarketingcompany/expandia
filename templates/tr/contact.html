@@ -1,0 +1,243 @@
+    <!-- Hero Section -->
+    <section class="min-h-screen bg-gradient-to-br from-buzz-warm via-base-100 to-buzz-light flex items-center pt-20">
+        <div class="container mx-auto container-padding">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16 animate-fade-in">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                        <span class="gradient-header">Let's Accelerate Your</span><br>
+                        <span class="text-base-content">Sales Growth</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-base-content/80 mb-8 leading-relaxed max-w-3xl mx-auto">
+                        Ready to scale your revenue? Book a free consultation and discover 
+                        how we can help you <span class="font-semibold text-primary">generate more leads and close more deals</span>.
+                    </p>
+                    <div class="flex items-center justify-center gap-6 text-sm text-base-content/60">
+                        <span class="flex items-center gap-2">
+                            <span class="w-3 h-3 bg-primary rounded-full"></span>
+                            Free Consultation
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <span class="w-3 h-3 bg-secondary rounded-full"></span>
+                            Custom Sales Strategy
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <span class="w-3 h-3 bg-accent rounded-full"></span>
+                            Fast Implementation
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div id="contact-form" class="max-w-2xl mx-auto">
+                    <div class="buzz-card p-8 lg:p-12">
+                        <div class="text-center mb-8">
+                            <h2 class="text-3xl font-bold mb-4 gradient-header">Get Your Sales Plan</h2>
+                            <p class="text-base-content/70">
+                                Tell us about your business and we'll create a custom sales strategy just for you.
+                            </p>
+                        </div>
+
+                        <form id="contact-form" class="space-y-6">
+                            <!-- Name and Company -->
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="form-control">
+                                    <label class="label">
+                                        <span class="label-text text-base-content font-medium">Your Name *</span>
+                                    </label>
+                                    <input type="text" name="name" placeholder="John Doe" class="input input-bordered input-primary buzz-input" required />
+                                </div>
+                                <div class="form-control">
+                                    <label class="label">
+                                        <span class="label-text text-base-content font-medium">Company *</span>
+                                    </label>
+                                    <input type="text" name="company" placeholder="Your Company Inc." class="input input-bordered input-primary buzz-input" required />
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text text-base-content font-medium">Email Address *</span>
+                                </label>
+                                <input type="email" name="email" placeholder="john@company.com" class="input input-bordered input-primary buzz-input" required />
+                            </div>
+
+                            <!-- What would you like help with -->
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text text-base-content font-medium">What would you like help with? *</span>
+                                </label>
+                                <select name="service" class="select select-bordered select-primary buzz-input" required>
+                                    <option disabled selected value="">Choose your main interest</option>
+                                    <option value="sales-as-service">Sales as a Service - Complete Outsourcing</option>
+                                    <option value="lead-generation">Lead Generation & Prospecting</option>
+                                    <option value="email-automation">Email Campaign Automation</option>
+                                    <option value="sales-ai">Sales AI Tools & Agents</option>
+                                    <option value="crm-management">CRM Management & Optimization</option>
+                                    <option value="sales-training">Sales Team Training & Support</option>
+                                    <option value="buffsend">BuffSend Email Platform Access</option>
+                                    <option value="consultation">Not sure - need consultation</option>
+                                </select>
+                            </div>
+
+                            <!-- Current Challenge -->
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text text-base-content font-medium">Describe your current challenge or goal</span>
+                                </label>
+                                <textarea name="message" class="textarea textarea-bordered textarea-primary buzz-input h-24" placeholder="Tell us about your sales challenges or revenue goals you want to achieve..."></textarea>
+                            </div>
+
+                            <!-- Honeypot field (hidden from users, catches bots) -->
+                            <div style="position: absolute; left: -9999px; opacity: 0;">
+                                <input type="text" name="website" tabindex="-1" autocomplete="off" />
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="pt-4">
+                                <button type="submit" class="credit-badge w-full py-4 text-white font-bold text-lg" id="submit-btn">
+                                    Get My Free Sales Consultation
+                                </button>
+                                <p class="text-center text-sm text-base-content/60 mt-4">
+                                    We'll respond within 24 hours with your personalized sales strategy
+                                </p>
+                            </div>
+
+                            <!-- Form Messages -->
+                            <div id="form-messages"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="section-spacing bg-base-100">
+        <div class="container mx-auto container-padding">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Email -->
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-primary/10 rounded-2xl flex items-center justify-center">
+                        <span class="text-2xl">📧</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Email Us</h3>
+                    <p class="text-base-content/70 mb-4">Get in touch directly</p>
+                    <a href="mailto:hello@expandia.ch" class="link link-primary font-medium">hello@expandia.ch</a>
+                </div>
+
+                <!-- LinkedIn -->
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-primary/10 rounded-2xl flex items-center justify-center">
+                        <span class="text-2xl">💼</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">LinkedIn</h3>
+                    <p class="text-base-content/70 mb-4">Connect with our team</p>
+                    <a href="https://www.linkedin.com/company/103769699" target="_blank" class="link link-primary font-medium">View Company Profile</a>
+                </div>
+
+                <!-- Schedule Call -->
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-primary/10 rounded-2xl flex items-center justify-center">
+                        <span class="text-2xl">📅</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Schedule Call</h3>
+                    <p class="text-base-content/70 mb-4">Book a time that works</p>
+                    <a href="https://meetings-eu1.hubspot.com/oocak" target="_blank" class="link link-primary font-medium">Book Meeting</a>
+                </div>
+            </div>
+
+            <!-- Addresses Section -->
+            <div class="mt-16 text-center">
+                <h3 class="text-2xl font-bold mb-8 gradient-header">Our Offices</h3>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Switzerland Office -->
+                    <div class="buzz-card p-6">
+                        <div class="w-12 h-12 mx-auto mb-4 bg-primary/10 rounded-xl flex items-center justify-center">
+                            <span class="text-xl">🇨🇭</span>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Switzerland Office</h4>
+                        <p class="text-base-content/70">
+                            Erlenstrasse 42<br>
+                            Basel, Switzerland
+                        </p>
+                    </div>
+
+                    <!-- Turkey Office -->
+                    <div class="buzz-card p-6">
+                        <div class="w-12 h-12 mx-auto mb-4 bg-primary/10 rounded-xl flex items-center justify-center">
+                            <span class="text-xl">🇹🇷</span>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Turkey Office</h4>
+                        <p class="text-base-content/70">
+                            Maslak, Buyukdere No:255<br>
+                            Sarıyer/Istanbul, Turkey
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-8 p-4 bg-base-200 rounded-xl max-w-md mx-auto">
+                    <p class="text-sm text-base-content/70">
+                        <span class="font-semibold">Part of Omay Group</span><br>
+                        A trusted partner in digital transformation
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-spacing bg-buzz-warm">
+        <div class="container mx-auto container-padding">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-header">Frequently Asked Questions</h2>
+                <p class="text-xl text-base-content/80 max-w-3xl mx-auto">
+                    Get answers to common questions about our sales solutions and process.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="join join-vertical w-full">
+                    <div class="collapse collapse-arrow join-item border border-base-300">
+                        <input type="radio" name="faq-accordion" checked="checked" />
+                        <div class="collapse-title text-xl font-medium">How quickly can we start seeing results?</div>
+                        <div class="collapse-content">
+                            <p>Most clients see increased lead generation within 2-4 weeks of starting. For Sales as a Service, we can begin outreach within 1-2 weeks after setup.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="collapse collapse-arrow join-item border border-base-300">
+                        <input type="radio" name="faq-accordion" />
+                        <div class="collapse-title text-xl font-medium">Do you work with our existing CRM and tools?</div>
+                        <div class="collapse-content">
+                            <p>Yes! We integrate seamlessly with popular CRMs like HubSpot, Salesforce, and Pipedrive. We enhance your current sales stack rather than replace it.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="collapse collapse-arrow join-item border border-base-300">
+                        <input type="radio" name="faq-accordion" />
+                        <div class="collapse-title text-xl font-medium">What if I'm not sure which solution I need?</div>
+                        <div class="collapse-content">
+                            <p>That's exactly what our free consultation is for! We'll analyze your current sales process and recommend whether Sales as a Service or Sales AI Solutions would be most effective for your business.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="collapse collapse-arrow join-item border border-base-300">
+                        <input type="radio" name="faq-accordion" />
+                        <div class="collapse-title text-xl font-medium">How do you ensure ROI on sales investment?</div>
+                        <div class="collapse-content">
+                            <p>We focus on measurable metrics like lead generation, conversion rates, and revenue impact. Most clients see 3-5x ROI within the first 6 months through increased sales and improved efficiency.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="collapse collapse-arrow join-item border border-base-300">
+                        <input type="radio" name="faq-accordion" />
+                        <div class="collapse-title text-xl font-medium">Do you provide ongoing support and optimization?</div>
+                        <div class="collapse-content">
+                            <p>Yes, we provide continuous optimization, performance monitoring, and scaling support to ensure your sales processes keep improving as your business grows.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

@@ -182,6 +182,32 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+// Handle Turkish routes
+app.get('/tr', (req, res) => {
+    res.sendFile(path.join(__dirname, 'tr', 'index.html'));
+});
+
+app.get('/tr/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'tr', 'index.html'));
+});
+
+app.get('/tr/:page', (req, res) => {
+    const page = req.params.page;
+    if (page.endsWith('.html')) {
+        res.sendFile(path.join(__dirname, 'tr', page), (err) => {
+            if (err) {
+                res.sendFile(path.join(__dirname, 'tr', 'index.html'));
+            }
+        });
+    } else {
+        res.sendFile(path.join(__dirname, 'tr', page + '.html'), (err) => {
+            if (err) {
+                res.sendFile(path.join(__dirname, 'tr', 'index.html'));
+            }
+        });
+    }
+});
+
 // Handle 404s by redirecting to home page
 app.get('*', (req, res) => {
     // Check if the requested file exists

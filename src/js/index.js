@@ -351,4 +351,44 @@ document.addEventListener('DOMContentLoaded', () => {
             carousel.scrollLeft = scrollLeft - walk;
         });
     }
-}); 
+});
+
+// Language switching functions
+function switchToEnglish() {
+    const currentPath = window.location.pathname;
+    if (currentPath.startsWith('/tr/')) {
+        window.location.href = currentPath.replace('/tr/', '/');
+    } else if (currentPath === '/tr' || currentPath === '/tr/index.html') {
+        window.location.href = '/';
+    } else {
+        // Already on English version
+        return;
+    }
+}
+
+function switchToTurkish() {
+    const currentPath = window.location.pathname;
+    if (currentPath.startsWith('/tr/')) {
+        // Already on Turkish version
+        return;
+    } else if (currentPath === '/' || currentPath === '/index.html') {
+        window.location.href = '/tr/';
+    } else {
+        window.location.href = '/tr' + currentPath;
+    }
+}
+
+// Update flag display based on current language
+function updateFlagDisplay() {
+    const currentFlag = document.getElementById('current-flag');
+    if (currentFlag) {
+        if (window.location.pathname.startsWith('/tr/')) {
+            currentFlag.textContent = '🇹🇷';
+        } else {
+            currentFlag.textContent = '🇺🇸';
+        }
+    }
+}
+
+// Call updateFlagDisplay when page loads
+document.addEventListener('DOMContentLoaded', updateFlagDisplay); 
