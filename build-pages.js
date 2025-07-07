@@ -66,64 +66,12 @@ ${pageFooter}
     <!-- JavaScript for smooth interactions -->
     <script src="${lang === 'tr' ? '../' : './'}dist/js/index.js"></script>
     <script>
-        // Make functions globally available
-        window.switchToEnglish = function() {
-            const currentPath = window.location.pathname;
-            if (currentPath.startsWith('/tr/')) {
-                window.location.href = currentPath.replace('/tr/', '/');
-            } else if (currentPath === '/tr' || currentPath === '/tr/index.html') {
-                window.location.href = '/';
+        // Update flag display based on current language
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentFlag = document.getElementById('current-flag');
+            if (currentFlag) {
+                currentFlag.textContent = '${lang === 'tr' ? '🇹🇷' : '🇺🇸'}';
             }
-        };
-        
-        window.switchToTurkish = function() {
-            const currentPath = window.location.pathname;
-            if (currentPath.startsWith('/tr/')) {
-                return;
-            } else if (currentPath === '/' || currentPath === '/index.html') {
-                window.location.href = '/tr/';
-            } else {
-                window.location.href = '/tr' + currentPath;
-            }
-        };
-        
-        // Update flag display
-        const currentFlag = document.getElementById('current-flag');
-        if (currentFlag) {
-            currentFlag.textContent = '${lang === 'tr' ? '🇹🇷' : '🇺🇸'}';
-        }
-        
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add animation classes when elements come into view
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all service cards and animated elements
-        document.querySelectorAll('.service-card, .buzz-card, .animate-slide-up').forEach(card => {
-            observer.observe(card);
         });
     </script>
 </body>

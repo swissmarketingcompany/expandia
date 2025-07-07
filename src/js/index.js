@@ -353,42 +353,45 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Language switching functions
-function switchToEnglish() {
-    const currentPath = window.location.pathname;
-    if (currentPath.startsWith('/tr/')) {
-        window.location.href = currentPath.replace('/tr/', '/');
-    } else if (currentPath === '/tr' || currentPath === '/tr/index.html') {
+// Global language switching functions - must be available immediately
+window.switchToEnglish = function() {
+    console.log('Switching to English, current path:', window.location.pathname);
+    const path = window.location.pathname;
+    
+    if (path.startsWith('/tr/')) {
+        // Remove /tr/ prefix
+        const newPath = path.replace('/tr/', '/');
+        window.location.href = newPath;
+    } else if (path === '/tr' || path === '/tr/') {
+        // Turkish home to English home
         window.location.href = '/';
     } else {
-        // Already on English version
-        return;
+        // Already on English
+        console.log('Already on English version');
     }
-}
+};
 
-function switchToTurkish() {
-    const currentPath = window.location.pathname;
-    if (currentPath.startsWith('/tr/')) {
-        // Already on Turkish version
+window.switchToTurkish = function() {
+    console.log('Switching to Turkish, current path:', window.location.pathname);
+    const path = window.location.pathname;
+    
+    if (path.startsWith('/tr/')) {
+        // Already on Turkish
+        console.log('Already on Turkish version');
         return;
-    } else if (currentPath === '/' || currentPath === '/index.html') {
+    } else if (path === '/' || path === '/index.html' || path === '') {
+        // English home to Turkish home
         window.location.href = '/tr/';
     } else {
-        window.location.href = '/tr' + currentPath;
+        // Add /tr/ prefix to other pages
+        window.location.href = '/tr' + path;
     }
-}
+};
 
-// Update flag display based on current language
-function updateFlagDisplay() {
-    const currentFlag = document.getElementById('current-flag');
-    if (currentFlag) {
-        if (window.location.pathname.startsWith('/tr/')) {
-            currentFlag.textContent = '🇹🇷';
-        } else {
-            currentFlag.textContent = '🇺🇸';
-        }
+// Update flag when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    const flag = document.getElementById('current-flag');
+    if (flag) {
+        flag.textContent = window.location.pathname.startsWith('/tr/') ? '🇹🇷' : '🇺🇸';
     }
-}
-
-// Call updateFlagDisplay when page loads
-document.addEventListener('DOMContentLoaded', updateFlagDisplay); 
+}); 
