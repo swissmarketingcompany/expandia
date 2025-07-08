@@ -6,13 +6,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Smooth scroll for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+            const href = this.getAttribute('href');
+            if (href && href !== '#') { // Fix: avoid invalid selector '#'
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             }
         });
     });
@@ -391,28 +394,29 @@ function switchToTurkish() {
 
 // Setup language switching event listeners
 function setupLanguageSwitching() {
-    const englishBtn = document.getElementById('switch-to-english');
-    const turkishBtn = document.getElementById('switch-to-turkish');
+    console.log('Setting up language switching...');
     
-    if (englishBtn) {
-        englishBtn.addEventListener('click', function(e) {
+    // Handle language switch clicks
+    document.querySelectorAll('.lang-switch').forEach(link => {
+        link.addEventListener('click', function(e) {
             e.preventDefault();
-            switchToEnglish();
+            const lang = this.getAttribute('data-lang');
+            console.log('Language switch clicked:', lang);
+            
+            if (lang === 'en') {
+                switchToEnglish();
+            } else if (lang === 'tr') {
+                switchToTurkish();
+            }
         });
-    }
-    
-    if (turkishBtn) {
-        turkishBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            switchToTurkish();
-        });
-    }
+    });
     
     // Update flag display
     const currentFlag = document.getElementById('current-flag');
     if (currentFlag) {
         const isOnTurkish = window.location.pathname.startsWith('/tr/') || window.location.pathname === '/tr';
         currentFlag.textContent = isOnTurkish ? '🇹🇷' : '🇺🇸';
+        console.log('Updated flag for path:', window.location.pathname, 'Turkish:', isOnTurkish);
     }
 }
 

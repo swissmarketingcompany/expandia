@@ -219,6 +219,23 @@ html {
     animation: scroll 60s linear infinite;
 }
 
+/* Specific tracks for three-row layout */
+.logo-track-row1 {
+    @apply flex items-center;
+    animation: scrollRow1 60s linear infinite;
+}
+
+.logo-track-row2 {
+    @apply flex items-center;
+    animation: scrollRow2 60s linear infinite;
+    animation-direction: reverse;
+}
+
+.logo-track-row3 {
+    @apply flex items-center;
+    animation: scrollRow3 60s linear infinite;
+}
+
 .logo-slide {
     @apply flex-none mx-8 flex items-center justify-center;
     min-width: 140px;
@@ -255,6 +272,36 @@ html {
     }
     100% {
         transform: translateX(calc(-156px * 14));
+    }
+}
+
+/* Row 1: 9 logos (client1, client2, client5-8, client10-12) */
+@keyframes scrollRow1 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-156px * 9));
+    }
+}
+
+/* Row 2: 9 logos (client13, client18-24, client26) */
+@keyframes scrollRow2 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-156px * 9));
+    }
+}
+
+/* Row 3: 10 items (client27-36) */
+@keyframes scrollRow3 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-156px * 10));
     }
 }
 

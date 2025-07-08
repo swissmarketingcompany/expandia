@@ -1,9 +1,34 @@
 const fs = require('fs');
 const path = require('path');
 
-// Read header and footer once
-const header = fs.readFileSync('includes/header.html', 'utf8');
+// Read navigation and footer once
+const navigation = fs.readFileSync('includes/header.html', 'utf8');
 const footer = fs.readFileSync('includes/footer.html', 'utf8');
+
+// HTML Document Template
+function createHTMLTemplate(lang = 'en') {
+    const basePath = lang === 'tr' ? '../' : './';
+    return `<!DOCTYPE html>
+<html lang="${lang}" data-theme="bumblebee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{PAGE_TITLE}} | Expandia - Sales Growth Partner</title>
+    <meta name="description" content="{{PAGE_DESCRIPTION}}">
+    <link href="${basePath}dist/css/output.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="${basePath}assets/favicon.ico">
+</head>
+<body class="font-sans">
+    {{NAVIGATION}}
+    
+    {{MAIN_CONTENT}}
+    
+    {{FOOTER}}
+    
+    <script src="${basePath}src/js/index.js"></script>
+</body>
+</html>`;
+}
 
 // Translation content for Turkish
 const turkishTranslations = {
@@ -69,6 +94,95 @@ function applyTurkishTranslations(content) {
     return translatedContent;
 }
 
+// Function to get page metadata
+function getPageMetadata(templateName, lang = 'en') {
+    const isturkish = lang === 'tr';
+    
+    const metadata = {
+        'index': {
+            title: isturkish ? 'Ana Sayfa' : 'Home',
+            description: isturkish 
+                ? 'Satış büyümesi ve gelir hızlandırma ortağınız. Kanıtlanmış stratejiler ve son teknoloji çözümlerle işletmenizi büyütün.'
+                : 'Your partner in sales growth and revenue acceleration. Scale your business with proven strategies and cutting-edge solutions.'
+        },
+        'solutions': {
+            title: isturkish ? 'Çözümler' : 'Solutions',
+            description: isturkish 
+                ? 'Satış operasyonlarınızı ölçeklendirin. Hizmet Olarak Satış ve AI destekli araçlarla daha fazla müşteri kazanın.'
+                : 'Scale your sales operations with Sales as a Service and AI-powered tools to win more customers.'
+        },
+        'about': {
+            title: isturkish ? 'Hakkımızda' : 'About',
+            description: isturkish 
+                ? 'Expandia ekibi ve satış büyümesi konusundaki uzmanlığımız hakkında bilgi edinin.'
+                : 'Learn about the Expandia team and our expertise in sales growth.'
+        },
+        'contact': {
+            title: isturkish ? 'İletişim' : 'Contact',
+            description: isturkish 
+                ? 'Ücretsiz danışmanlık için bizimle iletişime geçin ve satış büyümenizi hızlandırın.'
+                : 'Get in touch for a free consultation and accelerate your sales growth.'
+        },
+        'case-studies': {
+            title: isturkish ? 'Başarı Hikayeleri' : 'Case Studies',
+            description: isturkish 
+                ? 'Müşterilerimizin satış büyümesi başarı hikayelerini keşfedin.'
+                : 'Discover our clients\' sales growth success stories.'
+        }
+    };
+    
+    return metadata[templateName] || { title: 'Expandia', description: 'Sales Growth Partner' };
+}
+
+// Function to get active states for navigation
+function getActiveStates(pageType) {
+    const states = {
+        HOME_ACTIVE: '',
+        SOLUTIONS_ACTIVE: '',
+        COMPANY_ACTIVE: '',
+        SOLUTIONS_ITEM_ACTIVE: '',
+        CASESTUDIES_ITEM_ACTIVE: '',
+        ABOUT_ITEM_ACTIVE: '',
+        CONTACT_ITEM_ACTIVE: '',
+        // Mobile states
+        HOME_MOBILE_ACTIVE: '',
+        SOLUTIONS_MOBILE_ACTIVE: '',
+        CASESTUDIES_MOBILE_ACTIVE: '',
+        ABOUT_MOBILE_ACTIVE: '',
+        CONTACT_MOBILE_ACTIVE: ''
+    };
+
+    // Set active states based on current page
+    switch (pageType) {
+        case 'index':
+            states.HOME_ACTIVE = 'text-primary';
+            states.HOME_MOBILE_ACTIVE = 'class="text-primary font-semibold"';
+            break;
+        case 'solutions':
+            states.SOLUTIONS_ACTIVE = 'text-primary';
+            states.SOLUTIONS_ITEM_ACTIVE = 'bg-primary/10 border border-primary/20';
+            states.SOLUTIONS_MOBILE_ACTIVE = 'class="text-primary font-semibold"';
+            break;
+        case 'case-studies':
+            states.SOLUTIONS_ACTIVE = 'text-primary';
+            states.CASESTUDIES_ITEM_ACTIVE = 'bg-primary/10 border border-primary/20';
+            states.CASESTUDIES_MOBILE_ACTIVE = 'class="text-primary font-semibold"';
+            break;
+        case 'about':
+            states.COMPANY_ACTIVE = 'text-primary';
+            states.ABOUT_ITEM_ACTIVE = 'bg-primary/10 border border-primary/20';
+            states.ABOUT_MOBILE_ACTIVE = 'class="text-primary font-semibold"';
+            break;
+        case 'contact':
+            states.COMPANY_ACTIVE = 'text-primary';
+            states.CONTACT_ITEM_ACTIVE = 'bg-primary/10 border border-primary/20';
+            states.CONTACT_MOBILE_ACTIVE = 'class="text-primary font-semibold"';
+            break;
+    }
+
+    return states;
+}
+
 // Function to build a page
 function buildPage(templateName, outputName, lang = 'en') {
     const templatePath = lang === 'tr' ? `templates/tr/${templateName}.html` : `templates/${templateName}.html`;
@@ -80,36 +194,54 @@ function buildPage(templateName, outputName, lang = 'en') {
     
     let content = fs.readFileSync(templatePath, 'utf8');
     
-    // Update header for language switching
-    let pageHeader = header;
+    // Create the HTML document template
+    let htmlTemplate = createHTMLTemplate(lang);
+    let pageNavigation = navigation;
+    let pageFooter = footer;
     
     // Remove data-i18n attributes and keep the content as is
     content = content.replace(/\s*data-i18n="[^"]*"/g, '');
-    pageHeader = pageHeader.replace(/\s*data-i18n="[^"]*"/g, '');
-    let pageFooter = footer.replace(/\s*data-i18n="[^"]*"/g, '');
+    pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
+    pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
     
     // Apply template variables based on language
     const basePath = lang === 'tr' ? '../' : './';
     const logoPath = lang === 'tr' ? '../Expandia-main-logo-koyu-yesil.png' : 'Expandia-main-logo-koyu-yesil.png';
     
-    // Replace template variables in footer and header
+    // Replace template variables in navigation and footer
+    pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
+    pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
     pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
     pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
-    pageHeader = pageHeader.replace(/\{\{BASE_PATH\}\}/g, basePath);
-    pageHeader = pageHeader.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
+    
+    // Get active states for navigation
+    const activeStates = getActiveStates(templateName);
+    
+    // Replace navigation template variables
+    for (const [key, value] of Object.entries(activeStates)) {
+        pageNavigation = pageNavigation.replace(new RegExp(`\\{\\{${key}\\}\\}`, 'g'), value);
+    }
     
     // Apply Turkish translations if building Turkish version
     if (lang === 'tr') {
+        pageNavigation = applyTurkishTranslations(pageNavigation);
         pageFooter = applyTurkishTranslations(pageFooter);
-        pageHeader = applyTurkishTranslations(pageHeader);
+        content = applyTurkishTranslations(content);
     }
     
-    // Build the complete page
-    const fullPage = pageHeader + '\n' + content + '\n' + pageFooter;
+    // Insert navigation, content, and footer into HTML template
+    htmlTemplate = htmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
+    htmlTemplate = htmlTemplate.replace('{{MAIN_CONTENT}}', content);
+    htmlTemplate = htmlTemplate.replace('{{FOOTER}}', pageFooter);
+    
+    // Set page-specific metadata
+    const pageMetadata = getPageMetadata(templateName, lang);
+    htmlTemplate = htmlTemplate.replace('{{PAGE_TITLE}}', pageMetadata.title);
+    htmlTemplate = htmlTemplate.replace('{{PAGE_DESCRIPTION}}', pageMetadata.description);
     
     // Write to appropriate location
     const outputPath = lang === 'tr' ? `tr/${outputName}.html` : `${outputName}.html`;
-    fs.writeFileSync(outputPath, fullPage);
+    fs.writeFileSync(outputPath, htmlTemplate);
     console.log(`Built ${outputPath}`);
 }
 
