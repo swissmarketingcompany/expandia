@@ -5,6 +5,70 @@ const path = require('path');
 const header = fs.readFileSync('includes/header.html', 'utf8');
 const footer = fs.readFileSync('includes/footer.html', 'utf8');
 
+// Translation content for Turkish
+const turkishTranslations = {
+    // Navigation
+    'Get Started': 'Başlayın',
+    'Solutions': 'Çözümler',
+    'About': 'Hakkımızda',
+    'Contact': 'İletişim',
+    
+    // Footer Newsletter
+    'Stay Updated with Sales Insights': 'Satış Görüşleri ile Güncel Kalın',
+    'Get the latest sales strategies and industry updates.': 'En son satış stratejilerini ve sektör güncellemelerini alın.',
+    'Enter your email': 'E-postanızı girin',
+    'Subscribe': 'Abone Ol',
+    
+    // Footer Company Info
+    'Your Partner in Sales Growth and Revenue Acceleration. We help businesses scale their sales operations with proven strategies and cutting-edge solutions.': 'Satış Büyümesi ve Gelir Hızlandırma Ortağınız. İşletmelerin satış operasyonlarını kanıtlanmış stratejiler ve son teknoloji çözümlerle ölçeklendirmelerine yardımcı oluyoruz.',
+    
+    // Footer Links (removing duplicate)
+    'Sales as a Service': 'Hizmet Olarak Satış',
+    'Sales AI Solutions': 'Satış AI Çözümleri',
+    'Lead Generation': 'Potansiyel Müşteri Üretimi',
+    'BuffSend Platform': 'BuffSend Platformu',
+    'Company': 'Şirket',
+    'Success Stories': 'Başarı Hikayeleri',
+    'About Us': 'Hakkımızda',
+    'Contact Us': 'İletişim',
+    'Contact': 'İletişim',
+    // Handle partial translations
+    'Hakkımızda Us': 'Hakkımızda',
+    'İletişim Us': 'İletişim',
+    'Blog': 'Blog',
+    
+    // Footer Contact
+    'Get in Touch': 'İletişime Geçin',
+    'Ready to accelerate your sales growth? Let\'s discuss how we can help.': 'Satış büyümenizi hızlandırmaya hazır mısınız? Size nasıl yardımcı olabileceğimizi konuşalım.',
+    'Get Free Consultation': 'Ücretsiz Danışmanlık Alın',
+    'Schedule a Call': 'Toplantı Ayarlayın',
+    
+    // Footer Bottom
+    '&copy; 2024 Expandia. All rights reserved.': '&copy; 2024 Expandia. Tüm hakları saklıdır.',
+    'Privacy Policy': 'Gizlilik Politikası',
+    'Terms of Service': 'Hizmet Şartları',
+    'Cookie Policy': 'Çerez Politikası'
+};
+
+// Function to apply Turkish translations
+function applyTurkishTranslations(content) {
+    let translatedContent = content;
+    
+    // Apply all translations
+    for (const [english, turkish] of Object.entries(turkishTranslations)) {
+        // For longer phrases, do exact string replacement first
+        if (english.includes(' ')) {
+            translatedContent = translatedContent.replace(new RegExp(english.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), turkish);
+        } else {
+            // For single words, use word boundary regex to avoid partial matches
+            const regex = new RegExp(`\\b${english.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'g');
+            translatedContent = translatedContent.replace(regex, turkish);
+        }
+    }
+    
+    return translatedContent;
+}
+
 // Function to build a page
 function buildPage(templateName, outputName, lang = 'en') {
     const templatePath = lang === 'tr' ? `templates/tr/${templateName}.html` : `templates/${templateName}.html`;
@@ -24,98 +88,44 @@ function buildPage(templateName, outputName, lang = 'en') {
     pageHeader = pageHeader.replace(/\s*data-i18n="[^"]*"/g, '');
     let pageFooter = footer.replace(/\s*data-i18n="[^"]*"/g, '');
     
-    // Replace footer template variables based on language
+    // Apply template variables based on language
+    const basePath = lang === 'tr' ? '../' : './';
+    const logoPath = lang === 'tr' ? '../Expandia-main-logo-koyu-yesil.png' : 'Expandia-main-logo-koyu-yesil.png';
+    
+    // Replace template variables in footer and header
+    pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
+    pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
+    pageHeader = pageHeader.replace(/\{\{BASE_PATH\}\}/g, basePath);
+    pageHeader = pageHeader.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
+    
+    // Apply Turkish translations if building Turkish version
     if (lang === 'tr') {
-        // For Turkish version, links need to go up one level since we're in /tr/ directory
-        pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, '../');
-        pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, '../');
-        
-        // Update navigation links for Turkish version
-        pageHeader = pageHeader.replace(/href="([^"]*\.html)"/g, (match, href) => {
-            if (href.startsWith('http') || href.startsWith('#')) return match;
-            return `href="/tr/${href}"`;
-        });
-        
-        // Update content links for Turkish version
-        content = content.replace(/href="([^"]*\.html)"/g, (match, href) => {
-            if (href.startsWith('http') || href.startsWith('#')) return match;
-            return `href="/tr/${href}"`;
-        });
-        
-        // Fix image paths for Turkish version (they need to go up one level)
-        content = content.replace(/src="src\/assets\//g, 'src="../src/assets/');
-    } else {
-        // For English version, use relative paths from root
-        pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, '');
-        pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, '');
-        
-        // For English version, keep the same paths
-        // Images are served from root, so src/assets/ works
+        pageFooter = applyTurkishTranslations(pageFooter);
+        pageHeader = applyTurkishTranslations(pageHeader);
     }
     
-    // Combine header, content, and footer
-    const finalContent = `<!DOCTYPE html>
-<html lang="${lang}" data-theme="bumblebee">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expandia - Sales Growth & Revenue Acceleration Partner</title>
-    <meta name="description" content="We handle your sales operations and provide AI-powered tools to generate more leads, close more deals, and scale your revenue faster.">
-    <link href="${lang === 'tr' ? '../dist/css/output.css' : 'dist/css/output.css'}" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
-</head>
-<body class="font-sans">
-${pageHeader}
-
-${content}
-
-${pageFooter}
-
-    <!-- JavaScript for smooth interactions -->
-    <script src="${lang === 'tr' ? '../dist/js/index.js' : 'dist/js/index.js'}"></script>
-    <script>
-        // Update flag display based on current language
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentFlag = document.getElementById('current-flag');
-            if (currentFlag) {
-                currentFlag.textContent = '${lang === 'tr' ? '🇹🇷' : '🇺🇸'}';
-            }
-        });
-    </script>
-</body>
-</html>`;
+    // Build the complete page
+    const fullPage = pageHeader + '\n' + content + '\n' + pageFooter;
     
-    // Determine output path
-    const outputDir = lang === 'tr' ? 'tr' : '.';
-    const outputPath = path.join(outputDir, `${outputName}.html`);
-    
-    // Ensure output directory exists
-    if (lang === 'tr' && !fs.existsSync('tr')) {
-        fs.mkdirSync('tr', { recursive: true });
-    }
-    
-    // Write the file
-    fs.writeFileSync(outputPath, finalContent);
+    // Write to appropriate location
+    const outputPath = lang === 'tr' ? `tr/${outputName}.html` : `${outputName}.html`;
+    fs.writeFileSync(outputPath, fullPage);
     console.log(`Built ${outputPath}`);
 }
 
-// Build all pages for both languages
-const pages = [
-    { template: 'index', output: 'index' },
-    { template: 'about', output: 'about' },
-    { template: 'solutions', output: 'solutions' },
-    { template: 'contact', output: 'contact' },
-    { template: 'case-studies', output: 'case-studies' }
-];
-
+// Build all pages
 console.log('Building English pages...');
-pages.forEach(page => {
-    buildPage(page.template, page.output, 'en');
-});
+buildPage('index', 'index');
+buildPage('about', 'about');
+buildPage('solutions', 'solutions');
+buildPage('contact', 'contact');
+buildPage('case-studies', 'case-studies');
 
 console.log('Building Turkish pages...');
-pages.forEach(page => {
-    buildPage(page.template, page.output, 'tr');
-});
+buildPage('index', 'index', 'tr');
+buildPage('about', 'about', 'tr');
+buildPage('solutions', 'solutions', 'tr');
+buildPage('contact', 'contact', 'tr');
+buildPage('case-studies', 'case-studies', 'tr');
 
 console.log('Build complete!'); 
