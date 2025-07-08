@@ -24,7 +24,12 @@ function buildPage(templateName, outputName, lang = 'en') {
     pageHeader = pageHeader.replace(/\s*data-i18n="[^"]*"/g, '');
     let pageFooter = footer.replace(/\s*data-i18n="[^"]*"/g, '');
     
+    // Replace footer template variables based on language
     if (lang === 'tr') {
+        // For Turkish version, links need to go up one level since we're in /tr/ directory
+        pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, '../');
+        pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, '../');
+        
         // Update navigation links for Turkish version
         pageHeader = pageHeader.replace(/href="([^"]*\.html)"/g, (match, href) => {
             if (href.startsWith('http') || href.startsWith('#')) return match;
@@ -40,6 +45,10 @@ function buildPage(templateName, outputName, lang = 'en') {
         // Fix image paths for Turkish version (they need to go up one level)
         content = content.replace(/src="src\/assets\//g, 'src="../src/assets/');
     } else {
+        // For English version, use relative paths from root
+        pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, '');
+        pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, '');
+        
         // For English version, keep the same paths
         // Images are served from root, so src/assets/ works
     }
