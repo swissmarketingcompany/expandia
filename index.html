@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expandia - Sales Growth & Revenue Acceleration Partner</title>
     <meta name="description" content="We handle your sales operations and provide AI-powered tools to generate more leads, close more deals, and scale your revenue faster.">
-    <link href="./dist/css/output.css" rel="stylesheet">
+    <link href="dist/css/output.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
 </head>
 <body class="font-sans">
@@ -43,8 +43,8 @@
                 <span id="current-flag">🇺🇸</span>
             </div>
             <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-32">
-                <li><a href="javascript:void(0)" onclick="switchToEnglish()">🇺🇸 EN</a></li>
-                <li><a href="javascript:void(0)" onclick="window.location.href = '/tr' + window.location.pathname">🇹🇷 TR</a></li>
+                <li><a href="#" id="switch-to-english">🇺🇸 EN</a></li>
+                <li><a href="#" id="switch-to-turkish">🇹🇷 TR</a></li>
             </ul>
         </div>
         <a href="contact.html" class="btn btn-primary">Get Started</a>
@@ -1197,7 +1197,7 @@
     </footer> 
 
     <!-- JavaScript for smooth interactions -->
-    <script src="./dist/js/index.js"></script>
+    <script src="dist/js/index.js"></script>
     <script>
         // Update flag display based on current language
         document.addEventListener('DOMContentLoaded', function() {

@@ -285,6 +285,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize all functionality
     function init() {
+        setupLanguageSwitching();
         setupHeroButtons();
         setupSolutionButtons();
         setupCTAButtons();
@@ -353,8 +354,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Global language switching functions - must be available immediately
-window.switchToEnglish = function() {
+// Language switching functions
+function switchToEnglish() {
     console.log('Switching to English, current path:', window.location.pathname);
     const path = window.location.pathname;
     
@@ -369,9 +370,9 @@ window.switchToEnglish = function() {
         // Already on English
         console.log('Already on English version');
     }
-};
+}
 
-window.switchToTurkish = function() {
+function switchToTurkish() {
     console.log('Switching to Turkish, current path:', window.location.pathname);
     const path = window.location.pathname;
     
@@ -386,12 +387,32 @@ window.switchToTurkish = function() {
         // Add /tr/ prefix to other pages
         window.location.href = '/tr' + path;
     }
-};
+}
 
-// Update flag when page loads
-document.addEventListener('DOMContentLoaded', function() {
-    const flag = document.getElementById('current-flag');
-    if (flag) {
-        flag.textContent = window.location.pathname.startsWith('/tr/') ? '🇹🇷' : '🇺🇸';
+// Setup language switching event listeners
+function setupLanguageSwitching() {
+    const englishBtn = document.getElementById('switch-to-english');
+    const turkishBtn = document.getElementById('switch-to-turkish');
+    
+    if (englishBtn) {
+        englishBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            switchToEnglish();
+        });
     }
-}); 
+    
+    if (turkishBtn) {
+        turkishBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            switchToTurkish();
+        });
+    }
+    
+    // Update flag display
+    const currentFlag = document.getElementById('current-flag');
+    if (currentFlag) {
+        const isOnTurkish = window.location.pathname.startsWith('/tr/') || window.location.pathname === '/tr';
+        currentFlag.textContent = isOnTurkish ? '🇹🇷' : '🇺🇸';
+    }
+}
+

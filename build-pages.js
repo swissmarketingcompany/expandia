@@ -31,18 +31,17 @@ function buildPage(templateName, outputName, lang = 'en') {
             return `href="/tr/${href}"`;
         });
         
-        // Update language switcher functions
-        pageHeader = pageHeader.replace(/onclick="switchToEnglish\(\)"/g, `onclick="window.location.href = window.location.pathname.replace('/tr/', '/')"`);
-        pageHeader = pageHeader.replace(/onclick="switchToTurkish\(\)"/g, `onclick="window.location.href = window.location.pathname.replace('/tr/', '/')"`);
-        
         // Update content links for Turkish version
         content = content.replace(/href="([^"]*\.html)"/g, (match, href) => {
             if (href.startsWith('http') || href.startsWith('#')) return match;
             return `href="/tr/${href}"`;
         });
+        
+        // Fix image paths for Turkish version (they need to go up one level)
+        content = content.replace(/src="src\/assets\//g, 'src="../src/assets/');
     } else {
-        // For English, update language switcher to point to Turkish
-        pageHeader = pageHeader.replace(/onclick="switchToTurkish\(\)"/g, `onclick="window.location.href = '/tr' + window.location.pathname"`);
+        // For English version, keep the same paths
+        // Images are served from root, so src/assets/ works
     }
     
     // Combine header, content, and footer
@@ -53,7 +52,7 @@ function buildPage(templateName, outputName, lang = 'en') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expandia - Sales Growth & Revenue Acceleration Partner</title>
     <meta name="description" content="We handle your sales operations and provide AI-powered tools to generate more leads, close more deals, and scale your revenue faster.">
-    <link href="${lang === 'tr' ? '../' : './'}dist/css/output.css" rel="stylesheet">
+    <link href="${lang === 'tr' ? '../dist/css/output.css' : 'dist/css/output.css'}" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
 </head>
 <body class="font-sans">
@@ -64,7 +63,7 @@ ${content}
 ${pageFooter}
 
     <!-- JavaScript for smooth interactions -->
-    <script src="${lang === 'tr' ? '../' : './'}dist/js/index.js"></script>
+    <script src="${lang === 'tr' ? '../dist/js/index.js' : 'dist/js/index.js'}"></script>
     <script>
         // Update flag display based on current language
         document.addEventListener('DOMContentLoaded', function() {
