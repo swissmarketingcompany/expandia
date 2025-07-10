@@ -143,6 +143,7 @@ function getActiveStates(pageType) {
         HOME_ACTIVE: '',
         SOLUTIONS_ACTIVE: '',
         COMPANY_ACTIVE: '',
+        BLOG_ACTIVE: '',
         SOLUTIONS_ITEM_ACTIVE: '',
         CASESTUDIES_ITEM_ACTIVE: '',
         ABOUT_ITEM_ACTIVE: '',
@@ -152,7 +153,8 @@ function getActiveStates(pageType) {
         SOLUTIONS_MOBILE_ACTIVE: '',
         CASESTUDIES_MOBILE_ACTIVE: '',
         ABOUT_MOBILE_ACTIVE: '',
-        CONTACT_MOBILE_ACTIVE: ''
+        CONTACT_MOBILE_ACTIVE: '',
+        BLOG_MOBILE_ACTIVE: ''
     };
 
     // Set active states based on current page

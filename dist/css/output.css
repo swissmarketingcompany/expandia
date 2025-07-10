@@ -4281,10 +4281,6 @@ details.collapse summary::-webkit-details-marker{
   margin-right: 1rem;
 }
 
-.mr-auto{
-  margin-right: auto;
-}
-
 .mt-1{
   margin-top: 0.25rem;
 }
