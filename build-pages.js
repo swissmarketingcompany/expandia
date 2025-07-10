@@ -8,6 +8,7 @@ const footer = fs.readFileSync('includes/footer.html', 'utf8');
 // HTML Document Template
 function createHTMLTemplate(lang = 'en') {
     const basePath = lang === 'tr' ? '../' : './';
+    
     return `<!DOCTYPE html>
 <html lang="${lang}" data-theme="bumblebee">
 <head>
@@ -16,7 +17,9 @@ function createHTMLTemplate(lang = 'en') {
     <title>{{PAGE_TITLE}} | Expandia - Sales Growth Partner</title>
     <meta name="description" content="{{PAGE_DESCRIPTION}}">
     <link href="${basePath}dist/css/output.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="${basePath}assets/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="${basePath}favicon.ico">
+    <link rel="icon" type="image/png" href="${basePath}favicon.png">
+    <link rel="apple-touch-icon" href="${basePath}favicon.png">
 </head>
 <body class="font-sans">
     {{NAVIGATION}}

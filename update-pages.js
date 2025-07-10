@@ -10,7 +10,9 @@ const headerTemplate = `<!DOCTYPE html>
     <title>{{PAGE_TITLE}} | Expandia - AI Solution Partner</title>
     <meta name="description" content="{{PAGE_DESCRIPTION}}">
     <link href="./dist/css/output.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+            <link rel="icon" type="image/x-icon" href="/favicon.ico">
+        <link rel="icon" type="image/png" href="/favicon.png">
+        <link rel="apple-touch-icon" href="/favicon.png">
 </head>
 <body class="font-sans">
     <!-- Navigation -->
