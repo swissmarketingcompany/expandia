@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bumblebee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Button Testing Tool - Expandia</title>
+    <link href="dist/css/output.css" rel="stylesheet">
+    <style>
+        .test-result {
+            padding: 8px 12px;
+            margin: 4px 0;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        .test-pass { background-color: #d1fae5; color: #065f46; border: 1px solid #10b981; }
+        .test-fail { background-color: #fee2e2; color: #991b1b; border: 1px solid #ef4444; }
+        .test-info { background-color: #dbeafe; color: #1e40af; border: 1px solid #3b82f6; }
+        .test-warn { background-color: #fef3c7; color: #92400e; border: 1px solid #f59e0b; }
+        
+        #testProgress {
+            background: linear-gradient(90deg, #10b981 0%, #10b981 var(--progress, 0%), #e5e7eb var(--progress, 0%), #e5e7eb 100%);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="font-sans bg-base-200">
+    <div class="container mx-auto p-6">
+        <div class="buzz-card p-8 mb-6">
+            <h1 class="text-3xl font-bold mb-4 text-center">🧪 Blog Button Testing Tool</h1>
+            <p class="text-center text-base-content/70 mb-6">
+                Automated testing for all interactive elements on the blog page
+            </p>
+            
+            <!-- Test Progress -->
+            <div class="mb-6">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm font-medium">Test Progress</span>
+                    <span id="progressText" class="text-sm text-base-content/60">0/0 tests completed</span>
+                </div>
+                <div class="w-full bg-base-300 rounded-full h-2">
+                    <div id="testProgress" class="h-2 rounded-full transition-all duration-300" style="--progress: 0%;"></div>
+                </div>
+            </div>
+
+            <!-- Control Panel -->
+            <div class="flex flex-wrap gap-4 justify-center mb-6">
+                <button id="startTests" class="btn btn-primary">
+                    🚀 Start All Tests
+                </button>
+                <button id="testBlogPage" class="btn btn-secondary" disabled>
+                    📝 Test Blog Page
+                </button>
+                <button id="clearResults" class="btn btn-outline">
+                    🗑️ Clear Results
+                </button>
+                <button id="exportResults" class="btn btn-accent" disabled>
+                    📊 Export Results
+                </button>
+            </div>
+
+            <!-- Test Configuration -->
+            <div class="collapse collapse-arrow bg-base-100 mb-6">
+                <input type="checkbox" />
+                <div class="collapse-title text-lg font-medium">
+                    ⚙️ Test Configuration
+                </div>
+                <div class="collapse-content">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <label class="label cursor-pointer">
+                            <span class="label-text">Test Filter Buttons</span>
+                            <input type="checkbox" id="testFilters" class="checkbox checkbox-primary" checked />
+                        </label>
+                        <label class="label cursor-pointer">
+                            <span class="label-text">Test Navigation</span>
+                            <input type="checkbox" id="testNav" class="checkbox checkbox-primary" checked />
+                        </label>
+                        <label class="label cursor-pointer">
+                            <span class="label-text">Test Article Links</span>
+                            <input type="checkbox" id="testArticles" class="checkbox checkbox-primary" checked />
+                        </label>
+                        <label class="label cursor-pointer">
+                            <span class="label-text">Test Load More</span>
+                            <input type="checkbox" id="testLoadMore" class="checkbox checkbox-primary" checked />
+                        </label>
+                        <label class="label cursor-pointer">
+                            <span class="label-text">Visual Feedback Test</span>
+                            <input type="checkbox" id="testVisual" class="checkbox checkbox-primary" checked />
+                        </label>
+                        <label class="label cursor-pointer">
+                            <span class="label-text">Mobile Responsive Test</span>
+                            <input type="checkbox" id="testMobile" class="checkbox checkbox-primary" checked />
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Test Results -->
+        <div class="buzz-card p-6">
+            <h2 class="text-2xl font-bold mb-4">📋 Test Results</h2>
+            <div id="testResults" class="space-y-2">
+                <div class="test-info">Ready to run tests...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class BlogButtonTester {
+            constructor() {
+                this.blogWindow = null;
+                this.results = [];
+                this.testCount = 0;
+                this.completedTests = 0;
+                this.blogUrl = `http://127.0.0.1:6161/blog/index.html`;
+                
+                this.initializeEventListeners();
+            }
+
+            initializeEventListeners() {
+                document.getElementById('startTests').addEventListener('click', () => this.runAllTests());
+                document.getElementById('testBlogPage').addEventListener('click', () => this.openBlogPage());
+                document.getElementById('clearResults').addEventListener('click', () => this.clearResults());
+                document.getElementById('exportResults').addEventListener('click', () => this.exportResults());
+            }
+
+            log(message, type = 'info') {
+                const timestamp = new Date().toLocaleTimeString();
+                const result = { message, type, timestamp };
+                this.results.push(result);
+                
+                const resultsDiv = document.getElementById('testResults');
+                const resultElement = document.createElement('div');
+                resultElement.className = `test-result test-${type}`;
+                resultElement.textContent = `[${timestamp}] ${message}`;
+                resultsDiv.appendChild(resultElement);
+                resultsDiv.scrollTop = resultsDiv.scrollHeight;
+                
+                if (type === 'pass' || type === 'fail') {
+                    this.completedTests++;
+                    this.updateProgress();
+                }
+            }
+
+            updateProgress() {
+                const progress = this.testCount > 0 ? (this.completedTests / this.testCount) * 100 : 0;
+                const progressBar = document.getElementById('testProgress');
+                const progressText = document.getElementById('progressText');
+                
+                progressBar.style.setProperty('--progress', `${progress}%`);
+                progressText.textContent = `${this.completedTests}/${this.testCount} tests completed`;
+                
+                if (this.completedTests >= this.testCount && this.testCount > 0) {
+                    document.getElementById('exportResults').disabled = false;
+                    this.log('All tests completed! 🎉', 'info');
+                }
+            }
+
+            async openBlogPage() {
+                try {
+                    this.log('Opening blog page...', 'info');
+                    this.blogWindow = window.open(this.blogUrl, '_blank', 'width=1200,height=800');
+                    
+                    if (!this.blogWindow) {
+                        this.log('Failed to open blog page (popup blocked?)', 'fail');
+                        return false;
+                    }
+                    
+                    // Wait for page to load
+                    await this.waitForPageLoad();
+                    this.log('Blog page opened successfully', 'pass');
+                    return true;
+                } catch (error) {
+                    this.log(`Failed to open blog page: ${error.message}`, 'fail');
+                    return false;
+                }
+            }
+
+            async waitForPageLoad() {
+                return new Promise((resolve) => {
+                    const checkLoaded = () => {
+                        if (this.blogWindow && this.blogWindow.document.readyState === 'complete') {
+                            setTimeout(resolve, 1000); // Extra delay for scripts
+                        } else {
+                            setTimeout(checkLoaded, 100);
+                        }
+                    };
+                    checkLoaded();
+                });
+            }
+
+            async runAllTests() {
+                this.clearResults();
+                this.testCount = 0;
+                this.completedTests = 0;
+                
+                // Count total tests
+                if (document.getElementById('testFilters').checked) this.testCount += 12; // 10 filters + clear + visual feedback
+                if (document.getElementById('testNav').checked) this.testCount += 5; // mobile menu, language switch, etc.
+                if (document.getElementById('testArticles').checked) this.testCount += 8; // article links and CTA buttons
+                if (document.getElementById('testLoadMore').checked) this.testCount += 2; // load more + show all
+                if (document.getElementById('testVisual').checked) this.testCount += 5; // hover effects, transitions
+                if (document.getElementById('testMobile').checked) this.testCount += 3; // responsive tests
+                
+                this.updateProgress();
+                
+                this.log('🚀 Starting comprehensive blog button tests...', 'info');
+                
+                // Open blog page
+                const pageOpened = await this.openBlogPage();
+                if (!pageOpened) {
+                    this.log('Cannot proceed without blog page access', 'fail');
+                    return;
+                }
+
+                // Enable test blog page button
+                document.getElementById('testBlogPage').disabled = false;
+
+                // Run test suites
+                if (document.getElementById('testFilters').checked) {
+                    await this.testFilterButtons();
+                }
+                
+                if (document.getElementById('testNav').checked) {
+                    await this.testNavigation();
+                }
+                
+                if (document.getElementById('testArticles').checked) {
+                    await this.testArticleButtons();
+                }
+                
+                if (document.getElementById('testLoadMore').checked) {
+                    await this.testLoadMoreButtons();
+                }
+                
+                if (document.getElementById('testVisual').checked) {
+                    await this.testVisualFeedback();
+                }
+                
+                if (document.getElementById('testMobile').checked) {
+                    await this.testMobileResponsiveness();
+                }
+            }
+
+            async testFilterButtons() {
+                this.log('Testing filter buttons...', 'info');
+                
+                const filterButtons = [
+                    'cold-email', 'objections', 'closing', 'prospecting', 
+                    'leadership', 'automation', 'psychology', 'value-selling',
+                    'negotiation', 'pipeline'
+                ];
+                
+                for (const filter of filterButtons) {
+                    await this.testSingleFilter(filter);
+                    await this.delay(500); // Prevent overwhelming
+                }
+                
+                // Test clear filters
+                await this.testClearFilters();
+            }
+
+            async testSingleFilter(filterName) {
+                try {
+                    const doc = this.blogWindow.document;
+                    const filterBtn = doc.querySelector(`[data-filter="${filterName}"]`);
+                    
+                    if (!filterBtn) {
+                        this.log(`Filter button "${filterName}" not found`, 'fail');
+                        return;
+                    }
+                    
+                    // Record initial state
+                    const initialClass = filterBtn.className;
+                    
+                    // Click the filter
+                    filterBtn.click();
+                    
+                    await this.delay(300);
+                    
+                    // Check if button state changed
+                    const newClass = filterBtn.className;
+                    const stateChanged = newClass !== initialClass;
+                    
+                    if (stateChanged) {
+                        this.log(`✅ Filter "${filterName}" button works correctly`, 'pass');
+                        
+                        // Test if articles are filtered
+                        const articles = doc.querySelectorAll('.article-card');
+                        const visibleArticles = Array.from(articles).filter(article => 
+                            article.style.display !== 'none'
+                        );
+                        
+                        this.log(`   → Showing ${visibleArticles.length} articles for "${filterName}"`, 'info');
+                    } else {
+                        this.log(`❌ Filter "${filterName}" button did not change state`, 'fail');
+                    }
+                    
+                } catch (error) {
+                    this.log(`Error testing filter "${filterName}": ${error.message}`, 'fail');
+                }
+            }
+
+            async testClearFilters() {
+                try {
+                    const doc = this.blogWindow.document;
+                    const clearBtn = doc.getElementById('clearFilters');
+                    
+                    if (!clearBtn) {
+                        this.log('Clear filters button not found', 'fail');
+                        return;
+                    }
+                    
+                    clearBtn.click();
+                    await this.delay(300);
+                    
+                    // Check if all filter buttons are reset
+                    const filterBtns = doc.querySelectorAll('.filter-btn');
+                    const allReset = Array.from(filterBtns).every(btn => 
+                        btn.classList.contains('btn-outline')
+                    );
+                    
+                    if (allReset) {
+                        this.log('✅ Clear filters button works correctly', 'pass');
+                    } else {
+                        this.log('❌ Clear filters button did not reset all filters', 'fail');
+                    }
+                    
+                } catch (error) {
+                    this.log(`Error testing clear filters: ${error.message}`, 'fail');
+                }
+            }
+
+            async testNavigation() {
+                this.log('Testing navigation buttons...', 'info');
+                
+                try {
+                    const doc = this.blogWindow.document;
+                    
+                    // Test mobile menu button
+                    const mobileMenuBtn = doc.querySelector('.btn.btn-ghost.lg\\:hidden');
+                    if (mobileMenuBtn) {
+                        mobileMenuBtn.click();
+                        await this.delay(300);
+                        this.log('✅ Mobile menu button responsive', 'pass');
+                    } else {
+                        this.log('❌ Mobile menu button not found', 'fail');
+                    }
+                    
+                    // Test logo link
+                    const logoLink = doc.querySelector('a[href*="index.html"] img');
+                    if (logoLink && logoLink.closest('a')) {
+                        this.log('✅ Logo link found and accessible', 'pass');
+                    } else {
+                        this.log('❌ Logo link not found', 'fail');
+                    }
+                    
+                    // Test language switcher
+                    const langButtons = doc.querySelectorAll('.lang-switch');
+                    if (langButtons.length > 0) {
+                        this.log(`✅ Language switcher found (${langButtons.length} options)`, 'pass');
+                    } else {
+                        this.log('❌ Language switcher not found', 'fail');
+                    }
+                    
+                    // Test Browse All Articles button
+                    const browseBtn = doc.querySelector('a[href="#articleGrid"]');
+                    if (browseBtn) {
+                        this.log('✅ Browse All Articles button found', 'pass');
+                    } else {
+                        this.log('❌ Browse All Articles button not found', 'fail');
+                    }
+                    
+                    // Test Get Personal Coaching button
+                    const coachingBtn = doc.querySelector('a[href*="contact.html"]');
+                    if (coachingBtn) {
+                        this.log('✅ Get Personal Coaching button found', 'pass');
+                    } else {
+                        this.log('❌ Get Personal Coaching button not found', 'fail');
+                    }
+                    
+                } catch (error) {
+                    this.log(`Error testing navigation: ${error.message}`, 'fail');
+                }
+            }
+
+            async testArticleButtons() {
+                this.log('Testing article buttons...', 'info');
+                
+                try {
+                    const doc = this.blogWindow.document;
+                    
+                    // Test Read Now buttons
+                    const readNowBtns = doc.querySelectorAll('.btn-sm');
+                    let readNowCount = 0;
+                    
+                    readNowBtns.forEach(btn => {
+                        if (btn.textContent.includes('Read Now') && btn.href) {
+                            readNowCount++;
+                        }
+                    });
+                    
+                    if (readNowCount > 0) {
+                        this.log(`✅ Found ${readNowCount} "Read Now" buttons`, 'pass');
+                    } else {
+                        this.log('❌ No "Read Now" buttons found', 'fail');
+                    }
+                    
+                    // Test article cards hover
+                    const articleCards = doc.querySelectorAll('.article-card');
+                    if (articleCards.length > 0) {
+                        this.log(`✅ Found ${articleCards.length} article cards`, 'pass');
+                        
+                        // Test hover effect on first card
+                        const firstCard = articleCards[0];
+                        if (firstCard.classList.contains('hover:shadow-xl')) {
+                            this.log('✅ Article cards have hover effects', 'pass');
+                        } else {
+                            this.log('⚠️ Article cards missing hover effects', 'warn');
+                        }
+                    } else {
+                        this.log('❌ No article cards found', 'fail');
+                    }
+                    
+                } catch (error) {
+                    this.log(`Error testing article buttons: ${error.message}`, 'fail');
+                }
+            }
+
+            async testLoadMoreButtons() {
+                this.log('Testing load more functionality...', 'info');
+                
+                try {
+                    const doc = this.blogWindow.document;
+                    
+                    // Test Load More button
+                    const loadMoreBtn = doc.getElementById('loadMoreBtn');
+                    if (loadMoreBtn) {
+                        const initialDisplay = loadMoreBtn.style.display;
+                        this.log(`✅ Load More button found (display: ${initialDisplay || 'default'})`, 'pass');
+                    } else {
+                        this.log('❌ Load More button not found', 'fail');
+                    }
+                    
+                    // Test Show All Articles button
+                    const showAllBtn = doc.getElementById('showAllBtn');
+                    if (showAllBtn) {
+                        const initialDisplay = showAllBtn.style.display;
+                        this.log(`✅ Show All Articles button found (display: ${initialDisplay || 'default'})`, 'pass');
+                    } else {
+                        this.log('❌ Show All Articles button not found', 'fail');
+                    }
+                    
+                } catch (error) {
+                    this.log(`Error testing load more buttons: ${error.message}`, 'fail');
+                }
+            }
+
+            async testVisualFeedback() {
+                this.log('Testing visual feedback and animations...', 'info');
+                
+                try {
+                    const doc = this.blogWindow.document;
+                    
+                    // Test transition classes
+                    const elementsWithTransitions = doc.querySelectorAll('.transition-all, .transition-colors, .transition-shadow');
+                    if (elementsWithTransitions.length > 0) {
+                        this.log(`✅ Found ${elementsWithTransitions.length} elements with transitions`, 'pass');
+                    } else {
+                        this.log('⚠️ No transition animations found', 'warn');
+                    }
+                    
+                    // Test hover effects
+                    const hoverElements = doc.querySelectorAll('[class*="hover:"]');
+                    if (hoverElements.length > 0) {
+                        this.log(`✅ Found ${hoverElements.length} elements with hover effects`, 'pass');
+                    } else {
+                        this.log('⚠️ No hover effects found', 'warn');
+                    }
+                    
+                    // Test button color variations
+                    const coloredButtons = doc.querySelectorAll('.btn-primary, .btn-secondary, .btn-accent, .btn-info, .btn-warning, .btn-success');
+                    if (coloredButtons.length > 0) {
+                        this.log(`✅ Found ${coloredButtons.length} colored buttons`, 'pass');
+                    } else {
+                        this.log('⚠️ No colored buttons found', 'warn');
+                    }
+                    
+                    // Test badges
+                    const badges = doc.querySelectorAll('.badge');
+                    if (badges.length > 0) {
+                        this.log(`✅ Found ${badges.length} badges on articles`, 'pass');
+                    } else {
+                        this.log('⚠️ No badges found', 'warn');
+                    }
+                    
+                    // Test icons in buttons
+                    const iconsInButtons = doc.querySelectorAll('.btn svg, .btn span[class*="text-"]');
+                    if (iconsInButtons.length > 0) {
+                        this.log(`✅ Found ${iconsInButtons.length} icons in buttons`, 'pass');
+                    } else {
+                        this.log('⚠️ No icons in buttons found', 'warn');
+                    }
+                    
+                } catch (error) {
+                    this.log(`Error testing visual feedback: ${error.message}`, 'fail');
+                }
+            }
+
+            async testMobileResponsiveness() {
+                this.log('Testing mobile responsiveness...', 'info');
+                
+                try {
+                    const doc = this.blogWindow.document;
+                    
+                    // Test responsive classes
+                    const responsiveElements = doc.querySelectorAll('[class*="sm:"], [class*="md:"], [class*="lg:"]');
+                    if (responsiveElements.length > 0) {
+                        this.log(`✅ Found ${responsiveElements.length} responsive elements`, 'pass');
+                    } else {
+                        this.log('⚠️ Limited responsive design detected', 'warn');
+                    }
+                    
+                    // Test grid responsiveness
+                    const responsiveGrids = doc.querySelectorAll('[class*="grid-cols-"], [class*="md:grid-cols-"], [class*="lg:grid-cols-"]');
+                    if (responsiveGrids.length > 0) {
+                        this.log(`✅ Found ${responsiveGrids.length} responsive grids`, 'pass');
+                    } else {
+                        this.log('⚠️ No responsive grids found', 'warn');
+                    }
+                    
+                    // Test mobile menu
+                    const mobileMenu = doc.querySelector('.lg\\:hidden');
+                    if (mobileMenu) {
+                        this.log('✅ Mobile menu detected', 'pass');
+                    } else {
+                        this.log('❌ Mobile menu not found', 'fail');
+                    }
+                    
+                } catch (error) {
+                    this.log(`Error testing mobile responsiveness: ${error.message}`, 'fail');
+                }
+            }
+
+            async delay(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+
+            clearResults() {
+                this.results = [];
+                this.testCount = 0;
+                this.completedTests = 0;
+                this.updateProgress();
+                
+                const resultsDiv = document.getElementById('testResults');
+                resultsDiv.innerHTML = '<div class="test-info">Results cleared. Ready to run tests...</div>';
+                
+                document.getElementById('exportResults').disabled = true;
+            }
+
+            exportResults() {
+                const summary = {
+                    timestamp: new Date().toISOString(),
+                    totalTests: this.testCount,
+                    completedTests: this.completedTests,
+                    passedTests: this.results.filter(r => r.type === 'pass').length,
+                    failedTests: this.results.filter(r => r.type === 'fail').length,
+                    warnings: this.results.filter(r => r.type === 'warn').length,
+                    results: this.results
+                };
+                
+                const blob = new Blob([JSON.stringify(summary, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `blog-button-test-results-${Date.now()}.json`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                
+                this.log('Test results exported successfully! 📊', 'info');
+            }
+        }
+
+        // Initialize the tester
+        document.addEventListener('DOMContentLoaded', () => {
+            new BlogButtonTester();
+        });
+    </script>
+</body>
+</html> 

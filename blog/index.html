@@ -272,12 +272,12 @@
                 <div class="animate-fade-in-delay-3">
                     <p class="text-base-content/60 mb-6">👇 Start with our most popular guides</p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <a href="#articleGrid" class="btn btn-primary btn-lg px-8">
+                        <button id="browseAllBtn" class="btn btn-primary btn-lg px-8">
                             Browse All Articles
                             <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                             </svg>
-                        </a>
+                        </button>
                         <a href="../contact.html" class="btn btn-outline btn-lg px-8">
                             Get Personal Coaching
                         </a>
@@ -674,10 +674,12 @@
 
         // Search functionality
         const searchInput = document.getElementById('searchInput');
-        searchInput.addEventListener('input', function() {
-            searchTerm = this.value.toLowerCase();
-            filterAndDisplayArticles();
-        });
+        if (searchInput) {
+            searchInput.addEventListener('input', function() {
+                searchTerm = this.value.toLowerCase();
+                filterAndDisplayArticles();
+            });
+        }
 
         // Filter buttons
         document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -724,12 +726,61 @@
         document.getElementById('loadMoreBtn').addEventListener('click', function() {
             displayedCount += 9; // Load 9 more articles at a time
             filterAndDisplayArticles();
+            
+            // Scroll to the newly loaded articles
+            setTimeout(() => {
+                const articles = document.querySelectorAll('.article-card');
+                if (articles.length > 9) {
+                    articles[9].scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 100);
         });
 
         // Show all functionality
         document.getElementById('showAllBtn').addEventListener('click', function() {
             displayedCount = allArticles.length; // Show all articles
             filterAndDisplayArticles();
+            
+            // Update button text to reflect current state
+            setTimeout(() => {
+                const loadMoreBtn = document.getElementById('loadMoreBtn');
+                const showAllBtn = document.getElementById('showAllBtn');
+                if (loadMoreBtn) loadMoreBtn.style.display = 'none';
+                if (showAllBtn) showAllBtn.style.display = 'none';
+            }, 100);
+        });
+
+        // Browse All Articles button functionality
+        document.getElementById('browseAllBtn').addEventListener('click', function() {
+            // Reset any active filters
+            currentFilter = 'all';
+            searchTerm = '';
+            displayedCount = allArticles.length; // Show ALL fucking articles
+            
+            // Clear all filter button states
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('btn-primary', 'btn-secondary', 'btn-accent', 'btn-info', 'btn-warning', 'btn-success', 'btn-error');
+                btn.classList.add('btn-outline');
+            });
+            
+            // Update and display all articles
+            filterAndDisplayArticles();
+            
+            // Scroll to articles section
+            setTimeout(() => {
+                document.querySelector('#articleGrid').scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+            }, 100);
+            
+            // Hide load more buttons since we're showing everything
+            setTimeout(() => {
+                const loadMoreBtn = document.getElementById('loadMoreBtn');
+                const showAllBtn = document.getElementById('showAllBtn');
+                if (loadMoreBtn) loadMoreBtn.style.display = 'none';
+                if (showAllBtn) showAllBtn.style.display = 'none';
+            }, 200);
         });
 
         function filterAndDisplayArticles() {
@@ -762,11 +813,26 @@
             const showAllBtn = document.getElementById('showAllBtn');
 
             if (filteredArticles.length <= displayedCount) {
-                loadMoreBtn.style.display = 'none';
-                showAllBtn.style.display = 'none'; // Hide show all if all are shown
+                if (loadMoreBtn) loadMoreBtn.style.display = 'none';
+                if (showAllBtn) showAllBtn.style.display = 'none';
             } else {
-                loadMoreBtn.style.display = 'block';
-                showAllBtn.style.display = 'block'; // Show show all if more than 9 are shown
+                if (loadMoreBtn) {
+                    loadMoreBtn.style.display = 'inline-block';
+                    // Update button text with remaining count
+                    const remaining = filteredArticles.length - displayedCount;
+                    const showMoreText = remaining <= 9 ? `Show Last ${remaining} Articles` : 'Show More Articles';
+                    loadMoreBtn.innerHTML = `
+                        ${showMoreText}
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    `;
+                }
+                if (showAllBtn) {
+                    showAllBtn.style.display = 'inline-block';
+                    // Update show all button text with total count
+                    showAllBtn.innerHTML = `Show All Articles (${filteredArticles.length})`;
+                }
             }
         }
 
@@ -801,6 +867,9 @@
                 }
             });
         });
+
+        // Initialize the page with all articles
+        filterAndDisplayArticles();
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
