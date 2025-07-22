@@ -39,13 +39,15 @@ const contactLimiter = rateLimit({
 // General rate limiting
 const generalLimiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100, // Limit each IP to 100 requests per windowMs
+    max: process.env.NODE_ENV === 'production' ? 100 : 1000, // Higher limit for development
     standardHeaders: true,
     legacyHeaders: false,
 });
 
-// Apply rate limiting
-app.use(generalLimiter);
+// Apply rate limiting only in production for general requests
+if (process.env.NODE_ENV === 'production') {
+    app.use(generalLimiter);
+}
 
 // Middleware
 app.use(cors({
@@ -180,6 +182,17 @@ app.post('/api/contact', contactLimiter, contactValidation, async (req, res) => 
 // Handle all routes by serving the appropriate HTML file
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+// Serve sitemap and robots.txt
+app.get('/sitemap.xml', (req, res) => {
+    res.type('application/xml');
+    res.sendFile(path.join(__dirname, 'sitemap.xml'));
+});
+
+app.get('/robots.txt', (req, res) => {
+    res.type('text/plain');
+    res.sendFile(path.join(__dirname, 'robots.txt'));
 });
 
 // Handle Turkish routes

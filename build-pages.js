@@ -40,6 +40,26 @@ const turkishTranslations = {
     'Solutions': 'Çözümler',
     'About': 'Hakkımızda',
     'Contact': 'İletişim',
+    'Special Services': 'Özel Hizmetler',
+    'Lead Generation': 'Potansiyel Müşteri Üretimi',
+    'Sales Development': 'Satış Geliştirme',
+    'Marketing': 'Pazarlama',
+    'International': 'Uluslararası',
+    'Local Markets': 'Yerel Pazarlar',
+    'Ready to accelerate your sales growth?': 'Satış büyümenizi hızlandırmaya hazır mısınız?',
+    'Let\'s discuss your specific needs': 'Özel ihtiyaçlarınızı konuşalım',
+    'Get Free Consultation →': 'Ücretsiz Danışmanlık Alın →',
+    'Comprehensive sales growth solutions for your business': 'İşletmeniz için kapsamlı satış büyüme çözümleri',
+    'Complete sales management and operations outsourcing': 'Komple satış yönetimi ve operasyon dış kaynak kullanımı',
+    'BuffSend platform and AI-powered sales tools': 'BuffSend platformu ve AI destekli satış araçları',
+    'Real results from companies we\'ve helped': 'Yardım ettiğimiz şirketlerden gerçek sonuçlar',
+    'Istanbul Services': 'İstanbul Hizmetleri',
+    'Lead Generation & Sales': 'Potansiyel Müşteri Üretimi & Satış',
+    'Marketing & Outreach': 'Pazarlama & İletişim',
+    'International Expansion': 'Uluslararası Genişleme',
+    'Cold Email Agency': 'Soğuk E-posta Ajansı',
+    'Outsourced Sales Team': 'Dış Kaynaklı Satış Ekibi',
+    'Overseas Sales Consulting': 'Yurt Dışı Satış Danışmanlığı',
     
     // Footer Newsletter
     'Stay Updated with Sales Insights': 'Satış Görüşleri ile Güncel Kalın',
@@ -212,12 +232,15 @@ function buildPage(templateName, outputName, lang = 'en') {
     // Apply template variables based on language
     const basePath = lang === 'tr' ? '../' : './';
     const logoPath = lang === 'tr' ? '../Expandia-main-logo-koyu-yesil.png' : 'Expandia-main-logo-koyu-yesil.png';
+    const turkishServicesPath = lang === 'tr' ? './' : './tr/';
     
     // Replace template variables in navigation and footer
     pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
     pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
+    pageNavigation = pageNavigation.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
     pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
     pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
+    pageFooter = pageFooter.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
     
     // Get active states for navigation
     const activeStates = getActiveStates(templateName);
