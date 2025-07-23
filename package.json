@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
+    "serve": "node server.js",
     "build:css": "tailwindcss -i ./src/css/input.css -o ./dist/css/output.css",
     "build:js": "mkdir -p dist/js && cp src/js/*.js dist/js/",
     "build:pages": "node build-pages.js",

@@ -16,11 +16,16 @@ app.use(helmet({
     contentSecurityPolicy: {
         directives: {
             defaultSrc: ["'self'"],
-            styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+            styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "https://*.hsforms.net", "https://*.hsforms.com"],
             fontSrc: ["'self'", "https://fonts.gstatic.com"],
-            scriptSrc: ["'self'", "'unsafe-inline'", "https://www.googletagmanager.com", "https://www.google-analytics.com"],
-            imgSrc: ["'self'", "data:", "https:", "https://www.google-analytics.com"],
-            connectSrc: ["'self'", "https://www.google-analytics.com", "https://analytics.google.com", "https://stats.g.doubleclick.net"],
+            scriptSrc: ["'self'", "'unsafe-inline'", "https://www.googletagmanager.com", "https://www.google-analytics.com", 
+                        "https://*.hsforms.net", "https://*.hubspot.com", "https://*.hs-scripts.com", "https://*.hs-banner.com", 
+                        "https://*.hscollectedforms.net", "https://*.hs-analytics.net"],
+            imgSrc: ["'self'", "data:", "https:", "https://www.google-analytics.com", "https://*.hubspot.com"],
+            connectSrc: ["'self'", "https://www.google-analytics.com", "https://analytics.google.com", "https://stats.g.doubleclick.net",
+                        "https://*.hubspot.com", "https://*.hubapi.com", "https://*.hsforms.com"],
+            frameSrc: ["'self'", "https://*.hsforms.com", "https://*.hubspot.com"],
+            formAction: ["'self'", "https://*.hsforms.com", "https://*.hubspot.com"],
         },
     },
 }));
