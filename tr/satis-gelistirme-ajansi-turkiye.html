@@ -140,7 +140,7 @@
                             <summary class="font-semibold">Şirket</summary>
                             <ul class="p-2">
                                 <li><a href="../about.html" >Hakkımızda</a></li>
-                                <li><a href="../İletişim.html" >İletişim</a></li>
+                                <li><a href="../contact.html" >İletişim</a></li>
                             </ul>
                         </details>
                     </li>
@@ -266,7 +266,7 @@
                                     <p class="text-sm font-semibold text-base-content">Satış büyümenizi hızlandırmaya hazır mısınız?</p>
                                     <p class="text-xs text-base-content/60">Özel ihtiyaçlarınızı konuşalım</p>
                                 </div>
-                                <a href="../İletişim.html" class="btn btn-primary btn-sm buzz-button">
+                                <a href="../contact.html" class="btn btn-primary btn-sm buzz-button">
                                     Ücretsiz Danışmanlık Alın →
                                 </a>
                             </div>
@@ -294,7 +294,7 @@
                                     <div class="text-sm text-base-content/60">Misyonumuz</div>
                                 </div>
                             </a>
-                            <a href="../İletişim.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                            <a href="../contact.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
                                 <span class="text-xl">📞</span>
                                 <div>
                                     <div class="font-semibold">İletişim</div>
@@ -873,17 +873,34 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-16">
-        <div class="container mx-auto container-padding">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Footer -->
+    <footer class="footer-gradient text-white">
+        <!-- Newsletter Section -->
+        <div class="border-b border-white/10">
+            <div class="container mx-auto container-padding py-12">
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+                    <div class="text-center lg:text-left">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-2">Satış Görüşleri ile Güncel Kalın</h3>
+                        <p class="text-white/80">En son satış stratejilerini ve sektör güncellemelerini alın.</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+                        <input type="email" placeholder="E-postanızı girin" class="footer-newsletter-input">
+                        <button class="btn btn-primary">Abone Ol</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Footer Content -->
+        <div class="container mx-auto container-padding py-16">
+            <div class="grid md:grid-cols-12 gap-8 mb-16">
                 <!-- Şirket Info -->
-                <div class="md:col-span-1">
+                <div class="md:col-span-4">
                     <div class="flex items-center gap-3 mb-6">
                         <img src="../Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 w-auto brightness-0 invert">
                     </div>
                     <p class="text-white/80 mb-6 text-lg">
-                        Satış büyümesi ve gelir Sanatışında ortağınız. İşletmelerin kanıtlanmış stratejiler ve son teknoloji çözümlerle satış operasyonlarını ölçeklendirmelerine yardımcı oluyoruz.
+                        Satış Büyümesi ve Gelir Hızlandırma Ortağınız. İşletmelerin satış operasyonlarını kanıtlanmış stratejiler ve son teknoloji çözümlerle ölçeklendirmelerine yardımcı oluyoruz.
                     </p>
                     <div class="flex gap-4">
                         <a href="https://www.linkedin.com/company/expandia-ch/" class="footer-social-icon group" target="_blank" rel="noopener noreferrer">
@@ -895,70 +912,87 @@
                 </div>
 
                 <!-- Quick Links -->
-                <div class="md:col-span-1">
-                    <h3 class="text-xl font-bold mb-6">Hızlı Bağlantılar</h3>
-                    <ul class="space-y-3">
-                        <li><a href="index.html" class="text-white/80 hover:text-white transition-colors">Ana Sayfa</a></li>
-                        <li><a href="solutions.html" class="text-white/80 hover:text-white transition-colors">Çözümler</a></li>
-                        <li><a href="case-studies.html" class="text-white/80 hover:text-white transition-colors">Vaka Çalışmaları</a></li>
-                        <li><a href="about.html" class="text-white/80 hover:text-white transition-colors">Hakkımızda</a></li>
-                        <li><a href="blog/index.html" class="text-white/80 hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="İletişim.html" class="text-white/80 hover:text-white transition-colors">İletişim</a></li>
+                <div class="md:col-span-2">
+                    <h4 class="text-lg font-bold mb-6">Çözümler</h4>
+                    <ul class="space-y-4 text-white/80">
+                        <li><a href="../solutions.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Hizmet Olarak Satış
+                        </a></li>
+                        <li><a href="../solutions.html#ai-solutions" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Sales AI Çözümler
+                        </a></li>
+                        <li><a href="../solutions.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Potansiyel Müşteri Üretimi
+                        </a></li>
+                        <li><a href="../solutions.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            BuffSend Platformu
+                        </a></li>
                     </ul>
                 </div>
 
-                <!-- Hizmets -->
-                <div class="md:col-span-1">
-                    <h3 class="text-xl font-bold mb-6">Hizmetlerimiz</h3>
-                    <ul class="space-y-3">
-                        <li><a href="b2b-Potansiyel Müşteri-generation-ajansi.html" class="text-white/80 hover:text-white transition-colors">B2B Potansiyel Müşteri Üretimi</a></li>
-                        <li><a href="Potansiyel Müşteri-generation-hizmeti.html" class="text-white/80 hover:text-white transition-colors">Potansiyel Müşteri Üretimi Hizmeti</a></li>
-                        <li><a href="potansiyel-musteri-bulma-ajansi.html" class="text-white/80 hover:text-white transition-colors">Potansiyel Müşteri Bulma</a></li>
-                        <li><a href="satis-gelistirme-ajansi.html" class="text-white/80 hover:text-white transition-colors">Satış Geliştirme</a></li>
-                        <li><a href="randevu-ayarlama-hizmeti.html" class="text-white/80 hover:text-white transition-colors">Randevu Ayarlama</a></li>
-                        <li><a href="dis-kaynakli-satis-ekibi.html" class="text-white/80 hover:text-white transition-colors">Dış Kaynaklı Satış Ekibi</a></li>
-                        <li><a href="outbound-pazarlama-ajansi.html" class="text-white/80 hover:text-white transition-colors">Outbound Pazarlama</a></li>
-                        <li><a href="soguk-e-posta-ajansi.html" class="text-white/80 hover:text-white transition-colors">Soğuk E-posta</a></li>
-                        <li><a href="ihracat-pazarlama-danismanligi.html" class="text-white/80 hover:text-white transition-colors">İhracat Pazarlama</a></li>
-                        <li><a href="uluslararasi-pazar-girisi-danismanligi.html" class="text-white/80 hover:text-white transition-colors">Uluslararası Pazar Girişi</a></li>
-                        <li><a href="distributor-bulma-hizmeti.html" class="text-white/80 hover:text-white transition-colors">Distribütör Bulma</a></li>
-                        <li><a href="yurt-disi-satis-danismanligi.html" class="text-white/80 hover:text-white transition-colors">Yurt Dışı Satış</a></li>
-                        <li><a href="avrupa-pazarina-giris.html" class="text-white/80 hover:text-white transition-colors">Avrupa Pazarına Giriş</a></li>
-                        <li><a href="Potansiyel Müşteri-generation-ajansi-istanbul.html" class="text-white/80 hover:text-white transition-colors">İstanbul Potansiyel Müşteri Üretimi</a></li>
-                        <li><a href="satis-gelistirme-ajansi-turkiye.html" class="text-white/80 hover:text-white transition-colors">Türkiye Satış Geliştirme</a></li>
+                <!-- Resources -->
+                <div class="md:col-span-2">
+                    <h4 class="text-lg font-bold mb-6">Şirket</h4>
+                    <ul class="space-y-4 text-white/80">
+                        <li><a href="../case-studies.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Başarı Hikayeleri
+                        </a></li>
+                        <li><a href="../about.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Hakkımızda
+                        </a></li>
+                        <li><a href="../contact.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            İletişim
+                        </a></li>
+                        <li><a href="../blog/" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Sales University
+                        </a></li>
                     </ul>
                 </div>
 
-                <!-- İletişim Info -->
-                <div class="md:col-span-1">
-                    <h3 class="text-xl font-bold mb-6">İletişim</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-stSanat gap-3">
-                            <svg class="w-5 h-5 text-primary mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            </svg>
-                            <div>
-                                <p class="text-white/80">Zurich, Switzerland</p>
-                                <p class="text-white/60 text-sm">Türkiye operasyonları destekleniyor</p>
-                            </div>
-                        </div>
-                        <div class="flex items-stSanat gap-3">
-                            <svg class="w-5 h-5 text-primary mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                            </svg>
-                            <div>
-                                <p class="text-white/80">hello@expandia.ch</p>
-                            </div>
+                <!-- İletişim -->
+                <div class="md:col-span-4">
+                    <h4 class="text-lg font-bold mb-6">İletişime Geçin</h4>
+                    <div class="footer-contact-card">
+                        <p class="text-white/80 mb-6">Satış büyümenizi hızlandırmaya hazır mısınız? Let's discuss how we can help.</p>
+                        <a href="../contact.html" class="btn btn-primary w-full mb-6">Ücretsiz Danışmanlık Alın</a>
+                        <div class="space-y-4">
+                            <a href="mailto:hello@expandia.ch" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                                hello@expandia.ch
+                            </a>
+                            <a href="https://meetings-eu1.hubspot.com/oocak" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                                Toplantı Ayarlayın
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="border-t border-white/20 mt-12 pt-8 text-center">
-                <p class="text-white/60">&copy; 2024 Expandia. Tüm hakları saklıdır.</p>
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/60">
+                <div class="text-sm">
+                    &copy; 2024 Expandia. Tüm hakları saklıdır.
+                </div>
+                <div class="flex gap-6 text-sm">
+                    <a href="#" class="hover:text-primary transition-colors">Gizlilik Politikası</a>
+                    <a href="#" class="hover:text-primary transition-colors">Hizmet Şartları</a>
+                    <a href="#" class="hover:text-primary transition-colors">Çerez Politikası</a>
+                </div>
             </div>
         </div>
-    </footer>
+    </footer> 
 </body>
 </html> 

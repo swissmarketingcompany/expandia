@@ -20,6 +20,16 @@ function createHTMLTemplate(lang = 'en') {
     <link rel="icon" type="image/x-icon" href="${basePath}favicon.ico">
     <link rel="icon" type="image/png" href="${basePath}favicon.png">
     <link rel="apple-touch-icon" href="${basePath}favicon.png">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XY2B6K4R6Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XY2B6K4R6Q');
+    </script>
 </head>
 <body class="font-sans">
     {{NAVIGATION}}
