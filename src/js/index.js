@@ -363,12 +363,27 @@ function switchToEnglish() {
     const path = window.location.pathname;
     
     if (path.startsWith('/tr/')) {
-        // Remove /tr/ prefix
-        const newPath = path.replace('/tr/', '/');
-        window.location.href = newPath;
+        // Map Turkish pages to English equivalents
+        const englishPath = path.replace('/tr/', '/');
+        
+        // Handle specific page mappings
+        if (englishPath === '/index.html' || englishPath === '/') {
+            window.location.href = '/index.html';
+        } else if (englishPath === '/about.html') {
+            window.location.href = '/about.html';
+        } else if (englishPath === '/solutions.html') {
+            window.location.href = '/solutions.html';
+        } else if (englishPath === '/contact.html') {
+            window.location.href = '/contact.html';
+        } else if (englishPath === '/case-studies.html') {
+            window.location.href = '/case-studies.html';
+        } else {
+            // For other Turkish pages, redirect to solutions page
+            window.location.href = '/solutions.html';
+        }
     } else if (path === '/tr' || path === '/tr/') {
         // Turkish home to English home
-        window.location.href = '/';
+        window.location.href = '/index.html';
     } else {
         // Already on English
         console.log('Already on English version');
@@ -383,12 +398,22 @@ function switchToTurkish() {
         // Already on Turkish
         console.log('Already on Turkish version');
         return;
-    } else if (path === '/' || path === '/index.html' || path === '') {
-        // English home to Turkish home
-        window.location.href = '/tr/';
     } else {
-        // Add /tr/ prefix to other pages
-        window.location.href = '/tr' + path;
+        // Map English pages to Turkish equivalents
+        if (path === '/' || path === '/index.html' || path === '') {
+            window.location.href = '/tr/index.html';
+        } else if (path === '/about.html') {
+            window.location.href = '/tr/about.html';
+        } else if (path === '/solutions.html') {
+            window.location.href = '/tr/solutions.html';
+        } else if (path === '/contact.html') {
+            window.location.href = '/tr/contact.html';
+        } else if (path === '/case-studies.html') {
+            window.location.href = '/tr/case-studies.html';
+        } else {
+            // For other pages, redirect to Turkish home
+            window.location.href = '/tr/index.html';
+        }
     }
 }
 
