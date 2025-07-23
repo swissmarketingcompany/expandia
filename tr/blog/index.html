@@ -151,15 +151,21 @@
             </div>
             <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-32 text-right">
                 <li>
-                    <a href="#" data-lang="tr" class="lang-switch flex items-center gap-2 justify-end">
+                    <a href="../../blog/index.html" data-lang="en" class="lang-switch flex items-center gap-2 justify-end">
                         <span>🇺🇸</span>
                         <span>English</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" data-lang="tr" class="lang-switch flex items-center gap-2 justify-end">
+                    <a href="index.html" data-lang="tr" class="lang-switch flex items-center gap-2 justify-end">
                         <span>🇹🇷</span>
                         <span>Türkçe</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../de/blog/index.html" data-lang="de" class="lang-switch flex items-center gap-2 justify-end">
+                        <span>🇩🇪</span>
+                        <span>Deutsch</span>
                     </a>
                 </li>
             </ul>
@@ -183,27 +189,7 @@
                     Lafüğaf yok, sadece milyonlarca anlaşma kapatan gerçek satış profesyonellerinin kanıtlanmış teknikleri.
                 </p>
                 
-                <!-- Search and Filter Bar -->
-                <div class="max-w-2xl mx-auto mb-8">
-                    <div class="join w-full">
-                        <input type="text" id="searchInput" placeholder="Hangi satış zorluğuyla karşılaşıyorsunuz?" class="input input-bordered join-item flex-1 text-lg" />
-                        <button class="btn btn-primary join-item">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
 
-                <!-- Quick Problem Solvers -->
-                <div class="grid grid-cols-2 md:grid-cols-6 gap-3 mb-8">
-                    <button class="filter-btn btn btn-outline btn-sm" data-filter="cold-email">📧 Soğuk E-posta</button>
-                    <button class="filter-btn btn btn-outline btn-sm" data-filter="objections">💪 İtirazlar</button>
-                    <button class="filter-btn btn btn-outline btn-sm" data-filter="closing">🎯 Kapanış</button>
-                    <button class="filter-btn btn btn-outline btn-sm" data-filter="prospecting">🔍 Prospekt Arama</button>
-                    <button class="filter-btn btn btn-outline btn-sm" data-filter="leadership">👥 Liderlik</button>
-                    <button class="filter-btn btn btn-outline btn-sm" data-filter="automation">🤖 Otomasyon</button>
-                </div>
             </div>
         </div>
     </section>
@@ -212,205 +198,209 @@
     <section class="section-spacing bg-base-100">
         <div class="container mx-auto container-padding">
             <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
-                <span class="text-3xl">🔥</span>
-                Bu Hafta En Çok Okunanlar
+                <span class="text-3xl">📚</span>
+                Tüm Makaleler
             </h2>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12" id="articleGrid">
-                <!-- Featured Articles -->
-                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300" data-tags="cold-email deliverability">
+                <!-- Türkçe Makaleler -->
+                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300">
                     <div class="flex items-center gap-2 mb-3">
-                        <span class="badge badge-primary">Popular</span>
-                        <span class="text-xs text-base-content/60">8 min read</span>
+                        <span class="badge badge-primary">Popüler</span>
+                        <span class="text-xs text-base-content/60">8 dk okuma</span>
                     </div>
-                    <h3 class="text-lg font-bold mb-3 leading-tight">📧 Mastering Soğuk E-posta Deliverability</h3>
+                    <h3 class="text-lg font-bold mb-3 leading-tight">📧 Soğuk E-posta Ustalaşma</h3>
                     <p class="text-sm text-base-content/70 mb-4 line-clamp-3">
-                        Sick of your emails landing in spam? Here's how to achieve 90%+ deliverability rates with simple, actionable steps.
+                        E-postalarınız spam'e düşmekten bıktınız mı? İşte basit, uygulanabilir adımlarla %90+ teslim edilebilirlik oranları elde etme yolu.
                     </p>
                     <div class="flex items-center justify-between">
-                        <a href="mastering-cold-email-deliverability.html" class="btn btn-primary btn-sm">Şimdi Oku</a>
-                        <span class="text-xs text-base-content/50">Dec 2024</span>
+                        <a href="soguk-e-posta-ustaliği.html" class="btn btn-primary btn-sm">Şimdi Oku</a>
+                        <span class="text-xs text-base-content/50">Aralık 2024</span>
                     </div>
                 </article>
 
-                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300" data-tags="objections handling sales">
+                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300">
                     <div class="flex items-center gap-2 mb-3">
-                        <span class="badge badge-secondary">Trending</span>
-                        <span class="text-xs text-base-content/60">6 min read</span>
+                        <span class="badge badge-secondary">Trend</span>
+                        <span class="text-xs text-base-content/60">6 dk okuma</span>
                     </div>
-                    <h3 class="text-lg font-bold mb-3 leading-tight">💪 Overcoming Common Sales İtirazlar</h3>
+                    <h3 class="text-lg font-bold mb-3 leading-tight">💪 Yaygın Satış İtirazlarını Aşmak</h3>
                     <p class="text-sm text-base-content/70 mb-4 line-clamp-3">
-                        "It's too expensive" doesn't have to end the conversation. Learn the exact scripts that turn objections into closes.
+                        "Çok pahalı" sözünün konuşmayı bitirmesi gerekmez. İtirazları kapanışlara dönüştüren tam scriptleri öğrenin.
                     </p>
                     <div class="flex items-center justify-between">
-                        <a href="overcoming-common-sales-objections.html" class="btn btn-secondary btn-sm">Şimdi Oku</a>
-                        <span class="text-xs text-base-content/50">Dec 2024</span>
+                        <a href="yaygin-satis-itirazlari-asmak.html" class="btn btn-secondary btn-sm">Şimdi Oku</a>
+                        <span class="text-xs text-base-content/50">Aralık 2024</span>
                     </div>
                 </article>
 
-                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300" data-tags="prospecting linkedin">
+                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300">
                     <div class="flex items-center gap-2 mb-3">
-                        <span class="badge badge-accent">Hot</span>
-                        <span class="text-xs text-base-content/60">10 min read</span>
+                        <span class="badge badge-accent">Sıcak</span>
+                        <span class="text-xs text-base-content/60">10 dk okuma</span>
                     </div>
-                    <h3 class="text-lg font-bold mb-3 leading-tight">🔍 B2B Sales Prospekt Arama Mastery</h3>
+                    <h3 class="text-lg font-bold mb-3 leading-tight">🎯 Potansiyel Müşteri Üretim Stratejileri</h3>
                     <p class="text-sm text-base-content/70 mb-4 line-clamp-3">
-                        Stop wasting time on dead-end prospects. These research techniques help you find 3x more qualified leads.
+                        Sürekli kaliteli müşteri adayı üretme yöntemleri. Prospekt arama tekniklerini öğrenin.
                     </p>
                     <div class="flex items-center justify-between">
-                        <a href="b2b-sales-prospecting-mastery.html" class="btn btn-accent btn-sm">Şimdi Oku</a>
-                        <span class="text-xs text-base-content/50">Dec 2024</span>
+                        <a href="potansiyel-musteri-uretim-stratejileri.html" class="btn btn-accent btn-sm">Şimdi Oku</a>
+                        <span class="text-xs text-base-content/50">Aralık 2024</span>
                     </div>
                 </article>
 
-                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300" data-tags="psychology triggers">
+                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300">
                     <div class="flex items-center gap-2 mb-3">
-                        <span class="badge badge-info">Essential</span>
-                        <span class="text-xs text-base-content/60">12 min read</span>
+                        <span class="badge badge-info">Önemli</span>
+                        <span class="text-xs text-base-content/60">7 dk okuma</span>
                     </div>
-                    <h3 class="text-lg font-bold mb-3 leading-tight">🧠 Psychological Triggers in Sales</h3>
+                    <h3 class="text-lg font-bold mb-3 leading-tight">🤖 AI Destekli Satış Otomasyonu</h3>
                     <p class="text-sm text-base-content/70 mb-4 line-clamp-3">
-                        Why some salespeople close 5x more deals. The psychology behind customer decisions (and how to use it ethically).
+                        Yapay zeka ile satış süreçlerinizi otomatikleştirin ve verimliliği artırın. Modern satış teknolojileri.
                     </p>
                     <div class="flex items-center justify-between">
-                        <a href="psychological-triggers-sales.html" class="btn btn-info btn-sm">Şimdi Oku</a>
-                        <span class="text-xs text-base-content/50">Dec 2024</span>
+                        <a href="ai-destekli-satis-otomasyonu.html" class="btn btn-info btn-sm">Şimdi Oku</a>
+                        <span class="text-xs text-base-content/50">Aralık 2024</span>
                     </div>
                 </article>
 
-                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300" data-tags="automation technology">
+                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300">
                     <div class="flex items-center gap-2 mb-3">
-                        <span class="badge badge-warning">New</span>
-                        <span class="text-xs text-base-content/60">6 min read</span>
+                        <span class="badge badge-warning">Yeni</span>
+                        <span class="text-xs text-base-content/60">9 dk okuma</span>
                     </div>
-                    <h3 class="text-lg font-bold mb-3 leading-tight">⚡ Sales Otomasyon Excellence</h3>
+                    <h3 class="text-lg font-bold mb-3 leading-tight">⚡ Satış Teknoloji Yığını Optimizasyonu</h3>
                     <p class="text-sm text-base-content/70 mb-4 line-clamp-3">
-                        Automate the boring stuff, focus on closing. How to 3x your efficiency without losing the human touch.
+                        Maksimum verimlilik ve ROI için satış teknolojisi yığınınızı kurun. CRM ve araç entegrasyonları.
                     </p>
                     <div class="flex items-center justify-between">
-                        <a href="sales-automation-excellence.html" class="btn btn-warning btn-sm">Şimdi Oku</a>
-                        <span class="text-xs text-base-content/50">Dec 2024</span>
+                        <a href="satis-teknoloji-yigini-optimizasyonu.html" class="btn btn-warning btn-sm">Şimdi Oku</a>
+                        <span class="text-xs text-base-content/50">Aralık 2024</span>
                     </div>
                 </article>
 
-                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300" data-tags="closing value-selling">
+                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300">
                     <div class="flex items-center gap-2 mb-3">
-                        <span class="badge badge-success">Value</span>
-                        <span class="text-xs text-base-content/60">14 min read</span>
+                        <span class="badge badge-success">Değer</span>
+                        <span class="text-xs text-base-content/60">12 dk okuma</span>
                     </div>
-                    <h3 class="text-lg font-bold mb-3 leading-tight">💎 Value-Based Selling Mastery</h3>
+                    <h3 class="text-lg font-bold mb-3 leading-tight">💎 Müşteri Koruma ve Değer Tabanlı Satış</h3>
                     <p class="text-sm text-base-content/70 mb-4 line-clamp-3">
-                        Stop competing on price. Learn to sell value and watch your deal sizes increase by 40%+ overnight.
+                        Müşteri sadakatini artırın ve değer odaklı satış yapın. Fiyat rekabetinden kurtulun.
                     </p>
                     <div class="flex items-center justify-between">
-                        <a href="value-based-selling-mastery.html" class="btn btn-success btn-sm">Şimdi Oku</a>
-                        <span class="text-xs text-base-content/50">Dec 2024</span>
+                        <a href="musteri-koruma-deger-tabanli-satis.html" class="btn btn-success btn-sm">Şimdi Oku</a>
+                        <span class="text-xs text-base-content/50">Aralık 2024</span>
+                    </div>
+                </article>
+
+                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="badge badge-error">Global</span>
+                        <span class="text-xs text-base-content/60">11 dk okuma</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 leading-tight">🌍 Uluslararası Satış Genişletme Rehberi</h3>
+                    <p class="text-sm text-base-content/70 mb-4 line-clamp-3">
+                        Satış operasyonlarınızı yeni uluslararası pazarlara başarıyla genişletin. İhracat stratejileri.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <a href="uluslararasi-satis-genisletme-rehberi.html" class="btn btn-error btn-sm">Şimdi Oku</a>
+                        <span class="text-xs text-base-content/50">Aralık 2024</span>
+                    </div>
+                </article>
+
+                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="badge badge-neutral">Veri</span>
+                        <span class="text-xs text-base-content/60">9 dk okuma</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 leading-tight">📊 Veri Odaklı Satış Tahmin Yöntemleri</h3>
+                    <p class="text-sm text-base-content/70 mb-4 line-clamp-3">
+                        Doğru satış tahminleri ve gelir öngörüsü için veri ve analitik kullanın. Forecasting teknikleri.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <a href="veri-odakli-satis-tahmin-yontemleri.html" class="btn btn-neutral btn-sm">Şimdi Oku</a>
+                        <span class="text-xs text-base-content/50">Aralık 2024</span>
+                    </div>
+                </article>
+
+                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="badge badge-primary">Dijital</span>
+                        <span class="text-xs text-base-content/60">8 dk okuma</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 leading-tight">💻 Sanal Satış Toplantıları ve Güven İnşa Etme</h3>
+                    <p class="text-sm text-base-content/70 mb-4 line-clamp-3">
+                        Uzaktan satış toplantılarında güven oluşturma teknikleri. Online satış uzmanlığı.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <a href="sanal-satis-toplantilari-guven-insa-etme.html" class="btn btn-primary btn-sm">Şimdi Oku</a>
+                        <span class="text-xs text-base-content/50">Aralık 2024</span>
+                    </div>
+                </article>
+
+                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="badge badge-secondary">Pipeline</span>
+                        <span class="text-xs text-base-content/60">10 dk okuma</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 leading-tight">📈 Satış Hattı Optimizasyon Teknikleri</h3>
+                    <p class="text-sm text-base-content/70 mb-4 line-clamp-3">
+                        Satış hattınızı optimize ederek daha fazla anlaşma kapatın. Pipeline yönetimi teknikleri.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <a href="satis-hatti-optimizasyon-teknikleri.html" class="btn btn-secondary btn-sm">Şimdi Oku</a>
+                        <span class="text-xs text-base-content/50">Aralık 2024</span>
+                    </div>
+                </article>
+
+                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="badge badge-accent">LinkedIn</span>
+                        <span class="text-xs text-base-content/60">9 dk okuma</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 leading-tight">🔗 Gelişmiş LinkedIn İletişim Stratejileri</h3>
+                    <p class="text-sm text-base-content/70 mb-4 line-clamp-3">
+                        LinkedIn'de etkili iletişim kurma ve müşteri kazanma stratejileri. Sosyal satış teknikleri.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <a href="gelismis-linkedin-iletisim-stratejileri.html" class="btn btn-accent btn-sm">Şimdi Oku</a>
+                        <span class="text-xs text-base-content/50">Aralık 2024</span>
+                    </div>
+                </article>
+
+                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="badge badge-info">Gelir</span>
+                        <span class="text-xs text-base-content/60">8 dk okuma</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 leading-tight">📊 Çapraz Satış ve Yukarıya Satış Stratejileri</h3>
+                    <p class="text-sm text-base-content/70 mb-4 line-clamp-3">
+                        Mevcut müşterilerden daha fazla gelir elde etme teknikleri. Cross-sell ve upsell stratejileri.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <a href="capraz-satis-ve-yukariya-satis-stratejileri.html" class="btn btn-info btn-sm">Şimdi Oku</a>
+                        <span class="text-xs text-base-content/50">Aralık 2024</span>
+                    </div>
+                </article>
+
+                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="badge badge-warning">Sosyal</span>
+                        <span class="text-xs text-base-content/60">10 dk okuma</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 leading-tight">📱 B2B Sosyal Satış En İyi Uygulamaları</h3>
+                    <p class="text-sm text-base-content/70 mb-4 line-clamp-3">
+                        LinkedIn ve diğer sosyal platformlarda satış yapmayı öğrenin. Modern sosyal satış teknikleri.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <a href="b2b-sosyal-satis-en-iyi-uygulamalar.html" class="btn btn-warning btn-sm">Şimdi Oku</a>
+                        <span class="text-xs text-base-content/50">Aralık 2024</span>
                     </div>
                 </article>
             </div>
 
-            <!-- Load More Button -->
-            <div class="text-center">
-                <button id="loadMoreBtn" class="btn btn-outline btn-lg mr-4">
-                    Daha Fazla Makale Göster
-                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <button id="showAllBtn" class="btn btn-primary btn-lg">
-                    Tüm Makaleleri Göster (35)
-                </button>
-            </div>
-        </div>
-    </section>
 
-    <!-- Browse by Topic -->
-    <section class="section-spacing bg-gradient-to-r from-base-200 to-base-100">
-        <div class="container mx-auto container-padding">
-            <h2 class="text-3xl font-bold text-center mb-12">
-                <span class="gradient-header">Satış Zorluğuna Göre Gözat</span>
-            </h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Topic Cards -->
-                <div class="topic-card buzz-card p-6 text-center hover:shadow-xl transition-all duration-300 cursor-pointer" data-topic="cold-email">
-                    <div class="text-4xl mb-4">📧</div>
-                    <h3 class="text-xl font-bold mb-3">Soğuk E-posta & Outreach</h3>
-                    <p class="text-sm text-base-content/70 mb-4">E-postalarınızın açılmasını, okunmasını ve yanıtlanmasını sağlayın</p>
-                    <span class="badge badge-primary">5 articles</span>
-                </div>
-
-                <div class="topic-card buzz-card p-6 text-center hover:shadow-xl transition-all duration-300 cursor-pointer" data-topic="prospecting">
-                    <div class="text-4xl mb-4">🎯</div>
-                    <h3 class="text-xl font-bold mb-3">Müşteri Kazanma</h3>
-                    <p class="text-sm text-base-content/70 mb-4">İdeal müşteri adaylarınızı bulun ve nitelendirin</p>
-                    <span class="badge badge-secondary">8 articles</span>
-                </div>
-
-                <div class="topic-card buzz-card p-6 text-center hover:shadow-xl transition-all duration-300 cursor-pointer" data-topic="closing">
-                    <div class="text-4xl mb-4">🤝</div>
-                    <h3 class="text-xl font-bold mb-3">Kapanış & Negotiation</h3>
-                    <p class="text-sm text-base-content/70 mb-4">Müşteri adaylarını ödeme yapan müşterilere dönüştürün</p>
-                    <span class="badge badge-accent">6 articles</span>
-                </div>
-
-                <div class="topic-card buzz-card p-6 text-center hover:shadow-xl transition-all duration-300 cursor-pointer" data-topic="objections">
-                    <div class="text-4xl mb-4">💪</div>
-                    <h3 class="text-xl font-bold mb-3">İtiraz Yönetimi</h3>
-                    <p class="text-sm text-base-content/70 mb-4">Direnci gelire dönüştürün</p>
-                    <span class="badge badge-info">3 articles</span>
-                </div>
-
-                <div class="topic-card buzz-card p-6 text-center hover:shadow-xl transition-all duration-300 cursor-pointer" data-topic="automation">
-                    <div class="text-4xl mb-4">🤖</div>
-                    <h3 class="text-xl font-bold mb-3">Satış Teknolojisi</h3>
-                    <p class="text-sm text-base-content/70 mb-4">Satış sürecinizi otomatikleştirin ve ölçeklendirin</p>
-                    <span class="badge badge-warning">8 articles</span>
-                </div>
-
-                <div class="topic-card buzz-card p-6 text-center hover:shadow-xl transition-all duration-300 cursor-pointer" data-topic="psychology">
-                    <div class="text-4xl mb-4">🧠</div>
-                    <h3 class="text-xl font-bold mb-3">Satış Psikolojisi</h3>
-                    <p class="text-sm text-base-content/70 mb-4">Müşterileri satın almaya iten nedenleri anlayın</p>
-                    <span class="badge badge-success">3 articles</span>
-                </div>
-
-                <div class="topic-card buzz-card p-6 text-center hover:shadow-xl transition-all duration-300 cursor-pointer" data-topic="leadership">
-                    <div class="text-4xl mb-4">👥</div>
-                    <h3 class="text-xl font-bold mb-3">Sales Liderlik</h3>
-                    <p class="text-sm text-base-content/70 mb-4">Yüksek performanslı takımlar kurun ve yönetin</p>
-                    <span class="badge badge-error">4 articles</span>
-                </div>
-
-                <div class="topic-card buzz-card p-6 text-center hover:shadow-xl transition-all duration-300 cursor-pointer" data-topic="enterprise">
-                    <div class="text-4xl mb-4">🏢</div>
-                    <h3 class="text-xl font-bold mb-3">Kurumsal Satış</h3>
-                    <p class="text-sm text-base-content/70 mb-4">Büyük organizasyonlara ve karmaşık anlaşmalara satış yapın</p>
-                    <span class="badge badge-neutral">4 articles</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Signup -->
-    <section class="section-spacing bg-primary text-primary-content">
-        <div class="container mx-auto container-padding">
-            <div class="max-w-2xl mx-auto text-center">
-                <h2 class="text-3xl font-bold mb-4">Haftalık Satış İpuçları Alın</h2>
-                <p class="text-lg mb-8 opacity-90">
-                    2.500+ satış profesyonelinin her Salı en iyi stratejilerimizi aldığı gruba katılın.
-                    Spam yok, sadece uygulanabilir içgörüler.
-                </p>
-                
-                <div class="join w-full max-w-md mx-auto">
-                    <input type="email" placeholder="E-postanızı girin" class="input input-bordered join-item flex-1 text-base-content" />
-                    <button class="btn btn-secondary join-item">Abone Ol</button>
-                </div>
-                
-                <p class="text-sm opacity-70 mt-4">
-                    Sonsuza kadar ücretsiz. İstediğiniz zaman abonelikten çıkabilirsiniz.
-                </p>
-            </div>
         </div>
     </section>
 
@@ -554,7 +544,7 @@
             { title: "Yaygın Satış İtirazları Aşmak", tags: "itirazlar yonetim satis fiyat butce karar", url: "yaygin-satis-itirazlari-asmak.html", excerpt: "İtirazları kapanışlara dönüştüren tam scriptler öğrenin.", badge: "İtirazlar", readTime: "6 dk okuma" }
         ];
 
-        let currentFilterlet currentFilter = 'all';
+        let currentFilter = 'all';
         let searchTerm = '';
         let displayedCount = 9; // Show more articles initially
 
@@ -702,5 +692,6 @@
             });
         });
     </script>
+    <script src="../../src/js/index.js"></script>
 </body>
 </html>

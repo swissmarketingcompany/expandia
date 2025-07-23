@@ -161,15 +161,21 @@
             </div>
             <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-32 text-right">
                 <li>
-                    <a href="#" data-lang="en" class="lang-switch flex items-center gap-2 justify-end">
+                    <a href="index.html" data-lang="en" class="lang-switch flex items-center gap-2 justify-end">
                         <span>🇺🇸</span>
                         <span>English</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" data-lang="tr" class="lang-switch flex items-center gap-2 justify-end">
+                    <a href="../tr/blog/index.html" data-lang="tr" class="lang-switch flex items-center gap-2 justify-end">
                         <span>🇹🇷</span>
                         <span>Türkçe</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../de/blog/index.html" data-lang="de" class="lang-switch flex items-center gap-2 justify-end">
+                        <span>🇩🇪</span>
+                        <span>Deutsch</span>
                     </a>
                 </li>
             </ul>
@@ -179,17 +185,17 @@
 </nav> 
 
     <!-- Sales Knowledge Hub Hero Section -->
-    <section class="min-h-screen bg-gradient-to-br from-primary/20 via-base-100 to-secondary/20 relative overflow-hidden">
+    <section class="bg-gradient-to-br from-primary/20 via-base-100 to-secondary/20 relative overflow-hidden">
         <!-- Background decoration -->
         <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
         <div class="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
         <div class="absolute bottom-20 right-10 w-40 h-40 bg-secondary/10 rounded-full blur-3xl"></div>
         
-        <div class="container mx-auto px-6 py-20 relative z-10">
+        <div class="container mx-auto px-6 py-12 relative z-10">
             <div class="max-w-5xl mx-auto text-center">
                 <!-- Hero Header -->
                 <div class="mb-8 animate-fade-in">
-                    <h1 class="text-5xl md:text-7xl font-bold mb-6 pt-20 leading-tight">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 pt-8 leading-tight">
                         <span class="gradient-header">Sales Growth</span>
                     </h1>
                     
@@ -199,115 +205,21 @@
                         learn from sales pros who've generated <span class="font-bold text-accent">$500M+ in revenue</span>
                     </p>
                 </div>
-
-                <!-- Topic Tags Section -->
-                <div class="mb-12 animate-fade-in-delay">
-                    <div class="max-w-4xl mx-auto">
-                        <h3 class="text-xl font-semibold mb-6 text-center text-base-content">Choose Your Sales Challenge</h3>
-                        
-                        <!-- 10 Topic Tags Grid -->
-                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                            <button class="filter-btn btn btn-outline btn-lg hover:btn-primary transition-all duration-300 h-20 flex-col" data-filter="cold-email">
-                                <span class="text-2xl mb-1">📧</span>
-                                <span class="text-sm">Cold Email</span>
-                            </button>
-                            <button class="filter-btn btn btn-outline btn-lg hover:btn-secondary transition-all duration-300 h-20 flex-col" data-filter="objections">
-                                <span class="text-2xl mb-1">🛡️</span>
-                                <span class="text-sm">Objections</span>
-                            </button>
-                            <button class="filter-btn btn btn-outline btn-lg hover:btn-accent transition-all duration-300 h-20 flex-col" data-filter="closing">
-                                <span class="text-2xl mb-1">🤝</span>
-                                <span class="text-sm">Closing</span>
-                            </button>
-                            <button class="filter-btn btn btn-outline btn-lg hover:btn-info transition-all duration-300 h-20 flex-col" data-filter="prospecting">
-                                <span class="text-2xl mb-1">🎯</span>
-                                <span class="text-sm">Prospecting</span>
-                            </button>
-                            <button class="filter-btn btn btn-outline btn-lg hover:btn-warning transition-all duration-300 h-20 flex-col" data-filter="leadership">
-                                <span class="text-2xl mb-1">👥</span>
-                                <span class="text-sm">Leadership</span>
-                            </button>
-                            <button class="filter-btn btn btn-outline btn-lg hover:btn-success transition-all duration-300 h-20 flex-col" data-filter="automation">
-                                <span class="text-2xl mb-1">🤖</span>
-                                <span class="text-sm">AI & Tools</span>
-                            </button>
-                            <button class="filter-btn btn btn-outline btn-lg hover:btn-error transition-all duration-300 h-20 flex-col" data-filter="psychology">
-                                <span class="text-2xl mb-1">🧠</span>
-                                <span class="text-sm">Psychology</span>
-                            </button>
-                            <button class="filter-btn btn btn-outline btn-lg hover:btn-primary transition-all duration-300 h-20 flex-col" data-filter="value-selling">
-                                <span class="text-2xl mb-1">💎</span>
-                                <span class="text-sm">Value Selling</span>
-                            </button>
-                            <button class="filter-btn btn btn-outline btn-lg hover:btn-secondary transition-all duration-300 h-20 flex-col" data-filter="negotiation">
-                                <span class="text-2xl mb-1">🤔</span>
-                                <span class="text-sm">Negotiation</span>
-                            </button>
-                            <button class="filter-btn btn btn-outline btn-lg hover:btn-accent transition-all duration-300 h-20 flex-col" data-filter="pipeline">
-                                <span class="text-2xl mb-1">📊</span>
-                                <span class="text-sm">Pipeline</span>
-                            </button>
-                        </div>
-                        
-                        <!-- Clear Filter Button -->
-                        <div class="text-center mt-6">
-                            <button id="clearFilters" class="btn btn-ghost btn-sm">
-                                Show All Articles
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Stats Section -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 animate-fade-in-delay-2">
-                    <div class="text-center">
-                        <div class="text-3xl md:text-4xl font-black text-primary mb-2">35+</div>
-                        <div class="text-sm text-base-content/70">Expert Articles</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl md:text-4xl font-black text-secondary mb-2">500M+</div>
-                        <div class="text-sm text-base-content/70">Revenue Generated</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl md:text-4xl font-black text-accent mb-2">10K+</div>
-                        <div class="text-sm text-base-content/70">Sales Pros Trained</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl md:text-4xl font-black text-info mb-2">94%</div>
-                        <div class="text-sm text-base-content/70">Success Rate</div>
-                    </div>
-                </div>
-
-                <!-- CTA Section -->
-                <div class="animate-fade-in-delay-3">
-                    <p class="text-base-content/60 mb-6">👇 Start with our most popular guides</p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <button id="browseAllBtn" class="btn btn-primary btn-lg px-8">
-                            Browse All Articles
-                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-                        <a href="../contact.html" class="btn btn-outline btn-lg px-8">
-                            Get Personal Coaching
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Most Popular Articles -->
+    <!-- All Articles -->
     <section class="section-spacing bg-base-100">
         <div class="container mx-auto container-padding">
             <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
-                <span class="text-3xl">🔥</span>
-                Most Read This Week
+                <span class="text-3xl">📚</span>
+                All Articles
             </h2>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12" id="articleGrid">
-                <!-- Featured Articles -->
-                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300" data-tags="cold-email deliverability">
+                <!-- English Articles -->
+                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300">
                     <div class="flex items-center gap-2 mb-3">
                         <span class="badge badge-primary">Popular</span>
                         <span class="text-xs text-base-content/60">8 min read</span>
@@ -322,7 +234,7 @@
                     </div>
                 </article>
 
-                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300" data-tags="objections handling sales">
+                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300">
                     <div class="flex items-center gap-2 mb-3">
                         <span class="badge badge-secondary">Trending</span>
                         <span class="text-xs text-base-content/60">6 min read</span>
@@ -337,12 +249,12 @@
                     </div>
                 </article>
 
-                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300" data-tags="prospecting linkedin">
+                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300">
                     <div class="flex items-center gap-2 mb-3">
                         <span class="badge badge-accent">Hot</span>
                         <span class="text-xs text-base-content/60">10 min read</span>
                     </div>
-                    <h3 class="text-lg font-bold mb-3 leading-tight">🔍 B2B Sales Prospecting Mastery</h3>
+                    <h3 class="text-lg font-bold mb-3 leading-tight">🎯 B2B Sales Prospecting Mastery</h3>
                     <p class="text-sm text-base-content/70 mb-4 line-clamp-3">
                         Stop wasting time on dead-end prospects. These research techniques help you find 3x more qualified leads.
                     </p>
@@ -352,7 +264,7 @@
                     </div>
                 </article>
 
-                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300" data-tags="psychology triggers">
+                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300">
                     <div class="flex items-center gap-2 mb-3">
                         <span class="badge badge-info">Essential</span>
                         <span class="text-xs text-base-content/60">12 min read</span>
@@ -367,7 +279,7 @@
                     </div>
                 </article>
 
-                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300" data-tags="automation technology">
+                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300">
                     <div class="flex items-center gap-2 mb-3">
                         <span class="badge badge-warning">New</span>
                         <span class="text-xs text-base-content/60">6 min read</span>
@@ -382,7 +294,7 @@
                     </div>
                 </article>
 
-                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300" data-tags="closing value-selling">
+                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300">
                     <div class="flex items-center gap-2 mb-3">
                         <span class="badge badge-success">Value</span>
                         <span class="text-xs text-base-content/60">14 min read</span>
@@ -396,110 +308,98 @@
                         <span class="text-xs text-base-content/50">Dec 2024</span>
                     </div>
                 </article>
+
+                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="badge badge-error">Strategy</span>
+                        <span class="text-xs text-base-content/60">11 min read</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 leading-tight">📈 Lead Generation Strategies</h3>
+                    <p class="text-sm text-base-content/70 mb-4 line-clamp-3">
+                        Build a consistent pipeline of qualified prospects with these proven lead generation tactics.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <a href="lead-generation-strategies.html" class="btn btn-error btn-sm">Read Now</a>
+                        <span class="text-xs text-base-content/50">Dec 2024</span>
+                    </div>
+                </article>
+
+                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="badge badge-neutral">LinkedIn</span>
+                        <span class="text-xs text-base-content/60">9 min read</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 leading-tight">🔗 Advanced LinkedIn Outreach Strategies</h3>
+                    <p class="text-sm text-base-content/70 mb-4 line-clamp-3">
+                        Transform LinkedIn into your most powerful sales tool with these advanced outreach techniques.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <a href="advanced-linkedin-outreach-strategies.html" class="btn btn-neutral btn-sm">Read Now</a>
+                        <span class="text-xs text-base-content/50">Dec 2024</span>
+                    </div>
+                </article>
+
+                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="badge badge-primary">Pipeline</span>
+                        <span class="text-xs text-base-content/60">13 min read</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 leading-tight">📊 Sales Pipeline Optimization Techniques</h3>
+                    <p class="text-sm text-base-content/70 mb-4 line-clamp-3">
+                        Maximize your close rate and reduce sales cycle time with proven pipeline optimization strategies.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <a href="sales-pipeline-optimization-techniques.html" class="btn btn-primary btn-sm">Read Now</a>
+                        <span class="text-xs text-base-content/50">Dec 2024</span>
+                    </div>
+                </article>
+
+                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="badge badge-secondary">AI</span>
+                        <span class="text-xs text-base-content/60">15 min read</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 leading-tight">🤖 AI-Powered Sales Automation</h3>
+                    <p class="text-sm text-base-content/70 mb-4 line-clamp-3">
+                        Leverage artificial intelligence to automate repetitive tasks and focus on high-value activities.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <a href="ai-powered-sales-automation.html" class="btn btn-secondary btn-sm">Read Now</a>
+                        <span class="text-xs text-base-content/50">Dec 2024</span>
+                    </div>
+                </article>
+
+                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="badge badge-accent">Social</span>
+                        <span class="text-xs text-base-content/60">10 min read</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 leading-tight">📱 Social Selling Best Practices B2B</h3>
+                    <p class="text-sm text-base-content/70 mb-4 line-clamp-3">
+                        Master the art of social selling with proven strategies for building relationships and closing deals.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <a href="social-selling-best-practices-b2b.html" class="btn btn-accent btn-sm">Read Now</a>
+                        <span class="text-xs text-base-content/50">Dec 2024</span>
+                    </div>
+                </article>
+
+                <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="badge badge-info">Leadership</span>
+                        <span class="text-xs text-base-content/60">12 min read</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 leading-tight">👥 Sales Leadership Team Development</h3>
+                    <p class="text-sm text-base-content/70 mb-4 line-clamp-3">
+                        Build and lead high-performing sales teams that consistently exceed their targets.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <a href="sales-leadership-team-development.html" class="btn btn-info btn-sm">Read Now</a>
+                        <span class="text-xs text-base-content/50">Dec 2024</span>
+                    </div>
+                </article>
             </div>
 
-            <!-- Load More Button -->
-            <div class="text-center">
-                <button id="loadMoreBtn" class="btn btn-outline btn-lg mr-4">
-                    Show More Articles
-                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <button id="showAllBtn" class="btn btn-primary btn-lg">
-                    Show All Articles (35)
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Browse by Topic -->
-    <section class="section-spacing bg-gradient-to-r from-base-200 to-base-100">
-        <div class="container mx-auto container-padding">
-            <h2 class="text-3xl font-bold text-center mb-12">
-                <span class="gradient-header">Browse by Sales Challenge</span>
-            </h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Topic Cards -->
-                <div class="topic-card buzz-card p-6 text-center hover:shadow-xl transition-all duration-300 cursor-pointer" data-topic="cold-email">
-                    <div class="text-4xl mb-4">📧</div>
-                    <h3 class="text-xl font-bold mb-3">Cold Email & Outreach</h3>
-                    <p class="text-sm text-base-content/70 mb-4">Get your emails opened, read, and replied to</p>
-                    <span class="badge badge-primary">5 articles</span>
-                </div>
-
-                <div class="topic-card buzz-card p-6 text-center hover:shadow-xl transition-all duration-300 cursor-pointer" data-topic="prospecting">
-                    <div class="text-4xl mb-4">🎯</div>
-                    <h3 class="text-xl font-bold mb-3">Lead Generation</h3>
-                    <p class="text-sm text-base-content/70 mb-4">Find and qualify your ideal prospects</p>
-                    <span class="badge badge-secondary">8 articles</span>
-                </div>
-
-                <div class="topic-card buzz-card p-6 text-center hover:shadow-xl transition-all duration-300 cursor-pointer" data-topic="closing">
-                    <div class="text-4xl mb-4">🤝</div>
-                    <h3 class="text-xl font-bold mb-3">Closing & Negotiation</h3>
-                    <p class="text-sm text-base-content/70 mb-4">Turn prospects into paying customers</p>
-                    <span class="badge badge-accent">6 articles</span>
-                </div>
-
-                <div class="topic-card buzz-card p-6 text-center hover:shadow-xl transition-all duration-300 cursor-pointer" data-topic="objections">
-                    <div class="text-4xl mb-4">💪</div>
-                    <h3 class="text-xl font-bold mb-3">Objection Handling</h3>
-                    <p class="text-sm text-base-content/70 mb-4">Convert resistance into revenue</p>
-                    <span class="badge badge-info">3 articles</span>
-                </div>
-
-                <div class="topic-card buzz-card p-6 text-center hover:shadow-xl transition-all duration-300 cursor-pointer" data-topic="automation">
-                    <div class="text-4xl mb-4">🤖</div>
-                    <h3 class="text-xl font-bold mb-3">Sales Technology</h3>
-                    <p class="text-sm text-base-content/70 mb-4">Automate and scale your sales process</p>
-                    <span class="badge badge-warning">8 articles</span>
-                </div>
-
-                <div class="topic-card buzz-card p-6 text-center hover:shadow-xl transition-all duration-300 cursor-pointer" data-topic="psychology">
-                    <div class="text-4xl mb-4">🧠</div>
-                    <h3 class="text-xl font-bold mb-3">Sales Psychology</h3>
-                    <p class="text-sm text-base-content/70 mb-4">Understand what makes customers buy</p>
-                    <span class="badge badge-success">3 articles</span>
-                </div>
-
-                <div class="topic-card buzz-card p-6 text-center hover:shadow-xl transition-all duration-300 cursor-pointer" data-topic="leadership">
-                    <div class="text-4xl mb-4">👥</div>
-                    <h3 class="text-xl font-bold mb-3">Sales Leadership</h3>
-                    <p class="text-sm text-base-content/70 mb-4">Build and manage high-performing teams</p>
-                    <span class="badge badge-error">4 articles</span>
-                </div>
-
-                <div class="topic-card buzz-card p-6 text-center hover:shadow-xl transition-all duration-300 cursor-pointer" data-topic="enterprise">
-                    <div class="text-4xl mb-4">🏢</div>
-                    <h3 class="text-xl font-bold mb-3">Enterprise Sales</h3>
-                    <p class="text-sm text-base-content/70 mb-4">Sell to large organizations and complex deals</p>
-                    <span class="badge badge-neutral">4 articles</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Signup -->
-    <section class="section-spacing bg-primary text-primary-content">
-        <div class="container mx-auto container-padding">
-            <div class="max-w-2xl mx-auto text-center">
-                <h2 class="text-3xl font-bold mb-4">Get Weekly Sales Tips</h2>
-                <p class="text-lg mb-8 opacity-90">
-                    Join 2,500+ sales professionals getting our best strategies delivered every Tuesday.
-                    No spam, just actionable insights.
-                </p>
-                
-                <div class="join w-full max-w-md mx-auto">
-                    <input type="email" placeholder="Enter your email" class="input input-bordered join-item flex-1 text-base-content" />
-                    <button class="btn btn-secondary join-item">Subscribe</button>
-                </div>
-                
-                <p class="text-sm opacity-70 mt-4">
-                    Free forever. Unsubscribe anytime.
-                </p>
-            </div>
         </div>
     </section>
 

@@ -375,8 +375,16 @@ function switchToEnglish() {
             window.location.href = '/solutions.html';
         } else if (englishPath === '/contact.html') {
             window.location.href = '/contact.html';
-        } else if (englishPath === '/case-studies.html') {
+                        } else if (englishPath === '/case-studies.html') {
             window.location.href = '/case-studies.html';
+        } else if (englishPath.startsWith('/blog/')) {
+            // Handle blog pages - redirect to English blog
+            if (englishPath === '/blog/index.html' || englishPath === '/blog/') {
+                window.location.href = '/blog/index.html';
+            } else {
+                // For specific Turkish blog posts, redirect to English blog index
+                window.location.href = '/blog/index.html';
+            }
         } else {
             // For other Turkish pages, redirect to solutions page
             window.location.href = '/solutions.html';
@@ -410,10 +418,219 @@ function switchToTurkish() {
             window.location.href = '/tr/contact.html';
         } else if (path === '/case-studies.html') {
             window.location.href = '/tr/case-studies.html';
+        } else if (path.startsWith('/blog/')) {
+            // Handle blog pages - redirect to Turkish blog
+            if (path === '/blog/index.html' || path === '/blog/' || path === '/blog') {
+                window.location.href = '/tr/blog/index.html';
+            } else {
+                // For specific English blog posts, redirect to Turkish blog index
+                window.location.href = '/tr/blog/index.html';
+            }
         } else {
             // For other pages, redirect to Turkish home
             window.location.href = '/tr/index.html';
         }
+    }
+}
+
+function switchToGerman() {
+    console.log('Switching to German, current path:', window.location.pathname);
+    const path = window.location.pathname;
+    
+    if (path.startsWith('/de/')) {
+        // Already on German
+        console.log('Already on German version');
+        return;
+    } else {
+        // Map pages to German equivalents
+        if (path === '/' || path === '/index.html' || path === '' || path.startsWith('/tr/')) {
+            window.location.href = '/de/index.html';
+        } else if (path === '/about.html' || path === '/tr/about.html') {
+            window.location.href = '/de/about.html';
+        } else if (path === '/solutions.html' || path === '/tr/solutions.html') {
+            window.location.href = '/de/solutions.html';
+        } else if (path === '/contact.html' || path === '/tr/contact.html') {
+            window.location.href = '/de/contact.html';
+        } else if (path === '/case-studies.html' || path === '/tr/case-studies.html') {
+            window.location.href = '/de/case-studies.html';
+        } else if (path.startsWith('/blog/') || path.startsWith('/tr/blog/')) {
+            // Handle blog pages - redirect to German blog
+            window.location.href = '/de/blog/index.html';
+        } else {
+            // For other pages, redirect to German home
+            window.location.href = '/de/index.html';
+        }
+    }
+}
+
+// Geolocation-based language detection
+function detectUserLocation() {
+    // Check if user has manually selected a language before
+    const userLanguagePreference = localStorage.getItem('expandia_language_preference');
+    if (userLanguagePreference) {
+        console.log('User has language preference:', userLanguagePreference);
+        return; // Don't auto-redirect if user has made a choice
+    }
+
+    // Avoid redirect loops by checking if we just redirected
+    const lastRedirect = sessionStorage.getItem('expandia_last_redirect');
+    const now = Date.now();
+    if (lastRedirect && (now - parseInt(lastRedirect)) < 5000) {
+        console.log('Recently redirected, skipping auto-detection');
+        return;
+    }
+
+    // Check if we're already on the correct page to avoid redirect loops
+    const currentPath = window.location.pathname;
+    const isOnTurkish = currentPath.startsWith('/tr/') || currentPath === '/tr';
+    const isOnGerman = currentPath.startsWith('/de/') || currentPath === '/de';
+    
+    // Add a small delay to ensure page is loaded
+    setTimeout(() => {
+        // Try multiple geolocation methods
+        detectLocationByIP()
+            .then(country => {
+                console.log('Detected country:', country);
+                
+                // Language-specific countries/regions
+                const turkishCountries = ['TR', 'CY']; // Turkey, Cyprus
+                const germanCountries = ['DE', 'AT', 'CH']; // Germany, Austria, Switzerland
+                
+                const shouldShowTurkish = turkishCountries.includes(country);
+                const shouldShowGerman = germanCountries.includes(country);
+                
+                // Show notification and redirect based on location
+                if (shouldShowTurkish && !isOnTurkish) {
+                    showLanguageNotification('Turkish', () => {
+                        sessionStorage.setItem('expandia_last_redirect', Date.now().toString());
+                        switchToTurkish();
+                    });
+                } else if (shouldShowGerman && !isOnGerman) {
+                    showLanguageNotification('German', () => {
+                        sessionStorage.setItem('expandia_last_redirect', Date.now().toString());
+                        switchToGerman();
+                    });
+                } else if (!shouldShowTurkish && !shouldShowGerman && (isOnTurkish || isOnGerman)) {
+                    showLanguageNotification('English', () => {
+                        sessionStorage.setItem('expandia_last_redirect', Date.now().toString());
+                        switchToEnglish();
+                    });
+                } else {
+                    console.log('User is on correct language version');
+                }
+            })
+            .catch(error => {
+                console.log('Geolocation detection failed, using browser language as fallback');
+                
+                // Fallback to browser language detection
+                const browserLang = navigator.language || navigator.userLanguage;
+                const isTurkishBrowser = browserLang.startsWith('tr');
+                const isGermanBrowser = browserLang.startsWith('de');
+                
+                if (isTurkishBrowser && !isOnTurkish) {
+                    console.log('Browser language is Turkish, redirecting...');
+                    showLanguageNotification('Turkish', () => {
+                        sessionStorage.setItem('expandia_last_redirect', Date.now().toString());
+                        switchToTurkish();
+                    });
+                } else if (isGermanBrowser && !isOnGerman) {
+                    console.log('Browser language is German, redirecting...');
+                    showLanguageNotification('German', () => {
+                        sessionStorage.setItem('expandia_last_redirect', Date.now().toString());
+                        switchToGerman();
+                    });
+                }
+            });
+    }, 1000); // 1 second delay
+}
+
+// Show language notification banner
+function showLanguageNotification(suggestedLanguage, redirectCallback) {
+    const banner = document.createElement('div');
+    banner.className = 'fixed top-0 left-0 right-0 bg-primary text-white p-4 z-50 shadow-lg';
+    banner.innerHTML = `
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <span class="text-xl">${suggestedLanguage === 'Turkish' ? '🇹🇷' : suggestedLanguage === 'German' ? '🇩🇪' : '🇺🇸'}</span>
+                <span>
+                    ${suggestedLanguage === 'Turkish' 
+                        ? 'Türkiye\'den erişiyor gibi görünüyorsunuz. Türkçe versiyonu görüntülemek ister misiniz?' 
+                        : suggestedLanguage === 'German'
+                        ? 'Es sieht so aus, als würden Sie aus einem deutschsprachigen Land zugreifen. Möchten Sie die deutsche Version anzeigen?'
+                        : 'It looks like you\'re accessing from outside Turkey. Would you like to view the English version?'}
+                </span>
+            </div>
+            <div class="flex gap-2">
+                <button id="accept-language" class="btn btn-sm btn-secondary">
+                    ${suggestedLanguage === 'Turkish' ? 'Evet, Türkçe' : suggestedLanguage === 'German' ? 'Ja, Deutsch' : 'Yes, English'}
+                </button>
+                <button id="decline-language" class="btn btn-sm btn-ghost">
+                    ${suggestedLanguage === 'Turkish' ? 'Hayır, English kalsın' : suggestedLanguage === 'German' ? 'Nein, English beibehalten' : 'No, keep Turkish'}
+                </button>
+            </div>
+        </div>
+    `;
+
+    document.body.prepend(banner);
+
+    // Add event listeners
+    document.getElementById('accept-language').addEventListener('click', () => {
+        banner.remove();
+        redirectCallback();
+    });
+
+    document.getElementById('decline-language').addEventListener('click', () => {
+        banner.remove();
+        // Save user preference to not show again
+        localStorage.setItem('expandia_language_preference', suggestedLanguage === 'Turkish' ? 'en' : 'tr');
+    });
+
+    // Auto-hide after 10 seconds
+    setTimeout(() => {
+        if (banner.parentElement) {
+            banner.remove();
+        }
+    }, 10000);
+}
+
+// Detect location using IP geolocation API
+async function detectLocationByIP() {
+    try {
+        // Try multiple free geolocation services
+        const services = [
+            'https://ipapi.co/country_code/',
+            'https://ipinfo.io/country',
+            'https://api.country.is/'
+        ];
+        
+        for (const service of services) {
+            try {
+                const response = await fetch(service, { 
+                    timeout: 3000,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    if (service.includes('country.is')) {
+                        const data = await response.json();
+                        return data.country;
+                    } else {
+                        const countryCode = await response.text();
+                        return countryCode.trim().toUpperCase();
+                    }
+                }
+            } catch (error) {
+                console.log(`Service ${service} failed:`, error);
+                continue;
+            }
+        }
+        
+        throw new Error('All geolocation services failed');
+    } catch (error) {
+        console.error('IP geolocation failed:', error);
+        throw error;
     }
 }
 
@@ -428,10 +645,15 @@ function setupLanguageSwitching() {
             const lang = this.getAttribute('data-lang');
             console.log('Language switch clicked:', lang);
             
+            // Save user's language preference
+            localStorage.setItem('expandia_language_preference', lang);
+            
             if (lang === 'en') {
                 switchToEnglish();
             } else if (lang === 'tr') {
                 switchToTurkish();
+            } else if (lang === 'de') {
+                switchToGerman();
             }
         });
     });
@@ -440,8 +662,26 @@ function setupLanguageSwitching() {
     const currentFlag = document.getElementById('current-flag');
     if (currentFlag) {
         const isOnTurkish = window.location.pathname.startsWith('/tr/') || window.location.pathname === '/tr';
-        currentFlag.textContent = isOnTurkish ? '🇹🇷' : '🇺🇸';
-        console.log('Updated flag for path:', window.location.pathname, 'Turkish:', isOnTurkish);
+        const isOnGerman = window.location.pathname.startsWith('/de/') || window.location.pathname === '/de';
+        
+        if (isOnTurkish) {
+            currentFlag.textContent = '🇹🇷';
+        } else if (isOnGerman) {
+            currentFlag.textContent = '🇩🇪';
+        } else {
+            currentFlag.textContent = '🇺🇸';
+        }
+        console.log('Updated flag for path:', window.location.pathname, 'Turkish:', isOnTurkish, 'German:', isOnGerman);
     }
+    
+    // Run geolocation detection on page load
+    detectUserLocation();
+    
+    // Add debug function to clear language preferences (available in console)
+    window.clearLanguagePreference = function() {
+        localStorage.removeItem('expandia_language_preference');
+        sessionStorage.removeItem('expandia_last_redirect');
+        console.log('Language preferences cleared. Refresh the page to test geolocation again.');
+    };
 }
 
