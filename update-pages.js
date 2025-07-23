@@ -13,6 +13,16 @@ const headerTemplate = `<!DOCTYPE html>
             <link rel="icon" type="image/x-icon" href="/favicon.ico">
         <link rel="icon" type="image/png" href="/favicon.png">
         <link rel="apple-touch-icon" href="/favicon.png">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XY2B6K4R6Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XY2B6K4R6Q');
+    </script>
 </head>
 <body class="font-sans">
     <!-- Navigation -->
