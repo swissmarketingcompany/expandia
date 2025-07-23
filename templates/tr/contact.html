@@ -37,88 +37,17 @@
                             </p>
                         </div>
 
-                        <form id="contact-form" class="space-y-6">
-                            <!-- Name and Company -->
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text text-base-content font-medium">Adınız *</span>
-                                    </label>
-                                    <input type="text" name="name" placeholder="Ahmet Yılmaz" class="input input-bordered input-primary buzz-input" required />
-                                </div>
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text text-base-content font-medium">Şirket Adı *</span>
-                                    </label>
-                                    <input type="text" name="company" placeholder="Şirketiniz A.Ş." class="input input-bordered input-primary buzz-input" required />
-                                </div>
-                            </div>
+                        <!-- HubSpot Form -->
+                        <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
+                        <script>
+                          hbspt.forms.create({
+                            region: "eu1",
+                            portalId: "145104780",
+                            formId: "ae6c8da0-8483-4234-9e34-52b995f8f3eb"
+                          });
+                        </script>
 
-                            <!-- Email -->
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text text-base-content font-medium">E-posta Adresi *</span>
-                                </label>
-                                <input type="email" name="email" placeholder="ahmet@sirketiniz.com" class="input input-bordered input-primary buzz-input" required />
-                            </div>
 
-                            <!-- Service Interest -->
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text text-base-content font-medium">Hangi çözümle ilgileniyorsunuz?</span>
-                                </label>
-                                <select name="service" class="select select-bordered select-primary buzz-input">
-                                    <option value="">Lütfen seçiniz</option>
-                                    <option value="sales-as-service">Hizmet Olarak Satış - Tam Outsourcing</option>
-                                    <option value="ai-solutions">AI Satış Çözümleri - BuffSend Platform</option>
-                                    <option value="both">Her İkisi - Hibrit Yaklaşım</option>
-                                    <option value="consulting">Sadece Danışmanlık</option>
-                                </select>
-                            </div>
-
-                            <!-- Message -->
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text text-base-content font-medium">Projeniz hakkında daha fazla bilgi</span>
-                                </label>
-                                <textarea name="message" 
-                                          placeholder="Mevcut satış durumunuz, hedefleriniz ve karşılaştığınız zorluklar hakkında bize bilgi verin..." 
-                                          class="textarea textarea-bordered textarea-primary buzz-input h-32"
-                                          rows="4"></textarea>
-                            </div>
-
-                            <!-- Honeypot field (hidden) -->
-                            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" />
-
-                            <!-- Submit Button -->
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary btn-lg buzz-button w-full">
-                                    <span class="loading loading-spinner loading-md hidden"></span>
-                                    Ücretsiz Danışmanlığımı Ayırıt
-                                </button>
-                                <p class="text-sm text-base-content/60 mt-4">
-                                    24 saat içinde size geri döneceğiz
-                                </p>
-                            </div>
-                        </form>
-
-                        <!-- Success Message (hidden by default) -->
-                        <div id="success-message" class="hidden text-center p-6 bg-primary/10 rounded-lg mt-6">
-                            <div class="text-4xl mb-4">🎉</div>
-                            <h3 class="text-2xl font-bold text-primary mb-2">Teşekkürler!</h3>
-                            <p class="text-base-content/80">
-                                Mesajınız başarıyla gönderildi. Ekibimiz 24 saat içinde sizinle iletişime geçecek.
-                            </p>
-                        </div>
-
-                        <!-- Error Message (hidden by default) -->
-                        <div id="error-message" class="hidden text-center p-6 bg-error/10 rounded-lg mt-6">
-                            <div class="text-4xl mb-4">❌</div>
-                            <h3 class="text-2xl font-bold text-error mb-2">Bir Hata Oluştu</h3>
-                            <p class="text-base-content/80">
-                                Mesajınız gönderilemedi. Lütfen tekrar deneyin veya doğrudan hello@expandia.ch adresine e-posta gönderin.
-                            </p>
-                        </div>
                     </div>
                 </div>
             </div>

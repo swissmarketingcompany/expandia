@@ -37,75 +37,16 @@
                             </p>
                         </div>
 
-                        <form id="contact-form" class="space-y-6">
-                            <!-- Name and Company -->
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text text-base-content font-medium">Your Name *</span>
-                                    </label>
-                                    <input type="text" name="name" placeholder="John Doe" class="input input-bordered input-primary buzz-input" required />
-                                </div>
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text text-base-content font-medium">Company *</span>
-                                    </label>
-                                    <input type="text" name="company" placeholder="Your Company Inc." class="input input-bordered input-primary buzz-input" required />
-                                </div>
-                            </div>
+                        <!-- HubSpot Form -->
+                        <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
+                        <script>
+                          hbspt.forms.create({
+                            region: "eu1",
+                            portalId: "145104780",
+                            formId: "ae6c8da0-8483-4234-9e34-52b995f8f3eb"
+                          });
+                        </script>
 
-                            <!-- Email -->
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text text-base-content font-medium">Email Address *</span>
-                                </label>
-                                <input type="email" name="email" placeholder="john@company.com" class="input input-bordered input-primary buzz-input" required />
-                            </div>
-
-                            <!-- What would you like help with -->
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text text-base-content font-medium">What would you like help with? *</span>
-                                </label>
-                                <select name="service" class="select select-bordered select-primary buzz-input" required>
-                                    <option disabled selected value="">Choose your main interest</option>
-                                    <option value="sales-as-service">Sales as a Service - Complete Outsourcing</option>
-                                    <option value="lead-generation">Lead Generation & Prospecting</option>
-                                    <option value="email-automation">Email Campaign Automation</option>
-                                    <option value="sales-ai">Sales AI Tools & Agents</option>
-                                    <option value="crm-management">CRM Management & Optimization</option>
-                                    <option value="sales-training">Sales Team Training & Support</option>
-                                    <option value="buffsend">BuffSend Email Platform Access</option>
-                                    <option value="consultation">Not sure - need consultation</option>
-                                </select>
-                            </div>
-
-                            <!-- Current Challenge -->
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text text-base-content font-medium">Describe your current challenge or goal</span>
-                                </label>
-                                <textarea name="message" class="textarea textarea-bordered textarea-primary buzz-input h-24" placeholder="Tell us about your sales challenges or revenue goals you want to achieve..."></textarea>
-                            </div>
-
-                            <!-- Honeypot field (hidden from users, catches bots) -->
-                            <div style="position: absolute; left: -9999px; opacity: 0;">
-                                <input type="text" name="website" tabindex="-1" autocomplete="off" />
-                            </div>
-
-                            <!-- Submit Button -->
-                            <div class="pt-4">
-                                <button type="submit" class="credit-badge w-full py-4 text-white font-bold text-lg" id="submit-btn">
-                                    Get My Free Sales Consultation
-                                </button>
-                                <p class="text-center text-sm text-base-content/60 mt-4">
-                                    We'll respond within 24 hours with your personalized sales strategy
-                                </p>
-                            </div>
-
-                            <!-- Form Messages -->
-                            <div id="form-messages"></div>
-                        </form>
                     </div>
                 </div>
             </div>
