@@ -16,10 +16,10 @@ app.use(helmet({
     contentSecurityPolicy: false
 }));
 
-// Rate limiting for contact form
+// Rate limiting for contact form - more relaxed
 const contactLimiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 5, // Limit each IP to 5 contact form submissions per windowMs
+    max: 20, // Increased from 5 to 20 contact form submissions per 15 minutes
     message: {
         success: false,
         error: 'Too many contact form submissions. Please try again in 15 minutes.'
@@ -28,18 +28,19 @@ const contactLimiter = rateLimit({
     legacyHeaders: false,
 });
 
-// General rate limiting
+// General rate limiting - much more relaxed
 const generalLimiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
-    max: process.env.NODE_ENV === 'production' ? 100 : 1000, // Higher limit for development
+    max: process.env.NODE_ENV === 'production' ? 1000 : 2000, // Increased from 100 to 1000 for production
     standardHeaders: true,
     legacyHeaders: false,
 });
 
-// Apply rate limiting only in production for general requests
-if (process.env.NODE_ENV === 'production') {
-    app.use(generalLimiter);
-}
+// Rate limiting disabled for production by default
+// Uncomment the lines below if you want to re-enable rate limiting
+// if (process.env.NODE_ENV === 'production' && process.env.ENABLE_RATE_LIMIT === 'true') {
+//     app.use(generalLimiter);
+// }
 
 // Middleware
 app.use(cors({
@@ -98,7 +99,11 @@ const contactValidation = [
 ];
 
 // Contact form submission endpoint
-app.post('/api/contact', contactLimiter, contactValidation, async (req, res) => {
+// Contact form rate limiting disabled by default
+// Uncomment the line below if you want to re-enable contact rate limiting
+// const contactMiddleware = process.env.ENABLE_RATE_LIMIT === 'true' ? [contactLimiter] : [];
+
+app.post('/api/contact', contactValidation, async (req, res) => {
     try {
         // Check validation results
         const errors = validationResult(req);
