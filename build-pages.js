@@ -158,31 +158,69 @@ function createHTMLTemplate(lang = 'en') {
 
 // Translation content for Turkish
 const turkishTranslations = {
-    // Navigation
+    // Navigation Menu Items
+    'Home': 'Ana Sayfa',
+    'Sales University': 'Satış Üniversitesi',
     'Get Started': 'Başlayın',
     'Solutions': 'Çözümler',
     'About': 'Hakkımızda',
     'Contact': 'İletişim',
-    'Special Services': 'Özel Hizmetler',
-    'Lead Generation': 'Potansiyel Müşteri Üretimi',
-    'Sales Development': 'Satış Geliştirme',
-    'Marketing': 'Pazarlama',
-    'International': 'Uluslararası',
-    'Local Markets': 'Yerel Pazarlar',
-    'Ready to accelerate your sales growth?': 'Satış büyümenizi hızlandırmaya hazır mısınız?',
-    'Let\'s discuss your specific needs': 'Özel ihtiyaçlarınızı konuşalım',
-    'Get Free Consultation →': 'Ücretsiz Danışmanlık Alın →',
-    'Comprehensive sales growth solutions for your business': 'İşletmeniz için kapsamlı satış büyüme çözümleri',
-    'Complete sales management and operations outsourcing': 'Komple satış yönetimi ve operasyon dış kaynak kullanımı',
+    'Company': 'Şirket',
+    'About Us': 'Hakkımızda',
+    'Contact Us': 'İletişim',
+    'Success Stories': 'Başarı Hikayeleri',
+    
+    // Mega Menu Headers
+    'Sales Solutions & Services': 'Satış Çözümleri & Hizmetleri',
+    'Sales Çözümler & Services': 'Satış Çözümleri & Hizmetleri',
+    'About Expandia': 'Expandia Hakkında',
+    'Hakkımızda Expandia': 'Expandia Hakkında',
+    
+    // Main Service Cards
+    'Sales as a Service': 'Hizmet Olarak Satış',
+    'Sales AI Solutions': 'Satış AI Çözümleri',
+    'Sales AI Çözümler': 'Satış AI Çözümleri',
     'BuffSend platform and AI-powered sales tools': 'BuffSend platformu ve AI destekli satış araçları',
+    'Complete sales management and operations outsourcing': 'Komple satış yönetimi ve operasyon dış kaynak kullanımı',
     'Real results from companies we\'ve helped': 'Yardım ettiğimiz şirketlerden gerçek sonuçlar',
-    'Istanbul Services': 'İstanbul Hizmetleri',
+    'Comprehensive sales growth solutions for your business': 'İşletmeniz için kapsamlı satış büyüme çözümleri',
+    
+    // Section Headers
+    'Special Services': 'Özel Hizmetler',
     'Lead Generation & Sales': 'Potansiyel Müşteri Üretimi & Satış',
+    'Potansiyel Müşteri Üretimi & Sales': 'Potansiyel Müşteri Üretimi & Satış',
     'Marketing & Outreach': 'Pazarlama & İletişim',
     'International Expansion': 'Uluslararası Genişleme',
+    
+    // Service Items - English terms that need translation
+    'Appointment Setting': 'Randevu Ayarlama',
+    'Cold Email': 'Soğuk E-posta',
+    'Email Automation': 'E-posta Otomasyonu',
+    'AI Sales Tools': 'AI Satış Araçları',
+    'Export Marketing': 'İhracat Pazarlaması',
+    'Europe Market Entry': 'Avrupa Pazarına Giriş',
+    'Prospect Finding': 'Potansiyel Müşteri Bulma',
+    'Outbound Marketing': 'Outbound Pazarlama',
     'Cold Email Agency': 'Soğuk E-posta Ajansı',
     'Outsourced Sales Team': 'Dış Kaynaklı Satış Ekibi',
     'Overseas Sales Consulting': 'Yurt Dışı Satış Danışmanlığı',
+    'Distributor Finding': 'Distribütör Bulma',
+    'International Market Entry': 'Uluslararası Pazar Girişi',
+    'Sales Development': 'Satış Geliştirme',
+    'Agency': 'Ajansı',
+    'B2B Lead Generation': 'B2B Potansiyel Müşteri Üretimi',
+    'Lead Generation Service': 'Potansiyel Müşteri Üretimi Hizmeti',
+    'Our Sales Solutions': 'Satış Çözümlerimiz',
+    
+    // Call to Action Section
+    'Ready to accelerate your sales growth?': 'Satış büyümenizi hızlandırmaya hazır mısınız?',
+    'Let\'s discuss your specific needs': 'Özel ihtiyaçlarınızı konuşalım',
+    'Get Free Consultation →': 'Ücretsiz Danışmanlık Alın →',
+    'Get Free Consultation': 'Ücretsiz Danışmanlık Alın',
+    
+    // Company Menu
+    'Our Mission': 'Misyonumuz',
+    'Boost Your Sales': 'Satışlarınızı Artırın',
     
     // Footer Newsletter
     'Stay Updated with Sales Insights': 'Satış Görüşleri ile Güncel Kalın',
@@ -193,103 +231,125 @@ const turkishTranslations = {
     // Footer Company Info
     'Your Partner in Sales Growth and Revenue Acceleration. We help businesses scale their sales operations with proven strategies and cutting-edge solutions.': 'Satış Büyümesi ve Gelir Hızlandırma Ortağınız. İşletmelerin satış operasyonlarını kanıtlanmış stratejiler ve son teknoloji çözümlerle ölçeklendirmelerine yardımcı oluyoruz.',
     
-    // Footer Links (removing duplicate)
-    'Sales as a Service': 'Hizmet Olarak Satış',
-    'Sales AI Solutions': 'Satış AI Çözümleri',
-    'Lead Generation': 'Potansiyel Müşteri Üretimi',
-    'BuffSend Platform': 'BuffSend Platformu',
-    'Company': 'Şirket',
-    'Success Stories': 'Başarı Hikayeleri',
-    'About Us': 'Hakkımızda',
-    'Contact Us': 'İletişim',
-    'Contact': 'İletişim',
-    'Home': 'Ana Sayfa',
-    'Our Sales Çözümler': 'Satış Çözümlerimiz',
-    'Our Sales': 'Satış',
-    'Potansiyel Müşteri Üretimi Service': 'Potansiyel Müşteri Üretimi Hizmeti',
-    'Boost Your Sales': 'Satışlarınızı Artırın',
-    'Let\'s discuss how we can help': 'Size nasıl yardımcı olabileceğimizi konuşalım',
-    'Sales University': 'Satış Üniversitesi',
-    'Sales AI Çözümler': 'Satış AI Çözümleri',
-    'BuffSend Platform': 'BuffSend Platformu',
-    'Schedule a Call': 'Toplantı Ayarlayın',
-    // Handle partial translations
-    'Hakkımızda Us': 'Hakkımızda',
-    'İletişim Us': 'İletişim',
-    'Blog': 'Blog',
-    
     // Footer Contact
     'Get in Touch': 'İletişime Geçin',
     'Ready to accelerate your sales growth? Let\'s discuss how we can help.': 'Satış büyümenizi hızlandırmaya hazır mısınız? Size nasıl yardımcı olabileceğimizi konuşalım.',
-    'Get Free Consultation': 'Ücretsiz Danışmanlık Alın',
     'Schedule a Call': 'Toplantı Ayarlayın',
+    
+    // Footer Links
+    'Lead Generation': 'Potansiyel Müşteri Üretimi',
+    'BuffSend Platform': 'BuffSend Platformu',
     
     // Footer Bottom
     '&copy; 2024 Expandia. All rights reserved.': '&copy; 2024 Expandia. Tüm hakları saklıdır.',
     'Privacy Policy': 'Gizlilik Politikası',
     'Terms of Service': 'Hizmet Şartları',
-    'Cookie Policy': 'Çerez Politikası'
+    'Cookie Policy': 'Çerez Politikası',
+    
+    // Clean up partial translations
+    'Hakkımızda Us': 'Hakkımızda',
+    'İletişim Us': 'İletişim',
+    'Our Sales Çözümler': 'Satış Çözümlerimiz',
+    'Our Sales': 'Satış',
+    'Potansiyel Müşteri Üretimi Service': 'Potansiyel Müşteri Üretimi Hizmeti',
+    'Let\'s discuss how we can help': 'Size nasıl yardımcı olabileceğimizi konuşalım',
+    'Blog': 'Blog'
 };
 
 // Translation content for German
 const germanTranslations = {
-    // Navigation
+    // Navigation Menu Items
     'Home': 'Startseite',
+    'Sales University': 'Vertriebsschule', // Shorter than "Verkaufs-Universität" to fix width issue
     'Get Started': 'Jetzt starten',
     'Solutions': 'Lösungen',
     'About': 'Über uns',
     'Contact': 'Kontakt',
-    'Special Services': 'Spezialservices',
-    'Lead Generation': 'Lead-Generierung',
-    'Sales Development': 'Verkaufsentwicklung',
-    'Marketing': 'Marketing',
-    'International': 'International',
-    'Local Markets': 'Lokale Märkte',
-    'Ready to accelerate your sales growth?': 'Bereit, Ihr Umsatzwachstum zu beschleunigen?',
-    'Let\'s discuss your specific needs': 'Lassen Sie uns Ihre spezifischen Bedürfnisse besprechen',
-    'Get Free Consultation →': 'Kostenlose Beratung erhalten →',
-    'Comprehensive sales growth solutions for your business': 'Umfassende Umsatzwachstumslösungen für Ihr Unternehmen',
-    'Complete sales management and operations outsourcing': 'Vollständiges Outsourcing von Verkaufsmanagement und -abläufen',
+    'Company': 'Unternehmen',
+    'About Us': 'Über uns',
+    'Contact Us': 'Kontakt',
+    'Success Stories': 'Erfolgsgeschichten',
+    
+    // Mega Menu Headers
+    'Sales Solutions & Services': 'Verkaufslösungen & Services',
+    'Sales Lösungen & Services': 'Verkaufslösungen & Services',
+    'About Expandia': 'Über Expandia',
+    
+    // Main Service Cards
+    'Sales as a Service': 'Verkauf als Service',
+    'Sales AI Solutions': 'Verkaufs-KI-Lösungen',
     'BuffSend platform and AI-powered sales tools': 'BuffSend-Plattform und KI-gestützte Verkaufstools',
+    'Complete sales management and operations outsourcing': 'Vollständiges Outsourcing von Verkaufsmanagement und -abläufen',
     'Real results from companies we\'ve helped': 'Echte Ergebnisse von Unternehmen, denen wir geholfen haben',
+    'Comprehensive sales growth solutions for your business': 'Umfassende Umsatzwachstumslösungen für Ihr Unternehmen',
+    
+    // Section Headers
+    'Special Services': 'Spezialservices',
     'Lead Generation & Sales': 'Lead-Generierung & Verkauf',
     'Marketing & Outreach': 'Marketing & Outreach',
     'International Expansion': 'Internationale Expansion',
-    'Cold Email Agency': 'Cold-E-Mail-Agentur',
-    'Outsourced Sales Team': 'Ausgelagertes Verkaufsteam',
-    'Overseas Sales Consulting': 'Übersee-Verkaufsberatung',
-    'Sales as a Service': 'Sales als Service',
-    'Sales AI Solutions': 'Verkaufs-KI-Lösungen',
+    
+    // Service Items - English terms that need translation
     'B2B Lead Generation': 'B2B-Lead-Generierung',
-    'Success Stories': 'Erfolgsgeschichten',
-    'About Us': 'Über uns',
-    'Contact Us': 'Kontakt',
-    'Company': 'Unternehmen',
-    'Get in Touch': 'Kontakt aufnehmen',
-    'Ready to accelerate your sales growth? Let\'s discuss how we can help.': 'Bereit, Ihr Umsatzwachstum zu beschleunigen? Lassen Sie uns besprechen, wie wir helfen können.',
+    'Lead Generation Service': 'Lead-Generierung Service',
+    'Prospect Finding': 'Prospect Finding',
+    'Sales Development': 'Verkaufsentwicklung',
+    'Appointment Setting': 'Terminvereinbarung',
+    'Outsourced Sales Team': 'Ausgelagertes Verkaufsteam',
+    'Outbound Marketing': 'Outbound Marketing',
+    'Cold Email Agency': 'Cold-E-Mail-Agentur',
+    'Email Automation': 'E-Mail-Automatisierung',
+    'AI Sales Tools': 'KI-Verkaufstools',
+    'Export Marketing': 'Export-Marketing',
+    'International Market Entry': 'Internationaler Markteintritt',
+    'Distributor Finding': 'Distributor-Suche',
+    'Overseas Sales Consulting': 'Übersee-Verkaufsberatung',
+    'Europe Market Entry': 'Europa-Markteintritt',
+    
+    // Call to Action Section
+    'Ready to accelerate your sales growth?': 'Bereit, Ihr Umsatzwachstum zu beschleunigen?',
+    'Let\'s discuss your specific needs': 'Lassen Sie uns Ihre spezifischen Bedürfnisse besprechen',
+    'Get Free Consultation →': 'Kostenlose Beratung erhalten →',
     'Get Free Consultation': 'Kostenlose Beratung erhalten',
-    'Schedule a Call': 'Anruf planen',
+    
+    // Company Menu
+    'Our Mission': 'Unsere Mission',
+    'Boost Your Sales': 'Steigern Sie Ihren Umsatz',
+    
+    // Footer Newsletter
     'Stay Updated with Sales Insights': 'Bleiben Sie mit Verkaufseinblicken auf dem Laufenden',
     'Get the latest sales strategies and industry updates.': 'Erhalten Sie die neuesten Verkaufsstrategien und Branchenupdates.',
     'Enter your email': 'E-Mail eingeben',
     'Subscribe': 'Abonnieren',
+    
+    // Footer Company Info
     'Your Partner in Sales Growth and Revenue Acceleration. We help businesses scale their sales operations with proven strategies and cutting-edge solutions.': 'Ihr Partner für Umsatzwachstum und Umsatzbeschleunigung. Wir helfen Unternehmen, ihre Verkaufsabläufe mit bewährten Strategien und modernsten Lösungen zu skalieren.',
+    
+    // Footer Contact
+    'Get in Touch': 'Kontakt aufnehmen',
+    'Ready to accelerate your sales growth? Let\'s discuss how we can help.': 'Bereit, Ihr Umsatzwachstum zu beschleunigen? Lassen Sie uns besprechen, wie wir helfen können.',
+    'Schedule a Call': 'Anruf planen',
+    
+    // Footer Links
+    'Lead Generation': 'Lead-Generierung',
+    'BuffSend Platform': 'BuffSend-Plattform',
+    
+    // Footer Bottom
     '&copy; 2024 Expandia. All rights reserved.': '&copy; 2024 Expandia. Alle Rechte vorbehalten.',
     'Privacy Policy': 'Datenschutzrichtlinie',
     'Terms of Service': 'Nutzungsbedingungen',
     'Cookie Policy': 'Cookie-Richtlinie',
+    
+    // Clean up partial translations
+    'Über uns Us': 'Über uns',
+    'Kontakt Us': 'Kontakt',
     'Our Sales': 'Unsere Verkaufs',
-    'Sales University': 'Verkaufs-Universität',
     'Case Studies': 'Fallstudien',
     'Resources': 'Ressourcen',
     'Services': 'Services',
     'Blog': 'Blog',
-    'BuffSend Platform': 'BuffSend-Plattform',
-    'Über uns Us': 'Über uns',
-    'Kontakt Us': 'Kontakt',
     'Let\'s discuss how we can help': 'Lassen Sie uns besprechen, wie wir Ihnen helfen können',
-    'Let\'s discuss how our sales solutions can help you generate more leads': 'Lassen Sie uns besprechen, wie unsere Verkaufslösungen Ihnen helfen können, mehr Leads zu generieren',
-    'Schedule a Call': 'Anruf planen'
+    'Let\'s discuss how our sales solutions can help you generate more leads': 'Lassen Sie uns besprechen, wie unsere Verkaufslösungen Ihnen helfen können, mehr Leads zu generieren'
 };
 
 // Function to apply Turkish translations
@@ -641,49 +701,55 @@ function buildPage(templateName, outputName, lang = 'en') {
     
     // Apply language-specific translations and fixes
     if (lang === 'tr') {
+        // Apply Turkish translations to all content
         pageNavigation = applyTurkishTranslations(pageNavigation);
         pageFooter = applyTurkishTranslations(pageFooter);
         content = applyTurkishTranslations(content);
         
-        // Fix service page links for Turkish pages to point to Turkish service pages
+        // Fix Turkish service page links - Turkish has comprehensive standalone service pages
+        // Lead Generation & Sales section
         pageNavigation = pageNavigation.replace(/href="\.\.\/b2b-lead-generation-agency\.html"/g, 'href="./b2b-lead-generation-ajansi.html"');
         pageNavigation = pageNavigation.replace(/href="\.\.\/lead-generation-service\.html"/g, 'href="./lead-generation-hizmeti.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/prospect-finding-service\.html"/g, 'href="./potansiyel-musteri-bulma-ajansi.html"');
         pageNavigation = pageNavigation.replace(/href="\.\.\/sales-development-agency\.html"/g, 'href="./satis-gelistirme-ajansi.html"');
         pageNavigation = pageNavigation.replace(/href="\.\.\/appointment-setting-service\.html"/g, 'href="./randevu-ayarlama-hizmeti.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/outsourced-sales-team-service\.html"/g, 'href="./dis-kaynakli-satis-ekibi.html"');
+        
+        // Marketing & Outreach section
         pageNavigation = pageNavigation.replace(/href="\.\.\/outbound-marketing-agency\.html"/g, 'href="./outbound-pazarlama-ajansi.html"');
         pageNavigation = pageNavigation.replace(/href="\.\.\/cold-email-agency\.html"/g, 'href="./soguk-e-posta-ajansi.html"');
-        pageNavigation = pageNavigation.replace(/href="\.\.\/prospect-research-service\.html"/g, 'href="./potansiyel-musteri-bulma-ajansi.html"');
-        pageNavigation = pageNavigation.replace(/href="\.\.\/outsourced-sales-team\.html"/g, 'href="./dis-kaynakli-satis-ekibi.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/email-automation\.html"/g, 'href="./solutions.html#email-automation"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/ai-solutions\.html"/g, 'href="./solutions.html#ai-solutions"');
+        
+        // International Expansion section
         pageNavigation = pageNavigation.replace(/href="\.\.\/export-marketing-consulting\.html"/g, 'href="./ihracat-pazarlama-danismanligi.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/international-market-entry\.html"/g, 'href="./uluslararasi-pazar-girisi-danismanligi.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/distributor-finding\.html"/g, 'href="./distributor-bulma-hizmeti.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/overseas-sales-consulting\.html"/g, 'href="./yurt-disi-satis-danismanligi.html"');
         pageNavigation = pageNavigation.replace(/href="\.\.\/europe-market-entry\.html"/g, 'href="./avrupa-pazarina-giris.html"');
         
-        // Fix Company menu links for Turkish pages
-        pageNavigation = pageNavigation.replace(/href="\.\.\/about\.html"/g, 'href="./about.html"');
-        pageNavigation = pageNavigation.replace(/href="\.\.\/contact\.html"/g, 'href="./contact.html"');
-        
-        // Fix language switcher for Turkish pages
-        pageNavigation = pageNavigation.replace(
-            /<span id="current-flag">🇺🇸<\/span>/g,
-            '<span id="current-flag">🇹🇷</span>'
-        );
-        pageNavigation = pageNavigation.replace(
-            /href="#" data-lang="en"/g,
-            `href="../${outputName}.html" data-lang="en"`
-        );
-        pageNavigation = pageNavigation.replace(
-            /href="#" data-lang="tr"/g,
-            `href="${outputName}.html" data-lang="tr"`
-        );
-        pageNavigation = pageNavigation.replace(
-            /href="#" data-lang="de"/g,
-            `href="../de/${outputName}.html" data-lang="de"`
-        );
+        // Remove data-i18n attributes from Turkish pages
+        content = content.replace(/\s*data-i18n="[^"]*"/g, '');
+        pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
+        pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
     } else if (lang === 'de') {
-        // For German pages, convert standalone service page links to German solutions.html sections
+        // Convert ALL standalone service page links to German solutions.html sections
         // since German doesn't have standalone service pages
         pageNavigation = pageNavigation.replace(/href="\.\.\/b2b-lead-generation-agency\.html"/g, 'href="./solutions.html#b2b-lead-generation"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/lead-generation-service\.html"/g, 'href="./solutions.html#lead-generation"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/prospect-finding-service\.html"/g, 'href="./solutions.html#prospect-finding"');
         pageNavigation = pageNavigation.replace(/href="\.\.\/sales-development-agency\.html"/g, 'href="./solutions.html#sales-development"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/appointment-setting-service\.html"/g, 'href="./solutions.html#appointment-setting"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/outsourced-sales-team-service\.html"/g, 'href="./solutions.html#outsourced-sales-team"');
         pageNavigation = pageNavigation.replace(/href="\.\.\/outbound-marketing-agency\.html"/g, 'href="./solutions.html#outbound-marketing"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/cold-email-agency\.html"/g, 'href="./solutions.html#cold-email"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/email-automation\.html"/g, 'href="./solutions.html#email-automation"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/ai-solutions\.html"/g, 'href="./solutions.html#ai-solutions"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/export-marketing-consulting\.html"/g, 'href="./solutions.html#export-marketing"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/international-market-entry\.html"/g, 'href="./solutions.html#international-market-entry"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/distributor-finding\.html"/g, 'href="./solutions.html#distributor-finding"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/overseas-sales-consulting\.html"/g, 'href="./solutions.html#overseas-sales-consulting"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/europe-market-entry\.html"/g, 'href="./solutions.html#europe-market-entry"');
         
         // Fix Company menu links for German pages
         pageNavigation = pageNavigation.replace(/href="\.\.\/about\.html"/g, 'href="./about.html"');
@@ -722,16 +788,10 @@ function buildPage(templateName, outputName, lang = 'en') {
         pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
         pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
     } else {
-        // For English pages, fix service links to point to existing standalone service pages
-        // These exist: b2b-lead-generation-agency.html, sales-development-agency.html, outbound-marketing-agency.html
-        
-        // Fix service page links for English pages - link to actual standalone pages when they exist
-        pageNavigation = pageNavigation.replace(/href="\.\/solutions\.html#lead-generation"/g, 'href="./b2b-lead-generation-agency.html"');
-        pageNavigation = pageNavigation.replace(/href="\.\/solutions\.html#sales-development"/g, 'href="./sales-development-agency.html"');  
-        pageNavigation = pageNavigation.replace(/href="\.\/solutions\.html#outbound-marketing"/g, 'href="./outbound-marketing-agency.html"');
-        
-        // Keep solutions.html links for services that don't have standalone pages
-        // (appointment-setting, cold-email, prospect-finding, etc. stay as solutions.html#section)
+        // For English pages, ensure correct service page linking
+        // Fix Lead Generation Service to point to solutions section, not standalone page
+        pageNavigation = pageNavigation.replace(/href="\.\/b2b-lead-generation-agency\.html" class="block text-xs p-2 rounded-lg hover:bg-primary\/10 hover:text-primary transition-colors">Lead Generation Service</g, 'href="./solutions.html#lead-generation" class="block text-xs p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors">Lead Generation Service</');
+        pageNavigation = pageNavigation.replace(/href="\.\/b2b-lead-generation-agency\.html" class="text-xs">Lead Generation Service</g, 'href="./solutions.html#lead-generation" class="text-xs">Lead Generation Service</');
         
         // Remove data-i18n attributes from English pages
         content = content.replace(/\s*data-i18n="[^"]*"/g, '');
@@ -804,6 +864,18 @@ console.log('Building English service pages...');
 buildPage('b2b-lead-generation-agency', 'b2b-lead-generation-agency', 'en');
 buildPage('sales-development-agency', 'sales-development-agency', 'en');
 buildPage('outbound-marketing-agency', 'outbound-marketing-agency', 'en');
+buildPage('lead-generation-service', 'lead-generation-service', 'en');
+buildPage('prospect-finding-service', 'prospect-finding-service', 'en');
+buildPage('appointment-setting-service', 'appointment-setting-service', 'en');
+buildPage('cold-email-agency', 'cold-email-agency', 'en');
+buildPage('ai-solutions', 'ai-solutions', 'en');
+buildPage('outsourced-sales-team-service', 'outsourced-sales-team-service', 'en');
+buildPage('email-automation', 'email-automation', 'en');
+buildPage('export-marketing-consulting', 'export-marketing-consulting', 'en');
+buildPage('international-market-entry', 'international-market-entry', 'en');
+buildPage('distributor-finding', 'distributor-finding', 'en');
+buildPage('overseas-sales-consulting', 'overseas-sales-consulting', 'en');
+buildPage('europe-market-entry', 'europe-market-entry', 'en');
 
 // Build Turkish pages
 console.log('Building Turkish pages...');
