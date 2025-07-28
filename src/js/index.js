@@ -357,10 +357,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Language switching functions
+// Language switching functions - STANDARDIZED FOR MULTILINGUAL SUPPORT
 function switchToEnglish() {
     console.log('Switching to English, current path:', window.location.pathname);
     const path = window.location.pathname;
+    
+    // Set user language preference to prevent auto-redirects
+    localStorage.setItem('expandia_language_preference', 'en');
     
     if (path.startsWith('/tr/')) {
         // Map Turkish pages to English equivalents
@@ -368,30 +371,55 @@ function switchToEnglish() {
         
         // Handle specific page mappings
         if (englishPath === '/index.html' || englishPath === '/') {
-            window.location.href = '/index.html';
+            window.location.href = '/';
         } else if (englishPath === '/about.html') {
             window.location.href = '/about.html';
         } else if (englishPath === '/solutions.html') {
             window.location.href = '/solutions.html';
         } else if (englishPath === '/contact.html') {
             window.location.href = '/contact.html';
-                        } else if (englishPath === '/case-studies.html') {
+        } else if (englishPath === '/case-studies.html') {
             window.location.href = '/case-studies.html';
         } else if (englishPath.startsWith('/blog/')) {
             // Handle blog pages - redirect to English blog
             if (englishPath === '/blog/index.html' || englishPath === '/blog/') {
-                window.location.href = '/blog/index.html';
+                window.location.href = '/blog/';
             } else {
                 // For specific Turkish blog posts, redirect to English blog index
-                window.location.href = '/blog/index.html';
+                window.location.href = '/blog/';
             }
         } else {
-            // For other Turkish pages, redirect to solutions page
+            // For other Turkish pages, redirect to homepage
+            window.location.href = '/';
+        }
+    } else if (path.startsWith('/de/')) {
+        // Map German pages to English equivalents
+        const englishPath = path.replace('/de/', '/');
+        
+        // Handle specific page mappings
+        if (englishPath === '/index.html' || englishPath === '/') {
+            window.location.href = '/';
+        } else if (englishPath === '/about.html') {
+            window.location.href = '/about.html';
+        } else if (englishPath === '/solutions.html') {
             window.location.href = '/solutions.html';
+        } else if (englishPath === '/contact.html') {
+            window.location.href = '/contact.html';
+        } else if (englishPath === '/case-studies.html') {
+            window.location.href = '/case-studies.html';
+        } else if (englishPath.startsWith('/blog/')) {
+            // Handle blog pages - redirect to English blog
+            window.location.href = '/blog/';
+        } else {
+            // For other German pages, redirect to homepage
+            window.location.href = '/';
         }
     } else if (path === '/tr' || path === '/tr/') {
         // Turkish home to English home
-        window.location.href = '/index.html';
+        window.location.href = '/';
+    } else if (path === '/de' || path === '/de/') {
+        // German home to English home
+        window.location.href = '/';
     } else {
         // Already on English
         console.log('Already on English version');
@@ -402,14 +430,21 @@ function switchToTurkish() {
     console.log('Switching to Turkish, current path:', window.location.pathname);
     const path = window.location.pathname;
     
+    // Set user language preference to prevent auto-redirects
+    localStorage.setItem('expandia_language_preference', 'tr');
+    
     if (path.startsWith('/tr/')) {
         // Already on Turkish
         console.log('Already on Turkish version');
         return;
+    } else if (path.startsWith('/de/')) {
+        // Map German pages to Turkish equivalents
+        const turkishPath = path.replace('/de/', '/tr/');
+        window.location.href = turkishPath;
     } else {
         // Map English pages to Turkish equivalents
         if (path === '/' || path === '/index.html' || path === '') {
-            window.location.href = '/tr/index.html';
+            window.location.href = '/tr/';
         } else if (path === '/about.html') {
             window.location.href = '/tr/about.html';
         } else if (path === '/solutions.html') {
@@ -421,14 +456,14 @@ function switchToTurkish() {
         } else if (path.startsWith('/blog/')) {
             // Handle blog pages - redirect to Turkish blog
             if (path === '/blog/index.html' || path === '/blog/' || path === '/blog') {
-                window.location.href = '/tr/blog/index.html';
+                window.location.href = '/tr/blog/';
             } else {
                 // For specific English blog posts, redirect to Turkish blog index
-                window.location.href = '/tr/blog/index.html';
+                window.location.href = '/tr/blog/';
             }
         } else {
             // For other pages, redirect to Turkish home
-            window.location.href = '/tr/index.html';
+            window.location.href = '/tr/';
         }
     }
 }
@@ -437,28 +472,35 @@ function switchToGerman() {
     console.log('Switching to German, current path:', window.location.pathname);
     const path = window.location.pathname;
     
+    // Set user language preference to prevent auto-redirects
+    localStorage.setItem('expandia_language_preference', 'de');
+    
     if (path.startsWith('/de/')) {
         // Already on German
         console.log('Already on German version');
         return;
+    } else if (path.startsWith('/tr/')) {
+        // Map Turkish pages to German equivalents
+        const germanPath = path.replace('/tr/', '/de/');
+        window.location.href = germanPath;
     } else {
-        // Map pages to German equivalents
-        if (path === '/' || path === '/index.html' || path === '' || path.startsWith('/tr/')) {
-            window.location.href = '/de/index.html';
-        } else if (path === '/about.html' || path === '/tr/about.html') {
+        // Map English pages to German equivalents
+        if (path === '/' || path === '/index.html' || path === '') {
+            window.location.href = '/de/';
+        } else if (path === '/about.html') {
             window.location.href = '/de/about.html';
-        } else if (path === '/solutions.html' || path === '/tr/solutions.html') {
+        } else if (path === '/solutions.html') {
             window.location.href = '/de/solutions.html';
-        } else if (path === '/contact.html' || path === '/tr/contact.html') {
+        } else if (path === '/contact.html') {
             window.location.href = '/de/contact.html';
-        } else if (path === '/case-studies.html' || path === '/tr/case-studies.html') {
+        } else if (path === '/case-studies.html') {
             window.location.href = '/de/case-studies.html';
-        } else if (path.startsWith('/blog/') || path.startsWith('/tr/blog/')) {
+        } else if (path.startsWith('/blog/')) {
             // Handle blog pages - redirect to German blog
-            window.location.href = '/de/blog/index.html';
+            window.location.href = '/de/blog/';
         } else {
             // For other pages, redirect to German home
-            window.location.href = '/de/index.html';
+            window.location.href = '/de/';
         }
     }
 }

@@ -5,9 +5,90 @@ const path = require('path');
 const navigation = fs.readFileSync('includes/header.html', 'utf8');
 const footer = fs.readFileSync('includes/footer.html', 'utf8');
 
-// HTML Document Template
+// SEO Keywords by page type
+const seoKeywords = {
+    index: 'B2B lead generation Europe, sales as a service, export market entry, appointment setting for exporters',
+    solutions: 'B2B sales solutions, lead generation services Europe, sales automation, export sales consulting',
+    about: 'B2B sales agency Europe, export market specialists, international sales consulting',
+    contact: 'B2B lead generation consultation, export sales consultation, international market entry',
+    'case-studies': 'B2B sales success stories, export market case studies, international expansion results'
+};
+
+// Schema markup generators
+function generateOrganizationSchema() {
+    return {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Expandia",
+        "url": "https://www.expandia.ch",
+        "logo": "https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png",
+        "email": "hello@expandia.ch",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "CH"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/company/expandia-ch/"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41-XXX-XXX-XXXX",
+            "contactType": "sales",
+            "areaServed": ["CH", "DE", "AT", "TR", "EU"],
+            "availableLanguage": ["en", "de", "tr"]
+        }
+    };
+}
+
+function generateServiceSchema(serviceName, description, lang = 'en') {
+    const baseUrl = lang === 'en' ? 'https://www.expandia.ch' : `https://www.expandia.ch/${lang}`;
+    return {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": serviceName,
+        "description": description,
+        "provider": {
+            "@type": "Organization",
+            "name": "Expandia",
+            "url": baseUrl
+        },
+        "areaServed": {
+            "@type": "Place",
+            "name": "Europe"
+        },
+        "serviceType": "B2B Lead Generation",
+        "category": "Business Services"
+    };
+}
+
+function generateArticleSchema(title, description, url, datePublished = "2024-12-30") {
+    return {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": title,
+        "description": description,
+        "url": url,
+        "datePublished": datePublished,
+        "dateModified": datePublished,
+        "author": {
+            "@type": "Organization",
+            "name": "Expandia"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Expandia",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png"
+            }
+        }
+    };
+}
+
+// HTML Document Template with enhanced SEO
 function createHTMLTemplate(lang = 'en') {
     const basePath = (lang === 'tr' || lang === 'de') ? '../' : './';
+    const baseUrl = lang === 'en' ? 'https://www.expandia.ch' : `https://www.expandia.ch/${lang}`;
     
     return `<!DOCTYPE html>
 <html lang="${lang}" data-theme="bumblebee">
@@ -16,6 +97,33 @@ function createHTMLTemplate(lang = 'en') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{PAGE_TITLE}} | Expandia - Sales Growth Partner</title>
     <meta name="description" content="{{PAGE_DESCRIPTION}}">
+    <meta name="keywords" content="{{PAGE_KEYWORDS}}">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Expandia">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{CANONICAL_URL}}">
+    
+    <!-- Hreflang Links -->
+    <link rel="alternate" hreflang="en" href="https://www.expandia.ch/{{PAGE_URL_EN}}">
+    <link rel="alternate" hreflang="tr" href="https://www.expandia.ch/{{PAGE_URL_TR}}">
+    <link rel="alternate" hreflang="de" href="https://www.expandia.ch/{{PAGE_URL_DE}}">
+    <link rel="alternate" hreflang="x-default" href="https://www.expandia.ch/{{PAGE_URL_EN}}">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="{{PAGE_TITLE}} | Expandia">
+    <meta property="og:description" content="{{PAGE_DESCRIPTION}}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{CANONICAL_URL}}">
+    <meta property="og:image" content="https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png">
+    <meta property="og:site_name" content="Expandia">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{PAGE_TITLE}} | Expandia">
+    <meta name="twitter:description" content="{{PAGE_DESCRIPTION}}">
+    <meta name="twitter:image" content="https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png">
+    
     <link href="${basePath}dist/css/output.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="${basePath}favicon.ico">
     <link rel="icon" type="image/png" href="${basePath}favicon.png">
@@ -29,6 +137,11 @@ function createHTMLTemplate(lang = 'en') {
       gtag('js', new Date());
 
       gtag('config', 'G-XY2B6K4R6Q');
+    </script>
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {{SCHEMA_MARKUP}}
     </script>
 </head>
 <body class="font-sans">
@@ -90,6 +203,16 @@ const turkishTranslations = {
     'About Us': 'Hakkımızda',
     'Contact Us': 'İletişim',
     'Contact': 'İletişim',
+    'Home': 'Ana Sayfa',
+    'Our Sales Çözümler': 'Satış Çözümlerimiz',
+    'Our Sales': 'Satış',
+    'Potansiyel Müşteri Üretimi Service': 'Potansiyel Müşteri Üretimi Hizmeti',
+    'Boost Your Sales': 'Satışlarınızı Artırın',
+    'Let\'s discuss how we can help': 'Size nasıl yardımcı olabileceğimizi konuşalım',
+    'Sales University': 'Satış Üniversitesi',
+    'Sales AI Çözümler': 'Satış AI Çözümleri',
+    'BuffSend Platform': 'BuffSend Platformu',
+    'Schedule a Call': 'Toplantı Ayarlayın',
     // Handle partial translations
     'Hakkımızda Us': 'Hakkımızda',
     'İletişim Us': 'İletişim',
@@ -106,6 +229,67 @@ const turkishTranslations = {
     'Privacy Policy': 'Gizlilik Politikası',
     'Terms of Service': 'Hizmet Şartları',
     'Cookie Policy': 'Çerez Politikası'
+};
+
+// Translation content for German
+const germanTranslations = {
+    // Navigation
+    'Home': 'Startseite',
+    'Get Started': 'Jetzt starten',
+    'Solutions': 'Lösungen',
+    'About': 'Über uns',
+    'Contact': 'Kontakt',
+    'Special Services': 'Spezialservices',
+    'Lead Generation': 'Lead-Generierung',
+    'Sales Development': 'Verkaufsentwicklung',
+    'Marketing': 'Marketing',
+    'International': 'International',
+    'Local Markets': 'Lokale Märkte',
+    'Ready to accelerate your sales growth?': 'Bereit, Ihr Umsatzwachstum zu beschleunigen?',
+    'Let\'s discuss your specific needs': 'Lassen Sie uns Ihre spezifischen Bedürfnisse besprechen',
+    'Get Free Consultation →': 'Kostenlose Beratung erhalten →',
+    'Comprehensive sales growth solutions for your business': 'Umfassende Umsatzwachstumslösungen für Ihr Unternehmen',
+    'Complete sales management and operations outsourcing': 'Vollständiges Outsourcing von Verkaufsmanagement und -abläufen',
+    'BuffSend platform and AI-powered sales tools': 'BuffSend-Plattform und KI-gestützte Verkaufstools',
+    'Real results from companies we\'ve helped': 'Echte Ergebnisse von Unternehmen, denen wir geholfen haben',
+    'Lead Generation & Sales': 'Lead-Generierung & Verkauf',
+    'Marketing & Outreach': 'Marketing & Outreach',
+    'International Expansion': 'Internationale Expansion',
+    'Cold Email Agency': 'Cold-E-Mail-Agentur',
+    'Outsourced Sales Team': 'Ausgelagertes Verkaufsteam',
+    'Overseas Sales Consulting': 'Übersee-Verkaufsberatung',
+    'Sales as a Service': 'Sales als Service',
+    'Sales AI Solutions': 'Verkaufs-KI-Lösungen',
+    'B2B Lead Generation': 'B2B-Lead-Generierung',
+    'Success Stories': 'Erfolgsgeschichten',
+    'About Us': 'Über uns',
+    'Contact Us': 'Kontakt',
+    'Company': 'Unternehmen',
+    'Get in Touch': 'Kontakt aufnehmen',
+    'Ready to accelerate your sales growth? Let\'s discuss how we can help.': 'Bereit, Ihr Umsatzwachstum zu beschleunigen? Lassen Sie uns besprechen, wie wir helfen können.',
+    'Get Free Consultation': 'Kostenlose Beratung erhalten',
+    'Schedule a Call': 'Anruf planen',
+    'Stay Updated with Sales Insights': 'Bleiben Sie mit Verkaufseinblicken auf dem Laufenden',
+    'Get the latest sales strategies and industry updates.': 'Erhalten Sie die neuesten Verkaufsstrategien und Branchenupdates.',
+    'Enter your email': 'E-Mail eingeben',
+    'Subscribe': 'Abonnieren',
+    'Your Partner in Sales Growth and Revenue Acceleration. We help businesses scale their sales operations with proven strategies and cutting-edge solutions.': 'Ihr Partner für Umsatzwachstum und Umsatzbeschleunigung. Wir helfen Unternehmen, ihre Verkaufsabläufe mit bewährten Strategien und modernsten Lösungen zu skalieren.',
+    '&copy; 2024 Expandia. All rights reserved.': '&copy; 2024 Expandia. Alle Rechte vorbehalten.',
+    'Privacy Policy': 'Datenschutzrichtlinie',
+    'Terms of Service': 'Nutzungsbedingungen',
+    'Cookie Policy': 'Cookie-Richtlinie',
+    'Our Sales': 'Unsere Verkaufs',
+    'Sales University': 'Verkaufs-Universität',
+    'Case Studies': 'Fallstudien',
+    'Resources': 'Ressourcen',
+    'Services': 'Services',
+    'Blog': 'Blog',
+    'BuffSend Platform': 'BuffSend-Plattform',
+    'Über uns Us': 'Über uns',
+    'Kontakt Us': 'Kontakt',
+    'Let\'s discuss how we can help': 'Lassen Sie uns besprechen, wie wir Ihnen helfen können',
+    'Let\'s discuss how our sales solutions can help you generate more leads': 'Lassen Sie uns besprechen, wie unsere Verkaufslösungen Ihnen helfen können, mehr Leads zu generieren',
+    'Schedule a Call': 'Anruf planen'
 };
 
 // Function to apply Turkish translations
@@ -127,121 +311,289 @@ function applyTurkishTranslations(content) {
     return translatedContent;
 }
 
-// Function to get page metadata
+// Function to apply German translations
+function applyGermanTranslations(content) {
+    let translatedContent = content;
+    
+    // Apply all translations
+    for (const [english, german] of Object.entries(germanTranslations)) {
+        // For longer phrases, do exact string replacement first
+        if (english.includes(' ')) {
+            translatedContent = translatedContent.replace(new RegExp(english.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), german);
+        } else {
+            // For single words, use word boundary regex to avoid partial matches
+            const regex = new RegExp(`\\b${english.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'g');
+            translatedContent = translatedContent.replace(regex, german);
+        }
+    }
+    
+    return translatedContent;
+}
+
+// Function to get page metadata with enhanced SEO
 function getPageMetadata(templateName, lang = 'en') {
     const isturkish = lang === 'tr';
     const isgerman = lang === 'de';
     
     const metadata = {
         'index': {
-            title: isturkish ? 'Ana Sayfa' : isgerman ? 'Startseite' : 'Home',
+            title: isturkish 
+                ? 'B2B Lead Üretimi Türkiye | İhracat Satış Danışmanlığı' 
+                : isgerman 
+                ? 'B2B Lead-Generierung Deutschland | Export Beratung' 
+                : 'B2B Lead Generation Europe | Sales Growth Experts',
             description: isturkish 
-                ? 'Satış büyümesi ve gelir hızlandırma ortağınız. Kanıtlanmış stratejiler ve son teknoloji çözümlerle işletmenizi büyütün.'
+                ? 'Türkiye\'nin önde gelen B2B lead üretimi uzmanları. İhracat pazarları için randevu ayarlama ve satış otomasyonu ile büyümenizi hızlandırın.'
                 : isgerman
-                ? 'Ihr Partner für Umsatzwachstum und Umsatzbeschleunigung. Skalieren Sie Ihr Unternehmen mit bewährten Strategien und modernsten Lösungen.'
-                : 'Your partner in sales growth and revenue acceleration. Scale your business with proven strategies and cutting-edge solutions.'
+                ? 'Deutschlands führende B2B Lead-Generierung Spezialisten. Wir helfen Exporteuren beim Markteintritt mit Terminvereinbarung und Verkaufsautomation.'
+                : 'Expert B2B lead generation in Europe. We help exporters enter new markets with proven appointment setting and sales automation solutions.',
+            keywords: isturkish 
+                ? 'B2B lead üretimi Türkiye, ihracat satış danışmanlığı, randevu ayarlama hizmeti, Avrupa pazarı girişi'
+                : isgerman
+                ? 'B2B Lead-Generierung Deutschland, Terminvereinbarung Exporteure, europäischer Markteintritt, Verkaufsautomation Deutschland'
+                : 'B2B lead generation Europe, sales as a service, export market entry, appointment setting for exporters'
         },
         'solutions': {
-            title: isturkish ? 'Çözümler' : isgerman ? 'Lösungen' : 'Solutions',
+            title: isturkish 
+                ? 'B2B Satış Çözümleri | İhracat Danışmanlığı | Expandia' 
+                : isgerman 
+                ? 'B2B Verkaufslösungen | Export Beratung | Expandia' 
+                : 'Export Sales Solutions | B2B Growth Services Europe',
             description: isturkish 
-                ? 'Satış operasyonlarınızı ölçeklendirin. Hizmet Olarak Satış ve AI destekli araçlarla daha fazla müşteri kazanın.'
+                ? 'Avrupa pazarları için B2B satış çözümleri. İhracat danışmanlığı, lead üretimi ve satış otomasyonu hizmetleri.'
                 : isgerman
-                ? 'Skalieren Sie Ihre Verkaufsoperationen mit Sales as a Service und KI-gestützten Tools, um mehr Kunden zu gewinnen.'
-                : 'Scale your sales operations with Sales as a Service and AI-powered tools to win more customers.'
+                ? 'B2B Verkaufslösungen für europäische Märkte. Export-Beratung, Lead-Generierung und Verkaufsautomation.'
+                : 'Complete export sales solutions for European markets. B2B consulting, lead generation services, and sales automation for international growth.',
+            keywords: isturkish 
+                ? 'B2B satış çözümleri, ihracat danışmanlığı, satış otomasyonu, Avrupa pazarları'
+                : isgerman
+                ? 'B2B Verkaufslösungen, Export Beratung, Verkaufsautomation, europäische Märkte'
+                : 'export sales solutions, B2B consulting Europe, international sales services, European market expansion'
         },
         'about': {
-            title: isturkish ? 'Hakkımızda' : isgerman ? 'Über uns' : 'About',
+            title: isturkish 
+                ? 'Hakkımızda | B2B Satış Ajansı | Expandia' 
+                : isgerman 
+                ? 'Über uns | B2B Verkaufsagentur | Expandia' 
+                : 'About Us | B2B Sales Agency Europe | Expandia',
             description: isturkish 
-                ? 'Expandia ekibi ve satış büyümesi konusundaki uzmanlığımız hakkında bilgi edinin.'
+                ? 'Avrupa\'da faaliyet gösteren B2B satış ajansı. İhracat pazarı uzmanları ve uluslararası satış danışmanları.'
                 : isgerman
-                ? 'Erfahren Sie mehr über das Expandia-Team und unsere Expertise im Verkaufswachstum.'
-                : 'Learn about the Expandia team and our expertise in sales growth.'
+                ? 'B2B Verkaufsagentur in Europa. Export-Marktspezialisten und internationale Verkaufsberater.'
+                : 'B2B sales agency Europe. Export market specialists & international sales consultants helping companies expand globally.',
+            keywords: isturkish 
+                ? 'B2B satış ajansı Avrupa, ihracat pazarı uzmanları, uluslararası satış danışmanlığı'
+                : isgerman
+                ? 'B2B Verkaufsagentur Europa, Export Marktspezialisten, internationale Verkaufsberatung'
+                : 'B2B sales agency Europe, export market specialists, international sales consulting'
         },
         'contact': {
-            title: isturkish ? 'İletişim' : isgerman ? 'Kontakt' : 'Contact',
+            title: isturkish 
+                ? 'İletişim | B2B Lead Üretimi Danışmanlığı | Expandia' 
+                : isgerman 
+                ? 'Kontakt | B2B Lead-Generierung Beratung | Expandia' 
+                : 'Contact | B2B Lead Generation Consultation | Expandia',
             description: isturkish 
-                ? 'Ücretsiz danışmanlık için bizimle iletişime geçin ve satış büyümenizi hızlandırın.'
+                ? 'B2B lead üretimi ve ihracat satış danışmanlığı için ücretsiz konsültasyon. Uluslararası pazar girişi uzmanları.'
                 : isgerman
-                ? 'Kontaktieren Sie uns für eine kostenlose Beratung und beschleunigen Sie Ihr Umsatzwachstum.'
-                : 'Get in touch for a free consultation and accelerate your sales growth.'
+                ? 'Kostenlose Beratung für B2B Lead-Generierung und Export-Verkauf. Internationale Markteintritt-Spezialisten.'
+                : 'Free consultation for B2B lead generation & export sales. International market entry specialists ready to help.',
+            keywords: isturkish 
+                ? 'B2B lead üretimi danışmanlığı, ihracat satış konsültasyonu, uluslararası pazar girişi'
+                : isgerman
+                ? 'B2B Lead-Generierung Beratung, Export Verkaufs Konsultation, internationaler Markteintritt'
+                : 'B2B lead generation consultation, export sales consultation, international market entry'
         },
         'case-studies': {
-            title: isturkish ? 'Başarı Hikayeleri' : isgerman ? 'Erfolgsgeschichten' : 'Case Studies',
+            title: isturkish 
+                ? 'Başarı Hikayeleri | B2B Satış Sonuçları | Expandia' 
+                : isgerman 
+                ? 'Erfolgsgeschichten | B2B Verkaufsergebnisse | Expandia' 
+                : 'Success Stories | B2B Sales Results | Expandia',
             description: isturkish 
-                ? 'Müşterilerimizin satış büyümesi başarı hikayelerini keşfedin.'
+                ? 'B2B satış başarı hikayeleri ve ihracat pazarı örnek çalışmaları. Uluslararası genişleme sonuçları.'
                 : isgerman
-                ? 'Entdecken Sie die Erfolgsgeschichten unserer Kunden im Verkaufswachstum.'
-                : 'Discover our clients\' sales growth success stories.'
+                ? 'B2B Verkaufs-Erfolgsgeschichten und Export-Markt-Fallstudien. Internationale Expansionsergebnisse.'
+                : 'B2B sales success stories & export market case studies. International expansion results from our clients.',
+            keywords: isturkish 
+                ? 'B2B satış başarı hikayeleri, ihracat pazarı örnek çalışmaları, uluslararası genişleme sonuçları'
+                : isgerman
+                ? 'B2B Verkaufs Erfolgsgeschichten, Export Markt Fallstudien, internationale Expansion Ergebnisse'
+                : 'B2B sales success stories, export market case studies, international expansion results'
+        },
+        'b2b-lead-generation-agency': {
+            title: 'B2B Lead Generation Agency | Qualified Leads | Expandia',
+            description: 'Leading B2B Lead Generation agency. Generate qualified leads and continuously feed your sales pipeline with Expandia\'s proven strategies.',
+            keywords: 'B2B lead generation Europe, qualified leads, appointment setting for exporters, export market entry'
+        },
+        'sales-development-agency': {
+            title: 'Sales Development Agency | B2B Growth Experts | Expandia',
+            description: 'Professional Sales Development agency specializing in B2B growth. Complete sales team outsourcing and performance optimization.',
+            keywords: 'sales development agency, B2B sales outsourcing, sales team management, business development Europe'
+        },
+        'outbound-marketing-agency': {
+            title: 'Outbound Marketing Agency | B2B Outreach | Expandia',
+            description: 'Expert Outbound Marketing agency for B2B companies. Multi-channel outreach campaigns and customer acquisition strategies.',
+            keywords: 'outbound marketing agency, B2B outreach, cold email campaigns, LinkedIn outreach, multi-channel marketing'
         }
     };
     
-    return metadata[templateName] || { title: 'Expandia', description: 'Sales Growth Partner' };
+    return metadata[templateName] || metadata['index'];
 }
 
-// Function to get active states for navigation
-function getActiveStates(pageType) {
-    const states = {
-        HOME_ACTIVE: '',
-        SOLUTIONS_ACTIVE: '',
-        COMPANY_ACTIVE: '',
-        BLOG_ACTIVE: '',
-        SOLUTIONS_ITEM_ACTIVE: '',
-        CASESTUDIES_ITEM_ACTIVE: '',
-        ABOUT_ITEM_ACTIVE: '',
-        CONTACT_ITEM_ACTIVE: '',
-        // Mobile states
-        HOME_MOBILE_ACTIVE: '',
-        SOLUTIONS_MOBILE_ACTIVE: '',
-        CASESTUDIES_MOBILE_ACTIVE: '',
-        ABOUT_MOBILE_ACTIVE: '',
-        CONTACT_MOBILE_ACTIVE: '',
-        BLOG_MOBILE_ACTIVE: ''
+// Function to get URL mappings for hreflang - FIXED VERSION
+function getHreflangUrls(templateName) {
+    const urls = {
+        'index': { 
+            en: '', 
+            tr: 'tr/', 
+            de: 'de/' 
+        },
+        'solutions': { 
+            en: 'solutions.html', 
+            tr: 'tr/solutions.html', 
+            de: 'de/solutions.html' 
+        },
+        'about': { 
+            en: 'about.html', 
+            tr: 'tr/about.html', 
+            de: 'de/about.html' 
+        },
+        'contact': { 
+            en: 'contact.html', 
+            tr: 'tr/contact.html', 
+            de: 'de/contact.html' 
+        },
+        'case-studies': { 
+            en: 'case-studies.html', 
+            tr: 'tr/case-studies.html', 
+            de: 'de/case-studies.html' 
+        }
     };
-
-    // Set active states based on current page
-    switch (pageType) {
-        case 'index':
-            states.HOME_ACTIVE = 'text-primary';
-            states.HOME_MOBILE_ACTIVE = 'class="text-primary font-semibold"';
-            break;
-        case 'solutions':
-            states.SOLUTIONS_ACTIVE = 'text-primary';
-            states.SOLUTIONS_ITEM_ACTIVE = 'bg-primary/10 border border-primary/20';
-            states.SOLUTIONS_MOBILE_ACTIVE = 'class="text-primary font-semibold"';
-            break;
-        case 'case-studies':
-            states.SOLUTIONS_ACTIVE = 'text-primary';
-            states.CASESTUDIES_ITEM_ACTIVE = 'bg-primary/10 border border-primary/20';
-            states.CASESTUDIES_MOBILE_ACTIVE = 'class="text-primary font-semibold"';
-            break;
-        case 'about':
-            states.COMPANY_ACTIVE = 'text-primary';
-            states.ABOUT_ITEM_ACTIVE = 'bg-primary/10 border border-primary/20';
-            states.ABOUT_MOBILE_ACTIVE = 'class="text-primary font-semibold"';
-            break;
-        case 'contact':
-            states.COMPANY_ACTIVE = 'text-primary';
-            states.CONTACT_ITEM_ACTIVE = 'bg-primary/10 border border-primary/20';
-            states.CONTACT_MOBILE_ACTIVE = 'class="text-primary font-semibold"';
-            break;
-    }
-
-    return states;
+    
+    return urls[templateName] || urls['index'];
 }
 
-// Function to build a page
+// Function to get active navigation states
+function getActiveStates(templateName) {
+    const activeStates = {
+        'index': {
+            'HOME_ACTIVE': 'text-primary',
+            'SOLUTIONS_ACTIVE': '',
+            'ABOUT_ACTIVE': '',
+            'CONTACT_ACTIVE': '',
+            'CASESTUDIES_ACTIVE': '',
+            'BLOG_ACTIVE': '',
+            'COMPANY_ACTIVE': '',
+            'HOME_ITEM_ACTIVE': '',
+            'SOLUTIONS_ITEM_ACTIVE': '',
+            'ABOUT_ITEM_ACTIVE': '',
+            'CONTACT_ITEM_ACTIVE': '',
+            'CASESTUDIES_ITEM_ACTIVE': '',
+            'BLOG_ITEM_ACTIVE': '',
+            'HOME_MOBILE_ACTIVE': 'class="font-semibold text-primary"',
+            'SOLUTIONS_MOBILE_ACTIVE': '',
+            'ABOUT_MOBILE_ACTIVE': '',
+            'CONTACT_MOBILE_ACTIVE': '',
+            'CASESTUDIES_MOBILE_ACTIVE': '',
+            'BLOG_MOBILE_ACTIVE': ''
+        },
+        'solutions': {
+            'HOME_ACTIVE': '',
+            'SOLUTIONS_ACTIVE': 'text-primary',
+            'ABOUT_ACTIVE': '',
+            'CONTACT_ACTIVE': '',
+            'CASESTUDIES_ACTIVE': '',
+            'BLOG_ACTIVE': '',
+            'COMPANY_ACTIVE': '',
+            'HOME_ITEM_ACTIVE': '',
+            'SOLUTIONS_ITEM_ACTIVE': 'bg-primary/10 border border-primary/20',
+            'ABOUT_ITEM_ACTIVE': '',
+            'CONTACT_ITEM_ACTIVE': '',
+            'CASESTUDIES_ITEM_ACTIVE': '',
+            'BLOG_ITEM_ACTIVE': '',
+            'HOME_MOBILE_ACTIVE': '',
+            'SOLUTIONS_MOBILE_ACTIVE': 'class="font-semibold text-primary"',
+            'ABOUT_MOBILE_ACTIVE': '',
+            'CONTACT_MOBILE_ACTIVE': '',
+            'CASESTUDIES_MOBILE_ACTIVE': '',
+            'BLOG_MOBILE_ACTIVE': ''
+        },
+        'about': {
+            'HOME_ACTIVE': '',
+            'SOLUTIONS_ACTIVE': '',
+            'ABOUT_ACTIVE': '',
+            'CONTACT_ACTIVE': '',
+            'CASESTUDIES_ACTIVE': '',
+            'BLOG_ACTIVE': '',
+            'COMPANY_ACTIVE': 'text-primary',
+            'HOME_ITEM_ACTIVE': '',
+            'SOLUTIONS_ITEM_ACTIVE': '',
+            'ABOUT_ITEM_ACTIVE': 'bg-primary/10 border border-primary/20',
+            'CONTACT_ITEM_ACTIVE': '',
+            'CASESTUDIES_ITEM_ACTIVE': '',
+            'BLOG_ITEM_ACTIVE': '',
+            'HOME_MOBILE_ACTIVE': '',
+            'SOLUTIONS_MOBILE_ACTIVE': '',
+            'ABOUT_MOBILE_ACTIVE': 'class="font-semibold text-primary"',
+            'CONTACT_MOBILE_ACTIVE': '',
+            'CASESTUDIES_MOBILE_ACTIVE': '',
+            'BLOG_MOBILE_ACTIVE': ''
+        },
+        'contact': {
+            'HOME_ACTIVE': '',
+            'SOLUTIONS_ACTIVE': '',
+            'ABOUT_ACTIVE': '',
+            'CONTACT_ACTIVE': '',
+            'CASESTUDIES_ACTIVE': '',
+            'BLOG_ACTIVE': '',
+            'COMPANY_ACTIVE': 'text-primary',
+            'HOME_ITEM_ACTIVE': '',
+            'SOLUTIONS_ITEM_ACTIVE': '',
+            'ABOUT_ITEM_ACTIVE': '',
+            'CONTACT_ITEM_ACTIVE': 'bg-primary/10 border border-primary/20',
+            'CASESTUDIES_ITEM_ACTIVE': '',
+            'BLOG_ITEM_ACTIVE': '',
+            'HOME_MOBILE_ACTIVE': '',
+            'SOLUTIONS_MOBILE_ACTIVE': '',
+            'ABOUT_MOBILE_ACTIVE': '',
+            'CONTACT_MOBILE_ACTIVE': 'class="font-semibold text-primary"',
+            'CASESTUDIES_MOBILE_ACTIVE': '',
+            'BLOG_MOBILE_ACTIVE': ''
+        },
+        'case-studies': {
+            'HOME_ACTIVE': '',
+            'SOLUTIONS_ACTIVE': 'text-primary',
+            'ABOUT_ACTIVE': '',
+            'CONTACT_ACTIVE': '',
+            'CASESTUDIES_ACTIVE': '',
+            'BLOG_ACTIVE': '',
+            'COMPANY_ACTIVE': '',
+            'HOME_ITEM_ACTIVE': '',
+            'SOLUTIONS_ITEM_ACTIVE': '',
+            'ABOUT_ITEM_ACTIVE': '',
+            'CONTACT_ITEM_ACTIVE': '',
+            'CASESTUDIES_ITEM_ACTIVE': 'bg-primary/10 border border-primary/20',
+            'BLOG_ITEM_ACTIVE': '',
+            'HOME_MOBILE_ACTIVE': '',
+            'SOLUTIONS_MOBILE_ACTIVE': '',
+            'ABOUT_MOBILE_ACTIVE': '',
+            'CONTACT_MOBILE_ACTIVE': '',
+            'CASESTUDIES_MOBILE_ACTIVE': 'class="font-semibold text-primary"',
+            'BLOG_MOBILE_ACTIVE': ''
+        }
+    };
+    
+    return activeStates[templateName] || activeStates['index'];
+}
+
+// Main build function with enhanced SEO
 function buildPage(templateName, outputName, lang = 'en') {
-    let templatePath;
-    if (lang === 'tr') {
-        templatePath = `templates/tr/${templateName}.html`;
-    } else if (lang === 'de') {
-        templatePath = `templates/de/${templateName}.html`;
-    } else {
-        templatePath = `templates/${templateName}.html`;
-    }
+    const templateDir = lang === 'tr' || lang === 'de' ? `templates/${lang}/` : 'templates/';
+    const templatePath = `${templateDir}${templateName}.html`;
     
     if (!fs.existsSync(templatePath)) {
-        console.log(`Template ${templatePath} not found, skipping...`);
+        console.warn(`Template not found: ${templatePath}, using fallback`);
         return;
     }
     
@@ -271,6 +623,14 @@ function buildPage(templateName, outputName, lang = 'en') {
     pageFooter = pageFooter.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
     content = content.replace(/\{\{BASE_PATH\}\}/g, basePath);
     
+    // For German pages, fix ALL solutions.html links to be local AFTER BASE_PATH replacement
+    if (lang === 'de') {
+        // Convert ALL ../solutions.html links to ./solutions.html for German pages
+        pageNavigation = pageNavigation.replace(/href="\.\.\/solutions\.html/g, 'href="./solutions.html');
+        content = content.replace(/href="\.\.\/solutions\.html/g, 'href="./solutions.html');
+        pageFooter = pageFooter.replace(/href="\.\.\/solutions\.html/g, 'href="./solutions.html');
+    }
+    
     // Get active states for navigation
     const activeStates = getActiveStates(templateName);
     
@@ -284,6 +644,22 @@ function buildPage(templateName, outputName, lang = 'en') {
         pageNavigation = applyTurkishTranslations(pageNavigation);
         pageFooter = applyTurkishTranslations(pageFooter);
         content = applyTurkishTranslations(content);
+        
+        // Fix service page links for Turkish pages to point to Turkish service pages
+        pageNavigation = pageNavigation.replace(/href="\.\.\/b2b-lead-generation-agency\.html"/g, 'href="./b2b-lead-generation-ajansi.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/lead-generation-service\.html"/g, 'href="./lead-generation-hizmeti.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/sales-development-agency\.html"/g, 'href="./satis-gelistirme-ajansi.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/appointment-setting-service\.html"/g, 'href="./randevu-ayarlama-hizmeti.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/outbound-marketing-agency\.html"/g, 'href="./outbound-pazarlama-ajansi.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/cold-email-agency\.html"/g, 'href="./soguk-e-posta-ajansi.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/prospect-research-service\.html"/g, 'href="./potansiyel-musteri-bulma-ajansi.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/outsourced-sales-team\.html"/g, 'href="./dis-kaynakli-satis-ekibi.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/export-marketing-consulting\.html"/g, 'href="./ihracat-pazarlama-danismanligi.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/europe-market-entry\.html"/g, 'href="./avrupa-pazarina-giris.html"');
+        
+        // Fix Company menu links for Turkish pages
+        pageNavigation = pageNavigation.replace(/href="\.\.\/about\.html"/g, 'href="./about.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/contact\.html"/g, 'href="./contact.html"');
         
         // Fix language switcher for Turkish pages
         pageNavigation = pageNavigation.replace(
@@ -303,6 +679,16 @@ function buildPage(templateName, outputName, lang = 'en') {
             `href="../de/${outputName}.html" data-lang="de"`
         );
     } else if (lang === 'de') {
+        // For German pages, convert standalone service page links to German solutions.html sections
+        // since German doesn't have standalone service pages
+        pageNavigation = pageNavigation.replace(/href="\.\.\/b2b-lead-generation-agency\.html"/g, 'href="./solutions.html#b2b-lead-generation"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/sales-development-agency\.html"/g, 'href="./solutions.html#sales-development"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/outbound-marketing-agency\.html"/g, 'href="./solutions.html#outbound-marketing"');
+        
+        // Fix Company menu links for German pages
+        pageNavigation = pageNavigation.replace(/href="\.\.\/about\.html"/g, 'href="./about.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/contact\.html"/g, 'href="./contact.html"');
+        
         // Fix language switcher for German pages  
         pageNavigation = pageNavigation.replace(
             /<span id="current-flag">🇺🇸<\/span>/g,
@@ -325,91 +711,32 @@ function buildPage(templateName, outputName, lang = 'en') {
             /href="#" data-lang="de"/g,
             `href="${outputName}.html" data-lang="de"`
         );
-        // Translate German navigation text
-        pageNavigation = pageNavigation.replace(
-            /Get Started<\/a>/g,
-            'Jetzt starten</a>'
-        );
+        
+        // Apply German translations to all content
+        pageNavigation = applyGermanTranslations(pageNavigation);
+        pageFooter = applyGermanTranslations(pageFooter);
+        content = applyGermanTranslations(content);
+        
         // Remove data-i18n attributes from German pages
         content = content.replace(/\s*data-i18n="[^"]*"/g, '');
         pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
         pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
-        
-        // Comprehensive German translations for navigation
-        pageNavigation = pageNavigation.replace(/Home<\/a>/g, 'Startseite</a>');
-        pageNavigation = pageNavigation.replace(/>Home</g, '>Startseite<');
-        pageNavigation = pageNavigation.replace(/Solutions/g, 'Lösungen');
-        pageNavigation = pageNavigation.replace(/About Us/g, 'Über uns');
-        pageNavigation = pageNavigation.replace(/Contact Us/g, 'Kontakt');
-        pageNavigation = pageNavigation.replace(/Sales University/g, 'Verkaufs-Universität');
-        pageNavigation = pageNavigation.replace(/Company/g, 'Unternehmen');
-        pageNavigation = pageNavigation.replace(/Sales Solutions & Services/g, 'Verkaufslösungen & Services');
-        pageNavigation = pageNavigation.replace(/Comprehensive sales growth solutions for your business/g, 'Umfassende Verkaufswachstumslösungen für Ihr Unternehmen');
-        pageNavigation = pageNavigation.replace(/Sales AI Solutions/g, 'Verkaufs-KI-Lösungen');
-        pageNavigation = pageNavigation.replace(/Special Services/g, 'Spezialservices');
-        pageNavigation = pageNavigation.replace(/B2B Lead Generation/g, 'B2B-Lead-Generierung');
-        pageNavigation = pageNavigation.replace(/Lead Generation Service/g, 'Lead-Generierungs-Service');
-        pageNavigation = pageNavigation.replace(/Prospect Finding/g, 'Interessentenfindung');
-        pageNavigation = pageNavigation.replace(/Sales Development/g, 'Verkaufsentwicklung');
-        pageNavigation = pageNavigation.replace(/Appointment Setting/g, 'Terminvereinbarung');
-        pageNavigation = pageNavigation.replace(/Outsourced Sales Team/g, 'Ausgelagertes Verkaufsteam');
-        pageNavigation = pageNavigation.replace(/Outbound Marketing/g, 'Outbound-Marketing');
-        pageNavigation = pageNavigation.replace(/Cold Email Agency/g, 'Cold-E-Mail-Agentur');
-        pageNavigation = pageNavigation.replace(/Email Automation/g, 'E-Mail-Automatisierung');
-        pageNavigation = pageNavigation.replace(/AI Sales Tools/g, 'KI-Verkaufstools');
-        pageNavigation = pageNavigation.replace(/Export Marketing/g, 'Export-Marketing');
-        pageNavigation = pageNavigation.replace(/International Market Entry/g, 'Internationaler Markteintritt');
-        pageNavigation = pageNavigation.replace(/Distributor Finding/g, 'Händlersuche');
-        pageNavigation = pageNavigation.replace(/Overseas Sales Consulting/g, 'Übersee-Verkaufsberatung');
-        pageNavigation = pageNavigation.replace(/Europe Market Entry/g, 'Europa-Markteintritt');
-        
-        // Additional navigation text fixes
-        pageNavigation = pageNavigation.replace(/Our Sales/g, 'Unsere Verkaufs');
-        pageNavigation = pageNavigation.replace(/Sales as a Service/g, 'Sales als Service');
-        pageNavigation = pageNavigation.replace(/Case Studies/g, 'Fallstudien');
-        pageNavigation = pageNavigation.replace(/Services/g, 'Services');
-        
-        // Content text fixes
-        content = content.replace(/generate more leads/g, 'mehr Leads zu generieren');
-        content = content.replace(/Our Sales/g, 'Unsere Verkaufs');
-        content = content.replace(/Sales Lösungen/g, 'Verkaufslösungen');
-        content = content.replace(/Sales AI Lösungen/g, 'Verkaufs-KI-Lösungen');
-        
-        // Footer German translations
-        pageFooter = pageFooter.replace(/Stay Updated with Sales Insights/g, 'Bleiben Sie mit Verkaufseinblicken auf dem Laufenden');
-        pageFooter = pageFooter.replace(/Get the latest sales strategies and industry updates/g, 'Erhalten Sie die neuesten Verkaufsstrategien und Branchenupdates');
-        pageFooter = pageFooter.replace(/Subscribe/g, 'Abonnieren');
-        pageFooter = pageFooter.replace(/Enter your email/g, 'E-Mail eingeben');
-        pageFooter = pageFooter.replace(/Your Partner in Sales Growth and Revenue Acceleration/g, 'Ihr Partner für Verkaufswachstum und Umsatzbeschleunigung');
-        pageFooter = pageFooter.replace(/We help businesses scale their sales operations with proven strategies and cutting-edge solutions/g, 'Wir helfen Unternehmen, ihre Verkaufsabläufe mit bewährten Strategien und modernsten Lösungen zu skalieren');
-        pageFooter = pageFooter.replace(/Sales as a Service/g, 'Sales als Service');
-        pageFooter = pageFooter.replace(/Sales AI Solutions/g, 'Verkaufs-KI-Lösungen');
-        pageFooter = pageFooter.replace(/Lead Generation/g, 'Lead-Generierung');
-        pageFooter = pageFooter.replace(/About Us/g, 'Über uns');
-        pageFooter = pageFooter.replace(/Contact Us/g, 'Kontakt');
-        pageFooter = pageFooter.replace(/Resources/g, 'Ressourcen');
-        pageFooter = pageFooter.replace(/Privacy Policy/g, 'Datenschutzrichtlinie');
-        pageFooter = pageFooter.replace(/Terms of Service/g, 'Nutzungsbedingungen');
-        pageFooter = pageFooter.replace(/Cookie Policy/g, 'Cookie-Richtlinie');
-        pageFooter = pageFooter.replace(/Success Stories/g, 'Erfolgsgeschichten');
-        pageFooter = pageFooter.replace(/Sales University/g, 'Verkaufs-Universität');
-        pageFooter = pageFooter.replace(/Company/g, 'Unternehmen');
-        pageFooter = pageFooter.replace(/Blog/g, 'Blog');
-        pageFooter = pageFooter.replace(/Case Studies/g, 'Fallstudien');
     } else {
-        // Fix language switcher for English pages
-        pageNavigation = pageNavigation.replace(
-            /href="#" data-lang="en"/g,
-            `href="${outputName}.html" data-lang="en"`
-        );
-        pageNavigation = pageNavigation.replace(
-            /href="#" data-lang="tr"/g,
-            `href="tr/${outputName}.html" data-lang="tr"`
-        );
-        pageNavigation = pageNavigation.replace(
-            /href="#" data-lang="de"/g,
-            `href="de/${outputName}.html" data-lang="de"`
-        );
+        // For English pages, fix service links to point to existing standalone service pages
+        // These exist: b2b-lead-generation-agency.html, sales-development-agency.html, outbound-marketing-agency.html
+        
+        // Fix service page links for English pages - link to actual standalone pages when they exist
+        pageNavigation = pageNavigation.replace(/href="\.\/solutions\.html#lead-generation"/g, 'href="./b2b-lead-generation-agency.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\/solutions\.html#sales-development"/g, 'href="./sales-development-agency.html"');  
+        pageNavigation = pageNavigation.replace(/href="\.\/solutions\.html#outbound-marketing"/g, 'href="./outbound-marketing-agency.html"');
+        
+        // Keep solutions.html links for services that don't have standalone pages
+        // (appointment-setting, cold-email, prospect-finding, etc. stay as solutions.html#section)
+        
+        // Remove data-i18n attributes from English pages
+        content = content.replace(/\s*data-i18n="[^"]*"/g, '');
+        pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
+        pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
     }
     
     // Insert navigation, content, and footer into HTML template
@@ -417,10 +744,38 @@ function buildPage(templateName, outputName, lang = 'en') {
     htmlTemplate = htmlTemplate.replace('{{MAIN_CONTENT}}', content);
     htmlTemplate = htmlTemplate.replace('{{FOOTER}}', pageFooter);
     
-    // Set page-specific metadata
+    // Set page-specific metadata with SEO enhancements
     const pageMetadata = getPageMetadata(templateName, lang);
-    htmlTemplate = htmlTemplate.replace('{{PAGE_TITLE}}', pageMetadata.title);
-    htmlTemplate = htmlTemplate.replace('{{PAGE_DESCRIPTION}}', pageMetadata.description);
+    const hreflangUrls = getHreflangUrls(templateName);
+    const baseUrl = lang === 'en' ? 'https://www.expandia.ch' : `https://www.expandia.ch/${lang}`;
+    
+    // Generate canonical URL
+    const canonicalUrl = lang === 'en' ? 
+        `https://www.expandia.ch/${outputName === 'index' ? '' : outputName + '.html'}` :
+        `https://www.expandia.ch/${lang}/${outputName === 'index' ? '' : outputName + '.html'}`;
+    
+    // Generate schema markup
+    let schemaMarkup;
+    if (templateName === 'index') {
+        schemaMarkup = JSON.stringify(generateOrganizationSchema(), null, 2);
+    } else if (templateName === 'solutions') {
+        const serviceName = lang === 'tr' ? 'B2B Satış Çözümleri' : lang === 'de' ? 'B2B Verkaufslösungen' : 'B2B Sales Solutions';
+        const serviceDesc = pageMetadata.description;
+        schemaMarkup = JSON.stringify(generateServiceSchema(serviceName, serviceDesc, lang), null, 2);
+    } else {
+        // For other pages, use basic organization schema
+        schemaMarkup = JSON.stringify(generateOrganizationSchema(), null, 2);
+    }
+    
+    // Replace all template variables
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, pageMetadata.title);
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, pageMetadata.description);
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, pageMetadata.keywords);
+    htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, canonicalUrl);
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, hreflangUrls.en);
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, hreflangUrls.tr);
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, hreflangUrls.de);
+    htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, schemaMarkup);
     
     // Write to appropriate location
     let outputPath;
@@ -431,18 +786,26 @@ function buildPage(templateName, outputName, lang = 'en') {
     } else {
         outputPath = `${outputName}.html`;
     }
-    fs.writeFileSync(outputPath, htmlTemplate);
-    console.log(`Built ${outputPath}`);
+    
+    fs.writeFileSync(outputPath, htmlTemplate, 'utf8');
+    console.log(`Built ${outputPath} with enhanced SEO`);
 }
 
-// Build all pages
+// Build English pages
 console.log('Building English pages...');
-buildPage('index', 'index');
-buildPage('about', 'about');
-buildPage('solutions', 'solutions');
-buildPage('contact', 'contact');
-buildPage('case-studies', 'case-studies');
+buildPage('index', 'index', 'en');
+buildPage('about', 'about', 'en');
+buildPage('solutions', 'solutions', 'en');
+buildPage('contact', 'contact', 'en');
+buildPage('case-studies', 'case-studies', 'en');
 
+// Build English service pages
+console.log('Building English service pages...');
+buildPage('b2b-lead-generation-agency', 'b2b-lead-generation-agency', 'en');
+buildPage('sales-development-agency', 'sales-development-agency', 'en');
+buildPage('outbound-marketing-agency', 'outbound-marketing-agency', 'en');
+
+// Build Turkish pages
 console.log('Building Turkish pages...');
 buildPage('index', 'index', 'tr');
 buildPage('about', 'about', 'tr');
@@ -450,6 +813,7 @@ buildPage('solutions', 'solutions', 'tr');
 buildPage('contact', 'contact', 'tr');
 buildPage('case-studies', 'case-studies', 'tr');
 
+// Build German pages
 console.log('Building German pages...');
 buildPage('index', 'index', 'de');
 buildPage('about', 'about', 'de');
@@ -457,4 +821,4 @@ buildPage('solutions', 'solutions', 'de');
 buildPage('contact', 'contact', 'de');
 buildPage('case-studies', 'case-studies', 'de');
 
-console.log('Build complete!'); 
+console.log('Build complete with enhanced SEO!');

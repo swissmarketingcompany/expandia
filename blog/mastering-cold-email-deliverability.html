@@ -9,6 +9,95 @@
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="icon" type="image/png" href="../favicon.png">
     <link rel="apple-touch-icon" href="../favicon.png">
+    
+    <!-- Article Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Mastering Cold Email Deliverability: The Ultimate Guide to Inbox Success",
+        "description": "Learn the secrets to achieving 90%+ deliverability rates and avoiding spam filters with proven strategies used by top sales teams.",
+        "author": {
+            "@type": "Organization",
+            "name": "Expandia",
+            "url": "https://www.expandia.ch"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Expandia",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png"
+            }
+        },
+        "datePublished": "2024-12-30",
+        "dateModified": "2024-12-30",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.expandia.ch/blog/mastering-cold-email-deliverability.html"
+        },
+        "articleSection": "Sales Strategy",
+        "keywords": ["cold email deliverability", "email marketing", "B2B sales", "spam filters", "inbox placement"]
+    }
+    </script>
+    
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is email deliverability and why does it matter?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Email deliverability measures whether your emails successfully reach recipients' inboxes rather than being filtered to spam folders or blocked entirely. For B2B cold outreach, deliverability directly impacts campaign ROI and lead generation effectiveness, brand reputation and sender credibility, long-term email marketing success, and compliance with anti-spam regulations."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How can I improve my cold email open rates?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Improving cold email open rates requires optimizing subject lines (personalized, 6-10 words, avoid spam triggers for 25-40% improvement), using real sender names with company (15-25% improvement), and timing emails for Tuesday-Thursday, 9-11 AM recipient timezone (10-20% improvement)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are the most common spam filter triggers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Common spam filter triggers include content red flags like ALL CAPS text, overly salesy language, misleading subject lines, poor spelling, and image-heavy emails. Technical issues include missing SPF/DKIM/DMARC authentication, high bounce rates over 5%, low engagement rates, blacklisted IPs, and missing unsubscribe mechanisms."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I set up email authentication properly?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Proper email authentication requires setting up SPF (add TXT record to DNS), DKIM (generate public/private key pair and add public key to DNS), and DMARC (add DMARC policy to DNS with quarantine settings and reporting email)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What should I do if my emails are going to spam?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "If emails are going to spam, immediately audit content to remove spam triggers, check SPF/DKIM/DMARC authentication, review sending patterns to reduce volume and improve timing, clean your list by removing bounced recipients, monitor reputation using Google Postmaster and Microsoft SNDS, and implement feedback loops for unsubscribe requests."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I maintain long-term deliverability success?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Maintaining long-term deliverability success requires ongoing monitoring and optimization, building genuine engagement through valuable content, maintaining clean subscriber lists, monitoring key metrics like bounce rates and complaint rates, staying updated with ISP policy changes, and implementing feedback from recipients."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body class="font-sans">
     <!-- Navigation -->
@@ -674,7 +763,141 @@
                 </div>
             </div>
         </div>
-    </footer> 
+    </footer>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section-spacing bg-base-100">
+        <div class="container mx-auto container-padding">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-header">Cold Email Deliverability FAQ</h2>
+                <p class="text-xl text-base-content/80 max-w-3xl mx-auto">
+                    Expert answers to common questions about <strong>cold email deliverability</strong> and inbox placement.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div class="buzz-card p-8">
+                    <h3 class="text-2xl font-bold mb-4 text-primary">What is email deliverability and why does it matter?</h3>
+                    <p class="text-base-content/80 mb-4">
+                        <strong>Email deliverability</strong> measures whether your emails successfully reach recipients' inboxes rather than being filtered to spam folders or blocked entirely. For B2B cold outreach, deliverability directly impacts:
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-base-content/80 ml-4">
+                        <li>Campaign ROI and lead generation effectiveness</li>
+                        <li>Brand reputation and sender credibility</li>
+                        <li>Long-term email marketing success</li>
+                        <li>Compliance with anti-spam regulations</li>
+                    </ul>
+                </div>
+
+                <div class="buzz-card p-8">
+                    <h3 class="text-2xl font-bold mb-4 text-primary">How can I improve my cold email open rates?</h3>
+                    <p class="text-base-content/80 mb-4">
+                        Improving <strong>cold email open rates</strong> requires a multi-faceted approach:
+                    </p>
+                    <table class="w-full border-collapse border border-base-300 mt-4">
+                        <thead>
+                            <tr class="bg-base-200">
+                                <th class="border border-base-300 p-3 text-left">Factor</th>
+                                <th class="border border-base-300 p-3 text-left">Best Practice</th>
+                                <th class="border border-base-300 p-3 text-left">Impact</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border border-base-300 p-3">Subject Line</td>
+                                <td class="border border-base-300 p-3">Personalized, 6-10 words, avoid spam triggers</td>
+                                <td class="border border-base-300 p-3">25-40% improvement</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-base-300 p-3">Sender Name</td>
+                                <td class="border border-base-300 p-3">Real name + company (e.g., "John from Expandia")</td>
+                                <td class="border border-base-300 p-3">15-25% improvement</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-base-300 p-3">Send Time</td>
+                                <td class="border border-base-300 p-3">Tuesday-Thursday, 9-11 AM recipient timezone</td>
+                                <td class="border border-base-300 p-3">10-20% improvement</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="buzz-card p-8">
+                    <h3 class="text-2xl font-bold mb-4 text-primary">What are the most common spam filter triggers?</h3>
+                    <p class="text-base-content/80 mb-4">
+                        Understanding <strong>spam filter triggers</strong> is crucial for maintaining deliverability:
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-6 mt-4">
+                        <div class="space-y-3">
+                            <h4 class="font-bold text-primary">Content Red Flags:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-base-content/80">
+                                <li>ALL CAPS text and excessive punctuation!!!</li>
+                                <li>Overly salesy language ("Act now!", "Limited time")</li>
+                                <li>Misleading subject lines</li>
+                                <li>Poor spelling and grammar</li>
+                                <li>Image-heavy emails with little text</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-3">
+                            <h4 class="font-bold text-primary">Technical Issues:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-base-content/80">
+                                <li>Missing or incorrect SPF/DKIM/DMARC</li>
+                                <li>High bounce rates (>5%)</li>
+                                <li>Low engagement rates</li>
+                                <li>Sending from blacklisted IPs</li>
+                                <li>No unsubscribe mechanism</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="buzz-card p-8">
+                    <h3 class="text-2xl font-bold mb-4 text-primary">How do I set up email authentication properly?</h3>
+                    <p class="text-base-content/80 mb-4">
+                        Proper <strong>email authentication</strong> is fundamental for deliverability. Here's the step-by-step process:
+                    </p>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-base-200 rounded-lg">
+                            <h5 class="font-bold mb-2">1. SPF (Sender Policy Framework)</h5>
+                            <p class="text-sm mb-2">Add a TXT record to your DNS:</p>
+                            <code class="text-xs bg-base-300 p-2 rounded block">v=spf1 include:_spf.google.com ~all</code>
+                        </div>
+                        <div class="p-4 bg-base-200 rounded-lg">
+                            <h5 class="font-bold mb-2">2. DKIM (DomainKeys Identified Mail)</h5>
+                            <p class="text-sm">Generate a public/private key pair and add the public key to DNS</p>
+                        </div>
+                        <div class="p-4 bg-base-200 rounded-lg">
+                            <h5 class="font-bold mb-2">3. DMARC (Domain-based Message Authentication)</h5>
+                            <p class="text-sm mb-2">Add DMARC policy to DNS:</p>
+                            <code class="text-xs bg-base-300 p-2 rounded block">v=DMARC1; p=quarantine; rua=mailto:dmarc@yourdomain.com</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="buzz-card p-8">
+                    <h3 class="text-2xl font-bold mb-4 text-primary">What should I do if my emails are going to spam?</h3>
+                    <p class="text-base-content/80 mb-4">
+                        If your <strong>emails are going to spam</strong>, take immediate action:
+                    </p>
+                    <ol class="list-decimal list-inside space-y-2 text-base-content/80 ml-4">
+                        <li><strong>Audit your content:</strong> Remove spam trigger words and improve personalization</li>
+                        <li><strong>Check authentication:</strong> Verify SPF, DKIM, and DMARC are properly configured</li>
+                        <li><strong>Review sending patterns:</strong> Reduce volume and improve timing</li>
+                        <li><strong>Clean your list:</strong> Remove bounced and unengaged recipients</li>
+                        <li><strong>Monitor reputation:</strong> Use tools like Google Postmaster and Microsoft SNDS</li>
+                        <li><strong>Implement feedback loops:</strong> Process unsubscribe requests immediately</li>
+                    </ol>
+                </div>
+
+                <div class="buzz-card p-8">
+                    <h3 class="text-2xl font-bold mb-4 text-primary">How do I maintain long-term deliverability success?</h3>
+                    <p class="text-base-content/80">
+                        Maintaining <strong>long-term deliverability success</strong> requires ongoing monitoring and optimization. Focus on building genuine engagement through valuable content, maintaining clean subscriber lists, monitoring key metrics like bounce rates and complaint rates, staying updated with ISP policy changes, and implementing feedback from recipients. At Expandia, we help B2B companies achieve 90%+ deliverability rates through proven strategies and continuous optimization.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- JavaScript for smooth interactions -->
     <script src="../src/js/index.js"></script>

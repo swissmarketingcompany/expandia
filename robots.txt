@@ -2,18 +2,25 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://expandia.ch/sitemap.xml
-
-# Crawl delay (optional - helps with server load)
-Crawl-delay: 1
-
-# Disallow certain file types that aren't useful for SEO
-Disallow: *.json
-Disallow: *.js.map
-Disallow: *.css.map
+Sitemap: https://www.expandia.ch/sitemap.xml
 
 # Allow important directories
 Allow: /blog/
 Allow: /tr/
-Allow: /src/
-Allow: /dist/ 
+Allow: /de/
+Allow: /dist/
+
+# Disallow development and temporary files
+Disallow: /src/
+Disallow: /templates/
+Disallow: /node_modules/
+Disallow: *.json
+Disallow: *.js.map
+Disallow: *.css.map
+Disallow: /test-*
+Disallow: *.sh
+Disallow: /update-pages.js
+Disallow: /build-pages.js
+
+# Crawl delay (helps with server load)
+Crawl-delay: 1 
