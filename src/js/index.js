@@ -380,6 +380,8 @@ function switchToEnglish() {
             window.location.href = '/contact.html';
         } else if (englishPath === '/case-studies.html') {
             window.location.href = '/case-studies.html';
+        } else if (englishPath === '/satis-koruma-hizmetleri.html') {
+            window.location.href = '/sales-protection-services.html';
         } else if (englishPath.startsWith('/blog/')) {
             // Handle blog pages - redirect to English blog
             if (englishPath === '/blog/index.html' || englishPath === '/blog/') {
@@ -407,6 +409,8 @@ function switchToEnglish() {
             window.location.href = '/contact.html';
         } else if (englishPath === '/case-studies.html') {
             window.location.href = '/case-studies.html';
+        } else if (englishPath === '/schutzdienstleistungen.html') {
+            window.location.href = '/sales-protection-services.html';
         } else if (englishPath.startsWith('/blog/')) {
             // Handle blog pages - redirect to English blog
             window.location.href = '/blog/';
@@ -453,6 +457,8 @@ function switchToTurkish() {
             window.location.href = '/tr/contact.html';
         } else if (path === '/case-studies.html') {
             window.location.href = '/tr/case-studies.html';
+        } else if (path === '/sales-protection-services.html') {
+            window.location.href = '/tr/satis-koruma-hizmetleri.html';
         } else if (path.startsWith('/blog/')) {
             // Handle blog pages - redirect to Turkish blog
             if (path === '/blog/index.html' || path === '/blog/' || path === '/blog') {
@@ -495,6 +501,8 @@ function switchToGerman() {
             window.location.href = '/de/contact.html';
         } else if (path === '/case-studies.html') {
             window.location.href = '/de/case-studies.html';
+        } else if (path === '/sales-protection-services.html') {
+            window.location.href = '/de/schutzdienstleistungen.html';
         } else if (path.startsWith('/blog/')) {
             // Handle blog pages - redirect to German blog
             window.location.href = '/de/blog/';

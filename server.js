@@ -218,6 +218,19 @@ app.get('/tr/:page', (req, res) => {
     }
 });
 
+// 301 Redirects for old AI Solutions pages to new Sales Protection Services
+app.get('/ai-solutions.html', (req, res) => {
+    res.redirect(301, '/sales-protection-services.html');
+});
+
+app.get('/de/ai-solutions.html', (req, res) => {
+    res.redirect(301, '/de/schutzdienstleistungen.html');
+});
+
+app.get('/tr/ai-solutions.html', (req, res) => {
+    res.redirect(301, '/tr/satis-koruma-hizmetleri.html');
+});
+
 // Handle 404s by redirecting to home page
 app.get('*', (req, res) => {
     // Check if the requested file exists

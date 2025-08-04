@@ -178,9 +178,8 @@ const turkishTranslations = {
     
     // Main Service Cards
     'Sales as a Service': 'Hizmet Olarak Satış',
-    'Sales AI Solutions': 'Satış AI Çözümleri',
-    'Sales AI Çözümler': 'Satış AI Çözümleri',
-    'BuffSend platform and AI-powered sales tools': 'BuffSend platformu ve AI destekli satış araçları',
+    'Sales Protection Services': 'Satış Koruma Hizmetleri',
+    'Defend your revenue with data protection and threat monitoring': 'Gelirinizi veri koruması ve tehdit izleme ile savunun',
     'Complete sales management and operations outsourcing': 'Komple satış yönetimi ve operasyon dış kaynak kullanımı',
     'Real results from companies we\'ve helped': 'Yardım ettiğimiz şirketlerden gerçek sonuçlar',
     'Comprehensive sales growth solutions for your business': 'İşletmeniz için kapsamlı satış büyüme çözümleri',
@@ -196,7 +195,7 @@ const turkishTranslations = {
     'Appointment Setting': 'Randevu Ayarlama',
     'Cold Email': 'Soğuk E-posta',
     'Email Automation': 'E-posta Otomasyonu',
-    'AI Sales Tools': 'AI Satış Araçları',
+    'Sales Protection': 'Satış Koruması',
     'Export Marketing': 'İhracat Pazarlaması',
     'Europe Market Entry': 'Avrupa Pazarına Giriş',
     'Prospect Finding': 'Potansiyel Müşteri Bulma',
@@ -277,8 +276,8 @@ const germanTranslations = {
     
     // Main Service Cards
     'Sales as a Service': 'Verkauf als Service',
-    'Sales AI Solutions': 'Verkaufs-KI-Lösungen',
-    'BuffSend platform and AI-powered sales tools': 'BuffSend-Plattform und KI-gestützte Verkaufstools',
+    'Sales Protection Services': 'Vertriebsschutz-Services',
+    'Defend your revenue with data protection and threat monitoring': 'Schützen Sie Ihren Umsatz mit Datenschutz und Bedrohungsüberwachung',
     'Complete sales management and operations outsourcing': 'Vollständiges Outsourcing von Verkaufsmanagement und -abläufen',
     'Real results from companies we\'ve helped': 'Echte Ergebnisse von Unternehmen, denen wir geholfen haben',
     'Comprehensive sales growth solutions for your business': 'Umfassende Umsatzwachstumslösungen für Ihr Unternehmen',
@@ -299,7 +298,7 @@ const germanTranslations = {
     'Outbound Marketing': 'Outbound Marketing',
     'Cold Email Agency': 'Cold-E-Mail-Agentur',
     'Email Automation': 'E-Mail-Automatisierung',
-    'AI Sales Tools': 'KI-Verkaufstools',
+    'Sales Protection': 'Vertriebsschutz',
     'Export Marketing': 'Export-Marketing',
     'International Market Entry': 'Internationaler Markteintritt',
     'Distributor Finding': 'Distributor-Suche',
@@ -719,7 +718,7 @@ function buildPage(templateName, outputName, lang = 'en') {
         pageNavigation = pageNavigation.replace(/href="\.\.\/outbound-marketing-agency\.html"/g, 'href="./outbound-pazarlama-ajansi.html"');
         pageNavigation = pageNavigation.replace(/href="\.\.\/cold-email-agency\.html"/g, 'href="./soguk-e-posta-ajansi.html"');
         pageNavigation = pageNavigation.replace(/href="\.\.\/email-automation\.html"/g, 'href="./solutions.html#email-automation"');
-        pageNavigation = pageNavigation.replace(/href="\.\.\/ai-solutions\.html"/g, 'href="./solutions.html#ai-solutions"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/sales-protection-services\.html"/g, 'href="./satis-koruma-hizmetleri.html"');
         
         // International Expansion section
         pageNavigation = pageNavigation.replace(/href="\.\.\/export-marketing-consulting\.html"/g, 'href="./ihracat-pazarlama-danismanligi.html"');
@@ -744,7 +743,7 @@ function buildPage(templateName, outputName, lang = 'en') {
         pageNavigation = pageNavigation.replace(/href="\.\.\/outbound-marketing-agency\.html"/g, 'href="./solutions.html#outbound-marketing"');
         pageNavigation = pageNavigation.replace(/href="\.\.\/cold-email-agency\.html"/g, 'href="./solutions.html#cold-email"');
         pageNavigation = pageNavigation.replace(/href="\.\.\/email-automation\.html"/g, 'href="./solutions.html#email-automation"');
-        pageNavigation = pageNavigation.replace(/href="\.\.\/ai-solutions\.html"/g, 'href="./solutions.html#ai-solutions"');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/sales-protection-services\.html"/g, 'href="./schutzdienstleistungen.html"');
         pageNavigation = pageNavigation.replace(/href="\.\.\/export-marketing-consulting\.html"/g, 'href="./solutions.html#export-marketing"');
         pageNavigation = pageNavigation.replace(/href="\.\.\/international-market-entry\.html"/g, 'href="./solutions.html#international-market-entry"');
         pageNavigation = pageNavigation.replace(/href="\.\.\/distributor-finding\.html"/g, 'href="./solutions.html#distributor-finding"');
@@ -868,7 +867,7 @@ buildPage('lead-generation-service', 'lead-generation-service', 'en');
 buildPage('prospect-finding-service', 'prospect-finding-service', 'en');
 buildPage('appointment-setting-service', 'appointment-setting-service', 'en');
 buildPage('cold-email-agency', 'cold-email-agency', 'en');
-buildPage('ai-solutions', 'ai-solutions', 'en');
+buildPage('sales-protection-services', 'sales-protection-services', 'en');
 buildPage('outsourced-sales-team-service', 'outsourced-sales-team-service', 'en');
 buildPage('email-automation', 'email-automation', 'en');
 buildPage('export-marketing-consulting', 'export-marketing-consulting', 'en');
@@ -884,6 +883,7 @@ buildPage('about', 'about', 'tr');
 buildPage('solutions', 'solutions', 'tr');
 buildPage('contact', 'contact', 'tr');
 buildPage('case-studies', 'case-studies', 'tr');
+buildPage('satis-koruma-hizmetleri', 'satis-koruma-hizmetleri', 'tr');
 
 // Build German pages
 console.log('Building German pages...');
@@ -892,5 +892,6 @@ buildPage('about', 'about', 'de');
 buildPage('solutions', 'solutions', 'de');
 buildPage('contact', 'contact', 'de');
 buildPage('case-studies', 'case-studies', 'de');
+buildPage('schutzdienstleistungen', 'schutzdienstleistungen', 'de');
 
 console.log('Build complete with enhanced SEO!');

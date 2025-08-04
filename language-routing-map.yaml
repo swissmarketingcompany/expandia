@@ -97,6 +97,11 @@ url_mapping:
       en: "/outbound-marketing-agency.html"
       tr: "/tr/outbound-pazarlama-ajansi.html"
       de: "/de/solutions.html#outbound-marketing"
+      
+    sales_protection_services:
+      en: "/sales-protection-services.html"
+      tr: "/tr/satis-koruma-hizmetleri.html"
+      de: "/de/schutzdienstleistungen.html"
 
 # Language Switching Behavior
 language_switching:
