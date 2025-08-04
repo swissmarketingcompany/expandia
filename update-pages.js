@@ -83,11 +83,11 @@ const headerTemplate = `<!DOCTYPE html>
                                         <div class="text-sm text-base-content/60">Complete Sales Management</div>
                                     </div>
                                 </a>
-                                <a href="solutions.html#ai-solutions" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
-                                    <span class="text-xl">🤖</span>
+                                <a href="solutions.html#sales-protection" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
+                                    <span class="text-xl">🛡️</span>
                                     <div>
-                                        <div class="font-semibold">Sales AI Solutions</div>
-                                        <div class="text-sm text-base-content/60">BuffSend & AI Tools</div>
+                                        <div class="font-semibold">Sales Protection Services</div>
+                                        <div class="text-sm text-base-content/60">Data Security & Threat Monitoring</div>
                                     </div>
                                 </a>
                                 <a href="case-studies.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{CASESTUDIES_ITEM_ACTIVE}}">

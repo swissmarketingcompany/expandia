@@ -798,6 +798,11 @@ function buildPage(templateName, outputName, lang = 'en') {
         pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
     }
     
+    // Global replacements for all languages - update old AI Solutions anchors to Sales Protection
+    content = content.replace(/#ai-solutions/g, '#sales-protection');
+    pageNavigation = pageNavigation.replace(/#ai-solutions/g, '#sales-protection');
+    pageFooter = pageFooter.replace(/#ai-solutions/g, '#sales-protection');
+    
     // Insert navigation, content, and footer into HTML template
     htmlTemplate = htmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
     htmlTemplate = htmlTemplate.replace('{{MAIN_CONTENT}}', content);
