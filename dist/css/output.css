@@ -5505,10 +5505,6 @@ details.collapse summary::-webkit-details-marker{
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.grid-cols-4{
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
 .flex-col{
   flex-direction: column;
 }
@@ -5834,10 +5830,6 @@ details.collapse summary::-webkit-details-marker{
   background-color: var(--fallback-a,oklch(var(--a)/0.1));
 }
 
-.bg-accent\/20{
-  background-color: var(--fallback-a,oklch(var(--a)/0.2));
-}
-
 .bg-base-100{
   --tw-bg-opacity: 1;
   background-color: var(--fallback-b1,oklch(var(--b1)/var(--tw-bg-opacity, 1)));
@@ -5996,10 +5988,6 @@ details.collapse summary::-webkit-details-marker{
   background-color: var(--fallback-p,oklch(var(--p)/0.1));
 }
 
-.bg-primary\/20{
-  background-color: var(--fallback-p,oklch(var(--p)/0.2));
-}
-
 .bg-primary\/5{
   background-color: var(--fallback-p,oklch(var(--p)/0.05));
 }
@@ -6039,10 +6027,6 @@ details.collapse summary::-webkit-details-marker{
 
 .bg-secondary\/10{
   background-color: var(--fallback-s,oklch(var(--s)/0.1));
-}
-
-.bg-secondary\/20{
-  background-color: var(--fallback-s,oklch(var(--s)/0.2));
 }
 
 .bg-secondary\/5{
@@ -6286,11 +6270,6 @@ details.collapse summary::-webkit-details-marker{
 .via-secondary{
   --tw-gradient-to: var(--fallback-s,oklch(var(--s)/0))  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--fallback-s,oklch(var(--s)/1)) var(--tw-gradient-via-position), var(--tw-gradient-to);
-}
-
-.via-secondary\/10{
-  --tw-gradient-to: rgb(255 255 255 / 0)  var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--fallback-s,oklch(var(--s)/0.1)) var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
 .via-yellow-100{
@@ -8281,10 +8260,6 @@ body > footer.footer-gradient{
   border-color: var(--fallback-a,oklch(var(--a)/0.2));
 }
 
-.hover\:border-info\/20:hover{
-  border-color: var(--fallback-in,oklch(var(--in)/0.2));
-}
-
 .hover\:border-primary:hover{
   --tw-border-opacity: 1;
   border-color: var(--fallback-p,oklch(var(--p)/var(--tw-border-opacity, 1)));
@@ -8319,10 +8294,6 @@ body > footer.footer-gradient{
 .hover\:bg-blue-700:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(29 78 216 / var(--tw-bg-opacity, 1));
-}
-
-.hover\:bg-info\/5:hover{
-  background-color: var(--fallback-in,oklch(var(--in)/0.05));
 }
 
 .hover\:bg-primary\/10:hover{
