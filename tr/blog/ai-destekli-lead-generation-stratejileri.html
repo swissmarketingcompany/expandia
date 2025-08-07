@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="bumblebee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Destekli Lead Generation Stratejileri: %400 Dönüşüm Artışı | Expandia</title>
+    <meta name="description" content="AI destekli lead generation ile dönüşüm oranlarınızı %400 artırın. Makine öğrenimi teknikleri, tahmine dayalı analitik ve otomasyon araçları öğrenin.">
+    <meta name="keywords" content="AI lead generation, yapay zeka satış, makine öğrenimi, tahmine dayalı analitik, AI prospekting, otomatik lead puanlama">
+    <link href="../../dist/css/output.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XY2B6K4R6Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XY2B6K4R6Q');
+    </script>
+</head>
+<body class="font-sans">
+    <nav class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto container-padding">
+            <div class="navbar-start">
+                <a href="../index.html" class="text-xl font-bold text-primary">
+                    <img src="../../Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 w-auto">
+                </a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1">
+                    <li><a href="../index.html">Ana Sayfa</a></li>
+                    <li><a href="index.html" class="font-semibold text-primary">Blog</a></li>
+                </ul>
+            </div>
+            <div class="navbar-end">
+                <a href="../contact.html" class="btn btn-primary btn-sm">Başlayın</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section-spacing bg-gradient-to-br from-buzz-warm via-base-100 to-buzz-light">
+        <div class="container mx-auto container-padding">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="breadcrumbs text-sm mb-6">
+                    <ul>
+                        <li><a href="../index.html">Ana Sayfa</a></li>
+                        <li><a href="index.html">Blog</a></li>
+                        <li>AI & Lead Generation</li>
+                    </ul>
+                </div>
+                
+                <div class="flex items-center justify-center gap-4 mb-6">
+                    <span class="badge badge-secondary badge-lg">AI & Teknoloji</span>
+                    <span class="text-base-content/60">📅 10 Kasım 2024</span>
+                    <span class="text-base-content/60">⏱️ 6 dakika okuma</span>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    <span class="gradient-header">AI Destekli Lead Generation</span><br>
+                    <span class="text-base-content">Stratejileri</span>
+                </h1>
+                
+                <p class="text-xl text-base-content/80 leading-relaxed mb-8">
+                    Yapay zekanın lead generation'ı nasıl devrim yaratığını keşfedin. Dönüşüm oranlarını %400 artıran AI stratejileri ve ölçekte prospekt tanımlama otomasyonu öğrenin.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-spacing">
+        <div class="container mx-auto container-padding">
+            <div class="max-w-4xl mx-auto">
+                <article class="prose prose-lg max-w-none">
+                    
+                    <!-- AI Hazırlık Değerlendirmesi -->
+                    <div class="not-prose bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-8 mb-8">
+                        <h3 class="text-2xl font-bold mb-4 text-center">🤖 AI Hazırlık Değerlendirmesi</h3>
+                        <p class="text-center mb-6">İşletmenizin AI destekli lead generation'a hazır olup olmadığını öğrenin!</p>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="label">Mevcut veri toplama seviyeniz:</label>
+                                    <select class="select select-bordered w-full" id="veri-seviye">
+                                        <option value="minimal">Sadece temel iletişim bilgisi</option>
+                                        <option value="orta">Davranışsal + demografik veri</option>
+                                        <option value="kapsamli" selected>Tam müşteri yolculuğu takibi</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="label">Lead puanlama yönteminiz:</label>
+                                    <select class="select select-bordered w-full" id="puanlama-yontem">
+                                        <option value="manuel">Manuel kalifikasyon</option>
+                                        <option value="kural">Kural tabanlı puanlama</option>
+                                        <option value="tahmine" selected>Tahmine dayalı AI puanlama</option>
+                                    </select>
+                                </div>
+                                <button onclick="aiHazirligHesapla()" class="btn btn-primary btn-block">AI Hazırlığımı Kontrol Et</button>
+                            </div>
+                            
+                            <div id="ai-sonuc" class="space-y-4">
+                                <div class="stats stats-vertical shadow">
+                                    <div class="stat">
+                                        <div class="stat-title">AI Hazırlık Puanı</div>
+                                        <div class="stat-value text-primary" id="hazirlik-puani">85%</div>
+                                        <div class="stat-desc" id="puan-aciklama">AI'ya hazırsınız</div>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="stat-title">Potansiyel Artış</div>
+                                        <div class="stat-value text-success" id="potansiyel-artis">+300%</div>
+                                        <div class="stat-desc">Lead kalitesinde</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="alert alert-info">
+                                    <span class="text-sm" id="oneri">🚀 Gelişmiş AI özelliklerine odaklanın</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>🧠 Lead Generation'da AI Devrimi</h2>
+                    
+                    <p>Yapay zeka, lead generation'ı sadece değiştirmiyor—tamamen devrim yaratıyor. Geleneksel lead generation geniş hedefleme ve manuel kalifikasyona dayanırken, <strong>AI destekli lead generation</strong> cerrahi hassasiyetle prospektleri tanımlamak ve satın alma davranışını eşi görülmemiş doğrulukla tahmin etmek için makine öğrenimi algoritmalarını kullanır.</p>
+                    
+                    <p>AI destekli lead generation stratejileri uygulayan şirketler dikkat çeken sonuçlar görüyor: <strong>%400 daha yüksek dönüşüm oranları</strong>, manuel araştırma zamanında %85 azalma ve lead kalitesinde %60 iyileşme.</p>
+
+                    <h3>🎯 5 Oyun Değiştiren AI Lead Generation Stratejisi</h3>
+                    
+                    <div class="not-prose my-8 space-y-4">
+                        <div class="card bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20">
+                            <div class="card-body">
+                                <h4 class="card-title text-lg text-primary">🎯 Tahmine Dayalı Lead Puanlama</h4>
+                                <p class="text-sm">Binlerce veri noktasını analiz ederek hangi leadlerin dönüştürülme olasılığının en yüksek olduğunu tahmin etmek için makine öğrenimini kullanın.</p>
+                                <div class="badge badge-success">%35 dönüşüm artışı</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-gradient-to-r from-secondary/10 to-secondary/5 border border-secondary/20">
+                            <div class="card-body">
+                                <h4 class="card-title text-lg text-secondary">🔍 Niyet Verisi Analizi</h4>
+                                <p class="text-sm">Alanınızdaki çözümleri aktif olarak araştıran prospektleri tanımlamak için milyarlarca çevrimiçi sinyali izleyin.</p>
+                                <div class="badge badge-warning">%300 yanıt oranı artışı</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-gradient-to-r from-accent/10 to-accent/5 border border-accent/20">
+                            <div class="card-body">
+                                <h4 class="card-title text-lg text-accent">✍️ AI Üretimli Kişiselleştirme</h4>
+                                <p class="text-sm">Prospekt verilerini analiz etmek ve ilgi çekici, alakalı outreach üretmek için doğal dil işleme kullanın.</p>
+                                <div class="badge badge-info">%250 açılma oranı artışı</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-gradient-to-r from-info/10 to-info/5 border border-info/20">
+                            <div class="card-body">
+                                <h4 class="card-title text-lg text-info">👥 Benzer Kitle Modelleme</h4>
+                                <p class="text-sm">En iyi müşterilerinizin özelliklerini analiz edin ve büyük veritabanlarında benzer prospektleri bulmak için AI kullanın.</p>
+                                <div class="badge badge-primary">%400 lead kalite artışı</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-gradient-to-r from-success/10 to-success/5 border border-success/20">
+                            <div class="card-body">
+                                <h4 class="card-title text-lg text-success">💬 Konuşma AI Kalifikasyonu</h4>
+                                <p class="text-sm">7/24 prospektlerle etkileşim kurabilen, doğal konuşmalarla leadleri kalive edebilen akıllı chatbot'lar konuşlandırın.</p>
+                                <div class="badge badge-secondary">7/24 lead kalifikasyon</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Araçları Karşılaştırma -->
+                    <div class="not-prose my-8">
+                        <h3 class="text-2xl font-bold mb-4">🛠️ En İyi AI Lead Generation Araçları</h3>
+                        
+                        <div class="overflow-x-auto">
+                            <table class="table table-zebra w-full">
+                                <thead>
+                                    <tr>
+                                        <th>Araç</th>
+                                        <th>AI Yetenekleri</th>
+                                        <th>En İyi Kullanım</th>
+                                        <th>Fiyat</th>
+                                        <th>ROI Değerlendirmesi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="font-bold">Clay.com</div>
+                                            <div class="text-sm opacity-70">AI destekli veri platformu</div>
+                                        </td>
+                                        <td>
+                                            <div class="badge badge-primary badge-sm">Veri Zenginleştirme</div>
+                                            <div class="badge badge-secondary badge-sm">AI Kişiselleştirme</div>
+                                        </td>
+                                        <td>Veri odaklı prospekting</td>
+                                        <td>₺1,500/ay</td>
+                                        <td>
+                                            <div class="rating rating-sm">
+                                                <input type="radio" class="mask mask-star-2 bg-orange-400" checked readonly />
+                                                <input type="radio" class="mask mask-star-2 bg-orange-400" checked readonly />
+                                                <input type="radio" class="mask mask-star-2 bg-orange-400" checked readonly />
+                                                <input type="radio" class="mask mask-star-2 bg-orange-400" checked readonly />
+                                                <input type="radio" class="mask mask-star-2 bg-orange-400" checked readonly />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="font-bold">6sense</div>
+                                            <div class="text-sm opacity-70">Gelir AI platformu</div>
+                                        </td>
+                                        <td>
+                                            <div class="badge badge-primary badge-sm">Niyet Verisi</div>
+                                            <div class="badge badge-secondary badge-sm">Tahmine Dayalı Analitik</div>
+                                        </td>
+                                        <td>Kurumsal ABM</td>
+                                        <td>Özel</td>
+                                        <td>
+                                            <div class="rating rating-sm">
+                                                <input type="radio" class="mask mask-star-2 bg-orange-400" checked readonly />
+                                                <input type="radio" class="mask mask-star-2 bg-orange-400" checked readonly />
+                                                <input type="radio" class="mask mask-star-2 bg-orange-400" checked readonly />
+                                                <input type="radio" class="mask mask-star-2 bg-orange-400" checked readonly />
+                                                <input type="radio" class="mask mask-star-2 bg-gray-300" readonly />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="font-bold">Drift</div>
+                                            <div class="text-sm opacity-70">Konuşma AI</div>
+                                        </td>
+                                        <td>
+                                            <div class="badge badge-primary badge-sm">Chatbot AI</div>
+                                            <div class="badge badge-secondary badge-sm">Lead Kalifikasyon</div>
+                                        </td>
+                                        <td>Web sitesi dönüşümü</td>
+                                        <td>₺500/ay</td>
+                                        <td>
+                                            <div class="rating rating-sm">
+                                                <input type="radio" class="mask mask-star-2 bg-orange-400" checked readonly />
+                                                <input type="radio" class="mask mask-star-2 bg-orange-400" checked readonly />
+                                                <input type="radio" class="mask mask-star-2 bg-orange-400" checked readonly />
+                                                <input type="radio" class="mask mask-star-2 bg-orange-400" checked readonly />
+                                                <input type="radio" class="mask mask-star-2 bg-gray-300" readonly />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <h3>📊 AI Lead Generation Sistemi Oluşturma</h3>
+                    
+                    <p>AI destekli lead generation'ı uygulamak tek bir araç seçmekle ilgili değil—birden fazla AI sisteminin eşi görülmemiş hassasiyetle prospektleri tanımlamak, kalifiye etmek ve beslemek için birlikte çalıştığı <strong>akıllı bir ekosistem</strong> oluşturmakla ilgili.</p>
+
+                    <h3>🔮 AI Lead Generation'ın Geleceği</h3>
+                    
+                    <p>AI ile lead generation'da mümkün olanların sadece yüzeyini çiziyoruz. 2025 ve sonrasına baktığımızda, şunlar geliyor:</p>
+                    
+                    <ul>
+                        <li><strong>Duygusal Zeka AI:</strong> Duygusal ipuçlarını okuyabilen ve mesaj tonunu buna göre ayarlayabilen sistemler</li>
+                        <li><strong>Tahmine Dayalı İlişki Haritalama:</strong> Hedef organizasyonlar içindeki optimal ilişki yollarını tahmin eden AI</li>
+                        <li><strong>Gerçek Zamanlı Pazar Adaptasyonu:</strong> Pazar koşullarına göre stratejileri otomatik olarak ayarlayan sistemler</li>
+                        <li><strong>Çapraz Kanal Zekası:</strong> Tüm kanallar arasında temas noktalarını sorunsuzca organize eden birleşik AI</li>
+                    </ul>
+
+                    <div class="alert alert-info my-6">
+                        <span><strong>💡 Pro İpucu:</strong> AI destekli lead generation'ı şimdi uygulamaya başlayan işletmeler, bu teknolojiler olgunlaştıkça önemli bir rekabet avantajına sahip olacak. Beklemeyin—AI yolculuğunuza bugün başlayın.</span>
+                    </div>
+
+                    <h2>🚀 AI ile Lead Generation'ı Kullanmaya Hazır mısınız?</h2>
+                    
+                    <p>Lead generation'da AI devrimi geliyor değil—burada. Bu stratejileri şimdi uygulayan şirketler lead kalitesinde %400 iyileşme, manuel çabada %85 azalma ve eşi görülmemiş dönüşüm oranları görüyor.</p>
+                    
+                    <p>Soru, AI'nın lead generation'ınızı dönüştürüp dönüştürmeyeceği değil—rekabet avantajlarını toplayan erken benimseyen­ler arasında mı, yoksa yetişmeye çalışan geç takipçiler arasında mı olacağınız.</p>
+
+                    <div class="bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl p-6 my-8">
+                        <h3 class="text-xl font-bold mb-3">🎯 AI Dönüşümünüzü Bugün Başlatın!</h3>
+                        <p class="mb-4">Bir AI stratejisi ile başlayın ve oradan ölçeklendirin. Beklediğiniz her gün rakiplerinize verdiğiniz bir rekabet avantajı.</p>
+                        <div class="space-y-2 text-sm">
+                            <p>✅ Bu hafta tahmine dayalı lead puanlama ile başlayın</p>
+                            <p>✅ Sonra niyet verisi izleme uygulayın</p>
+                            <p>✅ Ölçeklendirmek için AI kişiselleştirme ekleyin</p>
+                            <p>✅ Sürekli optimize edin ve genişletin</p>
+                        </div>
+                    </div>
+
+                </article>
+
+                <!-- Call to Action -->
+                <div class="card bg-gradient-to-r from-primary/10 to-secondary/10 mt-12">
+                    <div class="card-body text-center">
+                        <h3 class="card-title justify-center text-2xl mb-4">AI ile Lead Generation'ınızı 10x Yapmaya Hazır mısınız?</h3>
+                        <p class="text-base-content/80 mb-6">
+                            Expandia'nın AI destekli lead generation stratejilerinin hatlarınızı nasıl dönüştürebileceğini keşfedin. 
+                            Uzmanlarımızdan ücretsiz AI denetimi ve uygulama planı alın.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="../contact.html" class="btn btn-primary btn-lg">
+                                🤖 Ücretsiz AI Denetimi Al
+                            </a>
+                            <a href="../solutions.html" class="btn btn-outline btn-lg">
+                                📖 AI Çözümlerini Keşfedin
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-base-200">
+        <div class="container mx-auto container-padding py-8">
+            <div class="text-center">
+                <p class="text-base-content/60 text-sm">© 2024 Expandia. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function aiHazirligHesapla() {
+            const veriSeviye = document.getElementById('veri-seviye').value;
+            const puanlamaYontem = document.getElementById('puanlama-yontem').value;
+            
+            let puan = 0;
+            
+            if (veriSeviye === 'kapsamli') puan += 50;
+            else if (veriSeviye === 'orta') puan += 30;
+            else puan += 10;
+            
+            if (puanlamaYontem === 'tahmine') puan += 50;
+            else if (puanlamaYontem === 'kural') puan += 25;
+            else puan += 5;
+            
+            let seviye, aciklama, potansiyel, oneri;
+            
+            if (puan >= 80) {
+                seviye = "AI Şampiyonu";
+                aciklama = "Gelişmiş AI uygulaması için mükemmel konumdasınız!";
+                potansiyel = "+50%";
+                oneri = "🚀 Gelişmiş AI özelliklerine odaklanın";
+            } else if (puan >= 60) {
+                seviye = "AI Hazır";
+                aciklama = "Sağlam temeller var. AI uygulamasına hazırsınız!";
+                potansiyel = "+200%";
+                oneri = "📈 Tahmine dayalı puanlama ve niyet verisi ile başlayın";
+            } else if (puan >= 40) {
+                seviye = "Ön Hazırlık";
+                aciklama = "İyi potansiyel! AI uygulaması öncesi hazırlık gerekli.";
+                potansiyel = "+300%";
+                oneri = "💡 Önce veri toplama ve temel otomasyona odaklanın";
+            } else {
+                seviye = "AI Öncesi";
+                aciklama = "Önemli fırsat! Temel inşa etme gerekli.";
+                potansiyel = "+400%";
+                oneri = "🔧 CRM uygulaması ve veri standardizasyonu ile başlayın";
+            }
+            
+            document.getElementById('hazirlik-puani').textContent = puan + '%';
+            document.getElementById('puan-aciklama').textContent = aciklama;
+            document.getElementById('potansiyel-artis').textContent = potansiyel;
+            document.getElementById('oneri').innerHTML = oneri;
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            aiHazirligHesapla();
+        });
+    </script>
+</body>
+</html>
