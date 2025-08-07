@@ -12,6 +12,7 @@
     "build:pages": "node build-pages.js",
     "build": "npm run build:css && npm run build:js && npm run build:pages",
     "heroku-postbuild": "npm run build",
+    "check-templates": "node check-templates.js",
     "test": "echo 'No tests specified'"
   },
   "engines": {
