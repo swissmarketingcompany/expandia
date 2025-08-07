@@ -806,21 +806,21 @@
                                         
                                         <!-- Trade Data Details (hidden by default) -->
                                         <div id="tradeDataDetails" class="mt-4 p-4 bg-base-100 rounded-lg" style="display: none;">
-                                                                                    <label class="block text-sm font-semibold mb-3">
-                                            🚢 Monthly Average Export/Import Shipment Count:
-                                        </label>
-                                        <input 
-                                            type="number" 
-                                            id="shipmentCount" 
-                                            class="input input-bordered w-full" 
-                                            placeholder="e.g: 50" 
-                                            min="1" 
-                                            max="1000"
-                                            oninput="calculatePrice()"
-                                        >
-                                        <p class="text-xs text-base-content/60 mt-2">
-                                            Including B/L, AWB, container shipments
-                                        </p>
+                                            <label class="block text-sm font-semibold mb-3">
+                                                🚢 Aylık Ortalama İhracat/İthalat Sevkiyat Sayısı:
+                                            </label>
+                                            <input 
+                                                type="number" 
+                                                id="shipmentCount" 
+                                                class="input input-bordered w-full" 
+                                                placeholder="Örn: 50" 
+                                                min="1" 
+                                                max="1000"
+                                                oninput="calculatePrice()"
+                                            >
+                                            <p class="text-xs text-base-content/60 mt-2">
+                                                B/L, AWB, konteyner sevkiyatları dahil
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -848,20 +848,20 @@
                                         <div class="bg-base-200/30 rounded-xl p-6">
                                             <h5 class="font-bold mb-4 flex items-center gap-2">
                                                 <span>💰</span>
-                                                <span>Cost Breakdown</span>
+                                                <span>Maliyet Detayı</span>
                                             </h5>
                                             <div class="space-y-3">
                                                 <div class="flex justify-between">
-                                                    <span class="text-sm">Personal data protection:</span>
+                                                    <span class="text-sm">Kişisel veri koruması:</span>
                                                     <span class="font-semibold" id="personalDataCost">€0</span>
                                                 </div>
                                                 <div id="tradeDataCostRow" class="flex justify-between" style="display: none;">
-                                                    <span class="text-sm">Trade data protection:</span>
+                                                    <span class="text-sm">Ticari veri koruması:</span>
                                                     <span class="font-semibold" id="tradeDataCost">€0</span>
                                                 </div>
                                                 <hr>
                                                 <div class="flex justify-between text-lg font-bold text-primary">
-                                                    <span>Total:</span>
+                                                    <span>Toplam:</span>
                                                     <span id="totalCostBreakdown">€0</span>
                                                 </div>
                                             </div>
@@ -871,33 +871,33 @@
                                         <div class="bg-base-200/30 rounded-xl p-6">
                                             <h5 class="font-bold mb-4 flex items-center gap-2">
                                                 <span>✅</span>
-                                                <span>Included Features</span>
+                                                <span>Dahil Özellikler</span>
                                             </h5>
                                             <div class="space-y-2 text-sm">
                                                 <div class="flex items-center gap-2">
                                                     <span class="text-green-500 font-bold">✓</span>
-                                                    <span>292 public data broker cleanup</span>
+                                                    <span>292 herkese açık veri broker temizliği</span>
                                                 </div>
                                                 <div class="flex items-center gap-2">
                                                     <span class="text-green-500 font-bold">✓</span>
-                                                    <span>GDPR/CCPA compliant process</span>
+                                                    <span>KVKK/GDPR uyumlu süreç</span>
                                                 </div>
                                                 <div class="flex items-center gap-2">
                                                     <span class="text-green-500 font-bold">✓</span>
-                                                    <span>Monthly monitoring and reporting</span>
+                                                    <span>Aylık izleme ve raporlama</span>
                                                 </div>
                                                 <div id="tradeFeatures" style="display: none;">
                                                     <div class="flex items-center gap-2">
                                                         <span class="text-green-500 font-bold">✓</span>
-                                                        <span>348 private data broker cleanup</span>
+                                                        <span>348 özel veri broker temizliği</span>
                                                     </div>
                                                     <div class="flex items-center gap-2">
                                                         <span class="text-green-500 font-bold">✓</span>
-                                                        <span>Corporate trade shield</span>
+                                                        <span>Kurumsal ticaret kalkanı</span>
                                                     </div>
                                                     <div class="flex items-center gap-2">
                                                         <span class="text-green-500 font-bold">✓</span>
-                                                        <span>Real-time threat monitoring</span>
+                                                        <span>Gerçek zamanlı tehdit izleme</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -908,10 +908,10 @@
                                     <div class="text-center mt-8">
                                         <a href="./contact.html" class="btn btn-primary btn-lg px-12">
                                             <span class="text-lg">🚀</span>
-                                            Get Quote Now
+                                            Hemen Teklif Al
                                         </a>
                                         <p class="text-sm text-base-content/60 mt-3">
-                                            Start with free consultation
+                                            Ücretsiz danışmanlık ile başlayın
                                         </p>
                                     </div>
                                 </div>
@@ -1200,7 +1200,7 @@
                                 <span class="font-bold text-lg bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">Smart Tip</span>
                             </div>
                             <p class="text-gray-700 font-medium">
-                                This dashboard comes with your special portal membership providing <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-bold">24/7 access</span>.
+                                Bu dashboard'a <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-bold">7/24 erişim</span> sağlayacak özel portal üyeliğiniz ile birlikte gelir.
                             </p>
                         </div>
                     </div>
@@ -1324,16 +1324,16 @@
                             </div>
                             <div class="bg-white rounded-xl p-6 shadow-md border border-orange-200/30">
                                 <div class="text-4xl font-bold text-orange-600 mb-3">7-21 Days</div>
-                                <div class="text-lg font-bold mb-3 text-gray-800">Initial Deletions</div>
+                                <div class="text-lg font-bold mb-3 text-gray-800">İlk Deletionler</div>
                                 <div class="text-sm text-gray-600 leading-relaxed">
                                     Initial deletion processes from data brokers
                                 </div>
                             </div>
                             <div class="bg-white rounded-xl p-6 shadow-md border border-green-200/30">
                                 <div class="text-4xl font-bold text-green-600 mb-3">30+ Days</div>
-                                <div class="text-lg font-bold mb-3 text-gray-800">Continuous Protection</div>
+                                <div class="text-lg font-bold mb-3 text-gray-800">Continuous Koruma</div>
                                 <div class="text-sm text-gray-600 leading-relaxed">
-                                    Monthly monitoring and protection against new threats
+                                    Aylık izleme ve yeni tehditlere karşı koruma
                                 </div>
                             </div>
                         </div>
