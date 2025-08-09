@@ -396,3 +396,28 @@
     </script>
 </body>
 </html>
+                oneri = "📈 Tahmine dayalı puanlama ve niyet verisi ile başlayın";
+            } else if (puan >= 40) {
+                seviye = "Ön Hazırlık";
+                aciklama = "İyi potansiyel! AI uygulaması öncesi hazırlık gerekli.";
+                potansiyel = "+300%";
+                oneri = "💡 Önce veri toplama ve temel otomasyona odaklanın";
+            } else {
+                seviye = "AI Öncesi";
+                aciklama = "Önemli fırsat! Temel inşa etme gerekli.";
+                potansiyel = "+400%";
+                oneri = "🔧 CRM uygulaması ve veri standardizasyonu ile başlayın";
+            }
+            
+            document.getElementById('hazirlik-puani').textContent = puan + '%';
+            document.getElementById('puan-aciklama').textContent = aciklama;
+            document.getElementById('potansiyel-artis').textContent = potansiyel;
+            document.getElementById('oneri').innerHTML = oneri;
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            aiHazirligHesapla();
+        });
+    </script>
+</body>
+</html>
