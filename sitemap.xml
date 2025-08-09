@@ -66,6 +66,18 @@
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://www.expandia.ch/blog/pricing-sow-scoping-and-deliverables.html</loc>
+        <lastmod>2024-12-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.expandia.ch/blog/pricing-regional-considerations-tax-currency-local.html</loc>
+        <lastmod>2024-12-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
         <loc>https://www.expandia.ch/blog/mastering-cold-email-deliverability.html</loc>
         <lastmod>2024-12-30</lastmod>
         <changefreq>monthly</changefreq>
