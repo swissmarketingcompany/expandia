@@ -218,6 +218,29 @@ app.get('/tr/:page', (req, res) => {
     }
 });
 
+// Turkish service alias redirects (EN slugs -> TR slugs)
+app.get('/tr/lead-generation-service.html', (req, res) => {
+    res.redirect(301, '/tr/lead-generation-hizmeti.html');
+});
+app.get('/tr/prospect-finding-service.html', (req, res) => {
+    res.redirect(301, '/tr/potansiyel-musteri-bulma-ajansi.html');
+});
+app.get('/tr/sales-development-agency.html', (req, res) => {
+    res.redirect(301, '/tr/satis-gelistirme-ajansi.html');
+});
+app.get('/tr/appointment-setting-service.html', (req, res) => {
+    res.redirect(301, '/tr/randevu-ayarlama-hizmeti.html');
+});
+app.get('/tr/outsourced-sales-team-service.html', (req, res) => {
+    res.redirect(301, '/tr/dis-kaynakli-satis-ekibi.html');
+});
+app.get('/tr/outbound-marketing-agency.html', (req, res) => {
+    res.redirect(301, '/tr/outbound-pazarlama-ajansi.html');
+});
+app.get('/tr/cold-email-agency.html', (req, res) => {
+    res.redirect(301, '/tr/soguk-e-posta-ajansi.html');
+});
+
 // 301 Redirects for old AI Solutions pages to new Sales Protection Services
 app.get('/ai-solutions.html', (req, res) => {
     res.redirect(301, '/sales-protection-services.html');

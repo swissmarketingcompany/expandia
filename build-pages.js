@@ -830,20 +830,54 @@ function buildPage(templateName, outputName, lang = 'en') {
         content = applyTurkishTranslations(content);
         
         // Fix Turkish service page links - Turkish has comprehensive standalone service pages
-        // Lead Generation & Sales section
+        // Lead Generation & Sales section (handle both ../ and ./ patterns)
         pageNavigation = pageNavigation.replace(/href="\.\.\/b2b-lead-generation-agency\.html"/g, 'href="./b2b-lead-generation-ajansi.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\/b2b-lead-generation-agency\.html"/g, 'href="./b2b-lead-generation-ajansi.html"');
+
         pageNavigation = pageNavigation.replace(/href="\.\.\/lead-generation-service\.html"/g, 'href="./lead-generation-hizmeti.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\/lead-generation-service\.html"/g, 'href="./lead-generation-hizmeti.html"');
+
         pageNavigation = pageNavigation.replace(/href="\.\.\/prospect-finding-service\.html"/g, 'href="./potansiyel-musteri-bulma-ajansi.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\/prospect-finding-service\.html"/g, 'href="./potansiyel-musteri-bulma-ajansi.html"');
+
         pageNavigation = pageNavigation.replace(/href="\.\.\/sales-development-agency\.html"/g, 'href="./satis-gelistirme-ajansi.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\/sales-development-agency\.html"/g, 'href="./satis-gelistirme-ajansi.html"');
+
         pageNavigation = pageNavigation.replace(/href="\.\.\/appointment-setting-service\.html"/g, 'href="./randevu-ayarlama-hizmeti.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\/appointment-setting-service\.html"/g, 'href="./randevu-ayarlama-hizmeti.html"');
+
         pageNavigation = pageNavigation.replace(/href="\.\.\/outsourced-sales-team-service\.html"/g, 'href="./dis-kaynakli-satis-ekibi.html"');
-        
+        pageNavigation = pageNavigation.replace(/href="\.\/outsourced-sales-team-service\.html"/g, 'href="./dis-kaynakli-satis-ekibi.html"');
+
         // Marketing & Outreach section
         pageNavigation = pageNavigation.replace(/href="\.\.\/outbound-marketing-agency\.html"/g, 'href="./outbound-pazarlama-ajansi.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\/outbound-marketing-agency\.html"/g, 'href="./outbound-pazarlama-ajansi.html"');
+
         pageNavigation = pageNavigation.replace(/href="\.\.\/cold-email-agency\.html"/g, 'href="./soguk-e-posta-ajansi.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\/cold-email-agency\.html"/g, 'href="./soguk-e-posta-ajansi.html"');
+
         pageNavigation = pageNavigation.replace(/href="\.\.\/email-automation\.html"/g, 'href="./solutions.html#email-automation"');
+        pageNavigation = pageNavigation.replace(/href="\.\/email-automation\.html"/g, 'href="./solutions.html#email-automation"');
+
         pageNavigation = pageNavigation.replace(/href="\.\.\/sales-protection-services\.html"/g, 'href="./satis-koruma-hizmetleri.html"');
-        
+        pageNavigation = pageNavigation.replace(/href="\.\/sales-protection-services\.html"/g, 'href="./satis-koruma-hizmetleri.html"');
+
+        // International Expansion section
+        pageNavigation = pageNavigation.replace(/href="\.\.\/export-marketing-consulting\.html"/g, 'href="./ihracat-pazarlama-danismanligi.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\/export-marketing-consulting\.html"/g, 'href="./ihracat-pazarlama-danismanligi.html"');
+
+        pageNavigation = pageNavigation.replace(/href="\.\.\/international-market-entry\.html"/g, 'href="./uluslararasi-pazar-girisi-danismanligi.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\/international-market-entry\.html"/g, 'href="./uluslararasi-pazar-girisi-danismanligi.html"');
+
+        pageNavigation = pageNavigation.replace(/href="\.\.\/distributor-finding\.html"/g, 'href="./distributor-bulma-hizmeti.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\/distributor-finding\.html"/g, 'href="./distributor-bulma-hizmeti.html"');
+
+        pageNavigation = pageNavigation.replace(/href="\.\.\/overseas-sales-consulting\.html"/g, 'href="./yurt-disi-satis-danismanligi.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\/overseas-sales-consulting\.html"/g, 'href="./yurt-disi-satis-danismanligi.html"');
+
+        pageNavigation = pageNavigation.replace(/href="\.\.\/europe-market-entry\.html"/g, 'href="./avrupa-pazarina-giris.html"');
+        pageNavigation = pageNavigation.replace(/href="\.\/europe-market-entry\.html"/g, 'href="./avrupa-pazarina-giris.html"');
+
         // Legal policy links for Turkish pages
         pageFooter = pageFooter.replace(/href="\.\/privacy-policy\.html"/g, 'href="./gizlilik-politikasi.html"');
         pageFooter = pageFooter.replace(/href="\.\/terms-of-service\.html"/g, 'href="../terms-of-service.html"');
