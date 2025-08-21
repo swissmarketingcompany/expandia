@@ -93,7 +93,7 @@ function generateArticleSchema(title, description, url, datePublished = "2024-12
 
 // HTML Document Template with enhanced SEO
 function createHTMLTemplate(lang = 'en') {
-    const basePath = (lang === 'tr' || lang === 'de') ? '../' : './';
+    const assetPath = (lang === 'tr' || lang === 'de') ? '../' : './';
     const baseUrl = lang === 'en' ? 'https://www.expandia.ch' : `https://www.expandia.ch/${lang}`;
     
     return `<!DOCTYPE html>
@@ -130,10 +130,10 @@ function createHTMLTemplate(lang = 'en') {
     <meta name="twitter:description" content="{{PAGE_DESCRIPTION}}">
     <meta name="twitter:image" content="https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png">
     
-    <link href="${basePath}dist/css/output.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="${basePath}favicon.ico">
-    <link rel="icon" type="image/png" href="${basePath}favicon.png">
-    <link rel="apple-touch-icon" href="${basePath}favicon.png">
+    <link href="${assetPath}dist/css/output.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="${assetPath}favicon.ico">
+    <link rel="icon" type="image/png" href="${assetPath}favicon.png">
+    <link rel="apple-touch-icon" href="${assetPath}favicon.png">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XY2B6K4R6Q"></script>
@@ -157,7 +157,7 @@ function createHTMLTemplate(lang = 'en') {
     
     {{FOOTER}}
     
-    <script src="${basePath}dist/js/index.js"></script>
+    <script src="${assetPath}dist/js/index.js"></script>
 </body>
 </html>`;
 }
@@ -185,16 +185,30 @@ const turkishTranslations = {
     // Main Service Cards
     'Sales as a Service': 'Hizmet Olarak Satış',
     'Sales Protection Services': 'Satış Koruma Hizmetleri',
-    'Defend your revenue with data protection and threat monitoring': 'Gelirinizi veri koruması ve tehdit izleme ile savunun',
-    'Complete sales management and operations outsourcing': 'Komple satış yönetimi ve operasyon dış kaynak kullanımı',
+    'AI Sales Solutions': 'AI Satış Çözümleri',
+    'Defend your revenue with data protection and threat monitoring': 'Gelirinizi veri koruması ve tehdit izleme ile koruyun',
+    'BuffSend platform and AI-powered sales tools': 'BuffSend platformu ve AI destekli satış araçları',
+    'Complete sales management and operations outsourcing': 'Tüm satış yönetimi ve operasyonlarınız için dış kaynak kullanımı',
     'Real results from companies we\'ve helped': 'Yardım ettiğimiz şirketlerden gerçek sonuçlar',
     'Comprehensive sales growth solutions for your business': 'İşletmeniz için kapsamlı satış büyüme çözümleri',
+    
+    // Footer Links
+    'Privacy Policy': 'Gizlilik Politikası',
+    'Terms of Service': 'Hizmet Şartları', 
+    'Cookie Policy': 'Çerez Politikası',
+    
+    // CTAs and Button Text
+    'Get Started': 'Başlayın',
+    'Contact Us': 'İletişim',
+    'Get Free Consultation': 'Ücretsiz Danışmanlık Alın',
+    'Let\'s discuss how we can help': 'Size nasıl yardımcı olabileceğimizi görüşelim',
+    'Let\'s discuss how we can help': 'Size nasıl yardımcı olabileceğimizi görüşelim',
     
     // Section Headers
     'Special Services': 'Özel Hizmetler',
     'Lead Generation & Sales': 'Potansiyel Müşteri Üretimi & Satış',
     'Potansiyel Müşteri Üretimi & Sales': 'Potansiyel Müşteri Üretimi & Satış',
-    'Marketing & Outreach': 'Pazarlama & İletişim',
+    'Marketing & Outreach': 'Pazarlama ve İletişim',
     'International Expansion': 'Uluslararası Genişleme',
     
     // Service Items - English terms that need translation
@@ -258,7 +272,19 @@ const turkishTranslations = {
     'Our Sales': 'Satış',
     'Potansiyel Müşteri Üretimi Service': 'Potansiyel Müşteri Üretimi Hizmeti',
     'Let\'s discuss how we can help': 'Size nasıl yardımcı olabileceğimizi konuşalım',
-    'Blog': 'Blog'
+    'Blog': 'Blog',
+    "Get Started": "Başlayın",
+    "Contact Us": "İletişim",
+    "Let's discuss how we can help": "Size nasıl yardımcı olabileceğimizi görüşelim",
+    "Lead Generation": "Potansiyel Müşteri Üretimi",
+    "Lead Generation Service": "Potansiyel Müşteri Üretimi Hizmeti",
+    "Sales Development": "Satış Geliştirme",
+    "Outbound Marketing": "Dışa Dönük Pazarlama",
+    "Cold Email": "Soğuk E‑posta",
+    "Cold Email Agency": "Soğuk E‑posta Ajansı",
+    "Sales Protection": "Satış Koruma",
+    "Lead Generation & Sales": "Potansiyel Müşteri Üretimi & Satış",
+    "B2B Lead Generation": "B2B Potansiyel Müşteri Üretimi",
 };
 
 // Translation content for German
@@ -274,6 +300,8 @@ const germanTranslations = {
     'About Us': 'Über uns',
     'Contact Us': 'Kontakt',
     'Success Stories': 'Erfolgsgeschichten',
+    'Special Services': 'Spezialservices',
+    'Our Sales Solutions': 'Unsere Verkaufslösungen',
     
     // Mega Menu Headers
     'Sales Solutions & Services': 'Verkaufslösungen & Services',
@@ -288,15 +316,104 @@ const germanTranslations = {
     'Real results from companies we\'ve helped': 'Echte Ergebnisse von Unternehmen, denen wir geholfen haben',
     'Comprehensive sales growth solutions for your business': 'Umfassende Umsatzwachstumslösungen für Ihr Unternehmen',
     
+    // Critical Legal Compliance Fix - Replace Turkish KVKK with German GDPR
+    'Expandia ticari sırlar ve KVKK\'ya saygılıdır; müşteri/tedarikçi listelerini temin etmez ve paylaşmaz.': 'Expandia respektiert Geschäftsgeheimnisse und die DSGVO; wir beschaffen oder teilen keine Kunden-/Lieferantenlisten.',
+    'Expandia ticari sırlar ve KVKK’ya saygılıdır; müşteri/tedarikçi listelerini temin etmez ve paylaşmaz.': 'Expandia respektiert Geschäftsgeheimnisse und die DSGVO; wir beschaffen oder teilen keine Kunden-/Lieferantenlisten.',
+    
     // Section Headers
     'Special Services': 'Spezialservices',
     'Lead Generation & Sales': 'Lead-Generierung & Verkauf',
     'Marketing & Outreach': 'Marketing & Outreach',
     'International Expansion': 'Internationale Expansion',
     
+    // Fix Denglisch (mixed German-English) issues
+    'Sales als Service': 'Ausgelagerte Vertriebslösung',
+    'Sales AI Lösungen': 'KI-Verkaufslösungen', 
+    'AI Sales Lösungen': 'KI-Verkaufslösungen',
+    'Lead-Generierung Increase': 'Steigerung der Potenzialkundengewinnung',
+    'Hassas veri işleme': 'Verarbeitung sensibler Daten',
+    'İlk Silmeler': 'Erste Löschungen',
+    '0-3 Gün': '0–3 Tage',
+    '30+ Gün': '30+ Tage',
+    '250,000,000+ Verified Contacts': '250.000.000+ verifizierte Kontakte',
+    // Turkish-to-German fixes on DE pages
+    'Kapsamlı koruma için 640 veri broker ve herkese açık veri tabanını sürekli izliyoruz': 'Für umfassenden Schutz überwachen wir kontinuierlich 640 Datenbroker und öffentliche Datenbanken',
+    'Toplam Kapsama Alanı': 'Gesamtabdeckung',
+    'Toplam Veri Broker': 'Gesamtzahl der Datenbroker',
+    'Veri Gizleme Oranı': 'Datenverschleierungsrate',
+    'Sürekli İzleme': 'Kontinuierliche Überwachung',
+    'PRICE CALCULATOR': 'Preisrechner',
+    'Fiyat Hesaplayıcısı': 'Preisrechner',
+    'Bilgilerinizi Girin': 'Geben Sie Ihre Daten ein',
+    'Korunacak Çalışan Sayısı': 'Anzahl der zu schützenden Mitarbeiter',
+    "C-level, VP'ler, satış personeli": 'C‑Level, VPs, Vertriebsmitarbeiter',
+    'Ticari Veri Koruması': 'Handelsdatenschutz',
+    'Hayır': 'Nein',
+    'Sadece kişisel veri koruması': 'Nur persönlicher Datenschutz',
+    'Evet': 'Ja',
+    'Gümrük + kişisel veri koruması': 'Zolldaten + persönlicher Datenschutz',
+    'Aylık Ortalama İhracat/İthalat Sevkiyat Sayısı:': 'Monatliche durchschnittliche Anzahl von Export/Import‑Sendungen:',
+    'Örn: 50': 'Z. B.: 50',
+    'B/L, AWB, konteyner sevkiyatları dahil': 'Inklusive B/L, AWB, Container‑Sendungen',
+    'Maliyet & Özellikler': 'Kosten & Funktionen',
+    'Tahmini Yıllık Maliyet': 'Geschätzte Jahreskosten',
+    '/ yıl': '/ Jahr',
+    'Maliyet Detayı': 'Kostenübersicht',
+    'Kişisel veri koruması:': 'Persönlicher Datenschutz:',
+    'Ticari veri koruması:': 'Handelsdatenschutz:',
+    'Toplam:': 'Gesamt:',
+    'Hemen Teklif Al': 'Jetzt Angebot erhalten',
+    'Ücretsiz danışmanlık ile başlayın': 'Beginnen Sie mit einer kostenlosen Beratung',
+    "📊 Aylık İzleme Dashboard'u": '📊 Monatliches Überwachungs‑Dashboard',
+    'Gerçek zamanlı koruma durumunuzu takip edin': 'Verfolgen Sie Ihren Schutzstatus in Echtzeit',
+    'Koruma Merkezi': 'Schutzzentrum',
+    'Son güncelleme: Bugün, 14:32': 'Letzte Aktualisierung: Heute, 14:32',
+    'CANLI': 'LIVE',
+    'Bu Ay Silinen': 'Diesen Monat gelöscht',
+    'Beklemede': 'Ausstehend',
+    '5-15 gün': '5–15 Tage',
+    'Yeni Tespit': 'Neu erkannt',
+    'Son 7 gün': 'Letzte 7 Tage',
+    'Başarı Oranı': 'Erfolgsquote',
+    'KVKK Uyumlu': 'DSGVO‑konform',
+    'Aylık İlerleme': 'Monatlicher Fortschritt',
+    'Silme Talepleri': 'Löschanträge',
+    'Veri Broker Taramaları': 'Datenbroker‑Scans',
+    'GDPR Uyumlu İşlemler': 'DSGVO‑konforme Vorgänge',
+    'Son Aktiviteler': 'Neueste Aktivitäten',
+    "ZoomInfo'dan 23 kayıt silindi": '23 Einträge bei ZoomInfo gelöscht',
+    '2 saat önce': 'vor 2 Stunden',
+    'Apollo.io taraması tamamlandı': 'Apollo.io‑Scan abgeschlossen',
+    '4 saat önce': 'vor 4 Stunden',
+    '12 yeni veri broker tespit edildi': '12 neue Datenbroker identifiziert',
+    '6 saat önce': 'vor 6 Stunden',
+    'Lusha silme talebi onaylandı': 'Löschantrag bei Lusha genehmigt',
+    '8 saat önce': 'vor 8 Stunden',
+    'Haftalık rapor hazırlandı': 'Wöchentlicher Bericht erstellt',
+    '1 gün önce': 'vor 1 Tag',
+    'Akıllı İpucu': 'Tipp',
+    'Bu dashboard\'a': 'Für dieses Dashboard',
+    'Süreç Nasıl İşliyor?': 'Wie läuft der Prozess ab?',
+    'Veri koruma sürecimizin her adımını şeffaf şekilde izleyin': 'Verfolgen Sie jeden Schritt unseres Datenschutzprozesses transparent',
+    'Veri Toplama': 'Datensammlung',
+    '1-2 Gün': '1–2 Tage',
+    'Kapsamlı Tarama': 'Umfassende Überprüfung',
+    '3-5 Gün': '3–5 Tage',
+    'Yasal Süreç': 'Rechtlicher Prozess',
+    'KVKK/GDPR uyumlu silme talepleri otomatik olarak gönderiliyor': 'DSGVO/GDPR‑konforme Löschanträge werden automatisch übermittelt',
+    '7-21 Gün': '7–21 Tage',
+    'Sürekli Koruma': 'Kontinuierlicher Schutz',
+    'Aylık izleme ve yeni tehditlere karşı koruma': 'Monatliche Überwachung und Schutz vor neuen Bedrohungen',
+    'Süreç Zaman Çizelgesi': 'Prozess‑Zeitplan',
+    'Başlangıç': 'Start',
+    'Veri toplama ve ilk tarama başlangıcı': 'Datensammlung und Beginn der ersten Überprüfung',
+    "Veri broker'larından ilk silme işlemleri": 'Erste Löschvorgänge von Datenbrokern',
+    'Our Sales Solutions': 'Unsere Verkaufslösungen',
+    'Cold Email': 'Cold‑Email',
+    
     // Service Items - English terms that need translation
-    'B2B Lead Generation': 'B2B-Lead-Generierung',
-    'Lead Generation Service': 'Lead-Generierung Service',
+    'B2B Lead Generation': 'B2B-Potenzialkundengewinnung',
+    'Lead Generation Service': 'Potenzialkundengewinnungs-Service',
     'Prospect Finding': 'Prospect Finding',
     'Sales Development': 'Verkaufsentwicklung',
     'Appointment Setting': 'Terminvereinbarung',
@@ -316,6 +433,7 @@ const germanTranslations = {
     'Let\'s discuss your specific needs': 'Lassen Sie uns Ihre spezifischen Bedürfnisse besprechen',
     'Get Free Consultation →': 'Kostenlose Beratung erhalten →',
     'Get Free Consultation': 'Kostenlose Beratung erhalten',
+    '📍 Get Started': '📍 Jetzt starten',
     
     // Company Menu
     'Our Mission': 'Unsere Mission',
@@ -403,7 +521,7 @@ function getPageMetadata(templateName, lang = 'en') {
     const metadata = {
         'index': {
             title: isturkish 
-                ? 'B2B Lead Üretimi Türkiye | İhracat Satış Danışmanlığı' 
+                ? 'B2B Potansiyel Müşteri Yaratma Türkiye | İhracat Satış Danışmanlığı' 
                 : isgerman 
                 ? 'B2B Lead-Generierung Deutschland | Export Beratung' 
                 : 'B2B Lead Generation Europe | Sales Growth Experts',
@@ -454,7 +572,7 @@ function getPageMetadata(templateName, lang = 'en') {
         },
         'contact': {
             title: isturkish 
-                ? 'İletişim | B2B Lead Üretimi Danışmanlığı | Expandia' 
+                ? 'İletişim | B2B Potansiyel Müşteri Yaratma Danışmanlığı | Expandia' 
                 : isgerman 
                 ? 'Kontakt | B2B Lead-Generierung Beratung | Expandia' 
                 : 'Contact | B2B Lead Generation Consultation | Expandia',
@@ -675,7 +793,7 @@ function buildPage(templateName, outputName, lang = 'en') {
     pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
     
     // Apply template variables based on language
-    const basePath = (lang === 'tr' || lang === 'de') ? '../' : './';
+    const basePath = './';
     const logoPath = (lang === 'tr' || lang === 'de') ? '../Expandia-main-logo-koyu-yesil.png' : 'Expandia-main-logo-koyu-yesil.png';
     const turkishServicesPath = lang === 'tr' ? './' : './tr/';
     
@@ -725,6 +843,11 @@ function buildPage(templateName, outputName, lang = 'en') {
         pageNavigation = pageNavigation.replace(/href="\.\.\/cold-email-agency\.html"/g, 'href="./soguk-e-posta-ajansi.html"');
         pageNavigation = pageNavigation.replace(/href="\.\.\/email-automation\.html"/g, 'href="./solutions.html#email-automation"');
         pageNavigation = pageNavigation.replace(/href="\.\.\/sales-protection-services\.html"/g, 'href="./satis-koruma-hizmetleri.html"');
+        
+        // Legal policy links for Turkish pages
+        pageFooter = pageFooter.replace(/href="\.\/privacy-policy\.html"/g, 'href="./gizlilik-politikasi.html"');
+        pageFooter = pageFooter.replace(/href="\.\/terms-of-service\.html"/g, 'href="../terms-of-service.html"');
+        pageFooter = pageFooter.replace(/href="\.\/cookie-policy\.html"/g, 'href="../cookie-policy.html"');
         
         // International Expansion section
         pageNavigation = pageNavigation.replace(/href="\.\.\/export-marketing-consulting\.html"/g, 'href="./ihracat-pazarlama-danismanligi.html"');
@@ -788,10 +911,116 @@ function buildPage(templateName, outputName, lang = 'en') {
         pageFooter = applyGermanTranslations(pageFooter);
         content = applyGermanTranslations(content);
         
+        // Remove broken links to non-existent German service pages
+        pageNavigation = pageNavigation.replace(/<li><a href="\.\/sales-development-agency\.html"[^>]*>.*?<\/a><\/li>/g, '');
+        pageNavigation = pageNavigation.replace(/<a href="\.\/sales-development-agency\.html"[^>]*>.*?<\/a>/g, '');
+        pageNavigation = pageNavigation.replace(/<li><a href="\.\/export-marketing-consulting\.html"[^>]*>.*?<\/a><\/li>/g, '');
+        pageNavigation = pageNavigation.replace(/<a href="\.\/export-marketing-consulting\.html"[^>]*>.*?<\/a>/g, '');
+        pageNavigation = pageNavigation.replace(/<li><a href="\.\/b2b-lead-generation-agency\.html"[^>]*>.*?<\/a><\/li>/g, '');
+        pageNavigation = pageNavigation.replace(/<a href="\.\/b2b-lead-generation-agency\.html"[^>]*>.*?<\/a>/g, '');
+        pageNavigation = pageNavigation.replace(/<li><a href="\.\/lead-generation-service\.html"[^>]*>.*?<\/a><\/li>/g, '');
+        pageNavigation = pageNavigation.replace(/<a href="\.\/lead-generation-service\.html"[^>]*>.*?<\/a>/g, '');
+        pageNavigation = pageNavigation.replace(/<li><a href="\.\/appointment-setting-service\.html"[^>]*>.*?<\/a><\/li>/g, '');
+        pageNavigation = pageNavigation.replace(/<a href="\.\/appointment-setting-service\.html"[^>]*>.*?<\/a>/g, '');
+        pageNavigation = pageNavigation.replace(/<li><a href="\.\/outbound-marketing-agency\.html"[^>]*>.*?<\/a><\/li>/g, '');
+        pageNavigation = pageNavigation.replace(/<a href="\.\/outbound-marketing-agency\.html"[^>]*>.*?<\/a>/g, '');
+        pageNavigation = pageNavigation.replace(/<li><a href="\.\/cold-email-agency\.html"[^>]*>.*?<\/a><\/li>/g, '');
+        pageNavigation = pageNavigation.replace(/<a href="\.\/cold-email-agency\.html"[^>]*>.*?<\/a>/g, '');
+        
         // Remove data-i18n attributes from German pages
         content = content.replace(/\s*data-i18n="[^"]*"/g, '');
         pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
         pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
+        // Force-replace any remaining Turkish legal text in footer/navigation/content
+        const turkishFooterLegal1 = 'Expandia ticari sırlar ve KVKK’ya saygılıdır; müşteri/tedarikçi listelerini temin etmez ve paylaşmaz.';
+        const turkishFooterLegal2 = 'Expandia ticari sırlar ve KVKK\'ya saygılıdır; müşteri/tedarikçi listelerini temin etmez ve paylaşmaz.';
+        const germanFooterLegal = 'Expandia respektiert Geschäftsgeheimnisse und die DSGVO; wir beschaffen oder teilen keine Kunden-/Lieferantenlisten.';
+        pageFooter = pageFooter.replace(new RegExp(turkishFooterLegal1.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), germanFooterLegal);
+        pageFooter = pageFooter.replace(new RegExp(turkishFooterLegal2.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), germanFooterLegal);
+        content = content.replace(new RegExp(turkishFooterLegal1.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), germanFooterLegal);
+        content = content.replace(new RegExp(turkishFooterLegal2.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), germanFooterLegal);
+
+        // Additional Turkish -> German cleanup for DE pages
+        const trDePairs = [
+            ['Kapsamlı koruma için 640 veri broker ve herkese açık veri tabanını sürekli izliyoruz', 'Für umfassenden Schutz überwachen wir kontinuierlich 640 Datenbroker und öffentliche Datenbanken'],
+            ['Toplam Kapsama Alanı', 'Gesamtabdeckung'],
+            ['Toplam Veri Broker', 'Gesamtzahl der Datenbroker'],
+            ['Veri Gizleme Oranı', 'Datenverschleierungsrate'],
+            ['Sürekli İzleme', 'Kontinuierliche Überwachung'],
+            ['Fiyat Hesaplayıcısı', 'Preisrechner'],
+            ['Bilgilerinizi Girin', 'Geben Sie Ihre Daten ein'],
+            ['Korunacak Çalışan Sayısı', 'Anzahl der zu schützenden Mitarbeiter'],
+            ["C-level, VP'ler, satış personeli", 'C‑Level, VPs, Vertriebsmitarbeiter'],
+            ['Ticari Veri Koruması', 'Handelsdatenschutz'],
+            ['Hayır', 'Nein'],
+            ['Sadece kişisel veri koruması', 'Nur persönlicher Datenschutz'],
+            ['Evet', 'Ja'],
+            ['Gümrük + kişisel veri koruması', 'Zolldaten + persönlicher Datenschutz'],
+            ['Aylık Ortalama İhracat/İthalat Sevkiyat Sayısı:', 'Monatliche durchschnittliche Anzahl von Export/Import‑Sendungen:'],
+            ['Örn: 50', 'Z. B.: 50'],
+            ['B/L, AWB, konteyner sevkiyatları dahil', 'Inklusive B/L, AWB, Container‑Sendungen'],
+            ['Maliyet & Özellikler', 'Kosten & Funktionen'],
+            ['Tahmini Yıllık Maliyet', 'Geschätzte Jahreskosten'],
+            ['/ yıl', '/ Jahr'],
+            ['Maliyet Detayı', 'Kostenübersicht'],
+            ['Kişisel veri koruması:', 'Persönlicher Datenschutz:'],
+            ['Ticari veri koruması:', 'Handelsdatenschutz:'],
+            ['Toplam:', 'Gesamt:'],
+            ['Hemen Teklif Al', 'Jetzt Angebot erhalten'],
+            ['Ücretsiz danışmanlık ile başlayın', 'Beginnen Sie mit einer kostenlosen Beratung'],
+            ["📊 Aylık İzleme Dashboard'u", '📊 Monatliches Überwachungs‑Dashboard'],
+            ['Gerçek zamanlı koruma durumunuzu takip edin', 'Verfolgen Sie Ihren Schutzstatus in Echtzeit'],
+            ['Koruma Merkezi', 'Schutzzentrum'],
+            ['Son güncelleme: Bugün, 14:32', 'Letzte Aktualisierung: Heute, 14:32'],
+            ['CANLI', 'LIVE'],
+            ['Bu Ay Silinen', 'Diesen Monat gelöscht'],
+            ['Beklemede', 'Ausstehend'],
+            ['5-15 gün', '5–15 Tage'],
+            ['Yeni Tespit', 'Neu erkannt'],
+            ['Son 7 gün', 'Letzte 7 Tage'],
+            ['Başarı Oranı', 'Erfolgsquote'],
+            ['KVKK Uyumlu', 'DSGVO‑konform'],
+            ['Aylık İlerleme', 'Monatlicher Fortschritt'],
+            ['Silme Talepleri', 'Löschanträge'],
+            ['Veri Broker Taramaları', 'Datenbroker‑Scans'],
+            ['GDPR Uyumlu İşlemler', 'DSGVO‑konforme Vorgänge'],
+            ['Son Aktiviteler', 'Neueste Aktivitäten'],
+            ["ZoomInfo'dan 23 kayıt silindi", '23 Einträge bei ZoomInfo gelöscht'],
+            ['2 saat önce', 'vor 2 Stunden'],
+            ['Apollo.io taraması tamamlandı', 'Apollo.io‑Scan abgeschlossen'],
+            ['4 saat önce', 'vor 4 Stunden'],
+            ['12 yeni veri broker tespit edildi', '12 neue Datenbroker identifiziert'],
+            ['6 saat önce', 'vor 6 Stunden'],
+            ['Lusha silme talebi onaylandı', 'Löschantrag bei Lusha genehmigt'],
+            ['8 saat önce', 'vor 8 Stunden'],
+            ['Haftalık rapor hazırlandı', 'Wöchentlicher Bericht erstellt'],
+            ['1 gün önce', 'vor 1 Tag'],
+            ['Akıllı İpucu', 'Tipp'],
+            ['Bu dashboard\'a', 'Für dieses Dashboard'],
+            ['Süreç Nasıl İşliyor?', 'Wie läuft der Prozess ab?'],
+            ['Veri koruma sürecimizin her adımını şeffaf şekilde izleyin', 'Verfolgen Sie jeden Schritt unseres Datenschutzprozesses transparent'],
+            ['Veri Toplama', 'Datensammlung'],
+            ['1-2 Gün', '1–2 Tage'],
+            ['Kapsamlı Tarama', 'Umfassende Überprüfung'],
+            ['3-5 Gün', '3–5 Tage'],
+            ['Yasal Süreç', 'Rechtlicher Prozess'],
+            ['KVKK/GDPR uyumlu silme talepleri otomatik olarak gönderiliyor', 'DSGVO/GDPR‑konforme Löschanträge werden automatisch übermittelt'],
+            ['7-21 Gün', '7–21 Tage'],
+            ['Sürekli Koruma', 'Kontinuierlicher Schutz'],
+            ['Aylık izleme ve yeni tehditlere karşı koruma', 'Monatliche Überwachung und Schutz vor neuen Bedrohungen'],
+            ['Süreç Zaman Çizelgesi', 'Prozess‑Zeitplan'],
+            ['Başlangıç', 'Start'],
+            ['Veri toplama ve ilk tarama başlangıcı', 'Datensammlung und Beginn der ersten Überprüfung'],
+            ["Veri broker'larından ilk silme işlemleri", 'Erste Löschvorgänge von Datenbrokern'],
+            ['0-3 Gün', '0–3 Tage'],
+            ['30+ Gün', '30+ Tage']
+        ];
+        for (const [tr, de] of trDePairs) {
+            const re = new RegExp(tr.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+            content = content.replace(re, de);
+            pageNavigation = pageNavigation.replace(re, de);
+            pageFooter = pageFooter.replace(re, de);
+        }
     } else {
         // For English pages, ensure correct service page linking
         // Fix Lead Generation Service to point to solutions section, not standalone page
