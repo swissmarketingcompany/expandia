@@ -17,7 +17,8 @@ const seoKeywords = {
     solutions: 'B2B sales solutions, lead generation services Europe, sales automation, export sales consulting',
     about: 'B2B sales agency Europe, export market specialists, international sales consulting',
     contact: 'B2B lead generation consultation, export sales consultation, international market entry',
-    'case-studies': 'B2B sales success stories, export market case studies, international expansion results'
+    'case-studies': 'B2B sales success stories, export market case studies, international expansion results',
+    onboarding: 'Expandia onboarding, sales service setup, B2B sales onboarding process, client onboarding form'
 };
 
 // Schema markup generators
@@ -1161,6 +1162,7 @@ buildPage('about', 'about', 'en');
 buildPage('solutions', 'solutions', 'en');
 buildPage('contact', 'contact', 'en');
 buildPage('case-studies', 'case-studies', 'en');
+buildPage('onboarding', 'onboarding', 'en');
 
 // Build English service pages
 console.log('Building English service pages...');
