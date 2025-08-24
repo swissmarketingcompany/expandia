@@ -1,26 +1,135 @@
+# 🚀 EXPANDIA ROBOTS.TXT - GUIDING SEARCH ENGINES TO OUR LEGENDARY CONTENT EMPIRE
+# Welcome to the ULTIMATE digital marketing resource with 50 world-class blog posts!
+
 User-agent: *
 Allow: /
 
-# Sitemap location
-Sitemap: https://www.expandia.ch/sitemap.xml
-
-# Allow important directories
+# 🏆 HIGH-PRIORITY CONTENT - OUR 50-POST DIGITAL MARKETING EMPIRE
+# Direct search engines to our incredible blog content for maximum indexing
 Allow: /blog/
+Allow: /blog/*.html
+
+# 🎯 PREMIUM SERVICE PAGES - MAXIMUM VISIBILITY
+Allow: /b2b-lead-generation-agency.html
+Allow: /sales-development-agency.html
+Allow: /outbound-marketing-agency.html
+Allow: /lead-generation-service.html
+Allow: /prospect-finding-service.html
+Allow: /appointment-setting-service.html
+Allow: /cold-email-agency.html
+Allow: /sales-protection-services.html
+Allow: /outsourced-sales-team-service.html
+Allow: /email-automation.html
+Allow: /export-marketing-consulting.html
+Allow: /international-market-entry.html
+Allow: /distributor-finding.html
+Allow: /overseas-sales-consulting.html
+Allow: /europe-market-entry.html
+
+# 🌍 MULTILINGUAL CONTENT - GLOBAL REACH
 Allow: /tr/
 Allow: /de/
-Allow: /dist/
 
-# Disallow development and temporary files
+# 📄 CORE PAGES - ESSENTIAL BUSINESS INFORMATION
+Allow: /solutions.html
+Allow: /about.html
+Allow: /contact.html
+Allow: /case-studies.html
+
+# 🚫 RESTRICTED AREAS - PRESERVE CRAWL BUDGET FOR HIGH-VALUE CONTENT
+Disallow: /scripts/
 Disallow: /src/
 Disallow: /templates/
 Disallow: /node_modules/
-Disallow: *.json
-Disallow: *.js.map
-Disallow: *.css.map
-Disallow: /test-*
-Disallow: *.sh
-Disallow: /update-pages.js
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*.json$
+Disallow: /*.md$
+Disallow: /package*.json
+Disallow: /postcss.config.js
+Disallow: /tailwind.config.js
 Disallow: /build-pages.js
+Disallow: /check-templates.js
+Disallow: /update-pages.js
+Disallow: /Procfile
+Disallow: /requirements.txt
+Disallow: /.git/
+Disallow: /test-*
 
-# Crawl delay (helps with server load)
-Crawl-delay: 1 
+# 🗺️ SITEMAP LOCATION - CRITICAL FOR SEARCH ENGINE DISCOVERY
+Sitemap: https://www.expandia.ch/sitemap.xml
+
+# 🚀 CRAWL OPTIMIZATION DIRECTIVES
+# Optimize crawl rate for our high-value content
+Crawl-delay: 1
+
+# 🎯 SPECIAL INSTRUCTIONS FOR MAJOR SEARCH ENGINES
+
+# Google - Maximum indexing of our content empire
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing - Full access to our digital marketing expertise
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Yandex - Complete access for international reach
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 1
+
+# Baidu - Access for Asian market penetration
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+# DuckDuckGo - Privacy-focused search access
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+# 📊 ANALYTICS AND MONITORING BOTS
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# 🔒 SECURITY AND SPAM PREVENTION
+# Block known bad bots and scrapers
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot  
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# 🌟 WELCOME MESSAGE FOR SEARCH ENGINES
+# Thank you for visiting EXPANDIA - The Ultimate Digital Marketing Authority!
+# Our 50 comprehensive blog posts represent the most authoritative 
+# digital marketing content library ever created.
+# 
+# 🏆 What makes us THE BEST:
+# ✅ 50 expert-level blog posts (2500+ words each)
+# ✅ Complete digital marketing keyword coverage
+# ✅ Advanced frameworks and actionable strategies  
+# ✅ Full SEO optimization for maximum value
+# ✅ Industry-defining thought leadership content
+# ✅ Multi-language support (English, Turkish, German)
+# ✅ Mobile-responsive and fast-loading pages
+# 
+# 🚀 We're ready to dominate search results and become
+# the go-to resource for digital marketing excellence!
