@@ -13,8 +13,8 @@ const footer = fs.readFileSync('includes/footer.html', 'utf8');
 
 // SEO Keywords by page type
 const seoKeywords = {
-    index: 'B2B lead generation Europe, sales as a service, export market entry, appointment setting for exporters',
-    solutions: 'B2B sales solutions, lead generation services Europe, sales automation, export sales consulting',
+    index: 'B2B lead generation Europe, inbound lead generation, outbound lead generation, lead generation training',
+    solutions: 'lead generation solutions, inbound lead generation, outbound lead generation, lead generation training, Europe',
     about: 'B2B sales agency Europe, export market specialists, international sales consulting',
     contact: 'B2B lead generation consultation, export sales consultation, international market entry',
     'case-studies': 'B2B sales success stories, export market case studies, international expansion results',
@@ -525,12 +525,12 @@ function getPageMetadata(templateName, lang = 'en') {
                 ? 'B2B Potansiyel Müşteri Yaratma Türkiye | İhracat Satış Danışmanlığı' 
                 : isgerman 
                 ? 'B2B Lead-Generierung Deutschland | Export Beratung' 
-                : 'B2B Lead Generation Europe | Sales Growth Experts',
+                : 'B2B Lead Generation Europe | Inbound, Outbound & Training',
             description: isturkish 
                 ? 'Türkiye\'nin önde gelen B2B lead üretimi uzmanları. İhracat pazarları için randevu ayarlama ve satış otomasyonu ile büyümenizi hızlandırın.'
                 : isgerman
                 ? 'Deutschlands führende B2B Lead-Generierung Spezialisten. Wir helfen Exporteuren beim Markteintritt mit Terminvereinbarung und Verkaufsautomation.'
-                : 'Expert B2B lead generation in Europe. We help exporters enter new markets with proven appointment setting and sales automation solutions.',
+                : 'Expert B2B lead generation in Europe. Inbound lead generation, outbound lead generation, and lead generation training for predictable pipeline.',
             keywords: isturkish 
                 ? 'B2B lead üretimi Türkiye, ihracat satış danışmanlığı, randevu ayarlama hizmeti, Avrupa pazarı girişi'
                 : isgerman
@@ -542,12 +542,12 @@ function getPageMetadata(templateName, lang = 'en') {
                 ? 'B2B Satış Çözümleri | İhracat Danışmanlığı | Expandia' 
                 : isgerman 
                 ? 'B2B Verkaufslösungen | Export Beratung | Expandia' 
-                : 'Export Sales Solutions | B2B Growth Services Europe',
+                : 'Lead Generation Solutions | Inbound, Outbound & Training',
             description: isturkish 
                 ? 'Avrupa pazarları için B2B satış çözümleri. İhracat danışmanlığı, lead üretimi ve satış otomasyonu hizmetleri.'
                 : isgerman
                 ? 'B2B Verkaufslösungen für europäische Märkte. Export-Beratung, Lead-Generierung und Verkaufsautomation.'
-                : 'Complete export sales solutions for European markets. B2B consulting, lead generation services, and sales automation for international growth.',
+                : 'Inbound lead generation, outbound lead generation, and lead generation training tailored to your growth goals.',
             keywords: isturkish 
                 ? 'B2B satış çözümleri, ihracat danışmanlığı, satış otomasyonu, Avrupa pazarları'
                 : isgerman
