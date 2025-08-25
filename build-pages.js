@@ -556,54 +556,69 @@ function getPageMetadata(templateName, lang = 'en') {
         },
         'about': {
             title: isturkish 
-                ? 'Hakkımızda | B2B Satış Ajansı | Expandia' 
+                ? 'Hakkımızda | B2B Lead Generation Ajansı | Expandia' 
                 : isgerman 
-                ? 'Über uns | B2B Verkaufsagentur | Expandia' 
-                : 'About Us | B2B Sales Agency Europe | Expandia',
+                ? 'Über uns | B2B Lead-Generierung Agentur | Expandia' 
+                : 'About Us | Lead Generation Agency Europe | Expandia',
             description: isturkish 
-                ? 'Avrupa\'da faaliyet gösteren B2B satış ajansı. İhracat pazarı uzmanları ve uluslararası satış danışmanları.'
+                ? 'Avrupa\'da faaliyet gösteren B2B lead generation ajansı. Inbound, outbound ve eğitim programları ile büyüyün.'
                 : isgerman
-                ? 'B2B Verkaufsagentur in Europa. Export-Marktspezialisten und internationale Verkaufsberater.'
-                : 'B2B sales agency Europe. Export market specialists & international sales consultants helping companies expand globally.',
+                ? 'B2B Lead-Generierung Agentur in Europa. Inbound, Outbound und Trainings für planbare Pipeline.'
+                : 'Lead generation agency in Europe. Inbound lead generation, outbound lead generation, and training for predictable pipeline.',
             keywords: isturkish 
                 ? 'B2B satış ajansı Avrupa, ihracat pazarı uzmanları, uluslararası satış danışmanlığı'
                 : isgerman
                 ? 'B2B Verkaufsagentur Europa, Export Marktspezialisten, internationale Verkaufsberatung'
-                : 'B2B sales agency Europe, export market specialists, international sales consulting'
+                : 'lead generation agency Europe, inbound lead generation, outbound lead generation, training'
         },
         'contact': {
             title: isturkish 
-                ? 'İletişim | B2B Potansiyel Müşteri Yaratma Danışmanlığı | Expandia' 
+                ? 'İletişim | B2B Lead Generation Danışmanlığı | Expandia' 
                 : isgerman 
                 ? 'Kontakt | B2B Lead-Generierung Beratung | Expandia' 
-                : 'Contact | B2B Lead Generation Consultation | Expandia',
+                : 'Contact | Lead Generation Consultation | Expandia',
             description: isturkish 
-                ? 'B2B lead üretimi ve ihracat satış danışmanlığı için ücretsiz konsültasyon. Uluslararası pazar girişi uzmanları.'
+                ? 'Inbound, outbound lead generation ve eğitim programları için ücretsiz danışmanlık. Planlı pipeline oluşturun.'
                 : isgerman
-                ? 'Kostenlose Beratung für B2B Lead-Generierung und Export-Verkauf. Internationale Markteintritt-Spezialisten.'
-                : 'Free consultation for B2B lead generation & export sales. International market entry specialists ready to help.',
+                ? 'Kostenlose Beratung für Inbound, Outbound und Trainings. Planbare Pipeline aufbauen.'
+                : 'Free consultation for inbound lead generation, outbound lead generation, and training. Build predictable pipeline fast.',
             keywords: isturkish 
                 ? 'B2B lead üretimi danışmanlığı, ihracat satış konsültasyonu, uluslararası pazar girişi'
                 : isgerman
                 ? 'B2B Lead-Generierung Beratung, Export Verkaufs Konsultation, internationaler Markteintritt'
-                : 'B2B lead generation consultation, export sales consultation, international market entry'
+                : 'lead generation consultation, inbound lead generation, outbound lead generation, training'
         },
         'case-studies': {
             title: isturkish 
-                ? 'Başarı Hikayeleri | B2B Satış Sonuçları | Expandia' 
+                ? 'Başarı Hikayeleri | B2B Lead Generation Sonuçları | Expandia' 
                 : isgerman 
-                ? 'Erfolgsgeschichten | B2B Verkaufsergebnisse | Expandia' 
-                : 'Success Stories | B2B Sales Results | Expandia',
+                ? 'Erfolgsgeschichten | B2B Lead-Generierung Ergebnisse | Expandia' 
+                : 'Success Stories | Lead Generation Results | Expandia',
             description: isturkish 
-                ? 'B2B satış başarı hikayeleri ve ihracat pazarı örnek çalışmaları. Uluslararası genişleme sonuçları.'
+                ? 'B2B lead generation başarı hikayeleri ve örnek çalışmalar. Inbound ve outbound program sonuçları.'
                 : isgerman
-                ? 'B2B Verkaufs-Erfolgsgeschichten und Export-Markt-Fallstudien. Internationale Expansionsergebnisse.'
-                : 'B2B sales success stories & export market case studies. International expansion results from our clients.',
+                ? 'B2B Lead-Generierung Erfolgsgeschichten und Fallstudien. Inbound und Outbound Resultate.'
+                : 'Lead generation case studies and proof of results. Inbound and outbound program outcomes from our clients.',
             keywords: isturkish 
                 ? 'B2B satış başarı hikayeleri, ihracat pazarı örnek çalışmaları, uluslararası genişleme sonuçları'
                 : isgerman
                 ? 'B2B Verkaufs Erfolgsgeschichten, Export Markt Fallstudien, internationale Expansion Ergebnisse'
-                : 'B2B sales success stories, export market case studies, international expansion results'
+                : 'lead generation success stories, inbound lead gen case studies, outbound lead gen results'
+        },
+        'lead-generation-service': {
+            title: 'Lead Generation Service | Inbound & Outbound | Expandia',
+            description: 'Inbound lead generation, outbound lead generation, and conversion optimization to build predictable pipeline.',
+            keywords: 'lead generation service, inbound lead generation, outbound lead generation, conversion optimization'
+        },
+        'appointment-setting-service': {
+            title: 'Appointment Setting Service | Qualified Meetings | Expandia',
+            description: 'Qualified meeting booking via multi-channel outbound: research, email, native calling, and follow-up.',
+            keywords: 'appointment setting, outbound lead generation, SDR, B2B meetings'
+        },
+        'cold-email-agency': {
+            title: 'Cold Email Agency | Deliverability & Replies | Expandia',
+            description: 'High-deliverability cold email programs with research, personalization, sequencing, and reply-to-booking.',
+            keywords: 'cold email agency, deliverability, inboxing, b2b outreach'
         },
         'b2b-lead-generation-agency': {
             title: 'B2B Lead Generation Agency | Qualified Leads | Expandia',
