@@ -37,15 +37,22 @@
                             </p>
                         </div>
 
-                        <!-- HubSpot Form -->
-                        <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
-                        <script>
-                          hbspt.forms.create({
-                            region: "eu1",
-                            portalId: "145104780",
-                            formId: "ae6c8da0-8483-4234-9e34-52b995f8f3eb"
-                          });
-                        </script>
+                        <!-- Native Contact Form -->
+                        <form id="expandia-contact-form" class="space-y-4">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <input name="name" type="text" class="input input-bordered w-full" placeholder="Your Name" required>
+                                <input name="company" type="text" class="input input-bordered w-full" placeholder="Company" required>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <input name="email" type="email" class="input input-bordered w-full" placeholder="Work Email" required>
+                                <input name="service" type="text" class="input input-bordered w-full" placeholder="Service Interest (optional)">
+                            </div>
+                            <!-- Honeypot -->
+                            <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
+                            <textarea name="message" class="textarea textarea-bordered w-full" rows="5" placeholder="Tell us about your goals (optional)"></textarea>
+                            <button type="submit" class="btn btn-primary w-full">Send</button>
+                            <p id="contact-status" class="text-sm text-base-content/70"></p>
+                        </form>
 
                     </div>
                 </div>
@@ -84,7 +91,7 @@
                     </div>
                     <h3 class="text-xl font-bold mb-2">Schedule Call</h3>
                     <p class="text-base-content/70 mb-4">Book a time that works</p>
-                    <a href="https://meetings-eu1.hubspot.com/oocak" target="_blank" class="link link-primary font-medium">Book Meeting</a>
+                    <a href="mailto:hello@expandia.ch" class="link link-primary font-medium">Email to Schedule</a>
                 </div>
             </div>
 

@@ -1751,11 +1751,6 @@ html{
     border-color: var(--fallback-p,oklch(var(--p)/var(--tw-border-opacity)));
   }
 
-  .radio-secondary:hover{
-    --tw-border-opacity: 1;
-    border-color: var(--fallback-s,oklch(var(--s)/var(--tw-border-opacity)));
-  }
-
   .table tr.hover:hover,
   .table tr.hover:nth-child(even):hover{
     --tw-bg-opacity: 1;
@@ -2369,12 +2364,6 @@ html{
   margin-top: -1rem;
   margin-bottom: -1rem;
   margin-inline-end: -1rem;
-}
-
-.input-lg[type="number"]::-webkit-inner-spin-button{
-  margin-top: -1.5rem;
-  margin-bottom: -1.5rem;
-  margin-inline-end: -1.5rem;
 }
 
 .join{
@@ -3932,26 +3921,6 @@ details.collapse summary::-webkit-details-marker{
   color: var(--fallback-pc,oklch(var(--pc)/var(--tw-text-opacity)));
 }
 
-.radio-secondary{
-  --chkbg: var(--s);
-  --tw-border-opacity: 1;
-  border-color: var(--fallback-s,oklch(var(--s)/var(--tw-border-opacity)));
-}
-
-.radio-secondary:focus-visible{
-  outline-color: var(--fallback-s,oklch(var(--s)/1));
-}
-
-.radio-secondary:checked,
-    .radio-secondary[aria-checked="true"]{
-  --tw-border-opacity: 1;
-  border-color: var(--fallback-s,oklch(var(--s)/var(--tw-border-opacity)));
-  --tw-bg-opacity: 1;
-  background-color: var(--fallback-s,oklch(var(--s)/var(--tw-bg-opacity)));
-  --tw-text-opacity: 1;
-  color: var(--fallback-sc,oklch(var(--sc)/var(--tw-text-opacity)));
-}
-
 .radio:disabled{
   cursor: not-allowed;
   opacity: 0.2;
@@ -4418,15 +4387,6 @@ details.collapse summary::-webkit-details-marker{
   width: 4rem;
   border-radius: 9999px;
   padding: 0px;
-}
-
-.input-lg{
-  height: 4rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  line-height: 2;
 }
 
 .join.join-vertical{
@@ -5391,10 +5351,6 @@ details.collapse summary::-webkit-details-marker{
   max-width: 56rem;
 }
 
-.max-w-5xl{
-  max-width: 64rem;
-}
-
 .max-w-6xl{
   max-width: 72rem;
 }
@@ -5790,11 +5746,6 @@ details.collapse summary::-webkit-details-marker{
   border-color: rgb(168 85 247 / var(--tw-border-opacity, 1));
 }
 
-.border-secondary{
-  --tw-border-opacity: 1;
-  border-color: var(--fallback-s,oklch(var(--s)/var(--tw-border-opacity, 1)));
-}
-
 .border-secondary\/20{
   border-color: var(--fallback-s,oklch(var(--s)/0.2));
 }
@@ -5832,6 +5783,10 @@ details.collapse summary::-webkit-details-marker{
 
 .bg-accent\/20{
   background-color: var(--fallback-a,oklch(var(--a)/0.2));
+}
+
+.bg-accent\/5{
+  background-color: var(--fallback-a,oklch(var(--a)/0.05));
 }
 
 .bg-base-100{
@@ -6436,11 +6391,6 @@ details.collapse summary::-webkit-details-marker{
   padding-right: 0.25rem;
 }
 
-.px-12{
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
-
 .px-3{
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -6632,6 +6582,10 @@ details.collapse summary::-webkit-details-marker{
   color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity, 1)));
 }
 
+.text-base-content\/40{
+  color: var(--fallback-bc,oklch(var(--bc)/0.4));
+}
+
 .text-base-content\/50{
   color: var(--fallback-bc,oklch(var(--bc)/0.5));
 }
@@ -6738,11 +6692,6 @@ details.collapse summary::-webkit-details-marker{
   color: rgb(22 101 52 / var(--tw-text-opacity, 1));
 }
 
-.text-info{
-  --tw-text-opacity: 1;
-  color: var(--fallback-in,oklch(var(--in)/var(--tw-text-opacity, 1)));
-}
-
 .text-orange-400{
   --tw-text-opacity: 1;
   color: rgb(251 146 60 / var(--tw-text-opacity, 1));
@@ -6814,8 +6763,8 @@ details.collapse summary::-webkit-details-marker{
   text-decoration-line: underline;
 }
 
-.opacity-50{
-  opacity: 0.5;
+.opacity-60{
+  opacity: 0.6;
 }
 
 .opacity-90{
@@ -8298,11 +8247,6 @@ body > footer.footer-gradient{
   background-color: var(--fallback-a,oklch(var(--a)/0.05));
 }
 
-.hover\:bg-base-100:hover{
-  --tw-bg-opacity: 1;
-  background-color: var(--fallback-b1,oklch(var(--b1)/var(--tw-bg-opacity, 1)));
-}
-
 .hover\:bg-base-200:hover{
   --tw-bg-opacity: 1;
   background-color: var(--fallback-b2,oklch(var(--b2)/var(--tw-bg-opacity, 1)));
@@ -8491,10 +8435,6 @@ body > footer.footer-gradient{
 
   .lg\:order-last{
     order: 9999;
-  }
-
-  .lg\:col-span-1{
-    grid-column: span 1 / span 1;
   }
 
   .lg\:col-span-2{

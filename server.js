@@ -3,6 +3,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 const { body, validationResult } = require('express-validator');
@@ -55,18 +56,9 @@ app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
 // Serve static files from the current directory
 app.use(express.static(__dirname));
 
-// Email configuration
-const createEmailTransporter = () => {
-    // For development, we'll use a simple Gmail configuration
-    // In production, you should use environment variables for credentials
-    return nodemailer.createTransporter({
-        service: 'gmail',
-        auth: {
-            user: process.env.EMAIL_USER || 'your-email@gmail.com', // Replace with your email
-            pass: process.env.EMAIL_PASS || 'your-app-password'     // Replace with your app password
-        }
-    });
-};
+// Email configuration (Resend)
+const resendApiKey = process.env.RESEND_API_KEY || '';
+const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
 // Input validation rules
 const contactValidation = [
@@ -144,23 +136,24 @@ app.post('/api/contact', contactValidation, async (req, res) => {
         Time: ${new Date().toISOString()}
         `;
         
-        // For now, we'll just log the submission (you can enable email later)
-        console.log('=== NEW CONTACT FORM SUBMISSION ===');
-        console.log(emailContent);
-        console.log('=====================================');
-        
-        // Uncomment this section when you have email credentials configured:
-        /*
-        const transporter = createEmailTransporter();
-        
-        await transporter.sendMail({
-            from: process.env.EMAIL_USER || 'your-email@gmail.com',
-            to: 'hello@expandia.ch', // Your business email
-            subject: `New Contact Form Submission from ${name} (${company})`,
-            text: emailContent,
-            replyTo: email
-        });
-        */
+        // Send via Resend if configured
+        if (resend) {
+            try {
+                await resend.emails.send({
+                    from: process.env.FROM_EMAIL || 'Expandia <no-reply@expandia.ch>',
+                    to: process.env.CONTACT_TO_EMAIL || 'hello@expandia.ch',
+                    subject: `New Contact Form Submission from ${name} (${company})`,
+                    text: emailContent,
+                    reply_to: email
+                });
+            } catch (e) {
+                console.error('Resend send error:', e);
+            }
+        } else {
+            console.log('=== NEW CONTACT FORM SUBMISSION ===');
+            console.log(emailContent);
+            console.log('=====================================');
+        }
         
         res.json({ 
             success: true, 
@@ -173,6 +166,46 @@ app.post('/api/contact', contactValidation, async (req, res) => {
             success: false, 
             error: 'Server error. Please try again later or contact us directly at hello@expandia.ch' 
         });
+    }
+});
+
+// Newsletter subscribe endpoint
+app.post('/api/subscribe', [
+    body('email').trim().isEmail().normalizeEmail().withMessage('Valid email required'),
+    body('website').optional().trim().isLength({ max: 0 }).withMessage(''), // honeypot
+], async (req, res) => {
+    try {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ success: false, error: 'Invalid input' });
+        }
+        const { email, website } = req.body;
+        if (website) {
+            return res.status(400).json({ success: false, error: 'Invalid submission' });
+        }
+
+        const text = `New newsletter subscription\n\nEmail: ${email}\nTime: ${new Date().toISOString()}\nUser Agent: ${req.get('user-agent')}`;
+
+        if (resend) {
+            try {
+                await resend.emails.send({
+                    from: process.env.FROM_EMAIL || 'Expandia <no-reply@expandia.ch>',
+                    to: process.env.SUBSCRIBE_TO_EMAIL || 'hello@expandia.ch',
+                    subject: 'New Newsletter Subscription',
+                    text
+                });
+            } catch (e) {
+                console.error('Resend subscribe send error:', e);
+            }
+        } else {
+            console.log('=== NEW NEWSLETTER SUBSCRIPTION ===');
+            console.log(text);
+            console.log('====================================');
+        }
+        res.json({ success: true, message: 'Subscribed. Check your inbox for confirmation shortly.' });
+    } catch (err) {
+        console.error('Subscribe error:', err);
+        res.status(500).json({ success: false, error: 'Server error' });
     }
 });
 

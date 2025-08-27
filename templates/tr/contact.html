@@ -37,15 +37,21 @@
                             </p>
                         </div>
 
-                        <!-- HubSpot Form -->
-                        <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
-                        <script>
-                          hbspt.forms.create({
-                            region: "eu1",
-                            portalId: "145104780",
-                            formId: "ae6c8da0-8483-4234-9e34-52b995f8f3eb"
-                          });
-                        </script>
+                        <!-- Yerel İletişim Formu -->
+                        <form id="expandia-contact-form" class="space-y-4">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <input name="name" type="text" class="input input-bordered w-full" placeholder="Adınız" required>
+                                <input name="company" type="text" class="input input-bordered w-full" placeholder="Şirket" required>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <input name="email" type="email" class="input input-bordered w-full" placeholder="İş E‑postası" required>
+                                <input name="service" type="text" class="input input-bordered w-full" placeholder="İlgi Alanı (opsiyonel)">
+                            </div>
+                            <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
+                            <textarea name="message" class="textarea textarea-bordered w-full" rows="5" placeholder="Hedefleriniz (opsiyonel)"></textarea>
+                            <button type="submit" class="btn btn-primary w-full">Gönder</button>
+                            <p id="contact-status" class="text-sm text-base-content/70"></p>
+                        </form>
 
 
                     </div>
@@ -88,8 +94,8 @@
                     <p class="text-base-content/70 mb-6">
                         Takvimimizden size uygun bir zaman seçin.
                     </p>
-                    <a href="https://meetings-eu1.hubspot.com/oocak" target="_blank" class="btn btn-secondary buzz-button">
-                        Takvimi Görüntüle
+                    <a href="mailto:hello@expandia.ch" class="btn btn-secondary buzz-button">
+                        E‑posta ile Randevu
                     </a>
                 </div>
 
