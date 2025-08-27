@@ -60,6 +60,30 @@ app.use(express.static(__dirname));
 const resendApiKey = process.env.RESEND_API_KEY || '';
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
+// Nodemailer fallback (Gmail)
+function createEmailTransporter() {
+    const user = process.env.EMAIL_USER;
+    const pass = process.env.EMAIL_PASS;
+    if (!user || !pass) return null;
+    try {
+        return nodemailer.createTransport({
+            service: 'gmail',
+            auth: { user, pass }
+        });
+    } catch (e) {
+        console.error('Failed to create nodemailer transporter:', e);
+        return null;
+    }
+}
+
+function formatFromAddress() {
+    const envFrom = process.env.FROM_EMAIL || '';
+    if (!envFrom) return 'Expandia <no-reply@expandia.ch>';
+    // If already contains a display-name format, return as-is
+    if (envFrom.includes('<') && envFrom.includes('>')) return envFrom;
+    return `Expandia <${envFrom}>`;
+}
+
 // Input validation rules
 const contactValidation = [
     body('name')
@@ -136,21 +160,50 @@ app.post('/api/contact', contactValidation, async (req, res) => {
         Time: ${new Date().toISOString()}
         `;
         
-        // Send via Resend if configured
+        let sentVia = null;
+        // Try Resend first
         if (resend) {
             try {
-                await resend.emails.send({
-                    from: process.env.FROM_EMAIL || 'Expandia <no-reply@expandia.ch>',
+                const result = await resend.emails.send({
+                    from: formatFromAddress(),
                     to: process.env.CONTACT_TO_EMAIL || 'hello@expandia.ch',
                     subject: `New Contact Form Submission from ${name} (${company})`,
                     text: emailContent,
                     reply_to: email
                 });
+                if (result && result.id) {
+                    console.log('Resend contact email sent. id=', result.id);
+                    sentVia = 'resend';
+                } else {
+                    console.warn('Resend returned no id for contact email. result=', result);
+                }
             } catch (e) {
-                console.error('Resend send error:', e);
+                console.error('Resend contact send error:', e);
             }
-        } else {
-            console.log('=== NEW CONTACT FORM SUBMISSION ===');
+        }
+
+        // Fallback to Nodemailer (Gmail) if Resend failed or not configured
+        if (!sentVia) {
+            const transporter = createEmailTransporter();
+            if (transporter) {
+                try {
+                    await transporter.sendMail({
+                        from: formatFromAddress(),
+                        to: process.env.CONTACT_TO_EMAIL || 'hello@expandia.ch',
+                        subject: `New Contact Form Submission from ${name} (${company})`,
+                        text: emailContent,
+                        replyTo: email
+                    });
+                    console.log('Nodemailer (Gmail) contact email sent.');
+                    sentVia = 'gmail';
+                } catch (e) {
+                    console.error('Nodemailer contact send error:', e);
+                }
+            }
+        }
+
+        if (!sentVia) {
+            console.log('=== NEW CONTACT FORM SUBMISSION (no email sent) ===');
             console.log(emailContent);
             console.log('=====================================');
         }
@@ -186,19 +239,46 @@ app.post('/api/subscribe', [
 
         const text = `New newsletter subscription\n\nEmail: ${email}\nTime: ${new Date().toISOString()}\nUser Agent: ${req.get('user-agent')}`;
 
+        let sentVia = null;
         if (resend) {
             try {
-                await resend.emails.send({
-                    from: process.env.FROM_EMAIL || 'Expandia <no-reply@expandia.ch>',
+                const result = await resend.emails.send({
+                    from: formatFromAddress(),
                     to: process.env.SUBSCRIBE_TO_EMAIL || 'hello@expandia.ch',
                     subject: 'New Newsletter Subscription',
                     text
                 });
+                if (result && result.id) {
+                    console.log('Resend subscribe email sent. id=', result.id);
+                    sentVia = 'resend';
+                } else {
+                    console.warn('Resend returned no id for subscribe email. result=', result);
+                }
             } catch (e) {
                 console.error('Resend subscribe send error:', e);
             }
-        } else {
-            console.log('=== NEW NEWSLETTER SUBSCRIPTION ===');
+        }
+
+        if (!sentVia) {
+            const transporter = createEmailTransporter();
+            if (transporter) {
+                try {
+                    await transporter.sendMail({
+                        from: formatFromAddress(),
+                        to: process.env.SUBSCRIBE_TO_EMAIL || 'hello@expandia.ch',
+                        subject: 'New Newsletter Subscription',
+                        text
+                    });
+                    console.log('Nodemailer (Gmail) subscribe email sent.');
+                    sentVia = 'gmail';
+                } catch (e) {
+                    console.error('Nodemailer subscribe send error:', e);
+                }
+            }
+        }
+
+        if (!sentVia) {
+            console.log('=== NEW NEWSLETTER SUBSCRIPTION (no email sent) ===');
             console.log(text);
             console.log('====================================');
         }
