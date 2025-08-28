@@ -111,7 +111,11 @@ const contactValidation = [
         .trim()
         .isLength({ max: 2000 })
         .escape()
-        .withMessage('Message cannot exceed 2000 characters')
+        .withMessage('Message cannot exceed 2000 characters'),
+    body('math')
+        .trim()
+        .equals('61')
+        .withMessage('Human verification failed')
 ];
 
 // Contact form submission endpoint
@@ -226,6 +230,7 @@ app.post('/api/contact', contactValidation, async (req, res) => {
 app.post('/api/subscribe', [
     body('email').trim().isEmail().normalizeEmail().withMessage('Valid email required'),
     body('website').optional().trim().isLength({ max: 0 }).withMessage(''), // honeypot
+    body('math').trim().equals('61').withMessage('Human verification failed'),
 ], async (req, res) => {
     try {
         const errors = validationResult(req);

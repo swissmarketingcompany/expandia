@@ -336,7 +336,7 @@ const germanTranslations = {
     'İlk Silmeler': 'Erste Löschungen',
     '0-3 Gün': '0–3 Tage',
     '30+ Gün': '30+ Tage',
-    '250,000,000+ Verified Contacts': '250.000.000+ verifizierte Kontakte',
+    '250,000,000+ Verified Contacts': 'Verifizierte, hochwertige Datenquellen',
     // Turkish-to-German fixes on DE pages
     'Kapsamlı koruma için 640 veri broker ve herkese açık veri tabanını sürekli izliyoruz': 'Für umfassenden Schutz überwachen wir kontinuierlich 640 Datenbroker und öffentliche Datenbanken',
     'Toplam Kapsama Alanı': 'Gesamtabdeckung',

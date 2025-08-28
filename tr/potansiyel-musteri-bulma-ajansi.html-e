@@ -275,7 +275,7 @@
                     <p class="text-xl md:text-2xl text-base-content/80 mb-8 leading-relaxed">
                         AI destekli araştırma teknolojileri ile 
                         <span class="font-semibold text-accent">iAnlaşma müşterilerinizi buluyoruz</span>. 
-                        250M+ doğrulanmış kontak veritabanımızdan 
+                        Doğrulanmış ve yüksek kaliteli kaynaklardan 
                         işletmenize en uygun potansiyel müşterileri tespit ediyoruz.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 mb-8">
@@ -288,8 +288,8 @@
                     </div>
                     <div class="grid grid-cols-3 gap-6 text-center">
                         <div>
-                            <div class="text-2xl font-bold text-accent">250M+</div>
-                            <div class="text-sm text-base-content/60">B2B Kontak</div>
+                            <div class="text-2xl font-bold text-accent">Geniş</div>
+                            <div class="text-sm text-base-content/60">Doğrulanmış B2B İletişim</div>
                         </div>
                         <div>
                             <div class="text-2xl font-bold text-primary">98%</div>
@@ -341,7 +341,7 @@
                 <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-header">Potansiyel Müşteri Bulma Süreci</h2>
                 <p class="text-xl text-base-content/80 max-w-4xl mx-auto">
                     İAnlaşma müşteri profilinize (ICP) uygun potansiyel müşterileri bulmak için 
-                    gelişmiş AI algoritmaları ve 250M+ kontak veritabanımızı kullanıyoruz.
+                    gelişmiş AI algoritmaları ve doğrulanmış kaynakları kullanıyoruz.
                 </p>
             </div>
 
@@ -455,7 +455,7 @@
                     </div>
                     <h3 class="text-2xl font-bold mb-4">İletişim Keşfi</h3>
                     <p class="text-base-content/80 mb-6">
-                        250M+ kontak veritabanımızdan doğrulanmış e-posta adresleri 
+                        Doğrulanmış kaynaklardan e‑posta adresleri 
                         ve telefon numaralarını buluyoruz.
                     </p>
                     <ul class="space-y-2 text-sm">
@@ -543,7 +543,7 @@
                 <div class="text-center">
                     <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">2</div>
                     <h3 class="text-xl font-bold mb-4">Veri Madenciliği</h3>
-                    <p class="text-base-content/70">250M+ kontak veritabanından AI algoritmaları ile uygun Potansiyel Müşteri'leri buluyoruz.</p>
+                    <p class="text-base-content/70">Doğrulanmış kaynaklardan AI algoritmaları ile uygun Potansiyel Müşteri'leri buluyoruz.</p>
                 </div>
                 
                 <div class="text-center">
@@ -720,7 +720,7 @@
                 İAnlaşma Müşterilerinizi Bulma Zamanı!
             </h2>
             <p class="text-xl text-base-content/80 mb-8 max-w-3xl mx-auto">
-                250M+ kontak veritabanımız ve AI destekli araştırma teknolojilerimizle 
+                Doğrulanmış kaynaklar ve AI destekli araştırma teknolojilerimizle 
                 iAnlaşma müşterilerinizi 72 saat içinde bulun.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
