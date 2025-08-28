@@ -809,7 +809,7 @@ function buildPage(templateName, outputName, lang = 'en') {
     pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
     
     // Apply template variables based on language
-    const basePath = './';
+    const basePath = (lang === 'tr' || lang === 'de') ? '../' : './';
     const logoPath = (lang === 'tr' || lang === 'de') ? '../Expandia-main-logo-koyu-yesil.png' : 'Expandia-main-logo-koyu-yesil.png';
     const turkishServicesPath = lang === 'tr' ? './' : './tr/';
     
