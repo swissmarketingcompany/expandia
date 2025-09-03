@@ -75,12 +75,7 @@
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
-    <url>
-        <loc>https://www.expandia.ch/sales-protection-services.html</loc>
-        <lastmod>2025-08-15</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
+
     <url>
         <loc>https://www.expandia.ch/outsourced-sales-team-service.html</loc>
         <lastmod>2025-08-15</lastmod>
@@ -706,12 +701,7 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    <url>
-        <loc>https://www.expandia.ch/tr/satis-koruma-hizmetleri.html</loc>
-        <lastmod>2024-12-30</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
+
 
     <!-- Turkish Blog -->
     <url>
@@ -872,12 +862,7 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    <url>
-        <loc>https://www.expandia.ch/de/schutzdienstleistungen.html</loc>
-        <lastmod>2024-12-30</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
+
 
     <!-- German Blog -->
     <url>

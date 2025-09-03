@@ -13,8 +13,8 @@ const footer = fs.readFileSync('includes/footer.html', 'utf8');
 
 // SEO Keywords by page type
 const seoKeywords = {
-    index: 'B2B lead generation Europe, inbound lead generation, outbound lead generation, lead generation training',
-    solutions: 'lead generation solutions, inbound lead generation, outbound lead generation, lead generation training, Europe',
+    index: 'B2B lead generation Europe, inbound lead generation, outbound lead generation',
+    solutions: 'lead generation solutions, inbound lead generation, outbound lead generation, Europe',
     about: 'B2B sales agency Europe, export market specialists, international sales consulting',
     contact: 'B2B lead generation consultation, export sales consultation, international market entry',
     'case-studies': 'B2B sales success stories, export market case studies, international expansion results',
@@ -185,7 +185,7 @@ const turkishTranslations = {
     
     // Main Service Cards
     'Sales as a Service': 'Hizmet Olarak Satış',
-    'Sales Protection Services': 'Satış Koruma Hizmetleri',
+
     'AI Sales Solutions': 'AI Satış Çözümleri',
     'Defend your revenue with data protection and threat monitoring': 'Gelirinizi veri koruması ve tehdit izleme ile koruyun',
     'BuffSend platform and AI-powered sales tools': 'BuffSend platformu ve AI destekli satış araçları',
@@ -216,7 +216,7 @@ const turkishTranslations = {
     'Appointment Setting': 'Randevu Ayarlama',
     'Cold Email': 'Soğuk E-posta',
     'Email Automation': 'E-posta Otomasyonu',
-    'Sales Protection': 'Satış Koruması',
+
     'Export Marketing': 'İhracat Pazarlaması',
     'Europe Market Entry': 'Avrupa Pazarına Giriş',
     'Prospect Finding': 'Potansiyel Müşteri Bulma',
@@ -283,7 +283,7 @@ const turkishTranslations = {
     "Outbound Marketing": "Dışa Dönük Pazarlama",
     "Cold Email": "Soğuk E‑posta",
     "Cold Email Agency": "Soğuk E‑posta Ajansı",
-    "Sales Protection": "Satış Koruma",
+
     "Lead Generation & Sales": "Potansiyel Müşteri Üretimi & Satış",
     "B2B Lead Generation": "B2B Potansiyel Müşteri Üretimi",
 };
@@ -311,7 +311,7 @@ const germanTranslations = {
     
     // Main Service Cards
     'Sales as a Service': 'Verkauf als Service',
-    'Sales Protection Services': 'Vertriebsschutz-Services',
+
     'Defend your revenue with data protection and threat monitoring': 'Schützen Sie Ihren Umsatz mit Datenschutz und Bedrohungsüberwachung',
     'Complete sales management and operations outsourcing': 'Vollständiges Outsourcing von Verkaufsmanagement und -abläufen',
     'Real results from companies we\'ve helped': 'Echte Ergebnisse von Unternehmen, denen wir geholfen haben',
@@ -422,7 +422,7 @@ const germanTranslations = {
     'Outbound Marketing': 'Outbound Marketing',
     'Cold Email Agency': 'Cold-E-Mail-Agentur',
     'Email Automation': 'E-Mail-Automatisierung',
-    'Sales Protection': 'Vertriebsschutz',
+
     'Export Marketing': 'Export-Marketing',
     'International Market Entry': 'Internationaler Markteintritt',
     'Distributor Finding': 'Distributor-Suche',
@@ -525,12 +525,12 @@ function getPageMetadata(templateName, lang = 'en') {
                 ? 'B2B Potansiyel Müşteri Yaratma Türkiye | İhracat Satış Danışmanlığı' 
                 : isgerman 
                 ? 'B2B Lead-Generierung Deutschland | Export Beratung' 
-                : 'B2B Lead Generation Europe | Inbound, Outbound & Training',
+                : 'B2B Lead Generation Europe | Inbound & Outbound',
             description: isturkish 
                 ? 'Türkiye\'nin önde gelen B2B lead üretimi uzmanları. İhracat pazarları için randevu ayarlama ve satış otomasyonu ile büyümenizi hızlandırın.'
                 : isgerman
                 ? 'Deutschlands führende B2B Lead-Generierung Spezialisten. Wir helfen Exporteuren beim Markteintritt mit Terminvereinbarung und Verkaufsautomation.'
-                : 'Expert B2B lead generation in Europe. Inbound lead generation, outbound lead generation, and lead generation training for predictable pipeline.',
+                : 'Expert B2B lead generation in Europe. Inbound lead generation and outbound lead generation for predictable pipeline.',
             keywords: isturkish 
                 ? 'B2B lead üretimi Türkiye, ihracat satış danışmanlığı, randevu ayarlama hizmeti, Avrupa pazarı girişi'
                 : isgerman
@@ -542,12 +542,12 @@ function getPageMetadata(templateName, lang = 'en') {
                 ? 'B2B Satış Çözümleri | İhracat Danışmanlığı | Expandia' 
                 : isgerman 
                 ? 'B2B Verkaufslösungen | Export Beratung | Expandia' 
-                : 'Lead Generation Solutions | Inbound, Outbound & Training',
+                : 'Lead Generation Solutions | Inbound & Outbound',
             description: isturkish 
                 ? 'Avrupa pazarları için B2B satış çözümleri. İhracat danışmanlığı, lead üretimi ve satış otomasyonu hizmetleri.'
                 : isgerman
                 ? 'B2B Verkaufslösungen für europäische Märkte. Export-Beratung, Lead-Generierung und Verkaufsautomation.'
-                : 'Inbound lead generation, outbound lead generation, and lead generation training tailored to your growth goals.',
+                : 'Inbound lead generation and outbound lead generation tailored to your growth goals.',
             keywords: isturkish 
                 ? 'B2B satış çözümleri, ihracat danışmanlığı, satış otomasyonu, Avrupa pazarları'
                 : isgerman
@@ -561,15 +561,15 @@ function getPageMetadata(templateName, lang = 'en') {
                 ? 'Über uns | B2B Lead-Generierung Agentur | Expandia' 
                 : 'About Us | Lead Generation Agency Europe | Expandia',
             description: isturkish 
-                ? 'Avrupa\'da faaliyet gösteren B2B lead generation ajansı. Inbound, outbound ve eğitim programları ile büyüyün.'
+                ? 'Avrupa\'da faaliyet gösteren B2B lead generation ajansı. Inbound ve outbound programları ile büyüyün.'
                 : isgerman
-                ? 'B2B Lead-Generierung Agentur in Europa. Inbound, Outbound und Trainings für planbare Pipeline.'
-                : 'Lead generation agency in Europe. Inbound lead generation, outbound lead generation, and training for predictable pipeline.',
+                ? 'B2B Lead-Generierung Agentur in Europa. Inbound und Outbound für planbare Pipeline.'
+                : 'Lead generation agency in Europe. Inbound lead generation and outbound lead generation for predictable pipeline.',
             keywords: isturkish 
                 ? 'B2B satış ajansı Avrupa, ihracat pazarı uzmanları, uluslararası satış danışmanlığı'
                 : isgerman
                 ? 'B2B Verkaufsagentur Europa, Export Marktspezialisten, internationale Verkaufsberatung'
-                : 'lead generation agency Europe, inbound lead generation, outbound lead generation, training'
+                : 'lead generation agency Europe, inbound lead generation, outbound lead generation'
         },
         'contact': {
             title: isturkish 
@@ -875,8 +875,7 @@ function buildPage(templateName, outputName, lang = 'en') {
         pageNavigation = pageNavigation.replace(/href="\.\.\/email-automation\.html"/g, 'href="./solutions.html#email-automation"');
         pageNavigation = pageNavigation.replace(/href="\.\/email-automation\.html"/g, 'href="./solutions.html#email-automation"');
 
-        pageNavigation = pageNavigation.replace(/href="\.\.\/sales-protection-services\.html"/g, 'href="./satis-koruma-hizmetleri.html"');
-        pageNavigation = pageNavigation.replace(/href="\.\/sales-protection-services\.html"/g, 'href="./satis-koruma-hizmetleri.html"');
+
 
         // International Expansion section
         pageNavigation = pageNavigation.replace(/href="\.\.\/export-marketing-consulting\.html"/g, 'href="./ihracat-pazarlama-danismanligi.html"');
@@ -922,7 +921,7 @@ function buildPage(templateName, outputName, lang = 'en') {
         pageNavigation = pageNavigation.replace(/href="\.\.\/outbound-marketing-agency\.html"/g, 'href="./solutions.html#outbound-marketing"');
         pageNavigation = pageNavigation.replace(/href="\.\.\/cold-email-agency\.html"/g, 'href="./solutions.html#cold-email"');
         pageNavigation = pageNavigation.replace(/href="\.\.\/email-automation\.html"/g, 'href="./solutions.html#email-automation"');
-        pageNavigation = pageNavigation.replace(/href="\.\.\/sales-protection-services\.html"/g, 'href="./schutzdienstleistungen.html"');
+
         pageNavigation = pageNavigation.replace(/href="\.\.\/export-marketing-consulting\.html"/g, 'href="./solutions.html#export-marketing"');
         pageNavigation = pageNavigation.replace(/href="\.\.\/international-market-entry\.html"/g, 'href="./solutions.html#international-market-entry"');
         pageNavigation = pageNavigation.replace(/href="\.\.\/distributor-finding\.html"/g, 'href="./solutions.html#distributor-finding"');
