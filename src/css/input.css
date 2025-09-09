@@ -239,6 +239,25 @@ html {
     display: block !important;
 }
 
+/* FAQ Enhancements */
+.collapse-title {
+    transition: all 0.2s ease;
+}
+
+.collapse-title:hover {
+    color: hsl(var(--p));
+    transform: translateX(4px);
+}
+
+.collapse input[type="checkbox"]:checked ~ .collapse-title {
+    color: hsl(var(--p));
+    font-weight: 600;
+}
+
+.collapse-content {
+    transition: all 0.3s ease;
+}
+
 /* Logo Carousel Styles */
 .logo-carousel {
     @apply overflow-hidden bg-white py-12 relative;

@@ -176,10 +176,14 @@ app.post('/api/contact', contactValidation, async (req, res) => {
                     reply_to: email
                 });
                 if (result && result.id) {
-                    console.log('Resend contact email sent. id=', result.id);
+                    if (process.env.NODE_ENV !== 'production') {
+                        console.log('Resend contact email sent. id=', result.id);
+                    }
                     sentVia = 'resend';
                 } else {
-                    console.warn('Resend returned no id for contact email. result=', result);
+                    if (process.env.NODE_ENV !== 'production') {
+                        console.warn('Resend returned no id for contact email. result=', result);
+                    }
                 }
             } catch (e) {
                 console.error('Resend contact send error:', e);
@@ -198,7 +202,9 @@ app.post('/api/contact', contactValidation, async (req, res) => {
                         text: emailContent,
                         replyTo: email
                     });
-                    console.log('Nodemailer (Gmail) contact email sent.');
+                    if (process.env.NODE_ENV !== 'production') {
+                        console.log('Nodemailer (Gmail) contact email sent.');
+                    }
                     sentVia = 'gmail';
                 } catch (e) {
                     console.error('Nodemailer contact send error:', e);
@@ -254,10 +260,14 @@ app.post('/api/subscribe', [
                     text
                 });
                 if (result && result.id) {
-                    console.log('Resend subscribe email sent. id=', result.id);
+                    if (process.env.NODE_ENV !== 'production') {
+                        console.log('Resend subscribe email sent. id=', result.id);
+                    }
                     sentVia = 'resend';
                 } else {
-                    console.warn('Resend returned no id for subscribe email. result=', result);
+                    if (process.env.NODE_ENV !== 'production') {
+                        console.warn('Resend returned no id for subscribe email. result=', result);
+                    }
                 }
             } catch (e) {
                 console.error('Resend subscribe send error:', e);
@@ -274,7 +284,9 @@ app.post('/api/subscribe', [
                         subject: 'New Newsletter Subscription',
                         text
                     });
-                    console.log('Nodemailer (Gmail) subscribe email sent.');
+                    if (process.env.NODE_ENV !== 'production') {
+                        console.log('Nodemailer (Gmail) subscribe email sent.');
+                    }
                     sentVia = 'gmail';
                 } catch (e) {
                     console.error('Nodemailer subscribe send error:', e);
@@ -395,6 +407,10 @@ app.get('*', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Expandia website is running on port ${PORT}`);
-    console.log(`Visit: http://localhost:${PORT}`);
+    if (process.env.NODE_ENV !== 'production') {
+        console.log(`Expandia website is running on port ${PORT}`);
+        console.log(`Visit: http://localhost:${PORT}`);
+    } else {
+        console.log(`Expandia website started on port ${PORT}`);
+    }
 }); 

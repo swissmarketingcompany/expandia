@@ -1,6 +1,28 @@
 // Contact and Newsletter Form Handlers (Resend-backed API)
 
 document.addEventListener('DOMContentLoaded', () => {
+    // FAQ Functionality
+    const faqItems = document.querySelectorAll('.collapse input[type="checkbox"]');
+    faqItems.forEach(faqInput => {
+        const collapseElement = faqInput.closest('.collapse');
+        const titleElement = collapseElement?.querySelector('.collapse-title');
+        
+        if (titleElement) {
+            // Make title clickable
+            titleElement.style.cursor = 'pointer';
+            titleElement.addEventListener('click', (e) => {
+                e.preventDefault();
+                faqInput.checked = !faqInput.checked;
+                
+                // Close other FAQ items (accordion behavior)
+                faqItems.forEach(otherInput => {
+                    if (otherInput !== faqInput) {
+                        otherInput.checked = false;
+                    }
+                });
+            });
+        }
+    });
     const contactForm = document.getElementById('expandia-contact-form');
     const statusEl = document.getElementById('contact-status');
     if (contactForm) {
