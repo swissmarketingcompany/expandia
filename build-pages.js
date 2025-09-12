@@ -18,7 +18,8 @@ const seoKeywords = {
     about: 'B2B sales agency Europe, export market specialists, international sales consulting',
     contact: 'B2B lead generation consultation, export sales consultation, international market entry',
     'case-studies': 'B2B sales success stories, export market case studies, international expansion results',
-    onboarding: 'Expandia onboarding, sales service setup, B2B sales onboarding process, client onboarding form'
+    onboarding: 'Expandia onboarding, sales service setup, B2B sales onboarding process, client onboarding form',
+    'email-marketing-management': 'email marketing management, email marketing service, B2B email marketing, email automation, email campaigns'
 };
 
 // Schema markup generators
@@ -1190,6 +1191,7 @@ buildPage('cold-email-agency', 'cold-email-agency', 'en');
 buildPage('sales-protection-services', 'sales-protection-services', 'en');
 buildPage('outsourced-sales-team-service', 'outsourced-sales-team-service', 'en');
 buildPage('email-automation', 'email-automation', 'en');
+buildPage('email-marketing-management', 'email-marketing-management', 'en');
 buildPage('export-marketing-consulting', 'export-marketing-consulting', 'en');
 buildPage('international-market-entry', 'international-market-entry', 'en');
 buildPage('distributor-finding', 'distributor-finding', 'en');
