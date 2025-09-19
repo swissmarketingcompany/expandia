@@ -31,18 +31,17 @@ function generateOrganizationSchema() {
         "url": "https://www.expandia.ch",
         "logo": "https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png",
         "email": "hello@expandia.ch",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "CH"
-        },
+        // International company. No single-country address to avoid implying Swiss-only identity.
+        // If a physical office needs to be listed later, add an appropriate PostalAddress here.
         "sameAs": [
             "https://www.linkedin.com/company/expandia-ch/"
         ],
         "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "+41-XXX-XXX-XXXX",
+            // Keep a generic contact point without country-specific signaling
+            "telephone": "+000-000-0000",
             "contactType": "sales",
-            "areaServed": ["CH", "DE", "AT", "TR", "EU"],
+            "areaServed": ["EU", "UK", "US", "MEA", "APAC"],
             "availableLanguage": ["en", "de", "tr"]
         }
     };
