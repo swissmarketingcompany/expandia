@@ -7,9 +7,49 @@ console.log('⚠️  WARNING: This will OVERWRITE generated HTML files!');
 console.log('📝 Always edit templates/ directory, not root HTML files');
 console.log('📖 See README-DEVELOPMENT.md for full instructions\n');
 
-// Read navigation and footer once
-const navigation = fs.readFileSync('includes/header.html', 'utf8');
-const footer = fs.readFileSync('includes/footer.html', 'utf8');
+// Read navigation and footer once - with validation
+const includesDir = 'includes';
+if (!fs.existsSync(includesDir)) {
+    console.error(`❌ ERROR: includes directory not found at ${includesDir}`);
+    process.exit(1);
+}
+
+const headerPath = `${includesDir}/header.html`;
+const footerPath = `${includesDir}/footer.html`;
+
+if (!fs.existsSync(headerPath)) {
+    console.error(`❌ ERROR: Header file not found at ${headerPath}`);
+    process.exit(1);
+}
+
+if (!fs.existsSync(footerPath)) {
+    console.error(`❌ ERROR: Footer file not found at ${footerPath}`);
+    process.exit(1);
+}
+
+const navigation = fs.readFileSync(headerPath, 'utf8');
+const footer = fs.readFileSync(footerPath, 'utf8');
+
+console.log(`✅ Successfully loaded header from ${headerPath}`);
+console.log(`✅ Successfully loaded footer from ${footerPath}`);
+
+// Template variable validation function
+function validateTemplateVariables(content, fileName) {
+    const requiredVars = ['{{BASE_PATH}}', '{{LOGO_PATH}}', '{{NAVIGATION}}', '{{MAIN_CONTENT}}', '{{FOOTER}}', '{{PAGE_TITLE}}', '{{PAGE_DESCRIPTION}}', '{{PAGE_KEYWORDS}}'];
+    const missingVars = [];
+
+    for (const varName of requiredVars) {
+        if (content.includes(varName)) {
+            missingVars.push(varName);
+        }
+    }
+
+    if (missingVars.length > 0) {
+        console.warn(`⚠️  WARNING: ${fileName} contains unreplaced template variables: ${missingVars.join(', ')}`);
+    }
+
+    return missingVars.length === 0;
+}
 
 // SEO Keywords by page type
 const seoKeywords = {
@@ -1136,6 +1176,9 @@ function buildPage(templateName, outputName, lang = 'en') {
     htmlTemplate = htmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
     htmlTemplate = htmlTemplate.replace('{{MAIN_CONTENT}}', content);
     htmlTemplate = htmlTemplate.replace('{{FOOTER}}', pageFooter);
+
+    // Validate template variables after replacement
+    validateTemplateVariables(htmlTemplate, `HTML template for ${outputName} (${lang})`);
     
     // Set page-specific metadata with SEO enhancements
     const pageMetadata = getPageMetadata(templateName, lang);
