@@ -1,7 +1,6 @@
 // Index Page JavaScript - Button Functionality and Interactions
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Index page JavaScript loaded');
 
     // Smooth scroll for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -22,61 +21,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Hero Section Button Handlers
     function setupHeroButtons() {
-        console.log('Setting up hero buttons...');
-        
-        // Main CTA button - Book Free AI Consultation
+        // Main CTA button
         const heroConsultationBtn = document.querySelector('.credit-badge');
         if (heroConsultationBtn) {
-            console.log('Found hero consultation button:', heroConsultationBtn);
             heroConsultationBtn.addEventListener('click', function(e) {
                 e.preventDefault();
-                console.log('Hero consultation button clicked');
                 window.location.href = 'contact.html';
             });
             heroConsultationBtn.style.cursor = 'pointer';
-        } else {
-            console.warn('Hero consultation button not found');
         }
 
         // View Our Work button
         const viewWorkBtn = document.querySelector('.btn-outline.btn-neutral');
         if (viewWorkBtn) {
-            console.log('Found view work button:', viewWorkBtn);
             viewWorkBtn.addEventListener('click', function(e) {
                 e.preventDefault();
-                console.log('View our work button clicked');
                 window.location.href = 'case-studies.html';
             });
-        } else {
-            console.warn('View work button not found');
         }
     }
 
     // Solutions Section Button Handlers
     function setupSolutionButtons() {
-        console.log('Setting up solution buttons...');
         const solutionButtons = document.querySelectorAll('.service-card .btn');
-        console.log(`Found ${solutionButtons.length} solution buttons`);
-        
+
         solutionButtons.forEach((button, index) => {
             button.addEventListener('click', function(e) {
                 e.preventDefault();
-                console.log(`Solution button ${index + 1} clicked`);
                 // Navigate to solutions page with specific anchor
                 const solutionAnchors = [
-                    '#ai-agents',
-                    '#automation', 
-                    '#predictive-analytics',
-                    '#lead-enrichment',
-                    '#nlp-documents',
-                    '#content-ai'
+                    '#lead-generation',
+                    '#sales-development',
+                    '#outbound-marketing',
+                    '#appointment-setting',
+                    '#cold-emailing',
+                    '#business-development'
                 ];
-                
+
                 if (solutionAnchors[index]) {
-                    console.log(`Navigating to: solutions.html${solutionAnchors[index]}`);
                     window.location.href = `solutions.html${solutionAnchors[index]}`;
                 } else {
-                    console.log('Navigating to: solutions.html');
                     window.location.href = 'solutions.html';
                 }
             });
@@ -85,34 +69,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // CTA Section Button Handlers
     function setupCTAButtons() {
-        console.log('Setting up CTA buttons...');
         // Find CTA section buttons
         const ctaSection = document.querySelector('.bg-gradient-to-r.from-primary.to-secondary');
         if (ctaSection) {
             const ctaButtons = ctaSection.querySelectorAll('.btn');
-            console.log(`Found ${ctaButtons.length} CTA buttons`);
-            
-            // Book Free AI Consultation button
+
+            // Book Free Consultation button
             if (ctaButtons[0]) {
-                console.log('Found CTA consultation button');
                 ctaButtons[0].addEventListener('click', function(e) {
                     e.preventDefault();
-                    console.log('CTA consultation button clicked');
                     window.location.href = 'contact.html';
                 });
             }
-            
+
             // View Our Solutions button
             if (ctaButtons[1]) {
-                console.log('Found CTA solutions button');
                 ctaButtons[1].addEventListener('click', function(e) {
                     e.preventDefault();
-                    console.log('View solutions button clicked');
                     window.location.href = 'solutions.html';
                 });
             }
-        } else {
-            console.warn('CTA section not found');
         }
     }
 
@@ -138,23 +114,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl" onclick="this.parentElement.parentElement.remove()">
                     ×
                 </button>
-                <h3 class="text-2xl font-bold mb-4 text-primary">AI Agent Demo Details</h3>
+                <h3 class="text-2xl font-bold mb-4 text-primary">Sales Development Demo</h3>
                 <div class="space-y-4">
                     <div class="flex justify-between items-center">
-                        <span class="text-gray-600">Processing Speed:</span>
-                        <span class="font-semibold text-primary">2.3ms avg</span>
+                        <span class="text-gray-600">Lead Generation Speed:</span>
+                        <span class="font-semibold text-primary">2.3 days avg</span>
                     </div>
                     <div class="flex justify-between items-center">
-                        <span class="text-gray-600">Accuracy Rate:</span>
+                        <span class="text-gray-600">Conversion Rate:</span>
                         <span class="font-semibold text-secondary">94.2%</span>
                     </div>
                     <div class="flex justify-between items-center">
-                        <span class="text-gray-600">Tasks Completed:</span>
+                        <span class="text-gray-600">Qualified Leads:</span>
                         <span class="font-semibold text-accent">1,247</span>
                     </div>
                     <div class="flex justify-between items-center">
-                        <span class="text-gray-600">Cost Savings:</span>
-                        <span class="font-semibold text-green-600">$12,500/month</span>
+                        <span class="text-gray-600">Revenue Growth:</span>
+                        <span class="font-semibold text-green-600">+65%</span>
                     </div>
                 </div>
                 <div class="mt-6 flex gap-3">
@@ -180,17 +156,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Footer Button Handler
     function setupFooterButton() {
-        console.log('Setting up footer button...');
         const footerButton = document.querySelector('footer .btn-primary');
         if (footerButton) {
-            console.log('Found footer button');
             footerButton.addEventListener('click', function(e) {
                 e.preventDefault();
-                console.log('Footer consultation button clicked');
                 window.location.href = 'contact.html';
             });
-        } else {
-            console.warn('Footer button not found');
         }
     }
 
@@ -247,18 +218,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Setup additional button handlers for new sections
     function setupAdditionalButtons() {
-        console.log('Setting up additional buttons...');
-        
         // Industry cards - make them clickable
         const industryCards = document.querySelectorAll('.buzz-card[class*="hover:scale-105"]');
         industryCards.forEach((card, index) => {
             card.style.cursor = 'pointer';
             card.addEventListener('click', function() {
-                console.log(`Industry card ${index + 1} clicked`);
                 window.location.href = 'industries.html';
             });
         });
-        
+
         // Process cards - add hover effects
         const processCards = document.querySelectorAll('.buzz-card[class*="relative"]');
         processCards.forEach(card => {
@@ -266,20 +234,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.style.transform = 'translateY(-5px)';
                 this.style.boxShadow = '0 10px 30px rgba(249, 194, 60, 0.2)';
             });
-            
+
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
                 this.style.boxShadow = '';
             });
         });
-        
+
         // Testimonial cards - add subtle hover effects
         const testimonialCards = document.querySelectorAll('.testimonial-card');
         testimonialCards.forEach(card => {
             card.addEventListener('mouseenter', function() {
                 this.style.transform = 'scale(1.02)';
             });
-            
+
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'scale(1)';
             });
@@ -299,7 +267,6 @@ document.addEventListener('DOMContentLoaded', function() {
         setupClickFeedback();
         setupAdditionalButtons();
         
-        console.log('Index page functionality initialized');
     }
 
     // Start the initialization
@@ -359,7 +326,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Language switching functions - STANDARDIZED FOR MULTILINGUAL SUPPORT
 function switchToEnglish() {
-    console.log('Switching to English, current path:', window.location.pathname);
     const path = window.location.pathname;
     
     // Set user language preference to prevent auto-redirects
@@ -431,7 +397,6 @@ function switchToEnglish() {
 }
 
 function switchToTurkish() {
-    console.log('Switching to Turkish, current path:', window.location.pathname);
     const path = window.location.pathname;
     
     // Set user language preference to prevent auto-redirects
@@ -475,7 +440,6 @@ function switchToTurkish() {
 }
 
 function switchToGerman() {
-    console.log('Switching to German, current path:', window.location.pathname);
     const path = window.location.pathname;
     
     // Set user language preference to prevent auto-redirects
@@ -518,7 +482,6 @@ function detectUserLocation() {
     // Check if user has manually selected a language before
     const userLanguagePreference = localStorage.getItem('expandia_language_preference');
     if (userLanguagePreference) {
-        console.log('User has language preference:', userLanguagePreference);
         return; // Don't auto-redirect if user has made a choice
     }
 
@@ -526,7 +489,6 @@ function detectUserLocation() {
     const lastRedirect = sessionStorage.getItem('expandia_last_redirect');
     const now = Date.now();
     if (lastRedirect && (now - parseInt(lastRedirect)) < 5000) {
-        console.log('Recently redirected, skipping auto-detection');
         return;
     }
 
@@ -534,13 +496,12 @@ function detectUserLocation() {
     const currentPath = window.location.pathname;
     const isOnTurkish = currentPath.startsWith('/tr/') || currentPath === '/tr';
     const isOnGerman = currentPath.startsWith('/de/') || currentPath === '/de';
-    
+
     // Add a small delay to ensure page is loaded
     setTimeout(() => {
         // Try multiple geolocation methods
         detectLocationByIP()
             .then(country => {
-                console.log('Detected country:', country);
                 
                 // Language-specific countries/regions
                 const turkishCountries = ['TR', 'CY']; // Turkey, Cyprus
@@ -566,25 +527,21 @@ function detectUserLocation() {
                         switchToEnglish();
                     });
                 } else {
-                    console.log('User is on correct language version');
+                    // User is on correct language version
                 }
             })
             .catch(error => {
-                console.log('Geolocation detection failed, using browser language as fallback');
-                
                 // Fallback to browser language detection
                 const browserLang = navigator.language || navigator.userLanguage;
                 const isTurkishBrowser = browserLang.startsWith('tr');
                 const isGermanBrowser = browserLang.startsWith('de');
-                
+
                 if (isTurkishBrowser && !isOnTurkish) {
-                    console.log('Browser language is Turkish, redirecting...');
                     showLanguageNotification('Turkish', () => {
                         sessionStorage.setItem('expandia_last_redirect', Date.now().toString());
                         switchToTurkish();
                     });
                 } else if (isGermanBrowser && !isOnGerman) {
-                    console.log('Browser language is German, redirecting...');
                     showLanguageNotification('German', () => {
                         sessionStorage.setItem('expandia_last_redirect', Date.now().toString());
                         switchToGerman();
@@ -672,32 +629,27 @@ async function detectLocationByIP() {
                     }
                 }
             } catch (error) {
-                console.log(`Service ${service} failed:`, error);
                 continue;
             }
         }
-        
+
         throw new Error('All geolocation services failed');
     } catch (error) {
-        console.error('IP geolocation failed:', error);
         throw error;
     }
 }
 
 // Setup language switching event listeners
 function setupLanguageSwitching() {
-    console.log('Setting up language switching...');
-    
     // Handle language switch clicks
     document.querySelectorAll('.lang-switch').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const lang = this.getAttribute('data-lang');
-            console.log('Language switch clicked:', lang);
-            
+
             // Save user's language preference
             localStorage.setItem('expandia_language_preference', lang);
-            
+
             if (lang === 'en') {
                 switchToEnglish();
             } else if (lang === 'tr') {
@@ -707,13 +659,13 @@ function setupLanguageSwitching() {
             }
         });
     });
-    
+
     // Update flag display
     const currentFlag = document.getElementById('current-flag');
     if (currentFlag) {
         const isOnTurkish = window.location.pathname.startsWith('/tr/') || window.location.pathname === '/tr';
         const isOnGerman = window.location.pathname.startsWith('/de/') || window.location.pathname === '/de';
-        
+
         if (isOnTurkish) {
             currentFlag.textContent = '🇹🇷';
         } else if (isOnGerman) {
@@ -721,17 +673,15 @@ function setupLanguageSwitching() {
         } else {
             currentFlag.textContent = '🇺🇸';
         }
-        console.log('Updated flag for path:', window.location.pathname, 'Turkish:', isOnTurkish, 'German:', isOnGerman);
     }
-    
+
     // Run geolocation detection on page load
     detectUserLocation();
-    
+
     // Add debug function to clear language preferences (available in console)
     window.clearLanguagePreference = function() {
         localStorage.removeItem('expandia_language_preference');
         sessionStorage.removeItem('expandia_last_redirect');
-        console.log('Language preferences cleared. Refresh the page to test geolocation again.');
     };
 }
 
