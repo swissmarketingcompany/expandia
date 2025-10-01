@@ -719,6 +719,50 @@ function getPageMetadata(templateName, lang = 'en') {
             title: 'Europe Market Entry | Business Development Consulting | Expandia',
             description: 'Professional Europe market entry consulting for international expansion. Expert guidance and execution for successful European market penetration.',
             keywords: 'Europe market entry, business development consulting, European expansion, international growth, market entry strategy, European business development'
+        },
+        'vision-mission': {
+            title: isturkish 
+                ? 'Vizyon & Misyon | Expandia' 
+                : isgerman 
+                ? 'Vision & Mission | Expandia' 
+                : 'Vision & Mission | Expandia',
+            description: isturkish 
+                ? 'Expandia\'nın vizyonu ve misyonu. B2B satış geliştirmenin geleceğini şekillendiriyoruz.'
+                : isgerman
+                ? 'Expandias Vision und Mission. Wir gestalten die Zukunft der B2B-Vertriebsentwicklung.'
+                : 'Expandia\'s vision and mission. Shaping the future of B2B sales development.',
+            keywords: isturkish 
+                ? 'Expandia vizyon, Expandia misyon, B2B satış ajansı değerleri'
+                : isgerman
+                ? 'Expandia Vision, Expandia Mission, B2B-Verkaufsagentur Werte'
+                : 'Expandia vision, Expandia mission, B2B sales agency values'
+        },
+        'vizyon-misyon': {
+            title: 'Vizyon & Misyon | Expandia',
+            description: 'Expandia\'nın vizyonu ve misyonu. B2B satış geliştirmenin geleceğini şekillendiriyoruz.',
+            keywords: 'Expandia vizyon, Expandia misyon, B2B satış ajansı değerleri'
+        },
+        'our-ethical-principles': {
+            title: isturkish 
+                ? 'Etik İlkelerimiz | Expandia' 
+                : isgerman 
+                ? 'Unsere ethischen Grundsätze | Expandia' 
+                : 'Our Ethical Principles | Expandia',
+            description: isturkish 
+                ? 'Expandia\'nın etik ilkeleri ve değerleri. Güven ve dürüstlüğün temeli.'
+                : isgerman
+                ? 'Expandias ethische Grundsätze und Werte. Die Grundlage von Vertrauen und Integrität.'
+                : 'Expandia\'s ethical principles and values. The foundation of trust and integrity.',
+            keywords: isturkish 
+                ? 'Expandia etik ilkeleri, iş etiği, KVKK uyumu, dürüstlük'
+                : isgerman
+                ? 'Expandia ethische Grundsätze, Geschäftsethik, DSGVO-Konformität, Integrität'
+                : 'Expandia ethical principles, business ethics, GDPR compliance, integrity'
+        },
+        'etik-ilkelerimiz': {
+            title: 'Etik İlkelerimiz | Expandia',
+            description: 'Expandia\'nın etik ilkeleri ve değerleri. Güven ve dürüstlüğün temeli.',
+            keywords: 'Expandia etik ilkeleri, iş etiği, KVKK uyumu, dürüstlük'
         }
     };
     
@@ -752,6 +796,26 @@ function getHreflangUrls(templateName) {
             en: 'case-studies.html', 
             tr: 'tr/case-studies.html', 
             de: 'de/case-studies.html' 
+        },
+        'vision-mission': { 
+            en: 'vision-mission.html', 
+            tr: 'tr/vizyon-misyon.html', 
+            de: 'de/vision-mission.html' 
+        },
+        'vizyon-misyon': { 
+            en: 'vision-mission.html', 
+            tr: 'tr/vizyon-misyon.html', 
+            de: 'de/vision-mission.html' 
+        },
+        'our-ethical-principles': { 
+            en: 'our-ethical-principles.html', 
+            tr: 'tr/etik-ilkelerimiz.html', 
+            de: 'de/our-ethical-principles.html' 
+        },
+        'etik-ilkelerimiz': { 
+            en: 'our-ethical-principles.html', 
+            tr: 'tr/etik-ilkelerimiz.html', 
+            de: 'de/our-ethical-principles.html' 
         }
     };
     
@@ -864,6 +928,106 @@ function getActiveStates(templateName) {
             'ABOUT_MOBILE_ACTIVE': '',
             'CONTACT_MOBILE_ACTIVE': '',
             'CASESTUDIES_MOBILE_ACTIVE': 'class="font-semibold text-primary"',
+            'BLOG_MOBILE_ACTIVE': ''
+        },
+        'vision-mission': {
+            'HOME_ACTIVE': '',
+            'SOLUTIONS_ACTIVE': '',
+            'ABOUT_ACTIVE': '',
+            'CONTACT_ACTIVE': '',
+            'CASESTUDIES_ACTIVE': '',
+            'BLOG_ACTIVE': '',
+            'COMPANY_ACTIVE': 'text-primary',
+            'HOME_ITEM_ACTIVE': '',
+            'SOLUTIONS_ITEM_ACTIVE': '',
+            'ABOUT_ITEM_ACTIVE': '',
+            'VISION_ITEM_ACTIVE': 'bg-primary/10 border border-primary/20',
+            'ETHICS_ITEM_ACTIVE': '',
+            'CONTACT_ITEM_ACTIVE': '',
+            'CASESTUDIES_ITEM_ACTIVE': '',
+            'BLOG_ITEM_ACTIVE': '',
+            'HOME_MOBILE_ACTIVE': '',
+            'SOLUTIONS_MOBILE_ACTIVE': '',
+            'ABOUT_MOBILE_ACTIVE': '',
+            'VISION_MOBILE_ACTIVE': 'class="font-semibold text-primary"',
+            'ETHICS_MOBILE_ACTIVE': '',
+            'CONTACT_MOBILE_ACTIVE': '',
+            'CASESTUDIES_MOBILE_ACTIVE': '',
+            'BLOG_MOBILE_ACTIVE': ''
+        },
+        'vizyon-misyon': {
+            'HOME_ACTIVE': '',
+            'SOLUTIONS_ACTIVE': '',
+            'ABOUT_ACTIVE': '',
+            'CONTACT_ACTIVE': '',
+            'CASESTUDIES_ACTIVE': '',
+            'BLOG_ACTIVE': '',
+            'COMPANY_ACTIVE': 'text-primary',
+            'HOME_ITEM_ACTIVE': '',
+            'SOLUTIONS_ITEM_ACTIVE': '',
+            'ABOUT_ITEM_ACTIVE': '',
+            'VISION_ITEM_ACTIVE': 'bg-primary/10 border border-primary/20',
+            'ETHICS_ITEM_ACTIVE': '',
+            'CONTACT_ITEM_ACTIVE': '',
+            'CASESTUDIES_ITEM_ACTIVE': '',
+            'BLOG_ITEM_ACTIVE': '',
+            'HOME_MOBILE_ACTIVE': '',
+            'SOLUTIONS_MOBILE_ACTIVE': '',
+            'ABOUT_MOBILE_ACTIVE': '',
+            'VISION_MOBILE_ACTIVE': 'class="font-semibold text-primary"',
+            'ETHICS_MOBILE_ACTIVE': '',
+            'CONTACT_MOBILE_ACTIVE': '',
+            'CASESTUDIES_MOBILE_ACTIVE': '',
+            'BLOG_MOBILE_ACTIVE': ''
+        },
+        'our-ethical-principles': {
+            'HOME_ACTIVE': '',
+            'SOLUTIONS_ACTIVE': '',
+            'ABOUT_ACTIVE': '',
+            'CONTACT_ACTIVE': '',
+            'CASESTUDIES_ACTIVE': '',
+            'BLOG_ACTIVE': '',
+            'COMPANY_ACTIVE': 'text-primary',
+            'HOME_ITEM_ACTIVE': '',
+            'SOLUTIONS_ITEM_ACTIVE': '',
+            'ABOUT_ITEM_ACTIVE': '',
+            'VISION_ITEM_ACTIVE': '',
+            'ETHICS_ITEM_ACTIVE': 'bg-primary/10 border border-primary/20',
+            'CONTACT_ITEM_ACTIVE': '',
+            'CASESTUDIES_ITEM_ACTIVE': '',
+            'BLOG_ITEM_ACTIVE': '',
+            'HOME_MOBILE_ACTIVE': '',
+            'SOLUTIONS_MOBILE_ACTIVE': '',
+            'ABOUT_MOBILE_ACTIVE': '',
+            'VISION_MOBILE_ACTIVE': '',
+            'ETHICS_MOBILE_ACTIVE': 'class="font-semibold text-primary"',
+            'CONTACT_MOBILE_ACTIVE': '',
+            'CASESTUDIES_MOBILE_ACTIVE': '',
+            'BLOG_MOBILE_ACTIVE': ''
+        },
+        'etik-ilkelerimiz': {
+            'HOME_ACTIVE': '',
+            'SOLUTIONS_ACTIVE': '',
+            'ABOUT_ACTIVE': '',
+            'CONTACT_ACTIVE': '',
+            'CASESTUDIES_ACTIVE': '',
+            'BLOG_ACTIVE': '',
+            'COMPANY_ACTIVE': 'text-primary',
+            'HOME_ITEM_ACTIVE': '',
+            'SOLUTIONS_ITEM_ACTIVE': '',
+            'ABOUT_ITEM_ACTIVE': '',
+            'VISION_ITEM_ACTIVE': '',
+            'ETHICS_ITEM_ACTIVE': 'bg-primary/10 border border-primary/20',
+            'CONTACT_ITEM_ACTIVE': '',
+            'CASESTUDIES_ITEM_ACTIVE': '',
+            'BLOG_ITEM_ACTIVE': '',
+            'HOME_MOBILE_ACTIVE': '',
+            'SOLUTIONS_MOBILE_ACTIVE': '',
+            'ABOUT_MOBILE_ACTIVE': '',
+            'VISION_MOBILE_ACTIVE': '',
+            'ETHICS_MOBILE_ACTIVE': 'class="font-semibold text-primary"',
+            'CONTACT_MOBILE_ACTIVE': '',
+            'CASESTUDIES_MOBILE_ACTIVE': '',
             'BLOG_MOBILE_ACTIVE': ''
         }
     };
@@ -1265,6 +1429,8 @@ buildPage('solutions', 'solutions', 'en');
 buildPage('contact', 'contact', 'en');
 buildPage('case-studies', 'case-studies', 'en');
 buildPage('onboarding', 'onboarding', 'en');
+buildPage('vision-mission', 'vision-mission', 'en');
+buildPage('our-ethical-principles', 'our-ethical-principles', 'en');
 
 // Build English service pages
 console.log('Building English service pages...');
@@ -1293,6 +1459,8 @@ buildPage('solutions', 'solutions', 'tr');
 buildPage('contact', 'contact', 'tr');
 buildPage('case-studies', 'case-studies', 'tr');
 buildPage('satis-koruma-hizmetleri', 'satis-koruma-hizmetleri', 'tr');
+buildPage('vizyon-misyon', 'vizyon-misyon', 'tr');
+buildPage('etik-ilkelerimiz', 'etik-ilkelerimiz', 'tr');
 
 // Build German pages
 console.log('Building German pages...');
