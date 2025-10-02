@@ -27,10 +27,12 @@ if (!fs.existsSync(footerPath)) {
     process.exit(1);
 }
 
-const navigation = fs.readFileSync(headerPath, 'utf8');
+const navigationEN = fs.readFileSync(headerPath, 'utf8');
+const navigationTR = fs.readFileSync('includes/header-tr.html', 'utf8');
+const navigationDE = fs.readFileSync('includes/header-de.html', 'utf8');
 const footer = fs.readFileSync(footerPath, 'utf8');
 
-console.log(`✅ Successfully loaded header from ${headerPath}`);
+console.log(`✅ Successfully loaded headers for all languages`);
 console.log(`✅ Successfully loaded footer from ${footerPath}`);
 
 // Template variable validation function
@@ -763,6 +765,69 @@ function getPageMetadata(templateName, lang = 'en') {
             title: 'Etik İlkelerimiz | Expandia',
             description: 'Expandia\'nın etik ilkeleri ve değerleri. Güven ve dürüstlüğün temeli.',
             keywords: 'Expandia etik ilkeleri, iş etiği, KVKK uyumu, dürüstlük'
+        },
+        'market-foundation-program': {
+            title: isturkish 
+                ? 'Pazar Temeli Programı | Expandia' 
+                : 'Market Foundation Program | Expandia',
+            description: isturkish 
+                ? 'Yeni pazarlara giren şirketler için. Konumlandırma, mesajlaşma ve ilk nitelikli toplantılar.'
+                : 'Perfect for companies entering new markets. Build positioning, messaging and first qualified meetings.',
+            keywords: isturkish 
+                ? 'pazar girişi, B2B satış programı, lead generation, pazar geliştirme'
+                : 'market entry, B2B sales program, lead generation, market development'
+        },
+        'pazar-temeli-programi': {
+            title: 'Pazar Temeli Programı | Expandia',
+            description: 'Yeni pazarlara giren şirketler için. Konumlandırma, mesajlaşma ve ilk nitelikli toplantılar.',
+            keywords: 'pazar girişi, B2B satış programı, lead generation, pazar geliştirme'
+        },
+        'market-accelerator-program': {
+            title: isturkish 
+                ? 'Pazar Hızlandırıcı Program | Expandia' 
+                : 'Market Accelerator Program | Expandia',
+            description: isturkish 
+                ? 'Büyük pazarlara hızla hakim olun. Agresif iletişim ve ölçeklenebilir büyüme.'
+                : 'Dominate large markets fast. Aggressive outreach and scalable growth.',
+            keywords: isturkish 
+                ? 'pazar hızlandırma, hızlı büyüme, B2B ölçeklendirme, satış hızlandırma'
+                : 'market acceleration, rapid growth, B2B scaling, sales acceleration'
+        },
+        'pazar-hizlandirici-program': {
+            title: 'Pazar Hızlandırıcı Program | Expandia',
+            description: 'Büyük pazarlara hızla hakim olun. Agresif iletişim ve ölçeklenebilir büyüme.',
+            keywords: 'pazar hızlandırma, hızlı büyüme, B2B ölçeklendirme, satış hızlandırma'
+        },
+        'fractional-bizdev-team': {
+            title: isturkish 
+                ? 'Kısmi İş Geliştirme Ekibi | Expandia' 
+                : 'Fractional BizDev Team | Expandia',
+            description: isturkish 
+                ? '5-50 kişilik şirketler için özel ekip üyesi. Ayda 40 saat, düşük maliyet, yüksek performans.'
+                : 'Dedicated team member for 5-50 headcount companies. 40 hours/month, low cost, high performance.',
+            keywords: isturkish 
+                ? 'kısmi iş geliştirme, fractional BizDev, dış kaynak satış, B2B ekip'
+                : 'fractional business development, fractional BizDev, outsourced sales, B2B team'
+        },
+        'kismi-is-gelistirme-ekibi': {
+            title: 'Kısmi İş Geliştirme Ekibi | Expandia',
+            description: '5-50 kişilik şirketler için özel ekip üyesi. Ayda 40 saat, düşük maliyet, yüksek performans.',
+            keywords: 'kısmi iş geliştirme, fractional BizDev, dış kaynak satış, B2B ekip'
+        },
+        'markt-grundlagen-programm': {
+            title: 'Markt-Grundlagen-Programm | Expandia',
+            description: 'Perfekt für Unternehmen, die in neue Märkte eintreten. Positionierung, Messaging und erste qualifizierte Meetings.',
+            keywords: 'Markteintritt, B2B Vertriebsprogramm, Lead-Generierung, Marktentwicklung'
+        },
+        'markt-beschleuniger-programm': {
+            title: 'Markt-Beschleuniger-Programm | Expandia',
+            description: 'Dominieren Sie große Märkte schnell. Aggressives Outreach und skalierbares Wachstum.',
+            keywords: 'Marktbeschleunigung, schnelles Wachstum, B2B-Skalierung, Vertriebsbeschleunigung'
+        },
+        'teilzeit-bizdev-team': {
+            title: 'Teilzeit-BizDev-Team | Expandia',
+            description: 'Dediziertes Teammitglied für Unternehmen mit 5-50 Mitarbeitern. 40 Stunden/Monat, niedrige Kosten, hohe Leistung.',
+            keywords: 'Teilzeit-Business-Development, Fractional BizDev, ausgelagerter Vertrieb, B2B-Team'
         }
     };
     
@@ -816,6 +881,51 @@ function getHreflangUrls(templateName) {
             en: 'our-ethical-principles.html', 
             tr: 'tr/etik-ilkelerimiz.html', 
             de: 'de/our-ethical-principles.html' 
+        },
+        'market-foundation-program': {
+            en: 'market-foundation-program.html',
+            tr: 'tr/pazar-temeli-programi.html',
+            de: 'de/markt-grundlagen-programm.html'
+        },
+        'pazar-temeli-programi': {
+            en: 'market-foundation-program.html',
+            tr: 'tr/pazar-temeli-programi.html',
+            de: 'de/markt-grundlagen-programm.html'
+        },
+        'markt-grundlagen-programm': {
+            en: 'market-foundation-program.html',
+            tr: 'tr/pazar-temeli-programi.html',
+            de: 'de/markt-grundlagen-programm.html'
+        },
+        'market-accelerator-program': {
+            en: 'market-accelerator-program.html',
+            tr: 'tr/pazar-hizlandirici-program.html',
+            de: 'de/markt-beschleuniger-programm.html'
+        },
+        'pazar-hizlandirici-program': {
+            en: 'market-accelerator-program.html',
+            tr: 'tr/pazar-hizlandirici-program.html',
+            de: 'de/markt-beschleuniger-programm.html'
+        },
+        'markt-beschleuniger-programm': {
+            en: 'market-accelerator-program.html',
+            tr: 'tr/pazar-hizlandirici-program.html',
+            de: 'de/markt-beschleuniger-programm.html'
+        },
+        'fractional-bizdev-team': {
+            en: 'fractional-bizdev-team.html',
+            tr: 'tr/kismi-is-gelistirme-ekibi.html',
+            de: 'de/teilzeit-bizdev-team.html'
+        },
+        'kismi-is-gelistirme-ekibi': {
+            en: 'fractional-bizdev-team.html',
+            tr: 'tr/kismi-is-gelistirme-ekibi.html',
+            de: 'de/teilzeit-bizdev-team.html'
+        },
+        'teilzeit-bizdev-team': {
+            en: 'fractional-bizdev-team.html',
+            tr: 'tr/kismi-is-gelistirme-ekibi.html',
+            de: 'de/teilzeit-bizdev-team.html'
         }
     };
     
@@ -1049,7 +1159,8 @@ function buildPage(templateName, outputName, lang = 'en') {
     
     // Create the HTML document template
     let htmlTemplate = createHTMLTemplate(lang);
-    let pageNavigation = navigation;
+    // Select the correct header based on language
+    let pageNavigation = lang === 'tr' ? navigationTR : lang === 'de' ? navigationDE : navigationEN;
     let pageFooter = footer;
     
     // Remove data-i18n attributes and keep the content as is
@@ -1070,6 +1181,48 @@ function buildPage(templateName, outputName, lang = 'en') {
     pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
     pageFooter = pageFooter.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
     content = content.replace(/\{\{BASE_PATH\}\}/g, basePath);
+    
+    // Replace language-specific service page names
+    const servicePages = {
+        en: {
+            foundation: 'market-foundation-program.html',
+            accelerator: 'market-accelerator-program.html',
+            fractional: 'fractional-bizdev-team.html',
+            vision: 'vision-mission.html',
+            ethics: 'our-ethical-principles.html'
+        },
+        tr: {
+            foundation: 'pazar-temeli-programi.html',
+            accelerator: 'pazar-hizlandirici-program.html',
+            fractional: 'kismi-is-gelistirme-ekibi.html',
+            vision: 'vizyon-misyon.html',
+            ethics: 'etik-ilkelerimiz.html'
+        },
+        de: {
+            foundation: 'markt-grundlagen-programm.html',
+            accelerator: 'markt-beschleuniger-programm.html',
+            fractional: 'teilzeit-bizdev-team.html',
+            vision: 'vision-mission.html',
+            ethics: 'our-ethical-principles.html'
+        }
+    };
+    
+    const currentLangPages = servicePages[lang] || servicePages.en;
+    pageNavigation = pageNavigation.replace(/\{\{MARKET_FOUNDATION_PAGE\}\}/g, currentLangPages.foundation);
+    pageNavigation = pageNavigation.replace(/\{\{MARKET_ACCELERATOR_PAGE\}\}/g, currentLangPages.accelerator);
+    pageNavigation = pageNavigation.replace(/\{\{FRACTIONAL_BIZDEV_PAGE\}\}/g, currentLangPages.fractional);
+    pageNavigation = pageNavigation.replace(/\{\{VISION_MISSION_PAGE\}\}/g, currentLangPages.vision);
+    pageNavigation = pageNavigation.replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, currentLangPages.ethics);
+    pageFooter = pageFooter.replace(/\{\{MARKET_FOUNDATION_PAGE\}\}/g, currentLangPages.foundation);
+    pageFooter = pageFooter.replace(/\{\{MARKET_ACCELERATOR_PAGE\}\}/g, currentLangPages.accelerator);
+    pageFooter = pageFooter.replace(/\{\{FRACTIONAL_BIZDEV_PAGE\}\}/g, currentLangPages.fractional);
+    pageFooter = pageFooter.replace(/\{\{VISION_MISSION_PAGE\}\}/g, currentLangPages.vision);
+    pageFooter = pageFooter.replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, currentLangPages.ethics);
+    content = content.replace(/\{\{MARKET_FOUNDATION_PAGE\}\}/g, currentLangPages.foundation);
+    content = content.replace(/\{\{MARKET_ACCELERATOR_PAGE\}\}/g, currentLangPages.accelerator);
+    content = content.replace(/\{\{FRACTIONAL_BIZDEV_PAGE\}\}/g, currentLangPages.fractional);
+    content = content.replace(/\{\{VISION_MISSION_PAGE\}\}/g, currentLangPages.vision);
+    content = content.replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, currentLangPages.ethics);
     
     // For German pages, fix ALL solutions.html links to be local AFTER BASE_PATH replacement
     if (lang === 'de') {
@@ -1431,6 +1584,9 @@ buildPage('case-studies', 'case-studies', 'en');
 buildPage('onboarding', 'onboarding', 'en');
 buildPage('vision-mission', 'vision-mission', 'en');
 buildPage('our-ethical-principles', 'our-ethical-principles', 'en');
+buildPage('market-foundation-program', 'market-foundation-program', 'en');
+buildPage('market-accelerator-program', 'market-accelerator-program', 'en');
+buildPage('fractional-bizdev-team', 'fractional-bizdev-team', 'en');
 
 // Build English service pages
 console.log('Building English service pages...');
@@ -1461,6 +1617,9 @@ buildPage('case-studies', 'case-studies', 'tr');
 buildPage('satis-koruma-hizmetleri', 'satis-koruma-hizmetleri', 'tr');
 buildPage('vizyon-misyon', 'vizyon-misyon', 'tr');
 buildPage('etik-ilkelerimiz', 'etik-ilkelerimiz', 'tr');
+buildPage('pazar-temeli-programi', 'pazar-temeli-programi', 'tr');
+buildPage('pazar-hizlandirici-program', 'pazar-hizlandirici-program', 'tr');
+buildPage('kismi-is-gelistirme-ekibi', 'kismi-is-gelistirme-ekibi', 'tr');
 
 // Build German pages
 console.log('Building German pages...');
@@ -1470,6 +1629,11 @@ buildPage('solutions', 'solutions', 'de');
 buildPage('contact', 'contact', 'de');
 buildPage('case-studies', 'case-studies', 'de');
 buildPage('schutzdienstleistungen', 'schutzdienstleistungen', 'de');
+buildPage('vision-mission', 'vision-mission', 'de');
+buildPage('our-ethical-principles', 'our-ethical-principles', 'de');
+buildPage('markt-grundlagen-programm', 'markt-grundlagen-programm', 'de');
+buildPage('markt-beschleuniger-programm', 'markt-beschleuniger-programm', 'de');
+buildPage('teilzeit-bizdev-team', 'teilzeit-bizdev-team', 'de');
 
 // Blog Post Building Function
 function buildBlogPost(templateName, outputName, lang = 'en') {
@@ -1490,7 +1654,7 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
     }
     
     // Process includes
-    blogTemplate = blogTemplate.replace('{{HEADER_INCLUDE}}', navigation);
+    blogTemplate = blogTemplate.replace('{{HEADER_INCLUDE}}', navigationEN);
     blogTemplate = blogTemplate.replace('{{FOOTER_INCLUDE}}', footer);
     
     // Replace path placeholders
