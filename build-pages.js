@@ -800,19 +800,19 @@ function getPageMetadata(templateName, lang = 'en') {
         },
         'fractional-bizdev-team': {
             title: isturkish 
-                ? 'Kısmi İş Geliştirme Ekibi | Expandia' 
+                ? 'Part-Time İş Geliştirme Ekibi | Expandia' 
                 : 'Fractional BizDev Team | Expandia',
             description: isturkish 
                 ? '5-50 kişilik şirketler için özel ekip üyesi. Ayda 40 saat, düşük maliyet, yüksek performans.'
                 : 'Dedicated team member for 5-50 headcount companies. 40 hours/month, low cost, high performance.',
             keywords: isturkish 
-                ? 'kısmi iş geliştirme, fractional BizDev, dış kaynak satış, B2B ekip'
+                ? 'part-time iş geliştirme, fractional BizDev, dış kaynak satış, B2B ekip'
                 : 'fractional business development, fractional BizDev, outsourced sales, B2B team'
         },
         'kismi-is-gelistirme-ekibi': {
-            title: 'Kısmi İş Geliştirme Ekibi | Expandia',
+            title: 'Part-Time İş Geliştirme Ekibi | Expandia',
             description: '5-50 kişilik şirketler için özel ekip üyesi. Ayda 40 saat, düşük maliyet, yüksek performans.',
-            keywords: 'kısmi iş geliştirme, fractional BizDev, dış kaynak satış, B2B ekip'
+            keywords: 'part-time iş geliştirme, fractional BizDev, dış kaynak satış, B2B ekip'
         },
         'markt-grundlagen-programm': {
             title: 'Markt-Grundlagen-Programm | Expandia',
