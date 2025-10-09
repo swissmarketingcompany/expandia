@@ -53,7 +53,15 @@ app.use(cors({
 app.use(bodyParser.json({ limit: '10mb' }));
 app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
 
-// Serve static files from the current directory
+// Static asset caching for dist assets (must come BEFORE general static)
+app.use('/dist', express.static(path.join(__dirname, 'dist'), {
+    setHeaders: (res, filePath) => {
+        // Cache bundled assets aggressively; HTML is served separately without this cache
+        res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+    }
+}));
+
+// Serve static files from the current directory (no aggressive cache for HTML)
 app.use(express.static(__dirname));
 
 // Email configuration (Resend)
@@ -386,24 +394,14 @@ app.get('/tr/ai-solutions.html', (req, res) => {
 
 // Handle 404s by redirecting to home page
 app.get('*', (req, res) => {
-    // Check if the requested file exists
+    // Serve files directly when present
     const requestedFile = path.join(__dirname, req.path);
-    
-    // If it's an HTML file request, try to serve it
-    if (req.path.endsWith('.html')) {
-        res.sendFile(requestedFile, (err) => {
-            if (err) {
-                res.redirect('/');
-            }
-        });
-    } else {
-        // For other files, try to serve them directly
-        res.sendFile(requestedFile, (err) => {
-            if (err) {
-                res.status(404).send('File not found');
-            }
-        });
-    }
+    res.sendFile(requestedFile, (err) => {
+        if (err) {
+            // Return proper 404 status with a friendly page
+            res.status(404).sendFile(path.join(__dirname, '404.html'));
+        }
+    });
 });
 
 app.listen(PORT, () => {

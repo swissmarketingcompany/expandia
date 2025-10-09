@@ -15,7 +15,11 @@ const path = require("path");
 
 const ROOT_DIR = process.cwd();
 const TARGET_DATE = "2025-08-09";
-const BLOG_DIRS = [path.join(ROOT_DIR, "tr", "blog"), path.join(ROOT_DIR, "de", "blog")];
+const BLOG_DIRS = [
+  path.join(ROOT_DIR, "blog"),
+  path.join(ROOT_DIR, "tr", "blog"),
+  path.join(ROOT_DIR, "de", "blog")
+];
 
 function toPosix(p) {
   return p.split(path.sep).join("/");
@@ -47,17 +51,32 @@ function hasOgTitle(html) {
   return /property=["']og:title["']/i.test(html);
 }
 
+function hasHreflangLinks(html) {
+  return /<link\s+rel=["']alternate["']\s+hreflang=/i.test(html);
+}
+
+function buildHreflangBlock() {
+  return [
+    '  <link rel="alternate" hreflang="en" href="https://www.expandia.ch/blog/">',
+    '  <link rel="alternate" hreflang="tr" href="https://www.expandia.ch/tr/blog/">',
+    '  <link rel="alternate" hreflang="de" href="https://www.expandia.ch/de/blog/">',
+    '  <link rel="alternate" hreflang="x-default" href="https://www.expandia.ch/blog/">'
+  ].join('\n');
+}
+
 function hasBlogPostingJsonLd(html) {
   return /"@type"\s*:\s*"BlogPosting"/i.test(html);
 }
 
-function ensureDatesInJsonLd(html) {
+function ensureDatesInJsonLd(html, fileMtime) {
   let updated = html;
   // Only attempt if BlogPosting exists
   if (!hasBlogPostingJsonLd(html)) return { html, changed: false };
   const before = updated;
-  updated = updated.replace(/"datePublished"\s*:\s*"[^"]*"/g, `"datePublished": "${TARGET_DATE}"`);
-  updated = updated.replace(/"dateModified"\s*:\s*"[^"]*"/g, `"dateModified": "${TARGET_DATE}"`);
+  const isoMtime = fileMtime ? new Date(fileMtime).toISOString().slice(0, 10) : TARGET_DATE;
+  // Keep existing datePublished if present; only backfill when empty
+  // Always update dateModified to mtime for freshness
+  updated = updated.replace(/"dateModified"\s*:\s*"[^"]*"/g, `"dateModified": "${isoMtime}"`);
   return { html: updated, changed: updated !== before };
 }
 
@@ -78,15 +97,15 @@ function buildOgTwitterBlock({ type, title, description, url }) {
     `  <meta property="og:description" content="${description}"/>`,
     `  <meta property="og:url" content="${url}"/>`,
     `  <meta property="og:site_name" content="Expandia"/>`,
-    `  <meta property="og:image" content="https://expandia.ch/favicon.png"/>`,
+    `  <meta property="og:image" content="https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png"/>`,
     `  <meta name="twitter:card" content="summary_large_image"/>`,
     `  <meta name="twitter:title" content="${title}"/>`,
     `  <meta name="twitter:description" content="${description}"/>`,
-    `  <meta name="twitter:image" content="https://expandia.ch/favicon.png"/>`,
+    `  <meta name="twitter:image" content="https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png"/>`,
   ].join("\n");
 }
 
-function buildBlogPostingJsonLd({ title, description, url }) {
+function buildBlogPostingJsonLd({ title, description, url, fileMtime }) {
   const json = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -96,11 +115,11 @@ function buildBlogPostingJsonLd({ title, description, url }) {
     publisher: {
       "@type": "Organization",
       name: "Expandia",
-      logo: { "@type": "ImageObject", url: "https://expandia.ch/favicon.png" },
+      logo: { "@type": "ImageObject", url: "https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png" },
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     datePublished: TARGET_DATE,
-    dateModified: TARGET_DATE,
+    dateModified: fileMtime ? new Date(fileMtime).toISOString().slice(0, 10) : TARGET_DATE,
   };
   return (
     "  <script type=\"application/ld+json\">" +
@@ -113,8 +132,9 @@ function processFile(absPath) {
   const rel = toPosix(path.relative(ROOT_DIR, absPath));
   let html = fs.readFileSync(absPath, "utf8");
   const isIndex = path.basename(absPath) === "index.html";
+  const fileMtime = fs.statSync(absPath).mtimeMs;
 
-  const canonicalUrl = `https://expandia.ch/${rel}`;
+  const canonicalUrl = `https://www.expandia.ch/${rel}`;
   let title = extractTitle(html);
   if (!title) title = path.basename(absPath, ".html").replace(/-/g, " ");
   let description = extractDescription(html);
@@ -164,7 +184,7 @@ function processFile(absPath) {
 
   if (!isIndex) {
     if (!hasBlogPostingJsonLd(html)) {
-      const block = "\n" + buildBlogPostingJsonLd({ title, description, url: canonicalUrl });
+      const block = "\n" + buildBlogPostingJsonLd({ title, description, url: canonicalUrl, fileMtime });
       html = injectBeforeHeadClose(html, block);
       changed = true;
     } else {
@@ -201,12 +221,23 @@ function processFile(absPath) {
         html = rebuilt;
       }
 
-      const { html: updated, changed: datesChanged } = ensureDatesInJsonLd(html);
+      const { html: updated, changed: datesChanged } = ensureDatesInJsonLd(html, fileMtime);
       if (datesChanged) {
         html = updated;
         changed = true;
       }
     }
+  }
+  // Add hreflang alternates on blog index pages only
+  if (isIndex && !hasHreflangLinks(html)) {
+    html = injectBeforeHeadClose(html, "\n" + buildHreflangBlock());
+    changed = true;
+  }
+
+  // Ensure robots meta exists for blog pages
+  if (!/name=["']robots["']/i.test(html)) {
+    html = injectBeforeHeadClose(html, "\n  <meta name=\"robots\" content=\"index, follow\">" );
+    changed = true;
   }
 
   if (changed) {

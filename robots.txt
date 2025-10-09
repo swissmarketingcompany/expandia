@@ -41,8 +41,6 @@ Disallow: /scripts/
 Disallow: /src/
 Disallow: /templates/
 Disallow: /node_modules/
-Disallow: /*.js$
-Disallow: /*.css$
 Disallow: /*.json$
 Disallow: /*.md$
 Disallow: /package*.json
