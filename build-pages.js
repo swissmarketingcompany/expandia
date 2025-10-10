@@ -30,10 +30,12 @@ if (!fs.existsSync(footerPath)) {
 const navigationEN = fs.readFileSync(headerPath, 'utf8');
 const navigationTR = fs.readFileSync('includes/header-tr.html', 'utf8');
 const navigationDE = fs.readFileSync('includes/header-de.html', 'utf8');
-const footer = fs.readFileSync(footerPath, 'utf8');
+const footerEN = fs.readFileSync(footerPath, 'utf8');
+const footerTR = fs.existsSync('includes/footer-tr.html') ? fs.readFileSync('includes/footer-tr.html', 'utf8') : footerEN;
+const footerDE = fs.existsSync('includes/footer-de.html') ? fs.readFileSync('includes/footer-de.html', 'utf8') : footerEN;
 
 console.log(`✅ Successfully loaded headers for all languages`);
-console.log(`✅ Successfully loaded footer from ${footerPath}`);
+console.log(`✅ Successfully loaded footers for all languages`);
 
 // Template variable validation function
 function validateTemplateVariables(content, fileName) {
@@ -1161,7 +1163,7 @@ function buildPage(templateName, outputName, lang = 'en') {
     let htmlTemplate = createHTMLTemplate(lang);
     // Select the correct header based on language
     let pageNavigation = lang === 'tr' ? navigationTR : lang === 'de' ? navigationDE : navigationEN;
-    let pageFooter = footer;
+    let pageFooter = lang === 'tr' ? footerTR : lang === 'de' ? footerDE : footerEN;
     
     // Remove data-i18n attributes and keep the content as is
     content = content.replace(/\s*data-i18n="[^"]*"/g, '');
@@ -1655,7 +1657,7 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
     
     // Process includes
     blogTemplate = blogTemplate.replace('{{HEADER_INCLUDE}}', navigationEN);
-    blogTemplate = blogTemplate.replace('{{FOOTER_INCLUDE}}', footer);
+    blogTemplate = blogTemplate.replace('{{FOOTER_INCLUDE}}', footerEN);
     
     // Replace path placeholders
     blogTemplate = blogTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
