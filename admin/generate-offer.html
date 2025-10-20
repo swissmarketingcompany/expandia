@@ -377,13 +377,10 @@
                 const response = await fetch('/api/admin/verify', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    credentials: 'include',
                     body: JSON.stringify({ password })
                 });
                 if (response.ok) {
-                    const data = await response.json();
-                    // Store the token returned by the server, not the password
-                    sessionStorage.setItem('adminAuth', data.token || '');
+                    sessionStorage.setItem('adminAuth', password);
                     document.getElementById('auth-screen').style.display = 'none';
                     document.getElementById('main-screen').style.display = 'block';
                 } else {
@@ -451,11 +448,17 @@
                         if (contentType && contentType.includes('application/json')) {
                             const error = await response.json();
                             errorMessage = error.error || errorMessage;
+                        } else if (response.status === 503) {
+                            errorMessage = 'Server timeout - the AI took too long to respond. Please try again with a simpler brief.';
                         } else {
                             errorMessage = `Server error: ${response.status}`;
                         }
                     } catch (e) {
-                        errorMessage = `Server error: ${response.status}`;
+                        if (response.status === 503) {
+                            errorMessage = 'Server timeout - the AI took too long to respond. Please try again with a simpler brief.';
+                        } else {
+                            errorMessage = `Server error: ${response.status}`;
+                        }
                     }
                     throw new Error(errorMessage);
                 }
@@ -506,8 +509,25 @@
                 });
 
                 if (!response.ok) {
-                    const error = await response.json();
-                    throw new Error(error.error || 'Refinement failed');
+                    let errorMessage = 'Refinement failed';
+                    try {
+                        const contentType = response.headers.get('content-type');
+                        if (contentType && contentType.includes('application/json')) {
+                            const error = await response.json();
+                            errorMessage = error.error || errorMessage;
+                        } else if (response.status === 503) {
+                            errorMessage = 'Server timeout - the AI took too long to respond. Please try again with a simpler brief.';
+                        } else {
+                            errorMessage = `Server error: ${response.status}`;
+                        }
+                    } catch (e) {
+                        if (response.status === 503) {
+                            errorMessage = 'Server timeout - the AI took too long to respond. Please try again with a simpler brief.';
+                        } else {
+                            errorMessage = `Server error: ${response.status}`;
+                        }
+                    }
+                    throw new Error(errorMessage);
                 }
 
                 const result = await response.json();
@@ -584,8 +604,19 @@
                 });
 
                 if (!response.ok) {
-                    const error = await response.json();
-                    throw new Error(error.error || 'Save failed');
+                    let errorMessage = 'Save failed';
+                    try {
+                        const contentType = response.headers.get('content-type');
+                        if (contentType && contentType.includes('application/json')) {
+                            const error = await response.json();
+                            errorMessage = error.error || errorMessage;
+                        } else {
+                            errorMessage = `Server error: ${response.status}`;
+                        }
+                    } catch (e) {
+                        errorMessage = `Server error: ${response.status}`;
+                    }
+                    throw new Error(errorMessage);
                 }
 
                 const result = await response.json();
