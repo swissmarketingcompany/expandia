@@ -53,6 +53,8 @@ Disallow: /Procfile
 Disallow: /requirements.txt
 Disallow: /.git/
 Disallow: /test-*
+Disallow: /admin/
+Disallow: /offers/
 
 # 🗺️ SITEMAP LOCATION - CRITICAL FOR SEARCH ENGINE DISCOVERY
 Sitemap: https://www.expandia.ch/sitemap.xml

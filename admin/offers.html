@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bumblebee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Offers - Expandia Admin</title>
+    <link href="../dist/css/output.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <style>
+        .admin-container {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f8fafc 0%, #e5e7eb 100%);
+        }
+        .offer-card {
+            transition: all 0.2s ease;
+        }
+        .offer-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        .copy-btn {
+            cursor: pointer;
+        }
+        .copy-btn:hover {
+            background: #e0a82e;
+            color: white;
+        }
+    </style>
+</head>
+<body class="admin-container">
+    <div id="auth-screen" class="min-h-screen flex items-center justify-center px-4">
+        <div class="card w-full max-w-md bg-white shadow-2xl">
+            <div class="card-body">
+                <div class="text-center mb-6">
+                    <h1 class="text-3xl font-bold text-primary mb-2">🔐 Admin Access</h1>
+                    <p class="text-gray-600">Enter admin password to view offers</p>
+                </div>
+                <form id="auth-form">
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text font-semibold">Admin Password</span>
+                        </label>
+                        <input type="password" id="admin-password" class="input input-bordered" required autofocus>
+                    </div>
+                    <div class="alert alert-error mt-4 hidden" id="auth-error">
+                        <span>❌ Invalid password</span>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full mt-6">Access Admin Panel</button>
+                </form>
+                <div class="text-center mt-4">
+                    <a href="/admin/create-offer" class="link link-primary text-sm">Create New Offer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="offers-screen" class="hidden">
+        <div class="navbar bg-[#18182f] text-white shadow-lg">
+            <div class="flex-1">
+                <a href="/" class="btn btn-ghost normal-case text-xl">
+                    <span class="text-[#e0a82e]">e</span>xpandia
+                </a>
+                <span class="ml-4 text-sm opacity-70">Admin Panel</span>
+            </div>
+            <div class="flex-none gap-2">
+                <a href="/admin/create-offer" class="btn btn-primary btn-sm">➕ New Offer</a>
+                <button id="logout-btn" class="btn btn-ghost btn-sm">🚪 Logout</button>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 py-8 max-w-7xl">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+                <div>
+                    <h1 class="text-4xl font-bold mb-2">All Offers</h1>
+                    <p class="text-gray-600">Manage your client proposals</p>
+                </div>
+                <div class="form-control w-full md:w-auto">
+                    <input type="text" id="search-input" placeholder="Search by client name or title..." class="input input-bordered w-full md:w-80">
+                </div>
+            </div>
+
+            <div id="loading" class="text-center py-12">
+                <span class="loading loading-spinner loading-lg text-primary"></span>
+                <p class="mt-4 text-gray-600">Loading offers...</p>
+            </div>
+
+            <div id="no-offers" class="hidden">
+                <div class="card bg-white shadow-xl">
+                    <div class="card-body text-center py-16">
+                        <div class="text-6xl mb-4">📋</div>
+                        <h2 class="text-2xl font-bold mb-2">No offers yet</h2>
+                        <p class="text-gray-600 mb-6">Create your first offer to get started</p>
+                        <a href="/admin/create-offer" class="btn btn-primary">Create First Offer</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="offers-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 hidden">
+                <!-- Offers will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <dialog id="delete-modal" class="modal">
+        <div class="modal-box">
+            <h3 class="font-bold text-lg mb-4">⚠️ Confirm Deletion</h3>
+            <p class="mb-4">Are you sure you want to delete this offer?</p>
+            <p class="font-semibold mb-2">Client: <span id="delete-client-name"></span></p>
+            <p class="text-sm text-gray-600 mb-6">This action cannot be undone.</p>
+            <div class="modal-action">
+                <button class="btn" onclick="delete_modal.close()">Cancel</button>
+                <button id="confirm-delete-btn" class="btn btn-error">Delete Offer</button>
+            </div>
+        </div>
+        <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+        </form>
+    </dialog>
+
+    <script>
+        let allOffers = [];
+        let deleteOfferId = null;
+
+        const adminPassword = sessionStorage.getItem('adminAuth');
+        if (adminPassword) {
+            showOffersScreen();
+            loadOffers();
+        }
+
+        // Auth form
+        document.getElementById('auth-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const password = document.getElementById('admin-password').value;
+            
+            try {
+                const response = await fetch('/api/admin/verify', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ password })
+                });
+
+                if (response.ok) {
+                    sessionStorage.setItem('adminAuth', password);
+                    showOffersScreen();
+                    loadOffers();
+                } else {
+                    document.getElementById('auth-error').classList.remove('hidden');
+                }
+            } catch (error) {
+                document.getElementById('auth-error').classList.remove('hidden');
+            }
+        });
+
+        function showOffersScreen() {
+            document.getElementById('auth-screen').classList.add('hidden');
+            document.getElementById('offers-screen').classList.remove('hidden');
+        }
+
+        // Logout
+        document.getElementById('logout-btn').addEventListener('click', () => {
+            sessionStorage.removeItem('adminAuth');
+            location.reload();
+        });
+
+        // Load offers
+        async function loadOffers() {
+            try {
+                const response = await fetch('/api/admin/offers', {
+                    headers: {
+                        'X-Admin-Password': sessionStorage.getItem('adminAuth')
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to load offers');
+                }
+
+                allOffers = await response.json();
+                displayOffers(allOffers);
+            } catch (error) {
+                console.error('Error loading offers:', error);
+                document.getElementById('loading').innerHTML = `
+                    <div class="alert alert-error">
+                        <span>❌ Error loading offers: ${error.message}</span>
+                    </div>
+                `;
+            }
+        }
+
+        function displayOffers(offers) {
+            document.getElementById('loading').classList.add('hidden');
+            
+            if (offers.length === 0) {
+                document.getElementById('no-offers').classList.remove('hidden');
+                document.getElementById('offers-grid').classList.add('hidden');
+                return;
+            }
+
+            document.getElementById('no-offers').classList.add('hidden');
+            document.getElementById('offers-grid').classList.remove('hidden');
+
+            const grid = document.getElementById('offers-grid');
+            grid.innerHTML = offers.map(offer => `
+                <div class="card bg-white shadow-xl offer-card">
+                    <div class="card-body">
+                        <h2 class="card-title text-lg">
+                            ${escapeHtml(offer.clientName)}
+                            <span class="badge badge-primary badge-sm">Active</span>
+                        </h2>
+                        <p class="text-sm text-gray-600">${escapeHtml(offer.title)}</p>
+                        
+                        <div class="divider my-2"></div>
+                        
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Created:</span>
+                                <span class="font-semibold">${formatDate(offer.createdAt)}</span>
+                            </div>
+                            ${offer.updatedAt && offer.updatedAt !== offer.createdAt ? `
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Updated:</span>
+                                <span class="font-semibold">${formatDate(offer.updatedAt)}</span>
+                            </div>
+                            ` : ''}
+                        </div>
+
+                        <div class="divider my-2"></div>
+
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-2">
+                                <input type="text" value="${window.location.origin}/proposals/${offer.id}" 
+                                    class="input input-bordered input-sm flex-1 text-xs font-mono" readonly>
+                                <button onclick="copyToClipboard('${window.location.origin}/proposals/${offer.id}', this)" 
+                                    class="btn btn-sm btn-outline copy-btn" title="Copy URL">
+                                    📋
+                                </button>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <input type="password" value="${escapeHtml(offer.password)}" id="pwd-${offer.id}"
+                                    class="input input-bordered input-sm flex-1 text-xs font-mono" readonly>
+                                <button onclick="togglePassword('${offer.id}')" 
+                                    class="btn btn-sm btn-outline" title="Show/Hide Password">
+                                    👁️
+                                </button>
+                                <button onclick="copyToClipboard('${escapeHtml(offer.password)}', this)" 
+                                    class="btn btn-sm btn-outline copy-btn" title="Copy Password">
+                                    📋
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="card-actions justify-end mt-4 gap-2">
+                            <a href="/proposals/${offer.id}" target="_blank" class="btn btn-sm btn-outline">
+                                👁️ View
+                            </a>
+                            <a href="/admin/edit-offer?id=${offer.id}" class="btn btn-sm btn-primary">
+                                ✏️ Edit
+                            </a>
+                            <button onclick="duplicateOffer('${offer.id}')" 
+                                class="btn btn-sm btn-secondary">
+                                📋 Duplicate
+                            </button>
+                            <button onclick="confirmDelete('${offer.id}', '${escapeHtml(offer.clientName)}')" 
+                                class="btn btn-sm btn-error">
+                                🗑️ Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Search functionality
+        document.getElementById('search-input').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filtered = allOffers.filter(offer => 
+                offer.clientName.toLowerCase().includes(searchTerm) ||
+                offer.title.toLowerCase().includes(searchTerm) ||
+                offer.id.toLowerCase().includes(searchTerm)
+            );
+            displayOffers(filtered);
+        });
+
+        // Copy to clipboard
+        function copyToClipboard(text, button) {
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = button.textContent;
+                button.textContent = '✅';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                }, 1000);
+            });
+        }
+
+        // Toggle password visibility
+        function togglePassword(id) {
+            const input = document.getElementById(`pwd-${id}`);
+            input.type = input.type === 'password' ? 'text' : 'password';
+        }
+
+        // Delete confirmation
+        function confirmDelete(id, clientName) {
+            deleteOfferId = id;
+            document.getElementById('delete-client-name').textContent = clientName;
+            delete_modal.showModal();
+        }
+
+        document.getElementById('confirm-delete-btn').addEventListener('click', async () => {
+            if (!deleteOfferId) return;
+
+            try {
+                const response = await fetch(`/api/admin/delete-offer/${deleteOfferId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'X-Admin-Password': sessionStorage.getItem('adminAuth')
+                    }
+                });
+
+                if (response.ok) {
+                    delete_modal.close();
+                    loadOffers(); // Reload offers
+                } else {
+                    alert('Failed to delete offer');
+                }
+            } catch (error) {
+                alert('Error deleting offer: ' + error.message);
+            }
+        });
+
+        // Duplicate offer
+        async function duplicateOffer(id) {
+            try {
+                const response = await fetch(`/api/admin/offer/${id}`, {
+                    headers: {
+                        'X-Admin-Password': sessionStorage.getItem('adminAuth')
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to fetch offer details for duplication');
+                }
+
+                const offer = await response.json();
+
+                // Store in sessionStorage and redirect to create page
+                sessionStorage.setItem('duplicateOffer', JSON.stringify({
+                    clientName: offer.clientName,
+                    title: offer.title + ' (Copy)',
+                    password: offer.password,
+                    htmlContent: offer.htmlContent
+                }));
+
+                window.location.href = '/admin/create-offer';
+            } catch (error) {
+                alert('Error duplicating offer: ' + error.message);
+            }
+        }
+
+        // Utility functions
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+    </script>
+</body>
+</html>
+

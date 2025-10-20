@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Prompt Manager - Expandia Admin</title>
+    <link href="../dist/css/output.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f8fafc 0%, #e5e7eb 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        .container-main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .navbar-admin {
+            background: white;
+            color: #1f2937;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-admin-left {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .navbar-admin-left img {
+            height: 40px;
+            width: auto;
+        }
+        .navbar-admin-right {
+            display: flex;
+            gap: 12px;
+        }
+        .navbar-admin button {
+            background: #e0a82e;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .navbar-admin button:hover {
+            background: #cc9925;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .card-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1f2937;
+        }
+        .alert {
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .alert-success {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+        .alert-error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+        .alert-info {
+            background: #dbeafe;
+            color: #1e40af;
+            border: 1px solid #bfdbfe;
+        }
+        .form-group {
+            margin-bottom: 16px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #374151;
+            font-size: 14px;
+        }
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            resize: vertical;
+            min-height: 400px;
+            box-sizing: border-box;
+        }
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #e0a82e;
+            box-shadow: 0 0 0 3px rgba(224, 168, 46, 0.1);
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: #e0a82e;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #cc9925;
+        }
+        .btn-secondary {
+            background: #18182f;
+            color: white;
+        }
+        .btn-secondary:hover {
+            background: #2d2d4a;
+        }
+        .btn-group {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        .loading {
+            text-align: center;
+            padding: 20px;
+        }
+        .loading-spinner {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            border: 3px solid #e0a82e;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .char-count {
+            font-size: 12px;
+            color: #6b7280;
+            margin-top: 4px;
+        }
+        .preview-section {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 16px;
+            margin-top: 20px;
+        }
+        .preview-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #374151;
+        }
+        .preview-content {
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+            padding: 8px;
+            background: white;
+            border-radius: 4px;
+            color: #4b5563;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        .auth-card {
+            background: white;
+            border-radius: 8px;
+            padding: 40px;
+            max-width: 400px;
+            margin: 60px auto;
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+        }
+        .auth-card h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 8px 0;
+            color: #1f2937;
+        }
+        .auth-card .subtitle {
+            color: #6b7280;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+        .auth-card input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+            margin-bottom: 16px;
+        }
+        .auth-card button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: #e0a82e;
+            color: white;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .info-box {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 12px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+            font-size: 13px;
+            color: #92400e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-main">
+        <!-- Auth Screen -->
+        <div id="auth-screen">
+            <div class="auth-card">
+                <div style="text-align: center; margin-bottom: 24px;">
+                    <div style="font-size: 40px; margin-bottom: 16px;">🔐</div>
+                    <h1>System Prompt Manager</h1>
+                    <p class="subtitle">Admin access only</p>
+                </div>
+                <form id="auth-form">
+                    <input type="password" id="admin-password" placeholder="Enter admin password" autocomplete="current-password" required autofocus>
+                    <div class="alert alert-error" id="auth-error" style="display: none;">
+                        ❌ Invalid password
+                    </div>
+                    <button type="submit" class="btn btn-primary">Access</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Main Screen -->
+        <div id="main-screen" style="display: none;">
+            <!-- Navbar -->
+            <div class="navbar-admin">
+                <div class="navbar-admin-left">
+                    <img src="../Expandia-main-logo-koyu-yesil.png" alt="Expandia" style="height: 40px; width: auto;">
+                </div>
+                <div class="navbar-admin-right">
+                    <button onclick="window.location.href='/admin/generate-offer'">✨ Generate Offers</button>
+                    <button onclick="window.location.href='/admin/offers'">📋 View Offers</button>
+                    <button onclick="logout()">🚪 Logout</button>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="card">
+                <div class="card-title">🧠 System Prompt Manager</div>
+                
+                <div class="info-box">
+                    💡 This system prompt is used by Gemini AI when generating and refining proposals. It defines the tone, values, and style of all generated content. Only visible to admins.
+                </div>
+
+                <div id="alert-container"></div>
+
+                <div class="form-group">
+                    <label>System Prompt (Edit & Save)</label>
+                    <textarea id="system-prompt" placeholder="Loading system prompt..."></textarea>
+                    <div class="char-count">
+                        Characters: <span id="char-count">0</span> | Lines: <span id="line-count">0</span>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary" onclick="savePrompt()" style="flex: 1;">
+                        💾 Save System Prompt
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="resetPrompt()">
+                        🔄 Reset to Default
+                    </button>
+                </div>
+
+                <!-- Preview Section -->
+                <div class="preview-section">
+                    <div class="preview-title">📋 Preview (First 300 chars)</div>
+                    <div class="preview-content" id="preview-content">Loading preview...</div>
+                </div>
+            </div>
+
+            <!-- Info Card -->
+            <div class="card">
+                <div class="card-title">ℹ️ How It Works</div>
+                <p style="color: #6b7280; line-height: 1.6; margin-bottom: 12px;">
+                    The system prompt is injected into every Gemini API call. It contains:
+                </p>
+                <ul style="color: #6b7280; line-height: 1.8; margin-left: 20px;">
+                    <li>✅ Company profile & mission</li>
+                    <li>✅ Core values & philosophy</li>
+                    <li>✅ Communication style guidelines</li>
+                    <li>✅ Design & branding requirements</li>
+                    <li>✅ Proposal structure template</li>
+                    <li>✅ Value calculation principles</li>
+                    <li>✅ Default pricing & terms</li>
+                </ul>
+                <p style="color: #6b7280; margin-top: 12px; font-size: 13px;">
+                    When you modify this prompt, all future generated proposals will follow your new guidelines.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const adminAuth = sessionStorage.getItem('adminAuth');
+        const defaultPrompt = `You are a proposal designer for Expandia, a business development and sales as a service company.
+
+COMPANY PROFILE:
+- Name: Expandia (expandia.ch)
+- Founded: 2013, now US-based (Delaware)
+- Team: 6 people, distributed globally
+- Mission: Help companies grow internationally through strategic business relationships and lead generation
+
+OUR PHILOSOPHY:
+- Direct, no-bullshit communication. Avoid jargon and wordplay
+- Simplicity first. First-principles thinking
+- We never overpromise. We underpromise and overdeliver
+- Value calculation is crucial: Show 4x+ ROI, not just 2-3x
+- Trust is earned through transparency and integrity
+- Every proposal must show clear, quantifiable value
+
+SERVICES (pick relevant ones):
+- B2B Lead Generation & Outbound Sales
+- Sales as a Service (SaaS model)
+- Business Development as a Service
+- Market Entry Strategy
+- Appointment Setting
+- Lead Management & CRM
+- Custom Outreach Campaigns
+- Monthly retainer or project-based
+
+DESIGN REQUIREMENTS:
+- Use Tailwind CSS
+- Colors: #e0a82e (gold accent), #18182f (dark navy background)
+- Clean, professional, modern
+- Print-friendly
+- Include: Executive summary, services/packages, pricing, timeline, ROI metrics, success indicators
+- Always show VALUE calculation, not just deliverables
+- Include concrete examples when possible
+
+TONE & STYLE:
+- Professional but conversational
+- Direct and honest
+- Avoid marketing fluff
+- Focus on results and metrics
+- Show respect for client's time
+- Emphasize partnership approach
+- Realistic timelines and expectations
+
+PROPOSAL STRUCTURE (adapt as needed):
+1. Header: Expandia logo + Client name + Date
+2. Executive Summary: Problem → Solution → Value
+3. Services/Packages: Clear options with descriptions
+4. Pricing: Transparent, with value breakdown
+5. Timeline: Realistic phases
+6. Value Metrics: What success looks like (meetings booked, leads generated, revenue impact, etc.)
+7. Add-ons: Optional services
+8. Terms: Payment terms, process, SLAs
+9. Footer: Contact info + company credentials
+
+PAYMENT TERMS (default unless specified):
+- Monthly retainers: $2,500-$5,000+
+- Project-based: Varies by scope
+- Payment: 50% upfront, 50% at mid-term or upon delivery
+
+KEY PRINCIPLES IN EVERY PROPOSAL:
+1. Show the math: "If we generate 50 qualified leads and your close rate is 20%, that's 10 new clients"
+2. Realistic: "We typically see X results in Y timeframe"
+3. Transparent: "Here's exactly what we'll do and when"
+4. Value-focused: "This is worth X to you because..."
+5. Partnership tone: "We'll work together to..."
+
+Generate ONLY valid HTML with no explanations.`;
+
+        if (adminAuth) {
+            document.getElementById('auth-screen').style.display = 'none';
+            document.getElementById('main-screen').style.display = 'block';
+            loadPrompt();
+        }
+
+        // Auth Form
+        document.getElementById('auth-form')?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const password = document.getElementById('admin-password').value;
+            try {
+                const response = await fetch('/api/admin/verify', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ password })
+                });
+                if (response.ok) {
+                    sessionStorage.setItem('adminAuth', password);
+                    document.getElementById('auth-screen').style.display = 'none';
+                    document.getElementById('main-screen').style.display = 'block';
+                    loadPrompt();
+                } else {
+                    document.getElementById('auth-error').style.display = 'block';
+                }
+            } catch (error) {
+                showAlert('Authentication error', 'error');
+            }
+        });
+
+        async function loadPrompt() {
+            try {
+                const response = await fetch('/api/admin/system-prompt', {
+                    headers: { 'X-Admin-Password': sessionStorage.getItem('adminAuth') }
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    document.getElementById('system-prompt').value = data.prompt;
+                    updateStats();
+                } else {
+                    document.getElementById('system-prompt').value = defaultPrompt;
+                }
+            } catch (error) {
+                document.getElementById('system-prompt').value = defaultPrompt;
+            }
+        }
+
+        function updateStats() {
+            const textarea = document.getElementById('system-prompt');
+            const charCount = textarea.value.length;
+            const lineCount = textarea.value.split('\n').length;
+            document.getElementById('char-count').textContent = charCount.toLocaleString();
+            document.getElementById('line-count').textContent = lineCount;
+
+            const preview = textarea.value.substring(0, 300) + (textarea.value.length > 300 ? '...' : '');
+            document.getElementById('preview-content').textContent = preview;
+        }
+
+        document.getElementById('system-prompt')?.addEventListener('input', updateStats);
+
+        async function savePrompt() {
+            const prompt = document.getElementById('system-prompt').value;
+            if (!prompt.trim()) {
+                showAlert('Prompt cannot be empty', 'error');
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/admin/system-prompt', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Admin-Password': sessionStorage.getItem('adminAuth')
+                    },
+                    body: JSON.stringify({ prompt })
+                });
+
+                if (response.ok) {
+                    showAlert('✅ System prompt saved successfully!', 'success');
+                } else {
+                    showAlert('Error saving prompt', 'error');
+                }
+            } catch (error) {
+                showAlert('Error: ' + error.message, 'error');
+            }
+        }
+
+        function resetPrompt() {
+            if (confirm('Are you sure? This will reset to the default system prompt.')) {
+                document.getElementById('system-prompt').value = defaultPrompt;
+                updateStats();
+                savePrompt();
+            }
+        }
+
+        function logout() {
+            sessionStorage.removeItem('adminAuth');
+            location.reload();
+        }
+
+        function showAlert(message, type) {
+            const container = document.getElementById('alert-container');
+            const alert = document.createElement('div');
+            alert.className = `alert alert-${type}`;
+            alert.textContent = message;
+            container.appendChild(alert);
+            setTimeout(() => alert.remove(), 5000);
+        }
+
+        // Initial stats
+        document.addEventListener('DOMContentLoaded', updateStats);
+    </script>
+</body>
+</html>

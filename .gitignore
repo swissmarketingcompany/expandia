@@ -60,4 +60,8 @@ pids
 
 # Temporary files
 tmp/
-temp/ 
+temp/
+
+# Offer system - exclude actual offer files but keep directory
+offers/*.json
+!offers/.gitkeep 
