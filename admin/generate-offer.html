@@ -417,6 +417,52 @@
 
         document.getElementById('client-name')?.addEventListener('input', updateOfferID);
 
+        async function pollForJobCompletion(jobId, clientName, offerTitle) {
+            const maxAttempts = 120; // 2 minutes max (120 * 1s)
+            let attempts = 0;
+            
+            while (attempts < maxAttempts) {
+                try {
+                    const response = await fetch(`/api/admin/generate-offer/${jobId}`, {
+                        headers: {
+                            'X-Admin-Token': sessionStorage.getItem('adminAuth') || ''
+                        },
+                        credentials: 'include'
+                    });
+                    
+                    if (!response.ok) throw new Error('Failed to check job status');
+                    
+                    const job = await response.json();
+                    document.getElementById('status-text').textContent = job.progress || 'Processing...';
+                    
+                    if (job.status === 'completed') {
+                        currentHtml = job.html;
+                        currentOffer = { clientName, offerTitle };
+                        document.getElementById('generation-status').style.display = 'none';
+                        showPreview();
+                        document.getElementById('save-section').style.display = 'block';
+                        showAlert('Proposal generated successfully!', 'success');
+                        return;
+                    }
+                    
+                    if (job.status === 'failed') {
+                        throw new Error(job.error || 'Generation failed');
+                    }
+                    
+                    // Still processing, wait 1 second
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                    attempts++;
+                } catch (error) {
+                    document.getElementById('generation-status').style.display = 'none';
+                    showAlert('Error: ' + error.message, 'error');
+                    return;
+                }
+            }
+            
+            document.getElementById('generation-status').style.display = 'none';
+            showAlert('Generation timed out. Please try again.', 'error');
+        }
+
         async function generateOfferAI() {
             const clientName = document.getElementById('client-name').value;
             const offerTitle = document.getElementById('offer-title').value;
@@ -469,13 +515,19 @@
                 }
 
                 const result = await response.json();
-                currentHtml = result.html;
-                currentOffer = { clientName, offerTitle };
-
-                document.getElementById('generation-status').style.display = 'none';
-                showPreview();
-                document.getElementById('save-section').style.display = 'block';
-                showAlert('Proposal generated successfully!', 'success');
+                
+                // Got job ID, now poll for results
+                if (result.jobId) {
+                    await pollForJobCompletion(result.jobId, clientName, offerTitle);
+                } else {
+                    // Old sync response (backward compatibility)
+                    currentHtml = result.html;
+                    currentOffer = { clientName, offerTitle };
+                    document.getElementById('generation-status').style.display = 'none';
+                    showPreview();
+                    document.getElementById('save-section').style.display = 'block';
+                    showAlert('Proposal generated successfully!', 'success');
+                }
             } catch (error) {
                 document.getElementById('generation-status').style.display = 'none';
                 showAlert('Error: ' + error.message, 'error');

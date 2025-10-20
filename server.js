@@ -358,6 +358,9 @@ const geminiService = new GeminiService(process.env.GEMINI_API_KEY);
 let systemPromptStorage = null;
 let masterTemplateStorage = null;
 
+// Job storage for async generation
+const generationJobs = new Map(); // jobId -> { status, html, error, progress }
+
 // Admin session management
 const adminSessions = new Map(); // Store: sessionToken -> { timestamp, ip }
 
@@ -479,6 +482,7 @@ app.delete('/api/admin/delete-offer/:id', requireAdmin, async (req, res) => {
 });
 
 // Generate offer with AI
+// Start async offer generation (returns immediately with job ID)
 app.post('/api/admin/generate-offer', geminiLimiter, requireAdmin, async (req, res) => {
     try {
         const { clientName, offerTitle, prompt } = req.body;
@@ -487,20 +491,80 @@ app.post('/api/admin/generate-offer', geminiLimiter, requireAdmin, async (req, r
             return res.status(400).json({ error: 'Missing required fields' });
         }
 
-        const customSystemPrompt = systemPromptStorage || getDefaultSystemPrompt();
+        // Generate job ID
+        const jobId = crypto.randomBytes(16).toString('hex');
         
-        // Use single API call for speed (Heroku 30s timeout)
-        const html = await geminiService.generateOfferWithPrompt(
-            customSystemPrompt,
-            prompt,
-            clientName,
-            offerTitle
-        );
+        // Store job with pending status
+        generationJobs.set(jobId, {
+            status: 'processing',
+            progress: 'Starting AI generation...',
+            html: null,
+            error: null,
+            createdAt: Date.now()
+        });
         
-        res.json({ success: true, html });
+        // Return job ID immediately (no timeout)
+        res.json({ success: true, jobId });
+        
+        // Start generation in background
+        (async () => {
+            try {
+                const customSystemPrompt = systemPromptStorage || getDefaultSystemPrompt();
+                
+                generationJobs.get(jobId).progress = 'Generating proposal...';
+                
+                const html = await geminiService.generateOfferWithPrompt(
+                    customSystemPrompt,
+                    prompt,
+                    clientName,
+                    offerTitle
+                );
+                
+                // Update job with result
+                generationJobs.set(jobId, {
+                    status: 'completed',
+                    progress: 'Done',
+                    html: html,
+                    error: null,
+                    createdAt: generationJobs.get(jobId).createdAt
+                });
+            } catch (error) {
+                console.error('Error generating offer:', error);
+                generationJobs.set(jobId, {
+                    status: 'failed',
+                    progress: 'Failed',
+                    html: null,
+                    error: error.message,
+                    createdAt: generationJobs.get(jobId).createdAt
+                });
+            }
+        })();
+        
     } catch (error) {
-        console.error('Error generating offer:', error);
+        console.error('Error starting generation:', error);
         res.status(500).json({ error: error.message });
+    }
+});
+
+// Poll for job status
+app.get('/api/admin/generate-offer/:jobId', requireAdmin, (req, res) => {
+    const { jobId } = req.params;
+    const job = generationJobs.get(jobId);
+    
+    if (!job) {
+        return res.status(404).json({ error: 'Job not found' });
+    }
+    
+    res.json({
+        status: job.status,
+        progress: job.progress,
+        html: job.html,
+        error: job.error
+    });
+    
+    // Clean up completed/failed jobs after 5 minutes
+    if (job.status !== 'processing' && Date.now() - job.createdAt > 300000) {
+        generationJobs.delete(jobId);
     }
 });
 
