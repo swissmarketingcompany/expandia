@@ -488,14 +488,12 @@ app.post('/api/admin/generate-offer', geminiLimiter, requireAdmin, async (req, r
         }
 
         const customSystemPrompt = systemPromptStorage || getDefaultSystemPrompt();
-        const masterTemplate = masterTemplateStorage || getDefaultMasterTemplate();
         
-        // Use the new master template approach
-        const html = await geminiService.generateProposalFromTemplate(
-            customSystemPrompt, 
-            masterTemplate, 
-            prompt, 
-            clientName, 
+        // Use single API call for speed (Heroku 30s timeout)
+        const html = await geminiService.generateOfferWithPrompt(
+            customSystemPrompt,
+            prompt,
+            clientName,
             offerTitle
         );
         
