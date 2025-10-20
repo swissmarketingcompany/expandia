@@ -11,8 +11,8 @@ class GeminiService {
             throw new Error('GEMINI_API_KEY is not set in environment variables');
         }
         this.apiKey = apiKey;
-        this.baseUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
-        this.model = 'gemini-2.0-flash';
+        this.baseUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent';
+        this.model = 'gemini-2.5-pro';
         
         // Create axios instance with timeout to prevent 503 errors
         this.axiosInstance = axios.create({
