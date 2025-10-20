@@ -83,7 +83,7 @@ const geminiLimiter = rateLimit({
 app.use(cookieParser());
 app.use(cors({
     origin: process.env.NODE_ENV === 'production' 
-        ? ['https://expandia.ch'] // Replace with your actual domain
+        ? ['https://expandia.ch', 'https://www.expandia.ch']
         : true, // Allow all origins in development
     credentials: true
 }));
