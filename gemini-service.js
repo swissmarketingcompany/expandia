@@ -14,9 +14,9 @@ class GeminiService {
         this.baseUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent';
         this.model = 'gemini-2.5-pro';
         
-        // Create axios instance with timeout to prevent 503 errors
+        // Create axios instance with 5 minute timeout for complex proposals
         this.axiosInstance = axios.create({
-            timeout: 30000, // 30 second timeout
+            timeout: 300000, // 5 minute timeout
             headers: {
                 'Content-Type': 'application/json'
             }

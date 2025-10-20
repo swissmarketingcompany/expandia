@@ -48,6 +48,7 @@ const adminLimiter = rateLimit({
     },
     standardHeaders: true,
     legacyHeaders: false,
+    validate: { xForwardedForHeader: false }, // Fix for Heroku proxy
     keyGenerator: (req) => {
         // Use IP address for rate limiting key
         return req.ip || req.connection.remoteAddress;
@@ -64,6 +65,7 @@ const geminiLimiter = rateLimit({
     },
     standardHeaders: true,
     legacyHeaders: false,
+    validate: { xForwardedForHeader: false }, // Fix for Heroku proxy
 });
 
 // Rate limiting disabled for production by default
