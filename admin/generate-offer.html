@@ -245,6 +245,7 @@
                 <form id="auth-form">
                     <div class="form-group">
                         <label>Password</label>
+                        <input type="text" id="admin-username" style="display: none;" autocomplete="username">
                         <input type="password" id="admin-password" placeholder="Enter password" autocomplete="current-password" required autofocus>
                     </div>
                     <div class="alert alert-error" id="auth-error" style="display: none;">
@@ -434,8 +435,9 @@
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'X-Admin-Password': sessionStorage.getItem('adminAuth')
+                        'X-Admin-Token': sessionStorage.getItem('adminAuth') || ''
                     },
+                    credentials: 'include',
                     body: JSON.stringify({ clientName, offerTitle, prompt })
                 });
 
@@ -473,8 +475,9 @@
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'X-Admin-Password': sessionStorage.getItem('adminAuth')
+                        'X-Admin-Token': sessionStorage.getItem('adminAuth') || ''
                     },
+                    credentials: 'include',
                     body: JSON.stringify({
                         html: currentHtml,
                         prompt: refinePrompt,
@@ -549,8 +552,9 @@
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'X-Admin-Password': sessionStorage.getItem('adminAuth')
+                        'X-Admin-Token': sessionStorage.getItem('adminAuth') || ''
                     },
+                    credentials: 'include',
                     body: JSON.stringify({
                         id: offerId,
                         clientName,
