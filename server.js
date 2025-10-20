@@ -482,7 +482,7 @@ app.delete('/api/admin/delete-offer/:id', requireAdmin, async (req, res) => {
 });
 
 // Generate offer with AI
-// Start async offer generation (returns immediately with job ID)
+// Real-time streaming offer generation with SSE
 app.post('/api/admin/generate-offer', geminiLimiter, requireAdmin, async (req, res) => {
     try {
         const { clientName, offerTitle, prompt } = req.body;
@@ -491,80 +491,39 @@ app.post('/api/admin/generate-offer', geminiLimiter, requireAdmin, async (req, r
             return res.status(400).json({ error: 'Missing required fields' });
         }
 
-        // Generate job ID
-        const jobId = crypto.randomBytes(16).toString('hex');
+        // Setup SSE
+        res.setHeader('Content-Type', 'text/event-stream');
+        res.setHeader('Cache-Control', 'no-cache');
+        res.setHeader('Connection', 'keep-alive');
         
-        // Store job with pending status
-        generationJobs.set(jobId, {
-            status: 'processing',
-            progress: 'Starting AI generation...',
-            html: null,
-            error: null,
-            createdAt: Date.now()
-        });
+        // Send initial message
+        res.write('data: ' + JSON.stringify({ type: 'status', message: 'Starting AI generation...' }) + '\n\n');
         
-        // Return job ID immediately (no timeout)
-        res.json({ success: true, jobId });
-        
-        // Start generation in background
-        (async () => {
-            try {
-                const customSystemPrompt = systemPromptStorage || getDefaultSystemPrompt();
-                
-                generationJobs.get(jobId).progress = 'Generating proposal...';
-                
-                const html = await geminiService.generateOfferWithPrompt(
-                    customSystemPrompt,
-                    prompt,
-                    clientName,
-                    offerTitle
-                );
-                
-                // Update job with result
-                generationJobs.set(jobId, {
-                    status: 'completed',
-                    progress: 'Done',
-                    html: html,
-                    error: null,
-                    createdAt: generationJobs.get(jobId).createdAt
-                });
-            } catch (error) {
-                console.error('Error generating offer:', error);
-                generationJobs.set(jobId, {
-                    status: 'failed',
-                    progress: 'Failed',
-                    html: null,
-                    error: error.message,
-                    createdAt: generationJobs.get(jobId).createdAt
-                });
-            }
-        })();
+        try {
+            const customSystemPrompt = systemPromptStorage || getDefaultSystemPrompt();
+            
+            res.write('data: ' + JSON.stringify({ type: 'status', message: 'Thinking...' }) + '\n\n');
+            
+            const html = await geminiService.generateOfferWithPrompt(
+                customSystemPrompt,
+                prompt,
+                clientName,
+                offerTitle
+            );
+            
+            // Send the complete HTML
+            res.write('data: ' + JSON.stringify({ type: 'complete', html: html }) + '\n\n');
+            res.end();
+            
+        } catch (error) {
+            console.error('Error generating offer:', error);
+            res.write('data: ' + JSON.stringify({ type: 'error', error: error.message }) + '\n\n');
+            res.end();
+        }
         
     } catch (error) {
         console.error('Error starting generation:', error);
         res.status(500).json({ error: error.message });
-    }
-});
-
-// Poll for job status
-app.get('/api/admin/generate-offer/:jobId', requireAdmin, (req, res) => {
-    const { jobId } = req.params;
-    const job = generationJobs.get(jobId);
-    
-    if (!job) {
-        return res.status(404).json({ error: 'Job not found' });
-    }
-    
-    res.json({
-        status: job.status,
-        progress: job.progress,
-        html: job.html,
-        error: job.error
-    });
-    
-    // Clean up completed/failed jobs after 5 minutes
-    if (job.status !== 'processing' && Date.now() - job.createdAt > 300000) {
-        generationJobs.delete(jobId);
     }
 });
 
