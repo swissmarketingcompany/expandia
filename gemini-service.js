@@ -11,8 +11,10 @@ class GeminiService {
             throw new Error('GEMINI_API_KEY is not set in environment variables');
         }
         this.apiKey = apiKey;
-        this.baseUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent';
-        this.model = 'gemini-2.5-pro';
+        // Use faster flash model to stay under 30s Heroku timeout
+        this.baseUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
+        this.model = 'gemini-2.0-flash';
+        this.timeout = 25000; // 25 seconds (under Heroku's 30s limit)
     }
 
     /**
@@ -104,7 +106,8 @@ Generate ONLY valid HTML with no explanations.`;
                 {
                     headers: {
                         'Content-Type': 'application/json'
-                    }
+                    },
+                    timeout: this.timeout
                 }
             );
 
@@ -161,7 +164,8 @@ Process the feedback and return improved HTML only.`;
                 {
                     headers: {
                         'Content-Type': 'application/json'
-                    }
+                    },
+                    timeout: this.timeout
                 }
             );
 
@@ -199,7 +203,8 @@ Process the feedback and return improved HTML only.`;
                 {
                     headers: {
                         'Content-Type': 'application/json'
-                    }
+                    },
+                    timeout: this.timeout
                 }
             );
 
@@ -235,7 +240,8 @@ Process the feedback and return improved HTML only.`;
                 {
                     headers: {
                         'Content-Type': 'application/json'
-                    }
+                    },
+                    timeout: this.timeout
                 }
             );
 
@@ -307,7 +313,8 @@ ${prompt}`;
                 {
                     headers: {
                         'Content-Type': 'application/json'
-                    }
+                    },
+                    timeout: this.timeout
                 }
             );
 
