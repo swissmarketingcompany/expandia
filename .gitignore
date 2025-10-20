@@ -29,6 +29,7 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+.cursor/
 
 # Python files (for your PDF generators)
 __pycache__/
