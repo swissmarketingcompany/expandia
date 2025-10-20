@@ -377,10 +377,13 @@
                 const response = await fetch('/api/admin/verify', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
+                    credentials: 'include',
                     body: JSON.stringify({ password })
                 });
                 if (response.ok) {
-                    sessionStorage.setItem('adminAuth', password);
+                    const data = await response.json();
+                    // Store the token returned by the server, not the password
+                    sessionStorage.setItem('adminAuth', data.token || '');
                     document.getElementById('auth-screen').style.display = 'none';
                     document.getElementById('main-screen').style.display = 'block';
                 } else {
@@ -442,8 +445,24 @@
                 });
 
                 if (!response.ok) {
-                    const error = await response.json();
-                    throw new Error(error.error || 'Generation failed');
+                    let errorMessage = 'Generation failed';
+                    try {
+                        const contentType = response.headers.get('content-type');
+                        if (contentType && contentType.includes('application/json')) {
+                            const error = await response.json();
+                            errorMessage = error.error || errorMessage;
+                        } else {
+                            errorMessage = `Server error: ${response.status}`;
+                        }
+                    } catch (e) {
+                        errorMessage = `Server error: ${response.status}`;
+                    }
+                    throw new Error(errorMessage);
+                }
+
+                const contentType = response.headers.get('content-type');
+                if (!contentType || !contentType.includes('application/json')) {
+                    throw new Error('Invalid response format from server');
                 }
 
                 const result = await response.json();
