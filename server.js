@@ -6,22 +6,12 @@ const cookieParser = require('cookie-parser');
 const nodemailer = require('nodemailer');
 const { Resend } = require('resend');
 const rateLimit = require('express-rate-limit');
-const helmet = require('helmet');
 const { body, validationResult } = require('express-validator');
 const app = express();
 const crypto = require('crypto'); // Added for session token generation
 
 // Get port from environment variable or default to 6161 for dev
 const PORT = process.env.PORT || 6161;
-
-// Security middleware - CSP temporarily disabled for HubSpot form testing
-app.use(helmet({
-    contentSecurityPolicy: false,
-    frameguard: { action: 'deny' }, // Prevent clickjacking
-    noSniff: true, // Prevent MIME type sniffing
-    xssFilter: true, // Enable XSS protection
-    referrerPolicy: { policy: 'strict-origin-when-cross-origin' } // Control referrer info
-}));
 
 // Rate limiting for contact form - more relaxed
 const contactLimiter = rateLimit({
