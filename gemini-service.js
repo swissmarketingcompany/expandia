@@ -11,10 +11,13 @@ class GeminiService {
             throw new Error('GEMINI_API_KEY is not set in environment variables');
         }
         this.apiKey = apiKey;
-        // Use faster flash model to stay under 30s Heroku timeout
-        this.baseUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
-        this.model = 'gemini-2.0-flash';
-        this.timeout = 25000; // 25 seconds (under Heroku's 30s limit)
+        this.baseUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent';
+        this.model = 'gemini-2.5-pro';
+        
+        // Create axios instance with timeout to prevent 503 errors
+        this.axiosInstance = axios.create({
+            timeout: 30000 // 30 second timeout
+        });
     }
 
     /**
@@ -94,20 +97,20 @@ Generate ONLY valid HTML with no explanations.`;
         const fullPrompt = `${systemPrompt}\n\nClient: "${clientName}"\nOffer Title: "${offerTitle}"\n\nProposal Brief:\n${prompt}`;
 
         try {
-            const response = await axios.post(
+            const response = await this.axiosInstance.post(
                 `${this.baseUrl}?key=${this.apiKey}`,
                 {
                     contents: [{
                         parts: [{
                             text: fullPrompt
                         }]
-                    }]
-                },
-                {
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    timeout: this.timeout
+                    }],
+                    generationConfig: {
+                        temperature: 1,
+                        topP: 0.95,
+                        topK: 40,
+                        maxOutputTokens: 8000
+                    }
                 }
             );
 
@@ -152,20 +155,20 @@ Process the feedback and return improved HTML only.`;
         const fullPrompt = `${systemPrompt}\n\nFeedback/Changes Requested:\n${editPrompt}\n\nCurrent HTML:\n\`\`\`html\n${currentHtml}\n\`\`\``;
 
         try {
-            const response = await axios.post(
+            const response = await this.axiosInstance.post(
                 `${this.baseUrl}?key=${this.apiKey}`,
                 {
                     contents: [{
                         parts: [{
                             text: fullPrompt
                         }]
-                    }]
-                },
-                {
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    timeout: this.timeout
+                    }],
+                    generationConfig: {
+                        temperature: 1,
+                        topP: 0.95,
+                        topK: 40,
+                        maxOutputTokens: 8000
+                    }
                 }
             );
 
@@ -191,20 +194,20 @@ Process the feedback and return improved HTML only.`;
         const fullPrompt = `${customSystemPrompt}\n\nClient: "${clientName}"\nOffer Title: "${offerTitle}"\n\nProposal Brief:\n${prompt}`;
 
         try {
-            const response = await axios.post(
+            const response = await this.axiosInstance.post(
                 `${this.baseUrl}?key=${this.apiKey}`,
                 {
                     contents: [{
                         parts: [{
                             text: fullPrompt
                         }]
-                    }]
-                },
-                {
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    timeout: this.timeout
+                    }],
+                    generationConfig: {
+                        temperature: 1,
+                        topP: 0.95,
+                        topK: 40,
+                        maxOutputTokens: 8000
+                    }
                 }
             );
 
@@ -228,20 +231,20 @@ Process the feedback and return improved HTML only.`;
         const fullPrompt = `${customSystemPrompt}\n\nClient: "${clientName}"\nOffer Title: "${offerTitle}"\n\nFeedback/Changes Requested:\n${editPrompt}\n\nCurrent HTML:\n\`\`\`html\n${currentHtml}\n\`\`\``;
 
         try {
-            const response = await axios.post(
+            const response = await this.axiosInstance.post(
                 `${this.baseUrl}?key=${this.apiKey}`,
                 {
                     contents: [{
                         parts: [{
                             text: fullPrompt
                         }]
-                    }]
-                },
-                {
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    timeout: this.timeout
+                    }],
+                    generationConfig: {
+                        temperature: 1,
+                        topP: 0.95,
+                        topK: 40,
+                        maxOutputTokens: 8000
+                    }
                 }
             );
 
@@ -301,20 +304,20 @@ Content brief:
 ${prompt}`;
 
         try {
-            const response = await axios.post(
+            const response = await this.axiosInstance.post(
                 `${this.baseUrl}?key=${this.apiKey}`,
                 {
                     contents: [{
                         parts: [{
                             text: fullPrompt
                         }]
-                    }]
-                },
-                {
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    timeout: this.timeout
+                    }],
+                    generationConfig: {
+                        temperature: 1,
+                        topP: 0.95,
+                        topK: 40,
+                        maxOutputTokens: 8000
+                    }
                 }
             );
 
