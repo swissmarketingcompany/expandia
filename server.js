@@ -87,6 +87,19 @@ app.use(cors({
         : true, // Allow all origins in development
     credentials: true
 }));
+
+// Add request timeout to prevent hanging requests
+app.use((req, res, next) => {
+    // Set timeout to 25 seconds (Heroku has 30s limit)
+    req.setTimeout(25000, () => {
+        console.error('Request timeout:', req.method, req.path);
+        if (!res.headersSent) {
+            res.status(408).send('Request timeout');
+        }
+    });
+    next();
+});
+
 app.use(bodyParser.json({ limit: '10mb' }));
 app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
 
@@ -950,7 +963,12 @@ app.get('*', (req, res) => {
     res.sendFile(requestedFile, (err) => {
         if (err) {
             // Return proper 404 status with a friendly page
-            res.status(404).sendFile(path.join(__dirname, '404.html'));
+            res.status(404).sendFile(path.join(__dirname, '404.html'), (err2) => {
+                if (err2) {
+                    // If 404.html also fails, send a simple text response
+                    res.status(404).send('Page not found');
+                }
+            });
         }
     });
 });

@@ -16,7 +16,10 @@ class GeminiService {
         
         // Create axios instance with timeout to prevent 503 errors
         this.axiosInstance = axios.create({
-            timeout: 30000 // 30 second timeout
+            timeout: 30000, // 30 second timeout
+            headers: {
+                'Content-Type': 'application/json'
+            }
         });
     }
 
