@@ -510,6 +510,9 @@
                             
                             if (data.type === 'status') {
                                 document.getElementById('status-text').textContent = data.message;
+                            } else if (data.type === 'heartbeat') {
+                                // Ignore heartbeat messages (just keep connection alive)
+                                console.log('Heartbeat received - AI still working...');
                             } else if (data.type === 'complete') {
                                 currentHtml = data.html;
                                 currentOffer = { clientName, offerTitle };

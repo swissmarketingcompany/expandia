@@ -491,35 +491,51 @@ app.post('/api/admin/generate-offer', geminiLimiter, requireAdmin, async (req, r
             return res.status(400).json({ error: 'Missing required fields' });
         }
 
-        // Setup SSE
+        // Setup SSE - respond immediately to avoid Heroku timeout
         res.setHeader('Content-Type', 'text/event-stream');
         res.setHeader('Cache-Control', 'no-cache');
         res.setHeader('Connection', 'keep-alive');
+        res.setHeader('X-Accel-Buffering', 'no'); // Disable nginx buffering
         
-        // Send initial message
-        res.write('data: ' + JSON.stringify({ type: 'status', message: 'Starting AI generation...' }) + '\n\n');
+        // Send initial message immediately
+        res.write('data: ' + JSON.stringify({ type: 'status', message: 'Connected. Starting AI generation...' }) + '\n\n');
         
-        try {
-            const customSystemPrompt = systemPromptStorage || getDefaultSystemPrompt();
-            
-            res.write('data: ' + JSON.stringify({ type: 'status', message: 'Thinking...' }) + '\n\n');
-            
-            const html = await geminiService.generateOfferWithPrompt(
-                customSystemPrompt,
-                prompt,
-                clientName,
-                offerTitle
-            );
-            
-            // Send the complete HTML
-            res.write('data: ' + JSON.stringify({ type: 'complete', html: html }) + '\n\n');
-            res.end();
-            
-        } catch (error) {
-            console.error('Error generating offer:', error);
-            res.write('data: ' + JSON.stringify({ type: 'error', error: error.message }) + '\n\n');
-            res.end();
-        }
+        // Keep connection alive with heartbeat every 15 seconds
+        const heartbeat = setInterval(() => {
+            res.write('data: ' + JSON.stringify({ type: 'heartbeat' }) + '\n\n');
+        }, 15000);
+        
+        // Run AI generation asynchronously
+        (async () => {
+            try {
+                const customSystemPrompt = systemPromptStorage || getDefaultSystemPrompt();
+                
+                res.write('data: ' + JSON.stringify({ type: 'status', message: 'AI is thinking... This may take 1-2 minutes.' }) + '\n\n');
+                
+                const html = await geminiService.generateOfferWithPrompt(
+                    customSystemPrompt,
+                    prompt,
+                    clientName,
+                    offerTitle
+                );
+                
+                // Send the complete HTML
+                res.write('data: ' + JSON.stringify({ type: 'complete', html: html }) + '\n\n');
+                clearInterval(heartbeat);
+                res.end();
+                
+            } catch (error) {
+                console.error('Error generating offer:', error);
+                res.write('data: ' + JSON.stringify({ type: 'error', error: error.message }) + '\n\n');
+                clearInterval(heartbeat);
+                res.end();
+            }
+        })();
+        
+        // Clean up on client disconnect
+        req.on('close', () => {
+            clearInterval(heartbeat);
+        });
         
     } catch (error) {
         console.error('Error starting generation:', error);
