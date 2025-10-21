@@ -1,26 +1,51 @@
 /**
- * Offer System Module for Expandia
- * Handles offer creation, editing, and client viewing
+ * Offer System Module for Expandia (PostgreSQL Version)
+ * Handles offer creation, editing, and client viewing with database persistence
  */
 
-const fs = require('fs').promises;
-const path = require('path');
+const { Pool } = require('pg');
 const crypto = require('crypto');
 
 class OfferSystem {
-    constructor(offersDir = './offers') {
-        this.offersDir = offersDir;
+    constructor() {
         this.adminPassword = process.env.ADMIN_PASSWORD || 'expandia2025';
         this.sessions = new Map(); // Store authenticated sessions
-        this.initializeOffersDirectory();
+        
+        // Initialize PostgreSQL connection pool
+        this.pool = new Pool({
+            connectionString: process.env.DATABASE_URL,
+            ssl: process.env.NODE_ENV === 'production' ? {
+                rejectUnauthorized: false
+            } : false
+        });
+        
+        this.initializeDatabase();
     }
 
-    async initializeOffersDirectory() {
+    async initializeDatabase() {
         try {
-            await fs.access(this.offersDir);
-        } catch {
-            await fs.mkdir(this.offersDir, { recursive: true });
-            console.log('✅ Offers directory created');
+            // Create offers table if it doesn't exist
+            await this.pool.query(`
+                CREATE TABLE IF NOT EXISTS offers (
+                    id VARCHAR(255) PRIMARY KEY,
+                    client_name VARCHAR(500) NOT NULL,
+                    title VARCHAR(500) NOT NULL,
+                    password_hash VARCHAR(255) NOT NULL,
+                    password_plain VARCHAR(255) NOT NULL,
+                    html_content TEXT NOT NULL,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )
+            `);
+            
+            // Create indexes
+            await this.pool.query(`
+                CREATE INDEX IF NOT EXISTS idx_offers_created_at ON offers(created_at DESC)
+            `);
+            
+            console.log('✅ Database initialized successfully');
+        } catch (error) {
+            console.error('❌ Database initialization error:', error.message);
         }
     }
 
@@ -42,8 +67,7 @@ class OfferSystem {
      * Verify client password
      */
     verifyClientPassword(offer, providedPassword) {
-        // Support both old format (just hash) and new format (hash + plain)
-        const storedHash = offer.passwordHash || offer.password;
+        const storedHash = offer.password_hash || offer.passwordHash;
         const providedHash = this.hashPassword(providedPassword);
         return storedHash === providedHash;
     }
@@ -67,46 +91,42 @@ class OfferSystem {
         }
 
         // Check if offer ID already exists
-        const filePath = path.join(this.offersDir, `${id}.json`);
-        try {
-            await fs.access(filePath);
+        const existing = await this.pool.query(
+            'SELECT id FROM offers WHERE id = $1',
+            [id]
+        );
+        
+        if (existing.rows.length > 0) {
             throw new Error('Offer with this ID already exists');
-        } catch (err) {
-            if (err.message === 'Offer with this ID already exists') {
-                throw err;
-            }
-            // File doesn't exist, which is what we want
         }
 
-        const offer = {
-            id,
-            clientName,
-            title,
-            passwordHash: this.hashPassword(password), // Store hashed for verification
-            passwordPlain: password, // Store plain text for admin viewing (security trade-off)
-            htmlContent,
-            createdAt: new Date().toISOString(),
-            updatedAt: new Date().toISOString()
-        };
+        // Insert new offer
+        await this.pool.query(
+            `INSERT INTO offers (id, client_name, title, password_hash, password_plain, html_content, created_at, updated_at)
+             VALUES ($1, $2, $3, $4, $5, $6, NOW(), NOW())`,
+            [id, clientName, title, this.hashPassword(password), password, htmlContent]
+        );
 
-        await fs.writeFile(filePath, JSON.stringify(offer, null, 2));
-        console.log(`✅ Offer created: ${id}`);
+        console.log(`✅ Offer created in database: ${id}`);
         
-        return { id, clientName, title, createdAt: offer.createdAt };
+        return { 
+            id, 
+            clientName, 
+            title, 
+            createdAt: new Date().toISOString() 
+        };
     }
 
     /**
      * Update an existing offer
      */
     async updateOffer(id, updateData) {
-        const filePath = path.join(this.offersDir, `${id}.json`);
-        
         // Read existing offer
         const existingOffer = await this.getOffer(id);
         
-        // Handle password update - support old formats
-        let newPasswordHash = existingOffer.passwordHash || existingOffer.password; // Support old format
-        let newPasswordPlain = existingOffer.passwordPlain || existingOffer.plainPassword || ''; // Support both old formats
+        // Handle password update
+        let newPasswordHash = existingOffer.password_hash;
+        let newPasswordPlain = existingOffer.password_plain;
         
         if (updateData.password && updateData.password !== newPasswordPlain) {
             // Password changed - update both hash and plain
@@ -115,38 +135,47 @@ class OfferSystem {
         }
         
         // Update fields
-        const updatedOffer = {
-            ...existingOffer,
-            clientName: updateData.clientName || existingOffer.clientName,
-            title: updateData.title || existingOffer.title,
-            passwordHash: newPasswordHash,
-            passwordPlain: newPasswordPlain,
-            htmlContent: updateData.htmlContent || existingOffer.htmlContent,
-            updatedAt: new Date().toISOString()
-        };
-        
-        // Remove old password fields (migration)
-        delete updatedOffer.password;
-        delete updatedOffer.plainPassword;
+        await this.pool.query(
+            `UPDATE offers 
+             SET client_name = $1, 
+                 title = $2, 
+                 password_hash = $3, 
+                 password_plain = $4, 
+                 html_content = $5, 
+                 updated_at = NOW()
+             WHERE id = $6`,
+            [
+                updateData.clientName || existingOffer.client_name,
+                updateData.title || existingOffer.title,
+                newPasswordHash,
+                newPasswordPlain,
+                updateData.htmlContent || existingOffer.html_content,
+                id
+            ]
+        );
 
-        await fs.writeFile(filePath, JSON.stringify(updatedOffer, null, 2));
-        console.log(`✅ Offer updated: ${id}`);
+        console.log(`✅ Offer updated in database: ${id}`);
         
-        return { id, updatedAt: updatedOffer.updatedAt };
+        return { 
+            id, 
+            updatedAt: new Date().toISOString() 
+        };
     }
 
     /**
      * Get a single offer by ID
      */
     async getOffer(id) {
-        const filePath = path.join(this.offersDir, `${id}.json`);
+        const result = await this.pool.query(
+            'SELECT * FROM offers WHERE id = $1',
+            [id]
+        );
         
-        try {
-            const data = await fs.readFile(filePath, 'utf8');
-            return JSON.parse(data);
-        } catch (err) {
+        if (result.rows.length === 0) {
             throw new Error('Offer not found');
         }
+        
+        return result.rows[0];
     }
 
     /**
@@ -154,11 +183,16 @@ class OfferSystem {
      */
     async getOfferForAdmin(id) {
         const offer = await this.getOffer(id);
-        // Return offer with plain text password for admin
-        // Support multiple old formats: passwordPlain, plainPassword
+        
+        // Return with camelCase keys for frontend compatibility
         return {
-            ...offer,
-            password: offer.passwordPlain || offer.plainPassword || offer.password || '' // Return plain password for display/edit
+            id: offer.id,
+            clientName: offer.client_name,
+            title: offer.title,
+            password: offer.password_plain, // Return plain password for admin
+            htmlContent: offer.html_content,
+            createdAt: offer.created_at,
+            updatedAt: offer.updated_at
         };
     }
 
@@ -168,9 +202,15 @@ class OfferSystem {
     async getOfferForClient(id) {
         const offer = await this.getOffer(id);
         
-        // Remove sensitive data (both password fields)
-        const { password, passwordHash, passwordPlain, ...clientOffer } = offer;
-        return clientOffer;
+        // Return without password fields
+        return {
+            id: offer.id,
+            clientName: offer.client_name,
+            title: offer.title,
+            htmlContent: offer.html_content,
+            createdAt: offer.created_at,
+            updatedAt: offer.updated_at
+        };
     }
 
     /**
@@ -178,30 +218,19 @@ class OfferSystem {
      */
     async getAllOffers() {
         try {
-            const files = await fs.readdir(this.offersDir);
-            const jsonFiles = files.filter(f => f.endsWith('.json'));
-            
-            const offers = await Promise.all(
-                jsonFiles.map(async (file) => {
-                    const data = await fs.readFile(path.join(this.offersDir, file), 'utf8');
-                    const offer = JSON.parse(data);
-                    // For listing, we don't need the full HTML content
-                    // Support multiple old formats: passwordPlain, plainPassword, or just show hash
-                    return {
-                        id: offer.id,
-                        clientName: offer.clientName,
-                        title: offer.title,
-                        password: offer.passwordPlain || offer.plainPassword || offer.password || '', // Show plain password for admin
-                        createdAt: offer.createdAt,
-                        updatedAt: offer.updatedAt
-                    };
-                })
+            const result = await this.pool.query(
+                'SELECT id, client_name, title, password_plain, created_at, updated_at FROM offers ORDER BY created_at DESC'
             );
-
-            // Sort by creation date (newest first)
-            offers.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
             
-            return offers;
+            // Convert to camelCase for frontend
+            return result.rows.map(offer => ({
+                id: offer.id,
+                clientName: offer.client_name,
+                title: offer.title,
+                password: offer.password_plain,
+                createdAt: offer.created_at,
+                updatedAt: offer.updated_at
+            }));
         } catch (err) {
             console.error('Error reading offers:', err);
             return [];
@@ -212,15 +241,17 @@ class OfferSystem {
      * Delete an offer
      */
     async deleteOffer(id) {
-        const filePath = path.join(this.offersDir, `${id}.json`);
+        const result = await this.pool.query(
+            'DELETE FROM offers WHERE id = $1 RETURNING id',
+            [id]
+        );
         
-        try {
-            await fs.unlink(filePath);
-            console.log(`✅ Offer deleted: ${id}`);
-            return true;
-        } catch (err) {
+        if (result.rows.length === 0) {
             throw new Error('Offer not found');
         }
+        
+        console.log(`✅ Offer deleted from database: ${id}`);
+        return true;
     }
 
     /**
