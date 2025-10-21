@@ -63,6 +63,6 @@ pids
 tmp/
 temp/
 
-# Offer system - exclude actual offer files but keep directory
-offers/*.json
+# Offer system - COMMIT offers to Git for persistence on Heroku
+# offers/*.json  <-- REMOVED: We need offers in Git or they're lost on Heroku
 !offers/.gitkeep 
