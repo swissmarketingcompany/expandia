@@ -41,7 +41,9 @@ class OfferSystem {
     /**
      * Verify client password
      */
-    verifyClientPassword(storedHash, providedPassword) {
+    verifyClientPassword(offer, providedPassword) {
+        // Support both old format (just hash) and new format (hash + plain)
+        const storedHash = offer.passwordHash || offer.password;
         const providedHash = this.hashPassword(providedPassword);
         return storedHash === providedHash;
     }
@@ -80,7 +82,8 @@ class OfferSystem {
             id,
             clientName,
             title,
-            password: this.hashPassword(password), // Store hashed password only
+            passwordHash: this.hashPassword(password), // Store hashed for verification
+            passwordPlain: password, // Store plain text for admin viewing (security trade-off)
             htmlContent,
             createdAt: new Date().toISOString(),
             updatedAt: new Date().toISOString()
@@ -101,15 +104,29 @@ class OfferSystem {
         // Read existing offer
         const existingOffer = await this.getOffer(id);
         
+        // Handle password update
+        let newPasswordHash = existingOffer.passwordHash || existingOffer.password; // Support old format
+        let newPasswordPlain = existingOffer.passwordPlain || ''; // Support old format
+        
+        if (updateData.password && updateData.password !== existingOffer.passwordPlain) {
+            // Password changed - update both hash and plain
+            newPasswordHash = this.hashPassword(updateData.password);
+            newPasswordPlain = updateData.password;
+        }
+        
         // Update fields
         const updatedOffer = {
             ...existingOffer,
             clientName: updateData.clientName || existingOffer.clientName,
             title: updateData.title || existingOffer.title,
-            password: updateData.password ? this.hashPassword(updateData.password) : existingOffer.password,
+            passwordHash: newPasswordHash,
+            passwordPlain: newPasswordPlain,
             htmlContent: updateData.htmlContent || existingOffer.htmlContent,
             updatedAt: new Date().toISOString()
         };
+        
+        // Remove old 'password' field if it exists (migration)
+        delete updatedOffer.password;
 
         await fs.writeFile(filePath, JSON.stringify(updatedOffer, null, 2));
         console.log(`✅ Offer updated: ${id}`);
@@ -136,10 +153,11 @@ class OfferSystem {
      */
     async getOfferForAdmin(id) {
         const offer = await this.getOffer(id);
-        // Return offer with unhashed password for admin view
-        // Note: We can't unhash, so we return the hash
-        // In practice, admin should copy the password when creating
-        return offer;
+        // Return offer with plain text password for admin
+        return {
+            ...offer,
+            password: offer.passwordPlain || offer.password || '' // Return plain password for display/edit
+        };
     }
 
     /**
@@ -148,8 +166,8 @@ class OfferSystem {
     async getOfferForClient(id) {
         const offer = await this.getOffer(id);
         
-        // Remove sensitive data
-        const { password, ...clientOffer } = offer;
+        // Remove sensitive data (both password fields)
+        const { password, passwordHash, passwordPlain, ...clientOffer } = offer;
         return clientOffer;
     }
 
@@ -170,7 +188,7 @@ class OfferSystem {
                         id: offer.id,
                         clientName: offer.clientName,
                         title: offer.title,
-                        password: offer.password,
+                        password: offer.passwordPlain || offer.password || '', // Show plain password for admin
                         createdAt: offer.createdAt,
                         updatedAt: offer.updatedAt
                     };
@@ -208,7 +226,7 @@ class OfferSystem {
     async authenticateClient(id, password) {
         const offer = await this.getOffer(id);
         
-        if (this.verifyClientPassword(offer.password, password)) {
+        if (this.verifyClientPassword(offer, password)) {
             const sessionId = this.generateSessionId();
             this.sessions.set(sessionId, {
                 offerId: id,
