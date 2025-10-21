@@ -104,11 +104,11 @@ class OfferSystem {
         // Read existing offer
         const existingOffer = await this.getOffer(id);
         
-        // Handle password update
+        // Handle password update - support old formats
         let newPasswordHash = existingOffer.passwordHash || existingOffer.password; // Support old format
-        let newPasswordPlain = existingOffer.passwordPlain || ''; // Support old format
+        let newPasswordPlain = existingOffer.passwordPlain || existingOffer.plainPassword || ''; // Support both old formats
         
-        if (updateData.password && updateData.password !== existingOffer.passwordPlain) {
+        if (updateData.password && updateData.password !== newPasswordPlain) {
             // Password changed - update both hash and plain
             newPasswordHash = this.hashPassword(updateData.password);
             newPasswordPlain = updateData.password;
@@ -125,8 +125,9 @@ class OfferSystem {
             updatedAt: new Date().toISOString()
         };
         
-        // Remove old 'password' field if it exists (migration)
+        // Remove old password fields (migration)
         delete updatedOffer.password;
+        delete updatedOffer.plainPassword;
 
         await fs.writeFile(filePath, JSON.stringify(updatedOffer, null, 2));
         console.log(`✅ Offer updated: ${id}`);
@@ -154,9 +155,10 @@ class OfferSystem {
     async getOfferForAdmin(id) {
         const offer = await this.getOffer(id);
         // Return offer with plain text password for admin
+        // Support multiple old formats: passwordPlain, plainPassword
         return {
             ...offer,
-            password: offer.passwordPlain || offer.password || '' // Return plain password for display/edit
+            password: offer.passwordPlain || offer.plainPassword || offer.password || '' // Return plain password for display/edit
         };
     }
 
@@ -184,11 +186,12 @@ class OfferSystem {
                     const data = await fs.readFile(path.join(this.offersDir, file), 'utf8');
                     const offer = JSON.parse(data);
                     // For listing, we don't need the full HTML content
+                    // Support multiple old formats: passwordPlain, plainPassword, or just show hash
                     return {
                         id: offer.id,
                         clientName: offer.clientName,
                         title: offer.title,
-                        password: offer.passwordPlain || offer.password || '', // Show plain password for admin
+                        password: offer.passwordPlain || offer.plainPassword || offer.password || '', // Show plain password for admin
                         createdAt: offer.createdAt,
                         updatedAt: offer.updatedAt
                     };
