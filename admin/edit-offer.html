@@ -292,11 +292,11 @@
 
                 <!-- Flip Card - Preview / Code Editor - Right Side -->
                 <div class="lg:col-span-2">
-                    <div class="flip-container" id="flip-container" onclick="toggleFlip()">
+                    <div class="flip-container" id="flip-container">
                         <div class="flipper">
                             <!-- Front: Preview -->
                             <div class="front">
-                                <div class="flip-hint">Click to edit code</div>
+                                <div class="flip-hint" onclick="toggleFlip()" style="cursor: pointer;">Click to edit code</div>
                                 <div style="flex: 1; padding: 16px; overflow: auto;">
                                     <div id="preview-container" class="preview-placeholder">
                                         <p style="font-size: 16px; font-weight: 500; margin: 0;">Preview</p>
@@ -308,7 +308,7 @@
                             
                             <!-- Back: Code Editor -->
                             <div class="back">
-                                <div class="flip-hint" style="background: #0f172a; color: #e2e8f0; border: 1px solid #334155;">Click to view preview</div>
+                                <div class="flip-hint" onclick="toggleFlip()" style="background: #0f172a; color: #e2e8f0; border: 1px solid #334155; cursor: pointer;">Click to view preview</div>
                                 <textarea id="htmlContent" placeholder="HTML content will appear here..." required></textarea>
                             </div>
                         </div>
