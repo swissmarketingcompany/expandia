@@ -545,47 +545,43 @@ app.post('/api/admin/generate-offer', geminiLimiter, requireAdmin, async (req, r
 
 // Refine offer with AI (SSE streaming to avoid timeout)
 app.post('/api/admin/refine-offer', geminiLimiter, requireAdmin, async (req, res) => {
+    const { html, prompt, clientName, offerTitle } = req.body;
+    
+    if (!html || !prompt || !clientName || !offerTitle) {
+        return res.status(400).json({ error: 'Missing required fields' });
+    }
+
+    // Set up SSE headers immediately
+    res.writeHead(200, {
+        'Content-Type': 'text/event-stream',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive',
+        'X-Accel-Buffering': 'no' // Disable nginx buffering
+    });
+
+    // Send immediate confirmation to establish streaming
+    res.write('data: ' + JSON.stringify({ type: 'status', message: 'Connected, starting AI refinement...' }) + '\n\n');
+    res.flushHeaders(); // Force flush headers
+
+    // Send heartbeat every 10 seconds to keep connection alive
+    const heartbeat = setInterval(() => {
+        res.write(': heartbeat\n\n');
+    }, 10000);
+
     try {
-        const { html, prompt, clientName, offerTitle } = req.body;
+        const customSystemPrompt = systemPromptStorage || getDefaultSystemPrompt();
+        const refinedHtml = await geminiService.refineOfferWithPrompt(customSystemPrompt, html, prompt, clientName, offerTitle);
         
-        if (!html || !prompt || !clientName || !offerTitle) {
-            return res.status(400).json({ error: 'Missing required fields' });
-        }
-
-        // Set up SSE
-        res.writeHead(200, {
-            'Content-Type': 'text/event-stream',
-            'Cache-Control': 'no-cache',
-            'Connection': 'keep-alive'
-        });
-
-        // Send heartbeat every 10 seconds to keep connection alive
-        const heartbeat = setInterval(() => {
-            res.write(': heartbeat\n\n');
-        }, 10000);
-
-        try {
-            // Start refinement
-            res.write('data: ' + JSON.stringify({ type: 'status', message: 'Starting AI refinement...' }) + '\n\n');
-
-            const customSystemPrompt = systemPromptStorage || getDefaultSystemPrompt();
-            const refinedHtml = await geminiService.refineOfferWithPrompt(customSystemPrompt, html, prompt, clientName, offerTitle);
-            
-            // Send success
-            res.write('data: ' + JSON.stringify({ type: 'complete', html: refinedHtml }) + '\n\n');
-            res.write('data: [DONE]\n\n');
-            
-        } catch (error) {
-            console.error('Error during refinement:', error);
-            res.write('data: ' + JSON.stringify({ type: 'error', message: error.message }) + '\n\n');
-        } finally {
-            clearInterval(heartbeat);
-            res.end();
-        }
+        // Send success
+        res.write('data: ' + JSON.stringify({ type: 'complete', html: refinedHtml }) + '\n\n');
+        res.write('data: [DONE]\n\n');
         
     } catch (error) {
-        console.error('Error starting refinement:', error);
-        res.status(500).json({ error: error.message });
+        console.error('Error during refinement:', error);
+        res.write('data: ' + JSON.stringify({ type: 'error', message: error.message }) + '\n\n');
+    } finally {
+        clearInterval(heartbeat);
+        res.end();
     }
 });
 

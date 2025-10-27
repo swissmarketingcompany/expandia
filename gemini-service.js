@@ -246,7 +246,10 @@ Process the feedback and return improved HTML only.`;
                         temperature: 1,
                         topP: 0.95,
                         topK: 40,
-                        maxOutputTokens: 8000
+                        maxOutputTokens: 8000,
+                        thinkingConfig: {
+                            thinkingBudget: 1024  // Reduced thinking for faster refinement
+                        }
                     }
                 }
             );
