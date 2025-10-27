@@ -40,56 +40,51 @@
             margin-top: 12px;
         }
         
-        /* Flip card styles */
-        .flip-container {
-            perspective: 1000px;
-            cursor: pointer;
-            height: 600px;
-        }
-        
-        .flip-container.flipped .flipper {
-            transform: rotateY(180deg);
-        }
-        
-        .flipper {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-        }
-        
-        .front, .back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            display: flex;
-            flex-direction: column;
+        /* Tab system styles */
+        .tab-container {
             border: 1px solid #e5e7eb;
             border-radius: 8px;
             background: white;
             overflow: hidden;
         }
         
-        .front {
-            z-index: 2;
-            transform: rotateY(0deg);
-            pointer-events: auto;
+        .tab-buttons {
+            display: flex;
+            border-bottom: 2px solid #e5e7eb;
+            background: #f8fafc;
         }
         
-        .back {
-            transform: rotateY(180deg);
-            background: #1e293b;
-            pointer-events: none;
+        .tab-button {
+            flex: 1;
+            padding: 12px 16px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-weight: 500;
+            color: #64748b;
+            transition: all 0.2s;
+            border-bottom: 3px solid transparent;
         }
         
-        .flip-container.flipped .front {
-            pointer-events: none;
+        .tab-button:hover {
+            background: #f1f5f9;
+            color: #334155;
         }
         
-        .flip-container.flipped .back {
-            pointer-events: auto;
+        .tab-button.active {
+            color: #18182f;
+            border-bottom-color: #e0a82e;
+            background: white;
+        }
+        
+        .tab-content {
+            display: none;
+            height: 600px;
+        }
+        
+        .tab-content.active {
+            display: flex;
+            flex-direction: column;
         }
         
         #htmlContent {
@@ -133,7 +128,17 @@
             color: #64748b;
         }
         
-        .flip-hint {
+        #preview-tab {
+            flex: 1;
+            padding: 16px;
+            overflow: auto;
+        }
+        
+        #code-tab {
+            background: #0f172a;
+        }
+        
+        .old-flip-hint {
             position: absolute;
             top: 12px;
             right: 12px;
@@ -290,27 +295,31 @@
                     </div>
                 </div>
 
-                <!-- Flip Card - Preview / Code Editor - Right Side -->
+                <!-- Tab System - Preview / Code Editor - Right Side -->
                 <div class="lg:col-span-2">
-                    <div class="flip-container" id="flip-container">
-                        <div class="flipper">
-                            <!-- Front: Preview -->
-                            <div class="front">
-                                <div class="flip-hint" onclick="toggleFlip()" style="cursor: pointer;">Click to edit code</div>
-                                <div style="flex: 1; padding: 16px; overflow: auto;">
-                                    <div id="preview-container" class="preview-placeholder">
-                                        <p style="font-size: 16px; font-weight: 500; margin: 0;">Preview</p>
-                                        <p style="font-size: 12px; margin: 0;">Click preview button or flip card to see</p>
-                                    </div>
-                                    <iframe id="preview-iframe" style="display: none;"></iframe>
-                                </div>
+                    <div class="tab-container">
+                        <!-- Tab Buttons -->
+                        <div class="tab-buttons">
+                            <button class="tab-button active" onclick="switchTab('preview')">
+                                📄 Preview
+                            </button>
+                            <button class="tab-button" onclick="switchTab('code')">
+                                💻 HTML Code
+                            </button>
+                        </div>
+                        
+                        <!-- Preview Tab -->
+                        <div id="preview-tab" class="tab-content active">
+                            <div id="preview-container" class="preview-placeholder">
+                                <p style="font-size: 16px; font-weight: 500; margin: 0;">Preview</p>
+                                <p style="font-size: 12px; margin: 0;">Click "Show Preview" button above to see the offer</p>
                             </div>
-                            
-                            <!-- Back: Code Editor -->
-                            <div class="back">
-                                <div class="flip-hint" onclick="toggleFlip()" style="background: #0f172a; color: #e2e8f0; border: 1px solid #334155; cursor: pointer;">Click to view preview</div>
-                                <textarea id="htmlContent" placeholder="HTML content will appear here..." required></textarea>
-                            </div>
+                            <iframe id="preview-iframe" style="display: none; width: 100%; height: 100%; border: none;"></iframe>
+                        </div>
+                        
+                        <!-- Code Editor Tab -->
+                        <div id="code-tab" class="tab-content">
+                            <textarea id="htmlContent" placeholder="HTML content will appear here..." required></textarea>
                         </div>
                     </div>
                 </div>
@@ -333,10 +342,20 @@
             }
         }
 
-        // Flip card toggle
-        function toggleFlip() {
-            const flipContainer = document.getElementById('flip-container');
-            flipContainer.classList.toggle('flipped');
+        // Tab switching
+        function switchTab(tabName) {
+            // Remove active class from all buttons and tabs
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            
+            // Add active class to selected tab
+            if (tabName === 'preview') {
+                document.querySelector('.tab-button:nth-child(1)').classList.add('active');
+                document.getElementById('preview-tab').classList.add('active');
+            } else if (tabName === 'code') {
+                document.querySelector('.tab-button:nth-child(2)').classList.add('active');
+                document.getElementById('code-tab').classList.add('active');
+            }
         }
 
         // Auth form
