@@ -816,6 +816,11 @@ function getPageMetadata(templateName, lang = 'en') {
             description: '5-50 kişilik şirketler için özel ekip üyesi. Ayda 40 saat, düşük maliyet, yüksek performans.',
             keywords: 'part-time iş geliştirme, fractional BizDev, dış kaynak satış, B2B ekip'
         },
+        'kurumsal-dijital-hediye-promosyon': {
+            title: 'Kurumsal Dijital Hediye Paketleri | Netflix, Spotify, Disney+ | Expandia',
+            description: 'Netflix, Spotify, Disney+ ve onlarca global markayı çalışanlarınıza hediye edin. Gerçek kullanım takibi, çok ülke desteği. Abonelik yok, kullandıkça öde.',
+            keywords: 'kurumsal hediye, dijital hediye kartı, çalışan motivasyonu, kurumsal promosyon, Netflix hediye, Spotify hediye'
+        },
         'markt-grundlagen-programm': {
             title: 'Markt-Grundlagen-Programm | Expandia',
             description: 'Perfekt für Unternehmen, die in neue Märkte eintreten. Positionierung, Messaging und erste qualifizierte Meetings.',
@@ -1622,6 +1627,7 @@ buildPage('etik-ilkelerimiz', 'etik-ilkelerimiz', 'tr');
 buildPage('pazar-temeli-programi', 'pazar-temeli-programi', 'tr');
 buildPage('pazar-hizlandirici-program', 'pazar-hizlandirici-program', 'tr');
 buildPage('kismi-is-gelistirme-ekibi', 'kismi-is-gelistirme-ekibi', 'tr');
+buildPage('kurumsal-dijital-hediye-promosyon', 'kurumsal-dijital-hediye-promosyon', 'tr');
 
 // Build German pages
 console.log('Building German pages...');
