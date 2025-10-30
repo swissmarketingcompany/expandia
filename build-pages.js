@@ -211,7 +211,7 @@ function createHTMLTemplate(lang = 'en') {
 const turkishTranslations = {
     // Navigation Menu Items
     'Home': 'Ana Sayfa',
-    'Sales University': 'Satış Üniversitesi',
+    'Sales University': 'Blog',
     'Get Started': 'Başlayın',
     'Solutions': 'Çözümler',
     'About': 'Hakkımızda',
