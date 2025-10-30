@@ -190,6 +190,9 @@ function createHTMLTemplate(lang = 'en') {
       gtag('config', 'G-XY2B6K4R6Q');
     </script>
     
+    <!-- Lordicon Script -->
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
     {{SCHEMA_MARKUP}}
