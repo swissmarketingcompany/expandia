@@ -1,7 +1,7 @@
 <!-- Navigation -->
 <nav class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
-    <div class="container mx-auto container-padding">
-        <div class="navbar-start">
+    <div class="container mx-auto container-padding flex items-center justify-between">
+        <div class="navbar-start flex items-center">
             <div class="dropdown">
                 <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -39,7 +39,7 @@
                     <li><a href="{{BASE_PATH}}blog/index.html" {{BLOG_MOBILE_ACTIVE}}>Sales University</a></li>
                 </ul>
             </div>
-            <a href="{{BASE_PATH}}index.html" class="btn btn-ghost hover:bg-transparent ml-0 items-center">
+            <a href="{{BASE_PATH}}index.html" class="flex items-center py-2 hover:opacity-80 transition-opacity">
                 <img src="{{LOGO_PATH}}" alt="Expandia" class="h-8 md:h-10 w-auto transition-all duration-300 hover:scale-105 logo-bumblebee">
             </a>
         </div>
@@ -153,7 +153,7 @@
         </ul>
     </div>
     
-    <div class="navbar-end flex-none justify-end flex items-center">
+    <div class="navbar-end flex items-center">
         <div class="dropdown dropdown-end mr-4">
             <div tabindex="0" role="button" class="btn btn-ghost btn-sm">
                 <span id="current-flag">🇺🇸</span>
@@ -183,5 +183,6 @@
             </ul>
         </div>
         <a href="{{BASE_PATH}}contact.html" class="btn btn-primary buzz-button ml-2">Get Started</a>
+    </div>
     </div>
 </nav> 
