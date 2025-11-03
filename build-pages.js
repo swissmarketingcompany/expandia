@@ -824,6 +824,11 @@ function getPageMetadata(templateName, lang = 'en') {
             description: 'Netflix, Spotify, Disney+ ve onlarca global markayı çalışanlarınıza hediye edin. Gerçek kullanım takibi, çok ülke desteği. Abonelik yok, kullandıkça öde.',
             keywords: 'kurumsal hediye, dijital hediye kartı, çalışan motivasyonu, kurumsal promosyon, Netflix hediye, Spotify hediye'
         },
+        'abd-pr-hizmeti': {
+            title: 'USA PR Service | Basın Bülteni Dağıtım Hizmeti | Expandia',
+            description: 'ABD pazarına yönelik profesyonel basın bülteni yazımı ve wire dağıtım hizmeti. Haberinizi ABD medyasına ulaştırın.',
+            keywords: 'USA PR service, basın bülteni dağıtımı, ABD medya, press release wire, kurumsal PR'
+        },
         'markt-grundlagen-programm': {
             title: 'Markt-Grundlagen-Programm | Expandia',
             description: 'Perfekt für Unternehmen, die in neue Märkte eintreten. Positionierung, Messaging und erste qualifizierte Meetings.',
@@ -936,6 +941,11 @@ function getHreflangUrls(templateName) {
             en: 'fractional-bizdev-team.html',
             tr: 'tr/kismi-is-gelistirme-ekibi.html',
             de: 'de/teilzeit-bizdev-team.html'
+        },
+        'abd-pr-hizmeti': {
+            en: 'tr/abd-pr-hizmeti.html',
+            tr: 'tr/abd-pr-hizmeti.html',
+            de: 'tr/abd-pr-hizmeti.html'
         }
     };
     
@@ -1631,6 +1641,7 @@ buildPage('pazar-temeli-programi', 'pazar-temeli-programi', 'tr');
 buildPage('pazar-hizlandirici-program', 'pazar-hizlandirici-program', 'tr');
 buildPage('kismi-is-gelistirme-ekibi', 'kismi-is-gelistirme-ekibi', 'tr');
 buildPage('kurumsal-dijital-hediye-promosyon', 'kurumsal-dijital-hediye-promosyon', 'tr');
+buildPage('abd-pr-hizmeti', 'abd-pr-hizmeti', 'tr');
 
 // Build German pages
 console.log('Building German pages...');
