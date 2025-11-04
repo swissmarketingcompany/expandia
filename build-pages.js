@@ -824,10 +824,54 @@ function getPageMetadata(templateName, lang = 'en') {
             description: 'Netflix, Spotify, Disney+ ve onlarca global markayı çalışanlarınıza hediye edin. Gerçek kullanım takibi, çok ülke desteği. Abonelik yok, kullandıkça öde.',
             keywords: 'kurumsal hediye, dijital hediye kartı, çalışan motivasyonu, kurumsal promosyon, Netflix hediye, Spotify hediye'
         },
+        'corporate-digital-gifting': {
+            title: isturkish
+                ? 'Kurumsal Dijital Hediye Paketleri | Netflix, Spotify, Disney+ | Expandia'
+                : isgerman
+                ? 'Unternehmens-Digitale Geschenke | Netflix, Spotify, Disney+ | Expandia'
+                : 'Corporate Digital Gifting | Netflix, Spotify, Disney+ | Expandia',
+            description: isturkish
+                ? 'Netflix, Spotify, Disney+ ve onlarca global markayı çalışanlarınıza hediye edin. Gerçek kullanım takibi, çok ülke desteği.'
+                : isgerman
+                ? 'Schenken Sie Netflix, Spotify, Disney+ und Dutzende globaler Marken an Ihre Mitarbeiter. Echtes Nutzungstracking, Multi-Land-Unterstützung.'
+                : 'Gift Netflix, Spotify, Disney+, and dozens of global brands to your employees. Real usage tracking, multi-country support.',
+            keywords: isturkish
+                ? 'kurumsal hediye, dijital hediye kartı, çalışan motivasyonu, kurumsal promosyon'
+                : isgerman
+                ? 'Unternehmensgeschenke, digitale Geschenkkarte, Mitarbeitermotivation, Unternehmenspromotion'
+                : 'corporate gifting, digital gift card, employee motivation, corporate promotion, Netflix gift, Spotify gift'
+        },
+        'unternehmens-digitale-geschenke': {
+            title: 'Unternehmens-Digitale Geschenke | Netflix, Spotify, Disney+ | Expandia',
+            description: 'Schenken Sie Netflix, Spotify, Disney+ und Dutzende globaler Marken an Ihre Mitarbeiter. Echtes Nutzungstracking, Multi-Land-Unterstützung.',
+            keywords: 'Unternehmensgeschenke, digitale Geschenkkarte, Mitarbeitermotivation, Unternehmenspromotion'
+        },
         'abd-pr-hizmeti': {
             title: 'USA PR Service | Basın Bülteni Dağıtım Hizmeti | Expandia',
             description: 'ABD pazarına yönelik profesyonel basın bülteni yazımı ve wire dağıtım hizmeti. Haberinizi ABD medyasına ulaştırın.',
             keywords: 'USA PR service, basın bülteni dağıtımı, ABD medya, press release wire, kurumsal PR'
+        },
+        'usa-pr-service': {
+            title: isturkish
+                ? 'USA PR Service | Basın Bülteni Dağıtım Hizmeti | Expandia'
+                : isgerman
+                ? 'USA PR-Dienst | Pressemitteilung Vertriebsservice | Expandia'
+                : 'USA PR Service | Press Release Distribution Service | Expandia',
+            description: isturkish
+                ? 'ABD pazarına yönelik profesyonel basın bülteni yazımı ve wire dağıtım hizmeti.'
+                : isgerman
+                ? 'Professioneller Pressemitteilungsschreibservice und Wire-Verteilung für den US-Markt.'
+                : 'Professional press release writing and wire distribution service for the US market. Get your news featured in US media.',
+            keywords: isturkish
+                ? 'USA PR service, basın bülteni dağıtımı, ABD medya, press release wire'
+                : isgerman
+                ? 'USA PR-Dienst, Pressemitteilungsverteilung, US-Medien, Pressemitteilung'
+                : 'USA PR service, press release distribution, US media, press release wire, corporate PR'
+        },
+        'usa-pr-dienst': {
+            title: 'USA PR-Dienst | Pressemitteilung Vertriebsservice | Expandia',
+            description: 'Professioneller Pressemitteilungsschreibservice und Wire-Verteilung für den US-Markt. Bringen Sie Ihre Nachricht in US-Medien.',
+            keywords: 'USA PR-Dienst, Pressemitteilungsverteilung, US-Medien, Pressemitteilung'
         },
         'markt-grundlagen-programm': {
             title: 'Markt-Grundlagen-Programm | Expandia',
@@ -943,9 +987,34 @@ function getHreflangUrls(templateName) {
             de: 'de/teilzeit-bizdev-team.html'
         },
         'abd-pr-hizmeti': {
-            en: 'tr/abd-pr-hizmeti.html',
+            en: 'usa-pr-service.html',
             tr: 'tr/abd-pr-hizmeti.html',
-            de: 'tr/abd-pr-hizmeti.html'
+            de: 'de/usa-pr-dienst.html'
+        },
+        'corporate-digital-gifting': {
+            en: 'corporate-digital-gifting.html',
+            tr: 'tr/kurumsal-dijital-hediye-promosyon.html',
+            de: 'de/unternehmens-digitale-geschenke.html'
+        },
+        'usa-pr-service': {
+            en: 'usa-pr-service.html',
+            tr: 'tr/abd-pr-hizmeti.html',
+            de: 'de/usa-pr-dienst.html'
+        },
+        'kurumsal-dijital-hediye-promosyon': {
+            en: 'corporate-digital-gifting.html',
+            tr: 'tr/kurumsal-dijital-hediye-promosyon.html',
+            de: 'de/unternehmens-digitale-geschenke.html'
+        },
+        'unternehmens-digitale-geschenke': {
+            en: 'corporate-digital-gifting.html',
+            tr: 'tr/kurumsal-dijital-hediye-promosyon.html',
+            de: 'de/unternehmens-digitale-geschenke.html'
+        },
+        'usa-pr-dienst': {
+            en: 'usa-pr-service.html',
+            tr: 'tr/abd-pr-hizmeti.html',
+            de: 'de/usa-pr-dienst.html'
         }
     };
     
@@ -1577,18 +1646,7 @@ function buildPage(templateName, outputName, lang = 'en') {
         }
     }
     
-    // Add generation warning comment at the top
-    const warningComment = `<!-- 
-🚨 AUTO-GENERATED FILE - DO NOT EDIT DIRECTLY!
-This file is automatically generated from templates/ directory.
-Edit templates/${lang === 'en' ? '' : lang + '/'}${templateName}.html instead.
-See README-DEVELOPMENT.md for instructions.
-Generated: ${new Date().toISOString()}
--->
-`;
-    
-    // Insert warning at the beginning
-    htmlTemplate = warningComment + htmlTemplate;
+    // Generation comment removed per user request
     
     fs.writeFileSync(outputPath, htmlTemplate, 'utf8');
     console.log(`✅ Built ${outputPath} with enhanced SEO`);
@@ -1626,6 +1684,8 @@ buildPage('international-market-entry', 'international-market-entry', 'en');
 buildPage('distributor-finding', 'distributor-finding', 'en');
 buildPage('overseas-sales-consulting', 'overseas-sales-consulting', 'en');
 buildPage('europe-market-entry', 'europe-market-entry', 'en');
+buildPage('corporate-digital-gifting', 'corporate-digital-gifting', 'en');
+buildPage('usa-pr-service', 'usa-pr-service', 'en');
 
 // Build Turkish pages
 console.log('Building Turkish pages...');
@@ -1656,6 +1716,8 @@ buildPage('our-ethical-principles', 'our-ethical-principles', 'de');
 buildPage('markt-grundlagen-programm', 'markt-grundlagen-programm', 'de');
 buildPage('markt-beschleuniger-programm', 'markt-beschleuniger-programm', 'de');
 buildPage('teilzeit-bizdev-team', 'teilzeit-bizdev-team', 'de');
+buildPage('unternehmens-digitale-geschenke', 'unternehmens-digitale-geschenke', 'de');
+buildPage('usa-pr-dienst', 'usa-pr-dienst', 'de');
 
 // Blog Post Building Function
 function buildBlogPost(templateName, outputName, lang = 'en') {
@@ -1721,17 +1783,7 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
         fs.mkdirSync(blogDir, { recursive: true });
     }
     
-    // Add generation warning comment
-    const warningComment = `<!-- 
-🚨 AUTO-GENERATED BLOG POST - DO NOT EDIT DIRECTLY!
-This file is automatically generated from templates/blog/ directory.
-Edit templates/blog/${templateName}.html instead.
-See README-DEVELOPMENT.md for instructions.
-Generated: ${new Date().toISOString()}
--->
-`;
-    
-    blogTemplate = warningComment + blogTemplate;
+    // Generation comment removed per user request
     
     fs.writeFileSync(outputPath, blogTemplate, 'utf8');
     console.log(`✅ Built blog post: ${outputPath}`);

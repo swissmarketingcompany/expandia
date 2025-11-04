@@ -5231,6 +5231,10 @@ details.collapse summary::-webkit-details-marker{
   height: 5rem;
 }
 
+.h-24{
+  height: 6rem;
+}
+
 .h-3{
   height: 0.75rem;
 }
@@ -5450,6 +5454,10 @@ details.collapse summary::-webkit-details-marker{
 
 .justify-between{
   justify-content: space-between;
+}
+
+.justify-items-center{
+  justify-items: center;
 }
 
 .gap-12{
@@ -5933,6 +5941,12 @@ details.collapse summary::-webkit-details-marker{
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-secondary\/5{
+  --tw-gradient-from: var(--fallback-s,oklch(var(--s)/0.05)) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .from-yellow-50{
   --tw-gradient-from: #fefce8 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(254 252 232 / 0) var(--tw-gradient-to-position);
@@ -6010,6 +6024,11 @@ details.collapse summary::-webkit-details-marker{
 
 .to-secondary\/5{
   --tw-gradient-to: var(--fallback-s,oklch(var(--s)/0.05)) var(--tw-gradient-to-position);
+}
+
+.object-contain{
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .object-cover{
@@ -6179,6 +6198,11 @@ details.collapse summary::-webkit-details-marker{
 
 .text-\[11px\]{
   font-size: 11px;
+}
+
+.text-base{
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .text-lg{
@@ -6395,6 +6419,10 @@ details.collapse summary::-webkit-details-marker{
 
 .opacity-60{
   opacity: 0.6;
+}
+
+.opacity-70{
+  opacity: 0.7;
 }
 
 .opacity-80{
@@ -7975,6 +8003,10 @@ body > footer.footer-gradient{
   text-decoration-line: underline;
 }
 
+.hover\:opacity-100:hover{
+  opacity: 1;
+}
+
 .hover\:opacity-80:hover{
   opacity: 0.8;
 }
@@ -8005,6 +8037,14 @@ body > footer.footer-gradient{
 }
 
 @media (min-width: 768px){
+  .md\:order-1{
+    order: 1;
+  }
+
+  .md\:order-2{
+    order: 2;
+  }
+
   .md\:col-span-2{
     grid-column: span 2 / span 2;
   }
@@ -8128,6 +8168,10 @@ body > footer.footer-gradient{
 
   .lg\:grid-cols-4{
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-5{
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .lg\:flex-row{
