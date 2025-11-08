@@ -805,19 +805,19 @@ function getPageMetadata(templateName, lang = 'en') {
         },
         'fractional-bizdev-team': {
             title: isturkish 
-                ? 'Part-Time İş Geliştirme Ekibi | Expandia' 
-                : 'Fractional BizDev Team | Expandia',
+                ? 'Part-Time Lead Generation Ekibi | Expandia' 
+                : 'Fractional Lead Generation Team | Expandia',
             description: isturkish 
                 ? '5-50 kişilik şirketler için özel ekip üyesi. Ayda 40 saat, düşük maliyet, yüksek performans.'
                 : 'Dedicated team member for 5-50 headcount companies. 40 hours/month, low cost, high performance.',
             keywords: isturkish 
-                ? 'part-time iş geliştirme, fractional BizDev, dış kaynak satış, B2B ekip'
-                : 'fractional business development, fractional BizDev, outsourced sales, B2B team'
+                ? 'part-time lead generation, fractional Lead Generation, dış kaynak satış, B2B ekip'
+                : 'fractional lead generation, fractional Lead Generation, outsourced sales, B2B team'
         },
         'kismi-is-gelistirme-ekibi': {
-            title: 'Part-Time İş Geliştirme Ekibi | Expandia',
+            title: 'Part-Time Lead Generation Ekibi | Expandia',
             description: '5-50 kişilik şirketler için özel ekip üyesi. Ayda 40 saat, düşük maliyet, yüksek performans.',
-            keywords: 'part-time iş geliştirme, fractional BizDev, dış kaynak satış, B2B ekip'
+            keywords: 'part-time lead generation, fractional Lead Generation, dış kaynak satış, B2B ekip'
         },
         'kurumsal-dijital-hediye-promosyon': {
             title: 'Kurumsal Dijital Hediye Paketleri | Netflix, Spotify, Disney+ | Expandia',
@@ -884,9 +884,9 @@ function getPageMetadata(templateName, lang = 'en') {
             keywords: 'Marktbeschleunigung, schnelles Wachstum, B2B-Skalierung, Vertriebsbeschleunigung'
         },
         'teilzeit-bizdev-team': {
-            title: 'Teilzeit-BizDev-Team | Expandia',
+            title: 'Teilzeit Lead Generation Team | Expandia',
             description: 'Dediziertes Teammitglied für Unternehmen mit 5-50 Mitarbeitern. 40 Stunden/Monat, niedrige Kosten, hohe Leistung.',
-            keywords: 'Teilzeit-Business-Development, Fractional BizDev, ausgelagerter Vertrieb, B2B-Team'
+            keywords: 'Teilzeit Lead Generation, Fractional Lead Generation, ausgelagerter Vertrieb, B2B-Team'
         }
     };
     
