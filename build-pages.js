@@ -213,7 +213,7 @@ function createHTMLTemplate(lang = 'en') {
     (function(){
     var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
     s1.async=true;
-    s1.src='https://embed.tawk.to/6911e0faaadb9719591b72a3/1j9mtdl0g';
+    s1.src='https://embed.tawk.to/6911e3f950ba1a195e0a2c28/1j9mu527m';
     s1.charset='UTF-8';
     s1.setAttribute('crossorigin','*');
     s0.parentNode.insertBefore(s1,s0);
