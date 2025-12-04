@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bumblebee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global B2B Lead Generation Locations | Expandia</title>
+    <meta name="description" content="Explore our B2B lead generation services across 75+ cities worldwide. Find local lead generation experts in your city.">
+    <meta name="keywords" content="B2B lead generation locations, global lead generation, local lead generation services, international B2B sales">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Expandia">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.expandia.ch/city-locations.html">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Global B2B Lead Generation Locations | Expandia">
+    <meta property="og:description" content="Explore our B2B lead generation services across 75+ cities worldwide.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.expandia.ch/city-locations.html">
+    <meta property="og:image" content="https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png">
+    <meta property="og:site_name" content="Expandia">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Global B2B Lead Generation Locations | Expandia">
+    <meta name="twitter:description" content="Explore our B2B lead generation services across 75+ cities worldwide.">
+    <meta name="twitter:image" content="https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png">
+
+    <link href="./dist/css/output.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="apple-touch-icon" href="./favicon.png">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XY2B6K4R6Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XY2B6K4R6Q');
+    </script>
+
+    <style>
+        #map {
+            height: 80vh;
+            width: 100%;
+            z-index: 1;
+        }
+        .city-marker {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .city-marker:hover {
+            transform: scale(1.2);
+            z-index: 1000;
+        }
+        .custom-popup {
+            font-family: inherit;
+        }
+        .custom-popup h3 {
+            color: #f9c23c;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .custom-popup a {
+            color: #e86100;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .custom-popup a:hover {
+            text-decoration: underline;
+        }
+        .map-container {
+            position: relative;
+            width: 100%;
+        }
+        .map-legend {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            z-index: 1000;
+            max-width: 200px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto container-padding flex items-center justify-between">
+            <div class="navbar-start flex items-center">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
+                        </svg>
+                    </div>
+                    <!-- Mobile Menu -->
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-72">
+                        <li>
+                            <a href="./index.html" class="font-semibold text-primary">Home</a>
+                        </li>
+                        <li>
+                            <details>
+                                <summary class="font-semibold">Solutions</summary>
+                                <ul class="p-2">
+                                    <li class="mt-2 px-3 py-1">
+                                        <span class="text-xs font-normal text-gray-500 uppercase tracking-wide">B2B Lead Generation</span>
+                                    </li>
+                                    <li><a href="./market-foundation-program.html" class="text-sm pl-8">🚀 Local Lead Generation</a></li>
+                                    <li><a href="./market-accelerator-program.html" class="text-sm pl-8">⚡ Global Lead Genereation</a></li>
+                                    <li><a href="./part-time-lead-generation-team.html" class="text-sm pl-8">👥 Part Time Lead Generation Team</a></li>
+                                    <li class="mt-4 px-3 py-1">
+                                        <span class="text-xs font-normal text-gray-500 uppercase tracking-wide">Corporate Solutions</span>
+                                    </li>
+                                    <li><a href="./corporate-digital-gifting.html" class="text-sm pl-8 flex items-center gap-2">
+                                        <lord-icon src="https://cdn.lordicon.com/gqdnbnwt.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:20px;height:20px"></lord-icon>
+                                        Digital Gifting
+                                    </a></li>
+                                    <li><a href="./usa-pr-service.html" class="text-sm pl-8 flex items-center gap-2">
+                                        <lord-icon src="https://cdn.lordicon.com/vdjwmfqs.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:20px;height:20px"></lord-icon>
+                                        USA PR Service
+                                    </a></li>
+                                </ul>
+                            </details>
+                        </li>
+                        <li>
+                            <details>
+                                <summary class="font-semibold">Company</summary>
+                                <ul class="p-2">
+                                    <li><a href="./about.html">About Us</a></li>
+                                    <li><a href="./vision-mission.html">Vision & Mission</a></li>
+                                    <li><a href="./our-ethical-principles.html">Our Ethical Principles</a></li>
+                                </ul>
+                            </details>
+                        </li>
+                        <li><a href="./blog/index.html">Growth Resources</a></li>
+                    </ul>
+                </div>
+                <a href="./index.html" class="flex items-center py-2 hover:opacity-80 transition-opacity">
+                    <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 md:h-10 w-auto transition-all duration-300 hover:scale-105 logo-bumblebee">
+                </a>
+            </div>
+        
+        <!-- Desktop Mega Menu -->
+        <div class="navbar-center hidden lg:flex justify-center">
+            <ul class="menu menu-horizontal px-1">
+                <li>
+                    <a href="./index.html" class="btn btn-ghost font-semibold text-primary">Home</a>
+                </li>
+                <li class="dropdown dropdown-hover">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold ">
+                        Solutions
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div tabindex="0" class="dropdown-content z-[1] card card-compact w-80 p-4 shadow-xl bg-base-100 border border-base-300">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary mb-3">Our Solutions</h3>
+                            <div class="grid gap-2">
+                                <div class="flex items-center gap-2 px-3 pt-1 pb-2">
+                                    <span class="text-sm opacity-60">🎯</span>
+                                    <div class="flex-1">
+                                        <div class="text-xs font-normal text-gray-500 uppercase tracking-wide">B2B Lead Generation</div>
+                                    </div>
+                                </div>
+                                <div class="space-y-1 pl-2">
+                                    <a href="./market-foundation-program.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/10 transition-colors">
+                                        <span class="text-lg">🚀</span>
+                                        <div class="font-semibold text-sm">Local Lead Generation</div>
+                                    </a>
+                                    <a href="./market-accelerator-program.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary/10 transition-colors">
+                                        <span class="text-lg">⚡</span>
+                                        <div class="font-semibold text-sm">Global Lead Generation</div>
+                                    </a>
+                                    <a href="./part-time-lead-generation-team.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-accent/10 transition-colors">
+                                        <span class="text-lg">👥</span>
+                                        <div class="font-semibold text-sm">Part Time Lead Generation Team</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="grid gap-2 mt-4">
+                                <div class="flex items-center gap-2 px-3 pt-1 pb-2">
+                                    <lord-icon src="https://cdn.lordicon.com/gqdnbnwt.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:28px;height:28px;opacity:0.6"></lord-icon>
+                                    <div class="flex-1">
+                                        <div class="text-xs font-normal text-gray-500 uppercase tracking-wide">Corporate Solutions</div>
+                                    </div>
+                                </div>
+                                <div class="space-y-1 pl-2">
+                                    <a href="./corporate-digital-gifting.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/10 transition-colors">
+                                        <lord-icon src="https://cdn.lordicon.com/gqdnbnwt.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:32px;height:32px"></lord-icon>
+                                        <div class="font-semibold text-sm">Digital Gifting</div>
+                                    </a>
+                                    <a href="./usa-pr-service.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/10 transition-colors">
+                                        <lord-icon src="https://cdn.lordicon.com/vdjwmfqs.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:32px;height:32px"></lord-icon>
+                                        <div class="font-semibold text-sm">USA PR Service</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="border-t border-base-300 mt-4 pt-4">
+                                <a href="./contact.html" class="btn btn-primary btn-sm w-full buzz-button">
+                                    Get Free Consultation
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown dropdown-hover">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold ">
+                        Company
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div tabindex="0" class="dropdown-content z-[1] card card-compact w-72 p-4 shadow-xl bg-base-100 border border-base-300">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary mb-3">About Expandia</h3>
+                            <div class="grid gap-2">
+                                <a href="./about.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                    <span class="text-xl">👥</span>
+                                    <div class="font-semibold">About Us</div>
+                                </a>
+                                <a href="./vision-mission.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
+                                    <span class="text-xl">🎯</span>
+                                    <div class="font-semibold">Vision & Mission</div>
+                                </a>
+                                <a href="./our-ethical-principles.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
+                                    <span class="text-xl">⚖️</span>
+                                    <div class="font-semibold">Our Ethical Principles</div>
+                                </a>
+                            </div>
+                            <div class="border-t border-base-300 mt-4 pt-4">
+                                <a href="./contact.html" class="btn btn-primary btn-sm w-full buzz-button">
+                                    Get Free Consultation
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="./blog/index.html" class="btn btn-ghost font-semibold ">Growth Blog</a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="navbar-end flex items-center">
+            <div class="dropdown dropdown-end mr-4">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-sm">
+                    <span id="current-flag">🇺🇸</span>
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-32 text-right">
+                    <li>
+                        <a href="#" data-lang="en" class="lang-switch flex items-center gap-2 justify-end">
+                            <span>🇺🇸</span>
+                            <span>English</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-lang="tr" class="lang-switch flex items-center gap-2 justify-end">
+                            <span>🇹🇷</span>
+                            <span>Türkçe</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-lang="de" class="lang-switch flex items-center gap-2 justify-end">
+                            <span>🇩🇪</span>
+                            <span>Deutsch</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <a href="./contact.html" class="btn btn-primary buzz-button ml-2">Get Started</a>
+        </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-12 md:py-16 bg-gradient-to-br from-buzz-warm via-base-100 to-buzz-light">
+        <div class="container mx-auto container-padding">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="gradient-header">Global B2B Lead Generation</span><br>
+                    <span class="text-base-content">Locations Worldwide</span>
+                </h1>
+                <p class="text-lg md:text-xl text-base-content/80 max-w-3xl mx-auto mb-8">
+                    Explore our B2B lead generation services across 86+ cities worldwide. 
+                    Click on any city to learn more about our local lead generation expertise.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section class="bg-base-100">
+        <div class="map-container">
+            <div id="map"></div>
+            <div class="map-legend">
+                <h3 class="font-bold mb-3 text-sm">Regions</h3>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #f9c23c;"></div>
+                    <span class="text-xs">DACH</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #e86100;"></div>
+                    <span class="text-xs">Western Europe</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #ff6b35;"></div>
+                    <span class="text-xs">Southern Europe</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #4a90e2;"></div>
+                    <span class="text-xs">Scandinavia</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #9b59b6;"></div>
+                    <span class="text-xs">Eastern Europe</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #e74c3c;"></div>
+                    <span class="text-xs">North America</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #95a5a6;"></div>
+                    <span class="text-xs">Turkey</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- City List Section -->
+    <section class="section-spacing bg-base-200">
+        <div class="container mx-auto container-padding">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">All Locations</h2>
+            <div id="city-list" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Cities will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-gradient text-white">
+        <div class="border-b border-white/10">
+            <div class="container mx-auto container-padding py-12">
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+                    <div class="text-center lg:text-left">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-2">Stay Updated with Growth Insights</h3>
+                        <p class="text-white/80">Get the latest growth strategies and lead generation updates.</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+                        <form id="newsletter-form" class="flex gap-4 w-full">
+                            <input type="email" name="email" placeholder="Enter your email" class="footer-newsletter-input" required>
+                            <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
+                            <input type="text" name="math" inputmode="numeric" pattern="[0-9]+" placeholder="30+31=" class="input input-bordered w-24 sm:w-28" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto container-padding py-16">
+            <div class="grid md:grid-cols-12 gap-8 mb-16">
+                <div class="md:col-span-4">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 w-auto brightness-0 invert">
+                    </div>
+                    <p class="text-white/80 mb-6 text-lg">
+                        Your Partner in Lead Generation and corporate communication.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/company/expandia-ch/" class="footer-social-icon group" target="_blank" rel="noopener noreferrer">
+                            <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:col-span-2">
+                    <h4 class="text-lg font-bold mb-6">Solutions</h4>
+                    <ul class="space-y-4 text-white/80">
+                        <li><a href="./market-foundation-program.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>Local Lead Generation</a></li>
+                        <li><a href="./market-accelerator-program.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>Global Lead Generation</a></li>
+                        <li><a href="./part-time-lead-generation-team.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>Part Time Lead Generation Team</a></li>
+                        <li><a href="./corporate-digital-gifting.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>Digital Gifting</a></li>
+                        <li><a href="./usa-pr-service.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>USA PR Service</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2">
+                    <h4 class="text-lg font-bold mb-6">Company</h4>
+                    <ul class="space-y-4 text-white/80">
+                        <li><a href="./case-studies.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>Success Stories</a></li>
+                        <li><a href="./about.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>About Us</a></li>
+                        <li><a href="./contact.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>Contact Us</a></li>
+                        <li><a href="./blog/" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>Growth Resources</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-4">
+                    <h4 class="text-lg font-bold mb-6">Get in Touch</h4>
+                    <div class="footer-contact-card">
+                        <p class="text-white/80 mb-6">Ready to accelerate your growth? Let's discuss how we can help.</p>
+                        <a href="./contact.html" class="btn btn-primary w-full mb-6">Get Free Consultation</a>
+                        <div class="space-y-4">
+                            <a href="mailto:hello@expandia.ch" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                                hello@expandia.ch
+                            </a>
+                            <a href="mailto:hello@expandia.ch" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                                Email to Schedule
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-white/60 text-sm">© <span id="year"></span> Expandia. All rights reserved.</p>
+                <div class="flex flex-wrap gap-4 text-sm">
+                    <a href="./privacy-policy.html" class="text-white/60 hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="./terms-of-service.html" class="text-white/60 hover:text-primary transition-colors">Terms of Service</a>
+                    <a href="./cookie-policy.html" class="text-white/60 hover:text-primary transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./dist/js/index.js"></script>
+    <script src="./dist/js/contact.js"></script>
+
+    <!-- Lord Icon -->
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+
+    <script>
+        // City data with coordinates and sub-regions
+        const cities = [
+            // DACH (Germany, Austria, Switzerland)
+            { name: 'Zurich', lat: 47.3769, lng: 8.5417, url: './b2b-lead-generation-zurich.html', region: 'DACH' },
+            { name: 'Geneva', lat: 46.2044, lng: 6.1432, url: './b2b-lead-generation-geneva.html', region: 'DACH' },
+            { name: 'Basel', lat: 47.5596, lng: 7.5886, url: './b2b-lead-generation-basel.html', region: 'DACH' },
+            { name: 'Bern', lat: 46.9481, lng: 7.4474, url: './b2b-lead-generation-bern.html', region: 'DACH' },
+            { name: 'Lausanne', lat: 46.5197, lng: 6.6323, url: './b2b-lead-generation-lausanne.html', region: 'DACH' },
+            { name: 'Lucerne', lat: 47.0502, lng: 8.3093, url: './b2b-lead-generation-lucerne.html', region: 'DACH' },
+            { name: 'St. Gallen', lat: 47.4245, lng: 9.3767, url: './b2b-lead-generation-st-gallen.html', region: 'DACH' },
+            { name: 'Lugano', lat: 46.0101, lng: 8.9600, url: './b2b-lead-generation-lugano.html', region: 'DACH' },
+            { name: 'Winterthur', lat: 47.4999, lng: 8.7371, url: './b2b-lead-generation-winterthur.html', region: 'DACH' },
+            { name: 'Berlin', lat: 52.5200, lng: 13.4050, url: './b2b-lead-generation-berlin.html', region: 'DACH' },
+            { name: 'Hamburg', lat: 53.5511, lng: 9.9937, url: './b2b-lead-generation-hamburg.html', region: 'DACH' },
+            { name: 'Munich', lat: 48.1351, lng: 11.5820, url: './b2b-lead-generation-munich.html', region: 'DACH' },
+            { name: 'Cologne', lat: 50.9375, lng: 6.9603, url: './b2b-lead-generation-cologne.html', region: 'DACH' },
+            { name: 'Frankfurt', lat: 50.1109, lng: 8.6821, url: './b2b-lead-generation-frankfurt.html', region: 'DACH' },
+            { name: 'Stuttgart', lat: 48.7758, lng: 9.1829, url: './b2b-lead-generation-stuttgart.html', region: 'DACH' },
+            { name: 'Düsseldorf', lat: 51.2277, lng: 6.7735, url: './b2b-lead-generation-duesseldorf.html', region: 'DACH' },
+            { name: 'Leipzig', lat: 51.3397, lng: 12.3731, url: './b2b-lead-generation-leipzig.html', region: 'DACH' },
+            { name: 'Dortmund', lat: 51.5136, lng: 7.4653, url: './b2b-lead-generation-dortmund.html', region: 'DACH' },
+            { name: 'Essen', lat: 51.4556, lng: 7.0116, url: './b2b-lead-generation-essen.html', region: 'DACH' },
+            
+            // Western Europe
+            { name: 'Paris', lat: 48.8566, lng: 2.3522, url: './b2b-lead-generation-paris.html', region: 'Western Europe' },
+            { name: 'Marseille', lat: 43.2965, lng: 5.3698, url: './b2b-lead-generation-marseille.html', region: 'Western Europe' },
+            { name: 'Lyon', lat: 45.7640, lng: 4.8357, url: './b2b-lead-generation-lyon.html', region: 'Western Europe' },
+            { name: 'Toulouse', lat: 43.6047, lng: 1.4442, url: './b2b-lead-generation-toulouse.html', region: 'Western Europe' },
+            { name: 'Nice', lat: 43.7102, lng: 7.2620, url: './b2b-lead-generation-nice.html', region: 'Western Europe' },
+            { name: 'Nantes', lat: 47.2184, lng: -1.5536, url: './b2b-lead-generation-nantes.html', region: 'Western Europe' },
+            { name: 'Montpellier', lat: 43.6108, lng: 3.8767, url: './b2b-lead-generation-montpellier.html', region: 'Western Europe' },
+            { name: 'Strasbourg', lat: 48.5734, lng: 7.7521, url: './b2b-lead-generation-strasbourg.html', region: 'Western Europe' },
+            { name: 'Bordeaux', lat: 44.8378, lng: -0.5792, url: './b2b-lead-generation-bordeaux.html', region: 'Western Europe' },
+            { name: 'Lille', lat: 50.6292, lng: 3.0573, url: './b2b-lead-generation-lille.html', region: 'Western Europe' },
+            { name: 'London', lat: 51.5074, lng: -0.1278, url: './b2b-lead-generation-london.html', region: 'Western Europe' },
+            { name: 'Birmingham', lat: 52.4862, lng: -1.8904, url: './b2b-lead-generation-birmingham.html', region: 'Western Europe' },
+            { name: 'Manchester', lat: 53.4808, lng: -2.2426, url: './b2b-lead-generation-manchester.html', region: 'Western Europe' },
+            { name: 'Glasgow', lat: 55.8642, lng: -4.2518, url: './b2b-lead-generation-glasgow.html', region: 'Western Europe' },
+            { name: 'Liverpool', lat: 53.4084, lng: -2.9916, url: './b2b-lead-generation-liverpool.html', region: 'Western Europe' },
+            { name: 'Leeds', lat: 53.8008, lng: -1.5491, url: './b2b-lead-generation-leeds.html', region: 'Western Europe' },
+            { name: 'Edinburgh', lat: 55.9533, lng: -3.1883, url: './b2b-lead-generation-edinburgh.html', region: 'Western Europe' },
+            { name: 'Bristol', lat: 51.4545, lng: -2.5879, url: './b2b-lead-generation-bristol.html', region: 'Western Europe' },
+            { name: 'Dublin', lat: 53.3498, lng: -6.2603, url: './b2b-lead-generation-dublin.html', region: 'Western Europe' },
+            { name: 'Cork', lat: 51.8985, lng: -8.4756, url: './b2b-lead-generation-cork.html', region: 'Western Europe' },
+            { name: 'Limerick', lat: 52.6638, lng: -8.6267, url: './b2b-lead-generation-limerick.html', region: 'Western Europe' },
+            { name: 'Amsterdam', lat: 52.3676, lng: 4.9041, url: './b2b-lead-generation-amsterdam.html', region: 'Western Europe' },
+            { name: 'Rotterdam', lat: 51.9244, lng: 4.4777, url: './b2b-lead-generation-rotterdam.html', region: 'Western Europe' },
+            { name: 'The Hague', lat: 52.0705, lng: 4.3007, url: './b2b-lead-generation-the-hague.html', region: 'Western Europe' },
+            
+            // Southern Europe
+            { name: 'Madrid', lat: 40.4168, lng: -3.7038, url: './b2b-lead-generation-madrid.html', region: 'Southern Europe' },
+            { name: 'Barcelona', lat: 41.3851, lng: 2.1734, url: './b2b-lead-generation-barcelona.html', region: 'Southern Europe' },
+            { name: 'Valencia', lat: 39.4699, lng: -0.3763, url: './b2b-lead-generation-valencia.html', region: 'Southern Europe' },
+            { name: 'Lisbon', lat: 38.7223, lng: -9.1393, url: './b2b-lead-generation-lisbon.html', region: 'Southern Europe' },
+            { name: 'Porto', lat: 41.1579, lng: -8.6291, url: './b2b-lead-generation-porto.html', region: 'Southern Europe' },
+            { name: 'Rome', lat: 41.9028, lng: 12.4964, url: './b2b-lead-generation-rome.html', region: 'Southern Europe' },
+            { name: 'Milan', lat: 45.4642, lng: 9.1900, url: './b2b-lead-generation-milan.html', region: 'Southern Europe' },
+            { name: 'Naples', lat: 40.8518, lng: 14.2681, url: './b2b-lead-generation-naples.html', region: 'Southern Europe' },
+            
+            // Scandinavia
+            { name: 'Stockholm', lat: 59.3293, lng: 18.0686, url: './b2b-lead-generation-stockholm.html', region: 'Scandinavia' },
+            { name: 'Gothenburg', lat: 57.7089, lng: 11.9746, url: './b2b-lead-generation-gothenburg.html', region: 'Scandinavia' },
+            { name: 'Malmö', lat: 55.6059, lng: 13.0007, url: './b2b-lead-generation-malmo.html', region: 'Scandinavia' },
+            { name: 'Oslo', lat: 59.9139, lng: 10.7522, url: './b2b-lead-generation-oslo.html', region: 'Scandinavia' },
+            { name: 'Bergen', lat: 60.3913, lng: 5.3221, url: './b2b-lead-generation-bergen.html', region: 'Scandinavia' },
+            
+            // Eastern Europe
+            { name: 'Warsaw', lat: 52.2297, lng: 21.0122, url: './b2b-lead-generation-warsaw.html', region: 'Eastern Europe' },
+            { name: 'Krakow', lat: 50.0647, lng: 19.9450, url: './b2b-lead-generation-krakow.html', region: 'Eastern Europe' },
+            { name: 'Lodz', lat: 51.7592, lng: 19.4560, url: './b2b-lead-generation-lodz.html', region: 'Eastern Europe' },
+            { name: 'Wroclaw', lat: 51.1079, lng: 17.0385, url: './b2b-lead-generation-wroclaw.html', region: 'Eastern Europe' },
+            { name: 'Poznan', lat: 52.4064, lng: 16.9252, url: './b2b-lead-generation-poznan.html', region: 'Eastern Europe' },
+            { name: 'Prague', lat: 50.0755, lng: 14.4378, url: './b2b-lead-generation-prague.html', region: 'Eastern Europe' },
+            { name: 'Budapest', lat: 47.4979, lng: 19.0402, url: './b2b-lead-generation-budapest.html', region: 'Eastern Europe' },
+            { name: 'Bucharest', lat: 44.4268, lng: 26.1025, url: './b2b-lead-generation-bucharest.html', region: 'Eastern Europe' },
+            { name: 'Sofia', lat: 42.6977, lng: 23.3219, url: './b2b-lead-generation-sofia.html', region: 'Eastern Europe' },
+            { name: 'Zagreb', lat: 45.8150, lng: 15.9819, url: './b2b-lead-generation-zagreb.html', region: 'Eastern Europe' },
+            { name: 'Bratislava', lat: 48.1486, lng: 17.1077, url: './b2b-lead-generation-bratislava.html', region: 'Eastern Europe' },
+            { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, url: './b2b-lead-generation-ljubljana.html', region: 'Eastern Europe' },
+            { name: 'Tallinn', lat: 59.4370, lng: 24.7536, url: './b2b-lead-generation-tallinn.html', region: 'Eastern Europe' },
+            { name: 'Riga', lat: 56.9496, lng: 24.1052, url: './b2b-lead-generation-riga.html', region: 'Eastern Europe' },
+            { name: 'Vilnius', lat: 54.6872, lng: 25.2797, url: './b2b-lead-generation-vilnius.html', region: 'Eastern Europe' },
+            { name: 'Belgrade', lat: 44.7866, lng: 20.4489, url: './b2b-lead-generation-belgrade.html', region: 'Eastern Europe' },
+            
+            // Turkey
+            { name: 'Istanbul', lat: 41.0082, lng: 28.9784, url: './b2b-lead-generation-istanbul.html', region: 'Turkey' },
+            { name: 'Ankara', lat: 39.9334, lng: 32.8597, url: './b2b-lead-generation-ankara.html', region: 'Turkey' },
+            { name: 'Izmir', lat: 38.4237, lng: 27.1428, url: './b2b-lead-generation-izmir.html', region: 'Turkey' },
+            { name: 'Bursa', lat: 40.1826, lng: 29.0665, url: './b2b-lead-generation-bursa.html', region: 'Turkey' },
+            { name: 'Antalya', lat: 36.8969, lng: 30.7133, url: './b2b-lead-generation-antalya.html', region: 'Turkey' },
+            
+            // North America
+            { name: 'New York', lat: 40.7128, lng: -74.0060, url: './b2b-lead-generation-new-york.html', region: 'North America' },
+            { name: 'Los Angeles', lat: 34.0522, lng: -118.2437, url: './b2b-lead-generation-los-angeles.html', region: 'North America' },
+            { name: 'Chicago', lat: 41.8781, lng: -87.6298, url: './b2b-lead-generation-chicago.html', region: 'North America' },
+            { name: 'Houston', lat: 29.7604, lng: -95.3698, url: './b2b-lead-generation-houston.html', region: 'North America' },
+            { name: 'Phoenix', lat: 33.4484, lng: -112.0740, url: './b2b-lead-generation-phoenix.html', region: 'North America' },
+            { name: 'Philadelphia', lat: 39.9526, lng: -75.1652, url: './b2b-lead-generation-philadelphia.html', region: 'North America' },
+            { name: 'San Antonio', lat: 29.4241, lng: -98.4936, url: './b2b-lead-generation-san-antonio.html', region: 'North America' },
+            { name: 'San Diego', lat: 32.7157, lng: -117.1611, url: './b2b-lead-generation-san-diego.html', region: 'North America' },
+            { name: 'Dallas', lat: 32.7767, lng: -96.7970, url: './b2b-lead-generation-dallas.html', region: 'North America' },
+            { name: 'San Jose', lat: 37.3382, lng: -121.8863, url: './b2b-lead-generation-san-jose.html', region: 'North America' }
+        ];
+
+        // Initialize map
+        const map = L.map('map').setView([50, 10], 3);
+
+        // Add tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors',
+            maxZoom: 18
+        }).addTo(map);
+
+        // Color mapping for sub-regions
+        const regionColors = {
+            'DACH': '#f9c23c',              // Yellow (primary)
+            'Western Europe': '#e86100',   // Orange (secondary)
+            'Southern Europe': '#ff6b35',   // Orange-red
+            'Scandinavia': '#4a90e2',      // Blue
+            'Eastern Europe': '#9b59b6',    // Purple
+            'North America': '#e74c3c',    // Red
+            'Turkey': '#95a5a6'            // Gray
+        };
+
+        // Create custom icon
+        function createCustomIcon(color) {
+            return L.divIcon({
+                className: 'city-marker',
+                html: `<div style="
+                    width: 20px;
+                    height: 20px;
+                    background-color: ${color};
+                    border: 3px solid white;
+                    border-radius: 50%;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+                    transition: all 0.3s ease;
+                "></div>`,
+                iconSize: [20, 20],
+                iconAnchor: [10, 10]
+            });
+        }
+
+        // Add markers for each city
+        cities.forEach(city => {
+            const color = regionColors[city.region] || '#ff6b35';
+            const icon = createCustomIcon(color);
+            
+            const marker = L.marker([city.lat, city.lng], { icon: icon }).addTo(map);
+            
+            // Create popup with link
+            const popupContent = `
+                <div class="custom-popup">
+                    <h3>${city.name}</h3>
+                    <p style="margin: 0.5rem 0; color: #666;">${city.region}</p>
+                    <a href="${city.url}" style="
+                        display: inline-block;
+                        margin-top: 0.5rem;
+                        padding: 0.5rem 1rem;
+                        background-color: #f9c23c;
+                        color: #000;
+                        border-radius: 0.25rem;
+                        font-weight: 600;
+                        text-decoration: none;
+                    ">View Services →</a>
+                </div>
+            `;
+            
+            marker.bindPopup(popupContent);
+            
+            // Add hover effect
+            marker.on('mouseover', function() {
+                this.openPopup();
+            });
+        });
+
+        // Populate city list
+        const cityListContainer = document.getElementById('city-list');
+        cities.sort((a, b) => a.name.localeCompare(b.name)).forEach(city => {
+            const cityCard = document.createElement('a');
+            cityCard.href = city.url;
+            cityCard.className = 'buzz-card p-4 hover:scale-105 transition-transform cursor-pointer';
+            cityCard.innerHTML = `
+                <div class="flex items-center gap-3">
+                    <div class="w-3 h-3 rounded-full" style="background-color: ${regionColors[city.region] || '#ff6b35'};"></div>
+                    <div>
+                        <h3 class="font-semibold">${city.name}</h3>
+                        <p class="text-sm text-base-content/60">${city.region}</p>
+                    </div>
+                </div>
+            `;
+            cityListContainer.appendChild(cityCard);
+        });
+    </script>
+</body>
+</html>
+
