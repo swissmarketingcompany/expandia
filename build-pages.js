@@ -817,16 +817,16 @@ function getPageMetadata(templateName, lang = 'en') {
             description: 'Büyük pazarlara hızla hakim olun. Agresif iletişim ve ölçeklenebilir büyüme.',
             keywords: 'pazar hızlandırma, hızlı büyüme, B2B ölçeklendirme, satış hızlandırma'
         },
-        'fractional-bizdev-team': {
-            title: isturkish 
-                ? 'Part-Time Lead Generation Ekibi | Expandia' 
-                : 'Fractional Lead Generation Team | Expandia',
-            description: isturkish 
+        'part-time-lead-generation-team': {
+            title: isturkish
+                ? 'Part-Time Lead Generation Ekibi | Expandia'
+                : 'Part-Time Lead Generation Team | Expandia',
+            description: isturkish
                 ? '5-50 kişilik şirketler için özel ekip üyesi. Ayda 40 saat, düşük maliyet, yüksek performans.'
                 : 'Dedicated team member for 5-50 headcount companies. 40 hours/month, low cost, high performance.',
-            keywords: isturkish 
-                ? 'part-time lead generation, fractional Lead Generation, dış kaynak satış, B2B ekip'
-                : 'fractional lead generation, fractional Lead Generation, outsourced sales, B2B team'
+            keywords: isturkish
+                ? 'part-time lead generation, part-time Lead Generation, dış kaynak satış, B2B ekip'
+                : 'part-time lead generation, part-time Lead Generation, outsourced sales, B2B team'
         },
         'kismi-is-gelistirme-ekibi': {
             title: 'Part-Time Lead Generation Ekibi | Expandia',
@@ -985,18 +985,18 @@ function getHreflangUrls(templateName) {
             tr: 'tr/pazar-hizlandirici-program.html',
             de: 'de/markt-beschleuniger-programm.html'
         },
-        'fractional-bizdev-team': {
-            en: 'fractional-bizdev-team.html',
+        'part-time-lead-generation-team': {
+            en: 'part-time-lead-generation-team.html',
             tr: 'tr/kismi-is-gelistirme-ekibi.html',
             de: 'de/teilzeit-bizdev-team.html'
         },
         'kismi-is-gelistirme-ekibi': {
-            en: 'fractional-bizdev-team.html',
+            en: 'part-time-lead-generation-team.html',
             tr: 'tr/kismi-is-gelistirme-ekibi.html',
             de: 'de/teilzeit-bizdev-team.html'
         },
         'teilzeit-bizdev-team': {
-            en: 'fractional-bizdev-team.html',
+            en: 'part-time-lead-generation-team.html',
             tr: 'tr/kismi-is-gelistirme-ekibi.html',
             de: 'de/teilzeit-bizdev-team.html'
         },
@@ -1290,7 +1290,7 @@ function buildPage(templateName, outputName, lang = 'en') {
         en: {
             foundation: 'market-foundation-program.html',
             accelerator: 'market-accelerator-program.html',
-            fractional: 'fractional-bizdev-team.html',
+            fractional: 'part-time-lead-generation-team.html',
             vision: 'vision-mission.html',
             ethics: 'our-ethical-principles.html'
         },
@@ -1678,7 +1678,7 @@ buildPage('vision-mission', 'vision-mission', 'en');
 buildPage('our-ethical-principles', 'our-ethical-principles', 'en');
 buildPage('market-foundation-program', 'market-foundation-program', 'en');
 buildPage('market-accelerator-program', 'market-accelerator-program', 'en');
-buildPage('fractional-bizdev-team', 'fractional-bizdev-team', 'en');
+buildPage('part-time-lead-generation-team', 'part-time-lead-generation-team', 'en');
 
 // Build English service pages
 console.log('Building English service pages...');
