@@ -667,14 +667,14 @@ function getPageMetadata(templateName, lang = 'en') {
                 : 'lead generation success stories, inbound lead gen case studies, outbound lead gen results'
         },
         'lead-generation-service': {
-            title: 'Lead Generation Service | Inbound & Outbound | Expandia',
-            description: 'Inbound lead generation, outbound lead generation, and conversion optimization to build predictable pipeline.',
-            keywords: 'lead generation service, inbound lead generation, outbound lead generation, conversion optimization'
+            title: 'Lead Generation Services for Small Business & B2B Companies | Expandia',
+            description: 'Lead generation services for small business and B2B companies. Inbound and outbound programs that build predictable pipeline and qualified sales opportunities.',
+            keywords: 'lead generation services for small business, B2B lead generation agency, inbound lead generation, outbound lead generation, automated lead generation solutions'
         },
         'appointment-setting-service': {
-            title: 'Appointment Setting Service | Qualified Meetings | Expandia',
-            description: 'Qualified meeting booking via multi-channel outbound: research, email, native calling, and follow-up.',
-            keywords: 'appointment setting, outbound lead generation, SDR, B2B meetings'
+            title: 'B2B Appointment Setting Services | Qualified Sales Meetings | Expandia',
+            description: 'B2B appointment setting services that fill your calendar with qualified meetings. Research, outbound sequences, and SDR calling for decision-makers in Europe and the USA.',
+            keywords: 'B2B appointment setting services, qualified sales meetings, SDR team, pipeline generation strategy, cold calling services for B2B'
         },
         'cold-email-agency': {
             title: 'Cold Email Agency | Deliverability & Replies | Expandia',
@@ -682,64 +682,64 @@ function getPageMetadata(templateName, lang = 'en') {
             keywords: 'cold email agency, deliverability, inboxing, b2b outreach'
         },
         'b2b-lead-generation-agency': {
-            title: 'B2B Lead Generation Agency | Qualified Leads | Expandia',
-            description: 'Leading B2B Lead Generation agency. Generate qualified leads and continuously feed your sales pipeline with Expandia\'s proven strategies.',
-            keywords: 'B2B lead generation Europe, qualified leads, appointment setting for exporters, export market entry'
+            title: 'B2B Lead Generation Agency Europe & USA | Qualified Leads | Expandia',
+            description: 'B2B lead generation agency for Europe and the USA. Generate qualified leads, book sales appointments, and grow pipeline for exporters and high-ticket B2B services.',
+            keywords: 'B2B lead generation Switzerland, B2B lead generation Europe, lead generation agency, best lead generation companies 2025, pay per lead generation agency'
         },
         'sales-development-agency': {
-            title: 'Sales Development Agency | B2B Growth Experts | Expandia',
-            description: 'Professional Sales Development agency specializing in B2B growth. Complete sales team outsourcing and performance optimization.',
-            keywords: 'sales development agency, B2B sales outsourcing, sales team management, business development Europe'
+            title: 'Outsourced Sales Development & SDR Teams | Expandia',
+            description: 'Outsourced sales development for B2B companies that need qualified opportunities, not just raw leads. SDR teams, pipeline generation, and sales development processes built for Europe and the USA.',
+            keywords: 'outsourced sales development, outsourced SDR teams, B2B sales development agency, pipeline generation strategy, sales development Europe'
         },
         'outbound-marketing-agency': {
-            title: 'Outbound Marketing Agency | B2B Outreach | Expandia',
-            description: 'Expert Outbound Marketing agency for B2B companies. Multi-channel outreach campaigns and customer acquisition strategies.',
-            keywords: 'outbound marketing agency, B2B outreach, cold email campaigns, LinkedIn outreach, multi-channel marketing'
+            title: 'Outbound Marketing Agency | Multi-Channel B2B Outreach | Expandia',
+            description: 'Outbound marketing agency focused on multi-channel B2B outreach. LinkedIn lead generation services, cold email campaigns, and outbound sequences that generate meetings with decision-makers.',
+            keywords: 'outbound marketing agency, LinkedIn lead generation services, cold email campaigns, B2B outreach, multi-channel outbound marketing'
         },
         'email-marketing-management': {
-            title: 'B2B Email Marketing Management | Lead Generation & Sales Development | Expandia',
-            description: 'Professional B2B email marketing management service for lead generation and business development. Achieve $36 ROI per $1 invested with expert email campaigns.',
-            keywords: 'B2B email marketing, lead generation, business development, email marketing management, sales development, ROI optimization'
+            title: 'B2B Email Marketing Lead Generation | Campaign Management | Expandia',
+            description: 'B2B email marketing management focused on lead generation and sales pipeline. Strategy, copy, and automation to turn email lists into qualified opportunities.',
+            keywords: 'email marketing lead generation, B2B email marketing, automated lead generation solutions, email marketing management, sales funnel conversion'
         },
         'email-automation': {
-            title: 'B2B Email Automation | Lead Generation & Sales Development | Expandia',
-            description: 'Professional B2B email automation service for lead generation and business development. Automate sales sequences, nurture leads, and close deals while you focus on strategy.',
-            keywords: 'B2B email automation, lead generation, business development, email sequences, sales automation, lead nurturing'
+            title: 'B2B Email Automation Services | Automated Lead Generation | Expandia',
+            description: 'B2B email automation services that turn manual outreach into automated lead generation. Build nurture sequences, trigger-based campaigns, and sales automation for Europe and the USA.',
+            keywords: 'automated lead generation solutions, B2B email automation, email sequences, sales automation, lead nurturing workflows'
         },
         'prospect-finding-service': {
-            title: 'Prospect Finding Service | B2B Lead Generation | Expandia',
-            description: 'Professional prospect finding service for B2B companies. Identify and target ideal customers with our proven research and data intelligence methods.',
-            keywords: 'prospect finding, B2B lead generation, business development, target account lists, ideal customer profile, lead research'
+            title: 'Prospect Finding Service | Qualified B2B Data & Lists | Expandia',
+            description: 'Prospect finding service providing qualified B2B data and account lists for Europe and the USA. Ideal customer profiling, research, and list-building that feeds your lead generation engine.',
+            keywords: 'B2B data providers Europe, qualified prospect lists, prospect finding service, target account lists, ideal customer profile research'
         },
         'outsourced-sales-team-service': {
-            title: 'Outsourced Sales Team Service | B2B Sales as a Service | Expandia',
-            description: 'Complete outsourced sales team service for B2B companies. Professional sales representatives and business development experts to accelerate your growth.',
-            keywords: 'outsourced sales team, B2B sales as a service, business development, sales outsourcing, sales team management, revenue growth'
+            title: 'Outsourced Sales Teams USA & Europe | Sales as a Service | Expandia',
+            description: 'Outsourced sales teams for B2B companies selling into Europe and the USA. SDRs, account executives, and appointment setters that operate as your Sales-as-a-Service team.',
+            keywords: 'outsourced sales teams USA, outsourced sales team, B2B sales as a service, sales outsourcing, high ticket closing services'
         },
         'distributor-finding': {
-            title: 'Distributor Finding Service | International Business Development | Expandia',
-            description: 'Professional distributor finding service for international expansion. Connect with the right partners and distributors in new markets across Europe.',
-            keywords: 'distributor finding, international business development, export consulting, market entry, channel partners, distribution network'
+            title: 'Distributor Finding Service | Europe Market Partners | Expandia',
+            description: 'Distributor finding service for European market entry. Identify, qualify, and secure distribution partners that can grow your revenue in new regions.',
+            keywords: 'distributor finding service, distributor lead generation, Europe market entry, export consulting, channel partners, distribution network'
         },
         'international-market-entry': {
-            title: 'International Market Entry | Business Development Consulting | Expandia',
-            description: 'Expert international market entry consulting for European expansion. Strategic planning and execution for successful market penetration.',
-            keywords: 'international market entry, business development consulting, export consulting, market expansion, international growth, European markets'
+            title: 'International Market Entry Services | Europe & USA | Expandia',
+            description: 'International market entry services for companies expanding into Europe and the USA. Strategy, partner selection, and pipeline generation for new markets.',
+            keywords: 'international market entry services, US market entry services, Europe market entry, export consulting, international growth, market expansion strategy'
         },
         'export-marketing-consulting': {
-            title: 'Export Marketing Consulting | International Business Development | Expandia',
-            description: 'Professional export marketing consulting for international business development. Strategic export planning and execution for global growth.',
-            keywords: 'export marketing consulting, international business development, export strategy, global expansion, international sales, market development'
+            title: 'Export Marketing Consulting | Europe & US Sales Growth | Expandia',
+            description: 'Export marketing consulting that connects your products with buyers across Europe and the USA. Positioning, messaging, and lead generation for export growth.',
+            keywords: 'export marketing consulting, export lead generation, Europe market entry, international sales strategy, global expansion'
         },
         'overseas-sales-consulting': {
-            title: 'Overseas Sales Consulting | International Business Development | Expandia',
-            description: 'Expert overseas sales consulting for international business development. Strategic sales planning and execution for successful global expansion.',
-            keywords: 'overseas sales consulting, international business development, global sales strategy, international expansion, overseas markets, sales consulting'
+            title: 'Overseas Sales Consulting | B2B Expansion Strategy | Expandia',
+            description: 'Overseas sales consulting for B2B companies expanding beyond their home market. Strategy, buyer insights, and lead generation programs that create predictable overseas revenue.',
+            keywords: 'overseas sales consulting, B2B sales growth, international expansion strategy, overseas markets, sales consulting Europe'
         },
         'europe-market-entry': {
-            title: 'Europe Market Entry | Business Development Consulting | Expandia',
-            description: 'Professional Europe market entry consulting for international expansion. Expert guidance and execution for successful European market penetration.',
-            keywords: 'Europe market entry, business development consulting, European expansion, international growth, market entry strategy, European business development'
+            title: 'Europe Market Entry Services | B2B Lead Generation | Expandia',
+            description: 'Europe market entry services combined with B2B lead generation. From strategy and localization to pipeline generation across key hubs like Zurich, Berlin, and London.',
+            keywords: 'Europe market entry services, B2B lead generation Europe, sales agency Zurich, B2B lead gen agency Berlin, European expansion strategy'
         },
         'vision-mission': {
             title: isturkish 

@@ -66,3 +66,7 @@ temp/
 # Offer system - COMMIT offers to Git for persistence on Heroku
 # offers/*.json  <-- REMOVED: We need offers in Git or they're lost on Heroku
 !offers/.gitkeep 
+
+# Local fal.ai image generation helpers (never commit)
+fal-image-jobs.local.json
+AI_IMAGE_GENERATION_FAL.md

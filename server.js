@@ -12,6 +12,7 @@ const nodemailer = require('nodemailer');
 const { Resend } = require('resend');
 const rateLimit = require('express-rate-limit');
 const { body, validationResult } = require('express-validator');
+const helmet = require('helmet');
 const app = express();
 
 // Get port from environment variable or default to 6161 for dev
@@ -43,10 +44,30 @@ const generalLimiter = rateLimit({
 //     app.use(generalLimiter);
 // }
 
-// Middleware
+// Security & middleware
+app.set('trust proxy', 1); // needed for secure cookies & correct IPs behind proxies
+
+// Helmet for secure HTTP headers
+app.use(helmet({
+    contentSecurityPolicy: false, // keep simple; CSP can be added later if needed
+    crossOriginEmbedderPolicy: false
+}));
+
+// Basic HTTPS redirect in production (Heroku/Reverse proxy)
+app.use((req, res, next) => {
+    if (process.env.NODE_ENV === 'production') {
+        const proto = req.headers['x-forwarded-proto'] || req.protocol;
+        if (proto !== 'https') {
+            const host = req.headers.host;
+            return res.redirect(301, `https://${host}${req.originalUrl}`);
+        }
+    }
+    next();
+});
+
 app.use(cookieParser());
 app.use(cors({
-    origin: true, // Allow ALL origins (all domains work)
+    origin: process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',').map(o => o.trim()) : true,
     credentials: true
 }));
 
