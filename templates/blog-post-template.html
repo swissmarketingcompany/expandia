@@ -3,13 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{BLOG_TITLE}} | Expandia Blog</title>
+    <title>{{BLOG_TITLE}} | Expandia</title>
     <meta name="description" content="{{BLOG_DESCRIPTION}}">
     <link href="../dist/css/output.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="icon" type="image/png" href="../favicon.png">
     <link rel="apple-touch-icon" href="../favicon.png">
-    
+    <link rel="canonical" href="{{CANONICAL_URL}}">
+
+    <!-- OpenGraph / Twitter for stronger SERP snippets -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Expandia" />
+    <meta property="og:title" content="{{BLOG_TITLE}} | Expandia" />
+    <meta property="og:description" content="{{BLOG_DESCRIPTION}}" />
+    <meta property="og:url" content="{{CANONICAL_URL}}" />
+    <meta property="og:image" content="{{OG_IMAGE}}">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{BLOG_TITLE}} | Expandia" />
+    <meta name="twitter:description" content="{{BLOG_DESCRIPTION}}" />
+    <meta name="twitter:image" content="{{OG_IMAGE}}" />
+
+    <!-- Article Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "{{BLOG_TITLE}}",
+        "description": "{{BLOG_DESCRIPTION}}",
+        "author": {
+            "@type": "Organization",
+            "name": "Expandia",
+            "url": "https://www.expandia.ch",
+            "sameAs": ["https://www.linkedin.com/company/expandia-ch/"]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Expandia",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png"
+            }
+        },
+        "datePublished": "{{PUBLISH_DATE}}",
+        "dateModified": "{{MODIFIED_DATE}}",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{CANONICAL_URL}}"
+        },
+        "articleSection": "{{ARTICLE_SECTION}}",
+        "keywords": {{KEYWORDS_JSON}},
+        "timeRequired": "{{READ_TIME_ISO}}",
+        "wordCount": {{WORD_COUNT}}
+    }
+    </script>
+
+    <!-- FAQ Schema (optional) -->
+    {{FAQ_SCHEMA}}
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XY2B6K4R6Q"></script>
     <script>
@@ -178,6 +228,12 @@
                     });
                 }
             });
+        });
+
+        // Lazy-load images to improve LCP on article pages
+        document.querySelectorAll('img:not([loading])').forEach(img => {
+            img.loading = 'lazy';
+            img.decoding = 'async';
         });
     </script>
 </body>

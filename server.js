@@ -94,6 +94,20 @@ app.use('/dist', express.static(path.join(__dirname, 'dist'), {
     }
 }));
 
+// Path-specific 301 redirects for consolidated content
+const redirectMap = {
+    '/blog/cross-channel-lead-generation-complete-guide.html': '/blog/cross-channel-lead-generation-guide.html',
+    '/blog/pipeline-generation-strategies-guide.html': '/blog/pipeline-generation-complete-guide.html'
+};
+
+app.use((req, res, next) => {
+    const target = redirectMap[req.path];
+    if (target) {
+        return res.redirect(301, target);
+    }
+    next();
+});
+
 // Serve static files from the current directory (no aggressive cache for HTML)
 app.use(express.static(__dirname));
 
