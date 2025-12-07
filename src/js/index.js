@@ -384,11 +384,27 @@ function switchToEnglish() {
             // For other German pages, redirect to homepage
             window.location.href = '/';
         }
+    } else if (path.startsWith('/fr/')) {
+        // Map French pages to English equivalents
+        const englishPath = path.replace('/fr/', '/');
+
+        // Handle specific page mappings
+        if (englishPath === '/index.html' || englishPath === '/') {
+            window.location.href = '/';
+        } else if (englishPath.startsWith('/blog/')) {
+             window.location.href = '/blog/';
+        } else {
+             // Try to find the corresponding page
+             window.location.href = englishPath;
+        }
     } else if (path === '/tr' || path === '/tr/') {
         // Turkish home to English home
         window.location.href = '/';
     } else if (path === '/de' || path === '/de/') {
         // German home to English home
+        window.location.href = '/';
+    } else if (path === '/fr' || path === '/fr/') {
+        // French home to English home
         window.location.href = '/';
     } else {
         // Already on English
@@ -409,6 +425,10 @@ function switchToTurkish() {
     } else if (path.startsWith('/de/')) {
         // Map German pages to Turkish equivalents
         const turkishPath = path.replace('/de/', '/tr/');
+        window.location.href = turkishPath;
+    } else if (path.startsWith('/fr/')) {
+        // Map French pages to Turkish equivalents
+        const turkishPath = path.replace('/fr/', '/tr/');
         window.location.href = turkishPath;
     } else {
         // Map English pages to Turkish equivalents
@@ -453,6 +473,10 @@ function switchToGerman() {
         // Map Turkish pages to German equivalents
         const germanPath = path.replace('/tr/', '/de/');
         window.location.href = germanPath;
+    } else if (path.startsWith('/fr/')) {
+        // Map French pages to German equivalents
+        const germanPath = path.replace('/fr/', '/de/');
+        window.location.href = germanPath;
     } else {
         // Map English pages to German equivalents
         if (path === '/' || path === '/index.html' || path === '') {
@@ -477,6 +501,40 @@ function switchToGerman() {
     }
 }
 
+function switchToFrench() {
+    const path = window.location.pathname;
+
+    // Set user language preference to prevent auto-redirects
+    localStorage.setItem('expandia_language_preference', 'fr');
+
+    if (path.startsWith('/fr/')) {
+        // Already on French
+        console.log('Already on French version');
+        return;
+    } else if (path.startsWith('/de/')) {
+        // Map German pages to French equivalents
+        const frenchPath = path.replace('/de/', '/fr/');
+        window.location.href = frenchPath;
+    } else if (path.startsWith('/tr/')) {
+        // Map Turkish pages to French equivalents
+        const frenchPath = path.replace('/tr/', '/fr/');
+        window.location.href = frenchPath;
+    } else {
+        // Map English pages to French equivalents
+        if (path === '/' || path === '/index.html' || path === '') {
+            window.location.href = '/fr/';
+        } else if (path.startsWith('/blog/')) {
+            // Handle blog pages - redirect to French blog (if exists, or root blog)
+            // For now, redirect to /fr/blog/ if it exists, but we probably want to check
+            window.location.href = '/fr/blog/';
+        } else {
+             // Try to find the corresponding page by prepending /fr/
+             // This assumes structure is mirrored
+             window.location.href = '/fr' + path;
+        }
+    }
+}
+
 // Geolocation-based language detection
 function detectUserLocation() {
     // Check if user has manually selected a language before
@@ -496,6 +554,7 @@ function detectUserLocation() {
     const currentPath = window.location.pathname;
     const isOnTurkish = currentPath.startsWith('/tr/') || currentPath === '/tr';
     const isOnGerman = currentPath.startsWith('/de/') || currentPath === '/de';
+    const isOnFrench = currentPath.startsWith('/fr/') || currentPath === '/fr';
 
     // Add a small delay to ensure page is loaded
     setTimeout(() => {
@@ -506,9 +565,11 @@ function detectUserLocation() {
                 // Language-specific countries/regions
                 const turkishCountries = ['TR', 'CY']; // Turkey, Cyprus
                 const germanCountries = ['DE', 'AT', 'CH']; // Germany, Austria, Switzerland
+                const frenchCountries = ['FR', 'BE', 'CA', 'LU', 'MC', 'SN', 'CI']; // France, Belgium, Canada, Luxembourg, Monaco, etc.
                 
                 const shouldShowTurkish = turkishCountries.includes(country);
                 const shouldShowGerman = germanCountries.includes(country);
+                const shouldShowFrench = frenchCountries.includes(country);
                 
                 // Show notification and redirect based on location
                 if (shouldShowTurkish && !isOnTurkish) {
@@ -521,7 +582,12 @@ function detectUserLocation() {
                         sessionStorage.setItem('expandia_last_redirect', Date.now().toString());
                         switchToGerman();
                     });
-                } else if (!shouldShowTurkish && !shouldShowGerman && (isOnTurkish || isOnGerman)) {
+                } else if (shouldShowFrench && !isOnFrench) {
+                    showLanguageNotification('French', () => {
+                        sessionStorage.setItem('expandia_last_redirect', Date.now().toString());
+                        switchToFrench();
+                    });
+                } else if (!shouldShowTurkish && !shouldShowGerman && !shouldShowFrench && (isOnTurkish || isOnGerman || isOnFrench)) {
                     showLanguageNotification('English', () => {
                         sessionStorage.setItem('expandia_last_redirect', Date.now().toString());
                         switchToEnglish();
@@ -535,6 +601,7 @@ function detectUserLocation() {
                 const browserLang = navigator.language || navigator.userLanguage;
                 const isTurkishBrowser = browserLang.startsWith('tr');
                 const isGermanBrowser = browserLang.startsWith('de');
+                const isFrenchBrowser = browserLang.startsWith('fr');
 
                 if (isTurkishBrowser && !isOnTurkish) {
                     showLanguageNotification('Turkish', () => {
@@ -546,6 +613,11 @@ function detectUserLocation() {
                         sessionStorage.setItem('expandia_last_redirect', Date.now().toString());
                         switchToGerman();
                     });
+                } else if (isFrenchBrowser && !isOnFrench) {
+                    showLanguageNotification('French', () => {
+                        sessionStorage.setItem('expandia_last_redirect', Date.now().toString());
+                        switchToFrench();
+                    });
                 }
             });
     }, 1000); // 1 second delay
@@ -555,24 +627,43 @@ function detectUserLocation() {
 function showLanguageNotification(suggestedLanguage, redirectCallback) {
     const banner = document.createElement('div');
     banner.className = 'fixed top-0 left-0 right-0 bg-primary text-white p-4 z-50 shadow-lg';
+
+    let message = '';
+    let acceptText = '';
+    let declineText = '';
+
+    if (suggestedLanguage === 'Turkish') {
+        message = 'Türkiye\'den erişiyor gibi görünüyorsunuz. Türkçe versiyonu görüntülemek ister misiniz?';
+        acceptText = 'Evet, Türkçe';
+        declineText = 'Hayır, English kalsın';
+    } else if (suggestedLanguage === 'German') {
+        message = 'Es sieht so aus, als würden Sie aus einem deutschsprachigen Land zugreifen. Möchten Sie die deutsche Version anzeigen?';
+        acceptText = 'Ja, Deutsch';
+        declineText = 'Nein, English beibehalten';
+    } else if (suggestedLanguage === 'French') {
+        message = 'Il semble que vous accédiez depuis un pays francophone. Voulez-vous voir la version française ?';
+        acceptText = 'Oui, Français';
+        declineText = 'Non, garder l\'anglais';
+    } else {
+        message = 'It looks like you\'re accessing from outside Turkey. Would you like to view the English version?';
+        acceptText = 'Yes, English';
+        declineText = 'No, keep Turkish';
+    }
+
+    const flag = suggestedLanguage === 'Turkish' ? '🇹🇷' : suggestedLanguage === 'German' ? '🇩🇪' : suggestedLanguage === 'French' ? '🇫🇷' : '🇺🇸';
+
     banner.innerHTML = `
         <div class="container mx-auto flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <span class="text-xl">${suggestedLanguage === 'Turkish' ? '🇹🇷' : suggestedLanguage === 'German' ? '🇩🇪' : '🇺🇸'}</span>
-                <span>
-                    ${suggestedLanguage === 'Turkish' 
-                        ? 'Türkiye\'den erişiyor gibi görünüyorsunuz. Türkçe versiyonu görüntülemek ister misiniz?' 
-                        : suggestedLanguage === 'German'
-                        ? 'Es sieht so aus, als würden Sie aus einem deutschsprachigen Land zugreifen. Möchten Sie die deutsche Version anzeigen?'
-                        : 'It looks like you\'re accessing from outside Turkey. Would you like to view the English version?'}
-                </span>
+                <span class="text-xl">${flag}</span>
+                <span>${message}</span>
             </div>
             <div class="flex gap-2">
                 <button id="accept-language" class="btn btn-sm btn-secondary">
-                    ${suggestedLanguage === 'Turkish' ? 'Evet, Türkçe' : suggestedLanguage === 'German' ? 'Ja, Deutsch' : 'Yes, English'}
+                    ${acceptText}
                 </button>
                 <button id="decline-language" class="btn btn-sm btn-ghost">
-                    ${suggestedLanguage === 'Turkish' ? 'Hayır, English kalsın' : suggestedLanguage === 'German' ? 'Nein, English beibehalten' : 'No, keep Turkish'}
+                    ${declineText}
                 </button>
             </div>
         </div>
@@ -589,7 +680,20 @@ function showLanguageNotification(suggestedLanguage, redirectCallback) {
     document.getElementById('decline-language').addEventListener('click', () => {
         banner.remove();
         // Save user preference to not show again
-        localStorage.setItem('expandia_language_preference', suggestedLanguage === 'Turkish' ? 'en' : 'tr');
+        let pref = 'en';
+        if (suggestedLanguage === 'Turkish') pref = 'en'; // Was Turkish, keep English/current? No, decline means keep CURRENT.
+        // The logic in original code was: if suggested is Turkish (so currently NOT Turkish), decline means keep English (or whatever it is).
+        // Actually the original code hardcoded: localStorage.setItem('expandia_language_preference', suggestedLanguage === 'Turkish' ? 'en' : 'tr');
+        // This is a bit simplistic. It should probably save the CURRENT language as preference.
+
+        // Let's improve this: save the CURRENT detected language as preference.
+        const currentPath = window.location.pathname;
+        if (currentPath.startsWith('/tr/')) pref = 'tr';
+        else if (currentPath.startsWith('/de/')) pref = 'de';
+        else if (currentPath.startsWith('/fr/')) pref = 'fr';
+        else pref = 'en';
+
+        localStorage.setItem('expandia_language_preference', pref);
     });
 
     // Auto-hide after 10 seconds
@@ -656,6 +760,8 @@ function setupLanguageSwitching() {
                 switchToTurkish();
             } else if (lang === 'de') {
                 switchToGerman();
+            } else if (lang === 'fr') {
+                switchToFrench();
             }
         });
     });
@@ -665,11 +771,14 @@ function setupLanguageSwitching() {
     if (currentFlag) {
         const isOnTurkish = window.location.pathname.startsWith('/tr/') || window.location.pathname === '/tr';
         const isOnGerman = window.location.pathname.startsWith('/de/') || window.location.pathname === '/de';
+        const isOnFrench = window.location.pathname.startsWith('/fr/') || window.location.pathname === '/fr';
 
         if (isOnTurkish) {
             currentFlag.textContent = '🇹🇷';
         } else if (isOnGerman) {
             currentFlag.textContent = '🇩🇪';
+        } else if (isOnFrench) {
+            currentFlag.textContent = '🇫🇷';
         } else {
             currentFlag.textContent = '🇺🇸';
         }
@@ -684,4 +793,3 @@ function setupLanguageSwitching() {
         sessionStorage.removeItem('expandia_last_redirect');
     };
 }
-
