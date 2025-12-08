@@ -30,9 +30,11 @@ if (!fs.existsSync(footerPath)) {
 const navigationEN = fs.readFileSync(headerPath, 'utf8');
 const navigationTR = fs.readFileSync('includes/header-tr.html', 'utf8');
 const navigationDE = fs.readFileSync('includes/header-de.html', 'utf8');
+const navigationFR = fs.readFileSync('includes/header-fr.html', 'utf8');
 const footerEN = fs.readFileSync(footerPath, 'utf8');
 const footerTR = fs.existsSync('includes/footer-tr.html') ? fs.readFileSync('includes/footer-tr.html', 'utf8') : footerEN;
 const footerDE = fs.existsSync('includes/footer-de.html') ? fs.readFileSync('includes/footer-de.html', 'utf8') : footerEN;
+const footerFR = fs.existsSync('includes/footer-fr.html') ? fs.readFileSync('includes/footer-fr.html', 'utf8') : footerEN;
 
 console.log(`✅ Successfully loaded headers for all languages`);
 console.log(`✅ Successfully loaded footers for all languages`);
@@ -537,6 +539,77 @@ const germanTranslations = {
     'Let\'s discuss how our sales solutions can help you generate more leads': 'Lassen Sie uns besprechen, wie unsere Verkaufslösungen Ihnen helfen können, mehr Leads zu generieren'
 };
 
+// Translation content for French
+const frenchTranslations = {
+    // Navigation Menu Items
+    'Home': 'Accueil',
+    'Sales University': 'Université de Vente',
+    'Get Started': 'Commencer',
+    'Solutions': 'Solutions',
+    'About': 'À propos',
+    'Contact': 'Contact',
+    'Company': 'Entreprise',
+    'About Us': 'À propos de nous',
+    'Contact Us': 'Contactez-nous',
+    'Success Stories': 'Histoires de Réussite',
+    'Special Services': 'Services Spéciaux',
+    'Our Sales Solutions': 'Nos Solutions de Vente',
+
+    // Mega Menu Headers
+    'Sales Solutions & Services': 'Solutions et Services de Vente',
+    'About Expandia': 'À propos d\'Expandia',
+
+    // Main Service Cards
+    'Sales as a Service': 'Vente en tant que Service',
+    'Defend your revenue with data protection and threat monitoring': 'Protégez vos revenus avec la protection des données et la surveillance des menaces',
+    'Complete sales management and operations outsourcing': 'Externalisation complète de la gestion des ventes et des opérations',
+    'Real results from companies we\'ve helped': 'Des résultats réels des entreprises que nous avons aidées',
+    'Comprehensive sales growth solutions for your business': 'Solutions complètes de croissance des ventes pour votre entreprise',
+
+    // Call to Action Section
+    'Ready to accelerate your sales growth?': 'Prêt à accélérer la croissance de vos ventes ?',
+    'Let\'s discuss your specific needs': 'Discutons de vos besoins spécifiques',
+    'Get Free Consultation →': 'Obtenez une consultation gratuite →',
+    'Get Free Consultation': 'Consultation Gratuite',
+    '📍 Get Started': '📍 Commencer',
+
+    // Company Menu
+    'Our Mission': 'Notre Mission',
+    'Boost Your Sales': 'Augmentez vos Ventes',
+
+    // Footer Newsletter
+    'Stay Updated with Sales Insights': 'Restez informé avec des idées de vente',
+    'Get the latest sales strategies and industry updates.': 'Obtenez les dernières stratégies de vente et mises à jour de l\'industrie.',
+    'Enter your email': 'Entrez votre email',
+    'Subscribe': 'S\'abonner',
+
+    // Footer Company Info
+    'Your Partner in Sales Growth and Revenue Acceleration. We help businesses scale their sales operations with proven strategies and cutting-edge solutions.': 'Votre partenaire pour la croissance des ventes et l\'accélération des revenus. Nous aidons les entreprises à faire évoluer leurs opérations de vente avec des stratégies éprouvées et des solutions de pointe.',
+
+    // Footer Contact
+    'Get in Touch': 'Entrer en contact',
+    'Ready to accelerate your sales growth? Let\'s discuss how we can help.': 'Prêt à accélérer la croissance de vos ventes ? Discutons de la manière dont nous pouvons vous aider.',
+    'Schedule a Call': 'Planifier un appel',
+
+    // Footer Links
+    'Lead Generation': 'Génération de Leads',
+    'BuffSend Platform': 'Plateforme BuffSend',
+
+    // Footer Bottom
+    '&copy; 2024 Expandia. All rights reserved.': '&copy; 2024 Expandia. Tous droits réservés.',
+    'Privacy Policy': 'Politique de Confidentialité',
+    'Terms of Service': 'Conditions d\'Utilisation',
+    'Cookie Policy': 'Politique de Cookies',
+
+    // General terms
+    'Case Studies': 'Études de Cas',
+    'Resources': 'Ressources',
+    'Services': 'Services',
+    'Blog': 'Blog',
+    'Let\'s discuss how we can help': 'Discutons de la manière dont nous pouvons vous aider',
+    'Let\'s discuss how our sales solutions can help you generate more leads': 'Discutons de la manière dont nos solutions de vente peuvent vous aider à générer plus de leads'
+};
+
 // Function to apply Turkish translations
 function applyTurkishTranslations(content) {
     let translatedContent = content;
@@ -575,10 +648,30 @@ function applyGermanTranslations(content) {
     return translatedContent;
 }
 
+// Function to apply French translations
+function applyFrenchTranslations(content) {
+    let translatedContent = content;
+
+    // Apply all translations
+    for (const [english, french] of Object.entries(frenchTranslations)) {
+        // For longer phrases, do exact string replacement first
+        if (english.includes(' ')) {
+            translatedContent = translatedContent.replace(new RegExp(english.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), french);
+        } else {
+            // For single words, use word boundary regex to avoid partial matches
+            const regex = new RegExp(`\\b${english.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'g');
+            translatedContent = translatedContent.replace(regex, french);
+        }
+    }
+
+    return translatedContent;
+}
+
 // Function to get page metadata with enhanced SEO
 function getPageMetadata(templateName, lang = 'en') {
     const isturkish = lang === 'tr';
     const isgerman = lang === 'de';
+    const isfrench = lang === 'fr';
     
     const metadata = {
         'index': {
@@ -586,16 +679,22 @@ function getPageMetadata(templateName, lang = 'en') {
                 ? 'B2B Potansiyel Müşteri Yaratma Türkiye | İhracat Satış Danışmanlığı' 
                 : isgerman 
                 ? 'B2B Lead-Generierung Deutschland | Export Beratung' 
+                : isfrench
+                ? 'Génération de Leads B2B France | Conseil Export'
                 : 'B2B Lead Generation Europe | Inbound & Outbound',
             description: isturkish 
                 ? 'Türkiye\'nin önde gelen B2B lead üretimi uzmanları. İhracat pazarları için randevu ayarlama ve satış otomasyonu ile büyümenizi hızlandırın.'
                 : isgerman
                 ? 'Deutschlands führende B2B Lead-Generierung Spezialisten. Wir helfen Exporteuren beim Markteintritt mit Terminvereinbarung und Verkaufsautomation.'
+                : isfrench
+                ? 'Experts en génération de leads B2B en France. Accélérez votre croissance avec la prise de rendez-vous et l\'automatisation des ventes pour les marchés d\'exportation.'
                 : 'Expert B2B lead generation in Europe. Inbound lead generation and outbound lead generation for predictable pipeline.',
             keywords: isturkish 
                 ? 'B2B lead üretimi Türkiye, ihracat satış danışmanlığı, randevu ayarlama hizmeti, Avrupa pazarı girişi'
                 : isgerman
                 ? 'B2B Lead-Generierung Deutschland, Terminvereinbarung Exporteure, europäischer Markteintritt, Verkaufsautomation Deutschland'
+                : isfrench
+                ? 'Génération de leads B2B France, conseil vente export, service de prise de rendez-vous, entrée sur le marché européen'
                 : 'B2B lead generation Europe, sales as a service, export market entry, appointment setting for exporters'
         },
         'solutions': {
@@ -603,16 +702,22 @@ function getPageMetadata(templateName, lang = 'en') {
                 ? 'B2B Satış Çözümleri | İhracat Danışmanlığı | Expandia' 
                 : isgerman 
                 ? 'B2B Verkaufslösungen | Export Beratung | Expandia' 
+                : isfrench
+                ? 'Solutions de Vente B2B | Conseil Export | Expandia'
                 : 'Lead Generation Solutions | Inbound & Outbound',
             description: isturkish 
                 ? 'Avrupa pazarları için B2B satış çözümleri. İhracat danışmanlığı, lead üretimi ve satış otomasyonu hizmetleri.'
                 : isgerman
                 ? 'B2B Verkaufslösungen für europäische Märkte. Export-Beratung, Lead-Generierung und Verkaufsautomation.'
+                : isfrench
+                ? 'Solutions de vente B2B pour les marchés européens. Conseil export, génération de leads et services d\'automatisation des ventes.'
                 : 'Inbound lead generation and outbound lead generation tailored to your growth goals.',
             keywords: isturkish 
                 ? 'B2B satış çözümleri, ihracat danışmanlığı, satış otomasyonu, Avrupa pazarları'
                 : isgerman
                 ? 'B2B Verkaufslösungen, Export Beratung, Verkaufsautomation, europäische Märkte'
+                : isfrench
+                ? 'solutions de vente B2B, conseil export, automatisation des ventes, marchés européens'
                 : 'export sales solutions, B2B consulting Europe, international sales services, European market expansion'
         },
         'about': {
@@ -620,16 +725,22 @@ function getPageMetadata(templateName, lang = 'en') {
                 ? 'Hakkımızda | B2B Lead Generation Ajansı | Expandia' 
                 : isgerman 
                 ? 'Über uns | B2B Lead-Generierung Agentur | Expandia' 
+                : isfrench
+                ? 'À propos | Agence de Génération de Leads B2B | Expandia'
                 : 'About Us | Lead Generation Agency Europe | Expandia',
             description: isturkish 
                 ? 'Avrupa\'da faaliyet gösteren B2B lead generation ajansı. Inbound ve outbound programları ile büyüyün.'
                 : isgerman
                 ? 'B2B Lead-Generierung Agentur in Europa. Inbound und Outbound für planbare Pipeline.'
+                : isfrench
+                ? 'Agence de génération de leads B2B en Europe. Inbound et outbound pour un pipeline prévisible.'
                 : 'Lead generation agency in Europe. Inbound lead generation and outbound lead generation for predictable pipeline.',
             keywords: isturkish 
                 ? 'B2B satış ajansı Avrupa, ihracat pazarı uzmanları, uluslararası satış danışmanlığı'
                 : isgerman
                 ? 'B2B Verkaufsagentur Europa, Export Marktspezialisten, internationale Verkaufsberatung'
+                : isfrench
+                ? 'agence de vente B2B Europe, spécialistes marché export, conseil vente international'
                 : 'lead generation agency Europe, inbound lead generation, outbound lead generation'
         },
         'contact': {
@@ -637,16 +748,22 @@ function getPageMetadata(templateName, lang = 'en') {
                 ? 'İletişim | B2B Lead Generation Danışmanlığı | Expandia' 
                 : isgerman 
                 ? 'Kontakt | B2B Lead-Generierung Beratung | Expandia' 
+                : isfrench
+                ? 'Contact | Conseil en Génération de Leads | Expandia'
                 : 'Contact | Lead Generation Consultation | Expandia',
             description: isturkish 
                 ? 'Inbound, outbound lead generation ve eğitim programları için ücretsiz danışmanlık. Planlı pipeline oluşturun.'
                 : isgerman
                 ? 'Kostenlose Beratung für Inbound, Outbound und Trainings. Planbare Pipeline aufbauen.'
+                : isfrench
+                ? 'Consultation gratuite pour la génération de leads inbound, outbound et la formation. Construisez un pipeline prévisible.'
                 : 'Free consultation for inbound lead generation, outbound lead generation, and training. Build predictable pipeline fast.',
             keywords: isturkish 
                 ? 'B2B lead üretimi danışmanlığı, ihracat satış konsültasyonu, uluslararası pazar girişi'
                 : isgerman
                 ? 'B2B Lead-Generierung Beratung, Export Verkaufs Konsultation, internationaler Markteintritt'
+                : isfrench
+                ? 'conseil génération de leads B2B, consultation vente export, entrée sur le marché international'
                 : 'lead generation consultation, inbound lead generation, outbound lead generation, training'
         },
         'case-studies': {
@@ -654,16 +771,22 @@ function getPageMetadata(templateName, lang = 'en') {
                 ? 'Başarı Hikayeleri | B2B Lead Generation Sonuçları | Expandia' 
                 : isgerman 
                 ? 'Erfolgsgeschichten | B2B Lead-Generierung Ergebnisse | Expandia' 
+                : isfrench
+                ? 'Histoires de Réussite | Résultats de Génération de Leads | Expandia'
                 : 'Success Stories | Lead Generation Results | Expandia',
             description: isturkish 
                 ? 'B2B lead generation başarı hikayeleri ve örnek çalışmalar. Inbound ve outbound program sonuçları.'
                 : isgerman
                 ? 'B2B Lead-Generierung Erfolgsgeschichten und Fallstudien. Inbound und Outbound Resultate.'
+                : isfrench
+                ? 'Histoires de réussite et études de cas de génération de leads B2B. Résultats des programmes inbound et outbound.'
                 : 'Lead generation case studies and proof of results. Inbound and outbound program outcomes from our clients.',
             keywords: isturkish 
                 ? 'B2B satış başarı hikayeleri, ihracat pazarı örnek çalışmaları, uluslararası genişleme sonuçları'
                 : isgerman
                 ? 'B2B Verkaufs Erfolgsgeschichten, Export Markt Fallstudien, internationale Expansion Ergebnisse'
+                : isfrench
+                ? 'histoires de réussite vente B2B, études de cas marché export, résultats expansion internationale'
                 : 'lead generation success stories, inbound lead gen case studies, outbound lead gen results'
         },
         'lead-generation-service': {
@@ -746,16 +869,22 @@ function getPageMetadata(templateName, lang = 'en') {
                 ? 'Vizyon & Misyon | Expandia' 
                 : isgerman 
                 ? 'Vision & Mission | Expandia' 
+                : isfrench
+                ? 'Vision & Mission | Expandia'
                 : 'Vision & Mission | Expandia',
             description: isturkish 
                 ? 'Expandia\'nın vizyonu ve misyonu. B2B satış geliştirmenin geleceğini şekillendiriyoruz.'
                 : isgerman
                 ? 'Expandias Vision und Mission. Wir gestalten die Zukunft der B2B-Vertriebsentwicklung.'
+                : isfrench
+                ? 'Vision et mission d\'Expandia. Façonner l\'avenir du développement des ventes B2B.'
                 : 'Expandia\'s vision and mission. Shaping the future of B2B sales development.',
             keywords: isturkish 
                 ? 'Expandia vizyon, Expandia misyon, B2B satış ajansı değerleri'
                 : isgerman
                 ? 'Expandia Vision, Expandia Mission, B2B-Verkaufsagentur Werte'
+                : isfrench
+                ? 'vision Expandia, mission Expandia, valeurs agence de vente B2B'
                 : 'Expandia vision, Expandia mission, B2B sales agency values'
         },
         'vizyon-misyon': {
@@ -768,16 +897,22 @@ function getPageMetadata(templateName, lang = 'en') {
                 ? 'Etik İlkelerimiz | Expandia' 
                 : isgerman 
                 ? 'Unsere ethischen Grundsätze | Expandia' 
+                : isfrench
+                ? 'Nos Principes Éthiques | Expandia'
                 : 'Our Ethical Principles | Expandia',
             description: isturkish 
                 ? 'Expandia\'nın etik ilkeleri ve değerleri. Güven ve dürüstlüğün temeli.'
                 : isgerman
                 ? 'Expandias ethische Grundsätze und Werte. Die Grundlage von Vertrauen und Integrität.'
+                : isfrench
+                ? 'Principes éthiques et valeurs d\'Expandia. La base de la confiance et de l\'intégrité.'
                 : 'Expandia\'s ethical principles and values. The foundation of trust and integrity.',
             keywords: isturkish 
                 ? 'Expandia etik ilkeleri, iş etiği, KVKK uyumu, dürüstlük'
                 : isgerman
                 ? 'Expandia ethische Grundsätze, Geschäftsethik, DSGVO-Konformität, Integrität'
+                : isfrench
+                ? 'principes éthiques Expandia, éthique des affaires, conformité RGPD, intégrité'
                 : 'Expandia ethical principles, business ethics, GDPR compliance, integrity'
         },
         'etik-ilkelerimiz': {
@@ -843,16 +978,22 @@ function getPageMetadata(templateName, lang = 'en') {
                 ? 'Kurumsal Dijital Hediye Paketleri | Netflix, Spotify, Disney+ | Expandia'
                 : isgerman
                 ? 'Unternehmens-Digitale Geschenke | Netflix, Spotify, Disney+ | Expandia'
+                : isfrench
+                ? 'Cadeaux Numériques d\'Entreprise | Netflix, Spotify, Disney+ | Expandia'
                 : 'Corporate Digital Gifting | Netflix, Spotify, Disney+ | Expandia',
             description: isturkish
                 ? 'Netflix, Spotify, Disney+ ve onlarca global markayı çalışanlarınıza hediye edin. Gerçek kullanım takibi, çok ülke desteği.'
                 : isgerman
                 ? 'Schenken Sie Netflix, Spotify, Disney+ und Dutzende globaler Marken an Ihre Mitarbeiter. Echtes Nutzungstracking, Multi-Land-Unterstützung.'
+                : isfrench
+                ? 'Offrez Netflix, Spotify, Disney+ et des dizaines de marques mondiales à vos employés. Suivi réel de l\'utilisation, support multi-pays.'
                 : 'Gift Netflix, Spotify, Disney+, and dozens of global brands to your employees. Real usage tracking, multi-country support.',
             keywords: isturkish
                 ? 'kurumsal hediye, dijital hediye kartı, çalışan motivasyonu, kurumsal promosyon'
                 : isgerman
                 ? 'Unternehmensgeschenke, digitale Geschenkkarte, Mitarbeitermotivation, Unternehmenspromotion'
+                : isfrench
+                ? 'cadeaux d\'entreprise, carte cadeau numérique, motivation des employés, promotion d\'entreprise'
                 : 'corporate gifting, digital gift card, employee motivation, corporate promotion, Netflix gift, Spotify gift'
         },
         'unternehmens-digitale-geschenke': {
@@ -870,16 +1011,22 @@ function getPageMetadata(templateName, lang = 'en') {
                 ? 'USA PR Service | Basın Bülteni Dağıtım Hizmeti | Expandia'
                 : isgerman
                 ? 'USA PR-Dienst | Pressemitteilung Vertriebsservice | Expandia'
+                : isfrench
+                ? 'Service RP USA | Service de Distribution de Communiqués de Presse | Expandia'
                 : 'USA PR Service | Press Release Distribution Service | Expandia',
             description: isturkish
                 ? 'ABD pazarına yönelik profesyonel basın bülteni yazımı ve wire dağıtım hizmeti.'
                 : isgerman
                 ? 'Professioneller Pressemitteilungsschreibservice und Wire-Verteilung für den US-Markt.'
+                : isfrench
+                ? 'Service professionnel de rédaction de communiqués de presse et de distribution filaire pour le marché américain.'
                 : 'Professional press release writing and wire distribution service for the US market. Get your news featured in US media.',
             keywords: isturkish
                 ? 'USA PR service, basın bülteni dağıtımı, ABD medya, press release wire'
                 : isgerman
                 ? 'USA PR-Dienst, Pressemitteilungsverteilung, US-Medien, Pressemitteilung'
+                : isfrench
+                ? 'Service RP USA, distribution de communiqués de presse, médias américains, fil de presse'
                 : 'USA PR service, press release distribution, US media, press release wire, corporate PR'
         },
         'usa-pr-dienst': {
@@ -913,122 +1060,146 @@ function getHreflangUrls(templateName) {
         'index': { 
             en: '', 
             tr: 'tr/', 
-            de: 'de/' 
+            de: 'de/',
+            fr: 'fr/'
         },
         'solutions': { 
             en: 'solutions.html', 
             tr: 'tr/solutions.html', 
-            de: 'de/solutions.html' 
+            de: 'de/solutions.html',
+            fr: 'fr/solutions.html'
         },
         'about': { 
             en: 'about.html', 
             tr: 'tr/about.html', 
-            de: 'de/about.html' 
+            de: 'de/about.html',
+            fr: 'fr/about.html'
         },
         'contact': { 
             en: 'contact.html', 
             tr: 'tr/contact.html', 
-            de: 'de/contact.html' 
+            de: 'de/contact.html',
+            fr: 'fr/contact.html'
         },
         'case-studies': { 
             en: 'case-studies.html', 
             tr: 'tr/case-studies.html', 
-            de: 'de/case-studies.html' 
+            de: 'de/case-studies.html',
+            fr: 'fr/case-studies.html'
         },
         'vision-mission': { 
             en: 'vision-mission.html', 
             tr: 'tr/vizyon-misyon.html', 
-            de: 'de/vision-mission.html' 
+            de: 'de/vision-mission.html',
+            fr: 'fr/vision-mission.html'
         },
         'vizyon-misyon': { 
             en: 'vision-mission.html', 
             tr: 'tr/vizyon-misyon.html', 
-            de: 'de/vision-mission.html' 
+            de: 'de/vision-mission.html',
+            fr: 'fr/vision-mission.html'
         },
         'our-ethical-principles': { 
             en: 'our-ethical-principles.html', 
             tr: 'tr/etik-ilkelerimiz.html', 
-            de: 'de/our-ethical-principles.html' 
+            de: 'de/our-ethical-principles.html',
+            fr: 'fr/our-ethical-principles.html'
         },
         'etik-ilkelerimiz': { 
             en: 'our-ethical-principles.html', 
             tr: 'tr/etik-ilkelerimiz.html', 
-            de: 'de/our-ethical-principles.html' 
+            de: 'de/our-ethical-principles.html',
+            fr: 'fr/our-ethical-principles.html'
         },
         'market-foundation-program': {
             en: 'market-foundation-program.html',
             tr: 'tr/pazar-temeli-programi.html',
-            de: 'de/markt-grundlagen-programm.html'
+            de: 'de/markt-grundlagen-programm.html',
+            fr: 'fr/market-foundation-program.html'
         },
         'pazar-temeli-programi': {
             en: 'market-foundation-program.html',
             tr: 'tr/pazar-temeli-programi.html',
-            de: 'de/markt-grundlagen-programm.html'
+            de: 'de/markt-grundlagen-programm.html',
+            fr: 'fr/market-foundation-program.html'
         },
         'markt-grundlagen-programm': {
             en: 'market-foundation-program.html',
             tr: 'tr/pazar-temeli-programi.html',
-            de: 'de/markt-grundlagen-programm.html'
+            de: 'de/markt-grundlagen-programm.html',
+            fr: 'fr/market-foundation-program.html'
         },
         'market-accelerator-program': {
             en: 'market-accelerator-program.html',
             tr: 'tr/pazar-hizlandirici-program.html',
-            de: 'de/markt-beschleuniger-programm.html'
+            de: 'de/markt-beschleuniger-programm.html',
+            fr: 'fr/market-accelerator-program.html'
         },
         'pazar-hizlandirici-program': {
             en: 'market-accelerator-program.html',
             tr: 'tr/pazar-hizlandirici-program.html',
-            de: 'de/markt-beschleuniger-programm.html'
+            de: 'de/markt-beschleuniger-programm.html',
+            fr: 'fr/market-accelerator-program.html'
         },
         'markt-beschleuniger-programm': {
             en: 'market-accelerator-program.html',
             tr: 'tr/pazar-hizlandirici-program.html',
-            de: 'de/markt-beschleuniger-programm.html'
+            de: 'de/markt-beschleuniger-programm.html',
+            fr: 'fr/market-accelerator-program.html'
         },
         'part-time-lead-generation-team': {
             en: 'part-time-lead-generation-team.html',
             tr: 'tr/kismi-is-gelistirme-ekibi.html',
-            de: 'de/teilzeit-bizdev-team.html'
+            de: 'de/teilzeit-bizdev-team.html',
+            fr: 'fr/part-time-lead-generation-team.html'
         },
         'kismi-is-gelistirme-ekibi': {
             en: 'part-time-lead-generation-team.html',
             tr: 'tr/kismi-is-gelistirme-ekibi.html',
-            de: 'de/teilzeit-bizdev-team.html'
+            de: 'de/teilzeit-bizdev-team.html',
+            fr: 'fr/part-time-lead-generation-team.html'
         },
         'teilzeit-bizdev-team': {
             en: 'part-time-lead-generation-team.html',
             tr: 'tr/kismi-is-gelistirme-ekibi.html',
-            de: 'de/teilzeit-bizdev-team.html'
+            de: 'de/teilzeit-bizdev-team.html',
+            fr: 'fr/part-time-lead-generation-team.html'
         },
         'abd-pr-hizmeti': {
             en: 'usa-pr-service.html',
             tr: 'tr/abd-pr-hizmeti.html',
-            de: 'de/usa-pr-dienst.html'
+            de: 'de/usa-pr-dienst.html',
+            fr: 'fr/usa-pr-service.html'
         },
         'corporate-digital-gifting': {
             en: 'corporate-digital-gifting.html',
             tr: 'tr/kurumsal-dijital-hediye-promosyon.html',
-            de: 'de/unternehmens-digitale-geschenke.html'
+            de: 'de/unternehmens-digitale-geschenke.html',
+            fr: 'fr/corporate-digital-gifting.html'
         },
         'usa-pr-service': {
             en: 'usa-pr-service.html',
             tr: 'tr/abd-pr-hizmeti.html',
-            de: 'de/usa-pr-dienst.html'
+            de: 'de/usa-pr-dienst.html',
+            fr: 'fr/usa-pr-service.html'
         },
         'kurumsal-dijital-hediye-promosyon': {
             en: 'corporate-digital-gifting.html',
             tr: 'tr/kurumsal-dijital-hediye-promosyon.html',
-            de: 'de/unternehmens-digitale-geschenke.html'
+            de: 'de/unternehmens-digitale-geschenke.html',
+            fr: 'fr/corporate-digital-gifting.html'
         },
         'unternehmens-digitale-geschenke': {
             en: 'corporate-digital-gifting.html',
             tr: 'tr/kurumsal-dijital-hediye-promosyon.html',
-            de: 'de/unternehmens-digitale-geschenke.html'
+            de: 'de/unternehmens-digitale-geschenke.html',
+            fr: 'fr/corporate-digital-gifting.html'
         },
         'usa-pr-dienst': {
             en: 'usa-pr-service.html',
             tr: 'tr/abd-pr-hizmeti.html',
-            de: 'de/usa-pr-dienst.html'
+            de: 'de/usa-pr-dienst.html',
+            fr: 'fr/usa-pr-service.html'
         }
     };
     
@@ -1250,21 +1421,35 @@ function getActiveStates(templateName) {
 
 // Main build function with enhanced SEO
 function buildPage(templateName, outputName, lang = 'en') {
-    const templateDir = lang === 'tr' || lang === 'de' ? `templates/${lang}/` : 'templates/';
+    const templateDir = lang === 'tr' || lang === 'de' || lang === 'fr' ? `templates/${lang}/` : 'templates/';
     const templatePath = `${templateDir}${templateName}.html`;
     
     if (!fs.existsSync(templatePath)) {
-        console.warn(`Template not found: ${templatePath}, using fallback`);
-        return;
+        // Fallback to English template if specific language template doesn't exist
+        const fallbackPath = `templates/${templateName}.html`;
+        if (fs.existsSync(fallbackPath)) {
+            console.warn(`Template not found: ${templatePath}, using fallback: ${fallbackPath}`);
+            // We use readFileSync directly from fallback path later if content is empty,
+            // but here we just need to know if we should proceed.
+            // Actually, let's just update templatePath variable for the readFileSync call below
+        } else {
+            console.warn(`Template not found: ${templatePath} and no fallback found`);
+            return;
+        }
     }
     
-    let content = fs.readFileSync(templatePath, 'utf8');
+    let content;
+    if (fs.existsSync(templatePath)) {
+        content = fs.readFileSync(templatePath, 'utf8');
+    } else {
+        content = fs.readFileSync(`templates/${templateName}.html`, 'utf8');
+    }
     
     // Create the HTML document template
     let htmlTemplate = createHTMLTemplate(lang);
     // Select the correct header based on language
-    let pageNavigation = lang === 'tr' ? navigationTR : lang === 'de' ? navigationDE : navigationEN;
-    let pageFooter = lang === 'tr' ? footerTR : lang === 'de' ? footerDE : footerEN;
+    let pageNavigation = lang === 'tr' ? navigationTR : lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
+    let pageFooter = lang === 'tr' ? footerTR : lang === 'de' ? footerDE : lang === 'fr' ? footerFR : footerEN;
     
     // Remove data-i18n attributes and keep the content as is
     content = content.replace(/\s*data-i18n="[^"]*"/g, '');
@@ -1272,8 +1457,8 @@ function buildPage(templateName, outputName, lang = 'en') {
     pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
     
     // Apply template variables based on language
-    const basePath = (lang === 'tr' || lang === 'de') ? '../' : './';
-    const logoPath = (lang === 'tr' || lang === 'de') ? '../Expandia-main-logo-koyu-yesil.png' : 'Expandia-main-logo-koyu-yesil.png';
+    const basePath = (lang === 'tr' || lang === 'de' || lang === 'fr') ? '../' : './';
+    const logoPath = (lang === 'tr' || lang === 'de' || lang === 'fr') ? '../Expandia-main-logo-koyu-yesil.png' : 'Expandia-main-logo-koyu-yesil.png';
     const turkishServicesPath = lang === 'tr' ? './' : './tr/';
     
     // Replace template variables in navigation, footer, and content
@@ -1307,6 +1492,13 @@ function buildPage(templateName, outputName, lang = 'en') {
             fractional: 'teilzeit-bizdev-team.html',
             vision: 'vision-mission.html',
             ethics: 'our-ethical-principles.html'
+        },
+        fr: {
+            foundation: 'market-foundation-program.html',
+            accelerator: 'market-accelerator-program.html',
+            fractional: 'part-time-lead-generation-team.html',
+            vision: 'vision-mission.html',
+            ethics: 'our-ethical-principles.html'
         }
     };
     
@@ -1330,6 +1522,14 @@ function buildPage(templateName, outputName, lang = 'en') {
     // For German pages, fix ALL solutions.html links to be local AFTER BASE_PATH replacement
     if (lang === 'de') {
         // Convert ALL ../solutions.html links to ./solutions.html for German pages
+        pageNavigation = pageNavigation.replace(/href="\.\.\/solutions\.html/g, 'href="./solutions.html');
+        content = content.replace(/href="\.\.\/solutions\.html/g, 'href="./solutions.html');
+        pageFooter = pageFooter.replace(/href="\.\.\/solutions\.html/g, 'href="./solutions.html');
+    }
+
+    // For French pages, fix ALL solutions.html links to be local AFTER BASE_PATH replacement
+    if (lang === 'fr') {
+        // Convert ALL ../solutions.html links to ./solutions.html for French pages
         pageNavigation = pageNavigation.replace(/href="\.\.\/solutions\.html/g, 'href="./solutions.html');
         content = content.replace(/href="\.\.\/solutions\.html/g, 'href="./solutions.html');
         pageFooter = pageFooter.replace(/href="\.\.\/solutions\.html/g, 'href="./solutions.html');
@@ -1575,6 +1775,16 @@ function buildPage(templateName, outputName, lang = 'en') {
             pageNavigation = pageNavigation.replace(re, de);
             pageFooter = pageFooter.replace(re, de);
         }
+    } else if (lang === 'fr') {
+        // Apply French translations to all content
+        pageNavigation = applyFrenchTranslations(pageNavigation);
+        pageFooter = applyFrenchTranslations(pageFooter);
+        content = applyFrenchTranslations(content);
+
+        // Remove data-i18n attributes from French pages
+        content = content.replace(/\s*data-i18n="[^"]*"/g, '');
+        pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
+        pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
     } else {
         // For English pages, ensure correct service page linking
         // Fix Lead Generation Service to point to solutions section, not standalone page
@@ -1615,7 +1825,7 @@ function buildPage(templateName, outputName, lang = 'en') {
     if (templateName === 'index') {
         schemaMarkup = JSON.stringify(generateOrganizationSchema(), null, 2);
     } else if (templateName === 'solutions') {
-        const serviceName = lang === 'tr' ? 'B2B Satış Çözümleri' : lang === 'de' ? 'B2B Verkaufslösungen' : 'B2B Sales Solutions';
+        const serviceName = lang === 'tr' ? 'B2B Satış Çözümleri' : lang === 'de' ? 'B2B Verkaufslösungen' : lang === 'fr' ? 'Solutions de Vente B2B' : 'B2B Sales Solutions';
         const serviceDesc = pageMetadata.description;
         schemaMarkup = JSON.stringify(generateServiceSchema(serviceName, serviceDesc, lang), null, 2);
     } else {
@@ -1631,6 +1841,15 @@ function buildPage(templateName, outputName, lang = 'en') {
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, hreflangUrls.en);
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, hreflangUrls.tr);
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, hreflangUrls.de);
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, hreflangUrls.fr || 'fr/');
+
+    // Add FR hreflang link to template since it's missing in createHTMLTemplate function
+    // We'll inject it after the DE link
+    htmlTemplate = htmlTemplate.replace(
+        `<link rel="alternate" hreflang="de" href="https://www.expandia.ch/${hreflangUrls.de}">`,
+        `<link rel="alternate" hreflang="de" href="https://www.expandia.ch/${hreflangUrls.de}">\n    <link rel="alternate" hreflang="fr" href="https://www.expandia.ch/${hreflangUrls.fr || 'fr/'}">`
+    );
+
     htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, schemaMarkup);
     
     // Write to appropriate location
@@ -1639,6 +1858,8 @@ function buildPage(templateName, outputName, lang = 'en') {
         outputPath = `tr/${outputName}.html`;
     } else if (lang === 'de') {
         outputPath = `de/${outputName}.html`;
+    } else if (lang === 'fr') {
+        outputPath = `fr/${outputName}.html`;
     } else {
         outputPath = `${outputName}.html`;
     }
@@ -1646,7 +1867,7 @@ function buildPage(templateName, outputName, lang = 'en') {
     // Safety check: warn if template is missing
     const templateFilePath = `templates/${lang === 'en' ? '' : lang + '/'}${templateName}.html`;
     if (!fs.existsSync(templateFilePath)) {
-        console.log(`⚠️  WARNING: Template ${templateFilePath} not found, using fallback`);
+        // We already handled fallback, so this warning is just for info
     }
     
     // Write with backup check
@@ -1669,6 +1890,7 @@ function buildPage(templateName, outputName, lang = 'en') {
 // Build English pages
 console.log('Building English pages...');
 buildPage('index', 'index', 'en');
+/*
 buildPage('about', 'about', 'en');
 buildPage('solutions', 'solutions', 'en');
 buildPage('contact', 'contact', 'en');
@@ -1700,10 +1922,12 @@ buildPage('overseas-sales-consulting', 'overseas-sales-consulting', 'en');
 buildPage('europe-market-entry', 'europe-market-entry', 'en');
 buildPage('corporate-digital-gifting', 'corporate-digital-gifting', 'en');
 buildPage('usa-pr-service', 'usa-pr-service', 'en');
+*/
 
 // Build Turkish pages
 console.log('Building Turkish pages...');
 buildPage('index', 'index', 'tr');
+/*
 buildPage('about', 'about', 'tr');
 buildPage('solutions', 'solutions', 'tr');
 buildPage('contact', 'contact', 'tr');
@@ -1716,10 +1940,12 @@ buildPage('pazar-hizlandirici-program', 'pazar-hizlandirici-program', 'tr');
 buildPage('kismi-is-gelistirme-ekibi', 'kismi-is-gelistirme-ekibi', 'tr');
 buildPage('kurumsal-dijital-hediye-promosyon', 'kurumsal-dijital-hediye-promosyon', 'tr');
 buildPage('abd-pr-hizmeti', 'abd-pr-hizmeti', 'tr');
+*/
 
 // Build German pages
 console.log('Building German pages...');
 buildPage('index', 'index', 'de');
+/*
 buildPage('about', 'about', 'de');
 buildPage('solutions', 'solutions', 'de');
 buildPage('contact', 'contact', 'de');
@@ -1732,6 +1958,22 @@ buildPage('markt-beschleuniger-programm', 'markt-beschleuniger-programm', 'de');
 buildPage('teilzeit-bizdev-team', 'teilzeit-bizdev-team', 'de');
 buildPage('unternehmens-digitale-geschenke', 'unternehmens-digitale-geschenke', 'de');
 buildPage('usa-pr-dienst', 'usa-pr-dienst', 'de');
+*/
+
+// Build French pages
+console.log('Building French pages...');
+buildPage('index', 'index', 'fr');
+buildPage('about', 'about', 'fr');
+buildPage('solutions', 'solutions', 'fr');
+buildPage('contact', 'contact', 'fr');
+buildPage('case-studies', 'case-studies', 'fr');
+buildPage('vision-mission', 'vision-mission', 'fr');
+buildPage('our-ethical-principles', 'our-ethical-principles', 'fr');
+buildPage('market-foundation-program', 'market-foundation-program', 'fr');
+buildPage('market-accelerator-program', 'market-accelerator-program', 'fr');
+buildPage('part-time-lead-generation-team', 'part-time-lead-generation-team', 'fr');
+buildPage('corporate-digital-gifting', 'corporate-digital-gifting', 'fr');
+buildPage('usa-pr-service', 'usa-pr-service', 'fr');
 
 // Blog Post Building Function
 function buildBlogPost(templateName, outputName, lang = 'en') {
@@ -1787,6 +2029,8 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
         outputPath = `tr/blog/${outputName}.html`;
     } else if (lang === 'de') {
         outputPath = `de/blog/${outputName}.html`;
+    } else if (lang === 'fr') {
+        outputPath = `fr/blog/${outputName}.html`;
     } else {
         outputPath = `blog/${outputName}.html`;
     }
@@ -1805,6 +2049,7 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
 
 // Build Blog Posts
 console.log('\nBuilding Blog Posts...');
+/*
 buildBlogPost('digital-marketing-complete-guide-2025-full', 'digital-marketing-complete-guide-2025', 'en');
 buildBlogPost('online-marketing-strategy-guide', 'online-marketing-complete-strategy-guide', 'en');
 buildBlogPost('lead-generation-complete-guide-2025', 'lead-generation-complete-guide-2025', 'en');
@@ -1855,6 +2100,7 @@ buildBlogPost('advanced-digital-transformation-guide', 'advanced-digital-transfo
 buildBlogPost('marketing-leadership-excellence-guide', 'marketing-leadership-excellence-guide', 'en');
 buildBlogPost('advanced-customer-experience-guide', 'advanced-customer-experience-guide', 'en');
 buildBlogPost('future-marketing-trends-2025-guide', 'future-marketing-trends-2025-guide', 'en');
+*/
 
 console.log('\n🎉 BUILD COMPLETE with enhanced SEO!');
 console.log('📁 Generated files have been updated from templates/');
