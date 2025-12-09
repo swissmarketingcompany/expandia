@@ -1,0 +1,230 @@
+# Expandia.ch Multilingual Routing Map
+# SEO and UX-Optimized Language Routing Configuration
+
+routing_configuration:
+  base_domain: "https://www.expandia.ch"
+  default_language: "en"
+  supported_languages: ["en", "tr", "de", "fr"]
+  
+  # Language Detection & Routing Strategy
+  language_detection:
+    method: "path_based"  # No cookies, clean URL-based routing
+    auto_redirect: true   # Based on geolocation with user preference storage
+    fallback_language: "en"
+    
+    geolocation_mapping:
+      turkish_countries: ["TR", "CY"]
+      german_countries: ["DE", "AT", "CH"]
+      french_countries: ["FR", "BE", "CA", "LU", "MC", "SN", "CI"]
+      default_countries: ["*"]  # All others default to English
+
+# Complete URL Structure
+url_mapping:
+  
+  # Main Pages
+  homepage:
+    en: "/"
+    tr: "/tr/"
+    de: "/de/"
+    fr: "/fr/"
+    canonical:
+      en: "https://www.expandia.ch/"
+      tr: "https://www.expandia.ch/tr/"
+      de: "https://www.expandia.ch/de/"
+      fr: "https://www.expandia.ch/fr/"
+    
+  solutions:
+    en: "/solutions.html"
+    tr: "/tr/solutions.html"
+    de: "/de/solutions.html"
+    fr: "/fr/solutions.html"
+    canonical:
+      en: "https://www.expandia.ch/solutions.html"
+      tr: "https://www.expandia.ch/tr/solutions.html"
+      de: "https://www.expandia.ch/de/solutions.html"
+      fr: "https://www.expandia.ch/fr/solutions.html"
+      
+  about:
+    en: "/about.html"
+    tr: "/tr/about.html"
+    de: "/de/about.html"
+    fr: "/fr/about.html"
+    canonical:
+      en: "https://www.expandia.ch/about.html"
+      tr: "https://www.expandia.ch/tr/about.html"
+      de: "https://www.expandia.ch/de/about.html"
+      fr: "https://www.expandia.ch/fr/about.html"
+      
+  contact:
+    en: "/contact.html"
+    tr: "/tr/contact.html"
+    de: "/de/contact.html"
+    fr: "/fr/contact.html"
+    canonical:
+      en: "https://www.expandia.ch/contact.html"
+      tr: "https://www.expandia.ch/tr/contact.html"
+      de: "https://www.expandia.ch/de/contact.html"
+      fr: "https://www.expandia.ch/fr/contact.html"
+      
+  case_studies:
+    en: "/case-studies.html"
+    tr: "/tr/case-studies.html"
+    de: "/de/case-studies.html"
+    fr: "/fr/case-studies.html"
+    canonical:
+      en: "https://www.expandia.ch/case-studies.html"
+      tr: "https://www.expandia.ch/tr/case-studies.html"
+      de: "https://www.expandia.ch/de/case-studies.html"
+      fr: "https://www.expandia.ch/fr/case-studies.html"
+
+  # Blog Section
+  blog:
+    en: "/blog/"
+    tr: "/tr/blog/"
+    de: "/de/blog/"
+    fr: "/fr/blog/"
+    canonical:
+      en: "https://www.expandia.ch/blog/"
+      tr: "https://www.expandia.ch/tr/blog/"
+      de: "https://www.expandia.ch/de/blog/"
+      fr: "https://www.expandia.ch/fr/blog/"
+
+  # Service Pages (Different strategies per language)
+  service_pages:
+    strategy:
+      en: "standalone_pages"     # Individual service pages
+      tr: "standalone_pages"     # Individual Turkish service pages (existing)
+      de: "sections_on_solutions" # Anchor sections on solutions page
+      fr: "standalone_pages"     # Individual French service pages
+      
+    b2b_lead_generation:
+      en: "/b2b-lead-generation-agency.html"
+      tr: "/tr/b2b-lead-generation-ajansi.html"
+      de: "/de/solutions.html#b2b-lead-generation"
+      fr: "/fr/market-foundation-program.html"
+      
+    sales_development:
+      en: "/sales-development-agency.html"
+      tr: "/tr/satis-gelistirme-ajansi.html"
+      de: "/de/solutions.html#sales-development"
+      fr: "/fr/market-accelerator-program.html"
+      
+    outbound_marketing:
+      en: "/outbound-marketing-agency.html"
+      tr: "/tr/outbound-pazarlama-ajansi.html"
+      de: "/de/solutions.html#outbound-marketing"
+      fr: "/fr/solutions.html"
+      
+    sales_protection_services:
+      en: "/sales-protection-services.html"
+      tr: "/tr/satis-koruma-hizmetleri.html"
+      de: "/de/schutzdienstleistungen.html"
+      fr: "/fr/solutions.html"
+
+# Language Switching Behavior
+language_switching:
+  mechanism: "javascript_path_based"  # No cookies
+  user_preference_storage: "localStorage"
+  
+  switching_rules:
+    from_english:
+      to_turkish: "Replace / with /tr/ in path"
+      to_german: "Replace / with /de/ in path"
+      to_french: "Replace / with /fr/ in path"
+      
+    from_turkish:
+      to_english: "Remove /tr/ from path"
+      to_german: "Replace /tr/ with /de/ in path"
+      to_french: "Replace /tr/ with /fr/ in path"
+      
+    from_german:
+      to_english: "Remove /de/ from path"
+      to_turkish: "Replace /de/ with /tr/ in path"
+      to_french: "Replace /de/ with /fr/ in path"
+
+    from_french:
+      to_english: "Remove /fr/ from path"
+      to_turkish: "Replace /fr/ with /tr/ in path"
+      to_german: "Replace /fr/ with /de/ in path"
+
+  fallback_behavior:
+    missing_translation: "redirect_to_homepage_in_target_language"
+    invalid_path: "redirect_to_homepage_in_current_language"
+
+# SEO Configuration
+seo_settings:
+  unique_titles: true
+  unique_descriptions: true
+  unique_h1_tags: true
+  unique_content: true
+  
+  hreflang_implementation:
+    enabled: true
+    x_default: "en"
+    bidirectional_linking: true
+    
+  canonical_urls:
+    self_referencing: true
+    language_specific: true
+    
+  html_lang_attributes:
+    en: "lang='en'"
+    tr: "lang='tr'"
+    de: "lang='de'"
+
+# Content Strategy
+content_localization:
+  translation_strategy: "full_localization"
+  mixed_language_content: false
+  fallback_content: "redirect_to_available_language"
+  
+  meta_tags:
+    localized_titles: true
+    localized_descriptions: true
+    localized_keywords: true
+    localized_og_tags: true
+
+# Technical Implementation
+technical_configuration:
+  build_system: "node_build_pages_js"
+  template_engine: "custom_replacement"
+  language_detection_script: "src/js/index.js"
+  
+  file_structure:
+    english: "/"
+    turkish: "/tr/"
+    german: "/de/"
+    
+  sitemap_entries:
+    all_languages_included: true
+    proper_priorities: true
+    last_modified_dates: true
+
+# Quality Assurance Checklist
+qa_compliance:
+  ✅ unique_titles_per_language: true
+  ✅ unique_descriptions_per_language: true
+  ✅ unique_h1_tags_per_language: true
+  ✅ no_mixed_language_content: true
+  ✅ proper_lang_attributes: true
+  ✅ correct_canonical_urls: true
+  ✅ bidirectional_hreflang: true
+  ✅ language_specific_paths: true
+  ✅ no_cookie_dependency: true
+  ✅ proper_fallback_behavior: true
+  ✅ sitemap_includes_all_languages: true
+
+# Error Handling & Fallbacks
+error_handling:
+  404_errors:
+    strategy: "redirect_to_homepage_in_detected_language"
+    
+  missing_translations:
+    blog_posts: "redirect_to_blog_index_in_target_language"
+    service_pages: "redirect_to_solutions_page_in_target_language"
+    
+  language_detection_failure:
+    fallback: "default_to_english"
+    
+  javascript_disabled:
+    fallback: "server_side_redirect_based_on_accept_language" 

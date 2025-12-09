@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="bumblebee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potansiyel Müşteri Bulma Ajansı | Hedefli Müşteri Keşfi | Expandia</title>
+    <meta name="description" content="Uzman potansiyel müşteri bulma ajansı ile iAnlaşma müşterilerinizi keşfedin. AI destekli araştırma, doğrulanmış veriler ve nitelikli Potansiyel Müşteriing hizmetleri.">
+    <meta name="keywords" content="potansiyel müşteri bulma ajansı, müşteri bulma hizmeti, Potansiyel Müşteri Araştırma, b2b müşteri araştırması, lead Araştırma ajansı">
+    <link href="../dist/css/output.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="canonical" href="https://expandia.ch/tr/potansiyel-musteri-bulma-ajansi.html">
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+        <nav class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto container-padding">
+        <div class="navbar-stSanat">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
+                    </svg>
+                </div>
+                <!-- Mobile Menu -->
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-72">
+                    <li>
+                        <a href="../index.html" class="text-primary font-semibold">Ana Sayfa</a>
+                    </li>
+                    <li>
+                        <details>
+                            <summary class="font-semibold">Çözümler</summary>
+                            <ul class="p-2">
+                                <li><a href="../solutions.html"  class="font-medium text-primary">📞 Satış Çözümlerimiz</a></li>
+                                <li><a href="../case-studies.html"  class="font-medium text-accent">📈 Başarı Hikayeleri</a></li>
+                                <li class="mt-3">
+                                    <details>
+                                        <summary class="text-sm font-medium text-primary">⭐ Özel Hizmetler</summary>
+                                        <ul class="p-2 space-y-1">
+                                            <li><a href="./b2b-lead-generation-ajansi.html" class="text-xs">B2B Potansiyel Müşteri Üretimi</a></li>
+                                            <li><a href="./lead-generation-hizmeti.html" class="text-xs">Potansiyel Müşteri Üretimi Hizmet</a></li>
+                                            <li><a href="./satis-gelistirme-ajansi.html" class="text-xs">Satış Geliştirme</a></li>
+                                            <li><a href="./randevu-ayarlama-hizmeti.html" class="text-xs">Appointment Ortam</a></li>
+                                            <li><a href="./outbound-pazarlama-ajansi.html" class="text-xs">Outbound Pazarlama</a></li>
+                                            <li><a href="./soguk-e-posta-ajansi.html" class="text-xs">Soğuk E-posta</a></li>
+                                            <li><a href="./ihracat-pazarlama-danismanligi.html" class="text-xs">Export Pazarlama</a></li>
+                                            <li><a href="./avrupa-pazarina-giris.html" class="text-xs">Europe Pazar Entry</a></li>
+                                            <li class="pt-1 border-t border-base-300">
+                                                <a href="./lead-generation-ajansi-istanbul.html" class="text-xs text-secondary">📍 İstanbul Hizmetleri</a>
+                                            </li>
+                                        </ul>
+                                    </details>
+                                </li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary class="font-semibold">Şirket</summary>
+                            <ul class="p-2">
+                                <li><a href="../about.html" >Hakkımızda</a></li>
+                                <li><a href="../İletişim.html" >İletişim</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li><a href="../blog/index.html" >Satış Üniversitesi</a></li>
+                </ul>
+            </div>
+            <a href="../index.html" class="btn btn-ghost hover:bg-transparent ml-0">
+                <img src="../Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="w-auto transition-all duration-300 hover:scale-105 logo-bumblebee">
+            </a>
+        </div>
+    
+    <!-- Desktop Mega Menu -->
+    <div class="navbar-center hidden lg:flex justify-center">
+        <ul class="menu menu-horizontal px-1">
+            <!-- Ana Sayfa Menu Item -->
+            <li>
+                <a href="../index.html" class="btn btn-ghost font-semibold text-primary">Ana Sayfa</a>
+            </li>
+            
+            <!-- Çözümler Mega Menu -->
+            <li class="dropdown dropdown-hover">
+                <div tabindex="0" role="button" class="btn btn-ghost font-semibold ">
+                    Çözümler
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div tabindex="0" class="dropdown-content z-[1] menu-mega-wide shadow-2xl bg-white border border-base-300 rounded-xl overflow-hidden" style="width: 650px; max-width: 90vw;">
+                    <div class="p-6">
+                        <!-- Header -->
+                        <div class="mb-6">
+                            <h3 class="text-xl font-bold text-primary mb-2">Satışs Çözümler & Hizmets</h3>
+                            <p class="text-sm text-base-content/60">İşletmeniz için kapsamlı satış büyüme çözümleri</p>
+                        </div>
+                        
+                        <!-- Main Hizmets Row -->
+                        <div class="grid grid-cols-3 gap-4 mb-6">
+                            <a href="../solutions.html" class="group p-4 rounded-xl hover:bg-primary/5 transition-all duration-300 border border-transparent hover:border-primary/20 ">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="text-2xl">📞</div>
+                                    <div class="font-semibold text-primary">Hizmet Olarak Satış</div>
+                                </div>
+                                <p class="text-xs text-base-content/60 leading-relaxed">Komple satış yönetimi ve operasyon dış kaynak kullanımı</p>
+                            </a>
+                            
+                            <a href="../solutions.html#ai-solutions" class="group p-4 rounded-xl hover:bg-secondary/5 transition-all duration-300 border border-transparent hover:border-secondary/20">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="text-2xl">🤖</div>
+                                    <div class="font-semibold text-secondary">Satışs AI Çözümler</div>
+                                </div>
+                                <p class="text-xs text-base-content/60 leading-relaxed">BuffSend Platformu ve AI destekli satış araçları</p>
+                            </a>
+                            
+                            <a href="../case-studies.html" class="group p-4 rounded-xl hover:bg-accent/5 transition-all duration-300 border border-transparent hover:border-accent/20 ">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="text-2xl">📈</div>
+                                    <div class="font-semibold text-accent">Başarı Hikayeleri</div>
+                                </div>
+                                <p class="text-xs text-base-content/60 leading-relaxed">Yardım ettiğimiz şirketlerden gerçek sonuçlar</p>
+                            </a>
+                        </div>
+                        
+                        <!-- Divider -->
+                        <div class="border-t border-base-200 my-6"></div>
+                        
+                        <!-- Specialized Hizmets Bölüm -->
+                        <div class="mb-4">
+                            <h4 class="font-bold text-primary mb-3 flex items-center gap-2">
+                                <span class="text-lg">⭐</span>
+                                Özel Hizmetler
+                            </h4>
+                        </div>
+                        
+                        <!-- Hizmets Grid -->
+                        <div class="grid grid-cols-3 gap-6">
+                            <!-- Potansiyel Müşteri Üretimi & Satışs -->
+                            <div class="space-y-3">
+                                <h5 class="text-sm font-semibold text-primary flex items-center gap-2 border-b border-primary/20 pb-2">
+                                    <span>🎯</span> Potansiyel Müşteri Üretimi & Satışs
+                                </h5>
+                                <div class="space-y-2">
+                                    <a href="./b2b-lead-generation-ajansi.html" class="block text-xs p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors">B2B Potansiyel Müşteri Üretimi</a>
+                                    <a href="./lead-generation-hizmeti.html" class="block text-xs p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors">Potansiyel Müşteri Üretimi Hizmet</a>
+                                    <a href="./potansiyel-musteri-bulma-ajansi.html" class="block text-xs p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors">Potansiyel Müşteri Finding</a>
+                                    <a href="./satis-gelistirme-ajansi.html" class="block text-xs p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors">Satış Geliştirme</a>
+                                    <a href="./randevu-ayarlama-hizmeti.html" class="block text-xs p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors">Appointment Ortam</a>
+                                    <a href="./dis-kaynakli-satis-ekibi.html" class="block text-xs p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors">Dış Kaynaklı Satış Ekibi</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Pazarlama & Outreach -->
+                            <div class="space-y-3">
+                                <h5 class="text-sm font-semibold text-secondary flex items-center gap-2 border-b border-secondary/20 pb-2">
+                                    <span>📢</span> Pazarlama & Outreach
+                                </h5>
+                                <div class="space-y-2">
+                                    <a href="./outbound-pazarlama-ajansi.html" class="block text-xs p-2 rounded-lg hover:bg-secondary/10 hover:text-secondary transition-colors">Outbound Pazarlama</a>
+                                    <a href="./soguk-e-posta-ajansi.html" class="block text-xs p-2 rounded-lg hover:bg-secondary/10 hover:text-secondary transition-colors">Soğuk E-posta Ajansı</a>
+                                    <a href="./lead-generation-ajansi-istanbul.html" class="block text-xs p-2 rounded-lg hover:bg-secondary/10 hover:text-secondary transition-colors">Istanbul Potansiyel Müşteri Üretimi</a>
+                                    <a href="./satis-gelistirme-ajansi-turkiye.html" class="block text-xs p-2 rounded-lg hover:bg-secondary/10 hover:text-secondary transition-colors">Turkey Satış Geliştirme</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Uluslararası Expansion -->
+                            <div class="space-y-3">
+                                <h5 class="text-sm font-semibold text-accent flex items-center gap-2 border-b border-accent/20 pb-2">
+                                    <span>🌍</span> Uluslararası Expansion
+                                </h5>
+                                <div class="space-y-2">
+                                    <a href="./ihracat-pazarlama-danismanligi.html" class="block text-xs p-2 rounded-lg hover:bg-accent/10 hover:text-accent transition-colors">Export Pazarlama</a>
+                                    <a href="./uluslararasi-pazar-girisi-danismanligi.html" class="block text-xs p-2 rounded-lg hover:bg-accent/10 hover:text-accent transition-colors">Uluslararası Pazar Entry</a>
+                                    <a href="./distributor-bulma-hizmeti.html" class="block text-xs p-2 rounded-lg hover:bg-accent/10 hover:text-accent transition-colors">Distributor Finding</a>
+                                    <a href="./yurt-disi-satis-danismanligi.html" class="block text-xs p-2 rounded-lg hover:bg-accent/10 hover:text-accent transition-colors">Yurt Dışı Satış Danışmanlığı</a>
+                                    <a href="./avrupa-pazarina-giris.html" class="block text-xs p-2 rounded-lg hover:bg-accent/10 hover:text-accent transition-colors">Europe Pazar Entry</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Bottom CTA -->
+                        <div class="mt-6 pt-4 border-t border-base-200">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm font-semibold text-base-content">Satış büyümenizi hızlandırmaya hazır mısınız?</p>
+                                    <p class="text-xs text-base-content/60">Özel ihtiyaçlarınızı konuşalım</p>
+                                </div>
+                                <a href="../İletişim.html" class="btn btn-primary btn-sm buzz-button">
+                                    Ücretsiz Danışmanlık Alın →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Şirket Mega Menu -->
+            <li class="dropdown dropdown-hover">
+                <div tabindex="0" role="button" class="btn btn-ghost font-semibold ">
+                    Şirket
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div tabindex="0" class="dropdown-content z-[1] card card-compact w-72 p-4 shadow-xl bg-base-100 border border-base-300" style="background-color: white !important; background: white !important;">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary mb-3">Hakkımızda Expandia</h3>
+                        <div class="grid gap-2">
+                            <a href="../about.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                <span class="text-xl">👥</span>
+                                <div>
+                                    <div class="font-semibold">Hakkımızda</div>
+                                    <div class="text-sm text-base-content/60">Misyonumuz</div>
+                                </div>
+                            </a>
+                            <a href="../İletişim.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                                <span class="text-xl">📞</span>
+                                <div>
+                                    <div class="font-semibold">İletişim</div>
+                                    <div class="text-sm text-base-content/60">Satışlarınızı Sanatırın</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="border-t border-base-300 mt-4 pt-4">
+                            <a href="../İletişim.html" class="btn btn-primary btn-sm w-full buzz-button">
+                                Ücretsiz Danışmanlık Alın
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            <!-- Satış Üniversitesi Menu Item -->
+            <li>
+                <a href="../blog/index.html" class="btn btn-ghost font-semibold ">Satış Üniversitesi</a>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="navbar-end flex-none justify-end flex items-center">
+        <div class="dropdown dropdown-end mr-4">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-sm">
+                <span id="current-flag">🇺🇸</span>
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </div>
+            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-32 text-right">
+                <li>
+                    <a href="../gizlilik-politikasi.html" data-lang="en" class="lang-switch flex items-center gap-2 justify-end">
+                        <span>🇺🇸</span>
+                        <span>English</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../gizlilik-politikasi.html" data-lang="tr" class="lang-switch flex items-center gap-2 justify-end">
+                        <span>🇹🇷</span>
+                        <span>Türkçe</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <a href="../İletişim.html" class="btn btn-primary buzz-button ml-2">Başlayın</a>
+    </div>
+</nav>
+
+    <!-- Hero Bölüm -->
+    <section class="min-h-screen bg-gradient-to-br from-accent/10 via-base-100 to-primary/10 flex items-center pt-20">
+        <div class="container mx-auto container-padding">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                        <span class="gradient-header">Potansiyel Müşteri</span><br>
+                        <span class="text-base-content">Bulma Ajansı</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-base-content/80 mb-8 leading-relaxed">
+                        AI destekli araştırma teknolojileri ile 
+                        <span class="font-semibold text-accent">iAnlaşma müşterilerinizi buluyoruz</span>. 
+                        Doğrulanmış ve yüksek kaliteli kaynaklardan 
+                        işletmenize en uygun potansiyel müşterileri tespit ediyoruz.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <a href="İletişim.html" class="btn btn-accent btn-lg buzz-button">
+                            Müşteri Araştırması Başlat
+                        </a>
+                        <a href="#nasil-calisir" class="btn btn-outline btn-lg">
+                            Nasıl Çalışır?
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-3 gap-6 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-accent">Geniş</div>
+                            <div class="text-sm text-base-content/60">Doğrulanmış B2B İletişim</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-primary">98%</div>
+                            <div class="text-sm text-base-content/60">Doğruluk Oranı</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-secondary">72h</div>
+                            <div class="text-sm text-base-content/60">Teslimat Süresi</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative animate-slide-up">
+                    <div class="buzz-card p-8 bg-gradient-to-br from-accent/10 to-primary/10">
+                        <h3 class="text-2xl font-bold mb-6">🔍 Müşteri Araştırma Paneli</h3>
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-lg border-l-4 border-accent">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-medium">Araştırma Tamamlandı</span>
+                                    <span class="text-green-600 font-bold">✓</span>
+                                </div>
+                                <div class="text-xl font-bold text-accent mt-1">2,847 Potansiyel Müşteri</div>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg border-l-4 border-primary">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-medium">E-posta Doğrulandı</span>
+                                    <span class="text-green-600 font-bold">✓</span>
+                                </div>
+                                <div class="text-xl font-bold text-primary mt-1">%98.2 Doğruluk</div>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg border-l-4 border-secondary">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-medium">LinkedIn Profilleri</span>
+                                    <span class="text-green-600 font-bold">✓</span>
+                                </div>
+                                <div class="text-xl font-bold text-secondary mt-1">2,156 Profil Bulundu</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Potansiyel Müşteri Bulma Nedir -->
+    <section id="nasil-calisir" class="section-spacing bg-base-100">
+        <div class="container mx-auto container-padding">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-header">Potansiyel Müşteri Bulma Süreci</h2>
+                <p class="text-xl text-base-content/80 max-w-4xl mx-auto">
+                    İAnlaşma müşteri profilinize (ICP) uygun potansiyel müşterileri bulmak için 
+                    gelişmiş AI algoritmaları ve doğrulanmış kaynakları kullanıyoruz.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <h3 class="text-3xl font-bold mb-6">Geleneksel vs AI Destekli Araştırma</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-stSanat gap-4">
+                            <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-red-600 font-bold">✗</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-red-600">Manuel Araştırma</h4>
+                                <p class="text-base-content/70">Google aramaları, LinkedIn'de manuel tarama, eski e-posta listeleri</p>
+                                <div class="text-sm text-red-500 mt-1">⏱️ 20-40 saat • 📊 %30-50 doğruluk • 💰 Yüksek maliyet</div>
+                            </div>
+                        </div>
+                        <div class="flex items-stSanat gap-4">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-green-600 font-bold">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-green-600">Expandia AI Araştırması</h4>
+                                <p class="text-base-content/70">AI destekli araçlar, gelişmiş filtreleme ve gerçek zamanlı doğrulama</p>
+                                <div class="text-sm text-green-500 mt-1">⏱️ 2-4 saat • 📊 %95+ doğruluk • 💰 Maliyet etkin</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-accent/5 to-primary/5 p-8 rounded-2xl">
+                    <h4 class="text-2xl font-bold mb-6">Araştırma Kriterleri</h4>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span>📊 Firmaografi (Sektör, Büyüklük)</span>
+                            <span class="badge badge-accent">✓</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>🛠️ Teknografi (Kullanılan Araçlar)</span>
+                            <span class="badge badge-primary">✓</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>👥 Demografik (Pozisyon, Deneyim)</span>
+                            <span class="badge badge-secondary">✓</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>🌍 Coğrafi (Lokasyon, Pazar)</span>
+                            <span class="badge badge-accent">✓</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>⚡ Intent Data (Satın Alma Sinyalleri)</span>
+                            <span class="badge badge-primary">✓</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hizmetlerimiz -->
+    <section id="hizmetler" class="section-spacing bg-buzz-light">
+        <div class="container mx-auto container-padding">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-header">Potansiyel Müşteri Bulma Hizmetlerimiz</h2>
+                <p class="text-xl text-base-content/80 max-w-3xl mx-auto">
+                    Kapsamlı araştırma hizmetlerimizle iAnlaşma müşterilerinizi bulun ve satış başarınızı Sanatırın.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- ICP Gelişim -->
+                <div class="buzz-card p-8">
+                    <div class="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center text-white text-2xl mb-6">
+                        🎯
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">ICP Gelişim</h3>
+                    <p class="text-base-content/80 mb-6">
+                        Mevcut müşteri analizinizi yaparak iAnlaşma müşteri profilinizi 
+                        (ICP) detaylı şekilde belirliyoruz.
+                    </p>
+                    <ul class="space-y-2 text-sm">
+                        <li>• Mevcut müşteri analizi</li>
+                        <li>• Sektör ve pazar araştırması</li>
+                        <li>• Alıcı persona geliştirme</li>
+                        <li>• ICP dokümentasyonu</li>
+                    </ul>
+                </div>
+
+                <!-- Pazar Araştırması -->
+                <div class="buzz-card p-8">
+                    <div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center text-white text-2xl mb-6">
+                        📊
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Pazar Araştırması</h3>
+                    <p class="text-base-content/80 mb-6">
+                        Hedef pazarınızdaki tüm potansiyel müşterileri tespit ediyor 
+                        ve pazar büyüklüğünü hesaplıyoruz.
+                    </p>
+                    <ul class="space-y-2 text-sm">
+                        <li>• Total Addressable Pazar (TAM)</li>
+                        <li>• Hizmetable Available Pazar (SAM)</li>
+                        <li>• Rekabet analizi</li>
+                        <li>• Pazar segmentasyonu</li>
+                    </ul>
+                </div>
+
+                <!-- İletişim Discovery -->
+                <div class="buzz-card p-8">
+                    <div class="w-16 h-16 bg-secondary rounded-2xl flex items-center justify-center text-white text-2xl mb-6">
+                        🔍
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">İletişim Keşfi</h3>
+                    <p class="text-base-content/80 mb-6">
+                        Doğrulanmış kaynaklardan e‑posta adresleri 
+                        ve telefon numaralarını buluyoruz.
+                    </p>
+                    <ul class="space-y-2 text-sm">
+                        <li>• E-posta adresi bulma</li>
+                        <li>• Telefon numarası araştırması</li>
+                        <li>• LinkedIn profil eşleştirme</li>
+                        <li>• Sosyal medya hesapları</li>
+                    </ul>
+                </div>
+
+                <!-- Data Enrichment -->
+                <div class="buzz-card p-8">
+                    <div class="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center text-white text-2xl mb-6">
+                        💎
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Veri Zenginleştirme</h3>
+                    <p class="text-base-content/80 mb-6">
+                        Mevcut kontak listenizi 50+ veri noktası ile zenginleştirerek 
+                        kişiselleştirme olanaklarını Sanatırıyoruz.
+                    </p>
+                    <ul class="space-y-2 text-sm">
+                        <li>• Şirket bilgileri güncelleme</li>
+                        <li>• Teknoloji altyapısı bilgisi</li>
+                        <li>• Finansal veriler</li>
+                        <li>• Recent news & events</li>
+                    </ul>
+                </div>
+
+                <!-- Email Verification -->
+                <div class="buzz-card p-8">
+                    <div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center text-white text-2xl mb-6">
+                        ✅
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">E-posta Doğrulama</h3>
+                    <p class="text-base-content/80 mb-6">
+                        Tüm e-posta adreslerini çoklu yöntemle doğrulayarak 
+                        %98+ deliverability garantisi sağlıyoruz.
+                    </p>
+                    <ul class="space-y-2 text-sm">
+                        <li>• Syntax validation</li>
+                        <li>• Alan verification</li>
+                        <li>• SMTP validation</li>
+                        <li>• Bounce risk assessment</li>
+                    </ul>
+                </div>
+
+                <!-- Gelenek Araştırma -->
+                <div class="buzz-card p-8">
+                    <div class="w-16 h-16 bg-secondary rounded-2xl flex items-center justify-center text-white text-2xl mb-6">
+                        🔬
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Özel Araştırma</h3>
+                    <p class="text-base-content/80 mb-6">
+                        Özel ihtiyaçlarınız için manuel araştırma yaparak 
+                        niche pazarlardaki potansiyel müşterileri buluyoruz.
+                    </p>
+                    <ul class="space-y-2 text-sm">
+                        <li>• Niche Pazar Araştırması</li>
+                        <li>• Executive İletişim finding</li>
+                        <li>• International expansion</li>
+                        <li>• Gelenek data points</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Araştırma Süreci -->
+    <section class="section-spacing bg-base-100">
+        <div class="container mx-auto container-padding">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-header">6 Aşamalı Araştırma Sürecimiz</h2>
+                <p class="text-xl text-base-content/80 max-w-3xl mx-auto">
+                    Sistematik yaklaşımımızla en kaliteli potansiyel müşteri listelerini hazırlıyoruz.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-accent rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">1</div>
+                    <h3 class="text-xl font-bold mb-4">ICP Tanımlama</h3>
+                    <p class="text-base-content/70">İAnlaşma müşteri profilinizi detaylı şekilde tanımlıyoruz ve kriterleri belirliyoruz.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">2</div>
+                    <h3 class="text-xl font-bold mb-4">Veri Madenciliği</h3>
+                    <p class="text-base-content/70">Doğrulanmış kaynaklardan AI algoritmaları ile uygun Potansiyel Müşteri'leri buluyoruz.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-secondary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">3</div>
+                    <h3 class="text-xl font-bold mb-4">İletişim Bulma</h3>
+                    <p class="text-base-content/70">E-posta adresleri, telefon numaraları ve sosyal medya hesaplarını tespit ediyoruz.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-accent rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">4</div>
+                    <h3 class="text-xl font-bold mb-4">Veri Doğrulama</h3>
+                    <p class="text-base-content/70">Çoklu yöntemle veri doğruluğunu kontrol ediyor ve kalitesiz kayıtları filtreliyoruz.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">5</div>
+                    <h3 class="text-xl font-bold mb-4">Zenginleştirme</h3>
+                    <p class="text-base-content/70">50+ veri noktası ile kontak bilgilerini zenginleştirerek kişiselleştirme imkanı sunuyoruz.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-secondary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">6</div>
+                    <h3 class="text-xl font-bold mb-4">Teslim & Destek</h3>
+                    <p class="text-base-content/70">Organized edilmiş listeyi CRM'inize yüklüyor ve kullanım desteği sağlıyoruz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Araştırma Paketleri -->
+    <section class="section-spacing bg-buzz-light">
+        <div class="container mx-auto container-padding">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-header">Potansiyel Müşteri Araştırma Hizmetlerimiz</h2>
+                <p class="text-xl text-base-content/80 max-w-3xl mx-auto">
+                    İhtiyacınıza uygun potansiyel müşteri araştırma çözümü için bizimle iletişime geçin.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <div class="buzz-card p-8 bg-gradient-to-r from-accent/5 to-primary/5 max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold mb-4">Size Özel Potansiyel Müşteri Araştırması</h3>
+                    <p class="text-base-content/80 mb-6">
+                        Her işletmenin farklı ihtiyaçları olduğunu biliyoruz. Bu nedenle potansiyel müşteri araştırma hizmetlerimizi 
+                        tamamen ihtiyaçlarınıza göre özelleştiriyoruz.
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-4 mb-6">
+                        <div class="text-center">
+                            <div class="text-xl font-bold text-accent">Hızlı Araştırma</div>
+                            <div class="text-sm text-base-content/60">500+ doğrulanmış kontak</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-xl font-bold text-primary">Profesyonel Araştırma</div>
+                            <div class="text-sm text-base-content/60">2,000+ doğrulanmış kontak</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-xl font-bold text-secondary">Kurumsal Araştırma</div>
+                            <div class="text-sm text-base-content/60">5,000+ doğrulanmış kontak</div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="contact.html" class="btn btn-primary btn-lg">Özel Teklifinizi Alın</a>
+                        <a href="mailto:hello@expandia.ch" class="btn btn-outline btn-lg">Direkt İletişim</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sonuçlar & Başarı Hikayeleri -->
+    <section class="section-spacing bg-base-100">
+        <div class="container mx-auto container-padding">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-header">Hizmet Kapasitemiz</h2>
+                <p class="text-xl text-base-content/80 max-w-3xl mx-auto">
+                    Potansiyel müşteri bulma konusunda sahip olduğumuz teknik altyapı ve hizmet kalitesi.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-accent mb-2">5K+</div>
+                    <div class="text-lg font-semibold mb-2">Araştırılan Kontak</div>
+                    <div class="text-sm text-base-content/60">Son 12 ayda</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-primary mb-2">90%</div>
+                    <div class="text-lg font-semibold mb-2">Doğruluk Oranı</div>
+                    <div class="text-sm text-base-content/60">E-posta validation</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-secondary mb-2">72h</div>
+                    <div class="text-lg font-semibold mb-2">Ortalama Teslimat</div>
+                    <div class="text-sm text-base-content/60">Süre garantisi</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-accent mb-2">50+</div>
+                    <div class="text-lg font-semibold mb-2">Tamamlanan Proje</div>
+                    <div class="text-sm text-base-content/60">Başarılı araştırma</div>
+                </div>
+            </div>
+
+            <!-- Müşteri Başarı Hikayeleri -->
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="buzz-card p-8">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold">
+                            E
+                        </div>
+                        <div>
+                            <h4 class="font-bold">İş Geliştirme Özellikleri</h4>
+                            <p class="text-sm text-base-content/60">Teknoloji Sektörü</p>
+                        </div>
+                    </div>
+                    <p class="text-base-content/80 mb-6">
+                        "Avrupa pazarına giriş için yapılan araştırma mükemmeldi. 
+                        1,500 potansiyel müşteri bulundu ve %95'i doğru iletişim bilgileriydi. 
+                        6 ay içinde 20 yeni müşteri kazandık."
+                    </p>
+                    <div class="grid grid-cols-3 gap-4 text-center">
+                        <div>
+                            <div class="text-lg font-bold text-primary">1,500</div>
+                            <div class="text-xs">Potansiyel Müşteri Bulundu</div>
+                        </div>
+                        <div>
+                            <div class="text-lg font-bold text-secondary">%95</div>
+                            <div class="text-xs">Doğruluk Oranı</div>
+                        </div>
+                        <div>
+                            <div class="text-lg font-bold text-accent">20</div>
+                            <div class="text-xs">Yeni Müşteri</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="buzz-card p-8">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+                            F
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Hizmet Kalitesi</h4>
+                            <p class="text-sm text-base-content/60">Finansal Teknoloji</p>
+                        </div>
+                    </div>
+                    <p class="text-base-content/80 mb-6">
+                        "Niche FinTech pazarında müşteri bulmak zordu. Expandia'nın 
+                        özel araştırması ile 50+ banka ve financial Kurum 
+                        ile iletişime geçebildik."
+                    </p>
+                    <div class="grid grid-cols-3 gap-4 text-center">
+                        <div>
+                            <div class="text-lg font-bold text-primary">50+</div>
+                            <div class="text-xs">Financial Kurum</div>
+                        </div>
+                        <div>
+                            <div class="text-lg font-bold text-secondary">€2.1M</div>
+                            <div class="text-xs">Pipeline Değer</div>
+                        </div>
+                        <div>
+                            <div class="text-lg font-bold text-accent">12</div>
+                            <div class="text-xs">Closed Anlaşmas</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Bölüm -->
+    <section class="section-spacing bg-gradient-to-br from-accent/10 to-primary/10">
+        <div class="container mx-auto container-padding text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-header">
+                İAnlaşma Müşterilerinizi Bulma Zamanı!
+            </h2>
+            <p class="text-xl text-base-content/80 mb-8 max-w-3xl mx-auto">
+                Doğrulanmış kaynaklar ve AI destekli araştırma teknolojilerimizle 
+                iAnlaşma müşterilerinizi 72 saat içinde bulun.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+                <a href="İletişim.html" class="btn btn-accent btn-lg buzz-button">
+                    Müşteri Araştırması Başlat
+                </a>
+                <a href="case-studies.html" class="btn btn-outline btn-lg">
+                    Başarı Hikayelerini İncele
+                </a>
+            </div>
+            <div class="text-sm text-base-content/60 max-w-2xl mx-auto">
+                ⭐ 50+ başarılı proje • 📊 %98+ doğruluk garantisi<br>
+                ⚡ 72 saat teslimat • 💰 Para iadesi garantisi
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-gradient text-white">
+        <div class="container mx-auto container-padding py-16">
+            <div class="grid md:grid-cols-12 gap-8 mb-16">
+                <div class="md:col-span-4">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="../Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 w-auto brightness-0 invert">
+                    </div>
+                    <p class="text-white/80 mb-6 text-lg">
+                        Potansiyel Müşteri Bulma ve B2B Araştırma konusunda uzman ortağınız. AI destekli araştırma teknolojileri ile iAnlaşma müşterilerinizi bulun.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/company/expandia-ch/" class="footer-social-icon group" target="_blank" rel="noopener noreferrer">
+                            <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="md:col-span-8">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div>
+                            <h4 class="text-lg font-bold mb-6">Araştırma Hizmetleri</h4>
+                            <ul class="space-y-4 text-white/80">
+                                <li><a href="b2b-lead-generation-ajansi.html" class="footer-link hover:text-primary transition-colors">B2B Potansiyel Müşteri Üretimi</a></li>
+                                <li><a href="lead-generation-hizmeti.html" class="footer-link hover:text-primary transition-colors">Potansiyel Müşteri Üretimi Hizmeti</a></li>
+                                <li><a href="potansiyel-musteri-bulma-ajansi.html" class="footer-link hover:text-primary transition-colors text-primary font-semibold">Potansiyel Müşteri Bulma</a></li>
+                                <li><a href="solutions.html" class="footer-link hover:text-primary transition-colors">Tüm Hizmetler</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-lg font-bold mb-6">Kaynaklar</h4>
+                            <ul class="space-y-4 text-white/80">
+                                <li><a href="case-studies.html" class="footer-link hover:text-primary transition-colors">Başarı Hikayeleri</a></li>
+                                <li><a href="blog/" class="footer-link hover:text-primary transition-colors">Araştırma Blog</a></li>
+                                <li><a href="about.html" class="footer-link hover:text-primary transition-colors">Hakkımızda</a></li>
+                                <li><a href="İletişim.html" class="footer-link hover:text-primary transition-colors">İletişim</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-lg font-bold mb-6">Hızlı Başlangıç</h4>
+                            <div class="space-y-4">
+                                <a href="mailto:hello@expandia.ch" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    </svg>
+                                    hello@expandia.ch
+                                </a>
+                                <a href="İletişim.html" class="btn btn-primary w-full">Araştırma Başlat</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/60">
+                <div class="text-sm">
+                    &copy; 2024 Expandia. Tüm hakları saklıdır. Potansiyel Müşteri Bulma Uzmanı.
+                </div>
+                <div class="flex gap-6 text-sm">
+                    <a href="../gizlilik-politikasi.html" class="hover:text-primary transition-colors">Gizlilik Politikası</a>
+                    <a href="../gizlilik-politikasi.html" class="hover:text-primary transition-colors">Hizmet Şartları</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../src/js/index.js"></script>
+</body>
+</html> 

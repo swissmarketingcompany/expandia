@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bumblebee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{PAGE_TITLE}} | Expandia - Sales Solutions Partner</title>
+    <meta name="description" content="{{PAGE_DESCRIPTION}}">
+    <meta name="keywords" content="{{PAGE_KEYWORDS}}">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Expandia">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{CANONICAL_URL}}">
+    <link rel="alternate" hreflang="fr" href="https://www.expandia.ch/fr/base-template.html">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="{{PAGE_TITLE}} | Expandia - Sales Solutions Partner">
+    <meta property="og:description" content="{{PAGE_DESCRIPTION}}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{CANONICAL_URL}}">
+    <meta property="og:image" content="https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png">
+    <meta property="og:site_name" content="Expandia">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{PAGE_TITLE}} | Expandia - Sales Solutions Partner">
+    <meta name="twitter:description" content="{{PAGE_DESCRIPTION}}">
+    <meta name="twitter:image" content="https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png">
+    
+    <link href="./dist/css/output.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XY2B6K4R6Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XY2B6K4R6Q');
+    </script>
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto container-padding flex items-center justify-between">
+            <div class="navbar-start flex items-center">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
+                        </svg>
+                    </div>
+                    <!-- Mobile Menu -->
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-72">
+                        <li>
+                            <a href="index.html" {{HOME_MOBILE_ACTIVE}}>Home</a>
+                        </li>
+                        <li>
+                            <details>
+                                <summary class="font-semibold">Solutions</summary>
+                                <ul class="p-2">
+                                    <li><a href="solutions.html" {{SOLUTIONS_MOBILE_ACTIVE}}>Our Sales Solutions</a></li>
+                                    <li><a href="case-studies.html" {{CASESTUDIES_MOBILE_ACTIVE}}>Success Stories</a></li>
+                                </ul>
+                            </details>
+                        </li>
+                        <li>
+                            <details>
+                                <summary class="font-semibold">Company</summary>
+                                <ul class="p-2">
+                                    <li><a href="about.html" {{ABOUT_MOBILE_ACTIVE}}>About Us</a></li>
+                                    <li><a href="contact.html" {{CONTACT_MOBILE_ACTIVE}}>Contact Us</a></li>
+                                </ul>
+                            </details>
+                        </li>
+                        <li><a href="blog/index.html" {{BLOG_MOBILE_ACTIVE}}>Sales University</a></li>
+                    </ul>
+                </div>
+                <a href="index.html" class="flex items-center py-2 hover:opacity-80 transition-opacity">
+                    <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 md:h-10 w-auto transition-all duration-300 hover:scale-105 logo-bumblebee">
+                </a>
+            </div>
+        
+        <!-- Desktop Mega Menu -->
+        <div class="navbar-center hidden lg:flex justify-center">
+            <ul class="menu menu-horizontal px-1">
+                <!-- Home Menu Item -->
+                <li>
+                    <a href="index.html" class="btn btn-ghost font-semibold {{HOME_ACTIVE}}">Home</a>
+                </li>
+                
+                <!-- Solutions Mega Menu -->
+                <li class="dropdown dropdown-hover">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold {{SOLUTIONS_ACTIVE}}">
+                        Solutions
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div tabindex="0" class="dropdown-content z-[1] card card-compact w-80 p-4 shadow-xl bg-base-100 border border-base-300" style="background-color: white !important; background: white !important;">
+                        <div class="card-body" style="background-color: white !important;">
+                            <h3 class="card-title text-primary mb-3">Sales Solutions & Services</h3>
+                            <div class="grid gap-2">
+                                <a href="solutions.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{SOLUTIONS_ITEM_ACTIVE}}">
+                                    <span class="text-xl">📞</span>
+                                    <div>
+                                        <div class="font-semibold">Sales as a Service</div>
+                                        <div class="text-sm text-base-content/60">Complete Sales Management</div>
+                                    </div>
+                                </a>
+                                <a href="solutions.html#sales-protection" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
+                                    <span class="text-xl">🤖</span>
+                                    <div>
+                                        <div class="font-semibold">Sales Protection Services</div>
+                                        <div class="text-sm text-base-content/60">BuffSend & AI Tools</div>
+                                    </div>
+                                </a>
+                                <a href="case-studies.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{CASESTUDIES_ITEM_ACTIVE}}">
+                                    <span class="text-xl">📈</span>
+                                    <div>
+                                        <div class="font-semibold">Success Stories</div>
+                                        <div class="text-sm text-base-content/60">Real Results from Real Companies</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Company Mega Menu -->
+                <li class="dropdown dropdown-hover">
+                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold {{COMPANY_ACTIVE}}">
+                        Company
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div tabindex="0" class="dropdown-content z-[1] card card-compact w-72 p-4 shadow-xl bg-base-100 border border-base-300" style="background-color: white !important; background: white !important;">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary mb-3">About Expandia</h3>
+                            <div class="grid gap-2">
+                                <a href="about.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{ABOUT_ITEM_ACTIVE}}">
+                                    <span class="text-xl">👥</span>
+                                    <div>
+                                        <div class="font-semibold">About Us</div>
+                                        <div class="text-sm text-base-content/60">Our Mission</div>
+                                    </div>
+                                </a>
+                                <a href="contact.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{CONTACT_ITEM_ACTIVE}}">
+                                    <span class="text-xl">📞</span>
+                                    <div>
+                                        <div class="font-semibold">Contact Us</div>
+                                        <div class="text-sm text-base-content/60">Boost Your Sales</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="border-t border-base-300 mt-4 pt-4">
+                                <a href="contact.html" class="btn btn-primary btn-sm w-full buzz-button">
+                                    Get Free Consultation
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                
+                <!-- Sales University Menu Item -->
+                <li>
+                    <a href="blog/index.html" class="btn btn-ghost font-semibold {{BLOG_ACTIVE}}">Sales University</a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="navbar-end flex items-center">
+            <div class="dropdown dropdown-end mr-4">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-sm">
+                    <span id="current-flag">🇺🇸</span>
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-32 text-right">
+                    <li>
+                        <a href="#" data-lang="en" class="lang-switch flex items-center gap-2 justify-end">
+                            <span>🇺🇸</span>
+                            <span>English</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-lang="tr" class="lang-switch flex items-center gap-2 justify-end">
+                            <span>🇹🇷</span>
+                            <span>Türkçe</span>
+                        </a>
+                </li>
+                <li>
+                    <a href="#" data-lang="fr" class="lang-switch flex items-center gap-2 justify-end">
+                        <span>🇫🇷</span>
+                        <span>Français</span>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+            <a href="contact.html" class="btn btn-primary buzz-button ml-2">Get Started</a>
+        </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT GOES HERE -->
+    {{MAIN_CONTENT}}
+
+    {{FOOTER_INCLUDE}}
+
+    <!-- JavaScript for smooth interactions -->
+    <script src="./dist/js/index.js"></script>
+    <script src="./src/js/i18n.js"></script>
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation classes when elements come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all service cards and animated elements
+        document.querySelectorAll('.service-card, .buzz-card, .animate-slide-up').forEach(card => {
+            observer.observe(card);
+        });
+
+        {{CUSTOM_JS}}
+    </script>
+    
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6911e3f950ba1a195e0a2c28/1j9mu527m';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+</html> 

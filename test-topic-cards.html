@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic Cards Test</title>
+    <link href="dist/css/output.css" rel="stylesheet">
+</head>
+<body class="font-sans bg-base-200 p-8">
+    <div class="container mx-auto">
+        <h1 class="text-3xl font-bold mb-8 text-center">🧪 Topic Cards Functionality Test</h1>
+        
+        <div class="buzz-card p-6 mb-8">
+            <h2 class="text-xl font-bold mb-4">Test Instructions:</h2>
+            <ol class="list-decimal list-inside space-y-2 text-base-content/80">
+                <li>Click the "Open Blog Page" button below</li>
+                <li>Scroll down to the "Browse by Sales Challenge" section</li>
+                <li>Click on any of the topic cards (Cold Email, Lead Generation, etc.)</li>
+                <li>Verify that it scrolls to the articles section and filters the content</li>
+                <li>Check that the corresponding filter button becomes active</li>
+            </ol>
+        </div>
+
+        <div class="text-center space-y-4">
+            <button id="openBlogPage" class="btn btn-primary btn-lg">
+                📝 Open Blog Page
+            </button>
+            
+            <div id="testResults" class="mt-8 space-y-2">
+                <div class="alert alert-info">
+                    <span>Ready to test topic cards functionality...</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="buzz-card p-6 mt-8">
+            <h2 class="text-xl font-bold mb-4">Expected Behavior:</h2>
+            <ul class="list-disc list-inside space-y-2 text-base-content/80">
+                <li><strong>Cold Email & Outreach:</strong> Should filter to show cold email related articles</li>
+                <li><strong>Lead Generation:</strong> Should filter to show prospecting articles</li>
+                <li><strong>Closing & Negotiation:</strong> Should filter to show closing related articles</li>
+                <li><strong>Objection Handling:</strong> Should filter to show objection handling articles</li>
+                <li><strong>Sales Technology:</strong> Should filter to show automation articles</li>
+                <li><strong>Sales Psychology:</strong> Should filter to show psychology articles</li>
+                <li><strong>Sales Leadership:</strong> Should filter to show leadership articles</li>
+                <li><strong>Enterprise Sales:</strong> Should filter to show enterprise articles</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('openBlogPage').addEventListener('click', function() {
+            const blogWindow = window.open('http://127.0.0.1:6161/blog/index.html', '_blank');
+            
+            const resultsDiv = document.getElementById('testResults');
+            resultsDiv.innerHTML = `
+                <div class="alert alert-success">
+                    <span>✅ Blog page opened! Now test the topic cards by clicking them.</span>
+                </div>
+                <div class="alert alert-info">
+                    <span>💡 Look for the "Browse by Sales Challenge" section and click any topic card.</span>
+                </div>
+            `;
+            
+            // Add some debugging info
+            setTimeout(() => {
+                resultsDiv.innerHTML += `
+                    <div class="alert alert-warning">
+                        <span>🔍 If topic cards don't work, check the browser console for errors.</span>
+                    </div>
+                `;
+            }, 2000);
+        });
+    </script>
+</body>
+</html> 

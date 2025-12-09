@@ -1,0 +1,245 @@
+<!-- Navigation -->
+<nav class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto container-padding flex items-center justify-between">
+        <div class="navbar-start flex items-center">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
+                    </svg>
+                </div>
+                <!-- Mobile Menu -->
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-72">
+                    <li>
+                        <a href="./index.html" {{HOME_MOBILE_ACTIVE}}>Accueil</a>
+                    </li>
+                    <li>
+                        <details>
+                            <summary class="font-semibold">Solutions</summary>
+                            <ul class="p-2">
+                                <li class="mt-2 px-3 py-1">
+                                    <span class="text-xs font-normal text-gray-500 uppercase tracking-wide">Génération de Leads B2B</span>
+                                </li>
+                                <li><a href="./{{MARKET_FOUNDATION_PAGE}}" class="text-sm pl-8">🚀 Génération de Leads Locale</a></li>
+                                <li><a href="./{{MARKET_ACCELERATOR_PAGE}}" class="text-sm pl-8">⚡ Génération de Leads Mondiale</a></li>
+                                <li><a href="./{{FRACTIONAL_BIZDEV_PAGE}}" class="text-sm pl-8">👥 Équipe de Génération de Leads à Temps Partiel</a></li>
+                                <li class="mt-4 px-3 py-1">
+                                    <span class="text-xs font-normal text-gray-500 uppercase tracking-wide">Solutions d'Entreprise</span>
+                                </li>
+                                <li><a href="./corporate-digital-gifting.html" class="text-sm pl-8 flex items-center gap-2">
+                                    <lord-icon src="https://cdn.lordicon.com/gqdnbnwt.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:20px;height:20px"></lord-icon>
+                                    Cadeaux Numériques
+                                </a></li>
+                                <li><a href="./usa-pr-service.html" class="text-sm pl-8 flex items-center gap-2">
+                                    <lord-icon src="https://cdn.lordicon.com/vdjwmfqs.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:20px;height:20px"></lord-icon>
+                                    Service RP USA
+                                </a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary class="font-semibold">Entreprise</summary>
+                            <ul class="p-2">
+                                <li><a href="./about.html" {{ABOUT_MOBILE_ACTIVE}}>À Propos</a></li>
+                                <li><a href="./{{VISION_MISSION_PAGE}}" {{VISION_MOBILE_ACTIVE}}>Vision & Mission</a></li>
+                                <li><a href="./{{ETHICAL_PRINCIPLES_PAGE}}" {{ETHICS_MOBILE_ACTIVE}}>Nos Principes Éthiques</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li><a href="../blog/index.html" {{BLOG_MOBILE_ACTIVE}}>Ressources de Croissance</a></li>
+                </ul>
+            </div>
+            <a href="./index.html" class="flex items-center py-2 hover:opacity-80 transition-opacity">
+                <img src="../Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 md:h-10 w-auto transition-all duration-300 hover:scale-105 logo-bumblebee">
+            </a>
+        </div>
+
+    <!-- Desktop Mega Menu -->
+    <div class="navbar-center hidden lg:flex justify-center">
+        <ul class="menu menu-horizontal px-1">
+            <!-- Accueil Menu Item -->
+            <li>
+                <a href="./index.html" class="btn btn-ghost font-semibold {{HOME_ACTIVE}}">Accueil</a>
+            </li>
+
+            <!-- Solutions Mega Menu -->
+            <li class="dropdown dropdown-hover">
+                <div tabindex="0" role="button" class="btn btn-ghost font-semibold {{SOLUTIONS_ACTIVE}}">
+                    Solutions
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div tabindex="0" class="dropdown-content z-[1] card card-compact w-80 p-4 shadow-xl bg-base-100 border border-base-300" style="background-color: white !important; background: white !important;">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary mb-3">Our Solutions</h3>
+
+                        <!-- Génération de Leads B2B - Title and Programs -->
+                        <div class="grid gap-2">
+                            <!-- Génération de Leads B2B Title (non-clickable) -->
+                            <div class="flex items-center gap-2 px-3 pt-1 pb-2">
+                                <span class="text-sm opacity-60">🎯</span>
+                                <div class="flex-1">
+                                    <div class="text-xs font-normal text-gray-500 uppercase tracking-wide">Génération de Leads B2B</div>
+                                </div>
+                            </div>
+
+                            <!-- Programs directly under title -->
+                            <div class="space-y-1 pl-2">
+                                <a href="./{{MARKET_FOUNDATION_PAGE}}" class="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/10 transition-colors">
+                                    <span class="text-lg">🚀</span>
+                                    <div>
+                                        <div class="font-semibold text-sm">Génération de Leads Locale</div>
+                                    </div>
+                                </a>
+                                <a href="./{{MARKET_ACCELERATOR_PAGE}}" class="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary/10 transition-colors">
+                                    <span class="text-lg">⚡</span>
+                                    <div>
+                                        <div class="font-semibold text-sm">Génération de Leads Mondiale</div>
+                                    </div>
+                                </a>
+                                <a href="./{{FRACTIONAL_BIZDEV_PAGE}}" class="flex items-center gap-3 p-3 rounded-lg hover:bg-accent/10 transition-colors">
+                                    <span class="text-lg">👥</span>
+                                    <div>
+                                        <div class="font-semibold text-sm">Équipe de Génération de Leads à Temps Partiel</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Solutions d'Entreprise Category -->
+                        <div class="grid gap-2 mt-4">
+                            <div class="flex items-center gap-2 px-3 pt-1 pb-2">
+                                <lord-icon
+                                    src="https://cdn.lordicon.com/gqdnbnwt.json"
+                                    trigger="hover"
+                                    colors="primary:#f9c23c,secondary:#e86100"
+                                    style="width:28px;height:28px;opacity:0.6">
+                                </lord-icon>
+                                <div class="flex-1">
+                                    <div class="text-xs font-normal text-gray-500 uppercase tracking-wide">Solutions d'Entreprise</div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-1 pl-2">
+                                <a href="./corporate-digital-gifting.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/10 transition-colors">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/gqdnbnwt.json"
+                                        trigger="hover"
+                                        colors="primary:#f9c23c,secondary:#e86100"
+                                        style="width:32px;height:32px">
+                                    </lord-icon>
+                                    <div>
+                                        <div class="font-semibold text-sm">Cadeaux Numériques</div>
+                                    </div>
+                                </a>
+                                <a href="./usa-pr-service.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/10 transition-colors">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/vdjwmfqs.json"
+                                        trigger="hover"
+                                        colors="primary:#f9c23c,secondary:#e86100"
+                                        style="width:32px;height:32px">
+                                    </lord-icon>
+                                    <div>
+                                        <div class="font-semibold text-sm">Service RP USA</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-base-300 mt-4 pt-4">
+                            <a href="./contact.html" class="btn btn-primary btn-sm w-full buzz-button">
+                                Consultation Gratuite
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Entreprise Mega Menu -->
+            <li class="dropdown dropdown-hover">
+                <div tabindex="0" role="button" class="btn btn-ghost font-semibold {{COMPANY_ACTIVE}}">
+                    Entreprise
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div tabindex="0" class="dropdown-content z-[1] card card-compact w-72 p-4 shadow-xl bg-base-100 border border-base-300" style="background-color: white !important; background: white !important;">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary mb-3">À Propos d'Expandia</h3>
+                        <div class="grid gap-2">
+                            <a href="./about.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{ABOUT_ITEM_ACTIVE}}">
+                                <span class="text-xl">👥</span>
+                                <div>
+                                    <div class="font-semibold">À Propos</div>
+                                </div>
+                            </a>
+                            <a href="./{{VISION_MISSION_PAGE}}" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{VISION_ITEM_ACTIVE}}">
+                                <span class="text-xl">🎯</span>
+                                <div>
+                                    <div class="font-semibold">Vision & Mission</div>
+                                </div>
+                            </a>
+                            <a href="./{{ETHICAL_PRINCIPLES_PAGE}}" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{ETHICS_ITEM_ACTIVE}}">
+                                <span class="text-xl">⚖️</span>
+                                <div>
+                                    <div class="font-semibold">Nos Principes Éthiques</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="border-t border-base-300 mt-4 pt-4">
+                            <a href="./contact.html" class="btn btn-primary btn-sm w-full buzz-button">
+                                Consultation Gratuite
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Sales University Menu Item -->
+            <li>
+                <a href="../blog/index.html" class="btn btn-ghost font-semibold {{BLOG_ACTIVE}}">Sales University</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="navbar-end flex items-center">
+        <div class="dropdown dropdown-end mr-4">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-sm">
+                <span id="current-flag">🇫🇷</span>
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </div>
+            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-32 text-right">
+                <li>
+                    <a href="../index.html" data-lang="en" class="lang-switch flex items-center gap-2 justify-end">
+                        <span>🇺🇸</span>
+                        <span>English</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../tr/index.html" data-lang="tr" class="lang-switch flex items-center gap-2 justify-end">
+                        <span>🇹🇷</span>
+                        <span>Türkçe</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../de/index.html" data-lang="de" class="lang-switch flex items-center gap-2 justify-end">
+                        <span>🇩🇪</span>
+                        <span>Deutsch</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./index.html" data-lang="fr" class="lang-switch flex items-center gap-2 justify-end">
+                        <span>🇫🇷</span>
+                        <span>Français</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <a href="./contact.html" class="btn btn-primary buzz-button ml-2">Commencer</a>
+    </div>
+    </div>
+</nav>
