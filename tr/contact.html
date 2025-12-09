@@ -672,17 +672,144 @@
             </div>
         </div>
     </footer> 
-    <script src="../dist/js/contact.js"></script>
 
+    <!-- TRANSLATED JAVASCRIPT LOGIC -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
 
-    
-    <script src="../dist/js/index.js"></script>
-</body>
-</html>
-    
-    {{FOOTER}}
-    
-    <script src="../dist/js/index.js"></script>
+        /* --- 1. FAQ Functionality --- */
+        const faqItems = document.querySelectorAll('.collapse input[type="checkbox"]');
+        faqItems.forEach(faqInput => {
+            const collapseElement = faqInput.closest('.collapse');
+            const titleElement = collapseElement?.querySelector('.collapse-title');
+            
+            if (titleElement) {
+                titleElement.style.cursor = 'pointer';
+                titleElement.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    faqInput.checked = !faqInput.checked;
+                    // Close other items
+                    faqItems.forEach(otherInput => {
+                        if (otherInput !== faqInput) {
+                            otherInput.checked = false;
+                        }
+                    });
+                });
+            }
+        });
+
+        /* --- 2. Contact Form Handler (Turkish) --- */
+        const contactForm = document.getElementById('expandia-contact-form');
+        const statusEl = document.getElementById('contact-status');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const formData = new FormData(contactForm);
+
+                // A. Anti-Spam
+                if (formData.get('website')) { 
+                    contactForm.reset();
+                    if (statusEl) statusEl.textContent = 'Teşekkürler! 24 saat içinde size döneceğiz.';
+                    return;
+                }
+
+                // B. Math Check
+                const mathAnswer = formData.get('math');
+                if (mathAnswer !== '61') {
+                    if (statusEl) statusEl.textContent = 'Lütfen matematik işlemini doğru cevaplayınız (30+31).';
+                    return;
+                }
+                
+                if (statusEl) statusEl.textContent = 'Gönderiliyor...';
+
+                // C. Prepare Data
+                const fullMessage = `
+                    Name: ${formData.get('name')}
+                    Company: ${formData.get('company')}
+                    Service Interest: ${formData.get('service')}
+                    ------------------------
+                    Message:
+                    ${formData.get('message')}
+                `;
+
+                const payload = {
+                    email: formData.get('email'),
+                    message: fullMessage
+                };
+
+                try {
+                    const resp = await fetch('https://expandia-contact-form.omaycompany.workers.dev/', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const data = await resp.json();
+
+                    if (resp.ok) {
+                        if (statusEl) statusEl.textContent = 'Teşekkürler! 24 saat içinde size döneceğiz.';
+                        contactForm.reset();
+                    } else {
+                        if (statusEl) statusEl.textContent = data.message || 'Gönderim başarısız. Lütfen tekrar deneyin.';
+                    }
+                } catch (err) {
+                    console.error(err);
+                    if (statusEl) statusEl.textContent = 'Sunucu hatası. Lütfen daha sonra tekrar deneyin.';
+                }
+            });
+        }
+
+        /* --- 3. Newsletter Form Handler (Turkish) --- */
+        const newsletterForm = document.getElementById('newsletter-form');
+        
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const formData = new FormData(newsletterForm);
+                const btn = newsletterForm.querySelector('button[type="submit"]');
+                const originalText = btn ? btn.textContent : 'Abone Ol';
+
+                if (formData.get('website')) return; 
+
+                // Math Check
+                if (formData.get('math') !== '61') {
+                    alert('Lütfen matematik işlemini doğru cevaplayınız.');
+                    return;
+                }
+                
+                if (btn) btn.textContent = 'Abone olunuyor...';
+                
+                const payload = {
+                    email: formData.get('email'),
+                    message: 'Newsletter Subscription Request (Turkish Site)'
+                };
+
+                try {
+                    const resp = await fetch('https://expandia-contact-form.omaycompany.workers.dev/', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (resp.ok) {
+                        newsletterForm.reset();
+                        if (btn) btn.textContent = 'Abone oldunuz!';
+                        setTimeout(() => { if (btn) btn.textContent = originalText; }, 2000);
+                    } else {
+                        if (btn) btn.textContent = 'Tekrar Deneyin';
+                        setTimeout(() => { if (btn) btn.textContent = originalText; }, 2000);
+                    }
+                } catch (err) {
+                    if (btn) btn.textContent = 'Hata';
+                    setTimeout(() => { if (btn) btn.textContent = originalText; }, 2000);
+                }
+            });
+        }
+    });
+    </script>
     
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
