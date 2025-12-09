@@ -178,7 +178,7 @@ const contactValidation = [
 // Uncomment the line below if you want to re-enable contact rate limiting
 // const contactMiddleware = process.env.ENABLE_RATE_LIMIT === 'true' ? [contactLimiter] : [];
 
-app.post('/api/contact', contactValidation, async (req, res) => {
+app.post('https://expandia-contact-form.omaycompany.workers.dev/', contactValidation, async (req, res) => {
     try {
         // Check validation results
         const errors = validationResult(req);
