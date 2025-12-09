@@ -644,9 +644,144 @@
             </div>
         </div>
     </footer> 
-    <script src="../dist/js/contact.js"></script>
-    
-    <script src="../dist/js/index.js"></script>
+
+    <!-- TRANSLATED JAVASCRIPT LOGIC (GERMAN) -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        /* --- 1. FAQ Functionality --- */
+        const faqItems = document.querySelectorAll('.collapse input[type="checkbox"]');
+        faqItems.forEach(faqInput => {
+            const collapseElement = faqInput.closest('.collapse');
+            const titleElement = collapseElement?.querySelector('.collapse-title');
+            
+            if (titleElement) {
+                titleElement.style.cursor = 'pointer';
+                titleElement.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    faqInput.checked = !faqInput.checked;
+                    // Close other items
+                    faqItems.forEach(otherInput => {
+                        if (otherInput !== faqInput) {
+                            otherInput.checked = false;
+                        }
+                    });
+                });
+            }
+        });
+
+        /* --- 2. Contact Form Handler (German) --- */
+        const contactForm = document.getElementById('expandia-contact-form');
+        const statusEl = document.getElementById('contact-status');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const formData = new FormData(contactForm);
+
+                // A. Anti-Spam
+                if (formData.get('website')) { 
+                    contactForm.reset();
+                    if (statusEl) statusEl.textContent = 'Vielen Dank! Wir melden uns innerhalb von 24 Stunden bei Ihnen.';
+                    return;
+                }
+
+                // B. Math Check
+                const mathAnswer = formData.get('math');
+                if (mathAnswer !== '61') {
+                    if (statusEl) statusEl.textContent = 'Bitte lösen Sie die Rechenaufgabe korrekt (30+31).';
+                    return;
+                }
+                
+                if (statusEl) statusEl.textContent = 'Wird gesendet...';
+
+                // C. Prepare Data
+                const fullMessage = `
+                    Name: ${formData.get('name')}
+                    Company: ${formData.get('company')}
+                    Service Interest: ${formData.get('service')}
+                    ------------------------
+                    Message:
+                    ${formData.get('message')}
+                `;
+
+                const payload = {
+                    email: formData.get('email'),
+                    message: fullMessage
+                };
+
+                try {
+                    const resp = await fetch('https://expandia-contact-form.omaycompany.workers.dev/', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const data = await resp.json();
+
+                    if (resp.ok) {
+                        if (statusEl) statusEl.textContent = 'Vielen Dank! Wir melden uns innerhalb von 24 Stunden bei Ihnen.';
+                        contactForm.reset();
+                    } else {
+                        if (statusEl) statusEl.textContent = data.message || 'Senden fehlgeschlagen. Bitte versuchen Sie es erneut.';
+                    }
+                } catch (err) {
+                    console.error(err);
+                    if (statusEl) statusEl.textContent = 'Serverfehler. Bitte versuchen Sie es später erneut.';
+                }
+            });
+        }
+
+        /* --- 3. Newsletter Form Handler (German) --- */
+        const newsletterForm = document.getElementById('newsletter-form');
+        
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const formData = new FormData(newsletterForm);
+                const btn = newsletterForm.querySelector('button[type="submit"]');
+                const originalText = btn ? btn.textContent : 'Abonnieren';
+
+                if (formData.get('website')) return; 
+
+                // Math Check
+                if (formData.get('math') !== '61') {
+                    alert('Bitte lösen Sie die Rechenaufgabe korrekt.');
+                    return;
+                }
+                
+                if (btn) btn.textContent = 'Anmeldung...';
+                
+                const payload = {
+                    email: formData.get('email'),
+                    message: 'Newsletter Subscription Request (German Site)'
+                };
+
+                try {
+                    const resp = await fetch('https://expandia-contact-form.omaycompany.workers.dev/', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (resp.ok) {
+                        newsletterForm.reset();
+                        if (btn) btn.textContent = 'Angemeldet!';
+                        setTimeout(() => { if (btn) btn.textContent = originalText; }, 2000);
+                    } else {
+                        if (btn) btn.textContent = 'Erneut versuchen';
+                        setTimeout(() => { if (btn) btn.textContent = originalText; }, 2000);
+                    }
+                } catch (err) {
+                    if (btn) btn.textContent = 'Fehler';
+                    setTimeout(() => { if (btn) btn.textContent = originalText; }, 2000);
+                }
+            });
+        }
+    });
+    </script>
     
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
