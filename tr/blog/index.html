@@ -30,9 +30,11 @@
 </head>
 <body class="font-sans">
     <!-- Navigation -->
+<!-- Navigation -->
+<!-- Navigation -->
 <nav class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
-    <div class="container mx-auto container-padding">
-        <div class="navbar-start">
+    <div class="container mx-auto container-padding flex items-center justify-between">
+        <div class="navbar-start flex items-center">
             <div class="dropdown">
                 <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -42,18 +44,42 @@
                 <!-- Mobile Menu -->
                 <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-72">
                     <li>
-                        <a href="../index.html" >Ana Sayfa</a>
+                        <a href="../../index.html">Ana Sayfa</a>
                     </li>
                     <li>
                         <details>
                             <summary class="font-semibold">Çözümler</summary>
                             <ul class="p-2">
                                 <li class="mt-2 px-3 py-1">
-                                    <span class="text-xs font-normal text-gray-500 uppercase tracking-wide">B2B İş Geliştirme</span>
+                                    <span class="text-xs font-normal text-gray-500 uppercase tracking-wide">B2B Lead Generation</span>
                                 </li>
-                                <li><a href="../pazar-temeli-programi.html" class="text-sm pl-8">🚀 Pazar Temeli Programı</a></li>
-                                <li><a href="../pazar-hizlandirici-program.html" class="text-sm pl-8">⚡ Pazar Hızlandırıcı Program</a></li>
-                                <li><a href="../kismi-is-gelistirme-ekibi.html" class="text-sm pl-8">👥 Part-Time İş Geliştirme Ekibi</a></li>
+                                <li><a href="../../pazar-temeli-programi.html" class="text-sm pl-8 flex items-center gap-2">
+                                    <lord-icon src="https://cdn.lordicon.com/zrtfxghu.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:20px;height:20px"></lord-icon>
+                                    Türkiye Lead Generation Hizmeti
+                                </a></li>
+                                <li><a href="../../pazar-hizlandirici-program.html" class="text-sm pl-8 flex items-center gap-2">
+                                    <lord-icon src="https://cdn.lordicon.com/xzksbhzh.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:20px;height:20px"></lord-icon>
+                                    İhracat Lead Generation Hizmeti
+                                </a></li>
+                                <li><a href="../../kismi-is-gelistirme-ekibi.html" class="text-sm pl-8 flex items-center gap-2">
+                                    <lord-icon src="https://cdn.lordicon.com/fmasbomy.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:20px;height:20px"></lord-icon>
+                                    Part-Time Lead Generation Ekibi
+                                </a></li>
+                                <li class="mt-4 px-3 py-1">
+                                    <span class="text-xs font-normal text-gray-500 uppercase tracking-wide">Kurumsal Çözümler</span>
+                                </li>
+                                <li><a href="../../kurumsal-dijital-hediye-promosyon.html" class="text-sm pl-8 flex items-center gap-2">
+                                    <lord-icon src="https://cdn.lordicon.com/gqdnbnwt.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:20px;height:20px"></lord-icon>
+                                    Dijital Hediye/Promosyon
+                                </a></li>
+                                <li><a href="../../abd-pr-hizmeti.html" class="text-sm pl-8 flex items-center gap-2">
+                                    <lord-icon src="https://cdn.lordicon.com/vdjwmfqs.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:20px;height:20px"></lord-icon>
+                                    USA PR Service
+                                </a></li>
+                                <li><a href="../../managed-it-services.html" class="text-sm pl-8 flex items-center gap-2">
+                                    <lord-icon src="https://cdn.lordicon.com/fhtaantg.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:20px;height:20px"></lord-icon>
+                                    Yönetilen BT Hizmetleri
+                                </a></li>
                             </ul>
                         </details>
                     </li>
@@ -61,31 +87,32 @@
                         <details>
                             <summary class="font-semibold">Şirket</summary>
                             <ul class="p-2">
-                                <li><a href="../about.html" >Hakkımızda</a></li>
-                                <li><a href="../vizyon-misyon.html" >Vizyon & Misyon</a></li>
-                                <li><a href="../etik-ilkelerimiz.html" >Etik İlkelerimiz</a></li>
+                                <li><a href="../../about.html">Hakkımızda</a></li>
+                                <li><a href="../../vizyon-misyon.html">Vizyon & Misyon</a></li>
+                                <li><a href="../../etik-ilkelerimiz.html">Etik İlkelerimiz</a></li>
                             </ul>
                         </details>
                     </li>
-                    <li><a href="index.html" class="text-primary font-semibold">Blog</a></li>
+                    <li><a href="../../city-locations.html">Hizmet Bölgeleri</a></li>
+                    <li><a href="./index.html" class="font-semibold text-primary">Blog</a></li>
                 </ul>
             </div>
-            <a href="../index.html" class="btn btn-ghost hover:bg-transparent ml-0">
+            <a href="../../index.html" class="flex items-center py-2 hover:opacity-80 transition-opacity">
                 <img src="../../Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 md:h-10 w-auto transition-all duration-300 hover:scale-105 logo-bumblebee">
             </a>
         </div>
-    
+
     <!-- Desktop Mega Menu -->
     <div class="navbar-center hidden lg:flex justify-center">
         <ul class="menu menu-horizontal px-1">
-            <!-- Ana Sayfa Menu Item -->
+            <!-- Home Menu Item -->
             <li>
-                <a href="../index.html" class="btn btn-ghost font-semibold ">Ana Sayfa</a>
+                <a href="../../index.html" class="btn btn-ghost font-semibold">Ana Sayfa</a>
             </li>
-            
-            <!-- Çözümler Mega Menu -->
+
+            <!-- Solutions Mega Menu -->
             <li class="dropdown dropdown-hover">
-                <div tabindex="0" role="button" class="btn btn-ghost font-semibold ">
+                <div tabindex="0" role="button" class="btn btn-ghost font-semibold">
                     Çözümler
                     <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -94,42 +121,113 @@
                 <div tabindex="0" class="dropdown-content z-[1] card card-compact w-80 p-4 shadow-xl bg-base-100 border border-base-300" style="background-color: white !important; background: white !important;">
                     <div class="card-body">
                         <h3 class="card-title text-primary mb-3">Çözümlerimiz</h3>
-                        
-                        <!-- B2B Business Development with nested items -->
+
+                        <!-- B2B Lead Generation - Title and Programs -->
                         <div class="grid gap-2">
-                            <!-- B2B Business Development Title (non-clickable) -->
+                            <!-- B2B Lead Generation Title (non-clickable) -->
                             <div class="flex items-center gap-2 px-3 pt-1 pb-2">
-                                <span class="text-sm opacity-60">🎯</span>
+                                <lord-icon
+                                    src="https://cdn.lordicon.com/vdjwmfqs.json"
+                                    trigger="hover"
+                                    colors="primary:#f9c23c,secondary:#e86100"
+                                    style="width:28px;height:28px;opacity:0.6">
+                                </lord-icon>
                                 <div class="flex-1">
-                                    <div class="text-xs font-normal text-gray-500 uppercase tracking-wide">B2B İş Geliştirme</div>
+                                    <div class="text-xs font-normal text-gray-500 uppercase tracking-wide">B2B Lead Generation</div>
                                 </div>
                             </div>
-                            
+
                             <!-- Programs directly under title -->
                             <div class="space-y-1 pl-2">
-                                <a href="../pazar-temeli-programi.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/10 transition-colors">
-                                    <span class="text-lg">🚀</span>
+                                <a href="../../pazar-temeli-programi.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/10 transition-colors">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/zrtfxghu.json"
+                                        trigger="hover"
+                                        colors="primary:#f9c23c,secondary:#e86100"
+                                        style="width:32px;height:32px">
+                                    </lord-icon>
                                     <div>
-                                        <div class="font-semibold text-sm">Pazar Temeli Programı</div>
+                                        <div class="font-semibold text-sm">Türkiye Lead Generation Hizmeti</div>
                                     </div>
                                 </a>
-                                <a href="../pazar-hizlandirici-program.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary/10 transition-colors">
-                                    <span class="text-lg">⚡</span>
+                                <a href="../../pazar-hizlandirici-program.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary/10 transition-colors">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/xzksbhzh.json"
+                                        trigger="hover"
+                                        colors="primary:#f9c23c,secondary:#e86100"
+                                        style="width:32px;height:32px">
+                                    </lord-icon>
                                     <div>
-                                        <div class="font-semibold text-sm">Pazar Hızlandırıcı Program</div>
+                                        <div class="font-semibold text-sm">İhracat Lead Generation Hizmeti</div>
                                     </div>
                                 </a>
-                                <a href="../kismi-is-gelistirme-ekibi.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-accent/10 transition-colors">
-                                    <span class="text-lg">👥</span>
+                                <a href="../../kismi-is-gelistirme-ekibi.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-accent/10 transition-colors">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/fmasbomy.json"
+                                        trigger="hover"
+                                        colors="primary:#f9c23c,secondary:#e86100"
+                                        style="width:32px;height:32px">
+                                    </lord-icon>
                                     <div>
-                                        <div class="font-semibold text-sm">Part-Time İş Geliştirme Ekibi</div>
+                                        <div class="font-semibold text-sm">Part-Time Lead Generation Ekibi</div>
                                     </div>
                                 </a>
                             </div>
                         </div>
-                        
+
+                        <!-- Corporate Solutions Category -->
+                        <div class="grid gap-2 mt-4">
+                            <div class="flex items-center gap-2 px-3 pt-1 pb-2">
+                                <lord-icon
+                                    src="https://cdn.lordicon.com/gqdnbnwt.json"
+                                    trigger="hover"
+                                    colors="primary:#f9c23c,secondary:#e86100"
+                                    style="width:28px;height:28px;opacity:0.6">
+                                </lord-icon>
+                                <div class="flex-1">
+                                    <div class="text-xs font-normal text-gray-500 uppercase tracking-wide">Kurumsal Çözümler</div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-1 pl-2">
+                                <a href="../../kurumsal-dijital-hediye-promosyon.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/10 transition-colors">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/gqdnbnwt.json"
+                                        trigger="hover"
+                                        colors="primary:#f9c23c,secondary:#e86100"
+                                        style="width:32px;height:32px">
+                                    </lord-icon>
+                                    <div>
+                                        <div class="font-semibold text-sm">Dijital Hediye/Promosyon</div>
+                                    </div>
+                                </a>
+                                <a href="../../abd-pr-hizmeti.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/10 transition-colors">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/vdjwmfqs.json"
+                                        trigger="hover"
+                                        colors="primary:#f9c23c,secondary:#e86100"
+                                        style="width:32px;height:32px">
+                                    </lord-icon>
+                                    <div>
+                                        <div class="font-semibold text-sm">USA PR Hizmeti</div>
+                                    </div>
+                                </a>
+                                <a href="../../managed-it-services.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/10 transition-colors">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/fhtaantg.json"
+                                        trigger="hover"
+                                        colors="primary:#f9c23c,secondary:#e86100"
+                                        style="width:32px;height:32px">
+                                    </lord-icon>
+                                    <div>
+                                        <div class="font-semibold text-sm">Yönetilen BT Hizmetleri</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
                         <div class="border-t border-base-300 mt-4 pt-4">
-                            <a href="../contact.html" class="btn btn-primary btn-sm w-full buzz-button">
+                            <a href="../../contact.html" class="btn btn-primary btn-sm w-full buzz-button">
                                 Ücretsiz Danışmanlık Alın
                             </a>
                         </div>
@@ -137,9 +235,9 @@
                 </div>
             </li>
 
-            <!-- Şirket Mega Menu -->
+            <!-- Company Mega Menu -->
             <li class="dropdown dropdown-hover">
-                <div tabindex="0" role="button" class="btn btn-ghost font-semibold ">
+                <div tabindex="0" role="button" class="btn btn-ghost font-semibold">
                     Şirket
                     <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -149,19 +247,19 @@
                     <div class="card-body">
                         <h3 class="card-title text-primary mb-3">Expandia Hakkında</h3>
                         <div class="grid gap-2">
-                            <a href="../about.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                            <a href="../../about.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
                                 <span class="text-xl">👥</span>
                                 <div>
                                     <div class="font-semibold">Hakkımızda</div>
                                 </div>
                             </a>
-                            <a href="../vizyon-misyon.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                            <a href="../../vizyon-misyon.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
                                 <span class="text-xl">🎯</span>
                                 <div>
                                     <div class="font-semibold">Vizyon & Misyon</div>
                                 </div>
                             </a>
-                            <a href="../etik-ilkelerimiz.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
+                            <a href="../../etik-ilkelerimiz.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
                                 <span class="text-xl">⚖️</span>
                                 <div>
                                     <div class="font-semibold">Etik İlkelerimiz</div>
@@ -169,22 +267,27 @@
                             </a>
                         </div>
                         <div class="border-t border-base-300 mt-4 pt-4">
-                            <a href="../contact.html" class="btn btn-primary btn-sm w-full buzz-button">
+                            <a href="../../contact.html" class="btn btn-primary btn-sm w-full buzz-button">
                                 Ücretsiz Danışmanlık Alın
                             </a>
                         </div>
                     </div>
                 </div>
             </li>
-            
+
+            <!-- Hizmet Bölgeleri Menu Item -->
+            <li>
+                <a href="../../city-locations.html" class="btn btn-ghost font-semibold">Hizmet Bölgeleri</a>
+            </li>
+
             <!-- Blog Menu Item -->
             <li>
-                <a href="../blog/index.html" class="btn btn-ghost font-semibold text-primary">Blog</a>
+                <a href="./index.html" class="btn btn-ghost font-semibold text-primary">Blog</a>
             </li>
         </ul>
     </div>
-    
-    <div class="navbar-end flex-none justify-end flex items-center">
+
+    <div class="navbar-end flex items-center">
         <div class="dropdown dropdown-end mr-4">
             <div tabindex="0" role="button" class="btn btn-ghost btn-sm">
                 <span id="current-flag">🇹🇷</span>
@@ -194,28 +297,37 @@
             </div>
             <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-32 text-right">
                 <li>
-                    <a href="../../blog/index.html" data-lang="en" class="lang-switch flex items-center gap-2 justify-end">
+                    <a href="#" data-lang="en" class="lang-switch flex items-center gap-2 justify-end">
                         <span>🇺🇸</span>
                         <span>English</span>
                     </a>
                 </li>
                 <li>
-                    <a href="index.html" data-lang="tr" class="lang-switch flex items-center gap-2 justify-end">
+                    <a href="#" data-lang="tr" class="lang-switch flex items-center gap-2 justify-end">
                         <span>🇹🇷</span>
                         <span>Türkçe</span>
                     </a>
                 </li>
                 <li>
-                    <a href="../../de/blog/index.html" data-lang="de" class="lang-switch flex items-center gap-2 justify-end">
+                    <a href="#" data-lang="de" class="lang-switch flex items-center gap-2 justify-end">
                         <span>🇩🇪</span>
                         <span>Deutsch</span>
                     </a>
                 </li>
+                <li>
+                    <a href="#" data-lang="fr" class="lang-switch flex items-center gap-2 justify-end">
+                        <span>🇫🇷</span>
+                        <span>Français</span>
+                    </a>
+                </li>
             </ul>
         </div>
-        <a href="../contact.html" class="btn btn-primary buzz-button ml-2">Başlayın</a>
+        <a href="../../contact.html" class="btn btn-primary buzz-button ml-2">Başlayın</a>
     </div>
-</nav> 
+    </div>
+</nav>
+
+ 
 
     <!-- Unified Hero Section -->
     <section class="py-12 md:py-16 bg-gradient-to-br from-buzz-warm via-base-100 to-buzz-light">

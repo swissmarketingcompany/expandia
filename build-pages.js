@@ -229,6 +229,20 @@ function createHTMLTemplate(lang = 'en') {
 
 // Translation content for Turkish
 const turkishTranslations = {
+    // New Header/Footer Items (Placed at top to avoid partial matches)
+    'Stay Updated with Growth Insights': 'Büyüme İçgörüleri ile Güncel Kalın',
+    'Get the latest growth strategies and lead generation updates.': 'En son büyüme stratejilerini ve potansiyel müşteri bulma güncellemelerini alın.',
+    'Your Partner in Lead Generation and corporate communication.': 'Lead Generation ve kurumsal iletişimdeki iş ortağınız.',
+    'Ready to accelerate your growth? Let\'s discuss how we can help.': 'Büyümenizi hızlandırmaya hazır mısınız? Size nasıl yardımcı olabileceğimizi konuşalım.',
+    'Local Lead Generation': 'Yerel Lead Generation',
+    'Global Lead Generation': 'Küresel Lead Generation',
+    'Part Time Lead Generation Team': 'Part-Time Lead Generation Ekibi',
+    'Corporate Solutions': 'Kurumsal Çözümler',
+    'Digital Gifting': 'Dijital Hediye',
+    'USA PR Service': 'ABD PR Hizmeti',
+    'Growth Resources': 'Büyüme Kaynakları',
+    'Email to Schedule': 'Planlamak İçin E-posta Gönder',
+
     // Navigation Menu Items
     'Home': 'Ana Sayfa',
     'Sales University': 'Blog',
@@ -307,18 +321,23 @@ const turkishTranslations = {
     'Boost Your Sales': 'Satışlarınızı Artırın',
     
     // Footer Newsletter
+    'Stay Updated with Growth Insights': 'Büyüme İçgörüleri ile Güncel Kalın',
+    'Get the latest growth strategies and lead generation updates.': 'En son büyüme stratejilerini ve potansiyel müşteri bulma güncellemelerini alın.',
     'Stay Updated with Sales Insights': 'Satış Görüşleri ile Güncel Kalın',
     'Get the latest sales strategies and industry updates.': 'En son satış stratejilerini ve sektör güncellemelerini alın.',
     'Enter your email': 'E-postanızı girin',
     'Subscribe': 'Abone Ol',
     
     // Footer Company Info
+    'Your Partner in Lead Generation and corporate communication.': 'Lead Generation ve kurumsal iletişimdeki iş ortağınız.',
     'Your Partner in Sales Growth and Revenue Acceleration. We help businesses scale their sales operations with proven strategies and cutting-edge solutions.': 'Satış Büyümesi ve Gelir Hızlandırma Ortağınız. İşletmelerin satış operasyonlarını kanıtlanmış stratejiler ve son teknoloji çözümlerle ölçeklendirmelerine yardımcı oluyoruz.',
     
     // Footer Contact
     'Get in Touch': 'İletişime Geçin',
+    'Ready to accelerate your growth? Let\'s discuss how we can help.': 'Büyümenizi hızlandırmaya hazır mısınız? Size nasıl yardımcı olabileceğimizi konuşalım.',
     'Ready to accelerate your sales growth? Let\'s discuss how we can help.': 'Satış büyümenizi hızlandırmaya hazır mısınız? Size nasıl yardımcı olabileceğimizi konuşalım.',
     'Schedule a Call': 'Toplantı Ayarlayın',
+    'Email to Schedule': 'Planlamak İçin E-posta Gönder',
     
     // Footer Links
     'Lead Generation': 'Potansiyel Müşteri Üretimi',
@@ -354,6 +373,20 @@ const turkishTranslations = {
 
 // Translation content for German
 const germanTranslations = {
+    // New Header/Footer Items (Placed at top to avoid partial matches)
+    'Stay Updated with Growth Insights': 'Bleiben Sie mit Wachstumseinblicken auf dem Laufenden',
+    'Get the latest growth strategies and lead generation updates.': 'Erhalten Sie die neuesten Wachstumsstrategien und Lead-Generierungs-Updates.',
+    'Your Partner in Lead Generation and corporate communication.': 'Ihr Partner für Lead-Generierung und Unternehmenskommunikation.',
+    'Ready to accelerate your growth? Let\'s discuss how we can help.': 'Bereit, Ihr Wachstum zu beschleunigen? Lassen Sie uns besprechen, wie wir helfen können.',
+    'Local Lead Generation': 'Lokale Lead-Generierung',
+    'Global Lead Generation': 'Globale Lead-Generierung',
+    'Part Time Lead Generation Team': 'Teilzeit Lead-Generierung Team',
+    'Corporate Solutions': 'Unternehmenslösungen',
+    'Digital Gifting': 'Digitale Geschenke',
+    'USA PR Service': 'USA PR-Dienst',
+    'Growth Resources': 'Wachstumsressourcen',
+    'Email to Schedule': 'E-Mail zur Terminplanung',
+
     // Navigation Menu Items
     'Home': 'Startseite',
     'Sales University': 'Vertriebsschule', // Shorter than "Verkaufs-Universität" to fix width issue
@@ -505,18 +538,23 @@ const germanTranslations = {
     'Boost Your Sales': 'Steigern Sie Ihren Umsatz',
     
     // Footer Newsletter
+    'Stay Updated with Growth Insights': 'Bleiben Sie mit Wachstumseinblicken auf dem Laufenden',
+    'Get the latest growth strategies and lead generation updates.': 'Erhalten Sie die neuesten Wachstumsstrategien und Lead-Generierungs-Updates.',
     'Stay Updated with Sales Insights': 'Bleiben Sie mit Verkaufseinblicken auf dem Laufenden',
     'Get the latest sales strategies and industry updates.': 'Erhalten Sie die neuesten Verkaufsstrategien und Branchenupdates.',
     'Enter your email': 'E-Mail eingeben',
     'Subscribe': 'Abonnieren',
     
     // Footer Company Info
+    'Your Partner in Lead Generation and corporate communication.': 'Ihr Partner für Lead-Generierung und Unternehmenskommunikation.',
     'Your Partner in Sales Growth and Revenue Acceleration. We help businesses scale their sales operations with proven strategies and cutting-edge solutions.': 'Ihr Partner für Umsatzwachstum und Umsatzbeschleunigung. Wir helfen Unternehmen, ihre Verkaufsabläufe mit bewährten Strategien und modernsten Lösungen zu skalieren.',
     
     // Footer Contact
     'Get in Touch': 'Kontakt aufnehmen',
+    'Ready to accelerate your growth? Let\'s discuss how we can help.': 'Bereit, Ihr Wachstum zu beschleunigen? Lassen Sie uns besprechen, wie wir helfen können.',
     'Ready to accelerate your sales growth? Let\'s discuss how we can help.': 'Bereit, Ihr Umsatzwachstum zu beschleunigen? Lassen Sie uns besprechen, wie wir helfen können.',
     'Schedule a Call': 'Anruf planen',
+    'Email to Schedule': 'E-Mail zur Terminplanung',
     
     // Footer Links
     'Lead Generation': 'Lead-Generierung',
@@ -537,11 +575,26 @@ const germanTranslations = {
     'Services': 'Services',
     'Blog': 'Blog',
     'Let\'s discuss how we can help': 'Lassen Sie uns besprechen, wie wir Ihnen helfen können',
-    'Let\'s discuss how our sales solutions can help you generate more leads': 'Lassen Sie uns besprechen, wie unsere Verkaufslösungen Ihnen helfen können, mehr Leads zu generieren'
+    'Let\'s discuss how our sales solutions can help you generate more leads': 'Lassen Sie uns besprechen, wie unsere Verkaufslösungen Ihnen helfen können, mehr Leads zu generieren',
+    
 };
 
 // Translation content for French
 const frenchTranslations = {
+    // New Header/Footer Items (Placed at top to avoid partial matches)
+    'Stay Updated with Growth Insights': 'Restez à jour avec les perspectives de croissance',
+    'Get the latest growth strategies and lead generation updates.': 'Obtenez les dernières stratégies de croissance et les mises à jour sur la génération de leads.',
+    'Your Partner in Lead Generation and corporate communication.': 'Votre partenaire en génération de leads et communication d\'entreprise.',
+    'Ready to accelerate your growth? Let\'s discuss how we can help.': 'Prêt à accélérer votre croissance ? Discutons de la manière dont nous pouvons vous aider.',
+    'Local Lead Generation': 'Génération de Leads Locale',
+    'Global Lead Generation': 'Génération de Leads Mondiale',
+    'Part Time Lead Generation Team': 'Équipe de Génération de Leads à Temps Partiel',
+    'Corporate Solutions': 'Solutions d\'Entreprise',
+    'Digital Gifting': 'Cadeaux Numériques',
+    'USA PR Service': 'Service RP USA',
+    'Growth Resources': 'Ressources de Croissance',
+    'Email to Schedule': 'Envoyer un email pour planifier',
+
     // Navigation Menu Items
     'Home': 'Accueil',
     'Sales University': 'Université de Vente',
@@ -579,18 +632,23 @@ const frenchTranslations = {
     'Boost Your Sales': 'Augmentez vos Ventes',
 
     // Footer Newsletter
+    'Stay Updated with Growth Insights': 'Restez à jour avec les perspectives de croissance',
+    'Get the latest growth strategies and lead generation updates.': 'Obtenez les dernières stratégies de croissance et les mises à jour sur la génération de leads.',
     'Stay Updated with Sales Insights': 'Restez informé avec des idées de vente',
     'Get the latest sales strategies and industry updates.': 'Obtenez les dernières stratégies de vente et mises à jour de l\'industrie.',
     'Enter your email': 'Entrez votre email',
     'Subscribe': 'S\'abonner',
 
     // Footer Company Info
+    'Your Partner in Lead Generation and corporate communication.': 'Votre partenaire en génération de leads et communication d\'entreprise.',
     'Your Partner in Sales Growth and Revenue Acceleration. We help businesses scale their sales operations with proven strategies and cutting-edge solutions.': 'Votre partenaire pour la croissance des ventes et l\'accélération des revenus. Nous aidons les entreprises à faire évoluer leurs opérations de vente avec des stratégies éprouvées et des solutions de pointe.',
 
     // Footer Contact
     'Get in Touch': 'Entrer en contact',
+    'Ready to accelerate your growth? Let\'s discuss how we can help.': 'Prêt à accélérer votre croissance ? Discutons de la manière dont nous pouvons vous aider.',
     'Ready to accelerate your sales growth? Let\'s discuss how we can help.': 'Prêt à accélérer la croissance de vos ventes ? Discutons de la manière dont nous pouvons vous aider.',
     'Schedule a Call': 'Planifier un appel',
+    'Email to Schedule': 'Envoyer un email pour planifier',
 
     // Footer Links
     'Lead Generation': 'Génération de Leads',
@@ -608,7 +666,8 @@ const frenchTranslations = {
     'Services': 'Services',
     'Blog': 'Blog',
     'Let\'s discuss how we can help': 'Discutons de la manière dont nous pouvons vous aider',
-    'Let\'s discuss how our sales solutions can help you generate more leads': 'Discutons de la manière dont nos solutions de vente peuvent vous aider à générer plus de leads'
+    'Let\'s discuss how our sales solutions can help you generate more leads': 'Discutons de la manière dont nos solutions de vente peuvent vous aider à générer plus de leads',
+
 };
 
 // Function to apply Turkish translations
@@ -1644,29 +1703,6 @@ function buildPage(templateName, outputName, lang = 'en') {
         pageNavigation = pageNavigation.replace(/href="\.\.\/about\.html"/g, 'href="./about.html"');
         pageNavigation = pageNavigation.replace(/href="\.\.\/contact\.html"/g, 'href="./contact.html"');
         
-        // Fix language switcher for German pages  
-        pageNavigation = pageNavigation.replace(
-            /<span id="current-flag">🇺🇸<\/span>/g,
-            '<span id="current-flag">🇩🇪</span>'
-        );
-        // Also fix any other instances
-        pageNavigation = pageNavigation.replace(
-            /id="current-flag">🇺🇸</g,
-            'id="current-flag">🇩🇪<'
-        );
-        pageNavigation = pageNavigation.replace(
-            /href="#" data-lang="en"/g,
-            `href="../${outputName}.html" data-lang="en"`
-        );
-        pageNavigation = pageNavigation.replace(
-            /href="#" data-lang="tr"/g,
-            `href="../tr/${outputName}.html" data-lang="tr"`
-        );
-        pageNavigation = pageNavigation.replace(
-            /href="#" data-lang="de"/g,
-            `href="${outputName}.html" data-lang="de"`
-        );
-        
         // Apply German translations to all content
         pageNavigation = applyGermanTranslations(pageNavigation);
         pageFooter = applyGermanTranslations(pageFooter);
@@ -1804,6 +1840,34 @@ function buildPage(templateName, outputName, lang = 'en') {
         pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
     }
     
+    // Generic Language Switcher Logic (runs for ALL languages)
+    const currentFlag = lang === 'tr' ? '🇹🇷' : lang === 'de' ? '🇩🇪' : lang === 'fr' ? '🇫🇷' : '🇺🇸';
+    pageNavigation = pageNavigation.replace(/<span id="current-flag">.*?<\/span>/g, `<span id="current-flag">${currentFlag}</span>`);
+    
+    // Fix paths for language switcher using hreflang mappings
+    const hrefUrls = getHreflangUrls(templateName);
+    const relPrefix = lang === 'en' ? './' : '../';
+    
+    // Fix EN link
+    let enLink = hrefUrls.en || 'index.html'; 
+    if (enLink === '') enLink = 'index.html';
+    pageNavigation = pageNavigation.replace(/href=["'][^"']*["']\s+data-lang="en"/g, `href="${relPrefix}${enLink}" data-lang="en"`);
+    
+    // Fix TR link
+    let trLink = hrefUrls.tr || 'tr/index.html';
+    if (trLink.endsWith('/')) trLink += 'index.html';
+    pageNavigation = pageNavigation.replace(/href=["'][^"']*["']\s+data-lang="tr"/g, `href="${relPrefix}${trLink}" data-lang="tr"`);
+    
+    // Fix DE link
+    let deLink = hrefUrls.de || 'de/index.html';
+    if (deLink.endsWith('/')) deLink += 'index.html';
+    pageNavigation = pageNavigation.replace(/href=["'][^"']*["']\s+data-lang="de"/g, `href="${relPrefix}${deLink}" data-lang="de"`);
+    
+    // Fix FR link
+    let frLink = hrefUrls.fr || 'fr/index.html';
+    if (frLink.endsWith('/')) frLink += 'index.html';
+    pageNavigation = pageNavigation.replace(/href=["'][^"']*["']\s+data-lang="fr"/g, `href="${relPrefix}${frLink}" data-lang="fr"`);
+
     // Global replacements for all languages - update old AI Solutions anchors to Sales Protection
     content = content.replace(/#ai-solutions/g, '#sales-protection');
     pageNavigation = pageNavigation.replace(/#ai-solutions/g, '#sales-protection');
@@ -1897,7 +1961,6 @@ function buildPage(templateName, outputName, lang = 'en') {
 // Build English pages
 console.log('Building English pages...');
 buildPage('index', 'index', 'en');
-/*
 buildPage('about', 'about', 'en');
 buildPage('solutions', 'solutions', 'en');
 buildPage('contact', 'contact', 'en');
@@ -1929,12 +1992,10 @@ buildPage('overseas-sales-consulting', 'overseas-sales-consulting', 'en');
 buildPage('europe-market-entry', 'europe-market-entry', 'en');
 buildPage('corporate-digital-gifting', 'corporate-digital-gifting', 'en');
 buildPage('usa-pr-service', 'usa-pr-service', 'en');
-*/
 
 // Build Turkish pages
 console.log('Building Turkish pages...');
 buildPage('index', 'index', 'tr');
-/*
 buildPage('about', 'about', 'tr');
 buildPage('solutions', 'solutions', 'tr');
 buildPage('contact', 'contact', 'tr');
@@ -1947,12 +2008,10 @@ buildPage('pazar-hizlandirici-program', 'pazar-hizlandirici-program', 'tr');
 buildPage('kismi-is-gelistirme-ekibi', 'kismi-is-gelistirme-ekibi', 'tr');
 buildPage('kurumsal-dijital-hediye-promosyon', 'kurumsal-dijital-hediye-promosyon', 'tr');
 buildPage('abd-pr-hizmeti', 'abd-pr-hizmeti', 'tr');
-*/
 
 // Build German pages
 console.log('Building German pages...');
 buildPage('index', 'index', 'de');
-/*
 buildPage('about', 'about', 'de');
 buildPage('solutions', 'solutions', 'de');
 buildPage('contact', 'contact', 'de');
@@ -1965,7 +2024,6 @@ buildPage('markt-beschleuniger-programm', 'markt-beschleuniger-programm', 'de');
 buildPage('teilzeit-bizdev-team', 'teilzeit-bizdev-team', 'de');
 buildPage('unternehmens-digitale-geschenke', 'unternehmens-digitale-geschenke', 'de');
 buildPage('usa-pr-dienst', 'usa-pr-dienst', 'de');
-*/
 
 // Build French pages
 console.log('Building French pages...');

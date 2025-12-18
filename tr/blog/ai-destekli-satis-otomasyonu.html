@@ -38,9 +38,11 @@
 </head>
 <body class="font-sans">
     <!-- Navigation -->
+<!-- Navigation -->
+<!-- Navigation -->
 <nav class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
-    <div class="container mx-auto container-padding">
-        <div class="navbar-start">
+    <div class="container mx-auto container-padding flex items-center justify-between">
+        <div class="navbar-start flex items-center">
             <div class="dropdown">
                 <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -50,170 +52,192 @@
                 <!-- Mobile Menu -->
                 <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-72">
                     <li>
-                        <a href="../../index.html" {{HOME_MOBILE_ACTIVE}}>Home</a>
+                        <a href="../../index.html">Ana Sayfa</a>
                     </li>
                     <li>
                         <details>
-                            <summary class="font-semibold">Solutions</summary>
+                            <summary class="font-semibold">Çözümler</summary>
                             <ul class="p-2">
-                                <li><a href="../../solutions.html" {{SOLUTIONS_MOBILE_ACTIVE}} class="font-medium text-primary" data-i18n="our-sales-solutions">📞 Our Sales Solutions</a></li>
-                                <li><a href="../../case-studies.html" {{CASESTUDIES_MOBILE_ACTIVE}} class="font-medium text-accent" data-i18n="success-stories">📈 Success Stories</a></li>
-                                <li class="mt-3">
-                                    <details>
-                                        <summary class="text-sm font-medium text-primary" data-i18n="special-services">⭐ Special Services</summary>
-                                        <ul class="p-2 space-y-1">
-                                            <li><a href="../../b2b-lead-generation-agency.html" class="text-xs" data-i18n="b2b-lead-generation">B2B Potansiyel Müşteri Üretimi</a></li>
-                                            <li><a href="../../lead-generation-hizmeti.html" class="text-xs" data-i18n="lead-generation-service">Potansiyel Müşteri Üretimi Hizmeti</a></li>
-                                            <li><a href="../../satis-gelistirme-ajansi.html" class="text-xs" data-i18n="sales-development">Satış Geliştirme</a></li>
-                                            <li><a href="../../randevu-ayarlama-hizmeti.html" class="text-xs" data-i18n="appointment-setting">Appointment Setting</a></li>
-                                            <li><a href="../../outbound-pazarlama-ajansi.html" class="text-xs" data-i18n="outbound-marketing">Dışa Dönük Pazarlama</a></li>
-                                            <li><a href="../../soguk-e-posta-ajansi.html" class="text-xs" data-i18n="cold-email">Soğuk E‑posta</a></li>
-                                            <li><a href="../../export-marketing-consulting.html" class="text-xs" data-i18n="export-marketing">Export Marketing</a></li>
-                                            <li><a href="../../europe-market-entry.html" class="text-xs" data-i18n="europe-market-entry">Europe Market Entry</a></li>
-                                            <li class="pt-1 border-t border-base-300">
-                                                <a href="../../contact.html" class="text-xs text-secondary" data-i18n="get-started">📍 Başlayın</a>
-                                            </li>
-                                        </ul>
-                                    </details>
+                                <li class="mt-2 px-3 py-1">
+                                    <span class="text-xs font-normal text-gray-500 uppercase tracking-wide">B2B Lead Generation</span>
                                 </li>
+                                <li><a href="../../pazar-temeli-programi.html" class="text-sm pl-8 flex items-center gap-2">
+                                    <lord-icon src="https://cdn.lordicon.com/zrtfxghu.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:20px;height:20px"></lord-icon>
+                                    Türkiye Lead Generation Hizmeti
+                                </a></li>
+                                <li><a href="../../pazar-hizlandirici-program.html" class="text-sm pl-8 flex items-center gap-2">
+                                    <lord-icon src="https://cdn.lordicon.com/xzksbhzh.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:20px;height:20px"></lord-icon>
+                                    İhracat Lead Generation Hizmeti
+                                </a></li>
+                                <li><a href="../../kismi-is-gelistirme-ekibi.html" class="text-sm pl-8 flex items-center gap-2">
+                                    <lord-icon src="https://cdn.lordicon.com/fmasbomy.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:20px;height:20px"></lord-icon>
+                                    Part-Time Lead Generation Ekibi
+                                </a></li>
+                                <li class="mt-4 px-3 py-1">
+                                    <span class="text-xs font-normal text-gray-500 uppercase tracking-wide">Kurumsal Çözümler</span>
+                                </li>
+                                <li><a href="../../kurumsal-dijital-hediye-promosyon.html" class="text-sm pl-8 flex items-center gap-2">
+                                    <lord-icon src="https://cdn.lordicon.com/gqdnbnwt.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:20px;height:20px"></lord-icon>
+                                    Dijital Hediye/Promosyon
+                                </a></li>
+                                <li><a href="../../abd-pr-hizmeti.html" class="text-sm pl-8 flex items-center gap-2">
+                                    <lord-icon src="https://cdn.lordicon.com/vdjwmfqs.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:20px;height:20px"></lord-icon>
+                                    USA PR Service
+                                </a></li>
+                                <li><a href="../../managed-it-services.html" class="text-sm pl-8 flex items-center gap-2">
+                                    <lord-icon src="https://cdn.lordicon.com/fhtaantg.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:20px;height:20px"></lord-icon>
+                                    Yönetilen BT Hizmetleri
+                                </a></li>
                             </ul>
                         </details>
                     </li>
                     <li>
                         <details>
-                            <summary class="font-semibold">Company</summary>
+                            <summary class="font-semibold">Şirket</summary>
                             <ul class="p-2">
-                                <li><a href="../../about.html" {{ABOUT_MOBILE_ACTIVE}}>About Us</a></li>
-                                <li><a href="../../contact.html" {{CONTACT_MOBILE_ACTIVE}}>İletişim</a></li>
+                                <li><a href="../../about.html">Hakkımızda</a></li>
+                                <li><a href="../../vizyon-misyon.html">Vizyon & Misyon</a></li>
+                                <li><a href="../../etik-ilkelerimiz.html">Etik İlkelerimiz</a></li>
                             </ul>
                         </details>
                     </li>
-                    <li><a href="../../blog/index.html" {{BLOG_MOBILE_ACTIVE}}>Sales University</a></li>
+                    <li><a href="../../city-locations.html">Hizmet Bölgeleri</a></li>
+                    <li><a href="./index.html" class="font-semibold text-primary">Blog</a></li>
                 </ul>
             </div>
-            <a href="../../index.html" class="btn btn-ghost hover:bg-transparent ml-0">
-                <img src="../../Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="w-auto transition-all duration-300 hover:scale-105 logo-bumblebee">
+            <a href="../../index.html" class="flex items-center py-2 hover:opacity-80 transition-opacity">
+                <img src="../../Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 md:h-10 w-auto transition-all duration-300 hover:scale-105 logo-bumblebee">
             </a>
         </div>
-    
+
     <!-- Desktop Mega Menu -->
     <div class="navbar-center hidden lg:flex justify-center">
         <ul class="menu menu-horizontal px-1">
             <!-- Home Menu Item -->
             <li>
-                <a href="../../index.html" class="btn btn-ghost font-semibold {{HOME_ACTIVE}}">Home</a>
+                <a href="../../index.html" class="btn btn-ghost font-semibold">Ana Sayfa</a>
             </li>
-            
+
             <!-- Solutions Mega Menu -->
             <li class="dropdown dropdown-hover">
-                <div tabindex="0" role="button" class="btn btn-ghost font-semibold {{SOLUTIONS_ACTIVE}}">
-                    Solutions
+                <div tabindex="0" role="button" class="btn btn-ghost font-semibold">
+                    Çözümler
                     <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </div>
-                <div tabindex="0" class="dropdown-content z-[1] menu-mega-wide shadow-2xl bg-white border border-base-300 rounded-xl overflow-hidden" style="width: 650px; max-width: 90vw;">
-                    <div class="p-6">
-                        <!-- Header -->
-                        <div class="mb-6">
-                            <h3 class="text-xl font-bold text-primary mb-2">Sales Solutions & Services</h3>
-                            <p class="text-sm text-base-content/60">Comprehensive sales growth solutions for your business</p>
-                        </div>
-                        
-                        <!-- Main Services Row -->
-                        <div class="grid grid-cols-3 gap-4 mb-6">
-                            <a href="../../solutions.html" class="group p-4 rounded-xl hover:bg-primary/5 transition-all duration-300 border border-transparent hover:border-primary/20 {{SOLUTIONS_ITEM_ACTIVE}}">
-                                <div class="flex items-center gap-3 mb-2">
-                                    <div class="text-2xl">📞</div>
-                                    <div class="font-semibold text-primary">Sales as a Service</div>
-                                </div>
-                                <p class="text-xs text-base-content/60 leading-relaxed">Complete sales management and operations outsourcing</p>
-                            </a>
-                            
-                            <a href="../../sales-protection-services.html" class="group p-4 rounded-xl hover:bg-secondary/5 transition-all duration-300 border border-transparent hover:border-secondary/20">
-                                <div class="flex items-center gap-3 mb-2">
-                                    <div class="text-2xl">🛡️</div>
-                                    <div class="font-semibold text-secondary">Satış Koruma Services</div>
-                                </div>
-                                <p class="text-xs text-base-content/60 leading-relaxed">Defend your revenue with data protection and threat monitoring</p>
-                            </a>
-                            
-                            <a href="../../case-studies.html" class="group p-4 rounded-xl hover:bg-accent/5 transition-all duration-300 border border-transparent hover:border-accent/20 {{CASESTUDIES_ITEM_ACTIVE}}">
-                                <div class="flex items-center gap-3 mb-2">
-                                    <div class="text-2xl">📈</div>
-                                    <div class="font-semibold text-accent">Success Stories</div>
-                                </div>
-                                <p class="text-xs text-base-content/60 leading-relaxed">Real results from companies we've helped</p>
-                            </a>
-                        </div>
-                        
-                        <!-- Divider -->
-                        <div class="border-t border-base-200 my-6"></div>
-                        
-                        <!-- Specialized Services Section -->
-                        <div class="mb-4">
-                            <h4 class="font-bold text-primary mb-3 flex items-center gap-2">
-                                <span class="text-lg">⭐</span>
-                                Special Services
-                            </h4>
-                        </div>
-                        
-                        <!-- Services Grid -->
-                        <div class="grid grid-cols-3 gap-6">
-                            <!-- Potansiyel Müşteri Üretimi Lead Generation & Sales Satış -->
-                            <div class="space-y-3">
-                                <h5 class="text-sm font-semibold text-primary flex items-center gap-2 border-b border-primary/20 pb-2">
-                                    <span>🎯</span> Potansiyel Müşteri Üretimi Lead Generation & Sales Satış
-                                </h5>
-                                <div class="space-y-2">
-                                    <a href="../../b2b-lead-generation-agency.html" class="block text-xs p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors">B2B Potansiyel Müşteri Üretimi</a>
-                                    <a href="../../lead-generation-hizmeti.html" class="block text-xs p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors">Potansiyel Müşteri Üretimi Hizmeti</a>
-                                    <a href="../../potansiyel-musteri-bulma-ajansi.html" class="block text-xs p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors">Prospect Finding</a>
-                                    <a href="../../satis-gelistirme-ajansi.html" class="block text-xs p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors">Satış Geliştirme</a>
-                                    <a href="../../randevu-ayarlama-hizmeti.html" class="block text-xs p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors">Appointment Setting</a>
-                                    <a href="../../dis-kaynakli-satis-ekibi.html" class="block text-xs p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors">Outsourced Sales Team</a>
+                <div tabindex="0" class="dropdown-content z-[1] card card-compact w-80 p-4 shadow-xl bg-base-100 border border-base-300" style="background-color: white !important; background: white !important;">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary mb-3">Çözümlerimiz</h3>
+
+                        <!-- B2B Lead Generation - Title and Programs -->
+                        <div class="grid gap-2">
+                            <!-- B2B Lead Generation Title (non-clickable) -->
+                            <div class="flex items-center gap-2 px-3 pt-1 pb-2">
+                                <lord-icon
+                                    src="https://cdn.lordicon.com/vdjwmfqs.json"
+                                    trigger="hover"
+                                    colors="primary:#f9c23c,secondary:#e86100"
+                                    style="width:28px;height:28px;opacity:0.6">
+                                </lord-icon>
+                                <div class="flex-1">
+                                    <div class="text-xs font-normal text-gray-500 uppercase tracking-wide">B2B Lead Generation</div>
                                 </div>
                             </div>
-                            
-                            <!-- Marketing & Outreach -->
-                            <div class="space-y-3">
-                                <h5 class="text-sm font-semibold text-secondary flex items-center gap-2 border-b border-secondary/20 pb-2">
-                                    <span>📢</span> Marketing & Outreach
-                                </h5>
-                                <div class="space-y-2">
-                                    <a href="../../outbound-pazarlama-ajansi.html" class="block text-xs p-2 rounded-lg hover:bg-secondary/10 hover:text-secondary transition-colors">Dışa Dönük Pazarlama</a>
-                                    <a href="../../soguk-e-posta-ajansi.html" class="block text-xs p-2 rounded-lg hover:bg-secondary/10 hover:text-secondary transition-colors">Soğuk E‑posta Ajansı</a>
-                                    <a href="../../email-automation.html" class="block text-xs p-2 rounded-lg hover:bg-secondary/10 hover:text-secondary transition-colors">Email Automation</a>
-                                    <a href="../../sales-protection-services.html" class="block text-xs p-2 rounded-lg hover:bg-secondary/10 hover:text-secondary transition-colors">Satış Koruma</a>
-                                </div>
-                            </div>
-                            
-                            <!-- International Expansion -->
-                            <div class="space-y-3">
-                                <h5 class="text-sm font-semibold text-accent flex items-center gap-2 border-b border-accent/20 pb-2">
-                                    <span>🌍</span> International Expansion
-                                </h5>
-                                <div class="space-y-2">
-                                    <a href="../../export-marketing-consulting.html" class="block text-xs p-2 rounded-lg hover:bg-accent/10 hover:text-accent transition-colors">Export Marketing</a>
-                                    <a href="../../international-market-entry.html" class="block text-xs p-2 rounded-lg hover:bg-accent/10 hover:text-accent transition-colors">International Market Entry</a>
-                                    <a href="../../distributor-finding.html" class="block text-xs p-2 rounded-lg hover:bg-accent/10 hover:text-accent transition-colors">Distributor Finding</a>
-                                    <a href="../../overseas-sales-consulting.html" class="block text-xs p-2 rounded-lg hover:bg-accent/10 hover:text-accent transition-colors">Overseas Sales Consulting</a>
-                                    <a href="../../europe-market-entry.html" class="block text-xs p-2 rounded-lg hover:bg-accent/10 hover:text-accent transition-colors">Europe Market Entry</a>
-                                </div>
+
+                            <!-- Programs directly under title -->
+                            <div class="space-y-1 pl-2">
+                                <a href="../../pazar-temeli-programi.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/10 transition-colors">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/zrtfxghu.json"
+                                        trigger="hover"
+                                        colors="primary:#f9c23c,secondary:#e86100"
+                                        style="width:32px;height:32px">
+                                    </lord-icon>
+                                    <div>
+                                        <div class="font-semibold text-sm">Türkiye Lead Generation Hizmeti</div>
+                                    </div>
+                                </a>
+                                <a href="../../pazar-hizlandirici-program.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary/10 transition-colors">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/xzksbhzh.json"
+                                        trigger="hover"
+                                        colors="primary:#f9c23c,secondary:#e86100"
+                                        style="width:32px;height:32px">
+                                    </lord-icon>
+                                    <div>
+                                        <div class="font-semibold text-sm">İhracat Lead Generation Hizmeti</div>
+                                    </div>
+                                </a>
+                                <a href="../../kismi-is-gelistirme-ekibi.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-accent/10 transition-colors">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/fmasbomy.json"
+                                        trigger="hover"
+                                        colors="primary:#f9c23c,secondary:#e86100"
+                                        style="width:32px;height:32px">
+                                    </lord-icon>
+                                    <div>
+                                        <div class="font-semibold text-sm">Part-Time Lead Generation Ekibi</div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        
-                        <!-- Bottom CTA -->
-                        <div class="mt-6 pt-4 border-t border-base-200">
-                            <div class="flex items-center justify-between">
-                                <div>
-                                    <p class="text-sm font-semibold text-base-content">Ready to accelerate your sales growth?</p>
-                                    <p class="text-xs text-base-content/60">Let's discuss your specific needs</p>
+
+                        <!-- Corporate Solutions Category -->
+                        <div class="grid gap-2 mt-4">
+                            <div class="flex items-center gap-2 px-3 pt-1 pb-2">
+                                <lord-icon
+                                    src="https://cdn.lordicon.com/gqdnbnwt.json"
+                                    trigger="hover"
+                                    colors="primary:#f9c23c,secondary:#e86100"
+                                    style="width:28px;height:28px;opacity:0.6">
+                                </lord-icon>
+                                <div class="flex-1">
+                                    <div class="text-xs font-normal text-gray-500 uppercase tracking-wide">Kurumsal Çözümler</div>
                                 </div>
-                                <a href="../../contact.html" class="btn btn-primary btn-sm buzz-button">
-                                    Get Free Consultation →
-                            </a>
                             </div>
+
+                            <div class="space-y-1 pl-2">
+                                <a href="../../kurumsal-dijital-hediye-promosyon.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/10 transition-colors">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/gqdnbnwt.json"
+                                        trigger="hover"
+                                        colors="primary:#f9c23c,secondary:#e86100"
+                                        style="width:32px;height:32px">
+                                    </lord-icon>
+                                    <div>
+                                        <div class="font-semibold text-sm">Dijital Hediye/Promosyon</div>
+                                    </div>
+                                </a>
+                                <a href="../../abd-pr-hizmeti.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/10 transition-colors">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/vdjwmfqs.json"
+                                        trigger="hover"
+                                        colors="primary:#f9c23c,secondary:#e86100"
+                                        style="width:32px;height:32px">
+                                    </lord-icon>
+                                    <div>
+                                        <div class="font-semibold text-sm">USA PR Hizmeti</div>
+                                    </div>
+                                </a>
+                                <a href="../../managed-it-services.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/10 transition-colors">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/fhtaantg.json"
+                                        trigger="hover"
+                                        colors="primary:#f9c23c,secondary:#e86100"
+                                        style="width:32px;height:32px">
+                                    </lord-icon>
+                                    <div>
+                                        <div class="font-semibold text-sm">Yönetilen BT Hizmetleri</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-base-300 mt-4 pt-4">
+                            <a href="../../contact.html" class="btn btn-primary btn-sm w-full buzz-button">
+                                Ücretsiz Danışmanlık Alın
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -221,51 +245,60 @@
 
             <!-- Company Mega Menu -->
             <li class="dropdown dropdown-hover">
-                <div tabindex="0" role="button" class="btn btn-ghost font-semibold {{COMPANY_ACTIVE}}">
-                    Company
+                <div tabindex="0" role="button" class="btn btn-ghost font-semibold">
+                    Şirket
                     <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </div>
                 <div tabindex="0" class="dropdown-content z-[1] card card-compact w-72 p-4 shadow-xl bg-base-100 border border-base-300" style="background-color: white !important; background: white !important;">
                     <div class="card-body">
-                        <h3 class="card-title text-primary mb-3">About Expandia</h3>
+                        <h3 class="card-title text-primary mb-3">Expandia Hakkında</h3>
                         <div class="grid gap-2">
-                            <a href="../../about.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{ABOUT_ITEM_ACTIVE}}">
+                            <a href="../../about.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
                                 <span class="text-xl">👥</span>
                                 <div>
-                                    <div class="font-semibold">About Us</div>
-                                    <div class="text-sm text-base-content/60">Our Mission</div>
+                                    <div class="font-semibold">Hakkımızda</div>
                                 </div>
                             </a>
-                            <a href="../../contact.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors {{CONTACT_ITEM_ACTIVE}}">
-                                <span class="text-xl">📞</span>
+                            <a href="../../vizyon-misyon.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
+                                <span class="text-xl">🎯</span>
                                 <div>
-                                    <div class="font-semibold">İletişim</div>
-                                    <div class="text-sm text-base-content/60">Boost Your Sales</div>
+                                    <div class="font-semibold">Vizyon & Misyon</div>
+                                </div>
+                            </a>
+                            <a href="../../etik-ilkelerimiz.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
+                                <span class="text-xl">⚖️</span>
+                                <div>
+                                    <div class="font-semibold">Etik İlkelerimiz</div>
                                 </div>
                             </a>
                         </div>
                         <div class="border-t border-base-300 mt-4 pt-4">
                             <a href="../../contact.html" class="btn btn-primary btn-sm w-full buzz-button">
-                                Get Free Consultation
+                                Ücretsiz Danışmanlık Alın
                             </a>
                         </div>
                     </div>
                 </div>
             </li>
-            
-            <!-- Sales University Menu Item -->
+
+            <!-- Hizmet Bölgeleri Menu Item -->
             <li>
-                <a href="../../blog/index.html" class="btn btn-ghost font-semibold {{BLOG_ACTIVE}}">Sales University</a>
+                <a href="../../city-locations.html" class="btn btn-ghost font-semibold">Hizmet Bölgeleri</a>
+            </li>
+
+            <!-- Blog Menu Item -->
+            <li>
+                <a href="./index.html" class="btn btn-ghost font-semibold text-primary">Blog</a>
             </li>
         </ul>
     </div>
-    
-    <div class="navbar-end flex-none justify-end flex items-center">
+
+    <div class="navbar-end flex items-center">
         <div class="dropdown dropdown-end mr-4">
             <div tabindex="0" role="button" class="btn btn-ghost btn-sm">
-                <span id="current-flag">🇺🇸</span>
+                <span id="current-flag">🇹🇷</span>
                 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
@@ -289,11 +322,20 @@
                         <span>Deutsch</span>
                     </a>
                 </li>
+                <li>
+                    <a href="#" data-lang="fr" class="lang-switch flex items-center gap-2 justify-end">
+                        <span>🇫🇷</span>
+                        <span>Français</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <a href="../../contact.html" class="btn btn-primary buzz-button ml-2">Başlayın</a>
     </div>
-</nav> 
+    </div>
+</nav>
+
+ 
 
     <section class="section-spacing">
         <div class="container mx-auto container-padding">

@@ -78,9 +78,11 @@
 </head>
 <body class="font-sans">
     <!-- Navigation -->
+<!-- Navigation -->
+<!-- Navigation -->
 <nav class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
-    <div class="container mx-auto container-padding">
-        <div class="navbar-start">
+    <div class="container mx-auto container-padding flex items-center justify-between">
+        <div class="navbar-start flex items-center">
             <div class="dropdown">
                 <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -100,8 +102,8 @@
                                     <span class="text-xs font-normal text-gray-500 uppercase tracking-wide">B2B Lead Generation</span>
                                 </li>
                                 <li><a href="../market-foundation-program.html" class="text-sm pl-8">🚀 Local Lead Generation</a></li>
-                                <li><a href="../market-accelerator-program.html" class="text-sm pl-8">⚡ Global Lead Genereation</a></li>
-                                <li><a href="../part-time-lead-generation-team.html" class="text-sm pl-8">👥 Part Time Lead Generation Team</a>
+                                <li><a href="../market-accelerator-program.html" class="text-sm pl-8">⚡ Global Lead Generation</a></li>
+                                <li><a href="../part-time-lead-generation-team.html" class="text-sm pl-8">👥 Part Time Lead Generation Team</a></li>
                                 <li class="mt-4 px-3 py-1">
                                     <span class="text-xs font-normal text-gray-500 uppercase tracking-wide">Corporate Solutions</span>
                                 </li>
@@ -112,7 +114,11 @@
                                 <li><a href="../usa-pr-service.html" class="text-sm pl-8 flex items-center gap-2">
                                     <lord-icon src="https://cdn.lordicon.com/vdjwmfqs.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:20px;height:20px"></lord-icon>
                                     USA PR Service
-                                </a></li></li>
+                                </a></li>
+                                <li><a href="../managed-it-services.html" class="text-sm pl-8 flex items-center gap-2">
+                                    <lord-icon src="https://cdn.lordicon.com/fhtaantg.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:20px;height:20px"></lord-icon>
+                                    Managed IT Services
+                                </a></li>
                             </ul>
                         </details>
                     </li>
@@ -121,18 +127,16 @@
                             <summary class="font-semibold">Company</summary>
                             <ul class="p-2">
                                 <li><a href="../about.html" >About Us</a></li>
-                                <li><a href="../vision-mission.html" >Vision & Mission</a></li>
-                                <li><a href="../our-ethical-principles.html" >Our Ethical Principles</a></li>
-                        </details>
-                    </li>
-                    <li><a href="../city-locations.html">Service Areas</a></li>
+                                <li><a href="../vision-mission.html" {{VISION_MOBILE_ACTIVE}}>Vision & Mission</a></li>
+                                <li><a href="../our-ethical-principles.html" {{ETHICS_MOBILE_ACTIVE}}>Our Ethical Principles</a></li>
                             </ul>
                         </details>
                     </li>
-                    <li><a href="../blog/index.html" class="text-primary font-semibold">Growth Resources</a></li>
+                    <li><a href="../city-locations.html">Service Areas</a></li>
+                    <li><a href="../blog/index.html" class="font-semibold text-primary">Growth Resources</a></li>
                 </ul>
             </div>
-            <a href="../index.html" class="btn btn-ghost hover:bg-transparent ml-0 items-center">
+            <a href="../index.html" class="flex items-center py-2 hover:opacity-80 transition-opacity">
                 <img src="../Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 md:h-10 w-auto transition-all duration-300 hover:scale-105 logo-bumblebee">
             </a>
         </div>
@@ -157,9 +161,9 @@
                     <div class="card-body">
                         <h3 class="card-title text-primary mb-3">Our Solutions</h3>
                         
-                        <!-- B2B Business Development - Title and Programs -->
+                        <!-- B2B Lead Generation - Title and Programs -->
                         <div class="grid gap-2">
-                            <!-- B2B Business Development Title (non-clickable) -->
+                            <!-- B2B Lead Generation Title (non-clickable) -->
                             <div class="flex items-center gap-2 px-3 pt-1 pb-2">
                                 <span class="text-sm opacity-60">🎯</span>
                                 <div class="flex-1">
@@ -185,6 +189,57 @@
                                     <span class="text-lg">👥</span>
                                     <div>
                                         <div class="font-semibold text-sm">Part Time Lead Generation Team</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Corporate Solutions Category -->
+                        <div class="grid gap-2 mt-4">
+                            <div class="flex items-center gap-2 px-3 pt-1 pb-2">
+                                <lord-icon
+                                    src="https://cdn.lordicon.com/gqdnbnwt.json"
+                                    trigger="hover"
+                                    colors="primary:#f9c23c,secondary:#e86100"
+                                    style="width:28px;height:28px;opacity:0.6">
+                                </lord-icon>
+                                <div class="flex-1">
+                                    <div class="text-xs font-normal text-gray-500 uppercase tracking-wide">Corporate Solutions</div>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-1 pl-2">
+                                <a href="../corporate-digital-gifting.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/10 transition-colors">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/gqdnbnwt.json"
+                                        trigger="hover"
+                                        colors="primary:#f9c23c,secondary:#e86100"
+                                        style="width:32px;height:32px">
+                                    </lord-icon>
+                                    <div>
+                                        <div class="font-semibold text-sm">Digital Gifting</div>
+                                    </div>
+                                </a>
+                                <a href="../usa-pr-service.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/10 transition-colors">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/vdjwmfqs.json"
+                                        trigger="hover"
+                                        colors="primary:#f9c23c,secondary:#e86100"
+                                        style="width:32px;height:32px">
+                                    </lord-icon>
+                                    <div>
+                                        <div class="font-semibold text-sm">USA PR Service</div>
+                                    </div>
+                                </a>
+                                <a href="../managed-it-services.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/10 transition-colors">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/fhtaantg.json"
+                                        trigger="hover"
+                                        colors="primary:#f9c23c,secondary:#e86100"
+                                        style="width:32px;height:32px">
+                                    </lord-icon>
+                                    <div>
+                                        <div class="font-semibold text-sm">Managed IT Services</div>
                                     </div>
                                 </a>
                             </div>
@@ -239,14 +294,19 @@
                 </div>
             </li>
             
+            <!-- Service Areas Menu Item -->
+            <li>
+                <a href="../city-locations.html" class="btn btn-ghost font-semibold">Service Areas</a>
+            </li>
+            
             <!-- Sales University Menu Item -->
             <li>
-                <a href="../blog/index.html" class="btn btn-ghost font-semibold text-primary">Growth Blog</a>
+                <a href="../blog/index.html" class="btn btn-ghost font-semibold text-primary">Sales University</a>
             </li>
         </ul>
     </div>
     
-    <div class="navbar-end flex-none justify-end flex items-center">
+    <div class="navbar-end flex items-center">
         <div class="dropdown dropdown-end mr-4">
             <div tabindex="0" role="button" class="btn btn-ghost btn-sm">
                 <span id="current-flag">🇺🇸</span>
@@ -273,11 +333,20 @@
                         <span>Deutsch</span>
                     </a>
                 </li>
+                <li>
+                    <a href="#" data-lang="fr" class="lang-switch flex items-center gap-2 justify-end">
+                        <span>🇫🇷</span>
+                        <span>Français</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <a href="../contact.html" class="btn btn-primary buzz-button ml-2">Get Started</a>
     </div>
-</nav> 
+    </div>
+</nav>
+
+ 
 
     <main class="min-h-screen bg-base-100">
         <div class="container mx-auto container-padding py-16">
