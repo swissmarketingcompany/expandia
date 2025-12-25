@@ -3,312 +3,396 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global B2B Lead Generation Locations | Expandia</title>
-    <meta name="description" content="Explore our B2B lead generation services across 75+ cities worldwide. Find local lead generation experts in your city.">
-    <meta name="keywords" content="B2B lead generation locations, global lead generation, local lead generation services, international B2B sales">
+    <title>Global B2B Lead Generation Locations | Expandia | Expandia - Sales Growth Partner</title>
+    <meta name="description" content="Explore our B2B lead generation services across 80+ cities worldwide.">
+    <meta name="keywords" content="B2B lead generation locations, global lead generation, local lead generation services">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Expandia">
-
+    
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.expandia.ch/city-locations.html">
-    <link rel="alternate" hreflang="fr" href="https://www.expandia.ch/fr/city-locations.html">
-
+    
+    <!-- Hreflang Links -->
+    <link rel="alternate" hreflang="en" href="https://www.expandia.ch/{{PAGE_URL_EN}}">
+    <link rel="alternate" hreflang="tr" href="https://www.expandia.ch/{{PAGE_URL_TR}}">
+    <link rel="alternate" hreflang="de" href="https://www.expandia.ch/{{PAGE_URL_DE}}">
+    <link rel="alternate" hreflang="fr" href="https://www.expandia.ch/{{PAGE_URL_FR}}">
+    <link rel="alternate" hreflang="x-default" href="https://www.expandia.ch/{{PAGE_URL_EN}}">
+    
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Global B2B Lead Generation Locations | Expandia">
-    <meta property="og:description" content="Explore our B2B lead generation services across 75+ cities worldwide.">
+    <meta property="og:title" content="Global B2B Lead Generation Locations | Expandia | Expandia">
+    <meta property="og:description" content="Explore our B2B lead generation services across 80+ cities worldwide.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.expandia.ch/city-locations.html">
     <meta property="og:image" content="https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png">
     <meta property="og:site_name" content="Expandia">
-
+    
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Global B2B Lead Generation Locations | Expandia">
-    <meta name="twitter:description" content="Explore our B2B lead generation services across 75+ cities worldwide.">
+    <meta name="twitter:title" content="Global B2B Lead Generation Locations | Expandia | Expandia">
+    <meta name="twitter:description" content="Explore our B2B lead generation services across 80+ cities worldwide.">
     <meta name="twitter:image" content="https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png">
-
-    <link href="./dist/css/output.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
-    <link rel="icon" type="image/png" href="./favicon.png">
-    <link rel="apple-touch-icon" href="./favicon.png">
-
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-          crossorigin=""/>
-
+    
+    <link href="/dist/css/output.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XY2B6K4R6Q"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+
       gtag('config', 'G-XY2B6K4R6Q');
     </script>
-
+    
+    <!-- Lordicon Script -->
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {}
+    </script>
+    
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
     <style>
-        #map {
-            height: 80vh;
-            width: 100%;
-            z-index: 1;
-        }
-        .city-marker {
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .city-marker:hover {
-            transform: scale(1.2);
-            z-index: 1000;
-        }
-        .custom-popup {
-            font-family: inherit;
-        }
-        .custom-popup h3 {
-            color: #f9c23c;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        .custom-popup a {
-            color: #e86100;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .custom-popup a:hover {
-            text-decoration: underline;
-        }
-        .map-container {
-            position: relative;
-            width: 100%;
-        }
-        .map-legend {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: white;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            z-index: 1000;
-            max-width: 200px;
-        }
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
-        .legend-color {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-        }
+        #map { height: 80vh; width: 100%; z-index: 1; }
+        .city-marker { cursor: pointer; transition: all 0.3s ease; }
+        .city-marker:hover { transform: scale(1.2); z-index: 1000; }
+        .custom-popup { font-family: inherit; }
+        .custom-popup h3 { color: #f9c23c; font-weight: bold; margin-bottom: 0.5rem; }
+        .custom-popup a { color: #e86100; text-decoration: none; font-weight: 600; }
+        .custom-popup a:hover { text-decoration: underline; }
+        .map-container { position: relative; width: 100%; }
+        .map-legend { position: absolute; top: 20px; right: 20px; background: white; padding: 1rem; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); z-index: 1000; max-width: 200px; }
+        .legend-item { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+        .legend-color { width: 20px; height: 20px; border-radius: 50%; }
     </style>
 </head>
 <body class="font-sans">
-    <!-- Navigation -->
-    <nav class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto container-padding flex items-center justify-between">
-            <div class="navbar-start flex items-center">
-                <div class="dropdown">
-                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
-                        </svg>
-                    </div>
-                    <!-- Mobile Menu -->
-                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-72">
-                        <li>
-                            <a href="./index.html" class="font-semibold text-primary">Home</a>
-                        </li>
-                        <li>
-                            <details>
-                                <summary class="font-semibold">Solutions</summary>
-                                <ul class="p-2">
-                                    <li class="mt-2 px-3 py-1">
-                                        <span class="text-xs font-normal text-gray-500 uppercase tracking-wide">B2B Lead Generation</span>
-                                    </li>
-                                    <li><a href="./market-foundation-program.html" class="text-sm pl-8">🚀 Local Lead Generation</a></li>
-                                    <li><a href="./market-accelerator-program.html" class="text-sm pl-8">⚡ Global Lead Genereation</a></li>
-                                    <li><a href="./part-time-lead-generation-team.html" class="text-sm pl-8">👥 Part Time Lead Generation Team</a></li>
-                                    <li class="mt-4 px-3 py-1">
-                                        <span class="text-xs font-normal text-gray-500 uppercase tracking-wide">Corporate Solutions</span>
-                                    </li>
-                                    <li><a href="./corporate-digital-gifting.html" class="text-sm pl-8 flex items-center gap-2">
-                                        <lord-icon src="https://cdn.lordicon.com/gqdnbnwt.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:20px;height:20px"></lord-icon>
-                                        Digital Gifting
-                                    </a></li>
-                                    <li><a href="./usa-pr-service.html" class="text-sm pl-8 flex items-center gap-2">
-                                        <lord-icon src="https://cdn.lordicon.com/vdjwmfqs.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:20px;height:20px"></lord-icon>
-                                        USA PR Service
-                                    </a></li>
-                                </ul>
-                            </details>
-                        </li>
-                        <li>
-                            <details>
-                                <summary class="font-semibold">Company</summary>
-                                <ul class="p-2">
-                                    <li><a href="./about.html">About Us</a></li>
-                                    <li><a href="./vision-mission.html">Vision & Mission</a></li>
-                                    <li><a href="./our-ethical-principles.html">Our Ethical Principles</a></li>
-                                </ul>
-                            </details>
-                        </li>
-                        <li><a href="./city-locations.html" class="font-semibold text-primary">Service Areas</a></li>
-                        <li><a href="./blog/index.html">Growth Resources</a></li>
-                    </ul>
-                </div>
-                <a href="./index.html" class="flex items-center py-2 hover:opacity-80 transition-opacity">
-                    <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 md:h-10 w-auto transition-all duration-300 hover:scale-105 logo-bumblebee">
-                </a>
-            </div>
-        
-        <!-- Desktop Mega Menu -->
-        <div class="navbar-center hidden lg:flex justify-center">
-            <ul class="menu menu-horizontal px-1">
-                <li>
-                    <a href="./index.html" class="btn btn-ghost font-semibold text-primary">Home</a>
-                </li>
-                <li class="dropdown dropdown-hover">
-                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold ">
-                        Solutions
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </div>
-                    <div tabindex="0" class="dropdown-content z-[1] card card-compact w-80 p-4 shadow-xl bg-base-100 border border-base-300">
-                        <div class="card-body">
-                            <h3 class="card-title text-primary mb-3">Our Solutions</h3>
-                            <div class="grid gap-2">
-                                <div class="flex items-center gap-2 px-3 pt-1 pb-2">
-                                    <span class="text-sm opacity-60">🎯</span>
-                                    <div class="flex-1">
-                                        <div class="text-xs font-normal text-gray-500 uppercase tracking-wide">B2B Lead Generation</div>
-                                    </div>
-                                </div>
-                                <div class="space-y-1 pl-2">
-                                    <a href="./market-foundation-program.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/10 transition-colors">
-                                        <span class="text-lg">🚀</span>
-                                        <div class="font-semibold text-sm">Local Lead Generation</div>
-                                    </a>
-                                    <a href="./market-accelerator-program.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary/10 transition-colors">
-                                        <span class="text-lg">⚡</span>
-                                        <div class="font-semibold text-sm">Global Lead Generation</div>
-                                    </a>
-                                    <a href="./part-time-lead-generation-team.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-accent/10 transition-colors">
-                                        <span class="text-lg">👥</span>
-                                        <div class="font-semibold text-sm">Part Time Lead Generation Team</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="grid gap-2 mt-4">
-                                <div class="flex items-center gap-2 px-3 pt-1 pb-2">
-                                    <lord-icon src="https://cdn.lordicon.com/gqdnbnwt.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:28px;height:28px;opacity:0.6"></lord-icon>
-                                    <div class="flex-1">
-                                        <div class="text-xs font-normal text-gray-500 uppercase tracking-wide">Corporate Solutions</div>
-                                    </div>
-                                </div>
-                                <div class="space-y-1 pl-2">
-                                    <a href="./corporate-digital-gifting.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/10 transition-colors">
-                                        <lord-icon src="https://cdn.lordicon.com/gqdnbnwt.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:32px;height:32px"></lord-icon>
-                                        <div class="font-semibold text-sm">Digital Gifting</div>
-                                    </a>
-                                    <a href="./usa-pr-service.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/10 transition-colors">
-                                        <lord-icon src="https://cdn.lordicon.com/vdjwmfqs.json" trigger="hover" colors="primary:#f9c23c,secondary:#e86100" style="width:32px;height:32px"></lord-icon>
-                                        <div class="font-semibold text-sm">USA PR Service</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="border-t border-base-300 mt-4 pt-4">
-                                <a href="./contact.html" class="btn btn-primary btn-sm w-full buzz-button">
-                                    Get Free Consultation
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="dropdown dropdown-hover">
-                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold ">
-                        Company
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </div>
-                    <div tabindex="0" class="dropdown-content z-[1] card card-compact w-72 p-4 shadow-xl bg-base-100 border border-base-300">
-                        <div class="card-body">
-                            <h3 class="card-title text-primary mb-3">About Expandia</h3>
-                            <div class="grid gap-2">
-                                <a href="./about.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors ">
-                                    <span class="text-xl">👥</span>
-                                    <div class="font-semibold">About Us</div>
-                                </a>
-                                <a href="./vision-mission.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
-                                    <span class="text-xl">🎯</span>
-                                    <div class="font-semibold">Vision & Mission</div>
-                                </a>
-                                <a href="./our-ethical-principles.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
-                                    <span class="text-xl">⚖️</span>
-                                    <div class="font-semibold">Our Ethical Principles</div>
-                                </a>
-                            </div>
-                            <div class="border-t border-base-300 mt-4 pt-4">
-                                <a href="./contact.html" class="btn btn-primary btn-sm w-full buzz-button">
-                                    Get Free Consultation
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <a href="./city-locations.html" class="btn btn-ghost font-semibold text-primary">Service Areas</a>
-                </li>
-                <li>
-                    <a href="./blog/index.html" class="btn btn-ghost font-semibold ">Growth Blog</a>
-                </li>
-            </ul>
-        </div>
-        
-        <div class="navbar-end flex items-center">
-            <div class="dropdown dropdown-end mr-4">
-                <div tabindex="0" role="button" class="btn btn-ghost btn-sm">
-                    <span id="current-flag">🇺🇸</span>
-                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <!-- Navigation - Premium Mega Menu -->
+<nav class="navbar bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
+    <div class="container mx-auto px-4 lg:px-8 flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="./index.html" class="flex-shrink-0">
+            <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-12 md:h-14">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center gap-1">
+            <a href="./index.html"
+                class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50">Home</a>
+
+            <!-- Solutions Mega Menu -->
+            <div class="relative" id="solutions-dropdown">
+                <button onclick="toggleDropdown('solutions-menu')"
+                    class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
+                    Solutions
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
+                </button>
+                <div id="solutions-menu"
+                    class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
+                    style="width: 720px;">
+                    <div class="grid grid-cols-3 divide-x divide-gray-100">
+                        <!-- Column 1: IT & Security -->
+                        <div class="p-6">
+                            <h3
+                                class="text-xs font-bold text-primary uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <span class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center">🛡️</span>
+                                IT & Security
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="./managed-it-services.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                            class="text-sm font-semibold text-gray-900">Managed IT Services</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">24/7 monitoring & support</p>
+                                    </a></li>
+                                <li><a href="./vulnerability-assessments.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                            class="text-sm font-semibold text-gray-900">Security Assessments</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">Penetration testing</p>
+                                    </a></li>
+                                <li><a href="./email-security.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                            class="text-sm font-semibold text-gray-900">Email Security</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">SPF, DKIM, DMARC</p>
+                                    </a></li>
+                                <li><a href="./website-care-plans.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                            class="text-sm font-semibold text-gray-900">Website Care</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">Maintenance & updates</p>
+                                    </a></li>
+                            </ul>
+                        </div>
+                        <!-- Column 2: Sales & Growth -->
+                        <div class="p-6">
+                            <h3
+                                class="text-xs font-bold text-secondary uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <span class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center">📈</span>
+                                Sales & Growth
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="./lead-generation-service.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                            class="text-sm font-semibold text-gray-900">Lead Generation</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">B2B outbound prospecting</p>
+                                    </a></li>
+                                <li><a href="./revops-crm-setup.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                            class="text-sm font-semibold text-gray-900">RevOps & CRM</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">HubSpot, Salesforce setup</p>
+                                    </a></li>
+                                <li><a href="./lost-lead-reactivation.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                            class="text-sm font-semibold text-gray-900">Lead Reactivation</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">Re-engage cold leads</p>
+                                    </a></li>
+                                <li><a href="./speed-to-lead.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                            class="text-sm font-semibold text-gray-900">Speed-to-Lead</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">Sub-5-minute response</p>
+                                    </a></li>
+                            </ul>
+                        </div>
+                        <!-- Column 3: Recruitment & AI -->
+                        <div class="p-6">
+                            <h3
+                                class="text-xs font-bold text-accent uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <span class="w-6 h-6 rounded bg-accent/10 flex items-center justify-center">👥</span>
+                                Recruitment
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="./recruitment.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                            class="text-sm font-semibold text-gray-900">Headhunting</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">Sales & tech talent</p>
+                                    </a></li>
+                                <li><a href="./recruitment.html#staffing"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                            class="text-sm font-semibold text-gray-900">Bridge Staffing</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">Temporary placements</p>
+                                    </a></li>
+                            </ul>
+                            <h3
+                                class="text-xs font-bold text-neutral uppercase tracking-wider mb-4 mt-6 flex items-center gap-2">
+                                <span class="w-6 h-6 rounded bg-neutral/10 flex items-center justify-center">🤖</span>
+                                AI Studio
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="./ai-creative-studio.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                            class="text-sm font-semibold text-gray-900">AI Creative Studio</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">Video, avatars, images</p>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- CTA Footer -->
+                    <div class="bg-gray-50 px-6 py-4 flex items-center justify-between border-t border-gray-100">
+                        <p class="text-sm text-gray-600">Not sure which service? Let's find the right fit together.</p>
+                        <a href="./contact.html" class="btn btn-primary btn-sm">Book a Call</a>
+                    </div>
                 </div>
-                <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-32 text-right">
-                    <li>
-                        <a href="#" data-lang="en" class="lang-switch flex items-center gap-2 justify-end">
-                            <span>🇺🇸</span>
-                            <span>English</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" data-lang="tr" class="lang-switch flex items-center gap-2 justify-end">
-                            <span>🇹🇷</span>
-                            <span>Türkçe</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" data-lang="de" class="lang-switch flex items-center gap-2 justify-end">
-                            <span>🇩🇪</span>
-                            <span>Deutsch</span>
-                        </a>
-                    </li>
-                <li>
-                    <a href="#" data-lang="fr" class="lang-switch flex items-center gap-2 justify-end">
-                        <span>🇫🇷</span>
-                        <span>Français</span>
-                    </a>
-                </li>
+            </div>
+
+            <!-- Company Mega Menu -->
+            <div class="relative" id="company-dropdown">
+                <button onclick="toggleDropdown('company-menu')"
+                    class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
+                    Company
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="company-menu"
+                    class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
+                    style="width: 480px;">
+                    <div class="grid grid-cols-2 divide-x divide-gray-100">
+                        <!-- Column 1: About -->
+                        <div class="p-6">
+                            <h3
+                                class="text-xs font-bold text-primary uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <span class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center">🏢</span>
+                                About Us
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="./about.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                        <span class="text-sm font-semibold text-gray-900">Our Story</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">Who we are & what we do</p>
+                                    </a></li>
+                                <li><a href="./{{VISION_MISSION_PAGE}}"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                        <span class="text-sm font-semibold text-gray-900">Vision & Mission</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">Our purpose and goals</p>
+                                    </a></li>
+                                <li><a href="./{{ETHICAL_PRINCIPLES_PAGE}}"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                        <span class="text-sm font-semibold text-gray-900">Ethics & Values</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">How we operate</p>
+                                    </a></li>
+                            </ul>
+                        </div>
+                        <!-- Column 2: Resources -->
+                        <div class="p-6">
+                            <h3
+                                class="text-xs font-bold text-secondary uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <span class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center">📚</span>
+                                Resources
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="./case-studies.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                        <span class="text-sm font-semibold text-gray-900">Case Studies</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">Real client success stories</p>
+                                    </a></li>
+                                <li><a href="./blog/index.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                        <span class="text-sm font-semibold text-gray-900">Blog & Insights</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">Tips, trends & guides</p>
+                                    </a></li>
+                                <li><a href="./city-locations.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                        <span class="text-sm font-semibold text-gray-900">Locations</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">Where we operate</p>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- CTA Footer -->
+                    <div class="bg-gray-50 px-6 py-4 flex items-center justify-between border-t border-gray-100">
+                        <p class="text-sm text-gray-600">Ready to grow your business?</p>
+                        <a href="./contact.html" class="btn btn-primary btn-sm">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side -->
+        <div class="flex items-center gap-3">
+            <!-- Language Switcher -->
+            <div class="dropdown dropdown-end hidden sm:block">
+                <label tabindex="0" class="btn btn-ghost btn-sm gap-1 text-gray-600">
+                    🇺🇸
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </label>
+                <ul tabindex="0"
+                    class="dropdown-content z-[999] menu p-2 shadow-lg bg-white rounded-xl border border-gray-100 w-36 mt-2">
+                    <li><a href="#" data-lang="en" class="lang-switch text-sm">🇺🇸 English</a></li>
+                    <li><a href="#" data-lang="tr" class="lang-switch text-sm">🇹🇷 Türkçe</a></li>
+                    <li><a href="#" data-lang="de" class="lang-switch text-sm">🇩🇪 Deutsch</a></li>
+                    <li><a href="#" data-lang="fr" class="lang-switch text-sm">🇫🇷 Français</a></li>
                 </ul>
             </div>
-            <a href="./contact.html" class="btn btn-primary buzz-button ml-2">Get Started</a>
-        </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
+            <!-- CTA Button -->
+            <a href="./contact.html"
+                class="btn btn-primary btn-sm lg:btn-md shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-shadow">Get
+                Started</a>
+
+            <!-- Mobile Menu Button -->
+            <div class="dropdown dropdown-end lg:hidden">
+                <label tabindex="0" class="btn btn-ghost btn-sm">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </label>
+                <ul tabindex="0"
+                    class="dropdown-content z-[999] menu p-4 shadow-2xl bg-white rounded-2xl w-80 mt-4 border border-gray-100">
+                    <li><a href="./index.html" class="text-base font-semibold py-3 rounded-xl">Home</a></li>
+                    <li class="mt-2"><span class="text-xs font-bold text-primary uppercase tracking-wider px-4 py-2">IT
+                            & Security</span>
+                        <ul class="pl-2">
+                            <li><a href="./managed-it-services.html" class="py-2 rounded-lg">Managed IT
+                                    Services</a></li>
+                            <li><a href="./vulnerability-assessments.html" class="py-2 rounded-lg">Security
+                                    Assessments</a></li>
+                            <li><a href="./email-security.html" class="py-2 rounded-lg">Email Security</a>
+                            </li>
+                            <li><a href="./website-care-plans.html" class="py-2 rounded-lg">Website Care</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="mt-2"><span
+                            class="text-xs font-bold text-secondary uppercase tracking-wider px-4 py-2">Sales &
+                            Growth</span>
+                        <ul class="pl-2">
+                            <li><a href="./lead-generation-service.html" class="py-2 rounded-lg">Lead
+                                    Generation</a></li>
+                            <li><a href="./revops-crm-setup.html" class="py-2 rounded-lg">RevOps & CRM</a>
+                            </li>
+                            <li><a href="./lost-lead-reactivation.html" class="py-2 rounded-lg">Lead
+                                    Reactivation</a></li>
+                            <li><a href="./speed-to-lead.html" class="py-2 rounded-lg">Speed-to-Lead</a></li>
+                        </ul>
+                    </li>
+                    <li class="mt-2"><span
+                            class="text-xs font-bold text-accent uppercase tracking-wider px-4 py-2">Talent & AI</span>
+                        <ul class="pl-2">
+                            <li><a href="./recruitment.html" class="py-2 rounded-lg">Recruitment</a></li>
+                            <li><a href="./ai-creative-studio.html" class="py-2 rounded-lg">AI Creative
+                                    Studio</a></li>
+                        </ul>
+                    </li>
+                    <li class="mt-2"><span
+                            class="text-xs font-bold text-gray-400 uppercase tracking-wider px-4 py-2">Company</span>
+                        <ul class="pl-2">
+                            <li><a href="./about.html" class="py-2 rounded-lg">About Us</a></li>
+                            <li><a href="./{{VISION_MISSION_PAGE}}" class="py-2 rounded-lg">Vision &
+                                    Mission</a></li>
+                            <li><a href="./{{ETHICAL_PRINCIPLES_PAGE}}" class="py-2 rounded-lg">Ethics</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="mt-4"><a href="./contact.html" class="btn btn-primary btn-block">Get
+                            Started</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    function toggleDropdown(menuId) {
+        const allMenus = ['solutions-menu', 'company-menu'];
+        allMenus.forEach(id => {
+            const menu = document.getElementById(id);
+            if (menu && id !== menuId) {
+                menu.classList.add('hidden');
+            }
+        });
+        const menu = document.getElementById(menuId);
+        if (menu) {
+            menu.classList.toggle('hidden');
+        }
+    }
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function (e) {
+        const solutionsDropdown = document.getElementById('solutions-dropdown');
+        const companyDropdown = document.getElementById('company-dropdown');
+
+        if (solutionsDropdown && !solutionsDropdown.contains(e.target)) {
+            document.getElementById('solutions-menu')?.classList.add('hidden');
+        }
+        if (companyDropdown && !companyDropdown.contains(e.target)) {
+            document.getElementById('company-menu')?.classList.add('hidden');
+        }
+    });
+</script>
+    
+        <!-- Hero Section -->
     <section class="py-12 md:py-16 bg-gradient-to-br from-buzz-warm via-base-100 to-buzz-light">
         <div class="container mx-auto container-padding">
             <div class="text-center">
@@ -317,7 +401,7 @@
                     <span class="text-base-content">Locations Worldwide</span>
                 </h1>
                 <p class="text-lg md:text-xl text-base-content/80 max-w-3xl mx-auto mb-8">
-                    Explore our B2B lead generation services across 86+ cities worldwide. 
+                    Explore our B2B lead generation services across 757+ cities worldwide. 
                     Click on any city to learn more about our local lead generation expertise.
                 </p>
             </div>
@@ -372,283 +456,231 @@
         </div>
     </section>
 
+    
     <!-- Footer -->
-    <footer class="footer-gradient text-white">
-        <div class="border-b border-white/10">
-            <div class="container mx-auto container-padding py-12">
-                <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
-                    <div class="text-center lg:text-left">
-                        <h3 class="text-2xl md:text-3xl font-bold mb-2">Stay Updated with Growth Insights</h3>
-                        <p class="text-white/80">Get the latest growth strategies and lead generation updates.</p>
-                    </div>
-                    <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-                        <form id="newsletter-form" class="flex gap-4 w-full">
-                            <input type="email" name="email" placeholder="Enter your email" class="footer-newsletter-input" required>
-                            <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
-                            <input type="text" name="math" inputmode="numeric" pattern="[0-9]+" placeholder="30+31=" class="input input-bordered w-24 sm:w-28" required>
-                            <button type="submit" class="btn btn-primary">Subscribe</button>
-                        </form>
-                    </div>
+<footer class="footer-gradient text-white">
+    <!-- Newsletter Section -->
+    <div class="border-b border-white/10">
+        <div class="container mx-auto container-padding py-12">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div class="text-center lg:text-left">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-2" data-i18n="footer.newsletter_title">Stay Updated
+                        with Growth Insights</h3>
+                    <p class="text-white/80" data-i18n="footer.newsletter_subtitle">Get the latest growth strategies and
+                        lead generation updates.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+                    <form id="newsletter-form" class="flex gap-4 w-full">
+                        <input type="email" name="email" placeholder="Enter your email" class="footer-newsletter-input"
+                            required>
+                        <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
+                        <input type="text" name="math" inputmode="numeric" pattern="[0-9]+" placeholder="30+31="
+                            class="input input-bordered w-24 sm:w-28" required>
+                        <button type="submit" class="btn btn-primary" data-i18n="footer.subscribe">Subscribe</button>
+                    </form>
                 </div>
             </div>
         </div>
-        <div class="container mx-auto container-padding py-16">
-            <div class="grid md:grid-cols-12 gap-8 mb-16">
-                <div class="md:col-span-4">
-                    <div class="flex items-center gap-3 mb-6">
-                        <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 w-auto brightness-0 invert">
-                    </div>
-                    <p class="text-white/80 mb-6 text-lg">
-                        Your Partner in Lead Generation and corporate communication.
-                    </p>
-                    <div class="flex gap-4">
-                        <a href="https://www.linkedin.com/company/expandia-ch/" class="footer-social-icon group" target="_blank" rel="noopener noreferrer">
-                            <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+    </div>
+
+    <!-- Main Footer Content -->
+    <div class="container mx-auto container-padding py-16">
+        <div class="grid md:grid-cols-12 gap-8 mb-16">
+            <!-- Company Info -->
+            <div class="md:col-span-4">
+                <div class="flex items-center gap-3 mb-6">
+                    <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 w-auto brightness-0 invert">
+                </div>
+                <p class="text-white/80 mb-6 text-lg" data-i18n="footer.company_info_subtitle">
+                    Your Partner in Lead Generation and corporate communication.
+                </p>
+                <div class="flex gap-4">
+                    <a href="https://www.linkedin.com/company/expandia-ch/" class="footer-social-icon group"
+                        target="_blank" rel="noopener noreferrer">
+                        <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="md:col-span-2">
+                <h4 class="text-lg font-bold mb-6" data-i18n="footer.quick_links_title">Solutions</h4>
+                <ul class="space-y-4 text-white/80">
+                    <li><a href="./solutions.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Local Lead Generation
+                        </a></li>
+                    <li><a href="./solutions.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Global Lead Generation
+                        </a></li>
+                    <li><a href="./blog/"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Part Time Lead Generation Team
+                        </a></li>
+                    <li><a href="./managed-it-services.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Managed IT Services
+                        </a></li>
+                </ul>
+            </div>
+
+            <!-- Resources -->
+            <div class="md:col-span-2">
+                <h4 class="text-lg font-bold mb-6" data-i18n="footer.resources_title">Company</h4>
+                <ul class="space-y-4 text-white/80">
+                    <li><a href="./case-studies.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Success Stories
+                        </a></li>
+                    <li><a href="./about.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            About Us
+                        </a></li>
+                    <li><a href="./contact.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Contact Us
+                        </a></li>
+                    <li><a href="./blog/"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Growth Resources
+                        </a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="md:col-span-4">
+                <h4 class="text-lg font-bold mb-6" data-i18n="footer.contact_title">Get in Touch</h4>
+                <div class="footer-contact-card">
+                    <p class="text-white/80 mb-6" data-i18n="footer.contact_subtitle">Ready to accelerate your growth?
+                        Let's discuss how we can help.</p>
+                    <a href="./contact.html" class="btn btn-primary w-full mb-6"
+                        data-i18n="footer.get_free_consultation">Get Free Consultation</a>
+                    <div class="space-y-4">
+                        <a href="mailto:hello@expandia.ch"
+                            class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
+                            hello@expandia.ch
+                        </a>
+                        <a href="mailto:hello@expandia.ch"
+                            class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors"
+                            data-i18n="footer.schedule_call">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            Email to Schedule
                         </a>
                     </div>
                 </div>
-                <div class="md:col-span-2">
-                    <h4 class="text-lg font-bold mb-6">Solutions</h4>
-                    <ul class="space-y-4 text-white/80">
-                        <li><a href="./market-foundation-program.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>Local Lead Generation</a></li>
-                        <li><a href="./market-accelerator-program.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>Global Lead Generation</a></li>
-                        <li><a href="./part-time-lead-generation-team.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>Part Time Lead Generation Team</a></li>
-                        <li><a href="./corporate-digital-gifting.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>Digital Gifting</a></li>
-                        <li><a href="./usa-pr-service.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>USA PR Service</a></li>
-                    </ul>
-                </div>
-                <div class="md:col-span-2">
-                    <h4 class="text-lg font-bold mb-6">Company</h4>
-                    <ul class="space-y-4 text-white/80">
-                        <li><a href="./case-studies.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>Success Stories</a></li>
-                        <li><a href="./about.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>About Us</a></li>
-                        <li><a href="./contact.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>Contact Us</a></li>
-                        <li><a href="./blog/" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>Growth Resources</a></li>
-                    </ul>
-                </div>
-                <div class="md:col-span-4">
-                    <h4 class="text-lg font-bold mb-6">Get in Touch</h4>
-                    <div class="footer-contact-card">
-                        <p class="text-white/80 mb-6">Ready to accelerate your growth? Let's discuss how we can help.</p>
-                        <a href="./contact.html" class="btn btn-primary w-full mb-6">Get Free Consultation</a>
-                        <div class="space-y-4">
-                            <a href="mailto:hello@expandia.ch" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                                </svg>
-                                hello@expandia.ch
-                            </a>
-                            <a href="mailto:hello@expandia.ch" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                                </svg>
-                                Email to Schedule
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-                <p class="text-white/60 text-sm">© <span id="year"></span> Expandia. All rights reserved.</p>
-                <div class="flex flex-wrap gap-4 text-sm">
-                    <a href="./privacy-policy.html" class="text-white/60 hover:text-primary transition-colors">Privacy Policy</a>
-                    <a href="./terms-of-service.html" class="text-white/60 hover:text-primary transition-colors">Terms of Service</a>
-                    <a href="./cookie-policy.html" class="text-white/60 hover:text-primary transition-colors">Cookie Policy</a>
-                </div>
             </div>
         </div>
-    </footer>
 
-    <script src="./dist/js/index.js"></script>
-    <script src="./dist/js/contact.js"></script>
-
-    <!-- Lord Icon -->
-    <script src="https://cdn.lordicon.com/lordicon.js"></script>
-
+        <!-- Bottom Bar -->
+        <div
+            class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/60">
+            <div class="text-sm" data-i18n="footer.copyright">
+                &copy; 2026 Expandia. All rights reserved.
+            </div>
+            <div class="flex gap-6 text-sm items-center">
+                <span class="text-white/60 text-xs">Part of Remova Inc.</span>
+                <a href="./privacy-policy.html" class="hover:text-primary transition-colors"
+                    data-i18n="footer.privacy_policy">Privacy Policy</a>
+                <a href="./terms-of-service.html" class="hover:text-primary transition-colors"
+                    data-i18n="footer.terms_of_service">Terms of Service</a>
+                <a href="./cookie-policy.html" class="hover:text-primary transition-colors"
+                    data-i18n="footer.cookie_policy">Cookie Policy</a>
+            </div>
+        </div>
+        <div class="mt-4 text-xs text-white/60 text-center">
+            Authorized domains: www.expandia.ch · www.goexpandia.com · www.getexpandia.com · www.expandia.com.tr
+        </div>
+    </div>
+</footer>
+<script src="./dist/js/contact.js"></script>
+    
+    <script src="/dist/js/index.js"></script>
+    
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6911e3f950ba1a195e0a2c28/1j9mu527m';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+    
+    
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
             integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
             crossorigin=""></script>
-
     <script>
-        // City data with coordinates and sub-regions
-        const cities = [
-            // DACH (Germany, Austria, Switzerland)
-            { name: 'Zurich', lat: 47.3769, lng: 8.5417, url: './b2b-lead-generation-zurich.html', region: 'DACH' },
-            { name: 'Geneva', lat: 46.2044, lng: 6.1432, url: './b2b-lead-generation-geneva.html', region: 'DACH' },
-            { name: 'Basel', lat: 47.5596, lng: 7.5886, url: './b2b-lead-generation-basel.html', region: 'DACH' },
-            { name: 'Bern', lat: 46.9481, lng: 7.4474, url: './b2b-lead-generation-bern.html', region: 'DACH' },
-            { name: 'Lausanne', lat: 46.5197, lng: 6.6323, url: './b2b-lead-generation-lausanne.html', region: 'DACH' },
-            { name: 'Lucerne', lat: 47.0502, lng: 8.3093, url: './b2b-lead-generation-lucerne.html', region: 'DACH' },
-            { name: 'St. Gallen', lat: 47.4245, lng: 9.3767, url: './b2b-lead-generation-st-gallen.html', region: 'DACH' },
-            { name: 'Lugano', lat: 46.0101, lng: 8.9600, url: './b2b-lead-generation-lugano.html', region: 'DACH' },
-            { name: 'Winterthur', lat: 47.4999, lng: 8.7371, url: './b2b-lead-generation-winterthur.html', region: 'DACH' },
-            { name: 'Berlin', lat: 52.5200, lng: 13.4050, url: './b2b-lead-generation-berlin.html', region: 'DACH' },
-            { name: 'Hamburg', lat: 53.5511, lng: 9.9937, url: './b2b-lead-generation-hamburg.html', region: 'DACH' },
-            { name: 'Munich', lat: 48.1351, lng: 11.5820, url: './b2b-lead-generation-munich.html', region: 'DACH' },
-            { name: 'Cologne', lat: 50.9375, lng: 6.9603, url: './b2b-lead-generation-cologne.html', region: 'DACH' },
-            { name: 'Frankfurt', lat: 50.1109, lng: 8.6821, url: './b2b-lead-generation-frankfurt.html', region: 'DACH' },
-            { name: 'Stuttgart', lat: 48.7758, lng: 9.1829, url: './b2b-lead-generation-stuttgart.html', region: 'DACH' },
-            { name: 'Düsseldorf', lat: 51.2277, lng: 6.7735, url: './b2b-lead-generation-duesseldorf.html', region: 'DACH' },
-            { name: 'Leipzig', lat: 51.3397, lng: 12.3731, url: './b2b-lead-generation-leipzig.html', region: 'DACH' },
-            { name: 'Dortmund', lat: 51.5136, lng: 7.4653, url: './b2b-lead-generation-dortmund.html', region: 'DACH' },
-            { name: 'Essen', lat: 51.4556, lng: 7.0116, url: './b2b-lead-generation-essen.html', region: 'DACH' },
-            
-            // Western Europe
-            { name: 'Paris', lat: 48.8566, lng: 2.3522, url: './b2b-lead-generation-paris.html', region: 'Western Europe' },
-            { name: 'Marseille', lat: 43.2965, lng: 5.3698, url: './b2b-lead-generation-marseille.html', region: 'Western Europe' },
-            { name: 'Lyon', lat: 45.7640, lng: 4.8357, url: './b2b-lead-generation-lyon.html', region: 'Western Europe' },
-            { name: 'Toulouse', lat: 43.6047, lng: 1.4442, url: './b2b-lead-generation-toulouse.html', region: 'Western Europe' },
-            { name: 'Nice', lat: 43.7102, lng: 7.2620, url: './b2b-lead-generation-nice.html', region: 'Western Europe' },
-            { name: 'Nantes', lat: 47.2184, lng: -1.5536, url: './b2b-lead-generation-nantes.html', region: 'Western Europe' },
-            { name: 'Montpellier', lat: 43.6108, lng: 3.8767, url: './b2b-lead-generation-montpellier.html', region: 'Western Europe' },
-            { name: 'Strasbourg', lat: 48.5734, lng: 7.7521, url: './b2b-lead-generation-strasbourg.html', region: 'Western Europe' },
-            { name: 'Bordeaux', lat: 44.8378, lng: -0.5792, url: './b2b-lead-generation-bordeaux.html', region: 'Western Europe' },
-            { name: 'Lille', lat: 50.6292, lng: 3.0573, url: './b2b-lead-generation-lille.html', region: 'Western Europe' },
-            { name: 'London', lat: 51.5074, lng: -0.1278, url: './b2b-lead-generation-london.html', region: 'Western Europe' },
-            { name: 'Birmingham', lat: 52.4862, lng: -1.8904, url: './b2b-lead-generation-birmingham.html', region: 'Western Europe' },
-            { name: 'Manchester', lat: 53.4808, lng: -2.2426, url: './b2b-lead-generation-manchester.html', region: 'Western Europe' },
-            { name: 'Glasgow', lat: 55.8642, lng: -4.2518, url: './b2b-lead-generation-glasgow.html', region: 'Western Europe' },
-            { name: 'Liverpool', lat: 53.4084, lng: -2.9916, url: './b2b-lead-generation-liverpool.html', region: 'Western Europe' },
-            { name: 'Leeds', lat: 53.8008, lng: -1.5491, url: './b2b-lead-generation-leeds.html', region: 'Western Europe' },
-            { name: 'Edinburgh', lat: 55.9533, lng: -3.1883, url: './b2b-lead-generation-edinburgh.html', region: 'Western Europe' },
-            { name: 'Bristol', lat: 51.4545, lng: -2.5879, url: './b2b-lead-generation-bristol.html', region: 'Western Europe' },
-            { name: 'Dublin', lat: 53.3498, lng: -6.2603, url: './b2b-lead-generation-dublin.html', region: 'Western Europe' },
-            { name: 'Cork', lat: 51.8985, lng: -8.4756, url: './b2b-lead-generation-cork.html', region: 'Western Europe' },
-            { name: 'Limerick', lat: 52.6638, lng: -8.6267, url: './b2b-lead-generation-limerick.html', region: 'Western Europe' },
-            { name: 'Amsterdam', lat: 52.3676, lng: 4.9041, url: './b2b-lead-generation-amsterdam.html', region: 'Western Europe' },
-            { name: 'Rotterdam', lat: 51.9244, lng: 4.4777, url: './b2b-lead-generation-rotterdam.html', region: 'Western Europe' },
-            { name: 'The Hague', lat: 52.0705, lng: 4.3007, url: './b2b-lead-generation-the-hague.html', region: 'Western Europe' },
-            
-            // Southern Europe
-            { name: 'Madrid', lat: 40.4168, lng: -3.7038, url: './b2b-lead-generation-madrid.html', region: 'Southern Europe' },
-            { name: 'Barcelona', lat: 41.3851, lng: 2.1734, url: './b2b-lead-generation-barcelona.html', region: 'Southern Europe' },
-            { name: 'Valencia', lat: 39.4699, lng: -0.3763, url: './b2b-lead-generation-valencia.html', region: 'Southern Europe' },
-            { name: 'Lisbon', lat: 38.7223, lng: -9.1393, url: './b2b-lead-generation-lisbon.html', region: 'Southern Europe' },
-            { name: 'Porto', lat: 41.1579, lng: -8.6291, url: './b2b-lead-generation-porto.html', region: 'Southern Europe' },
-            { name: 'Rome', lat: 41.9028, lng: 12.4964, url: './b2b-lead-generation-rome.html', region: 'Southern Europe' },
-            { name: 'Milan', lat: 45.4642, lng: 9.1900, url: './b2b-lead-generation-milan.html', region: 'Southern Europe' },
-            { name: 'Naples', lat: 40.8518, lng: 14.2681, url: './b2b-lead-generation-naples.html', region: 'Southern Europe' },
-            
-            // Scandinavia
-            { name: 'Stockholm', lat: 59.3293, lng: 18.0686, url: './b2b-lead-generation-stockholm.html', region: 'Scandinavia' },
-            { name: 'Gothenburg', lat: 57.7089, lng: 11.9746, url: './b2b-lead-generation-gothenburg.html', region: 'Scandinavia' },
-            { name: 'Malmö', lat: 55.6059, lng: 13.0007, url: './b2b-lead-generation-malmo.html', region: 'Scandinavia' },
-            { name: 'Oslo', lat: 59.9139, lng: 10.7522, url: './b2b-lead-generation-oslo.html', region: 'Scandinavia' },
-            { name: 'Bergen', lat: 60.3913, lng: 5.3221, url: './b2b-lead-generation-bergen.html', region: 'Scandinavia' },
-            
-            // Eastern Europe
-            { name: 'Warsaw', lat: 52.2297, lng: 21.0122, url: './b2b-lead-generation-warsaw.html', region: 'Eastern Europe' },
-            { name: 'Krakow', lat: 50.0647, lng: 19.9450, url: './b2b-lead-generation-krakow.html', region: 'Eastern Europe' },
-            { name: 'Lodz', lat: 51.7592, lng: 19.4560, url: './b2b-lead-generation-lodz.html', region: 'Eastern Europe' },
-            { name: 'Wroclaw', lat: 51.1079, lng: 17.0385, url: './b2b-lead-generation-wroclaw.html', region: 'Eastern Europe' },
-            { name: 'Poznan', lat: 52.4064, lng: 16.9252, url: './b2b-lead-generation-poznan.html', region: 'Eastern Europe' },
-            { name: 'Prague', lat: 50.0755, lng: 14.4378, url: './b2b-lead-generation-prague.html', region: 'Eastern Europe' },
-            { name: 'Budapest', lat: 47.4979, lng: 19.0402, url: './b2b-lead-generation-budapest.html', region: 'Eastern Europe' },
-            { name: 'Bucharest', lat: 44.4268, lng: 26.1025, url: './b2b-lead-generation-bucharest.html', region: 'Eastern Europe' },
-            { name: 'Sofia', lat: 42.6977, lng: 23.3219, url: './b2b-lead-generation-sofia.html', region: 'Eastern Europe' },
-            { name: 'Zagreb', lat: 45.8150, lng: 15.9819, url: './b2b-lead-generation-zagreb.html', region: 'Eastern Europe' },
-            { name: 'Bratislava', lat: 48.1486, lng: 17.1077, url: './b2b-lead-generation-bratislava.html', region: 'Eastern Europe' },
-            { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, url: './b2b-lead-generation-ljubljana.html', region: 'Eastern Europe' },
-            { name: 'Tallinn', lat: 59.4370, lng: 24.7536, url: './b2b-lead-generation-tallinn.html', region: 'Eastern Europe' },
-            { name: 'Riga', lat: 56.9496, lng: 24.1052, url: './b2b-lead-generation-riga.html', region: 'Eastern Europe' },
-            { name: 'Vilnius', lat: 54.6872, lng: 25.2797, url: './b2b-lead-generation-vilnius.html', region: 'Eastern Europe' },
-            { name: 'Belgrade', lat: 44.7866, lng: 20.4489, url: './b2b-lead-generation-belgrade.html', region: 'Eastern Europe' },
-            
-            // Turkey
-            { name: 'Istanbul', lat: 41.0082, lng: 28.9784, url: './b2b-lead-generation-istanbul.html', region: 'Turkey' },
-            { name: 'Ankara', lat: 39.9334, lng: 32.8597, url: './b2b-lead-generation-ankara.html', region: 'Turkey' },
-            { name: 'Izmir', lat: 38.4237, lng: 27.1428, url: './b2b-lead-generation-izmir.html', region: 'Turkey' },
-            { name: 'Bursa', lat: 40.1826, lng: 29.0665, url: './b2b-lead-generation-bursa.html', region: 'Turkey' },
-            { name: 'Antalya', lat: 36.8969, lng: 30.7133, url: './b2b-lead-generation-antalya.html', region: 'Turkey' },
-            
-            // North America
-            { name: 'New York', lat: 40.7128, lng: -74.0060, url: './b2b-lead-generation-new-york.html', region: 'North America' },
-            { name: 'Los Angeles', lat: 34.0522, lng: -118.2437, url: './b2b-lead-generation-los-angeles.html', region: 'North America' },
-            { name: 'Chicago', lat: 41.8781, lng: -87.6298, url: './b2b-lead-generation-chicago.html', region: 'North America' },
-            { name: 'Houston', lat: 29.7604, lng: -95.3698, url: './b2b-lead-generation-houston.html', region: 'North America' },
-            { name: 'Phoenix', lat: 33.4484, lng: -112.0740, url: './b2b-lead-generation-phoenix.html', region: 'North America' },
-            { name: 'Philadelphia', lat: 39.9526, lng: -75.1652, url: './b2b-lead-generation-philadelphia.html', region: 'North America' },
-            { name: 'San Antonio', lat: 29.4241, lng: -98.4936, url: './b2b-lead-generation-san-antonio.html', region: 'North America' },
-            { name: 'San Diego', lat: 32.7157, lng: -117.1611, url: './b2b-lead-generation-san-diego.html', region: 'North America' },
-            { name: 'Dallas', lat: 32.7767, lng: -96.7970, url: './b2b-lead-generation-dallas.html', region: 'North America' },
-            { name: 'San Jose', lat: 37.3382, lng: -121.8863, url: './b2b-lead-generation-san-jose.html', region: 'North America' }
-        ];
-
+        const cities = [{"name":"Amsterdam","lat":52.3676,"lng":4.9041,"url":"./b2b-lead-generation-amsterdam.html","region":"Western Europe"},{"name":"Ankara","lat":39.9334,"lng":32.8597,"url":"./b2b-lead-generation-ankara.html","region":"Turkey"},{"name":"Antalya","lat":36.8969,"lng":30.7133,"url":"./b2b-lead-generation-antalya.html","region":"Turkey"},{"name":"Barcelona","lat":41.3851,"lng":2.1734,"url":"./b2b-lead-generation-barcelona.html","region":"Southern Europe"},{"name":"Basel","lat":47.5596,"lng":7.5886,"url":"./b2b-lead-generation-basel.html","region":"DACH"},{"name":"Belgrade","lat":44.7866,"lng":20.4489,"url":"./b2b-lead-generation-belgrade.html","region":"Eastern Europe"},{"name":"Bergen","lat":60.3913,"lng":5.3221,"url":"./b2b-lead-generation-bergen.html","region":"Scandinavia"},{"name":"Berlin","lat":52.52,"lng":13.405,"url":"./b2b-lead-generation-berlin.html","region":"DACH"},{"name":"Bern","lat":46.9481,"lng":7.4474,"url":"./b2b-lead-generation-bern.html","region":"DACH"},{"name":"Birmingham","lat":52.4862,"lng":-1.8904,"url":"./b2b-lead-generation-birmingham.html","region":"Western Europe"},{"name":"Bordeaux","lat":44.8378,"lng":-0.5792,"url":"./b2b-lead-generation-bordeaux.html","region":"Western Europe"},{"name":"Bratislava","lat":48.1486,"lng":17.1077,"url":"./b2b-lead-generation-bratislava.html","region":"Eastern Europe"},{"name":"Bristol","lat":51.4545,"lng":-2.5879,"url":"./b2b-lead-generation-bristol.html","region":"Western Europe"},{"name":"Bucharest","lat":44.4268,"lng":26.1025,"url":"./b2b-lead-generation-bucharest.html","region":"Eastern Europe"},{"name":"Budapest","lat":47.4979,"lng":19.0402,"url":"./b2b-lead-generation-budapest.html","region":"Eastern Europe"},{"name":"Bursa","lat":40.1826,"lng":29.0665,"url":"./b2b-lead-generation-bursa.html","region":"Turkey"},{"name":"Chicago","lat":41.8781,"lng":-87.6298,"url":"./b2b-lead-generation-chicago.html","region":"North America"},{"name":"Cologne","lat":50.9375,"lng":6.9603,"url":"./b2b-lead-generation-cologne.html","region":"DACH"},{"name":"Cork","lat":51.8985,"lng":-8.4756,"url":"./b2b-lead-generation-cork.html","region":"Western Europe"},{"name":"Dallas","lat":32.7767,"lng":-96.797,"url":"./b2b-lead-generation-dallas.html","region":"North America"},{"name":"Dublin","lat":53.3498,"lng":-6.2603,"url":"./b2b-lead-generation-dublin.html","region":"Western Europe"},{"name":"Edinburgh","lat":55.9533,"lng":-3.1883,"url":"./b2b-lead-generation-edinburgh.html","region":"Western Europe"},{"name":"Geneva","lat":46.2044,"lng":6.1432,"url":"./b2b-lead-generation-geneva.html","region":"DACH"},{"name":"Glasgow","lat":55.8642,"lng":-4.2518,"url":"./b2b-lead-generation-glasgow.html","region":"Western Europe"},{"name":"Gothenburg","lat":57.7089,"lng":11.9746,"url":"./b2b-lead-generation-gothenburg.html","region":"Scandinavia"},{"name":"Hamburg","lat":53.5511,"lng":9.9937,"url":"./b2b-lead-generation-hamburg.html","region":"DACH"},{"name":"Houston","lat":29.7604,"lng":-95.3698,"url":"./b2b-lead-generation-houston.html","region":"North America"},{"name":"Istanbul","lat":41.0082,"lng":28.9784,"url":"./b2b-lead-generation-istanbul.html","region":"Turkey"},{"name":"Izmir","lat":38.4237,"lng":27.1428,"url":"./b2b-lead-generation-izmir.html","region":"Turkey"},{"name":"Krakow","lat":50.0647,"lng":19.945,"url":"./b2b-lead-generation-krakow.html","region":"Eastern Europe"},{"name":"Lausanne","lat":46.5197,"lng":6.6323,"url":"./b2b-lead-generation-lausanne.html","region":"DACH"},{"name":"Leeds","lat":53.8008,"lng":-1.5491,"url":"./b2b-lead-generation-leeds.html","region":"Western Europe"},{"name":"Lille","lat":50.6292,"lng":3.0573,"url":"./b2b-lead-generation-lille.html","region":"Western Europe"},{"name":"Limerick","lat":52.6638,"lng":-8.6267,"url":"./b2b-lead-generation-limerick.html","region":"Western Europe"},{"name":"Lisbon","lat":38.7223,"lng":-9.1393,"url":"./b2b-lead-generation-lisbon.html","region":"Southern Europe"},{"name":"Liverpool","lat":53.4084,"lng":-2.9916,"url":"./b2b-lead-generation-liverpool.html","region":"Western Europe"},{"name":"Ljubljana","lat":46.0569,"lng":14.5058,"url":"./b2b-lead-generation-ljubljana.html","region":"Eastern Europe"},{"name":"Lodz","lat":51.7592,"lng":19.456,"url":"./b2b-lead-generation-lodz.html","region":"Eastern Europe"},{"name":"London","lat":51.5074,"lng":-0.1278,"url":"./b2b-lead-generation-london.html","region":"Western Europe"},{"name":"Los Angeles","lat":34.0522,"lng":-118.2437,"url":"./b2b-lead-generation-los-angeles.html","region":"North America"},{"name":"Lucerne","lat":47.0502,"lng":8.3093,"url":"./b2b-lead-generation-lucerne.html","region":"DACH"},{"name":"Lugano","lat":46.0101,"lng":8.96,"url":"./b2b-lead-generation-lugano.html","region":"DACH"},{"name":"Lyon","lat":45.764,"lng":4.8357,"url":"./b2b-lead-generation-lyon.html","region":"Western Europe"},{"name":"Madrid","lat":40.4168,"lng":-3.7038,"url":"./b2b-lead-generation-madrid.html","region":"Southern Europe"},{"name":"Malmö","lat":55.6059,"lng":13.0007,"url":"./b2b-lead-generation-malmo.html","region":"Scandinavia"},{"name":"Manchester","lat":53.4808,"lng":-2.2426,"url":"./b2b-lead-generation-manchester.html","region":"Western Europe"},{"name":"Marseille","lat":43.2965,"lng":5.3698,"url":"./b2b-lead-generation-marseille.html","region":"Western Europe"},{"name":"Milan","lat":45.4642,"lng":9.19,"url":"./b2b-lead-generation-milan.html","region":"Southern Europe"},{"name":"Montpellier","lat":43.6108,"lng":3.8767,"url":"./b2b-lead-generation-montpellier.html","region":"Western Europe"},{"name":"Munich","lat":48.1351,"lng":11.582,"url":"./b2b-lead-generation-munich.html","region":"DACH"},{"name":"Nantes","lat":47.2184,"lng":-1.5536,"url":"./b2b-lead-generation-nantes.html","region":"Western Europe"},{"name":"Naples","lat":40.8518,"lng":14.2681,"url":"./b2b-lead-generation-naples.html","region":"Southern Europe"},{"name":"New York","lat":40.7128,"lng":-74.006,"url":"./b2b-lead-generation-new-york.html","region":"North America"},{"name":"Nice","lat":43.7102,"lng":7.262,"url":"./b2b-lead-generation-nice.html","region":"Western Europe"},{"name":"Oslo","lat":59.9139,"lng":10.7522,"url":"./b2b-lead-generation-oslo.html","region":"Scandinavia"},{"name":"Paris","lat":48.8566,"lng":2.3522,"url":"./b2b-lead-generation-paris.html","region":"Western Europe"},{"name":"Philadelphia","lat":39.9526,"lng":-75.1652,"url":"./b2b-lead-generation-philadelphia.html","region":"North America"},{"name":"Phoenix","lat":33.4484,"lng":-112.074,"url":"./b2b-lead-generation-phoenix.html","region":"North America"},{"name":"Porto","lat":41.1579,"lng":-8.6291,"url":"./b2b-lead-generation-porto.html","region":"Southern Europe"},{"name":"Poznan","lat":52.4064,"lng":16.9252,"url":"./b2b-lead-generation-poznan.html","region":"Eastern Europe"},{"name":"Prague","lat":50.0755,"lng":14.4378,"url":"./b2b-lead-generation-prague.html","region":"Eastern Europe"},{"name":"Riga","lat":56.9496,"lng":24.1052,"url":"./b2b-lead-generation-riga.html","region":"Eastern Europe"},{"name":"Rome","lat":41.9028,"lng":12.4964,"url":"./b2b-lead-generation-rome.html","region":"Southern Europe"},{"name":"Rotterdam","lat":51.9244,"lng":4.4777,"url":"./b2b-lead-generation-rotterdam.html","region":"Western Europe"},{"name":"San Antonio","lat":29.4241,"lng":-98.4936,"url":"./b2b-lead-generation-san-antonio.html","region":"North America"},{"name":"San Diego","lat":32.7157,"lng":-117.1611,"url":"./b2b-lead-generation-san-diego.html","region":"North America"},{"name":"San Jose","lat":37.3382,"lng":-121.8863,"url":"./b2b-lead-generation-san-jose.html","region":"North America"},{"name":"Sofia","lat":42.6977,"lng":23.3219,"url":"./b2b-lead-generation-sofia.html","region":"Eastern Europe"},{"name":"St. Gallen","lat":47.4245,"lng":9.3767,"url":"./b2b-lead-generation-st-gallen.html","region":"DACH"},{"name":"Stockholm","lat":59.3293,"lng":18.0686,"url":"./b2b-lead-generation-stockholm.html","region":"Scandinavia"},{"name":"Strasbourg","lat":48.5734,"lng":7.7521,"url":"./b2b-lead-generation-strasbourg.html","region":"Western Europe"},{"name":"Tallinn","lat":59.437,"lng":24.7536,"url":"./b2b-lead-generation-tallinn.html","region":"Eastern Europe"},{"name":"The Hague","lat":52.0705,"lng":4.3007,"url":"./b2b-lead-generation-the-hague.html","region":"Western Europe"},{"name":"Toulouse","lat":43.6047,"lng":1.4442,"url":"./b2b-lead-generation-toulouse.html","region":"Western Europe"},{"name":"Valencia","lat":39.4699,"lng":-0.3763,"url":"./b2b-lead-generation-valencia.html","region":"Southern Europe"},{"name":"Vilnius","lat":54.6872,"lng":25.2797,"url":"./b2b-lead-generation-vilnius.html","region":"Eastern Europe"},{"name":"Warsaw","lat":52.2297,"lng":21.0122,"url":"./b2b-lead-generation-warsaw.html","region":"Eastern Europe"},{"name":"Winterthur","lat":47.4999,"lng":8.7371,"url":"./b2b-lead-generation-winterthur.html","region":"DACH"},{"name":"Wroclaw","lat":51.1079,"lng":17.0385,"url":"./b2b-lead-generation-wroclaw.html","region":"Eastern Europe"},{"name":"Zagreb","lat":45.815,"lng":15.9819,"url":"./b2b-lead-generation-zagreb.html","region":"Eastern Europe"},{"name":"Zurich","lat":47.3769,"lng":8.5417,"url":"./b2b-lead-generation-zurich.html","region":"DACH"},{"name":"Austin","lat":0,"lng":0,"url":"./b2b-lead-generation-austin.html","region":"North America"},{"name":"Jacksonville","lat":0,"lng":0,"url":"./b2b-lead-generation-jacksonville.html","region":"North America"},{"name":"Fort Worth","lat":0,"lng":0,"url":"./b2b-lead-generation-fort-worth.html","region":"North America"},{"name":"Columbus","lat":0,"lng":0,"url":"./b2b-lead-generation-columbus.html","region":"North America"},{"name":"San Francisco","lat":0,"lng":0,"url":"./b2b-lead-generation-san-francisco.html","region":"North America"},{"name":"Charlotte","lat":0,"lng":0,"url":"./b2b-lead-generation-charlotte.html","region":"North America"},{"name":"Indianapolis","lat":0,"lng":0,"url":"./b2b-lead-generation-indianapolis.html","region":"North America"},{"name":"Seattle","lat":0,"lng":0,"url":"./b2b-lead-generation-seattle.html","region":"North America"},{"name":"Denver","lat":0,"lng":0,"url":"./b2b-lead-generation-denver.html","region":"North America"},{"name":"Washington","lat":0,"lng":0,"url":"./b2b-lead-generation-washington.html","region":"North America"},{"name":"Boston","lat":0,"lng":0,"url":"./b2b-lead-generation-boston.html","region":"North America"},{"name":"El Paso","lat":0,"lng":0,"url":"./b2b-lead-generation-el-paso.html","region":"North America"},{"name":"Nashville","lat":0,"lng":0,"url":"./b2b-lead-generation-nashville.html","region":"North America"},{"name":"Detroit","lat":0,"lng":0,"url":"./b2b-lead-generation-detroit.html","region":"North America"},{"name":"Oklahoma City","lat":0,"lng":0,"url":"./b2b-lead-generation-oklahoma-city.html","region":"North America"},{"name":"Portland","lat":0,"lng":0,"url":"./b2b-lead-generation-portland.html","region":"North America"},{"name":"Las Vegas","lat":0,"lng":0,"url":"./b2b-lead-generation-las-vegas.html","region":"North America"},{"name":"Memphis","lat":0,"lng":0,"url":"./b2b-lead-generation-memphis.html","region":"North America"},{"name":"Louisville","lat":0,"lng":0,"url":"./b2b-lead-generation-louisville.html","region":"North America"},{"name":"Baltimore","lat":0,"lng":0,"url":"./b2b-lead-generation-baltimore.html","region":"North America"},{"name":"Milwaukee","lat":0,"lng":0,"url":"./b2b-lead-generation-milwaukee.html","region":"North America"},{"name":"Albuquerque","lat":0,"lng":0,"url":"./b2b-lead-generation-albuquerque.html","region":"North America"},{"name":"Tucson","lat":0,"lng":0,"url":"./b2b-lead-generation-tucson.html","region":"North America"},{"name":"Fresno","lat":0,"lng":0,"url":"./b2b-lead-generation-fresno.html","region":"North America"},{"name":"Mesa","lat":0,"lng":0,"url":"./b2b-lead-generation-mesa.html","region":"North America"},{"name":"Sacramento","lat":0,"lng":0,"url":"./b2b-lead-generation-sacramento.html","region":"North America"},{"name":"Atlanta","lat":0,"lng":0,"url":"./b2b-lead-generation-atlanta.html","region":"North America"},{"name":"Kansas City","lat":0,"lng":0,"url":"./b2b-lead-generation-kansas-city.html","region":"North America"},{"name":"Colorado Springs","lat":0,"lng":0,"url":"./b2b-lead-generation-colorado-springs.html","region":"North America"},{"name":"Miami","lat":0,"lng":0,"url":"./b2b-lead-generation-miami.html","region":"North America"},{"name":"Raleigh","lat":0,"lng":0,"url":"./b2b-lead-generation-raleigh.html","region":"North America"},{"name":"Omaha","lat":0,"lng":0,"url":"./b2b-lead-generation-omaha.html","region":"North America"},{"name":"Long Beach","lat":0,"lng":0,"url":"./b2b-lead-generation-long-beach.html","region":"North America"},{"name":"Virginia Beach","lat":0,"lng":0,"url":"./b2b-lead-generation-virginia-beach.html","region":"North America"},{"name":"Oakland","lat":0,"lng":0,"url":"./b2b-lead-generation-oakland.html","region":"North America"},{"name":"Minneapolis","lat":0,"lng":0,"url":"./b2b-lead-generation-minneapolis.html","region":"North America"},{"name":"Tulsa","lat":0,"lng":0,"url":"./b2b-lead-generation-tulsa.html","region":"North America"},{"name":"Arlington","lat":0,"lng":0,"url":"./b2b-lead-generation-arlington.html","region":"North America"},{"name":"Tampa","lat":0,"lng":0,"url":"./b2b-lead-generation-tampa.html","region":"North America"},{"name":"New Orleans","lat":0,"lng":0,"url":"./b2b-lead-generation-new-orleans.html","region":"North America"},{"name":"Wichita","lat":0,"lng":0,"url":"./b2b-lead-generation-wichita.html","region":"North America"},{"name":"Cleveland","lat":0,"lng":0,"url":"./b2b-lead-generation-cleveland.html","region":"North America"},{"name":"Bakersfield","lat":0,"lng":0,"url":"./b2b-lead-generation-bakersfield.html","region":"North America"},{"name":"Aurora","lat":0,"lng":0,"url":"./b2b-lead-generation-aurora.html","region":"North America"},{"name":"Anaheim","lat":0,"lng":0,"url":"./b2b-lead-generation-anaheim.html","region":"North America"},{"name":"Honolulu","lat":0,"lng":0,"url":"./b2b-lead-generation-honolulu.html","region":"North America"},{"name":"Santa Ana","lat":0,"lng":0,"url":"./b2b-lead-generation-santa-ana.html","region":"North America"},{"name":"Riverside","lat":0,"lng":0,"url":"./b2b-lead-generation-riverside.html","region":"North America"},{"name":"Corpus Christi","lat":0,"lng":0,"url":"./b2b-lead-generation-corpus-christi.html","region":"North America"},{"name":"Lexington","lat":0,"lng":0,"url":"./b2b-lead-generation-lexington.html","region":"North America"},{"name":"Henderson","lat":0,"lng":0,"url":"./b2b-lead-generation-henderson.html","region":"North America"},{"name":"Stockton","lat":0,"lng":0,"url":"./b2b-lead-generation-stockton.html","region":"North America"},{"name":"Saint Paul","lat":0,"lng":0,"url":"./b2b-lead-generation-saint-paul.html","region":"North America"},{"name":"Cincinnati","lat":0,"lng":0,"url":"./b2b-lead-generation-cincinnati.html","region":"North America"},{"name":"St. Louis","lat":0,"lng":0,"url":"./b2b-lead-generation-st-louis.html","region":"North America"},{"name":"Pittsburgh","lat":0,"lng":0,"url":"./b2b-lead-generation-pittsburgh.html","region":"North America"},{"name":"Greensboro","lat":0,"lng":0,"url":"./b2b-lead-generation-greensboro.html","region":"North America"},{"name":"Lincoln","lat":0,"lng":0,"url":"./b2b-lead-generation-lincoln.html","region":"North America"},{"name":"Anchorage","lat":0,"lng":0,"url":"./b2b-lead-generation-anchorage.html","region":"North America"},{"name":"Plano","lat":0,"lng":0,"url":"./b2b-lead-generation-plano.html","region":"North America"},{"name":"Orlando","lat":0,"lng":0,"url":"./b2b-lead-generation-orlando.html","region":"North America"},{"name":"Irvine","lat":0,"lng":0,"url":"./b2b-lead-generation-irvine.html","region":"North America"},{"name":"Newark","lat":0,"lng":0,"url":"./b2b-lead-generation-newark.html","region":"North America"},{"name":"Durham","lat":0,"lng":0,"url":"./b2b-lead-generation-durham.html","region":"North America"},{"name":"Chula Vista","lat":0,"lng":0,"url":"./b2b-lead-generation-chula-vista.html","region":"North America"},{"name":"Toledo","lat":0,"lng":0,"url":"./b2b-lead-generation-toledo.html","region":"North America"},{"name":"Fort Wayne","lat":0,"lng":0,"url":"./b2b-lead-generation-fort-wayne.html","region":"North America"},{"name":"St. Petersburg","lat":0,"lng":0,"url":"./b2b-lead-generation-st-petersburg.html","region":"North America"},{"name":"Laredo","lat":0,"lng":0,"url":"./b2b-lead-generation-laredo.html","region":"North America"},{"name":"Jersey City","lat":0,"lng":0,"url":"./b2b-lead-generation-jersey-city.html","region":"North America"},{"name":"Chandler","lat":0,"lng":0,"url":"./b2b-lead-generation-chandler.html","region":"North America"},{"name":"Madison","lat":0,"lng":0,"url":"./b2b-lead-generation-madison.html","region":"North America"},{"name":"Lubbock","lat":0,"lng":0,"url":"./b2b-lead-generation-lubbock.html","region":"North America"},{"name":"Scottsdale","lat":0,"lng":0,"url":"./b2b-lead-generation-scottsdale.html","region":"North America"},{"name":"Reno","lat":0,"lng":0,"url":"./b2b-lead-generation-reno.html","region":"North America"},{"name":"Buffalo","lat":0,"lng":0,"url":"./b2b-lead-generation-buffalo.html","region":"North America"},{"name":"Gilbert","lat":0,"lng":0,"url":"./b2b-lead-generation-gilbert.html","region":"North America"},{"name":"Glendale","lat":0,"lng":0,"url":"./b2b-lead-generation-glendale.html","region":"North America"},{"name":"North Las Vegas","lat":0,"lng":0,"url":"./b2b-lead-generation-north-las-vegas.html","region":"North America"},{"name":"Winston-Salem","lat":0,"lng":0,"url":"./b2b-lead-generation-winston-salem.html","region":"North America"},{"name":"Chesapeake","lat":0,"lng":0,"url":"./b2b-lead-generation-chesapeake.html","region":"North America"},{"name":"Norfolk","lat":0,"lng":0,"url":"./b2b-lead-generation-norfolk.html","region":"North America"},{"name":"Fremont","lat":0,"lng":0,"url":"./b2b-lead-generation-fremont.html","region":"North America"},{"name":"Garland","lat":0,"lng":0,"url":"./b2b-lead-generation-garland.html","region":"North America"},{"name":"Irving","lat":0,"lng":0,"url":"./b2b-lead-generation-irving.html","region":"North America"},{"name":"Hialeah","lat":0,"lng":0,"url":"./b2b-lead-generation-hialeah.html","region":"North America"},{"name":"Richmond","lat":0,"lng":0,"url":"./b2b-lead-generation-richmond.html","region":"North America"},{"name":"Boise","lat":0,"lng":0,"url":"./b2b-lead-generation-boise.html","region":"North America"},{"name":"Spokane","lat":0,"lng":0,"url":"./b2b-lead-generation-spokane.html","region":"North America"},{"name":"Baton Rouge","lat":0,"lng":0,"url":"./b2b-lead-generation-baton-rouge.html","region":"North America"},{"name":"Sheffield","lat":0,"lng":0,"url":"./b2b-lead-generation-sheffield.html","region":"Western Europe"},{"name":"Bradford","lat":0,"lng":0,"url":"./b2b-lead-generation-bradford.html","region":"Western Europe"},{"name":"Kirklees","lat":0,"lng":0,"url":"./b2b-lead-generation-kirklees.html","region":"Western Europe"},{"name":"Fife","lat":0,"lng":0,"url":"./b2b-lead-generation-fife.html","region":"Western Europe"},{"name":"Wirral","lat":0,"lng":0,"url":"./b2b-lead-generation-wirral.html","region":"Western Europe"},{"name":"North Lanarkshire","lat":0,"lng":0,"url":"./b2b-lead-generation-north-lanarkshire.html","region":"Western Europe"},{"name":"Wakefield","lat":0,"lng":0,"url":"./b2b-lead-generation-wakefield.html","region":"Western Europe"},{"name":"Cardiff","lat":0,"lng":0,"url":"./b2b-lead-generation-cardiff.html","region":"Western Europe"},{"name":"Dudley","lat":0,"lng":0,"url":"./b2b-lead-generation-dudley.html","region":"Western Europe"},{"name":"Wigan","lat":0,"lng":0,"url":"./b2b-lead-generation-wigan.html","region":"Western Europe"},{"name":"East Riding","lat":0,"lng":0,"url":"./b2b-lead-generation-east-riding.html","region":"Western Europe"},{"name":"South Lanarkshire","lat":0,"lng":0,"url":"./b2b-lead-generation-south-lanarkshire.html","region":"Western Europe"},{"name":"Coventry","lat":0,"lng":0,"url":"./b2b-lead-generation-coventry.html","region":"Western Europe"},{"name":"Belfast","lat":0,"lng":0,"url":"./b2b-lead-generation-belfast.html","region":"Western Europe"},{"name":"Leicester","lat":0,"lng":0,"url":"./b2b-lead-generation-leicester.html","region":"Western Europe"},{"name":"Sunderland","lat":0,"lng":0,"url":"./b2b-lead-generation-sunderland.html","region":"Western Europe"},{"name":"Sandwell","lat":0,"lng":0,"url":"./b2b-lead-generation-sandwell.html","region":"Western Europe"},{"name":"Doncaster","lat":0,"lng":0,"url":"./b2b-lead-generation-doncaster.html","region":"Western Europe"},{"name":"Stockport","lat":0,"lng":0,"url":"./b2b-lead-generation-stockport.html","region":"Western Europe"},{"name":"Sefton","lat":0,"lng":0,"url":"./b2b-lead-generation-sefton.html","region":"Western Europe"},{"name":"Nottingham","lat":0,"lng":0,"url":"./b2b-lead-generation-nottingham.html","region":"Western Europe"},{"name":"Newcastle","lat":0,"lng":0,"url":"./b2b-lead-generation-newcastle.html","region":"Western Europe"},{"name":"Kingston upon Hull","lat":0,"lng":0,"url":"./b2b-lead-generation-kingston-upon-hull.html","region":"Western Europe"},{"name":"Bolton","lat":0,"lng":0,"url":"./b2b-lead-generation-bolton.html","region":"Western Europe"},{"name":"Walsall","lat":0,"lng":0,"url":"./b2b-lead-generation-walsall.html","region":"Western Europe"},{"name":"Plymouth","lat":0,"lng":0,"url":"./b2b-lead-generation-plymouth.html","region":"Western Europe"},{"name":"Rotherham","lat":0,"lng":0,"url":"./b2b-lead-generation-rotherham.html","region":"Western Europe"},{"name":"Stoke-on-Trent","lat":0,"lng":0,"url":"./b2b-lead-generation-stoke-on-trent.html","region":"Western Europe"},{"name":"Wolverhampton","lat":0,"lng":0,"url":"./b2b-lead-generation-wolverhampton.html","region":"Western Europe"},{"name":"Rhondda Cynon Taf","lat":0,"lng":0,"url":"./b2b-lead-generation-rhondda-cynon-taf.html","region":"Western Europe"},{"name":"South Gloucestershire","lat":0,"lng":0,"url":"./b2b-lead-generation-south-gloucestershire.html","region":"Western Europe"},{"name":"Derby","lat":0,"lng":0,"url":"./b2b-lead-generation-derby.html","region":"Western Europe"},{"name":"Swansea","lat":0,"lng":0,"url":"./b2b-lead-generation-swansea.html","region":"Western Europe"},{"name":"Salford","lat":0,"lng":0,"url":"./b2b-lead-generation-salford.html","region":"Western Europe"},{"name":"Aberdeenshire","lat":0,"lng":0,"url":"./b2b-lead-generation-aberdeenshire.html","region":"Western Europe"},{"name":"Barnsley","lat":0,"lng":0,"url":"./b2b-lead-generation-barnsley.html","region":"Western Europe"},{"name":"Tameside","lat":0,"lng":0,"url":"./b2b-lead-generation-tameside.html","region":"Western Europe"},{"name":"Oldham","lat":0,"lng":0,"url":"./b2b-lead-generation-oldham.html","region":"Western Europe"},{"name":"Trafford","lat":0,"lng":0,"url":"./b2b-lead-generation-trafford.html","region":"Western Europe"},{"name":"Aberdeen","lat":0,"lng":0,"url":"./b2b-lead-generation-aberdeen.html","region":"Western Europe"},{"name":"Southampton","lat":0,"lng":0,"url":"./b2b-lead-generation-southampton.html","region":"Western Europe"},{"name":"Highland","lat":0,"lng":0,"url":"./b2b-lead-generation-highland.html","region":"Western Europe"},{"name":"Rochdale","lat":0,"lng":0,"url":"./b2b-lead-generation-rochdale.html","region":"Western Europe"},{"name":"Solihull","lat":0,"lng":0,"url":"./b2b-lead-generation-solihull.html","region":"Western Europe"},{"name":"Gateshead","lat":0,"lng":0,"url":"./b2b-lead-generation-gateshead.html","region":"Western Europe"},{"name":"Milton Keynes","lat":0,"lng":0,"url":"./b2b-lead-generation-milton-keynes.html","region":"Western Europe"},{"name":"North Tyneside","lat":0,"lng":0,"url":"./b2b-lead-generation-north-tyneside.html","region":"Western Europe"},{"name":"Calderdale","lat":0,"lng":0,"url":"./b2b-lead-generation-calderdale.html","region":"Western Europe"},{"name":"Northampton","lat":0,"lng":0,"url":"./b2b-lead-generation-northampton.html","region":"Western Europe"},{"name":"Portsmouth","lat":0,"lng":0,"url":"./b2b-lead-generation-portsmouth.html","region":"Western Europe"},{"name":"Warrington","lat":0,"lng":0,"url":"./b2b-lead-generation-warrington.html","region":"Western Europe"},{"name":"North Somerset","lat":0,"lng":0,"url":"./b2b-lead-generation-north-somerset.html","region":"Western Europe"},{"name":"Bury","lat":0,"lng":0,"url":"./b2b-lead-generation-bury.html","region":"Western Europe"},{"name":"Luton","lat":0,"lng":0,"url":"./b2b-lead-generation-luton.html","region":"Western Europe"},{"name":"St Helens","lat":0,"lng":0,"url":"./b2b-lead-generation-st-helens.html","region":"Western Europe"},{"name":"Stockton-on-Tees","lat":0,"lng":0,"url":"./b2b-lead-generation-stockton-on-tees.html","region":"Western Europe"},{"name":"Renfrewshire","lat":0,"lng":0,"url":"./b2b-lead-generation-renfrewshire.html","region":"Western Europe"},{"name":"York","lat":0,"lng":0,"url":"./b2b-lead-generation-york.html","region":"Western Europe"},{"name":"Thurrock","lat":0,"lng":0,"url":"./b2b-lead-generation-thurrock.html","region":"Western Europe"},{"name":"Bournemouth","lat":0,"lng":0,"url":"./b2b-lead-generation-bournemouth.html","region":"Western Europe"},{"name":"County Durham","lat":0,"lng":0,"url":"./b2b-lead-generation-county-durham.html","region":"Western Europe"},{"name":"Peterborough","lat":0,"lng":0,"url":"./b2b-lead-generation-peterborough.html","region":"Western Europe"},{"name":"Brighton","lat":0,"lng":0,"url":"./b2b-lead-generation-brighton.html","region":"Western Europe"},{"name":"Southend-on-Sea","lat":0,"lng":0,"url":"./b2b-lead-generation-southend-on-sea.html","region":"Western Europe"},{"name":"Newborough","lat":0,"lng":0,"url":"./b2b-lead-generation-newborough.html","region":"Western Europe"},{"name":"Reading","lat":0,"lng":0,"url":"./b2b-lead-generation-reading.html","region":"Western Europe"},{"name":"Wokingham","lat":0,"lng":0,"url":"./b2b-lead-generation-wokingham.html","region":"Western Europe"},{"name":"Toronto","lat":0,"lng":0,"url":"./b2b-lead-generation-toronto.html","region":"North America"},{"name":"Montreal","lat":0,"lng":0,"url":"./b2b-lead-generation-montreal.html","region":"North America"},{"name":"Calgary","lat":0,"lng":0,"url":"./b2b-lead-generation-calgary.html","region":"North America"},{"name":"Ottawa","lat":0,"lng":0,"url":"./b2b-lead-generation-ottawa.html","region":"North America"},{"name":"Edmonton","lat":0,"lng":0,"url":"./b2b-lead-generation-edmonton.html","region":"North America"},{"name":"Mississauga","lat":0,"lng":0,"url":"./b2b-lead-generation-mississauga.html","region":"North America"},{"name":"Winnipeg","lat":0,"lng":0,"url":"./b2b-lead-generation-winnipeg.html","region":"North America"},{"name":"Vancouver","lat":0,"lng":0,"url":"./b2b-lead-generation-vancouver.html","region":"North America"},{"name":"Brampton","lat":0,"lng":0,"url":"./b2b-lead-generation-brampton.html","region":"North America"},{"name":"Hamilton","lat":0,"lng":0,"url":"./b2b-lead-generation-hamilton.html","region":"North America"},{"name":"Quebec City","lat":0,"lng":0,"url":"./b2b-lead-generation-quebec-city.html","region":"North America"},{"name":"Surrey","lat":0,"lng":0,"url":"./b2b-lead-generation-surrey.html","region":"North America"},{"name":"Laval","lat":0,"lng":0,"url":"./b2b-lead-generation-laval.html","region":"North America"},{"name":"Halifax","lat":0,"lng":0,"url":"./b2b-lead-generation-halifax.html","region":"North America"},{"name":"Markham","lat":0,"lng":0,"url":"./b2b-lead-generation-markham.html","region":"North America"},{"name":"Vaughan","lat":0,"lng":0,"url":"./b2b-lead-generation-vaughan.html","region":"North America"},{"name":"Gatineau","lat":0,"lng":0,"url":"./b2b-lead-generation-gatineau.html","region":"North America"},{"name":"Saskatoon","lat":0,"lng":0,"url":"./b2b-lead-generation-saskatoon.html","region":"North America"},{"name":"Longueuil","lat":0,"lng":0,"url":"./b2b-lead-generation-longueuil.html","region":"North America"},{"name":"Kitchener","lat":0,"lng":0,"url":"./b2b-lead-generation-kitchener.html","region":"North America"},{"name":"Burnaby","lat":0,"lng":0,"url":"./b2b-lead-generation-burnaby.html","region":"North America"},{"name":"Windsor","lat":0,"lng":0,"url":"./b2b-lead-generation-windsor.html","region":"North America"},{"name":"Regina","lat":0,"lng":0,"url":"./b2b-lead-generation-regina.html","region":"North America"},{"name":"Richmond","lat":0,"lng":0,"url":"./b2b-lead-generation-richmond.html","region":"North America"},{"name":"Oakville","lat":0,"lng":0,"url":"./b2b-lead-generation-oakville.html","region":"North America"},{"name":"Burlington","lat":0,"lng":0,"url":"./b2b-lead-generation-burlington.html","region":"North America"},{"name":"Richmond Hill","lat":0,"lng":0,"url":"./b2b-lead-generation-richmond-hill.html","region":"North America"},{"name":"Oshawa","lat":0,"lng":0,"url":"./b2b-lead-generation-oshawa.html","region":"North America"},{"name":"Catharines","lat":0,"lng":0,"url":"./b2b-lead-generation-catharines.html","region":"North America"},{"name":"Sydney","lat":0,"lng":0,"url":"./b2b-lead-generation-sydney.html","region":"APAC"},{"name":"Melbourne","lat":0,"lng":0,"url":"./b2b-lead-generation-melbourne.html","region":"APAC"},{"name":"Brisbane","lat":0,"lng":0,"url":"./b2b-lead-generation-brisbane.html","region":"APAC"},{"name":"Perth","lat":0,"lng":0,"url":"./b2b-lead-generation-perth.html","region":"APAC"},{"name":"Adelaide","lat":0,"lng":0,"url":"./b2b-lead-generation-adelaide.html","region":"APAC"},{"name":"Gold Coast","lat":0,"lng":0,"url":"./b2b-lead-generation-gold-coast.html","region":"APAC"},{"name":"Canberra","lat":0,"lng":0,"url":"./b2b-lead-generation-canberra.html","region":"APAC"},{"name":"Newcastle","lat":0,"lng":0,"url":"./b2b-lead-generation-newcastle.html","region":"APAC"},{"name":"Wollongong","lat":0,"lng":0,"url":"./b2b-lead-generation-wollongong.html","region":"APAC"},{"name":"Logan City","lat":0,"lng":0,"url":"./b2b-lead-generation-logan-city.html","region":"APAC"},{"name":"Frankfurt","lat":0,"lng":0,"url":"./b2b-lead-generation-frankfurt.html","region":"DACH"},{"name":"Stuttgart","lat":0,"lng":0,"url":"./b2b-lead-generation-stuttgart.html","region":"DACH"},{"name":"Düsseldorf","lat":0,"lng":0,"url":"./b2b-lead-generation-dsseldorf.html","region":"DACH"},{"name":"Leipzig","lat":0,"lng":0,"url":"./b2b-lead-generation-leipzig.html","region":"DACH"},{"name":"Dortmund","lat":0,"lng":0,"url":"./b2b-lead-generation-dortmund.html","region":"DACH"},{"name":"Essen","lat":0,"lng":0,"url":"./b2b-lead-generation-essen.html","region":"DACH"},{"name":"Bremen","lat":0,"lng":0,"url":"./b2b-lead-generation-bremen.html","region":"DACH"},{"name":"Dresden","lat":0,"lng":0,"url":"./b2b-lead-generation-dresden.html","region":"DACH"},{"name":"Hanover","lat":0,"lng":0,"url":"./b2b-lead-generation-hanover.html","region":"DACH"},{"name":"Nuremberg","lat":0,"lng":0,"url":"./b2b-lead-generation-nuremberg.html","region":"DACH"},{"name":"Duisburg","lat":0,"lng":0,"url":"./b2b-lead-generation-duisburg.html","region":"DACH"},{"name":"Bochum","lat":0,"lng":0,"url":"./b2b-lead-generation-bochum.html","region":"DACH"},{"name":"Wuppertal","lat":0,"lng":0,"url":"./b2b-lead-generation-wuppertal.html","region":"DACH"},{"name":"Bielefeld","lat":0,"lng":0,"url":"./b2b-lead-generation-bielefeld.html","region":"DACH"},{"name":"Bonn","lat":0,"lng":0,"url":"./b2b-lead-generation-bonn.html","region":"DACH"},{"name":"Münster","lat":0,"lng":0,"url":"./b2b-lead-generation-mnster.html","region":"DACH"},{"name":"Karlsruhe","lat":0,"lng":0,"url":"./b2b-lead-generation-karlsruhe.html","region":"DACH"},{"name":"Mannheim","lat":0,"lng":0,"url":"./b2b-lead-generation-mannheim.html","region":"DACH"},{"name":"Augsburg","lat":0,"lng":0,"url":"./b2b-lead-generation-augsburg.html","region":"DACH"},{"name":"Wiesbaden","lat":0,"lng":0,"url":"./b2b-lead-generation-wiesbaden.html","region":"DACH"},{"name":"Gelsenkirchen","lat":0,"lng":0,"url":"./b2b-lead-generation-gelsenkirchen.html","region":"DACH"},{"name":"Mönchengladbach","lat":0,"lng":0,"url":"./b2b-lead-generation-mnchengladbach.html","region":"DACH"},{"name":"Braunschweig","lat":0,"lng":0,"url":"./b2b-lead-generation-braunschweig.html","region":"DACH"},{"name":"Chemnitz","lat":0,"lng":0,"url":"./b2b-lead-generation-chemnitz.html","region":"DACH"},{"name":"Kiel","lat":0,"lng":0,"url":"./b2b-lead-generation-kiel.html","region":"DACH"},{"name":"Aachen","lat":0,"lng":0,"url":"./b2b-lead-generation-aachen.html","region":"DACH"},{"name":"Rennes","lat":0,"lng":0,"url":"./b2b-lead-generation-rennes.html","region":"Western Europe"},{"name":"Reims","lat":0,"lng":0,"url":"./b2b-lead-generation-reims.html","region":"Western Europe"},{"name":"Le Havre","lat":0,"lng":0,"url":"./b2b-lead-generation-le-havre.html","region":"Western Europe"},{"name":"Saint-Étienne","lat":0,"lng":0,"url":"./b2b-lead-generation-saint-tienne.html","region":"Western Europe"},{"name":"Toulon","lat":0,"lng":0,"url":"./b2b-lead-generation-toulon.html","region":"Western Europe"},{"name":"Grenoble","lat":0,"lng":0,"url":"./b2b-lead-generation-grenoble.html","region":"Western Europe"},{"name":"Dijon","lat":0,"lng":0,"url":"./b2b-lead-generation-dijon.html","region":"Western Europe"},{"name":"Angers","lat":0,"lng":0,"url":"./b2b-lead-generation-angers.html","region":"Western Europe"},{"name":"Nîmes","lat":0,"lng":0,"url":"./b2b-lead-generation-nmes.html","region":"Western Europe"},{"name":"Villeurbanne","lat":0,"lng":0,"url":"./b2b-lead-generation-villeurbanne.html","region":"Western Europe"},{"name":"Biel/Bienne","lat":0,"lng":0,"url":"./b2b-lead-generation-bielbienne.html","region":"DACH"},{"name":"Utrecht","lat":0,"lng":0,"url":"./b2b-lead-generation-utrecht.html","region":"Western Europe"},{"name":"Eindhoven","lat":0,"lng":0,"url":"./b2b-lead-generation-eindhoven.html","region":"Western Europe"},{"name":"Tilburg","lat":0,"lng":0,"url":"./b2b-lead-generation-tilburg.html","region":"Western Europe"},{"name":"Groningen","lat":0,"lng":0,"url":"./b2b-lead-generation-groningen.html","region":"Western Europe"},{"name":"Almere","lat":0,"lng":0,"url":"./b2b-lead-generation-almere.html","region":"Western Europe"},{"name":"Breda","lat":0,"lng":0,"url":"./b2b-lead-generation-breda.html","region":"Western Europe"},{"name":"Nijmegen","lat":0,"lng":0,"url":"./b2b-lead-generation-nijmegen.html","region":"Western Europe"},{"name":"Des Moines","lat":0,"lng":0,"url":"./b2b-lead-generation-des-moines.html","region":"North America"},{"name":"Modesto","lat":0,"lng":0,"url":"./b2b-lead-generation-modesto.html","region":"North America"},{"name":"Fayetteville","lat":0,"lng":0,"url":"./b2b-lead-generation-fayetteville.html","region":"North America"},{"name":"Tacoma","lat":0,"lng":0,"url":"./b2b-lead-generation-tacoma.html","region":"North America"},{"name":"Oxnard","lat":0,"lng":0,"url":"./b2b-lead-generation-oxnard.html","region":"North America"},{"name":"Fontana","lat":0,"lng":0,"url":"./b2b-lead-generation-fontana.html","region":"North America"},{"name":"Montgomery","lat":0,"lng":0,"url":"./b2b-lead-generation-montgomery.html","region":"North America"},{"name":"Moreno Valley","lat":0,"lng":0,"url":"./b2b-lead-generation-moreno-valley.html","region":"North America"},{"name":"Shreveport","lat":0,"lng":0,"url":"./b2b-lead-generation-shreveport.html","region":"North America"},{"name":"Yonkers","lat":0,"lng":0,"url":"./b2b-lead-generation-yonkers.html","region":"North America"},{"name":"Akron","lat":0,"lng":0,"url":"./b2b-lead-generation-akron.html","region":"North America"},{"name":"Huntington Beach","lat":0,"lng":0,"url":"./b2b-lead-generation-huntington-beach.html","region":"North America"},{"name":"Little Rock","lat":0,"lng":0,"url":"./b2b-lead-generation-little-rock.html","region":"North America"},{"name":"Augusta","lat":0,"lng":0,"url":"./b2b-lead-generation-augusta.html","region":"North America"},{"name":"Amarillo","lat":0,"lng":0,"url":"./b2b-lead-generation-amarillo.html","region":"North America"},{"name":"Mobile","lat":0,"lng":0,"url":"./b2b-lead-generation-mobile.html","region":"North America"},{"name":"Grand Rapids","lat":0,"lng":0,"url":"./b2b-lead-generation-grand-rapids.html","region":"North America"},{"name":"Salt Lake City","lat":0,"lng":0,"url":"./b2b-lead-generation-salt-lake-city.html","region":"North America"},{"name":"Huntsville","lat":0,"lng":0,"url":"./b2b-lead-generation-huntsville.html","region":"North America"},{"name":"Tallahassee","lat":0,"lng":0,"url":"./b2b-lead-generation-tallahassee.html","region":"North America"},{"name":"Grand Prairie","lat":0,"lng":0,"url":"./b2b-lead-generation-grand-prairie.html","region":"North America"},{"name":"Overland Park","lat":0,"lng":0,"url":"./b2b-lead-generation-overland-park.html","region":"North America"},{"name":"Knoxville","lat":0,"lng":0,"url":"./b2b-lead-generation-knoxville.html","region":"North America"},{"name":"Worcester","lat":0,"lng":0,"url":"./b2b-lead-generation-worcester.html","region":"North America"},{"name":"Brownsville","lat":0,"lng":0,"url":"./b2b-lead-generation-brownsville.html","region":"North America"},{"name":"Santa Clarita","lat":0,"lng":0,"url":"./b2b-lead-generation-santa-clarita.html","region":"North America"},{"name":"Providence","lat":0,"lng":0,"url":"./b2b-lead-generation-providence.html","region":"North America"},{"name":"Garden Grove","lat":0,"lng":0,"url":"./b2b-lead-generation-garden-grove.html","region":"North America"},{"name":"Chattanooga","lat":0,"lng":0,"url":"./b2b-lead-generation-chattanooga.html","region":"North America"},{"name":"Oceanside","lat":0,"lng":0,"url":"./b2b-lead-generation-oceanside.html","region":"North America"},{"name":"Jackson","lat":0,"lng":0,"url":"./b2b-lead-generation-jackson.html","region":"North America"},{"name":"Fort Lauderdale","lat":0,"lng":0,"url":"./b2b-lead-generation-fort-lauderdale.html","region":"North America"},{"name":"Santa Rosa","lat":0,"lng":0,"url":"./b2b-lead-generation-santa-rosa.html","region":"North America"},{"name":"Rancho Cucamonga","lat":0,"lng":0,"url":"./b2b-lead-generation-rancho-cucamonga.html","region":"North America"},{"name":"Port St. Lucie","lat":0,"lng":0,"url":"./b2b-lead-generation-port-st-lucie.html","region":"North America"},{"name":"Tempe","lat":0,"lng":0,"url":"./b2b-lead-generation-tempe.html","region":"North America"},{"name":"Ontario","lat":0,"lng":0,"url":"./b2b-lead-generation-ontario.html","region":"North America"},{"name":"Lancaster","lat":0,"lng":0,"url":"./b2b-lead-generation-lancaster.html","region":"North America"},{"name":"Eugene","lat":0,"lng":0,"url":"./b2b-lead-generation-eugene.html","region":"North America"},{"name":"Pembroke Pines","lat":0,"lng":0,"url":"./b2b-lead-generation-pembroke-pines.html","region":"North America"},{"name":"Salem","lat":0,"lng":0,"url":"./b2b-lead-generation-salem.html","region":"North America"},{"name":"Cape Coral","lat":0,"lng":0,"url":"./b2b-lead-generation-cape-coral.html","region":"North America"},{"name":"Peoria","lat":0,"lng":0,"url":"./b2b-lead-generation-peoria.html","region":"North America"},{"name":"Sioux Falls","lat":0,"lng":0,"url":"./b2b-lead-generation-sioux-falls.html","region":"North America"},{"name":"Springfield","lat":0,"lng":0,"url":"./b2b-lead-generation-springfield.html","region":"North America"},{"name":"Elk Grove","lat":0,"lng":0,"url":"./b2b-lead-generation-elk-grove.html","region":"North America"},{"name":"Rockford","lat":0,"lng":0,"url":"./b2b-lead-generation-rockford.html","region":"North America"},{"name":"Corona","lat":0,"lng":0,"url":"./b2b-lead-generation-corona.html","region":"North America"},{"name":"Palmdale","lat":0,"lng":0,"url":"./b2b-lead-generation-palmdale.html","region":"North America"},{"name":"Salinas","lat":0,"lng":0,"url":"./b2b-lead-generation-salinas.html","region":"North America"},{"name":"Pomona","lat":0,"lng":0,"url":"./b2b-lead-generation-pomona.html","region":"North America"},{"name":"Pasadena","lat":0,"lng":0,"url":"./b2b-lead-generation-pasadena.html","region":"North America"},{"name":"Joliet","lat":0,"lng":0,"url":"./b2b-lead-generation-joliet.html","region":"North America"},{"name":"Paterson","lat":0,"lng":0,"url":"./b2b-lead-generation-paterson.html","region":"North America"},{"name":"Torrance","lat":0,"lng":0,"url":"./b2b-lead-generation-torrance.html","region":"North America"},{"name":"Syracuse","lat":0,"lng":0,"url":"./b2b-lead-generation-syracuse.html","region":"North America"},{"name":"Bridgeport","lat":0,"lng":0,"url":"./b2b-lead-generation-bridgeport.html","region":"North America"},{"name":"Hayward","lat":0,"lng":0,"url":"./b2b-lead-generation-hayward.html","region":"North America"},{"name":"Fort Collins","lat":0,"lng":0,"url":"./b2b-lead-generation-fort-collins.html","region":"North America"},{"name":"Escondido","lat":0,"lng":0,"url":"./b2b-lead-generation-escondido.html","region":"North America"},{"name":"Lakewood","lat":0,"lng":0,"url":"./b2b-lead-generation-lakewood.html","region":"North America"},{"name":"Naperville","lat":0,"lng":0,"url":"./b2b-lead-generation-naperville.html","region":"North America"},{"name":"Dayton","lat":0,"lng":0,"url":"./b2b-lead-generation-dayton.html","region":"North America"},{"name":"Hollywood","lat":0,"lng":0,"url":"./b2b-lead-generation-hollywood.html","region":"North America"},{"name":"Sunnyvale","lat":0,"lng":0,"url":"./b2b-lead-generation-sunnyvale.html","region":"North America"},{"name":"Alexandria","lat":0,"lng":0,"url":"./b2b-lead-generation-alexandria.html","region":"North America"},{"name":"Mesquite","lat":0,"lng":0,"url":"./b2b-lead-generation-mesquite.html","region":"North America"},{"name":"Hampton","lat":0,"lng":0,"url":"./b2b-lead-generation-hampton.html","region":"North America"},{"name":"Pasadena","lat":0,"lng":0,"url":"./b2b-lead-generation-pasadena.html","region":"North America"},{"name":"Orange","lat":0,"lng":0,"url":"./b2b-lead-generation-orange.html","region":"North America"},{"name":"Savannah","lat":0,"lng":0,"url":"./b2b-lead-generation-savannah.html","region":"North America"},{"name":"Fullerton","lat":0,"lng":0,"url":"./b2b-lead-generation-fullerton.html","region":"North America"},{"name":"Warren","lat":0,"lng":0,"url":"./b2b-lead-generation-warren.html","region":"North America"},{"name":"Clarksville","lat":0,"lng":0,"url":"./b2b-lead-generation-clarksville.html","region":"North America"},{"name":"McKinney","lat":0,"lng":0,"url":"./b2b-lead-generation-mckinney.html","region":"North America"},{"name":"McAllen","lat":0,"lng":0,"url":"./b2b-lead-generation-mcallen.html","region":"North America"},{"name":"New Haven","lat":0,"lng":0,"url":"./b2b-lead-generation-new-haven.html","region":"North America"},{"name":"West Valley City","lat":0,"lng":0,"url":"./b2b-lead-generation-west-valley-city.html","region":"North America"},{"name":"Sterling Heights","lat":0,"lng":0,"url":"./b2b-lead-generation-sterling-heights.html","region":"North America"},{"name":"Columbia","lat":0,"lng":0,"url":"./b2b-lead-generation-columbia.html","region":"North America"},{"name":"Killeen","lat":0,"lng":0,"url":"./b2b-lead-generation-killeen.html","region":"North America"},{"name":"Topeka","lat":0,"lng":0,"url":"./b2b-lead-generation-topeka.html","region":"North America"},{"name":"Thousand Oaks","lat":0,"lng":0,"url":"./b2b-lead-generation-thousand-oaks.html","region":"North America"},{"name":"Cedar Rapids","lat":0,"lng":0,"url":"./b2b-lead-generation-cedar-rapids.html","region":"North America"},{"name":"Olathe","lat":0,"lng":0,"url":"./b2b-lead-generation-olathe.html","region":"North America"},{"name":"Elizabeth","lat":0,"lng":0,"url":"./b2b-lead-generation-elizabeth.html","region":"North America"},{"name":"Waco","lat":0,"lng":0,"url":"./b2b-lead-generation-waco.html","region":"North America"},{"name":"Hartford","lat":0,"lng":0,"url":"./b2b-lead-generation-hartford.html","region":"North America"},{"name":"Visalia","lat":0,"lng":0,"url":"./b2b-lead-generation-visalia.html","region":"North America"},{"name":"Gainesville","lat":0,"lng":0,"url":"./b2b-lead-generation-gainesville.html","region":"North America"},{"name":"Simi Valley","lat":0,"lng":0,"url":"./b2b-lead-generation-simi-valley.html","region":"North America"},{"name":"Stamford","lat":0,"lng":0,"url":"./b2b-lead-generation-stamford.html","region":"North America"},{"name":"Bellevue","lat":0,"lng":0,"url":"./b2b-lead-generation-bellevue.html","region":"North America"},{"name":"Concord","lat":0,"lng":0,"url":"./b2b-lead-generation-concord.html","region":"North America"},{"name":"Miramar","lat":0,"lng":0,"url":"./b2b-lead-generation-miramar.html","region":"North America"},{"name":"Coral Springs","lat":0,"lng":0,"url":"./b2b-lead-generation-coral-springs.html","region":"North America"},{"name":"Lafayette","lat":0,"lng":0,"url":"./b2b-lead-generation-lafayette.html","region":"North America"},{"name":"Charleston","lat":0,"lng":0,"url":"./b2b-lead-generation-charleston.html","region":"North America"},{"name":"Carrollton","lat":0,"lng":0,"url":"./b2b-lead-generation-carrollton.html","region":"North America"},{"name":"Roseville","lat":0,"lng":0,"url":"./b2b-lead-generation-roseville.html","region":"North America"},{"name":"Thornton","lat":0,"lng":0,"url":"./b2b-lead-generation-thornton.html","region":"North America"},{"name":"Beaumont","lat":0,"lng":0,"url":"./b2b-lead-generation-beaumont.html","region":"North America"},{"name":"Allentown","lat":0,"lng":0,"url":"./b2b-lead-generation-allentown.html","region":"North America"},{"name":"Surprise","lat":0,"lng":0,"url":"./b2b-lead-generation-surprise.html","region":"North America"},{"name":"Evansville","lat":0,"lng":0,"url":"./b2b-lead-generation-evansville.html","region":"North America"},{"name":"Abilene","lat":0,"lng":0,"url":"./b2b-lead-generation-abilene.html","region":"North America"},{"name":"Frisco","lat":0,"lng":0,"url":"./b2b-lead-generation-frisco.html","region":"North America"},{"name":"Independence","lat":0,"lng":0,"url":"./b2b-lead-generation-independence.html","region":"North America"},{"name":"Santa Clara","lat":0,"lng":0,"url":"./b2b-lead-generation-santa-clara.html","region":"North America"},{"name":"Springfield","lat":0,"lng":0,"url":"./b2b-lead-generation-springfield.html","region":"North America"},{"name":"Vallejo","lat":0,"lng":0,"url":"./b2b-lead-generation-vallejo.html","region":"North America"},{"name":"Victorville","lat":0,"lng":0,"url":"./b2b-lead-generation-victorville.html","region":"North America"},{"name":"Athens","lat":0,"lng":0,"url":"./b2b-lead-generation-athens.html","region":"North America"},{"name":"Peoria","lat":0,"lng":0,"url":"./b2b-lead-generation-peoria.html","region":"North America"},{"name":"Lansing","lat":0,"lng":0,"url":"./b2b-lead-generation-lansing.html","region":"North America"},{"name":"Ann Arbor","lat":0,"lng":0,"url":"./b2b-lead-generation-ann-arbor.html","region":"North America"},{"name":"El Monte","lat":0,"lng":0,"url":"./b2b-lead-generation-el-monte.html","region":"North America"},{"name":"Denton","lat":0,"lng":0,"url":"./b2b-lead-generation-denton.html","region":"North America"},{"name":"Berkeley","lat":0,"lng":0,"url":"./b2b-lead-generation-berkeley.html","region":"North America"},{"name":"Provo","lat":0,"lng":0,"url":"./b2b-lead-generation-provo.html","region":"North America"},{"name":"Downey","lat":0,"lng":0,"url":"./b2b-lead-generation-downey.html","region":"North America"},{"name":"Midland","lat":0,"lng":0,"url":"./b2b-lead-generation-midland.html","region":"North America"},{"name":"Norman","lat":0,"lng":0,"url":"./b2b-lead-generation-norman.html","region":"North America"},{"name":"Waterbury","lat":0,"lng":0,"url":"./b2b-lead-generation-waterbury.html","region":"North America"},{"name":"Costa Mesa","lat":0,"lng":0,"url":"./b2b-lead-generation-costa-mesa.html","region":"North America"},{"name":"Inglewood","lat":0,"lng":0,"url":"./b2b-lead-generation-inglewood.html","region":"North America"},{"name":"Murfreesboro","lat":0,"lng":0,"url":"./b2b-lead-generation-murfreesboro.html","region":"North America"},{"name":"Columbia","lat":0,"lng":0,"url":"./b2b-lead-generation-columbia.html","region":"North America"},{"name":"Elgin","lat":0,"lng":0,"url":"./b2b-lead-generation-elgin.html","region":"North America"},{"name":"Clearwater","lat":0,"lng":0,"url":"./b2b-lead-generation-clearwater.html","region":"North America"},{"name":"Miami Gardens","lat":0,"lng":0,"url":"./b2b-lead-generation-miami-gardens.html","region":"North America"},{"name":"Rochester","lat":0,"lng":0,"url":"./b2b-lead-generation-rochester.html","region":"North America"},{"name":"Pueblo","lat":0,"lng":0,"url":"./b2b-lead-generation-pueblo.html","region":"North America"},{"name":"Lowell","lat":0,"lng":0,"url":"./b2b-lead-generation-lowell.html","region":"North America"},{"name":"Wilmington","lat":0,"lng":0,"url":"./b2b-lead-generation-wilmington.html","region":"North America"},{"name":"Turin","lat":0,"lng":0,"url":"./b2b-lead-generation-turin.html","region":"Southern Europe"},{"name":"Palermo","lat":0,"lng":0,"url":"./b2b-lead-generation-palermo.html","region":"Southern Europe"},{"name":"Genoa","lat":0,"lng":0,"url":"./b2b-lead-generation-genoa.html","region":"Southern Europe"},{"name":"Bologna","lat":0,"lng":0,"url":"./b2b-lead-generation-bologna.html","region":"Southern Europe"},{"name":"Florence","lat":0,"lng":0,"url":"./b2b-lead-generation-florence.html","region":"Southern Europe"},{"name":"Bari","lat":0,"lng":0,"url":"./b2b-lead-generation-bari.html","region":"Southern Europe"},{"name":"Catania","lat":0,"lng":0,"url":"./b2b-lead-generation-catania.html","region":"Southern Europe"},{"name":"Venice","lat":0,"lng":0,"url":"./b2b-lead-generation-venice.html","region":"Southern Europe"},{"name":"Verona","lat":0,"lng":0,"url":"./b2b-lead-generation-verona.html","region":"Southern Europe"},{"name":"Messina","lat":0,"lng":0,"url":"./b2b-lead-generation-messina.html","region":"Southern Europe"},{"name":"Padua","lat":0,"lng":0,"url":"./b2b-lead-generation-padua.html","region":"Southern Europe"},{"name":"Trieste","lat":0,"lng":0,"url":"./b2b-lead-generation-trieste.html","region":"Southern Europe"},{"name":"Taranto","lat":0,"lng":0,"url":"./b2b-lead-generation-taranto.html","region":"Southern Europe"},{"name":"Brescia","lat":0,"lng":0,"url":"./b2b-lead-generation-brescia.html","region":"Southern Europe"},{"name":"Parma","lat":0,"lng":0,"url":"./b2b-lead-generation-parma.html","region":"Southern Europe"},{"name":"Prato","lat":0,"lng":0,"url":"./b2b-lead-generation-prato.html","region":"Southern Europe"},{"name":"Modena","lat":0,"lng":0,"url":"./b2b-lead-generation-modena.html","region":"Southern Europe"},{"name":"Reggio Calabria","lat":0,"lng":0,"url":"./b2b-lead-generation-reggio-calabria.html","region":"Southern Europe"},{"name":"Reggio Emilia","lat":0,"lng":0,"url":"./b2b-lead-generation-reggio-emilia.html","region":"Southern Europe"},{"name":"Perugia","lat":0,"lng":0,"url":"./b2b-lead-generation-perugia.html","region":"Southern Europe"},{"name":"Ravenna","lat":0,"lng":0,"url":"./b2b-lead-generation-ravenna.html","region":"Southern Europe"},{"name":"Livorno","lat":0,"lng":0,"url":"./b2b-lead-generation-livorno.html","region":"Southern Europe"},{"name":"Cagliari","lat":0,"lng":0,"url":"./b2b-lead-generation-cagliari.html","region":"Southern Europe"},{"name":"Foggia","lat":0,"lng":0,"url":"./b2b-lead-generation-foggia.html","region":"Southern Europe"},{"name":"Rimini","lat":0,"lng":0,"url":"./b2b-lead-generation-rimini.html","region":"Southern Europe"},{"name":"Salerno","lat":0,"lng":0,"url":"./b2b-lead-generation-salerno.html","region":"Southern Europe"},{"name":"Ferrara","lat":0,"lng":0,"url":"./b2b-lead-generation-ferrara.html","region":"Southern Europe"},{"name":"Seville","lat":0,"lng":0,"url":"./b2b-lead-generation-seville.html","region":"Southern Europe"},{"name":"Zaragoza","lat":0,"lng":0,"url":"./b2b-lead-generation-zaragoza.html","region":"Southern Europe"},{"name":"Málaga","lat":0,"lng":0,"url":"./b2b-lead-generation-mlaga.html","region":"Southern Europe"},{"name":"Murcia","lat":0,"lng":0,"url":"./b2b-lead-generation-murcia.html","region":"Southern Europe"},{"name":"Palma","lat":0,"lng":0,"url":"./b2b-lead-generation-palma.html","region":"Southern Europe"},{"name":"Las Palmas","lat":0,"lng":0,"url":"./b2b-lead-generation-las-palmas.html","region":"Southern Europe"},{"name":"Bilbao","lat":0,"lng":0,"url":"./b2b-lead-generation-bilbao.html","region":"Southern Europe"},{"name":"Alicante","lat":0,"lng":0,"url":"./b2b-lead-generation-alicante.html","region":"Southern Europe"},{"name":"Córdoba","lat":0,"lng":0,"url":"./b2b-lead-generation-crdoba.html","region":"Southern Europe"},{"name":"Valladolid","lat":0,"lng":0,"url":"./b2b-lead-generation-valladolid.html","region":"Southern Europe"},{"name":"Vigo","lat":0,"lng":0,"url":"./b2b-lead-generation-vigo.html","region":"Southern Europe"},{"name":"Gijón","lat":0,"lng":0,"url":"./b2b-lead-generation-gijn.html","region":"Southern Europe"},{"name":"L'Hospitalet","lat":0,"lng":0,"url":"./b2b-lead-generation-lhospitalet.html","region":"Southern Europe"},{"name":"Vitoria-Gasteiz","lat":0,"lng":0,"url":"./b2b-lead-generation-vitoria-gasteiz.html","region":"Southern Europe"},{"name":"A Coruña","lat":0,"lng":0,"url":"./b2b-lead-generation-a-corua.html","region":"Southern Europe"},{"name":"Elche","lat":0,"lng":0,"url":"./b2b-lead-generation-elche.html","region":"Southern Europe"},{"name":"Granada","lat":0,"lng":0,"url":"./b2b-lead-generation-granada.html","region":"Southern Europe"},{"name":"Terrassa","lat":0,"lng":0,"url":"./b2b-lead-generation-terrassa.html","region":"Southern Europe"},{"name":"Badalona","lat":0,"lng":0,"url":"./b2b-lead-generation-badalona.html","region":"Southern Europe"},{"name":"Oviedo","lat":0,"lng":0,"url":"./b2b-lead-generation-oviedo.html","region":"Southern Europe"},{"name":"Sabadell","lat":0,"lng":0,"url":"./b2b-lead-generation-sabadell.html","region":"Southern Europe"},{"name":"Cartagena","lat":0,"lng":0,"url":"./b2b-lead-generation-cartagena.html","region":"Southern Europe"},{"name":"Jerez","lat":0,"lng":0,"url":"./b2b-lead-generation-jerez.html","region":"Southern Europe"},{"name":"Móstoles","lat":0,"lng":0,"url":"./b2b-lead-generation-mstoles.html","region":"Southern Europe"},{"name":"Santa Cruz","lat":0,"lng":0,"url":"./b2b-lead-generation-santa-cruz.html","region":"Southern Europe"},{"name":"Pamplona","lat":0,"lng":0,"url":"./b2b-lead-generation-pamplona.html","region":"Southern Europe"},{"name":"Almería","lat":0,"lng":0,"url":"./b2b-lead-generation-almera.html","region":"Southern Europe"},{"name":"Gdansk","lat":0,"lng":0,"url":"./b2b-lead-generation-gdansk.html","region":"Eastern Europe"},{"name":"Szczecin","lat":0,"lng":0,"url":"./b2b-lead-generation-szczecin.html","region":"Eastern Europe"},{"name":"Bydgoszcz","lat":0,"lng":0,"url":"./b2b-lead-generation-bydgoszcz.html","region":"Eastern Europe"},{"name":"Lublin","lat":0,"lng":0,"url":"./b2b-lead-generation-lublin.html","region":"Eastern Europe"},{"name":"Katowice","lat":0,"lng":0,"url":"./b2b-lead-generation-katowice.html","region":"Eastern Europe"},{"name":"Bialystok","lat":0,"lng":0,"url":"./b2b-lead-generation-bialystok.html","region":"Eastern Europe"},{"name":"Gdynia","lat":0,"lng":0,"url":"./b2b-lead-generation-gdynia.html","region":"Eastern Europe"},{"name":"Czestochowa","lat":0,"lng":0,"url":"./b2b-lead-generation-czestochowa.html","region":"Eastern Europe"},{"name":"Radom","lat":0,"lng":0,"url":"./b2b-lead-generation-radom.html","region":"Eastern Europe"},{"name":"Sosnowiec","lat":0,"lng":0,"url":"./b2b-lead-generation-sosnowiec.html","region":"Eastern Europe"},{"name":"Torun","lat":0,"lng":0,"url":"./b2b-lead-generation-torun.html","region":"Eastern Europe"},{"name":"Kielce","lat":0,"lng":0,"url":"./b2b-lead-generation-kielce.html","region":"Eastern Europe"},{"name":"Rzeszow","lat":0,"lng":0,"url":"./b2b-lead-generation-rzeszow.html","region":"Eastern Europe"},{"name":"Gliwice","lat":0,"lng":0,"url":"./b2b-lead-generation-gliwice.html","region":"Eastern Europe"},{"name":"Zabrze","lat":0,"lng":0,"url":"./b2b-lead-generation-zabrze.html","region":"Eastern Europe"},{"name":"Adana","lat":0,"lng":0,"url":"./b2b-lead-generation-adana.html","region":"Turkey"},{"name":"Gaziantep","lat":0,"lng":0,"url":"./b2b-lead-generation-gaziantep.html","region":"Turkey"},{"name":"Konya","lat":0,"lng":0,"url":"./b2b-lead-generation-konya.html","region":"Turkey"},{"name":"Kayseri","lat":0,"lng":0,"url":"./b2b-lead-generation-kayseri.html","region":"Turkey"},{"name":"Mersin","lat":0,"lng":0,"url":"./b2b-lead-generation-mersin.html","region":"Turkey"},{"name":"Eskisehir","lat":0,"lng":0,"url":"./b2b-lead-generation-eskisehir.html","region":"Turkey"},{"name":"Diyarbakir","lat":0,"lng":0,"url":"./b2b-lead-generation-diyarbakir.html","region":"Turkey"},{"name":"Samsun","lat":0,"lng":0,"url":"./b2b-lead-generation-samsun.html","region":"Turkey"},{"name":"Denizli","lat":0,"lng":0,"url":"./b2b-lead-generation-denizli.html","region":"Turkey"},{"name":"Sanliurfa","lat":0,"lng":0,"url":"./b2b-lead-generation-sanliurfa.html","region":"Turkey"},{"name":"Adapazari","lat":0,"lng":0,"url":"./b2b-lead-generation-adapazari.html","region":"Turkey"},{"name":"Malatya","lat":0,"lng":0,"url":"./b2b-lead-generation-malatya.html","region":"Turkey"},{"name":"Kahramanmaras","lat":0,"lng":0,"url":"./b2b-lead-generation-kahramanmaras.html","region":"Turkey"},{"name":"Erzurum","lat":0,"lng":0,"url":"./b2b-lead-generation-erzurum.html","region":"Turkey"},{"name":"Van","lat":0,"lng":0,"url":"./b2b-lead-generation-van.html","region":"Turkey"},{"name":"Batman","lat":0,"lng":0,"url":"./b2b-lead-generation-batman.html","region":"Turkey"},{"name":"Elazig","lat":0,"lng":0,"url":"./b2b-lead-generation-elazig.html","region":"Turkey"},{"name":"Izmit","lat":0,"lng":0,"url":"./b2b-lead-generation-izmit.html","region":"Turkey"},{"name":"Manisa","lat":0,"lng":0,"url":"./b2b-lead-generation-manisa.html","region":"Turkey"},{"name":"Sivas","lat":0,"lng":0,"url":"./b2b-lead-generation-sivas.html","region":"Turkey"},{"name":"Gebze","lat":0,"lng":0,"url":"./b2b-lead-generation-gebze.html","region":"Turkey"},{"name":"Balikesir","lat":0,"lng":0,"url":"./b2b-lead-generation-balikesir.html","region":"Turkey"},{"name":"Tarsus","lat":0,"lng":0,"url":"./b2b-lead-generation-tarsus.html","region":"Turkey"},{"name":"Kutahya","lat":0,"lng":0,"url":"./b2b-lead-generation-kutahya.html","region":"Turkey"},{"name":"Trabzon","lat":0,"lng":0,"url":"./b2b-lead-generation-trabzon.html","region":"Turkey"},{"name":"Malmö","lat":0,"lng":0,"url":"./b2b-lead-generation-malm.html","region":"Scandinavia"},{"name":"Uppsala","lat":0,"lng":0,"url":"./b2b-lead-generation-uppsala.html","region":"Scandinavia"},{"name":"Västerås","lat":0,"lng":0,"url":"./b2b-lead-generation-vsters.html","region":"Scandinavia"},{"name":"Örebro","lat":0,"lng":0,"url":"./b2b-lead-generation-rebro.html","region":"Scandinavia"},{"name":"Linköping","lat":0,"lng":0,"url":"./b2b-lead-generation-linkping.html","region":"Scandinavia"},{"name":"Helsingborg","lat":0,"lng":0,"url":"./b2b-lead-generation-helsingborg.html","region":"Scandinavia"},{"name":"Jönköping","lat":0,"lng":0,"url":"./b2b-lead-generation-jnkping.html","region":"Scandinavia"},{"name":"Norrköping","lat":0,"lng":0,"url":"./b2b-lead-generation-norrkping.html","region":"Scandinavia"},{"name":"Trondheim","lat":0,"lng":0,"url":"./b2b-lead-generation-trondheim.html","region":"Scandinavia"},{"name":"Stavanger","lat":0,"lng":0,"url":"./b2b-lead-generation-stavanger.html","region":"Scandinavia"},{"name":"Drammen","lat":0,"lng":0,"url":"./b2b-lead-generation-drammen.html","region":"Scandinavia"},{"name":"Fredrikstad","lat":0,"lng":0,"url":"./b2b-lead-generation-fredrikstad.html","region":"Scandinavia"},{"name":"Kristiansand","lat":0,"lng":0,"url":"./b2b-lead-generation-kristiansand.html","region":"Scandinavia"},{"name":"Sandnes","lat":0,"lng":0,"url":"./b2b-lead-generation-sandnes.html","region":"Scandinavia"},{"name":"Tromsø","lat":0,"lng":0,"url":"./b2b-lead-generation-troms.html","region":"Scandinavia"},{"name":"Sarpsborg","lat":0,"lng":0,"url":"./b2b-lead-generation-sarpsborg.html","region":"Scandinavia"},{"name":"Copenhagen","lat":0,"lng":0,"url":"./b2b-lead-generation-copenhagen.html","region":"Scandinavia"},{"name":"Aarhus","lat":0,"lng":0,"url":"./b2b-lead-generation-aarhus.html","region":"Scandinavia"},{"name":"Odense","lat":0,"lng":0,"url":"./b2b-lead-generation-odense.html","region":"Scandinavia"},{"name":"Aalborg","lat":0,"lng":0,"url":"./b2b-lead-generation-aalborg.html","region":"Scandinavia"},{"name":"Esbjerg","lat":0,"lng":0,"url":"./b2b-lead-generation-esbjerg.html","region":"Scandinavia"},{"name":"Randers","lat":0,"lng":0,"url":"./b2b-lead-generation-randers.html","region":"Scandinavia"},{"name":"Kolding","lat":0,"lng":0,"url":"./b2b-lead-generation-kolding.html","region":"Scandinavia"},{"name":"Horsens","lat":0,"lng":0,"url":"./b2b-lead-generation-horsens.html","region":"Scandinavia"},{"name":"Vejle","lat":0,"lng":0,"url":"./b2b-lead-generation-vejle.html","region":"Scandinavia"},{"name":"Roskilde","lat":0,"lng":0,"url":"./b2b-lead-generation-roskilde.html","region":"Scandinavia"},{"name":"Helsinki","lat":0,"lng":0,"url":"./b2b-lead-generation-helsinki.html","region":"Scandinavia"},{"name":"Espoo","lat":0,"lng":0,"url":"./b2b-lead-generation-espoo.html","region":"Scandinavia"},{"name":"Tampere","lat":0,"lng":0,"url":"./b2b-lead-generation-tampere.html","region":"Scandinavia"},{"name":"Vantaa","lat":0,"lng":0,"url":"./b2b-lead-generation-vantaa.html","region":"Scandinavia"},{"name":"Oulu","lat":0,"lng":0,"url":"./b2b-lead-generation-oulu.html","region":"Scandinavia"},{"name":"Turku","lat":0,"lng":0,"url":"./b2b-lead-generation-turku.html","region":"Scandinavia"},{"name":"Jyväskylä","lat":0,"lng":0,"url":"./b2b-lead-generation-jyvskyl.html","region":"Scandinavia"},{"name":"Lahti","lat":0,"lng":0,"url":"./b2b-lead-generation-lahti.html","region":"Scandinavia"},{"name":"Kuopio","lat":0,"lng":0,"url":"./b2b-lead-generation-kuopio.html","region":"Scandinavia"},{"name":"Pori","lat":0,"lng":0,"url":"./b2b-lead-generation-pori.html","region":"Scandinavia"},{"name":"Vienna","lat":0,"lng":0,"url":"./b2b-lead-generation-vienna.html","region":"DACH"},{"name":"Graz","lat":0,"lng":0,"url":"./b2b-lead-generation-graz.html","region":"DACH"},{"name":"Linz","lat":0,"lng":0,"url":"./b2b-lead-generation-linz.html","region":"DACH"},{"name":"Salzburg","lat":0,"lng":0,"url":"./b2b-lead-generation-salzburg.html","region":"DACH"},{"name":"Innsbruck","lat":0,"lng":0,"url":"./b2b-lead-generation-innsbruck.html","region":"DACH"},{"name":"Klagenfurt","lat":0,"lng":0,"url":"./b2b-lead-generation-klagenfurt.html","region":"DACH"},{"name":"Villach","lat":0,"lng":0,"url":"./b2b-lead-generation-villach.html","region":"DACH"},{"name":"Wels","lat":0,"lng":0,"url":"./b2b-lead-generation-wels.html","region":"DACH"},{"name":"Sankt Pölten","lat":0,"lng":0,"url":"./b2b-lead-generation-sankt-plten.html","region":"DACH"},{"name":"Dornbirn","lat":0,"lng":0,"url":"./b2b-lead-generation-dornbirn.html","region":"DACH"},{"name":"Brussels","lat":0,"lng":0,"url":"./b2b-lead-generation-brussels.html","region":"Western Europe"},{"name":"Antwerp","lat":0,"lng":0,"url":"./b2b-lead-generation-antwerp.html","region":"Western Europe"},{"name":"Ghent","lat":0,"lng":0,"url":"./b2b-lead-generation-ghent.html","region":"Western Europe"},{"name":"Charleroi","lat":0,"lng":0,"url":"./b2b-lead-generation-charleroi.html","region":"Western Europe"},{"name":"Liège","lat":0,"lng":0,"url":"./b2b-lead-generation-lige.html","region":"Western Europe"},{"name":"Bruges","lat":0,"lng":0,"url":"./b2b-lead-generation-bruges.html","region":"Western Europe"},{"name":"Namur","lat":0,"lng":0,"url":"./b2b-lead-generation-namur.html","region":"Western Europe"},{"name":"Leuven","lat":0,"lng":0,"url":"./b2b-lead-generation-leuven.html","region":"Western Europe"},{"name":"Mons","lat":0,"lng":0,"url":"./b2b-lead-generation-mons.html","region":"Western Europe"},{"name":"Aalst","lat":0,"lng":0,"url":"./b2b-lead-generation-aalst.html","region":"Western Europe"},{"name":"Vila Nova de Gaia","lat":0,"lng":0,"url":"./b2b-lead-generation-vila-nova-de-gaia.html","region":"Southern Europe"},{"name":"Amadora","lat":0,"lng":0,"url":"./b2b-lead-generation-amadora.html","region":"Southern Europe"},{"name":"Braga","lat":0,"lng":0,"url":"./b2b-lead-generation-braga.html","region":"Southern Europe"},{"name":"Funchal","lat":0,"lng":0,"url":"./b2b-lead-generation-funchal.html","region":"Southern Europe"},{"name":"Coimbra","lat":0,"lng":0,"url":"./b2b-lead-generation-coimbra.html","region":"Southern Europe"},{"name":"Setúbal","lat":0,"lng":0,"url":"./b2b-lead-generation-setbal.html","region":"Southern Europe"},{"name":"Almada","lat":0,"lng":0,"url":"./b2b-lead-generation-almada.html","region":"Southern Europe"},{"name":"Agualva-Cacém","lat":0,"lng":0,"url":"./b2b-lead-generation-agualva-cacm.html","region":"Southern Europe"},{"name":"Galway","lat":0,"lng":0,"url":"./b2b-lead-generation-galway.html","region":"Western Europe"},{"name":"Waterford","lat":0,"lng":0,"url":"./b2b-lead-generation-waterford.html","region":"Western Europe"},{"name":"Drogheda","lat":0,"lng":0,"url":"./b2b-lead-generation-drogheda.html","region":"Western Europe"},{"name":"Dundalk","lat":0,"lng":0,"url":"./b2b-lead-generation-dundalk.html","region":"Western Europe"},{"name":"Swords","lat":0,"lng":0,"url":"./b2b-lead-generation-swords.html","region":"Western Europe"},{"name":"Bray","lat":0,"lng":0,"url":"./b2b-lead-generation-bray.html","region":"Western Europe"},{"name":"Navan","lat":0,"lng":0,"url":"./b2b-lead-generation-navan.html","region":"Western Europe"},{"name":"Brno","lat":0,"lng":0,"url":"./b2b-lead-generation-brno.html","region":"Eastern Europe"},{"name":"Ostrava","lat":0,"lng":0,"url":"./b2b-lead-generation-ostrava.html","region":"Eastern Europe"},{"name":"Plzen","lat":0,"lng":0,"url":"./b2b-lead-generation-plzen.html","region":"Eastern Europe"},{"name":"Liberec","lat":0,"lng":0,"url":"./b2b-lead-generation-liberec.html","region":"Eastern Europe"},{"name":"Olomouc","lat":0,"lng":0,"url":"./b2b-lead-generation-olomouc.html","region":"Eastern Europe"},{"name":"Ceske Budejovice","lat":0,"lng":0,"url":"./b2b-lead-generation-ceske-budejovice.html","region":"Eastern Europe"},{"name":"Hradec Kralove","lat":0,"lng":0,"url":"./b2b-lead-generation-hradec-kralove.html","region":"Eastern Europe"},{"name":"Usti nad Labem","lat":0,"lng":0,"url":"./b2b-lead-generation-usti-nad-labem.html","region":"Eastern Europe"},{"name":"Pardubice","lat":0,"lng":0,"url":"./b2b-lead-generation-pardubice.html","region":"Eastern Europe"},{"name":"Debrecen","lat":0,"lng":0,"url":"./b2b-lead-generation-debrecen.html","region":"Eastern Europe"},{"name":"Szeged","lat":0,"lng":0,"url":"./b2b-lead-generation-szeged.html","region":"Eastern Europe"},{"name":"Miskolc","lat":0,"lng":0,"url":"./b2b-lead-generation-miskolc.html","region":"Eastern Europe"},{"name":"Pécs","lat":0,"lng":0,"url":"./b2b-lead-generation-pcs.html","region":"Eastern Europe"},{"name":"Gyor","lat":0,"lng":0,"url":"./b2b-lead-generation-gyor.html","region":"Eastern Europe"},{"name":"Nyíregyháza","lat":0,"lng":0,"url":"./b2b-lead-generation-nyregyhza.html","region":"Eastern Europe"},{"name":"Kecskemét","lat":0,"lng":0,"url":"./b2b-lead-generation-kecskemt.html","region":"Eastern Europe"},{"name":"Székesfehérvár","lat":0,"lng":0,"url":"./b2b-lead-generation-szkesfehrvr.html","region":"Eastern Europe"},{"name":"Szombathely","lat":0,"lng":0,"url":"./b2b-lead-generation-szombathely.html","region":"Eastern Europe"},{"name":"Cluj-Napoca","lat":0,"lng":0,"url":"./b2b-lead-generation-cluj-napoca.html","region":"Eastern Europe"},{"name":"Timisoara","lat":0,"lng":0,"url":"./b2b-lead-generation-timisoara.html","region":"Eastern Europe"},{"name":"Iasi","lat":0,"lng":0,"url":"./b2b-lead-generation-iasi.html","region":"Eastern Europe"},{"name":"Constanta","lat":0,"lng":0,"url":"./b2b-lead-generation-constanta.html","region":"Eastern Europe"},{"name":"Craiova","lat":0,"lng":0,"url":"./b2b-lead-generation-craiova.html","region":"Eastern Europe"},{"name":"Brasov","lat":0,"lng":0,"url":"./b2b-lead-generation-brasov.html","region":"Eastern Europe"},{"name":"Galati","lat":0,"lng":0,"url":"./b2b-lead-generation-galati.html","region":"Eastern Europe"},{"name":"Ploiesti","lat":0,"lng":0,"url":"./b2b-lead-generation-ploiesti.html","region":"Eastern Europe"},{"name":"Oradea","lat":0,"lng":0,"url":"./b2b-lead-generation-oradea.html","region":"Eastern Europe"},{"name":"Halle","lat":0,"lng":0,"url":"./b2b-lead-generation-halle.html","region":"DACH"},{"name":"Magdeburg","lat":0,"lng":0,"url":"./b2b-lead-generation-magdeburg.html","region":"DACH"},{"name":"Freiburg","lat":0,"lng":0,"url":"./b2b-lead-generation-freiburg.html","region":"DACH"},{"name":"Krefeld","lat":0,"lng":0,"url":"./b2b-lead-generation-krefeld.html","region":"DACH"},{"name":"Lübeck","lat":0,"lng":0,"url":"./b2b-lead-generation-lbeck.html","region":"DACH"},{"name":"Oberhausen","lat":0,"lng":0,"url":"./b2b-lead-generation-oberhausen.html","region":"DACH"},{"name":"Erfurt","lat":0,"lng":0,"url":"./b2b-lead-generation-erfurt.html","region":"DACH"},{"name":"Mainz","lat":0,"lng":0,"url":"./b2b-lead-generation-mainz.html","region":"DACH"},{"name":"Rostock","lat":0,"lng":0,"url":"./b2b-lead-generation-rostock.html","region":"DACH"},{"name":"Kassel","lat":0,"lng":0,"url":"./b2b-lead-generation-kassel.html","region":"DACH"},{"name":"Hagen","lat":0,"lng":0,"url":"./b2b-lead-generation-hagen.html","region":"DACH"},{"name":"Hamm","lat":0,"lng":0,"url":"./b2b-lead-generation-hamm.html","region":"DACH"},{"name":"Saarbrücken","lat":0,"lng":0,"url":"./b2b-lead-generation-saarbrcken.html","region":"DACH"},{"name":"Mülheim","lat":0,"lng":0,"url":"./b2b-lead-generation-mlheim.html","region":"DACH"},{"name":"Potsdam","lat":0,"lng":0,"url":"./b2b-lead-generation-potsdam.html","region":"DACH"},{"name":"Ludwigshafen","lat":0,"lng":0,"url":"./b2b-lead-generation-ludwigshafen.html","region":"DACH"},{"name":"Oldenburg","lat":0,"lng":0,"url":"./b2b-lead-generation-oldenburg.html","region":"DACH"},{"name":"Leverkusen","lat":0,"lng":0,"url":"./b2b-lead-generation-leverkusen.html","region":"DACH"},{"name":"Osnabrück","lat":0,"lng":0,"url":"./b2b-lead-generation-osnabrck.html","region":"DACH"},{"name":"Solingen","lat":0,"lng":0,"url":"./b2b-lead-generation-solingen.html","region":"DACH"},{"name":"Heidelberg","lat":0,"lng":0,"url":"./b2b-lead-generation-heidelberg.html","region":"DACH"},{"name":"Herne","lat":0,"lng":0,"url":"./b2b-lead-generation-herne.html","region":"DACH"},{"name":"Neuss","lat":0,"lng":0,"url":"./b2b-lead-generation-neuss.html","region":"DACH"},{"name":"Darmstadt","lat":0,"lng":0,"url":"./b2b-lead-generation-darmstadt.html","region":"DACH"},{"name":"Paderborn","lat":0,"lng":0,"url":"./b2b-lead-generation-paderborn.html","region":"DACH"},{"name":"Regensburg","lat":0,"lng":0,"url":"./b2b-lead-generation-regensburg.html","region":"DACH"},{"name":"Ingolstadt","lat":0,"lng":0,"url":"./b2b-lead-generation-ingolstadt.html","region":"DACH"},{"name":"Würzburg","lat":0,"lng":0,"url":"./b2b-lead-generation-wrzburg.html","region":"DACH"},{"name":"Fürth","lat":0,"lng":0,"url":"./b2b-lead-generation-frth.html","region":"DACH"},{"name":"Wolfsburg","lat":0,"lng":0,"url":"./b2b-lead-generation-wolfsburg.html","region":"DACH"},{"name":"Offenbach","lat":0,"lng":0,"url":"./b2b-lead-generation-offenbach.html","region":"DACH"},{"name":"Ulm","lat":0,"lng":0,"url":"./b2b-lead-generation-ulm.html","region":"DACH"},{"name":"Heilbronn","lat":0,"lng":0,"url":"./b2b-lead-generation-heilbronn.html","region":"DACH"},{"name":"Pforzheim","lat":0,"lng":0,"url":"./b2b-lead-generation-pforzheim.html","region":"DACH"},{"name":"Göttingen","lat":0,"lng":0,"url":"./b2b-lead-generation-gttingen.html","region":"DACH"},{"name":"Bottrop","lat":0,"lng":0,"url":"./b2b-lead-generation-bottrop.html","region":"DACH"},{"name":"Trier","lat":0,"lng":0,"url":"./b2b-lead-generation-trier.html","region":"DACH"},{"name":"Recklinghausen","lat":0,"lng":0,"url":"./b2b-lead-generation-recklinghausen.html","region":"DACH"},{"name":"Reutlingen","lat":0,"lng":0,"url":"./b2b-lead-generation-reutlingen.html","region":"DACH"},{"name":"Bremerhaven","lat":0,"lng":0,"url":"./b2b-lead-generation-bremerhaven.html","region":"DACH"},{"name":"Saint-Denis","lat":0,"lng":0,"url":"./b2b-lead-generation-saint-denis.html","region":"Western Europe"},{"name":"Le Mans","lat":0,"lng":0,"url":"./b2b-lead-generation-le-mans.html","region":"Western Europe"},{"name":"Aix-en-Provence","lat":0,"lng":0,"url":"./b2b-lead-generation-aix-en-provence.html","region":"Western Europe"},{"name":"Clermont-Ferrand","lat":0,"lng":0,"url":"./b2b-lead-generation-clermont-ferrand.html","region":"Western Europe"},{"name":"Brest","lat":0,"lng":0,"url":"./b2b-lead-generation-brest.html","region":"Western Europe"},{"name":"Limoges","lat":0,"lng":0,"url":"./b2b-lead-generation-limoges.html","region":"Western Europe"},{"name":"Tours","lat":0,"lng":0,"url":"./b2b-lead-generation-tours.html","region":"Western Europe"},{"name":"Amiens","lat":0,"lng":0,"url":"./b2b-lead-generation-amiens.html","region":"Western Europe"},{"name":"Perpignan","lat":0,"lng":0,"url":"./b2b-lead-generation-perpignan.html","region":"Western Europe"},{"name":"Metz","lat":0,"lng":0,"url":"./b2b-lead-generation-metz.html","region":"Western Europe"},{"name":"Besançon","lat":0,"lng":0,"url":"./b2b-lead-generation-besanon.html","region":"Western Europe"},{"name":"Boulogne-Billancourt","lat":0,"lng":0,"url":"./b2b-lead-generation-boulogne-billancourt.html","region":"Western Europe"},{"name":"Orléans","lat":0,"lng":0,"url":"./b2b-lead-generation-orlans.html","region":"Western Europe"},{"name":"Mulhouse","lat":0,"lng":0,"url":"./b2b-lead-generation-mulhouse.html","region":"Western Europe"},{"name":"Rouen","lat":0,"lng":0,"url":"./b2b-lead-generation-rouen.html","region":"Western Europe"},{"name":"Saint-Denis","lat":0,"lng":0,"url":"./b2b-lead-generation-saint-denis.html","region":"Western Europe"},{"name":"Caen","lat":0,"lng":0,"url":"./b2b-lead-generation-caen.html","region":"Western Europe"},{"name":"Argenteuil","lat":0,"lng":0,"url":"./b2b-lead-generation-argenteuil.html","region":"Western Europe"},{"name":"Montreuil","lat":0,"lng":0,"url":"./b2b-lead-generation-montreuil.html","region":"Western Europe"},{"name":"Nancy","lat":0,"lng":0,"url":"./b2b-lead-generation-nancy.html","region":"Western Europe"},{"name":"Roubaix","lat":0,"lng":0,"url":"./b2b-lead-generation-roubaix.html","region":"Western Europe"},{"name":"Tourcoing","lat":0,"lng":0,"url":"./b2b-lead-generation-tourcoing.html","region":"Western Europe"},{"name":"Nanterre","lat":0,"lng":0,"url":"./b2b-lead-generation-nanterre.html","region":"Western Europe"},{"name":"Avignon","lat":0,"lng":0,"url":"./b2b-lead-generation-avignon.html","region":"Western Europe"},{"name":"Vitry-sur-Seine","lat":0,"lng":0,"url":"./b2b-lead-generation-vitry-sur-seine.html","region":"Western Europe"},{"name":"Créteil","lat":0,"lng":0,"url":"./b2b-lead-generation-crteil.html","region":"Western Europe"},{"name":"Dunkerque","lat":0,"lng":0,"url":"./b2b-lead-generation-dunkerque.html","region":"Western Europe"},{"name":"Poitiers","lat":0,"lng":0,"url":"./b2b-lead-generation-poitiers.html","region":"Western Europe"},{"name":"Asnières-sur-Seine","lat":0,"lng":0,"url":"./b2b-lead-generation-asnires-sur-seine.html","region":"Western Europe"},{"name":"Courbevoie","lat":0,"lng":0,"url":"./b2b-lead-generation-courbevoie.html","region":"Western Europe"},{"name":"Versailles","lat":0,"lng":0,"url":"./b2b-lead-generation-versailles.html","region":"Western Europe"},{"name":"Colombes","lat":0,"lng":0,"url":"./b2b-lead-generation-colombes.html","region":"Western Europe"},{"name":"Fort-de-France","lat":0,"lng":0,"url":"./b2b-lead-generation-fort-de-france.html","region":"Western Europe"},{"name":"Aulnay-sous-Bois","lat":0,"lng":0,"url":"./b2b-lead-generation-aulnay-sous-bois.html","region":"Western Europe"},{"name":"Saint-Pierre","lat":0,"lng":0,"url":"./b2b-lead-generation-saint-pierre.html","region":"Western Europe"},{"name":"Rueil-Malmaison","lat":0,"lng":0,"url":"./b2b-lead-generation-rueil-malmaison.html","region":"Western Europe"},{"name":"Pau","lat":0,"lng":0,"url":"./b2b-lead-generation-pau.html","region":"Western Europe"},{"name":"Aubervilliers","lat":0,"lng":0,"url":"./b2b-lead-generation-aubervilliers.html","region":"Western Europe"},{"name":"Le Tampon","lat":0,"lng":0,"url":"./b2b-lead-generation-le-tampon.html","region":"Western Europe"},{"name":"Champigny-sur-Marne","lat":0,"lng":0,"url":"./b2b-lead-generation-champigny-sur-marne.html","region":"Western Europe"},{"name":"Antibes","lat":0,"lng":0,"url":"./b2b-lead-generation-antibes.html","region":"Western Europe"},{"name":"Béziers","lat":0,"lng":0,"url":"./b2b-lead-generation-bziers.html","region":"Western Europe"},{"name":"La Rochelle","lat":0,"lng":0,"url":"./b2b-lead-generation-la-rochelle.html","region":"Western Europe"},{"name":"Saint-Maur-des-Fossés","lat":0,"lng":0,"url":"./b2b-lead-generation-saint-maur-des-fosss.html","region":"Western Europe"},{"name":"Cannes","lat":0,"lng":0,"url":"./b2b-lead-generation-cannes.html","region":"Western Europe"},{"name":"Calais","lat":0,"lng":0,"url":"./b2b-lead-generation-calais.html","region":"Western Europe"},{"name":"Saint-Nazaire","lat":0,"lng":0,"url":"./b2b-lead-generation-saint-nazaire.html","region":"Western Europe"},{"name":"Mérignac","lat":0,"lng":0,"url":"./b2b-lead-generation-mrignac.html","region":"Western Europe"},{"name":"Drancy","lat":0,"lng":0,"url":"./b2b-lead-generation-drancy.html","region":"Western Europe"},{"name":"Colmar","lat":0,"lng":0,"url":"./b2b-lead-generation-colmar.html","region":"Western Europe"},{"name":"Ajaccio","lat":0,"lng":0,"url":"./b2b-lead-generation-ajaccio.html","region":"Western Europe"},{"name":"Bourges","lat":0,"lng":0,"url":"./b2b-lead-generation-bourges.html","region":"Western Europe"},{"name":"Issy-les-Moulineaux","lat":0,"lng":0,"url":"./b2b-lead-generation-issy-les-moulineaux.html","region":"Western Europe"},{"name":"Levallois-Perret","lat":0,"lng":0,"url":"./b2b-lead-generation-levallois-perret.html","region":"Western Europe"},{"name":"La Seyne-sur-Mer","lat":0,"lng":0,"url":"./b2b-lead-generation-la-seyne-sur-mer.html","region":"Western Europe"},{"name":"Quimper","lat":0,"lng":0,"url":"./b2b-lead-generation-quimper.html","region":"Western Europe"},{"name":"Noisy-le-Grand","lat":0,"lng":0,"url":"./b2b-lead-generation-noisy-le-grand.html","region":"Western Europe"},{"name":"Villeneuve-d'Ascq","lat":0,"lng":0,"url":"./b2b-lead-generation-villeneuve-dascq.html","region":"Western Europe"},{"name":"Neuilly-sur-Seine","lat":0,"lng":0,"url":"./b2b-lead-generation-neuilly-sur-seine.html","region":"Western Europe"},{"name":"Valence","lat":0,"lng":0,"url":"./b2b-lead-generation-valence.html","region":"Western Europe"},{"name":"Antony","lat":0,"lng":0,"url":"./b2b-lead-generation-antony.html","region":"Western Europe"},{"name":"Cergy","lat":0,"lng":0,"url":"./b2b-lead-generation-cergy.html","region":"Western Europe"},{"name":"Vénissieux","lat":0,"lng":0,"url":"./b2b-lead-generation-vnissieux.html","region":"Western Europe"},{"name":"Pessac","lat":0,"lng":0,"url":"./b2b-lead-generation-pessac.html","region":"Western Europe"},{"name":"Troyes","lat":0,"lng":0,"url":"./b2b-lead-generation-troyes.html","region":"Western Europe"},{"name":"Clichy","lat":0,"lng":0,"url":"./b2b-lead-generation-clichy.html","region":"Western Europe"},{"name":"Ivry-sur-Seine","lat":0,"lng":0,"url":"./b2b-lead-generation-ivry-sur-seine.html","region":"Western Europe"},{"name":"Chambéry","lat":0,"lng":0,"url":"./b2b-lead-generation-chambry.html","region":"Western Europe"},{"name":"Lorient","lat":0,"lng":0,"url":"./b2b-lead-generation-lorient.html","region":"Western Europe"}];
+        
         // Initialize map
         const map = L.map('map').setView([50, 10], 3);
-
-        // Add tile layer
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors',
             maxZoom: 18
         }).addTo(map);
-
-        // Color mapping for sub-regions
+        
         const regionColors = {
-            'DACH': '#f9c23c',              // Yellow (primary)
-            'Western Europe': '#e86100',   // Orange (secondary)
-            'Southern Europe': '#ff6b35',   // Orange-red
-            'Scandinavia': '#4a90e2',      // Blue
-            'Eastern Europe': '#9b59b6',    // Purple
-            'North America': '#e74c3c',    // Red
-            'Turkey': '#95a5a6'            // Gray
+            'DACH': '#f9c23c',
+            'Western Europe': '#e86100',
+            'Southern Europe': '#ff6b35',
+            'Scandinavia': '#4a90e2',
+            'Eastern Europe': '#9b59b6',
+            'North America': '#e74c3c',
+            'Turkey': '#95a5a6'
         };
 
-        // Create custom icon
         function createCustomIcon(color) {
             return L.divIcon({
                 className: 'city-marker',
-                html: `<div style="
-                    width: 20px;
-                    height: 20px;
-                    background-color: ${color};
-                    border: 3px solid white;
-                    border-radius: 50%;
-                    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-                    transition: all 0.3s ease;
-                "></div>`,
+                html: `<div style="width: 20px; height: 20px; background-color: ${color}; border: 3px solid white; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.3); transition: all 0.3s ease;"></div>`,
                 iconSize: [20, 20],
                 iconAnchor: [10, 10]
             });
         }
 
-        // Add markers for each city
         cities.forEach(city => {
+            if(city.lat === 0 && city.lng === 0) return;
             const color = regionColors[city.region] || '#ff6b35';
             const icon = createCustomIcon(color);
-            
             const marker = L.marker([city.lat, city.lng], { icon: icon }).addTo(map);
             
-            // Create popup with link
             const popupContent = `
                 <div class="custom-popup">
                     <h3>${city.name}</h3>
                     <p style="margin: 0.5rem 0; color: #666;">${city.region}</p>
-                    <a href="${city.url}" style="
-                        display: inline-block;
-                        margin-top: 0.5rem;
-                        padding: 0.5rem 1rem;
-                        background-color: #f9c23c;
-                        color: #000;
-                        border-radius: 0.25rem;
-                        font-weight: 600;
-                        text-decoration: none;
-                    ">View Services →</a>
+                    <a href="${city.url}" style="display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; background-color: #f9c23c; color: #000; border-radius: 0.25rem; font-weight: 600; text-decoration: none;">View Services →</a>
                 </div>
             `;
-            
             marker.bindPopup(popupContent);
-            
-            // Add hover effect
-            marker.on('mouseover', function() {
-                this.openPopup();
-            });
+            marker.on('mouseover', function() { this.openPopup(); });
         });
 
-        // Populate city list
         const cityListContainer = document.getElementById('city-list');
         cities.sort((a, b) => a.name.localeCompare(b.name)).forEach(city => {
             const cityCard = document.createElement('a');
@@ -668,4 +700,3 @@
     </script>
 </body>
 </html>
-

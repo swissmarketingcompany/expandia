@@ -1,0 +1,48 @@
+
+[
+    {
+        "id": "managed-it",
+        "name": "Managed IT Services",
+        "slug_pattern": "managed-it-services-{{CITY_SLUG}}",
+        "title_template": "Managed IT Services {{CITY_NAME}} | 24/7 IT Support & Helpdesk",
+        "description_template": "Premier Managed IT Services in {{CITY_NAME}}. Proactive IT support, cloud management, and cybersecurity for growing businesses in {{COUNTRY_NAME}}.",
+        "icon": "🖥️",
+        "template": "service-city-landing"
+    },
+    {
+        "id": "cybersecurity",
+        "name": "Cybersecurity",
+        "slug_pattern": "cybersecurity-services-{{CITY_SLUG}}",
+        "title_template": "Cybersecurity Services {{CITY_NAME}} | VAPT & Network Protection",
+        "description_template": "Expert Cybersecurity services in {{CITY_NAME}}. Vulnerability assessments, penetration testing, and compliance solutions for {{CITY_NAME}} companies.",
+        "icon": "🛡️",
+        "template": "service-city-landing"
+    },
+    {
+        "id": "recruitment",
+        "name": "B2B Recruitment",
+        "slug_pattern": "recruitment-agency-{{CITY_SLUG}}",
+        "title_template": "B2B Recruitment Agency {{CITY_NAME}} | Sales & Tech Talent",
+        "description_template": "Leading B2B recruitment agency in {{CITY_NAME}}. We find top sales, engineering, and leadership talent for companies in {{COUNTRY_NAME}}.",
+        "icon": "👥",
+        "template": "service-city-landing"
+    },
+    {
+        "id": "ai-studio",
+        "name": "AI Creative Studio",
+        "slug_pattern": "ai-creative-studio-{{CITY_SLUG}}",
+        "title_template": "AI Creative Studio {{CITY_NAME}} | Video & Digital Twins",
+        "description_template": "Transform your brand with our AI Creative Studio in {{CITY_NAME}}. AI video generation, digital avatars, and localized content for {{COUNTRY_NAME}} markets.",
+        "icon": "🤖",
+        "template": "service-city-landing"
+    },
+    {
+        "id": "revops",
+        "name": "RevOps & CRM",
+        "slug_pattern": "revops-consulting-{{CITY_SLUG}}",
+        "title_template": "RevOps Consulting {{CITY_NAME}} | HubSpot & Salesforce Experts",
+        "description_template": "Revenue Operations (RevOps) consulting in {{CITY_NAME}}. Optimize your CRM, align sales and marketing, and drive growth in {{CITY_NAME}}.",
+        "icon": "⚙️",
+        "template": "service-city-landing"
+    }
+]
