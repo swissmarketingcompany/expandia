@@ -584,8 +584,22 @@ function buildCityPages() {
             </a>
         `).join('');
 
+        // Generate Service Links for this City
+        const serviceLinksHtml = services.map(service => {
+            const serviceSlug = service.slug_pattern.replace('{{CITY_SLUG}}', cityData.slug.replace('b2b-lead-generation-', ''));
+            return `
+            <a href="${serviceSlug}.html" class="flex items-center gap-4 p-4 rounded-xl bg-base-100 border border-base-300 hover:border-primary hover:shadow-md transition-all group">
+                <div class="text-2xl">${service.icon}</div>
+                <div>
+                    <h3 class="font-bold group-hover:text-primary transition-colors">${service.name}</h3>
+                    <p class="text-xs text-base-content/60">in ${city}</p>
+                </div>
+            </a>`;
+        }).join('');
+
         // Replace placeholders in content
         content = content.replace(/\{\{CITY_NAME\}\}/g, city);
+        content = content.replace(/\{\{SERVICE_LINKS\}\}/g, serviceLinksHtml);
         content = content.replace(/\{\{COUNTRY_NAME\}\}/g, country);
         content = content.replace(/\{\{HERO_IMAGE\}\}/g, image);
         content = content.replace(/\{\{CITY_SLUG\}\}/g, slug);
