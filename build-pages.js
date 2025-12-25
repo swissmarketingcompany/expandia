@@ -334,145 +334,210 @@ function deg2rad(deg) {
 }
 
 // -------------------------------------------------------------------------
-// NEW: Build Service x City Pages
+// NEW: Build Service x City Pages (Multi-Language)
 // -------------------------------------------------------------------------
 function buildServiceCityPages() {
-    console.log('\n🏗️  Building Service x City Landing Pages...');
+    console.log('\n🏗️  Building Service x City Landing Pages (Multi-Language)...');
     
     // Read the mega template
     const templateContent = fs.readFileSync('templates/service-city-landing.html', 'utf8');
     let pageCount = 0;
+    const languages = ['en', 'de', 'fr', 'tr'];
 
-    services.forEach(service => {
-        const contentData = serviceContent[service.id];
-        if (!contentData) {
-            console.warn(`No content found for service ID: ${service.id}`);
-            return;
-        }
+    languages.forEach(lang => {
+        services.forEach(service => {
+            // Get content for specific language, fallback to EN if missing
+            const contentData = (serviceContent[service.id] && serviceContent[service.id][lang]) 
+                ? serviceContent[service.id][lang] 
+                : (serviceContent[service.id] ? serviceContent[service.id]['en'] : null);
 
-        cities.forEach(cityData => {
-            const lang = 'en'; // Currently only EN
-            const city = cityData.city;
-            const country = cityData.country;
-            
-            // Replace dynamic parts in slug
-            const slug = service.slug_pattern.replace('{{CITY_SLUG}}', cityData.slug.replace('b2b-lead-generation-', ''));
-            
-            // Replace dynamic parts in title/desc
-            const title = service.title_template
-                .replace('{{CITY_NAME}}', city)
-                .replace('{{COUNTRY_NAME}}', country);
-            
-            const description = service.description_template
-                .replace('{{CITY_NAME}}', city)
-                .replace('{{COUNTRY_NAME}}', country);
+            if (!contentData) {
+                console.warn(`No content found for service ID: ${service.id} (Lang: ${lang})`);
+                return;
+            }
 
-            // Construct Content Blocks
-            const intro = contentData.intro.map(p => `<p>${p.replace(/\{\{CITY_NAME\}\}/g, city).replace(/\{\{COUNTRY_NAME\}\}/g, country)}</p>`).join('\n');
-            
-            const painPoints = contentData.pain_points.map(point => `
-                <div class="flex gap-3 items-start">
-                    <span class="text-error text-xl">⚠️</span>
-                    <p>${point.replace(/\{\{CITY_NAME\}\}/g, city)}</p>
-                </div>
-            `).join('');
+            cities.forEach(cityData => {
+                const city = cityData.city;
+                const country = cityData.country;
+                
+                // Replace dynamic parts in slug
+                let slug = service.slug_pattern.replace('{{CITY_SLUG}}', cityData.slug.replace('b2b-lead-generation-', ''));
+                
+                // Determine title/desc based on language
+                let titleTemplate = service.title_template;
+                let descTemplate = service.description_template;
 
-            const benefits = contentData.benefits.map(benefit => {
-                // Split bold text
-                const parts = benefit.split('**');
-                if (parts.length === 3) {
-                    return `
-                    <div class="flex gap-3">
-                        <span class="text-secondary text-xl">✓</span>
-                        <p><strong class="text-secondary-content">${parts[1]}</strong> ${parts[2].replace(/\{\{CITY_NAME\}\}/g, city)}</p>
-                    </div>`;
+                if (lang !== 'en' && service.translations && service.translations[lang]) {
+                    titleTemplate = service.translations[lang].title_template;
+                    descTemplate = service.translations[lang].description_template;
                 }
-                return `<p>${benefit}</p>`;
-            }).join('');
 
-            const faq = contentData.faq.map(item => `
-                <div class="collapse collapse-plus bg-base-200">
-                    <input type="radio" name="my-accordion-3" /> 
-                    <div class="collapse-title text-xl font-medium">
-                        ${item.q.replace(/\{\{CITY_NAME\}\}/g, city).replace(/\{\{COUNTRY_NAME\}\}/g, country)}
+                // Replace dynamic parts in title/desc
+                const title = titleTemplate
+                    .replace('{{CITY_NAME}}', city)
+                    .replace('{{COUNTRY_NAME}}', country);
+                
+                const description = descTemplate
+                    .replace('{{CITY_NAME}}', city)
+                    .replace('{{COUNTRY_NAME}}', country);
+
+                // Construct Content Blocks
+                const intro = contentData.intro.map(p => `<p>${p.replace(/\{\{CITY_NAME\}\}/g, city).replace(/\{\{COUNTRY_NAME\}\}/g, country)}</p>`).join('\n');
+                
+                const painPoints = contentData.pain_points.map(point => `
+                    <div class="flex gap-3 items-start">
+                        <span class="text-error text-xl">⚠️</span>
+                        <p>${point.replace(/\{\{CITY_NAME\}\}/g, city)}</p>
                     </div>
-                    <div class="collapse-content"> 
-                        <p>${item.a.replace(/\{\{CITY_NAME\}\}/g, city).replace(/\{\{COUNTRY_NAME\}\}/g, country)}</p>
-                    </div>
-                </div>
-            `).join('');
+                `).join('');
 
-            // Calculate Nearby Cities (same logic as before)
-            const nearby = cities
-                .filter(c => c.slug !== cityData.slug && c.lat && c.lng && cityData.lat && cityData.lng)
-                .map(c => ({
-                    ...c,
-                    distance: getDistanceFromLatLonInKm(cityData.lat, cityData.lng, c.lat, c.lng)
-                }))
-                .sort((a, b) => a.distance - b.distance)
-                .slice(0, 5); // Show 5 links
-
-            const nearbyLinks = nearby.map(c => {
-                // We need to link to the SAME service in the nearby city
-                const nearbySlug = service.slug_pattern.replace('{{CITY_SLUG}}', c.slug.replace('b2b-lead-generation-', ''));
-                return `<a href="${nearbySlug}.html" class="link link-hover hover:text-primary transition-colors">${c.city}</a>`;
-            }).join(' • ');
-
-            // Build HTML
-            let htmlTemplate = createHTMLTemplate(lang);
-            let content = templateContent;
-
-            // Replacements
-            content = content.replace(/\{\{SERVICE_NAME\}\}/g, service.name);
-            content = content.replace(/\{\{SERVICE_ICON\}\}/g, service.icon);
-            content = content.replace(/\{\{CITY_NAME\}\}/g, city);
-            content = content.replace(/\{\{COUNTRY_NAME\}\}/g, country);
-            content = content.replace('{{INTRO_TEXT}}', intro);
-            content = content.replace('{{PAIN_POINTS_LIST}}', painPoints);
-            content = content.replace('{{BENEFITS_LIST}}', benefits);
-            content = content.replace('{{FAQ_LIST}}', faq);
-            content = content.replace('{{NEARBY_CITIES_LINKS}}', nearbyLinks);
-
-            // Navigation/Footer
-            let pageNavigation = navigationEN;
-            let pageFooter = footerEN;
-            const basePath = './';
-            const logoPath = 'Expandia-main-logo-koyu-yesil.png';
-            pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
-            pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
-            pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
-            pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
-
-            htmlTemplate = htmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
-            htmlTemplate = htmlTemplate.replace('{{MAIN_CONTENT}}', content);
-            htmlTemplate = htmlTemplate.replace('{{FOOTER}}', pageFooter);
-
-            // Metadata & Schema
-            htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, title);
-            htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, description);
-            htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, `${service.name} ${city}, ${service.name} Agency ${city}, ${country} B2B Services`);
-            htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.expandia.ch/${slug}.html`);
-
-            const schema = {
-                "@context": "https://schema.org",
-                "@type": "Service",
-                "name": `${service.name} in ${city}`,
-                "provider": { "@type": "Organization", "name": "Expandia", "url": "https://www.expandia.ch" },
-                "areaServed": { 
-                    "@type": "City", 
-                    "name": city,
-                    "address": {
-                        "@type": "PostalAddress",
-                        "addressCountry": country
+                const benefits = contentData.benefits.map(benefit => {
+                    // Split bold text
+                    const parts = benefit.split('**');
+                    if (parts.length === 3) {
+                        return `
+                        <div class="flex gap-3">
+                            <span class="text-secondary text-xl">✓</span>
+                            <p><strong class="text-secondary-content">${parts[1]}</strong> ${parts[2].replace(/\{\{CITY_NAME\}\}/g, city)}</p>
+                        </div>`;
                     }
-                },
-                "description": description
-            };
-            htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, JSON.stringify(schema, null, 2));
+                    return `<p>${benefit}</p>`;
+                }).join('');
 
-            // Write File
-            fs.writeFileSync(`${slug}.html`, htmlTemplate, 'utf8');
-            pageCount++;
+                const faq = contentData.faq.map(item => `
+                    <div class="collapse collapse-plus bg-base-200">
+                        <input type="radio" name="my-accordion-3" /> 
+                        <div class="collapse-title text-xl font-medium">
+                            ${item.q.replace(/\{\{CITY_NAME\}\}/g, city).replace(/\{\{COUNTRY_NAME\}\}/g, country)}
+                        </div>
+                        <div class="collapse-content"> 
+                            <p>${item.a.replace(/\{\{CITY_NAME\}\}/g, city).replace(/\{\{COUNTRY_NAME\}\}/g, country)}</p>
+                        </div>
+                    </div>
+                `).join('');
+
+                // Calculate Nearby Cities (same logic as before)
+                const nearby = cities
+                    .filter(c => c.slug !== cityData.slug && c.lat && c.lng && cityData.lat && cityData.lng)
+                    .map(c => ({
+                        ...c,
+                        distance: getDistanceFromLatLonInKm(cityData.lat, cityData.lng, c.lat, c.lng)
+                    }))
+                    .sort((a, b) => a.distance - b.distance)
+                    .slice(0, 5); 
+
+                const nearbyLinks = nearby.map(c => {
+                    const nearbySlug = service.slug_pattern.replace('{{CITY_SLUG}}', c.slug.replace('b2b-lead-generation-', ''));
+                    // Handle relative linking for subdirectories
+                    const linkPrefix = lang === 'en' ? './' : '../'; 
+                    // If we are in a lang folder, we link to other pages in THAT lang folder (conceptually). 
+                    // But currently flat structure for EN, subdirs for others.
+                    // Wait, if I am in `de/`, linking to `de/other.html`, it is just `./other.html`.
+                    // Yes.
+                    return `<a href="./${nearbySlug}.html" class="link link-hover hover:text-primary transition-colors">${c.city}</a>`;
+                }).join(' • ');
+
+                // Build HTML
+                let htmlTemplate = createHTMLTemplate(lang);
+                let content = templateContent;
+
+                // Replacements
+                content = content.replace(/\{\{SERVICE_NAME\}\}/g, service.name);
+                content = content.replace(/\{\{SERVICE_ICON\}\}/g, service.icon);
+                content = content.replace(/\{\{CITY_NAME\}\}/g, city);
+                content = content.replace(/\{\{COUNTRY_NAME\}\}/g, country);
+                content = content.replace('{{INTRO_TEXT}}', intro);
+                content = content.replace('{{PAIN_POINTS_LIST}}', painPoints);
+                content = content.replace('{{BENEFITS_LIST}}', benefits);
+                content = content.replace('{{FAQ_LIST}}', faq);
+                content = content.replace('{{NEARBY_CITIES_LINKS}}', nearbyLinks);
+                content = content.replace(/\{\{CITY_POPULATION\}\}/g, cityData.population || 'growing');
+                content = content.replace(/\{\{CITY_LANDMARK\}\}/g, cityData.landmark || 'the city center');
+
+                // Navigation/Footer
+                let pageNavigation = lang === 'tr' ? navigationTR : lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
+                let pageFooter = lang === 'tr' ? footerTR : lang === 'de' ? footerDE : lang === 'fr' ? footerFR : footerEN;
+                
+                // Clean i18n
+                pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
+                pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
+
+                const basePath = (lang === 'tr' || lang === 'de' || lang === 'fr') ? '../' : './';
+                const logoPath = (lang === 'tr' || lang === 'de' || lang === 'fr') ? '../Expandia-main-logo-koyu-yesil.png' : 'Expandia-main-logo-koyu-yesil.png';
+                const turkishServicesPath = lang === 'tr' ? './' : './tr/';
+
+                pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
+                pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
+                pageNavigation = pageNavigation.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
+                pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
+                pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
+                pageFooter = pageFooter.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
+
+                // Apply Translation Helper
+                if (lang !== 'en') {
+                    pageNavigation = applyTranslations(pageNavigation, lang);
+                    pageFooter = applyTranslations(pageFooter, lang);
+                }
+
+                // Flag logic
+                const currentFlag = lang === 'tr' ? '🇹🇷' : lang === 'de' ? '🇩🇪' : lang === 'fr' ? '🇫🇷' : '🇺🇸';
+                pageNavigation = pageNavigation.replace(/<span id="current-flag">.*?<\/span>/g, `<span id="current-flag">${currentFlag}</span>`);
+
+                htmlTemplate = htmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
+                htmlTemplate = htmlTemplate.replace('{{MAIN_CONTENT}}', content);
+                htmlTemplate = htmlTemplate.replace('{{FOOTER}}', pageFooter);
+
+                // Metadata & Schema
+                htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, title);
+                htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, description);
+                htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, `${service.name} ${city}, ${service.name} Agency ${city}, ${country} B2B Services`);
+                
+                const canonicalSlug = lang === 'en' ? `${slug}.html` : `${lang}/${slug}.html`;
+                htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.expandia.ch/${canonicalSlug}`);
+                
+                // Hreflang logic
+                htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, `${slug}.html`);
+                htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, `tr/${slug}.html`);
+                htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, `de/${slug}.html`);
+                htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, `fr/${slug}.html`);
+                
+                // Fix missing FR hreflang in template logic (hacky patch based on previous code)
+                if (!htmlTemplate.includes('hreflang="fr"')) {
+                     htmlTemplate = htmlTemplate.replace(
+                        `<link rel="alternate" hreflang="de" href="https://www.expandia.ch/de/${slug}.html">`,
+                        `<link rel="alternate" hreflang="de" href="https://www.expandia.ch/de/${slug}.html">\n    <link rel="alternate" hreflang="fr" href="https://www.expandia.ch/fr/${slug}.html">`
+                    );
+                }
+
+                const schema = {
+                    "@context": "https://schema.org",
+                    "@type": "Service",
+                    "name": `${service.name} in ${city}`,
+                    "provider": { "@type": "Organization", "name": "Expandia", "url": "https://www.expandia.ch" },
+                    "areaServed": { 
+                        "@type": "City", 
+                        "name": city,
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": country
+                        }
+                    },
+                    "description": description
+                };
+                htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, JSON.stringify(schema, null, 2));
+
+                // Write File
+                const outputPath = lang === 'en' ? `${slug}.html` : `${lang}/${slug}.html`;
+                
+                // Ensure dir exists
+                const dir = path.dirname(outputPath);
+                if (!fs.existsSync(dir)) {
+                    fs.mkdirSync(dir, { recursive: true });
+                }
+
+                fs.writeFileSync(outputPath, htmlTemplate, 'utf8');
+                pageCount++;
+            });
         });
     });
     console.log(`✅ Built ${pageCount} Service x City pages.`);
@@ -525,6 +590,8 @@ function buildCityPages() {
         content = content.replace(/\{\{HERO_IMAGE\}\}/g, image);
         content = content.replace(/\{\{CITY_SLUG\}\}/g, slug);
         content = content.replace(/\{\{NEARBY_CITIES\}\}/g, nearbyHtml);
+        content = content.replace(/\{\{CITY_POPULATION\}\}/g, cityData.population || 'growing');
+        content = content.replace(/\{\{CITY_LANDMARK\}\}/g, cityData.landmark || 'the city center');
         
         // Navigation and Footer (EN)
         let pageNavigation = navigationEN;
@@ -824,7 +891,10 @@ function generateSitemap() {
     services.forEach(service => {
         cities.forEach(city => {
             const slug = service.slug_pattern.replace('{{CITY_SLUG}}', city.slug.replace('b2b-lead-generation-', ''));
-            serviceCityPages.push(`${slug}.html`);
+            serviceCityPages.push(`${slug}.html`); // EN
+            serviceCityPages.push(`de/${slug}.html`); // DE
+            serviceCityPages.push(`fr/${slug}.html`); // FR
+            serviceCityPages.push(`tr/${slug}.html`); // TR
         });
     });
 
