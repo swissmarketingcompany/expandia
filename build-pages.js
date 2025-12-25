@@ -5,6 +5,8 @@ const cities = require('./data/cities.json');
 const industries = require('./data/industries.json');
 const services = require('./data/services.json');
 const serviceContent = require('./data/service-content.json');
+const topCities = require('./data/top-cities.json');
+const topIndustries = require('./data/top-industries.json');
 const metadata = require('./data/metadata.json');
 const { createHTMLTemplate, generateOrganizationSchema, generateBreadcrumbSchema } = require('./scripts/utils/template-engine');
 const { applyTranslations } = require('./scripts/utils/translations');
@@ -544,6 +546,122 @@ function buildServiceCityPages() {
 }
 
 // -------------------------------------------------------------------------
+// NEW: Build Service x Industry x City Pages (Multi-Language)
+// -------------------------------------------------------------------------
+function buildServiceIndustryCityPages() {
+    console.log('\n🏗️  Building Service x Industry x City Landing Pages (Multi-Language)...');
+    
+    // Read the mega template
+    const templateContent = fs.readFileSync('templates/service-industry-city-landing.html', 'utf8');
+    let pageCount = 0;
+    const languages = ['en', 'de', 'fr', 'tr'];
+
+    languages.forEach(lang => {
+        services.forEach(service => {
+            topIndustries.forEach(industry => {
+                topCities.forEach(cityData => {
+                    const city = cityData.city;
+                    const country = cityData.country;
+                    
+                    // Slug: service-industry-city.html
+                    // E.g. managed-it-services-fintech-london.html
+                    const slug = `${service.slug_pattern.replace('-{{CITY_SLUG}}', '')}-${industry.slug.replace('b2b-lead-generation-', '')}-${cityData.slug.replace('b2b-lead-generation-', '')}`;
+                    
+                    // Determine title/desc based on language (Simplified for this massive scale)
+                    let title = `${service.name} for ${industry.name} in ${city}`;
+                    let description = `${service.name} tailored for ${industry.name} companies in ${city}.`;
+
+                    // Build HTML
+                    let htmlTemplate = createHTMLTemplate(lang);
+                    let content = templateContent;
+
+                    // Replacements
+                    content = content.replace(/\{\{SERVICE_NAME\}\}/g, service.name);
+                    content = content.replace(/\{\{SERVICE_ICON\}\}/g, service.icon);
+                    content = content.replace(/\{\{INDUSTRY_NAME\}\}/g, industry.name);
+                    content = content.replace(/\{\{CITY_NAME\}\}/g, city);
+                    content = content.replace(/\{\{COUNTRY_NAME\}\}/g, country);
+
+                    // Navigation/Footer
+                    let pageNavigation = lang === 'tr' ? navigationTR : lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
+                    let pageFooter = lang === 'tr' ? footerTR : lang === 'de' ? footerDE : lang === 'fr' ? footerFR : footerEN;
+                    
+                    // Clean i18n
+                    pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
+                    pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
+
+                    const basePath = (lang === 'tr' || lang === 'de' || lang === 'fr') ? '../' : './';
+                    const logoPath = (lang === 'tr' || lang === 'de' || lang === 'fr') ? '../Expandia-main-logo-koyu-yesil.png' : 'Expandia-main-logo-koyu-yesil.png';
+                    const turkishServicesPath = lang === 'tr' ? './' : './tr/';
+
+                    pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
+                    pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
+                    pageNavigation = pageNavigation.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
+                    pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
+                    pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
+                    pageFooter = pageFooter.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
+
+                    // Apply Translation Helper
+                    if (lang !== 'en') {
+                        pageNavigation = applyTranslations(pageNavigation, lang);
+                        pageFooter = applyTranslations(pageFooter, lang);
+                    }
+
+                    htmlTemplate = htmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
+                    htmlTemplate = htmlTemplate.replace('{{MAIN_CONTENT}}', content);
+                    htmlTemplate = htmlTemplate.replace('{{FOOTER}}', pageFooter);
+
+                    // Metadata & Schema
+                    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, title);
+                    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, description);
+                    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, `${service.name} ${industry.name} ${city}`);
+                    
+                    const canonicalSlug = lang === 'en' ? `${slug}.html` : `${lang}/${slug}.html`;
+                    htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.expandia.ch/${canonicalSlug}`);
+                    
+                    // Hreflang logic
+                    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, `${slug}.html`);
+                    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, `tr/${slug}.html`);
+                    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, `de/${slug}.html`);
+                    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, `fr/${slug}.html`);
+                    
+                    // Fix missing FR hreflang
+                    if (!htmlTemplate.includes('hreflang="fr"')) {
+                        htmlTemplate = htmlTemplate.replace(
+                            `<link rel="alternate" hreflang="de" href="https://www.expandia.ch/de/${slug}.html">`,
+                            `<link rel="alternate" hreflang="de" href="https://www.expandia.ch/de/${slug}.html">\n    <link rel="alternate" hreflang="fr" href="https://www.expandia.ch/fr/${slug}.html">`
+                        );
+                    }
+
+                    const schema = {
+                        "@context": "https://schema.org",
+                        "@type": "Service",
+                        "name": `${service.name} for ${industry.name} in ${city}`,
+                        "provider": { "@type": "Organization", "name": "Expandia", "url": "https://www.expandia.ch" },
+                        "areaServed": { "@type": "City", "name": city },
+                        "audience": { "@type": "Audience", "audienceType": industry.name }
+                    };
+                    htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, JSON.stringify(schema, null, 2));
+
+                    // Write File
+                    const outputPath = lang === 'en' ? `${slug}.html` : `${lang}/${slug}.html`;
+                    
+                    // Ensure dir exists
+                    const dir = path.dirname(outputPath);
+                    if (!fs.existsSync(dir)) {
+                        fs.mkdirSync(dir, { recursive: true });
+                    }
+
+                    fs.writeFileSync(outputPath, htmlTemplate, 'utf8');
+                    pageCount++;
+                });
+            });
+        });
+    });
+    console.log(`✅ Built ${pageCount} Service x Industry x City pages.`);
+}
+
+// -------------------------------------------------------------------------
 // NEW: Build City Landing Pages (Refactored)
 // -------------------------------------------------------------------------
 function buildCityPages() {
@@ -912,6 +1030,20 @@ function generateSitemap() {
         });
     });
 
+    // Add Service x Industry x City Pages
+    const serviceIndustryCityPages = [];
+    services.forEach(service => {
+        topIndustries.forEach(industry => {
+            topCities.forEach(cityData => {
+                const slug = `${service.slug_pattern.replace('-{{CITY_SLUG}}', '')}-${industry.slug.replace('b2b-lead-generation-', '')}-${cityData.slug.replace('b2b-lead-generation-', '')}`;
+                serviceIndustryCityPages.push(`${slug}.html`); // EN
+                serviceIndustryCityPages.push(`de/${slug}.html`); // DE
+                serviceIndustryCityPages.push(`fr/${slug}.html`); // FR
+                serviceIndustryCityPages.push(`tr/${slug}.html`); // TR
+            });
+        });
+    });
+
     // Add Blog Pages
     const blogDir = 'templates/blog';
     let blogPages = [];
@@ -921,7 +1053,7 @@ function generateSitemap() {
             .map(file => `blog/${file}`);
     }
 
-    const allPages = [...staticPages, ...localizedPages, ...cityPages, ...industryPages, ...serviceCityPages, ...blogPages];
+    const allPages = [...staticPages, ...localizedPages, ...cityPages, ...industryPages, ...serviceCityPages, ...serviceIndustryCityPages, ...blogPages];
     
     let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
@@ -1067,6 +1199,7 @@ buildPage('ai-creative-studio', 'ai-creative-studio', 'fr');
 buildCityPages();
 buildIndustryPages();
 buildServiceCityPages();
+buildServiceIndustryCityPages(); // NEW
 buildCityLocationsPage();
 buildBlogPosts();
 generateSitemap();
