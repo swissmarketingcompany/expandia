@@ -325,36 +325,42 @@
             </div>
             <a href="../../contact.html"
                 class="btn btn-primary btn-sm lg:btn-md shadow-lg shadow-primary/20 hidden sm:inline-flex">Başla</a>
-            <div class="dropdown dropdown-end lg:hidden">
-                <label tabindex="0" class="btn btn-ghost btn-sm"><svg class="w-6 h-6" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24">
+            <div class="lg:hidden relative">
+                <button onclick="toggleMobileMenu()" class="btn btn-ghost btn-sm"><svg class="w-6 h-6" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg></label>
-                <ul tabindex="0"
-                    class="dropdown-content z-[999] menu p-4 shadow-2xl bg-white rounded-2xl w-72 mt-4 border max-h-[80vh] overflow-y-auto overscroll-contain">
-                    <li><a href="./index.html" class="font-semibold py-3">Ana Sayfa</a></li>
-                    <li class="menu-title text-primary text-xs mt-2">BT & Güvenlik</li>
-                    <li><a href="../../managed-it-services.html">Yönetilen BT</a></li>
-                    <li><a href="../../vulnerability-assessments.html">Güvenlik</a></li>
-                    <li><a href="../../email-security.html">E-posta</a></li>
-                    <li><a href="../../website-care-plans.html">Web</a></li>
-                    <li class="menu-title text-secondary text-xs mt-2">Satış</li>
-                    <li><a href="../../lead-generation-service.html">Lead-Gen</a></li>
-                    <li><a href="../../revops-crm-setup.html">RevOps</a></li>
-                    <li><a href="../../lost-lead-reactivation.html">Reaktivasyon</a></li>
-                    <li><a href="../../speed-to-lead.html">Hızlı Yanıt</a></li>
-                    <li class="menu-title text-accent text-xs mt-2">Yetenek & YZ</li>
-                    <li><a href="../../recruitment.html">İşe Alım</a></li>
-                    <li><a href="../../ai-creative-studio.html">YZ Stüdyo</a></li>
+                    </svg></button>
+                <div id="mobile-menu" class="hidden absolute right-0 top-full mt-4 z-[999]">
+                    <ul
+                        class="menu p-4 shadow-2xl bg-white rounded-2xl w-72 border max-h-[80vh] overflow-y-auto overscroll-contain">
+                        <li><a href="./index.html" class="font-semibold py-3">Ana Sayfa</a></li>
+                        <li class="menu-title text-primary text-xs mt-2">BT & Güvenlik</li>
+                        <li><a href="../../managed-it-services.html">Yönetilen BT</a></li>
+                        <li><a href="../../vulnerability-assessments.html">Güvenlik</a></li>
+                        <li><a href="../../email-security.html">E-posta</a></li>
+                        <li><a href="../../website-care-plans.html">Web</a></li>
+                        <li class="menu-title text-secondary text-xs mt-2">Satış</li>
+                        <li><a href="../../lead-generation-service.html">Lead-Gen</a></li>
+                        <li><a href="../../revops-crm-setup.html">RevOps</a></li>
+                        <li><a href="../../lost-lead-reactivation.html">Reaktivasyon</a></li>
+                        <li><a href="../../speed-to-lead.html">Hızlı Yanıt</a></li>
+                        <li class="menu-title text-accent text-xs mt-2">Yetenek & YZ</li>
+                        <li><a href="../../recruitment.html">İşe Alım</a></li>
+                        <li><a href="../../ai-creative-studio.html">YZ Stüdyo</a></li>
 
-                </ul>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 </nav>
 
 <script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+    }
     function toggleDropdown(menuId) {
         const allMenus = ['solutions-menu', 'company-menu'];
         allMenus.forEach(id => {
@@ -417,17 +423,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">İlgili Terimler</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./conversion-rate.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Conversion Rate</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Conversion Rate, satışta geliri artırmak ve müşteri ilişkilerini yönetmek için kullanılan temel bir kavramdır.</p>
+                <a href="./risk-assessment.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Risk Assessment</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Risk Assessment, sistemleri ve verileri dijital saldırılardan korumayı içeren kritik bir siber güvenlik kavramdır.</p>
                 </a>
-                <a href="./viral-marketing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Viral Marketing</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Viral Marketing, işletmelerin hedef kitlelerine ulaşmasına yardımcı olarak pazarlamada kilit bir rol oynar.</p>
+                <a href="./total-contract-value-tcv.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Total Contract Value (TCV)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Total Contract Value (TCV), büyümeyi en üst düzeye çıkarmak için satış ve pazarlamayı hizalamaya odaklanan Gelir Operasyonları için merkezidir.</p>
                 </a>
-                <a href="./malware.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Malware</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Malware, sistemleri ve verileri dijital saldırılardan korumayı içeren kritik bir siber güvenlik kavramdır.</p>
+                <a href="./data-hygiene.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Data Hygiene</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Data Hygiene, büyümeyi en üst düzeye çıkarmak için satış ve pazarlamayı hizalamaya odaklanan Gelir Operasyonları için merkezidir.</p>
                 </a>
             </div>
         </div>
