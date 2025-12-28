@@ -548,6 +548,8 @@ function buildServiceCityPages() {
                 const turkishServicesPath = lang === 'tr' ? './' : './tr/';
 
                 pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
+                pageNavigation = pageNavigation.replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html');
+                pageNavigation = pageNavigation.replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, 'our-ethical-principles.html');
                 pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
                 pageNavigation = pageNavigation.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
                 pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
@@ -687,6 +689,8 @@ function buildServiceIndustryCityPages() {
                     const turkishServicesPath = lang === 'tr' ? './' : './tr/';
 
                     pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
+                    pageNavigation = pageNavigation.replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html');
+                    pageNavigation = pageNavigation.replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, 'our-ethical-principles.html');
                     pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
                     pageNavigation = pageNavigation.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
                     pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
