@@ -368,6 +368,14 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
     }
     function toggleDropdown(menuId) {
         const allMenus = ['solutions-menu', 'company-menu'];

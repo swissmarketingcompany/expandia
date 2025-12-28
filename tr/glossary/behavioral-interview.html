@@ -360,6 +360,14 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
     }
     function toggleDropdown(menuId) {
         const allMenus = ['solutions-menu', 'company-menu'];
@@ -423,17 +431,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">İlgili Terimler</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./erp-enterprise-resource-planning.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">ERP (Enterprise Resource Planning)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">ERP (Enterprise Resource Planning), dijital çözümler oluşturmak için kullanılan sistemleri veya yazılımları tanımlayan bir teknoloji terimidir.</p>
+                <a href="./multi-channel-marketing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Multi-Channel Marketing</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Multi-Channel Marketing, işletmelerin hedef kitlelerine ulaşmasına yardımcı olarak pazarlamada kilit bir rol oynar.</p>
                 </a>
-                <a href="./emotional-intelligence.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Emotional Intelligence</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">undefined</p>
+                <a href="./commission.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Commission</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Commission, satışta geliri artırmak ve müşteri ilişkilerini yönetmek için kullanılan temel bir kavramdır.</p>
                 </a>
-                <a href="./vulnerability-assessment.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Vulnerability Assessment</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Vulnerability Assessment, sistemleri ve verileri dijital saldırılardan korumayı içeren kritik bir siber güvenlik kavramdır.</p>
+                <a href="./sales-operations.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Sales Operations</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Sales Operations, satışta geliri artırmak ve müşteri ilişkilerini yönetmek için kullanılan temel bir kavramdır.</p>
                 </a>
             </div>
         </div>

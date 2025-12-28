@@ -351,6 +351,14 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
     }
     function toggleDropdown(menuId) {
         const allMenus = ['solutions-menu', 'company-menu'];
@@ -411,17 +419,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Termes Connexes</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./open-source.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Open Source</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Open Source est un terme technologique décrivant les systèmes, logiciels ou méthodologies.</p>
+                <a href="./talent-acquisition.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Talent Acquisition</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Talent Acquisition concerne le processus de recrutement, impliquant l'attraction et la sélection des candidats.</p>
                 </a>
-                <a href="./sales-script.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Sales Script</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Sales Script est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
+                <a href="./scalability.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Scalability</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Scalability est un terme technologique décrivant les systèmes, logiciels ou méthodologies.</p>
                 </a>
-                <a href="./productivity.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Productivity</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">undefined</p>
+                <a href="./account-management.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Account Management</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Account Management est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
                 </a>
             </div>
         </div>

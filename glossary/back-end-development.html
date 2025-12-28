@@ -415,6 +415,14 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
     }
 
     function toggleDropdown(menuId) {
@@ -493,17 +501,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Related Terms</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./exit-interview.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Exit Interview</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Exit Interview relates to the recruitment process, involving the attraction, selection, and onboarding of qualified candidates.</p>
+                <a href="./pipeline-management.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Pipeline Management</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Pipeline Management is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
                 </a>
-                <a href="./front-end-development.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Front-End Development</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Front-End Development is a technology term that describes systems, software, or methodologies used to build and maintain digital solutions.</p>
+                <a href="./crm-customer-relationship-management.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">CRM (Customer Relationship Management)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">CRM (Customer Relationship Management) is a technology term that describes systems, software, or methodologies used to build and maintain digital solutions.</p>
                 </a>
-                <a href="./appointment-setting.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Appointment Setting</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Appointment Setting is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
+                <a href="./quota.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Quota</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Quota is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
                 </a>
             </div>
         </div>

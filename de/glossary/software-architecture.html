@@ -350,6 +350,14 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
     }
     function toggleDropdown(menuId) {
         const allMenus = ['solutions-menu', 'company-menu'];
@@ -410,17 +418,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Verwandte Begriffe</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./applicant-tracking-system-ats.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Applicant Tracking System (ATS)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Applicant Tracking System (ATS) bezieht sich auf den Rekrutierungsprozess und die Auswahl qualifizierter Kandidaten.</p>
+                <a href="./insider-threat.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Insider Threat</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Insider Threat ist ein kritisches Konzept der Cybersicherheit zum Schutz von Systemen und Daten.</p>
                 </a>
-                <a href="./lead-magnet.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Lead Magnet</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Lead Magnet spielt eine Schlüsselrolle im Marketing, indem es Unternehmen hilft, ihre Zielgruppe zu erreichen.</p>
+                <a href="./return-on-ad-spend-roas.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Return on Ad Spend (ROAS)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Return on Ad Spend (ROAS) spielt eine Schlüsselrolle im Marketing, indem es Unternehmen hilft, ihre Zielgruppe zu erreichen.</p>
                 </a>
-                <a href="./cybersecurity.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Cybersecurity</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Cybersecurity ist ein Technologiebegriff, der Systeme, Software oder Methoden beschreibt.</p>
+                <a href="./erp-enterprise-resource-planning.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">ERP (Enterprise Resource Planning)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">ERP (Enterprise Resource Planning) ist ein Technologiebegriff, der Systeme, Software oder Methoden beschreibt.</p>
                 </a>
             </div>
         </div>

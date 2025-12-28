@@ -360,6 +360,14 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
     }
     function toggleDropdown(menuId) {
         const allMenus = ['solutions-menu', 'company-menu'];
@@ -423,17 +431,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">İlgili Terimler</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./patent-law.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Patent Law</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">undefined</p>
+                <a href="./upselling.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Upselling</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Upselling, satışta geliri artırmak ve müşteri ilişkilerini yönetmek için kullanılan temel bir kavramdır.</p>
                 </a>
-                <a href="./executive-search.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Executive Search</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Executive Search, nitelikli adayların çekilmesi ve seçilmesini içeren işe alım süreciyle ilgilidir.</p>
+                <a href="./job-offer.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Job Offer</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Job Offer, nitelikli adayların çekilmesi ve seçilmesini içeren işe alım süreciyle ilgilidir.</p>
                 </a>
-                <a href="./digital-signature.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Digital Signature</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Digital Signature, sistemleri ve verileri dijital saldırılardan korumayı içeren kritik bir siber güvenlik kavramdır.</p>
+                <a href="./information-security.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Information Security</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Information Security, sistemleri ve verileri dijital saldırılardan korumayı içeren kritik bir siber güvenlik kavramdır.</p>
                 </a>
             </div>
         </div>

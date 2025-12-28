@@ -350,6 +350,14 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
     }
     function toggleDropdown(menuId) {
         const allMenus = ['solutions-menu', 'company-menu'];
@@ -410,17 +418,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Verwandte Begriffe</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./zero-day-exploit.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Zero Day Exploit</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Zero Day Exploit ist ein kritisches Konzept der Cybersicherheit zum Schutz von Systemen und Daten.</p>
+                <a href="./market-research.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Market Research</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">undefined</p>
                 </a>
-                <a href="./zero-trust-security.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Zero Trust Security</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Zero Trust Security ist ein kritisches Konzept der Cybersicherheit zum Schutz von Systemen und Daten.</p>
+                <a href="./influencer-marketing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Influencer Marketing</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Influencer Marketing spielt eine Schlüsselrolle im Marketing, indem es Unternehmen hilft, ihre Zielgruppe zu erreichen.</p>
                 </a>
-                <a href="./career-pathing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Career Pathing</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Career Pathing bezieht sich auf den Rekrutierungsprozess und die Auswahl qualifizierter Kandidaten.</p>
+                <a href="./antivirus.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Antivirus</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Antivirus ist ein kritisches Konzept der Cybersicherheit zum Schutz von Systemen und Daten.</p>
                 </a>
             </div>
         </div>

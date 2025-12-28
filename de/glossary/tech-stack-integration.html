@@ -350,6 +350,14 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
     }
     function toggleDropdown(menuId) {
         const allMenus = ['solutions-menu', 'company-menu'];
@@ -410,17 +418,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Verwandte Begriffe</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./conversion-optimization.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Conversion Optimization</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Conversion Optimization spielt eine Schlüsselrolle im Marketing, indem es Unternehmen hilft, ihre Zielgruppe zu erreichen.</p>
+                <a href="./cold-emailing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Cold Emailing</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Cold Emailing ist ein grundlegendes Konzept im Vertrieb, das sich auf Strategien oder Kennzahlen bezieht, um Umsatz zu steigern.</p>
                 </a>
-                <a href="./sales-funnel.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Sales Funnel</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Sales Funnel ist ein grundlegendes Konzept im Vertrieb, das sich auf Strategien oder Kennzahlen bezieht, um Umsatz zu steigern.</p>
+                <a href="./talent-acquisition.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Talent Acquisition</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Talent Acquisition bezieht sich auf den Rekrutierungsprozess und die Auswahl qualifizierter Kandidaten.</p>
                 </a>
-                <a href="./mobile-app-development.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Mobile App Development</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Mobile App Development ist ein Technologiebegriff, der Systeme, Software oder Methoden beschreibt.</p>
+                <a href="./technical-recruiting.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Technical Recruiting</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Technical Recruiting bezieht sich auf den Rekrutierungsprozess und die Auswahl qualifizierter Kandidaten.</p>
                 </a>
             </div>
         </div>

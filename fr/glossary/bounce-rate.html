@@ -351,6 +351,14 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
     }
     function toggleDropdown(menuId) {
         const allMenus = ['solutions-menu', 'company-menu'];
@@ -411,17 +419,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Termes Connexes</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./enterprise-sales.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Enterprise Sales</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Enterprise Sales est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
+                <a href="./gatekeeper.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Gatekeeper</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Gatekeeper est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
                 </a>
-                <a href="./devops.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">DevOps</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">DevOps est un terme technologique décrivant les systèmes, logiciels ou méthodologies.</p>
+                <a href="./marketing-automation.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Marketing Automation</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Marketing Automation joue un rôle clé dans le marketing en aidant les entreprises à atteindre leur public cible.</p>
                 </a>
-                <a href="./back-end-development.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Back-End Development</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Back-End Development est un terme technologique décrivant les systèmes, logiciels ou méthodologies.</p>
+                <a href="./churn-rate.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Churn Rate</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Churn Rate est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
                 </a>
             </div>
         </div>

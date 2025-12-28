@@ -350,6 +350,14 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
     }
     function toggleDropdown(menuId) {
         const allMenus = ['solutions-menu', 'company-menu'];
@@ -410,17 +418,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Verwandte Begriffe</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./back-end-development.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Back-End Development</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Back-End Development ist ein Technologiebegriff, der Systeme, Software oder Methoden beschreibt.</p>
+                <a href="./b2b-sales.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">B2B Sales</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">B2B Sales ist ein grundlegendes Konzept im Vertrieb, das sich auf Strategien oder Kennzahlen bezieht, um Umsatz zu steigern.</p>
                 </a>
-                <a href="./full-cycle-recruiting.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Full-Cycle Recruiting</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Full-Cycle Recruiting bezieht sich auf den Rekrutierungsprozess und die Auswahl qualifizierter Kandidaten.</p>
+                <a href="./data-mining.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Data Mining</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Data Mining ist ein Technologiebegriff, der Systeme, Software oder Methoden beschreibt.</p>
                 </a>
-                <a href="./brute-force-attack.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Brute Force Attack</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Brute Force Attack ist ein kritisches Konzept der Cybersicherheit zum Schutz von Systemen und Daten.</p>
+                <a href="./microservices.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Microservices</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Microservices ist ein Technologiebegriff, der Systeme, Software oder Methoden beschreibt.</p>
                 </a>
             </div>
         </div>

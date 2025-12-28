@@ -350,6 +350,14 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
     }
     function toggleDropdown(menuId) {
         const allMenus = ['solutions-menu', 'company-menu'];
@@ -410,17 +418,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Verwandte Begriffe</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./identity-management.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Identity Management</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Identity Management ist ein kritisches Konzept der Cybersicherheit zum Schutz von Systemen und Daten.</p>
-                </a>
-                <a href="./bootstrapping.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Bootstrapping</h3>
+                <a href="./angel-investment.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Angel Investment</h3>
                     <p class="text-sm text-base-content/60 line-clamp-3">undefined</p>
                 </a>
-                <a href="./zero-day-exploit.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Zero Day Exploit</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Zero Day Exploit ist ein kritisches Konzept der Cybersicherheit zum Schutz von Systemen und Daten.</p>
+                <a href="./access-control.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Access Control</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Access Control ist ein kritisches Konzept der Cybersicherheit zum Schutz von Systemen und Daten.</p>
+                </a>
+                <a href="./lead-generation.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Lead Generation</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Lead Generation ist ein grundlegendes Konzept im Vertrieb, das sich auf Strategien oder Kennzahlen bezieht, um Umsatz zu steigern.</p>
                 </a>
             </div>
         </div>

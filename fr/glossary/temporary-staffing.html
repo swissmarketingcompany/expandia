@@ -351,6 +351,14 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
     }
     function toggleDropdown(menuId) {
         const allMenus = ['solutions-menu', 'company-menu'];
@@ -411,17 +419,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Termes Connexes</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./security-operations-center-soc.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Security Operations Center (SOC)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Security Operations Center (SOC) est un concept critique de cybersécurité impliquant des mesures de protection des systèmes.</p>
+                <a href="./automation.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Automation</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Automation est un terme technologique décrivant les systèmes, logiciels ou méthodologies.</p>
                 </a>
-                <a href="./software-development-life-cycle-sdlc.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Software Development Life Cycle (SDLC)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Software Development Life Cycle (SDLC) est un terme technologique décrivant les systèmes, logiciels ou méthodologies.</p>
+                <a href="./disruption.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Disruption</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">undefined</p>
                 </a>
-                <a href="./customer-lifetime-value-clv.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Customer Lifetime Value (CLV)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Customer Lifetime Value (CLV) est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
+                <a href="./sales-funnel.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Sales Funnel</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Sales Funnel est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
                 </a>
             </div>
         </div>

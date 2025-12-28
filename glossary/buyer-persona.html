@@ -415,6 +415,14 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
     }
 
     function toggleDropdown(menuId) {
@@ -493,17 +501,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Related Terms</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./cross-selling.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Cross-Selling</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Cross-Selling is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
+                <a href="./cybersecurity.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Cybersecurity</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Cybersecurity is a technology term that describes systems, software, or methodologies used to build and maintain digital solutions.</p>
                 </a>
-                <a href="./intellectual-property.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Intellectual Property</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Intellectual Property is an important term in the Business industry.</p>
+                <a href="./search-engine-marketing-sem.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Search Engine Marketing (SEM)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Search Engine Marketing (SEM) plays a key role in marketing by helping businesses reach their target audience and measure campaign success.</p>
                 </a>
-                <a href="./digital-signature.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Digital Signature</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Digital Signature is a critical cybersecurity concept involving measures to protect systems, networks, and data from digital attacks.</p>
+                <a href="./direct-marketing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Direct Marketing</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Direct Marketing plays a key role in marketing by helping businesses reach their target audience and measure campaign success.</p>
                 </a>
             </div>
         </div>

@@ -415,6 +415,14 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
     }
 
     function toggleDropdown(menuId) {
@@ -493,17 +501,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Related Terms</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./automation.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Automation</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Automation is a technology term that describes systems, software, or methodologies used to build and maintain digital solutions.</p>
+                <a href="./social-selling.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Social Selling</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Social Selling is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
                 </a>
-                <a href="./virtual-teams.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Virtual Teams</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Virtual Teams is an important term in the Business industry.</p>
+                <a href="./b2b-sales.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">B2B Sales</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">B2B Sales is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
                 </a>
-                <a href="./customer-lifetime-value-clv.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Customer Lifetime Value (CLV)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Customer Lifetime Value (CLV) is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
+                <a href="./key-performance-indicator-kpi.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Key Performance Indicator (KPI)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Key Performance Indicator (KPI) is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
                 </a>
             </div>
         </div>

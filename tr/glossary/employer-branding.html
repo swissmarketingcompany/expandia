@@ -360,6 +360,14 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
     }
     function toggleDropdown(menuId) {
         const allMenus = ['solutions-menu', 'company-menu'];
@@ -423,17 +431,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">İlgili Terimler</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./tech-stack.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Tech Stack</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Tech Stack, dijital çözümler oluşturmak için kullanılan sistemleri veya yazılımları tanımlayan bir teknoloji terimidir.</p>
+                <a href="./data-encryption.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Data Encryption</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Data Encryption, sistemleri ve verileri dijital saldırılardan korumayı içeren kritik bir siber güvenlik kavramdır.</p>
                 </a>
-                <a href="./cost-per-click-cpc.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Cost Per Click (CPC)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Cost Per Click (CPC), işletmelerin hedef kitlelerine ulaşmasına yardımcı olarak pazarlamada kilit bir rol oynar.</p>
+                <a href="./territory-management.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Territory Management</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Territory Management, büyümeyi en üst düzeye çıkarmak için satış ve pazarlamayı hizalamaya odaklanan Gelir Operasyonları için merkezidir.</p>
                 </a>
-                <a href="./monthly-recurring-revenue-mrr.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Monthly Recurring Revenue (MRR)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Monthly Recurring Revenue (MRR), satışta geliri artırmak ve müşteri ilişkilerini yönetmek için kullanılan temel bir kavramdır.</p>
+                <a href="./remote-work.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Remote Work</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Remote Work, nitelikli adayların çekilmesi ve seçilmesini içeren işe alım süreciyle ilgilidir.</p>
                 </a>
             </div>
         </div>

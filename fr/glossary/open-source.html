@@ -351,6 +351,14 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
     }
     function toggleDropdown(menuId) {
         const allMenus = ['solutions-menu', 'company-menu'];
@@ -415,13 +423,13 @@
                     <h3 class="font-bold text-lg mb-2 group-hover:text-primary">GDPR</h3>
                     <p class="text-sm text-base-content/60 line-clamp-3">GDPR est un concept critique de cybersécurité impliquant des mesures de protection des systèmes.</p>
                 </a>
-                <a href="./zero-day-exploit.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Zero Day Exploit</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Zero Day Exploit est un concept critique de cybersécurité impliquant des mesures de protection des systèmes.</p>
+                <a href="./forecasting.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Forecasting</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Forecasting est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
                 </a>
-                <a href="./intrusion-detection-system-ids.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Intrusion Detection System (IDS)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Intrusion Detection System (IDS) est un concept critique de cybersécurité impliquant des mesures de protection des systèmes.</p>
+                <a href="./annual-recurring-revenue-arr.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Annual Recurring Revenue (ARR)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Annual Recurring Revenue (ARR) est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
                 </a>
             </div>
         </div>

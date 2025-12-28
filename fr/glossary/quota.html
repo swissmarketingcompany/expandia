@@ -351,6 +351,14 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
     }
     function toggleDropdown(menuId) {
         const allMenus = ['solutions-menu', 'company-menu'];
@@ -411,17 +419,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Termes Connexes</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./search-engine-marketing-sem.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Search Engine Marketing (SEM)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Search Engine Marketing (SEM) joue un rôle clé dans le marketing en aidant les entreprises à atteindre leur public cible.</p>
+                <a href="./churn-rate.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Churn Rate</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Churn Rate est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
                 </a>
-                <a href="./data-hygiene.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Data Hygiene</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Data Hygiene est central pour les opérations de revenus, se concentrant sur l'alignement des ventes et du marketing.</p>
+                <a href="./follow-up.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Follow-up</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Follow-up est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
                 </a>
-                <a href="./recruitment-agency.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Recruitment Agency</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Recruitment Agency concerne le processus de recrutement, impliquant l'attraction et la sélection des candidats.</p>
+                <a href="./candidate-experience.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Candidate Experience</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Candidate Experience concerne le processus de recrutement, impliquant l'attraction et la sélection des candidats.</p>
                 </a>
             </div>
         </div>

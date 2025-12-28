@@ -360,6 +360,14 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
     }
     function toggleDropdown(menuId) {
         const allMenus = ['solutions-menu', 'company-menu'];
@@ -427,13 +435,13 @@
                     <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Customer Data Platform (CDP)</h3>
                     <p class="text-sm text-base-content/60 line-clamp-3">Customer Data Platform (CDP), büyümeyi en üst düzeye çıkarmak için satış ve pazarlamayı hizalamaya odaklanan Gelir Operasyonları için merkezidir.</p>
                 </a>
-                <a href="./quality-assurance.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Quality Assurance</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">undefined</p>
+                <a href="./insider-threat.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Insider Threat</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Insider Threat, sistemleri ve verileri dijital saldırılardan korumayı içeren kritik bir siber güvenlik kavramdır.</p>
                 </a>
-                <a href="./six-sigma.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Six Sigma</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">undefined</p>
+                <a href="./social-engineering.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Social Engineering</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Social Engineering, sistemleri ve verileri dijital saldırılardan korumayı içeren kritik bir siber güvenlik kavramdır.</p>
                 </a>
             </div>
         </div>

@@ -415,6 +415,14 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
     }
 
     function toggleDropdown(menuId) {
@@ -493,17 +501,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Related Terms</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./identity-management.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Identity Management</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Identity Management is a critical cybersecurity concept involving measures to protect systems, networks, and data from digital attacks.</p>
+                <a href="./corporate-social-responsibility-csr.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Corporate Social Responsibility (CSR)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Corporate Social Responsibility (CSR) is an important term in the Business industry.</p>
                 </a>
-                <a href="./sales-enablement.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Sales Enablement</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Sales Enablement is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
+                <a href="./data-encryption.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Data Encryption</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Data Encryption is a critical cybersecurity concept involving measures to protect systems, networks, and data from digital attacks.</p>
                 </a>
-                <a href="./sales-pitch.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Sales Pitch</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Sales Pitch is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
+                <a href="./botnet.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Botnet</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Botnet is a critical cybersecurity concept involving measures to protect systems, networks, and data from digital attacks.</p>
                 </a>
             </div>
         </div>

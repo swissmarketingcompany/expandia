@@ -351,6 +351,14 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
     }
     function toggleDropdown(menuId) {
         const allMenus = ['solutions-menu', 'company-menu'];
@@ -411,17 +419,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Termes Connexes</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./data-integrity.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Data Integrity</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Data Integrity est central pour les opérations de revenus, se concentrant sur l'alignement des ventes et du marketing.</p>
+                <a href="./cryptography.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Cryptography</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Cryptography est un concept critique de cybersécurité impliquant des mesures de protection des systèmes.</p>
                 </a>
-                <a href="./tech-stack.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Tech Stack</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Tech Stack est un terme technologique décrivant les systèmes, logiciels ou méthodologies.</p>
+                <a href="./social-media-marketing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Social Media Marketing</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Social Media Marketing joue un rôle clé dans le marketing en aidant les entreprises à atteindre leur public cible.</p>
                 </a>
-                <a href="./cybersecurity.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Cybersecurity</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Cybersecurity est un terme technologique décrivant les systèmes, logiciels ou méthodologies.</p>
+                <a href="./platform-as-a-service-paas.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Platform as a Service (PaaS)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Platform as a Service (PaaS) est un terme technologique décrivant les systèmes, logiciels ou méthodologies.</p>
                 </a>
             </div>
         </div>

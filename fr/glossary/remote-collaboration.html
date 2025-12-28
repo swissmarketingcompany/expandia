@@ -351,6 +351,14 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
     }
     function toggleDropdown(menuId) {
         const allMenus = ['solutions-menu', 'company-menu'];
@@ -411,17 +419,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Termes Connexes</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./lead-magnet.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Lead Magnet</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Lead Magnet joue un rôle clé dans le marketing en aidant les entreprises à atteindre leur public cible.</p>
+                <a href="./outplacement.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Outplacement</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Outplacement concerne le processus de recrutement, impliquant l'attraction et la sélection des candidats.</p>
                 </a>
-                <a href="./cybersecurity.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Cybersecurity</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Cybersecurity est un terme technologique décrivant les systèmes, logiciels ou méthodologies.</p>
+                <a href="./copyright.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Copyright</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">undefined</p>
                 </a>
-                <a href="./digital-marketing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Digital Marketing</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Digital Marketing joue un rôle clé dans le marketing en aidant les entreprises à atteindre leur public cible.</p>
+                <a href="./talent-management.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Talent Management</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Talent Management concerne le processus de recrutement, impliquant l'attraction et la sélection des candidats.</p>
                 </a>
             </div>
         </div>

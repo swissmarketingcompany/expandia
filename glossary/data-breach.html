@@ -415,6 +415,14 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
     }
 
     function toggleDropdown(menuId) {
@@ -493,17 +501,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Related Terms</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./remote-collaboration.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Remote Collaboration</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Remote Collaboration is an important term in the Business industry.</p>
+                <a href="./value-proposition.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Value Proposition</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Value Proposition is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
                 </a>
-                <a href="./performance-marketing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Performance Marketing</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Performance Marketing plays a key role in marketing by helping businesses reach their target audience and measure campaign success.</p>
+                <a href="./pipeline-management.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Pipeline Management</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Pipeline Management is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
                 </a>
-                <a href="./buyer-persona.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Buyer Persona</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Buyer Persona plays a key role in marketing by helping businesses reach their target audience and measure campaign success.</p>
+                <a href="./net-promoter-score-nps.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Net Promoter Score (NPS)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Net Promoter Score (NPS) is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
                 </a>
             </div>
         </div>

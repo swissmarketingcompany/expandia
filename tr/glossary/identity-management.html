@@ -360,6 +360,14 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
     }
     function toggleDropdown(menuId) {
         const allMenus = ['solutions-menu', 'company-menu'];
@@ -423,17 +431,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">İlgili Terimler</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./cloud-computing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Cloud Computing</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Cloud Computing, dijital çözümler oluşturmak için kullanılan sistemleri veya yazılımları tanımlayan bir teknoloji terimidir.</p>
+                <a href="./outplacement.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Outplacement</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Outplacement, nitelikli adayların çekilmesi ve seçilmesini içeren işe alım süreciyle ilgilidir.</p>
                 </a>
-                <a href="./data-integrity.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Data Integrity</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Data Integrity, büyümeyi en üst düzeye çıkarmak için satış ve pazarlamayı hizalamaya odaklanan Gelir Operasyonları için merkezidir.</p>
+                <a href="./user-acceptance-testing-uat.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">User Acceptance Testing (UAT)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">User Acceptance Testing (UAT), dijital çözümler oluşturmak için kullanılan sistemleri veya yazılımları tanımlayan bir teknoloji terimidir.</p>
                 </a>
-                <a href="./antivirus.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Antivirus</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Antivirus, sistemleri ve verileri dijital saldırılardan korumayı içeren kritik bir siber güvenlik kavramdır.</p>
+                <a href="./demand-generation.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Demand Generation</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Demand Generation, işletmelerin hedef kitlelerine ulaşmasına yardımcı olarak pazarlamada kilit bir rol oynar.</p>
                 </a>
             </div>
         </div>
