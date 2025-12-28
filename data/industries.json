@@ -1,19 +1,11 @@
 [
   {
-    "id": "b2b-lead-generation-saas",
-    "slug": "b2b-lead-generation-saas",
-    "name": "SaaS",
-    "title": "B2B Lead Generation for SaaS Companies | Expandia",
-    "description": "Specialized B2B lead generation for SaaS companies. Fill your pipeline with qualified demos and trials.",
-    "image": "./assets/local/saas-hero.jpg"
-  },
-  {
-    "id": "b2b-lead-generation-financial-services",
-    "slug": "b2b-lead-generation-financial-services",
-    "name": "Financial Services",
-    "title": "Lead Generation for Financial Services | Expandia",
-    "description": "High-quality lead generation for financial services, fintech, and investment firms. Compliant and targeted outreach.",
-    "image": "./assets/local/finance-hero.jpg"
+    "id": "b2b-lead-generation-manufacturing",
+    "slug": "b2b-lead-generation-manufacturing",
+    "name": "Manufacturing",
+    "title": "Industrial & Manufacturing Lead Generation | Expandia",
+    "description": "Find distributors, partners, and B2B buyers for your manufacturing business in Europe and globally.",
+    "image": "./assets/local/manufacturing-hero.jpg"
   },
   {
     "id": "b2b-lead-generation-consulting",

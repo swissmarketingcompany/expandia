@@ -34,10 +34,10 @@
     <meta name="twitter:description" content="Lead generation case studies and proof of results. Inbound and outbound program outcomes from our clients.">
     <meta name="twitter:image" content="https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png">
     
-    <link href="/dist/css/output.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="apple-touch-icon" href="/favicon.png">
+    <link href="./dist/css/output.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="apple-touch-icon" href="./favicon.png">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XY2B6K4R6Q"></script>
@@ -49,8 +49,10 @@
       gtag('config', 'G-XY2B6K4R6Q');
     </script>
     
-    <!-- Lordicon Script -->
-    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Vivus for SVG Animation -->
+    <script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
     
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
@@ -84,6 +86,10 @@
 }
     </script>
     
+    <style>
+        .lucide { cursor: pointer; }
+    </style>
+
     
 </head>
 <body class="font-sans">
@@ -92,7 +98,7 @@
     <div class="container mx-auto px-4 lg:px-8 flex items-center justify-between h-16">
         <!-- Logo -->
         <a href="./index.html" class="flex-shrink-0">
-            <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-12 md:h-14">
+            <img src="./Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-12 md:h-14">
         </a>
 
         <!-- Desktop Navigation -->
@@ -117,7 +123,7 @@
                         <div class="p-6">
                             <h3
                                 class="text-xs font-bold text-primary uppercase tracking-wider mb-4 flex items-center gap-2">
-                                <span class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center">🛡️</span>
+                                <span class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center text-primary"><i data-lucide="shield-check" class="w-4 h-4"></i></span>
                                 IT & Security
                             </h3>
                             <ul class="space-y-1">
@@ -147,7 +153,7 @@
                         <div class="p-6">
                             <h3
                                 class="text-xs font-bold text-secondary uppercase tracking-wider mb-4 flex items-center gap-2">
-                                <span class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center">📈</span>
+                                <span class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center text-secondary"><i data-lucide="trending-up" class="w-4 h-4"></i></span>
                                 Sales & Growth
                             </h3>
                             <ul class="space-y-1">
@@ -171,13 +177,23 @@
                                             class="text-sm font-semibold text-gray-900">Speed-to-Lead</span>
                                         <p class="text-xs text-gray-500 mt-0.5">Sub-5-minute response</p>
                                     </a></li>
+                                <li><a href="./usa-pr-service.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                            class="text-sm font-semibold text-gray-900">USA PR Service</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">Press release distribution</p>
+                                    </a></li>
+                                <li><a href="./international-market-entry.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                            class="text-sm font-semibold text-gray-900">Market Entry</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">International expansion</p>
+                                    </a></li>
                             </ul>
                         </div>
                         <!-- Column 3: Recruitment & AI -->
                         <div class="p-6">
                             <h3
                                 class="text-xs font-bold text-accent uppercase tracking-wider mb-4 flex items-center gap-2">
-                                <span class="w-6 h-6 rounded bg-accent/10 flex items-center justify-center">👥</span>
+                                <span class="w-6 h-6 rounded bg-accent/10 flex items-center justify-center text-accent"><i data-lucide="users" class="w-4 h-4"></i></span>
                                 Recruitment
                             </h3>
                             <ul class="space-y-1">
@@ -191,10 +207,15 @@
                                             class="text-sm font-semibold text-gray-900">Bridge Staffing</span>
                                         <p class="text-xs text-gray-500 mt-0.5">Temporary placements</p>
                                     </a></li>
+                                <li><a href="./corporate-digital-gifting.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                            class="text-sm font-semibold text-gray-900">Corporate Gifting</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">Employee rewards</p>
+                                    </a></li>
                             </ul>
                             <h3
                                 class="text-xs font-bold text-neutral uppercase tracking-wider mb-4 mt-6 flex items-center gap-2">
-                                <span class="w-6 h-6 rounded bg-neutral/10 flex items-center justify-center">🤖</span>
+                                <span class="w-6 h-6 rounded bg-neutral/10 flex items-center justify-center text-neutral"><i data-lucide="bot" class="w-4 h-4"></i></span>
                                 AI Studio
                             </h3>
                             <ul class="space-y-1">
@@ -231,7 +252,7 @@
                         <div class="p-6">
                             <h3
                                 class="text-xs font-bold text-primary uppercase tracking-wider mb-4 flex items-center gap-2">
-                                <span class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center">🏢</span>
+                                <span class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center text-primary"><i data-lucide="building-2" class="w-4 h-4"></i></span>
                                 About Us
                             </h3>
                             <ul class="space-y-1">
@@ -240,12 +261,12 @@
                                         <span class="text-sm font-semibold text-gray-900">Our Story</span>
                                         <p class="text-xs text-gray-500 mt-0.5">Who we are & what we do</p>
                                     </a></li>
-                                <li><a href="./{{VISION_MISSION_PAGE}}"
+                                <li><a href="./vision-mission.html"
                                         class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
                                         <span class="text-sm font-semibold text-gray-900">Vision & Mission</span>
                                         <p class="text-xs text-gray-500 mt-0.5">Our purpose and goals</p>
                                     </a></li>
-                                <li><a href="./{{ETHICAL_PRINCIPLES_PAGE}}"
+                                <li><a href="./our-ethical-principles.html"
                                         class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
                                         <span class="text-sm font-semibold text-gray-900">Ethics & Values</span>
                                         <p class="text-xs text-gray-500 mt-0.5">How we operate</p>
@@ -256,7 +277,7 @@
                         <div class="p-6">
                             <h3
                                 class="text-xs font-bold text-secondary uppercase tracking-wider mb-4 flex items-center gap-2">
-                                <span class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center">📚</span>
+                                <span class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center text-secondary"><i data-lucide="library-big" class="w-4 h-4"></i></span>
                                 Resources
                             </h3>
                             <ul class="space-y-1">
@@ -360,9 +381,9 @@
                             class="text-xs font-bold text-gray-400 uppercase tracking-wider px-4 py-2">Company</span>
                         <ul class="pl-2">
                             <li><a href="./about.html" class="py-2 rounded-lg">About Us</a></li>
-                            <li><a href="./{{VISION_MISSION_PAGE}}" class="py-2 rounded-lg">Vision &
+                            <li><a href="./vision-mission.html" class="py-2 rounded-lg">Vision &
                                     Mission</a></li>
-                            <li><a href="./{{ETHICAL_PRINCIPLES_PAGE}}" class="py-2 rounded-lg">Ethics</a>
+                            <li><a href="./our-ethical-principles.html" class="py-2 rounded-lg">Ethics</a>
                             </li>
                         </ul>
                     </li>
@@ -402,6 +423,7 @@
         }
     });
 </script>
+
     
         <!-- Hero Section -->
     <section class="section-spacing bg-gradient-to-br from-buzz-warm via-base-100 to-buzz-light">
@@ -446,169 +468,6 @@
             <div class="space-y-16">
                 
 
-                <!-- Case Study 2: Samm Technology -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-cols-2 gap-12 items-center">
-                    <div class="buzz-card p-8 bg-base-200 lg:order-last">
-                        <h3 class="text-2xl md:text-2xl md:text-3xl font-bold mb-4">
-                            Multi-Million Dollar Tech Firm Enters 4 New International Markets in 3 Months
-                        </h3>
-                        <p class="font-semibold text-secondary mb-6">Client: Samm Teknoloji - Multi-Million Dollar Turkish Tech Firm</p>
-                        
-                        <p class="mb-6 text-base-content/80">
-                            <strong class="text-base-content">Challenge:</strong>
-                            Samm Teknoloji, a multi-million dollar technology company, needed to rapidly expand their international presence and generate qualified leads in new European markets. They required a sophisticated approach to contact thousands of companies across multiple countries while maintaining their premium technology brand positioning.
-                        </p>
-                        <p class="mb-6 text-base-content/80">
-                            <strong class="text-base-content">Solution:</strong>
-                            We deployed an outbound lead generation engine with coordinated calling and email campaigns. Leveraging verified, high‑quality data sources, we reached decision-makers with localized messaging across target markets while maintaining consistent brand positioning.
-                        </p>
-                        <p class="text-base-content/80">
-                            <strong class="text-base-content">Implementation:</strong>
-                            Over an intensive 3-month period, our native-speaking sales professionals conducted thousands of personalized outreach activities across Spain, Egypt, France, and Czechia. We maintained daily calling and email activities while carefully nurturing each qualified prospect through our systematic follow-up process.
-                        </p>
-                    </div>
-                    <div class="prose lg:prose-xl lg:order-first">
-                        <h4 class="font-bold mb-6">📈 Outstanding Results:</h4>
-                        <div class="space-y-4">
-                            <div class="bg-secondary/10 p-4 rounded-lg">
-                                <div class="text-2xl md:text-2xl font-bold text-secondary mb-2">4 New Markets</div>
-                                <div class="text-sm text-base-content/70">Successfully entered Spain, Egypt, France, and Czechia</div>
-                            </div>
-                            <div class="bg-primary/10 p-4 rounded-lg">
-                                <div class="text-2xl md:text-2xl font-bold text-primary mb-2">10+ Qualified Leads</div>
-                                <div class="text-sm text-base-content/70">Generated in just 3 months through targeted campaigns</div>
-                            </div>
-                            <div class="bg-accent/10 p-4 rounded-lg">
-                                <div class="text-2xl md:text-2xl font-bold text-accent mb-2">1,000s Contacted</div>
-                                <div class="text-sm text-base-content/70">Reached thousands of companies via calling + email</div>
-                            </div>
-                            <div class="bg-green-100 p-4 rounded-lg">
-                                <div class="text-lg font-bold text-green-700 mb-2">3-Month Timeline</div>
-                                <div class="text-sm text-green-600">Rapid international expansion achieved in record time</div>
-                            </div>
-                        </div>
-                        <div class="mt-6 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-400">
-                            <p class="text-blue-700 font-medium">"Expandia's ability to penetrate new international markets so quickly while maintaining lead quality has been remarkable. Their systematic approach helped us establish a strong presence in 4 countries in just 3 months."</p>
-                            <p class="text-xs text-base-content/60 mt-2">- Business Development Director, Samm Teknoloji</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Case Study 3: Enerkon Global -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-cols-2 gap-12 items-center">
-                    <div class="buzz-card p-8 bg-gradient-to-br from-accent/5 to-primary/5">
-                        <h3 class="text-2xl md:text-2xl md:text-3xl font-bold mb-4">
-                            Energy Company Secures Major Deals with Fortune 500 & Government Entities
-                        </h3>
-                        <p class="font-semibold text-accent mb-6">Client: Boiler Producer</p>
-                        
-                        <p class="mb-6 text-base-content/80">
-                            <strong class="text-base-content">Challenge:</strong>
-                            Boiler Producer needed to break into highly competitive international markets and establish relationships with Fortune 500 companies and state-owned enterprises. They required a sophisticated outreach strategy to reach C-level decision-makers at major corporations while positioning themselves as a trusted partner in the global energy sector.
-                        </p>
-                        <p class="mb-6 text-base-content/80">
-                            <strong class="text-base-content">Solution:</strong>
-                            We executed a full-funnel lead generation program. Using verified, high‑quality data sources, we identified and engaged top-tier prospects, crafted executive-level messaging, and maintained persistent but professional outreach sequences optimized for enterprise cycles.
-                        </p>
-                        <p class="text-base-content/80">
-                            <strong class="text-base-content">Execution:</strong>
-                            Our senior sales professionals utilized multi-channel approaches including personalized emails, strategic calling campaigns, and relationship-building activities specifically designed for enterprise and government procurement processes. We maintained consistent follow-up over extended periods, understanding that these deals require long-term relationship development.
-                        </p>
-                    </div>
-                    <div class="prose lg:prose-xl">
-                        <h4 class="font-bold mb-6">🌟 Game-Changing Results:</h4>
-                        <div class="space-y-4">
-                            <div class="bg-gradient-to-r from-accent/20 to-accent/10 p-4 rounded-lg border-l-4 border-accent">
-                                <div class="text-xl md:text-xl font-bold text-accent mb-2">Stellantis (Fiat-Chrysler-PSA)</div>
-                                <div class="text-sm text-base-content/70">Secured partnership with €179B automotive giant</div>
-                            </div>
-                            <div class="bg-primary/10 p-4 rounded-lg">
-                                <div class="text-xl md:text-xl font-bold text-primary mb-2">Ukraine Hydroenergo</div>
-                                <div class="text-sm text-base-content/70">Partnered with state-owned power provider</div>
-                            </div>
-                            <div class="bg-secondary/10 p-4 rounded-lg">
-                                <div class="text-xl md:text-xl font-bold text-secondary mb-2">Synthos</div>
-                                <div class="text-sm text-base-content/70">Deal with leading Polish chemical company</div>
-                            </div>
-                            <div class="bg-accent/10 p-4 rounded-lg">
-                                <div class="text-xl md:text-xl font-bold text-accent mb-2">Tauron Group</div>
-                                <div class="text-sm text-base-content/70">Contract with top Polish electricity distributor</div>
-                            </div>
-                            <div class="bg-gradient-to-r from-green-100 to-emerald-100 p-4 rounded-lg">
-                                <div class="text-lg font-bold text-green-700 mb-2">Fortune 500 + Government Success</div>
-                                <div class="text-sm text-green-600">Proven ability to close deals at the highest corporate and government levels</div>
-                            </div>
-                        </div>
-                        <div class="mt-6 p-6 bg-gradient-to-r from-accent/10 to-primary/10 rounded-lg border border-accent/20">
-                            <p class="text-accent font-medium italic">"These clients were introduced by Expandia's outreach services. Their ability to open doors with Fortune 500 companies and government entities that seemed impossible to reach has been extraordinary."</p>
-                            <p class="text-xs text-base-content/60 mt-2">- CEO, Boiler Producer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Case Study 3: Dentaş Kağıt -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-cols-2 gap-12 items-center">
-                    <div class="buzz-card p-8 bg-base-200">
-                        <h3 class="text-2xl md:text-2xl md:text-3xl font-bold mb-4">
-                            Paper Manufacturing Company Achieves 99% Email Deliverability with Strategic Lead Generation
-                        </h3>
-                        <p class="font-semibold text-accent mb-6">Client: Dentaş Kağıt</p>
-                        
-                        <p class="mb-6 text-base-content/80">
-                            <strong class="text-base-content">Challenge:</strong>
-                            Dentaş Kağıt, a specialized paper manufacturing company, needed to generate qualified leads for their B2B products in a highly competitive market. They required a focused approach to reach the right decision-makers while maintaining their reputation and avoiding spam filters that could damage their email deliverability.
-                        </p>
-                        <p class="mb-6 text-base-content/80">
-                            <strong class="text-base-content">Solution:</strong>
-                            We implemented a precision email marketing strategy focusing exclusively on email outreach. Our team developed highly targeted campaigns with personalized messaging for different industry segments. We prioritized email deliverability and compliance, ensuring all campaigns met the highest standards for professional B2B communication.
-                        </p>
-                        <p class="text-base-content/80">
-                            <strong class="text-base-content">Execution:</strong>
-                            Over a focused 4-month period, we executed carefully crafted email sequences, maintained pristine sender reputation, and optimized every aspect of the campaign for maximum deliverability. Our team monitored bounce rates, spam scores, and engagement metrics to ensure consistent performance throughout the campaign.
-                        </p>
-                    </div>
-                    <div class="prose lg:prose-xl">
-                        <h4 class="font-bold mb-6">Impressive Performance:</h4>
-                        <div class="space-y-4">
-                            <div class="bg-accent/10 p-4 rounded-lg">
-                                <div class="text-2xl md:text-2xl font-bold text-accent mb-2">20 Qualified Leads</div>
-                                <div class="text-sm text-base-content/70">Generated in just 4 months through targeted email campaigns</div>
-                            </div>
-                            <div class="bg-primary/10 p-4 rounded-lg">
-                                <div class="text-2xl md:text-2xl font-bold text-primary mb-2">99% Deliverability</div>
-                                <div class="text-sm text-base-content/70">Exceptional email deliverability rate maintained throughout the campaign</div>
-                            </div>
-                            <div class="bg-secondary/10 p-4 rounded-lg">
-                                <div class="text-2xl md:text-2xl font-bold text-secondary mb-2">Email-Only Approach</div>
-                                <div class="text-sm text-base-content/70">Achieved remarkable results using only email marketing strategies</div>
-                            </div>
-                        </div>
-                        <div class="mt-6 bg-gradient-to-r from-accent/10 to-primary/10 p-6 rounded-lg">
-                            <h5 class="font-bold text-lg mb-3">Key Success Factors:</h5>
-                            <ul class="space-y-2 text-sm">
-                                <li class="flex items-start gap-2">
-                                    <span class="text-green-500 font-bold">✓</span>
-                                    <span>Pristine sender reputation management</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-green-500 font-bold">✓</span>
-                                    <span>Industry-specific messaging and targeting</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-green-500 font-bold">✓</span>
-                                    <span>Compliance with all email marketing regulations</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-green-500 font-bold">✓</span>
-                                    <span>Continuous optimization and monitoring</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="mt-6 p-4 bg-purple-50 rounded-lg border-l-4 border-purple-400">
-                            <p class="text-purple-700 font-medium">"Expandia's email expertise is unmatched. They achieved what we thought was impossible - consistent lead generation with perfect deliverability rates. Their approach is both strategic and technically excellent."</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -679,6 +538,7 @@
             </div>
         </div>
     </section>
+
     
     <!-- Footer -->
 <footer class="footer-gradient text-white">
@@ -687,10 +547,8 @@
         <div class="container mx-auto container-padding py-12">
             <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
                 <div class="text-center lg:text-left">
-                    <h3 class="text-2xl md:text-3xl font-bold mb-2">Stay Updated
-                        with Growth Insights</h3>
-                    <p class="text-white/80">Get the latest growth strategies and
-                        lead generation updates.</p>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-2">Stay Ahead with Expandia</h3>
+                    <p class="text-white/80">Get the latest insights on IT, business growth, and AI innovation.</p>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
                     <form id="newsletter-form" class="flex gap-4 w-full">
@@ -709,13 +567,13 @@
     <!-- Main Footer Content -->
     <div class="container mx-auto container-padding py-16">
         <div class="grid md:grid-cols-12 gap-8 mb-16">
-            <!-- Company Info -->
+            <!-- Company Info (Span 4) -->
             <div class="md:col-span-4">
                 <div class="flex items-center gap-3 mb-6">
-                    <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 w-auto brightness-0 invert">
+                    <img src="./Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 w-auto brightness-0 invert">
                 </div>
                 <p class="text-white/80 mb-6 text-lg">
-                    Your Partner in Lead Generation and corporate communication.
+                    Your strategic partner for Managed IT, Sales Growth, Specialized Recruitment, and AI Innovation.
                 </p>
                 <div class="flex gap-4">
                     <a href="https://www.linkedin.com/company/expandia-ch/" class="footer-social-icon group"
@@ -729,61 +587,71 @@
                 </div>
             </div>
 
-            <!-- Quick Links -->
+            <!-- Solutions (Span 2) -->
             <div class="md:col-span-2">
                 <h4 class="text-lg font-bold mb-6">Solutions</h4>
                 <ul class="space-y-4 text-white/80">
-                    <li><a href="./solutions.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Local Lead Generation
-                        </a></li>
-                    <li><a href="./solutions.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Global Lead Generation
-                        </a></li>
-                    <li><a href="./blog/"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Part Time Lead Generation Team
-                        </a></li>
                     <li><a href="./managed-it-services.html"
                             class="footer-link hover:text-primary transition-colors flex items-center gap-2">
                             <span class="footer-link-dot"></span>
-                            Managed IT Services
+                            Managed IT
+                        </a></li>
+                    <li><a href="./lead-generation-service.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Lead Generation
+                        </a></li>
+                    <li><a href="./recruitment.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Recruitment
+                        </a></li>
+                    <li><a href="./ai-creative-studio.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            AI Studio
+                        </a></li>
+                    <li><a href="./revops-crm-setup.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            RevOps & CRM
                         </a></li>
                 </ul>
             </div>
 
-            <!-- Resources -->
+            <!-- Company (Span 2) -->
             <div class="md:col-span-2">
                 <h4 class="text-lg font-bold mb-6">Company</h4>
                 <ul class="space-y-4 text-white/80">
+                    <li><a href="./about.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            About Us
+                        </a></li>
                     <li><a href="./case-studies.html"
                             class="footer-link hover:text-primary transition-colors flex items-center gap-2">
                             <span class="footer-link-dot"></span>
                             Success Stories
                         </a></li>
-                    <li><a href="./about.html"
+                    <li><a href="./city-locations.html"
                             class="footer-link hover:text-primary transition-colors flex items-center gap-2">
                             <span class="footer-link-dot"></span>
-                            About Us
+                            Locations
+                        </a></li>
+                    <li><a href="./blog/"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Blog & Insights
                         </a></li>
                     <li><a href="./contact.html"
                             class="footer-link hover:text-primary transition-colors flex items-center gap-2">
                             <span class="footer-link-dot"></span>
                             Contact Us
                         </a></li>
-                    <li><a href="./blog/"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Growth Resources
-                        </a></li>
                 </ul>
             </div>
 
-            <!-- Contact -->
+            <!-- Contact (Span 4) -->
             <div class="md:col-span-4">
                 <h4 class="text-lg font-bold mb-6">Get in Touch</h4>
                 <div class="footer-contact-card">
@@ -831,8 +699,9 @@
     </div>
 </footer>
 <script src="./dist/js/contact.js"></script>
+
     
-    <script src="/dist/js/index.js"></script>
+    <script src="./dist/js/index.js"></script>
     
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
@@ -848,6 +717,41 @@
     </script>
     <!--End of Tawk.to Script-->
     
+    <!-- Lucide Icons & Vivus Init -->
+    <script>
+      lucide.createIcons();
+      
+      // Initialize Vivus on hover for all Lucide icons
+      document.addEventListener('DOMContentLoaded', function() {
+          setTimeout(function() {
+              const icons = document.querySelectorAll('.lucide');
+              icons.forEach(icon => {
+                  // Only animate if it's an SVG
+                  if(icon.tagName.toLowerCase() === 'svg') {
+                      // Trigger animation on hover
+                      icon.parentElement.addEventListener('mouseenter', () => {
+                          new Vivus(icon, {
+                              duration: 50,
+                              type: 'oneByOne',
+                              start: 'autostart',
+                              animTimingFunction: Vivus.EASE
+                          });
+                      });
+                      
+                      // Also trigger on load for hero icons
+                      if (icon.closest('.buzz-card')) {
+                           new Vivus(icon, {
+                              duration: 100,
+                              type: 'oneByOne',
+                              start: 'autostart'
+                          });
+                      }
+                  }
+              });
+          }, 100);
+      });
+    </script>
+
     
 </body>
 </html>

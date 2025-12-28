@@ -55,7 +55,7 @@ function generateBreadcrumbSchema(items) {
 }
 
 function createHTMLTemplate(lang = 'en', headContent = '', scriptContent = '') {
-    const assetPath = '/';
+    const assetPath = '{{BASE_PATH}}';
     
     return `<!DOCTYPE html>
 <html lang="${lang}" data-theme="bumblebee">
@@ -107,14 +107,20 @@ function createHTMLTemplate(lang = 'en', headContent = '', scriptContent = '') {
       gtag('config', 'G-XY2B6K4R6Q');
     </script>
     
-    <!-- Lordicon Script -->
-    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Vivus for SVG Animation -->
+    <script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
     
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
     {{SCHEMA_MARKUP}}
     </script>
     
+    <style>
+        .lucide { cursor: pointer; }
+    </style>
+
     ${headContent}
 </head>
 <body class="font-sans">
@@ -140,6 +146,41 @@ function createHTMLTemplate(lang = 'en', headContent = '', scriptContent = '') {
     </script>
     <!--End of Tawk.to Script-->
     
+    <!-- Lucide Icons & Vivus Init -->
+    <script>
+      lucide.createIcons();
+      
+      // Initialize Vivus on hover for all Lucide icons
+      document.addEventListener('DOMContentLoaded', function() {
+          setTimeout(function() {
+              const icons = document.querySelectorAll('.lucide');
+              icons.forEach(icon => {
+                  // Only animate if it's an SVG
+                  if(icon.tagName.toLowerCase() === 'svg') {
+                      // Trigger animation on hover
+                      icon.parentElement.addEventListener('mouseenter', () => {
+                          new Vivus(icon, {
+                              duration: 50,
+                              type: 'oneByOne',
+                              start: 'autostart',
+                              animTimingFunction: Vivus.EASE
+                          });
+                      });
+                      
+                      // Also trigger on load for hero icons
+                      if (icon.closest('.buzz-card')) {
+                           new Vivus(icon, {
+                              duration: 100,
+                              type: 'oneByOne',
+                              start: 'autostart'
+                          });
+                      }
+                  }
+              });
+          }, 100);
+      });
+    </script>
+
     ${scriptContent}
 </body>
 </html>`;

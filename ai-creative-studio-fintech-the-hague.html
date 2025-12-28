@@ -33,10 +33,10 @@
     <meta name="twitter:description" content="AI Creative Studio tailored for FinTech companies in The Hague.">
     <meta name="twitter:image" content="https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png">
     
-    <link href="/dist/css/output.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="apple-touch-icon" href="/favicon.png">
+    <link href="./dist/css/output.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="apple-touch-icon" href="./favicon.png">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XY2B6K4R6Q"></script>
@@ -48,8 +48,10 @@
       gtag('config', 'G-XY2B6K4R6Q');
     </script>
     
-    <!-- Lordicon Script -->
-    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Vivus for SVG Animation -->
+    <script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
     
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
@@ -73,6 +75,10 @@
 }
     </script>
     
+    <style>
+        .lucide { cursor: pointer; }
+    </style>
+
     
 </head>
 <body class="font-sans">
@@ -106,7 +112,7 @@
                         <div class="p-6">
                             <h3
                                 class="text-xs font-bold text-primary uppercase tracking-wider mb-4 flex items-center gap-2">
-                                <span class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center">🛡️</span>
+                                <span class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center text-primary"><i data-lucide="shield-check" class="w-4 h-4"></i></span>
                                 IT & Security
                             </h3>
                             <ul class="space-y-1">
@@ -136,7 +142,7 @@
                         <div class="p-6">
                             <h3
                                 class="text-xs font-bold text-secondary uppercase tracking-wider mb-4 flex items-center gap-2">
-                                <span class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center">📈</span>
+                                <span class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center text-secondary"><i data-lucide="trending-up" class="w-4 h-4"></i></span>
                                 Sales & Growth
                             </h3>
                             <ul class="space-y-1">
@@ -160,13 +166,23 @@
                                             class="text-sm font-semibold text-gray-900">Speed-to-Lead</span>
                                         <p class="text-xs text-gray-500 mt-0.5">Sub-5-minute response</p>
                                     </a></li>
+                                <li><a href="./usa-pr-service.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                            class="text-sm font-semibold text-gray-900">USA PR Service</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">Press release distribution</p>
+                                    </a></li>
+                                <li><a href="./international-market-entry.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                            class="text-sm font-semibold text-gray-900">Market Entry</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">International expansion</p>
+                                    </a></li>
                             </ul>
                         </div>
                         <!-- Column 3: Recruitment & AI -->
                         <div class="p-6">
                             <h3
                                 class="text-xs font-bold text-accent uppercase tracking-wider mb-4 flex items-center gap-2">
-                                <span class="w-6 h-6 rounded bg-accent/10 flex items-center justify-center">👥</span>
+                                <span class="w-6 h-6 rounded bg-accent/10 flex items-center justify-center text-accent"><i data-lucide="users" class="w-4 h-4"></i></span>
                                 Recruitment
                             </h3>
                             <ul class="space-y-1">
@@ -180,10 +196,15 @@
                                             class="text-sm font-semibold text-gray-900">Bridge Staffing</span>
                                         <p class="text-xs text-gray-500 mt-0.5">Temporary placements</p>
                                     </a></li>
+                                <li><a href="./corporate-digital-gifting.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                            class="text-sm font-semibold text-gray-900">Corporate Gifting</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">Employee rewards</p>
+                                    </a></li>
                             </ul>
                             <h3
                                 class="text-xs font-bold text-neutral uppercase tracking-wider mb-4 mt-6 flex items-center gap-2">
-                                <span class="w-6 h-6 rounded bg-neutral/10 flex items-center justify-center">🤖</span>
+                                <span class="w-6 h-6 rounded bg-neutral/10 flex items-center justify-center text-neutral"><i data-lucide="bot" class="w-4 h-4"></i></span>
                                 AI Studio
                             </h3>
                             <ul class="space-y-1">
@@ -220,7 +241,7 @@
                         <div class="p-6">
                             <h3
                                 class="text-xs font-bold text-primary uppercase tracking-wider mb-4 flex items-center gap-2">
-                                <span class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center">🏢</span>
+                                <span class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center text-primary"><i data-lucide="building-2" class="w-4 h-4"></i></span>
                                 About Us
                             </h3>
                             <ul class="space-y-1">
@@ -245,7 +266,7 @@
                         <div class="p-6">
                             <h3
                                 class="text-xs font-bold text-secondary uppercase tracking-wider mb-4 flex items-center gap-2">
-                                <span class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center">📚</span>
+                                <span class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center text-secondary"><i data-lucide="library-big" class="w-4 h-4"></i></span>
                                 Resources
                             </h3>
                             <ul class="space-y-1">
@@ -391,6 +412,7 @@
         }
     });
 </script>
+
     
     
     <!-- Hero -->
@@ -398,7 +420,11 @@
         <div class="container mx-auto container-padding">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <p class="text-sm uppercase tracking-wide text-primary mb-3">AI Creative Studio • FinTech • The Hague</p>
+                    <p class="text-sm uppercase tracking-wide text-primary mb-3">
+                        <a href="ai-creative-studio.html" class="hover:underline">AI Creative Studio</a> • 
+                        <a href="b2b-lead-generation-fintech.html" class="hover:underline">FinTech</a> • 
+                        The Hague
+                    </p>
                     <h1 class="text-4xl md:text-5xl font-bold mb-6">
                         <span class="gradient-header">AI Creative Studio</span><br>
                         <span class="text-base-content">for FinTech Companies in The Hague</span>
@@ -420,7 +446,7 @@
                 <div class="space-y-6">
                     <div class="rounded-2xl overflow-hidden shadow-xl border border-base-300 bg-white p-2">
                         <div class="bg-base-100 rounded-xl overflow-hidden relative aspect-video flex items-center justify-center text-6xl">
-                            🤖
+                            <i data-lucide="bot" class="w-32 h-32"></i>
                         </div>
                     </div>
                     <div class="buzz-card p-6">
@@ -488,10 +514,8 @@
         <div class="container mx-auto container-padding py-12">
             <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
                 <div class="text-center lg:text-left">
-                    <h3 class="text-2xl md:text-3xl font-bold mb-2">Stay Updated
-                        with Growth Insights</h3>
-                    <p class="text-white/80">Get the latest growth strategies and
-                        lead generation updates.</p>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-2">Stay Ahead with Expandia</h3>
+                    <p class="text-white/80">Get the latest insights on IT, business growth, and AI innovation.</p>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
                     <form id="newsletter-form" class="flex gap-4 w-full">
@@ -510,13 +534,13 @@
     <!-- Main Footer Content -->
     <div class="container mx-auto container-padding py-16">
         <div class="grid md:grid-cols-12 gap-8 mb-16">
-            <!-- Company Info -->
+            <!-- Company Info (Span 4) -->
             <div class="md:col-span-4">
                 <div class="flex items-center gap-3 mb-6">
                     <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 w-auto brightness-0 invert">
                 </div>
                 <p class="text-white/80 mb-6 text-lg">
-                    Your Partner in Lead Generation and corporate communication.
+                    Your strategic partner for Managed IT, Sales Growth, Specialized Recruitment, and AI Innovation.
                 </p>
                 <div class="flex gap-4">
                     <a href="https://www.linkedin.com/company/expandia-ch/" class="footer-social-icon group"
@@ -530,61 +554,71 @@
                 </div>
             </div>
 
-            <!-- Quick Links -->
+            <!-- Solutions (Span 2) -->
             <div class="md:col-span-2">
                 <h4 class="text-lg font-bold mb-6">Solutions</h4>
                 <ul class="space-y-4 text-white/80">
-                    <li><a href="./solutions.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Local Lead Generation
-                        </a></li>
-                    <li><a href="./solutions.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Global Lead Generation
-                        </a></li>
-                    <li><a href="./blog/"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Part Time Lead Generation Team
-                        </a></li>
                     <li><a href="./managed-it-services.html"
                             class="footer-link hover:text-primary transition-colors flex items-center gap-2">
                             <span class="footer-link-dot"></span>
-                            Managed IT Services
+                            Managed IT
+                        </a></li>
+                    <li><a href="./lead-generation-service.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Lead Generation
+                        </a></li>
+                    <li><a href="./recruitment.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Recruitment
+                        </a></li>
+                    <li><a href="./ai-creative-studio.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            AI Studio
+                        </a></li>
+                    <li><a href="./revops-crm-setup.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            RevOps & CRM
                         </a></li>
                 </ul>
             </div>
 
-            <!-- Resources -->
+            <!-- Company (Span 2) -->
             <div class="md:col-span-2">
                 <h4 class="text-lg font-bold mb-6">Company</h4>
                 <ul class="space-y-4 text-white/80">
+                    <li><a href="./about.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            About Us
+                        </a></li>
                     <li><a href="./case-studies.html"
                             class="footer-link hover:text-primary transition-colors flex items-center gap-2">
                             <span class="footer-link-dot"></span>
                             Success Stories
                         </a></li>
-                    <li><a href="./about.html"
+                    <li><a href="./city-locations.html"
                             class="footer-link hover:text-primary transition-colors flex items-center gap-2">
                             <span class="footer-link-dot"></span>
-                            About Us
+                            Locations
+                        </a></li>
+                    <li><a href="./blog/"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Blog & Insights
                         </a></li>
                     <li><a href="./contact.html"
                             class="footer-link hover:text-primary transition-colors flex items-center gap-2">
                             <span class="footer-link-dot"></span>
                             Contact Us
                         </a></li>
-                    <li><a href="./blog/"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Growth Resources
-                        </a></li>
                 </ul>
             </div>
 
-            <!-- Contact -->
+            <!-- Contact (Span 4) -->
             <div class="md:col-span-4">
                 <h4 class="text-lg font-bold mb-6">Get in Touch</h4>
                 <div class="footer-contact-card">
@@ -632,8 +666,9 @@
     </div>
 </footer>
 <script src="./dist/js/contact.js"></script>
+
     
-    <script src="/dist/js/index.js"></script>
+    <script src="./dist/js/index.js"></script>
     
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
@@ -649,6 +684,41 @@
     </script>
     <!--End of Tawk.to Script-->
     
+    <!-- Lucide Icons & Vivus Init -->
+    <script>
+      lucide.createIcons();
+      
+      // Initialize Vivus on hover for all Lucide icons
+      document.addEventListener('DOMContentLoaded', function() {
+          setTimeout(function() {
+              const icons = document.querySelectorAll('.lucide');
+              icons.forEach(icon => {
+                  // Only animate if it's an SVG
+                  if(icon.tagName.toLowerCase() === 'svg') {
+                      // Trigger animation on hover
+                      icon.parentElement.addEventListener('mouseenter', () => {
+                          new Vivus(icon, {
+                              duration: 50,
+                              type: 'oneByOne',
+                              start: 'autostart',
+                              animTimingFunction: Vivus.EASE
+                          });
+                      });
+                      
+                      // Also trigger on load for hero icons
+                      if (icon.closest('.buzz-card')) {
+                           new Vivus(icon, {
+                              duration: 100,
+                              type: 'oneByOne',
+                              start: 'autostart'
+                          });
+                      }
+                  }
+              });
+          }, 100);
+      });
+    </script>
+
     
 </body>
 </html>

@@ -357,5 +357,27 @@
     "title": "Global B2B Lead Generation Locations | Expandia",
     "description": "Explore our B2B lead generation services across 80+ cities worldwide.",
     "keywords": "B2B lead generation locations, global lead generation, local lead generation services"
+  },
+  "blog-index": {
+    "title": "Sales University - Expert Sales Training & Resources | Expandia",
+    "description": "Master sales with our comprehensive Sales University. Expert-written articles on cold email, lead generation, sales psychology, and advanced sales techniques.",
+    "keywords": "sales training, b2b sales blog, lead generation resources, sales university",
+    "translations": {
+      "tr": {
+        "title": "Satış Üniversitesi - Uzman Satış Eğitimi & Kaynaklar | Expandia",
+        "description": "Kapsamlı Satış Üniversitemizle satışta ustalaşın. Soğuk e-posta, lead generation, satış psikolojisi ve ileri satış teknikleri üzerine uzman makaleler.",
+        "keywords": "satış eğitimi, b2b satış blogu, lead generation kaynakları, satış üniversitesi"
+      },
+      "de": {
+        "title": "Sales University - Experten-Vertriebstraining & Ressourcen | Expandia",
+        "description": "Meistern Sie den Vertrieb mit unserer umfassenden Sales University. Expertenartikel zu Cold Email, Lead-Generierung, Verkaufspsychologie und fortgeschrittenen Verkaufstechniken.",
+        "keywords": "Vertriebstraining, B2B Vertriebsblog, Lead-Generierung Ressourcen, Sales University"
+      },
+      "fr": {
+        "title": "Sales University - Formation et Ressources de Vente Expertes | Expandia",
+        "description": "Maîtrisez la vente avec notre Sales University complète. Articles d'experts sur l'email froid, la génération de leads, la psychologie de vente et les techniques avancées.",
+        "keywords": "formation vente, blog vente b2b, ressources génération de leads, sales university"
+      }
+    }
   }
 }

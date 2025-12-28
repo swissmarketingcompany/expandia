@@ -1,0 +1,538 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{PAGE_TITLE}}</title>
+    <meta name="description" content="{{PAGE_DESCRIPTION}}">
+    <meta name="keywords" content="{{PAGE_KEYWORDS}}">
+    <link rel="canonical" href="{{CANONICAL_URL}}">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{CANONICAL_URL}}">
+    <meta property="og:title" content="{{PAGE_TITLE}}">
+    <meta property="og:description" content="{{PAGE_DESCRIPTION}}">
+    <meta property="og:image" content="../../Expandia-main-logo-koyu-yesil.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{CANONICAL_URL}}">
+    <meta property="twitter:title" content="{{PAGE_TITLE}}">
+    <meta property="twitter:description" content="{{PAGE_DESCRIPTION}}">
+    <meta property="twitter:image" content="../../Expandia-main-logo-koyu-yesil.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Styles -->
+    <link href="../../dist/css/output.css" rel="stylesheet">
+</head>
+<body class="font-sans antialiased text-gray-900 bg-white">
+    <!-- Navigation - Premium Mega Menu -->
+<nav class="navbar bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
+    <div class="container mx-auto px-4 lg:px-8 flex items-center justify-between h-16">
+        <a href="../../index.html" class="flex-shrink-0">
+            <img src="../../Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-12 md:h-14">
+        </a>
+        <div class="hidden lg:flex items-center gap-1">
+            <a href="../../index.html"
+                class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50">Home</a>
+
+            <!-- Solutions Mega Menu -->
+            <div class="relative" id="solutions-dropdown">
+                <button onclick="toggleDropdown('solutions-menu')"
+                    class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
+                    Lösungen
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="solutions-menu"
+                    class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
+                    style="width: 720px;">
+                    <div class="grid grid-cols-3 divide-x divide-gray-100">
+                        <div class="p-6">
+                            <h3
+                                class="text-xs font-bold text-primary uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center text-primary"><i data-lucide="shield-check" class="w-4 h-4"></i></span>IT
+                                & Sicherheit</h3>
+                            <ul class="space-y-1">
+                                <li><a href="../../managed-it-services.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Managed IT</span>
+                                        <p class="text-xs text-gray-500">24/7 Überwachung</p>
+                                    </a></li>
+                                <li><a href="../../vulnerability-assessments.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Sicherheitsbewertung</span>
+                                        <p class="text-xs text-gray-500">Penetrationstests</p>
+                                    </a></li>
+                                <li><a href="../../email-security.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">E-Mail-Sicherheit</span>
+                                        <p class="text-xs text-gray-500">SPF, DKIM, DMARC</p>
+                                    </a></li>
+                                <li><a href="../../website-care-plans.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Website-Wartung</span>
+                                        <p class="text-xs text-gray-500">Updates & Pflege</p>
+                                    </a></li>
+                            </ul>
+                        </div>
+                        <div class="p-6">
+                            <h3
+                                class="text-xs font-bold text-secondary uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center text-secondary"><i data-lucide="trending-up" class="w-4 h-4"></i></span>Vertrieb
+                                & Wachstum</h3>
+                            <ul class="space-y-1">
+                                <li><a href="../../lead-generation-service.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Lead-Generierung</span>
+                                        <p class="text-xs text-gray-500">B2B Outbound</p>
+                                    </a></li>
+                                <li><a href="../../revops-crm-setup.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">RevOps & CRM</span>
+                                        <p class="text-xs text-gray-500">HubSpot, Salesforce</p>
+                                    </a></li>
+                                <li><a href="../../lost-lead-reactivation.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Lead-Reaktivierung</span>
+                                        <p class="text-xs text-gray-500">Kalte Leads reaktivieren</p>
+                                    </a></li>
+                                <li><a href="../../speed-to-lead.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Speed-to-Lead</span>
+                                        <p class="text-xs text-gray-500">Unter 5 Min. Antwort</p>
+                                    </a></li>
+                                <li><a href="../../usa-pr-service.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">USA PR-Dienst</span>
+                                        <p class="text-xs text-gray-500">Pressemitteilungen</p>
+                                    </a></li>
+                                <li><a href="../../international-market-entry.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Markteintritt</span>
+                                        <p class="text-xs text-gray-500">Internationale Expansion</p>
+                                    </a></li>
+                            </ul>
+                        </div>
+                        <div class="p-6">
+                            <h3
+                                class="text-xs font-bold text-accent uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded bg-accent/10 flex items-center justify-center text-accent"><i data-lucide="users" class="w-4 h-4"></i></span>Rekrutierung
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="../../recruitment.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Headhunting</span>
+                                        <p class="text-xs text-gray-500">Tech-Talente</p>
+                                    </a></li>
+                                <li><a href="../../recruitment.html#staffing"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Überbrückung</span>
+                                        <p class="text-xs text-gray-500">Temporär</p>
+                                    </a></li>
+                                <li><a href="../../corporate-digital-gifting.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Firmengeschenke</span>
+                                        <p class="text-xs text-gray-500">Mitarbeiterbelohnung</p>
+                                    </a></li>
+                            </ul>
+                            <h3
+                                class="text-xs font-bold text-neutral uppercase tracking-wider mb-4 mt-6 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded bg-neutral/10 flex items-center justify-center text-neutral"><i data-lucide="bot" class="w-4 h-4"></i></span>KI-Studio
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="../../ai-creative-studio.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">KI-Kreativstudio</span>
+                                        <p class="text-xs text-gray-500">Video & Avatare</p>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 px-6 py-4 flex items-center justify-between border-t">
+                        <p class="text-sm text-gray-600">Nicht sicher? Lassen Sie uns sprechen.</p><a
+                            href="../../contact.html" class="btn btn-primary btn-sm">Gespräch buchen</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Company Mega Menu -->
+            <div class="relative" id="company-dropdown">
+                <button onclick="toggleDropdown('company-menu')"
+                    class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
+                    Unternehmen
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="company-menu"
+                    class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
+                    style="width: 480px;">
+                    <div class="grid grid-cols-2 divide-x divide-gray-100">
+                        <div class="p-6">
+                            <h3
+                                class="text-xs font-bold text-primary uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center text-primary"><i data-lucide="building-2" class="w-4 h-4"></i></span>Über
+                                uns</h3>
+                            <ul class="space-y-1">
+                                <li><a href="../../about.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Unsere Geschichte</span>
+                                        <p class="text-xs text-gray-500">Wer wir sind</p>
+                                    </a></li>
+                                <li><a href="../../{{VISION_MISSION_PAGE}}"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Vision & Mission</span>
+                                        <p class="text-xs text-gray-500">Unser Ziel</p>
+                                    </a></li>
+                                <li><a href="../../{{ETHICAL_PRINCIPLES_PAGE}}"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Ethik & Werte</span>
+                                        <p class="text-xs text-gray-500">Wie wir arbeiten</p>
+                                    </a></li>
+                            </ul>
+                        </div>
+                        <div class="p-6">
+                            <h3
+                                class="text-xs font-bold text-secondary uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center text-secondary"><i data-lucide="library-big" class="w-4 h-4"></i></span>Ressourcen
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="../../case-studies.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Erfolgsgeschichten</span>
+                                        <p class="text-xs text-gray-500">Kundenreferenzen</p>
+                                    </a></li>
+                                <li><a href="../../blog/index.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Blog & Insights</span>
+                                        <p class="text-xs text-gray-500">Tipps & Trends</p>
+                                    </a></li>
+                                <li><a href="../../city-locations.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Standorte</span>
+                                        <p class="text-xs text-gray-500">Wo wir tätig sind</p>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 px-6 py-4 flex items-center justify-between border-t">
+                        <p class="text-sm text-gray-600">Bereit zu wachsen?</p><a href="../../contact.html"
+                            class="btn btn-primary btn-sm">Kontakt</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center gap-3">
+            <div class="dropdown dropdown-end hidden sm:block"><label tabindex="0"
+                    class="btn btn-ghost btn-sm gap-1 text-gray-600">🇩🇪<svg class="w-3 h-3" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg></label>
+                <ul tabindex="0"
+                    class="dropdown-content z-[999] menu p-2 shadow-lg bg-white rounded-xl border w-36 mt-2">
+                    <li><a href="../scaling-sales-operations.html" data-lang="en" class="lang-switch text-sm">🇺🇸 English</a></li>
+                    <li><a href="../tr/blog/scaling-sales-operations.html" data-lang="tr" class="lang-switch text-sm">🇹🇷 Türkçe</a></li>
+                    <li><a href="../de/blog/scaling-sales-operations.html" data-lang="de" class="lang-switch text-sm">🇩🇪 Deutsch</a></li>
+                    <li><a href="../fr/blog/scaling-sales-operations.html" data-lang="fr" class="lang-switch text-sm">🇫🇷 Français</a></li>
+                </ul>
+            </div>
+            <a href="../../contact.html"
+                class="btn btn-primary btn-sm lg:btn-md shadow-lg shadow-primary/20">Loslegen</a>
+            <div class="dropdown dropdown-end lg:hidden"><label tabindex="0" class="btn btn-ghost btn-sm"><svg
+                        class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg></label>
+                <ul tabindex="0"
+                    class="dropdown-content z-[999] menu p-4 shadow-2xl bg-white rounded-2xl w-72 mt-4 border">
+                    <li><a href="../../index.html" class="font-semibold py-3">Home</a></li>
+                    <li class="menu-title text-primary text-xs mt-2">IT & Sicherheit</li>
+                    <li><a href="../../managed-it-services.html">Managed IT</a></li>
+                    <li><a href="../../vulnerability-assessments.html">Sicherheit</a></li>
+                    <li><a href="../../email-security.html">E-Mail</a></li>
+                    <li><a href="../../website-care-plans.html">Website</a></li>
+                    <li class="menu-title text-secondary text-xs mt-2">Vertrieb</li>
+                    <li><a href="../../lead-generation-service.html">Lead-Gen</a></li>
+                    <li><a href="../../revops-crm-setup.html">RevOps</a></li>
+                    <li><a href="../../lost-lead-reactivation.html">Reaktivierung</a></li>
+                    <li><a href="../../speed-to-lead.html">Speed-to-Lead</a></li>
+                    <li class="menu-title text-accent text-xs mt-2">Talent & KI</li>
+                    <li><a href="../../recruitment.html">Rekrutierung</a></li>
+                    <li><a href="../../ai-creative-studio.html">KI-Studio</a></li>
+                    <li class="mt-4"><a href="../../contact.html" class="btn btn-primary btn-block">Loslegen</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<script>
+    function toggleDropdown(menuId) {
+        const allMenus = ['solutions-menu', 'company-menu'];
+        allMenus.forEach(id => { const menu = document.getElementById(id); if (menu && id !== menuId) menu.classList.add('hidden'); });
+        document.getElementById(menuId)?.classList.toggle('hidden');
+    }
+    document.addEventListener('click', function (e) {
+        if (!document.getElementById('solutions-dropdown')?.contains(e.target)) document.getElementById('solutions-menu')?.classList.add('hidden');
+        if (!document.getElementById('company-dropdown')?.contains(e.target)) document.getElementById('company-menu')?.classList.add('hidden');
+    });
+</script>
+
+
+    <main class="pt-24 pb-16">
+        <article class="container mx-auto px-4 max-w-4xl">
+            <!-- Breadcrumb -->
+            <nav class="flex text-sm text-gray-500 mb-8" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                    <li class="inline-flex items-center">
+                        <a href="../../index.html" class="inline-flex items-center hover:text-primary">
+                            <i data-lucide="home" class="w-4 h-4 mr-2"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+                            <a href="../../blog/index.html" class="ml-1 md:ml-2 hover:text-primary">Blog</a>
+                        </div>
+                    </li>
+                    <li aria-current="page">
+                        <div class="flex items-center">
+                            <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+                            <span class="ml-1 md:ml-2 text-gray-700 font-medium truncate">Ein Leitfaden zur Skalierung Ihrer Vertriebsabläufe</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+
+            <!-- Header -->
+            <header class="mb-12 text-center">
+                <span class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-primary uppercase bg-primary/10 rounded-full">
+                    REVOPS
+                </span>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Ein Leitfaden zur Skalierung Ihrer Vertriebsabläufe</h1>
+                <div class="flex items-center justify-center gap-4 text-sm text-gray-500">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <span>2026</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="clock" class="w-4 h-4"></i>
+                        <span>5 min read</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="prose prose-lg prose-primary mx-auto">
+                <p class="lead text-xl text-gray-600 mb-8">
+                    [DE] Revenue Operations (RevOps) is the engine of growth. For Ihrer Stadt companies, aligning Sales, Marketing, and Customer Success is crucial. Our RevOps consulting optimizes your tech stack and processes.
+                </p>
+
+                <h2>Häufige Herausforderungen</h2>
+                <ul>
+                    <li>[DE] Sales and Marketing teams fighting over lead quality</li><li>[DE] Messy CRM data and duplicate records</li><li>[DE] Lack of visibility into the sales pipeline</li><li>[DE] Manual data entry wasting sales time</li><li>[DE] Inaccurate revenue forecasting</li><li>[DE] Tools not talking to each other (Tech Stack bloat)</li><li>[DE] Leads falling through the cracks</li><li>[DE] Inconsistent sales processes</li><li>[DE] Difficulty measuring ROI of marketing campaigns</li><li>[DE] Slow onboarding of new sales reps</li>
+                </ul>
+
+                <h2>Wichtige Vorteile</h2>
+                <ul>
+                    <li>[DE] <strong>Alignment:</strong> Get everyone rowing in the same direction.</li><li>[DE] <strong>Efficiency:</strong> Automate manual tasks and workflows.</li><li>[DE] <strong>Visibility:</strong> Accurate dashboards and reporting.</li><li>[DE] <strong>Scalability:</strong> Processes that hold up as you grow.</li><li>[DE] <strong>Data Hygiene:</strong> Clean, reliable data you can trust.</li><li>[DE] <strong>Revenue Growth:</strong> Optimized funnels lead to more closed deals.</li><li>[DE] <strong>Better CX:</strong> Seamless handoffs between departments.</li><li>[DE] <strong>Tech Optimization:</strong> Get the most out of your expensive software.</li>
+                </ul>
+
+                <div class="bg-gray-50 p-8 rounded-2xl my-12 border border-gray-100">
+                    <h3 class="text-2xl font-bold mb-4">Expandia Insights</h3>
+                    <p class="mb-0">
+                        At Expandia, we specialize in revops. Our solutions are designed to address these exact challenges and drive measurable growth for your business.
+                    </p>
+                </div>
+
+                <h2>FAQ</h2><h3>[DE] Do you work with HubSpot or Salesforce?</h3><p>[DE] We are experts in both. We can help with implementation, migration, cleanup, and advanced automation on both platforms.</p><h3>[DE] What is the first step for a Ihrer Stadt company?</h3><p>[DE] We start with a comprehensive audit of your current tech stack, data quality, and team workflows to identify the biggest bottlenecks.</p><h3>[DE] How is RevOps different from Sales Ops?</h3><p>[DE] Sales Ops focuses just on sales. RevOps breaks down the silos, looking at the entire customer lifecycle from marketing touchpoint to renewal and expansion.</p>
+
+                <h2>Fazit</h2>
+                <p>
+                    Möchten Sie mehr erfahren? Kontaktieren Sie Expandia noch heute.
+                </p>
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-16 text-center bg-gradient-to-br from-primary/5 to-secondary/5 rounded-3xl p-12">
+                <h2 class="text-3xl font-bold mb-4">Möchten Sie mehr erfahren?</h2>
+                <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+                     Kontaktieren Sie Expandia noch heute.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="../../contact.html" class="btn btn-primary btn-lg">
+                        Kontakt
+                    </a>
+                    <a href="../../services.html" class="btn btn-outline btn-lg">
+                        Dienstleistungen
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+<footer class="footer-gradient text-white">
+    <!-- Newsletter Section -->
+    <div class="border-b border-white/10">
+        <div class="container mx-auto container-padding py-12">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div class="text-center lg:text-left">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-2">Bleiben Sie vorne mit Expandia</h3>
+                    <p class="text-white/80">Erhalten Sie die neuesten Einblicke in IT, Geschäftswachstum und KI-Innovation.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+                    <form id="newsletter-form" class="flex gap-4 w-full">
+                        <input type="email" name="email" placeholder="Geben Sie Ihre E-Mail ein" class="footer-newsletter-input" required>
+                        <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
+                        <input type="text" name="math" inputmode="numeric" pattern="[0-9]+" placeholder="30+31=" class="input input-bordered w-24 sm:w-28" required>
+                        <button type="submit" class="btn btn-primary">Abonnieren</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Footer Content -->
+    <div class="container mx-auto container-padding py-16">
+        <div class="grid md:grid-cols-12 gap-8 mb-16">
+            <!-- Company Info (Span 4) -->
+            <div class="md:col-span-4">
+                <div class="flex items-center gap-3 mb-6">
+                    <img src="../../Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 w-auto brightness-0 invert">
+                </div>
+                <p class="text-white/80 mb-6 text-lg">
+                    Ihr strategischer Partner für Managed IT, Umsatzwachstum, spezialisierte Rekrutierung und KI-Innovation.
+                </p>
+                <div class="flex gap-4">
+                    <a href="https://www.linkedin.com/company/expandia-ch/" class="footer-social-icon group" target="_blank" rel="noopener noreferrer">
+                        <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Solutions (Span 2) -->
+            <div class="md:col-span-2">
+                <h4 class="text-lg font-bold mb-6">Lösungen</h4>
+                <ul class="space-y-4 text-white/80">
+                    <li><a href="../../managed-it-services.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                        <span class="footer-link-dot"></span>
+                        Managed IT
+                    </a></li>
+                    <li><a href="../../lead-generation-service.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                        <span class="footer-link-dot"></span>
+                        Lead-Generierung
+                    </a></li>
+                    <li><a href="../../recruitment.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                        <span class="footer-link-dot"></span>
+                        Rekrutierung
+                    </a></li>
+                    <li><a href="../../ai-creative-studio.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                        <span class="footer-link-dot"></span>
+                        KI-Kreativstudio
+                    </a></li>
+                    <li><a href="../../revops-crm-setup.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                        <span class="footer-link-dot"></span>
+                        RevOps & CRM
+                    </a></li>
+                </ul>
+            </div>
+
+            <!-- Company (Span 2) -->
+            <div class="md:col-span-2">
+                <h4 class="text-lg font-bold mb-6">Unternehmen</h4>
+                <ul class="space-y-4 text-white/80">
+                    <li><a href="../../about.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                        <span class="footer-link-dot"></span>
+                        Über uns
+                    </a></li>
+                    <li><a href="../../case-studies.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                        <span class="footer-link-dot"></span>
+                        Erfolgsgeschichten
+                    </a></li>
+                    <li><a href="../../city-locations.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                        <span class="footer-link-dot"></span>
+                        Standorte
+                    </a></li>
+                    <li><a href="../../blog/index.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                        <span class="footer-link-dot"></span>
+                        Blog & Insights
+                    </a></li>
+                    <li><a href="../../contact.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                        <span class="footer-link-dot"></span>
+                        Kontakt
+                    </a></li>
+                </ul>
+            </div>
+
+            <!-- Contact (Span 4) -->
+            <div class="md:col-span-4">
+                <h4 class="text-lg font-bold mb-6">Kontakt aufnehmen</h4>
+                <div class="footer-contact-card">
+                    <p class="text-white/80 mb-6">Bereit, Ihr Wachstum zu beschleunigen? Lassen Sie uns besprechen, wie wir helfen können.</p>
+                    <a href="../../contact.html" class="btn btn-primary w-full mb-6">Kostenlose Beratung</a>
+                    <div class="space-y-4">
+                        <a href="mailto:hello@expandia.ch" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            hello@expandia.ch
+                        </a>
+                        <a href="mailto:hello@expandia.ch" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            Gespräch buchen
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/60">
+            <div class="text-sm">
+                &copy; 2026 Expandia. Alle Rechte vorbehalten.
+            </div>
+            <div class="flex gap-6 text-sm items-center">
+                <span class="text-white/60 text-xs">Teil von Remova Inc.</span>
+                <a href="../../privacy-policy.html" class="hover:text-primary transition-colors">Datenschutzrichtlinie</a>
+                <a href="../../terms-of-service.html" class="hover:text-primary transition-colors">Nutzungsbedingungen</a>
+                <a href="../../cookie-policy.html" class="hover:text-primary transition-colors">Cookie-Richtlinie</a>
+            </div>
+        </div>
+        <div class="mt-4 text-xs text-white/60 text-center">
+            Zugelassene Domains: www.expandia.ch · www.goexpandia.com · www.getexpandia.com · www.expandia.com.tr
+        </div>
+    </div>
+</footer>
+<script src="../../dist/js/contact.js"></script>
+
+    
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
+    

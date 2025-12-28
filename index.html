@@ -34,10 +34,10 @@
     <meta name="twitter:description" content="Expert B2B lead generation in Europe. Inbound lead generation and outbound lead generation for predictable pipeline.">
     <meta name="twitter:image" content="https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png">
     
-    <link href="/dist/css/output.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="apple-touch-icon" href="/favicon.png">
+    <link href="./dist/css/output.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="apple-touch-icon" href="./favicon.png">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XY2B6K4R6Q"></script>
@@ -49,8 +49,10 @@
       gtag('config', 'G-XY2B6K4R6Q');
     </script>
     
-    <!-- Lordicon Script -->
-    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Vivus for SVG Animation -->
+    <script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
     
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
@@ -84,6 +86,10 @@
 }
     </script>
     
+    <style>
+        .lucide { cursor: pointer; }
+    </style>
+
     
 </head>
 <body class="font-sans">
@@ -92,7 +98,7 @@
     <div class="container mx-auto px-4 lg:px-8 flex items-center justify-between h-16">
         <!-- Logo -->
         <a href="./index.html" class="flex-shrink-0">
-            <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-12 md:h-14">
+            <img src="./Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-12 md:h-14">
         </a>
 
         <!-- Desktop Navigation -->
@@ -117,7 +123,7 @@
                         <div class="p-6">
                             <h3
                                 class="text-xs font-bold text-primary uppercase tracking-wider mb-4 flex items-center gap-2">
-                                <span class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center">🛡️</span>
+                                <span class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center text-primary"><i data-lucide="shield-check" class="w-4 h-4"></i></span>
                                 IT & Security
                             </h3>
                             <ul class="space-y-1">
@@ -147,7 +153,7 @@
                         <div class="p-6">
                             <h3
                                 class="text-xs font-bold text-secondary uppercase tracking-wider mb-4 flex items-center gap-2">
-                                <span class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center">📈</span>
+                                <span class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center text-secondary"><i data-lucide="trending-up" class="w-4 h-4"></i></span>
                                 Sales & Growth
                             </h3>
                             <ul class="space-y-1">
@@ -171,13 +177,23 @@
                                             class="text-sm font-semibold text-gray-900">Speed-to-Lead</span>
                                         <p class="text-xs text-gray-500 mt-0.5">Sub-5-minute response</p>
                                     </a></li>
+                                <li><a href="./usa-pr-service.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                            class="text-sm font-semibold text-gray-900">USA PR Service</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">Press release distribution</p>
+                                    </a></li>
+                                <li><a href="./international-market-entry.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                            class="text-sm font-semibold text-gray-900">Market Entry</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">International expansion</p>
+                                    </a></li>
                             </ul>
                         </div>
                         <!-- Column 3: Recruitment & AI -->
                         <div class="p-6">
                             <h3
                                 class="text-xs font-bold text-accent uppercase tracking-wider mb-4 flex items-center gap-2">
-                                <span class="w-6 h-6 rounded bg-accent/10 flex items-center justify-center">👥</span>
+                                <span class="w-6 h-6 rounded bg-accent/10 flex items-center justify-center text-accent"><i data-lucide="users" class="w-4 h-4"></i></span>
                                 Recruitment
                             </h3>
                             <ul class="space-y-1">
@@ -191,10 +207,15 @@
                                             class="text-sm font-semibold text-gray-900">Bridge Staffing</span>
                                         <p class="text-xs text-gray-500 mt-0.5">Temporary placements</p>
                                     </a></li>
+                                <li><a href="./corporate-digital-gifting.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                            class="text-sm font-semibold text-gray-900">Corporate Gifting</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">Employee rewards</p>
+                                    </a></li>
                             </ul>
                             <h3
                                 class="text-xs font-bold text-neutral uppercase tracking-wider mb-4 mt-6 flex items-center gap-2">
-                                <span class="w-6 h-6 rounded bg-neutral/10 flex items-center justify-center">🤖</span>
+                                <span class="w-6 h-6 rounded bg-neutral/10 flex items-center justify-center text-neutral"><i data-lucide="bot" class="w-4 h-4"></i></span>
                                 AI Studio
                             </h3>
                             <ul class="space-y-1">
@@ -231,7 +252,7 @@
                         <div class="p-6">
                             <h3
                                 class="text-xs font-bold text-primary uppercase tracking-wider mb-4 flex items-center gap-2">
-                                <span class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center">🏢</span>
+                                <span class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center text-primary"><i data-lucide="building-2" class="w-4 h-4"></i></span>
                                 About Us
                             </h3>
                             <ul class="space-y-1">
@@ -240,12 +261,12 @@
                                         <span class="text-sm font-semibold text-gray-900">Our Story</span>
                                         <p class="text-xs text-gray-500 mt-0.5">Who we are & what we do</p>
                                     </a></li>
-                                <li><a href="./{{VISION_MISSION_PAGE}}"
+                                <li><a href="./vision-mission.html"
                                         class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
                                         <span class="text-sm font-semibold text-gray-900">Vision & Mission</span>
                                         <p class="text-xs text-gray-500 mt-0.5">Our purpose and goals</p>
                                     </a></li>
-                                <li><a href="./{{ETHICAL_PRINCIPLES_PAGE}}"
+                                <li><a href="./our-ethical-principles.html"
                                         class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
                                         <span class="text-sm font-semibold text-gray-900">Ethics & Values</span>
                                         <p class="text-xs text-gray-500 mt-0.5">How we operate</p>
@@ -256,7 +277,7 @@
                         <div class="p-6">
                             <h3
                                 class="text-xs font-bold text-secondary uppercase tracking-wider mb-4 flex items-center gap-2">
-                                <span class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center">📚</span>
+                                <span class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center text-secondary"><i data-lucide="library-big" class="w-4 h-4"></i></span>
                                 Resources
                             </h3>
                             <ul class="space-y-1">
@@ -360,9 +381,9 @@
                             class="text-xs font-bold text-gray-400 uppercase tracking-wider px-4 py-2">Company</span>
                         <ul class="pl-2">
                             <li><a href="./about.html" class="py-2 rounded-lg">About Us</a></li>
-                            <li><a href="./{{VISION_MISSION_PAGE}}" class="py-2 rounded-lg">Vision &
+                            <li><a href="./vision-mission.html" class="py-2 rounded-lg">Vision &
                                     Mission</a></li>
-                            <li><a href="./{{ETHICAL_PRINCIPLES_PAGE}}" class="py-2 rounded-lg">Ethics</a>
+                            <li><a href="./our-ethical-principles.html" class="py-2 rounded-lg">Ethics</a>
                             </li>
                         </ul>
                     </li>
@@ -402,6 +423,7 @@
         }
     });
 </script>
+
     
     <!-- Hero Section -->
 <section class="section-spacing bg-gradient-to-br from-buzz-warm via-base-100 to-buzz-light relative overflow-hidden">
@@ -438,41 +460,34 @@
                 </a>
             </div>
 
-            <!-- Trust Bar -->
-            <div class="pt-8 border-t border-base-200">
-                <p class="text-sm text-base-content/50 mb-4 uppercase tracking-widest font-bold">Trusted by growing
-                    companies</p>
-                <div
-                    class="flex flex-wrap justify-center items-center gap-8 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all">
-                    <span class="text-xl font-black">LLumar</span>
-                    <span class="text-xl font-black">Samm Teknoloji</span>
-                    <span class="text-xl font-black">Baris Enerji</span>
-                </div>
-            </div>
         </div>
     </div>
 </section>
 
 <!-- Key Metrics Strip -->
-<section class="py-8 bg-neutral text-white">
+<section class="py-12 bg-white border-b border-base-200">
     <div class="container mx-auto container-padding">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-                <div class="text-3xl md:text-4xl font-black text-primary">100%</div>
-                <p class="text-sm opacity-80">Swiss Data Compliance</p>
-                <p class="text-xs opacity-50">nFADP/GDPR</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <!-- Metric 1 -->
+            <div class="text-center p-6 rounded-2xl bg-base-50 hover:shadow-lg transition-all duration-300 group">
+                <div class="text-4xl md:text-5xl font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-300">100%</div>
+                <p class="font-bold text-base-content/80">Swiss Data Compliance</p>
+                <p class="text-xs text-base-content/50 mt-1">nFADP/GDPR</p>
             </div>
-            <div>
-                <div class="text-3xl md:text-4xl font-black text-secondary">300%</div>
-                <p class="text-sm opacity-80">Avg. Pipeline Increase</p>
+            <!-- Metric 2 -->
+            <div class="text-center p-6 rounded-2xl bg-base-50 hover:shadow-lg transition-all duration-300 group">
+                <div class="text-4xl md:text-5xl font-black text-secondary mb-2 group-hover:scale-110 transition-transform duration-300">300%</div>
+                <p class="font-bold text-base-content/80">Avg. Pipeline Increase</p>
             </div>
-            <div>
-                <div class="text-3xl md:text-4xl font-black text-accent">&lt; 5 Min</div>
-                <p class="text-sm opacity-80">Speed-to-Lead Response</p>
+            <!-- Metric 3 -->
+            <div class="text-center p-6 rounded-2xl bg-base-50 hover:shadow-lg transition-all duration-300 group">
+                <div class="text-4xl md:text-5xl font-black text-accent mb-2 group-hover:scale-110 transition-transform duration-300">< 5 Min</div>
+                <p class="font-bold text-base-content/80">Speed-to-Lead Response</p>
             </div>
-            <div>
-                <div class="text-3xl md:text-4xl font-black text-primary">2-4 Weeks</div>
-                <p class="text-sm opacity-80">Time to Onboarding</p>
+            <!-- Metric 4 -->
+            <div class="text-center p-6 rounded-2xl bg-base-50 hover:shadow-lg transition-all duration-300 group">
+                <div class="text-4xl md:text-5xl font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-300">2-4 Weeks</div>
+                <p class="font-bold text-base-content/80">Time to Onboarding</p>
             </div>
         </div>
     </div>
@@ -496,7 +511,7 @@
             <div
                 class="buzz-card p-8 bg-white shadow-xl hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-primary">
                 <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-4xl mb-6">
-                    🛡️
+                    <i data-lucide="shield-check" class="w-12 h-12 text-primary"></i>
                 </div>
                 <h3 class="text-xl font-bold mb-4 text-primary">Managed IT & Cybersecurity</h3>
                 <p class="text-base-content/70 text-sm mb-6">
@@ -528,7 +543,7 @@
             <div
                 class="buzz-card p-8 bg-white shadow-xl hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-secondary">
                 <div class="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center text-4xl mb-6">
-                    🚀
+                    <i data-lucide="trending-up" class="w-12 h-12 text-secondary"></i>
                 </div>
                 <h3 class="text-xl font-bold mb-4 text-secondary">Sales & Business Growth</h3>
                 <p class="text-base-content/70 text-sm mb-6">
@@ -559,7 +574,7 @@
             <div
                 class="buzz-card p-8 bg-white shadow-xl hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-accent">
                 <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center text-4xl mb-6">
-                    🤝
+                    <i data-lucide="users" class="w-12 h-12 text-accent"></i>
                 </div>
                 <h3 class="text-xl font-bold mb-4 text-accent">Recruitment & Operations</h3>
                 <p class="text-base-content/70 text-sm mb-6">
@@ -590,7 +605,7 @@
             <div
                 class="buzz-card p-8 bg-white shadow-xl hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-neutral">
                 <div class="w-16 h-16 bg-neutral/10 rounded-2xl flex items-center justify-center text-4xl mb-6">
-                    🎨
+                    <i data-lucide="bot" class="w-12 h-12 text-neutral"></i>
                 </div>
                 <h3 class="text-xl font-bold mb-4 text-neutral">AI Creative Studio</h3>
                 <p class="text-base-content/70 text-sm mb-6">
@@ -636,7 +651,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="buzz-card p-10 bg-white shadow-xl text-center hover:shadow-2xl transition-all">
                 <div class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center text-4xl mx-auto mb-6">
-                    🇨🇭
+                    <i data-lucide="file-check" class="w-14 h-14 text-primary"></i>
                 </div>
                 <h3 class="text-2xl font-bold mb-4">Swiss Contract, European Cost</h3>
                 <p class="text-base-content/70">
@@ -648,7 +663,7 @@
             <div class="buzz-card p-10 bg-white shadow-xl text-center hover:shadow-2xl transition-all">
                 <div
                     class="w-20 h-20 bg-secondary/10 rounded-2xl flex items-center justify-center text-4xl mx-auto mb-6">
-                    🔧
+                    <i data-lucide="zap" class="w-14 h-14 text-secondary"></i>
                 </div>
                 <h3 class="text-2xl font-bold mb-4">The "Execution First" Mindset</h3>
                 <p class="text-base-content/70">
@@ -659,7 +674,7 @@
 
             <div class="buzz-card p-10 bg-white shadow-xl text-center hover:shadow-2xl transition-all">
                 <div class="w-20 h-20 bg-accent/10 rounded-2xl flex items-center justify-center text-4xl mx-auto mb-6">
-                    🚀
+                    <i data-lucide="layers" class="w-14 h-14 text-accent"></i>
                 </div>
                 <h3 class="text-2xl font-bold mb-4">Scalable Infrastructure</h3>
                 <p class="text-base-content/70">
@@ -671,101 +686,92 @@
     </div>
 </section>
 
-<!-- Deep Dive: Sales & Growth -->
-<section class="section-spacing bg-base-100">
-    <div class="container mx-auto container-padding">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-6xl font-black mb-6">
-                <span class="gradient-header">Our Core</span><br>
-                <span class="text-base-content">Growth Programs</span>
-            </h2>
-            <p class="text-xl text-base-content/80 max-w-3xl mx-auto">
-                Proven methodologies to enter new markets and fill pipelines.
-            </p>
-        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Market Foundation -->
-            <div class="buzz-card p-8 bg-white shadow-xl">
-                <div class="text-5xl mb-6">🧭</div>
-                <h3 class="text-2xl font-bold text-primary mb-4">Market Foundation</h3>
-                <p class="text-base-content/70 mb-6">
-                    Ideal for entering new markets. We establish your local presence (Virtual Office) and build your
-                    initial sales pipeline using compliant Cold Outreach.
-                </p>
-                <a href="lead-generation-service.html" class="btn btn-primary btn-outline">Learn More →</a>
-            </div>
-
-            <!-- Market Accelerator -->
-            <div class="buzz-card p-8 bg-white shadow-xl border-2 border-secondary">
-                <div
-                    class="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-white text-xs font-bold px-4 py-1 rounded-full">
-                    Popular</div>
-                <div class="text-5xl mb-6">🚀</div>
-                <h3 class="text-2xl font-bold text-secondary mb-4">Market Accelerator</h3>
-                <p class="text-base-content/70 mb-6">
-                    Aggressive scaling. We combine high-volume outbound with our <strong>"Speed-to-Lead"</strong>
-                    service, calling your web leads within 5 minutes to maximize conversion.
-                </p>
-                <a href="speed-to-lead.html" class="btn btn-secondary">Learn More →</a>
-            </div>
-
-            <!-- Lost Lead Reactivation -->
-            <div class="buzz-card p-8 bg-white shadow-xl">
-                <div class="text-5xl mb-6">♻️</div>
-                <h3 class="text-2xl font-bold text-accent mb-4">Lost Lead Reactivation</h3>
-                <p class="text-base-content/70 mb-6">
-                    Don't let your data go to waste. We actively call and re-engage your old leads to turn "dead"
-                    databases into new revenue.
-                </p>
-                <a href="lost-lead-reactivation.html" class="btn btn-accent btn-outline text-accent">Learn More →</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Success Stories -->
+<!-- Specialized Solutions -->
 <section class="section-spacing bg-gradient-to-br from-buzz-warm via-base-100 to-buzz-light">
     <div class="container mx-auto container-padding">
         <div class="text-center mb-16">
             <h2 class="text-4xl md:text-6xl font-black mb-6">
-                <span class="gradient-header">Real Results</span><br>
-                <span class="text-base-content">From Real Companies</span>
+                <span class="gradient-header">Specialized Solutions</span><br>
+                <span class="text-base-content">For Every Business Challenge</span>
             </h2>
+            <p class="text-xl text-base-content/80 max-w-3xl mx-auto">
+                Beyond the basics. Targeted interventions to solve specific operational bottlenecks.
+            </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div class="buzz-card p-8 text-center bg-white shadow-xl hover:shadow-2xl transition-all">
-                <div class="text-4xl mb-4">🏢</div>
-                <h3 class="text-xl font-bold mb-2 text-primary">LLumar</h3>
-                <div class="text-4xl font-black text-primary mb-4">10x Growth</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            
+            <!-- Service 1 -->
+            <a href="vulnerability-assessments.html" class="buzz-card p-8 bg-white shadow-xl hover:shadow-2xl transition-all group">
+                <div class="text-4xl mb-4">
+                    <i data-lucide="shield-alert" class="w-10 h-10 text-primary"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Vulnerability Assessments</h3>
                 <p class="text-base-content/70">
-                    Achieved 10x sales growth through expansion into Switzerland, Spain, and France using our outsourced
-                    sales teams.
+                    Identify and patch security gaps before hackers exploit them. Full penetration testing and risk analysis.
                 </p>
-            </div>
-            <div class="buzz-card p-8 text-center bg-white shadow-xl hover:shadow-2xl transition-all">
-                <div class="text-4xl mb-4">💻</div>
-                <h3 class="text-xl font-bold mb-2 text-secondary">Samm Teknoloji</h3>
-                <div class="text-4xl font-black text-secondary mb-4">4 Markets</div>
+            </a>
+
+            <!-- Service 2 -->
+            <a href="revops-crm-setup.html" class="buzz-card p-8 bg-white shadow-xl hover:shadow-2xl transition-all group">
+                <div class="text-4xl mb-4">
+                    <i data-lucide="settings-2" class="w-10 h-10 text-secondary"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">RevOps & CRM Setup</h3>
                 <p class="text-base-content/70">
-                    Multi-million dollar tech firm entered 4 new international markets in just 3 months, utilizing our
-                    <strong>Virtual Office</strong> and <strong>Headhunting</strong> services.
+                    Optimize your HubSpot or Salesforce architecture. Align sales and marketing data for cleaner reporting.
                 </p>
-            </div>
-            <div class="buzz-card p-8 text-center bg-white shadow-xl hover:shadow-2xl transition-all">
-                <div class="text-4xl mb-4">⚡</div>
-                <h3 class="text-xl font-bold mb-2 text-accent">Baris Enerji</h3>
-                <div class="text-4xl font-black text-accent mb-4">F500 Deals</div>
+            </a>
+
+            <!-- Service 3 -->
+            <a href="website-care-plans.html" class="buzz-card p-8 bg-white shadow-xl hover:shadow-2xl transition-all group">
+                <div class="text-4xl mb-4">
+                    <i data-lucide="activity" class="w-10 h-10 text-accent"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Website Care Plans</h3>
                 <p class="text-base-content/70">
-                    Secured partnerships with major energy corporations via our <strong>Enterprise "Lumpy Mail"
-                        Campaigns</strong>.
+                    Stop worrying about WordPress updates and backups. We handle maintenance, speed optimization, and security.
                 </p>
-            </div>
+            </a>
+
+             <!-- Service 4 -->
+            <a href="email-security.html" class="buzz-card p-8 bg-white shadow-xl hover:shadow-2xl transition-all group">
+                <div class="text-4xl mb-4">
+                    <i data-lucide="mail-check" class="w-10 h-10 text-primary"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Email Security (DMARC)</h3>
+                <p class="text-base-content/70">
+                    Prevent phishing and ensure your emails land in the inbox, not spam. Full DMARC/SPF/DKIM implementation.
+                </p>
+            </a>
+
+             <!-- Service 5 -->
+            <a href="city-locations.html" class="buzz-card p-8 bg-white shadow-xl hover:shadow-2xl transition-all group">
+                <div class="text-4xl mb-4">
+                    <i data-lucide="globe" class="w-10 h-10 text-secondary"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Global Market Entry</h3>
+                <p class="text-base-content/70">
+                    Expand into 700+ cities with localized lead generation campaigns. We handle the data and the outreach.
+                </p>
+            </a>
+
+             <!-- Service 6 -->
+            <a href="glossary/index.html" class="buzz-card p-8 bg-white shadow-xl hover:shadow-2xl transition-all group">
+                <div class="text-4xl mb-4">
+                    <i data-lucide="book-open" class="w-10 h-10 text-neutral"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Industry Glossary</h3>
+                <p class="text-base-content/70">
+                    Master the terminology of modern business. Explore definitions for hundreds of Sales, IT, and AI terms.
+                </p>
+            </a>
+
         </div>
 
         <div class="text-center">
-            <a href="case-studies.html" class="btn btn-primary btn-lg">View All Success Stories</a>
+            <a href="solutions.html" class="btn btn-primary btn-lg">Explore All Services</a>
         </div>
     </div>
 </section>
@@ -956,6 +962,7 @@
         </div>
     </div>
 </section>
+
     
     <!-- Footer -->
 <footer class="footer-gradient text-white">
@@ -964,10 +971,8 @@
         <div class="container mx-auto container-padding py-12">
             <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
                 <div class="text-center lg:text-left">
-                    <h3 class="text-2xl md:text-3xl font-bold mb-2">Stay Updated
-                        with Growth Insights</h3>
-                    <p class="text-white/80">Get the latest growth strategies and
-                        lead generation updates.</p>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-2">Stay Ahead with Expandia</h3>
+                    <p class="text-white/80">Get the latest insights on IT, business growth, and AI innovation.</p>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
                     <form id="newsletter-form" class="flex gap-4 w-full">
@@ -986,13 +991,13 @@
     <!-- Main Footer Content -->
     <div class="container mx-auto container-padding py-16">
         <div class="grid md:grid-cols-12 gap-8 mb-16">
-            <!-- Company Info -->
+            <!-- Company Info (Span 4) -->
             <div class="md:col-span-4">
                 <div class="flex items-center gap-3 mb-6">
-                    <img src="Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 w-auto brightness-0 invert">
+                    <img src="./Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 w-auto brightness-0 invert">
                 </div>
                 <p class="text-white/80 mb-6 text-lg">
-                    Your Partner in Lead Generation and corporate communication.
+                    Your strategic partner for Managed IT, Sales Growth, Specialized Recruitment, and AI Innovation.
                 </p>
                 <div class="flex gap-4">
                     <a href="https://www.linkedin.com/company/expandia-ch/" class="footer-social-icon group"
@@ -1006,61 +1011,71 @@
                 </div>
             </div>
 
-            <!-- Quick Links -->
+            <!-- Solutions (Span 2) -->
             <div class="md:col-span-2">
                 <h4 class="text-lg font-bold mb-6">Solutions</h4>
                 <ul class="space-y-4 text-white/80">
-                    <li><a href="./solutions.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Local Lead Generation
-                        </a></li>
-                    <li><a href="./solutions.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Global Lead Generation
-                        </a></li>
-                    <li><a href="./blog/"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Part Time Lead Generation Team
-                        </a></li>
                     <li><a href="./managed-it-services.html"
                             class="footer-link hover:text-primary transition-colors flex items-center gap-2">
                             <span class="footer-link-dot"></span>
-                            Managed IT Services
+                            Managed IT
+                        </a></li>
+                    <li><a href="./lead-generation-service.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Lead Generation
+                        </a></li>
+                    <li><a href="./recruitment.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Recruitment
+                        </a></li>
+                    <li><a href="./ai-creative-studio.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            AI Studio
+                        </a></li>
+                    <li><a href="./revops-crm-setup.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            RevOps & CRM
                         </a></li>
                 </ul>
             </div>
 
-            <!-- Resources -->
+            <!-- Company (Span 2) -->
             <div class="md:col-span-2">
                 <h4 class="text-lg font-bold mb-6">Company</h4>
                 <ul class="space-y-4 text-white/80">
+                    <li><a href="./about.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            About Us
+                        </a></li>
                     <li><a href="./case-studies.html"
                             class="footer-link hover:text-primary transition-colors flex items-center gap-2">
                             <span class="footer-link-dot"></span>
                             Success Stories
                         </a></li>
-                    <li><a href="./about.html"
+                    <li><a href="./city-locations.html"
                             class="footer-link hover:text-primary transition-colors flex items-center gap-2">
                             <span class="footer-link-dot"></span>
-                            About Us
+                            Locations
+                        </a></li>
+                    <li><a href="./blog/"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Blog & Insights
                         </a></li>
                     <li><a href="./contact.html"
                             class="footer-link hover:text-primary transition-colors flex items-center gap-2">
                             <span class="footer-link-dot"></span>
                             Contact Us
                         </a></li>
-                    <li><a href="./blog/"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Growth Resources
-                        </a></li>
                 </ul>
             </div>
 
-            <!-- Contact -->
+            <!-- Contact (Span 4) -->
             <div class="md:col-span-4">
                 <h4 class="text-lg font-bold mb-6">Get in Touch</h4>
                 <div class="footer-contact-card">
@@ -1108,8 +1123,9 @@
     </div>
 </footer>
 <script src="./dist/js/contact.js"></script>
+
     
-    <script src="/dist/js/index.js"></script>
+    <script src="./dist/js/index.js"></script>
     
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
@@ -1125,6 +1141,41 @@
     </script>
     <!--End of Tawk.to Script-->
     
+    <!-- Lucide Icons & Vivus Init -->
+    <script>
+      lucide.createIcons();
+      
+      // Initialize Vivus on hover for all Lucide icons
+      document.addEventListener('DOMContentLoaded', function() {
+          setTimeout(function() {
+              const icons = document.querySelectorAll('.lucide');
+              icons.forEach(icon => {
+                  // Only animate if it's an SVG
+                  if(icon.tagName.toLowerCase() === 'svg') {
+                      // Trigger animation on hover
+                      icon.parentElement.addEventListener('mouseenter', () => {
+                          new Vivus(icon, {
+                              duration: 50,
+                              type: 'oneByOne',
+                              start: 'autostart',
+                              animTimingFunction: Vivus.EASE
+                          });
+                      });
+                      
+                      // Also trigger on load for hero icons
+                      if (icon.closest('.buzz-card')) {
+                           new Vivus(icon, {
+                              duration: 100,
+                              type: 'oneByOne',
+                              start: 'autostart'
+                          });
+                      }
+                  }
+              });
+          }, 100);
+      });
+    </script>
+
     
 </body>
 </html>

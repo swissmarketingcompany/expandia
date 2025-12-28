@@ -7,9 +7,12 @@ const services = require('./data/services.json');
 const serviceContent = require('./data/service-content.json');
 const topCities = require('./data/top-cities.json');
 const topIndustries = require('./data/top-industries.json');
+const glossary = require('./data/glossary.json');
 const metadata = require('./data/metadata.json');
 const { createHTMLTemplate, generateOrganizationSchema, generateBreadcrumbSchema } = require('./scripts/utils/template-engine');
 const { applyTranslations } = require('./scripts/utils/translations');
+const { blogTopics } = require('./scripts/generate-blog-posts');
+const legacyBlogPosts = require('./data/legacy-blog-posts.json');
 
 // 🚨 BUILD SYSTEM WARNING
 console.log('\n🔧 EXPANDIA BUILD SYSTEM STARTING...');
@@ -52,12 +55,12 @@ console.log(`✅ Successfully loaded footers for all languages`);
 function getPageMetadata(templateName, lang = 'en') {
     // Get base metadata from JSON
     const baseMeta = metadata[templateName] || metadata['index'];
-    
+
     // Check for translations in JSON
     if (baseMeta.translations && baseMeta.translations[lang]) {
         return { ...baseMeta, ...baseMeta.translations[lang] };
     }
-    
+
     return baseMeta;
 }
 
@@ -101,7 +104,7 @@ function getHreflangUrls(templateName) {
 }
 
 function getActiveStates(templateName) {
-     const activeStates = {
+    const activeStates = {
         'index': { 'HOME_ACTIVE': 'text-primary', 'HOME_MOBILE_ACTIVE': 'class="font-semibold text-primary"' },
         'solutions': { 'SOLUTIONS_ACTIVE': 'text-primary', 'SOLUTIONS_MOBILE_ACTIVE': 'class="font-semibold text-primary"', 'SOLUTIONS_ITEM_ACTIVE': 'bg-primary/10 border border-primary/20' },
         'about': { 'COMPANY_ACTIVE': 'text-primary', 'ABOUT_MOBILE_ACTIVE': 'class="font-semibold text-primary"', 'ABOUT_ITEM_ACTIVE': 'bg-primary/10 border border-primary/20' },
@@ -125,7 +128,7 @@ function buildPage(templateName, outputName, lang = 'en') {
     if (!fs.existsSync(templatePath)) {
         const fallbackPath = `templates/${templateName}.html`;
         if (!fs.existsSync(fallbackPath)) {
-             console.warn(`Template not found: ${templatePath}`);
+            console.warn(`Template not found: ${templatePath}`);
             return;
         }
     }
@@ -141,11 +144,24 @@ function buildPage(templateName, outputName, lang = 'en') {
     pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
     pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
 
-    const basePath = (lang === 'tr' || lang === 'de' || lang === 'fr') ? '../' : './';
-    const logoPath = (lang === 'tr' || lang === 'de' || lang === 'fr') ? '../Expandia-main-logo-koyu-yesil.png' : 'Expandia-main-logo-koyu-yesil.png';
+    // Calculate dynamic base path based on output depth
+    const depth = outputName.split('/').length - 1;
+    let relativePrefix = '';
+    for (let i = 0; i < depth; i++) {
+        relativePrefix += '../';
+    }
+    if (lang !== 'en') {
+        relativePrefix += '../';
+    }
+    const basePath = relativePrefix || './';
+
+    const logoPath = basePath + 'Expandia-main-logo-koyu-yesil.png';
+    htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
     const turkishServicesPath = lang === 'tr' ? './' : './tr/';
 
     pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
+    pageNavigation = pageNavigation.replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html');
+    pageNavigation = pageNavigation.replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, 'our-ethical-principles.html');
     pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
     pageNavigation = pageNavigation.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
     pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
@@ -153,22 +169,22 @@ function buildPage(templateName, outputName, lang = 'en') {
     pageFooter = pageFooter.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
     content = content.replace(/\{\{BASE_PATH\}\}/g, basePath);
 
-     // Language specific logic 
+    // Language specific logic 
     if (lang === 'tr') {
-         pageNavigation = applyTranslations(pageNavigation, 'tr');
-         pageFooter = applyTranslations(pageFooter, 'tr');
-         content = applyTranslations(content, 'tr');
-         pageNavigation = pageNavigation.replace(/href="\.\.\/b2b-lead-generation-agency\.html"/g, 'href="./b2b-lead-generation-ajansi.html"');
+        pageNavigation = applyTranslations(pageNavigation, 'tr');
+        pageFooter = applyTranslations(pageFooter, 'tr');
+        content = applyTranslations(content, 'tr');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/b2b-lead-generation-agency\.html"/g, 'href="./b2b-lead-generation-ajansi.html"');
     } else if (lang === 'de') {
-         pageNavigation = applyTranslations(pageNavigation, 'de');
-         pageFooter = applyTranslations(pageFooter, 'de');
-         content = applyTranslations(content, 'de');
-         pageNavigation = pageNavigation.replace(/href="\.\.\/solutions\.html/g, 'href="./solutions.html');
+        pageNavigation = applyTranslations(pageNavigation, 'de');
+        pageFooter = applyTranslations(pageFooter, 'de');
+        content = applyTranslations(content, 'de');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/solutions\.html/g, 'href="./solutions.html');
     } else if (lang === 'fr') {
-         pageNavigation = applyTranslations(pageNavigation, 'fr');
-         pageFooter = applyTranslations(pageFooter, 'fr');
-         content = applyTranslations(content, 'fr');
-         pageNavigation = pageNavigation.replace(/href="\.\.\/solutions\.html/g, 'href="./solutions.html');
+        pageNavigation = applyTranslations(pageNavigation, 'fr');
+        pageFooter = applyTranslations(pageFooter, 'fr');
+        content = applyTranslations(content, 'fr');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/solutions\.html/g, 'href="./solutions.html');
     }
 
     // Flag logic
@@ -208,22 +224,40 @@ function buildPage(templateName, outputName, lang = 'en') {
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, pageMetadata.description);
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, pageMetadata.keywords);
     htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, canonicalUrl);
-    
+
     // Schema
     let schemaMarkup = JSON.stringify(generateOrganizationSchema(), null, 2);
     htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, schemaMarkup);
-    
+
     // Hreflang Tags in HEAD
     const hreflangUrls2 = getHreflangUrls(templateName);
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, hreflangUrls2.en);
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, hreflangUrls2.tr);
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, hreflangUrls2.de);
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, hreflangUrls2.fr || 'fr/');
-    
+
     htmlTemplate = htmlTemplate.replace(
         `<link rel="alternate" hreflang="de" href="https://www.expandia.ch/${hreflangUrls2.de}">`,
         `<link rel="alternate" hreflang="de" href="https://www.expandia.ch/${hreflangUrls2.de}">\n    <link rel="alternate" hreflang="fr" href="https://www.expandia.ch/${hreflangUrls2.fr || 'fr/'}">`
     );
+
+    // Dynamic Blog Index Injection
+    if (templateName === 'blog-index') {
+        const newArticles = blogTopics.map(topic => ({
+            title: topic.title[lang] || topic.title['en'],
+            tags: `${topic.serviceId} business b2b`,
+            url: `${topic.slug}.html`,
+            excerpt: topic.title[lang] || topic.title['en'], // Simplified excerpt
+            badge: "New",
+            readTime: "5 min read"
+        }));
+
+        // Combine new and legacy (legacy mostly EN, could filter or translate if needed)
+        // We put NEW articles FIRST as requested
+        const combinedArticles = [...newArticles, ...legacyBlogPosts];
+
+        htmlTemplate = htmlTemplate.replace('{{BLOG_ARTICLES_JSON}}', JSON.stringify(combinedArticles));
+    }
 
     let outputPath = lang === 'en' ? `${outputName}.html` : `${lang}/${outputName}.html`;
     fs.writeFileSync(outputPath, htmlTemplate, 'utf8');
@@ -232,25 +266,60 @@ function buildPage(templateName, outputName, lang = 'en') {
 
 // Blog Post Building Function
 function buildBlogPost(templateName, outputName, lang = 'en') {
-    console.log(`🏗️  Building blog post: ${outputName} (${lang.toUpperCase()})`);
+    // console.log(`🏗️  Building blog post: ${outputName} (${lang.toUpperCase()})`);
 
     const basePath = lang === 'en' ? '../' : '../../';
     const logoPath = lang === 'en' ? '../Expandia-main-logo-koyu-yesil.png' : '../../Expandia-main-logo-koyu-yesil.png';
 
     // Read blog post template
     let blogTemplate;
-    const templatePath = `templates/blog/${templateName}.html`;
+    const templateDir = lang === 'en' ? 'templates/blog' : `templates/${lang}/blog`;
+    const templatePath = `${templateDir}/${templateName}.html`;
 
     if (fs.existsSync(templatePath)) {
         blogTemplate = fs.readFileSync(templatePath, 'utf8');
     } else {
-        console.log(`⚠️  Blog template ${templatePath} not found`);
-        return;
+        // Fallback to EN if language template not found (optional, but good for safety)
+        const fallbackPath = `templates/blog/${templateName}.html`;
+        if (fs.existsSync(fallbackPath)) {
+            blogTemplate = fs.readFileSync(fallbackPath, 'utf8');
+            // TODO: Apply translations here if we rely on fallback
+        } else {
+            console.log(`⚠️  Blog template ${templatePath} not found`);
+            return;
+        }
     }
 
+    // Select Navigation/Footer based on language
+    let nav = lang === 'tr' ? navigationTR : lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
+    let foot = lang === 'tr' ? footerTR : lang === 'de' ? footerDE : lang === 'fr' ? footerFR : footerEN;
+
+    // Clean i18n
+    nav = nav.replace(/\s*data-i18n="[^"]*"/g, '');
+    foot = foot.replace(/\s*data-i18n="[^"]*"/g, '');
+
     // Process includes
-    blogTemplate = blogTemplate.replace('{{HEADER_INCLUDE}}', navigationEN);
-    blogTemplate = blogTemplate.replace('{{FOOTER_INCLUDE}}', footerEN);
+    blogTemplate = blogTemplate.replace('{{HEADER_INCLUDE}}', nav);
+    blogTemplate = blogTemplate.replace('{{FOOTER_INCLUDE}}', foot);
+
+    // Turkish services path
+    const turkishServicesPath = lang === 'tr' ? '../' : '../tr/';
+    blogTemplate = blogTemplate.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
+
+    // Flag logic
+    const currentFlag = lang === 'tr' ? '🇹🇷' : lang === 'de' ? '🇩🇪' : lang === 'fr' ? '🇫🇷' : '🇺🇸';
+    blogTemplate = blogTemplate.replace(/<span id="current-flag">.*?<\/span>/g, `<span id="current-flag">${currentFlag}</span>`);
+
+    // Hreflang logic for switcher (Simple relative adjustment)
+    const relPrefix = lang === 'en' ? './' : '../';
+    // This assumes blog posts have same filenames across languages!
+    blogTemplate = blogTemplate.replace(/href=["'][^"']*["']\s+data-lang="en"/g, `href="${relPrefix}${templateName}.html" data-lang="en"`);
+    blogTemplate = blogTemplate.replace(/href=["'][^"']*["']\s+data-lang="tr"/g, `href="${relPrefix}tr/blog/${templateName}.html" data-lang="tr"`);
+    blogTemplate = blogTemplate.replace(/href=["'][^"']*["']\s+data-lang="de"/g, `href="${relPrefix}de/blog/${templateName}.html" data-lang="de"`);
+    blogTemplate = blogTemplate.replace(/href=["'][^"']*["']\s+data-lang="fr"/g, `href="${relPrefix}fr/blog/${templateName}.html" data-lang="fr"`);
+
+    // Fix paths in nav/footer
+    blogTemplate = blogTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath); // Replacements in nav/footer happen here
 
     // Replace path placeholders
     blogTemplate = blogTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
@@ -302,19 +371,28 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
 
 // Blog Post Building Function
 function buildBlogPosts() {
-    console.log('\n🏗️  Building Blog Posts...');
-    const blogDir = 'templates/blog';
-    if (fs.existsSync(blogDir)) {
-        const files = fs.readdirSync(blogDir).filter(file => file.endsWith('.html'));
+    console.log('\n🏗️  Building Blog Posts (Multi-Language)...');
+    const languages = ['en', 'de', 'fr', 'tr'];
+    let totalBuilt = 0;
+
+    // Use English templates as the master list
+    const masterBlogDir = 'templates/blog';
+    if (!fs.existsSync(masterBlogDir)) {
+        console.log('⚠️ Master blog templates directory not found.');
+        return;
+    }
+
+    const files = fs.readdirSync(masterBlogDir).filter(file => file.endsWith('.html'));
+
+    languages.forEach(lang => {
         files.forEach(file => {
             const templateName = file.replace('.html', '');
-            // For now only English
-            buildBlogPost(templateName, templateName, 'en');
+            buildBlogPost(templateName, templateName, lang);
         });
-        console.log(`✅ Built ${files.length} blog posts.`);
-    } else {
-        console.log('⚠️ Blog templates directory not found.');
-    }
+        console.log(`✅ Built ${files.length} blog posts for ${lang.toUpperCase()}.`);
+        totalBuilt += files.length;
+    });
+    console.log(`✅ Total Blog Posts Built: ${totalBuilt}`);
 }
 
 // Helper: Haversine distance
@@ -340,7 +418,7 @@ function deg2rad(deg) {
 // -------------------------------------------------------------------------
 function buildServiceCityPages() {
     console.log('\n🏗️  Building Service x City Landing Pages (Multi-Language)...');
-    
+
     // Read the mega template
     const templateContent = fs.readFileSync('templates/service-city-landing.html', 'utf8');
     let pageCount = 0;
@@ -349,8 +427,8 @@ function buildServiceCityPages() {
     languages.forEach(lang => {
         services.forEach(service => {
             // Get content for specific language, fallback to EN if missing
-            const contentData = (serviceContent[service.id] && serviceContent[service.id][lang]) 
-                ? serviceContent[service.id][lang] 
+            const contentData = (serviceContent[service.id] && serviceContent[service.id][lang])
+                ? serviceContent[service.id][lang]
                 : (serviceContent[service.id] ? serviceContent[service.id]['en'] : null);
 
             if (!contentData) {
@@ -361,10 +439,10 @@ function buildServiceCityPages() {
             cities.forEach(cityData => {
                 const city = cityData.city;
                 const country = cityData.country;
-                
+
                 // Replace dynamic parts in slug
                 let slug = service.slug_pattern.replace('{{CITY_SLUG}}', cityData.slug.replace('b2b-lead-generation-', ''));
-                
+
                 // Determine title/desc based on language
                 let titleTemplate = service.title_template;
                 let descTemplate = service.description_template;
@@ -378,14 +456,14 @@ function buildServiceCityPages() {
                 const title = titleTemplate
                     .replace('{{CITY_NAME}}', city)
                     .replace('{{COUNTRY_NAME}}', country);
-                
+
                 const description = descTemplate
                     .replace('{{CITY_NAME}}', city)
                     .replace('{{COUNTRY_NAME}}', country);
 
                 // Construct Content Blocks
                 const intro = contentData.intro.map(p => `<p>${p.replace(/\{\{CITY_NAME\}\}/g, city).replace(/\{\{COUNTRY_NAME\}\}/g, country)}</p>`).join('\n');
-                
+
                 const painPoints = contentData.pain_points.map(point => `
                     <div class="flex gap-3 items-start">
                         <span class="text-error text-xl">⚠️</span>
@@ -426,12 +504,12 @@ function buildServiceCityPages() {
                         distance: getDistanceFromLatLonInKm(cityData.lat, cityData.lng, c.lat, c.lng)
                     }))
                     .sort((a, b) => a.distance - b.distance)
-                    .slice(0, 5); 
+                    .slice(0, 5);
 
                 const nearbyLinks = nearby.map(c => {
                     const nearbySlug = service.slug_pattern.replace('{{CITY_SLUG}}', c.slug.replace('b2b-lead-generation-', ''));
                     // Handle relative linking for subdirectories
-                    const linkPrefix = lang === 'en' ? './' : '../'; 
+                    const linkPrefix = lang === 'en' ? './' : '../';
                     // If we are in a lang folder, we link to other pages in THAT lang folder (conceptually). 
                     // But currently flat structure for EN, subdirs for others.
                     // Wait, if I am in `de/`, linking to `de/other.html`, it is just `./other.html`.
@@ -459,13 +537,14 @@ function buildServiceCityPages() {
                 // Navigation/Footer
                 let pageNavigation = lang === 'tr' ? navigationTR : lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
                 let pageFooter = lang === 'tr' ? footerTR : lang === 'de' ? footerDE : lang === 'fr' ? footerFR : footerEN;
-                
+
                 // Clean i18n
                 pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
                 pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
 
                 const basePath = (lang === 'tr' || lang === 'de' || lang === 'fr') ? '../' : './';
                 const logoPath = (lang === 'tr' || lang === 'de' || lang === 'fr') ? '../Expandia-main-logo-koyu-yesil.png' : 'Expandia-main-logo-koyu-yesil.png';
+                htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
                 const turkishServicesPath = lang === 'tr' ? './' : './tr/';
 
                 pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
@@ -493,19 +572,19 @@ function buildServiceCityPages() {
                 htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, title);
                 htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, description);
                 htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, `${service.name} ${city}, ${service.name} Agency ${city}, ${country} B2B Services`);
-                
+
                 const canonicalSlug = lang === 'en' ? `${slug}.html` : `${lang}/${slug}.html`;
                 htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.expandia.ch/${canonicalSlug}`);
-                
+
                 // Hreflang logic
                 htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, `${slug}.html`);
                 htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, `tr/${slug}.html`);
                 htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, `de/${slug}.html`);
                 htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, `fr/${slug}.html`);
-                
+
                 // Fix missing FR hreflang in template logic (hacky patch based on previous code)
                 if (!htmlTemplate.includes('hreflang="fr"')) {
-                     htmlTemplate = htmlTemplate.replace(
+                    htmlTemplate = htmlTemplate.replace(
                         `<link rel="alternate" hreflang="de" href="https://www.expandia.ch/de/${slug}.html">`,
                         `<link rel="alternate" hreflang="de" href="https://www.expandia.ch/de/${slug}.html">\n    <link rel="alternate" hreflang="fr" href="https://www.expandia.ch/fr/${slug}.html">`
                     );
@@ -516,8 +595,8 @@ function buildServiceCityPages() {
                     "@type": "Service",
                     "name": `${service.name} in ${city}`,
                     "provider": { "@type": "Organization", "name": "Expandia", "url": "https://www.expandia.ch" },
-                    "areaServed": { 
-                        "@type": "City", 
+                    "areaServed": {
+                        "@type": "City",
                         "name": city,
                         "address": {
                             "@type": "PostalAddress",
@@ -530,7 +609,7 @@ function buildServiceCityPages() {
 
                 // Write File
                 const outputPath = lang === 'en' ? `${slug}.html` : `${lang}/${slug}.html`;
-                
+
                 // Ensure dir exists
                 const dir = path.dirname(outputPath);
                 if (!fs.existsSync(dir)) {
@@ -550,7 +629,7 @@ function buildServiceCityPages() {
 // -------------------------------------------------------------------------
 function buildServiceIndustryCityPages() {
     console.log('\n🏗️  Building Service x Industry x City Landing Pages (Multi-Language)...');
-    
+
     // Read the mega template
     const templateContent = fs.readFileSync('templates/service-industry-city-landing.html', 'utf8');
     let pageCount = 0;
@@ -562,14 +641,24 @@ function buildServiceIndustryCityPages() {
                 topCities.forEach(cityData => {
                     const city = cityData.city;
                     const country = cityData.country;
-                    
+
                     // Slug: service-industry-city.html
                     // E.g. managed-it-services-fintech-london.html
                     const slug = `${service.slug_pattern.replace('-{{CITY_SLUG}}', '')}-${industry.slug.replace('b2b-lead-generation-', '')}-${cityData.slug.replace('b2b-lead-generation-', '')}`;
-                    
+
                     // Determine title/desc based on language (Simplified for this massive scale)
                     let title = `${service.name} for ${industry.name} in ${city}`;
                     let description = `${service.name} tailored for ${industry.name} companies in ${city}.`;
+
+                    // Service Slug Mapping
+                    const serviceSlugMap = {
+                        'managed-it': 'managed-it-services',
+                        'cybersecurity': 'vulnerability-assessments',
+                        'recruitment': 'recruitment',
+                        'ai-studio': 'ai-creative-studio',
+                        'revops': 'revops-crm-setup'
+                    };
+                    const serviceSlug = serviceSlugMap[service.id] || 'index';
 
                     // Build HTML
                     let htmlTemplate = createHTMLTemplate(lang);
@@ -581,17 +670,20 @@ function buildServiceIndustryCityPages() {
                     content = content.replace(/\{\{INDUSTRY_NAME\}\}/g, industry.name);
                     content = content.replace(/\{\{CITY_NAME\}\}/g, city);
                     content = content.replace(/\{\{COUNTRY_NAME\}\}/g, country);
+                    content = content.replace(/\{\{SERVICE_SLUG\}\}/g, serviceSlug);
+                    content = content.replace(/\{\{INDUSTRY_SLUG\}\}/g, industry.slug);
 
                     // Navigation/Footer
                     let pageNavigation = lang === 'tr' ? navigationTR : lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
                     let pageFooter = lang === 'tr' ? footerTR : lang === 'de' ? footerDE : lang === 'fr' ? footerFR : footerEN;
-                    
+
                     // Clean i18n
                     pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
                     pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
 
                     const basePath = (lang === 'tr' || lang === 'de' || lang === 'fr') ? '../' : './';
                     const logoPath = (lang === 'tr' || lang === 'de' || lang === 'fr') ? '../Expandia-main-logo-koyu-yesil.png' : 'Expandia-main-logo-koyu-yesil.png';
+                    htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
                     const turkishServicesPath = lang === 'tr' ? './' : './tr/';
 
                     pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
@@ -615,16 +707,16 @@ function buildServiceIndustryCityPages() {
                     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, title);
                     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, description);
                     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, `${service.name} ${industry.name} ${city}`);
-                    
+
                     const canonicalSlug = lang === 'en' ? `${slug}.html` : `${lang}/${slug}.html`;
                     htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.expandia.ch/${canonicalSlug}`);
-                    
+
                     // Hreflang logic
                     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, `${slug}.html`);
                     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, `tr/${slug}.html`);
                     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, `de/${slug}.html`);
                     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, `fr/${slug}.html`);
-                    
+
                     // Fix missing FR hreflang
                     if (!htmlTemplate.includes('hreflang="fr"')) {
                         htmlTemplate = htmlTemplate.replace(
@@ -645,7 +737,7 @@ function buildServiceIndustryCityPages() {
 
                     // Write File
                     const outputPath = lang === 'en' ? `${slug}.html` : `${lang}/${slug}.html`;
-                    
+
                     // Ensure dir exists
                     const dir = path.dirname(outputPath);
                     if (!fs.existsSync(dir)) {
@@ -662,28 +754,175 @@ function buildServiceIndustryCityPages() {
 }
 
 // -------------------------------------------------------------------------
-// NEW: Build City Landing Pages (Refactored)
+// NEW: Build City Landing Pages (Refactored) - B2B/Corporate/Manufacturing Focus
 // -------------------------------------------------------------------------
+
+// Region-based content for unique city pages
+const regionContent = {
+    'DACH': {
+        targetHeadline: 'Corporate Enterprises & Industrial Manufacturers',
+        industries: ['Industrial Manufacturing', 'Engineering Companies', 'Corporate Enterprises', 'Automotive Suppliers', 'Machinery & Equipment', 'Chemicals & Materials', 'Logistics & Supply Chain', 'Business Services', 'Wholesale & Distribution', 'Construction & Infrastructure'],
+        insights: [
+            { title: 'Industrial Precision', text: 'Our approach matches the DACH region\'s emphasis on quality and precision. We identify decision-makers who value long-term partnerships over transactional relationships.' },
+            { title: 'Cross-Border Expertise', text: 'Navigate the German, Austrian, and Swiss markets effectively with campaigns tailored to local business cultures and procurement processes.' },
+            { title: 'Mid-Market Focus', text: 'Reach the Mittelstand—the backbone of DACH manufacturing. Our campaigns connect you with privately-owned, export-oriented companies.' },
+            { title: 'Multi-Language Campaigns', text: 'German-language outreach combined with English for international divisions. We adapt messaging to regional business expectations.' }
+        ],
+        marketStats: [
+            { stat: '3M+', desc: 'B2B companies across DACH region' },
+            { stat: '€2.1T', desc: 'Combined manufacturing output' },
+            { stat: '68%', desc: 'Companies actively seeking suppliers' }
+        ],
+        marketContext: 'The DACH region represents one of Europe\'s most mature B2B markets, with strong demand for quality-focused suppliers and service providers.',
+        serviceIntro: 'Our B2B lead generation methodology is designed for the complex, relationship-driven sales cycles typical of corporate and industrial buyers across Germany, Austria, and Switzerland.'
+    },
+    'Western Europe': {
+        targetHeadline: 'B2B Companies & Corporate Enterprises',
+        industries: ['Corporate Services', 'Manufacturing Companies', 'Business Consulting', 'Logistics & Freight', 'Industrial Equipment', 'Construction & Engineering', 'Telecommunications', 'Energy & Utilities', 'Retail & Wholesale', 'Professional Services'],
+        insights: [
+            { title: 'Enterprise Connections', text: 'Access decision-makers at corporate headquarters and regional offices across Western European markets.' },
+            { title: 'Cross-Border Campaigns', text: 'Expand from one market to multiple countries with campaigns that respect local business practices and languages.' },
+            { title: 'Procurement Expertise', text: 'We understand formal procurement processes and help you position effectively in competitive tender situations.' },
+            { title: 'Quality Over Quantity', text: 'Focus on qualified meetings with buyers who have budget and authority, not just contact lists.' }
+        ],
+        marketStats: [
+            { stat: '5M+', desc: 'Active B2B enterprises' },
+            { stat: '€4.2T', desc: 'Annual B2B commerce value' },
+            { stat: '72%', desc: 'Digital procurement adoption' }
+        ],
+        marketContext: 'Western Europe offers mature B2B markets with sophisticated buyers who expect professional, value-driven sales approaches and clear ROI.',
+        serviceIntro: 'From the UK to the Benelux, our lead generation services help you connect with corporate buyers and industrial decision-makers across Western Europe\'s diverse markets.'
+    },
+    'Scandinavia': {
+        targetHeadline: 'Industrial Companies & Corporate Groups',
+        industries: ['Maritime & Shipping', 'Energy & Clean Tech', 'Industrial Manufacturing', 'Engineering Services', 'Forest & Paper Products', 'Corporate Enterprises', 'Telecommunications', 'Construction & Real Estate', 'Business Services', 'Healthcare Industry'],
+        insights: [
+            { title: 'Sustainability Focus', text: 'Scandinavian buyers prioritize sustainable practices. We help position your offering around long-term value and environmental responsibility.' },
+            { title: 'Direct Communication', text: 'Nordic business culture values straightforward communication. Our outreach reflects this—clear, honest, and results-oriented.' },
+            { title: 'Innovation-Driven', text: 'Connect with companies at the forefront of industrial innovation, from clean energy to advanced manufacturing.' },
+            { title: 'Regional Expansion', text: 'Use Scandinavia as a springboard to Nordic and Baltic markets with integrated campaign strategies.' }
+        ],
+        marketStats: [
+            { stat: '800K+', desc: 'B2B companies in the Nordics' },
+            { stat: '€890B', desc: 'Combined GDP' },
+            { stat: '85%', desc: 'Digital business adoption' }
+        ],
+        marketContext: 'The Nordic region combines industrial heritage with technology leadership, creating opportunities for B2B providers who can deliver innovation and reliability.',
+        serviceIntro: 'Reach industrial manufacturers, corporate groups, and service providers across Norway, Sweden, Denmark, and Finland with campaigns tailored to Nordic business values.'
+    },
+    'Turkey': {
+        targetHeadline: 'Manufacturing Companies & Corporate Groups',
+        industries: ['Manufacturing & Production', 'Textile & Apparel', 'Automotive Industry', 'Construction & Building Materials', 'Food & Beverage Production', 'Corporate Enterprises', 'Logistics & Export', 'Industrial Machinery', 'Wholesale & Trading', 'Business Services'],
+        insights: [
+            { title: 'Manufacturing Hub', text: 'Turkey is a major manufacturing center for Europe and the Middle East. Connect with producers seeking international partners and suppliers.' },
+            { title: 'Export-Oriented', text: 'Reach companies actively exporting to Europe, MENA, and beyond—businesses that understand international B2B relationships.' },
+            { title: 'Growing Corporate Sector', text: 'Turkish corporate groups are expanding rapidly. Position your services to support their growth ambitions.' },
+            { title: 'Local & International', text: 'Campaigns in Turkish and English to reach both domestic industrial players and internationally-focused enterprises.' }
+        ],
+        marketStats: [
+            { stat: '1.2M+', desc: 'Active industrial companies' },
+            { stat: '€210B', desc: 'Annual manufacturing output' },
+            { stat: '45%', desc: 'Export-oriented businesses' }
+        ],
+        marketContext: 'Turkey\'s strategic position bridges European and Asian markets, with a strong manufacturing base and growing corporate sector seeking B2B partnerships.',
+        serviceIntro: 'Connect with Turkish manufacturers, corporate groups, and export-oriented businesses through campaigns that understand the local business landscape.'
+    },
+    'Eastern Europe': {
+        targetHeadline: 'Industrial Manufacturers & Growing Enterprises',
+        industries: ['Manufacturing & Assembly', 'Automotive Suppliers', 'IT & Business Services', 'Logistics & Warehousing', 'Construction & Development', 'Industrial Equipment', 'Corporate Services', 'Wholesale & Distribution', 'Energy & Utilities', 'Agriculture & Food Processing'],
+        insights: [
+            { title: 'Manufacturing Growth', text: 'Eastern Europe has emerged as a manufacturing powerhouse. Connect with companies expanding production and seeking suppliers.' },
+            { title: 'Cost-Competitive Quality', text: 'Reach enterprises that combine competitive costs with European quality standards—attractive partners for Western companies.' },
+            { title: 'EU Integration', text: 'Companies in EU member states follow familiar procurement practices, making cross-border B2B relationships straightforward.' },
+            { title: 'Nearshoring Hub', text: 'As companies nearshore operations to Eastern Europe, new B2B opportunities emerge across the supply chain.' }
+        ],
+        marketStats: [
+            { stat: '2M+', desc: 'B2B enterprises' },
+            { stat: '€580B', desc: 'Regional GDP' },
+            { stat: '7.2%', desc: 'Average growth rate' }
+        ],
+        marketContext: 'Eastern Europe continues to grow as a B2B hub, with expanding manufacturing capacity and increasingly sophisticated corporate buyers.',
+        serviceIntro: 'Tap into Eastern Europe\'s growing industrial base and corporate sector with lead generation campaigns designed for emerging market dynamics.'
+    },
+    'Southern Europe': {
+        targetHeadline: 'Corporate Enterprises & Industrial Companies',
+        industries: ['Manufacturing & Production', 'Fashion & Luxury Goods', 'Food & Beverage', 'Construction & Real Estate', 'Corporate Services', 'Automotive & Machinery', 'Tourism Infrastructure', 'Logistics & Transport', 'Wholesale & Retail', 'Professional Services'],
+        insights: [
+            { title: 'Relationship-Driven', text: 'Southern European business culture emphasizes personal relationships. Our approach builds trust before pushing for meetings.' },
+            { title: 'Industry Clusters', text: 'Connect with companies in regional industry clusters—from Italian manufacturing to Spanish construction.' },
+            { title: 'Mediterranean Markets', text: 'Reach buyers across Italy, Spain, Portugal, and Greece with campaigns adapted to local business practices.' },
+            { title: 'Export Champions', text: 'Many Southern European companies are export leaders in their sectors—ideal partners for international B2B relationships.' }
+        ],
+        marketStats: [
+            { stat: '3.5M+', desc: 'Active B2B companies' },
+            { stat: '€2.8T', desc: 'Combined GDP' },
+            { stat: '58%', desc: 'Export-active businesses' }
+        ],
+        marketContext: 'Southern Europe combines industrial tradition with entrepreneurial energy, offering diverse B2B opportunities across manufacturing and services.',
+        serviceIntro: 'From Italian manufacturing to Spanish corporate enterprises, we help you connect with decision-makers across Southern Europe\'s diverse B2B landscape.'
+    },
+    'North America': {
+        targetHeadline: 'B2B Enterprises & Corporate Companies',
+        industries: ['Corporate Enterprises', 'Manufacturing & Production', 'Business Services', 'Industrial Equipment', 'Construction & Engineering', 'Logistics & Distribution', 'Healthcare Industry', 'Energy & Utilities', 'Telecommunications', 'Professional Services'],
+        insights: [
+            { title: 'Enterprise Scale', text: 'Access decision-makers at large enterprises and mid-market companies across the US and Canada.' },
+            { title: 'Competitive Markets', text: 'Stand out in competitive North American markets with targeted, personalized outreach that cuts through the noise.' },
+            { title: 'Time Zone Coverage', text: 'Campaign execution aligned with North American business hours for optimal engagement and response rates.' },
+            { title: 'Cross-Border Expansion', text: 'Use North America as your launchpad for global expansion or target specific regional markets.' }
+        ],
+        marketStats: [
+            { stat: '6M+', desc: 'B2B companies' },
+            { stat: '$25T', desc: 'Annual B2B commerce' },
+            { stat: '78%', desc: 'Digital buying preference' }
+        ],
+        marketContext: 'North America represents the world\'s largest B2B market, with sophisticated buyers who expect data-driven, value-focused sales approaches.',
+        serviceIntro: 'Reach corporate buyers and industrial decision-makers across the United States and Canada with campaigns that match American business expectations.'
+    }
+};
+
+// Default content for regions not explicitly defined
+const defaultRegionContent = {
+    targetHeadline: 'B2B Companies & Corporate Enterprises',
+    industries: ['Corporate Enterprises', 'Manufacturing Companies', 'Business Services', 'Industrial Suppliers', 'Logistics & Distribution', 'Construction & Engineering', 'Professional Services', 'Wholesale & Trading', 'Technology Companies', 'Energy & Utilities'],
+    insights: [
+        { title: 'Global Reach', text: 'Connect with B2B decision-makers worldwide through targeted, professional outreach campaigns.' },
+        { title: 'Industry Expertise', text: 'Our team understands B2B sales cycles and helps position your offering for enterprise and mid-market buyers.' },
+        { title: 'Quality Meetings', text: 'Focus on qualified conversations with buyers who have budget, authority, and genuine interest.' },
+        { title: 'Scalable Approach', text: 'Start with targeted campaigns and scale as you identify successful patterns and markets.' }
+    ],
+    marketStats: [
+        { stat: '100M+', desc: 'B2B companies globally' },
+        { stat: '$50T+', desc: 'Global B2B commerce' },
+        { stat: '65%', desc: 'Prefer digital engagement' }
+    ],
+    marketContext: 'B2B markets worldwide are increasingly open to professional outreach from qualified providers offering clear value propositions.',
+    serviceIntro: 'Our lead generation services help B2B companies connect with corporate and industrial buyers across diverse global markets.'
+};
+
 function buildCityPages() {
-    console.log('\n🏗️  Building City Landing Pages...');
-    
+    console.log('\n🏗️  Building City Landing Pages (B2B/Corporate/Manufacturing Focus)...');
+
     const templateContent = fs.readFileSync('templates/city-landing.html', 'utf8');
-    
+
     cities.forEach(cityData => {
         const lang = 'en'; // Currently only EN for cities
         const city = cityData.city;
         const country = cityData.country;
-        const slug = cityData.slug; // e.g., 'b2b-lead-generation-london'
+        const region = cityData.region || 'Global';
+        const slug = cityData.slug;
         const image = cityData.image || './assets/local/default-city.jpg';
-        
-        // Prepare metadata
-        const title = `B2B Lead Generation Agency in ${city} | Financial & Corporate Hub | Expandia`;
-        const description = `B2B lead generation agency in ${city} helping financial services, technology, and professional services companies win qualified leads across the UK and Europe.`;
-        const keywords = `B2B lead generation ${city}, lead generation agency ${city}, sales agency ${city}, appointment setting ${city}, ${country} B2B leads`;
+
+        // Get region-specific content
+        const regionData = regionContent[region] || defaultRegionContent;
+
+        // SEO-optimized metadata (no Financial Services, focus on B2B/Corporate/Manufacturing)
+        const title = `B2B Lead Generation Agency in ${city}, ${country} | Corporate & Industrial Sales | Expandia`;
+        const description = `Professional B2B lead generation services in ${city}. We help corporate enterprises, manufacturers, and industrial companies generate qualified sales meetings and expand their ${region} market presence. Outbound prospecting, appointment setting, and account-based marketing for complex B2B sales cycles.`;
+        const keywords = `B2B lead generation ${city}, corporate sales ${city}, industrial lead generation ${country}, appointment setting ${city}, B2B sales agency ${country}, manufacturing leads, enterprise sales, outbound prospecting, account-based marketing ${city}`;
 
         let htmlTemplate = createHTMLTemplate(lang);
         let content = templateContent;
-        
+
         // Calculate Nearby Cities
         const nearby = cities
             .filter(c => c.slug !== slug && c.lat && c.lng && cityData.lat && cityData.lng)
@@ -693,7 +932,7 @@ function buildCityPages() {
             }))
             .sort((a, b) => a.distance - b.distance)
             .slice(0, 4);
-        
+
         const nearbyHtml = nearby.map(c => `
             <a href="${c.slug}.html" class="block p-4 rounded-lg border border-base-300 hover:border-primary transition-all group bg-base-100">
                 <div class="font-bold text-lg group-hover:text-primary">${c.city}</div>
@@ -707,56 +946,82 @@ function buildCityPages() {
             const serviceSlug = service.slug_pattern.replace('{{CITY_SLUG}}', cityData.slug.replace('b2b-lead-generation-', ''));
             return `
             <a href="${serviceSlug}.html" class="flex items-center gap-4 p-4 rounded-xl bg-base-100 border border-base-300 hover:border-primary hover:shadow-md transition-all group">
-                <div class="text-2xl">${service.icon}</div>
+                <div class="text-2xl"><i data-lucide="${service.icon}"></i></div>
                 <div>
                     <h3 class="font-bold group-hover:text-primary transition-colors">${service.name}</h3>
-                    <p class="text-xs text-base-content/60">in ${city}</p>
+                    <p class="text-xs text-base-content/60">Available globally</p>
                 </div>
             </a>`;
         }).join('');
 
-        // Replace placeholders in content
+        // Intro paragraph (unique per region, mentions city)
+        const introParagraph = `We help B2B companies reach corporate enterprises, manufacturers, and industrial buyers across ${region}. Whether you're targeting decision-makers in ${city} or expanding across ${country}, our lead generation services deliver qualified sales meetings with buyers who have genuine interest and budget.`;
+
+        // Replace all placeholders
         content = content.replace(/\{\{CITY_NAME\}\}/g, city);
-        content = content.replace(/\{\{SERVICE_LINKS\}\}/g, serviceLinksHtml);
         content = content.replace(/\{\{COUNTRY_NAME\}\}/g, country);
+        content = content.replace(/\{\{REGION_NAME\}\}/g, region);
+        content = content.replace(/\{\{SERVICE_LINKS\}\}/g, serviceLinksHtml);
         content = content.replace(/\{\{HERO_IMAGE\}\}/g, image);
         content = content.replace(/\{\{CITY_SLUG\}\}/g, slug);
         content = content.replace(/\{\{NEARBY_CITIES\}\}/g, nearbyHtml);
-        content = content.replace(/\{\{CITY_POPULATION\}\}/g, cityData.population || 'growing');
-        content = content.replace(/\{\{CITY_LANDMARK\}\}/g, cityData.landmark || 'the city center');
-        
+
+        // Dynamic content from region
+        content = content.replace(/\{\{TARGET_HEADLINE\}\}/g, regionData.targetHeadline);
+        content = content.replace(/\{\{INTRO_PARAGRAPH\}\}/g, introParagraph);
+        content = content.replace(/\{\{SERVICE_INTRO\}\}/g, regionData.serviceIntro);
+
+        // 10 Target Industries
+        regionData.industries.forEach((industry, i) => {
+            content = content.replace(`{{TARGET_INDUSTRY_${i + 1}}}`, industry);
+        });
+
+        // 4 Insights
+        regionData.insights.forEach((insight, i) => {
+            content = content.replace(`{{INSIGHT_TITLE_${i + 1}}}`, insight.title);
+            content = content.replace(`{{INSIGHT_TEXT_${i + 1}}}`, insight.text);
+        });
+
+        // 3 Market Stats
+        regionData.marketStats.forEach((stat, i) => {
+            content = content.replace(`{{MARKET_STAT_${i + 1}}}`, stat.stat);
+            content = content.replace(`{{MARKET_STAT_DESC_${i + 1}}}`, stat.desc);
+        });
+        content = content.replace(/\{\{MARKET_CONTEXT\}\}/g, regionData.marketContext);
+
         // Navigation and Footer (EN)
         let pageNavigation = navigationEN;
         let pageFooter = footerEN;
-        
+
         // Common replacements
         const basePath = './';
         const logoPath = 'Expandia-main-logo-koyu-yesil.png';
-        
+        htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
+
         pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
         pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
         pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
         pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
-        
+
         // Inject Content
         htmlTemplate = htmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
         htmlTemplate = htmlTemplate.replace('{{MAIN_CONTENT}}', content);
         htmlTemplate = htmlTemplate.replace('{{FOOTER}}', pageFooter);
-        
+
         // Metadata
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, title);
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, description);
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, keywords);
         htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.expandia.ch/${slug}.html`);
-        
-        // Enhanced Schema for City Page
+
+        // Enhanced Schema for City Page (B2B/Corporate focus)
         const schema = {
             "@context": "https://schema.org",
             "@type": "Service",
-            "name": `B2B Lead Generation ${city}`,
+            "name": `B2B Lead Generation Services in ${city}`,
             "provider": { "@type": "Organization", "name": "Expandia", "url": "https://www.expandia.ch" },
-            "areaServed": { 
-                "@type": "City", 
+            "areaServed": {
+                "@type": "City",
                 "name": city,
                 "address": {
                     "@type": "PostalAddress",
@@ -764,12 +1029,17 @@ function buildCityPages() {
                 }
             },
             "description": description,
+            "audience": {
+                "@type": "BusinessAudience",
+                "audienceType": "B2B companies, corporate enterprises, manufacturers"
+            },
             "hasOfferCatalog": {
                 "@type": "OfferCatalog",
                 "name": "B2B Sales Services",
                 "itemListElement": [
                     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Outbound Lead Generation" } },
                     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Appointment Setting" } },
+                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Account-Based Marketing" } },
                     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "B2B List Building" } }
                 ]
             }
@@ -779,19 +1049,20 @@ function buildCityPages() {
         // Write file
         fs.writeFileSync(`${slug}.html`, htmlTemplate, 'utf8');
     });
-    console.log(`✅ Built ${cities.length} city pages.`);
+    console.log(`✅ Built ${cities.length} city pages with region-specific B2B content.`);
 }
+
 
 // -------------------------------------------------------------------------
 // NEW: Build Industry Pages
 // -------------------------------------------------------------------------
 function buildIndustryPages() {
     console.log('\n🏗️  Building Industry Pages...');
-    
+
     const templateContent = fs.readFileSync('templates/industry-landing.html', 'utf8');
-    
+
     industries.forEach(industryData => {
-        const lang = 'en'; 
+        const lang = 'en';
         const name = industryData.name;
         const slug = industryData.slug;
         const image = industryData.image || './assets/local/default-industry.jpg';
@@ -801,35 +1072,35 @@ function buildIndustryPages() {
 
         let htmlTemplate = createHTMLTemplate(lang);
         let content = templateContent;
-        
+
         // Replace placeholders in content
         content = content.replace(/\{\{INDUSTRY_NAME\}\}/g, name);
         content = content.replace(/\{\{HERO_IMAGE\}\}/g, image);
-        
+
         // Navigation and Footer (EN)
         let pageNavigation = navigationEN;
         let pageFooter = footerEN;
-        
+
         // Common replacements
         const basePath = './';
         const logoPath = 'Expandia-main-logo-koyu-yesil.png';
-        
+
         pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
         pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
         pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
         pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
-        
+
         // Inject Content
         htmlTemplate = htmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
         htmlTemplate = htmlTemplate.replace('{{MAIN_CONTENT}}', content);
         htmlTemplate = htmlTemplate.replace('{{FOOTER}}', pageFooter);
-        
+
         // Metadata
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, title);
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, description);
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, keywords);
         htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.expandia.ch/${slug}.html`);
-        
+
         // Schema
         const schema = {
             "@context": "https://schema.org",
@@ -855,10 +1126,10 @@ function buildIndustryPages() {
 // -------------------------------------------------------------------------
 function buildCityLocationsPage() {
     console.log('\n🏗️  Building City Locations Page...');
-    
+
     const templateContent = fs.readFileSync('templates/city-locations.html', 'utf8');
     const lang = 'en';
-    
+
     // Prepare Head Content (Leaflet CSS)
     const headContent = `
     <!-- Leaflet CSS -->
@@ -878,7 +1149,7 @@ function buildCityLocationsPage() {
         .legend-item { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
         .legend-color { width: 20px; height: 20px; border-radius: 50%; }
     </style>`;
-    
+
     // Prepare Script Content (Leaflet JS + Logic)
     // Transform cities data for JS
     const citiesForJs = cities.map(c => ({
@@ -888,7 +1159,7 @@ function buildCityLocationsPage() {
         url: `./${c.slug}.html`,
         region: c.region || 'Global'
     }));
-    
+
     const scriptContent = `
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
@@ -960,21 +1231,22 @@ function buildCityLocationsPage() {
 
     let htmlTemplate = createHTMLTemplate(lang, headContent, scriptContent);
     let content = templateContent.replace('{{CITY_COUNT}}', cities.length);
-    
+
     // Navigation/Footer replacements... (standard)
     let pageNavigation = navigationEN;
     let pageFooter = footerEN;
     const basePath = './';
     const logoPath = 'Expandia-main-logo-koyu-yesil.png';
+    htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
     pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
     pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
     pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
     pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
-    
+
     htmlTemplate = htmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
     htmlTemplate = htmlTemplate.replace('{{MAIN_CONTENT}}', content);
     htmlTemplate = htmlTemplate.replace('{{FOOTER}}', pageFooter);
-    
+
     const pageMetadata = getPageMetadata('city-locations', lang);
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, pageMetadata.title);
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, pageMetadata.description);
@@ -989,12 +1261,313 @@ function buildCityLocationsPage() {
 // -------------------------------------------------------------------------
 // NEW: Generate Dynamic Sitemap
 // -------------------------------------------------------------------------
+// -------------------------------------------------------------------------
+// NEW: Build Glossary Pages
+// -------------------------------------------------------------------------
+function buildGlossaryTerms() {
+    console.log('\n📖 Building Glossary Term Pages...');
+
+    const templateContent = fs.readFileSync('templates/glossary-term.html', 'utf8');
+    const languages = ['en', 'de', 'fr', 'tr'];
+
+    languages.forEach(lang => {
+        const glossaryIndexUrl = lang === 'en' ? 'glossary.html' : 'glossary.html'; // Relative path handling below
+
+        glossary.forEach(termData => {
+            let termName = termData.term;
+            let definition = termData.definition;
+
+            // Handle Translation
+            if (lang !== 'en' && termData.translations && termData.translations[lang]) {
+                termName = termData.translations[lang].term;
+                definition = termData.translations[lang].definition;
+            }
+
+            // Fallback for missing translation
+            if (!termName) termName = termData.term;
+            if (!definition) definition = termData.definition;
+
+            let htmlTemplate = createHTMLTemplate(lang);
+            let content = templateContent;
+
+            // Common Replacements
+            content = content.replace(/\{\{TERM_NAME\}\}/g, termName);
+            content = content.replace(/\{\{TERM_DEFINITION\}\}/g, definition);
+            content = content.replace(/\{\{TERM_CATEGORY\}\}/g, termData.category);
+
+            // Labels
+            const labels = {
+                en: { glossary: 'Glossary', related: 'Related Terms', ctaTitle: 'Ready to Scale?', ctaDesc: 'Let us help you implement these strategies.', ctaBtn: 'Get Started' },
+                de: { glossary: 'Glossar', related: 'Verwandte Begriffe', ctaTitle: 'Bereit zu skalieren?', ctaDesc: 'Lassen Sie uns Ihnen bei der Umsetzung helfen.', ctaBtn: 'Loslegen' },
+                fr: { glossary: 'Glossaire', related: 'Termes Connexes', ctaTitle: 'Prêt à évoluer ?', ctaDesc: 'Laissez-nous vous aider à mettre en œuvre ces stratégies.', ctaBtn: 'Commencer' },
+                tr: { glossary: 'Sözlük', related: 'İlgili Terimler', ctaTitle: 'Büyümeye Hazır mısınız?', ctaDesc: 'Bu stratejileri uygulamanıza yardımcı olalım.', ctaBtn: 'Hemen Başla' }
+            };
+            const label = labels[lang] || labels['en'];
+
+            content = content.replace(/\{\{GLOSSARY_LABEL\}\}/g, label.glossary);
+            content = content.replace(/\{\{RELATED_TERMS_LABEL\}\}/g, label.related);
+            content = content.replace(/\{\{CTA_TITLE\}\}/g, label.ctaTitle);
+            content = content.replace(/\{\{CTA_DESCRIPTION\}\}/g, label.ctaDesc);
+            content = content.replace(/\{\{CTA_BUTTON\}\}/g, label.ctaBtn);
+
+            // Related Terms Logic (Random 3 from same category or random)
+            const related = glossary
+                .filter(t => t.slug !== termData.slug)
+                .sort(() => 0.5 - Math.random())
+                .slice(0, 3);
+
+            const relatedHtml = related.map(t => {
+                let rName = t.term;
+                let rDef = t.definition;
+                if (lang !== 'en' && t.translations && t.translations[lang]) {
+                    rName = t.translations[lang].term;
+                    rDef = t.translations[lang].definition;
+                }
+                const link = `./${t.slug}.html`; // Glossary structure is flat per lang folder
+                return `
+                <a href="${link}" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">${rName}</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">${rDef}</p>
+                </a>`;
+            }).join('');
+            content = content.replace(/\{\{RELATED_TERMS_LIST\}\}/g, relatedHtml);
+
+
+            // Navigation/Footer
+            let pageNavigation = lang === 'tr' ? navigationTR : lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
+            let pageFooter = lang === 'tr' ? footerTR : lang === 'de' ? footerDE : lang === 'fr' ? footerFR : footerEN;
+
+            // Clean i18n
+            pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
+            pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
+
+            // Glossary is in a subfolder 'glossary/' for EN? Or just 'glossary.html' and flat terms?
+            // To support "Programmatic Glossary" scale (2000 pages), we should probably put them in a folder.
+            // Let's say: en: /glossary/term.html, de: /de/glossary/term.html
+
+            const basePath = (lang === 'en') ? '../' : '../../'; // glossary/ or lang/glossary/
+            const logoPath = (lang === 'en') ? '../Expandia-main-logo-koyu-yesil.png' : '../../Expandia-main-logo-koyu-yesil.png';
+            htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
+            const turkishServicesPath = lang === 'tr' ? '../' : '../tr/'; // Adjusted for depth
+
+            pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
+            pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
+            pageNavigation = pageNavigation.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
+            pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
+            pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
+            pageFooter = pageFooter.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
+
+            content = content.replace(/\{\{GLOSSARY_INDEX_URL\}\}/g, './index.html'); // Points to index inside glossary folder
+
+            // Apply Translation Helper
+            if (lang !== 'en') {
+                pageNavigation = applyTranslations(pageNavigation, lang);
+                pageFooter = applyTranslations(pageFooter, lang);
+            }
+
+            htmlTemplate = htmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
+            htmlTemplate = htmlTemplate.replace('{{MAIN_CONTENT}}', content);
+            htmlTemplate = htmlTemplate.replace('{{FOOTER}}', pageFooter);
+
+            // Metadata
+            const pageTitle = `${termName} - Definition & Business Context | Expandia Glossary`;
+            const pageDesc = `What is ${termName}? Definition and business importance for ${termData.category}.`;
+
+            htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, pageTitle);
+            htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, pageDesc);
+            htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, `${termName} definition, what is ${termName}, ${termName} meaning, ${termData.category} glossary`);
+
+            const canonicalSlug = lang === 'en' ? `glossary/${termData.slug}.html` : `${lang}/glossary/${termData.slug}.html`;
+            htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.expandia.ch/${canonicalSlug}`);
+
+            // Hreflang
+            htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, `glossary/${termData.slug}.html`);
+            htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, `tr/glossary/${termData.slug}.html`);
+            htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, `de/glossary/${termData.slug}.html`);
+            htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, `fr/glossary/${termData.slug}.html`);
+
+            // Schema
+            const definedTermSchema = {
+                "@context": "https://schema.org",
+                "@type": "DefinedTerm",
+                "name": termName,
+                "description": definition,
+                "inDefinedTermSet": "https://www.expandia.ch/glossary"
+            };
+
+            const faqSchema = {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [{
+                    "@type": "Question",
+                    "name": `What is ${termName}?`,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": definition
+                    }
+                }]
+            };
+
+            const schema = [definedTermSchema, faqSchema];
+            htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, JSON.stringify(schema, null, 2));
+
+            // Write File
+            let outputDir;
+            if (lang === 'en') {
+                outputDir = 'glossary';
+            } else {
+                outputDir = `${lang}/glossary`;
+            }
+
+            if (!fs.existsSync(outputDir)) {
+                fs.mkdirSync(outputDir, { recursive: true });
+            }
+
+            fs.writeFileSync(`${outputDir}/${termData.slug}.html`, htmlTemplate, 'utf8');
+        });
+    });
+    console.log(`✅ Built ${glossary.length * languages.length} Glossary Term pages.`);
+}
+
+function buildGlossaryIndex() {
+    console.log('\n📖 Building Glossary Index Pages...');
+
+    const templateContent = fs.readFileSync('templates/glossary-index.html', 'utf8');
+    const languages = ['en', 'de', 'fr', 'tr'];
+
+    languages.forEach(lang => {
+        let htmlTemplate = createHTMLTemplate(lang);
+        let content = templateContent;
+
+        const labels = {
+            en: {
+                glossary: 'Glossary',
+                title: 'Business & Tech Glossary',
+                desc: 'Comprehensive definitions for key terms in B2B marketing, sales, and technology.',
+                ctaTitle: 'Ready to Scale?', ctaDesc: 'Let us help you implement these strategies.', ctaBtn: 'Get Started'
+            },
+            de: {
+                glossary: 'Glossar',
+                title: 'Business & Tech Glossar',
+                desc: 'Umfassende Definitionen für Schlüsselbegriffe in B2B-Marketing, Vertrieb und Technologie.',
+                ctaTitle: 'Bereit zu skalieren?', ctaDesc: 'Lassen Sie uns Ihnen bei der Umsetzung helfen.', ctaBtn: 'Loslegen'
+            },
+            fr: {
+                glossary: 'Glossaire',
+                title: 'Glossaire Business & Tech',
+                desc: 'Définitions complètes des termes clés du marketing B2B, des ventes et de la technologie.',
+                ctaTitle: 'Prêt à évoluer ?', ctaDesc: 'Laissez-nous vous aider à mettre en œuvre ces stratégies.', ctaBtn: 'Commencer'
+            },
+            tr: {
+                glossary: 'Sözlük',
+                title: 'İş ve Teknoloji Sözlüğü',
+                desc: 'B2B pazarlama, satış ve teknoloji alanındaki temel terimler için kapsamlı tanımlar.',
+                ctaTitle: 'Büyümeye Hazır mısınız?', ctaDesc: 'Bu stratejileri uygulamanıza yardımcı olalım.', ctaBtn: 'Hemen Başla'
+            }
+        };
+        const label = labels[lang] || labels['en'];
+
+        content = content.replace(/\{\{GLOSSARY_LABEL\}\}/g, label.glossary);
+        content = content.replace(/\{\{PAGE_TITLE_TEXT\}\}/g, label.title);
+        content = content.replace(/\{\{PAGE_DESCRIPTION_TEXT\}\}/g, label.desc);
+        content = content.replace(/\{\{CTA_TITLE\}\}/g, label.ctaTitle);
+        content = content.replace(/\{\{CTA_DESCRIPTION\}\}/g, label.ctaDesc);
+        content = content.replace(/\{\{CTA_BUTTON\}\}/g, label.ctaBtn);
+
+        // Build List
+        // Group by letter or just list? For 2000 pages, we need grouping. But for now with 6 terms, just a list is fine.
+        // Let's do a simple grid of cards.
+        const listHtml = glossary.map(termData => {
+            let termName = termData.term;
+            let definition = termData.definition;
+            if (lang !== 'en' && termData.translations && termData.translations[lang]) {
+                termName = termData.translations[lang].term;
+                definition = termData.translations[lang].definition;
+            }
+            if (!termName) termName = termData.term;
+            if (!definition) definition = termData.definition;
+
+            const link = `./${termData.slug}.html`;
+
+            return `
+             <a href="${link}" class="buzz-card p-6 block hover:border-primary transition-colors group" data-category="${termData.category}">
+                <div class="text-sm text-primary mb-2 font-semibold tracking-wide">${termData.category}</div>
+                <h3 class="font-bold text-xl mb-3 group-hover:text-primary">${termName}</h3>
+                <p class="text-base-content/70 line-clamp-3">${definition}</p>
+             </a>
+             `;
+        }).join('');
+
+        content = content.replace(/\{\{GLOSSARY_LIST\}\}/g, listHtml);
+
+        // Navigation/Footer
+        let pageNavigation = lang === 'tr' ? navigationTR : lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
+        let pageFooter = lang === 'tr' ? footerTR : lang === 'de' ? footerDE : lang === 'fr' ? footerFR : footerEN;
+
+        pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
+        pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
+
+        const basePath = (lang === 'en') ? '../' : '../../';
+        const logoPath = (lang === 'en') ? '../Expandia-main-logo-koyu-yesil.png' : '../../Expandia-main-logo-koyu-yesil.png';
+        htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
+        const turkishServicesPath = lang === 'tr' ? '../' : '../tr/';
+
+        pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
+        pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
+        pageNavigation = pageNavigation.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
+        pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
+        pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
+        pageFooter = pageFooter.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
+
+        if (lang !== 'en') {
+            pageNavigation = applyTranslations(pageNavigation, lang);
+            pageFooter = applyTranslations(pageFooter, lang);
+        }
+
+        htmlTemplate = htmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
+        htmlTemplate = htmlTemplate.replace('{{MAIN_CONTENT}}', content);
+        htmlTemplate = htmlTemplate.replace('{{FOOTER}}', pageFooter);
+
+        // Metadata
+        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, label.title + ' | Expandia');
+        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, label.desc);
+        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, 'glossary, terms, definitions, B2B, sales, marketing');
+
+        const canonicalSlug = lang === 'en' ? `glossary/index.html` : `${lang}/glossary/index.html`;
+        htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.expandia.ch/${canonicalSlug}`);
+
+        // Hreflang
+        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, `glossary/index.html`);
+        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, `tr/glossary/index.html`);
+        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, `de/glossary/index.html`);
+        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, `fr/glossary/index.html`);
+
+        // Schema
+        htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, '{}');
+
+        // Write File
+        let outputDir;
+        if (lang === 'en') {
+            outputDir = 'glossary';
+        } else {
+            outputDir = `${lang}/glossary`;
+        }
+
+        if (!fs.existsSync(outputDir)) {
+            fs.mkdirSync(outputDir, { recursive: true });
+        }
+
+        fs.writeFileSync(`${outputDir}/index.html`, htmlTemplate, 'utf8');
+    });
+    console.log(`✅ Built Glossary Index pages.`);
+}
+
 function generateSitemap() {
     console.log('\n🗺️  Generating Sitemap...');
-    
+
     const baseUrl = 'https://www.expandia.ch';
     const today = new Date().toISOString().split('T')[0];
-    
+
     // List of static pages
     const staticPages = [
         'index.html', 'about.html', 'solutions.html', 'contact.html', 'case-studies.html',
@@ -1002,7 +1575,7 @@ function generateSitemap() {
         'website-care-plans.html', 'revops-crm-setup.html', 'lost-lead-reactivation.html',
         'speed-to-lead.html', 'recruitment.html', 'ai-creative-studio.html', 'city-locations.html'
     ];
-    
+
     // Add TR/DE/FR versions
     const languages = ['tr', 'de', 'fr'];
     const localizedPages = [];
@@ -1054,7 +1627,7 @@ function generateSitemap() {
     }
 
     const allPages = [...staticPages, ...localizedPages, ...cityPages, ...industryPages, ...serviceCityPages, ...serviceIndustryCityPages, ...blogPages];
-    
+
     let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
 
@@ -1069,7 +1642,7 @@ function generateSitemap() {
     });
 
     sitemapContent += `\n</urlset>`;
-    
+
     fs.writeFileSync('sitemap.xml', sitemapContent);
     console.log(`✅ Generated sitemap.xml with ${allPages.length} URLs`);
 }
@@ -1123,6 +1696,7 @@ buildPage('lost-lead-reactivation', 'lost-lead-reactivation', 'en');
 buildPage('speed-to-lead', 'speed-to-lead', 'en');
 buildPage('recruitment', 'recruitment', 'en');
 buildPage('ai-creative-studio', 'ai-creative-studio', 'en');
+buildPage('blog-index', 'blog/index', 'en');
 
 // Build Turkish pages
 console.log('Building Turkish pages...');
@@ -1147,6 +1721,7 @@ buildPage('lost-lead-reactivation', 'lost-lead-reactivation', 'tr');
 buildPage('speed-to-lead', 'speed-to-lead', 'tr');
 buildPage('recruitment', 'recruitment', 'tr');
 buildPage('ai-creative-studio', 'ai-creative-studio', 'tr');
+buildPage('blog-index', 'blog/index', 'tr');
 
 // Build German pages
 console.log('Building German pages...');
@@ -1171,6 +1746,7 @@ buildPage('lost-lead-reactivation', 'lost-lead-reactivation', 'de');
 buildPage('speed-to-lead', 'speed-to-lead', 'de');
 buildPage('recruitment', 'recruitment', 'de');
 buildPage('ai-creative-studio', 'ai-creative-studio', 'de');
+buildPage('blog-index', 'blog/index', 'de');
 
 // Build French pages
 console.log('Building French pages...');
@@ -1194,6 +1770,7 @@ buildPage('lost-lead-reactivation', 'lost-lead-reactivation', 'fr');
 buildPage('speed-to-lead', 'speed-to-lead', 'fr');
 buildPage('recruitment', 'recruitment', 'fr');
 buildPage('ai-creative-studio', 'ai-creative-studio', 'fr');
+buildPage('blog-index', 'blog/index', 'fr');
 
 // Call new functions
 buildCityPages();
@@ -1202,6 +1779,8 @@ buildServiceCityPages();
 buildServiceIndustryCityPages(); // NEW
 buildCityLocationsPage();
 buildBlogPosts();
+buildGlossaryTerms(); // NEW
+buildGlossaryIndex(); // NEW
 generateSitemap();
 
 console.log('\n🎉 BUILD COMPLETE with enhanced SEO!');
