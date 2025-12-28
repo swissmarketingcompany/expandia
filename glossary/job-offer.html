@@ -346,64 +346,67 @@
                             d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
-                <div id="mobile-menu" class="hidden absolute right-0 top-full mt-4 z-[999]">
-                    <ul
-                        class="menu p-4 shadow-2xl bg-white rounded-2xl w-80 border border-gray-100 max-h-[80vh] overflow-y-auto overscroll-contain">
-                        <li><a href="../index.html" class="text-base font-semibold py-3 rounded-xl">Home</a>
-                        </li>
-                        <li class="mt-2"><span
-                                class="text-xs font-bold text-primary uppercase tracking-wider px-4 py-2">IT
+                <div id="mobile-menu"
+                    class="hidden fixed top-16 right-0 max-h-[500px] w-80 bg-white shadow-2xl z-[999] overflow-y-auto overscroll-contain border-l border-gray-100 rounded-bl-2xl">
+                    <ul class="menu p-3 w-full text-xs">
+                        <li class="mt-1">
+                            <span
+                                class="text-[10px] font-bold text-primary uppercase tracking-wider px-2 py-1 bg-primary/5 rounded-lg mb-1">IT
                                 & Security</span>
-                            <ul class="pl-2">
-                                <li><a href="../managed-it-services.html" class="py-2 rounded-lg">Managed IT
-                                        Services</a></li>
+                            <ul class="pl-0 space-y-0.5">
+                                <li><a href="../managed-it-services.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Managed IT Services</a></li>
                                 <li><a href="../vulnerability-assessments.html"
-                                        class="py-2 rounded-lg">Security
-                                        Assessments</a></li>
-                                <li><a href="../email-security.html" class="py-2 rounded-lg">Email
-                                        Security</a>
-                                </li>
-                                <li><a href="../website-care-plans.html" class="py-2 rounded-lg">Website
-                                        Care</a>
-                                </li>
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Security Assessments</a></li>
+                                <li><a href="../email-security.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Email Security</a></li>
+                                <li><a href="../website-care-plans.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Website Care</a></li>
                             </ul>
                         </li>
-                        <li class="mt-2"><span
-                                class="text-xs font-bold text-secondary uppercase tracking-wider px-4 py-2">Sales &
-                                Growth</span>
-                            <ul class="pl-2">
-                                <li><a href="../lead-generation-service.html" class="py-2 rounded-lg">Lead
-                                        Generation</a></li>
-                                <li><a href="../revops-crm-setup.html" class="py-2 rounded-lg">RevOps &
-                                        CRM</a>
-                                </li>
-                                <li><a href="../lost-lead-reactivation.html" class="py-2 rounded-lg">Lead
-                                        Reactivation</a></li>
-                                <li><a href="../speed-to-lead.html" class="py-2 rounded-lg">Speed-to-Lead</a>
-                                </li>
+                        <li class="mt-2">
+                            <span
+                                class="text-[10px] font-bold text-secondary uppercase tracking-wider px-2 py-1 bg-secondary/5 rounded-lg mb-1">Sales
+                                & Growth</span>
+                            <ul class="pl-0 space-y-0.5">
+                                <li><a href="../lead-generation-service.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Lead Generation</a></li>
+                                <li><a href="../revops-crm-setup.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">RevOps & CRM</a></li>
+                                <li><a href="../lost-lead-reactivation.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Lead Reactivation</a></li>
+                                <li><a href="../speed-to-lead.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Speed-to-Lead</a></li>
                             </ul>
                         </li>
-                        <li class="mt-2"><span
-                                class="text-xs font-bold text-accent uppercase tracking-wider px-4 py-2">Talent &
-                                AI</span>
-                            <ul class="pl-2">
-                                <li><a href="../recruitment.html" class="py-2 rounded-lg">Recruitment</a></li>
-                                <li><a href="../ai-creative-studio.html" class="py-2 rounded-lg">AI Creative
-                                        Studio</a></li>
+                        <li class="mt-2">
+                            <span
+                                class="text-[10px] font-bold text-accent uppercase tracking-wider px-2 py-1 bg-accent/5 rounded-lg mb-1">Talent
+                                & AI</span>
+                            <ul class="pl-0 space-y-0.5">
+                                <li><a href="../recruitment.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Recruitment</a></li>
+                                <li><a href="../ai-creative-studio.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">AI Creative Studio</a></li>
                             </ul>
                         </li>
-                        <li class="mt-2"><span
-                                class="text-xs font-bold text-gray-400 uppercase tracking-wider px-4 py-2">Company</span>
-                            <ul class="pl-2">
-                                <li><a href="../about.html" class="py-2 rounded-lg">About Us</a></li>
-                                <li><a href="../{{VISION_MISSION_PAGE}}" class="py-2 rounded-lg">Vision &
-                                        Mission</a></li>
-                                <li><a href="../{{ETHICAL_PRINCIPLES_PAGE}}"
-                                        class="py-2 rounded-lg">Ethics</a>
-                                </li>
+                        <li class="mt-2">
+                            <span
+                                class="text-[10px] font-bold text-gray-400 uppercase tracking-wider px-2 py-1 bg-gray-50 rounded-lg mb-1">Company</span>
+                            <ul class="pl-0 space-y-0.5">
+                                <li><a href="../about.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">About Us</a></li>
+                                <li><a href="../{{VISION_MISSION_PAGE}}"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Vision & Mission</a></li>
+                                <li><a href="../our-ethical-principles.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Ethics</a></li>
                             </ul>
                         </li>
-
+                        <li class="mt-2 pt-2 border-t border-gray-50">
+                            <a href="../contact.html"
+                                class="btn btn-primary btn-sm w-full text-xs min-h-0 h-9 font-bold shadow-sm">Contact
+                                Us</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -501,17 +504,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Related Terms</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./data-mining.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Data Mining</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Data Mining is a technology term that describes systems, software, or methodologies used to build and maintain digital solutions.</p>
+                <a href="./buyer-persona.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Buyer Persona</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Buyer Persona plays a key role in marketing by helping businesses reach their target audience and measure campaign success.</p>
                 </a>
-                <a href="./performance-marketing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Performance Marketing</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Performance Marketing plays a key role in marketing by helping businesses reach their target audience and measure campaign success.</p>
+                <a href="./tech-stack-integration.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Tech Stack Integration</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Tech Stack Integration is central to Revenue Operations, focusing on aligning sales, marketing, and customer success to maximize growth.</p>
                 </a>
-                <a href="./user-interface-ui.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">User Interface (UI)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">User Interface (UI) plays a key role in marketing by helping businesses reach their target audience and measure campaign success.</p>
+                <a href="./average-contract-value-acv.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Average Contract Value (ACV)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Average Contract Value (ACV) is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
                 </a>
             </div>
         </div>
