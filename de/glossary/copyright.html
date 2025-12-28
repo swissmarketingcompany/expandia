@@ -398,6 +398,27 @@
         if (!document.getElementById('company-dropdown')?.contains(e.target)) document.getElementById('company-menu')?.classList.add('hidden');
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -447,17 +468,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Verwandte Begriffe</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./churn-rate.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Churn Rate</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Churn Rate ist ein grundlegendes Konzept im Vertrieb, das sich auf Strategien oder Kennzahlen bezieht, um Umsatz zu steigern.</p>
+                <a href="./headhunting.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Headhunting</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Headhunting bezieht sich auf den Rekrutierungsprozess und die Auswahl qualifizierter Kandidaten.</p>
                 </a>
-                <a href="./gatekeeper.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Gatekeeper</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Gatekeeper ist ein grundlegendes Konzept im Vertrieb, das sich auf Strategien oder Kennzahlen bezieht, um Umsatz zu steigern.</p>
+                <a href="./blockchain.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Blockchain</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Blockchain ist ein Technologiebegriff, der Systeme, Software oder Methoden beschreibt.</p>
                 </a>
-                <a href="./entrepreneurship.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Entrepreneurship</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">undefined</p>
+                <a href="./digital-transformation.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Digital Transformation</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Digital Transformation ist ein Technologiebegriff, der Systeme, Software oder Methoden beschreibt.</p>
                 </a>
             </div>
         </div>

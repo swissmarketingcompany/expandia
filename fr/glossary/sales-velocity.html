@@ -399,6 +399,27 @@
         if (!document.getElementById('company-dropdown')?.contains(e.target)) document.getElementById('company-menu')?.classList.add('hidden');
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -448,17 +469,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Termes Connexes</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./funnel-metrics.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Funnel Metrics</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Funnel Metrics est central pour les opérations de revenus, se concentrant sur l'alignement des ventes et du marketing.</p>
+                <a href="./full-stack-development.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Full-Stack Development</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Full-Stack Development est un terme technologique décrivant les systèmes, logiciels ou méthodologies.</p>
                 </a>
-                <a href="./account-executive-ae.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Account Executive (AE)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Account Executive (AE) est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
+                <a href="./virtual-reality-vr.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Virtual Reality (VR)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Virtual Reality (VR) est un terme technologique décrivant les systèmes, logiciels ou méthodologies.</p>
                 </a>
-                <a href="./keyword-research.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Keyword Research</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Keyword Research joue un rôle clé dans le marketing en aidant les entreprises à atteindre leur public cible.</p>
+                <a href="./logistics.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Logistics</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">undefined</p>
                 </a>
             </div>
         </div>

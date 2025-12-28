@@ -451,6 +451,27 @@
         }
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -500,17 +521,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Related Terms</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./pay-per-click-ppc.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Pay-Per-Click (PPC)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Pay-Per-Click (PPC) plays a key role in marketing by helping businesses reach their target audience and measure campaign success.</p>
+                <a href="./inventory-management.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Inventory Management</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Inventory Management is an important term in the Business industry.</p>
                 </a>
-                <a href="./influencer-marketing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Influencer Marketing</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Influencer Marketing plays a key role in marketing by helping businesses reach their target audience and measure campaign success.</p>
+                <a href="./angel-investment.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Angel Investment</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Angel Investment is an important term in the Business industry.</p>
                 </a>
-                <a href="./account-executive-ae.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Account Executive (AE)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Account Executive (AE) is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
+                <a href="./direct-marketing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Direct Marketing</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Direct Marketing plays a key role in marketing by helping businesses reach their target audience and measure campaign success.</p>
                 </a>
             </div>
         </div>

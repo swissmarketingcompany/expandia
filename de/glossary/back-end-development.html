@@ -398,6 +398,27 @@
         if (!document.getElementById('company-dropdown')?.contains(e.target)) document.getElementById('company-menu')?.classList.add('hidden');
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -447,17 +468,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Verwandte Begriffe</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./average-contract-value-acv.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Average Contract Value (ACV)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Average Contract Value (ACV) ist ein grundlegendes Konzept im Vertrieb, das sich auf Strategien oder Kennzahlen bezieht, um Umsatz zu steigern.</p>
+                <a href="./compliance-management.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Compliance Management</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">undefined</p>
                 </a>
-                <a href="./content-marketing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Content Marketing</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Content Marketing spielt eine Schlüsselrolle im Marketing, indem es Unternehmen hilft, ihre Zielgruppe zu erreichen.</p>
+                <a href="./sales-operations.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Sales Operations</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Sales Operations ist ein grundlegendes Konzept im Vertrieb, das sich auf Strategien oder Kennzahlen bezieht, um Umsatz zu steigern.</p>
                 </a>
-                <a href="./net-promoter-score-nps.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Net Promoter Score (NPS)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Net Promoter Score (NPS) ist ein grundlegendes Konzept im Vertrieb, das sich auf Strategien oder Kennzahlen bezieht, um Umsatz zu steigern.</p>
+                <a href="./sales-funnel.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Sales Funnel</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Sales Funnel ist ein grundlegendes Konzept im Vertrieb, das sich auf Strategien oder Kennzahlen bezieht, um Umsatz zu steigern.</p>
                 </a>
             </div>
         </div>

@@ -451,6 +451,27 @@
         }
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -500,17 +521,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Related Terms</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./data-mining.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Data Mining</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Data Mining is a technology term that describes systems, software, or methodologies used to build and maintain digital solutions.</p>
+                <a href="./candidate-sourcing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Candidate Sourcing</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Candidate Sourcing relates to the recruitment process, involving the attraction, selection, and onboarding of qualified candidates.</p>
                 </a>
-                <a href="./big-data.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Big Data</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Big Data is a technology term that describes systems, software, or methodologies used to build and maintain digital solutions.</p>
+                <a href="./lead-scoring.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Lead Scoring</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Lead Scoring is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
                 </a>
-                <a href="./a-b-testing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">A/B Testing</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">A/B Testing is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
+                <a href="./lead-qualification.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Lead Qualification</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Lead Qualification is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
                 </a>
             </div>
         </div>

@@ -411,6 +411,27 @@
         if (!document.getElementById('company-dropdown')?.contains(e.target)) document.getElementById('company-menu')?.classList.add('hidden');
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -460,17 +481,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">İlgili Terimler</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./marketing-automation.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Marketing Automation</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Marketing Automation, işletmelerin hedef kitlelerine ulaşmasına yardımcı olarak pazarlamada kilit bir rol oynar.</p>
+                <a href="./entrepreneurship.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Entrepreneurship</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">undefined</p>
                 </a>
-                <a href="./engagement-rate.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Engagement Rate</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Engagement Rate, işletmelerin hedef kitlelerine ulaşmasına yardımcı olarak pazarlamada kilit bir rol oynar.</p>
+                <a href="./risk-assessment.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Risk Assessment</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Risk Assessment, sistemleri ve verileri dijital saldırılardan korumayı içeren kritik bir siber güvenlik kavramdır.</p>
                 </a>
-                <a href="./staffing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Staffing</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Staffing, nitelikli adayların çekilmesi ve seçilmesini içeren işe alım süreciyle ilgilidir.</p>
+                <a href="./vpn-virtual-private-network.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">VPN (Virtual Private Network)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">VPN (Virtual Private Network), sistemleri ve verileri dijital saldırılardan korumayı içeren kritik bir siber güvenlik kavramdır.</p>
                 </a>
             </div>
         </div>

@@ -398,6 +398,27 @@
         if (!document.getElementById('company-dropdown')?.contains(e.target)) document.getElementById('company-menu')?.classList.add('hidden');
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -447,17 +468,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Verwandte Begriffe</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./sustainability.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Sustainability</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">undefined</p>
+                <a href="./firewall.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Firewall</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Firewall ist ein kritisches Konzept der Cybersicherheit zum Schutz von Systemen und Daten.</p>
                 </a>
-                <a href="./commission.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Commission</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Commission ist ein grundlegendes Konzept im Vertrieb, das sich auf Strategien oder Kennzahlen bezieht, um Umsatz zu steigern.</p>
+                <a href="./sql-injection.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">SQL Injection</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">SQL Injection ist ein kritisches Konzept der Cybersicherheit zum Schutz von Systemen und Daten.</p>
                 </a>
-                <a href="./ideal-customer-profile-icp.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Ideal Customer Profile (ICP)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Ideal Customer Profile (ICP) ist ein grundlegendes Konzept im Vertrieb, das sich auf Strategien oder Kennzahlen bezieht, um Umsatz zu steigern.</p>
+                <a href="./vpn-virtual-private-network.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">VPN (Virtual Private Network)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">VPN (Virtual Private Network) ist ein kritisches Konzept der Cybersicherheit zum Schutz von Systemen und Daten.</p>
                 </a>
             </div>
         </div>

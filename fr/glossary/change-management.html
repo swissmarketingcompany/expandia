@@ -399,6 +399,27 @@
         if (!document.getElementById('company-dropdown')?.contains(e.target)) document.getElementById('company-menu')?.classList.add('hidden');
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -448,17 +469,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Termes Connexes</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./bootstrapping.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Bootstrapping</h3>
+                <a href="./recruitment-agency.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Recruitment Agency</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Recruitment Agency concerne le processus de recrutement, impliquant l'attraction et la sélection des candidats.</p>
+                </a>
+                <a href="./cost-accounting.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Cost Accounting</h3>
                     <p class="text-sm text-base-content/60 line-clamp-3">undefined</p>
                 </a>
-                <a href="./b2b-sales.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">B2B Sales</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">B2B Sales est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
-                </a>
-                <a href="./objection-handling.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Objection Handling</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Objection Handling est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
+                <a href="./ideal-customer-profile-icp.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Ideal Customer Profile (ICP)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Ideal Customer Profile (ICP) est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
                 </a>
             </div>
         </div>

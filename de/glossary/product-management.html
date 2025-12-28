@@ -398,6 +398,27 @@
         if (!document.getElementById('company-dropdown')?.contains(e.target)) document.getElementById('company-menu')?.classList.add('hidden');
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -447,17 +468,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Verwandte Begriffe</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./remarketing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Remarketing</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Remarketing spielt eine Schlüsselrolle im Marketing, indem es Unternehmen hilft, ihre Zielgruppe zu erreichen.</p>
+                <a href="./innovation.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Innovation</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">undefined</p>
                 </a>
-                <a href="./compliance.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Compliance</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Compliance ist ein kritisches Konzept der Cybersicherheit zum Schutz von Systemen und Daten.</p>
+                <a href="./viral-marketing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Viral Marketing</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Viral Marketing spielt eine Schlüsselrolle im Marketing, indem es Unternehmen hilft, ihre Zielgruppe zu erreichen.</p>
                 </a>
-                <a href="./webinar.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Webinar</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Webinar spielt eine Schlüsselrolle im Marketing, indem es Unternehmen hilft, ihre Zielgruppe zu erreichen.</p>
+                <a href="./cold-emailing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Cold Emailing</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Cold Emailing ist ein grundlegendes Konzept im Vertrieb, das sich auf Strategien oder Kennzahlen bezieht, um Umsatz zu steigern.</p>
                 </a>
             </div>
         </div>

@@ -399,6 +399,27 @@
         if (!document.getElementById('company-dropdown')?.contains(e.target)) document.getElementById('company-menu')?.classList.add('hidden');
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -448,17 +469,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Termes Connexes</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./account-management.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Account Management</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Account Management est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
+                <a href="./territory-management.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Territory Management</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Territory Management est central pour les opérations de revenus, se concentrant sur l'alignement des ventes et du marketing.</p>
                 </a>
-                <a href="./data-analytics.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Data Analytics</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Data Analytics est un terme technologique décrivant les systèmes, logiciels ou méthodologies.</p>
+                <a href="./exit-interview.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Exit Interview</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Exit Interview concerne le processus de recrutement, impliquant l'attraction et la sélection des candidats.</p>
                 </a>
-                <a href="./employer-branding.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Employer Branding</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Employer Branding concerne le processus de recrutement, impliquant l'attraction et la sélection des candidats.</p>
+                <a href="./background-check.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Background Check</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Background Check concerne le processus de recrutement, impliquant l'attraction et la sélection des candidats.</p>
                 </a>
             </div>
         </div>

@@ -411,6 +411,27 @@
         if (!document.getElementById('company-dropdown')?.contains(e.target)) document.getElementById('company-menu')?.classList.add('hidden');
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -460,17 +481,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">İlgili Terimler</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./discovery-call.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Discovery Call</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Discovery Call, satışta geliri artırmak ve müşteri ilişkilerini yönetmek için kullanılan temel bir kavramdır.</p>
+                <a href="./antivirus.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Antivirus</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Antivirus, sistemleri ve verileri dijital saldırılardan korumayı içeren kritik bir siber güvenlik kavramdır.</p>
                 </a>
-                <a href="./ideal-customer-profile-icp.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Ideal Customer Profile (ICP)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Ideal Customer Profile (ICP), satışta geliri artırmak ve müşteri ilişkilerini yönetmek için kullanılan temel bir kavramdır.</p>
+                <a href="./virtual-reality-vr.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Virtual Reality (VR)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Virtual Reality (VR), dijital çözümler oluşturmak için kullanılan sistemleri veya yazılımları tanımlayan bir teknoloji terimidir.</p>
                 </a>
-                <a href="./cold-emailing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Cold Emailing</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Cold Emailing, satışta geliri artırmak ve müşteri ilişkilerini yönetmek için kullanılan temel bir kavramdır.</p>
+                <a href="./click-through-rate-ctr.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Click-Through Rate (CTR)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Click-Through Rate (CTR), işletmelerin hedef kitlelerine ulaşmasına yardımcı olarak pazarlamada kilit bir rol oynar.</p>
                 </a>
             </div>
         </div>

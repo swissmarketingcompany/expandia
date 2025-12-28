@@ -451,6 +451,27 @@
         }
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -500,17 +521,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Related Terms</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./team-building.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Team Building</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Team Building is an important term in the Business industry.</p>
+                <a href="./ransomware.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Ransomware</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Ransomware is a critical cybersecurity concept involving measures to protect systems, networks, and data from digital attacks.</p>
                 </a>
-                <a href="./data-warehouse.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Data Warehouse</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Data Warehouse is a technology term that describes systems, software, or methodologies used to build and maintain digital solutions.</p>
+                <a href="./robotic-process-automation-rpa.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Robotic Process Automation (RPA)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Robotic Process Automation (RPA) is a technology term that describes systems, software, or methodologies used to build and maintain digital solutions.</p>
                 </a>
-                <a href="./challenger-sale.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Challenger Sale</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Challenger Sale is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
+                <a href="./sales-operations.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Sales Operations</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Sales Operations is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
                 </a>
             </div>
         </div>

@@ -398,6 +398,27 @@
         if (!document.getElementById('company-dropdown')?.contains(e.target)) document.getElementById('company-menu')?.classList.add('hidden');
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -447,17 +468,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Verwandte Begriffe</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./sales-pitch.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Sales Pitch</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Sales Pitch ist ein grundlegendes Konzept im Vertrieb, das sich auf Strategien oder Kennzahlen bezieht, um Umsatz zu steigern.</p>
+                <a href="./customer-acquisition-cost-cac.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Customer Acquisition Cost (CAC)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Customer Acquisition Cost (CAC) ist ein grundlegendes Konzept im Vertrieb, das sich auf Strategien oder Kennzahlen bezieht, um Umsatz zu steigern.</p>
                 </a>
-                <a href="./cryptography.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Cryptography</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Cryptography ist ein kritisches Konzept der Cybersicherheit zum Schutz von Systemen und Daten.</p>
+                <a href="./sales-enablement.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Sales Enablement</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Sales Enablement ist ein grundlegendes Konzept im Vertrieb, das sich auf Strategien oder Kennzahlen bezieht, um Umsatz zu steigern.</p>
                 </a>
-                <a href="./email-marketing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Email Marketing</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Email Marketing spielt eine Schlüsselrolle im Marketing, indem es Unternehmen hilft, ihre Zielgruppe zu erreichen.</p>
+                <a href="./lead-scoring.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Lead Scoring</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Lead Scoring ist ein grundlegendes Konzept im Vertrieb, das sich auf Strategien oder Kennzahlen bezieht, um Umsatz zu steigern.</p>
                 </a>
             </div>
         </div>

@@ -399,6 +399,27 @@
         if (!document.getElementById('company-dropdown')?.contains(e.target)) document.getElementById('company-menu')?.classList.add('hidden');
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -448,17 +469,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Termes Connexes</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./go-to-market-strategy-gtm.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Go-to-Market Strategy (GTM)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Go-to-Market Strategy (GTM) est central pour les opérations de revenus, se concentrant sur l'alignement des ventes et du marketing.</p>
+                <a href="./human-resources-hr.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Human Resources (HR)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Human Resources (HR) concerne le processus de recrutement, impliquant l'attraction et la sélection des candidats.</p>
                 </a>
-                <a href="./appointment-setting.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Appointment Setting</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Appointment Setting est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
+                <a href="./lead-scoring.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Lead Scoring</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Lead Scoring est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
                 </a>
-                <a href="./customer-success.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Customer Success</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Customer Success est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
+                <a href="./forecasting.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Forecasting</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Forecasting est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
                 </a>
             </div>
         </div>

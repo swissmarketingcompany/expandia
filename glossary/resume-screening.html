@@ -451,6 +451,27 @@
         }
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -500,17 +521,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Related Terms</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./brand-equity.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Brand Equity</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Brand Equity plays a key role in marketing by helping businesses reach their target audience and measure campaign success.</p>
+                <a href="./quality-assurance.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Quality Assurance</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Quality Assurance is an important term in the Business industry.</p>
                 </a>
-                <a href="./direct-marketing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Direct Marketing</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Direct Marketing plays a key role in marketing by helping businesses reach their target audience and measure campaign success.</p>
+                <a href="./cold-calling.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Cold Calling</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Cold Calling is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
                 </a>
-                <a href="./erp-enterprise-resource-planning.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">ERP (Enterprise Resource Planning)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">ERP (Enterprise Resource Planning) is a technology term that describes systems, software, or methodologies used to build and maintain digital solutions.</p>
+                <a href="./key-performance-indicator-kpi.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Key Performance Indicator (KPI)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Key Performance Indicator (KPI) is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
                 </a>
             </div>
         </div>

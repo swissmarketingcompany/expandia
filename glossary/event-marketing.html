@@ -451,6 +451,27 @@
         }
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -500,17 +521,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Related Terms</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./big-data.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Big Data</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Big Data is a technology term that describes systems, software, or methodologies used to build and maintain digital solutions.</p>
+                <a href="./cold-emailing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Cold Emailing</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Cold Emailing is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
                 </a>
-                <a href="./information-security.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Information Security</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Information Security is a critical cybersecurity concept involving measures to protect systems, networks, and data from digital attacks.</p>
+                <a href="./temporary-staffing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Temporary Staffing</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Temporary Staffing relates to the recruitment process, involving the attraction, selection, and onboarding of qualified candidates.</p>
                 </a>
-                <a href="./ideal-customer-profile-icp.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Ideal Customer Profile (ICP)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Ideal Customer Profile (ICP) is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
+                <a href="./customer-acquisition-cost-cac.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Customer Acquisition Cost (CAC)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Customer Acquisition Cost (CAC) is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
                 </a>
             </div>
         </div>

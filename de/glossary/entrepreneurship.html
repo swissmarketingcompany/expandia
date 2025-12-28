@@ -398,6 +398,27 @@
         if (!document.getElementById('company-dropdown')?.contains(e.target)) document.getElementById('company-menu')?.classList.add('hidden');
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -447,17 +468,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Verwandte Begriffe</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./sales-enablement.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Sales Enablement</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Sales Enablement ist ein grundlegendes Konzept im Vertrieb, das sich auf Strategien oder Kennzahlen bezieht, um Umsatz zu steigern.</p>
+                <a href="./a-b-testing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">A/B Testing</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">A/B Testing ist ein grundlegendes Konzept im Vertrieb, das sich auf Strategien oder Kennzahlen bezieht, um Umsatz zu steigern.</p>
                 </a>
-                <a href="./affiliate-marketing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Affiliate Marketing</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Affiliate Marketing spielt eine Schlüsselrolle im Marketing, indem es Unternehmen hilft, ihre Zielgruppe zu erreichen.</p>
+                <a href="./growth-hacking.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Growth Hacking</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Growth Hacking spielt eine Schlüsselrolle im Marketing, indem es Unternehmen hilft, ihre Zielgruppe zu erreichen.</p>
                 </a>
-                <a href="./social-selling.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Social Selling</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Social Selling ist ein grundlegendes Konzept im Vertrieb, das sich auf Strategien oder Kennzahlen bezieht, um Umsatz zu steigern.</p>
+                <a href="./outbound-sales.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Outbound Sales</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Outbound Sales ist ein grundlegendes Konzept im Vertrieb, das sich auf Strategien oder Kennzahlen bezieht, um Umsatz zu steigern.</p>
                 </a>
             </div>
         </div>

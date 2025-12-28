@@ -399,6 +399,27 @@
         if (!document.getElementById('company-dropdown')?.contains(e.target)) document.getElementById('company-menu')?.classList.add('hidden');
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -448,17 +469,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Termes Connexes</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./incident-response.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Incident Response</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Incident Response est un concept critique de cybersécurité impliquant des mesures de protection des systèmes.</p>
+                <a href="./zero-trust-security.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Zero Trust Security</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Zero Trust Security est un concept critique de cybersécurité impliquant des mesures de protection des systèmes.</p>
                 </a>
-                <a href="./background-check.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Background Check</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Background Check concerne le processus de recrutement, impliquant l'attraction et la sélection des candidats.</p>
+                <a href="./compliance-management.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Compliance Management</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">undefined</p>
                 </a>
-                <a href="./information-security.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Information Security</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Information Security est un concept critique de cybersécurité impliquant des mesures de protection des systèmes.</p>
+                <a href="./vulnerability-assessment.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Vulnerability Assessment</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Vulnerability Assessment est un concept critique de cybersécurité impliquant des mesures de protection des systèmes.</p>
                 </a>
             </div>
         </div>

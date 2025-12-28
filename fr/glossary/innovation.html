@@ -399,6 +399,27 @@
         if (!document.getElementById('company-dropdown')?.contains(e.target)) document.getElementById('company-menu')?.classList.add('hidden');
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -448,17 +469,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Termes Connexes</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./average-contract-value-acv.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Average Contract Value (ACV)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Average Contract Value (ACV) est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
+                <a href="./opportunity.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Opportunity</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Opportunity est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
                 </a>
-                <a href="./behavioral-interview.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Behavioral Interview</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Behavioral Interview concerne le processus de recrutement, impliquant l'attraction et la sélection des candidats.</p>
+                <a href="./big-data.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Big Data</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Big Data est un terme technologique décrivant les systèmes, logiciels ou méthodologies.</p>
                 </a>
-                <a href="./outbound-sales.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Outbound Sales</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Outbound Sales est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
+                <a href="./decision-maker.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Decision Maker</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Decision Maker est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
                 </a>
             </div>
         </div>

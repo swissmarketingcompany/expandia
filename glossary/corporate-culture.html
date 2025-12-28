@@ -451,6 +451,27 @@
         }
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -500,17 +521,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Related Terms</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./pay-per-click-ppc.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Pay-Per-Click (PPC)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Pay-Per-Click (PPC) plays a key role in marketing by helping businesses reach their target audience and measure campaign success.</p>
+                <a href="./account-based-selling.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Account-Based Selling</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Account-Based Selling is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
                 </a>
-                <a href="./sales-cycle.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Sales Cycle</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Sales Cycle is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
+                <a href="./database.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Database</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Database is a technology term that describes systems, software, or methodologies used to build and maintain digital solutions.</p>
                 </a>
-                <a href="./cybersecurity.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Cybersecurity</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Cybersecurity is a technology term that describes systems, software, or methodologies used to build and maintain digital solutions.</p>
+                <a href="./churn-rate.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Churn Rate</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Churn Rate is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
                 </a>
             </div>
         </div>

@@ -411,6 +411,27 @@
         if (!document.getElementById('company-dropdown')?.contains(e.target)) document.getElementById('company-menu')?.classList.add('hidden');
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -460,17 +481,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">İlgili Terimler</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./brand-awareness.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Brand Awareness</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Brand Awareness, işletmelerin hedef kitlelerine ulaşmasına yardımcı olarak pazarlamada kilit bir rol oynar.</p>
+                <a href="./sales-operations.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Sales Operations</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Sales Operations, satışta geliri artırmak ve müşteri ilişkilerini yönetmek için kullanılan temel bir kavramdır.</p>
                 </a>
-                <a href="./open-source.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Open Source</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Open Source, dijital çözümler oluşturmak için kullanılan sistemleri veya yazılımları tanımlayan bir teknoloji terimidir.</p>
+                <a href="./authentication.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Authentication</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Authentication, sistemleri ve verileri dijital saldırılardan korumayı içeren kritik bir siber güvenlik kavramdır.</p>
                 </a>
-                <a href="./account-based-selling.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Account-Based Selling</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Account-Based Selling, satışta geliri artırmak ve müşteri ilişkilerini yönetmek için kullanılan temel bir kavramdır.</p>
+                <a href="./b2c-sales.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">B2C Sales</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">B2C Sales, satışta geliri artırmak ve müşteri ilişkilerini yönetmek için kullanılan temel bir kavramdır.</p>
                 </a>
             </div>
         </div>

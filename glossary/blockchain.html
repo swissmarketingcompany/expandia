@@ -451,6 +451,27 @@
         }
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -504,13 +525,13 @@
                     <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Cross-Selling</h3>
                     <p class="text-sm text-base-content/60 line-clamp-3">Cross-Selling is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
                 </a>
-                <a href="./salary-negotiation.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Salary Negotiation</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Salary Negotiation relates to the recruitment process, involving the attraction, selection, and onboarding of qualified candidates.</p>
+                <a href="./digital-marketing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Digital Marketing</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Digital Marketing plays a key role in marketing by helping businesses reach their target audience and measure campaign success.</p>
                 </a>
-                <a href="./tech-stack.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Tech Stack</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Tech Stack is a technology term that describes systems, software, or methodologies used to build and maintain digital solutions.</p>
+                <a href="./full-stack-development.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Full-Stack Development</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Full-Stack Development is a technology term that describes systems, software, or methodologies used to build and maintain digital solutions.</p>
                 </a>
             </div>
         </div>

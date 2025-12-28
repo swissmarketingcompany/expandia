@@ -399,6 +399,27 @@
         if (!document.getElementById('company-dropdown')?.contains(e.target)) document.getElementById('company-menu')?.classList.add('hidden');
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -452,13 +473,13 @@
                     <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Inventory Management</h3>
                     <p class="text-sm text-base-content/60 line-clamp-3">undefined</p>
                 </a>
-                <a href="./solution-selling.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Solution Selling</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Solution Selling est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
+                <a href="./cross-selling.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Cross-Selling</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Cross-Selling est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
                 </a>
-                <a href="./b2c-sales.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">B2C Sales</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">B2C Sales est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
+                <a href="./lead-generation.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Lead Generation</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Lead Generation est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
                 </a>
             </div>
         </div>

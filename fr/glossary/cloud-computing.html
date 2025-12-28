@@ -399,6 +399,27 @@
         if (!document.getElementById('company-dropdown')?.contains(e.target)) document.getElementById('company-menu')?.classList.add('hidden');
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -448,17 +469,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Termes Connexes</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./api-application-programming-interface.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">API (Application Programming Interface)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">API (Application Programming Interface) est un terme technologique décrivant les systèmes, logiciels ou méthodologies.</p>
+                <a href="./security-operations-center-soc.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Security Operations Center (SOC)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Security Operations Center (SOC) est un concept critique de cybersécurité impliquant des mesures de protection des systèmes.</p>
                 </a>
-                <a href="./front-end-development.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Front-End Development</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Front-End Development est un terme technologique décrivant les systèmes, logiciels ou méthodologies.</p>
+                <a href="./six-sigma.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Six Sigma</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">undefined</p>
                 </a>
-                <a href="./account-based-marketing-abm.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Account-Based Marketing (ABM)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Account-Based Marketing (ABM) joue un rôle clé dans le marketing en aidant les entreprises à atteindre leur public cible.</p>
+                <a href="./full-cycle-recruiting.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Full-Cycle Recruiting</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Full-Cycle Recruiting concerne le processus de recrutement, impliquant l'attraction et la sélection des candidats.</p>
                 </a>
             </div>
         </div>

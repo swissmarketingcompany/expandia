@@ -399,6 +399,27 @@
         if (!document.getElementById('company-dropdown')?.contains(e.target)) document.getElementById('company-menu')?.classList.add('hidden');
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -448,17 +469,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Termes Connexes</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./sales-alignment.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Sales Alignment</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Sales Alignment est central pour les opérations de revenus, se concentrant sur l'alignement des ventes et du marketing.</p>
+                <a href="./sales-operations.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Sales Operations</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Sales Operations est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
                 </a>
-                <a href="./social-media-marketing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Social Media Marketing</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Social Media Marketing joue un rôle clé dans le marketing en aidant les entreprises à atteindre leur public cible.</p>
+                <a href="./diversity-and-inclusion.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Diversity and Inclusion</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Diversity and Inclusion concerne le processus de recrutement, impliquant l'attraction et la sélection des candidats.</p>
                 </a>
-                <a href="./virtual-reality-vr.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Virtual Reality (VR)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Virtual Reality (VR) est un terme technologique décrivant les systèmes, logiciels ou méthodologies.</p>
+                <a href="./inbound-sales.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Inbound Sales</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Inbound Sales est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
                 </a>
             </div>
         </div>

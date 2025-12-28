@@ -399,6 +399,27 @@
         if (!document.getElementById('company-dropdown')?.contains(e.target)) document.getElementById('company-menu')?.classList.add('hidden');
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -448,17 +469,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Termes Connexes</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./crowdfunding.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Crowdfunding</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">undefined</p>
+                <a href="./cloud-security.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Cloud Security</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Cloud Security est un concept critique de cybersécurité impliquant des mesures de protection des systèmes.</p>
                 </a>
-                <a href="./data-mining.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Data Mining</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Data Mining est un terme technologique décrivant les systèmes, logiciels ou méthodologies.</p>
+                <a href="./vulnerability-assessment.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Vulnerability Assessment</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Vulnerability Assessment est un concept critique de cybersécurité impliquant des mesures de protection des systèmes.</p>
                 </a>
-                <a href="./solution-selling.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Solution Selling</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Solution Selling est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
+                <a href="./antivirus.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Antivirus</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Antivirus est un concept critique de cybersécurité impliquant des mesures de protection des systèmes.</p>
                 </a>
             </div>
         </div>

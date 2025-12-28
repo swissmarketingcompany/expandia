@@ -451,6 +451,27 @@
         }
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -500,17 +521,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Related Terms</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./freelancer.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Freelancer</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Freelancer relates to the recruitment process, involving the attraction, selection, and onboarding of qualified candidates.</p>
+                <a href="./disruption.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Disruption</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Disruption is an important term in the Business industry.</p>
                 </a>
-                <a href="./paid-media.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Paid Media</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Paid Media plays a key role in marketing by helping businesses reach their target audience and measure campaign success.</p>
+                <a href="./risk-management.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Risk Management</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Risk Management is an important term in the Business industry.</p>
                 </a>
-                <a href="./return-on-ad-spend-roas.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Return on Ad Spend (ROAS)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Return on Ad Spend (ROAS) plays a key role in marketing by helping businesses reach their target audience and measure campaign success.</p>
+                <a href="./customer-data-platform-cdp.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Customer Data Platform (CDP)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Customer Data Platform (CDP) is central to Revenue Operations, focusing on aligning sales, marketing, and customer success to maximize growth.</p>
                 </a>
             </div>
         </div>

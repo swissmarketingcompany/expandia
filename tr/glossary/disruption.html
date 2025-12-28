@@ -411,6 +411,27 @@
         if (!document.getElementById('company-dropdown')?.contains(e.target)) document.getElementById('company-menu')?.classList.add('hidden');
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -460,13 +481,13 @@
             <h2 class="text-2xl font-bold mb-8 text-center">İlgili Terimler</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./brand-awareness.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Brand Awareness</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Brand Awareness, işletmelerin hedef kitlelerine ulaşmasına yardımcı olarak pazarlamada kilit bir rol oynar.</p>
+                <a href="./user-interface-ui.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">User Interface (UI)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">User Interface (UI), işletmelerin hedef kitlelerine ulaşmasına yardımcı olarak pazarlamada kilit bir rol oynar.</p>
                 </a>
-                <a href="./email-automation.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Email Automation</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Email Automation, işletmelerin hedef kitlelerine ulaşmasına yardımcı olarak pazarlamada kilit bir rol oynar.</p>
+                <a href="./keyword-research.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Keyword Research</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Keyword Research, işletmelerin hedef kitlelerine ulaşmasına yardımcı olarak pazarlamada kilit bir rol oynar.</p>
                 </a>
                 <a href="./technical-recruiting.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
                     <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Technical Recruiting</h3>

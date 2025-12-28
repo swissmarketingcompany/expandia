@@ -411,6 +411,27 @@
         if (!document.getElementById('company-dropdown')?.contains(e.target)) document.getElementById('company-menu')?.classList.add('hidden');
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -460,17 +481,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">İlgili Terimler</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./account-based-selling.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Account-Based Selling</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Account-Based Selling, satışta geliri artırmak ve müşteri ilişkilerini yönetmek için kullanılan temel bir kavramdır.</p>
+                <a href="./lead-scoring.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Lead Scoring</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Lead Scoring, satışta geliri artırmak ve müşteri ilişkilerini yönetmek için kullanılan temel bir kavramdır.</p>
                 </a>
-                <a href="./pay-per-click-ppc.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Pay-Per-Click (PPC)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Pay-Per-Click (PPC), işletmelerin hedef kitlelerine ulaşmasına yardımcı olarak pazarlamada kilit bir rol oynar.</p>
+                <a href="./monthly-recurring-revenue-mrr.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Monthly Recurring Revenue (MRR)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Monthly Recurring Revenue (MRR), satışta geliri artırmak ve müşteri ilişkilerini yönetmek için kullanılan temel bir kavramdır.</p>
                 </a>
-                <a href="./technical-recruiting.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Technical Recruiting</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Technical Recruiting, nitelikli adayların çekilmesi ve seçilmesini içeren işe alım süreciyle ilgilidir.</p>
+                <a href="./email-automation.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Email Automation</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Email Automation, işletmelerin hedef kitlelerine ulaşmasına yardımcı olarak pazarlamada kilit bir rol oynar.</p>
                 </a>
             </div>
         </div>

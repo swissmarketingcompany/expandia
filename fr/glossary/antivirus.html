@@ -399,6 +399,27 @@
         if (!document.getElementById('company-dropdown')?.contains(e.target)) document.getElementById('company-menu')?.classList.add('hidden');
     });
 </script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
     
     <main>
     <!-- Hero -->
@@ -448,17 +469,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Termes Connexes</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./tech-stack.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Tech Stack</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Tech Stack est un terme technologique décrivant les systèmes, logiciels ou méthodologies.</p>
+                <a href="./content-marketing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Content Marketing</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Content Marketing joue un rôle clé dans le marketing en aidant les entreprises à atteindre leur public cible.</p>
                 </a>
-                <a href="./whitepaper.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Whitepaper</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Whitepaper joue un rôle clé dans le marketing en aidant les entreprises à atteindre leur public cible.</p>
+                <a href="./platform-as-a-service-paas.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Platform as a Service (PaaS)</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Platform as a Service (PaaS) est un terme technologique décrivant les systèmes, logiciels ou méthodologies.</p>
                 </a>
-                <a href="./software-development-life-cycle-sdlc.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Software Development Life Cycle (SDLC)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Software Development Life Cycle (SDLC) est un terme technologique décrivant les systèmes, logiciels ou méthodologies.</p>
+                <a href="./cold-calling.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Cold Calling</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Cold Calling est un concept fondamental de la vente, faisant référence aux stratégies pour augmenter les revenus.</p>
                 </a>
             </div>
         </div>
