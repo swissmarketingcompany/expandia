@@ -1,108 +1,108 @@
-    <!-- Hero Section -->
-    <section class="py-12 md:py-16 bg-gradient-to-br from-buzz-warm via-base-100 to-buzz-light">
-        <div class="container mx-auto container-padding">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">
-                    <span class="gradient-header">Global B2B Lead Generation</span><br>
-                    <span class="text-base-content">Locations Worldwide</span>
-                </h1>
-                <p class="text-lg md:text-xl text-base-content/80 max-w-3xl mx-auto mb-8">
-                    Explore our B2B lead generation services across {{CITY_COUNT}}+ cities worldwide. 
-                    Click on any city to learn more about our local lead generation expertise.
-                </p>
-            </div>
-        </div>
-    </section>
+<!-- Hero Section -->
+<section class="py-12 md:py-16 bg-gradient-to-br from-buzz-warm via-base-100 to-buzz-light">
+  <div class="container mx-auto container-padding">
+    <div class="text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        <span class="gradient-header">Globale B2B-Lead-Generierung</span><br>
+        <span class="text-base-content">Standorte Weltweit</span>
+      </h1>
+      <p class="text-lg md:text-xl text-base-content/80 max-w-3xl mx-auto mb-8">
+        Entdecken Sie unsere B2B-Lead-Generierungs-Services in über {{CITY_COUNT}} Städten weltweit.
+        Klicken Sie auf eine Stadt, um mehr über unsere lokale Expertise in der Lead-Generierung zu erfahren.
+      </p>
+    </div>
+  </div>
+</section>
 
-    <!-- Interactive Map Section -->
-    <section class="bg-base-100">
-        <div class="map-container">
-            <div id="map"></div>
-            <div class="map-legend">
-                <h3 class="font-bold mb-3 text-sm">Regions</h3>
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: #f9c23c;"></div>
-                    <span class="text-xs">DACH</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: #e86100;"></div>
-                    <span class="text-xs">Western Europe</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: #ff6b35;"></div>
-                    <span class="text-xs">Southern Europe</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: #4a90e2;"></div>
-                    <span class="text-xs">Scandinavia</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: #9b59b6;"></div>
-                    <span class="text-xs">Eastern Europe</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: #e74c3c;"></div>
-                    <span class="text-xs">North America</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: #95a5a6;"></div>
-                    <span class="text-xs">Turkey</span>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Interactive Map Section -->
+<section class="bg-base-100">
+  <div class="map-container">
+    <div id="map"></div>
+    <div class="map-legend">
+      <h3 class="font-bold mb-3 text-sm">Regionen</h3>
+      <div class="legend-item">
+        <div class="legend-color" style="background-color: #f9c23c;"></div>
+        <span class="text-xs">DACH</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background-color: #e86100;"></div>
+        <span class="text-xs">Westeuropa</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background-color: #ff6b35;"></div>
+        <span class="text-xs">Südeuropa</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background-color: #4a90e2;"></div>
+        <span class="text-xs">Skandinavien</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background-color: #9b59b6;"></div>
+        <span class="text-xs">Osteuropa</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background-color: #e74c3c;"></div>
+        <span class="text-xs">Nordamerika</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background-color: #95a5a6;"></div>
+        <span class="text-xs">Türkei</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- City List Section -->
-    <section class="section-spacing bg-base-200">
-        <div class="container mx-auto container-padding">
-            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">All Locations</h2>
-            <div id="city-list" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <!-- Cities will be populated by JavaScript -->
-            </div>
-        </div>
-    <script type="application/ld+json">
+<!-- City List Section -->
+<section class="section-spacing bg-base-200">
+  <div class="container mx-auto container-padding">
+    <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Alle Standorte</h2>
+    <div id="city-list" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <!-- Cities will be populated by JavaScript -->
+    </div>
+  </div>
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How quickly can we start working together?",
+      "name": "Wie schnell können wir mit der Zusammenarbeit beginnen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We can typically begin within 1-2 weeks after our initial consultation. We'll set up everything needed and start delivering results quickly."
+        "text": "In der Regel können wir innerhalb von 1 bis 2 Wochen nach unserem Erstgespräch beginnen. Wir richten alles Notwendige ein und fangen schnell an, Ergebnisse zu liefern."
       }
     },
     {
       "@type": "Question",
-      "name": "What makes Expandia different from other agencies?",
+      "name": "Was unterscheidet Expandia von anderen Agenturen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We combine deep European market expertise with data-driven strategies and multilingual capabilities. Our team has 8+ years of experience helping businesses scale internationally."
+        "text": "Wir kombinieren tiefgreifende Expertise im europäischen Markt mit datengesteuerten Strategien und Mehrsprachigkeit. Unser Team verfügt über mehr als 8 Jahre Erfahrung darin, Unternehmen bei der internationalen Skalierung zu unterstützen."
       }
     },
     {
       "@type": "Question",
-      "name": "Do you work with companies of all sizes?",
+      "name": "Arbeiten Sie mit Unternehmen jeder Größe zusammen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, we work with startups, SMEs, and enterprise companies. Our solutions are scalable and tailored to your specific business needs and growth stage."
+        "text": "Ja, wir arbeiten mit Start-ups, KMU und Konzernen zusammen. Unsere Lösungen sind skalierbar und auf Ihre spezifischen Geschäftsanforderungen und Wachstumsphasen zugeschnitten."
       }
     },
     {
       "@type": "Question",
-      "name": "What is your pricing model?",
+      "name": "Wie sieht Ihr Preismodell aus?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We offer flexible pricing based on your specific needs and goals. Contact us for a free consultation and custom quote tailored to your business objectives."
+        "text": "Wir bieten eine flexible Preisgestaltung an, die auf Ihren spezifischen Bedürfnissen und Zielen basiert. Kontaktieren Sie uns für ein kostenloses Beratungsgespräch und ein individuelles Angebot, das auf Ihre Geschäftsziele zugeschnitten ist."
       }
     },
     {
       "@type": "Question",
-      "name": "How do you measure success?",
+      "name": "Wie messen Sie den Erfolg?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We focus on measurable KPIs including lead generation, conversion rates, ROI, and revenue impact. You'll receive detailed analytics and regular performance reports."
+        "text": "Wir konzentrieren uns auf messbare KPIs wie Lead-Generierung, Konversionsraten, ROI und Auswirkungen auf den Umsatz. Sie erhalten detaillierte Analysen und regelmäßige Leistungsberichte."
       }
     }
   ]
