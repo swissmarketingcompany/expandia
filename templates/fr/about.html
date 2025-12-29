@@ -1,30 +1,25 @@
 <!-- Hero Section -->
 <section class="section-spacing bg-gradient-to-br from-buzz-warm via-base-100 to-buzz-light">
-    <div class="container mx-auto container-padding">
-        <div class="text-center max-w-4xl mx-auto animate-fade-in">
-            <h1 class="text-5xl md:text-5xl md:text-7xl font-bold mb-6">
-                <span class="gradient-header">À propos</span><br>
-                <span class="text-base-content">Expandia Solutions de Vente</span>
-            </h1>
-            <p class="text-xl md:text-xl md:text-2xl text-base-content/80 mb-12 leading-relaxed">
-                Nous sommes votre <span class="font-semibold text-primary">partenaire de croissance des
-                    ventes</span> dédié,
-                spécialisé dans les services de Génération de Leads et le développement commercial pratique qui
-                accélèrent les revenus pour les entreprises de toutes tailles.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                <div class="buzz-card p-6">
-                    <div class="text-3xl md:text-3xl font-bold text-primary mb-2">500+</div>
-                    <div class="text-sm text-base-content/60">Clients Servis</div>
-                </div>
-                <div class="buzz-card p-6">
-                    <div class="text-3xl md:text-3xl font-bold text-secondary mb-2">50 M€+</div>
-                    <div class="text-sm text-base-content/60">Revenus Générés</div>
-                </div>
-                <div class="buzz-card p-6">
-                    <div class="text-3xl md:text-3xl font-bold text-accent mb-2">95%</div>
-                    <div class="text-sm text-base-content/60">Satisfaction Client</div>
-                </div>
+
+
+    <div class="container mx-auto container-padding relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="text-left animate-fade-in order-2 lg:order-1">
+                <h1 class="text-5xl md:text-5xl md:text-7xl font-bold mb-6">
+                    <span class="gradient-header">Votre partenaire</span><br>
+                    <span class="text-base-content">d'exécution opérationnelle</span>
+                </h1>
+                <p class="text-xl md:text-xl md:text-2xl text-base-content/80 mb-8 leading-relaxed">
+                    Nous comblons le fossé entre la <strong>gouvernance stratégique</strong> et <strong>l'efficacité
+                        européenne</strong>.
+                    Nous ne nous contentons pas de vous conseiller sur l'IT, la vente et le recrutement – nous gérons
+                    les opérations quotidiennes pour que vous puissiez vous concentrer sur la stratégie.
+                </p>
+            </div>
+
+            <div class="order-1 lg:order-2">
+                <img src="{{BASE_PATH}}assets/images/about-team-hive.png" alt="Zusammenarbeit des Expandia-Teams"
+                    class="rounded-3xl shadow-2xl w-full h-auto object-cover hover:scale-[1.02] transition-transform duration-500">
             </div>
         </div>
     </div>
@@ -33,12 +28,11 @@
 <!-- Page Header -->
 <section class="section-spacing bg-gradient-to-br from-buzz-warm to-base-100 text-center">
     <div class="container mx-auto container-padding">
-        <h2 class="text-4xl md:text-4xl md:text-6xl font-bold mb-4">Nous Construisons l'Avenir de la Vente</h2>
-        <p class="text-lg md:text-xl md:text-xl text-base-content/80 max-w-3xl mx-auto">
-            Expandia a été fondée sur un principe simple : la vente doit être un catalyseur de croissance, pas un goulot
-            d'étranglement.
-            Nous combinons l'expertise humaine avec des outils modernes pour créer des solutions de vente efficaces et
-            évolutives.
+        <h2 class="text-4xl md:text-4xl md:text-6xl font-bold mb-4" data-i18n="about.title">L'"Écart d'Exécution"</h2>
+        <p class="text-lg md:text-xl md:text-xl text-base-content/80 max-w-3xl mx-auto" data-i18n="about.subtitle">
+            La plupart des PME ont suffisamment de stratégie. Ce qui leur manque, c'est la capacité d'exécution.
+            Les consultants livrent des présentations ; Expandia livre des systèmes IT fonctionnels, des rendez-vous de
+            vente qualifiés et des candidats sélectionnés.
         </p>
     </div>
 </section>
@@ -46,21 +40,15 @@
 <!-- Notre Mission Section -->
 <section class="section-spacing bg-base-100">
     <div class="container mx-auto container-padding">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div class="prose lg:prose-xl">
-                <h2>Notre Mission</h2>
-                <p>
-                    Donner aux entreprises de toutes tailles les moyens d'atteindre leur plein potentiel de revenus.
-                    Nous pensons qu'en
-                    fournissant une combinaison de services de vente dirigés par des experts et d'automatisation
-                    intelligente, nous pouvons égaliser
-                    les chances et rendre les ventes de haute performance accessibles à tous.
-                </p>
-            </div>
-            <div>
-                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1974&auto=format&fit=crop"
-                    alt="Sales team collaborating" class="rounded-lg shadow-lg w-full h-auto">
-            </div>
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-4xl md:text-6xl font-bold mb-6" data-i18n="about.mission_title">Notre Mission
+            </h2>
+            <p class="text-lg md:text-xl text-base-content/80 leading-relaxed" data-i18n="about.mission_subtitle">
+                Fournir aux PME l'infrastructure opérationnelle d'une multinationale.
+                Nous pensons qu'une sécurité IT de haute qualité, une croissance agressive des ventes et des talents
+                de premier plan devraient être accessibles sans les coûts liés à la création de départements
+                internes à partir de zéro.
+            </p>
         </div>
     </div>
 </section>
@@ -68,152 +56,100 @@
 <!-- Notre Histoire Section -->
 <section class="section-spacing bg-buzz-light">
     <div class="container mx-auto container-padding">
-        <div class="max-w-4xl mx-auto prose lg:prose-xl text-center">
-            <h2>Notre Histoire</h2>
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-4xl md:text-6xl font-bold mb-8" data-i18n="about.story_title">Notre Histoire
+            </h2>
         </div>
-        <div class="max-w-4xl mx-auto mt-8 space-y-6 text-base-content/80">
-            <p>
-                Fondée par une équipe de leaders chevronnés de la vente, Expandia est née d'une frustration partagée
-                vis-à-vis du modèle de vente traditionnel. Nous avons vu de nos propres yeux combien de temps et de
-                talent étaient
-                gaspillés dans des tâches répétitives, des processus inefficaces et des conjectures. Nous savions qu'il
-                devait y avoir une meilleure façon de faire.
+        <div class="max-w-4xl mx-auto space-y-6 text-lg md:text-xl text-base-content/80 leading-relaxed">
+            <p data-i18n="about.story_p1">
+                Expandia est née d'un constat simple : "Pourquoi est-il si difficile d'embaucher un développeur fiable
+                ?"
+                "Pourquoi faut-il 6 mois pour mettre en place la génération de leads ?" Les fondateurs ont réalisé que
+                les entreprises étaient freinées par les complexités du recrutement local et de la gestion des
+                prestataires.
             </p>
-            <p>
-                Nous avons commencé par offrir notre expertise en vente en tant que service, en construisant et en
-                gérant des équipes de
-                vente performantes pour nos clients. Nous continuons d'affiner nos méthodes et notre stack technologique
-                pour apporter la puissance des
-                opérations efficaces et des données à nos clients.
+            <p data-i18n="about.story_p2">
+                Nous avons construit la solution que nous aurions aimée avoir : un partenaire unique et de
+                confiance qui agit comme une passerelle vers des équipes opérationnelles européennes spécialisées. Un
+                seul contrat, régi par des normes juridiques strictes, donnant accès à des capacités d'exécution
+                immédiates.
             </p>
-            <p>
-                Aujourd'hui, Expandia est un fournisseur leader de solutions de vente hybrides, offrant le meilleur des
-                deux mondes :
-                l'orientation stratégique et le pouvoir de conclusion de professionnels de la vente expérimentés,
-                soutenus par des
-                processus efficaces et un reporting robuste.
+            <p data-i18n="about.story_p3">
+                Aujourd'hui, nous aidons les entreprises à se développer en prenant en charge le travail de <a
+                    href="managed-it-services.html" class="link text-primary">l'IT</a>,
+                des <a href="lead-generation-service.html" class="link text-secondary">Ventes</a> et du <a
+                    href="recruitment.html" class="link text-accent">Recrutement</a>.
+                Nous ne nous contentons pas de vous dire quoi faire – nous nous connectons et nous le faisons.
             </p>
         </div>
     </div>
 </section>
 
-
-
-<!-- Our Services -->
+<!-- Nos Piliers Opérationnels -->
 <section class="section-spacing bg-gradient-to-br from-buzz-warm to-buzz-light">
     <div class="container mx-auto container-padding">
         <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-4xl md:text-6xl font-bold mb-6 gradient-header">Nos Programmes</h2>
+            <h2 class="text-4xl md:text-4xl md:text-6xl font-bold mb-6 gradient-header">Piliers Opérationnels</h2>
             <p class="text-xl md:text-xl text-base-content/80 max-w-3xl mx-auto">
-                Choisissez l'approche qui correspond le mieux aux besoins de votre entreprise et à votre stade de
-                croissance.
+                Nous ne sommes pas une agence. Nous sommes votre partenaire d'infrastructure.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Programme Fondation de Marché -->
-            <div class="buzz-card p-8 bg-white">
-                <div class="text-center mb-6">
-                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-3xl">🧭</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Pilier IT -->
+            <div class="buzz-card p-8 bg-white border-t-4 border-primary">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-primary mb-2">Programme Fondation de Marché</h3>
-                    <p class="text-sm text-base-content/60">À partir de 2 000 €/mois</p>
+                    <h3 class="text-2xl font-bold">IT Gérée & Sécurité</h3>
                 </div>
-                <p class="text-base-content/80 mb-6">
-                    Idéal pour entrer sur des marchés de petite et moyenne taille. Construction de base du pipeline et
-                    présence sur le marché.
+                <p class="text-base-content/70">
+                    Du simple helpdesk à la cybersécurité avancée. Nous veillons à ce que votre base numérique soit
+                    solide, conforme à la LPD et surveillée 24h/24, 7j/7.
                 </p>
-                <ul class="space-y-3 mb-6">
-                    <li class="flex items-start gap-2">
-                        <span class="text-primary">•</span>
-                        <span class="text-sm">Jusqu'à 2 500 entreprises ciblées/an</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-primary">•</span>
-                        <span class="text-sm">Jusqu'à 10 000 contacts atteints/an</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-primary">•</span>
-                        <span class="text-sm">Configuration de 5 domaines d'envoi</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-primary">•</span>
-                        <span class="text-sm">Enregistrement et gestion CRM complets</span>
-                    </li>
-                </ul>
-                <a href="market-foundation-program.html" class="btn btn-primary btn-sm w-full">En Savoir Plus</a>
             </div>
 
-            <!-- Programme Accélérateur de Marché -->
-            <div class="buzz-card p-8 bg-white border-2 border-secondary">
-                <div class="text-center mb-6">
-                    <div class="inline-block px-3 py-1 bg-secondary/10 rounded-full mb-3">
-                        <span class="text-secondary font-semibold text-xs">LE PLUS POPULAIRE</span>
+            <!-- Pilier Ventes -->
+            <div class="buzz-card p-8 bg-white border-t-4 border-secondary">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center text-secondary">
+                        <i data-lucide="trending-up" class="w-6 h-6"></i>
                     </div>
-                    <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-3xl">⚡</span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-secondary mb-2">Programme Accélérateur de Marché</h3>
-                    <p class="text-sm text-base-content/60">À partir de 2 500 €/mois</p>
+                    <h3 class="text-2xl font-bold">Ventes & Croissance</h3>
                 </div>
-                <p class="text-base-content/80 mb-6">
-                    Pour les entreprises prêtes à passer à l'échelle. Listes cibles plus grandes, plus de points de
-                    contact et prospection agressive.
+                <p class="text-base-content/70">
+                    Génération de leads, architecture CRM et expansion du marché. Nous construisons le moteur qui
+                    stimule vos revenus.
                 </p>
-                <ul class="space-y-3 mb-6">
-                    <li class="flex items-start gap-2">
-                        <span class="text-secondary">•</span>
-                        <span class="text-sm">Jusqu'à 5 000 entreprises ciblées/an</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-secondary">•</span>
-                        <span class="text-sm">Jusqu'à 20 000 contacts atteints/an</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-secondary">•</span>
-                        <span class="text-sm">Configuration de 10 domaines d'envoi</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-secondary">•</span>
-                        <span class="text-sm">Prospection multicanal avancée</span>
-                    </li>
-                </ul>
-                <a href="market-accelerator-program.html" class="btn btn-secondary btn-sm w-full">En Savoir Plus</a>
             </div>
 
-            <!-- Fractional Génération de Leads Team -->
-            <div class="buzz-card p-8 bg-white">
-                <div class="text-center mb-6">
-                    <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-3xl">👥</span>
+            <!-- Pilier Recrutement -->
+            <div class="buzz-card p-8 bg-white border-t-4 border-accent">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center text-accent">
+                        <i data-lucide="users" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-accent mb-2">Équipe de Génération de Leads à Temps Partiel</h3>
-                    <p class="text-sm text-base-content/60">3 000 €/mois + bonus de performance</p>
+                    <h3 class="text-2xl font-bold">Recrutement</h3>
                 </div>
-                <p class="text-base-content/80 mb-6">
-                    Un professionnel senior de la Génération de Leads dédié travaillant 40 heures/mois exclusivement
-                    pour vous.
+                <p class="text-base-content/70">
+                    Chasse de têtes et personnel de transition. Nous trouvons les talents dont vous avez besoin, gérons
+                    la complexité de la paie et les mettons rapidement à votre service.
                 </p>
-                <ul class="space-y-3 mb-6">
-                    <li class="flex items-start gap-2">
-                        <span class="text-accent">•</span>
-                        <span class="text-sm">40 heures/mois de travail dédié</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-accent">•</span>
-                        <span class="text-sm">Stratégie complète et exécution</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-accent">•</span>
-                        <span class="text-sm">Réservation de réunions et participation</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-accent">•</span>
-                        <span class="text-sm">Incitatifs alignés (bonus sur revenus)</span>
-                    </li>
-                </ul>
-                <a href="fractional-bizdev-team.html" class="btn btn-accent btn-sm w-full">En Savoir Plus</a>
+            </div>
+
+            <!-- Pilier IA -->
+            <div class="buzz-card p-8 bg-white border-t-4 border-neutral">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 bg-neutral/10 rounded-full flex items-center justify-center text-neutral">
+                        <i data-lucide="bot" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold">Studio Créatif IA</h3>
+                </div>
+                <p class="text-base-content/70">
+                    Production de contenu rentable grâce aux derniers outils d'IA générative. Vidéos et visuels haut de
+                    gamme sans le prix d'un studio.
+                </p>
             </div>
         </div>
     </div>
@@ -232,38 +168,39 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="text-center">
                 <div
-                    class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-3xl md:text-3xl mx-auto mb-4">
-                    🎯
+                    class="w-24 h-24 bg-primary/10 mask mask-hexagon flex items-center justify-center mx-auto mb-4 relative group-hover:scale-110 transition-transform">
+                    <div class="absolute inset-0 bg-primary/20 mask mask-hexagon animate-ping"></div>
+                    <span class="text-4xl">🎯</span>
                 </div>
                 <h3 class="text-xl md:text-xl font-bold mb-3">Résultats d'Abord</h3>
-                <p class="text-base-content/70">Chaque stratégie, chaque campagne, chaque action est mesurée par
-                    l'impact sur les revenus qu'elle crée pour votre entreprise.</p>
+                <p class="text-base-content/70">Chaque stratégie, chaque campagne, chaque action est mesurée par son
+                    impact sur les revenus de votre entreprise.</p>
             </div>
             <div class="text-center">
                 <div
-                    class="w-20 h-20 bg-secondary rounded-full flex items-center justify-center text-white text-3xl md:text-3xl mx-auto mb-4">
-                    🤝
+                    class="w-24 h-24 bg-secondary/10 mask mask-hexagon flex items-center justify-center mx-auto mb-4 relative group-hover:scale-110 transition-transform">
+                    <span class="text-4xl">🤝</span>
                 </div>
                 <h3 class="text-xl md:text-xl font-bold mb-3">Vrai Partenariat</h3>
                 <p class="text-base-content/70">Nous réussissons quand vous réussissez. Votre croissance est notre
-                    principale mesure de succès.</p>
+                    principal indicateur de succès.</p>
             </div>
             <div class="text-center">
                 <div
-                    class="w-20 h-20 bg-accent rounded-full flex items-center justify-center text-white text-3xl md:text-3xl mx-auto mb-4">
-                    💡
+                    class="w-24 h-24 bg-accent/10 mask mask-hexagon flex items-center justify-center mx-auto mb-4 relative group-hover:scale-110 transition-transform">
+                    <span class="text-4xl">💡</span>
                 </div>
                 <h3 class="text-xl md:text-xl font-bold mb-3">Innovation</h3>
-                <p class="text-base-content/70">Nous adoptons continuellement les dernières technologies et
-                    méthodologies de vente pour vous garder en avance sur la concurrence.</p>
+                <p class="text-base-content/70">Nous adoptons en permanence les dernières technologies et méthodes de
+                    vente pour vous garder en avance sur la concurrence.</p>
             </div>
             <div class="text-center">
                 <div
-                    class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-3xl md:text-3xl mx-auto mb-4">
-                    🔍
+                    class="w-24 h-24 bg-primary/10 mask mask-hexagon flex items-center justify-center mx-auto mb-4 relative group-hover:scale-110 transition-transform">
+                    <span class="text-4xl">🔍</span>
                 </div>
                 <h3 class="text-xl md:text-xl font-bold mb-3">Transparence</h3>
-                <p class="text-base-content/70">Reporting clair, communication honnête et visibilité totale sur nos
+                <p class="text-base-content/70">Rapports clairs, communication honnête et visibilité totale sur nos
                     activités et votre ROI.</p>
             </div>
         </div>
@@ -274,11 +211,11 @@
 <section class="section-spacing bg-primary text-white">
     <div class="container mx-auto container-padding text-center">
         <h2 class="text-4xl md:text-4xl md:text-6xl font-bold mb-6">
-            Prêt à Faire Évoluer Vos Ventes ?
+            Prêt à accélérer vos ventes ?
         </h2>
         <p class="text-xl md:text-xl mb-8 max-w-3xl mx-auto opacity-90">
             Discutons de la manière dont nos solutions de vente peuvent vous aider à générer plus de leads,
-            conclure plus d'affaires et accélérer la croissance de votre entreprise.
+            conclure plus d'affaires et accélérer votre croissance.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="contact.html" class="btn btn-secondary btn-lg">
@@ -291,5 +228,4 @@
         </div>
     </div>
 </section>
-
 {{FOOTER}}
