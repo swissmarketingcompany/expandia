@@ -150,6 +150,8 @@ function buildPage(templateName, outputName, lang = 'en') {
     for (let i = 0; i < depth; i++) {
         relativePrefix += '../';
     }
+    const navPath = relativePrefix || './';
+
     if (lang !== 'en') {
         relativePrefix += '../';
     }
@@ -159,12 +161,12 @@ function buildPage(templateName, outputName, lang = 'en') {
     htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
     const turkishServicesPath = lang === 'tr' ? './' : './tr/';
 
-    pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
+    pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, navPath);
     pageNavigation = pageNavigation.replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html');
     pageNavigation = pageNavigation.replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, 'our-ethical-principles.html');
     pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
     pageNavigation = pageNavigation.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
-    pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
+    pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, navPath);
     pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
     pageFooter = pageFooter.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
     content = content.replace(/\{\{BASE_PATH\}\}/g, basePath);
@@ -269,6 +271,7 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
     // console.log(`🏗️  Building blog post: ${outputName} (${lang.toUpperCase()})`);
 
     const basePath = lang === 'en' ? '../' : '../../';
+    const navPath = '../';
     const logoPath = lang === 'en' ? '../Expandia-main-logo-koyu-yesil.png' : '../../Expandia-main-logo-koyu-yesil.png';
 
     // Read blog post template
@@ -298,6 +301,10 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
     nav = nav.replace(/\s*data-i18n="[^"]*"/g, '');
     foot = foot.replace(/\s*data-i18n="[^"]*"/g, '');
 
+    // Apply navPath to nav/foot BEFORE merging
+    nav = nav.replace(/\{\{BASE_PATH\}\}/g, navPath);
+    foot = foot.replace(/\{\{BASE_PATH\}\}/g, navPath);
+
     // Process includes
     blogTemplate = blogTemplate.replace('{{HEADER_INCLUDE}}', nav);
     blogTemplate = blogTemplate.replace('{{FOOTER_INCLUDE}}', foot);
@@ -319,10 +326,12 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
     blogTemplate = blogTemplate.replace(/href=["'][^"']*["']\s+data-lang="fr"/g, `href="${relPrefix}fr/blog/${templateName}.html" data-lang="fr"`);
 
     // Fix paths in nav/footer
-    blogTemplate = blogTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath); // Replacements in nav/footer happen here
+    // blogTemplate = blogTemplate.replace(/\{\{BASE_PATH\}\}/g, navPath); // Moved above
 
     // Replace path placeholders
-    blogTemplate = blogTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
+    // Smart replacement: Assets use basePath, Links use navPath
+    blogTemplate = blogTemplate.replace(/(href|src)="\{\{BASE_PATH\}\}([^"]+\.(css|ico|png|jpg|jpeg|js|svg))"/g, `$1="${basePath}$2"`);
+    blogTemplate = blogTemplate.replace(/\{\{BASE_PATH\}\}/g, navPath);
     blogTemplate = blogTemplate.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
 
     // Set active states for navigation
