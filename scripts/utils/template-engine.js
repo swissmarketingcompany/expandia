@@ -56,13 +56,13 @@ function generateBreadcrumbSchema(items) {
 
 function createHTMLTemplate(lang = 'en', headContent = '', scriptContent = '') {
     const assetPath = '{{BASE_PATH}}';
-    
+
     return `<!DOCTYPE html>
 <html lang="${lang}" data-theme="bumblebee">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{PAGE_TITLE}} | Expandia - Sales Growth Partner</title>
+    <title>{{PAGE_TITLE}}</title>
     <meta name="description" content="{{PAGE_DESCRIPTION}}">
     <meta name="keywords" content="{{PAGE_KEYWORDS}}">
     <meta name="robots" content="index, follow">
@@ -79,7 +79,7 @@ function createHTMLTemplate(lang = 'en', headContent = '', scriptContent = '') {
     <link rel="alternate" hreflang="x-default" href="https://www.expandia.ch/{{PAGE_URL_EN}}">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="{{PAGE_TITLE}} | Expandia">
+    <meta property="og:title" content="{{PAGE_TITLE}}">
     <meta property="og:description" content="{{PAGE_DESCRIPTION}}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{CANONICAL_URL}}">
@@ -88,7 +88,7 @@ function createHTMLTemplate(lang = 'en', headContent = '', scriptContent = '') {
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{PAGE_TITLE}} | Expandia">
+    <meta name="twitter:title" content="{{PAGE_TITLE}}">
     <meta name="twitter:description" content="{{PAGE_DESCRIPTION}}">
     <meta name="twitter:image" content="https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png">
     

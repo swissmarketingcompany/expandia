@@ -238,10 +238,6 @@ function buildPage(templateName, outputName, lang = 'en') {
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, hreflangUrls2.de);
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, hreflangUrls2.fr || 'fr/');
 
-    htmlTemplate = htmlTemplate.replace(
-        `<link rel="alternate" hreflang="de" href="https://www.expandia.ch/${hreflangUrls2.de}">`,
-        `<link rel="alternate" hreflang="de" href="https://www.expandia.ch/${hreflangUrls2.de}">\n    <link rel="alternate" hreflang="fr" href="https://www.expandia.ch/${hreflangUrls2.fr || 'fr/'}">`
-    );
 
     // Dynamic Blog Index Injection
     if (templateName === 'blog-index') {
@@ -367,6 +363,37 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
     } else {
         outputPath = `blog/${outputName}.html`;
     }
+
+    // Canonical tag logic
+    const canonicalUrl = lang === 'en'
+        ? `https://www.expandia.ch/blog/${outputName}.html`
+        : `https://www.expandia.ch/${lang}/blog/${outputName}.html`;
+    blogTemplate = blogTemplate.replace(/\{\{CANONICAL_URL\}\}/g, canonicalUrl);
+
+    // --- Metadata Replacement Logic ---
+    let pageTitle = 'Expandia Blog';
+    let pageDesc = 'Deep dive into B2B sales, lead generation, and operations strategies.';
+    let pageKeywords = 'B2B sales, lead generation, Expandia blog';
+
+    // 1. Check generated blog topics
+    const topic = blogTopics.find(t => t.slug === templateName);
+    if (topic) {
+        pageTitle = topic.title[lang] || topic.title['en'];
+        pageDesc = pageTitle + '. Read expert insights on Expandia Blog.';
+    }
+    // 2. Check legacy posts
+    else {
+        const legacy = legacyBlogPosts.find(p => p.url === templateName + '.html' || p.url === templateName);
+        if (legacy) {
+            pageTitle = legacy.title;
+            pageDesc = legacy.excerpt;
+        }
+    }
+
+    // Apply replacements
+    blogTemplate = blogTemplate.replace(/\{\{PAGE_TITLE\}\}/g, pageTitle + ' | Expandia');
+    blogTemplate = blogTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, pageDesc);
+    blogTemplate = blogTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, pageKeywords);
 
     // Ensure blog directory exists
     const blogDir = path.dirname(outputPath);
@@ -1013,6 +1040,8 @@ function buildCityPages() {
 
         pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
         pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
+        pageNavigation = pageNavigation.replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html');
+        pageNavigation = pageNavigation.replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, 'our-ethical-principles.html');
         pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
         pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
 
@@ -1026,6 +1055,12 @@ function buildCityPages() {
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, description);
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, keywords);
         htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.expandia.ch/${slug}.html`);
+
+        // Hreflang URLs
+        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, `${slug}.html`);
+        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, `${slug}.html`);
+        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, `${slug}.html`);
+        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, `${slug}.html`);
 
         // Enhanced Schema for City Page (B2B/Corporate focus)
         const schema = {
@@ -1100,6 +1135,8 @@ function buildIndustryPages() {
 
         pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
         pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
+        pageNavigation = pageNavigation.replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html');
+        pageNavigation = pageNavigation.replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, 'our-ethical-principles.html');
         pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
         pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
 
@@ -1113,6 +1150,12 @@ function buildIndustryPages() {
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, description);
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, keywords);
         htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.expandia.ch/${slug}.html`);
+
+        // Hreflang URLs
+        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, `${slug}.html`);
+        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, `${slug}.html`);
+        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, `${slug}.html`);
+        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, `${slug}.html`);
 
         // Schema
         const schema = {

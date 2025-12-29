@@ -90,8 +90,47 @@
 
       gtag('config', 'G-XY2B6K4R6Q');
     </script>
+    <!-- Breadcrumb Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.expandia.ch/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.expandia.ch/templates/blog/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Lead Generation Complete Guide 2025"
+    }
+  ]
+}
+</script>
 </head>
 <body class="font-sans">
+
+<!-- Breadcrumbs -->
+<div class="bg-base-200 py-3">
+    <div class="container mx-auto container-padding">
+        <div class="breadcrumbs text-sm">
+            <ul>
+                <li><a href="../" class="link link-hover">Home</a></li>
+                <li><a href="../templates/blog/index.html" class="link link-hover">Blog</a></li>
+                <li class="text-base-content/60">Lead Generation Complete Guide 2025</li>
+            </ul>
+        </div>
+    </div>
+</div>
     {{HEADER_INCLUDE}}
 
     <main class="min-h-screen bg-base-100">

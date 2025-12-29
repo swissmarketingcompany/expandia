@@ -1,116 +1,116 @@
 {
   "index": {
-    "title": "B2B Lead Generation Europe | Inbound & Outbound",
-    "description": "Expert B2B lead generation in Europe. Inbound lead generation and outbound lead generation for predictable pipeline.",
-    "keywords": "B2B lead generation Europe, sales as a service, export market entry, appointment setting for exporters",
+    "title": "Managed Sales Operations & B2B Growth Partner | Expandia",
+    "description": "Your strategic operations partner in Europe. We manage IT, sales, security, and recruitment so you can focus on strategy and growth.",
+    "keywords": "managed operations, sales as a service, IT operations, export market entry, business operations partner",
     "translations": {
       "tr": {
-        "title": "B2B Potansiyel Müşteri Yaratma Türkiye | İhracat Satış Danışmanlığı",
-        "description": "Türkiye'nin önde gelen B2B lead üretimi uzmanları. İhracat pazarları için randevu ayarlama ve satış otomasyonu ile büyümenizi hızlandırın.",
+        "title": "Yönetilen Satış Operasyonları & B2B Büyüme Ortağı | Expandia",
+        "description": "Avrupa'da stratejik operasyon ortağınız. Stratejinize ve büyümenize odaklanabilmeniz için BT, satış, güvenlik ve işe alımı yönetiyoruz.",
         "keywords": "B2B lead üretimi Türkiye, ihracat satış danışmanlığı, randevu ayarlama hizmeti, Avrupa pazarı girişi"
       },
       "de": {
-        "title": "B2B Lead-Generierung Deutschland | Export Beratung",
-        "description": "Deutschlands führende B2B Lead-Generierung Spezialisten. Wir helfen Exporteuren beim Markteintritt mit Terminvereinbarung und Verkaufsautomation.",
+        "title": "Managed Sales Operations & B2B Wachstumspartner | Expandia",
+        "description": "Ihr strategischer Operations-Partner in Europa. Wir verwalten IT, Vertrieb, Sicherheit und Recruiting, damit Sie sich auf Strategie und Wachstum konzentrieren können.",
         "keywords": "B2B Lead-Generierung Deutschland, Terminvereinbarung Exporteure, europäischer Markteintritt, Verkaufsautomation Deutschland"
       },
       "fr": {
-        "title": "Génération de Leads B2B France | Conseil Export",
-        "description": "Experts en génération de leads B2B en France. Accélérez votre croissance avec la prise de rendez-vous et l'automatisation des ventes pour les marchés d'exportation.",
+        "title": "Opérations de Vente Gérées & Partenaire de Croissance B2B | Expandia",
+        "description": "Votre partenaire stratégique en opérations en Europe. Nous gérons l'IT, les ventes, la sécurité et le recrutement pour que vous puissiez vous concentrer sur la stratégie et la croissance.",
         "keywords": "Génération de leads B2B France, conseil vente export, service de prise de rendez-vous, entrée sur le marché européen"
       }
     }
   },
   "solutions": {
-    "title": "Lead Generation Solutions | Inbound & Outbound",
+    "title": "End-to-End Sales Operations Solutions | Expandia",
     "description": "Inbound lead generation and outbound lead generation tailored to your growth goals.",
     "keywords": "export sales solutions, B2B consulting Europe, international sales services, European market expansion",
     "translations": {
       "tr": {
-        "title": "B2B Satış Çözümleri | İhracat Danışmanlığı | Expandia",
+        "title": "Uçtan Uca Satış Operasyon Çözümleri | Expandia",
         "description": "Avrupa pazarları için B2B satış çözümleri. İhracat danışmanlığı, lead üretimi ve satış otomasyonu hizmetleri.",
         "keywords": "B2B satış çözümleri, ihracat danışmanlığı, satış otomasyonu, Avrupa pazarları"
       },
       "de": {
-        "title": "B2B Verkaufslösungen | Export Beratung | Expandia",
+        "title": "End-to-End Vertriebsoperations-Lösungen | Expandia",
         "description": "B2B Verkaufslösungen für europäische Märkte. Export-Beratung, Lead-Generierung und Verkaufsautomation.",
         "keywords": "B2B Verkaufslösungen, Export Beratung, Verkaufsautomation, europäische Märkte"
       },
       "fr": {
-        "title": "Solutions de Vente B2B | Conseil Export | Expandia",
+        "title": "Solutions d'Opérations de Vente de Bout en Bout | Expandia",
         "description": "Solutions de vente B2B pour les marchés européens. Conseil export, génération de leads et services d'automatisation des ventes.",
         "keywords": "solutions de vente B2B, conseil export, automatisation des ventes, marchés européens"
       }
     }
   },
   "about": {
-    "title": "About Us | Lead Generation Agency Europe | Expandia",
+    "title": "About Us | Managed Operations Partner Europe | Expandia",
     "description": "Lead generation agency in Europe. Inbound lead generation and outbound lead generation for predictable pipeline.",
     "keywords": "lead generation agency Europe, inbound lead generation, outbound lead generation",
     "translations": {
       "tr": {
-        "title": "Hakkımızda | B2B Lead Generation Ajansı | Expandia",
+        "title": "Hakkımızda | Yönetilen Operasyonlar Ortağı Avrupa | Expandia",
         "description": "Avrupa'da faaliyet gösteren B2B lead generation ajansı. Inbound ve outbound programları ile büyüyün.",
         "keywords": "B2B satış ajansı Avrupa, ihracat pazarı uzmanları, uluslararası satış danışmanlığı"
       },
       "de": {
-        "title": "Über uns | B2B Lead-Generierung Agentur | Expandia",
+        "title": "Über uns | Managed Operations Partner Europa | Expandia",
         "description": "B2B Lead-Generierung Agentur in Europa. Inbound und Outbound für planbare Pipeline.",
         "keywords": "B2B Verkaufsagentur Europa, Export Marktspezialisten, internationale Verkaufsberatung"
       },
       "fr": {
-        "title": "À propos | Agence de Génération de Leads B2B | Expandia",
+        "title": "À propos | Partenaire d'Opérations Gérées Europe | Expandia",
         "description": "Agence de génération de leads B2B en Europe. Inbound et outbound pour un pipeline prévisible.",
         "keywords": "agence de vente B2B Europe, spécialistes marché export, conseil vente international"
       }
     }
   },
   "contact": {
-    "title": "Contact | Lead Generation Consultation | Expandia",
+    "title": "Contact | Sales Operations Consultation | Expandia",
     "description": "Free consultation for inbound lead generation, outbound lead generation, and training. Build predictable pipeline fast.",
     "keywords": "lead generation consultation, inbound lead generation, outbound lead generation, training",
     "translations": {
       "tr": {
-        "title": "İletişim | B2B Lead Generation Danışmanlığı | Expandia",
+        "title": "İletişim | Satış Operasyonları Danışmanlığı | Expandia",
         "description": "Inbound, outbound lead generation ve eğitim programları için ücretsiz danışmanlık. Planlı pipeline oluşturun.",
         "keywords": "B2B lead üretimi danışmanlığı, ihracat satış konsültasyonu, uluslararası pazar girişi"
       },
       "de": {
-        "title": "Kontakt | B2B Lead-Generierung Beratung | Expandia",
+        "title": "Kontakt | Vertriebsoperations-Beratung | Expandia",
         "description": "Kostenlose Beratung für Inbound, Outbound und Trainings. Planbare Pipeline aufbauen.",
         "keywords": "B2B Lead-Generierung Beratung, Export Verkaufs Konsultation, internationaler Markteintritt"
       },
       "fr": {
-        "title": "Contact | Conseil en Génération de Leads | Expandia",
+        "title": "Contact | Consultation Opérations de Vente | Expandia",
         "description": "Consultation gratuite pour la génération de leads inbound, outbound et la formation. Construisez un pipeline prévisible.",
         "keywords": "conseil génération de leads B2B, consultation vente export, entrée sur le marché international"
       }
     }
   },
   "case-studies": {
-    "title": "Success Stories | Lead Generation Results | Expandia",
+    "title": "Success Stories | Managed Sales Results | Expandia",
     "description": "Lead generation case studies and proof of results. Inbound and outbound program outcomes from our clients.",
     "keywords": "lead generation success stories, inbound lead gen case studies, outbound lead gen results",
     "translations": {
       "tr": {
-        "title": "Başarı Hikayeleri | B2B Lead Generation Sonuçları | Expandia",
+        "title": "Başarı Hikayeleri | Yönetilen Satış Sonuçları | Expandia",
         "description": "B2B lead generation başarı hikayeleri ve örnek çalışmalar. Inbound ve outbound program sonuçları.",
         "keywords": "B2B satış başarı hikayeleri, ihracat pazarı örnek çalışmaları, uluslararası genişleme sonuçları"
       },
       "de": {
-        "title": "Erfolgsgeschichten | B2B Lead-Generierung Ergebnisse | Expandia",
+        "title": "Erfolgsgeschichten | Managed Sales Ergebnisse | Expandia",
         "description": "B2B Lead-Generierung Erfolgsgeschichten und Fallstudien. Inbound und Outbound Resultate.",
         "keywords": "B2B Verkaufs Erfolgsgeschichten, Export Markt Fallstudien, internationale Expansion Ergebnisse"
       },
       "fr": {
-        "title": "Histoires de Réussite | Résultats de Génération de Leads | Expandia",
+        "title": "Histoires de Réussite | Résultats de Vente Gérée | Expandia",
         "description": "Histoires de réussite et études de cas de génération de leads B2B. Résultats des programmes inbound et outbound.",
         "keywords": "histoires de réussite vente B2B, études de cas marché export, résultats expansion internationale"
       }
     }
   },
   "lead-generation-service": {
-    "title": "Lead Generation Services for Small Business & B2B Companies | Expandia",
+    "title": "B2B Growth Services for Small Business & Enterprises | Expandia",
     "description": "Lead generation services for small business and B2B companies. Inbound and outbound programs that build predictable pipeline and qualified sales opportunities.",
     "keywords": "lead generation services for small business, B2B lead generation agency, inbound lead generation, outbound lead generation, automated lead generation solutions"
   },
@@ -125,7 +125,7 @@
     "keywords": "cold email agency, deliverability, inboxing, b2b outreach"
   },
   "b2b-lead-generation-agency": {
-    "title": "B2B Lead Generation Agency Europe & USA | Qualified Leads | Expandia",
+    "title": "B2B Growth Agency Europe & USA | Managed Sales | Expandia",
     "description": "B2B lead generation agency for Europe and the USA. Generate qualified leads, book sales appointments, and grow pipeline for exporters and high-ticket B2B services.",
     "keywords": "B2B lead generation Switzerland, B2B lead generation Europe, lead generation agency, best lead generation companies 2025, pay per lead generation agency"
   },
@@ -140,12 +140,12 @@
     "keywords": "outbound marketing agency, LinkedIn lead generation services, cold email campaigns, B2B outreach, multi-channel outbound marketing"
   },
   "email-marketing-management": {
-    "title": "B2B Email Marketing Lead Generation | Campaign Management | Expandia",
+    "title": "B2B Email Marketing Operations | Campaign Management | Expandia",
     "description": "B2B email marketing management focused on lead generation and sales pipeline. Strategy, copy, and automation to turn email lists into qualified opportunities.",
     "keywords": "email marketing lead generation, B2B email marketing, automated lead generation solutions, email marketing management, sales funnel conversion"
   },
   "email-automation": {
-    "title": "B2B Email Automation Services | Automated Lead Generation | Expandia",
+    "title": "B2B Email Automation Services | Sales Automation | Expandia",
     "description": "B2B email automation services that turn manual outreach into automated lead generation. Build nurture sequences, trigger-based campaigns, and sales automation for Europe and the USA.",
     "keywords": "automated lead generation solutions, B2B email automation, email sequences, sales automation, lead nurturing workflows"
   },
@@ -180,7 +180,7 @@
     "keywords": "overseas sales consulting, B2B sales growth, international expansion strategy, overseas markets, sales consulting Europe"
   },
   "europe-market-entry": {
-    "title": "Europe Market Entry Services | B2B Lead Generation | Expandia",
+    "title": "Europe Market Entry Services | Managed Sales Operations | Expandia",
     "description": "Europe market entry services combined with B2B lead generation. From strategy and localization to pipeline generation across key hubs like Zurich, Berlin, and London.",
     "keywords": "Europe market entry services, B2B lead generation Europe, sales agency Zurich, B2B lead gen agency Berlin, European expansion strategy"
   },
@@ -354,27 +354,27 @@
     "keywords": "AI video localization, AI avatars, digital twins, generative content studio"
   },
   "city-locations": {
-    "title": "Global B2B Lead Generation Locations | Expandia",
+    "title": "Global Managed Sales Operations Locations | Expandia",
     "description": "Explore our B2B lead generation services across 80+ cities worldwide.",
     "keywords": "B2B lead generation locations, global lead generation, local lead generation services"
   },
   "blog-index": {
-    "title": "Sales University - Expert Sales Training & Resources | Expandia",
+    "title": "Sales University - Sales Operations Resources | Expandia",
     "description": "Master sales with our comprehensive Sales University. Expert-written articles on cold email, lead generation, sales psychology, and advanced sales techniques.",
     "keywords": "sales training, b2b sales blog, lead generation resources, sales university",
     "translations": {
       "tr": {
-        "title": "Satış Üniversitesi - Uzman Satış Eğitimi & Kaynaklar | Expandia",
+        "title": "Satış Üniversitesi - Satış Operasyonları Kaynakları | Expandia",
         "description": "Kapsamlı Satış Üniversitemizle satışta ustalaşın. Soğuk e-posta, lead generation, satış psikolojisi ve ileri satış teknikleri üzerine uzman makaleler.",
         "keywords": "satış eğitimi, b2b satış blogu, lead generation kaynakları, satış üniversitesi"
       },
       "de": {
-        "title": "Sales University - Experten-Vertriebstraining & Ressourcen | Expandia",
+        "title": "Sales University - Vertriebsoperations-Ressourcen | Expandia",
         "description": "Meistern Sie den Vertrieb mit unserer umfassenden Sales University. Expertenartikel zu Cold Email, Lead-Generierung, Verkaufspsychologie und fortgeschrittenen Verkaufstechniken.",
         "keywords": "Vertriebstraining, B2B Vertriebsblog, Lead-Generierung Ressourcen, Sales University"
       },
       "fr": {
-        "title": "Sales University - Formation et Ressources de Vente Expertes | Expandia",
+        "title": "Sales University - Ressources d'Opérations de Vente | Expandia",
         "description": "Maîtrisez la vente avec notre Sales University complète. Articles d'experts sur l'email froid, la génération de leads, la psychologie de vente et les techniques avancées.",
         "keywords": "formation vente, blog vente b2b, ressources génération de leads, sales university"
       }
