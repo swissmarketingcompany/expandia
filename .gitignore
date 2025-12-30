@@ -5,8 +5,10 @@ yarn-debug.log*
 yarn-error.log*
 
 # Production builds
-dist/
+dist/css/
 build/
+# Keep dist/js for GitHub Pages deployment
+!dist/js/
 
 # Environment variables
 .env
