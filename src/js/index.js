@@ -354,216 +354,105 @@ document.addEventListener('DOMContentLoaded', () => {
 // Language switching functions - STANDARDIZED FOR MULTILINGUAL SUPPORT
 function switchToEnglish() {
     const path = window.location.pathname;
+    const origin = window.location.origin;
 
     // Set user language preference to prevent auto-redirects
     localStorage.setItem('expandia_language_preference', 'en');
 
-    if (path.startsWith('/tr/')) {
-        // Map Turkish pages to English equivalents
-        const englishPath = path.replace('/tr/', '/');
+    // Detect if already on English (not in any language subfolder)
+    const isOnEnglish = !path.includes('/tr/') && !path.includes('/de/') && !path.includes('/fr/') &&
+        !path.endsWith('/tr') && !path.endsWith('/de') && !path.endsWith('/fr');
 
-        // Handle specific page mappings
-        if (englishPath === '/index.html' || englishPath === '/') {
-            window.location.href = '/';
-        } else if (englishPath === '/about.html') {
-            window.location.href = '/about.html';
-        } else if (englishPath === '/solutions.html') {
-            window.location.href = '/solutions.html';
-        } else if (englishPath === '/contact.html') {
-            window.location.href = '/contact.html';
-        } else if (englishPath === '/case-studies.html') {
-            window.location.href = '/case-studies.html';
-        } else if (englishPath === '/satis-koruma-hizmetleri.html') {
-            window.location.href = '/sales-protection-services.html';
-        } else if (englishPath.startsWith('/blog/')) {
-            // Handle blog pages - redirect to English blog
-            if (englishPath === '/blog/index.html' || englishPath === '/blog/') {
-                window.location.href = '/blog/';
-            } else {
-                // For specific Turkish blog posts, redirect to English blog index
-                window.location.href = '/blog/';
-            }
-        } else {
-            // For other Turkish pages, redirect to homepage
-            window.location.href = '/';
-        }
-    } else if (path.startsWith('/de/')) {
-        // Map German pages to English equivalents
-        const englishPath = path.replace('/de/', '/');
-
-        // Handle specific page mappings
-        if (englishPath === '/index.html' || englishPath === '/') {
-            window.location.href = '/';
-        } else if (englishPath === '/about.html') {
-            window.location.href = '/about.html';
-        } else if (englishPath === '/solutions.html') {
-            window.location.href = '/solutions.html';
-        } else if (englishPath === '/contact.html') {
-            window.location.href = '/contact.html';
-        } else if (englishPath === '/case-studies.html') {
-            window.location.href = '/case-studies.html';
-        } else if (englishPath === '/schutzdienstleistungen.html') {
-            window.location.href = '/sales-protection-services.html';
-        } else if (englishPath.startsWith('/blog/')) {
-            // Handle blog pages - redirect to English blog
-            window.location.href = '/blog/';
-        } else {
-            // For other German pages, redirect to homepage
-            window.location.href = '/';
-        }
-    } else if (path.startsWith('/fr/')) {
-        // Map French pages to English equivalents
-        const englishPath = path.replace('/fr/', '/');
-
-        // Handle specific page mappings
-        if (englishPath === '/index.html' || englishPath === '/') {
-            window.location.href = '/';
-        } else if (englishPath.startsWith('/blog/')) {
-            window.location.href = '/blog/';
-        } else {
-            // Try to find the corresponding page
-            window.location.href = englishPath;
-        }
-    } else if (path === '/tr' || path === '/tr/') {
-        // Turkish home to English home
-        window.location.href = '/';
-    } else if (path === '/de' || path === '/de/') {
-        // German home to English home
-        window.location.href = '/';
-    } else if (path === '/fr' || path === '/fr/') {
-        // French home to English home
-        window.location.href = '/';
-    } else {
-        // Already on English
+    if (isOnEnglish) {
         console.log('Already on English version');
+        return;
     }
+
+    // Extract the page name from current path
+    let pageName = path.split('/').pop() || 'index.html';
+    if (pageName === '' || pageName === 'fr' || pageName === 'tr' || pageName === 'de') {
+        pageName = 'index.html';
+    }
+
+    // Build the English URL (no language prefix)
+    window.location.href = origin + '/' + pageName;
 }
 
 function switchToTurkish() {
     const path = window.location.pathname;
+    const origin = window.location.origin;
 
     // Set user language preference to prevent auto-redirects
     localStorage.setItem('expandia_language_preference', 'tr');
 
-    if (path.startsWith('/tr/')) {
-        // Already on Turkish
+    // Detect if already on Turkish
+    const isOnTurkish = path.includes('/tr/') || path.endsWith('/tr');
+
+    if (isOnTurkish) {
         console.log('Already on Turkish version');
         return;
-    } else if (path.startsWith('/de/')) {
-        // Map German pages to Turkish equivalents
-        const turkishPath = path.replace('/de/', '/tr/');
-        window.location.href = turkishPath;
-    } else if (path.startsWith('/fr/')) {
-        // Map French pages to Turkish equivalents
-        const turkishPath = path.replace('/fr/', '/tr/');
-        window.location.href = turkishPath;
-    } else {
-        // Map English pages to Turkish equivalents
-        if (path === '/' || path === '/index.html' || path === '') {
-            window.location.href = '/tr/';
-        } else if (path === '/about.html') {
-            window.location.href = '/tr/about.html';
-        } else if (path === '/solutions.html') {
-            window.location.href = '/tr/solutions.html';
-        } else if (path === '/contact.html') {
-            window.location.href = '/tr/contact.html';
-        } else if (path === '/case-studies.html') {
-            window.location.href = '/tr/case-studies.html';
-        } else if (path === '/sales-protection-services.html') {
-            window.location.href = '/tr/satis-koruma-hizmetleri.html';
-        } else if (path.startsWith('/blog/')) {
-            // Handle blog pages - redirect to Turkish blog
-            if (path === '/blog/index.html' || path === '/blog/' || path === '/blog') {
-                window.location.href = '/tr/blog/';
-            } else {
-                // For specific English blog posts, redirect to Turkish blog index
-                window.location.href = '/tr/blog/';
-            }
-        } else {
-            // For other pages, redirect to Turkish home
-            window.location.href = '/tr/';
-        }
     }
+
+    // Extract the page name from current path
+    let pageName = path.split('/').pop() || 'index.html';
+    if (pageName === '' || pageName === 'fr' || pageName === 'tr' || pageName === 'de') {
+        pageName = 'index.html';
+    }
+
+    // Build the Turkish URL
+    window.location.href = origin + '/tr/' + pageName;
 }
 
 function switchToGerman() {
     const path = window.location.pathname;
+    const origin = window.location.origin;
 
     // Set user language preference to prevent auto-redirects
     localStorage.setItem('expandia_language_preference', 'de');
 
-    if (path.startsWith('/de/')) {
-        // Already on German
+    // Detect current language from path
+    const isOnFrench = path.includes('/fr/') || path.endsWith('/fr');
+    const isOnTurkish = path.includes('/tr/') || path.endsWith('/tr');
+    const isOnGerman = path.includes('/de/') || path.endsWith('/de');
+
+    if (isOnGerman) {
         console.log('Already on German version');
         return;
-    } else if (path.startsWith('/tr/')) {
-        // Map Turkish pages to German equivalents
-        const germanPath = path.replace('/tr/', '/de/');
-        window.location.href = germanPath;
-    } else if (path.startsWith('/fr/')) {
-        // Map French pages to German equivalents
-        const germanPath = path.replace('/fr/', '/de/');
-        window.location.href = germanPath;
-    } else {
-        // Map English pages to German equivalents
-        if (path === '/' || path === '/index.html' || path === '') {
-            window.location.href = '/de/';
-        } else if (path === '/about.html') {
-            window.location.href = '/de/about.html';
-        } else if (path === '/solutions.html') {
-            window.location.href = '/de/solutions.html';
-        } else if (path === '/contact.html') {
-            window.location.href = '/de/contact.html';
-        } else if (path === '/case-studies.html') {
-            window.location.href = '/de/case-studies.html';
-        } else if (path === '/sales-protection-services.html') {
-            window.location.href = '/de/schutzdienstleistungen.html';
-        } else if (path.startsWith('/blog/')) {
-            // Handle blog pages - redirect to German blog
-            window.location.href = '/de/blog/';
-        } else {
-            // For other pages, redirect to German home
-            window.location.href = '/de/';
-        }
     }
+
+    // Extract the page name from current path
+    let pageName = path.split('/').pop() || 'index.html';
+    if (pageName === '' || pageName === 'fr' || pageName === 'tr' || pageName === 'de') {
+        pageName = 'index.html';
+    }
+
+    // Build the German URL
+    window.location.href = origin + '/de/' + pageName;
 }
 
 function switchToFrench() {
     const path = window.location.pathname;
+    const origin = window.location.origin;
 
     // Set user language preference to prevent auto-redirects
     localStorage.setItem('expandia_language_preference', 'fr');
 
-    // Normalize path
-    const normalizedPath = path.endsWith('/') ? path.slice(0, -1) : path;
+    // Detect if already on French
+    const isOnFrench = path.includes('/fr/') || path.endsWith('/fr');
 
-    if (normalizedPath === '/fr' || normalizedPath.startsWith('/fr/')) {
-        // Already on French - redirect to index if just /fr
-        if (normalizedPath === '/fr') {
-            window.location.href = '/fr/index.html';
-        }
+    if (isOnFrench) {
+        console.log('Already on French version');
         return;
-    } else if (normalizedPath.startsWith('/de/')) {
-        // Map German pages to French equivalents
-        const frenchPath = normalizedPath.replace('/de/', '/fr/');
-        window.location.href = frenchPath;
-    } else if (normalizedPath.startsWith('/tr/')) {
-        // Map Turkish pages to French equivalents
-        const frenchPath = normalizedPath.replace('/tr/', '/fr/');
-        window.location.href = frenchPath;
-    } else {
-        // Map English pages to French equivalents
-        if (normalizedPath === '/' || normalizedPath === '/index.html' || normalizedPath === '') {
-            window.location.href = '/fr/index.html';
-        } else if (normalizedPath.startsWith('/blog/')) {
-            // Handle blog pages - redirect to French blog
-            window.location.href = '/fr/blog/';
-        } else {
-            // Try to find the corresponding page by prepending /fr/
-            // This assumes structure is mirrored
-            window.location.href = '/fr' + normalizedPath;
-        }
     }
+
+    // Extract the page name from current path
+    let pageName = path.split('/').pop() || 'index.html';
+    if (pageName === '' || pageName === 'fr' || pageName === 'tr' || pageName === 'de') {
+        pageName = 'index.html';
+    }
+
+    // Build the French URL
+    window.location.href = origin + '/fr/' + pageName;
 }
 
 // Geolocation-based language detection
