@@ -415,17 +415,6 @@
     </div>
 </nav>
 
-<!-- Breadcrumbs -->
-<div class="bg-base-200 py-3">
-    <div class="container mx-auto container-padding">
-        <div class="breadcrumbs text-sm">
-            <ul>
-                <li><a href="../" class="link link-hover">Home</a></li>
-                <li class="text-base-content/60">Header</li>
-            </ul>
-        </div>
-    </div>
-</div>
 
 <script>
     function toggleMobileMenu() {
@@ -576,11 +565,15 @@
                 </div>
                 <div class="relative aspect-video bg-neutral rounded-3xl overflow-hidden shadow-2xl border border-white/10 group-hover:scale-[1.02] transition-transform duration-500"
                     id="video-container">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 opacity-60"></div>
+                    <!-- Thumbnail Image -->
+                    <img src="./assets/images/expandia managed operations.png"
+                        alt="Expandia Managed Operations" class="absolute inset-0 w-full h-full object-cover">
+                    <!-- Dark Overlay -->
+                    <div class="absolute inset-0 bg-black/30"></div>
                     <!-- Play Button Placeholder -->
                     <div class="absolute inset-0 flex items-center justify-center">
                         <div
-                            class="w-24 h-24 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform duration-300">
+                            class="w-24 h-24 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border-2 border-white/40 group-hover:scale-110 group-hover:bg-white/30 transition-all duration-300 shadow-2xl">
                             <div
                                 class="w-0 h-0 border-t-[15px] border-t-transparent border-l-[25px] border-l-white border-b-[15px] border-b-transparent ml-2">
                             </div>

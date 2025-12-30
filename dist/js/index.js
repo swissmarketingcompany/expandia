@@ -262,9 +262,9 @@ document.addEventListener('DOMContentLoaded', function () {
         if (facade && container) {
             facade.addEventListener('click', function () {
                 const videoId = 'q-G9zgf1twU';
-                // Use YouTube Enhanced Privacy Mode (youtube-nocookie.com)
+                // Use YouTube Enhanced Privacy Mode with minimal UI
                 const iframe = document.createElement('iframe');
-                iframe.setAttribute('src', `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&controls=0&modestbranding=1&rel=0`);
+                iframe.setAttribute('src', `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&cc_load_policy=0&fs=0&disablekb=1`);
                 iframe.setAttribute('frameborder', '0');
                 iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
                 iframe.setAttribute('allowfullscreen', '');
