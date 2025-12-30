@@ -90,32 +90,6 @@
     </style>
 
     
-    <!-- Breadcrumb Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.expandia.ch/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Français",
-      "item": "https://www.expandia.ch/fr/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Speed To Lead"
-    }
-  ]
-}
-</script>
 </head>
 <body class="font-sans">
     <!-- Navigation - Premium Mega Menu -->
@@ -413,9 +387,8 @@
     <div class="container mx-auto container-padding">
         <div class="breadcrumbs text-sm">
             <ul>
-                <li><a href="../" class="link link-hover">Home</a></li>
-                <li><a href="../fr/index.html" class="link link-hover">Français</a></li>
-                <li class="text-base-content/60">Speed To Lead</li>
+                <li><a href="../" class="link link-hover">Accueil</a></li>
+                <li class="text-base-content/60">Header Fr</li>
             </ul>
         </div>
     </div>
@@ -464,6 +437,54 @@
         new MutationObserver(moveBanner).observe(document.body, { childList: true });
     })();
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How quickly can we start working together?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We can typically begin within 1-2 weeks after our initial consultation. We'll set up everything needed and start delivering results quickly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes Expandia different from other agencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We combine deep European market expertise with data-driven strategies and multilingual capabilities. Our team has 8+ years of experience helping businesses scale internationally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with companies of all sizes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we work with startups, SMEs, and enterprise companies. Our solutions are scalable and tailored to your specific business needs and growth stage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your pricing model?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer flexible pricing based on your specific needs and goals. Contact us for a free consultation and custom quote tailored to your business objectives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you measure success?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We focus on measurable KPIs including lead generation, conversion rates, ROI, and revenue impact. You'll receive detailed analytics and regular performance reports."
+      }
+    }
+  ]
+}
+</script>
     
     <!-- Speed to Lead Hero -->
 <section class="section-spacing bg-gradient-to-br from-base-100 via-secondary/10 to-base-200 relative overflow-hidden">
@@ -482,27 +503,28 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                     </svg>
-                    Lightning Fast Response
+                    Réponse Rapide Comme l'Éclair
                 </div>
                 <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
-                    <span class="text-secondary italic">Speed</span>-to-Lead<br>
-                    <span class="text-base-content">Response Engine</span>
+                    Moteur de Réponse<br>
+                    <span class="text-secondary italic">Speed</span>-to-Lead
                 </h1>
                 <p class="text-xl md:text-2xl text-base-content/80 mb-8 leading-relaxed">
-                    Leads go cold in minutes, not hours. We implement the infrastructure to ensure your prospects are
-                    engaged within <span class="text-secondary font-black">under 5 minutes</span>—increasing conversion
-                    by up to 391%.
+                    Les prospects se refroidissent en quelques minutes, pas en quelques heures. Nous mettons en œuvre
+                    l'infrastructure nécessaire pour garantir que vos prospects soient contactés en <span
+                        class="text-secondary font-black">moins de 5 minutes</span> — augmentant la conversion jusqu'à
+                    391 %.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="contact.html"
                         class="btn btn-secondary btn-lg buzz-button px-10 shadow-lg shadow-secondary/25">
-                        Test My Response Time
+                        Tester mon Temps de Réponse
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </a>
-                    <a href="#how" class="btn btn-outline btn-lg">View Infrastructure</a>
+                    <a href="#how" class="btn btn-outline btn-lg">Voir l'Infrastructure</a>
                 </div>
             </div>
 
@@ -520,10 +542,10 @@
     <div class="container mx-auto container-padding">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-                <h2 class="text-3xl md:text-5xl font-black mb-8">The Math of Abandonment</h2>
+                <h2 class="text-3xl md:text-5xl font-black mb-8">Les Chiffres de l'Abandon</h2>
                 <p class="text-lg text-base-content/70 mb-8 font-medium">
-                    Waiting just 30 minutes to respond makes a lead 21x less likely to enter your sales process. In the
-                    modern B2B world, whoever speaks first, wins.
+                    Attendre seulement 30 minutes pour répondre rend un prospect 21 fois moins susceptible d'entrer dans
+                    votre processus de vente. Dans le monde B2B moderne, celui qui parle en premier l'emporte.
                 </p>
 
                 <div class="bg-base-100 p-8 rounded-3xl border-2 border-base-200">
@@ -533,8 +555,9 @@
                             60m
                         </div>
                         <div>
-                            <span class="font-bold text-xl text-red-600">Standard Response</span>
-                            <p class="text-sm text-base-content/60">Lead has already moved to your competitor's site.
+                            <span class="font-bold text-xl text-red-600">Réponse Standard</span>
+                            <p class="text-sm text-base-content/60">Le prospect est déjà passé sur le site de votre
+                                concurrent.
                             </p>
                         </div>
                     </div>
@@ -544,8 +567,9 @@
                             5m
                         </div>
                         <div>
-                            <span class="font-bold text-xl text-green-600">The Expandia Method</span>
-                            <p class="text-sm text-base-content/60">Immediate SMS, Email, or AI-powered voice outreach.
+                            <span class="font-bold text-xl text-green-600">La Méthode Expandia</span>
+                            <p class="text-sm text-base-content/60">Prospection immédiate par SMS, e-mail ou voix
+                                assistée par l'IA.
                             </p>
                         </div>
                     </div>
@@ -555,21 +579,21 @@
             <div class="space-y-6">
                 <div
                     class="buzz-card p-10 bg-gradient-to-br from-secondary/5 to-base-100 shadow-xl border-l-4 border-secondary">
-                    <h4 class="text-4xl font-black text-secondary mb-4">391% Increase</h4>
-                    <p class="text-base-content/60">Average increase in conversion rate when responding in under 5
-                        minutes vs 30 minutes.</p>
+                    <h4 class="text-4xl font-black text-secondary mb-4">Augmentation de 391 %</h4>
+                    <p class="text-base-content/60">Augmentation moyenne du taux de conversion lorsque la réponse est
+                        effectuée en moins de 5 minutes par rapport à 30 minutes.</p>
                 </div>
                 <div
                     class="buzz-card p-10 bg-gradient-to-br from-primary/5 to-base-100 shadow-xl border-l-4 border-primary">
-                    <h4 class="text-2xl font-black text-primary mb-4">AI Voice Hand-off</h4>
-                    <p class="text-base-content/60">Automated appointment booking that happens while the lead is still
-                        on your website.</p>
+                    <h4 class="text-2xl font-black text-primary mb-4">Transfert Vocal IA</h4>
+                    <p class="text-base-content/60">Prise de rendez-vous automatisée qui s'effectue pendant que le
+                        prospect est encore sur votre site Web.</p>
                 </div>
                 <div
                     class="buzz-card p-10 bg-gradient-to-br from-accent/5 to-base-100 shadow-xl border-l-4 border-accent">
-                    <h4 class="text-2xl font-black text-accent mb-4">21x More Likely</h4>
-                    <p class="text-base-content/60">Leads contacted in 5 minutes are 21x more likely to convert than
-                        those contacted in 30 minutes.</p>
+                    <h4 class="text-2xl font-black text-accent mb-4">21x Plus de Chances</h4>
+                    <p class="text-base-content/60">Les prospects contactés en 5 minutes sont 21 fois plus susceptibles
+                        de convertir que ceux contactés en 30 minutes.</p>
                 </div>
             </div>
         </div>
@@ -580,16 +604,16 @@
 <section id="how" class="section-spacing bg-base-200">
     <div class="container mx-auto container-padding">
         <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-3xl md:text-5xl font-black mb-4">Full-Stack Response Infrastructure</h2>
-            <p class="text-lg text-base-content/60">Our three-stage system ensures every lead gets the attention they
-                deserve.</p>
+            <h2 class="text-3xl md:text-5xl font-black mb-4">Infrastructure de Réponse Full-Stack</h2>
+            <p class="text-lg text-base-content/60">Notre système à trois étapes garantit que chaque prospect reçoit
+                l'attention qu'il mérite.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div
                 class="p-10 bg-white rounded-[2rem] shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-20 h-20 bg-primary/5 rounded-bl-[4rem]"></div>
-                <div class="text-primary font-black text-xs uppercase mb-4 tracking-widest">Stage 01</div>
+                <div class="text-primary font-black text-xs uppercase mb-4 tracking-widest">Étape 01</div>
                 <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
                     <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -597,14 +621,14 @@
                         </path>
                     </svg>
                 </div>
-                <h4 class="text-xl font-bold mb-4">Instant Enrichment</h4>
-                <p class="text-base-content/60">As soon as a form is submitted, we pull social data and company history
-                    to prepare the sales team with full context.</p>
+                <h4 class="text-xl font-bold mb-4">Enrichissement Instantané</h4>
+                <p class="text-base-content/60">Dès qu'un formulaire est soumis, nous extrayons les données sociales et
+                    l'historique de l'entreprise pour préparer l'équipe de vente avec tout le contexte nécessaire.</p>
             </div>
             <div
                 class="p-10 bg-white rounded-[2rem] shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-20 h-20 bg-secondary/5 rounded-bl-[4rem]"></div>
-                <div class="text-secondary font-black text-xs uppercase mb-4 tracking-widest">Stage 02</div>
+                <div class="text-secondary font-black text-xs uppercase mb-4 tracking-widest">Étape 02</div>
                 <div class="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center mb-6">
                     <svg class="w-7 h-7 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -612,14 +636,14 @@
                         </path>
                     </svg>
                 </div>
-                <h4 class="text-xl font-bold mb-4">Multi-Channel Blitz</h4>
-                <p class="text-base-content/60">Immediate SMS and Email. If unresponded within 3 mins, we trigger an AI
-                    voice call or Slack alert to your team.</p>
+                <h4 class="text-xl font-bold mb-4">Offensive Multi-Canal</h4>
+                <p class="text-base-content/60">SMS et e-mail immédiats. En l'absence de réponse sous 3 minutes, nous
+                    déclenchons un appel vocal IA ou une alerte Slack pour votre équipe.</p>
             </div>
             <div
                 class="p-10 bg-white rounded-[2rem] shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-20 h-20 bg-accent/5 rounded-bl-[4rem]"></div>
-                <div class="text-accent font-black text-xs uppercase mb-4 tracking-widest">Stage 03</div>
+                <div class="text-accent font-black text-xs uppercase mb-4 tracking-widest">Étape 03</div>
                 <div class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
                     <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -627,9 +651,9 @@
                         </path>
                     </svg>
                 </div>
-                <h4 class="text-xl font-bold mb-4">Live Calendar Sync</h4>
-                <p class="text-base-content/60">Lead is automatically routed to an available AE based on territory and
-                    round-robin logic. Meeting booked instantly.</p>
+                <h4 class="text-xl font-bold mb-4">Sync Calendrier en Temps Réel</h4>
+                <p class="text-base-content/60">Le prospect est automatiquement dirigé vers un AE disponible en fonction
+                    du territoire et d'une logique de répartition équitable. Rendez-vous réservé instantanément.</p>
             </div>
         </div>
     </div>
@@ -645,16 +669,17 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-3xl"></div>
             </div>
             <div>
-                <h2 class="text-3xl md:text-5xl font-black mb-8">What happens when a lead submits?</h2>
+                <h2 class="text-3xl md:text-5xl font-black mb-8">Que se passe-t-il quand un prospect soumet un
+                    formulaire ?</h2>
                 <div class="space-y-6">
                     <div class="flex gap-4">
                         <div
                             class="w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">
                             1</div>
                         <div>
-                            <h4 class="font-bold text-lg mb-1">0-10 seconds</h4>
-                            <p class="text-base-content/60">Form data enriched with LinkedIn, company size, tech stack
-                            </p>
+                            <h4 class="font-bold text-lg mb-1">0-10 secondes</h4>
+                            <p class="text-base-content/60">Données du formulaire enrichies avec LinkedIn, taille
+                                d'entreprise, pile technologique</p>
                         </div>
                     </div>
                     <div class="flex gap-4">
@@ -662,9 +687,9 @@
                             class="w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">
                             2</div>
                         <div>
-                            <h4 class="font-bold text-lg mb-1">10-30 seconds</h4>
-                            <p class="text-base-content/60">Personalized SMS + Email sent with context-aware messaging
-                            </p>
+                            <h4 class="font-bold text-lg mb-1">10-30 secondes</h4>
+                            <p class="text-base-content/60">SMS + E-mail personnalisés envoyés avec une messagerie
+                                adaptée au contexte</p>
                         </div>
                     </div>
                     <div class="flex gap-4">
@@ -672,8 +697,9 @@
                             class="w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">
                             3</div>
                         <div>
-                            <h4 class="font-bold text-lg mb-1">30-60 seconds</h4>
-                            <p class="text-base-content/60">Slack notification to assigned AE with full lead context</p>
+                            <h4 class="font-bold text-lg mb-1">30-60 secondes</h4>
+                            <p class="text-base-content/60">Notification Slack à l'AE (Account Executive) assigné avec
+                                tout le contexte du prospect</p>
                         </div>
                     </div>
                     <div class="flex gap-4">
@@ -681,8 +707,9 @@
                             class="w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">
                             4</div>
                         <div>
-                            <h4 class="font-bold text-lg mb-1">3 minutes (if no response)</h4>
-                            <p class="text-base-content/60">AI voice call initiated to book meeting on the spot</p>
+                            <h4 class="font-bold text-lg mb-1">3 minutes (si pas de réponse)</h4>
+                            <p class="text-base-content/60">Appel vocal IA initié pour prendre rendez-vous sur le champ
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -699,13 +726,61 @@
     </div>
 
     <div class="container mx-auto container-padding text-center relative z-10">
-        <h2 class="text-4xl md:text-5xl font-black mb-6 text-white">Stop Leaking Revenue.</h2>
-        <p class="text-xl text-white/80 mb-10 max-w-2xl mx-auto">We'll set up your speed-to-lead engine in under 7 days.
-            Book a technical demo today.</p>
+        <h2 class="text-4xl md:text-5xl font-black mb-6 text-white">Arrêtez les Pertes de Revenus.</h2>
+        <p class="text-xl text-white/80 mb-10 max-w-2xl mx-auto">Nous mettrons en place votre moteur speed-to-lead en
+            moins de 7 jours. Réservez une démo technique dès aujourd'hui.</p>
         <a href="contact.html"
-            class="btn btn-lg bg-white text-secondary hover:bg-white/90 border-none px-16 shadow-xl">Book Technical
-            Demo</a>
+            class="btn btn-lg bg-white text-secondary hover:bg-white/90 border-none px-16 shadow-xl">Réserver une Démo
+            Technique</a>
     </div>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Dans quel délai pouvons-nous commencer à travailler ensemble ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nous pouvons généralement commencer dans un délai de 1 à 2 semaines après notre consultation initiale. Nous mettrons en place tout le nécessaire pour obtenir des résultats rapidement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qu'est-ce qui différencie Expandia des autres agences ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nous combinons une expertise approfondie du marché européen avec des stratégies axées sur les données et des capacités multilingues. Notre équipe possède plus de 8 ans d'expérience dans l'accompagnement des entreprises pour leur croissance internationale."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Travaillez-vous avec des entreprises de toutes tailles ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, nous travaillons avec des startups, des PME et des grandes entreprises. Nos solutions sont évolutives et adaptées à vos besoins spécifiques et à votre stade de croissance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quel est votre modèle de tarification ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nous proposons une tarification flexible basée sur vos besoins et objectifs spécifiques. Contactez-nous pour une consultation gratuite et un devis personnalisé adapté à votre entreprise."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment mesurez-vous le succès ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nous nous concentrons sur des indicateurs clés (KPI) mesurables, notamment la génération de prospects, les taux de conversion, le ROI et l'impact sur le chiffre d'affaires. Vous recevrez des rapports de performance réguliers."
+      }
+    }
+  ]
+}
+</script>
 </section>
     
     <!-- Footer -->
@@ -869,6 +944,54 @@
     </div>
 </footer>
 <script src="./dist/js/contact.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How quickly can we start working together?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We can typically begin within 1-2 weeks after our initial consultation. We'll set up everything needed and start delivering results quickly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes Expandia different from other agencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We combine deep European market expertise with data-driven strategies and multilingual capabilities. Our team has 8+ years of experience helping businesses scale internationally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with companies of all sizes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we work with startups, SMEs, and enterprise companies. Our solutions are scalable and tailored to your specific business needs and growth stage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your pricing model?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer flexible pricing based on your specific needs and goals. Contact us for a free consultation and custom quote tailored to your business objectives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you measure success?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We focus on measurable KPIs including lead generation, conversion rates, ROI, and revenue impact. You'll receive detailed analytics and regular performance reports."
+      }
+    }
+  ]
+}
+</script>
     
     <script src="../dist/js/index.js"></script>
     
@@ -922,53 +1045,5 @@
     </script>
 
     
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How quickly can we start working together?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We can typically begin within 1-2 weeks after our initial consultation. We'll set up everything needed and start delivering results quickly."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What makes Expandia different from other agencies?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We combine deep European market expertise with data-driven strategies and multilingual capabilities. Our team has 8+ years of experience helping businesses scale internationally."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you work with companies of all sizes?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, we work with startups, SMEs, and enterprise companies. Our solutions are scalable and tailored to your specific business needs and growth stage."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is your pricing model?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We offer flexible pricing based on your specific needs and goals. Contact us for a free consultation and custom quote tailored to your business objectives."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do you measure success?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We focus on measurable KPIs including lead generation, conversion rates, ROI, and revenue impact. You'll receive detailed analytics and regular performance reports."
-      }
-    }
-  ]
-}
-</script>
 </body>
 </html>

@@ -90,32 +90,6 @@
     </style>
 
     
-    <!-- Breadcrumb Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.expandia.ch/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Deutsch",
-      "item": "https://www.expandia.ch/de/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Website Care Plans"
-    }
-  ]
-}
-</script>
 </head>
 <body class="font-sans">
     <!-- Navigation - Premium Mega Menu -->
@@ -412,9 +386,8 @@
     <div class="container mx-auto container-padding">
         <div class="breadcrumbs text-sm">
             <ul>
-                <li><a href="../" class="link link-hover">Home</a></li>
-                <li><a href="../de/index.html" class="link link-hover">Deutsch</a></li>
-                <li class="text-base-content/60">Website Care Plans</li>
+                <li><a href="../" class="link link-hover">Startseite</a></li>
+                <li class="text-base-content/60">Header De</li>
             </ul>
         </div>
     </div>
@@ -463,22 +436,71 @@
         new MutationObserver(moveBanner).observe(document.body, { childList: true });
     })();
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How quickly can we start working together?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We can typically begin within 1-2 weeks after our initial consultation. We'll set up everything needed and start delivering results quickly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes Expandia different from other agencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We combine deep European market expertise with data-driven strategies and multilingual capabilities. Our team has 8+ years of experience helping businesses scale internationally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with companies of all sizes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we work with startups, SMEs, and enterprise companies. Our solutions are scalable and tailored to your specific business needs and growth stage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your pricing model?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer flexible pricing based on your specific needs and goals. Kontakt us for a free consultation and custom quote tailored to your business objectives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you measure success?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We focus on measurable KPIs including lead generation, conversion rates, ROI, and revenue impact. You'll receive detailed analytics and regular performance reports."
+      }
+    }
+  ]
+}
+</script>
     
-    <!-- Website Care Header -->
+    <!-- Website-Pflege Header -->
 <section class="section-spacing bg-gradient-to-br from-base-100 via-accent/5 to-base-200">
     <div class="container mx-auto container-padding">
         <div class="max-w-4xl mx-auto text-center animate-fade-in">
             <h1 class="text-4xl md:text-6xl font-black mb-6">
-                <span class="text-accent underline decoration-primary/30">Website Care</span><br>
-                <span class="text-base-content">& Performance Plans</span>
+                <span class="text-accent underline decoration-primary/30">Website-Pflege</span><br>
+                <span class="text-base-content">& Performance-Pläne</span>
             </h1>
             <p class="text-xl md:text-2xl text-base-content/80 mb-8 leading-relaxed">
-                Your website is your most valuable 24/7 salesperson. We keep it fast, secure, and fully optimized while
-                you focus on closing deals.
+                Ihre Website ist Ihr wertvollster Verkäufer – rund um die Uhr. Wir halten sie schnell, sicher und voll
+                optimiert,
+                während Sie sich auf den Geschäftsabschluss konzentrieren.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#pricing" class="btn btn-accent btn-lg buzz-button">Compare Plans</a>
-                <a href="#contact" class="btn btn-outline btn-lg">Get Free Speed Audit</a>
+                <a href="#pricing" class="btn btn-accent btn-lg buzz-button px-6">Pläne vergleichen</a>
+                <a href="#contact" class="btn btn-outline btn-lg px-6">Kostenlose Geschwindigkeitsanalyse</a>
             </div>
         </div>
     </div>
@@ -493,36 +515,36 @@
                     <lord-icon src="https://cdn.lordicon.com/vxpbiwni.json" trigger="loop" delay="2000"
                         colors="primary:#e86100,secondary:#f9c23c" style="width:32px;height:32px"></lord-icon>
                 </div>
-                <h3 class="text-xl font-bold mb-3">Real-time Security</h3>
-                <p class="text-sm text-base-content/70">WAF protection, malware scanning, and immediate hack recovery
-                    guarantee.</p>
+                <h3 class="text-xl font-bold mb-3">Echtzeit-Sicherheit</h3>
+                <p class="text-sm text-base-content/70">WAF-Schutz, Malware-Scanning und sofortige Garantie zur
+                    Wiederherstellung nach Hacks.</p>
             </div>
             <div class="p-8 bg-base-200 rounded-3xl hover:bg-white hover:shadow-2xl transition-all duration-300">
                 <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-6 text-primary">
                     <lord-icon src="https://cdn.lordicon.com/kvsszuvz.json" trigger="loop" delay="2500"
                         colors="primary:#f9c23c,secondary:#e86100" style="width:32px;height:32px"></lord-icon>
                 </div>
-                <h3 class="text-xl font-bold mb-3">Daily Backups</h3>
-                <p class="text-sm text-base-content/70">Encrypted off-site backups with one-click restore functionality.
-                </p>
+                <h3 class="text-xl font-bold mb-3">Tägliche Backups</h3>
+                <p class="text-sm text-base-content/70">Verschlüsselte Off-Site-Backups mit
+                    One-Click-Wiederherstellungsfunktion.</p>
             </div>
             <div class="p-8 bg-base-200 rounded-3xl hover:bg-white hover:shadow-2xl transition-all duration-300">
                 <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center mb-6 text-secondary">
                     <lord-icon src="https://cdn.lordicon.com/fptaeqqh.json" trigger="loop" delay="3000"
                         colors="primary:#e86100,secondary:#f9c23c" style="width:32px;height:32px"></lord-icon>
                 </div>
-                <h3 class="text-xl font-bold mb-3">Core Speed</h3>
-                <p class="text-sm text-base-content/70">Vitals optimization, caching, and CDN management for lightning
-                    loads.</p>
+                <h3 class="text-xl font-bold mb-3">Core-Performance</h3>
+                <p class="text-sm text-base-content/70">Core-Web-Vitals-Optimierung, Caching und CDN-Management für
+                    blitzschnelle Ladezeiten.</p>
             </div>
             <div class="p-8 bg-base-200 rounded-3xl hover:bg-white hover:shadow-2xl transition-all duration-300">
                 <div class="w-12 h-12 bg-neutral/20 rounded-xl flex items-center justify-center mb-6 text-neutral">
                     <lord-icon src="https://cdn.lordicon.com/msetevov.json" trigger="loop" delay="3500"
                         colors="primary:#e86100,secondary:#f9c23c" style="width:32px;height:32px"></lord-icon>
                 </div>
-                <h3 class="text-xl font-bold mb-3">Admin Support</h3>
-                <p class="text-sm text-base-content/70">Unlimited minor content updates and expert platform technical
-                    support.</p>
+                <h3 class="text-xl font-bold mb-3">Admin-Support</h3>
+                <p class="text-sm text-base-content/70">Unbegrenzte kleinere Inhalts-Updates und fachkundiger
+                    technischer Support für die Plattform.</p>
             </div>
         </div>
     </div>
@@ -532,49 +554,47 @@
 <section id="pricing" class="section-spacing bg-base-200">
     <div class="container mx-auto container-padding">
         <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-black mb-4">Maintenance Packages</h2>
-            <p class="text-lg text-base-content/60">Choose the right level of support for your business needs.</p>
+            <h2 class="text-4xl md:text-5xl font-black mb-4">Wartungspakete</h2>
+            <p class="text-lg text-base-content/60">Wählen Sie das passende Support-Level für Ihre geschäftlichen
+                Anforderungen.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <!-- Basic Plan -->
             <div class="buzz-card bg-white p-10 flex flex-col shadow-lg border border-base-300">
-                <h4 class="text-xl font-bold mb-2">Essential Care</h4>
-                <div class="text-3xl font-black text-base-content mb-6">$199<span
-                        class="text-sm font-normal text-base-content/60">/mo</span></div>
+                <h4 class="text-xl font-bold mb-2 text-base-content">Essential Care</h4>
                 <ul class="space-y-4 mb-10 flex-grow">
-                    <li class="flex items-center gap-2 text-sm"><span class="text-primary font-bold">✓</span> Daily
-                        Cloud Backups</li>
-                    <li class="flex items-center gap-2 text-sm"><span class="text-primary font-bold">✓</span> Security
-                        Patching</li>
-                    <li class="flex items-center gap-2 text-sm"><span class="text-primary font-bold">✓</span> SSL
-                        Monitoring</li>
-                    <li class="flex items-center gap-2 text-sm"><span class="text-primary font-bold">✓</span> Bi-weekly
-                        Performance Scan</li>
+                    <li class="flex items-center gap-2 text-sm"><span class="text-primary font-bold">✓</span> Tägliche
+                        Cloud-Backups</li>
+                    <li class="flex items-center gap-2 text-sm"><span class="text-primary font-bold">✓</span>
+                        Sicherheitspatches</li>
+                    <li class="flex items-center gap-2 text-sm"><span class="text-primary font-bold">✓</span>
+                        SSL-Überwachung</li>
+                    <li class="flex items-center gap-2 text-sm"><span class="text-primary font-bold">✓</span>
+                        Zweiwöchentlicher Performance-Scan</li>
                 </ul>
                 <a href="contact.html?plan=essential-care"
-                    class="btn btn-outline btn-block text-accent border-accent hover:bg-accent hover:border-accent">Get
-                    Started</a>
+                    class="btn btn-outline btn-block text-accent border-accent hover:bg-accent hover:border-accent">Jetzt
+                    starten</a>
             </div>
 
             <!-- Pro Plan -->
             <div class="buzz-card bg-primary p-10 flex flex-col shadow-2xl scale-105 relative z-10 text-white">
                 <div
                     class="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-widest">
-                    Most Popular</div>
+                    AM BELIEBTESTEN</div>
                 <h4 class="text-xl font-bold mb-2">Business Growth</h4>
-                <div class="text-3xl font-black mb-6">$499<span class="text-sm font-normal opacity-70">/mo</span></div>
                 <ul class="space-y-4 mb-10 flex-grow">
-                    <li class="flex items-center gap-2 text-sm"><span class="text-white font-bold">✓</span> All
-                        Essential Features</li>
-                    <li class="flex items-center gap-2 text-sm"><span class="text-white font-bold">✓</span> Core Web
-                        Vitals Optimization</li>
-                    <li class="flex items-center gap-2 text-sm"><span class="text-white font-bold">✓</span> 2 Hours
-                        Monthly Content Support</li>
-                    <li class="flex items-center gap-2 text-sm"><span class="text-white font-bold">✓</span> Dedicated
-                        Account Manager</li>
-                    <li class="flex items-center gap-2 text-sm"><span class="text-white font-bold">✓</span> Priority
-                        Tech Support (4h SLA)</li>
+                    <li class="flex items-center gap-2 text-sm"><span class="text-white font-bold">✓</span> Alle
+                        Essential-Funktionen</li>
+                    <li class="flex items-center gap-2 text-sm"><span class="text-white font-bold">✓</span>
+                        Core-Web-Vitals-Optimierung</li>
+                    <li class="flex items-center gap-2 text-sm"><span class="text-white font-bold">✓</span> 2 Stunden
+                        monatliche Inhalts-Unterstützung</li>
+                    <li class="flex items-center gap-2 text-sm"><span class="text-white font-bold">✓</span> Dedizierter
+                        Account-Manager</li>
+                    <li class="flex items-center gap-2 text-sm"><span class="text-white font-bold">✓</span>
+                        Priorisierter Tech-Support (4h SLA)</li>
                 </ul>
                 <a href="contact.html?plan=business-growth"
                     class="btn btn-white btn-block text-primary border-none shadow-lg">Jetzt starten</a>
@@ -582,19 +602,18 @@
 
             <!-- Enterprise Plan -->
             <div class="buzz-card bg-white p-10 flex flex-col shadow-lg border border-base-300">
-                <h4 class="text-xl font-bold mb-2">Enterprise Plus</h4>
-                <div class="text-3xl font-black text-base-content mb-6">Custom</div>
+                <h4 class="text-xl font-bold mb-2 text-base-content">Enterprise Plus</h4>
                 <ul class="space-y-4 mb-10 flex-grow">
-                    <li class="flex items-center gap-2 text-sm"><span class="text-primary font-bold">✓</span> Full
-                        White-Glove Mgmt</li>
-                    <li class="flex items-center gap-2 text-sm"><span class="text-primary font-bold">✓</span> Global CDN
-                        Integration</li>
                     <li class="flex items-center gap-2 text-sm"><span class="text-primary font-bold">✓</span>
-                        Multi-region Uptime Monitoring</li>
-                    <li class="flex items-center gap-2 text-sm"><span class="text-primary font-bold">✓</span> Custom
-                        Development Hours</li>
+                        Vollständiges White-Glove-Management</li>
+                    <li class="flex items-center gap-2 text-sm"><span class="text-primary font-bold">✓</span> Globale
+                        CDN-Integration</li>
+                    <li class="flex items-center gap-2 text-sm"><span class="text-primary font-bold">✓</span>
+                        Multi-Region Uptime-Überwachung</li>
+                    <li class="flex items-center gap-2 text-sm"><span class="text-primary font-bold">✓</span>
+                        Individuelle Entwicklungsstunden</li>
                 </ul>
-                <a href="contact.html?plan=enterprise" class="btn btn-outline btn-block">Inquire Now</a>
+                <a href="contact.html?plan=enterprise" class="btn btn-outline btn-block">Jetzt anfragen</a>
             </div>
         </div>
     </div>
@@ -604,12 +623,62 @@
 <section id="contact" class="section-spacing bg-base-100">
     <div class="container mx-auto container-padding text-center">
         <div class="max-w-2xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-black mb-6">Need a custom speed audit first?</h2>
-            <p class="text-lg text-base-content/70 mb-10">We'll analyze your current site performance, mobile vitals,
-                and security profile—completely free of charge.</p>
-            <a href="contact.html" class="btn btn-primary btn-lg buzz-button px-10">Get My Free Audit</a>
+            <h2 class="text-3xl md:text-4xl font-black mb-6">Benötigen Sie zuerst ein individuelles Speed-Audit?</h2>
+            <p class="text-lg text-base-content/70 mb-10">Wir analysieren Ihre aktuelle Website-Performance, die mobilen
+                Core Web Vitals
+                und das Sicherheitsprofil – komplett kostenlos.</p>
+            <a href="contact.html" class="btn btn-primary btn-lg buzz-button px-10 text-white">Mein kostenloses Audit
+                anfordern</a>
         </div>
     </div>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie schnell können wir mit der Zusammenarbeit beginnen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In der Regel können wir innerhalb von 1-2 Wochen nach unserem ersten Beratungsgespräch beginnen. Wir richten alles Notwendige ein und liefern schnell erste Ergebnisse."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was unterscheidet Expandia von anderen Agenturen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wir kombinieren tiefgreifende Expertise im europäischen Markt mit datengesteuerten Strategien und mehrsprachigen Kapazitäten. Unser Team verfügt über mehr als 8 Jahre Erfahrung in der internationalen Skalierung von Unternehmen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Arbeiten Sie mit Unternehmen jeder Größe zusammen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, wir arbeiten mit Startups, KMUs und Großunternehmen zusammen. Unsere Lösungen sind skalierbar und auf Ihre spezifischen geschäftlichen Anforderungen und Wachstumsphasen zugeschnitten."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie sieht Ihr Preismodell aus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wir bieten flexible Preise basierend auf Ihren spezifischen Bedürfnissen und Zielen. Kontaktieren Sie uns für eine kostenlose Beratung und ein individuelles Angebot, das auf Ihre Geschäftsziele zugeschnitten ist."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie messen Sie den Erfolg?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wir konzentrieren uns auf messbare KPIs wie Lead-Generierung, Konversionsraten, ROI und Auswirkungen auf den Umsatz. Sie erhalten detaillierte Analysen und regelmäßige Leistungsberichte."
+      }
+    }
+  ]
+}
+</script>
 </section>
     
     <!-- Footer -->
@@ -773,6 +842,54 @@
     </div>
 </footer>
 <script src="./dist/js/contact.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How quickly can we start working together?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We can typically begin within 1-2 weeks after our initial consultation. We'll set up everything needed and start delivering results quickly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes Expandia different from other agencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We combine deep European market expertise with data-driven strategies and multilingual capabilities. Our team has 8+ years of experience helping businesses scale internationally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with companies of all sizes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we work with startups, SMEs, and enterprise companies. Our solutions are scalable and tailored to your specific business needs and growth stage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your pricing model?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer flexible pricing based on your specific needs and goals. Kontakt us for a free consultation and custom quote tailored to your business objectives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you measure success?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We focus on measurable KPIs including lead generation, conversion rates, ROI, and revenue impact. You'll receive detailed analytics and regular performance reports."
+      }
+    }
+  ]
+}
+</script>
     
     <script src="../dist/js/index.js"></script>
     
@@ -826,53 +943,5 @@
     </script>
 
     
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How quickly can we start working together?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We can typically begin within 1-2 weeks after our initial consultation. We'll set up everything needed and start delivering results quickly."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What makes Expandia different from other agencies?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We combine deep European market expertise with data-driven strategies and multilingual capabilities. Our team has 8+ years of experience helping businesses scale internationally."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you work with companies of all sizes?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, we work with startups, SMEs, and enterprise companies. Our solutions are scalable and tailored to your specific business needs and growth stage."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is your pricing model?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We offer flexible pricing based on your specific needs and goals. Contact us for a free consultation and custom quote tailored to your business objectives."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do you measure success?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We focus on measurable KPIs including lead generation, conversion rates, ROI, and revenue impact. You'll receive detailed analytics and regular performance reports."
-      }
-    }
-  ]
-}
-</script>
 </body>
 </html>

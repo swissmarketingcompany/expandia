@@ -90,26 +90,6 @@
     </style>
 
     
-    <!-- Breadcrumb Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.expandia.ch/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Recruitment"
-    }
-  ]
-}
-</script>
 </head>
 <body class="font-sans">
     <!-- Navigation - Premium Mega Menu -->
@@ -441,7 +421,7 @@
         <div class="breadcrumbs text-sm">
             <ul>
                 <li><a href="../" class="link link-hover">Home</a></li>
-                <li class="text-base-content/60">Recruitment</li>
+                <li class="text-base-content/60">Header</li>
             </ul>
         </div>
     </div>
@@ -509,6 +489,54 @@
         new MutationObserver(moveBanner).observe(document.body, { childList: true });
     })();
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How quickly can we start working together?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We can typically begin within 1-2 weeks after our initial consultation. We'll set up everything needed and start delivering results quickly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes Expandia different from other agencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We combine deep European market expertise with data-driven strategies and multilingual capabilities. Our team has 8+ years of experience helping businesses scale internationally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with companies of all sizes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we work with startups, SMEs, and enterprise companies. Our solutions are scalable and tailored to your specific business needs and growth stage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your pricing model?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer flexible pricing based on your specific needs and goals. Contact us for a free consultation and custom quote tailored to your business objectives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you measure success?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We focus on measurable KPIs including lead generation, conversion rates, ROI, and revenue impact. You'll receive detailed analytics and regular performance reports."
+      }
+    }
+  ]
+}
+</script>
     
     <!-- Recruitment Hero -->
 <section class="section-spacing bg-gradient-to-br from-base-100 via-accent/5 to-white relative overflow-hidden">
@@ -532,14 +560,14 @@
                 </h1>
                 <p class="text-xl md:text-2xl text-base-content/80 mb-10 leading-relaxed">
                     We bridge the gap between world-class talent and high-growth companies. Precision headhunting,
-                    compliant staffing, and executive assistance—all in one place.
+                    compliant staffing, and sales operations—all in one place.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-6">
                     <a href="#headhunting"
                         class="btn btn-primary btn-lg buzz-button px-10 shadow-lg shadow-primary/25">Hire Top Talent</a>
                     <a href="#va"
-                        class="btn btn-outline btn-lg px-10 border-accent text-accent hover:bg-accent hover:border-accent hover:text-white">Find
-                        a VA</a>
+                        class="btn btn-outline btn-lg px-10 border-accent text-accent hover:bg-accent hover:border-accent hover:text-white">Hire
+                        Sales Agents</a>
                 </div>
             </div>
 
@@ -608,36 +636,6 @@
                         <span class="font-bold">Product Managers</span>
                     </div>
                 </div>
-                <blockquote
-                    class="border-l-4 border-secondary p-6 bg-secondary/5 rounded-r-2xl italic text-base-content/70">
-                    "Expandia reduced our time-to-hire by 60% for a critical CTO role. Their candidate quality was
-                    unmatched."
-                    <p class="text-sm font-bold mt-2 text-secondary">— VP of Engineering, Series B Startup</p>
-                </blockquote>
-            </div>
-            <div class="lg:w-1/2">
-                <div class="grid grid-cols-2 gap-4">
-                    <div
-                        class="aspect-square bg-base-100 rounded-3xl p-8 flex flex-col justify-end transform hover:scale-105 transition-transform shadow-lg">
-                        <div class="text-5xl font-black text-primary mb-2">95%</div>
-                        <p class="text-sm font-bold text-base-content/60 uppercase">Placement Rate</p>
-                    </div>
-                    <div
-                        class="aspect-square bg-primary rounded-3xl p-8 flex flex-col justify-end text-white transform hover:scale-105 transition-transform shadow-xl">
-                        <div class="text-5xl font-black mb-2">21d</div>
-                        <p class="text-sm font-bold opacity-80 uppercase">Avg. Time to Fill</p>
-                    </div>
-                    <div
-                        class="aspect-square bg-secondary rounded-3xl p-8 flex flex-col justify-end text-white transform hover:scale-105 transition-transform shadow-xl">
-                        <div class="text-5xl font-black mb-2">300+</div>
-                        <p class="text-sm font-bold opacity-80 uppercase">Active Network</p>
-                    </div>
-                    <div
-                        class="aspect-square bg-base-100 rounded-3xl p-8 flex flex-col justify-end transform hover:scale-105 transition-transform shadow-lg">
-                        <div class="text-5xl font-black text-accent mb-2">12mo</div>
-                        <p class="text-sm font-bold text-base-content/60 uppercase">Retention Guarantee</p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -692,7 +690,7 @@
     </div>
 </section>
 
-<!-- Executive Virtual Assistance -->
+<!-- Sales Agents -->
 <section id="va" class="section-spacing bg-white">
     <div class="container mx-auto container-padding">
         <div class="flex flex-col lg:flex-row-reverse gap-16 items-center">
@@ -703,13 +701,13 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                     </svg>
-                    Executive VA
+                    Sales Agents
                 </div>
-                <h2 class="text-3xl md:text-5xl font-black mb-8 leading-tight">Scale your focus, not your inbox.</h2>
+                <h2 class="text-3xl md:text-5xl font-black mb-8 leading-tight">Build your sales team, fast.</h2>
                 <p class="text-lg text-base-content/70 mb-8 leading-relaxed">
-                    Our Executive Virtual Assistants are not just "helpers"—they are business operators trained to think
-                    like founders. From managing CRM data to coordinating complex travel, they provide the breathing
-                    room you need to lead.
+                    Our Sales Agents are performance-driven professionals trained to convert leads into customers. From
+                    cold outreach to deal closing, they bring the hustle and expertise needed to scale your revenue
+                    without the overhead of full-time hires.
                 </p>
                 <div class="space-y-4 mb-10">
                     <div class="flex items-start gap-4 p-5 rounded-2xl hover:bg-base-100 transition-colors">
@@ -721,9 +719,9 @@
                             </svg>
                         </div>
                         <div>
-                            <span class="font-bold text-lg">Email & Calendar Management</span>
-                            <p class="text-sm text-base-content/60">Inbox triage and scheduling that respects your
-                                priorities.</p>
+                            <span class="font-bold text-lg">Outbound Lead Generation</span>
+                            <p class="text-sm text-base-content/60">Proactive prospecting and cold outreach to fill your
+                                pipeline.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4 p-5 rounded-2xl hover:bg-base-100 transition-colors">
@@ -735,9 +733,9 @@
                             </svg>
                         </div>
                         <div>
-                            <span class="font-bold text-lg">Lead Gen & CRM Ops</span>
-                            <p class="text-sm text-base-content/60">Keeping your pipeline clean and your data up to
-                                date.</p>
+                            <span class="font-bold text-lg">Qualification & Discovery Calls</span>
+                            <p class="text-sm text-base-content/60">Pre-qualify leads and conduct discovery to warm them
+                                up for closers.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4 p-5 rounded-2xl hover:bg-base-100 transition-colors">
@@ -749,19 +747,19 @@
                             </svg>
                         </div>
                         <div>
-                            <span class="font-bold text-lg">Special Projects & Research</span>
-                            <p class="text-sm text-base-content/60">Deep-dive market analysis and administrative
-                                heavy-lifting.</p>
+                            <span class="font-bold text-lg">Deal Closing & Follow-ups</span>
+                            <p class="text-sm text-base-content/60">Persistent follow-through to convert opportunities
+                                into revenue.</p>
                         </div>
                     </div>
                 </div>
                 <a href="contact.html"
-                    class="btn btn-accent btn-lg buzz-button text-white shadow-lg shadow-accent/25">Hire an Executive
-                    VA</a>
+                    class="btn btn-accent btn-lg buzz-button text-white shadow-lg shadow-accent/25">Hire Sales
+                    Agents</a>
             </div>
             <div class="lg:w-1/2">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80"
-                    alt="Executive Virtual Assistant" class="rounded-3xl shadow-2xl w-full object-cover aspect-[4/5]">
+                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80" alt="Sales Team"
+                    class="rounded-3xl shadow-2xl w-full object-cover aspect-[4/5]">
             </div>
         </div>
     </div>
@@ -780,11 +778,59 @@
     <div class="container mx-auto container-padding text-center relative z-10">
         <h2 class="text-4xl md:text-5xl font-black mb-8 text-white">Scale Your Organization Effortlessly</h2>
         <p class="text-xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Whether you need a single executive assistant or a full regional sales team, Expandia handles the complexity
+            Whether you need a dedicated sales agent or a full regional sales team, Expandia handles the complexity
             of global hiring.
         </p>
         <a href="contact.html" class="btn btn-primary btn-lg buzz-button px-16 shadow-xl">Start Hiring Now</a>
     </div>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How quickly can we start working together?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We can typically begin within 1-2 weeks after our initial consultation. We'll set up everything needed and start delivering results quickly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes Expandia different from other agencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We combine deep European market expertise with data-driven strategies and multilingual capabilities. Our team has 8+ years of experience helping businesses scale internationally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with companies of all sizes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we work with startups, SMEs, and enterprise companies. Our solutions are scalable and tailored to your specific business needs and growth stage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your pricing model?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer flexible pricing based on your specific needs and goals. Contact us for a free consultation and custom quote tailored to your business objectives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you measure success?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We focus on measurable KPIs including lead generation, conversion rates, ROI, and revenue impact. You'll receive detailed analytics and regular performance reports."
+      }
+    }
+  ]
+}
+</script>
 </section>
     
     <!-- Footer -->
@@ -947,6 +993,54 @@
 </footer>
 <script src="./dist/js/contact.js"></script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How quickly can we start working together?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We can typically begin within 1-2 weeks after our initial consultation. We'll set up everything needed and start delivering results quickly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes Expandia different from other agencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We combine deep European market expertise with data-driven strategies and multilingual capabilities. Our team has 8+ years of experience helping businesses scale internationally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with companies of all sizes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we work with startups, SMEs, and enterprise companies. Our solutions are scalable and tailored to your specific business needs and growth stage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your pricing model?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer flexible pricing based on your specific needs and goals. Contact us for a free consultation and custom quote tailored to your business objectives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you measure success?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We focus on measurable KPIs including lead generation, conversion rates, ROI, and revenue impact. You'll receive detailed analytics and regular performance reports."
+      }
+    }
+  ]
+}
+</script>
     
     <script src="./dist/js/index.js"></script>
     
@@ -1000,53 +1094,5 @@
     </script>
 
     
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How quickly can we start working together?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We can typically begin within 1-2 weeks after our initial consultation. We'll set up everything needed and start delivering results quickly."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What makes Expandia different from other agencies?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We combine deep European market expertise with data-driven strategies and multilingual capabilities. Our team has 8+ years of experience helping businesses scale internationally."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you work with companies of all sizes?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, we work with startups, SMEs, and enterprise companies. Our solutions are scalable and tailored to your specific business needs and growth stage."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is your pricing model?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We offer flexible pricing based on your specific needs and goals. Contact us for a free consultation and custom quote tailored to your business objectives."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do you measure success?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We focus on measurable KPIs including lead generation, conversion rates, ROI, and revenue impact. You'll receive detailed analytics and regular performance reports."
-      }
-    }
-  ]
-}
-</script>
 </body>
 </html>

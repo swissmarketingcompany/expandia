@@ -1,6 +1,6 @@
 // Index Page JavaScript - Button Functionality and Interactions
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
     // Smooth scroll for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Main CTA button
         const heroConsultationBtn = document.querySelector('.credit-badge');
         if (heroConsultationBtn) {
-            heroConsultationBtn.addEventListener('click', function(e) {
+            heroConsultationBtn.addEventListener('click', function (e) {
                 e.preventDefault();
                 window.location.href = 'contact.html';
             });
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // View Our Work button
         const viewWorkBtn = document.querySelector('.btn-outline.btn-neutral');
         if (viewWorkBtn) {
-            viewWorkBtn.addEventListener('click', function(e) {
+            viewWorkBtn.addEventListener('click', function (e) {
                 e.preventDefault();
                 window.location.href = 'case-studies.html';
             });
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const solutionButtons = document.querySelectorAll('.service-card .btn');
 
         solutionButtons.forEach((button, index) => {
-            button.addEventListener('click', function(e) {
+            button.addEventListener('click', function (e) {
                 e.preventDefault();
                 // Navigate to solutions page with specific anchor
                 const solutionAnchors = [
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Book Free Consultation button
             if (ctaButtons[0]) {
-                ctaButtons[0].addEventListener('click', function(e) {
+                ctaButtons[0].addEventListener('click', function (e) {
                     e.preventDefault();
                     window.location.href = 'contact.html';
                 });
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // View Our Solutions button
             if (ctaButtons[1]) {
-                ctaButtons[1].addEventListener('click', function(e) {
+                ctaButtons[1].addEventListener('click', function (e) {
                     e.preventDefault();
                     window.location.href = 'solutions.html';
                 });
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function setupDemoButton() {
         const demoButton = document.querySelector('button[class*="text-xs text-primary"]');
         if (demoButton) {
-            demoButton.addEventListener('click', function() {
+            demoButton.addEventListener('click', function () {
                 console.log('Demo details button clicked');
                 // Show a modal or navigate to a demo page
                 showDemoModal();
@@ -143,11 +143,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
         `;
-        
+
         document.body.appendChild(modal);
-        
+
         // Close modal when clicking outside
-        modal.addEventListener('click', function(e) {
+        modal.addEventListener('click', function (e) {
             if (e.target === modal) {
                 modal.remove();
             }
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function setupFooterButton() {
         const footerButton = document.querySelector('footer .btn-primary');
         if (footerButton) {
-            footerButton.addEventListener('click', function(e) {
+            footerButton.addEventListener('click', function (e) {
                 e.preventDefault();
                 window.location.href = 'contact.html';
             });
@@ -190,12 +190,12 @@ document.addEventListener('DOMContentLoaded', function() {
     function setupButtonEffects() {
         const buttons = document.querySelectorAll('.buzz-button, .credit-badge');
         buttons.forEach(button => {
-            button.addEventListener('mouseenter', function() {
+            button.addEventListener('mouseenter', function () {
                 this.style.transform = 'translateY(-2px)';
                 this.style.boxShadow = '0 8px 25px rgba(249, 194, 60, 0.3)';
             });
-            
-            button.addEventListener('mouseleave', function() {
+
+            button.addEventListener('mouseleave', function () {
                 this.style.transform = 'translateY(0)';
                 this.style.boxShadow = '';
             });
@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function setupClickFeedback() {
         const allButtons = document.querySelectorAll('button, .btn, a.btn');
         allButtons.forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function () {
                 // Add a subtle click animation
                 this.style.transform = 'scale(0.95)';
                 setTimeout(() => {
@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const industryCards = document.querySelectorAll('.buzz-card[class*="hover:scale-105"]');
         industryCards.forEach((card, index) => {
             card.style.cursor = 'pointer';
-            card.addEventListener('click', function() {
+            card.addEventListener('click', function () {
                 window.location.href = 'industries.html';
             });
         });
@@ -230,12 +230,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Process cards - add hover effects
         const processCards = document.querySelectorAll('.buzz-card[class*="relative"]');
         processCards.forEach(card => {
-            card.addEventListener('mouseenter', function() {
+            card.addEventListener('mouseenter', function () {
                 this.style.transform = 'translateY(-5px)';
                 this.style.boxShadow = '0 10px 30px rgba(249, 194, 60, 0.2)';
             });
 
-            card.addEventListener('mouseleave', function() {
+            card.addEventListener('mouseleave', function () {
                 this.style.transform = 'translateY(0)';
                 this.style.boxShadow = '';
             });
@@ -244,20 +244,47 @@ document.addEventListener('DOMContentLoaded', function() {
         // Testimonial cards - add subtle hover effects
         const testimonialCards = document.querySelectorAll('.testimonial-card');
         testimonialCards.forEach(card => {
-            card.addEventListener('mouseenter', function() {
+            card.addEventListener('mouseenter', function () {
                 this.style.transform = 'scale(1.02)';
             });
 
-            card.addEventListener('mouseleave', function() {
+            card.addEventListener('mouseleave', function () {
                 this.style.transform = 'scale(1)';
             });
         });
+    }
+
+    // Video Facade Functionality
+    function setupVideoFacade() {
+        const facade = document.getElementById('hero-video-facade');
+        const container = document.getElementById('video-container');
+
+        if (facade && container) {
+            facade.addEventListener('click', function () {
+                const videoId = 'q-G9zgf1twU';
+                // Use YouTube Enhanced Privacy Mode (youtube-nocookie.com)
+                const iframe = document.createElement('iframe');
+                iframe.setAttribute('src', `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&controls=0&modestbranding=1&rel=0`);
+                iframe.setAttribute('frameborder', '0');
+                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                iframe.setAttribute('allowfullscreen', '');
+                iframe.className = 'absolute inset-0 w-full h-full rounded-3xl';
+
+                // Clear container and append iframe
+                container.innerHTML = '';
+                container.appendChild(iframe);
+
+                // Remove pointer cursor
+                facade.style.cursor = 'default';
+            }, { once: true });
+        }
     }
 
     // Initialize all functionality
     function init() {
         setupLanguageSwitching();
         setupHeroButtons();
+        setupVideoFacade();
         setupSolutionButtons();
         setupCTAButtons();
         setupDemoButton();
@@ -266,7 +293,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setupButtonEffects();
         setupClickFeedback();
         setupAdditionalButtons();
-        
+
     }
 
     // Start the initialization
@@ -290,31 +317,31 @@ function trackButtonClick(buttonName) {
 document.addEventListener('DOMContentLoaded', () => {
     const carousel = document.querySelector('.logo-carousel');
     const track = document.querySelector('.logo-track');
-    
+
     if (carousel && track) {
         // Pause animation on hover
         carousel.addEventListener('mouseenter', () => {
             track.style.animationPlayState = 'paused';
         });
-        
+
         carousel.addEventListener('mouseleave', () => {
             track.style.animationPlayState = 'running';
         });
-        
+
         // Touch handling
         let startX;
         let scrollLeft;
-        
+
         carousel.addEventListener('touchstart', (e) => {
             startX = e.touches[0].pageX - carousel.offsetLeft;
             scrollLeft = carousel.scrollLeft;
             track.style.animationPlayState = 'paused';
         });
-        
+
         carousel.addEventListener('touchend', () => {
             track.style.animationPlayState = 'running';
         });
-        
+
         carousel.addEventListener('touchmove', (e) => {
             e.preventDefault();
             const x = e.touches[0].pageX - carousel.offsetLeft;
@@ -327,14 +354,14 @@ document.addEventListener('DOMContentLoaded', () => {
 // Language switching functions - STANDARDIZED FOR MULTILINGUAL SUPPORT
 function switchToEnglish() {
     const path = window.location.pathname;
-    
+
     // Set user language preference to prevent auto-redirects
     localStorage.setItem('expandia_language_preference', 'en');
-    
+
     if (path.startsWith('/tr/')) {
         // Map Turkish pages to English equivalents
         const englishPath = path.replace('/tr/', '/');
-        
+
         // Handle specific page mappings
         if (englishPath === '/index.html' || englishPath === '/') {
             window.location.href = '/';
@@ -363,7 +390,7 @@ function switchToEnglish() {
     } else if (path.startsWith('/de/')) {
         // Map German pages to English equivalents
         const englishPath = path.replace('/de/', '/');
-        
+
         // Handle specific page mappings
         if (englishPath === '/index.html' || englishPath === '/') {
             window.location.href = '/';
@@ -392,10 +419,10 @@ function switchToEnglish() {
         if (englishPath === '/index.html' || englishPath === '/') {
             window.location.href = '/';
         } else if (englishPath.startsWith('/blog/')) {
-             window.location.href = '/blog/';
+            window.location.href = '/blog/';
         } else {
-             // Try to find the corresponding page
-             window.location.href = englishPath;
+            // Try to find the corresponding page
+            window.location.href = englishPath;
         }
     } else if (path === '/tr' || path === '/tr/') {
         // Turkish home to English home
@@ -414,10 +441,10 @@ function switchToEnglish() {
 
 function switchToTurkish() {
     const path = window.location.pathname;
-    
+
     // Set user language preference to prevent auto-redirects
     localStorage.setItem('expandia_language_preference', 'tr');
-    
+
     if (path.startsWith('/tr/')) {
         // Already on Turkish
         console.log('Already on Turkish version');
@@ -461,10 +488,10 @@ function switchToTurkish() {
 
 function switchToGerman() {
     const path = window.location.pathname;
-    
+
     // Set user language preference to prevent auto-redirects
     localStorage.setItem('expandia_language_preference', 'de');
-    
+
     if (path.startsWith('/de/')) {
         // Already on German
         console.log('Already on German version');
@@ -509,7 +536,7 @@ function switchToFrench() {
 
     // Normalize path
     const normalizedPath = path.endsWith('/') ? path.slice(0, -1) : path;
-    
+
     if (normalizedPath === '/fr' || normalizedPath.startsWith('/fr/')) {
         // Already on French - redirect to index if just /fr
         if (normalizedPath === '/fr') {
@@ -532,9 +559,9 @@ function switchToFrench() {
             // Handle blog pages - redirect to French blog
             window.location.href = '/fr/blog/';
         } else {
-             // Try to find the corresponding page by prepending /fr/
-             // This assumes structure is mirrored
-             window.location.href = '/fr' + normalizedPath;
+            // Try to find the corresponding page by prepending /fr/
+            // This assumes structure is mirrored
+            window.location.href = '/fr' + normalizedPath;
         }
     }
 }
@@ -565,16 +592,16 @@ function detectUserLocation() {
         // Try multiple geolocation methods
         detectLocationByIP()
             .then(country => {
-                
+
                 // Language-specific countries/regions
                 const turkishCountries = ['TR', 'CY']; // Turkey, Cyprus
                 const germanCountries = ['DE', 'AT', 'CH']; // Germany, Austria, Switzerland
                 const frenchCountries = ['FR', 'BE', 'CA', 'LU', 'MC', 'SN', 'CI']; // France, Belgium, Canada, Luxembourg, Monaco, etc.
-                
+
                 const shouldShowTurkish = turkishCountries.includes(country);
                 const shouldShowGerman = germanCountries.includes(country);
                 const shouldShowFrench = frenchCountries.includes(country);
-                
+
                 // Show notification and redirect based on location
                 if (shouldShowTurkish && !isOnTurkish) {
                     showLanguageNotification('Turkish', () => {
@@ -717,16 +744,16 @@ async function detectLocationByIP() {
             'https://ipinfo.io/country',
             'https://api.country.is/'
         ];
-        
+
         for (const service of services) {
             try {
-                const response = await fetch(service, { 
+                const response = await fetch(service, {
                     timeout: 3000,
                     headers: {
                         'Accept': 'application/json'
                     }
                 });
-                
+
                 if (response.ok) {
                     if (service.includes('country.is')) {
                         const data = await response.json();
@@ -751,7 +778,7 @@ async function detectLocationByIP() {
 function setupLanguageSwitching() {
     // Handle language switch clicks
     document.querySelectorAll('.lang-switch').forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
             const lang = this.getAttribute('data-lang');
 
@@ -792,7 +819,7 @@ function setupLanguageSwitching() {
     detectUserLocation();
 
     // Add debug function to clear language preferences (available in console)
-    window.clearLanguagePreference = function() {
+    window.clearLanguagePreference = function () {
         localStorage.removeItem('expandia_language_preference');
         sessionStorage.removeItem('expandia_last_redirect');
     };

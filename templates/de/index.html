@@ -4,35 +4,51 @@
     <div class="absolute bottom-10 left-10 w-48 h-48 bg-secondary/10 rounded-full blur-2xl"></div>
 
     <div class="container mx-auto container-padding">
-        <div class="max-w-5xl mx-auto text-center animate-fade-in relative z-10">
-            <div
-                class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold mb-6">
-                <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
-                Managed Operations. Europäische Effizienz.
-            </div>
-            <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
-                <span class="gradient-header">Fokus auf Ihre Strategie.</span><br>
-                <span class="text-base-content">Wir kümmern uns um die Ausführung.</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-base-content/80 mb-10 leading-relaxed max-w-4xl mx-auto">
-                Der All-in-One operative Partner für KMUs. Wir managen Ihre <strong
-                    class="text-primary">IT-Sicherheit</strong>, steigern Ihren <strong
-                    class="text-secondary">Umsatz</strong>, rekrutieren Ihr <strong class="text-accent">Talent</strong>,
-                und produzieren Ihre <strong class="text-primary">AI-Inhalte</strong>.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 mb-12 justify-center">
-                <a href="managed-it-services.html"
-                    class="btn btn-primary btn-lg buzz-button shadow-lg shadow-primary/25">
-                    IT-Dienste entdecken
-                </a>
-                <a href="lead-generation-service.html" class="btn btn-secondary btn-lg shadow-lg shadow-secondary/25">
-                    Sales-Wachstum entdecken
-                </a>
-                <a href="contact.html" class="btn btn-outline btn-lg">
-                    Mit einem Experten sprechen
-                </a>
+        <div class="grid lg:grid-cols-2 gap-12 items-center animate-fade-in relative z-10">
+            <div class="text-left">
+                <div
+                    class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold mb-6">
+                    <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                    Managed Operations. Europäische Effizienz.
+                </div>
+                <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+                    <span class="gradient-header">Fokus auf Ihre Strategie.</span><br>
+                    <span class="text-base-content">Wir kümmern uns um die Ausführung.</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-base-content/80 mb-10 leading-relaxed">
+                    Der All-in-One operative Partner für KMUs. Wir managen Ihre <strong
+                        class="text-primary">IT-Sicherheit</strong>, steigern Ihren <strong
+                        class="text-secondary">Umsatz</strong>, rekrutieren Ihr <strong
+                        class="text-accent">Talent</strong>,
+                    und produzieren Ihre <strong class="text-primary">AI-Inhalte</strong>.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                    <a href="managed-it-services.html"
+                        class="btn btn-primary btn-lg buzz-button shadow-lg shadow-primary/25">
+                        IT-Dienste entdecken
+                    </a>
+                </div>
             </div>
 
+            <!-- Video Placeholder -->
+            <div class="relative group cursor-pointer" id="hero-video-facade">
+                <div
+                    class="absolute -inset-4 bg-primary/20 rounded-[2rem] blur-2xl group-hover:bg-primary/30 transition-colors duration-500">
+                </div>
+                <div class="relative aspect-video bg-neutral rounded-3xl overflow-hidden shadow-2xl border border-white/10 group-hover:scale-[1.02] transition-transform duration-500"
+                    id="video-container">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 opacity-60"></div>
+                    <!-- Play Button Placeholder -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div
+                            class="w-24 h-24 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform duration-300">
+                            <div
+                                class="w-0 h-0 border-t-[15px] border-t-transparent border-l-[25px] border-l-white border-b-[15px] border-b-transparent ml-2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

@@ -90,32 +90,6 @@
     </style>
 
     
-    <!-- Breadcrumb Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.expandia.ch/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Deutsch",
-      "item": "https://www.expandia.ch/de/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Revops Crm Setup"
-    }
-  ]
-}
-</script>
 </head>
 <body class="font-sans">
     <!-- Navigation - Premium Mega Menu -->
@@ -412,9 +386,8 @@
     <div class="container mx-auto container-padding">
         <div class="breadcrumbs text-sm">
             <ul>
-                <li><a href="../" class="link link-hover">Home</a></li>
-                <li><a href="../de/index.html" class="link link-hover">Deutsch</a></li>
-                <li class="text-base-content/60">Revops Crm Setup</li>
+                <li><a href="../" class="link link-hover">Startseite</a></li>
+                <li class="text-base-content/60">Header De</li>
             </ul>
         </div>
     </div>
@@ -463,6 +436,54 @@
         new MutationObserver(moveBanner).observe(document.body, { childList: true });
     })();
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How quickly can we start working together?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We can typically begin within 1-2 weeks after our initial consultation. We'll set up everything needed and start delivering results quickly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes Expandia different from other agencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We combine deep European market expertise with data-driven strategies and multilingual capabilities. Our team has 8+ years of experience helping businesses scale internationally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with companies of all sizes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we work with startups, SMEs, and enterprise companies. Our solutions are scalable and tailored to your specific business needs and growth stage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your pricing model?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer flexible pricing based on your specific needs and goals. Kontakt us for a free consultation and custom quote tailored to your business objectives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you measure success?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We focus on measurable KPIs including lead generation, conversion rates, ROI, and revenue impact. You'll receive detailed analytics and regular performance reports."
+      }
+    }
+  ]
+}
+</script>
     
     <!-- RevOps & CRM Hero -->
 <section class="section-spacing bg-gradient-to-br from-base-100 via-secondary/10 to-base-200 relative overflow-hidden">
@@ -483,22 +504,22 @@
                 </div>
                 <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
                     <span class="text-secondary">RevOps</span><br>
-                    <span class="text-base-content">&amp; CRM Infrastructure</span>
+                    <span class="text-base-content">&amp; CRM-Infrastruktur</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-base-content/80 mb-8 leading-relaxed">
-                    Siloed data is the enemy of growth. We align your sales, marketing, and success teams under a
-                    single, high-performance CRM engine that converts.
+                    Datensilos sind der Feind des Wachstums. Wir führen Ihre Vertriebs-, Marketing- und
+                    Kundenerfolgsteams in einer einzigen, leistungsstarken CRM-Engine zusammen, die konvertiert.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="contact.html"
                         class="btn btn-secondary btn-lg buzz-button px-10 shadow-lg shadow-secondary/25">
-                        Audit My CRM
+                        Meinen CRM-Audit anfordern
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                         </svg>
                     </a>
-                    <a href="#details" class="btn btn-outline btn-lg">Browse Lösungen</a>
+                    <a href="#details" class="btn btn-outline btn-lg">Lösungen durchsuchen</a>
                 </div>
             </div>
 
@@ -515,9 +536,9 @@
 <section id="details" class="section-spacing bg-base-100">
     <div class="container mx-auto container-padding">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-5xl font-bold mb-4">The Three Pillars of RevOps</h2>
-            <p class="text-lg text-base-content/60 max-w-2xl mx-auto">Transform your revenue operations with our proven
-                methodology.</p>
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">Die drei Säulen von RevOps</h2>
+            <p class="text-lg text-base-content/60 max-w-2xl mx-auto">Transformieren Sie Ihre Revenue Operations mit
+                unserer bewährten Methodik.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -531,13 +552,14 @@
                     </svg>
                 </div>
                 <h3 class="text-2xl font-bold mb-4">Pipeline Design</h3>
-                <p class="text-base-content/60">We map your actual sales cycle into a digital workflow, ensuring no lead
-                    is forgotten and every stage has clear exit criteria.</p>
+                <p class="text-base-content/60">Wir bilden Ihren tatsächlichen Verkaufszyklus in einem digitalen
+                    Workflow ab
+                    und stellen sicher, dass kein Lead vergessen wird und jede Phase klare Ausstiegskriterien hat.</p>
             </div>
             <div class="buzz-card p-10 bg-white border border-base-200 shadow-xl scale-105 relative">
                 <div
                     class="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-white text-xs font-bold px-4 py-1 rounded-full">
-                    Popular</div>
+                    Beliebt</div>
                 <div class="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center mb-6">
                     <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -545,9 +567,9 @@
                         </path>
                     </svg>
                 </div>
-                <h3 class="text-2xl font-bold mb-4">Data Enrichment</h3>
-                <p class="text-base-content/60">Automated cleaning and enrichment of your database. We pull in
-                    firmographics, intent data, and technographics automatically.</p>
+                <h3 class="text-2xl font-bold mb-4">Datenanreicherung</h3>
+                <p class="text-base-content/60">Automatisierte Bereinigung und Anreicherung Ihrer Datenbank. Wir ziehen
+                    Firmografien, Intent-Daten und Technografien automatisch hinzu.</p>
             </div>
             <div
                 class="buzz-card p-10 bg-white border border-base-200 hover:shadow-xl transition-all hover:-translate-y-2">
@@ -559,8 +581,8 @@
                     </svg>
                 </div>
                 <h3 class="text-2xl font-bold mb-4">Reporting & BI</h3>
-                <p class="text-base-content/60">Custom dashboards that show your real CAC, LTV, and conversion velocity.
-                    Real-time insights for executive decision making.</p>
+                <p class="text-base-content/60">Individuelle Dashboards, die Ihre echten CAC-, LTV- und
+                    Konversionsgeschwindigkeiten zeigen. Echtzeit-Einblicke für Management-Entscheidungen.</p>
             </div>
         </div>
     </div>
@@ -571,11 +593,12 @@
     <div class="container mx-auto container-padding">
         <div class="flex flex-col lg:flex-row gap-16 items-center">
             <div class="lg:w-1/2">
-                <h2 class="text-3xl md:text-5xl font-black mb-8 leading-tight">We build ecosystems, not just
-                    spreadsheets.</h2>
+                <h2 class="text-3xl md:text-5xl font-black mb-8 leading-tight">Wir bauen Ökosysteme, nicht nur
+                    Tabellenkalkulationen.</h2>
                 <p class="text-lg text-base-content/80 mb-10">
-                    A CRM is only as good as the tools it talks to. We specialize in complex integrations that bridge
-                    the gap between your sales development and your closing team.
+                    Ein CRM ist nur so gut wie die Tools, mit denen es kommuniziert. Wir sind spezialisiert auf komplexe
+                    Integrationen, welche die Lücke zwischen Ihrer Vertriebsentwicklung und Ihrem Closing-Team
+                    schließen.
                 </p>
                 <div class="space-y-4">
                     <div
@@ -583,8 +606,8 @@
                         <span
                             class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center font-bold text-secondary text-lg">01</span>
                         <div>
-                            <span class="font-bold text-lg">HubSpot & Salesforce Implementation</span>
-                            <p class="text-sm text-base-content/60">Platinum-level configuration and customization</p>
+                            <span class="font-bold text-lg">HubSpot- & Salesforce-Implementierung</span>
+                            <p class="text-sm text-base-content/60">Konfiguration und Anpassung auf Platinum-Niveau</p>
                         </div>
                     </div>
                     <div
@@ -592,9 +615,8 @@
                         <span
                             class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center font-bold text-secondary text-lg">02</span>
                         <div>
-                            <span class="font-bold text-lg">Automated Lead Routing</span>
-                            <p class="text-sm text-base-content/60">Territory-based assignment with round-robin logic
-                            </p>
+                            <span class="font-bold text-lg">Automatisierte Lead-Zuweisung</span>
+                            <p class="text-sm text-base-content/60">Gebietsbasierte Zuweisung mit Round-Robin-Logik</p>
                         </div>
                     </div>
                     <div
@@ -602,8 +624,9 @@
                         <span
                             class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center font-bold text-secondary text-lg">03</span>
                         <div>
-                            <span class="font-bold text-lg">Email/LinkedIn Automation Sync</span>
-                            <p class="text-sm text-base-content/60">Bi-directional sync with your outreach tools</p>
+                            <span class="font-bold text-lg">Synchronisation von E-Mail-/LinkedIn-Automatisierung</span>
+                            <p class="text-sm text-base-content/60">Bidirektionale Synchronisierung mit Ihren
+                                Outreach-Tools</p>
                         </div>
                     </div>
                 </div>
@@ -656,12 +679,62 @@
     </div>
 
     <div class="container mx-auto container-padding text-center relative z-10">
-        <h2 class="text-4xl md:text-5xl font-black mb-6 text-white">Stop Fighting Your Data.</h2>
-        <p class="text-xl text-white/80 mb-10 max-w-2xl mx-auto">Get a full RevOps audit in 48 hours. We'll show you
-            where your revenue is leaking.</p>
+        <h2 class="text-4xl md:text-5xl font-black mb-6 text-white">Hören Sie auf, gegen Ihre Daten zu kämpfen.</h2>
+        <p class="text-xl text-white/80 mb-10 max-w-2xl mx-auto">Erhalten Sie ein vollständiges RevOps-Audit in 48
+            Stunden. Wir
+            zeigen Ihnen, wo Ihr Umsatz verloren geht.</p>
         <a href="contact.html"
-            class="btn btn-lg bg-white text-secondary hover:bg-white/90 border-none px-16 shadow-xl">Book My Audit</a>
+            class="btn btn-lg bg-white text-secondary hover:bg-white/90 border-none px-16 shadow-xl">Meinen Audit
+            buchen</a>
     </div>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie schnell können wir mit der Zusammenarbeit beginnen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In der Regel können wir innerhalb von 1 bis 2 Wochen nach unserem Erstgespräch beginnen. Wir richten alles Notwendige ein und fangen schnell an, Ergebnisse zu liefern."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was unterscheidet Expandia von anderen Agenturen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wir kombinieren tiefgreifende Expertise im europäischen Markt mit datengesteuerten Strategien und Mehrsprachigkeit. Unser Team verfügt über mehr als 8 Jahre Erfahrung darin, Unternehmen bei der internationalen Skalierung zu unterstützen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Arbeiten Sie mit Unternehmen jeder Größe zusammen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, wir arbeiten mit Start-ups, KMU und Konzernen zusammen. Unsere Lösungen sind skalierbar und auf Ihre spezifischen Geschäftsanforderungen und Wachstumsphasen zugeschnitten."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie sieht Ihr Preismodell aus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wir bieten eine flexible Preisgestaltung an, die auf Ihren spezifischen Bedürfnissen und Zielen basiert. Kontaktieren Sie uns für ein kostenloses Beratungsgespräch und ein individuelles Angebot, das auf Ihre Geschäftsziele zugeschnitten ist."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie messen Sie den Erfolg?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wir konzentrieren uns auf messbare KPIs wie Lead-Generierung, Konversionsraten, ROI und Auswirkungen auf den Umsatz. Sie erhalten detaillierte Analysen und regelmäßige Leistungsberichte."
+      }
+    }
+  ]
+}
+</script>
 </section>
     
     <!-- Footer -->
@@ -825,6 +898,54 @@
     </div>
 </footer>
 <script src="./dist/js/contact.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How quickly can we start working together?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We can typically begin within 1-2 weeks after our initial consultation. We'll set up everything needed and start delivering results quickly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes Expandia different from other agencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We combine deep European market expertise with data-driven strategies and multilingual capabilities. Our team has 8+ years of experience helping businesses scale internationally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with companies of all sizes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we work with startups, SMEs, and enterprise companies. Our solutions are scalable and tailored to your specific business needs and growth stage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your pricing model?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer flexible pricing based on your specific needs and goals. Kontakt us for a free consultation and custom quote tailored to your business objectives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you measure success?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We focus on measurable KPIs including lead generation, conversion rates, ROI, and revenue impact. You'll receive detailed analytics and regular performance reports."
+      }
+    }
+  ]
+}
+</script>
     
     <script src="../dist/js/index.js"></script>
     
@@ -878,53 +999,5 @@
     </script>
 
     
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How quickly can we start working together?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We can typically begin within 1-2 weeks after our initial consultation. We'll set up everything needed and start delivering results quickly."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What makes Expandia different from other agencies?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We combine deep European market expertise with data-driven strategies and multilingual capabilities. Our team has 8+ years of experience helping businesses scale internationally."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you work with companies of all sizes?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, we work with startups, SMEs, and enterprise companies. Our solutions are scalable and tailored to your specific business needs and growth stage."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is your pricing model?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We offer flexible pricing based on your specific needs and goals. Contact us for a free consultation and custom quote tailored to your business objectives."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do you measure success?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We focus on measurable KPIs including lead generation, conversion rates, ROI, and revenue impact. You'll receive detailed analytics and regular performance reports."
-      }
-    }
-  ]
-}
-</script>
 </body>
 </html>
