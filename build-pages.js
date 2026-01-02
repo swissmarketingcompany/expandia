@@ -1763,6 +1763,10 @@ buildPage('our-ethical-principles', 'our-ethical-principles', 'de');
 buildPage('markt-grundlagen-programm', 'markt-grundlagen-programm', 'de');
 buildPage('markt-beschleuniger-programm', 'markt-beschleuniger-programm', 'de');
 buildPage('teilzeit-bizdev-team', 'teilzeit-bizdev-team', 'de');
+// Build German service pages
+buildPage('lead-generation-service', 'lead-generation-service', 'de');
+buildPage('international-market-entry', 'international-market-entry', 'de');
+buildPage('corporate-digital-gifting', 'corporate-digital-gifting', 'de');
 // Build New Pillar Pages (German)
 buildPage('managed-it-services', 'managed-it-services', 'de');
 buildPage('vulnerability-assessments', 'vulnerability-assessments', 'de');
