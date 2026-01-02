@@ -286,72 +286,158 @@
       }
     }
   },
-  "usa-pr-service": {
-    "title": "USA PR Service | Press Release Distribution Service | Expandia",
-    "description": "Professional press release writing and wire distribution service for the US market. Get your news featured in US media.",
-    "keywords": "USA PR service, press release distribution, US media, press release wire, corporate PR",
-    "translations": {
-      "tr": {
-        "title": "USA PR Service | Basın Bülteni Dağıtım Hizmeti | Expandia",
-        "description": "ABD pazarına yönelik profesyonel basın bülteni yazımı ve wire dağıtım hizmeti.",
-        "keywords": "USA PR service, basın bülteni dağıtımı, ABD medya, press release wire"
-      },
-      "de": {
-        "title": "USA PR-Dienst | Pressemitteilung Vertriebsservice | Expandia",
-        "description": "Professioneller Pressemitteilungsschreibservice und Wire-Verteilung für den US-Markt.",
-        "keywords": "USA PR-Dienst, Pressemitteilungsverteilung, US-Medien, Pressemitteilung"
-      },
-      "fr": {
-        "title": "Service RP USA | Service de Distribution de Communiqués de Presse | Expandia",
-        "description": "Service professionnel de rédaction de communiqués de presse et de distribution filaire pour le marché américain.",
-        "keywords": "Service RP USA, distribution de communiqués de presse, médias américains, fil de presse"
-      }
-    }
-  },
   "managed-it-services": {
     "title": "Managed IT Services & Cybersecurity for B2B | Expandia",
     "description": "Enterprise-grade Managed IT services and cybersecurity. Endpoint protection, cloud security, and technical support for high-growth companies.",
-    "keywords": "managed IT services, cybersecurity for business, MSP services, IT support Europe"
+    "keywords": "managed IT services, cybersecurity for business, MSP services, IT support Europe",
+    "translations": {
+      "de": {
+        "title": "Verwaltete IT-Dienste & Cybersicherheit für B2B | Expandia",
+        "description": "Verwaltete IT-Dienste und Cybersicherheit auf Unternehmensniveau. Endpoint-Schutz, Cloud-Sicherheit und technischer Support.",
+        "keywords": "verwaltete IT-Dienste, Cybersicherheit, MSP-Dienste, IT-Support Europa"
+      },
+      "fr": {
+        "title": "Services IT Gérés & Cybersécurité pour B2B | Expandia",
+        "description": "Services IT gérés et cybersécurité de niveau entreprise. Protection des endpoints, sécurité cloud et support technique.",
+        "keywords": "services IT gérés, cybersécurité, services MSP, support IT Europe"
+      }
+    }
   },
   "vulnerability-assessments": {
     "title": "Vulnerability Assessments & Penetration Testing | Expandia",
     "description": "Identify and fix security gaps before they are exploited. Comprehensive vulnerability scanning and assessment for your digital infrastructure.",
-    "keywords": "vulnerability assessment, pentesting, security audit, network security scan"
+    "keywords": "vulnerability assessment, pentesting, security audit, network security scan",
+    "translations": {
+      "de": {
+        "title": "Schwachstellen-Bewertung & Scans | Expandia",
+        "description": "Identifizieren und beheben Sie Sicherheitslücken, bevor sie ausgenutzt werden. Umfassendes Schwachstellen-Scanning.",
+        "keywords": "Schwachstellenbewertung, Pentesting, Sicherheitsaudit, Netzwerk-Sicherheitsscan"
+      },
+      "fr": {
+        "title": "Évaluations de Vulnérabilité & Tests de Pénétration | Expandia",
+        "description": "Identifiez et corrigez les failles de sécurité avant qu'elles ne soient exploitées. Analyse complète des vulnérabilités.",
+        "keywords": "évaluation vulnérabilité, pentesting, audit sécurité, scan sécurité réseau"
+      }
+    }
   },
   "email-security": {
     "title": "Email Security & Global Deliverability Solutions | Expandia",
     "description": "Protect your domain and ensure your emails reach the inbox. Expert email security, SPF/DKIM/DMARC setup, and deliverability optimization.",
-    "keywords": "email security, email deliverability, DMARC setup, spam protection"
+    "keywords": "email security, email deliverability, DMARC setup, spam protection",
+    "translations": {
+      "de": {
+        "title": "Email Security & globale Zustellbarkeit | Expandia",
+        "description": "Schützen Sie Ihre Domain und stellen Sie sicher, dass Ihre E-Mails im Posteingang ankommen. Experten-E-Mail-Sicherheit.",
+        "keywords": "E-Mail-Sicherheit, E-Mail-Zustellbarkeit, DMARC-Setup, Spam-Schutz"
+      },
+      "fr": {
+        "title": "Sécurité Email & Solutions de Délivrabilité Globale | Expandia",
+        "description": "Protégez votre domaine et assurez-vous que vos emails arrivent dans la boîte de réception. Sécurité email experte.",
+        "keywords": "sécurité email, délivrabilité email, configuration DMARC, protection spam"
+      }
+    }
   },
   "website-care-plans": {
     "title": "Website Care Plans & Performance Optimization | Expandia",
     "description": "Keep your website fast, secure, and always-on. Managed WordPress care, security updates, and performance tuning.",
-    "keywords": "website maintenance, website care plan, wordpress support, speed optimization"
+    "keywords": "website maintenance, website care plan, wordpress support, speed optimization",
+    "translations": {
+      "de": {
+        "title": "Website-Pflege & Performance-Pläne | Expandia",
+        "description": "Halten Sie Ihre Website schnell, sicher und immer verfügbar. Verwaltete WordPress-Pflege, Sicherheitsupdates.",
+        "keywords": "Website-Wartung, Website-Pflegeplan, WordPress-Support, Geschwindigkeitsoptimierung"
+      },
+      "fr": {
+        "title": "Plans de Maintenance Web & Optimisation des Performances | Expandia",
+        "description": "Gardez votre site web rapide, sécurisé et toujours en ligne. Maintenance WordPress gérée, mises à jour de sécurité.",
+        "keywords": "maintenance site web, plan de maintenance, support WordPress, optimisation vitesse"
+      }
+    }
   },
   "revops-crm-setup": {
     "title": "RevOps & CRM Infrastructure Setup | HubSpot & Salesforce | Expandia",
     "description": "Streamline your sales and marketing with expert RevOps and CRM setup. Align your teams and data for scalable growth.",
-    "keywords": "revops, CRM setup, HubSpot implementation, Salesforce consulting"
+    "keywords": "revops, CRM setup, HubSpot implementation, Salesforce consulting",
+    "translations": {
+      "de": {
+        "title": "RevOps & CRM-Infrastruktur | Expandia",
+        "description": "Optimieren Sie Vertrieb und Marketing mit Experten-RevOps und CRM-Setup. Richten Sie Ihre Teams und Daten aus.",
+        "keywords": "RevOps, CRM-Setup, HubSpot-Implementierung, Salesforce-Beratung"
+      },
+      "fr": {
+        "title": "RevOps & Infrastructure CRM | HubSpot & Salesforce | Expandia",
+        "description": "Rationalisez vos ventes et marketing avec une configuration RevOps et CRM experte. Alignez vos équipes et données.",
+        "keywords": "revops, configuration CRM, implémentation HubSpot, conseil Salesforce"
+      }
+    }
   },
   "lost-lead-reactivation": {
     "title": "Lost Lead Reactivation | Recover Your Sales Pipeline | Expandia",
     "description": "Turn your dormant CRM leads into closed deals. Professional reactivation sequences that resurface qualified opportunities.",
-    "keywords": "lead reactivation, CRM recovery, lost lead pipeline, sales recovery"
+    "keywords": "lead reactivation, CRM recovery, lost lead pipeline, sales recovery",
+    "translations": {
+      "de": {
+        "title": "Reaktivierung verlorener Leads | Expandia",
+        "description": "Verwandeln Sie Ihre ruhenden CRM-Leads in abgeschlossene Geschäfte. Professionelle Reaktivierungssequenzen.",
+        "keywords": "Lead-Reaktivierung, CRM-Wiederherstellung, verlorene Lead-Pipeline, Verkaufswiederherstellung"
+      },
+      "fr": {
+        "title": "Réactivation de Leads Perdus | Récupérez Votre Pipeline | Expandia",
+        "description": "Transformez vos leads CRM dormants en deals conclus. Séquences de réactivation professionnelles.",
+        "keywords": "réactivation leads, récupération CRM, pipeline leads perdus, récupération ventes"
+      }
+    }
   },
   "speed-to-lead": {
-    "title": "Speed to Lead Response Engine | Instant Engagement | Expandia",
-    "description": "Engage your inbound leads in under 5 minutes. Automated response infrastructure that triples your conversion rates.",
-    "keywords": "speed to lead, lead response time, instant sales engagement, lead conversion"
+    "title": "Cold Calling Service | Professional SDR Outreach | Expandia",
+    "description": "Professional cold calling service with native-speaking SDRs. Book qualified meetings directly on your calendar through phone outreach.",
+    "keywords": "cold calling service, SDR outreach, phone sales, B2B cold calling, appointment setting",
+    "translations": {
+      "de": {
+        "title": "Schnellreaktions-Engine für Leads | Expandia",
+        "description": "Professioneller Cold-Calling-Service mit muttersprachlichen SDRs. Buchen Sie qualifizierte Meetings direkt in Ihrem Kalender.",
+        "keywords": "Cold-Calling-Service, SDR-Outreach, Telefonverkauf, B2B Cold-Calling, Terminvereinbarung"
+      },
+      "fr": {
+        "title": "Service d'Appels à Froid | Prospection SDR Professionnelle | Expandia",
+        "description": "Service d'appels à froid professionnel avec des SDR natifs. Réservez des réunions qualifiées directement dans votre calendrier.",
+        "keywords": "service appels à froid, prospection SDR, vente téléphonique, appels à froid B2B, prise de rendez-vous"
+      }
+    }
   },
   "recruitment": {
     "title": "B2B Recruitment & Specialized Headhunting | Expandia",
     "description": "Find top-tier talent for sales, tech, and leadership roles. Specialized headhunting and safe bridge staffing solutions.",
-    "keywords": "B2B recruitment, headhunting, executive search, sales recruitment"
+    "keywords": "B2B recruitment, headhunting, executive search, sales recruitment",
+    "translations": {
+      "de": {
+        "title": "Talente ohne Grenzen | Expandia",
+        "description": "Finden Sie erstklassige Talente für Vertriebs-, Tech- und Führungsrollen. Spezialisiertes Headhunting und sichere Überbrückungslösungen.",
+        "keywords": "B2B Recruiting, Headhunting, Executive Search, Vertriebsrecruiting"
+      },
+      "fr": {
+        "title": "Recrutement B2B & Chasse de Têtes Spécialisée | Expandia",
+        "description": "Trouvez des talents de premier plan pour les rôles de vente, tech et leadership. Chasse de têtes spécialisée et solutions de staffing.",
+        "keywords": "recrutement B2B, chasse de têtes, recherche de cadres, recrutement ventes"
+      }
+    }
   },
   "ai-creative-studio": {
     "title": "AI Creative Studio | Video Localization & Digital Twins | Expandia",
     "description": "The future of corporate content. AI video localization, hyper-realistic avatars, and brand-specific generative assets.",
-    "keywords": "AI video localization, AI avatars, digital twins, generative content studio"
+    "keywords": "AI video localization, AI avatars, digital twins, generative content studio",
+    "translations": {
+      "de": {
+        "title": "KI-Kreativstudio | Video-Lokalisierung & Digitale Zwillinge | Expandia",
+        "description": "Die Zukunft von Unternehmensinhalten. KI-Video-Lokalisierung, hyperrealistische Avatare und markenspezifische generative Assets.",
+        "keywords": "KI-Video-Lokalisierung, KI-Avatare, digitale Zwillinge, generatives Content-Studio"
+      },
+      "fr": {
+        "title": "Studio Créatif IA | Localisation Vidéo & Jumeaux Numériques | Expandia",
+        "description": "L'avenir du contenu d'entreprise. Localisation vidéo IA, avatars hyper-réalistes et assets génératifs spécifiques à la marque.",
+        "keywords": "localisation vidéo IA, avatars IA, jumeaux numériques, studio contenu génératif"
+      }
+    }
   },
   "city-locations": {
     "title": "Global Managed Sales Operations Locations | Expandia",

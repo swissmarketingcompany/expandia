@@ -63,12 +63,12 @@ app.use((req, res, next) => {
     if (process.env.NODE_ENV === 'production') {
         const proto = req.headers['x-forwarded-proto'] || req.protocol;
         const host = req.headers.host || '';
-        
+
         // Redirect HTTP to HTTPS
         if (proto !== 'https') {
             return res.redirect(301, `https://${host}${req.originalUrl}`);
         }
-        
+
         // Redirect non-www to www (canonical domain)
         if (host && host.startsWith('expandia.ch') && !host.startsWith('www.')) {
             return res.redirect(301, `https://www.${host}${req.originalUrl}`);
@@ -396,54 +396,9 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Handle Turkish routes
-app.get('/tr', (req, res) => {
-    res.sendFile(path.join(__dirname, 'tr', 'index.html'));
-});
 
-app.get('/tr/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'tr', 'index.html'));
-});
 
-app.get('/tr/:page', (req, res) => {
-    const page = req.params.page;
-    if (page.endsWith('.html')) {
-        res.sendFile(path.join(__dirname, 'tr', page), (err) => {
-            if (err) {
-                res.sendFile(path.join(__dirname, 'tr', 'index.html'));
-            }
-        });
-    } else {
-        res.sendFile(path.join(__dirname, 'tr', page + '.html'), (err) => {
-            if (err) {
-                res.sendFile(path.join(__dirname, 'tr', 'index.html'));
-            }
-        });
-    }
-});
 
-// Turkish service alias redirects (EN slugs -> TR slugs)
-app.get('/tr/lead-generation-service.html', (req, res) => {
-    res.redirect(301, '/tr/lead-generation-hizmeti.html');
-});
-app.get('/tr/prospect-finding-service.html', (req, res) => {
-    res.redirect(301, '/tr/potansiyel-musteri-bulma-ajansi.html');
-});
-app.get('/tr/sales-development-agency.html', (req, res) => {
-    res.redirect(301, '/tr/satis-gelistirme-ajansi.html');
-});
-app.get('/tr/appointment-setting-service.html', (req, res) => {
-    res.redirect(301, '/tr/randevu-ayarlama-hizmeti.html');
-});
-app.get('/tr/outsourced-sales-team-service.html', (req, res) => {
-    res.redirect(301, '/tr/dis-kaynakli-satis-ekibi.html');
-});
-app.get('/tr/outbound-marketing-agency.html', (req, res) => {
-    res.redirect(301, '/tr/outbound-pazarlama-ajansi.html');
-});
-app.get('/tr/cold-email-agency.html', (req, res) => {
-    res.redirect(301, '/tr/soguk-e-posta-ajansi.html');
-});
 
 // 301 Redirects for old AI Solutions pages to new Sales Protection Services
 app.get('/ai-solutions.html', (req, res) => {
@@ -454,9 +409,7 @@ app.get('/de/ai-solutions.html', (req, res) => {
     res.redirect(301, '/de/schutzdienstleistungen.html');
 });
 
-app.get('/tr/ai-solutions.html', (req, res) => {
-    res.redirect(301, '/tr/satis-koruma-hizmetleri.html');
-});
+
 
 // Handle German routes
 app.get('/de', (req, res) => {
@@ -587,13 +540,7 @@ app.get('/blog/social-proof-network-effects-enterprise-buying.ht', (req, res) =>
     res.redirect(301, '/blog/index.html');
 });
 
-app.get('/tr/blog/b2b-lead-generation-pazarlama-stratejileri-2025.html', (req, res) => {
-    res.redirect(301, '/tr/blog/b2b-lead-generation-pazarlama-stratejileri-2024.html');
-});
 
-app.get('/tr/blog/lead-generation-strategies.html', (req, res) => {
-    res.redirect(301, '/tr/blog/potansiyel-musteri-uretim-stratejileri.html');
-});
 
 // Handle potential old blog post paths
 app.get('/potential-areas-for-expandias-sustainable-impact', (req, res) => {
@@ -613,11 +560,11 @@ app.get('/pdfs/:filename', (req, res) => {
 app.get('/:path/:page', (req, res, next) => {
     const page = req.params.page;
     // Check if it contains template variables
-    if (page && (page.includes('{{') || page.includes('BASE_PATH') || page.includes('BLOG_URL') || 
-                 page.includes('CONTACT_URL') || page.includes('ABOUT_URL') || page.includes('SOLUTIONS_URL') ||
-                 page.includes('CASE_STUDIES_URL') || page.includes('VISION_MISSION_PAGE') ||
-                 page.includes('ETHICAL_PRINCIPLES_PAGE') || page.includes('MARKET_ACCELERATOR_PAGE') ||
-                 page.includes('MARKET_FOUNDATION_PAGE') || page.includes('FRACTIONAL_BIZDEV_PAGE'))) {
+    if (page && (page.includes('{{') || page.includes('BASE_PATH') || page.includes('BLOG_URL') ||
+        page.includes('CONTACT_URL') || page.includes('ABOUT_URL') || page.includes('SOLUTIONS_URL') ||
+        page.includes('CASE_STUDIES_URL') || page.includes('VISION_MISSION_PAGE') ||
+        page.includes('ETHICAL_PRINCIPLES_PAGE') || page.includes('MARKET_ACCELERATOR_PAGE') ||
+        page.includes('MARKET_FOUNDATION_PAGE') || page.includes('FRACTIONAL_BIZDEV_PAGE'))) {
         return res.redirect(301, '/');
     }
     // Let it fall through to the catch-all handler
@@ -625,25 +572,7 @@ app.get('/:path/:page', (req, res, next) => {
 });
 
 // Handle pages that should exist but are accessed incorrectly
-app.get('/soguk-e-posta-ajansi.html', (req, res) => {
-    res.redirect(301, '/tr/soguk-e-posta-ajansi.html');
-});
 
-app.get('/potansiyel-musteri-bulma-ajansi.html', (req, res) => {
-    res.redirect(301, '/tr/potansiyel-musteri-bulma-ajansi.html');
-});
-
-app.get('/lead-generation-hizmeti.html', (req, res) => {
-    res.redirect(301, '/tr/lead-generation-hizmeti.html');
-});
-
-app.get('/dis-kaynakli-satis-ekibi.html', (req, res) => {
-    res.redirect(301, '/tr/dis-kaynakli-satis-ekibi.html');
-});
-
-app.get('/satis-gelistirme-ajansi.html', (req, res) => {
-    res.redirect(301, '/tr/satis-gelistirme-ajansi.html');
-});
 
 app.get('/unternehmens-digitale-geschenke.html', (req, res) => {
     res.redirect(301, '/de/unternehmens-digitale-geschenke.html');

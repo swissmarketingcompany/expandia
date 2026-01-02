@@ -41,11 +41,11 @@ if (!fs.existsSync(footerPath)) {
 }
 
 const navigationEN = fs.readFileSync(headerPath, 'utf8');
-const navigationTR = fs.readFileSync('includes/header-tr.html', 'utf8');
+
 const navigationDE = fs.readFileSync('includes/header-de.html', 'utf8');
 const navigationFR = fs.readFileSync('includes/header-fr.html', 'utf8');
 const footerEN = fs.readFileSync(footerPath, 'utf8');
-const footerTR = fs.existsSync('includes/footer-tr.html') ? fs.readFileSync('includes/footer-tr.html', 'utf8') : footerEN;
+
 const footerDE = fs.existsSync('includes/footer-de.html') ? fs.readFileSync('includes/footer-de.html', 'utf8') : footerEN;
 const footerFR = fs.existsSync('includes/footer-fr.html') ? fs.readFileSync('includes/footer-fr.html', 'utf8') : footerEN;
 
@@ -66,39 +66,40 @@ function getPageMetadata(templateName, lang = 'en') {
 
 function getHreflangUrls(templateName) {
     const urls = {
-        'index': { en: '', tr: 'tr/', de: 'de/', fr: 'fr/' },
-        'solutions': { en: 'solutions.html', tr: 'tr/solutions.html', de: 'de/solutions.html', fr: 'fr/solutions.html' },
-        'about': { en: 'about.html', tr: 'tr/about.html', de: 'de/about.html', fr: 'fr/about.html' },
-        'contact': { en: 'contact.html', tr: 'tr/contact.html', de: 'de/contact.html', fr: 'fr/contact.html' },
-        'case-studies': { en: 'case-studies.html', tr: 'tr/case-studies.html', de: 'de/case-studies.html', fr: 'fr/case-studies.html' },
-        'managed-it-services': { en: 'managed-it-services.html', tr: 'tr/managed-it-services.html', de: 'de/managed-it-services.html', fr: 'fr/managed-it-services.html' },
-        'vulnerability-assessments': { en: 'vulnerability-assessments.html', tr: 'tr/vulnerability-assessments.html', de: 'de/vulnerability-assessments.html', fr: 'fr/vulnerability-assessments.html' },
-        'email-security': { en: 'email-security.html', tr: 'tr/email-security.html', de: 'de/email-security.html', fr: 'fr/email-security.html' },
-        'website-care-plans': { en: 'website-care-plans.html', tr: 'tr/website-care-plans.html', de: 'de/website-care-plans.html', fr: 'fr/website-care-plans.html' },
-        'revops-crm-setup': { en: 'revops-crm-setup.html', tr: 'tr/revops-crm-setup.html', de: 'de/revops-crm-setup.html', fr: 'fr/revops-crm-setup.html' },
-        'lost-lead-reactivation': { en: 'lost-lead-reactivation.html', tr: 'tr/lost-lead-reactivation.html', de: 'de/lost-lead-reactivation.html', fr: 'fr/lost-lead-reactivation.html' },
-        'speed-to-lead': { en: 'speed-to-lead.html', tr: 'tr/speed-to-lead.html', de: 'de/speed-to-lead.html', fr: 'fr/speed-to-lead.html' },
-        'recruitment': { en: 'recruitment.html', tr: 'tr/recruitment.html', de: 'de/recruitment.html', fr: 'fr/recruitment.html' },
-        'ai-creative-studio': { en: 'ai-creative-studio.html', tr: 'tr/ai-creative-studio.html', de: 'de/ai-creative-studio.html', fr: 'fr/ai-creative-studio.html' },
-        'vision-mission': { en: 'vision-mission.html', tr: 'tr/vizyon-misyon.html', de: 'de/vision-mission.html', fr: 'fr/vision-mission.html' },
-        'vizyon-misyon': { en: 'vision-mission.html', tr: 'tr/vizyon-misyon.html', de: 'de/vision-mission.html', fr: 'fr/vision-mission.html' },
-        'our-ethical-principles': { en: 'our-ethical-principles.html', tr: 'tr/etik-ilkelerimiz.html', de: 'de/our-ethical-principles.html', fr: 'fr/our-ethical-principles.html' },
-        'etik-ilkelerimiz': { en: 'our-ethical-principles.html', tr: 'tr/etik-ilkelerimiz.html', de: 'de/our-ethical-principles.html', fr: 'fr/our-ethical-principles.html' },
-        'market-foundation-program': { en: 'market-foundation-program.html', tr: 'tr/pazar-temeli-programi.html', de: 'de/markt-grundlagen-programm.html', fr: 'fr/market-foundation-program.html' },
-        'pazar-temeli-programi': { en: 'market-foundation-program.html', tr: 'tr/pazar-temeli-programi.html', de: 'de/markt-grundlagen-programm.html', fr: 'fr/market-foundation-program.html' },
-        'markt-grundlagen-programm': { en: 'market-foundation-program.html', tr: 'tr/pazar-temeli-programi.html', de: 'de/markt-grundlagen-programm.html', fr: 'fr/market-foundation-program.html' },
-        'market-accelerator-program': { en: 'market-accelerator-program.html', tr: 'tr/pazar-hizlandirici-program.html', de: 'de/markt-beschleuniger-programm.html', fr: 'fr/market-accelerator-program.html' },
-        'pazar-hizlandirici-program': { en: 'market-accelerator-program.html', tr: 'tr/pazar-hizlandirici-program.html', de: 'de/markt-beschleuniger-programm.html', fr: 'fr/market-accelerator-program.html' },
-        'markt-beschleuniger-programm': { en: 'market-accelerator-program.html', tr: 'tr/pazar-hizlandirici-program.html', de: 'de/markt-beschleuniger-programm.html', fr: 'fr/market-accelerator-program.html' },
-        'part-time-lead-generation-team': { en: 'part-time-lead-generation-team.html', tr: 'tr/kismi-is-gelistirme-ekibi.html', de: 'de/teilzeit-bizdev-team.html', fr: 'fr/part-time-lead-generation-team.html' },
-        'kismi-is-gelistirme-ekibi': { en: 'part-time-lead-generation-team.html', tr: 'tr/kismi-is-gelistirme-ekibi.html', de: 'de/teilzeit-bizdev-team.html', fr: 'fr/part-time-lead-generation-team.html' },
-        'teilzeit-bizdev-team': { en: 'part-time-lead-generation-team.html', tr: 'tr/kismi-is-gelistirme-ekibi.html', de: 'de/teilzeit-bizdev-team.html', fr: 'fr/part-time-lead-generation-team.html' },
-        'abd-pr-hizmeti': { en: 'usa-pr-service.html', tr: 'tr/abd-pr-hizmeti.html', de: 'de/usa-pr-dienst.html', fr: 'fr/usa-pr-service.html' },
-        'corporate-digital-gifting': { en: 'corporate-digital-gifting.html', tr: 'tr/kurumsal-dijital-hediye-promosyon.html', de: 'de/unternehmens-digitale-geschenke.html', fr: 'fr/corporate-digital-gifting.html' },
-        'usa-pr-service': { en: 'usa-pr-service.html', tr: 'tr/abd-pr-hizmeti.html', de: 'de/usa-pr-dienst.html', fr: 'fr/usa-pr-service.html' },
-        'kurumsal-dijital-hediye-promosyon': { en: 'corporate-digital-gifting.html', tr: 'tr/kurumsal-dijital-hediye-promosyon.html', de: 'de/unternehmens-digitale-geschenke.html', fr: 'fr/corporate-digital-gifting.html' },
-        'unternehmens-digitale-geschenke': { en: 'corporate-digital-gifting.html', tr: 'tr/kurumsal-dijital-hediye-promosyon.html', de: 'de/unternehmens-digitale-geschenke.html', fr: 'fr/corporate-digital-gifting.html' },
-        'usa-pr-dienst': { en: 'usa-pr-service.html', tr: 'tr/abd-pr-hizmeti.html', de: 'de/usa-pr-dienst.html', fr: 'fr/usa-pr-service.html' }
+        'index': { en: '', de: 'de/', fr: 'fr/' },
+        'solutions': { en: 'solutions.html', de: 'de/solutions.html', fr: 'fr/solutions.html' },
+        'about': { en: 'about.html', de: 'de/about.html', fr: 'fr/about.html' },
+        'contact': { en: 'contact.html', de: 'de/contact.html', fr: 'fr/contact.html' },
+        'case-studies': { en: 'case-studies.html', de: 'de/case-studies.html', fr: 'fr/case-studies.html' },
+        'managed-it-services': { en: 'managed-it-services.html', de: 'de/managed-it-services.html', fr: 'fr/managed-it-services.html' },
+        'vulnerability-assessments': { en: 'vulnerability-assessments.html', de: 'de/vulnerability-assessments.html', fr: 'fr/vulnerability-assessments.html' },
+        'email-security': { en: 'email-security.html', de: 'de/email-security.html', fr: 'fr/email-security.html' },
+        'website-care-plans': { en: 'website-care-plans.html', de: 'de/website-care-plans.html', fr: 'fr/website-care-plans.html' },
+        'revops-crm-setup': { en: 'revops-crm-setup.html', de: 'de/revops-crm-setup.html', fr: 'fr/revops-crm-setup.html' },
+        'lost-lead-reactivation': { en: 'lost-lead-reactivation.html', de: 'de/lost-lead-reactivation.html', fr: 'fr/lost-lead-reactivation.html' },
+        'speed-to-lead': { en: 'speed-to-lead.html', de: 'de/speed-to-lead.html', fr: 'fr/speed-to-lead.html' },
+        'recruitment': { en: 'recruitment.html', de: 'de/recruitment.html', fr: 'fr/recruitment.html' },
+        'ai-creative-studio': { en: 'ai-creative-studio.html', de: 'de/ai-creative-studio.html', fr: 'fr/ai-creative-studio.html' },
+        'vision-mission': { en: 'vision-mission.html', de: 'de/vision-mission.html', fr: 'fr/vision-mission.html' },
+        'vizyon-misyon': { en: 'vision-mission.html', de: 'de/vision-mission.html', fr: 'fr/vision-mission.html' },
+        'our-ethical-principles': { en: 'our-ethical-principles.html', de: 'de/our-ethical-principles.html', fr: 'fr/our-ethical-principles.html' },
+        'etik-ilkelerimiz': { en: 'our-ethical-principles.html', de: 'de/our-ethical-principles.html', fr: 'fr/our-ethical-principles.html' },
+        'market-foundation-program': { en: 'market-foundation-program.html', de: 'de/markt-grundlagen-programm.html', fr: 'fr/market-foundation-program.html' },
+        'pazar-temeli-programi': { en: 'market-foundation-program.html', de: 'de/markt-grundlagen-programm.html', fr: 'fr/market-foundation-program.html' },
+        'markt-grundlagen-programm': { en: 'market-foundation-program.html', de: 'de/markt-grundlagen-programm.html', fr: 'fr/market-foundation-program.html' },
+        'market-accelerator-program': { en: 'market-accelerator-program.html', de: 'de/markt-beschleuniger-programm.html', fr: 'fr/market-accelerator-program.html' },
+        'pazar-hizlandirici-program': { en: 'market-accelerator-program.html', de: 'de/markt-beschleuniger-programm.html', fr: 'fr/market-accelerator-program.html' },
+        'markt-beschleuniger-programm': { en: 'market-accelerator-program.html', de: 'de/markt-beschleuniger-programm.html', fr: 'fr/market-accelerator-program.html' },
+        'part-time-lead-generation-team': { en: 'part-time-lead-generation-team.html', de: 'de/teilzeit-bizdev-team.html', fr: 'fr/part-time-lead-generation-team.html' },
+        'kismi-is-gelistirme-ekibi': { en: 'part-time-lead-generation-team.html', de: 'de/teilzeit-bizdev-team.html', fr: 'fr/part-time-lead-generation-team.html' },
+        'teilzeit-bizdev-team': { en: 'part-time-lead-generation-team.html', de: 'de/teilzeit-bizdev-team.html', fr: 'fr/part-time-lead-generation-team.html' },
+        'abd-pr-hizmeti': { en: 'usa-pr-service.html', de: 'de/usa-pr-dienst.html', fr: 'fr/usa-pr-service.html' },
+        'corporate-digital-gifting': { en: 'corporate-digital-gifting.html', de: 'de/unternehmens-digitale-geschenke.html', fr: 'fr/corporate-digital-gifting.html' },
+        'usa-pr-service': { en: 'usa-pr-service.html', de: 'de/usa-pr-dienst.html', fr: 'fr/usa-pr-service.html' },
+        'kurumsal-dijital-hediye-promosyon': { en: 'corporate-digital-gifting.html', de: 'de/unternehmens-digitale-geschenke.html', fr: 'fr/corporate-digital-gifting.html' },
+        'unternehmens-digitale-geschenke': { en: 'corporate-digital-gifting.html', de: 'de/unternehmens-digitale-geschenke.html', fr: 'fr/corporate-digital-gifting.html' },
+        'usa-pr-dienst': { en: 'usa-pr-service.html', de: 'de/usa-pr-dienst.html', fr: 'fr/usa-pr-service.html' },
+        'international-market-entry': { en: 'international-market-entry.html', de: 'de/international-market-entry.html', fr: 'fr/international-market-entry.html' }
     };
     return urls[templateName] || urls['index'];
 }
@@ -118,7 +119,7 @@ function getActiveStates(templateName) {
 }
 
 function buildPage(templateName, outputName, lang = 'en') {
-    const templateDir = lang === 'tr' || lang === 'de' || lang === 'fr' ? `templates/${lang}/` : 'templates/';
+    const templateDir = lang === 'de' || lang === 'fr' ? `templates/${lang}/` : 'templates/';
     const templatePath = `${templateDir}${templateName}.html`;
 
     if (lang === 'fr' && !fs.existsSync(templatePath)) {
@@ -136,8 +137,8 @@ function buildPage(templateName, outputName, lang = 'en') {
     let content = fs.existsSync(templatePath) ? fs.readFileSync(templatePath, 'utf8') : fs.readFileSync(`templates/${templateName}.html`, 'utf8');
 
     let htmlTemplate = createHTMLTemplate(lang);
-    let pageNavigation = lang === 'tr' ? navigationTR : lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
-    let pageFooter = lang === 'tr' ? footerTR : lang === 'de' ? footerDE : lang === 'fr' ? footerFR : footerEN;
+    let pageNavigation = lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
+    let pageFooter = lang === 'de' ? footerDE : lang === 'fr' ? footerFR : footerEN;
 
     // Clean up data-i18n attributes as we handle translation on build
     content = content.replace(/\s*data-i18n="[^"]*"/g, '');
@@ -159,7 +160,7 @@ function buildPage(templateName, outputName, lang = 'en') {
 
     const logoPath = basePath + 'Expandia-main-logo-koyu-yesil.png';
     htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
-    const turkishServicesPath = lang === 'tr' ? './' : './tr/';
+    const turkishServicesPath = './';
 
     pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, navPath);
     pageNavigation = pageNavigation.replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html');
@@ -172,12 +173,7 @@ function buildPage(templateName, outputName, lang = 'en') {
     content = content.replace(/\{\{BASE_PATH\}\}/g, basePath);
 
     // Language specific logic 
-    if (lang === 'tr') {
-        pageNavigation = applyTranslations(pageNavigation, 'tr');
-        pageFooter = applyTranslations(pageFooter, 'tr');
-        content = applyTranslations(content, 'tr');
-        pageNavigation = pageNavigation.replace(/href="\.\.\/b2b-lead-generation-agency\.html"/g, 'href="./b2b-lead-generation-ajansi.html"');
-    } else if (lang === 'de') {
+    if (lang === 'de') {
         pageNavigation = applyTranslations(pageNavigation, 'de');
         pageFooter = applyTranslations(pageFooter, 'de');
         content = applyTranslations(content, 'de');
@@ -234,7 +230,7 @@ function buildPage(templateName, outputName, lang = 'en') {
     // Hreflang Tags in HEAD
     const hreflangUrls2 = getHreflangUrls(templateName);
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, hreflangUrls2.en);
-    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, hreflangUrls2.tr);
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, '');
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, hreflangUrls2.de);
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, hreflangUrls2.fr || 'fr/');
 
@@ -290,8 +286,8 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
     }
 
     // Select Navigation/Footer based on language
-    let nav = lang === 'tr' ? navigationTR : lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
-    let foot = lang === 'tr' ? footerTR : lang === 'de' ? footerDE : lang === 'fr' ? footerFR : footerEN;
+    let nav = lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
+    let foot = lang === 'de' ? footerDE : lang === 'fr' ? footerFR : footerEN;
 
     // Clean i18n
     nav = nav.replace(/\s*data-i18n="[^"]*"/g, '');
@@ -306,11 +302,11 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
     blogTemplate = blogTemplate.replace('{{FOOTER_INCLUDE}}', foot);
 
     // Turkish services path
-    const turkishServicesPath = lang === 'tr' ? '../' : '../tr/';
+    const turkishServicesPath = './';
     blogTemplate = blogTemplate.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
 
     // Flag logic
-    const currentFlag = lang === 'tr' ? '🇹🇷' : lang === 'de' ? '🇩🇪' : lang === 'fr' ? '🇫🇷' : '🇺🇸';
+    const currentFlag = lang === 'de' ? '🇩🇪' : lang === 'fr' ? '🇫🇷' : '🇺🇸';
     blogTemplate = blogTemplate.replace(/<span id="current-flag">.*?<\/span>/g, `<span id="current-flag">${currentFlag}</span>`);
 
     // Hreflang logic for switcher (Simple relative adjustment)
@@ -408,7 +404,7 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
 // Blog Post Building Function
 function buildBlogPosts() {
     console.log('\n🏗️  Building Blog Posts (Multi-Language)...');
-    const languages = ['en', 'de', 'fr', 'tr'];
+    const languages = ['en', 'de', 'fr'];
     let totalBuilt = 0;
 
     // Use English templates as the master list
@@ -458,7 +454,7 @@ function buildServiceCityPages() {
     // Read the mega template
     const templateContent = fs.readFileSync('templates/service-city-landing.html', 'utf8');
     let pageCount = 0;
-    const languages = ['en', 'de', 'fr', 'tr'];
+    const languages = ['en', 'de', 'fr'];
 
     languages.forEach(lang => {
         services.forEach(service => {
@@ -571,17 +567,17 @@ function buildServiceCityPages() {
                 content = content.replace(/\{\{CITY_LANDMARK\}\}/g, cityData.landmark || 'the city center');
 
                 // Navigation/Footer
-                let pageNavigation = lang === 'tr' ? navigationTR : lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
-                let pageFooter = lang === 'tr' ? footerTR : lang === 'de' ? footerDE : lang === 'fr' ? footerFR : footerEN;
+                let pageNavigation = lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
+                let pageFooter = lang === 'de' ? footerDE : lang === 'fr' ? footerFR : footerEN;
 
                 // Clean i18n
                 pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
                 pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
 
-                const basePath = (lang === 'tr' || lang === 'de' || lang === 'fr') ? '../' : './';
-                const logoPath = (lang === 'tr' || lang === 'de' || lang === 'fr') ? '../Expandia-main-logo-koyu-yesil.png' : 'Expandia-main-logo-koyu-yesil.png';
+                const basePath = (lang === 'de' || lang === 'fr') ? '../' : './';
+                const logoPath = (lang === 'de' || lang === 'fr') ? '../Expandia-main-logo-koyu-yesil.png' : 'Expandia-main-logo-koyu-yesil.png';
                 htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
-                const turkishServicesPath = lang === 'tr' ? './' : './tr/';
+                const turkishServicesPath = './';
 
                 pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
                 pageNavigation = pageNavigation.replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html');
@@ -599,7 +595,7 @@ function buildServiceCityPages() {
                 }
 
                 // Flag logic
-                const currentFlag = lang === 'tr' ? '🇹🇷' : lang === 'de' ? '🇩🇪' : lang === 'fr' ? '🇫🇷' : '🇺🇸';
+                const currentFlag = lang === 'de' ? '🇩🇪' : lang === 'fr' ? '🇫🇷' : '🇺🇸';
                 pageNavigation = pageNavigation.replace(/<span id="current-flag">.*?<\/span>/g, `<span id="current-flag">${currentFlag}</span>`);
 
                 htmlTemplate = htmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
@@ -616,7 +612,7 @@ function buildServiceCityPages() {
 
                 // Hreflang logic
                 htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, `${slug}.html`);
-                htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, `tr/${slug}.html`);
+                htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, ``);
                 htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, `de/${slug}.html`);
                 htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, `fr/${slug}.html`);
 
@@ -671,7 +667,7 @@ function buildServiceIndustryCityPages() {
     // Read the mega template
     const templateContent = fs.readFileSync('templates/service-industry-city-landing.html', 'utf8');
     let pageCount = 0;
-    const languages = ['en', 'de', 'fr', 'tr'];
+    const languages = ['en', 'de', 'fr'];
 
     languages.forEach(lang => {
         services.forEach(service => {
@@ -712,17 +708,17 @@ function buildServiceIndustryCityPages() {
                     content = content.replace(/\{\{INDUSTRY_SLUG\}\}/g, industry.slug);
 
                     // Navigation/Footer
-                    let pageNavigation = lang === 'tr' ? navigationTR : lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
-                    let pageFooter = lang === 'tr' ? footerTR : lang === 'de' ? footerDE : lang === 'fr' ? footerFR : footerEN;
+                    let pageNavigation = lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
+                    let pageFooter = lang === 'de' ? footerDE : lang === 'fr' ? footerFR : footerEN;
 
                     // Clean i18n
                     pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
                     pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
 
-                    const basePath = (lang === 'tr' || lang === 'de' || lang === 'fr') ? '../' : './';
-                    const logoPath = (lang === 'tr' || lang === 'de' || lang === 'fr') ? '../Expandia-main-logo-koyu-yesil.png' : 'Expandia-main-logo-koyu-yesil.png';
+                    const basePath = (lang === 'de' || lang === 'fr') ? '../' : './';
+                    const logoPath = (lang === 'de' || lang === 'fr') ? '../Expandia-main-logo-koyu-yesil.png' : 'Expandia-main-logo-koyu-yesil.png';
                     htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
-                    const turkishServicesPath = lang === 'tr' ? './' : './tr/';
+                    const turkishServicesPath = './';
 
                     pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
                     pageNavigation = pageNavigation.replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html');
@@ -753,7 +749,7 @@ function buildServiceIndustryCityPages() {
 
                     // Hreflang logic
                     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, `${slug}.html`);
-                    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, `tr/${slug}.html`);
+                    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, ``);
                     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, `de/${slug}.html`);
                     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, `fr/${slug}.html`);
 
@@ -1324,7 +1320,7 @@ function buildGlossaryTerms() {
     console.log('\n📖 Building Glossary Term Pages...');
 
     const templateContent = fs.readFileSync('templates/glossary-term.html', 'utf8');
-    const languages = ['en', 'de', 'fr', 'tr'];
+    const languages = ['en', 'de', 'fr'];
 
     languages.forEach(lang => {
         const glossaryIndexUrl = lang === 'en' ? 'glossary.html' : 'glossary.html'; // Relative path handling below
@@ -1390,8 +1386,8 @@ function buildGlossaryTerms() {
 
 
             // Navigation/Footer
-            let pageNavigation = lang === 'tr' ? navigationTR : lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
-            let pageFooter = lang === 'tr' ? footerTR : lang === 'de' ? footerDE : lang === 'fr' ? footerFR : footerEN;
+            let pageNavigation = lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
+            let pageFooter = lang === 'de' ? footerDE : lang === 'fr' ? footerFR : footerEN;
 
             // Clean i18n
             pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
@@ -1489,7 +1485,7 @@ function buildGlossaryIndex() {
     console.log('\n📖 Building Glossary Index Pages...');
 
     const templateContent = fs.readFileSync('templates/glossary-index.html', 'utf8');
-    const languages = ['en', 'de', 'fr', 'tr'];
+    const languages = ['en', 'de', 'fr'];
 
     languages.forEach(lang => {
         let htmlTemplate = createHTMLTemplate(lang);
@@ -1557,8 +1553,8 @@ function buildGlossaryIndex() {
         content = content.replace(/\{\{GLOSSARY_LIST\}\}/g, listHtml);
 
         // Navigation/Footer
-        let pageNavigation = lang === 'tr' ? navigationTR : lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
-        let pageFooter = lang === 'tr' ? footerTR : lang === 'de' ? footerDE : lang === 'fr' ? footerFR : footerEN;
+        let pageNavigation = lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
+        let pageFooter = lang === 'de' ? footerDE : lang === 'fr' ? footerFR : footerEN;
 
         pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
         pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
@@ -1655,7 +1651,6 @@ function generateSitemap() {
             serviceCityPages.push(`${slug}.html`); // EN
             serviceCityPages.push(`de/${slug}.html`); // DE
             serviceCityPages.push(`fr/${slug}.html`); // FR
-            serviceCityPages.push(`tr/${slug}.html`); // TR
         });
     });
 
@@ -1668,7 +1663,6 @@ function generateSitemap() {
                 serviceIndustryCityPages.push(`${slug}.html`); // EN
                 serviceIndustryCityPages.push(`de/${slug}.html`); // DE
                 serviceIndustryCityPages.push(`fr/${slug}.html`); // FR
-                serviceIndustryCityPages.push(`tr/${slug}.html`); // TR
             });
         });
     });
@@ -1754,30 +1748,7 @@ buildPage('recruitment', 'recruitment', 'en');
 buildPage('ai-creative-studio', 'ai-creative-studio', 'en');
 buildPage('blog-index', 'blog/index', 'en');
 
-// Build Turkish pages
-console.log('Building Turkish pages...');
-buildPage('index', 'index', 'tr');
-buildPage('about', 'about', 'tr');
-buildPage('solutions', 'solutions', 'tr');
-buildPage('contact', 'contact', 'tr');
-buildPage('case-studies', 'case-studies', 'tr');
-buildPage('satis-koruma-hizmetleri', 'satis-koruma-hizmetleri', 'tr');
-buildPage('vizyon-misyon', 'vizyon-misyon', 'tr');
-buildPage('etik-ilkelerimiz', 'etik-ilkelerimiz', 'tr');
-buildPage('pazar-temeli-programi', 'pazar-temeli-programi', 'tr');
-buildPage('pazar-hizlandirici-program', 'pazar-hizlandirici-program', 'tr');
-buildPage('kismi-is-gelistirme-ekibi', 'kismi-is-gelistirme-ekibi', 'tr');
-// Build New Pillar Pages (Turkish)
-buildPage('managed-it-services', 'managed-it-services', 'tr');
-buildPage('vulnerability-assessments', 'vulnerability-assessments', 'tr');
-buildPage('email-security', 'email-security', 'tr');
-buildPage('website-care-plans', 'website-care-plans', 'tr');
-buildPage('revops-crm-setup', 'revops-crm-setup', 'tr');
-buildPage('lost-lead-reactivation', 'lost-lead-reactivation', 'tr');
-buildPage('speed-to-lead', 'speed-to-lead', 'tr');
-buildPage('recruitment', 'recruitment', 'tr');
-buildPage('ai-creative-studio', 'ai-creative-studio', 'tr');
-buildPage('blog-index', 'blog/index', 'tr');
+
 
 // Build German pages
 console.log('Building German pages...');

@@ -360,8 +360,8 @@ function switchToEnglish() {
     localStorage.setItem('expandia_language_preference', 'en');
 
     // Detect if already on English (not in any language subfolder)
-    const isOnEnglish = !path.includes('/tr/') && !path.includes('/de/') && !path.includes('/fr/') &&
-        !path.endsWith('/tr') && !path.endsWith('/de') && !path.endsWith('/fr');
+    const isOnEnglish = !path.includes('/de/') && !path.includes('/fr/') &&
+        !path.endsWith('/de') && !path.endsWith('/fr');
 
     if (isOnEnglish) {
         console.log('Already on English version');
@@ -370,7 +370,7 @@ function switchToEnglish() {
 
     // Extract the page name from current path
     let pageName = path.split('/').pop() || 'index.html';
-    if (pageName === '' || pageName === 'fr' || pageName === 'tr' || pageName === 'de') {
+    if (pageName === '' || pageName === 'fr' || pageName === 'de') {
         pageName = 'index.html';
     }
 
@@ -378,30 +378,7 @@ function switchToEnglish() {
     window.location.href = origin + '/' + pageName;
 }
 
-function switchToTurkish() {
-    const path = window.location.pathname;
-    const origin = window.location.origin;
 
-    // Set user language preference to prevent auto-redirects
-    localStorage.setItem('expandia_language_preference', 'tr');
-
-    // Detect if already on Turkish
-    const isOnTurkish = path.includes('/tr/') || path.endsWith('/tr');
-
-    if (isOnTurkish) {
-        console.log('Already on Turkish version');
-        return;
-    }
-
-    // Extract the page name from current path
-    let pageName = path.split('/').pop() || 'index.html';
-    if (pageName === '' || pageName === 'fr' || pageName === 'tr' || pageName === 'de') {
-        pageName = 'index.html';
-    }
-
-    // Build the Turkish URL
-    window.location.href = origin + '/tr/' + pageName;
-}
 
 function switchToGerman() {
     const path = window.location.pathname;
@@ -412,7 +389,6 @@ function switchToGerman() {
 
     // Detect current language from path
     const isOnFrench = path.includes('/fr/') || path.endsWith('/fr');
-    const isOnTurkish = path.includes('/tr/') || path.endsWith('/tr');
     const isOnGerman = path.includes('/de/') || path.endsWith('/de');
 
     if (isOnGerman) {
@@ -422,7 +398,7 @@ function switchToGerman() {
 
     // Extract the page name from current path
     let pageName = path.split('/').pop() || 'index.html';
-    if (pageName === '' || pageName === 'fr' || pageName === 'tr' || pageName === 'de') {
+    if (pageName === '' || pageName === 'fr' || pageName === 'de') {
         pageName = 'index.html';
     }
 
@@ -447,7 +423,7 @@ function switchToFrench() {
 
     // Extract the page name from current path
     let pageName = path.split('/').pop() || 'index.html';
-    if (pageName === '' || pageName === 'fr' || pageName === 'tr' || pageName === 'de') {
+    if (pageName === '' || pageName === 'fr' || pageName === 'de') {
         pageName = 'index.html';
     }
 
@@ -472,7 +448,6 @@ function detectUserLocation() {
 
     // Check if we're already on the correct page to avoid redirect loops
     const currentPath = window.location.pathname;
-    const isOnTurkish = currentPath.startsWith('/tr/') || currentPath === '/tr';
     const isOnGerman = currentPath.startsWith('/de/') || currentPath === '/de';
     const isOnFrench = currentPath.startsWith('/fr/') || currentPath === '/fr';
 
@@ -483,21 +458,14 @@ function detectUserLocation() {
             .then(country => {
 
                 // Language-specific countries/regions
-                const turkishCountries = ['TR', 'CY']; // Turkey, Cyprus
                 const germanCountries = ['DE', 'AT', 'CH']; // Germany, Austria, Switzerland
                 const frenchCountries = ['FR', 'BE', 'CA', 'LU', 'MC', 'SN', 'CI']; // France, Belgium, Canada, Luxembourg, Monaco, etc.
 
-                const shouldShowTurkish = turkishCountries.includes(country);
                 const shouldShowGerman = germanCountries.includes(country);
                 const shouldShowFrench = frenchCountries.includes(country);
 
                 // Show notification and redirect based on location
-                if (shouldShowTurkish && !isOnTurkish) {
-                    showLanguageNotification('Turkish', () => {
-                        sessionStorage.setItem('expandia_last_redirect', Date.now().toString());
-                        switchToTurkish();
-                    });
-                } else if (shouldShowGerman && !isOnGerman) {
+                if (shouldShowGerman && !isOnGerman) {
                     showLanguageNotification('German', () => {
                         sessionStorage.setItem('expandia_last_redirect', Date.now().toString());
                         switchToGerman();
@@ -507,7 +475,11 @@ function detectUserLocation() {
                         sessionStorage.setItem('expandia_last_redirect', Date.now().toString());
                         switchToFrench();
                     });
-                } else if (!shouldShowTurkish && !shouldShowGerman && !shouldShowFrench && (isOnTurkish || isOnGerman || isOnFrench)) {
+                    showLanguageNotification('French', () => {
+                        sessionStorage.setItem('expandia_last_redirect', Date.now().toString());
+                        switchToFrench();
+                    });
+                } else if (!shouldShowGerman && !shouldShowFrench && (isOnGerman || isOnFrench)) {
                     showLanguageNotification('English', () => {
                         sessionStorage.setItem('expandia_last_redirect', Date.now().toString());
                         switchToEnglish();
@@ -519,16 +491,10 @@ function detectUserLocation() {
             .catch(error => {
                 // Fallback to browser language detection
                 const browserLang = navigator.language || navigator.userLanguage;
-                const isTurkishBrowser = browserLang.startsWith('tr');
                 const isGermanBrowser = browserLang.startsWith('de');
                 const isFrenchBrowser = browserLang.startsWith('fr');
 
-                if (isTurkishBrowser && !isOnTurkish) {
-                    showLanguageNotification('Turkish', () => {
-                        sessionStorage.setItem('expandia_last_redirect', Date.now().toString());
-                        switchToTurkish();
-                    });
-                } else if (isGermanBrowser && !isOnGerman) {
+                if (isGermanBrowser && !isOnGerman) {
                     showLanguageNotification('German', () => {
                         sessionStorage.setItem('expandia_last_redirect', Date.now().toString());
                         switchToGerman();
@@ -552,11 +518,7 @@ function showLanguageNotification(suggestedLanguage, redirectCallback) {
     let acceptText = '';
     let declineText = '';
 
-    if (suggestedLanguage === 'Turkish') {
-        message = 'Türkiye\'den erişiyor gibi görünüyorsunuz. Türkçe versiyonu görüntülemek ister misiniz?';
-        acceptText = 'Evet, Türkçe';
-        declineText = 'Hayır, English kalsın';
-    } else if (suggestedLanguage === 'German') {
+    if (suggestedLanguage === 'German') {
         message = 'Es sieht so aus, als würden Sie aus einem deutschsprachigen Land zugreifen. Möchten Sie die deutsche Version anzeigen?';
         acceptText = 'Ja, Deutsch';
         declineText = 'Nein, English beibehalten';
@@ -565,12 +527,12 @@ function showLanguageNotification(suggestedLanguage, redirectCallback) {
         acceptText = 'Oui, Français';
         declineText = 'Non, garder l\'anglais';
     } else {
-        message = 'It looks like you\'re accessing from outside Turkey. Would you like to view the English version?';
+        message = 'Use English version?';
         acceptText = 'Yes, English';
-        declineText = 'No, keep Turkish';
+        declineText = 'No';
     }
 
-    const flag = suggestedLanguage === 'Turkish' ? '🇹🇷' : suggestedLanguage === 'German' ? '🇩🇪' : suggestedLanguage === 'French' ? '🇫🇷' : '🇺🇸';
+    const flag = suggestedLanguage === 'German' ? '🇩🇪' : suggestedLanguage === 'French' ? '🇫🇷' : '🇺🇸';
 
     banner.innerHTML = `
         <div class="container mx-auto flex items-center justify-between">
@@ -601,15 +563,14 @@ function showLanguageNotification(suggestedLanguage, redirectCallback) {
         banner.remove();
         // Save user preference to not show again
         let pref = 'en';
-        if (suggestedLanguage === 'Turkish') pref = 'en'; // Was Turkish, keep English/current? No, decline means keep CURRENT.
+        if (suggestedLanguage === 'German') pref = 'en';
         // The logic in original code was: if suggested is Turkish (so currently NOT Turkish), decline means keep English (or whatever it is).
         // Actually the original code hardcoded: localStorage.setItem('expandia_language_preference', suggestedLanguage === 'Turkish' ? 'en' : 'tr');
         // This is a bit simplistic. It should probably save the CURRENT language as preference.
 
         // Let's improve this: save the CURRENT detected language as preference.
         const currentPath = window.location.pathname;
-        if (currentPath.startsWith('/tr/')) pref = 'tr';
-        else if (currentPath.startsWith('/de/')) pref = 'de';
+        if (currentPath.startsWith('/de/')) pref = 'de';
         else if (currentPath.startsWith('/fr/')) pref = 'fr';
         else pref = 'en';
 
@@ -676,8 +637,6 @@ function setupLanguageSwitching() {
 
             if (lang === 'en') {
                 switchToEnglish();
-            } else if (lang === 'tr') {
-                switchToTurkish();
             } else if (lang === 'de') {
                 switchToGerman();
             } else if (lang === 'fr') {
@@ -689,13 +648,11 @@ function setupLanguageSwitching() {
     // Update flag display
     const currentFlag = document.getElementById('current-flag');
     if (currentFlag) {
-        const isOnTurkish = window.location.pathname.startsWith('/tr/') || window.location.pathname === '/tr';
+
         const isOnGerman = window.location.pathname.startsWith('/de/') || window.location.pathname === '/de';
         const isOnFrench = window.location.pathname.startsWith('/fr/') || window.location.pathname === '/fr';
 
-        if (isOnTurkish) {
-            currentFlag.textContent = '🇹🇷';
-        } else if (isOnGerman) {
+        if (isOnGerman) {
             currentFlag.textContent = '🇩🇪';
         } else if (isOnFrench) {
             currentFlag.textContent = '🇫🇷';
