@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const formData = new FormData(contactForm);
 
             // A. HONEYPOT CHECK (Anti-Spam)
-            // If the hidden 'website' field is filled, it's a bot. Fake success.
             if (formData.get('website')) {
                 contactForm.reset();
                 if (statusEl) statusEl.textContent = 'Thanks! We will get back within 24 hours.';
@@ -39,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // B. MATH CAPTCHA CHECK
-            // HTML says "30+31=". The answer must be 61.
             const mathAnswer = formData.get('math');
             if (mathAnswer !== '61') {
                 if (statusEl) statusEl.textContent = 'Please solve the math question correctly (30+31).';
@@ -48,21 +46,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (statusEl) statusEl.textContent = 'Sending...';
 
-            // C. FORMAT DATA FOR WORKER
-            // We combine Name, Company, and Service into the "message" 
-            // so your current Worker logic receives all the info.
-            const fullMessage = `
-                Name: ${formData.get('name')}
-                Company: ${formData.get('company')}
-                Service Interest: ${formData.get('service')}
-                ------------------------
-                Message:
-                ${formData.get('message')}
-            `;
-
+            // C. PAYLOAD - Send all required fields
             const payload = {
+                name: formData.get('name'),
+                company: formData.get('company'),
                 email: formData.get('email'),
-                message: fullMessage
+                service: formData.get('service') || '',
+                message: formData.get('message') || '',
+                math: formData.get('math')
             };
 
             try {
@@ -78,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (statusEl) statusEl.textContent = 'Thanks! We will get back within 24 hours.';
                     contactForm.reset();
                 } else {
-                    if (statusEl) statusEl.textContent = data.message || 'Submission failed. Please try again.';
+                    if (statusEl) statusEl.textContent = data.error || 'Submission failed. Please try again.';
                 }
             } catch (err) {
                 console.error(err);
@@ -115,14 +106,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (btn) btn.textContent = 'Subscribing...';
 
-            // C. PAYLOAD
+            // C. PAYLOAD for newsletter
             const payload = {
                 email: formData.get('email'),
-                message: 'Newsletter Subscription Request' // Static message for newsletter
+                math: formData.get('math')
             };
 
             try {
-                const resp = await fetch('/api/contact', {
+                const resp = await fetch('/api/subscribe', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
