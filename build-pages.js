@@ -250,7 +250,7 @@ function buildPage(templateName, outputName, lang = 'en') {
         // We put NEW articles FIRST as requested
         const combinedArticles = [...newArticles, ...legacyBlogPosts];
 
-        htmlTemplate = htmlTemplate.replace('{{BLOG_ARTICLES_JSON}}', JSON.stringify(combinedArticles));
+        htmlTemplate = htmlTemplate.replace(/\{\{\s*BLOG_ARTICLES_JSON\s*\}\}/g, JSON.stringify(combinedArticles));
     }
 
     let outputPath = lang === 'en' ? `${outputName}.html` : `${lang}/${outputName}.html`;
