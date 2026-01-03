@@ -46,18 +46,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (statusEl) statusEl.textContent = 'Sending...';
 
-            // C. PAYLOAD - Send all required fields
+            // C. FORMAT DATA FOR WORKER
+            const fullMessage = `
+Name: ${formData.get('name')}
+Company: ${formData.get('company')}
+Service Interest: ${formData.get('service') || 'Not specified'}
+------------------------
+Message:
+${formData.get('message') || 'No message provided'}
+            `.trim();
+
             const payload = {
-                name: formData.get('name'),
-                company: formData.get('company'),
                 email: formData.get('email'),
-                service: formData.get('service') || '',
-                message: formData.get('message') || '',
-                math: formData.get('math')
+                message: fullMessage
             };
 
             try {
-                const resp = await fetch('/api/contact', {
+                const resp = await fetch('https://expandia-contact-form.omaycompany.workers.dev/', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
@@ -69,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (statusEl) statusEl.textContent = 'Thanks! We will get back within 24 hours.';
                     contactForm.reset();
                 } else {
-                    if (statusEl) statusEl.textContent = data.error || 'Submission failed. Please try again.';
+                    if (statusEl) statusEl.textContent = data.message || 'Submission failed. Please try again.';
                 }
             } catch (err) {
                 console.error(err);
@@ -109,11 +114,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // C. PAYLOAD for newsletter
             const payload = {
                 email: formData.get('email'),
-                math: formData.get('math')
+                message: 'Newsletter Subscription Request'
             };
 
             try {
-                const resp = await fetch('/api/subscribe', {
+                const resp = await fetch('https://expandia-contact-form.omaycompany.workers.dev/', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
