@@ -1,18 +1,50 @@
 
 const fs = require('fs');
 const path = require('path');
-const cities = require('./data/cities.json');
-const industries = require('./data/industries.json');
-const services = require('./data/services.json');
-const serviceContent = require('./data/service-content.json');
-const topCities = require('./data/top-cities.json');
-const topIndustries = require('./data/top-industries.json');
-const glossary = require('./data/glossary.json');
-const metadata = require('./data/metadata.json');
-const { createHTMLTemplate, generateOrganizationSchema, generateBreadcrumbSchema } = require('./scripts/utils/template-engine');
-const { applyTranslations } = require('./scripts/utils/translations');
-const { blogTopics } = require('./scripts/generate-blog-posts');
-const legacyBlogPosts = require('./data/legacy-blog-posts.json');
+
+// MOCK DATA (Dependencies deleted)
+const cities = [];
+const industries = [];
+const services = [];
+const serviceContent = {};
+const topCities = [];
+const topIndustries = [];
+const glossary = [];
+const metadata = {};
+const legacyBlogPosts = [];
+const blogTopics = {};
+
+// INLINE HELPER FUNCTIONS
+function createHTMLTemplate(lang = 'en', headContent = '', scriptContent = '') {
+    return `<!DOCTYPE html>
+<html lang="${lang}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{PAGE_TITLE}}</title>
+    <meta name="description" content="{{PAGE_DESCRIPTION}}">
+    <link rel="icon" type="image/png" href="{{BASE_PATH}}favicon.png">
+    <link rel="stylesheet" href="{{BASE_PATH}}dist/css/output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    ${headContent}
+    {{SCHEMA_MARKUP}}
+</head>
+<body class="bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary">
+    {{HEADER}}
+    <main class="flex-grow">
+        {{CONTENT}}
+    </main>
+    {{FOOTER}}
+    <script src="{{BASE_PATH}}dist/js/index.js"></script>
+    <script src="{{BASE_PATH}}dist/js/contact.js"></script>
+    ${scriptContent}
+</body>
+</html>`;
+}
+
+function generateOrganizationSchema() { return {}; }
+function generateBreadcrumbSchema() { return {}; }
+const applyTranslations = (content) => content; // Identity function (English only)
 
 // 🚨 BUILD SYSTEM WARNING
 console.log('\n🔧 EXPANDIA BUILD SYSTEM STARTING...');
@@ -42,26 +74,23 @@ if (!fs.existsSync(footerPath)) {
 
 const navigationEN = fs.readFileSync(headerPath, 'utf8');
 
-const navigationDE = fs.readFileSync('includes/header-de.html', 'utf8');
-const navigationFR = fs.readFileSync('includes/header-fr.html', 'utf8');
+// DISABLED: Multi-language support removed
+// const navigationDE = fs.readFileSync('includes/header-de.html', 'utf8');
+// const navigationFR = fs.readFileSync('includes/header-fr.html', 'utf8');
 const footerEN = fs.readFileSync(footerPath, 'utf8');
 
-const footerDE = fs.existsSync('includes/footer-de.html') ? fs.readFileSync('includes/footer-de.html', 'utf8') : footerEN;
-const footerFR = fs.existsSync('includes/footer-fr.html') ? fs.readFileSync('includes/footer-fr.html', 'utf8') : footerEN;
+// const footerDE = fs.existsSync('includes/footer-de.html') ? fs.readFileSync('includes/footer-de.html', 'utf8') : footerEN;
+// const footerFR = fs.existsSync('includes/footer-fr.html') ? fs.readFileSync('includes/footer-fr.html', 'utf8') : footerEN;
 
 console.log(`✅ Successfully loaded headers for all languages`);
 console.log(`✅ Successfully loaded footers for all languages`);
 
 function getPageMetadata(templateName, lang = 'en') {
-    // Get base metadata from JSON
-    const baseMeta = metadata[templateName] || metadata['index'];
-
-    // Check for translations in JSON
-    if (baseMeta.translations && baseMeta.translations[lang]) {
-        return { ...baseMeta, ...baseMeta.translations[lang] };
-    }
-
-    return baseMeta;
+    return {
+        title: 'Expandia - Cold Email Infrastructure & Lead Generation',
+        description: 'Premium B2B Lead Generation and Cold Email Infrastructure services. Get 2-day delivery on infrastructure setup and marketing campaigns.',
+        keywords: 'cold email, lead generation, sales, marketing'
+    };
 }
 
 function getHreflangUrls(templateName) {
@@ -78,8 +107,7 @@ function getHreflangUrls(templateName) {
         'revops-crm-setup': { en: 'revops-crm-setup.html', de: 'de/revops-crm-setup.html', fr: 'fr/revops-crm-setup.html' },
         'lost-lead-reactivation': { en: 'lost-lead-reactivation.html', de: 'de/lost-lead-reactivation.html', fr: 'fr/lost-lead-reactivation.html' },
         'speed-to-lead': { en: 'speed-to-lead.html', de: 'de/speed-to-lead.html', fr: 'fr/speed-to-lead.html' },
-        'recruitment': { en: 'recruitment.html', de: 'de/recruitment.html', fr: 'fr/recruitment.html' },
-        'ai-creative-studio': { en: 'ai-creative-studio.html', de: 'de/ai-creative-studio.html', fr: 'fr/ai-creative-studio.html' },
+
         'vision-mission': { en: 'vision-mission.html', de: 'de/vision-mission.html', fr: 'fr/vision-mission.html' },
         'vizyon-misyon': { en: 'vision-mission.html', de: 'de/vision-mission.html', fr: 'fr/vision-mission.html' },
         'our-ethical-principles': { en: 'our-ethical-principles.html', de: 'de/our-ethical-principles.html', fr: 'fr/our-ethical-principles.html' },
@@ -93,12 +121,9 @@ function getHreflangUrls(templateName) {
         'part-time-lead-generation-team': { en: 'part-time-lead-generation-team.html', de: 'de/teilzeit-bizdev-team.html', fr: 'fr/part-time-lead-generation-team.html' },
         'kismi-is-gelistirme-ekibi': { en: 'part-time-lead-generation-team.html', de: 'de/teilzeit-bizdev-team.html', fr: 'fr/part-time-lead-generation-team.html' },
         'teilzeit-bizdev-team': { en: 'part-time-lead-generation-team.html', de: 'de/teilzeit-bizdev-team.html', fr: 'fr/part-time-lead-generation-team.html' },
-        'abd-pr-hizmeti': { en: 'usa-pr-service.html', de: 'de/usa-pr-dienst.html', fr: 'fr/usa-pr-service.html' },
         'corporate-digital-gifting': { en: 'corporate-digital-gifting.html', de: 'de/unternehmens-digitale-geschenke.html', fr: 'fr/corporate-digital-gifting.html' },
-        'usa-pr-service': { en: 'usa-pr-service.html', de: 'de/usa-pr-dienst.html', fr: 'fr/usa-pr-service.html' },
         'kurumsal-dijital-hediye-promosyon': { en: 'corporate-digital-gifting.html', de: 'de/unternehmens-digitale-geschenke.html', fr: 'fr/corporate-digital-gifting.html' },
         'unternehmens-digitale-geschenke': { en: 'corporate-digital-gifting.html', de: 'de/unternehmens-digitale-geschenke.html', fr: 'fr/corporate-digital-gifting.html' },
-        'usa-pr-dienst': { en: 'usa-pr-service.html', de: 'de/usa-pr-dienst.html', fr: 'fr/usa-pr-service.html' },
         'international-market-entry': { en: 'international-market-entry.html', de: 'de/international-market-entry.html', fr: 'fr/international-market-entry.html' }
     };
     return urls[templateName] || urls['index'];
@@ -122,10 +147,6 @@ function buildPage(templateName, outputName, lang = 'en') {
     const templateDir = lang === 'de' || lang === 'fr' ? `templates/${lang}/` : 'templates/';
     const templatePath = `${templateDir}${templateName}.html`;
 
-    if (lang === 'fr' && !fs.existsSync(templatePath)) {
-        return;
-    }
-
     if (!fs.existsSync(templatePath)) {
         const fallbackPath = `templates/${templateName}.html`;
         if (!fs.existsSync(fallbackPath)) {
@@ -137,8 +158,8 @@ function buildPage(templateName, outputName, lang = 'en') {
     let content = fs.existsSync(templatePath) ? fs.readFileSync(templatePath, 'utf8') : fs.readFileSync(`templates/${templateName}.html`, 'utf8');
 
     let htmlTemplate = createHTMLTemplate(lang);
-    let pageNavigation = lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
-    let pageFooter = lang === 'de' ? footerDE : lang === 'fr' ? footerFR : footerEN;
+    let pageNavigation = navigationEN; // Only English now
+    let pageFooter = footerEN; // Only English now
 
     // Clean up data-i18n attributes as we handle translation on build
     content = content.replace(/\s*data-i18n="[^"]*"/g, '');
@@ -401,7 +422,8 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
     console.log(`✅ Built blog post: ${outputPath}`);
 }
 
-// Blog Post Building Function
+// DISABLED: Blog Posts Generation (was creating 1000s of pages)
+/*
 function buildBlogPosts() {
     console.log('\n🏗️  Building Blog Posts (Multi-Language)...');
     const languages = ['en', 'de', 'fr'];
@@ -689,7 +711,7 @@ function buildServiceIndustryCityPages() {
                         'managed-it': 'managed-it-services',
                         'cybersecurity': 'vulnerability-assessments',
                         'recruitment': 'recruitment',
-                        'ai-studio': 'ai-creative-studio',
+
                         'revops': 'revops-crm-setup'
                     };
                     const serviceSlug = serviceSlugMap[service.id] || 'index';
@@ -934,7 +956,10 @@ const defaultRegionContent = {
     marketContext: 'B2B markets worldwide are increasingly open to professional outreach from qualified providers offering clear value propositions.',
     serviceIntro: 'Our lead generation services help B2B companies connect with corporate and industrial buyers across diverse global markets.'
 };
+*/
 
+// DISABLED: City landing pages generation (was creating 1000s of pages)
+/*
 function buildCityPages() {
     console.log('\n🏗️  Building City Landing Pages (B2B/Corporate/Manufacturing Focus)...');
 
@@ -1095,11 +1120,12 @@ function buildCityPages() {
     });
     console.log(`✅ Built ${cities.length} city pages with region-specific B2B content.`);
 }
+*/
 
 
 // -------------------------------------------------------------------------
-// NEW: Build Industry Pages
-// -------------------------------------------------------------------------
+// DISABLED: Industry landing pages generation (was creating 1000s of pages)
+/*
 function buildIndustryPages() {
     console.log('\n🏗️  Building Industry Pages...');
 
@@ -1172,6 +1198,7 @@ function buildIndustryPages() {
     });
     console.log(`✅ Built ${industries.length} industry pages.`);
 }
+*/
 
 // -------------------------------------------------------------------------
 // NEW: Build City Locations Page (Map)
@@ -1620,63 +1647,34 @@ function generateSitemap() {
     const baseUrl = 'https://www.expandia.ch';
     const today = new Date().toISOString().split('T')[0];
 
-    // List of static pages
-    const staticPages = [
-        'index.html', 'about.html', 'solutions.html', 'contact.html', 'case-studies.html',
-        'managed-it-services.html', 'vulnerability-assessments.html', 'email-security.html',
-        'website-care-plans.html', 'revops-crm-setup.html', 'lost-lead-reactivation.html',
-        'speed-to-lead.html', 'recruitment.html', 'ai-creative-studio.html', 'city-locations.html'
+    // SIMPLIFIED: Only core English pages
+    const allPages = [
+        'index.html',
+        'about.html',
+        'solutions.html',
+        'contact.html',
+        'vision-mission.html',
+        'our-ethical-principles.html',
+        'privacy-policy.html',
+        'terms-of-service.html',
+        'cookie-policy.html',
+        // Service pages
+        'b2b-lead-generation-agency.html',
+        'sales-development-agency.html',
+        'outbound-marketing-agency.html',
+        'prospect-finding-service.html',
+        'cold-email-agency.html',
+        'email-automation.html',
+        'email-marketing-management.html',
+        'outbound-lead-generation.html',
+        // Core services
+        'revops-crm-setup.html',
+        'lost-lead-reactivation.html',
+        'speed-to-lead.html',
+        // New product pages
+        'product-cold-email-infra.html',
+        'product-marketing-setup.html'
     ];
-
-    // Add TR/DE/FR versions
-    const languages = ['tr', 'de', 'fr'];
-    const localizedPages = [];
-    languages.forEach(lang => {
-        staticPages.forEach(page => {
-            localizedPages.push(`${lang}/${page}`);
-        });
-    });
-
-    // Add City Pages
-    const cityPages = cities.map(c => `${c.slug}.html`);
-
-    // Add Industry Pages
-    const industryPages = industries.map(i => `${i.slug}.html`);
-
-    // Add Service x City Pages
-    const serviceCityPages = [];
-    services.forEach(service => {
-        cities.forEach(city => {
-            const slug = service.slug_pattern.replace('{{CITY_SLUG}}', city.slug.replace('b2b-lead-generation-', ''));
-            serviceCityPages.push(`${slug}.html`); // EN
-            serviceCityPages.push(`de/${slug}.html`); // DE
-            serviceCityPages.push(`fr/${slug}.html`); // FR
-        });
-    });
-
-    // Add Service x Industry x City Pages
-    const serviceIndustryCityPages = [];
-    services.forEach(service => {
-        topIndustries.forEach(industry => {
-            topCities.forEach(cityData => {
-                const slug = `${service.slug_pattern.replace('-{{CITY_SLUG}}', '')}-${industry.slug.replace('b2b-lead-generation-', '')}-${cityData.slug.replace('b2b-lead-generation-', '')}`;
-                serviceIndustryCityPages.push(`${slug}.html`); // EN
-                serviceIndustryCityPages.push(`de/${slug}.html`); // DE
-                serviceIndustryCityPages.push(`fr/${slug}.html`); // FR
-            });
-        });
-    });
-
-    // Add Blog Pages
-    const blogDir = 'templates/blog';
-    let blogPages = [];
-    if (fs.existsSync(blogDir)) {
-        blogPages = fs.readdirSync(blogDir)
-            .filter(file => file.endsWith('.html'))
-            .map(file => `blog/${file}`);
-    }
-
-    const allPages = [...staticPages, ...localizedPages, ...cityPages, ...industryPages, ...serviceCityPages, ...serviceIndustryCityPages, ...blogPages];
 
     let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
@@ -1706,92 +1704,87 @@ buildPage('index', 'index', 'en');
 buildPage('about', 'about', 'en');
 buildPage('solutions', 'solutions', 'en');
 buildPage('contact', 'contact', 'en');
-buildPage('case-studies', 'case-studies', 'en');
-buildPage('onboarding', 'onboarding', 'en');
 buildPage('vision-mission', 'vision-mission', 'en');
 buildPage('our-ethical-principles', 'our-ethical-principles', 'en');
-buildPage('market-foundation-program', 'market-foundation-program', 'en');
-buildPage('market-accelerator-program', 'market-accelerator-program', 'en');
-buildPage('part-time-lead-generation-team', 'part-time-lead-generation-team', 'en');
+buildPage('privacy-policy', 'privacy-policy', 'en');
+buildPage('terms-of-service', 'terms-of-service', 'en');
+buildPage('cookie-policy', 'cookie-policy', 'en');
 
 // Build English service pages
 console.log('Building English service pages...');
 buildPage('b2b-lead-generation-agency', 'b2b-lead-generation-agency', 'en');
 buildPage('sales-development-agency', 'sales-development-agency', 'en');
 buildPage('outbound-marketing-agency', 'outbound-marketing-agency', 'en');
-buildPage('lead-generation-service', 'lead-generation-service', 'en');
 buildPage('prospect-finding-service', 'prospect-finding-service', 'en');
-buildPage('appointment-setting-service', 'appointment-setting-service', 'en');
 buildPage('cold-email-agency', 'cold-email-agency', 'en');
-buildPage('outsourced-sales-team-service', 'outsourced-sales-team-service', 'en');
 buildPage('email-automation', 'email-automation', 'en');
 buildPage('email-marketing-management', 'email-marketing-management', 'en');
-buildPage('export-marketing-consulting', 'export-marketing-consulting', 'en');
-buildPage('international-market-entry', 'international-market-entry', 'en');
-buildPage('distributor-finding', 'distributor-finding', 'en');
-buildPage('overseas-sales-consulting', 'overseas-sales-consulting', 'en');
-buildPage('europe-market-entry', 'europe-market-entry', 'en');
-buildPage('fractional-bizdev-team', 'fractional-bizdev-team', 'en');
-buildPage('inbound-lead-generation', 'inbound-lead-generation', 'en');
 buildPage('outbound-lead-generation', 'outbound-lead-generation', 'en');
 
 // Build New Pillar Pages (English)
 console.log('Building New Pillar Pages (English)...');
-buildPage('managed-it-services', 'managed-it-services', 'en');
-buildPage('vulnerability-assessments', 'vulnerability-assessments', 'en');
-buildPage('email-security', 'email-security', 'en');
-buildPage('website-care-plans', 'website-care-plans', 'en');
 buildPage('revops-crm-setup', 'revops-crm-setup', 'en');
 buildPage('lost-lead-reactivation', 'lost-lead-reactivation', 'en');
 buildPage('speed-to-lead', 'speed-to-lead', 'en');
-buildPage('recruitment', 'recruitment', 'en');
-buildPage('ai-creative-studio', 'ai-creative-studio', 'en');
 
-// Build German pages
-console.log('Building German pages...');
-buildPage('index', 'index', 'de');
-buildPage('about', 'about', 'de');
-buildPage('solutions', 'solutions', 'de');
-buildPage('contact', 'contact', 'de');
-buildPage('case-studies', 'case-studies', 'de');
-buildPage('vision-mission', 'vision-mission', 'de');
-buildPage('our-ethical-principles', 'our-ethical-principles', 'de');
-buildPage('markt-grundlagen-programm', 'markt-grundlagen-programm', 'de');
-buildPage('markt-beschleuniger-programm', 'markt-beschleuniger-programm', 'de');
-buildPage('teilzeit-bizdev-team', 'teilzeit-bizdev-team', 'de');
-buildPage('lead-generation-service', 'lead-generation-service', 'de');
-buildPage('international-market-entry', 'international-market-entry', 'de');
-buildPage('managed-it-services', 'managed-it-services', 'de');
-buildPage('vulnerability-assessments', 'vulnerability-assessments', 'de');
-buildPage('email-security', 'email-security', 'de');
-buildPage('website-care-plans', 'website-care-plans', 'de');
-buildPage('revops-crm-setup', 'revops-crm-setup', 'de');
-buildPage('lost-lead-reactivation', 'lost-lead-reactivation', 'de');
-buildPage('speed-to-lead', 'speed-to-lead', 'de');
-buildPage('recruitment', 'recruitment', 'de');
-buildPage('ai-creative-studio', 'ai-creative-studio', 'de');
+// Build Product Pages
+console.log('Building Product Pages...');
+buildPage('product-cold-email-infra', 'product-cold-email-infra', 'en');
+buildPage('product-marketing-setup', 'product-marketing-setup', 'en');
 
-// Build French pages
-console.log('Building French pages...');
-buildPage('index', 'index', 'fr');
-buildPage('about', 'about', 'fr');
-buildPage('solutions', 'solutions', 'fr');
-buildPage('contact', 'contact', 'fr');
-buildPage('case-studies', 'case-studies', 'fr');
-buildPage('vision-mission', 'vision-mission', 'fr');
-buildPage('our-ethical-principles', 'our-ethical-principles', 'fr');
-buildPage('market-foundation-program', 'market-foundation-program', 'fr');
-buildPage('market-accelerator-program', 'market-accelerator-program', 'fr');
-buildPage('part-time-lead-generation-team', 'part-time-lead-generation-team', 'fr');
-buildPage('managed-it-services', 'managed-it-services', 'fr');
-buildPage('vulnerability-assessments', 'vulnerability-assessments', 'fr');
-buildPage('email-security', 'email-security', 'fr');
-buildPage('website-care-plans', 'website-care-plans', 'fr');
-buildPage('revops-crm-setup', 'revops-crm-setup', 'fr');
-buildPage('lost-lead-reactivation', 'lost-lead-reactivation', 'fr');
-buildPage('speed-to-lead', 'speed-to-lead', 'fr');
-buildPage('recruitment', 'recruitment', 'fr');
-buildPage('ai-creative-studio', 'ai-creative-studio', 'fr');
+// Build German pages - DISABLED (English only)
+// console.log('Building German pages...');
+// buildPage('index', 'index', 'de');
+// buildPage('about', 'about', 'de');
+// buildPage('solutions', 'solutions', 'de');
+// buildPage('contact', 'contact', 'de');
+// buildPage('case-studies', 'case-studies', 'de');
+// buildPage('vision-mission', 'vision-mission', 'de');
+// buildPage('our-ethical-principles', 'our-ethical-principles', 'de');
+// buildPage('city-locations', 'city-locations', 'de');
+// buildPage('markt-grundlagen-programm', 'markt-grundlagen-programm', 'de');
+// buildPage('markt-beschleuniger-programm', 'markt-beschleuniger-programm', 'de');
+// buildPage('teilzeit-bizdev-team', 'teilzeit-bizdev-team', 'de');
+// buildPage('lead-generation-service', 'lead-generation-service', 'de');
+// buildPage('international-market-entry', 'international-market-entry', 'de');
+// buildPage('managed-it-services', 'managed-it-services', 'de');
+// buildPage('vulnerability-assessments', 'vulnerability-assessments', 'de');
+// buildPage('email-security', 'email-security', 'de');
+// buildPage('website-care-plans', 'website-care-plans', 'de');
+// buildPage('revops-crm-setup', 'revops-crm-setup', 'de');
+// buildPage('lost-lead-reactivation', 'lost-lead-reactivation', 'de');
+// buildPage('speed-to-lead', 'speed-to-lead', 'de');
+// buildPage('ai-creative-studio', 'ai-creative-studio', 'de');
+// buildPage('privacy-policy', 'privacy-policy', 'de');
+// buildPage('terms-of-service', 'terms-of-service', 'de');
+// buildPage('cookie-policy', 'cookie-policy', 'de');
+
+// Build French pages - DISABLED (English only)
+// console.log('Building French pages...');
+// buildPage('index', 'index', 'fr');
+// buildPage('about', 'about', 'fr');
+// buildPage('solutions', 'solutions', 'fr');
+// buildPage('contact', 'contact', 'fr');
+// buildPage('case-studies', 'case-studies', 'fr');
+// buildPage('vision-mission', 'vision-mission', 'fr');
+// buildPage('our-ethical-principles', 'our-ethical-principles', 'fr');
+// buildPage('city-locations', 'city-locations', 'fr');
+// buildPage('market-foundation-program', 'market-foundation-program', 'fr');
+// buildPage('market-accelerator-program', 'market-accelerator-program', 'fr');
+// buildPage('part-time-lead-generation-team', 'part-time-lead-generation-team', 'fr');
+// buildPage('lead-generation-service', 'lead-generation-service', 'fr');
+// buildPage('international-market-entry', 'international-market-entry', 'fr');
+// buildPage('managed-it-services', 'managed-it-services', 'fr');
+// buildPage('vulnerability-assessments', 'vulnerability-assessments', 'fr');
+// buildPage('email-security', 'email-security', 'fr');
+// buildPage('website-care-plans', 'website-care-plans', 'fr');
+// buildPage('revops-crm-setup', 'revops-crm-setup', 'fr');
+// buildPage('lost-lead-reactivation', 'lost-lead-reactivation', 'fr');
+// buildPage('speed-to-lead', 'speed-to-lead', 'fr');
+// buildPage('ai-creative-studio', 'ai-creative-studio', 'fr');
+// buildPage('privacy-policy', 'privacy-policy', 'fr');
+// buildPage('terms-of-service', 'terms-of-service', 'fr');
+// buildPage('cookie-policy', 'cookie-policy', 'fr');
 
 // Generate sitemap
 generateSitemap();
