@@ -1723,7 +1723,6 @@ buildPage('lead-generation-service', 'lead-generation-service', 'en');
 buildPage('prospect-finding-service', 'prospect-finding-service', 'en');
 buildPage('appointment-setting-service', 'appointment-setting-service', 'en');
 buildPage('cold-email-agency', 'cold-email-agency', 'en');
-buildPage('sales-protection-services', 'sales-protection-services', 'en');
 buildPage('outsourced-sales-team-service', 'outsourced-sales-team-service', 'en');
 buildPage('email-automation', 'email-automation', 'en');
 buildPage('email-marketing-management', 'email-marketing-management', 'en');
@@ -1732,8 +1731,9 @@ buildPage('international-market-entry', 'international-market-entry', 'en');
 buildPage('distributor-finding', 'distributor-finding', 'en');
 buildPage('overseas-sales-consulting', 'overseas-sales-consulting', 'en');
 buildPage('europe-market-entry', 'europe-market-entry', 'en');
-buildPage('corporate-digital-gifting', 'corporate-digital-gifting', 'en');
-buildPage('usa-pr-service', 'usa-pr-service', 'en');
+buildPage('fractional-bizdev-team', 'fractional-bizdev-team', 'en');
+buildPage('inbound-lead-generation', 'inbound-lead-generation', 'en');
+buildPage('outbound-lead-generation', 'outbound-lead-generation', 'en');
 
 // Build New Pillar Pages (English)
 console.log('Building New Pillar Pages (English)...');
@@ -1746,9 +1746,6 @@ buildPage('lost-lead-reactivation', 'lost-lead-reactivation', 'en');
 buildPage('speed-to-lead', 'speed-to-lead', 'en');
 buildPage('recruitment', 'recruitment', 'en');
 buildPage('ai-creative-studio', 'ai-creative-studio', 'en');
-buildPage('blog-index', 'blog/index', 'en');
-
-
 
 // Build German pages
 console.log('Building German pages...');
@@ -1757,17 +1754,13 @@ buildPage('about', 'about', 'de');
 buildPage('solutions', 'solutions', 'de');
 buildPage('contact', 'contact', 'de');
 buildPage('case-studies', 'case-studies', 'de');
-buildPage('schutzdienstleistungen', 'schutzdienstleistungen', 'de');
 buildPage('vision-mission', 'vision-mission', 'de');
 buildPage('our-ethical-principles', 'our-ethical-principles', 'de');
 buildPage('markt-grundlagen-programm', 'markt-grundlagen-programm', 'de');
 buildPage('markt-beschleuniger-programm', 'markt-beschleuniger-programm', 'de');
 buildPage('teilzeit-bizdev-team', 'teilzeit-bizdev-team', 'de');
-// Build German service pages
 buildPage('lead-generation-service', 'lead-generation-service', 'de');
 buildPage('international-market-entry', 'international-market-entry', 'de');
-buildPage('corporate-digital-gifting', 'corporate-digital-gifting', 'de');
-// Build New Pillar Pages (German)
 buildPage('managed-it-services', 'managed-it-services', 'de');
 buildPage('vulnerability-assessments', 'vulnerability-assessments', 'de');
 buildPage('email-security', 'email-security', 'de');
@@ -1777,7 +1770,6 @@ buildPage('lost-lead-reactivation', 'lost-lead-reactivation', 'de');
 buildPage('speed-to-lead', 'speed-to-lead', 'de');
 buildPage('recruitment', 'recruitment', 'de');
 buildPage('ai-creative-studio', 'ai-creative-studio', 'de');
-buildPage('blog-index', 'blog/index', 'de');
 
 // Build French pages
 console.log('Building French pages...');
@@ -1791,7 +1783,6 @@ buildPage('our-ethical-principles', 'our-ethical-principles', 'fr');
 buildPage('market-foundation-program', 'market-foundation-program', 'fr');
 buildPage('market-accelerator-program', 'market-accelerator-program', 'fr');
 buildPage('part-time-lead-generation-team', 'part-time-lead-generation-team', 'fr');
-// Build New Pillar Pages (French)
 buildPage('managed-it-services', 'managed-it-services', 'fr');
 buildPage('vulnerability-assessments', 'vulnerability-assessments', 'fr');
 buildPage('email-security', 'email-security', 'fr');
@@ -1801,21 +1792,11 @@ buildPage('lost-lead-reactivation', 'lost-lead-reactivation', 'fr');
 buildPage('speed-to-lead', 'speed-to-lead', 'fr');
 buildPage('recruitment', 'recruitment', 'fr');
 buildPage('ai-creative-studio', 'ai-creative-studio', 'fr');
-buildPage('blog-index', 'blog/index', 'fr');
 
-// Call new functions
-buildCityPages();
-buildIndustryPages();
-buildServiceCityPages();
-buildServiceIndustryCityPages(); // NEW
-buildCityLocationsPage();
-buildBlogPosts();
-buildGlossaryTerms(); // NEW
-buildGlossaryIndex(); // NEW
+// Generate sitemap
 generateSitemap();
 
-console.log('\n🎉 BUILD COMPLETE with enhanced SEO!');
+console.log('\n🎉 BUILD COMPLETE!');
 console.log('📁 Generated files have been updated from templates/');
 console.log('⚠️  REMEMBER: Always edit templates/, not root HTML files');
-console.log('📖 See README-DEVELOPMENT.md for development guidelines');
 console.log('🚀 Ready for deployment!\n');
