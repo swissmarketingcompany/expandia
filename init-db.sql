@@ -5,8 +5,6 @@ CREATE TABLE IF NOT EXISTS offers (
     id VARCHAR(255) PRIMARY KEY,
     client_name VARCHAR(500) NOT NULL,
     title VARCHAR(500) NOT NULL,
-    password_hash VARCHAR(255) NOT NULL,
-    password_plain VARCHAR(255) NOT NULL,
     html_content TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
