@@ -36,7 +36,7 @@ function generateOrganizationSchema() {
             "telephone": "+000-000-0000",
             "contactType": "sales",
             "areaServed": ["EU", "UK", "US", "MEA", "APAC"],
-            "availableLanguage": ["en", "de", "tr"]
+            "availableLanguage": ["en", "de", "fr"]
         }
     };
 }
@@ -73,7 +73,6 @@ function createHTMLTemplate(lang = 'en', headContent = '', scriptContent = '') {
     
     <!-- Hreflang Links -->
     <link rel="alternate" hreflang="en" href="https://www.expandia.ch/{{PAGE_URL_EN}}">
-    <link rel="alternate" hreflang="tr" href="https://www.expandia.ch/{{PAGE_URL_TR}}">
     <link rel="alternate" hreflang="de" href="https://www.expandia.ch/{{PAGE_URL_DE}}">
     <link rel="alternate" hreflang="fr" href="https://www.expandia.ch/{{PAGE_URL_FR}}">
     <link rel="alternate" hreflang="x-default" href="https://www.expandia.ch/{{PAGE_URL_EN}}">
