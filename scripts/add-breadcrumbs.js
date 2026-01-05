@@ -21,7 +21,7 @@ const EXCLUDED_PAGES = [
 ];
 
 // Generate breadcrumb schema based on file path
-const generateBreadcrumbSchema = (filePath, baseUrl = 'https://www.expandia.ch') => {
+const generateBreadcrumbSchema = (filePath, baseUrl = 'https://www.goexpandia.com') => {
     const relativePath = filePath.replace(/^.*?expandia\//, '');
     const parts = relativePath.split('/').filter(p => p && p !== 'expandia');
 
@@ -90,7 +90,7 @@ const generateBreadcrumbHTML = (breadcrumbs) => {
             return `<li class="text-base-content/60">${crumb.name}</li>`;
         } else {
             // Clickable breadcrumb
-            const url = crumb.url.replace('https://www.expandia.ch', '..');
+            const url = crumb.url.replace('https://www.goexpandia.com', '..');
             return `<li><a href="${url}" class="link link-hover">${crumb.name}</a></li>`;
         }
     }).join('\n                ');

@@ -57,7 +57,7 @@ Disallow: /admin/
 Disallow: /offers/
 
 # 🗺️ SITEMAP LOCATION - CRITICAL FOR SEARCH ENGINE DISCOVERY
-Sitemap: https://www.expandia.ch/sitemap.xml
+Sitemap: https://www.goexpandia.com/sitemap.xml
 
 # 🚀 CRAWL OPTIMIZATION DIRECTIVES
 # Optimize crawl rate for our high-value content

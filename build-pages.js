@@ -216,7 +216,7 @@ function buildPage(templateName, outputName, lang = 'en') {
     htmlTemplate = htmlTemplate.replace('{{FOOTER}}', pageFooter);
 
     const pageMetadata = getPageMetadata(templateName, lang);
-    const canonicalUrl = lang === 'en' ? `https://www.expandia.ch/${outputName}.html` : `https://www.expandia.ch/${lang}/${outputName}.html`;
+    const canonicalUrl = lang === 'en' ? `https://www.goexpandia.com/${outputName}.html` : `https://www.goexpandia.com/${lang}/${outputName}.html`;
 
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, pageMetadata.title);
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, pageMetadata.description);
@@ -362,8 +362,8 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
 
     // Canonical tag logic
     const canonicalUrl = lang === 'en'
-        ? `https://www.expandia.ch/blog/${outputName}.html`
-        : `https://www.expandia.ch/${lang}/blog/${outputName}.html`;
+        ? `https://www.goexpandia.com/blog/${outputName}.html`
+        : `https://www.goexpandia.com/${lang}/blog/${outputName}.html`;
     blogTemplate = blogTemplate.replace(/\{\{CANONICAL_URL\}\}/g, canonicalUrl);
 
     // --- Metadata Replacement Logic ---
@@ -608,7 +608,7 @@ function buildServiceCityPages() {
                 htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, `${service.name} ${city}, ${service.name} Agency ${city}, ${country} B2B Services`);
 
                 const canonicalSlug = lang === 'en' ? `${slug}.html` : `${lang}/${slug}.html`;
-                htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.expandia.ch/${canonicalSlug}`);
+                htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.goexpandia.com/${canonicalSlug}`);
 
                 // Hreflang logic
                 htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, `${slug}.html`);
@@ -619,8 +619,8 @@ function buildServiceCityPages() {
                 // Fix missing FR hreflang in template logic (hacky patch based on previous code)
                 if (!htmlTemplate.includes('hreflang="fr"')) {
                     htmlTemplate = htmlTemplate.replace(
-                        `<link rel="alternate" hreflang="de" href="https://www.expandia.ch/de/${slug}.html">`,
-                        `<link rel="alternate" hreflang="de" href="https://www.expandia.ch/de/${slug}.html">\n    <link rel="alternate" hreflang="fr" href="https://www.expandia.ch/fr/${slug}.html">`
+                        `<link rel="alternate" hreflang="de" href="https://www.goexpandia.com/de/${slug}.html">`,
+                        `<link rel="alternate" hreflang="de" href="https://www.goexpandia.com/de/${slug}.html">\n    <link rel="alternate" hreflang="fr" href="https://www.goexpandia.com/fr/${slug}.html">`
                     );
                 }
 
@@ -628,7 +628,7 @@ function buildServiceCityPages() {
                     "@context": "https://schema.org",
                     "@type": "Service",
                     "name": `${service.name} in ${city}`,
-                    "provider": { "@type": "Organization", "name": "Go Expandia", "url": "https://www.expandia.ch" },
+                    "provider": { "@type": "Organization", "name": "Go Expandia", "url": "https://www.goexpandia.com" },
                     "areaServed": {
                         "@type": "City",
                         "name": city,
@@ -745,7 +745,7 @@ function buildServiceIndustryCityPages() {
                     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, `${service.name} ${industry.name} ${city}`);
 
                     const canonicalSlug = lang === 'en' ? `${slug}.html` : `${lang}/${slug}.html`;
-                    htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.expandia.ch/${canonicalSlug}`);
+                    htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.goexpandia.com/${canonicalSlug}`);
 
                     // Hreflang logic
                     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, `${slug}.html`);
@@ -756,8 +756,8 @@ function buildServiceIndustryCityPages() {
                     // Fix missing FR hreflang
                     if (!htmlTemplate.includes('hreflang="fr"')) {
                         htmlTemplate = htmlTemplate.replace(
-                            `<link rel="alternate" hreflang="de" href="https://www.expandia.ch/de/${slug}.html">`,
-                            `<link rel="alternate" hreflang="de" href="https://www.expandia.ch/de/${slug}.html">\n    <link rel="alternate" hreflang="fr" href="https://www.expandia.ch/fr/${slug}.html">`
+                            `<link rel="alternate" hreflang="de" href="https://www.goexpandia.com/de/${slug}.html">`,
+                            `<link rel="alternate" hreflang="de" href="https://www.goexpandia.com/de/${slug}.html">\n    <link rel="alternate" hreflang="fr" href="https://www.goexpandia.com/fr/${slug}.html">`
                         );
                     }
 
@@ -765,7 +765,7 @@ function buildServiceIndustryCityPages() {
                         "@context": "https://schema.org",
                         "@type": "Service",
                         "name": `${service.name} for ${industry.name} in ${city}`,
-                        "provider": { "@type": "Organization", "name": "Go Expandia", "url": "https://www.expandia.ch" },
+                        "provider": { "@type": "Organization", "name": "Go Expandia", "url": "https://www.goexpandia.com" },
                         "areaServed": { "@type": "City", "name": city },
                         "audience": { "@type": "Audience", "audienceType": industry.name }
                     };
@@ -1050,7 +1050,7 @@ function buildCityPages() {
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, title);
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, description);
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, keywords);
-        htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.expandia.ch/${slug}.html`);
+        htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.goexpandia.com/${slug}.html`);
 
         // Hreflang URLs
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, `${slug}.html`);
@@ -1063,7 +1063,7 @@ function buildCityPages() {
             "@context": "https://schema.org",
             "@type": "Service",
             "name": `B2B Lead Generation Services in ${city}`,
-            "provider": { "@type": "Organization", "name": "Go Expandia", "url": "https://www.expandia.ch" },
+            "provider": { "@type": "Organization", "name": "Go Expandia", "url": "https://www.goexpandia.com" },
             "areaServed": {
                 "@type": "City",
                 "name": city,
@@ -1145,7 +1145,7 @@ function buildIndustryPages() {
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, title);
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, description);
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, keywords);
-        htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.expandia.ch/${slug}.html`);
+        htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.goexpandia.com/${slug}.html`);
 
         // Hreflang URLs
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, `${slug}.html`);
@@ -1158,7 +1158,7 @@ function buildIndustryPages() {
             "@context": "https://schema.org",
             "@type": "Service",
             "name": `B2B Lead Generation for ${name}`,
-            "provider": { "@type": "Organization", "name": "Go Expandia", "url": "https://www.expandia.ch" },
+            "provider": { "@type": "Organization", "name": "Go Expandia", "url": "https://www.goexpandia.com" },
             "description": description,
             "audience": {
                 "@type": "Audience",
@@ -1303,7 +1303,7 @@ function buildCityLocationsPage() {
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, pageMetadata.title);
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, pageMetadata.description);
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, pageMetadata.keywords);
-    htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, 'https://www.expandia.ch/city-locations.html');
+    htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, 'https://www.goexpandia.com/city-locations.html');
     htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, '{}'); // TODO: Add schema
 
     fs.writeFileSync('city-locations.html', htmlTemplate, 'utf8');
@@ -1430,7 +1430,7 @@ function buildGlossaryTerms() {
             htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, `${termName} definition, what is ${termName}, ${termName} meaning, ${termData.category} glossary`);
 
             const canonicalSlug = lang === 'en' ? `glossary/${termData.slug}.html` : `${lang}/glossary/${termData.slug}.html`;
-            htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.expandia.ch/${canonicalSlug}`);
+            htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.goexpandia.com/${canonicalSlug}`);
 
             // Hreflang
             htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, `glossary/${termData.slug}.html`);
@@ -1444,7 +1444,7 @@ function buildGlossaryTerms() {
                 "@type": "DefinedTerm",
                 "name": termName,
                 "description": definition,
-                "inDefinedTermSet": "https://www.expandia.ch/glossary"
+                "inDefinedTermSet": "https://www.goexpandia.com/glossary"
             };
 
             const faqSchema = {
@@ -1586,7 +1586,7 @@ function buildGlossaryIndex() {
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, 'glossary, terms, definitions, B2B, sales, marketing');
 
         const canonicalSlug = lang === 'en' ? `glossary/index.html` : `${lang}/glossary/index.html`;
-        htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.expandia.ch/${canonicalSlug}`);
+        htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.goexpandia.com/${canonicalSlug}`);
 
         // Hreflang
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, `glossary/index.html`);
@@ -1617,7 +1617,7 @@ function buildGlossaryIndex() {
 function generateSitemap() {
     console.log('\n🗺️  Generating Sitemap...');
 
-    const baseUrl = 'https://www.expandia.ch';
+    const baseUrl = 'https://www.goexpandia.com';
     const today = new Date().toISOString().split('T')[0];
 
     // List of static pages

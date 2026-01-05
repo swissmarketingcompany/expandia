@@ -1,8 +1,8 @@
-# Expandia.ch Multilingual Routing Map
+# goexpandia.com Multilingual Routing Map
 # SEO and UX-Optimized Language Routing Configuration
 
 routing_configuration:
-  base_domain: "https://www.expandia.ch"
+  base_domain: "https://www.goexpandia.com"
   default_language: "en"
   supported_languages: ["en", "tr", "de", "fr"]
   
@@ -28,10 +28,10 @@ url_mapping:
     de: "/de/"
     fr: "/fr/"
     canonical:
-      en: "https://www.expandia.ch/"
-      tr: "https://www.expandia.ch/tr/"
-      de: "https://www.expandia.ch/de/"
-      fr: "https://www.expandia.ch/fr/"
+      en: "https://www.goexpandia.com/"
+      tr: "https://www.goexpandia.com/tr/"
+      de: "https://www.goexpandia.com/de/"
+      fr: "https://www.goexpandia.com/fr/"
     
   solutions:
     en: "/solutions.html"
@@ -39,10 +39,10 @@ url_mapping:
     de: "/de/solutions.html"
     fr: "/fr/solutions.html"
     canonical:
-      en: "https://www.expandia.ch/solutions.html"
-      tr: "https://www.expandia.ch/tr/solutions.html"
-      de: "https://www.expandia.ch/de/solutions.html"
-      fr: "https://www.expandia.ch/fr/solutions.html"
+      en: "https://www.goexpandia.com/solutions.html"
+      tr: "https://www.goexpandia.com/tr/solutions.html"
+      de: "https://www.goexpandia.com/de/solutions.html"
+      fr: "https://www.goexpandia.com/fr/solutions.html"
       
   about:
     en: "/about.html"
@@ -50,10 +50,10 @@ url_mapping:
     de: "/de/about.html"
     fr: "/fr/about.html"
     canonical:
-      en: "https://www.expandia.ch/about.html"
-      tr: "https://www.expandia.ch/tr/about.html"
-      de: "https://www.expandia.ch/de/about.html"
-      fr: "https://www.expandia.ch/fr/about.html"
+      en: "https://www.goexpandia.com/about.html"
+      tr: "https://www.goexpandia.com/tr/about.html"
+      de: "https://www.goexpandia.com/de/about.html"
+      fr: "https://www.goexpandia.com/fr/about.html"
       
   contact:
     en: "/contact.html"
@@ -61,10 +61,10 @@ url_mapping:
     de: "/de/contact.html"
     fr: "/fr/contact.html"
     canonical:
-      en: "https://www.expandia.ch/contact.html"
-      tr: "https://www.expandia.ch/tr/contact.html"
-      de: "https://www.expandia.ch/de/contact.html"
-      fr: "https://www.expandia.ch/fr/contact.html"
+      en: "https://www.goexpandia.com/contact.html"
+      tr: "https://www.goexpandia.com/tr/contact.html"
+      de: "https://www.goexpandia.com/de/contact.html"
+      fr: "https://www.goexpandia.com/fr/contact.html"
       
   case_studies:
     en: "/case-studies.html"
@@ -72,10 +72,10 @@ url_mapping:
     de: "/de/case-studies.html"
     fr: "/fr/case-studies.html"
     canonical:
-      en: "https://www.expandia.ch/case-studies.html"
-      tr: "https://www.expandia.ch/tr/case-studies.html"
-      de: "https://www.expandia.ch/de/case-studies.html"
-      fr: "https://www.expandia.ch/fr/case-studies.html"
+      en: "https://www.goexpandia.com/case-studies.html"
+      tr: "https://www.goexpandia.com/tr/case-studies.html"
+      de: "https://www.goexpandia.com/de/case-studies.html"
+      fr: "https://www.goexpandia.com/fr/case-studies.html"
 
   # Blog Section
   blog:
@@ -84,10 +84,10 @@ url_mapping:
     de: "/de/blog/"
     fr: "/fr/blog/"
     canonical:
-      en: "https://www.expandia.ch/blog/"
-      tr: "https://www.expandia.ch/tr/blog/"
-      de: "https://www.expandia.ch/de/blog/"
-      fr: "https://www.expandia.ch/fr/blog/"
+      en: "https://www.goexpandia.com/blog/"
+      tr: "https://www.goexpandia.com/tr/blog/"
+      de: "https://www.goexpandia.com/de/blog/"
+      fr: "https://www.goexpandia.com/fr/blog/"
 
   # Service Pages (Different strategies per language)
   service_pages:

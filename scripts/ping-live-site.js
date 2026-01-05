@@ -7,7 +7,7 @@
 
 const https = require('https');
 
-const LIVE_SITEMAP_URL = 'https://www.expandia.ch/sitemap.xml';
+const LIVE_SITEMAP_URL = 'https://www.goexpandia.com/sitemap.xml';
 
 // 🎯 Live search engine ping URLs
 const searchEnginePings = [
@@ -85,7 +85,7 @@ function pingSearchEngine(engine) {
 async function executeLiveNotification() {
     console.log('\n🚀 IMMEDIATE LIVE SITE SEARCH ENGINE NOTIFICATION');
     console.log('=' .repeat(60));
-    console.log(`🌐 LIVE Site: https://www.expandia.ch`);
+    console.log(`🌐 LIVE Site: https://www.goexpandia.com`);
     console.log(`🗺️  LIVE Sitemap: ${LIVE_SITEMAP_URL}`);
     console.log(`📝 Content: 50 LEGENDARY blog posts NOW LIVE!`);
     console.log('=' .repeat(60));

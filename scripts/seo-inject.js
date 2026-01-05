@@ -57,10 +57,10 @@ function hasHreflangLinks(html) {
 
 function buildHreflangBlock() {
   return [
-    '  <link rel="alternate" hreflang="en" href="https://www.expandia.ch/blog/">',
-    '  <link rel="alternate" hreflang="tr" href="https://www.expandia.ch/tr/blog/">',
-    '  <link rel="alternate" hreflang="de" href="https://www.expandia.ch/de/blog/">',
-    '  <link rel="alternate" hreflang="x-default" href="https://www.expandia.ch/blog/">'
+    '  <link rel="alternate" hreflang="en" href="https://www.goexpandia.com/blog/">',
+    '  <link rel="alternate" hreflang="tr" href="https://www.goexpandia.com/tr/blog/">',
+    '  <link rel="alternate" hreflang="de" href="https://www.goexpandia.com/de/blog/">',
+    '  <link rel="alternate" hreflang="x-default" href="https://www.goexpandia.com/blog/">'
   ].join('\n');
 }
 
@@ -97,11 +97,11 @@ function buildOgTwitterBlock({ type, title, description, url }) {
     `  <meta property="og:description" content="${description}"/>`,
     `  <meta property="og:url" content="${url}"/>`,
     `  <meta property="og:site_name" content="Expandia"/>`,
-    `  <meta property="og:image" content="https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png"/>`,
+    `  <meta property="og:image" content="https://www.goexpandia.com/Expandia-main-logo-koyu-yesil.png"/>`,
     `  <meta name="twitter:card" content="summary_large_image"/>`,
     `  <meta name="twitter:title" content="${title}"/>`,
     `  <meta name="twitter:description" content="${description}"/>`,
-    `  <meta name="twitter:image" content="https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png"/>`,
+    `  <meta name="twitter:image" content="https://www.goexpandia.com/Expandia-main-logo-koyu-yesil.png"/>`,
   ].join("\n");
 }
 
@@ -115,7 +115,7 @@ function buildBlogPostingJsonLd({ title, description, url, fileMtime }) {
     publisher: {
       "@type": "Organization",
       name: "Expandia",
-      logo: { "@type": "ImageObject", url: "https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png" },
+      logo: { "@type": "ImageObject", url: "https://www.goexpandia.com/Expandia-main-logo-koyu-yesil.png" },
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     datePublished: TARGET_DATE,
@@ -134,7 +134,7 @@ function processFile(absPath) {
   const isIndex = path.basename(absPath) === "index.html";
   const fileMtime = fs.statSync(absPath).mtimeMs;
 
-  const canonicalUrl = `https://www.expandia.ch/${rel}`;
+  const canonicalUrl = `https://www.goexpandia.com/${rel}`;
   let title = extractTitle(html);
   if (!title) title = path.basename(absPath, ".html").replace(/-/g, " ");
   let description = extractDescription(html);

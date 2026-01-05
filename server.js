@@ -70,7 +70,7 @@ app.use((req, res, next) => {
         }
 
         // Redirect non-www to www (canonical domain)
-        if (host && host.startsWith('expandia.ch') && !host.startsWith('www.')) {
+        if (host && host.startsWith('goexpandia.com') && !host.startsWith('www.')) {
             return res.redirect(301, `https://www.${host}${req.originalUrl}`);
         }
     }
@@ -133,7 +133,7 @@ function createEmailTransporter() {
 
 function formatFromAddress() {
     const envFrom = process.env.FROM_EMAIL || '';
-    if (!envFrom) return 'Expandia <no-reply@expandia.ch>';
+    if (!envFrom) return 'Expandia <no-reply@goexpandia.com>';
     // If already contains a display-name format, return as-is
     if (envFrom.includes('<') && envFrom.includes('>')) return envFrom;
     return `Expandia <${envFrom}>`;
@@ -225,7 +225,7 @@ app.post('https://expandia-contact-form.omaycompany.workers.dev/', contactValida
             try {
                 const result = await resend.emails.send({
                     from: formatFromAddress(),
-                    to: process.env.CONTACT_TO_EMAIL || 'hello@expandia.ch',
+                    to: process.env.CONTACT_TO_EMAIL || 'hello@goexpandia.com',
                     subject: `New Contact Form Submission from ${name} (${company})`,
                     text: emailContent,
                     reply_to: email
@@ -252,7 +252,7 @@ app.post('https://expandia-contact-form.omaycompany.workers.dev/', contactValida
                 try {
                     await transporter.sendMail({
                         from: formatFromAddress(),
-                        to: process.env.CONTACT_TO_EMAIL || 'hello@expandia.ch',
+                        to: process.env.CONTACT_TO_EMAIL || 'hello@goexpandia.com',
                         subject: `New Contact Form Submission from ${name} (${company})`,
                         text: emailContent,
                         replyTo: email
@@ -282,7 +282,7 @@ app.post('https://expandia-contact-form.omaycompany.workers.dev/', contactValida
         console.error('Contact form error:', error);
         res.status(500).json({
             success: false,
-            error: 'Server error. Please try again later or contact us directly at hello@expandia.ch'
+            error: 'Server error. Please try again later or contact us directly at hello@goexpandia.com'
         });
     }
 });
@@ -310,7 +310,7 @@ app.post('/api/subscribe', [
             try {
                 const result = await resend.emails.send({
                     from: formatFromAddress(),
-                    to: process.env.SUBSCRIBE_TO_EMAIL || 'hello@expandia.ch',
+                    to: process.env.SUBSCRIBE_TO_EMAIL || 'hello@goexpandia.com',
                     subject: 'New Newsletter Subscription',
                     text
                 });
@@ -335,7 +335,7 @@ app.post('/api/subscribe', [
                 try {
                     await transporter.sendMail({
                         from: formatFromAddress(),
-                        to: process.env.SUBSCRIBE_TO_EMAIL || 'hello@expandia.ch',
+                        to: process.env.SUBSCRIBE_TO_EMAIL || 'hello@goexpandia.com',
                         subject: 'New Newsletter Subscription',
                         text
                     });

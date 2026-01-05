@@ -8,16 +8,16 @@
 const https = require('https');
 
 // 🎯 PRODUCTION WEBSITE CONFIGURATION
-const WEBSITE_URL = 'https://www.expandia.ch';
+const WEBSITE_URL = 'https://www.goexpandia.com';
 const SITEMAP_URL = `${WEBSITE_URL}/sitemap.xml`;
 
 console.log('\n🚀 EXPANDIA PRODUCTION SEO DOMINATION GUIDE');
-console.log('=' .repeat(70));
+console.log('='.repeat(70));
 console.log(`🌐 LIVE Website: ${WEBSITE_URL}`);
 console.log(`🗺️  LIVE Sitemap: ${SITEMAP_URL}`);
 console.log(`📝 Content Empire: 50 WORLD-CLASS Blog Posts - NOW LIVE!`);
 console.log(`🎯 Mission: IMMEDIATE SEARCH ENGINE DOMINATION`);
-console.log('=' .repeat(70));
+console.log('='.repeat(70));
 
 // 🔥 IMMEDIATE PRODUCTION ACTIONS
 const immediateActions = [
@@ -26,19 +26,19 @@ const immediateActions = [
         priority: 'CRITICAL',
         steps: [
             '1. Go to https://search.google.com/search-console/',
-            '2. Add property: https://www.expandia.ch',
+            '2. Add property: https://www.goexpandia.com',
             '3. Verify ownership (HTML file or DNS)',
-            '4. Submit sitemap: https://www.expandia.ch/sitemap.xml',
+            '4. Submit sitemap: https://www.goexpandia.com/sitemap.xml',
             '5. Request indexing for top 10 blog posts'
         ],
         impact: 'Immediate Google discovery of our content empire'
     },
     {
-        action: 'Bing Webmaster Tools Setup', 
+        action: 'Bing Webmaster Tools Setup',
         priority: 'HIGH',
         steps: [
             '1. Go to https://www.bing.com/webmasters/',
-            '2. Add site: https://www.expandia.ch',
+            '2. Add site: https://www.goexpandia.com',
             '3. Verify ownership',
             '4. Submit sitemap URL',
             '5. Configure crawl settings'
@@ -60,7 +60,7 @@ const immediateActions = [
 // 🎯 PRIORITY BLOG POSTS FOR IMMEDIATE INDEXING
 const priorityPosts = [
     'digital-marketing-complete-guide-2025',
-    'ai-marketing-strategy-guide', 
+    'ai-marketing-strategy-guide',
     'future-marketing-trends-2025-guide',
     'marketing-innovation-strategy-guide',
     'lead-generation-complete-guide-2025',
@@ -76,15 +76,15 @@ const priorityPosts = [
  */
 async function testSitemapAccessibility() {
     console.log('\n🔍 TESTING LIVE SITEMAP ACCESSIBILITY...');
-    
+
     return new Promise((resolve) => {
         https.get(SITEMAP_URL, (response) => {
             let data = '';
-            
+
             response.on('data', (chunk) => {
                 data += chunk;
             });
-            
+
             response.on('end', () => {
                 if (response.statusCode === 200) {
                     console.log('   ✅ SUCCESS: Sitemap is LIVE and accessible!');
@@ -108,10 +108,10 @@ async function testSitemapAccessibility() {
  */
 async function executeProductionSetup() {
     console.log('\n🚀 EXECUTING LIVE PRODUCTION SEO SETUP...');
-    
+
     // Test sitemap accessibility
     const sitemapLive = await testSitemapAccessibility();
-    
+
     // Display immediate actions
     console.log('\n🎯 IMMEDIATE ACTIONS REQUIRED:');
     immediateActions.forEach((item, index) => {
@@ -122,25 +122,25 @@ async function executeProductionSetup() {
             console.log(`      ${step}`);
         });
     });
-    
+
     // Priority posts for immediate indexing
     console.log('\n🏆 TOP PRIORITY POSTS FOR IMMEDIATE GOOGLE SUBMISSION:');
     priorityPosts.forEach((post, index) => {
         const url = `${WEBSITE_URL}/blog/${post}.html`;
         console.log(`   ${index + 1}. ${url}`);
     });
-    
+
     // Manual ping URLs
     console.log('\n⚡ MANUAL SEARCH ENGINE PING URLS:');
     console.log(`   🔍 Google Ping: https://www.google.com/ping?sitemap=${encodeURIComponent(SITEMAP_URL)}`);
     console.log(`   🔍 Bing Ping: https://www.bing.com/ping?sitemap=${encodeURIComponent(SITEMAP_URL)}`);
-    
+
     console.log('\n🎉 PRODUCTION SUCCESS INDICATORS TO WATCH:');
     console.log('   📊 Google Search Console: Coverage report shows indexing');
     console.log('   📈 Analytics: Organic traffic from search engines');
     console.log('   🎯 Rankings: Keywords appearing in search results');
     console.log('   💰 Business: Leads generated from blog content');
-    
+
     console.log('\n🏆 OUR LIVE CONTENT EMPIRE IS READY FOR DOMINATION!');
     console.log('🚀 50 world-class blog posts are now discoverable by search engines!');
     console.log('🌟 EXPANDIA is positioned for unprecedented organic growth!');

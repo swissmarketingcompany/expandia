@@ -10,13 +10,13 @@ const fs = require('fs');
 const path = require('path');
 
 // 🎯 WEBSITE CONFIGURATION
-const WEBSITE_URL = 'https://www.expandia.ch';
+const WEBSITE_URL = 'https://www.goexpandia.com';
 
 // 🏆 OUR LEGENDARY 50-POST CONTENT EMPIRE URLs
 const BLOG_POSTS = [
     // Phase 1: Digital Marketing Fundamentals (Posts 1-10)
     'digital-marketing-complete-guide-2025',
-    'online-marketing-complete-strategy-guide', 
+    'online-marketing-complete-strategy-guide',
     'lead-generation-complete-guide-2025',
     'digital-marketing-services-complete-breakdown',
     'how-to-choose-digital-marketing-agency',
@@ -81,7 +81,7 @@ const PRIORITY_PAGES = [
     'blog/',
     'solutions.html',
     'about.html',
-    'contact.html', 
+    'contact.html',
     'case-studies.html',
     'b2b-lead-generation-agency.html',
     'sales-development-agency.html',
@@ -94,9 +94,9 @@ const PRIORITY_PAGES = [
  */
 function generateUrlList() {
     const urls = [];
-    
+
     console.log('🏆 GENERATING COMPREHENSIVE URL LIST FOR GOOGLE DOMINATION...\n');
-    
+
     // 📍 Priority pages
     console.log('📍 Adding Priority Pages:');
     PRIORITY_PAGES.forEach(page => {
@@ -104,7 +104,7 @@ function generateUrlList() {
         urls.push(url);
         console.log(`   ✅ ${url}`);
     });
-    
+
     // 📝 Our legendary 50-post content empire
     console.log('\n📝 Adding Our LEGENDARY 50-Post Content Empire:');
     BLOG_POSTS.forEach((post, index) => {
@@ -112,11 +112,11 @@ function generateUrlList() {
         urls.push(url);
         console.log(`   🏆 ${index + 1}/50: ${url}`);
     });
-    
+
     console.log(`\n🎯 TOTAL URLS GENERATED: ${urls.length}`);
     console.log(`📊 Blog Posts: ${BLOG_POSTS.length}`);
     console.log(`📄 Priority Pages: ${PRIORITY_PAGES.length}`);
-    
+
     return urls;
 }
 
@@ -136,7 +136,7 @@ function createSubmissionReport(urls) {
             description: 'The most comprehensive digital marketing content library ever created',
             phases: [
                 'Digital Marketing Fundamentals (Posts 1-10)',
-                'Digital Marketing Strategy & Services (Posts 11-20)', 
+                'Digital Marketing Strategy & Services (Posts 11-20)',
                 'Online Marketing & Advertising (Posts 21-30)',
                 'Advanced Marketing Technologies (Posts 31-40)',
                 'Advanced Strategy & Innovation (Posts 41-50)'
@@ -148,7 +148,7 @@ function createSubmissionReport(urls) {
         urls: urls,
         submissionInstructions: [
             '1. Go to Google Search Console (search.google.com/search-console)',
-            '2. Select your property: https://www.expandia.ch',
+            '2. Select your property: https://www.goexpandia.com',
             '3. Navigate to URL Inspection tool',
             '4. Submit each URL individually using "Request Indexing"',
             '5. For bulk submission, use the Sitemaps section with sitemap.xml',
@@ -163,10 +163,10 @@ function createSubmissionReport(urls) {
             'Complete domination of digital marketing search results'
         ]
     };
-    
+
     const reportPath = 'scripts/google-submission-report.json';
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    
+
     console.log(`\n📊 SUBMISSION REPORT CREATED: ${reportPath}`);
     return reportPath;
 }
@@ -177,12 +177,12 @@ function createSubmissionReport(urls) {
 function createUrlListFile(urls) {
     const urlListPath = 'scripts/urls-for-google-submission.txt';
     const urlList = urls.join('\n');
-    
+
     fs.writeFileSync(urlListPath, urlList);
-    
+
     console.log(`\n💾 URL LIST FILE CREATED: ${urlListPath}`);
     console.log(`📝 Contains ${urls.length} URLs ready for Google submission`);
-    
+
     return urlListPath;
 }
 
@@ -191,12 +191,12 @@ function createUrlListFile(urls) {
  */
 function generateSitemapSubmissionInfo() {
     const sitemapUrl = `${WEBSITE_URL}/sitemap.xml`;
-    
+
     console.log('\n🗺️  SITEMAP SUBMISSION INFORMATION:');
     console.log(`   📍 Sitemap URL: ${sitemapUrl}`);
     console.log(`   🎯 Submit via: Google Search Console > Sitemaps`);
     console.log(`   📊 Contains: All ${BLOG_POSTS.length + PRIORITY_PAGES.length} URLs with priorities`);
-    
+
     return sitemapUrl;
 }
 
@@ -210,37 +210,37 @@ function executeGoogleSubmissionCampaign() {
     console.log('📝 Content: 50 world-class blog posts + priority pages');
     console.log('🏆 Objective: TOTAL SEARCH ENGINE DOMINATION');
     console.log('='.repeat(70));
-    
+
     // 🚀 Generate URL list
     const urls = generateUrlList();
-    
+
     // 📊 Create submission report
     const reportPath = createSubmissionReport(urls);
-    
+
     // 💾 Create URL list file
     const urlListPath = createUrlListFile(urls);
-    
+
     // 🗺️ Generate sitemap info
     const sitemapUrl = generateSitemapSubmissionInfo();
-    
+
     // 🎉 Victory summary
     console.log('\n' + '🏆'.repeat(35));
     console.log('🎉 GOOGLE SUBMISSION PREPARATION COMPLETE!');
     console.log('🏆'.repeat(35));
-    
+
     console.log('\n🌟 CAMPAIGN RESULTS:');
     console.log(`   ✅ URLs Generated: ${urls.length}`);
     console.log(`   📊 Report Created: ${reportPath}`);
     console.log(`   💾 URL List File: ${urlListPath}`);
     console.log(`   🗺️  Sitemap URL: ${sitemapUrl}`);
-    
+
     console.log('\n🚀 NEXT STEPS FOR GOOGLE DOMINATION:');
     console.log('   1. 📊 Open Google Search Console');
     console.log('   2. 🗺️  Submit sitemap.xml via Sitemaps section');
     console.log('   3. 🎯 Use URL Inspection tool for individual URLs');
     console.log('   4. 📈 Monitor indexing progress in Coverage report');
     console.log('   5. 🏆 Watch our content empire dominate search results!');
-    
+
     console.log('\n💎 OUR CONTENT EMPIRE ADVANTAGES:');
     console.log('   📝 50 comprehensive, expert-level blog posts');
     console.log('   🎯 Complete digital marketing keyword coverage');
@@ -248,10 +248,10 @@ function executeGoogleSubmissionCampaign() {
     console.log('   ⚡ Full SEO optimization for maximum visibility');
     console.log('   🌟 Industry-defining thought leadership content');
     console.log('   🏆 The most authoritative digital marketing resource online');
-    
+
     console.log('\n🎉 GOOGLE WILL LOVE OUR INCREDIBLE CONTENT! 🎉');
     console.log('🚀 EXPANDIA: READY FOR SEARCH ENGINE DOMINATION! 🚀\n');
-    
+
     return {
         urls,
         reportPath,

@@ -23,7 +23,7 @@ def update_file(filepath):
     else:
             suffix = '/' + filename
 
-    fr_tag = f'<link rel="alternate" hreflang="fr" href="https://www.expandia.ch/fr{suffix}">'
+    fr_tag = f'<link rel="alternate" hreflang="fr" href="https://www.goexpandia.com/fr{suffix}">'
 
     # Check if already exists
     if 'hreflang="fr"' not in content:
