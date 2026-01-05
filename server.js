@@ -63,15 +63,21 @@ app.use((req, res, next) => {
     if (process.env.NODE_ENV === 'production') {
         const proto = req.headers['x-forwarded-proto'] || req.protocol;
         const host = req.headers.host || '';
+        const canonicalHost = 'www.goexpandia.com';
 
-        // Redirect HTTP to HTTPS
+        // 1. Force migration from old domain (expandia.ch) to new canonical domain
+        if (host && host.includes('expandia.ch')) {
+            return res.redirect(301, `https://${canonicalHost}${req.originalUrl}`);
+        }
+
+        // 2. Redirect HTTP to HTTPS
         if (proto !== 'https') {
             return res.redirect(301, `https://${host}${req.originalUrl}`);
         }
 
-        // Redirect non-www to www (canonical domain)
-        if (host && host.startsWith('goexpandia.com') && !host.startsWith('www.')) {
-            return res.redirect(301, `https://www.${host}${req.originalUrl}`);
+        // 3. Redirect non-www to www (canonical domain)
+        if (host === 'goexpandia.com') {
+            return res.redirect(301, `https://${canonicalHost}${req.originalUrl}`);
         }
     }
     next();
