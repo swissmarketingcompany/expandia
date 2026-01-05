@@ -9,8 +9,8 @@ module.exports = {
     extend: {
       colors: {
         // Golden Buzz Palette
-        'buzz-primary': '#f9c23c',
-        'buzz-secondary': '#e86100',
+        'buzz-primary': '#cb102c',
+        'buzz-secondary': '#f9c23c',
         'buzz-accent': '#1fb2a6',
         'buzz-neutral': '#3d4451',
         'buzz-neutral-dark': '#2d3440',
@@ -21,8 +21,8 @@ module.exports = {
         'sans': ['Inter', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
-        'buzz-gradient': 'linear-gradient(90deg, #FFA500 0%, #FFD700 100%)',
-        'buzz-hero': 'linear-gradient(135deg, #f59e0b 0%, #f97316 50%, #dc2626 100%)',
+        'buzz-gradient': 'linear-gradient(90deg, #cb102c 0%, #dc2626 100%)',
+        'buzz-hero': 'linear-gradient(135deg, #991b1b 0%, #cb102c 50%, #dc2626 100%)',
       },
       animation: {
         'bounce-subtle': 'bounce-subtle 2s infinite',
@@ -58,8 +58,8 @@ module.exports = {
     themes: [
       {
         bumblebee: {
-          "primary": "#f9c23c",
-          "secondary": "#e86100", 
+          "primary": "#cb102c",
+          "secondary": "#f9c23c",
           "accent": "#1fb2a6",
           "neutral": "#3d4451",
           "base-100": "#ffffff",

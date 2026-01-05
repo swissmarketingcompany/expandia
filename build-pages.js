@@ -158,7 +158,7 @@ function buildPage(templateName, outputName, lang = 'en') {
     }
     const basePath = relativePrefix || './';
 
-    const logoPath = basePath + 'Expandia-main-logo-koyu-yesil.png';
+    const logoPath = basePath + 'go-expandia-logo.png';
     htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
     const turkishServicesPath = './';
 
@@ -264,7 +264,7 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
 
     const basePath = lang === 'en' ? '../' : '../../';
     const navPath = '../';
-    const logoPath = lang === 'en' ? '../Expandia-main-logo-koyu-yesil.png' : '../../Expandia-main-logo-koyu-yesil.png';
+    const logoPath = lang === 'en' ? '../go-expandia-logo.png' : '../../go-expandia-logo.png';
 
     // Read blog post template
     let blogTemplate;
@@ -367,15 +367,15 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
     blogTemplate = blogTemplate.replace(/\{\{CANONICAL_URL\}\}/g, canonicalUrl);
 
     // --- Metadata Replacement Logic ---
-    let pageTitle = 'Expandia Blog';
+    let pageTitle = 'Go Expandia Blog';
     let pageDesc = 'Deep dive into B2B sales, lead generation, and operations strategies.';
-    let pageKeywords = 'B2B sales, lead generation, Expandia blog';
+    let pageKeywords = 'B2B sales, lead generation, Go Expandia blog';
 
     // 1. Check generated blog topics
     const topic = blogTopics.find(t => t.slug === templateName);
     if (topic) {
         pageTitle = topic.title[lang] || topic.title['en'];
-        pageDesc = pageTitle + '. Read expert insights on Expandia Blog.';
+        pageDesc = pageTitle + '. Read expert insights on Go Expandia Blog.';
     }
     // 2. Check legacy posts
     else {
@@ -387,7 +387,7 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
     }
 
     // Apply replacements
-    blogTemplate = blogTemplate.replace(/\{\{PAGE_TITLE\}\}/g, pageTitle + ' | Expandia');
+    blogTemplate = blogTemplate.replace(/\{\{PAGE_TITLE\}\}/g, pageTitle + ' | Go Expandia');
     blogTemplate = blogTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, pageDesc);
     blogTemplate = blogTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, pageKeywords);
 
@@ -575,7 +575,7 @@ function buildServiceCityPages() {
                 pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
 
                 const basePath = (lang === 'de' || lang === 'fr') ? '../' : './';
-                const logoPath = (lang === 'de' || lang === 'fr') ? '../Expandia-main-logo-koyu-yesil.png' : 'Expandia-main-logo-koyu-yesil.png';
+                const logoPath = (lang === 'de' || lang === 'fr') ? '../go-expandia-logo.png' : 'go-expandia-logo.png';
                 htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
                 const turkishServicesPath = './';
 
@@ -628,7 +628,7 @@ function buildServiceCityPages() {
                     "@context": "https://schema.org",
                     "@type": "Service",
                     "name": `${service.name} in ${city}`,
-                    "provider": { "@type": "Organization", "name": "Expandia", "url": "https://www.expandia.ch" },
+                    "provider": { "@type": "Organization", "name": "Go Expandia", "url": "https://www.expandia.ch" },
                     "areaServed": {
                         "@type": "City",
                         "name": city,
@@ -716,7 +716,7 @@ function buildServiceIndustryCityPages() {
                     pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
 
                     const basePath = (lang === 'de' || lang === 'fr') ? '../' : './';
-                    const logoPath = (lang === 'de' || lang === 'fr') ? '../Expandia-main-logo-koyu-yesil.png' : 'Expandia-main-logo-koyu-yesil.png';
+                    const logoPath = (lang === 'de' || lang === 'fr') ? '../go-expandia-logo.png' : 'go-expandia-logo.png';
                     htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
                     const turkishServicesPath = './';
 
@@ -765,7 +765,7 @@ function buildServiceIndustryCityPages() {
                         "@context": "https://schema.org",
                         "@type": "Service",
                         "name": `${service.name} for ${industry.name} in ${city}`,
-                        "provider": { "@type": "Organization", "name": "Expandia", "url": "https://www.expandia.ch" },
+                        "provider": { "@type": "Organization", "name": "Go Expandia", "url": "https://www.expandia.ch" },
                         "areaServed": { "@type": "City", "name": city },
                         "audience": { "@type": "Audience", "audienceType": industry.name }
                     };
@@ -952,7 +952,7 @@ function buildCityPages() {
         const regionData = regionContent[region] || defaultRegionContent;
 
         // SEO-optimized metadata (no Financial Services, focus on B2B/Corporate/Manufacturing)
-        const title = `B2B Lead Generation Agency in ${city}, ${country} | Corporate & Industrial Sales | Expandia`;
+        const title = `B2B Lead Generation Agency in ${city}, ${country} | Corporate & Industrial Sales | Go Expandia`;
         const description = `Professional B2B lead generation services in ${city}. We help corporate enterprises, manufacturers, and industrial companies generate qualified sales meetings and expand their ${region} market presence. Outbound prospecting, appointment setting, and account-based marketing for complex B2B sales cycles.`;
         const keywords = `B2B lead generation ${city}, corporate sales ${city}, industrial lead generation ${country}, appointment setting ${city}, B2B sales agency ${country}, manufacturing leads, enterprise sales, outbound prospecting, account-based marketing ${city}`;
 
@@ -1031,7 +1031,7 @@ function buildCityPages() {
 
         // Common replacements
         const basePath = './';
-        const logoPath = 'Expandia-main-logo-koyu-yesil.png';
+        const logoPath = 'go-expandia-logo.png';
         htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
 
         pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
@@ -1063,7 +1063,7 @@ function buildCityPages() {
             "@context": "https://schema.org",
             "@type": "Service",
             "name": `B2B Lead Generation Services in ${city}`,
-            "provider": { "@type": "Organization", "name": "Expandia", "url": "https://www.expandia.ch" },
+            "provider": { "@type": "Organization", "name": "Go Expandia", "url": "https://www.expandia.ch" },
             "areaServed": {
                 "@type": "City",
                 "name": city,
@@ -1127,7 +1127,7 @@ function buildIndustryPages() {
 
         // Common replacements
         const basePath = './';
-        const logoPath = 'Expandia-main-logo-koyu-yesil.png';
+        const logoPath = 'go-expandia-logo.png';
 
         pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
         pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
@@ -1158,7 +1158,7 @@ function buildIndustryPages() {
             "@context": "https://schema.org",
             "@type": "Service",
             "name": `B2B Lead Generation for ${name}`,
-            "provider": { "@type": "Organization", "name": "Expandia", "url": "https://www.expandia.ch" },
+            "provider": { "@type": "Organization", "name": "Go Expandia", "url": "https://www.expandia.ch" },
             "description": description,
             "audience": {
                 "@type": "Audience",
@@ -1288,7 +1288,7 @@ function buildCityLocationsPage() {
     let pageNavigation = navigationEN;
     let pageFooter = footerEN;
     const basePath = './';
-    const logoPath = 'Expandia-main-logo-koyu-yesil.png';
+    const logoPath = 'go-expandia-logo.png';
     htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
     pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
     pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
@@ -1398,7 +1398,7 @@ function buildGlossaryTerms() {
             // Let's say: en: /glossary/term.html, de: /de/glossary/term.html
 
             const basePath = (lang === 'en') ? '../' : '../../'; // glossary/ or lang/glossary/
-            const logoPath = (lang === 'en') ? '../Expandia-main-logo-koyu-yesil.png' : '../../Expandia-main-logo-koyu-yesil.png';
+            const logoPath = (lang === 'en') ? '../go-expandia-logo.png' : '../../go-expandia-logo.png';
             htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
             const turkishServicesPath = lang === 'tr' ? '../' : '../tr/'; // Adjusted for depth
 
@@ -1422,7 +1422,7 @@ function buildGlossaryTerms() {
             htmlTemplate = htmlTemplate.replace('{{FOOTER}}', pageFooter);
 
             // Metadata
-            const pageTitle = `${termName} - Definition & Business Context | Expandia Glossary`;
+            const pageTitle = `${termName} - Definition & Business Context | Go Expandia Glossary`;
             const pageDesc = `What is ${termName}? Definition and business importance for ${termData.category}.`;
 
             htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, pageTitle);
@@ -1560,7 +1560,7 @@ function buildGlossaryIndex() {
         pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
 
         const basePath = (lang === 'en') ? '../' : '../../';
-        const logoPath = (lang === 'en') ? '../Expandia-main-logo-koyu-yesil.png' : '../../Expandia-main-logo-koyu-yesil.png';
+        const logoPath = (lang === 'en') ? '../go-expandia-logo.png' : '../../go-expandia-logo.png';
         htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
         const turkishServicesPath = lang === 'tr' ? '../' : '../tr/';
 
@@ -1581,7 +1581,7 @@ function buildGlossaryIndex() {
         htmlTemplate = htmlTemplate.replace('{{FOOTER}}', pageFooter);
 
         // Metadata
-        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, label.title + ' | Expandia');
+        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, label.title + ' | Go Expandia');
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, label.desc);
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, 'glossary, terms, definitions, B2B, sales, marketing');
 

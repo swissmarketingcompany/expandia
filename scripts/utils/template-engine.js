@@ -24,12 +24,12 @@ function generateOrganizationSchema() {
     return {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "Expandia",
+        "name": "Go Expandia",
         "url": "https://www.expandia.ch",
-        "logo": "https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png",
-        "email": "hello@expandia.ch",
+        "logo": "https://www.expandia.ch/go-expandia-logo.png",
+        "email": "hello@goexpandia.com",
         "sameAs": [
-            "https://www.linkedin.com/company/expandia-ch/"
+            "https://www.linkedin.com/company/103769699/"
         ],
         "contactPoint": {
             "@type": "ContactPoint",
@@ -66,7 +66,7 @@ function createHTMLTemplate(lang = 'en', headContent = '', scriptContent = '') {
     <meta name="description" content="{{PAGE_DESCRIPTION}}">
     <meta name="keywords" content="{{PAGE_KEYWORDS}}">
     <meta name="robots" content="index, follow">
-    <meta name="author" content="Expandia">
+    <meta name="author" content="Go Expandia">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="{{CANONICAL_URL}}">
@@ -83,14 +83,14 @@ function createHTMLTemplate(lang = 'en', headContent = '', scriptContent = '') {
     <meta property="og:description" content="{{PAGE_DESCRIPTION}}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{CANONICAL_URL}}">
-    <meta property="og:image" content="https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png">
-    <meta property="og:site_name" content="Expandia">
+    <meta property="og:image" content="https://www.expandia.ch/go-expandia-logo.png">
+    <meta property="og:site_name" content="Go Expandia">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{PAGE_TITLE}}">
     <meta name="twitter:description" content="{{PAGE_DESCRIPTION}}">
-    <meta name="twitter:image" content="https://www.expandia.ch/Expandia-main-logo-koyu-yesil.png">
+    <meta name="twitter:image" content="https://www.expandia.ch/go-expandia-logo.png">
     
     <link href="${assetPath}dist/css/output.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="${assetPath}favicon.ico">
