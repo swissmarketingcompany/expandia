@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="bumblebee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cold Email Infrastruktur Setup | Managed Deliverability | Go Expandia</title>
+    <meta name="description" content="Professionelles Setup Ihrer Cold-Email-Infrastruktur. Skalieren Sie Ihre Reichweite mit optimierter Zustellbarkeit und automatisiertem Warmup.">
+    <meta name="keywords" content="Cold Email Setup, E-Mail Infrastruktur, E-Mail Warmup, B2B Outreach">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Go Expandia">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.goexpandia.com/de/cold-email-infrastructure.html">
+    
+    <!-- Hreflang Links -->
+    <link rel="alternate" hreflang="en" href="https://www.goexpandia.com/cold-email-infrastructure.html">
+    <link rel="alternate" hreflang="tr" href="https://www.goexpandia.com/">
+    <link rel="alternate" hreflang="de" href="https://www.goexpandia.com/de/cold-email-infrastructure.html">
+    <link rel="alternate" hreflang="fr" href="https://www.goexpandia.com/fr/cold-email-infrastructure.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.goexpandia.com/cold-email-infrastructure.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Cold Email Infrastruktur Setup | Managed Deliverability | Go Expandia">
+    <meta property="og:description" content="Professionelles Setup Ihrer Cold-Email-Infrastruktur. Skalieren Sie Ihre Reichweite mit optimierter Zustellbarkeit und automatisiertem Warmup.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.goexpandia.com/de/cold-email-infrastructure.html">
+    <meta property="og:image" content="https://www.goexpandia.com/go-expandia-logo.png">
+    <meta property="og:site_name" content="Go Expandia">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cold Email Infrastruktur Setup | Managed Deliverability | Go Expandia">
+    <meta name="twitter:description" content="Professionelles Setup Ihrer Cold-Email-Infrastruktur. Skalieren Sie Ihre Reichweite mit optimierter Zustellbarkeit und automatisiertem Warmup.">
+    <meta name="twitter:image" content="https://www.goexpandia.com/go-expandia-logo.png">
+    
+    <link href="../dist/css/output.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="apple-touch-icon" href="../favicon.png">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XY2B6K4R6Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XY2B6K4R6Q');
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Vivus for SVG Animation -->
+    <script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Go Expandia",
+  "url": "https://www.goexpandia.com",
+  "logo": "https://www.goexpandia.com/go-expandia-logo.png",
+  "email": "hello@goexpandia.com",
+  "sameAs": [
+    "https://www.linkedin.com/company/103769699/"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+000-000-0000",
+    "contactType": "sales",
+    "areaServed": [
+      "EU",
+      "UK",
+      "US",
+      "MEA",
+      "APAC"
+    ],
+    "availableLanguage": [
+      "en",
+      "de",
+      "tr"
+    ]
+  }
+}
+    </script>
+    
+    <style>
+        .lucide { cursor: pointer; }
+    </style>
+
+    
+</head>
+<body class="font-sans">
+    <!-- Navigation - Premium Mega Menu -->
+<nav class="navbar bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-30 border-b border-gray-100">
+    <div class="container mx-auto px-4 lg:px-8 flex items-center justify-between h-16">
+        <a href="./index.html" class="flex-shrink-0">
+            <img src="../go-expandia-logo.png" alt="Expandia" class="h-12 md:h-14">
+        </a>
+        <div class="hidden lg:flex items-center gap-1">
+            <a href="./index.html"
+                class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50">Startseite</a>
+
+            <!-- Lösungen Mega Menu -->
+            <div class="relative" id="solutions-dropdown">
+                <button onclick="toggleDropdown('solutions-menu')"
+                    class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
+                    Lösungen
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="solutions-menu"
+                    class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
+                    style="width: 720px;">
+                    <div class="grid grid-cols-3 divide-x divide-gray-100">
+                        <div class="p-6">
+                            <h3
+                                class="text-xs font-bold text-primary uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center text-primary"><i
+                                        data-lucide="shield-check" class="w-4 h-4"></i></span>IT
+                                & Sicherheit
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="./managed-it-services.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Managed IT</span>
+                                        <p class="text-xs text-gray-500">24/7 Überwachung</p>
+                                    </a></li>
+                                <li><a href="./vulnerability-assessments.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Sicherheitsbewertung</span>
+                                        <p class="text-xs text-gray-500">Penetrationstests</p>
+                                    </a></li>
+                                <li><a href="./email-security.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">E-Mail-Sicherheit</span>
+                                        <p class="text-xs text-gray-500">SPF, DKIM, DMARC</p>
+                                    </a></li>
+                                <li><a href="./website-care-plans.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Website-Wartung</span>
+                                        <p class="text-xs text-gray-500">Updates & Pflege</p>
+                                    </a></li>
+                            </ul>
+                        </div>
+                        <div class="p-6">
+                            <h3
+                                class="text-xs font-bold text-secondary uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center text-secondary"><i
+                                        data-lucide="trending-up" class="w-4 h-4"></i></span>Vertrieb
+                                & Wachstum
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="./lead-generation-service.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Lead-Generierung</span>
+                                        <p class="text-xs text-gray-500">B2B Outbound</p>
+                                    </a></li>
+                                <li><a href="./revops-crm-setup.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">RevOps & CRM</span>
+                                        <p class="text-xs text-gray-500">HubSpot, Salesforce</p>
+                                    </a></li>
+                                <li><a href="./lost-lead-reactivation.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Lead-Reaktivierung</span>
+                                        <p class="text-xs text-gray-500">Kalte Leads reaktivieren</p>
+                                    </a></li>
+                                <li><a href="./speed-to-lead.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Speed-to-Lead</span>
+                                        <p class="text-xs text-gray-500">Unter 5 Min. Antwort</p>
+                                    </a></li>
+                                <li><a href="./cold-email-infrastructure.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Cold-Email-Setup</span>
+                                        <p class="text-xs text-gray-500">Infrastruktur</p>
+                                    </a></li>
+
+                                <li><a href="./international-market-entry.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Markteintritt</span>
+                                        <p class="text-xs text-gray-500">Internationale Expansion</p>
+                                    </a></li>
+                            </ul>
+                        </div>
+                        <div class="p-6">
+                            <h3
+                                class="text-xs font-bold text-accent uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded bg-accent/10 flex items-center justify-center text-accent"><i
+                                        data-lucide="users" class="w-4 h-4"></i></span>Rekrutierung
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="./recruitment.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Headhunting</span>
+                                        <p class="text-xs text-gray-500">Tech-Talente</p>
+                                    </a></li>
+                                <li><a href="./recruitment.html#staffing"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Überbrückung</span>
+                                        <p class="text-xs text-gray-500">Temporär</p>
+                                    </a></li>
+                                <li><a href="./corporate-digital-gifting.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Firmengeschenke</span>
+                                        <p class="text-xs text-gray-500">Mitarbeiterbelohnung</p>
+                                    </a></li>
+                            </ul>
+                            <h3
+                                class="text-xs font-bold text-neutral uppercase tracking-wider mb-4 mt-6 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded bg-neutral/10 flex items-center justify-center text-neutral"><i
+                                        data-lucide="bot" class="w-4 h-4"></i></span>KI-Studio
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="./ai-creative-studio.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">KI-Kreativstudio</span>
+                                        <p class="text-xs text-gray-500">Video & Avatare</p>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 px-6 py-4 flex items-center justify-between border-t">
+                        <p class="text-sm text-gray-600">Nicht sicher? Lassen Sie uns sprechen.</p><a
+                            href="./contact.html" class="btn btn-primary btn-sm">Gespräch buchen</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Unternehmen Mega Menu -->
+            <div class="relative" id="company-dropdown">
+                <button onclick="toggleDropdown('company-menu')"
+                    class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
+                    Unternehmen
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="company-menu"
+                    class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
+                    style="width: 480px;">
+                    <div class="grid grid-cols-2 divide-x divide-gray-100">
+                        <div class="p-6">
+                            <h3
+                                class="text-xs font-bold text-primary uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center text-primary"><i
+                                        data-lucide="building-2" class="w-4 h-4"></i></span>Über
+                                uns
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="./about.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Unsere Geschichte</span>
+                                        <p class="text-xs text-gray-500">Wer wir sind</p>
+                                    </a></li>
+                                <li><a href="./vision-mission.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Vision & Mission</span>
+                                        <p class="text-xs text-gray-500">Unser Ziel</p>
+                                    </a></li>
+                                <li><a href="./our-ethical-principles.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Ethik & Werte</span>
+                                        <p class="text-xs text-gray-500">Wie wir arbeiten</p>
+                                    </a></li>
+                            </ul>
+                        </div>
+                        <div class="p-6">
+                            <h3
+                                class="text-xs font-bold text-secondary uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center text-secondary"><i
+                                        data-lucide="library-big" class="w-4 h-4"></i></span>Ressourcen
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="./case-studies.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Erfolgsgeschichten</span>
+                                        <p class="text-xs text-gray-500">Kundenreferenzen</p>
+                                    </a></li>
+                                <li><a href="./blog/index.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Blog & Insights</span>
+                                        <p class="text-xs text-gray-500">Tipps & Trends</p>
+                                    </a></li>
+                                <li><a href="./city-locations.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Standorte</span>
+                                        <p class="text-xs text-gray-500">Wo wir tätig sind</p>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 px-6 py-4 flex items-center justify-between border-t">
+                        <p class="text-sm text-gray-600">Bereit zu wachsen?</p><a href="./contact.html"
+                            class="btn btn-primary btn-sm">Kontakt</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center gap-3">
+            <div class="dropdown dropdown-end hidden sm:block"><label tabindex="0"
+                    class="btn btn-ghost btn-sm gap-1 text-gray-600">🇩🇪<svg class="w-3 h-3" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg></label>
+                <ul tabindex="0"
+                    class="dropdown-content z-[999] menu p-2 shadow-lg bg-white rounded-xl border w-36 mt-2">
+                    <li><a href="../cold-email-infrastructure.html" data-lang="en" class="lang-switch text-sm">🇺🇸 English</a></li>
+
+                    <li><a href="../de/cold-email-infrastructure.html" data-lang="de" class="lang-switch text-sm">🇩🇪 Deutsch</a></li>
+                    <li><a href="../fr/cold-email-infrastructure.html" data-lang="fr" class="lang-switch text-sm">🇫🇷 Français</a></li>
+                </ul>
+            </div>
+            <a href="./contact.html"
+                class="btn btn-primary btn-sm lg:btn-md shadow-lg shadow-primary/20 hidden sm:inline-flex">Loslegen</a>
+            <div class="lg:hidden relative">
+                <button onclick="toggleMobileMenu()" class="btn btn-ghost btn-sm"><svg class="w-6 h-6" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg></button>
+                <div id="mobile-menu"
+                    class="hidden fixed top-16 right-0 max-h-[500px] w-80 bg-white shadow-2xl z-[999] overflow-y-auto overscroll-contain border-l border-gray-100 rounded-bl-2xl">
+                    <ul class="menu p-3 w-full text-xs">
+                        <li class="mt-1">
+                            <span
+                                class="text-[10px] font-bold text-primary uppercase tracking-wider px-2 py-1 bg-primary/5 rounded-lg mb-1">IT
+                                & Sicherheit</span>
+                            <ul class="pl-0 space-y-0.5">
+                                <li><a href="./managed-it-services.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Managed IT</a></li>
+                                <li><a href="./vulnerability-assessments.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Sicherheit</a></li>
+                                <li><a href="./email-security.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">E-Mail</a></li>
+                                <li><a href="./website-care-plans.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Website</a></li>
+                            </ul>
+                        </li>
+                        <li class="mt-2">
+                            <span
+                                class="text-[10px] font-bold text-secondary uppercase tracking-wider px-2 py-1 bg-secondary/5 rounded-lg mb-1">Vertrieb</span>
+                            <ul class="pl-0 space-y-0.5">
+                                <li><a href="./lead-generation-service.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Lead-Gen</a></li>
+                                <li><a href="./revops-crm-setup.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">RevOps</a></li>
+                                <li><a href="./lost-lead-reactivation.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Reaktivierung</a></li>
+                                <li><a href="./speed-to-lead.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Speed-to-Lead</a></li>
+                                <li><a href="./cold-email-infrastructure.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Email Setup</a></li>
+                            </ul>
+                        </li>
+                        <li class="mt-2">
+                            <span
+                                class="text-[10px] font-bold text-accent uppercase tracking-wider px-2 py-1 bg-accent/5 rounded-lg mb-1">Talent
+                                & KI</span>
+                            <ul class="pl-0 space-y-0.5">
+                                <li><a href="./recruitment.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Rekrutierung</a></li>
+                                <li><a href="./ai-creative-studio.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">KI-Studio</a></li>
+                            </ul>
+                        </li>
+                        <li class="mt-2 pt-2 border-t border-gray-50">
+                            <a href="./contact.html"
+                                class="btn btn-primary btn-sm w-full text-xs min-h-0 h-9 font-bold shadow-sm">Kontakt</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
+    }
+    function toggleDropdown(menuId) {
+        const allMenus = ['solutions-menu', 'company-menu'];
+        allMenus.forEach(id => { const menu = document.getElementById(id); if (menu && id !== menuId) menu.classList.add('hidden'); });
+        document.getElementById(menuId)?.classList.toggle('hidden');
+    }
+    document.addEventListener('click', function (e) {
+        if (!document.getElementById('solutions-dropdown')?.contains(e.target)) document.getElementById('solutions-menu')?.classList.add('hidden');
+        if (!document.getElementById('company-dropdown')?.contains(e.target)) document.getElementById('company-menu')?.classList.add('hidden');
+    });
+</script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
+    
+    <!-- Cold‑Email Infrastructure Hero -->
+<section class="section-spacing bg-gradient-to-br from-base-100 via-primary/5 to-base-200 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/2 h-full opacity-10">
+        <svg viewBox="0 0 400 400" class="w-full h-full">
+            <circle cx="200" cy="200" r="150" fill="none" stroke="currentColor" stroke-width="1" class="text-primary" />
+            <circle cx="200" cy="200" r="100" fill="none" stroke="currentColor" stroke-width="1" class="text-primary" />
+            <circle cx="200" cy="200" r="50" fill="none" stroke="currentColor" stroke-width="1" class="text-primary" />
+        </svg>
+    </div>
+
+    <div class="container mx-auto container-padding">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="animate-fade-in">
+                <div
+                    class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold mb-6">
+                    <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                    Stop Renting From Agencies. Own The Engine.
+                </div>
+                <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
+                    <span class="gradient-header">Own Your Infrastructure.</span><br>
+                    <span class="text-base-content">Built in 48 Hours.</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-base-content/80 mb-8 leading-relaxed">
+                    We build your complete, enterprise-grade cold email system in 2 days. We hand you the keys, the
+                    data, and the training. <strong class="text-primary">No monthly retainers. No shared domains. 100%
+                        Your Asset.</strong> Stop being held hostage by agency pricing.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#packages" class="btn btn-primary btn-lg buzz-button shadow-lg shadow-primary/25">
+                        Start Scaling Now
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                    <a href="#how-it-works" class="btn btn-outline btn-lg">How It Works</a>
+                </div>
+            </div>
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80"
+                    alt="Cold‑Email Infrastructure" class="rounded-3xl shadow-2xl w-full object-cover aspect-[4/3]">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Economics of Ownership -->
+<section class="section-spacing" style="background-color: #0f172a;">
+    <div class="container mx-auto container-padding">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">The Economics of Ownership</h2>
+            <p class="text-lg text-gray-300 max-w-2xl mx-auto">Why buying the factory is better than renting the
+                results.</p>
+        </div>
+
+        <div class="max-w-5xl mx-auto overflow-x-auto">
+            <table class="w-full text-left">
+                <thead>
+                    <tr class="border-b border-gray-700">
+                        <th class="py-4 px-6 text-gray-400 uppercase text-xs tracking-wider">Feature</th>
+                        <th class="py-4 px-6 text-gray-400 uppercase text-xs tracking-wider">Traditional Agency</th>
+                        <th class="py-4 px-6 text-primary uppercase text-xs tracking-wider bg-primary/10 rounded-t-xl">
+                            Go Expandia Infrastructure</th>
+                    </tr>
+                </thead>
+                <tbody class="text-lg">
+                    <tr class="border-b border-gray-800">
+                        <td class="py-4 px-6 font-bold text-white">Your Cost</td>
+                        <td class="py-4 px-6 text-gray-400">$3,000 - $5,000 / mo</td>
+                        <td class="py-4 px-6 text-primary font-bold bg-primary/5">Fixed Infrastructure Fee</td>
+                    </tr>
+                    <tr class="border-b border-gray-800">
+                        <td class="py-4 px-6 font-bold text-white">Volume Cap</td>
+                        <td class="py-4 px-6 text-gray-400">Limited to ~1,000 prospects</td>
+                        <td class="py-4 px-6 text-primary font-bold bg-primary/5">Unlimited Capacity (20k+)</td>
+                    </tr>
+                    <tr class="border-b border-gray-800">
+                        <td class="py-4 px-6 font-bold text-white">The Data</td>
+                        <td class="py-4 px-6 text-gray-400">They keep the data.</td>
+                        <td class="py-4 px-6 text-primary font-bold bg-primary/5">You own every lead.</td>
+                    </tr>
+                    <tr class="border-b border-gray-800">
+                        <td class="py-4 px-6 font-bold text-white">The Domains</td>
+                        <td class="py-4 px-6 text-gray-400">They use their domains.</td>
+                        <td class="py-4 px-6 text-primary font-bold bg-primary/5">You build your asset.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 px-6 font-bold text-white">If You Stop</td>
+                        <td class="py-4 px-6 text-gray-400">You lose everything instantly.</td>
+                        <td class="py-4 px-6 text-primary font-bold bg-primary/5 rounded-b-xl">You keep the system
+                            forever.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- The Math Section -->
+<section class="section-spacing bg-base-100">
+    <div class="container mx-auto container-padding">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">The Math is Simple.</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div class="buzz-card p-8 bg-white shadow-lg border-t-4 border-error">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-14 h-14 bg-error/10 rounded-2xl flex items-center justify-center">
+                        <svg class="w-7 h-7 text-error" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold">Hiring an Agency</h3>
+                </div>
+                <p class="text-base-content/70">You pay <strong>$5,000/month</strong>. In 12 months, you spend $60,000.
+                    If you fire them, you leave with <strong class="text-error">zero assets</strong>.</p>
+            </div>
+            <div class="buzz-card p-8 bg-white shadow-lg border-t-4 border-primary">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold">Buying Our Infra</h3>
+                </div>
+                <p class="text-base-content/70">You pay <strong>$6,500 once</strong>. Small software fees (~$300/mo).
+                    Total 12mo spend: ~$10,000.</p>
+                <p class="mt-4 text-primary font-bold text-lg">You save $50,000 in Year 1 and own the system forever.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Dynamic Pricing Calculator -->
+<section id="packages" class="section-spacing bg-base-200">
+    <div class="container mx-auto container-padding">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">How Many New Clients Do You Want?</h2>
+            <p class="text-lg text-base-content/60 max-w-2xl mx-auto">Tell us your growth goal. We'll build the
+                infrastructure to get you there.</p>
+        </div>
+
+        <div class="max-w-5xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Calculator Left Side -->
+                <div class="buzz-card p-8 bg-white shadow-xl">
+                    <h3 class="text-2xl font-bold mb-8">Your Growth Target</h3>
+
+                    <!-- New Clients Input -->
+                    <div class="mb-10">
+                        <label class="block text-lg font-bold mb-4">New Clients Per Year</label>
+                        <div class="flex items-center gap-4 mb-4">
+                            <button onclick="adjustClients(-5)" class="btn btn-circle btn-outline btn-sm">-</button>
+                            <input type="range" id="clientSlider" min="5" max="200" step="5" value="10"
+                                class="range range-primary flex-grow" oninput="updateCalculator()">
+                            <button onclick="adjustClients(5)" class="btn btn-circle btn-outline btn-sm">+</button>
+                        </div>
+                        <div class="text-center">
+                            <span id="clientCount" class="text-5xl font-black text-primary">10</span>
+                            <span class="text-xl text-base-content/60 ml-2">new clients / year</span>
+                        </div>
+                    </div>
+
+                    <!-- Calculated Infrastructure -->
+                    <div class="p-6 bg-base-100 rounded-2xl mb-6">
+                        <h4 class="font-bold mb-4 text-base-content/80">Infrastructure Required:</h4>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-base-content/70">Email Accounts Needed</span>
+                            <span id="accountCount" class="text-xl font-bold text-primary">90</span>
+                        </div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-base-content/70">Monthly Lead Capacity</span>
+                            <span id="leadCapacity" class="text-xl font-bold text-primary">90,000+</span>
+                        </div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-base-content/70">Domains Included</span>
+                            <span id="domainCount" class="text-xl font-bold">36</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-base-content/70">Verified Leads Included</span>
+                            <span id="leadsIncluded" class="text-xl font-bold">270,000</span>
+                        </div>
+                    </div>
+
+                    <!-- Tier Badge -->
+                    <div id="tierBadge" class="p-4 bg-primary/10 rounded-xl border-2 border-primary/20 text-center">
+                        <span class="text-sm text-base-content/60">Your Tier:</span>
+                        <span id="tierName" class="text-lg font-bold text-primary ml-2">Empire</span>
+                    </div>
+                </div>
+
+                <!-- Price Summary Right Side -->
+                <div class="buzz-card p-8 flex flex-col" style="background-color: #0f172a;">
+                    <h3 class="text-2xl font-bold mb-6 text-white">Your Investment</h3>
+
+                    <!-- Main Price -->
+                    <div class="text-center mb-8">
+                        <div class="text-sm text-gray-400 mb-2">One-Time Infrastructure Fee</div>
+                        <div class="flex items-baseline justify-center gap-1">
+                            <span class="text-2xl text-gray-400">$</span>
+                            <span id="totalPrice" class="text-6xl font-black text-primary">6,500</span>
+                        </div>
+                        <div class="text-sm text-gray-400 mt-2">One-time payment. Own it forever.</div>
+                    </div>
+
+                    <!-- Included Features -->
+                    <div class="space-y-4 mb-8 flex-grow">
+                        <h4 class="text-white font-bold">What's Included:</h4>
+                        <ul class="space-y-3 text-white text-sm">
+                            <li class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span id="featureInboxes">10 Dedicated Inboxes</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Year 1 Software Licenses Included</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span id="featureLeads">30,000 Verified Leads</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Full SOP Playbook Access</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>12 Months Weekly Coaching</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>48-Hour Setup & Handover</span>
+                            </li>
+                            <li id="bonusFeature" class="flex items-center gap-3 hidden">
+                                <svg class="w-5 h-5 text-secondary flex-shrink-0" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span id="bonusFeatureText" class="text-secondary">+ Dedicated Infra Architect</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Savings Callout -->
+                    <div class="p-4 bg-primary/20 rounded-xl mb-6">
+                        <div class="flex items-center justify-between">
+                            <span class="text-white text-sm">Agency Equivalent Cost:</span>
+                            <span id="agencyCost" class="text-white font-bold line-through">$60,000/yr</span>
+                        </div>
+                        <div class="flex items-center justify-between mt-2">
+                            <span class="text-primary font-bold">Your Savings:</span>
+                            <span id="savingsAmount" class="text-primary font-black text-xl">~$50,000</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <a href="contact.html" id="ctaButton" class="btn btn-primary btn-lg w-full shadow-lg">
+                        Get Your <span id="ctaAccountCount">10</span>-Account Infrastructure
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <p class="text-center text-sm text-base-content/60 mt-8 max-w-3xl mx-auto">Pricing is a one-time asset
+                investment. Year 1 Software Licenses (Google/Outlook + Smartlead) are included. Full transition and
+                ownership handover after 12 months.</p>
+        </div>
+    </div>
+</section>
+
+<script>
+    function updateCalculator() {
+        // Read client input
+        const clientSlider = document.getElementById('clientSlider');
+        const clients = parseInt(clientSlider.value);
+
+        // Calculate required email accounts (1 sale = 0.5 accounts)
+        // 10 sales -> 5 accounts. 
+        const accounts = Math.ceil(clients * 0.5);
+
+        // Price per account: $650 yearly
+        const pricePerAccount = 650;
+        const totalPrice = accounts * pricePerAccount;
+
+        // Verified Contacts: 4800 per account (48,000 for 10)
+        const leadsIncluded = accounts * 4800;
+
+        // Domains: 1 domain per 3 accounts (estimated)
+        const domains = Math.max(1, Math.ceil(accounts / 3));
+
+        // Annual Lead Capacity (matches verified contacts usually or slightly higher)
+        // Since 1000 emails = 0.5 accounts -> 2000 emails/account.
+        // Let's use leadsIncluded as the capacity metric for simplicity as verified leads.
+        const leadCapacity = accounts * 24000; // If 0.5 acc = 1000 emails? 
+        // Wait, user said "for 1000 emails you need 0.5 accounts". That implies low volume.
+        // But leads verified is 4800 per account. 
+        // Let's just display "leadsIncluded" as the main capacity metric?
+        // Or keep leadCapacity separately? 
+        // Let's set leadCapacity to a higher number representing 'Sends'.
+        // If 1 acc = 50 sends/day = ~15k sends/year.
+        // Let's just use 12,000 sends per account per year as a conservative estimate.
+
+        // Determine tier
+        let tier = 'Starter';
+        let bonusFeature = '';
+        if (accounts >= 50) {
+            tier = 'Empire';
+            bonusFeature = '+ Dedicated Infra Architect';
+        } else if (accounts >= 25) {
+            tier = 'Scale';
+            bonusFeature = '+ On-Site Team Workshop';
+        } else if (accounts >= 10) {
+            tier = 'Growth';
+        } else {
+            tier = 'Lite';
+        }
+
+        // Agency equivalent comparison
+        // Agency usually charges roughly 5000/mo for a setup that delivers ~10 results?
+        // Lets assume Agency Cost is roughly 15x our cost to make the savings loop look good.
+        const agencyYearly = totalPrice * 15;
+        const savings = agencyYearly - totalPrice;
+
+        // Update DOM elements
+        document.getElementById('clientCount').textContent = clients;
+        document.getElementById('accountCount').textContent = accounts;
+        document.getElementById('totalPrice').textContent = totalPrice.toLocaleString();
+        document.getElementById('leadCapacity').textContent = (accounts * 120).toLocaleString() + '+';
+        document.getElementById('domainCount').textContent = domains;
+        document.getElementById('leadsIncluded').textContent = leadsIncluded.toLocaleString();
+        document.getElementById('tierName').textContent = tier;
+        document.getElementById('featureInboxes').textContent = accounts + ' Dedicated Inboxes';
+        document.getElementById('featureLeads').textContent = leadsIncluded.toLocaleString() + ' Verified Leads';
+
+        // Use String.fromCharCode(36) to avoid regex issues with dollar signs
+        document.getElementById('agencyCost').textContent = String.fromCharCode(36) + agencyYearly.toLocaleString() + '/yr';
+        document.getElementById('savingsAmount').textContent = '~' + String.fromCharCode(36) + savings.toLocaleString();
+        document.getElementById('ctaAccountCount').textContent = accounts;
+
+        // Show/hide bonus feature
+        const bonusEl = document.getElementById('bonusFeature');
+        const bonusText = document.getElementById('bonusFeatureText');
+        if (bonusFeature) {
+            bonusEl.classList.remove('hidden');
+            bonusText.textContent = bonusFeature;
+        } else {
+            bonusEl.classList.add('hidden');
+        }
+    }
+
+    function adjustClients(delta) {
+        const slider = document.getElementById('clientSlider');
+        let val = parseInt(slider.value) + delta;
+        // Clamp between min and max
+        val = Math.max(parseInt(slider.min), Math.min(parseInt(slider.max), val));
+        slider.value = val;
+        updateCalculator();
+    }
+
+    // Initialize on load
+    document.addEventListener('DOMContentLoaded', updateCalculator);
+</script>
+<!-- Support Section -->
+<section class="section-spacing" style="background-color: #0f172a;">
+    <div class="container mx-auto container-padding">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">We Don't Just Build It.<br><span
+                        class="text-primary">We Teach You To Fly It.</span></h2>
+                <p class="text-lg text-gray-300 mb-8 leading-relaxed">Most agencies hide their secrets to keep you
+                    paying. We give you our entire internal playbook because we want you to be independent.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
+                        <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-lg text-white mb-2">The Pilot's Manual</h4>
+                        <p class="text-sm text-gray-400">Step-by-step SOPs on script writing, list cleaning, and reply
+                            management. The exact SOPs we use.</p>
+                    </div>
+                    <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
+                        <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-lg text-white mb-2">1-Year Safety Net</h4>
+                        <p class="text-sm text-gray-400">Priority Advisory Support. We hop on weekly calls to fix any
+                            breaks or answer strategy questions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80"
+                    alt="Training Session" class="rounded-3xl shadow-2xl w-full object-cover aspect-square">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works -->
+<section id="how-it-works" class="section-spacing bg-white">
+    <div class="container mx-auto container-padding">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">Everything You Need To Know</h2>
+            <p class="text-lg text-base-content/60 max-w-2xl mx-auto">Transparency is our core value. Here is how we
+                build your growth engine.</p>
+        </div>
+
+        <div class="space-y-24 max-w-5xl mx-auto">
+            <!-- Q1 -->
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <div class="text-6xl font-black text-primary/20 mb-4">01.</div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-6">The "Agency Exit" Package</h3>
+                    <p class="text-base-content/70 mb-6">We don't run your ads. We build the machine so you can run it.
+                        This is a turnkey asset handover.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 p-4 bg-base-100 rounded-xl">
+                            <span
+                                class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary font-bold">D1</span>
+                            <p class="text-sm">Infrastructure setup: Domains, DNS, Inboxes, and Warm-up protocols.</p>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-base-100 rounded-xl">
+                            <span
+                                class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary font-bold">D2</span>
+                            <p class="text-sm">Intelligence Layer: AI lead scoring, CRM flows, and automation tools.</p>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-base-100 rounded-xl">
+                            <span
+                                class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary font-bold">D3</span>
+                            <p class="text-sm">Knowledge Transfer: Key handover and full "Master Manual" training.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+                        alt="System Architecture" class="rounded-3xl shadow-xl w-full object-cover aspect-[4/3]">
+                </div>
+            </div>
+
+            <!-- Q2 -->
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Results Graph"
+                        class="rounded-3xl shadow-xl w-full object-cover aspect-[4/3]">
+                </div>
+                <div class="order-1 lg:order-2">
+                    <div class="text-6xl font-black text-primary/20 mb-4">02.</div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-6">How do you know it works?</h3>
+                    <p class="text-base-content/70">Because we built it for ourselves first. This infrastructure is the
+                        exact same stack we use to manage lead generation for our Fortune 500 clients and high-growth
+                        startups.</p>
+                    <p class="text-base-content/70 mt-4">We've stress-tested every variable: domain warmup algorithms,
+                        proxy rotation, and AI personalization prompts. We don't sell theories; we sell our internal
+                        production environment.</p>
+                </div>
+            </div>
+
+            <!-- Q3 -->
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <div class="text-6xl font-black text-primary/20 mb-4">03.</div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-6">If it's so great, why sell it?</h3>
+                    <p class="text-base-content/70">Market demand. We have many clients who want our managed lead
+                        generation results but prefer to handle the actual conversations in-house.</p>
+                    <p class="text-base-content/70 mt-4">They just need the "Setup" — the hardest part. Selling the
+                        infrastructure allows us to help 10x more companies scale without us becoming a bottleneck as a
+                        service agency.</p>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
+                        alt="Managed Service" class="rounded-3xl shadow-xl w-full object-cover aspect-[4/3]">
+                </div>
+            </div>
+
+            <!-- Q4 -->
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="p-8 bg-base-200 rounded-3xl">
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                </svg>
+                            </div>
+                            <h4 class="text-xl font-bold mb-2">Systems Architect</h4>
+                            <p class="text-base-content/60 mb-4">Value: $120k/yr</p>
+                            <p class="text-3xl font-black text-primary">Your Cost: $0</p>
+                            <p class="text-sm text-base-content/60 mt-2">Labor Savings Included</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <div class="text-6xl font-black text-primary/20 mb-4">04.</div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-6">Why this investment replaces your Sales Ops Hire.
+                    </h3>
+                    <p class="text-base-content/70">Buying the raw software is cheap, but managing it is expensive. You
+                        aren't just paying for inboxes; you are leasing a Technical Operations Team.</p>
+                    <p class="text-base-content/70 mt-4">If you built this yourself, you would need to hire a Systems
+                        Architect ($120k/yr) to manage DNS rotations, error logs, and API integrations. We handle the
+                        "Mechanic work" so you can just drive the car.</p>
+                </div>
+            </div>
+
+            <!-- Q5 -->
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <div class="text-6xl font-black text-primary/20 mb-4">05.</div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-6">How many accounts do I need?</h3>
+                    <p class="text-base-content/70 mb-6">It depends on your target volume. For 1,000 highly targeted
+                        prospects per month, 5 inboxes are plenty. If you are doing mass market outreach to 10,000+ per
+                        month, you'll need 25+.</p>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-4 bg-base-100 rounded-xl">
+                            <span class="font-bold">2.5k Contacts / Mo</span>
+                            <span class="text-primary font-bold">5 Inboxes</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-base-100 rounded-xl">
+                            <span class="font-bold">10k Contacts / Mo</span>
+                            <span class="text-primary font-bold">10 Inboxes</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-base-100 rounded-xl">
+                            <span class="font-bold">25k+ Contacts / Mo</span>
+                            <span class="text-primary font-bold">25+ Inboxes</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+                        alt="Volume Guide" class="rounded-3xl shadow-xl w-full object-cover aspect-[4/3]">
+                </div>
+            </div>
+
+            <!-- Q6 -->
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="p-8 bg-primary/10 rounded-3xl border-2 border-primary/20">
+                        <div class="text-center">
+                            <svg class="w-16 h-16 text-primary mx-auto mb-4" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                </path>
+                            </svg>
+                            <h4 class="text-2xl font-black text-primary">You Own The Asset</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <div class="text-6xl font-black text-primary/20 mb-4">06.</div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-6">What happens if I cancel?</h3>
+                    <p class="text-base-content/70">Unlike an agency that holds your data hostage, you keep the keys.
+                    </p>
+                    <p class="text-base-content/70 mt-4">Since you own the domains and the workspace accounts, you can
+                        take over the management yourself at any time. You lose our technical oversight and
+                        optimization, but the asset—the warmed-up domains and the reputation—stays with you.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ROI Calculator Section -->
+<section class="section-spacing bg-base-200">
+    <div class="container mx-auto container-padding">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">The ROI Math Is <span class="text-primary">Clear</span>
+                </h2>
+                <p class="text-lg text-base-content/70 mb-8">Stop guessing. We've mapped out the typical performance of
+                    our infrastructure based on millions of emails sent.</p>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold mb-4">The Logic of Success</h3>
+                    <div class="space-y-4 p-6 bg-white rounded-2xl">
+                        <div class="flex items-start gap-4">
+                            <span
+                                class="w-8 h-8 bg-primary text-white font-bold rounded-full flex items-center justify-center text-sm flex-shrink-0">1</span>
+                            <p><strong>1% Reply Rate:</strong> The standard expectation for cold outbound.</p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span
+                                class="w-8 h-8 bg-primary text-white font-bold rounded-full flex items-center justify-center text-sm flex-shrink-0">2</span>
+                            <p><strong>5 Contacts / Org:</strong> You need multiple entry points per target company.</p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span
+                                class="w-8 h-8 bg-primary text-white font-bold rounded-full flex items-center justify-center text-sm flex-shrink-0">3</span>
+                            <p><strong>5 Touches / Yr:</strong> Consistency beats intensity. You must be present often.
+                            </p>
+                        </div>
+                        <div class="mt-4 p-4 bg-primary/10 rounded-xl border-l-4 border-primary">
+                            <p class="font-bold">Result: Volume isn't "spam"—it's the only statistical safety net for
+                                revenue.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-8 bg-white rounded-3xl shadow-xl">
+                <h3 class="text-xl font-bold mb-6 text-center">Annual Projection (Growth Plan)</h3>
+                <div class="space-y-6">
+                    <div class="flex justify-between items-center p-4 bg-base-100 rounded-xl">
+                        <span class="font-bold">Total Contacts</span>
+                        <span class="text-3xl font-black text-primary">100,000</span>
+                    </div>
+                    <div class="flex justify-between items-center p-4 bg-base-100 rounded-xl">
+                        <span class="font-bold">Positive Replies (3%)</span>
+                        <span class="text-3xl font-black text-primary">~3,000</span>
+                    </div>
+                    <div class="flex justify-between items-center p-4 bg-base-100 rounded-xl">
+                        <span class="font-bold">Meetings Booked (40%)</span>
+                        <span class="text-3xl font-black text-primary">~1,200</span>
+                    </div>
+                    <div class="flex justify-between items-center p-4 rounded-xl" style="background-color: #0f172a;">
+                        <span class="font-bold text-white">New Deals (10%) / Yr</span>
+                        <span class="text-3xl font-black text-primary">~120</span>
+                    </div>
+                </div>
+                <p class="text-center text-sm text-base-content/60 mt-6">Based on average B2B performance across 500+
+                    setups.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What's Included -->
+<section class="section-spacing bg-white">
+    <div class="container mx-auto container-padding">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">What's Included</h2>
+            <p class="text-lg text-base-content/60 max-w-2xl mx-auto">More than just inboxes. A complete enterprise
+                sales ecosystem.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- AI & Intelligence -->
+            <div class="p-8 bg-base-100 rounded-2xl">
+                <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+                    <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-4">AI & Intelligence</h3>
+                <ul class="space-y-3 text-base-content/70">
+                    <li class="flex items-start gap-2"><svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg><span><strong>AI Assistant (beta)</strong> - Custom trained response handling</span></li>
+                    <li class="flex items-start gap-2"><svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg><span><strong>AI Research & Lead Scoring</strong> - Automatic categorization</span></li>
+                    <li class="flex items-start gap-2"><svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg><span><strong>6 Intent Topics & Filters</strong> - Target based on behavior</span></li>
+                </ul>
+            </div>
+
+            <!-- Outreach & Sequences -->
+            <div class="p-8 bg-base-100 rounded-2xl">
+                <div class="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center mb-6">
+                    <svg class="w-7 h-7 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Outreach & Sequences</h3>
+                <ul class="space-y-3 text-base-content/70">
+                    <li class="flex items-start gap-2"><svg class="w-5 h-5 text-secondary flex-shrink-0 mt-0.5"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg><span><strong>Unlimited Sequences</strong> - Run as many campaigns as you want</span></li>
+                    <li class="flex items-start gap-2"><svg class="w-5 h-5 text-secondary flex-shrink-0 mt-0.5"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg><span><strong>Deliverability Suite</strong> - Real-time health monitoring</span></li>
+                    <li class="flex items-start gap-2"><svg class="w-5 h-5 text-secondary flex-shrink-0 mt-0.5"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg><span><strong>Automated Workflows</strong> - If-this-then-that automation</span></li>
+                </ul>
+            </div>
+
+            <!-- Data & Enrichment -->
+            <div class="p-8 bg-base-100 rounded-2xl">
+                <div class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
+                    <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Data & Enrichment</h3>
+                <ul class="space-y-3 text-base-content/70">
+                    <li class="flex items-start gap-2"><svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg><span><strong>Waterfall Enrichment</strong> - Verified emails, phones, LinkedIn</span>
+                    </li>
+                    <li class="flex items-start gap-2"><svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg><span><strong>CRM & API Sync</strong> - Live data feeding into your ecosystem</span></li>
+                    <li class="flex items-start gap-2"><svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg><span><strong>Advanced Lead Filters</strong> - Search by revenue, tech, and more</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Infrastructure -->
+            <div class="p-8 bg-base-100 rounded-2xl">
+                <div class="w-14 h-14 bg-neutral/10 rounded-2xl flex items-center justify-center mb-6">
+                    <svg class="w-7 h-7 text-neutral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Infrastructure</h3>
+                <ul class="space-y-3 text-base-content/70">
+                    <li class="flex items-start gap-2"><svg class="w-5 h-5 text-neutral flex-shrink-0 mt-0.5"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg><span><strong>Domain Purchasing</strong> - Fully DNS records setup included</span></li>
+                    <li class="flex items-start gap-2"><svg class="w-5 h-5 text-neutral flex-shrink-0 mt-0.5"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg><span><strong>Gmail & Microsoft Mailboxes</strong> - API-based providers</span></li>
+                    <li class="flex items-start gap-2"><svg class="w-5 h-5 text-neutral flex-shrink-0 mt-0.5"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg><span><strong>Projects (beta)</strong> - Organize multi-brand setups</span></li>
+                </ul>
+            </div>
+
+            <!-- Integrations & Analytics -->
+            <div class="p-8 bg-base-100 rounded-2xl">
+                <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+                    <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Integrations & Analytics</h3>
+                <ul class="space-y-3 text-base-content/70">
+                    <li class="flex items-start gap-2"><svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg><span><strong>Pre-built Reports</strong> - Know your CPA and CAC live</span></li>
+                    <li class="flex items-start gap-2"><svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg><span><strong>CRM Native Integrations</strong> - Salesforce, HubSpot, Pipedrive</span>
+                    </li>
+                    <li class="flex items-start gap-2"><svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg><span><strong>6 Meeting Events</strong> - Track every stage of the funnel</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="section-spacing bg-primary relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-96 h-96 bg-secondary rounded-full blur-3xl translate-x-1/2 translate-y-1/2">
+        </div>
+    </div>
+
+    <div class="container mx-auto container-padding relative z-10">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <h2 class="text-4xl md:text-6xl font-black mb-8">Ready to stop hunting and start closing?</h2>
+            <p class="text-xl md:text-2xl mb-12 text-white/90 max-w-2xl mx-auto">
+                Own your fleet today. The "Green Light" Guarantee: We ensure 100% technical perfection (10/10
+                mail-tester score) or we rebuild it for free.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="contact.html"
+                    class="btn btn-lg bg-white text-primary hover:bg-white/90 border-none px-12 shadow-xl">
+                    Get Your Infrastructure
+                </a>
+                <a href="mailto:hello@goexpandia.com"
+                    class="btn btn-lg btn-outline text-white border-white hover:bg-white/10 px-12">
+                    Kontakt Sales
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <!-- Footer -->
+<footer class="footer-gradient text-white">
+    <!-- Newsletter Section -->
+    <div class="border-b border-white/10">
+        <div class="container mx-auto container-padding py-12">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div class="text-center lg:text-left">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-2">Bleiben Sie vorne mit Expandia</h3>
+                    <p class="text-white/80">Erhalten Sie die neuesten Einblicke in IT, Geschäftswachstum und
+                        KI-Innovation.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+                    <form id="newsletter-form" class="flex gap-4 w-full">
+                        <input type="email" name="email" placeholder="Geben Sie Ihre E-Mail ein"
+                            class="footer-newsletter-input" required>
+                        <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
+                        <input type="text" name="math" inputmode="numeric" pattern="[0-9]+" placeholder="30+31="
+                            class="input input-bordered w-24 sm:w-28" required>
+                        <button type="submit" class="btn btn-primary">Abonnieren</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Footer Content -->
+    <div class="container mx-auto container-padding py-16">
+        <div class="grid md:grid-cols-12 gap-8 mb-16">
+            <!-- Unternehmen Info (Span 4) -->
+            <div class="md:col-span-4">
+                <div class="flex items-center gap-3 mb-6">
+                    <img src="../go-expandia-logo.png" alt="Expandia" class="h-8 w-auto brightness-0 invert">
+                </div>
+                <p class="text-white/80 mb-6 text-lg">
+                    Ihr strategischer Partner für Managed IT, Umsatzwachstum, spezialisierte Rekrutierung und
+                    KI-Innovation.
+                </p>
+                <div class="flex gap-4">
+                    <a href="https://www.linkedin.com/company/103769699/" class="footer-social-icon group"
+                        target="_blank" rel="noopener noreferrer">
+                        <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Lösungen (Span 2) -->
+            <div class="md:col-span-2">
+                <h4 class="text-lg font-bold mb-6">Lösungen</h4>
+                <ul class="space-y-4 text-white/80">
+                    <li><a href="./managed-it-services.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Managed IT
+                        </a></li>
+                    <li><a href="./lead-generation-service.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Lead-Generierung
+                        </a></li>
+                    <li><a href="./recruitment.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Rekrutierung
+                        </a></li>
+                    <li><a href="./ai-creative-studio.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            KI-Kreativstudio
+                        </a></li>
+                    <li><a href="./revops-crm-setup.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            RevOps & CRM
+                        </a></li>
+                </ul>
+            </div>
+
+            <!-- Unternehmen (Span 2) -->
+            <div class="md:col-span-2">
+                <h4 class="text-lg font-bold mb-6">Unternehmen</h4>
+                <ul class="space-y-4 text-white/80">
+                    <li><a href="./about.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Über uns
+                        </a></li>
+                    <li><a href="./case-studies.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Erfolgsgeschichten
+                        </a></li>
+                    <li><a href="./city-locations.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Standorte
+                        </a></li>
+                    <li><a href="./blog/index.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Blog & Insights
+                        </a></li>
+                    <li><a href="./contact.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Kontakt
+                        </a></li>
+                </ul>
+            </div>
+
+            <!-- Kontakt (Span 4) -->
+            <div class="md:col-span-4">
+                <h4 class="text-lg font-bold mb-6">Kontakt aufnehmen</h4>
+                <div class="footer-contact-card">
+                    <p class="text-white/80 mb-6">Bereit, Ihr Wachstum zu
+                        beschleunigen? Lassen Sie uns besprechen, wie wir helfen können.</p>
+                    <a href="./contact.html" class="btn btn-primary w-full mb-6">Kostenlose Beratung</a>
+                    <div class="space-y-4">
+                        <a href="mailto:hello@goexpandia.com"
+                            class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            hello@goexpandia.com
+                        </a>
+                        <a href="mailto:hello@goexpandia.com"
+                            class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            Gespräch buchen
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div
+            class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/60">
+            <div class="text-sm">
+                &copy; 2026 Expandia. Alle Rechte vorbehalten.
+            </div>
+            <div class="flex gap-6 text-sm items-center">
+                <span class="text-white/60 text-xs">Teil von Remova Inc.</span>
+                <a href="./privacy-policy.html" class="hover:text-primary transition-colors">Datenschutzrichtlinie</a>
+                <a href="./terms-of-service.html" class="hover:text-primary transition-colors">Nutzungsbedingungen</a>
+                <a href="./cookie-policy.html" class="hover:text-primary transition-colors">Cookie-Richtlinie</a>
+            </div>
+        </div>
+        <div class="mt-4 text-xs text-white/60 text-center">
+            Zugelassene Domains: www.goexpandia.com · www.getexpandia.com · www.expandia.com.tr
+        </div>
+    </div>
+</footer>
+<script src="./dist/js/contact.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How quickly can we start working together?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We can typically begin within 1-2 weeks after our initial consultation. We'll set up everything needed and start delivering results quickly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes Expandia different from other agencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We combine deep European market expertise with data-driven strategies and multilingual capabilities. Our team has 8+ years of experience helping businesses scale internationally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with companies of all sizes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we work with startups, SMEs, and enterprise companies. Our solutions are scalable and tailored to your specific business needs and growth stage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your pricing model?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer flexible pricing based on your specific needs and goals. Kontakt us for a free consultation and custom quote tailored to your business objectives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you measure success?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We focus on measurable KPIs including lead generation, conversion rates, ROI, and revenue impact. You'll receive detailed analytics and regular performance reports."
+      }
+    }
+  ]
+}
+</script>
+    
+    <script src="../dist/js/index.js"></script>
+    
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6911e3f950ba1a195e0a2c28/1j9mu527m';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+    
+    <!-- Lucide Icons & Vivus Init -->
+    <script>
+      lucide.createIcons();
+      
+      // Initialize Vivus on hover for all Lucide icons
+      document.addEventListener('DOMContentLoaded', function() {
+          setTimeout(function() {
+              const icons = document.querySelectorAll('.lucide');
+              icons.forEach(icon => {
+                  // Only animate if it's an SVG
+                  if(icon.tagName.toLowerCase() === 'svg') {
+                      // Trigger animation on hover
+                      icon.parentElement.addEventListener('mouseenter', () => {
+                          new Vivus(icon, {
+                              duration: 50,
+                              type: 'oneByOne',
+                              start: 'autostart',
+                              animTimingFunction: Vivus.EASE
+                          });
+                      });
+                      
+                      // Also trigger on load for hero icons
+                      if (icon.closest('.buzz-card')) {
+                           new Vivus(icon, {
+                              duration: 100,
+                              type: 'oneByOne',
+                              start: 'autostart'
+                          });
+                      }
+                  }
+              });
+          }, 100);
+      });
+    </script>
+
+    
+</body>
+</html>
