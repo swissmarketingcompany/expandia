@@ -13,6 +13,7 @@ const { Resend } = require('resend');
 const rateLimit = require('express-rate-limit');
 const { body, validationResult } = require('express-validator');
 const helmet = require('helmet');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const app = express();
 
 // Get port from environment variable or default to 6161 for dev
@@ -184,7 +185,7 @@ const contactValidation = [
 // Uncomment the line below if you want to re-enable contact rate limiting
 // const contactMiddleware = process.env.ENABLE_RATE_LIMIT === 'true' ? [contactLimiter] : [];
 
-app.post('https://expandia-contact-form.omaycompany.workers.dev/', contactValidation, async (req, res) => {
+app.post('/api/contact', contactValidation, async (req, res) => {
     try {
         // Check validation results
         const errors = validationResult(req);
@@ -364,6 +365,55 @@ app.post('/api/subscribe', [
     } catch (err) {
         console.error('Subscribe error:', err);
         res.status(500).json({ success: false, error: 'Server error' });
+    }
+});
+
+// Stripe Checkout Endpoint
+app.post('/api/create-checkout-session', async (req, res) => {
+    try {
+        const { packageId, customerName, customerEmail } = req.body;
+
+        const packages = {
+            'lite-5': { name: "LITE - 5 Clients / Year", price: 195000 },
+            'lite-10': { name: "LITE - 10 Clients / Year", price: 325000 },
+            'lite-15': { name: "LITE - 15 Clients / Year", price: 520000 },
+            'growth-20': { name: "GROWTH - 20 Clients / Year", price: 650000 },
+            'growth-30': { name: "GROWTH - 30 Clients / Year", price: 975000 },
+            'scale-50': { name: "SCALE - 50 Clients / Year", price: 1625000 }
+        };
+
+        const pkg = packages[packageId];
+        if (!pkg) {
+            return res.status(400).json({ error: 'Invalid package selected' });
+        }
+
+        const session = await stripe.checkout.sessions.create({
+            payment_method_types: ['card'],
+            line_items: [{
+                price_data: {
+                    currency: 'usd',
+                    product_data: {
+                        name: pkg.name,
+                        description: `Infrastructure setup for ${pkg.name}`,
+                    },
+                    unit_amount: pkg.price,
+                },
+                quantity: 1,
+            }],
+            mode: 'payment',
+            success_url: `${req.protocol}://${req.get('host')}/success.html?session_id={CHECKOUT_SESSION_ID}`,
+            cancel_url: `${req.protocol}://${req.get('host')}/cart.html?package=${packageId}`,
+            customer_email: customerEmail,
+            metadata: {
+                customerName: customerName,
+                packageId: packageId
+            }
+        });
+
+        res.json({ url: session.url });
+    } catch (error) {
+        console.error('Stripe Checkout Error:', error);
+        res.status(500).json({ error: 'Payment initialization failed. Please contact support.' });
     }
 });
 
