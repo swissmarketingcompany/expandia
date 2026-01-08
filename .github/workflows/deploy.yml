@@ -9,15 +9,30 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      
-      - name: Deploy to Heroku
-        uses: akhileshns/heroku-deploy@v3.14.15
+      - name: Checkout code
+        uses: actions/checkout@v4
         with:
-          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
-          heroku_email: ${{ secrets.HEROKU_EMAIL }}
+          fetch-depth: 0
+
+      - name: Deploy to Heroku via Git
         env:
-          HD_STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
-          HD_NODE_ENV: "production"
-          HD_NPM_CONFIG_PRODUCTION: "false"
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
+        run: |
+          git remote add heroku https://heroku:${HEROKU_API_KEY}@git.heroku.com/${HEROKU_APP_NAME}.git
+          git push heroku main:main --force
+
+      - name: Set Heroku Config Vars
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
+        run: |
+          curl -n -X PATCH https://api.heroku.com/apps/${HEROKU_APP_NAME}/config-vars \
+            -H "Content-Type: application/json" \
+            -H "Accept: application/vnd.heroku+json; version=3" \
+            -H "Authorization: Bearer ${HEROKU_API_KEY}" \
+            -d '{
+              "STRIPE_SECRET_KEY": "${{ secrets.STRIPE_SECRET_KEY }}",
+              "NODE_ENV": "production",
+              "NPM_CONFIG_PRODUCTION": "false"
+            }'
