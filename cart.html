@@ -716,71 +716,53 @@
         // Package Data Configuration
         const packages = {
             'lite-5': {
-                name: "LITE - 5 Clients / Year",
+                name: "LITE: 5 Clients / Year",
                 price: 1950,
-                save: 27300,
+                save: 22050, // Calculated based on agency rates
                 accounts: 3,
-                leads: "360+/mo",
-                verified: "14.4K",
-                domains: 1,
+                leads: "360/mo",
+                verified: "15k",
+                campaigns: 5,
                 tag: "🌱 LITE",
-                color: "emerald"
+                color: "emerald",
+                paymentLink: "https://buy.stripe.com/7sY4gydEC3PU3mud808Zq0a"
             },
             'lite-10': {
-                name: "LITE - 10 Clients / Year",
+                name: "POPULAR: 10 Clients / Year",
                 price: 3250,
-                save: 45500,
-                accounts: 5,
-                leads: "600+/mo",
-                verified: "24K",
-                domains: 2,
-                tag: "🌿 LITE",
+                save: 44750,
+                accounts: 10,
+                leads: "1200/mo",
+                verified: "48k",
+                campaigns: 10,
+                tag: "🔥 POPULAR",
                 color: "teal",
-                popular: true
-            },
-            'lite-15': {
-                name: "LITE - 15 Clients / Year",
-                price: 5200,
-                save: 72800,
-                accounts: 8,
-                leads: "960+/mo",
-                verified: "38.4K",
-                domains: 3,
-                tag: "🌱 LITE",
-                color: "cyan"
+                popular: true,
+                paymentLink: "https://buy.stripe.com/fZu6oG0RQ4TY6yGd808Zq0b"
             },
             'growth-20': {
-                name: "GROWTH - 20 Clients / Year",
+                name: "GROWTH: 20 Clients / Year",
                 price: 6500,
                 save: 91000,
-                accounts: 10,
-                leads: "1,200+/mo",
-                verified: "48K",
-                domains: 4,
+                accounts: 20,
+                leads: "2400/mo",
+                verified: "96k",
+                campaigns: 20,
                 tag: "📊 GROWTH",
-                color: "emerald"
-            },
-            'growth-30': {
-                name: "GROWTH - 30 Clients / Year",
-                price: 9750,
-                save: 136500,
-                accounts: 15,
-                leads: "1,800+/mo",
-                verified: "72K",
-                domains: 5,
-                tag: "📈 GROWTH",
-                color: "teal"
+                color: "emerald",
+                paymentLink: "https://buy.stripe.com/cNicN46cafyCcX44Bu8Zq0c"
             },
             'scale-50': {
-                name: "SCALE - 50 Clients / Year",
+                name: "ENTERPRISE: 50 Clients / Year",
                 price: 16250,
                 save: 227500,
-                accounts: 25,
-                leads: "3,000+/mo",
-                verified: "120K",
-                domains: 9,
-                tag: "🚀 SCALE",
-                color: "purple"
+                accounts: 50,
+                leads: "6000+/mo",
+                verified: "120k",
+                campaigns: 50,
+                tag: "🚀 ENTERPRISE",
+                color: "purple",
+                paymentLink: "https://buy.stripe.com/28E8wOgQO9ae0ai6JC8Zq0d"
             }
         };
 
@@ -842,8 +824,8 @@
                             <span class="font-medium text-sm">${pkg.leads} Leads Capacity</span>
                         </div>
                         <div class="flex items-center gap-3 p-3 bg-base-100 rounded-lg">
-                            <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary font-bold">${pkg.domains}</div>
-                            <span class="font-medium text-sm">Dedicated Domains</span>
+                            <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary font-bold">${pkg.campaigns}</div>
+                            <span class="font-medium text-sm">Campaigns Included</span>
                         </div>
                         <div class="flex items-center gap-3 p-3 bg-base-100 rounded-lg">
                             <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary font-bold">
@@ -855,7 +837,7 @@
                     <div class="mt-6 pt-6 border-t border-gray-100">
                         <ul class="space-y-2 text-sm text-gray-600">
                             <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Year 1 Software Licenses Included</li>
-                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 12 Months Weekly Coaching</li>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 12 Months monthly coaching</li>
                             <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 48-Hour Turnaround Time</li>
                         </ul>
                     </div>
@@ -886,30 +868,26 @@
             btn.disabled = true;
 
             try {
-                const response = await fetch('/api/create-checkout-session', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        packageId,
-                        customerName,
-                        customerEmail
-                    }),
-                });
+                // Static Checkout Logic (GitHub Pages compatible)
+                if (packages[packageId] && packages[packageId].paymentLink) {
+                    const paymentLink = packages[packageId].paymentLink;
 
-                const data = await response.json();
+                    // Construct URL with prefilled email
+                    // Stripe Payment Links support ?prefilled_email=
+                    const finalUrl = `${paymentLink}?prefilled_email=${encodeURIComponent(customerEmail)}`;
 
-                if (data.url) {
-                    window.location.href = data.url;
+                    // Optional: You can also pass client_reference_id if you want to track it in Stripe events
+                    // const finalUrlWithRef = `${finalUrl}&client_reference_id=${encodeURIComponent(customerName)}`;
+
+                    window.location.href = finalUrl;
                 } else {
-                    alert('Payment Error: ' + (data.error || 'Unknown error'));
+                    alert('Configuration Error: Payment link missing for this package.');
                     btn.innerHTML = originalText;
                     btn.disabled = false;
                 }
             } catch (error) {
                 console.error('Error:', error);
-                alert('An error occurred. Please try again or contact support.');
+                alert('An error occurred. Please try again.');
                 btn.innerHTML = originalText;
                 btn.disabled = false;
             }

@@ -66,18 +66,24 @@ app.use((req, res, next) => {
         const host = req.headers.host || '';
         const canonicalHost = 'www.goexpandia.com';
 
+        // Log request for debugging
+        console.log(`[Request] ${req.method} ${proto}://${host}${req.originalUrl}`);
+
         // 1. Force migration from old domain (expandia.ch) to new canonical domain
         if (host && host.includes('expandia.ch')) {
+            console.log(`[Redirect] Old Domain -> Canonical: ${canonicalHost}`);
             return res.redirect(301, `https://${canonicalHost}${req.originalUrl}`);
         }
 
         // 2. Redirect HTTP to HTTPS
         if (proto !== 'https') {
+            console.log(`[Redirect] HTTP -> HTTPS`);
             return res.redirect(301, `https://${host}${req.originalUrl}`);
         }
 
         // 3. Redirect non-www to www (canonical domain)
         if (host === 'goexpandia.com') {
+            console.log(`[Redirect] non-www -> www`);
             return res.redirect(301, `https://${canonicalHost}${req.originalUrl}`);
         }
     }
@@ -116,7 +122,8 @@ app.use((req, res, next) => {
 });
 
 // Serve static files from the current directory (no aggressive cache for HTML)
-app.use(express.static(__dirname));
+// MOVED TO END OF FILE TO PREVENT SHADOWING API ROUTES
+// app.use(express.static(__dirname));
 
 // Email configuration (Resend)
 const resendApiKey = process.env.RESEND_API_KEY || '';
@@ -370,6 +377,10 @@ app.post('/api/subscribe', [
 
 // Stripe Checkout Endpoint
 app.post('/api/create-checkout-session', async (req, res) => {
+    console.log('[API] /api/create-checkout-session called');
+    console.log('Headers:', JSON.stringify(req.headers));
+    console.log('Body:', JSON.stringify(req.body));
+
     try {
         const { packageId, customerName, customerEmail } = req.body;
 
@@ -997,6 +1008,11 @@ app.get('/de/sales-protection-services.html', (req, res) => {
 app.get('/de/cookie-policy.html', (req, res) => {
     res.redirect(301, '/de/privacy-policy.html');
 });
+
+// MOVED STATIC MIDDLEWARE HERE - AFTER API ROUTES
+// Serve static files from the current directory (no aggressive cache for HTML)
+app.use(express.static(__dirname));
+
 
 app.get('/de/privacy-policy.html', (req, res) => {
     res.redirect(301, '/de/privacy-policy.html');
