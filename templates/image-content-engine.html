@@ -1,225 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- Image Content Engine Hero -->
+<section class="section-spacing bg-gradient-to-br from-base-100 via-accent/5 to-base-200 relative overflow-hidden">
+    <!-- Background Decorations -->
+    <div class="absolute top-0 right-0 w-1/2 h-full opacity-10">
+        <svg viewBox="0 0 400 400" class="w-full h-full">
+            <rect x="50" y="50" width="100" height="100" fill="none" stroke="currentColor" stroke-width="2"
+                class="text-accent" />
+            <circle cx="300" cy="300" r="80" fill="none" stroke="currentColor" stroke-width="2" class="text-accent" />
+        </svg>
+    </div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Content Engine | Go Expandia</title>
-    <meta name="description"
-        content="Scale your visual identity with our AI-powered Image Content Engine. Custom brand models, high-fidelity product shoots, and marketing assets.">
-</head>
-
-<body>
-    {{HEADER}}
-
-    <main>
-        <!-- Hero -->
-        <section
-            class="section-spacing bg-gradient-to-br from-neutral via-neutral/90 to-accent/20 text-white overflow-hidden relative">
-            <div class="absolute inset-0 opacity-20">
-                <div class="absolute top-0 right-0 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
-                <div class="absolute bottom-0 left-0 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
-            </div>
-
-            <div class="container mx-auto container-padding relative z-10">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
-                    <div class="animate-fade-in">
-                        <div
-                            class="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-full text-sm font-bold mb-6">
-                            <span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
-                            Generative Brand Visuals
-                        </div>
-                        <h1 class="text-4xl md:text-7xl font-black mb-6 leading-none">
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">Image
-                                Content</span><br>
-                            <span>Engine</span>
-                        </h1>
-                        <p class="text-xl md:text-2xl text-white/80 mb-10 leading-relaxed font-light">
-                            Hyper-realistic product shots, brand-specific illustrations, and infinite marketing assets.
-                            We train custom AI models on your brand's unique DNA to generate assets that belong only to
-                            you.
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-6">
-                            <a href="#solutions"
-                                class="btn btn-accent btn-lg buzz-button px-10 shadow-lg shadow-accent/25">Generate Your
-                                Brand</a>
-                            <a href="contact.html"
-                                class="btn btn-outline btn-lg px-10 border-white text-white hover:bg-white/10">Request a
-                                Portfolio</a>
-                        </div>
-                    </div>
-                    <!-- Hero Visual -->
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=800&q=80"
-                            alt="AI Image Generation" class="rounded-3xl shadow-2xl w-full object-cover aspect-square">
-                    </div>
+    <div class="container mx-auto container-padding">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="animate-fade-in">
+                <div
+                    class="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-bold mb-6">
+                    <span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
+                    Visual Studio
                 </div>
-            </div>
-        </section>
-
-        <!-- Product Shoot Section -->
-        <section id="solutions" class="section-spacing bg-white">
-            <div class="container mx-auto container-padding">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                    <div>
-                        <div
-                            class="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-bold mb-6">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z">
-                                </path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            </svg>
-                            Virtual Product Studio
-                        </div>
-                        <h2 class="text-3xl md:text-5xl font-black mb-8 leading-tight">No studio. No camera. Infinite
-                            shots.</h2>
-                        <p class="text-lg text-base-content/70 mb-8 leading-relaxed">
-                            Upload a few cell phone photos of your product, and our engine creates professional,
-                            studio-quality lifestyle imagery in any setting imaginable. Perfect for eCommerce and Social
-                            Commerce.
-                        </p>
-                        <div class="space-y-6 mb-10">
-                            <div
-                                class="p-6 bg-base-100 rounded-2xl border-l-4 border-accent hover:shadow-lg transition-shadow">
-                                <h4 class="text-xl font-bold mb-2">Model Persistence</h4>
-                                <p class="text-sm text-base-content/60">Ensure your product looks identical across
-                                    thousands of different generated scenes.</p>
-                            </div>
-                            <div
-                                class="p-6 bg-base-100 rounded-2xl border-l-4 border-primary hover:shadow-lg transition-shadow">
-                                <h4 class="text-xl font-bold mb-2">Lighting & Material Fidelity</h4>
-                                <p class="text-sm text-base-content/60">AI that understands glass, metal, and fabric
-                                    properties for true-to-life results.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="relative group grid grid-cols-2 gap-4">
-                        <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=400&q=80"
-                            class="rounded-2xl shadow-lg aspect-square object-cover">
-                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&q=80"
-                            class="rounded-2xl shadow-lg aspect-square object-cover">
-                        <img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?w=400&q=80"
-                            class="rounded-2xl shadow-lg aspect-square object-cover">
-                        <img src="https://images.unsplash.com/photo-1633412802994-5c058f151b66?w=400&q=80"
-                            class="rounded-2xl shadow-lg aspect-square object-cover">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Custom LoRA Models -->
-        <section class="section-spacing bg-base-100">
-            <div class="container mx-auto container-padding">
-                <div class="text-center max-w-4xl mx-auto mb-16">
-                    <h2 class="text-4xl md:text-6xl font-black mb-6">Your Own Creative Model</h2>
-                    <p class="text-xl text-base-content/60">We don't just prompt. We train. Build a private AI model
-                        that understands your specific branding constraints.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div
-                        class="buzz-card bg-white p-10 flex flex-col border-b-4 border-primary hover:shadow-xl transition-shadow">
-                        <div
-                            class="h-48 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl mb-8 flex items-center justify-center">
-                            <i data-lucide="palette" class="w-20 h-20 text-primary/40"></i>
-                        </div>
-                        <h4 class="text-2xl font-bold mb-4">Brand Aesthetic Training</h4>
-                        <p class="text-sm text-base-content/60 mb-6">Train the AI on your unique color palettes,
-                            textures, and compositional styles.</p>
-                    </div>
-                    <div
-                        class="buzz-card bg-white p-10 flex flex-col border-b-4 border-accent hover:shadow-xl transition-shadow">
-                        <div
-                            class="h-48 bg-gradient-to-br from-accent/10 to-accent/5 rounded-2xl mb-8 flex items-center justify-center">
-                            <i data-lucide="component" class="w-20 h-20 text-accent/40"></i>
-                        </div>
-                        <h4 class="text-2xl font-bold mb-4">Specific Assets</h4>
-                        <p class="text-sm text-base-content/60 mb-6">Upload your custom fonts and logo variants to be
-                            natively integrated into visual generation.</p>
-                    </div>
-                    <div
-                        class="buzz-card bg-white p-10 flex flex-col border-b-4 border-secondary hover:shadow-xl transition-shadow">
-                        <div
-                            class="h-48 bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-2xl mb-8 flex items-center justify-center">
-                            <i data-lucide="database" class="w-20 h-20 text-secondary/40"></i>
-                        </div>
-                        <h4 class="text-2xl font-bold mb-4">Private Hosting</h4>
-                        <p class="text-sm text-base-content/60 mb-6">Your trained models are securely hosted and
-                            accessible only by your team via API or Web UI.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Common Questions -->
-        <section id="how-it-works" class="section-spacing bg-white">
-            <div class="container mx-auto container-padding">
-                <div class="text-center mb-24">
-                    <h2 class="text-4xl md:text-6xl font-black mb-6">Common Questions</h2>
-                    <p class="text-xl text-base-content/60 max-w-2xl mx-auto font-light">Everything you need to know
-                        about our visual content infrastructure.</p>
-                </div>
-
-                <div class="space-y-32 max-w-6xl mx-auto">
-                    <!-- Q1 -->
-                    <div class="grid lg:grid-cols-2 gap-20 items-center">
-                        <div>
-                            <div class="text-8xl font-black text-primary/10 mb-6">01.</div>
-                            <h3 class="text-3xl md:text-4xl font-bold mb-8 leading-tight">Is the quality print-ready?
-                            </h3>
-                            <p class="text-lg text-base-content/70 leading-relaxed">Yes. Our engine includes
-                                high-fidelity upscaling protocols. We can generate and upscale images to 4K resolution
-                                and beyond, suitable for physical banners, high-res web, and print media.</p>
-                        </div>
-                        <div class="relative group">
-                            <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&q=80"
-                                alt="High Resolution Upscaling"
-                                class="relative rounded-3xl shadow-2xl w-full object-cover aspect-[4/3]">
-                        </div>
-                    </div>
-
-                    <!-- Q2 -->
-                    <div class="grid lg:grid-cols-2 gap-20 items-center">
-                        <div class="order-2 lg:order-1 relative group">
-                            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80"
-                                alt="Copyright Management"
-                                class="relative rounded-3xl shadow-2xl w-full object-cover aspect-[4/3]">
-                        </div>
-                        <div class="order-1 lg:order-2">
-                            <div class="text-8xl font-black text-primary/10 mb-6">02.</div>
-                            <h3 class="text-3xl md:text-4xl font-bold mb-8 leading-tight">Who owns the copyrights?</h3>
-                            <p class="text-lg text-base-content/70 leading-relaxed">You do. Images generated through
-                                your custom-trained private models are your property. Unlike generic stock libraries,
-                                these are unique assets created specifically for your brand.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="section-spacing bg-gradient-to-r from-accent to-primary relative overflow-hidden">
-            <div class="absolute inset-0 opacity-10">
-                <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-                <div class="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-            </div>
-
-            <div class="container mx-auto container-padding text-center relative z-10">
-                <h2 class="text-4xl md:text-5xl font-black mb-8 text-white">Stop hunting for stock photos.</h2>
-                <p class="text-xl mb-12 text-white/90 max-w-2xl mx-auto leading-relaxed">
-                    Start generating exactly what you need, when you need it. Let's build your brand's visual engine
-                    today.
+                <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
+                    <span class="gradient-header from-accent to-secondary">Image Content</span><br>
+                    <span class="text-base-content">Engine</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-base-content/80 mb-8 leading-relaxed">
+                    Stunning visuals, on demand. From social media thumbnails to infographic series, we provide the
+                    design execution you need to scale.
                 </p>
-                <a href="contact.html"
-                    class="btn btn-lg bg-white text-accent hover:bg-white/90 border-none px-16 shadow-2xl">Start Your
-                    Portfolio</a>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="contact.html"
+                        class="btn btn-accent btn-lg buzz-button shadow-lg shadow-accent/25 text-white">
+                        Get Design Quote
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="#portfolio" class="btn btn-outline btn-lg">View Portfolio</a>
+                </div>
             </div>
-        </section>
-    </main>
 
-    {{FOOTER}}
-</body>
+            <!-- Hero Visual -->
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1626785774573-4b799314346d?auto=format&fit=crop&w=800&q=80"
+                    alt="Digital Design" class="rounded-3xl shadow-2xl w-full object-cover aspect-[4/3]">
+            </div>
+        </div>
+    </div>
+</section>
 
-</html>
+<!-- Design Services -->
+<section id="portfolio" class="section-spacing bg-white">
+    <div class="container mx-auto container-padding">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">Visuals That Convert</h2>
+            <p class="text-lg text-base-content/60 max-w-2xl mx-auto">Our design team integrates with your brand
+                guidelines to deliver consistent, high-converting assets.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="buzz-card p-6 bg-base-100 rounded-2xl">
+                <img src="https://source.unsplash.com/random/400x300?graphic" alt="Social Media"
+                    class="w-full h-48 object-cover rounded-xl mb-4 bg-gray-200">
+                <h3 class="font-bold text-xl mb-2">Social Assets</h3>
+                <p class="text-base-content/70">Instagram carousels, LinkedIn posts, and Twitter visuals.</p>
+            </div>
+            <div class="buzz-card p-6 bg-base-100 rounded-2xl">
+                <img src="https://source.unsplash.com/random/400x300?data" alt="Infographics"
+                    class="w-full h-48 object-cover rounded-xl mb-4 bg-gray-200">
+                <h3 class="font-bold text-xl mb-2">Infographics</h3>
+                <p class="text-base-content/70">Turn complex data into shareable visual stories.</p>
+            </div>
+            <div class="buzz-card p-6 bg-base-100 rounded-2xl">
+                <img src="https://source.unsplash.com/random/400x300?ad" alt="Ad Creatives"
+                    class="w-full h-48 object-cover rounded-xl mb-4 bg-gray-200">
+                <h3 class="font-bold text-xl mb-2">Ad Creatives</h3>
+                <p class="text-base-content/70">High-CTR banners and visuals for paid campaigns.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Image Content Engine",
+  "description": "Professional graphic design services for social media and marketing.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Go Expandia"
+  }
+}
+</script>
