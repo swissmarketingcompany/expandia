@@ -513,31 +513,51 @@
 </script>
     
     <!-- Video Content Engine Hero -->
-<section class="section-spacing bg-gradient-to-br from-base-100 via-error/5 to-base-200 relative overflow-hidden">
-    <!-- Background Decorations -->
-    <div class="absolute top-0 left-0 w-1/2 h-full opacity-10">
-        <svg viewBox="0 0 400 400" class="w-full h-full">
-            <polygon points="100,100 200,150 100,200" fill="currentColor" class="text-error" />
-            <circle cx="300" cy="300" r="50" fill="none" stroke="currentColor" stroke-width="2" class="text-error" />
-        </svg>
-    </div>
-
+<section class="section-spacing bg-base-100 relative overflow-hidden">
     <div class="container mx-auto container-padding">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <div class="animate-fade-in">
+            <div class="animate-fade-in z-10">
                 <div
                     class="inline-flex items-center gap-2 bg-error/10 text-error px-4 py-2 rounded-full text-sm font-bold mb-6">
                     <span class="w-2 h-2 bg-error rounded-full animate-pulse"></span>
                     Broadcast Quality
                 </div>
-                <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
-                    <span class="gradient-header from-error to-warning">Video Content</span><br>
-                    <span class="text-base-content">Engine</span>
+                <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight text-base-content">
+                    Video Content<br>
+                    <span class="text-error">Engine</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-base-content/80 mb-8 leading-relaxed">
-                    Scale your video presence without the studio costs. AI-driven avatars, motion graphics, and
-                    professional editing in one subscription.
+                    Scale your video presence without the studio costs. Use AI-driven production to create diverse video
+                    assets for every channel.
                 </p>
+
+                <div class="mb-8 p-6 bg-base-200/50 rounded-2xl border border-base-content/5">
+                    <h3 class="font-bold text-lg mb-3 text-base-content">Why Video Marketing?</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-2 text-base-content/70">
+                            <svg class="w-5 h-5 text-error mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Capture attention on LinkedIn & TikTok.</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-base-content/70">
+                            <svg class="w-5 h-5 text-error mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Explain complex products in seconds.</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-base-content/70">
+                            <svg class="w-5 h-5 text-error mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Repurpose one shoot into 20+ clips.</span>
+                        </li>
+                    </ul>
+                </div>
+
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="contact.html"
                         class="btn btn-error btn-lg buzz-button shadow-lg shadow-error/25 text-white">
@@ -548,17 +568,17 @@
                             </path>
                         </svg>
                     </a>
-                    <a href="#examples" class="btn btn-outline btn-lg">Watch Examples</a>
+                    <a href="#examples" class="btn btn-outline btn-lg text-base-content">Watch Examples</a>
                 </div>
             </div>
 
             <!-- Hero Visual -->
-            <div class="relative">
-                <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=800&q=80"
+            <div class="relative z-10">
+                <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80"
                     alt="Video Production" class="rounded-3xl shadow-2xl w-full object-cover aspect-[4/3]">
                 <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
                     <div
-                        class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/50">
+                        class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/50 shadow-lg">
                         <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M8 5v14l11-7z" />
                         </svg>
@@ -570,51 +590,35 @@
 </section>
 
 <!-- Features Grid -->
-<section id="examples" class="section-spacing bg-white">
+<section id="examples" class="section-spacing bg-base-200/30">
     <div class="container mx-auto container-padding">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-5xl font-bold mb-4">Video for Every Channel</h2>
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 text-base-content">Video for Every Channel</h2>
             <p class="text-lg text-base-content/60 max-w-2xl mx-auto">Engage your audience on YouTube, LinkedIn, and
                 TikTok with optimized video formats.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="p-6 bg-base-100 rounded-2xl hover:shadow-lg transition-all">
-                <div
-                    class="w-12 h-12 bg-error/10 rounded-xl flex items-center justify-center mb-4 text-error font-bold text-xl">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z">
-                        </path>
-                    </svg></div>
-                <h3 class="font-bold text-lg mb-2">AI Explainers</h3>
+            <div class="p-6 bg-base-100 rounded-2xl hover:shadow-lg transition-all border border-base-content/5">
+                <img src="https://images.unsplash.com/photo-1626544827763-d516dce335ca?auto=format&fit=crop&w=400&q=60"
+                    alt="Youtube" class="w-full h-48 object-cover rounded-xl mb-4 bg-base-300">
+                <h3 class="font-bold text-lg mb-2 text-base-content">AI Explainers & Demos</h3>
                 <p class="text-sm text-base-content/70">Professional product walkthroughs using AI avatars to save
                     filming time.</p>
             </div>
-            <div class="p-6 bg-base-100 rounded-2xl hover:shadow-lg transition-all">
-                <div
-                    class="w-12 h-12 bg-error/10 rounded-xl flex items-center justify-center mb-4 text-error font-bold text-xl">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z">
-                        </path>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg></div>
-                <h3 class="font-bold text-lg mb-2">Social Shorts</h3>
+            <div class="p-6 bg-base-100 rounded-2xl hover:shadow-lg transition-all border border-base-content/5">
+                <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=400&q=60"
+                    alt="TikTok" class="w-full h-48 object-cover rounded-xl mb-4 bg-base-300">
+                <h3 class="font-bold text-lg mb-2 text-base-content">Social Shorts</h3>
                 <p class="text-sm text-base-content/70">Vertical video clips optimized for TikTok, Reels, and YouTube
                     Shorts.</p>
             </div>
-            <div class="p-6 bg-base-100 rounded-2xl hover:shadow-lg transition-all">
-                <div
-                    class="w-12 h-12 bg-error/10 rounded-xl flex items-center justify-center mb-4 text-error font-bold text-xl">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z">
-                        </path>
-                    </svg></div>
-                <h3 class="font-bold text-lg mb-2">Sales Demos</h3>
-                <p class="text-sm text-base-content/70">High-converting demo reels for your sales team.</p>
+            <div class="p-6 bg-base-100 rounded-2xl hover:shadow-lg transition-all border border-base-content/5">
+                <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=400&q=60"
+                    alt="Sales Demos" class="w-full h-48 object-cover rounded-xl mb-4 bg-base-300">
+                <h3 class="font-bold text-lg mb-2 text-base-content">Sales Demos</h3>
+                <p class="text-sm text-base-content/70">High-converting demo reels and personalized video outreach for
+                    your sales team.</p>
             </div>
         </div>
     </div>
