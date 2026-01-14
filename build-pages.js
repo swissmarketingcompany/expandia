@@ -1759,6 +1759,9 @@ buildPage('verified-lead-list', 'verified-lead-list', 'en');
 buildPage('email-deliverability-checkup', 'email-deliverability-checkup', 'en');
 buildPage('secure-email-workplace-setup', 'secure-email-workplace-setup', 'en');
 buildPage('website-care-services', 'website-care-services', 'en');
+buildPage('written-content-engine', 'written-content-engine', 'en');
+buildPage('image-content-engine', 'image-content-engine', 'en');
+buildPage('video-content-engine', 'video-content-engine', 'en');
 
 buildPage('blog-index', 'blog/index', 'en');
 
