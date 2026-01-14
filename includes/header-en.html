@@ -1,275 +1,325 @@
-<!-- Navigation -->
-<nav class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
-    <div class="container mx-auto container-padding flex items-center justify-between">
-        <div class="navbar-start flex items-center">
-            <div class="dropdown">
-                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h8m-8 6h16"></path>
-                    </svg>
-                </div>
-                <!-- Mobile Menu -->
-                <ul tabindex="0"
-                    class="menu menu-sm dropdown-content mt-3 z-[100] p-2 shadow bg-base-100 rounded-box w-72 max-h-[80vh] overflow-y-auto">
-                    <li><a href="{{BASE_PATH}}index.html" {{HOME_MOBILE_ACTIVE}}>Home</a></li>
-                    <li>
-                        <details>
-                            <summary class="font-semibold">Solutions</summary>
-                            <ul class="p-2">
-                                <li class="mt-2 px-3 py-1 text-xs font-bold text-gray-400 uppercase">IT & Security</li>
-                                <li><a href="{{BASE_PATH}}managed-it-services.html" class="text-sm pl-8">Managed IT
-                                        (MSP)</a></li>
-                                <li><a href="{{BASE_PATH}}vulnerability-assessments.html"
-                                        class="text-sm pl-8">Vulnerability Assessments</a></li>
-                                <li><a href="{{BASE_PATH}}email-security.html" class="text-sm pl-8">Email Security</a>
-                                </li>
-                                <li class="mt-4 px-3 py-1 text-xs font-bold text-gray-400 uppercase">Sales & Growth</li>
-                                <li><a href="{{BASE_PATH}}lead-generation-service.html" class="text-sm pl-8">B2B Lead
-                                        Generation</a></li>
-                                <li><a href="{{BASE_PATH}}revops-crm-setup.html" class="text-sm pl-8">RevOps & CRM</a>
-                                </li>
-                                <li><a href="{{BASE_PATH}}lost-lead-reactivation.html" class="text-sm pl-8">Lead
-                                        Reactivation</a></li>
-                                <li class="mt-4 px-3 py-1 text-xs font-bold text-gray-400 uppercase">Talent & AI</li>
-                                <li><a href="{{BASE_PATH}}recruitment.html" class="text-sm pl-8">Specialized
-                                        Recruitment</a></li>
-                                <li><a href="{{BASE_PATH}}ai-creative-studio.html" class="text-sm pl-8">AI Creative
-                                        Studio</a></li>
-                            </ul>
-                        </details>
-                    </li>
-                    <li>
-                        <details>
-                            <summary class="font-semibold">Company</summary>
-                            <ul class="p-2">
-                                <li><a href="{{BASE_PATH}}about.html" {{ABOUT_MOBILE_ACTIVE}}>About Us</a></li>
-                                <li><a href="{{BASE_PATH}}{{VISION_MISSION_PAGE}}" {{VISION_MOBILE_ACTIVE}}>Vision &
-                                        Mission</a></li>
-                                <li><a href="{{BASE_PATH}}{{ETHICAL_PRINCIPLES_PAGE}}"
-                                        {{ETHICS_MOBILE_ACTIVE}}>Ethics</a></li>
-                            </ul>
-                        </details>
-                    </li>
-                    <li><a href="{{BASE_PATH}}city-locations.html">Service Areas</a></li>
-                    <li><a href="{{BASE_PATH}}blog/index.html" {{BLOG_MOBILE_ACTIVE}}>Sales University</a></li>
-                </ul>
-            </div>
-            <a href="{{BASE_PATH}}index.html" class="flex items-center py-2 hover:opacity-80 transition-opacity">
-                <img src="{{LOGO_PATH}}" alt="Expandia"
-                    class="h-8 md:h-10 w-auto transition-all duration-300 hover:scale-105 logo-bumblebee">
-            </a>
-        </div>
+<!-- Navigation - Premium Mega Menu -->
+<nav class="navbar bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-30 border-b border-gray-100">
+    <div class="container mx-auto px-4 lg:px-8 flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="{{BASE_PATH}}index.html" class="flex-shrink-0">
+            <img src="{{LOGO_PATH}}" alt="Go Expandia" class="h-12 md:h-14">
+        </a>
 
-        <!-- Desktop Mega Menu -->
-        <div class="navbar-center hidden lg:flex justify-center">
-            <ul class="menu menu-horizontal px-1">
-                <li><a href="{{BASE_PATH}}index.html" class="btn btn-ghost font-semibold {{HOME_ACTIVE}}">Home</a></li>
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center gap-1">
+            <a href="{{BASE_PATH}}index.html"
+                class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50">Home</a>
 
-                <li class="dropdown dropdown-hover">
-                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold {{SOLUTIONS_ACTIVE}}">
-                        Solutions
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </div>
-                    <div tabindex="0"
-                        class="dropdown-content z-[2] card card-compact w-[95vw] md:w-[850px] p-6 shadow-2xl bg-base-100 border border-base-300 left-1/2 -translate-x-1/2"
-                        style="background-color: white !important;">
-                        <div class="card-body p-0">
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                                <!-- Pillar 1: IT & Security -->
-                                <div>
-                                    <div
-                                        class="text-xs font-bold text-primary uppercase tracking-wider mb-4 border-b border-primary/10 pb-2">
-                                        IT & Cybersecurity</div>
-                                    <ul class="space-y-3">
-                                        <li><a href="{{BASE_PATH}}managed-it-services.html"
-                                                class="text-sm hover:text-primary transition-colors block py-1 font-medium">Managed
-                                                IT Services</a></li>
-                                        <li><a href="{{BASE_PATH}}vulnerability-assessments.html"
-                                                class="text-sm hover:text-primary transition-colors block py-1">Security
-                                                Assessments</a></li>
-                                        <li><a href="{{BASE_PATH}}email-security.html"
-                                                class="text-sm hover:text-primary transition-colors block py-1">Email
-                                                Deliverability</a></li>
-                                        <li><a href="{{BASE_PATH}}website-care-plans.html"
-                                                class="text-sm hover:text-primary transition-colors block py-1">Website
-                                                Care Plans</a></li>
-                                    </ul>
-                                </div>
-
-                                <!-- Pillar 2: Sales & Growth -->
-                                <div>
-                                    <div
-                                        class="text-xs font-bold text-secondary uppercase tracking-wider mb-4 border-b border-secondary/10 pb-2">
-                                        Sales & Growth</div>
-                                    <ul class="space-y-3">
-                                        <li><a href="{{BASE_PATH}}lead-generation-service.html"
-                                                class="text-sm hover:text-secondary transition-colors block py-1 font-medium">Lead
-                                                Generation</a></li>
-                                        <li><a href="{{BASE_PATH}}revops-crm-setup.html"
-                                                class="text-sm hover:text-secondary transition-colors block py-1">RevOps
-                                                & CRM Setup</a></li>
-                                        <li><a href="{{BASE_PATH}}lost-lead-reactivation.html"
-                                                class="text-sm hover:text-secondary transition-colors block py-1">Lead
-                                                Reactivation</a></li>
-                                        <li><a href="{{BASE_PATH}}cold-calling.html"
-                                                class="text-sm hover:text-secondary transition-colors block py-1">Speed-to-Lead
-                                                Engine</a></li>
-                                    </ul>
-                                </div>
-
-                                <!-- Pillar 3: Recruitment -->
-                                <div>
-                                    <div
-                                        class="text-xs font-bold text-accent uppercase tracking-wider mb-4 border-b border-accent/10 pb-2">
-                                        Recruitment</div>
-                                    <ul class="space-y-3">
-                                        <li><a href="{{BASE_PATH}}recruitment.html"
-                                                class="text-sm hover:text-accent transition-colors block py-1 font-medium">Specialized
-                                                Headhunting</a></li>
-                                        <li><a href="{{BASE_PATH}}recruitment.html#staffing"
-                                                class="text-sm hover:text-accent transition-colors block py-1">Bridge
-                                                Staffing</a></li>
-                                        <li><a href="{{BASE_PATH}}recruitment.html#va"
-                                                class="text-sm hover:text-accent transition-colors block py-1">Executive
-                                                VAs</a></li>
-                                    </ul>
-                                </div>
-
-                                <!-- Pillar 4: AI Creative Studio -->
-                                <div>
-                                    <div
-                                        class="text-xs font-bold text-neutral uppercase tracking-wider mb-4 border-b border-neutral/10 pb-2">
-                                        AI Creative Studio</div>
-                                    <ul class="space-y-3">
-                                        <li><a href="{{BASE_PATH}}ai-creative-studio.html"
-                                                class="text-sm hover:text-neutral transition-colors block py-1 font-medium">Video
-                                                Localization</a></li>
-                                        <li><a href="{{BASE_PATH}}ai-creative-studio.html#avatars"
-                                                class="text-sm hover:text-neutral transition-colors block py-1">Corporate
-                                                Avatars</a></li>
-                                        <li><a href="{{BASE_PATH}}ai-creative-studio.html#images"
-                                                class="text-sm hover:text-neutral transition-colors block py-1">Custom
-                                                Image Models</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="border-t border-base-200 mt-6 pt-4 flex items-center justify-between">
-                                <p class="text-xs text-base-content/50 italic">Engineering growth through code, data,
-                                    and human intelligence.</p>
-                                <a href="{{BASE_PATH}}contact.html" class="btn btn-primary btn-sm buzz-button px-6">Book
-                                    a Strategy Call</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="dropdown dropdown-hover">
-                    <div tabindex="0" role="button" class="btn btn-ghost font-semibold {{COMPANY_ACTIVE}}">
-                        Company
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </div>
-                    <div tabindex="0"
-                        class="dropdown-content z-[1] card card-compact w-64 p-4 shadow-xl bg-base-100 border border-base-300"
-                        style="background-color: white !important;">
-                        <div class="card-body">
-                            <div class="grid gap-2">
-                                <a href="{{BASE_PATH}}about.html"
-                                    class="p-3 rounded-xl hover:bg-base-200 transition-colors font-semibold">About
-                                    Us</a>
-                                <a href="{{BASE_PATH}}{{VISION_MISSION_PAGE}}"
-                                    class="p-3 rounded-xl hover:bg-base-200 transition-colors font-semibold">Vision &
-                                    Mission</a>
-                                <a href="{{BASE_PATH}}{{ETHICAL_PRINCIPLES_PAGE}}"
-                                    class="p-3 rounded-xl hover:bg-base-200 transition-colors font-semibold">Ethical
-                                    Principles</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-
-                <li><a href="{{BASE_PATH}}city-locations.html" class="btn btn-ghost font-semibold">Service Areas</a>
-                </li>
-                <li><a href="{{BASE_PATH}}blog/index.html" class="btn btn-ghost font-semibold {{BLOG_ACTIVE}}">Sales
-                        University</a></li>
-            </ul>
-        </div>
-
-        <div class="navbar-end flex items-center">
-            <div class="dropdown dropdown-end mr-4">
-                <div tabindex="0" role="button" class="btn btn-ghost btn-sm">
-                    <span id="current-flag">🇺🇸</span>
-                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <!-- Products Mega Menu -->
+            <div class="relative" id="solutions-dropdown">
+                <button onclick="toggleDropdown('solutions-menu')"
+                    class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
+                    Solutions
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
+                </button>
+                <div id="solutions-menu"
+                    class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
+                    style="width: 720px;">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-6">
+                        <!-- Left Column -->
+                        <div>
+                            <h3
+                                class="text-xs font-bold text-primary uppercase tracking-wider mb-4 border-b border-primary/10 pb-2">
+                                Solutions
+                            </h3>
+                            <ul class="space-y-3">
+                                <li><a href="{{BASE_PATH}}b2b-lead-generation-agency.html"
+                                        class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                                        <span class="text-sm font-semibold text-gray-900">B2B Lead Generation</span>
+                                    </a></li>
+                                <li><a href="{{BASE_PATH}}sales-development-agency.html"
+                                        class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                                        <span class="text-sm font-semibold text-gray-900">Managed Sales Operations & B2B
+                                            Growth Partner (Go Expandia)</span>
+                                    </a></li>
+                                <li><a href="{{BASE_PATH}}lead-generation-service.html"
+                                        class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                                        <span class="text-sm font-semibold text-gray-900">B2B Potansiyel Müşteri
+                                            Yaratma Türkiye (Turkey Lead Gen)</span>
+                                    </a></li>
+                                <li><a href="{{BASE_PATH}}revops-infrastructure.html"
+                                        class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                                        <span class="text-sm font-semibold text-gray-900">Managed Sales Operations & B2B
+                                            Growth Partner (Expandia)</span>
+                                    </a></li>
+                            </ul>
+                        </div>
+                        <!-- Right Column -->
+                        <div class="pt-8 md:pt-0">
+                            <h3
+                                class="text-xs font-bold text-secondary uppercase tracking-wider mb-4 border-b border-secondary/10 pb-2 md:hidden">
+                                &nbsp;
+                            </h3>
+                            <!-- Desktop Formatting: Align with first item -->
+                            <div class="md:mt-[38px]"></div>
+                            <ul class="space-y-3">
+                                <li><a href="{{BASE_PATH}}managed-it-services.html"
+                                        class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                                        <span class="text-sm font-semibold text-gray-900">Managed IT Services &
+                                            Cybersecurity</span>
+                                    </a></li>
+                                <li><a href="{{BASE_PATH}}market-foundation-program.html"
+                                        class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                                        <span class="text-sm font-semibold text-gray-900">B2B Growth Services for Small
+                                            Business</span>
+                                    </a></li>
+                                <li><a href="{{BASE_PATH}}lead-generation-service.html"
+                                        class="block p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                                        <span class="text-sm font-semibold text-gray-900">Lead Generation Solutions
+                                            (Inbound & Outbound)</span>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- CTA Footer -->
+                    <div class="bg-gray-50 px-6 py-4 flex items-center justify-between border-t border-gray-100">
+                        <p class="text-sm text-gray-600">Not sure which service? Let's find the right fit together.</p>
+                        <a href="{{BASE_PATH}}contact.html" class="btn btn-primary btn-sm">Book a Call</a>
+                    </div>
                 </div>
-                <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-32 text-right">
-                    <li><a href="#" data-lang="en"
-                            class="lang-switch flex items-center gap-2 justify-end"><span>🇺🇸</span> English</a></li>
+            </div>
 
-                    <li><a href="#" data-lang="de"
-                            class="lang-switch flex items-center gap-2 justify-end"><span>🇩🇪</span> Deutsch</a></li>
-                    <li><a href="#" data-lang="fr"
-                            class="lang-switch flex items-center gap-2 justify-end"><span>🇫🇷</span> Français</a></li>
+            <!-- Company Mega Menu -->
+            <div class="relative" id="company-dropdown">
+                <button onclick="toggleDropdown('company-menu')"
+                    class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
+                    Company
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="company-menu"
+                    class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
+                    style="width: 480px;">
+                    <div class="grid grid-cols-2 divide-x divide-gray-100">
+                        <!-- Column 1: About -->
+                        <div class="p-6">
+                            <h3
+                                class="text-xs font-bold text-primary uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center text-primary"><i
+                                        data-lucide="building-2" class="w-4 h-4"></i></span>
+                                About Us
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="{{BASE_PATH}}about.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                        <span class="text-sm font-semibold text-gray-900">Our Story</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">Who we are & what we do</p>
+                                    </a></li>
+                                <li><a href="{{BASE_PATH}}{{VISION_MISSION_PAGE}}"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                        <span class="text-sm font-semibold text-gray-900">Vision & Mission</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">Our purpose and goals</p>
+                                    </a></li>
+                                <li><a href="{{BASE_PATH}}{{ETHICAL_PRINCIPLES_PAGE}}"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                        <span class="text-sm font-semibold text-gray-900">Ethics & Values</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">How we operate</p>
+                                    </a></li>
+                            </ul>
+                        </div>
+                        <!-- Column 2: Resources -->
+                        <div class="p-6">
+                            <h3
+                                class="text-xs font-bold text-secondary uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center text-secondary"><i
+                                        data-lucide="library-big" class="w-4 h-4"></i></span>
+                                Resources
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="{{BASE_PATH}}case-studies.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                        <span class="text-sm font-semibold text-gray-900">Case Studies</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">Real client success stories</p>
+                                    </a></li>
+                                <li><a href="{{BASE_PATH}}blog/index.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                        <span class="text-sm font-semibold text-gray-900">Blog & Insights</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">Tips, trends & guides</p>
+                                    </a></li>
+                                <li><a href="{{BASE_PATH}}city-locations.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                        <span class="text-sm font-semibold text-gray-900">Locations</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">Where we operate</p>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- CTA Footer -->
+                    <div class="bg-gray-50 px-6 py-4 flex items-center justify-between border-t border-gray-100">
+                        <p class="text-sm text-gray-600">Ready to grow your business?</p>
+                        <a href="{{BASE_PATH}}contact.html" class="btn btn-primary btn-sm">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side -->
+        <div class="flex items-center gap-3">
+            <!-- Language Switcher -->
+            <div class="dropdown dropdown-end hidden sm:block">
+                <label tabindex="0" class="btn btn-ghost btn-sm gap-1 text-gray-600">
+                    🇺🇸
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </label>
+                <ul tabindex="0"
+                    class="dropdown-content z-[999] menu p-2 shadow-lg bg-white rounded-xl border border-gray-100 w-36 mt-2">
+                    <li><a href="#" data-lang="en" class="lang-switch text-sm">🇺🇸 English</a></li>
+
+                    <li><a href="#" data-lang="de" class="lang-switch text-sm">🇩🇪 Deutsch</a></li>
+                    <li><a href="#" data-lang="fr" class="lang-switch text-sm">🇫🇷 Français</a></li>
                 </ul>
             </div>
-            <a href="{{BASE_PATH}}contact.html" class="btn btn-primary buzz-button ml-2">Get Started</a>
+
+            <!-- CTA Button -->
+            <a href="{{BASE_PATH}}contact.html"
+                class="btn btn-primary btn-sm lg:btn-md shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-shadow hidden sm:inline-flex">Get
+                Started</a>
+
+            <!-- Mobile Menu Button -->
+            <div class="lg:hidden relative">
+                <button onclick="toggleMobileMenu()" class="btn btn-ghost btn-sm">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <div id="mobile-menu"
+                    class="hidden fixed top-16 right-0 max-h-[500px] w-80 bg-white shadow-2xl z-[999] overflow-y-auto overscroll-contain border-l border-gray-100 rounded-bl-2xl">
+                    <ul class="menu p-3 w-full text-xs">
+                        <!-- Solutions Section -->
+                        <li class="mt-1">
+                            <span
+                                class="text-[10px] font-bold text-primary uppercase tracking-wider px-2 py-1 bg-primary/5 rounded-lg mb-1">Solutions</span>
+                            <ul class="pl-0 space-y-0.5">
+                                <li><a href="{{BASE_PATH}}b2b-lead-generation-agency.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">B2B Lead Generation</a></li>
+                                <li><a href="{{BASE_PATH}}sales-development-agency.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Managed Sales Operations & B2B
+                                        Growth Partner (Go Expandia)</a></li>
+                                <li><a href="{{BASE_PATH}}lead-generation-service.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">B2B Potansiyel Müşteri Yaratma
+                                        Türkiye (Turkey Lead Gen)</a></li>
+                                <li><a href="{{BASE_PATH}}revops-infrastructure.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Managed Sales Operations & B2B
+                                        Growth Partner (Expandia)</a></li>
+                                <li><a href="{{BASE_PATH}}managed-it-services.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Managed IT Services &
+                                        Cybersecurity</a>
+                                </li>
+                                <li><a href="{{BASE_PATH}}market-foundation-program.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">B2B Growth Services for Small
+                                        Business</a></li>
+                                <li><a href="{{BASE_PATH}}lead-generation-service.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Lead Generation Solutions (Inbound
+                                        &
+                                        Outbound)</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Company Section -->
+                        <li class="mt-4 pt-2 border-t border-gray-100">
+                            <span
+                                class="text-[10px] font-bold text-gray-400 uppercase tracking-wider px-2 py-1 bg-gray-50 rounded-lg mb-1">Company</span>
+                            <ul class="pl-0 space-y-0.5">
+                                <li><a href="{{BASE_PATH}}about.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">Our
+                                        Story</a></li>
+                                <li><a href="{{BASE_PATH}}{{VISION_MISSION_PAGE}}"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Vision & Mission</a></li>
+                                <li><a href="{{BASE_PATH}}{{ETHICAL_PRINCIPLES_PAGE}}"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Ethics & Values</a></li>
+                                <li><a href="{{BASE_PATH}}case-studies.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Case Studies</a></li>
+                                <li><a href="{{BASE_PATH}}blog/index.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Blog & Insights</a></li>
+                                <li><a href="{{BASE_PATH}}city-locations.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Locations</a></li>
+                            </ul>
+                        </li>
+                        <li class="mt-2 pt-2 border-t border-gray-50">
+                            <a href="{{BASE_PATH}}contact.html"
+                                class="btn btn-primary btn-sm w-full text-xs min-h-0 h-9 font-bold shadow-sm">Get
+                                Started</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </nav>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How quickly can we start working together?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We can typically begin within 1-2 weeks after our initial consultation. We'll set up everything needed and start delivering results quickly."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What makes Expandia different from other agencies?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We combine deep European market expertise with data-driven strategies and multilingual capabilities. Our team has 8+ years of experience helping businesses scale internationally."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you work with companies of all sizes?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, we work with startups, SMEs, and enterprise companies. Our solutions are scalable and tailored to your specific business needs and growth stage."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is your pricing model?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We offer flexible pricing based on your specific needs and goals. Contact us for a free consultation and custom quote tailored to your business objectives."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do you measure success?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We focus on measurable KPIs including lead generation, conversion rates, ROI, and revenue impact. You'll receive detailed analytics and regular performance reports."
-      }
+
+<script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
     }
-  ]
-}
+
+    function toggleDropdown(menuId) {
+        const allMenus = ['solutions-menu', 'company-menu'];
+        allMenus.forEach(id => {
+            const menu = document.getElementById(id);
+            if (menu && id !== menuId) {
+                menu.classList.add('hidden');
+            }
+        });
+        const menu = document.getElementById(menuId);
+        if (menu) {
+            menu.classList.toggle('hidden');
+        }
+    }
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function (e) {
+        const solutionsDropdown = document.getElementById('solutions-dropdown');
+        const companyDropdown = document.getElementById('company-dropdown');
+
+        if (solutionsDropdown && !solutionsDropdown.contains(e.target)) {
+            document.getElementById('solutions-menu')?.classList.add('hidden');
+        }
+        if (companyDropdown && !companyDropdown.contains(e.target)) {
+            document.getElementById('company-menu')?.classList.add('hidden');
+        }
+    });
+</script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
 </script>

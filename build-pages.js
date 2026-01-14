@@ -1746,6 +1746,20 @@ buildPage('lost-lead-reactivation', 'lost-lead-reactivation', 'en');
 buildPage('speed-to-lead', 'speed-to-lead', 'en');
 buildPage('recruitment', 'recruitment', 'en');
 buildPage('ai-creative-studio', 'ai-creative-studio', 'en');
+
+// Build New Infrastructure Category Pages
+buildPage('turnkey-it-infrastructure', 'turnkey-it-infrastructure', 'en');
+buildPage('turnkey-growth-infrastructure', 'turnkey-growth-infrastructure', 'en');
+buildPage('ai-content-infrastructure', 'ai-content-infrastructure', 'en');
+
+// Build New Infrastructure Product Pages
+buildPage('cold-email-infrastructure', 'cold-email-infrastructure', 'en');
+buildPage('revops-infrastructure', 'revops-infrastructure', 'en');
+buildPage('verified-lead-list', 'verified-lead-list', 'en');
+buildPage('email-deliverability-checkup', 'email-deliverability-checkup', 'en');
+buildPage('secure-email-workplace-setup', 'secure-email-workplace-setup', 'en');
+buildPage('website-care-services', 'website-care-services', 'en');
+
 buildPage('blog-index', 'blog/index', 'en');
 
 
