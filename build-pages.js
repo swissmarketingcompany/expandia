@@ -1797,6 +1797,19 @@ buildPage('b2b-lead-generation-agency', 'b2b-lead-generation-agency', 'de');
 buildPage('sales-development-agency', 'sales-development-agency', 'de');
 buildPage('revops-infrastructure', 'revops-infrastructure', 'de');
 buildPage('market-foundation-program', 'market-foundation-program', 'de');
+// Build Missing Products Pages (English Filenames)
+buildPage('turnkey-it-infrastructure', 'turnkey-it-infrastructure', 'de');
+buildPage('turnkey-growth-infrastructure', 'turnkey-growth-infrastructure', 'de');
+buildPage('ai-content-infrastructure', 'ai-content-infrastructure', 'de');
+buildPage('email-deliverability-checkup', 'email-deliverability-checkup', 'de');
+buildPage('secure-email-workplace-setup', 'secure-email-workplace-setup', 'de');
+buildPage('website-care-services', 'website-care-services', 'de');
+buildPage('cold-email-infrastructure', 'cold-email-infrastructure', 'de');
+buildPage('verified-lead-list', 'verified-lead-list', 'de');
+buildPage('written-content-engine', 'written-content-engine', 'de');
+buildPage('image-content-engine', 'image-content-engine', 'de');
+buildPage('video-content-engine', 'video-content-engine', 'de');
+buildPage('market-accelerator-program', 'market-accelerator-program', 'de');
 
 // Build French pages
 console.log('Building French pages...');
@@ -1826,6 +1839,18 @@ buildPage('b2b-lead-generation-agency', 'b2b-lead-generation-agency', 'fr');
 buildPage('sales-development-agency', 'sales-development-agency', 'fr');
 buildPage('revops-infrastructure', 'revops-infrastructure', 'fr');
 buildPage('lead-generation-service', 'lead-generation-service', 'fr');
+// Build Missing Products Pages
+buildPage('turnkey-it-infrastructure', 'turnkey-it-infrastructure', 'fr');
+buildPage('turnkey-growth-infrastructure', 'turnkey-growth-infrastructure', 'fr');
+buildPage('ai-content-infrastructure', 'ai-content-infrastructure', 'fr');
+buildPage('email-deliverability-checkup', 'email-deliverability-checkup', 'fr');
+buildPage('secure-email-workplace-setup', 'secure-email-workplace-setup', 'fr');
+buildPage('website-care-services', 'website-care-services', 'fr');
+buildPage('cold-email-infrastructure', 'cold-email-infrastructure', 'fr');
+buildPage('verified-lead-list', 'verified-lead-list', 'fr');
+buildPage('written-content-engine', 'written-content-engine', 'fr');
+buildPage('image-content-engine', 'image-content-engine', 'fr');
+buildPage('video-content-engine', 'video-content-engine', 'fr');
 
 // Call new functions
 buildCityPages();
