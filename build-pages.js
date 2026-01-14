@@ -1792,6 +1792,11 @@ buildPage('speed-to-lead', 'speed-to-lead', 'de');
 buildPage('recruitment', 'recruitment', 'de');
 buildPage('ai-creative-studio', 'ai-creative-studio', 'de');
 buildPage('blog-index', 'blog/index', 'de');
+// Build Missing Solutions Pages (English Filenames for Menu Compatibility)
+buildPage('b2b-lead-generation-agency', 'b2b-lead-generation-agency', 'de');
+buildPage('sales-development-agency', 'sales-development-agency', 'de');
+buildPage('revops-infrastructure', 'revops-infrastructure', 'de');
+buildPage('market-foundation-program', 'market-foundation-program', 'de');
 
 // Build French pages
 console.log('Building French pages...');
@@ -1816,6 +1821,11 @@ buildPage('speed-to-lead', 'speed-to-lead', 'fr');
 buildPage('recruitment', 'recruitment', 'fr');
 buildPage('ai-creative-studio', 'ai-creative-studio', 'fr');
 buildPage('blog-index', 'blog/index', 'fr');
+// Build Missing Solutions Pages
+buildPage('b2b-lead-generation-agency', 'b2b-lead-generation-agency', 'fr');
+buildPage('sales-development-agency', 'sales-development-agency', 'fr');
+buildPage('revops-infrastructure', 'revops-infrastructure', 'fr');
+buildPage('lead-generation-service', 'lead-generation-service', 'fr');
 
 // Call new functions
 buildCityPages();
