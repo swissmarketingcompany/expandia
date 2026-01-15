@@ -1,0 +1,272 @@
+[
+    {
+        "id": "b2b-lead-generation-amsterdam",
+        "slug": "b2b-lead-generation-amsterdam",
+        "city": "Amsterdam",
+        "country": "Netherlands",
+        "region": "Western Europe",
+        "lat": 52.3676,
+        "lng": 4.9041,
+        "tier": 1,
+        "keyIndustries": [
+            "Fintech",
+            "Technology",
+            "Logistics",
+            "Trade",
+            "Creative Industries"
+        ],
+        "businessChallenges": [
+            "High competition for talent",
+            "Rising office costs",
+            "International expansion complexity"
+        ],
+        "marketSize": "€95B GDP",
+        "b2bCompanies": "45,000+",
+        "uniqueAngle": "Europe's fintech capital with strong startup ecosystem",
+        "localInsight": "Amsterdam's business culture values direct communication and work-life balance. Decision-makers expect data-driven proposals and sustainable business practices.",
+        "templateVariant": "fintech-hub"
+    },
+    {
+        "id": "b2b-lead-generation-berlin",
+        "slug": "b2b-lead-generation-berlin",
+        "city": "Berlin",
+        "country": "Germany",
+        "region": "DACH",
+        "lat": 52.52,
+        "lng": 13.405,
+        "tier": 1,
+        "keyIndustries": [
+            "Software",
+            "Startups",
+            "Media",
+            "Creative Tech",
+            "E-commerce"
+        ],
+        "businessChallenges": [
+            "Scaling beyond local market",
+            "Talent retention",
+            "International sales"
+        ],
+        "marketSize": "€160B GDP",
+        "b2bCompanies": "85,000+",
+        "uniqueAngle": "Germany's startup capital with vibrant tech scene",
+        "localInsight": "Berlin's business environment is more informal than traditional German cities. English is widely used in business, but German-language outreach still preferred for established companies.",
+        "templateVariant": "startup-hub"
+    },
+    {
+        "id": "b2b-lead-generation-london",
+        "slug": "b2b-lead-generation-london",
+        "city": "London",
+        "country": "United Kingdom",
+        "region": "Western Europe",
+        "lat": 51.5074,
+        "lng": -0.1278,
+        "tier": 1,
+        "keyIndustries": [
+            "Financial Services",
+            "Professional Services",
+            "Technology",
+            "Media",
+            "Legal Services"
+        ],
+        "businessChallenges": [
+            "Post-Brexit market access",
+            "High operational costs",
+            "Competitive talent market"
+        ],
+        "marketSize": "£500B GDP",
+        "b2bCompanies": "350,000+",
+        "uniqueAngle": "Europe's financial capital and global business hub",
+        "localInsight": "London buyers expect polished, professional outreach. Decision cycles can be longer due to multiple stakeholders. Strong emphasis on proven track record and case studies.",
+        "templateVariant": "financial-hub"
+    },
+    {
+        "id": "b2b-lead-generation-paris",
+        "slug": "b2b-lead-generation-paris",
+        "city": "Paris",
+        "country": "France",
+        "region": "Western Europe",
+        "lat": 48.8566,
+        "lng": 2.3522,
+        "tier": 1,
+        "keyIndustries": [
+            "Luxury Goods",
+            "Financial Services",
+            "Technology",
+            "Aerospace",
+            "Corporate Services"
+        ],
+        "businessChallenges": [
+            "Complex procurement processes",
+            "Language barriers",
+            "Regulatory compliance"
+        ],
+        "marketSize": "€730B GDP",
+        "b2bCompanies": "120,000+",
+        "uniqueAngle": "France's business capital with strong luxury and corporate sectors",
+        "localInsight": "French business culture values relationships and formal communication. French-language outreach is essential. Decision-makers appreciate detailed proposals and long-term partnership approaches.",
+        "templateVariant": "corporate-hub"
+    },
+    {
+        "id": "b2b-lead-generation-munich",
+        "slug": "b2b-lead-generation-munich",
+        "city": "Munich",
+        "country": "Germany",
+        "region": "DACH",
+        "lat": 48.1351,
+        "lng": 11.582,
+        "tier": 1,
+        "keyIndustries": [
+            "Automotive",
+            "Engineering",
+            "Insurance",
+            "Technology",
+            "Manufacturing"
+        ],
+        "businessChallenges": [
+            "Digital transformation",
+            "Supply chain optimization",
+            "International expansion"
+        ],
+        "marketSize": "€145B GDP",
+        "b2bCompanies": "95,000+",
+        "uniqueAngle": "Germany's automotive and engineering powerhouse",
+        "localInsight": "Munich's business culture emphasizes precision, quality, and long-term relationships. Decision cycles are thorough. Technical expertise and proven results are highly valued.",
+        "templateVariant": "industrial-hub"
+    },
+    {
+        "id": "b2b-lead-generation-zurich",
+        "slug": "b2b-lead-generation-zurich",
+        "city": "Zurich",
+        "country": "Switzerland",
+        "region": "DACH",
+        "lat": 47.3769,
+        "lng": 8.5417,
+        "tier": 1,
+        "keyIndustries": [
+            "Banking",
+            "Insurance",
+            "Pharmaceuticals",
+            "Technology",
+            "Professional Services"
+        ],
+        "businessChallenges": [
+            "High costs",
+            "Talent scarcity",
+            "Market saturation"
+        ],
+        "marketSize": "CHF 150B GDP",
+        "b2bCompanies": "42,000+",
+        "uniqueAngle": "Global financial center with strong pharma and insurance sectors",
+        "localInsight": "Swiss business culture values discretion, precision, and quality. Multilingual approach (German, English, French) is advantageous. Decision-makers expect premium service and proven expertise.",
+        "templateVariant": "financial-hub"
+    },
+    {
+        "id": "b2b-lead-generation-frankfurt",
+        "slug": "b2b-lead-generation-frankfurt",
+        "city": "Frankfurt",
+        "country": "Germany",
+        "region": "DACH",
+        "lat": 50.1109,
+        "lng": 8.6821,
+        "tier": 1,
+        "keyIndustries": [
+            "Banking",
+            "Financial Services",
+            "Logistics",
+            "Trade Fairs",
+            "Professional Services"
+        ],
+        "businessChallenges": [
+            "Post-Brexit positioning",
+            "Fintech competition",
+            "Talent attraction"
+        ],
+        "marketSize": "€85B GDP",
+        "b2bCompanies": "65,000+",
+        "uniqueAngle": "Europe's banking capital and ECB headquarters",
+        "localInsight": "Frankfurt's business environment is international and fast-paced. English widely used in financial sector. Decision-makers value efficiency and clear ROI.",
+        "templateVariant": "financial-hub"
+    },
+    {
+        "id": "b2b-lead-generation-vienna",
+        "slug": "b2b-lead-generation-vienna",
+        "city": "Vienna",
+        "country": "Austria",
+        "region": "DACH",
+        "lat": 48.2082,
+        "lng": 16.3738,
+        "tier": 1,
+        "keyIndustries": [
+            "Corporate Services",
+            "Technology",
+            "Life Sciences",
+            "Real Estate",
+            "Professional Services"
+        ],
+        "businessChallenges": [
+            "Eastern European expansion",
+            "Digital transformation",
+            "Talent development"
+        ],
+        "marketSize": "€95B GDP",
+        "b2bCompanies": "55,000+",
+        "uniqueAngle": "Gateway to Eastern European markets",
+        "localInsight": "Viennese business culture blends German precision with more relaxed Austrian approach. Formal titles and proper etiquette important. Strong focus on quality and long-term partnerships.",
+        "templateVariant": "corporate-hub"
+    },
+    {
+        "id": "b2b-lead-generation-stockholm",
+        "slug": "b2b-lead-generation-stockholm",
+        "city": "Stockholm",
+        "country": "Sweden",
+        "region": "Scandinavia",
+        "lat": 59.3293,
+        "lng": 18.0686,
+        "tier": 1,
+        "keyIndustries": [
+            "Technology",
+            "Fintech",
+            "Gaming",
+            "Clean Tech",
+            "Life Sciences"
+        ],
+        "businessChallenges": [
+            "Scaling internationally",
+            "Sustainability requirements",
+            "Talent costs"
+        ],
+        "marketSize": "SEK 950B GDP",
+        "b2bCompanies": "48,000+",
+        "uniqueAngle": "Nordic tech hub with unicorn factory reputation",
+        "localInsight": "Swedish business culture values flat hierarchies and consensus. Sustainability is non-negotiable. Decision-makers appreciate straightforward, honest communication and innovative solutions.",
+        "templateVariant": "tech-hub"
+    },
+    {
+        "id": "b2b-lead-generation-copenhagen",
+        "slug": "b2b-lead-generation-copenhagen",
+        "city": "Copenhagen",
+        "country": "Denmark",
+        "region": "Scandinavia",
+        "lat": 55.6761,
+        "lng": 12.5683,
+        "tier": 1,
+        "keyIndustries": [
+            "Life Sciences",
+            "Clean Tech",
+            "Maritime",
+            "Design",
+            "IT Services"
+        ],
+        "businessChallenges": [
+            "Small domestic market",
+            "High costs",
+            "International expansion"
+        ],
+        "marketSize": "DKK 800B GDP",
+        "b2bCompanies": "38,000+",
+        "uniqueAngle": "Scandinavian life sciences and clean tech leader",
+        "localInsight": "Danish business culture emphasizes work-life balance and sustainability. Direct communication style. Decision-makers value innovation and environmental responsibility.",
+        "templateVariant": "cleantech-hub"
+    }
+]

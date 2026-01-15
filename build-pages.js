@@ -951,10 +951,10 @@ function buildCityPages() {
         // Get region-specific content
         const regionData = regionContent[region] || defaultRegionContent;
 
-        // SEO-optimized metadata (no Financial Services, focus on B2B/Corporate/Manufacturing)
-        const title = `B2B Lead Generation Agency in ${city}, ${country} | Corporate & Industrial Sales | Go Expandia`;
-        const description = `Professional B2B lead generation services in ${city}. We help corporate enterprises, manufacturers, and industrial companies generate qualified sales meetings and expand their ${region} market presence. Outbound prospecting, appointment setting, and account-based marketing for complex B2B sales cycles.`;
-        const keywords = `B2B lead generation ${city}, corporate sales ${city}, industrial lead generation ${country}, appointment setting ${city}, B2B sales agency ${country}, manufacturing leads, enterprise sales, outbound prospecting, account-based marketing ${city}`;
+        // SEO-optimized metadata - Short titles (50-60 chars) and descriptions (150-155 chars)
+        const title = `B2B Lead Generation ${city} | Go Expandia`;
+        const description = `Professional B2B lead generation in ${city}. We help ${region} companies generate qualified meetings with corporate buyers. Proven results.`;
+        const keywords = `B2B lead generation ${city}, corporate sales ${city}, ${country} B2B agency, appointment setting ${city}`;
 
         let htmlTemplate = createHTMLTemplate(lang);
         let content = templateContent;
@@ -1864,8 +1864,9 @@ buildPage('video-content-engine', 'video-content-engine', 'fr');
 // Call new functions
 buildCityPages();
 buildIndustryPages();
-buildServiceCityPages();
-buildServiceIndustryCityPages(); // NEW
+// DISABLED: Service x City pages (388,000+ duplicate content pages removed for SEO)
+// buildServiceCityPages();
+// buildServiceIndustryCityPages();
 buildCityLocationsPage();
 buildBlogPosts();
 buildGlossaryTerms(); // NEW
