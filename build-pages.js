@@ -1714,6 +1714,12 @@ buildPage('market-foundation-program', 'market-foundation-program', 'en');
 buildPage('market-accelerator-program', 'market-accelerator-program', 'en');
 buildPage('part-time-lead-generation-team', 'part-time-lead-generation-team', 'en');
 
+// Build Service Category Pages
+buildPage('lead-generation-services', 'lead-generation-services', 'en');
+buildPage('managed-services', 'managed-services', 'en');
+buildPage('growth-programs', 'growth-programs', 'en');
+
+
 // Build English service pages
 console.log('Building English service pages...');
 buildPage('b2b-lead-generation-agency', 'b2b-lead-generation-agency', 'en');
