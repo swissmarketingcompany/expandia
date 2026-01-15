@@ -134,16 +134,16 @@
             <a href="./index.html"
                 class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50">Home</a>
 
-            <!-- Solutions Mega Menu (NEW 3-Column) -->
-            <div class="relative" id="solutions-dropdown">
-                <button onclick="toggleDropdown('solutions-menu')"
+            <!-- Products Mega Menu (RESTORED) -->
+            <div class="relative" id="products-dropdown">
+                <button onclick="toggleDropdown('products-menu')"
                     class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
-                    Solutions
+                    Products
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
-                <div id="solutions-menu"
+                <div id="products-menu"
                     class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
                     style="width: 800px;">
                     <div class="grid grid-cols-3 divide-x divide-gray-100">
@@ -161,6 +161,17 @@
                                         class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
                                             class="text-sm font-semibold text-gray-900">B2B Lead Generation</span></a>
                                 </li>
+                                <li><a href="./outreach-software-management.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                            class="text-sm font-semibold text-gray-900">Outreach Software
+                                            Management</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">Expert platform management</p>
+                                    </a></li>
+                                <li><a href="./crm-management.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                            class="text-sm font-semibold text-gray-900">CRM Management</span>
+                                        <p class="text-xs text-gray-500 mt-0.5">Expert CRM optimization</p>
+                                    </a></li>
                             </ul>
                         </div>
                         <!-- Column 2: Managed Operations -->
@@ -215,16 +226,16 @@
                 </div>
             </div>
 
-            <!-- Products Mega Menu (RESTORED) -->
-            <div class="relative" id="products-dropdown">
-                <button onclick="toggleDropdown('products-menu')"
+            <!-- Services Mega Menu (NEW 3-Column) -->
+            <div class="relative" id="services-dropdown">
+                <button onclick="toggleDropdown('services-menu')"
                     class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
-                    Products
+                    Services
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
-                <div id="products-menu"
+                <div id="services-menu"
                     class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
                     style="width: 720px;">
                     <div class="grid grid-cols-3 divide-x divide-gray-100">
@@ -431,33 +442,17 @@
                 <button onclick="toggleMobileMenu()" class="btn btn-ghost btn-sm">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16"></path>
+                            d="M4 6h16M4 12h16M4 18h16">
+                        </path>
                     </svg>
                 </button>
                 <div id="mobile-menu"
                     class="hidden fixed top-16 right-0 max-h-[500px] w-80 bg-white shadow-2xl z-[999] overflow-y-auto overscroll-contain border-l border-gray-100 rounded-bl-2xl">
                     <ul class="menu p-3 w-full text-xs">
-                        <!-- Solutions Section (Mobile) -->
+                        <!-- Products Section (Mobile) -->
                         <li class="mt-1">
                             <span
-                                class="text-[10px] font-bold text-primary uppercase tracking-wider px-2 py-1 bg-primary/5 rounded-lg mb-1">Solutions</span>
-                            <ul class="pl-0 space-y-0.5">
-                                <li><a href="./b2b-lead-generation-agency.html"
-                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">B2B Lead Generation</a></li>
-                                <li><a href="./sales-development-agency.html"
-                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Managed Sales Ops (Go
-                                        Expandia)</a></li>
-                                <li><a href="./managed-it-services.html"
-                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Managed IT Services</a></li>
-                                <li><a href="./market-foundation-program.html"
-                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Small Business Growth</a></li>
-                            </ul>
-                        </li>
-
-                        <!-- Products Section (Mobile) -->
-                        <li class="mt-2">
-                            <span
-                                class="text-[10px] font-bold text-secondary uppercase tracking-wider px-2 py-1 bg-secondary/5 rounded-lg mb-1">Products</span>
+                                class="text-[10px] font-bold text-primary uppercase tracking-wider px-2 py-1 bg-primary/5 rounded-lg mb-1">Products</span>
                             <ul class="pl-0 space-y-0.5">
                                 <li><a href="./turnkey-it-infrastructure.html"
                                         class="py-2 px-3 rounded-lg hover:bg-gray-50">Turnkey IT Infra</a></li>
@@ -468,13 +463,35 @@
                             </ul>
                         </li>
 
+                        <!-- Services Section (Mobile) -->
+                        <li class="mt-2">
+                            <span
+                                class="text-[10px] font-bold text-secondary uppercase tracking-wider px-2 py-1 bg-secondary/5 rounded-lg mb-1">Services</span>
+                            <ul class="pl-0 space-y-0.5">
+                                <li><a href="./b2b-lead-generation-agency.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">B2B Lead Generation</a></li>
+                                <li><a href="./outreach-software-management.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Outreach Software Mgmt</a></li>
+                                <li><a href="./crm-management.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">CRM Management</a></li>
+                                <li><a href="./sales-development-agency.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Managed Sales Ops (Go
+                                        Expandia)</a></li>
+                                <li><a href="./managed-it-services.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Managed IT Services</a></li>
+                                <li><a href="./market-foundation-program.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Small Business Growth</a></li>
+                            </ul>
+                        </li>
+
                         <!-- Company Section -->
                         <li class="mt-4 pt-2 border-t border-gray-100">
                             <span
                                 class="text-[10px] font-bold text-gray-400 uppercase tracking-wider px-2 py-1 bg-gray-50 rounded-lg mb-1">Company</span>
                             <ul class="pl-0 space-y-0.5">
                                 <li><a href="./about.html"
-                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">About Us</a></li>
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">About
+                                        Us</a></li>
                                 <li><a href="./case-studies.html"
                                         class="py-2 px-3 rounded-lg hover:bg-gray-50">Case Studies</a></li>
                                 <li><a href="./contact.html"
@@ -510,7 +527,7 @@
 
     function toggleDropdown(menuId) {
         // Updated to include new menus
-        const allMenus = ['solutions-menu', 'products-menu', 'company-menu'];
+        const allMenus = ['products-menu', 'services-menu', 'company-menu'];
         allMenus.forEach(id => {
             const menu = document.getElementById(id);
             if (menu && id !== menuId) {
@@ -525,15 +542,15 @@
 
     // Close dropdowns when clicking outside
     document.addEventListener('click', function (e) {
-        const solutionsDropdown = document.getElementById('solutions-dropdown');
         const productsDropdown = document.getElementById('products-dropdown');
+        const servicesDropdown = document.getElementById('services-dropdown');
         const companyDropdown = document.getElementById('company-dropdown');
 
-        if (solutionsDropdown && !solutionsDropdown.contains(e.target)) {
-            document.getElementById('solutions-menu')?.classList.add('hidden');
-        }
         if (productsDropdown && !productsDropdown.contains(e.target)) {
             document.getElementById('products-menu')?.classList.add('hidden');
+        }
+        if (servicesDropdown && !servicesDropdown.contains(e.target)) {
+            document.getElementById('services-menu')?.classList.add('hidden');
         }
         if (companyDropdown && !companyDropdown.contains(e.target)) {
             document.getElementById('company-menu')?.classList.add('hidden');
@@ -574,7 +591,7 @@
                         loading="lazy" class="w-full h-full object-cover" />
                 </div>
                 <div class="buzz-card p-4 md:p-6 lg:p-8">
-                    <h2 class="text-xl font-bold mb-4">Industries That Can Choose Our Services</h2>
+                    <h2 class="text-xl font-bold mb-4">Industries We Serve in Southern Europe</h2>
                     <ul class="grid grid-cols-2 gap-2 text-base-content/80 text-sm">
                         <li>• Manufacturing & Production</li>
                         <li>• Fashion & Luxury Goods</li>
@@ -598,7 +615,7 @@
     <div class="container mx-auto container-padding">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">
-                Why B2B Companies Can Choose Us for Southern Europe Growth
+                Why Southern Europe Companies Choose Our Services
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="buzz-card p-6">
@@ -626,72 +643,125 @@
 <section class="section-spacing bg-base-100">
     <div class="container mx-auto container-padding">
         <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">
-            Lead Generation Services for B2B Companies
+            Our B2B Lead Generation Approach
         </h2>
         <p class="text-center max-w-3xl mx-auto mb-12 text-base-content/70">
             From Italian manufacturing to Spanish corporate enterprises, we help you connect with decision-makers across Southern Europe's diverse B2B landscape.
         </p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             <div class="buzz-card p-6">
-                <h3 class="font-bold text-xl mb-3">Ideal Client & Buyer Mapping</h3>
+                <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-xl mb-3">Ideal Client Profiling</h3>
                 <p class="text-base-content/80">
-                    We define your ideal clients across Southern Europe and map the buying roles involved in complex
-                    B2B decisions—from procurement managers to C-suite executives.
+                    We work with you to define your ideal customer profile across Southern Europe, mapping buying
+                    committees from procurement to C-suite decision-makers.
                 </p>
             </div>
             <div class="buzz-card p-6">
-                <h3 class="font-bold text-xl mb-3">Multi-Channel Outbound Campaigns</h3>
+                <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-xl mb-3">Multi-Channel Outreach</h3>
                 <p class="text-base-content/80">
-                    Email, LinkedIn, and phone outreach designed for corporate and mid-market decision-makers who care
-                    about ROI, reliability, and measurable business impact.
+                    Personalized email sequences, LinkedIn engagement, and strategic phone outreach designed for
+                    corporate buyers who value ROI and reliability.
                 </p>
             </div>
             <div class="buzz-card p-6">
-                <h3 class="font-bold text-xl mb-3">Appointment Setting & Qualification</h3>
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-xl mb-3">Qualified Appointment Setting</h3>
                 <p class="text-base-content/80">
-                    We pre-qualify interest, handle scheduling, and hand over warm opportunities to your sales
-                    or account teams—ready for productive conversations.
+                    We pre-qualify interest, handle objections, and schedule meetings with decision-makers ready for
+                    productive sales conversations.
                 </p>
             </div>
         </div>
 
-        <!-- Other Services -->
+        <!-- Growth Infrastructure Products -->
         <div class="bg-base-200 rounded-2xl p-8 md:p-12">
-            <h2 class="text-3xl font-bold mb-8 text-center">More B2B Services Available</h2>
+            <h2 class="text-3xl font-bold mb-4 text-center">Growth Infrastructure for Cartagena Businesses</h2>
+            <p class="text-center max-w-2xl mx-auto mb-8 text-base-content/70">
+                Beyond lead generation, we offer complete infrastructure solutions to accelerate your growth. All
+                delivered in 48 hours.
+            </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 
-            <a href="managed-it-services-cartagena.html" class="flex items-center gap-4 p-4 rounded-xl bg-base-100 border border-base-300 hover:border-primary hover:shadow-md transition-all group">
-                <div class="text-2xl"><i data-lucide="monitor-check"></i></div>
+            <a href="turnkey-it-infrastructure-cartagena.html" class="flex items-center gap-4 p-4 rounded-xl bg-base-100 border border-base-300 hover:border-primary hover:shadow-md transition-all group">
+                <div class="text-2xl"><i data-lucide="server"></i></div>
                 <div>
-                    <h3 class="font-bold group-hover:text-primary transition-colors">Managed IT Services</h3>
+                    <h3 class="font-bold group-hover:text-primary transition-colors">Turnkey IT Infrastructure</h3>
                     <p class="text-xs text-base-content/60">Available globally</p>
                 </div>
             </a>
-            <a href="cybersecurity-services-cartagena.html" class="flex items-center gap-4 p-4 rounded-xl bg-base-100 border border-base-300 hover:border-primary hover:shadow-md transition-all group">
-                <div class="text-2xl"><i data-lucide="shield-alert"></i></div>
+            <a href="turnkey-growth-infrastructure-cartagena.html" class="flex items-center gap-4 p-4 rounded-xl bg-base-100 border border-base-300 hover:border-primary hover:shadow-md transition-all group">
+                <div class="text-2xl"><i data-lucide="trending-up"></i></div>
                 <div>
-                    <h3 class="font-bold group-hover:text-primary transition-colors">Cybersecurity</h3>
+                    <h3 class="font-bold group-hover:text-primary transition-colors">Turnkey Growth Infrastructure</h3>
                     <p class="text-xs text-base-content/60">Available globally</p>
                 </div>
             </a>
-            <a href="recruitment-agency-cartagena.html" class="flex items-center gap-4 p-4 rounded-xl bg-base-100 border border-base-300 hover:border-primary hover:shadow-md transition-all group">
-                <div class="text-2xl"><i data-lucide="users"></i></div>
+            <a href="ai-content-infrastructure-cartagena.html" class="flex items-center gap-4 p-4 rounded-xl bg-base-100 border border-base-300 hover:border-primary hover:shadow-md transition-all group">
+                <div class="text-2xl"><i data-lucide="file-text"></i></div>
                 <div>
-                    <h3 class="font-bold group-hover:text-primary transition-colors">B2B Recruitment</h3>
+                    <h3 class="font-bold group-hover:text-primary transition-colors">AI Content Infrastructure</h3>
                     <p class="text-xs text-base-content/60">Available globally</p>
                 </div>
             </a>
-            <a href="ai-creative-studio-cartagena.html" class="flex items-center gap-4 p-4 rounded-xl bg-base-100 border border-base-300 hover:border-primary hover:shadow-md transition-all group">
-                <div class="text-2xl"><i data-lucide="bot"></i></div>
+            <a href="cold-email-infrastructure-cartagena.html" class="flex items-center gap-4 p-4 rounded-xl bg-base-100 border border-base-300 hover:border-primary hover:shadow-md transition-all group">
+                <div class="text-2xl"><i data-lucide="mail"></i></div>
                 <div>
-                    <h3 class="font-bold group-hover:text-primary transition-colors">AI Creative Studio</h3>
+                    <h3 class="font-bold group-hover:text-primary transition-colors">Cold Email Infrastructure</h3>
                     <p class="text-xs text-base-content/60">Available globally</p>
                 </div>
             </a>
-            <a href="revops-consulting-cartagena.html" class="flex items-center gap-4 p-4 rounded-xl bg-base-100 border border-base-300 hover:border-primary hover:shadow-md transition-all group">
+            <a href="revops-infrastructure-cartagena.html" class="flex items-center gap-4 p-4 rounded-xl bg-base-100 border border-base-300 hover:border-primary hover:shadow-md transition-all group">
                 <div class="text-2xl"><i data-lucide="settings-2"></i></div>
                 <div>
-                    <h3 class="font-bold group-hover:text-primary transition-colors">RevOps & CRM</h3>
+                    <h3 class="font-bold group-hover:text-primary transition-colors">RevOps Infrastructure</h3>
+                    <p class="text-xs text-base-content/60">Available globally</p>
+                </div>
+            </a>
+            <a href="verified-lead-list-cartagena.html" class="flex items-center gap-4 p-4 rounded-xl bg-base-100 border border-base-300 hover:border-primary hover:shadow-md transition-all group">
+                <div class="text-2xl"><i data-lucide="database"></i></div>
+                <div>
+                    <h3 class="font-bold group-hover:text-primary transition-colors">Verified Lead List</h3>
+                    <p class="text-xs text-base-content/60">Available globally</p>
+                </div>
+            </a>
+            <a href="email-deliverability-checkup-cartagena.html" class="flex items-center gap-4 p-4 rounded-xl bg-base-100 border border-base-300 hover:border-primary hover:shadow-md transition-all group">
+                <div class="text-2xl"><i data-lucide="mail-check"></i></div>
+                <div>
+                    <h3 class="font-bold group-hover:text-primary transition-colors">Email Deliverability Checkup</h3>
+                    <p class="text-xs text-base-content/60">Available globally</p>
+                </div>
+            </a>
+            <a href="secure-email-workplace-cartagena.html" class="flex items-center gap-4 p-4 rounded-xl bg-base-100 border border-base-300 hover:border-primary hover:shadow-md transition-all group">
+                <div class="text-2xl"><i data-lucide="shield-check"></i></div>
+                <div>
+                    <h3 class="font-bold group-hover:text-primary transition-colors">Secure Email Workplace Setup</h3>
+                    <p class="text-xs text-base-content/60">Available globally</p>
+                </div>
+            </a>
+            <a href="website-care-services-cartagena.html" class="flex items-center gap-4 p-4 rounded-xl bg-base-100 border border-base-300 hover:border-primary hover:shadow-md transition-all group">
+                <div class="text-2xl"><i data-lucide="globe"></i></div>
+                <div>
+                    <h3 class="font-bold group-hover:text-primary transition-colors">Website Care Services</h3>
                     <p class="text-xs text-base-content/60">Available globally</p>
                 </div>
             </a>
@@ -703,10 +773,13 @@
 <!-- Market Insights Section -->
 <section class="section-spacing bg-gradient-to-r from-primary/5 to-secondary/5">
     <div class="container mx-auto container-padding">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">
-            Southern Europe B2B Market Insights
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">
+            Southern Europe B2B Market Overview
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <p class="text-center max-w-2xl mx-auto mb-8 text-base-content/70">
+            Understanding the market landscape helps us create more effective campaigns for your business.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-8">
             <div class="text-center">
                 <div class="text-4xl font-bold text-primary mb-2">3.5M+</div>
                 <p class="text-base-content/70 text-sm">Active B2B companies</p>
@@ -720,7 +793,7 @@
                 <p class="text-base-content/70 text-sm">Export-active businesses</p>
             </div>
         </div>
-        <p class="text-center mt-8 text-base-content/60 text-sm max-w-2xl mx-auto">
+        <p class="text-center text-base-content/60 text-sm max-w-2xl mx-auto">
             Southern Europe combines industrial tradition with entrepreneurial energy, offering diverse B2B opportunities across manufacturing and services.
         </p>
     </div>
@@ -729,12 +802,12 @@
 <!-- Nearby Cities -->
 <section class="section-spacing bg-base-200">
     <div class="container mx-auto container-padding">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">
-            Also Serving the Southern Europe Region
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">
+            We Also Serve Companies Across Southern Europe
         </h2>
         <p class="text-center max-w-2xl mx-auto mb-8 text-base-content/80">
-            Our B2B lead generation services extend across major business hubs in the region, enabling cross-border
-            campaigns and regional market expansion.
+            Our B2B lead generation services extend to major business hubs throughout the region, enabling cross-border
+            campaigns and regional market expansion strategies.
         </p>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             
@@ -751,64 +824,16 @@
 <section class="section-spacing bg-primary text-white">
     <div class="container mx-auto container-padding text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Grow Your B2B Pipeline?
+            Ready to Build Your B2B Pipeline in Cartagena?
         </h2>
         <p class="max-w-2xl mx-auto mb-6 text-primary-content/90">
-            Whether you're targeting Southern Europe markets or expanding globally, we can help you create a consistent
-            pipeline of qualified B2B meetings every month.
+            Whether you're targeting local Cartagena accounts or expanding across Southern Europe, we'll help you
+            create a consistent pipeline of qualified B2B meetings every month.
         </p>
         <a href="contact.html" class="btn btn-secondary btn-lg buzz-button">
-            Request a Strategy Session
+            Request a Free Strategy Session
         </a>
     </div>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How quickly can we start working together?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We can typically begin within 1-2 weeks after our initial consultation. We'll set up everything needed and start delivering results quickly."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What makes Go Expandia different from other agencies?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We combine deep European market expertise with data-driven strategies and multilingual capabilities. Our team has 8+ years of experience helping businesses scale internationally."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you work with companies of all sizes?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, we work with startups, SMEs, and enterprise companies. Our solutions are scalable and tailored to your specific business needs and growth stage."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is your pricing model?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We offer flexible pricing based on your specific needs and goals. Contact us for a free consultation and custom quote tailored to your business objectives."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do you measure success?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We focus on measurable KPIs including lead generation, conversion rates, ROI, and revenue impact. You'll receive detailed analytics and regular performance reports."
-      }
-    }
-  ]
-}
-</script>
 </section>
     
     <!-- Footer -->

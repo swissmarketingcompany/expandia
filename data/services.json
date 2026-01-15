@@ -1,117 +1,83 @@
 [
   {
-    "id": "managed-it",
-    "name": "Managed IT Services",
-    "slug_pattern": "managed-it-services-{{CITY_SLUG}}",
-    "title_template": "Managed IT Services {{CITY_NAME}} | 24/7 IT Support & Helpdesk",
-    "description_template": "Premier Managed IT Services in {{CITY_NAME}}. Proactive IT support, cloud management, and cybersecurity for growing businesses in {{COUNTRY_NAME}}.",
-    "icon": "monitor-check",
-    "template": "service-city-landing",
-    "translations": {
-      "de": {
-        "title_template": "[DE] Managed IT Services {{CITY_NAME}} | 24/7 IT Support & Helpdesk",
-        "description_template": "[DE] Premier Managed IT Services in {{CITY_NAME}}. Proactive IT support, cloud management, and cybersecurity for growing businesses in {{COUNTRY_NAME}}."
-      },
-      "fr": {
-        "title_template": "[FR] Managed IT Services {{CITY_NAME}} | 24/7 IT Support & Helpdesk",
-        "description_template": "[FR] Premier Managed IT Services in {{CITY_NAME}}. Proactive IT support, cloud management, and cybersecurity for growing businesses in {{COUNTRY_NAME}}."
-      },
-      "tr": {
-        "title_template": "[TR] Managed IT Services {{CITY_NAME}} | 24/7 IT Support & Helpdesk",
-        "description_template": "[TR] Premier Managed IT Services in {{CITY_NAME}}. Proactive IT support, cloud management, and cybersecurity for growing businesses in {{COUNTRY_NAME}}."
-      }
-    }
+    "id": "turnkey-it",
+    "name": "Turnkey IT Infrastructure",
+    "slug_pattern": "turnkey-it-infrastructure-{{CITY_SLUG}}",
+    "title_template": "Turnkey IT Infrastructure {{CITY_NAME}} | Complete Setup in 48 Hours",
+    "description_template": "Complete IT infrastructure setup in {{CITY_NAME}}. Domain, email, security, and cloud systems delivered in 48 hours for businesses in {{COUNTRY_NAME}}.",
+    "icon": "server",
+    "template": "service-city-landing"
   },
   {
-    "id": "cybersecurity",
-    "name": "Cybersecurity",
-    "slug_pattern": "cybersecurity-services-{{CITY_SLUG}}",
-    "title_template": "Cybersecurity Services {{CITY_NAME}} | VAPT & Network Protection",
-    "description_template": "Expert Cybersecurity services in {{CITY_NAME}}. Vulnerability assessments, penetration testing, and compliance solutions for {{CITY_NAME}} companies.",
-    "icon": "shield-alert",
-    "template": "service-city-landing",
-    "translations": {
-      "de": {
-        "title_template": "[DE] Cybersecurity Services {{CITY_NAME}} | VAPT & Network Protection",
-        "description_template": "[DE] Expert Cybersecurity services in {{CITY_NAME}}. Vulnerability assessments, penetration testing, and compliance solutions for {{CITY_NAME}} companies."
-      },
-      "fr": {
-        "title_template": "[FR] Cybersecurity Services {{CITY_NAME}} | VAPT & Network Protection",
-        "description_template": "[FR] Expert Cybersecurity services in {{CITY_NAME}}. Vulnerability assessments, penetration testing, and compliance solutions for {{CITY_NAME}} companies."
-      },
-      "tr": {
-        "title_template": "[TR] Cybersecurity Services {{CITY_NAME}} | VAPT & Network Protection",
-        "description_template": "[TR] Expert Cybersecurity services in {{CITY_NAME}}. Vulnerability assessments, penetration testing, and compliance solutions for {{CITY_NAME}} companies."
-      }
-    }
+    "id": "turnkey-growth",
+    "name": "Turnkey Growth Infrastructure",
+    "slug_pattern": "turnkey-growth-infrastructure-{{CITY_SLUG}}",
+    "title_template": "Turnkey Growth Infrastructure {{CITY_NAME}} | Sales & Marketing Setup",
+    "description_template": "Complete growth infrastructure in {{CITY_NAME}}. CRM, email automation, and sales tools configured in 48 hours for {{COUNTRY_NAME}} businesses.",
+    "icon": "trending-up",
+    "template": "service-city-landing"
   },
   {
-    "id": "recruitment",
-    "name": "B2B Recruitment",
-    "slug_pattern": "recruitment-agency-{{CITY_SLUG}}",
-    "title_template": "B2B Recruitment Agency {{CITY_NAME}} | Sales & Tech Talent",
-    "description_template": "Leading B2B recruitment agency in {{CITY_NAME}}. We find top sales, engineering, and leadership talent for companies in {{COUNTRY_NAME}}.",
-    "icon": "users",
-    "template": "service-city-landing",
-    "translations": {
-      "de": {
-        "title_template": "[DE] B2B Recruitment Agency {{CITY_NAME}} | Sales & Tech Talent",
-        "description_template": "[DE] Leading B2B recruitment agency in {{CITY_NAME}}. We find top sales, engineering, and leadership talent for companies in {{COUNTRY_NAME}}."
-      },
-      "fr": {
-        "title_template": "[FR] B2B Recruitment Agency {{CITY_NAME}} | Sales & Tech Talent",
-        "description_template": "[FR] Leading B2B recruitment agency in {{CITY_NAME}}. We find top sales, engineering, and leadership talent for companies in {{COUNTRY_NAME}}."
-      },
-      "tr": {
-        "title_template": "[TR] B2B Recruitment Agency {{CITY_NAME}} | Sales & Tech Talent",
-        "description_template": "[TR] Leading B2B recruitment agency in {{CITY_NAME}}. We find top sales, engineering, and leadership talent for companies in {{COUNTRY_NAME}}."
-      }
-    }
+    "id": "ai-content",
+    "name": "AI Content Infrastructure",
+    "slug_pattern": "ai-content-infrastructure-{{CITY_SLUG}}",
+    "title_template": "AI Content Infrastructure {{CITY_NAME}} | Automated Content Creation",
+    "description_template": "AI-powered content infrastructure for {{CITY_NAME}} businesses. Automated blog posts, social media, and marketing content for {{COUNTRY_NAME}} markets.",
+    "icon": "file-text",
+    "template": "service-city-landing"
   },
   {
-    "id": "ai-studio",
-    "name": "AI Creative Studio",
-    "slug_pattern": "ai-creative-studio-{{CITY_SLUG}}",
-    "title_template": "AI Creative Studio {{CITY_NAME}} | Video & Digital Twins",
-    "description_template": "Transform your brand with our AI Creative Studio in {{CITY_NAME}}. AI video generation, digital avatars, and localized content for {{COUNTRY_NAME}} markets.",
-    "icon": "bot",
-    "template": "service-city-landing",
-    "translations": {
-      "de": {
-        "title_template": "[DE] AI Creative Studio {{CITY_NAME}} | Video & Digital Twins",
-        "description_template": "[DE] Transform your brand with our AI Creative Studio in {{CITY_NAME}}. AI video generation, digital avatars, and localized content for {{COUNTRY_NAME}} markets."
-      },
-      "fr": {
-        "title_template": "[FR] AI Creative Studio {{CITY_NAME}} | Video & Digital Twins",
-        "description_template": "[FR] Transform your brand with our AI Creative Studio in {{CITY_NAME}}. AI video generation, digital avatars, and localized content for {{COUNTRY_NAME}} markets."
-      },
-      "tr": {
-        "title_template": "[TR] AI Creative Studio {{CITY_NAME}} | Video & Digital Twins",
-        "description_template": "[TR] Transform your brand with our AI Creative Studio in {{CITY_NAME}}. AI video generation, digital avatars, and localized content for {{COUNTRY_NAME}} markets."
-      }
-    }
+    "id": "cold-email",
+    "name": "Cold Email Infrastructure",
+    "slug_pattern": "cold-email-infrastructure-{{CITY_SLUG}}",
+    "title_template": "Cold Email Infrastructure {{CITY_NAME}} | Deliverability & Automation",
+    "description_template": "Professional cold email infrastructure in {{CITY_NAME}}. Domain setup, email warming, and deliverability optimization for {{COUNTRY_NAME}} outreach campaigns.",
+    "icon": "mail",
+    "template": "service-city-landing"
   },
   {
-    "id": "revops",
-    "name": "RevOps & CRM",
-    "slug_pattern": "revops-consulting-{{CITY_SLUG}}",
-    "title_template": "RevOps Consulting {{CITY_NAME}} | HubSpot & Salesforce Experts",
-    "description_template": "Revenue Operations (RevOps) consulting in {{CITY_NAME}}. Optimize your CRM, align sales and marketing, and drive growth in {{CITY_NAME}}.",
+    "id": "revops-infra",
+    "name": "RevOps Infrastructure",
+    "slug_pattern": "revops-infrastructure-{{CITY_SLUG}}",
+    "title_template": "RevOps Infrastructure {{CITY_NAME}} | CRM & Sales Automation",
+    "description_template": "Revenue operations infrastructure for {{CITY_NAME}} companies. CRM setup, sales automation, and pipeline management for {{COUNTRY_NAME}} businesses.",
     "icon": "settings-2",
-    "template": "service-city-landing",
-    "translations": {
-      "de": {
-        "title_template": "[DE] RevOps Consulting {{CITY_NAME}} | HubSpot & Salesforce Experts",
-        "description_template": "[DE] Revenue Operations (RevOps) consulting in {{CITY_NAME}}. Optimize your CRM, align sales and marketing, and drive growth in {{CITY_NAME}}."
-      },
-      "fr": {
-        "title_template": "[FR] RevOps Consulting {{CITY_NAME}} | HubSpot & Salesforce Experts",
-        "description_template": "[FR] Revenue Operations (RevOps) consulting in {{CITY_NAME}}. Optimize your CRM, align sales and marketing, and drive growth in {{CITY_NAME}}."
-      },
-      "tr": {
-        "title_template": "[TR] RevOps Consulting {{CITY_NAME}} | HubSpot & Salesforce Experts",
-        "description_template": "[TR] Revenue Operations (RevOps) consulting in {{CITY_NAME}}. Optimize your CRM, align sales and marketing, and drive growth in {{CITY_NAME}}."
-      }
-    }
+    "template": "service-city-landing"
+  },
+  {
+    "id": "verified-leads",
+    "name": "Verified Lead List",
+    "slug_pattern": "verified-lead-list-{{CITY_SLUG}}",
+    "title_template": "Verified Lead List {{CITY_NAME}} | B2B Contact Database",
+    "description_template": "Verified B2B lead lists for {{CITY_NAME}}. Accurate contact data, decision-makers, and company information for {{COUNTRY_NAME}} market entry.",
+    "icon": "database",
+    "template": "service-city-landing"
+  },
+  {
+    "id": "email-deliverability",
+    "name": "Email Deliverability Checkup",
+    "slug_pattern": "email-deliverability-checkup-{{CITY_SLUG}}",
+    "title_template": "Email Deliverability Checkup {{CITY_NAME}} | Inbox Optimization",
+    "description_template": "Professional email deliverability audit in {{CITY_NAME}}. SPF, DKIM, DMARC setup and inbox placement optimization for {{COUNTRY_NAME}} businesses.",
+    "icon": "mail-check",
+    "template": "service-city-landing"
+  },
+  {
+    "id": "secure-email",
+    "name": "Secure Email Workplace Setup",
+    "slug_pattern": "secure-email-workplace-{{CITY_SLUG}}",
+    "title_template": "Secure Email Workplace {{CITY_NAME}} | Enterprise Email Security",
+    "description_template": "Enterprise-grade email security for {{CITY_NAME}} businesses. Google Workspace or Microsoft 365 with advanced threat protection for {{COUNTRY_NAME}} companies.",
+    "icon": "shield-check",
+    "template": "service-city-landing"
+  },
+  {
+    "id": "website-care",
+    "name": "Website Care Services",
+    "slug_pattern": "website-care-services-{{CITY_SLUG}}",
+    "title_template": "Website Care Services {{CITY_NAME}} | Maintenance & Support",
+    "description_template": "Professional website maintenance in {{CITY_NAME}}. Updates, security, backups, and support for {{COUNTRY_NAME}} business websites.",
+    "icon": "globe",
+    "template": "service-city-landing"
   }
 ]
