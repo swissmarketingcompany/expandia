@@ -1643,7 +1643,7 @@ function generateSitemap() {
     // Add Industry Pages
     const industryPages = industries.map(i => `${i.slug}.html`);
 
-    // Add Service x City Pages
+    // Re-enabled: Service x City Pages (these pages are bringing in clients)
     const serviceCityPages = [];
     services.forEach(service => {
         cities.forEach(city => {
@@ -1654,7 +1654,7 @@ function generateSitemap() {
         });
     });
 
-    // Add Service x Industry x City Pages
+    // Re-enabled: Service x Industry x City Pages (these pages are bringing in clients)
     const serviceIndustryCityPages = [];
     services.forEach(service => {
         topIndustries.forEach(industry => {
@@ -1676,7 +1676,18 @@ function generateSitemap() {
             .map(file => `blog/${file}`);
     }
 
-    const allPages = [...staticPages, ...localizedPages, ...cityPages, ...industryPages, ...serviceCityPages, ...serviceIndustryCityPages, ...blogPages];
+    // Add Glossary Pages
+    const glossaryPages = [];
+    glossary.forEach(term => {
+        glossaryPages.push(`glossary/${term.slug}.html`); // EN
+        glossaryPages.push(`de/glossary/${term.slug}.html`); // DE
+        glossaryPages.push(`fr/glossary/${term.slug}.html`); // FR
+    });
+    glossaryPages.push('glossary/index.html');
+    glossaryPages.push('de/glossary/index.html');
+    glossaryPages.push('fr/glossary/index.html');
+
+    const allPages = [...staticPages, ...localizedPages, ...cityPages, ...industryPages, ...serviceCityPages, ...serviceIndustryCityPages, ...blogPages, ...glossaryPages];
 
     let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
@@ -1864,9 +1875,9 @@ buildPage('video-content-engine', 'video-content-engine', 'fr');
 // Call new functions
 buildCityPages();
 buildIndustryPages();
-// DISABLED: Service x City pages (388,000+ duplicate content pages removed for SEO)
-// buildServiceCityPages();
-// buildServiceIndustryCityPages();
+// Re-enabled: These pages are bringing in clients
+buildServiceCityPages();
+buildServiceIndustryCityPages();
 buildCityLocationsPage();
 buildBlogPosts();
 buildGlossaryTerms(); // NEW
