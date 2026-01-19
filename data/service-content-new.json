@@ -1,0 +1,2344 @@
+{
+  "turnkey-it": {
+    "en": {
+      "intro": [
+        "Stop wrestling with IT complexity. We deliver enterprise-grade IT infrastructure that's secure, compliant, and ready to scale. From email security to workplace setup, we handle the technical heavy lifting so you can focus on growth."
+      ],
+      "pain_points": [
+        "Lack of specialized expertise in {{CITY_NAME}}",
+        "High costs of traditional solutions",
+        "Difficulty scaling operations",
+        "Time-consuming manual processes",
+        "Limited visibility into performance",
+        "Compliance and regulatory challenges in {{COUNTRY_NAME}}",
+        "Integration issues with existing systems",
+        "Inconsistent results and quality",
+        "Poor customer support and response times",
+        "Inability to compete with larger companies"
+      ],
+      "benefits": [
+        "**enterprise-grade IT\n                        infrastructure:** Stop wrestling with IT complexity. We deliver  that's secure, compliant, and ready to scale. From email security to\n                    workplace setup, we handle the technical heavy lifting so you can focus on growth."
+      ],
+      "faq": [
+        {
+          "q": "What is included in Turnkey IT Infrastructure for {{CITY_NAME}} companies?",
+          "a": "Our Turnkey IT Infrastructure packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "How quickly can we get started in {{CITY_NAME}}?",
+          "a": "We can deploy Turnkey IT Infrastructure for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "Do you support companies outside of {{CITY_NAME}}?",
+          "a": "Yes, while we specialize in {{CITY_NAME}}, our Turnkey IT Infrastructure supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "de": {
+      "intro": [
+        "[DE] Stop wrestling with IT complexity. We deliver enterprise-grade IT infrastructure that's secure, compliant, and ready to scale. From email security to workplace setup, we handle the technical heavy lifting so you can focus on growth."
+      ],
+      "pain_points": [
+        "[DE] Lack of specialized expertise in {{CITY_NAME}}",
+        "[DE] High costs of traditional solutions",
+        "[DE] Difficulty scaling operations",
+        "[DE] Time-consuming manual processes",
+        "[DE] Limited visibility into performance",
+        "[DE] Compliance and regulatory challenges in {{COUNTRY_NAME}}",
+        "[DE] Integration issues with existing systems",
+        "[DE] Inconsistent results and quality",
+        "[DE] Poor customer support and response times",
+        "[DE] Inability to compete with larger companies"
+      ],
+      "benefits": [
+        "[DE] **enterprise-grade IT\n                        infrastructure:** Stop wrestling with IT complexity. We deliver  that's secure, compliant, and ready to scale. From email security to\n                    workplace setup, we handle the technical heavy lifting so you can focus on growth."
+      ],
+      "faq": [
+        {
+          "q": "[DE] What is included in Turnkey IT Infrastructure for {{CITY_NAME}} companies?",
+          "a": "[DE] Our Turnkey IT Infrastructure packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[DE] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[DE] We can deploy Turnkey IT Infrastructure for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[DE] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[DE] Yes, while we specialize in {{CITY_NAME}}, our Turnkey IT Infrastructure supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "fr": {
+      "intro": [
+        "[FR] Stop wrestling with IT complexity. We deliver enterprise-grade IT infrastructure that's secure, compliant, and ready to scale. From email security to workplace setup, we handle the technical heavy lifting so you can focus on growth."
+      ],
+      "pain_points": [
+        "[FR] Lack of specialized expertise in {{CITY_NAME}}",
+        "[FR] High costs of traditional solutions",
+        "[FR] Difficulty scaling operations",
+        "[FR] Time-consuming manual processes",
+        "[FR] Limited visibility into performance",
+        "[FR] Compliance and regulatory challenges in {{COUNTRY_NAME}}",
+        "[FR] Integration issues with existing systems",
+        "[FR] Inconsistent results and quality",
+        "[FR] Poor customer support and response times",
+        "[FR] Inability to compete with larger companies"
+      ],
+      "benefits": [
+        "[FR] **enterprise-grade IT\n                        infrastructure:** Stop wrestling with IT complexity. We deliver  that's secure, compliant, and ready to scale. From email security to\n                    workplace setup, we handle the technical heavy lifting so you can focus on growth."
+      ],
+      "faq": [
+        {
+          "q": "[FR] What is included in Turnkey IT Infrastructure for {{CITY_NAME}} companies?",
+          "a": "[FR] Our Turnkey IT Infrastructure packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[FR] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[FR] We can deploy Turnkey IT Infrastructure for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[FR] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[FR] Yes, while we specialize in {{CITY_NAME}}, our Turnkey IT Infrastructure supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    }
+  },
+  "email-deliverability": {
+    "en": {
+      "intro": [
+        "Find out why your emails go to spam. We check your domain health, fix technical issues, and improve your inbox delivery rate. Get a full report in 2 days.",
+        "You pay $1,500/month for ongoing email consulting. In 12 months, you spend $18,000 with no guaranteed fixes.",
+        "You pay $500 per domain once. We fix everything and monitor for 3 months. Total cost: $500-$2,000."
+      ],
+      "pain_points": [
+        "SPF, DKIM, DMARC Audit",
+        "Blacklist Check (50+ Lists)",
+        "Domain Reputation Score",
+        "DNS Configuration Fixes",
+        "Full Record Cleanup - SPF, DKIM, DMARC optimization",
+        "PTR & Reverse DNS - Essential for enterprise filters",
+        "BIMI Setup - Get your logo in the inbox (select plans)",
+        "50+ Major Databases - Spamhaus, Barracuda, SORBS removal",
+        "Delisting Management - We handle the removal requests manually",
+        "Ongoing Monitoring - 24/7 alerts if you hit a blacklist again"
+      ],
+      "benefits": [
+        "**$1,500/month:** You pay  for ongoing email consulting. In\n                    12 months, you spend $18,000 with no guaranteed fixes.",
+        "**no guaranteed fixes:** You pay $1,500/month for ongoing email consulting. In\n                    12 months, you spend $18,000 with .",
+        "**$500 per domain:** You pay  once. We fix everything and\n                    monitor for 3 months. Total cost: $500-$2,000.",
+        "**$500-$2,000:** You pay $500 per domain once. We fix everything and\n                    monitor for 3 months. Total cost: .",
+        "**90% Inbox Goal::** We aim for technical perfection so you stay out of the\n                                \"Promotions\" or \"Spam\" folders.",
+        "**Domain Protection::** We set up multiple sending domains so your main brand\n                                domain is always protected.",
+        "**Technical Trust::** Proper DNS setup makes Google & Microsoft trust your\n                                emails, so they get delivered first.",
+        "**Full Record Cleanup:** - SPF, DKIM, DMARC optimization"
+      ],
+      "faq": [
+        {
+          "q": "What is included in Email Deliverability Checkup for {{CITY_NAME}} companies?",
+          "a": "Our Email Deliverability Checkup packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "How quickly can we get started in {{CITY_NAME}}?",
+          "a": "We can deploy Email Deliverability Checkup for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "Do you support companies outside of {{CITY_NAME}}?",
+          "a": "Yes, while we specialize in {{CITY_NAME}}, our Email Deliverability Checkup supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "de": {
+      "intro": [
+        "[DE] Find out why your emails go to spam. We check your domain health, fix technical issues, and improve your inbox delivery rate. Get a full report in 2 days.",
+        "[DE] You pay $1,500/month for ongoing email consulting. In 12 months, you spend $18,000 with no guaranteed fixes.",
+        "[DE] You pay $500 per domain once. We fix everything and monitor for 3 months. Total cost: $500-$2,000."
+      ],
+      "pain_points": [
+        "[DE] SPF, DKIM, DMARC Audit",
+        "[DE] Blacklist Check (50+ Lists)",
+        "[DE] Domain Reputation Score",
+        "[DE] DNS Configuration Fixes",
+        "[DE] Full Record Cleanup - SPF, DKIM, DMARC optimization",
+        "[DE] PTR & Reverse DNS - Essential for enterprise filters",
+        "[DE] BIMI Setup - Get your logo in the inbox (select plans)",
+        "[DE] 50+ Major Databases - Spamhaus, Barracuda, SORBS removal",
+        "[DE] Delisting Management - We handle the removal requests manually",
+        "[DE] Ongoing Monitoring - 24/7 alerts if you hit a blacklist again"
+      ],
+      "benefits": [
+        "[DE] **$1,500/month:** You pay  for ongoing email consulting. In\n                    12 months, you spend $18,000 with no guaranteed fixes.",
+        "[DE] **no guaranteed fixes:** You pay $1,500/month for ongoing email consulting. In\n                    12 months, you spend $18,000 with .",
+        "[DE] **$500 per domain:** You pay  once. We fix everything and\n                    monitor for 3 months. Total cost: $500-$2,000.",
+        "[DE] **$500-$2,000:** You pay $500 per domain once. We fix everything and\n                    monitor for 3 months. Total cost: .",
+        "[DE] **90% Inbox Goal::** We aim for technical perfection so you stay out of the\n                                \"Promotions\" or \"Spam\" folders.",
+        "[DE] **Domain Protection::** We set up multiple sending domains so your main brand\n                                domain is always protected.",
+        "[DE] **Technical Trust::** Proper DNS setup makes Google & Microsoft trust your\n                                emails, so they get delivered first.",
+        "[DE] **Full Record Cleanup:** - SPF, DKIM, DMARC optimization"
+      ],
+      "faq": [
+        {
+          "q": "[DE] What is included in Email Deliverability Checkup for {{CITY_NAME}} companies?",
+          "a": "[DE] Our Email Deliverability Checkup packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[DE] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[DE] We can deploy Email Deliverability Checkup for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[DE] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[DE] Yes, while we specialize in {{CITY_NAME}}, our Email Deliverability Checkup supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "fr": {
+      "intro": [
+        "[FR] Find out why your emails go to spam. We check your domain health, fix technical issues, and improve your inbox delivery rate. Get a full report in 2 days.",
+        "[FR] You pay $1,500/month for ongoing email consulting. In 12 months, you spend $18,000 with no guaranteed fixes.",
+        "[FR] You pay $500 per domain once. We fix everything and monitor for 3 months. Total cost: $500-$2,000."
+      ],
+      "pain_points": [
+        "[FR] SPF, DKIM, DMARC Audit",
+        "[FR] Blacklist Check (50+ Lists)",
+        "[FR] Domain Reputation Score",
+        "[FR] DNS Configuration Fixes",
+        "[FR] Full Record Cleanup - SPF, DKIM, DMARC optimization",
+        "[FR] PTR & Reverse DNS - Essential for enterprise filters",
+        "[FR] BIMI Setup - Get your logo in the inbox (select plans)",
+        "[FR] 50+ Major Databases - Spamhaus, Barracuda, SORBS removal",
+        "[FR] Delisting Management - We handle the removal requests manually",
+        "[FR] Ongoing Monitoring - 24/7 alerts if you hit a blacklist again"
+      ],
+      "benefits": [
+        "[FR] **$1,500/month:** You pay  for ongoing email consulting. In\n                    12 months, you spend $18,000 with no guaranteed fixes.",
+        "[FR] **no guaranteed fixes:** You pay $1,500/month for ongoing email consulting. In\n                    12 months, you spend $18,000 with .",
+        "[FR] **$500 per domain:** You pay  once. We fix everything and\n                    monitor for 3 months. Total cost: $500-$2,000.",
+        "[FR] **$500-$2,000:** You pay $500 per domain once. We fix everything and\n                    monitor for 3 months. Total cost: .",
+        "[FR] **90% Inbox Goal::** We aim for technical perfection so you stay out of the\n                                \"Promotions\" or \"Spam\" folders.",
+        "[FR] **Domain Protection::** We set up multiple sending domains so your main brand\n                                domain is always protected.",
+        "[FR] **Technical Trust::** Proper DNS setup makes Google & Microsoft trust your\n                                emails, so they get delivered first.",
+        "[FR] **Full Record Cleanup:** - SPF, DKIM, DMARC optimization"
+      ],
+      "faq": [
+        {
+          "q": "[FR] What is included in Email Deliverability Checkup for {{CITY_NAME}} companies?",
+          "a": "[FR] Our Email Deliverability Checkup packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[FR] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[FR] We can deploy Email Deliverability Checkup for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[FR] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[FR] Yes, while we specialize in {{CITY_NAME}}, our Email Deliverability Checkup supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    }
+  },
+  "secure-email": {
+    "en": {
+      "intro": [
+        "Get Microsoft 365 or Google Workspace set up with enterprise-level security. We handle everything: email, calendar, file storage, security policies, and team training.",
+        "You pay $2,000/month for basic IT management. In 12 months, you spend $24,000. If you leave, you often lose your configurations.",
+        "You pay $3,000 once (for typical 10-user team). No ongoing fees to us. You only pay your Workspace provider."
+      ],
+      "pain_points": [
+        "Microsoft 365 or Google Workspace",
+        "Multi-factor authentication (MFA)",
+        "Data loss prevention (DLP)",
+        "Email security and anti-phishing",
+        "Mobile device management",
+        "Team training and 12-month support",
+        "+ Dedicated Infra Architect",
+        "Full Admin Setup - Google or Microsoft tenant configuration",
+        "Organization Policies - Custom user roles & permissions",
+        "Domain Verification - Clean records (DKIM, SPF, DMARC)"
+      ],
+      "benefits": [
+        "**$2,000/month:** You pay  for basic IT management. In 12\n                    months, you spend $24,000. If you leave, you often lose your\n                        configurations.",
+        "**lose your\n                        configurations:** You pay $2,000/month for basic IT management. In 12\n                    months, you spend $24,000. If you leave, you often .",
+        "**$3,000 once:** You pay  (for typical 10-user team). No\n                    ongoing fees to us. You only pay your Workspace provider.",
+        "**Zero Setup Friction::** Skip the 40+ hours of technical configuration.\n                                    We handle everything from DNS to MFA policies.",
+        "**Compliance Ready::** Your workspace is built to GDPR, HIPAA, or SOC2\n                                    standards from day one, opening doors to bigger clients.",
+        "**Phishing Protection::** 90% of breaches start with an email. Our\n                                    advanced filtering stops threats before they reach your team.",
+        "**Full Admin Setup:** - Google or Microsoft tenant configuration",
+        "**Organization Policies:** - Custom user roles & permissions"
+      ],
+      "faq": [
+        {
+          "q": "What is included in Secure Email & Workplace Setup for {{CITY_NAME}} companies?",
+          "a": "Our Secure Email & Workplace Setup packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "How quickly can we get started in {{CITY_NAME}}?",
+          "a": "We can deploy Secure Email & Workplace Setup for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "Do you support companies outside of {{CITY_NAME}}?",
+          "a": "Yes, while we specialize in {{CITY_NAME}}, our Secure Email & Workplace Setup supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "de": {
+      "intro": [
+        "[DE] Get Microsoft 365 or Google Workspace set up with enterprise-level security. We handle everything: email, calendar, file storage, security policies, and team training.",
+        "[DE] You pay $2,000/month for basic IT management. In 12 months, you spend $24,000. If you leave, you often lose your configurations.",
+        "[DE] You pay $3,000 once (for typical 10-user team). No ongoing fees to us. You only pay your Workspace provider."
+      ],
+      "pain_points": [
+        "[DE] Microsoft 365 or Google Workspace",
+        "[DE] Multi-factor authentication (MFA)",
+        "[DE] Data loss prevention (DLP)",
+        "[DE] Email security and anti-phishing",
+        "[DE] Mobile device management",
+        "[DE] Team training and 12-month support",
+        "[DE] + Dedicated Infra Architect",
+        "[DE] Full Admin Setup - Google or Microsoft tenant configuration",
+        "[DE] Organization Policies - Custom user roles & permissions",
+        "[DE] Domain Verification - Clean records (DKIM, SPF, DMARC)"
+      ],
+      "benefits": [
+        "[DE] **$2,000/month:** You pay  for basic IT management. In 12\n                    months, you spend $24,000. If you leave, you often lose your\n                        configurations.",
+        "[DE] **lose your\n                        configurations:** You pay $2,000/month for basic IT management. In 12\n                    months, you spend $24,000. If you leave, you often .",
+        "[DE] **$3,000 once:** You pay  (for typical 10-user team). No\n                    ongoing fees to us. You only pay your Workspace provider.",
+        "[DE] **Zero Setup Friction::** Skip the 40+ hours of technical configuration.\n                                    We handle everything from DNS to MFA policies.",
+        "[DE] **Compliance Ready::** Your workspace is built to GDPR, HIPAA, or SOC2\n                                    standards from day one, opening doors to bigger clients.",
+        "[DE] **Phishing Protection::** 90% of breaches start with an email. Our\n                                    advanced filtering stops threats before they reach your team.",
+        "[DE] **Full Admin Setup:** - Google or Microsoft tenant configuration",
+        "[DE] **Organization Policies:** - Custom user roles & permissions"
+      ],
+      "faq": [
+        {
+          "q": "[DE] What is included in Secure Email & Workplace Setup for {{CITY_NAME}} companies?",
+          "a": "[DE] Our Secure Email & Workplace Setup packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[DE] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[DE] We can deploy Secure Email & Workplace Setup for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[DE] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[DE] Yes, while we specialize in {{CITY_NAME}}, our Secure Email & Workplace Setup supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "fr": {
+      "intro": [
+        "[FR] Get Microsoft 365 or Google Workspace set up with enterprise-level security. We handle everything: email, calendar, file storage, security policies, and team training.",
+        "[FR] You pay $2,000/month for basic IT management. In 12 months, you spend $24,000. If you leave, you often lose your configurations.",
+        "[FR] You pay $3,000 once (for typical 10-user team). No ongoing fees to us. You only pay your Workspace provider."
+      ],
+      "pain_points": [
+        "[FR] Microsoft 365 or Google Workspace",
+        "[FR] Multi-factor authentication (MFA)",
+        "[FR] Data loss prevention (DLP)",
+        "[FR] Email security and anti-phishing",
+        "[FR] Mobile device management",
+        "[FR] Team training and 12-month support",
+        "[FR] + Dedicated Infra Architect",
+        "[FR] Full Admin Setup - Google or Microsoft tenant configuration",
+        "[FR] Organization Policies - Custom user roles & permissions",
+        "[FR] Domain Verification - Clean records (DKIM, SPF, DMARC)"
+      ],
+      "benefits": [
+        "[FR] **$2,000/month:** You pay  for basic IT management. In 12\n                    months, you spend $24,000. If you leave, you often lose your\n                        configurations.",
+        "[FR] **lose your\n                        configurations:** You pay $2,000/month for basic IT management. In 12\n                    months, you spend $24,000. If you leave, you often .",
+        "[FR] **$3,000 once:** You pay  (for typical 10-user team). No\n                    ongoing fees to us. You only pay your Workspace provider.",
+        "[FR] **Zero Setup Friction::** Skip the 40+ hours of technical configuration.\n                                    We handle everything from DNS to MFA policies.",
+        "[FR] **Compliance Ready::** Your workspace is built to GDPR, HIPAA, or SOC2\n                                    standards from day one, opening doors to bigger clients.",
+        "[FR] **Phishing Protection::** 90% of breaches start with an email. Our\n                                    advanced filtering stops threats before they reach your team.",
+        "[FR] **Full Admin Setup:** - Google or Microsoft tenant configuration",
+        "[FR] **Organization Policies:** - Custom user roles & permissions"
+      ],
+      "faq": [
+        {
+          "q": "[FR] What is included in Secure Email & Workplace Setup for {{CITY_NAME}} companies?",
+          "a": "[FR] Our Secure Email & Workplace Setup packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[FR] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[FR] We can deploy Secure Email & Workplace Setup for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[FR] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[FR] Yes, while we specialize in {{CITY_NAME}}, our Secure Email & Workplace Setup supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    }
+  },
+  "website-care": {
+    "en": {
+      "intro": [
+        "We monitor your website 24/7, apply security updates, optimize performance, and fix issues before they affect your business. Daily backups included.",
+        "You pay $1,200/month for a full-service maintenance agency. In 12 months, you spend $14,400 just to keep the lights on.",
+        "You pay $299/month. Total 12mo spend: $3,588. Includes monitoring, security, and weekly backups."
+      ],
+      "pain_points": [
+        "Weekly Performance Reports",
+        "Year 1 Software Licenses Included",
+        "Vulnerability Patching",
+        "Full SOP Playbook Access",
+        "12 Months monthly coaching",
+        "48-Hour Setup & Handover",
+        "+ Dedicated Infra Architect",
+        "Uptime Tracking - 1-minute interval checks from 5 global locations",
+        "Instant Alerts - We're notified immediately if anything breaks",
+        "Error Log Auditing - Catching silent failures before they escalate"
+      ],
+      "benefits": [
+        "**$1,200/month:** You pay  for a full-service maintenance\n                    agency. In 12 months, you spend $14,400 just to keep the lights on.",
+        "**$299/month:** You pay . Total 12mo spend: $3,588. Includes\n                    monitoring, security, and weekly backups.",
+        "**Zero Downtime Anxiety::** We catch 99.9% of server issues before your\n                                    customers do. Most fixes happen while you're sleeping.",
+        "**Performance Optimization::** A 1-second delay reduces conversions by\n                                    7%. We keep your site lightning fast across all devices.",
+        "**Bulletproof Backups::** Human error happens. We keep daily off-site\n                                    backups so you can revert any mistake in minutes.",
+        "**Uptime Tracking:** - 1-minute interval checks from 5 global\n                            locations",
+        "**Instant Alerts:** - We're notified immediately if anything\n                            breaks",
+        "**Error Log Auditing:** - Catching silent failures before they\n                            escalate"
+      ],
+      "faq": [
+        {
+          "q": "What is included in Website Care Services for {{CITY_NAME}} companies?",
+          "a": "Our Website Care Services packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "How quickly can we get started in {{CITY_NAME}}?",
+          "a": "We can deploy Website Care Services for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "Do you support companies outside of {{CITY_NAME}}?",
+          "a": "Yes, while we specialize in {{CITY_NAME}}, our Website Care Services supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "de": {
+      "intro": [
+        "[DE] We monitor your website 24/7, apply security updates, optimize performance, and fix issues before they affect your business. Daily backups included.",
+        "[DE] You pay $1,200/month for a full-service maintenance agency. In 12 months, you spend $14,400 just to keep the lights on.",
+        "[DE] You pay $299/month. Total 12mo spend: $3,588. Includes monitoring, security, and weekly backups."
+      ],
+      "pain_points": [
+        "[DE] Weekly Performance Reports",
+        "[DE] Year 1 Software Licenses Included",
+        "[DE] Vulnerability Patching",
+        "[DE] Full SOP Playbook Access",
+        "[DE] 12 Months monthly coaching",
+        "[DE] 48-Hour Setup & Handover",
+        "[DE] + Dedicated Infra Architect",
+        "[DE] Uptime Tracking - 1-minute interval checks from 5 global locations",
+        "[DE] Instant Alerts - We're notified immediately if anything breaks",
+        "[DE] Error Log Auditing - Catching silent failures before they escalate"
+      ],
+      "benefits": [
+        "[DE] **$1,200/month:** You pay  for a full-service maintenance\n                    agency. In 12 months, you spend $14,400 just to keep the lights on.",
+        "[DE] **$299/month:** You pay . Total 12mo spend: $3,588. Includes\n                    monitoring, security, and weekly backups.",
+        "[DE] **Zero Downtime Anxiety::** We catch 99.9% of server issues before your\n                                    customers do. Most fixes happen while you're sleeping.",
+        "[DE] **Performance Optimization::** A 1-second delay reduces conversions by\n                                    7%. We keep your site lightning fast across all devices.",
+        "[DE] **Bulletproof Backups::** Human error happens. We keep daily off-site\n                                    backups so you can revert any mistake in minutes.",
+        "[DE] **Uptime Tracking:** - 1-minute interval checks from 5 global\n                            locations",
+        "[DE] **Instant Alerts:** - We're notified immediately if anything\n                            breaks",
+        "[DE] **Error Log Auditing:** - Catching silent failures before they\n                            escalate"
+      ],
+      "faq": [
+        {
+          "q": "[DE] What is included in Website Care Services for {{CITY_NAME}} companies?",
+          "a": "[DE] Our Website Care Services packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[DE] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[DE] We can deploy Website Care Services for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[DE] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[DE] Yes, while we specialize in {{CITY_NAME}}, our Website Care Services supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "fr": {
+      "intro": [
+        "[FR] We monitor your website 24/7, apply security updates, optimize performance, and fix issues before they affect your business. Daily backups included.",
+        "[FR] You pay $1,200/month for a full-service maintenance agency. In 12 months, you spend $14,400 just to keep the lights on.",
+        "[FR] You pay $299/month. Total 12mo spend: $3,588. Includes monitoring, security, and weekly backups."
+      ],
+      "pain_points": [
+        "[FR] Weekly Performance Reports",
+        "[FR] Year 1 Software Licenses Included",
+        "[FR] Vulnerability Patching",
+        "[FR] Full SOP Playbook Access",
+        "[FR] 12 Months monthly coaching",
+        "[FR] 48-Hour Setup & Handover",
+        "[FR] + Dedicated Infra Architect",
+        "[FR] Uptime Tracking - 1-minute interval checks from 5 global locations",
+        "[FR] Instant Alerts - We're notified immediately if anything breaks",
+        "[FR] Error Log Auditing - Catching silent failures before they escalate"
+      ],
+      "benefits": [
+        "[FR] **$1,200/month:** You pay  for a full-service maintenance\n                    agency. In 12 months, you spend $14,400 just to keep the lights on.",
+        "[FR] **$299/month:** You pay . Total 12mo spend: $3,588. Includes\n                    monitoring, security, and weekly backups.",
+        "[FR] **Zero Downtime Anxiety::** We catch 99.9% of server issues before your\n                                    customers do. Most fixes happen while you're sleeping.",
+        "[FR] **Performance Optimization::** A 1-second delay reduces conversions by\n                                    7%. We keep your site lightning fast across all devices.",
+        "[FR] **Bulletproof Backups::** Human error happens. We keep daily off-site\n                                    backups so you can revert any mistake in minutes.",
+        "[FR] **Uptime Tracking:** - 1-minute interval checks from 5 global\n                            locations",
+        "[FR] **Instant Alerts:** - We're notified immediately if anything\n                            breaks",
+        "[FR] **Error Log Auditing:** - Catching silent failures before they\n                            escalate"
+      ],
+      "faq": [
+        {
+          "q": "[FR] What is included in Website Care Services for {{CITY_NAME}} companies?",
+          "a": "[FR] Our Website Care Services packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[FR] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[FR] We can deploy Website Care Services for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[FR] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[FR] Yes, while we specialize in {{CITY_NAME}}, our Website Care Services supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    }
+  },
+  "turnkey-growth": {
+    "en": {
+      "intro": [
+        "We build your complete revenue generation infrastructure and hand you the keys. No monthly retainers. No agency lock-in. 100% your asset. From cold email systems to verified lead lists, we deliver the infrastructure that drives predictable growth."
+      ],
+      "pain_points": [
+        "Lack of specialized expertise in {{CITY_NAME}}",
+        "High costs of traditional solutions",
+        "Difficulty scaling operations",
+        "Time-consuming manual processes",
+        "Limited visibility into performance",
+        "Compliance and regulatory challenges in {{COUNTRY_NAME}}",
+        "Integration issues with existing systems",
+        "Inconsistent results and quality",
+        "Poor customer support and response times",
+        "Inability to compete with larger companies"
+      ],
+      "benefits": [
+        "**revenue generation infrastructure:** We build your complete  and\n                    hand you the keys. No monthly retainers. No agency lock-in. 100% your\n                        asset. From cold email systems to verified lead lists, we deliver the infrastructure\n                    that drives predictable growth.",
+        "**100% your\n                        asset.:** We build your complete revenue generation infrastructure and\n                    hand you the keys. No monthly retainers. No agency lock-in.  From cold email systems to verified lead lists, we deliver the infrastructure\n                    that drives predictable growth."
+      ],
+      "faq": [
+        {
+          "q": "What is included in Turnkey Growth Infrastructure for {{CITY_NAME}} companies?",
+          "a": "Our Turnkey Growth Infrastructure packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "How quickly can we get started in {{CITY_NAME}}?",
+          "a": "We can deploy Turnkey Growth Infrastructure for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "Do you support companies outside of {{CITY_NAME}}?",
+          "a": "Yes, while we specialize in {{CITY_NAME}}, our Turnkey Growth Infrastructure supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "de": {
+      "intro": [
+        "[DE] We build your complete revenue generation infrastructure and hand you the keys. No monthly retainers. No agency lock-in. 100% your asset. From cold email systems to verified lead lists, we deliver the infrastructure that drives predictable growth."
+      ],
+      "pain_points": [
+        "[DE] Lack of specialized expertise in {{CITY_NAME}}",
+        "[DE] High costs of traditional solutions",
+        "[DE] Difficulty scaling operations",
+        "[DE] Time-consuming manual processes",
+        "[DE] Limited visibility into performance",
+        "[DE] Compliance and regulatory challenges in {{COUNTRY_NAME}}",
+        "[DE] Integration issues with existing systems",
+        "[DE] Inconsistent results and quality",
+        "[DE] Poor customer support and response times",
+        "[DE] Inability to compete with larger companies"
+      ],
+      "benefits": [
+        "[DE] **revenue generation infrastructure:** We build your complete  and\n                    hand you the keys. No monthly retainers. No agency lock-in. 100% your\n                        asset. From cold email systems to verified lead lists, we deliver the infrastructure\n                    that drives predictable growth.",
+        "[DE] **100% your\n                        asset.:** We build your complete revenue generation infrastructure and\n                    hand you the keys. No monthly retainers. No agency lock-in.  From cold email systems to verified lead lists, we deliver the infrastructure\n                    that drives predictable growth."
+      ],
+      "faq": [
+        {
+          "q": "[DE] What is included in Turnkey Growth Infrastructure for {{CITY_NAME}} companies?",
+          "a": "[DE] Our Turnkey Growth Infrastructure packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[DE] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[DE] We can deploy Turnkey Growth Infrastructure for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[DE] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[DE] Yes, while we specialize in {{CITY_NAME}}, our Turnkey Growth Infrastructure supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "fr": {
+      "intro": [
+        "[FR] We build your complete revenue generation infrastructure and hand you the keys. No monthly retainers. No agency lock-in. 100% your asset. From cold email systems to verified lead lists, we deliver the infrastructure that drives predictable growth."
+      ],
+      "pain_points": [
+        "[FR] Lack of specialized expertise in {{CITY_NAME}}",
+        "[FR] High costs of traditional solutions",
+        "[FR] Difficulty scaling operations",
+        "[FR] Time-consuming manual processes",
+        "[FR] Limited visibility into performance",
+        "[FR] Compliance and regulatory challenges in {{COUNTRY_NAME}}",
+        "[FR] Integration issues with existing systems",
+        "[FR] Inconsistent results and quality",
+        "[FR] Poor customer support and response times",
+        "[FR] Inability to compete with larger companies"
+      ],
+      "benefits": [
+        "[FR] **revenue generation infrastructure:** We build your complete  and\n                    hand you the keys. No monthly retainers. No agency lock-in. 100% your\n                        asset. From cold email systems to verified lead lists, we deliver the infrastructure\n                    that drives predictable growth.",
+        "[FR] **100% your\n                        asset.:** We build your complete revenue generation infrastructure and\n                    hand you the keys. No monthly retainers. No agency lock-in.  From cold email systems to verified lead lists, we deliver the infrastructure\n                    that drives predictable growth."
+      ],
+      "faq": [
+        {
+          "q": "[FR] What is included in Turnkey Growth Infrastructure for {{CITY_NAME}} companies?",
+          "a": "[FR] Our Turnkey Growth Infrastructure packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[FR] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[FR] We can deploy Turnkey Growth Infrastructure for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[FR] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[FR] Yes, while we specialize in {{CITY_NAME}}, our Turnkey Growth Infrastructure supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    }
+  },
+  "cold-email": {
+    "en": {
+      "intro": [
+        "We build your complete, enterprise-grade cold email system in 2 days. We hand you the keys, the data, and the training. No monthly retainers. No shared domains. 100% Your Asset. Stop being held hostage by agency pricing.",
+        "You pay $5,000/month. In 12 months, you spend $60,000. If you fire them, you leave with zero assets."
+      ],
+      "pain_points": [
+        "Year 1 Software Licenses Included",
+        "30,000 Verified Leads",
+        "Full SOP Playbook Access",
+        "12 Months monthly coaching",
+        "48-Hour Setup & Handover",
+        "+ Dedicated Infra Architect",
+        "Year 1 Software Licenses",
+        "Year 1 Software Licenses",
+        "Year 1 Software Licenses",
+        "Year 1 Software Licenses"
+      ],
+      "benefits": [
+        "**No monthly retainers. No shared domains. 100%\n                        Your Asset.:** We build your complete, enterprise-grade cold email system in 2 days. We hand you the keys, the\n                    data, and the training.  Stop being held hostage by agency pricing.",
+        "**$5,000/month:** You pay . In 12 months, you spend $60,000.\n                    If you fire them, you leave with zero assets.",
+        "**zero assets:** You pay $5,000/month. In 12 months, you spend $60,000.\n                    If you fire them, you leave with .",
+        "**$6,500 once:** You pay . Small software fees (~$300/mo).\n                    Total 12mo spend: ~$10,000.",
+        "**1% Reply Rate::** The standard expectation for cold outbound.",
+        "**5 Contacts / Org::** You need multiple entry points per target company.",
+        "**5 Touches / Yr::** Consistency beats intensity. You must be present often.",
+        "**AI Assistant (beta):** - Custom trained response handling"
+      ],
+      "faq": [
+        {
+          "q": "What is included in Cold Email Infrastructure for {{CITY_NAME}} companies?",
+          "a": "Our Cold Email Infrastructure packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "How quickly can we get started in {{CITY_NAME}}?",
+          "a": "We can deploy Cold Email Infrastructure for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "Do you support companies outside of {{CITY_NAME}}?",
+          "a": "Yes, while we specialize in {{CITY_NAME}}, our Cold Email Infrastructure supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "de": {
+      "intro": [
+        "[DE] We build your complete, enterprise-grade cold email system in 2 days. We hand you the keys, the data, and the training. No monthly retainers. No shared domains. 100% Your Asset. Stop being held hostage by agency pricing.",
+        "[DE] You pay $5,000/month. In 12 months, you spend $60,000. If you fire them, you leave with zero assets."
+      ],
+      "pain_points": [
+        "[DE] Year 1 Software Licenses Included",
+        "[DE] 30,000 Verified Leads",
+        "[DE] Full SOP Playbook Access",
+        "[DE] 12 Months monthly coaching",
+        "[DE] 48-Hour Setup & Handover",
+        "[DE] + Dedicated Infra Architect",
+        "[DE] Year 1 Software Licenses",
+        "[DE] Year 1 Software Licenses",
+        "[DE] Year 1 Software Licenses",
+        "[DE] Year 1 Software Licenses"
+      ],
+      "benefits": [
+        "[DE] **No monthly retainers. No shared domains. 100%\n                        Your Asset.:** We build your complete, enterprise-grade cold email system in 2 days. We hand you the keys, the\n                    data, and the training.  Stop being held hostage by agency pricing.",
+        "[DE] **$5,000/month:** You pay . In 12 months, you spend $60,000.\n                    If you fire them, you leave with zero assets.",
+        "[DE] **zero assets:** You pay $5,000/month. In 12 months, you spend $60,000.\n                    If you fire them, you leave with .",
+        "[DE] **$6,500 once:** You pay . Small software fees (~$300/mo).\n                    Total 12mo spend: ~$10,000.",
+        "[DE] **1% Reply Rate::** The standard expectation for cold outbound.",
+        "[DE] **5 Contacts / Org::** You need multiple entry points per target company.",
+        "[DE] **5 Touches / Yr::** Consistency beats intensity. You must be present often.",
+        "[DE] **AI Assistant (beta):** - Custom trained response handling"
+      ],
+      "faq": [
+        {
+          "q": "[DE] What is included in Cold Email Infrastructure for {{CITY_NAME}} companies?",
+          "a": "[DE] Our Cold Email Infrastructure packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[DE] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[DE] We can deploy Cold Email Infrastructure for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[DE] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[DE] Yes, while we specialize in {{CITY_NAME}}, our Cold Email Infrastructure supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "fr": {
+      "intro": [
+        "[FR] We build your complete, enterprise-grade cold email system in 2 days. We hand you the keys, the data, and the training. No monthly retainers. No shared domains. 100% Your Asset. Stop being held hostage by agency pricing.",
+        "[FR] You pay $5,000/month. In 12 months, you spend $60,000. If you fire them, you leave with zero assets."
+      ],
+      "pain_points": [
+        "[FR] Year 1 Software Licenses Included",
+        "[FR] 30,000 Verified Leads",
+        "[FR] Full SOP Playbook Access",
+        "[FR] 12 Months monthly coaching",
+        "[FR] 48-Hour Setup & Handover",
+        "[FR] + Dedicated Infra Architect",
+        "[FR] Year 1 Software Licenses",
+        "[FR] Year 1 Software Licenses",
+        "[FR] Year 1 Software Licenses",
+        "[FR] Year 1 Software Licenses"
+      ],
+      "benefits": [
+        "[FR] **No monthly retainers. No shared domains. 100%\n                        Your Asset.:** We build your complete, enterprise-grade cold email system in 2 days. We hand you the keys, the\n                    data, and the training.  Stop being held hostage by agency pricing.",
+        "[FR] **$5,000/month:** You pay . In 12 months, you spend $60,000.\n                    If you fire them, you leave with zero assets.",
+        "[FR] **zero assets:** You pay $5,000/month. In 12 months, you spend $60,000.\n                    If you fire them, you leave with .",
+        "[FR] **$6,500 once:** You pay . Small software fees (~$300/mo).\n                    Total 12mo spend: ~$10,000.",
+        "[FR] **1% Reply Rate::** The standard expectation for cold outbound.",
+        "[FR] **5 Contacts / Org::** You need multiple entry points per target company.",
+        "[FR] **5 Touches / Yr::** Consistency beats intensity. You must be present often.",
+        "[FR] **AI Assistant (beta):** - Custom trained response handling"
+      ],
+      "faq": [
+        {
+          "q": "[FR] What is included in Cold Email Infrastructure for {{CITY_NAME}} companies?",
+          "a": "[FR] Our Cold Email Infrastructure packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[FR] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[FR] We can deploy Cold Email Infrastructure for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[FR] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[FR] Yes, while we specialize in {{CITY_NAME}}, our Cold Email Infrastructure supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    }
+  },
+  "revops-infra": {
+    "en": {
+      "intro": [
+        "We set up your complete sales system with CRM, automation, and reporting. Everything is ready to use in 2 days. No consultants needed. No long setup times.",
+        "You pay $5,000/month for a RevOps agency. In 12 months, you spend $60,000 for work that you don't own.",
+        "You pay $2,500 + $500/member once. For a 5-member team, that's $5,000 total. No ongoing fees to us."
+      ],
+      "pain_points": [
+        "Sales CRM Setup (HubSpot/SF)",
+        "Automation Workflows & Triggers",
+        "Full SOP Playbook & Training",
+        "5 Years of Advisory Support",
+        "Custom Field Mapping - No more \"Other\" fields",
+        "Pipeline Stages - Accurate mapping of your sales journey",
+        "Multi-Tool Sync - CRM, Marketing & Sales alignment",
+        "Lead Routing - Instant assignment to the right rep",
+        "Automated Sequences - Scale follow-ups without manual work",
+        "Contract Management - E-signature & deal closing workflows"
+      ],
+      "benefits": [
+        "**$5,000/month:** You pay  for a RevOps agency. In 12 months,\n                    you spend $60,000 for work that you don't own.",
+        "**don't own:** You pay $5,000/month for a RevOps agency. In 12 months,\n                    you spend $60,000 for work that you .",
+        "**$2,500 + $500/member once:** You pay . For a 5-member team,\n                    that's $5,000 total. No ongoing fees to us.",
+        "**Eliminate Data Silos::** Your CRM, marketing, and sales tools finally\n                                    speak the same language with 100% sync.",
+        "**Automate Grunt Work::** 70% of manual data entry is automated, giving\n                                    your reps 10+ hours back per week.",
+        "**Predictable Forecasts::** Stop guessing. Know exactly where your\n                                    revenue is coming from with 100% clarity.",
+        "**Custom Field Mapping:** - No more \"Other\" fields",
+        "**Pipeline Stages:** - Accurate mapping of your sales journey"
+      ],
+      "faq": [
+        {
+          "q": "What is included in RevOps Infrastructure for {{CITY_NAME}} companies?",
+          "a": "Our RevOps Infrastructure packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "How quickly can we get started in {{CITY_NAME}}?",
+          "a": "We can deploy RevOps Infrastructure for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "Do you support companies outside of {{CITY_NAME}}?",
+          "a": "Yes, while we specialize in {{CITY_NAME}}, our RevOps Infrastructure supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "de": {
+      "intro": [
+        "[DE] We set up your complete sales system with CRM, automation, and reporting. Everything is ready to use in 2 days. No consultants needed. No long setup times.",
+        "[DE] You pay $5,000/month for a RevOps agency. In 12 months, you spend $60,000 for work that you don't own.",
+        "[DE] You pay $2,500 + $500/member once. For a 5-member team, that's $5,000 total. No ongoing fees to us."
+      ],
+      "pain_points": [
+        "[DE] Sales CRM Setup (HubSpot/SF)",
+        "[DE] Automation Workflows & Triggers",
+        "[DE] Full SOP Playbook & Training",
+        "[DE] 5 Years of Advisory Support",
+        "[DE] Custom Field Mapping - No more \"Other\" fields",
+        "[DE] Pipeline Stages - Accurate mapping of your sales journey",
+        "[DE] Multi-Tool Sync - CRM, Marketing & Sales alignment",
+        "[DE] Lead Routing - Instant assignment to the right rep",
+        "[DE] Automated Sequences - Scale follow-ups without manual work",
+        "[DE] Contract Management - E-signature & deal closing workflows"
+      ],
+      "benefits": [
+        "[DE] **$5,000/month:** You pay  for a RevOps agency. In 12 months,\n                    you spend $60,000 for work that you don't own.",
+        "[DE] **don't own:** You pay $5,000/month for a RevOps agency. In 12 months,\n                    you spend $60,000 for work that you .",
+        "[DE] **$2,500 + $500/member once:** You pay . For a 5-member team,\n                    that's $5,000 total. No ongoing fees to us.",
+        "[DE] **Eliminate Data Silos::** Your CRM, marketing, and sales tools finally\n                                    speak the same language with 100% sync.",
+        "[DE] **Automate Grunt Work::** 70% of manual data entry is automated, giving\n                                    your reps 10+ hours back per week.",
+        "[DE] **Predictable Forecasts::** Stop guessing. Know exactly where your\n                                    revenue is coming from with 100% clarity.",
+        "[DE] **Custom Field Mapping:** - No more \"Other\" fields",
+        "[DE] **Pipeline Stages:** - Accurate mapping of your sales journey"
+      ],
+      "faq": [
+        {
+          "q": "[DE] What is included in RevOps Infrastructure for {{CITY_NAME}} companies?",
+          "a": "[DE] Our RevOps Infrastructure packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[DE] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[DE] We can deploy RevOps Infrastructure for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[DE] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[DE] Yes, while we specialize in {{CITY_NAME}}, our RevOps Infrastructure supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "fr": {
+      "intro": [
+        "[FR] We set up your complete sales system with CRM, automation, and reporting. Everything is ready to use in 2 days. No consultants needed. No long setup times.",
+        "[FR] You pay $5,000/month for a RevOps agency. In 12 months, you spend $60,000 for work that you don't own.",
+        "[FR] You pay $2,500 + $500/member once. For a 5-member team, that's $5,000 total. No ongoing fees to us."
+      ],
+      "pain_points": [
+        "[FR] Sales CRM Setup (HubSpot/SF)",
+        "[FR] Automation Workflows & Triggers",
+        "[FR] Full SOP Playbook & Training",
+        "[FR] 5 Years of Advisory Support",
+        "[FR] Custom Field Mapping - No more \"Other\" fields",
+        "[FR] Pipeline Stages - Accurate mapping of your sales journey",
+        "[FR] Multi-Tool Sync - CRM, Marketing & Sales alignment",
+        "[FR] Lead Routing - Instant assignment to the right rep",
+        "[FR] Automated Sequences - Scale follow-ups without manual work",
+        "[FR] Contract Management - E-signature & deal closing workflows"
+      ],
+      "benefits": [
+        "[FR] **$5,000/month:** You pay  for a RevOps agency. In 12 months,\n                    you spend $60,000 for work that you don't own.",
+        "[FR] **don't own:** You pay $5,000/month for a RevOps agency. In 12 months,\n                    you spend $60,000 for work that you .",
+        "[FR] **$2,500 + $500/member once:** You pay . For a 5-member team,\n                    that's $5,000 total. No ongoing fees to us.",
+        "[FR] **Eliminate Data Silos::** Your CRM, marketing, and sales tools finally\n                                    speak the same language with 100% sync.",
+        "[FR] **Automate Grunt Work::** 70% of manual data entry is automated, giving\n                                    your reps 10+ hours back per week.",
+        "[FR] **Predictable Forecasts::** Stop guessing. Know exactly where your\n                                    revenue is coming from with 100% clarity.",
+        "[FR] **Custom Field Mapping:** - No more \"Other\" fields",
+        "[FR] **Pipeline Stages:** - Accurate mapping of your sales journey"
+      ],
+      "faq": [
+        {
+          "q": "[FR] What is included in RevOps Infrastructure for {{CITY_NAME}} companies?",
+          "a": "[FR] Our RevOps Infrastructure packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[FR] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[FR] We can deploy RevOps Infrastructure for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[FR] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[FR] Yes, while we specialize in {{CITY_NAME}}, our RevOps Infrastructure supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    }
+  },
+  "verified-leads": {
+    "en": {
+      "intro": [
+        "We build your complete, enterprise-grade verified lead database in 2 days. We hand you the keys, the data, and the training. No monthly retainers. No shared domains. 100% Your Asset. Stop being held hostage by agency pricing.",
+        "You pay $3,000/month for a research assistant. In 12 months, you spend $36,000. If they leave, your data flow stops.",
+        "You pay $1,000 once for 1,000 verified leads. No ongoing fees. Ownership forever."
+      ],
+      "pain_points": [
+        "Direct Mobile Phone Numbers",
+        "Quarterly Data Refresh (Free)",
+        "LinkedIn Profile URLs",
+        "Industry & Job Title Tags",
+        "95% Accuracy Guarantee",
+        "Bulk Discount Applied",
+        "10+ Data Providers - We merge the best data from across the web",
+        "98% Verified Emails - Every email is pinged before delivery",
+        "No Old Data - Real-time scrubbing of job titles & companies",
+        "Job Changes - Target people in their first 90 days"
+      ],
+      "benefits": [
+        "**No monthly retainers. No shared domains. 100%\n                        Your Asset.:** We build your complete, enterprise-grade verified lead database in 2 days. We hand you the keys, the\n                    data, and the training.  Stop being held hostage by agency pricing.",
+        "**$3,000/month:** You pay  for a research assistant. In 12\n                    months, you spend $36,000. If they leave, your data flow stops.",
+        "**data flow stops:** You pay $3,000/month for a research assistant. In 12\n                    months, you spend $36,000. If they leave, your .",
+        "**$1,000 once:** You pay  for 1,000 verified leads. No\n                    ongoing fees. Ownership forever.",
+        "**98% Deliverability::** We verify every single lead through 3 separate\n                                    layers of validation to ensure zero bounces.",
+        "**Deep Intent Mapping::** We don't just find names; we find people\n                                    currently searching for your specific solution.",
+        "**Zero Waste::** Stop paying for leads that don't exist. We only count\n                                    100% verified, reachable prospects.",
+        "**10+ Data Providers:** - We merge the best data from across the\n                            web"
+      ],
+      "faq": [
+        {
+          "q": "What is included in Verified Lead List for {{CITY_NAME}} companies?",
+          "a": "Our Verified Lead List packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "How quickly can we get started in {{CITY_NAME}}?",
+          "a": "We can deploy Verified Lead List for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "Do you support companies outside of {{CITY_NAME}}?",
+          "a": "Yes, while we specialize in {{CITY_NAME}}, our Verified Lead List supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "de": {
+      "intro": [
+        "[DE] We build your complete, enterprise-grade verified lead database in 2 days. We hand you the keys, the data, and the training. No monthly retainers. No shared domains. 100% Your Asset. Stop being held hostage by agency pricing.",
+        "[DE] You pay $3,000/month for a research assistant. In 12 months, you spend $36,000. If they leave, your data flow stops.",
+        "[DE] You pay $1,000 once for 1,000 verified leads. No ongoing fees. Ownership forever."
+      ],
+      "pain_points": [
+        "[DE] Direct Mobile Phone Numbers",
+        "[DE] Quarterly Data Refresh (Free)",
+        "[DE] LinkedIn Profile URLs",
+        "[DE] Industry & Job Title Tags",
+        "[DE] 95% Accuracy Guarantee",
+        "[DE] Bulk Discount Applied",
+        "[DE] 10+ Data Providers - We merge the best data from across the web",
+        "[DE] 98% Verified Emails - Every email is pinged before delivery",
+        "[DE] No Old Data - Real-time scrubbing of job titles & companies",
+        "[DE] Job Changes - Target people in their first 90 days"
+      ],
+      "benefits": [
+        "[DE] **No monthly retainers. No shared domains. 100%\n                        Your Asset.:** We build your complete, enterprise-grade verified lead database in 2 days. We hand you the keys, the\n                    data, and the training.  Stop being held hostage by agency pricing.",
+        "[DE] **$3,000/month:** You pay  for a research assistant. In 12\n                    months, you spend $36,000. If they leave, your data flow stops.",
+        "[DE] **data flow stops:** You pay $3,000/month for a research assistant. In 12\n                    months, you spend $36,000. If they leave, your .",
+        "[DE] **$1,000 once:** You pay  for 1,000 verified leads. No\n                    ongoing fees. Ownership forever.",
+        "[DE] **98% Deliverability::** We verify every single lead through 3 separate\n                                    layers of validation to ensure zero bounces.",
+        "[DE] **Deep Intent Mapping::** We don't just find names; we find people\n                                    currently searching for your specific solution.",
+        "[DE] **Zero Waste::** Stop paying for leads that don't exist. We only count\n                                    100% verified, reachable prospects.",
+        "[DE] **10+ Data Providers:** - We merge the best data from across the\n                            web"
+      ],
+      "faq": [
+        {
+          "q": "[DE] What is included in Verified Lead List for {{CITY_NAME}} companies?",
+          "a": "[DE] Our Verified Lead List packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[DE] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[DE] We can deploy Verified Lead List for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[DE] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[DE] Yes, while we specialize in {{CITY_NAME}}, our Verified Lead List supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "fr": {
+      "intro": [
+        "[FR] We build your complete, enterprise-grade verified lead database in 2 days. We hand you the keys, the data, and the training. No monthly retainers. No shared domains. 100% Your Asset. Stop being held hostage by agency pricing.",
+        "[FR] You pay $3,000/month for a research assistant. In 12 months, you spend $36,000. If they leave, your data flow stops.",
+        "[FR] You pay $1,000 once for 1,000 verified leads. No ongoing fees. Ownership forever."
+      ],
+      "pain_points": [
+        "[FR] Direct Mobile Phone Numbers",
+        "[FR] Quarterly Data Refresh (Free)",
+        "[FR] LinkedIn Profile URLs",
+        "[FR] Industry & Job Title Tags",
+        "[FR] 95% Accuracy Guarantee",
+        "[FR] Bulk Discount Applied",
+        "[FR] 10+ Data Providers - We merge the best data from across the web",
+        "[FR] 98% Verified Emails - Every email is pinged before delivery",
+        "[FR] No Old Data - Real-time scrubbing of job titles & companies",
+        "[FR] Job Changes - Target people in their first 90 days"
+      ],
+      "benefits": [
+        "[FR] **No monthly retainers. No shared domains. 100%\n                        Your Asset.:** We build your complete, enterprise-grade verified lead database in 2 days. We hand you the keys, the\n                    data, and the training.  Stop being held hostage by agency pricing.",
+        "[FR] **$3,000/month:** You pay  for a research assistant. In 12\n                    months, you spend $36,000. If they leave, your data flow stops.",
+        "[FR] **data flow stops:** You pay $3,000/month for a research assistant. In 12\n                    months, you spend $36,000. If they leave, your .",
+        "[FR] **$1,000 once:** You pay  for 1,000 verified leads. No\n                    ongoing fees. Ownership forever.",
+        "[FR] **98% Deliverability::** We verify every single lead through 3 separate\n                                    layers of validation to ensure zero bounces.",
+        "[FR] **Deep Intent Mapping::** We don't just find names; we find people\n                                    currently searching for your specific solution.",
+        "[FR] **Zero Waste::** Stop paying for leads that don't exist. We only count\n                                    100% verified, reachable prospects.",
+        "[FR] **10+ Data Providers:** - We merge the best data from across the\n                            web"
+      ],
+      "faq": [
+        {
+          "q": "[FR] What is included in Verified Lead List for {{CITY_NAME}} companies?",
+          "a": "[FR] Our Verified Lead List packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[FR] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[FR] We can deploy Verified Lead List for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[FR] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[FR] Yes, while we specialize in {{CITY_NAME}}, our Verified Lead List supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    }
+  },
+  "ai-content": {
+    "en": {
+      "intro": [
+        "Hyper-realistic avatars, seamless video localization, and high-fidelity brand assets. We combine generative AI with human artistry to redefine corporate content.",
+        "Don't just subtitle. Localize. Our AI-driven video engine synchronizes lip movements and preserves the original speaker's voice while perfectly translating into 30+ languages.",
+        "Pixel-perfect re-animation of the speaker's mouth to match target language phonemes."
+      ],
+      "pain_points": [
+        "01 Product Shoot Simulation (No studio needed)",
+        "02 Consistent Marketing Visuals across global teams",
+        "03 Rapid Prototyping for ad creative and social content"
+      ],
+      "benefits": [
+        "**Rapid Deployment:** Get started in 48 hours or less.",
+        "**Local Expertise:** Deep understanding of the {{CITY_NAME}} market.",
+        "**Cost Effective:** Predictable pricing with no hidden fees.",
+        "**Scalable Solution:** Grows with your business needs.",
+        "**Expert Support:** Dedicated team available when you need them.",
+        "**Proven Results:** Track record of success in {{COUNTRY_NAME}}.",
+        "**Compliance Ready:** Meet all local regulatory requirements.",
+        "**Integration Friendly:** Works with your existing tools and systems."
+      ],
+      "faq": [
+        {
+          "q": "What is included in AI Content Infrastructure for {{CITY_NAME}} companies?",
+          "a": "Our AI Content Infrastructure packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "How quickly can we get started in {{CITY_NAME}}?",
+          "a": "We can deploy AI Content Infrastructure for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "Do you support companies outside of {{CITY_NAME}}?",
+          "a": "Yes, while we specialize in {{CITY_NAME}}, our AI Content Infrastructure supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "de": {
+      "intro": [
+        "[DE] Hyper-realistic avatars, seamless video localization, and high-fidelity brand assets. We combine generative AI with human artistry to redefine corporate content.",
+        "[DE] Don't just subtitle. Localize. Our AI-driven video engine synchronizes lip movements and preserves the original speaker's voice while perfectly translating into 30+ languages.",
+        "[DE] Pixel-perfect re-animation of the speaker's mouth to match target language phonemes."
+      ],
+      "pain_points": [
+        "[DE] 01 Product Shoot Simulation (No studio needed)",
+        "[DE] 02 Consistent Marketing Visuals across global teams",
+        "[DE] 03 Rapid Prototyping for ad creative and social content"
+      ],
+      "benefits": [
+        "[DE] **Rapid Deployment:** Get started in 48 hours or less.",
+        "[DE] **Local Expertise:** Deep understanding of the {{CITY_NAME}} market.",
+        "[DE] **Cost Effective:** Predictable pricing with no hidden fees.",
+        "[DE] **Scalable Solution:** Grows with your business needs.",
+        "[DE] **Expert Support:** Dedicated team available when you need them.",
+        "[DE] **Proven Results:** Track record of success in {{COUNTRY_NAME}}.",
+        "[DE] **Compliance Ready:** Meet all local regulatory requirements.",
+        "[DE] **Integration Friendly:** Works with your existing tools and systems."
+      ],
+      "faq": [
+        {
+          "q": "[DE] What is included in AI Content Infrastructure for {{CITY_NAME}} companies?",
+          "a": "[DE] Our AI Content Infrastructure packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[DE] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[DE] We can deploy AI Content Infrastructure for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[DE] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[DE] Yes, while we specialize in {{CITY_NAME}}, our AI Content Infrastructure supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "fr": {
+      "intro": [
+        "[FR] Hyper-realistic avatars, seamless video localization, and high-fidelity brand assets. We combine generative AI with human artistry to redefine corporate content.",
+        "[FR] Don't just subtitle. Localize. Our AI-driven video engine synchronizes lip movements and preserves the original speaker's voice while perfectly translating into 30+ languages.",
+        "[FR] Pixel-perfect re-animation of the speaker's mouth to match target language phonemes."
+      ],
+      "pain_points": [
+        "[FR] 01 Product Shoot Simulation (No studio needed)",
+        "[FR] 02 Consistent Marketing Visuals across global teams",
+        "[FR] 03 Rapid Prototyping for ad creative and social content"
+      ],
+      "benefits": [
+        "[FR] **Rapid Deployment:** Get started in 48 hours or less.",
+        "[FR] **Local Expertise:** Deep understanding of the {{CITY_NAME}} market.",
+        "[FR] **Cost Effective:** Predictable pricing with no hidden fees.",
+        "[FR] **Scalable Solution:** Grows with your business needs.",
+        "[FR] **Expert Support:** Dedicated team available when you need them.",
+        "[FR] **Proven Results:** Track record of success in {{COUNTRY_NAME}}.",
+        "[FR] **Compliance Ready:** Meet all local regulatory requirements.",
+        "[FR] **Integration Friendly:** Works with your existing tools and systems."
+      ],
+      "faq": [
+        {
+          "q": "[FR] What is included in AI Content Infrastructure for {{CITY_NAME}} companies?",
+          "a": "[FR] Our AI Content Infrastructure packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[FR] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[FR] We can deploy AI Content Infrastructure for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[FR] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[FR] Yes, while we specialize in {{CITY_NAME}}, our AI Content Infrastructure supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    }
+  },
+  "written-content": {
+    "en": {
+      "intro": [
+        "Get a full year of AI-generated blog posts, articles, and social captions—scheduled and ready to publish automatically. No more content planning. Ever."
+      ],
+      "pain_points": [
+        "365 AI-written articles (SEO-optimized, 800-1200 words each)",
+        "Pre-scheduled posting to your blog or LinkedIn",
+        "Delivered in 48 hours—set it and forget it for a year",
+        "90 AI-Written Articles",
+        "Auto-Scheduled Publishing",
+        "180 AI-Written Articles",
+        "Auto-Scheduled Publishing",
+        "365 AI-Written Articles",
+        "Auto-Scheduled Publishing",
+        "730 AI-Written Articles"
+      ],
+      "benefits": [
+        "**365 AI-written articles:** (SEO-optimized,\n                                800-1200 words each)",
+        "**Pre-scheduled posting:** to your blog or\n                                LinkedIn",
+        "**Delivered in 48 hours:** —set it and forget it\n                                for a year"
+      ],
+      "faq": [
+        {
+          "q": "What is included in Written Content Engine for {{CITY_NAME}} companies?",
+          "a": "Our Written Content Engine packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "How quickly can we get started in {{CITY_NAME}}?",
+          "a": "We can deploy Written Content Engine for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "Do you support companies outside of {{CITY_NAME}}?",
+          "a": "Yes, while we specialize in {{CITY_NAME}}, our Written Content Engine supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "de": {
+      "intro": [
+        "[DE] Get a full year of AI-generated blog posts, articles, and social captions—scheduled and ready to publish automatically. No more content planning. Ever."
+      ],
+      "pain_points": [
+        "[DE] 365 AI-written articles (SEO-optimized, 800-1200 words each)",
+        "[DE] Pre-scheduled posting to your blog or LinkedIn",
+        "[DE] Delivered in 48 hours—set it and forget it for a year",
+        "[DE] 90 AI-Written Articles",
+        "[DE] Auto-Scheduled Publishing",
+        "[DE] 180 AI-Written Articles",
+        "[DE] Auto-Scheduled Publishing",
+        "[DE] 365 AI-Written Articles",
+        "[DE] Auto-Scheduled Publishing",
+        "[DE] 730 AI-Written Articles"
+      ],
+      "benefits": [
+        "[DE] **365 AI-written articles:** (SEO-optimized,\n                                800-1200 words each)",
+        "[DE] **Pre-scheduled posting:** to your blog or\n                                LinkedIn",
+        "[DE] **Delivered in 48 hours:** —set it and forget it\n                                for a year"
+      ],
+      "faq": [
+        {
+          "q": "[DE] What is included in Written Content Engine for {{CITY_NAME}} companies?",
+          "a": "[DE] Our Written Content Engine packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[DE] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[DE] We can deploy Written Content Engine for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[DE] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[DE] Yes, while we specialize in {{CITY_NAME}}, our Written Content Engine supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "fr": {
+      "intro": [
+        "[FR] Get a full year of AI-generated blog posts, articles, and social captions—scheduled and ready to publish automatically. No more content planning. Ever."
+      ],
+      "pain_points": [
+        "[FR] 365 AI-written articles (SEO-optimized, 800-1200 words each)",
+        "[FR] Pre-scheduled posting to your blog or LinkedIn",
+        "[FR] Delivered in 48 hours—set it and forget it for a year",
+        "[FR] 90 AI-Written Articles",
+        "[FR] Auto-Scheduled Publishing",
+        "[FR] 180 AI-Written Articles",
+        "[FR] Auto-Scheduled Publishing",
+        "[FR] 365 AI-Written Articles",
+        "[FR] Auto-Scheduled Publishing",
+        "[FR] 730 AI-Written Articles"
+      ],
+      "benefits": [
+        "[FR] **365 AI-written articles:** (SEO-optimized,\n                                800-1200 words each)",
+        "[FR] **Pre-scheduled posting:** to your blog or\n                                LinkedIn",
+        "[FR] **Delivered in 48 hours:** —set it and forget it\n                                for a year"
+      ],
+      "faq": [
+        {
+          "q": "[FR] What is included in Written Content Engine for {{CITY_NAME}} companies?",
+          "a": "[FR] Our Written Content Engine packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[FR] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[FR] We can deploy Written Content Engine for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[FR] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[FR] Yes, while we specialize in {{CITY_NAME}}, our Written Content Engine supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    }
+  },
+  "image-content": {
+    "en": {
+      "intro": [
+        "Get a full year of AI-generated graphics, social media posts, and ad creatives—scheduled and ready to publish automatically. Never run out of visuals again.",
+        "Our AI design team generates, schedules, and delivers a full year of graphics in one go."
+      ],
+      "pain_points": [
+        "365 AI-designed images (social posts, infographics, ads)",
+        "Pre-scheduled posting to Instagram, LinkedIn, or Twitter",
+        "Delivered in 48 hours—your brand stays visible all year",
+        "90 AI-Designed Graphics",
+        "Auto-Scheduled Publishing",
+        "180 AI-Designed Graphics",
+        "Auto-Scheduled Publishing",
+        "365 AI-Designed Graphics",
+        "Auto-Scheduled Publishing",
+        "730 AI-Designed Graphics"
+      ],
+      "benefits": [
+        "**365 AI-designed images:** (social posts,\n                                infographics, ads)",
+        "**Pre-scheduled posting:** to Instagram,\n                                LinkedIn, or Twitter",
+        "**Delivered in 48 hours:** —your brand stays\n                                visible all year"
+      ],
+      "faq": [
+        {
+          "q": "What is included in Image Content Engine for {{CITY_NAME}} companies?",
+          "a": "Our Image Content Engine packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "How quickly can we get started in {{CITY_NAME}}?",
+          "a": "We can deploy Image Content Engine for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "Do you support companies outside of {{CITY_NAME}}?",
+          "a": "Yes, while we specialize in {{CITY_NAME}}, our Image Content Engine supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "de": {
+      "intro": [
+        "[DE] Get a full year of AI-generated graphics, social media posts, and ad creatives—scheduled and ready to publish automatically. Never run out of visuals again.",
+        "[DE] Our AI design team generates, schedules, and delivers a full year of graphics in one go."
+      ],
+      "pain_points": [
+        "[DE] 365 AI-designed images (social posts, infographics, ads)",
+        "[DE] Pre-scheduled posting to Instagram, LinkedIn, or Twitter",
+        "[DE] Delivered in 48 hours—your brand stays visible all year",
+        "[DE] 90 AI-Designed Graphics",
+        "[DE] Auto-Scheduled Publishing",
+        "[DE] 180 AI-Designed Graphics",
+        "[DE] Auto-Scheduled Publishing",
+        "[DE] 365 AI-Designed Graphics",
+        "[DE] Auto-Scheduled Publishing",
+        "[DE] 730 AI-Designed Graphics"
+      ],
+      "benefits": [
+        "[DE] **365 AI-designed images:** (social posts,\n                                infographics, ads)",
+        "[DE] **Pre-scheduled posting:** to Instagram,\n                                LinkedIn, or Twitter",
+        "[DE] **Delivered in 48 hours:** —your brand stays\n                                visible all year"
+      ],
+      "faq": [
+        {
+          "q": "[DE] What is included in Image Content Engine for {{CITY_NAME}} companies?",
+          "a": "[DE] Our Image Content Engine packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[DE] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[DE] We can deploy Image Content Engine for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[DE] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[DE] Yes, while we specialize in {{CITY_NAME}}, our Image Content Engine supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "fr": {
+      "intro": [
+        "[FR] Get a full year of AI-generated graphics, social media posts, and ad creatives—scheduled and ready to publish automatically. Never run out of visuals again.",
+        "[FR] Our AI design team generates, schedules, and delivers a full year of graphics in one go."
+      ],
+      "pain_points": [
+        "[FR] 365 AI-designed images (social posts, infographics, ads)",
+        "[FR] Pre-scheduled posting to Instagram, LinkedIn, or Twitter",
+        "[FR] Delivered in 48 hours—your brand stays visible all year",
+        "[FR] 90 AI-Designed Graphics",
+        "[FR] Auto-Scheduled Publishing",
+        "[FR] 180 AI-Designed Graphics",
+        "[FR] Auto-Scheduled Publishing",
+        "[FR] 365 AI-Designed Graphics",
+        "[FR] Auto-Scheduled Publishing",
+        "[FR] 730 AI-Designed Graphics"
+      ],
+      "benefits": [
+        "[FR] **365 AI-designed images:** (social posts,\n                                infographics, ads)",
+        "[FR] **Pre-scheduled posting:** to Instagram,\n                                LinkedIn, or Twitter",
+        "[FR] **Delivered in 48 hours:** —your brand stays\n                                visible all year"
+      ],
+      "faq": [
+        {
+          "q": "[FR] What is included in Image Content Engine for {{CITY_NAME}} companies?",
+          "a": "[FR] Our Image Content Engine packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[FR] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[FR] We can deploy Image Content Engine for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[FR] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[FR] Yes, while we specialize in {{CITY_NAME}}, our Image Content Engine supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    }
+  },
+  "video-content": {
+    "en": {
+      "intro": [
+        "Get a full year of AI-generated video content—explainers, shorts, and demos—scheduled and ready to publish automatically. No filming. No editing. Just results.",
+        "Our AI video team generates, schedules, and delivers a full year of content in one go."
+      ],
+      "pain_points": [
+        "365 AI-generated videos (30-90 seconds, optimized for each platform)",
+        "Pre-scheduled posting to YouTube, TikTok, LinkedIn, or Instagram",
+        "Delivered in 48 hours—your video pipeline runs on autopilot",
+        "90 AI-Generated Videos",
+        "Auto-Scheduled Publishing",
+        "AI Avatar + Motion Graphics",
+        "180 AI-Generated Videos",
+        "Auto-Scheduled Publishing",
+        "AI Avatar + Motion Graphics",
+        "365 AI-Generated Videos"
+      ],
+      "benefits": [
+        "**365 AI-generated videos:** (30-90 seconds,\n                                optimized for each platform)",
+        "**Pre-scheduled posting:** to YouTube, TikTok,\n                                LinkedIn, or Instagram",
+        "**Delivered in 48 hours:** —your video pipeline\n                                runs on autopilot"
+      ],
+      "faq": [
+        {
+          "q": "What is included in Video Content Engine for {{CITY_NAME}} companies?",
+          "a": "Our Video Content Engine packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "How quickly can we get started in {{CITY_NAME}}?",
+          "a": "We can deploy Video Content Engine for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "Do you support companies outside of {{CITY_NAME}}?",
+          "a": "Yes, while we specialize in {{CITY_NAME}}, our Video Content Engine supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "de": {
+      "intro": [
+        "[DE] Get a full year of AI-generated video content—explainers, shorts, and demos—scheduled and ready to publish automatically. No filming. No editing. Just results.",
+        "[DE] Our AI video team generates, schedules, and delivers a full year of content in one go."
+      ],
+      "pain_points": [
+        "[DE] 365 AI-generated videos (30-90 seconds, optimized for each platform)",
+        "[DE] Pre-scheduled posting to YouTube, TikTok, LinkedIn, or Instagram",
+        "[DE] Delivered in 48 hours—your video pipeline runs on autopilot",
+        "[DE] 90 AI-Generated Videos",
+        "[DE] Auto-Scheduled Publishing",
+        "[DE] AI Avatar + Motion Graphics",
+        "[DE] 180 AI-Generated Videos",
+        "[DE] Auto-Scheduled Publishing",
+        "[DE] AI Avatar + Motion Graphics",
+        "[DE] 365 AI-Generated Videos"
+      ],
+      "benefits": [
+        "[DE] **365 AI-generated videos:** (30-90 seconds,\n                                optimized for each platform)",
+        "[DE] **Pre-scheduled posting:** to YouTube, TikTok,\n                                LinkedIn, or Instagram",
+        "[DE] **Delivered in 48 hours:** —your video pipeline\n                                runs on autopilot"
+      ],
+      "faq": [
+        {
+          "q": "[DE] What is included in Video Content Engine for {{CITY_NAME}} companies?",
+          "a": "[DE] Our Video Content Engine packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[DE] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[DE] We can deploy Video Content Engine for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[DE] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[DE] Yes, while we specialize in {{CITY_NAME}}, our Video Content Engine supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "fr": {
+      "intro": [
+        "[FR] Get a full year of AI-generated video content—explainers, shorts, and demos—scheduled and ready to publish automatically. No filming. No editing. Just results.",
+        "[FR] Our AI video team generates, schedules, and delivers a full year of content in one go."
+      ],
+      "pain_points": [
+        "[FR] 365 AI-generated videos (30-90 seconds, optimized for each platform)",
+        "[FR] Pre-scheduled posting to YouTube, TikTok, LinkedIn, or Instagram",
+        "[FR] Delivered in 48 hours—your video pipeline runs on autopilot",
+        "[FR] 90 AI-Generated Videos",
+        "[FR] Auto-Scheduled Publishing",
+        "[FR] AI Avatar + Motion Graphics",
+        "[FR] 180 AI-Generated Videos",
+        "[FR] Auto-Scheduled Publishing",
+        "[FR] AI Avatar + Motion Graphics",
+        "[FR] 365 AI-Generated Videos"
+      ],
+      "benefits": [
+        "[FR] **365 AI-generated videos:** (30-90 seconds,\n                                optimized for each platform)",
+        "[FR] **Pre-scheduled posting:** to YouTube, TikTok,\n                                LinkedIn, or Instagram",
+        "[FR] **Delivered in 48 hours:** —your video pipeline\n                                runs on autopilot"
+      ],
+      "faq": [
+        {
+          "q": "[FR] What is included in Video Content Engine for {{CITY_NAME}} companies?",
+          "a": "[FR] Our Video Content Engine packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[FR] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[FR] We can deploy Video Content Engine for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[FR] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[FR] Yes, while we specialize in {{CITY_NAME}}, our Video Content Engine supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    }
+  },
+  "b2b-lead-gen": {
+    "en": {
+      "intro": [
+        "As a leading B2B Lead Generation agency, we generate qualified leads and continuously feed your sales pipeline to accelerate your business growth.",
+        "B2B Lead Generation is the process of identifying, qualifying, and preparing potential business customers who show interest in your products or services for your sales team.",
+        "Cold calls, generic email lists, random business card collection at trade shows"
+      ],
+      "pain_points": [
+        "• Firmographic and technographic analysis",
+        "• Intent data timing optimization",
+        "• Social media signals tracking",
+        "• Trigger event monitoring",
+        "• Personalized email sequences",
+        "• LinkedIn Sales Navigator campaigns",
+        "• Cold calling and warm transfers",
+        "• Social media engagement",
+        "• Budget verification",
+        "• Timeline confirmation"
+      ],
+      "benefits": [
+        "**B2B lead generation Europe:** Get answers to common questions about our  services and\n                process.",
+        "**B2B lead generation Europe:** is the process of identifying and attracting potential\n                    business customers for your products or services. Our systematic approach includes:",
+        "**2-4 weeks:** Most clients see initial qualified leads within  of campaign launch. Our\n                    proven process follows this timeline:",
+        "**appointment setting for exporters:** Our  service combines deep market knowledge with\n                    advanced technology:",
+        "**Market Expertise::** 8+ years specializing in European B2B markets",
+        "**Multilingual Team::** Native speakers for German, Turkish, and English markets",
+        "**Quality Focus::** We only book meetings with decision-makers",
+        "**Full Transparency::** Real-time reporting and campaign analytics"
+      ],
+      "faq": [
+        {
+          "q": "What is included in B2B Lead Generation for {{CITY_NAME}} companies?",
+          "a": "Our B2B Lead Generation packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "How quickly can we get started in {{CITY_NAME}}?",
+          "a": "We can deploy B2B Lead Generation for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "Do you support companies outside of {{CITY_NAME}}?",
+          "a": "Yes, while we specialize in {{CITY_NAME}}, our B2B Lead Generation supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "de": {
+      "intro": [
+        "[DE] As a leading B2B Lead Generation agency, we generate qualified leads and continuously feed your sales pipeline to accelerate your business growth.",
+        "[DE] B2B Lead Generation is the process of identifying, qualifying, and preparing potential business customers who show interest in your products or services for your sales team.",
+        "[DE] Cold calls, generic email lists, random business card collection at trade shows"
+      ],
+      "pain_points": [
+        "[DE] • Firmographic and technographic analysis",
+        "[DE] • Intent data timing optimization",
+        "[DE] • Social media signals tracking",
+        "[DE] • Trigger event monitoring",
+        "[DE] • Personalized email sequences",
+        "[DE] • LinkedIn Sales Navigator campaigns",
+        "[DE] • Cold calling and warm transfers",
+        "[DE] • Social media engagement",
+        "[DE] • Budget verification",
+        "[DE] • Timeline confirmation"
+      ],
+      "benefits": [
+        "[DE] **B2B lead generation Europe:** Get answers to common questions about our  services and\n                process.",
+        "[DE] **B2B lead generation Europe:** is the process of identifying and attracting potential\n                    business customers for your products or services. Our systematic approach includes:",
+        "[DE] **2-4 weeks:** Most clients see initial qualified leads within  of campaign launch. Our\n                    proven process follows this timeline:",
+        "[DE] **appointment setting for exporters:** Our  service combines deep market knowledge with\n                    advanced technology:",
+        "[DE] **Market Expertise::** 8+ years specializing in European B2B markets",
+        "[DE] **Multilingual Team::** Native speakers for German, Turkish, and English markets",
+        "[DE] **Quality Focus::** We only book meetings with decision-makers",
+        "[DE] **Full Transparency::** Real-time reporting and campaign analytics"
+      ],
+      "faq": [
+        {
+          "q": "[DE] What is included in B2B Lead Generation for {{CITY_NAME}} companies?",
+          "a": "[DE] Our B2B Lead Generation packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[DE] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[DE] We can deploy B2B Lead Generation for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[DE] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[DE] Yes, while we specialize in {{CITY_NAME}}, our B2B Lead Generation supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "fr": {
+      "intro": [
+        "[FR] As a leading B2B Lead Generation agency, we generate qualified leads and continuously feed your sales pipeline to accelerate your business growth.",
+        "[FR] B2B Lead Generation is the process of identifying, qualifying, and preparing potential business customers who show interest in your products or services for your sales team.",
+        "[FR] Cold calls, generic email lists, random business card collection at trade shows"
+      ],
+      "pain_points": [
+        "[FR] • Firmographic and technographic analysis",
+        "[FR] • Intent data timing optimization",
+        "[FR] • Social media signals tracking",
+        "[FR] • Trigger event monitoring",
+        "[FR] • Personalized email sequences",
+        "[FR] • LinkedIn Sales Navigator campaigns",
+        "[FR] • Cold calling and warm transfers",
+        "[FR] • Social media engagement",
+        "[FR] • Budget verification",
+        "[FR] • Timeline confirmation"
+      ],
+      "benefits": [
+        "[FR] **B2B lead generation Europe:** Get answers to common questions about our  services and\n                process.",
+        "[FR] **B2B lead generation Europe:** is the process of identifying and attracting potential\n                    business customers for your products or services. Our systematic approach includes:",
+        "[FR] **2-4 weeks:** Most clients see initial qualified leads within  of campaign launch. Our\n                    proven process follows this timeline:",
+        "[FR] **appointment setting for exporters:** Our  service combines deep market knowledge with\n                    advanced technology:",
+        "[FR] **Market Expertise::** 8+ years specializing in European B2B markets",
+        "[FR] **Multilingual Team::** Native speakers for German, Turkish, and English markets",
+        "[FR] **Quality Focus::** We only book meetings with decision-makers",
+        "[FR] **Full Transparency::** Real-time reporting and campaign analytics"
+      ],
+      "faq": [
+        {
+          "q": "[FR] What is included in B2B Lead Generation for {{CITY_NAME}} companies?",
+          "a": "[FR] Our B2B Lead Generation packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[FR] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[FR] We can deploy B2B Lead Generation for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[FR] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[FR] Yes, while we specialize in {{CITY_NAME}}, our B2B Lead Generation supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    }
+  },
+  "outreach-software": {
+    "en": {
+      "intro": [
+        "Sales tools are complex. We optimize your outreach stack (Lemlist, Instantly, Apollo) for maximum deliverability and automation, so you just focus on closing.",
+        "Most sales teams spend 30% of their time fixing tech issues instead of selling. DIY setups lead to the spam folder.",
+        "Without proper DNS warming and rotation, your emails land in spam. You burn through leads without ever reaching clarity."
+      ],
+      "pain_points": [
+        "Lack of specialized expertise in {{CITY_NAME}}",
+        "High costs of traditional solutions",
+        "Difficulty scaling operations",
+        "Time-consuming manual processes",
+        "Limited visibility into performance",
+        "Compliance and regulatory challenges in {{COUNTRY_NAME}}",
+        "Integration issues with existing systems",
+        "Inconsistent results and quality",
+        "Poor customer support and response times",
+        "Inability to compete with larger companies"
+      ],
+      "benefits": [
+        "**Rapid Deployment:** Get started in 48 hours or less.",
+        "**Local Expertise:** Deep understanding of the {{CITY_NAME}} market.",
+        "**Cost Effective:** Predictable pricing with no hidden fees.",
+        "**Scalable Solution:** Grows with your business needs.",
+        "**Expert Support:** Dedicated team available when you need them.",
+        "**Proven Results:** Track record of success in {{COUNTRY_NAME}}.",
+        "**Compliance Ready:** Meet all local regulatory requirements.",
+        "**Integration Friendly:** Works with your existing tools and systems."
+      ],
+      "faq": [
+        {
+          "q": "What is included in Outreach Software Management for {{CITY_NAME}} companies?",
+          "a": "Our Outreach Software Management packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "How quickly can we get started in {{CITY_NAME}}?",
+          "a": "We can deploy Outreach Software Management for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "Do you support companies outside of {{CITY_NAME}}?",
+          "a": "Yes, while we specialize in {{CITY_NAME}}, our Outreach Software Management supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "de": {
+      "intro": [
+        "[DE] Sales tools are complex. We optimize your outreach stack (Lemlist, Instantly, Apollo) for maximum deliverability and automation, so you just focus on closing.",
+        "[DE] Most sales teams spend 30% of their time fixing tech issues instead of selling. DIY setups lead to the spam folder.",
+        "[DE] Without proper DNS warming and rotation, your emails land in spam. You burn through leads without ever reaching clarity."
+      ],
+      "pain_points": [
+        "[DE] Lack of specialized expertise in {{CITY_NAME}}",
+        "[DE] High costs of traditional solutions",
+        "[DE] Difficulty scaling operations",
+        "[DE] Time-consuming manual processes",
+        "[DE] Limited visibility into performance",
+        "[DE] Compliance and regulatory challenges in {{COUNTRY_NAME}}",
+        "[DE] Integration issues with existing systems",
+        "[DE] Inconsistent results and quality",
+        "[DE] Poor customer support and response times",
+        "[DE] Inability to compete with larger companies"
+      ],
+      "benefits": [
+        "[DE] **Rapid Deployment:** Get started in 48 hours or less.",
+        "[DE] **Local Expertise:** Deep understanding of the {{CITY_NAME}} market.",
+        "[DE] **Cost Effective:** Predictable pricing with no hidden fees.",
+        "[DE] **Scalable Solution:** Grows with your business needs.",
+        "[DE] **Expert Support:** Dedicated team available when you need them.",
+        "[DE] **Proven Results:** Track record of success in {{COUNTRY_NAME}}.",
+        "[DE] **Compliance Ready:** Meet all local regulatory requirements.",
+        "[DE] **Integration Friendly:** Works with your existing tools and systems."
+      ],
+      "faq": [
+        {
+          "q": "[DE] What is included in Outreach Software Management for {{CITY_NAME}} companies?",
+          "a": "[DE] Our Outreach Software Management packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[DE] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[DE] We can deploy Outreach Software Management for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[DE] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[DE] Yes, while we specialize in {{CITY_NAME}}, our Outreach Software Management supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "fr": {
+      "intro": [
+        "[FR] Sales tools are complex. We optimize your outreach stack (Lemlist, Instantly, Apollo) for maximum deliverability and automation, so you just focus on closing.",
+        "[FR] Most sales teams spend 30% of their time fixing tech issues instead of selling. DIY setups lead to the spam folder.",
+        "[FR] Without proper DNS warming and rotation, your emails land in spam. You burn through leads without ever reaching clarity."
+      ],
+      "pain_points": [
+        "[FR] Lack of specialized expertise in {{CITY_NAME}}",
+        "[FR] High costs of traditional solutions",
+        "[FR] Difficulty scaling operations",
+        "[FR] Time-consuming manual processes",
+        "[FR] Limited visibility into performance",
+        "[FR] Compliance and regulatory challenges in {{COUNTRY_NAME}}",
+        "[FR] Integration issues with existing systems",
+        "[FR] Inconsistent results and quality",
+        "[FR] Poor customer support and response times",
+        "[FR] Inability to compete with larger companies"
+      ],
+      "benefits": [
+        "[FR] **Rapid Deployment:** Get started in 48 hours or less.",
+        "[FR] **Local Expertise:** Deep understanding of the {{CITY_NAME}} market.",
+        "[FR] **Cost Effective:** Predictable pricing with no hidden fees.",
+        "[FR] **Scalable Solution:** Grows with your business needs.",
+        "[FR] **Expert Support:** Dedicated team available when you need them.",
+        "[FR] **Proven Results:** Track record of success in {{COUNTRY_NAME}}.",
+        "[FR] **Compliance Ready:** Meet all local regulatory requirements.",
+        "[FR] **Integration Friendly:** Works with your existing tools and systems."
+      ],
+      "faq": [
+        {
+          "q": "[FR] What is included in Outreach Software Management for {{CITY_NAME}} companies?",
+          "a": "[FR] Our Outreach Software Management packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[FR] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[FR] We can deploy Outreach Software Management for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[FR] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[FR] Yes, while we specialize in {{CITY_NAME}}, our Outreach Software Management supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    }
+  },
+  "crm-management": {
+    "en": {
+      "intro": [
+        "A messy CRM costs you revenue every single day. We clean your data, automate your workflows, and build dashboards that actually make sense.",
+        "We merge duplicates, standardize formatting, enrich missing fields, and validate emails. Garbage out, Gold in.",
+        "Automate lead assignment, follow-up reminders, deal movement, and contract generation. Stop doing busy work."
+      ],
+      "pain_points": [
+        "Lack of specialized expertise in {{CITY_NAME}}",
+        "High costs of traditional solutions",
+        "Difficulty scaling operations",
+        "Time-consuming manual processes",
+        "Limited visibility into performance",
+        "Compliance and regulatory challenges in {{COUNTRY_NAME}}",
+        "Integration issues with existing systems",
+        "Inconsistent results and quality",
+        "Poor customer support and response times",
+        "Inability to compete with larger companies"
+      ],
+      "benefits": [
+        "**Rapid Deployment:** Get started in 48 hours or less.",
+        "**Local Expertise:** Deep understanding of the {{CITY_NAME}} market.",
+        "**Cost Effective:** Predictable pricing with no hidden fees.",
+        "**Scalable Solution:** Grows with your business needs.",
+        "**Expert Support:** Dedicated team available when you need them.",
+        "**Proven Results:** Track record of success in {{COUNTRY_NAME}}.",
+        "**Compliance Ready:** Meet all local regulatory requirements.",
+        "**Integration Friendly:** Works with your existing tools and systems."
+      ],
+      "faq": [
+        {
+          "q": "What is included in CRM Management for {{CITY_NAME}} companies?",
+          "a": "Our CRM Management packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "How quickly can we get started in {{CITY_NAME}}?",
+          "a": "We can deploy CRM Management for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "Do you support companies outside of {{CITY_NAME}}?",
+          "a": "Yes, while we specialize in {{CITY_NAME}}, our CRM Management supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "de": {
+      "intro": [
+        "[DE] A messy CRM costs you revenue every single day. We clean your data, automate your workflows, and build dashboards that actually make sense.",
+        "[DE] We merge duplicates, standardize formatting, enrich missing fields, and validate emails. Garbage out, Gold in.",
+        "[DE] Automate lead assignment, follow-up reminders, deal movement, and contract generation. Stop doing busy work."
+      ],
+      "pain_points": [
+        "[DE] Lack of specialized expertise in {{CITY_NAME}}",
+        "[DE] High costs of traditional solutions",
+        "[DE] Difficulty scaling operations",
+        "[DE] Time-consuming manual processes",
+        "[DE] Limited visibility into performance",
+        "[DE] Compliance and regulatory challenges in {{COUNTRY_NAME}}",
+        "[DE] Integration issues with existing systems",
+        "[DE] Inconsistent results and quality",
+        "[DE] Poor customer support and response times",
+        "[DE] Inability to compete with larger companies"
+      ],
+      "benefits": [
+        "[DE] **Rapid Deployment:** Get started in 48 hours or less.",
+        "[DE] **Local Expertise:** Deep understanding of the {{CITY_NAME}} market.",
+        "[DE] **Cost Effective:** Predictable pricing with no hidden fees.",
+        "[DE] **Scalable Solution:** Grows with your business needs.",
+        "[DE] **Expert Support:** Dedicated team available when you need them.",
+        "[DE] **Proven Results:** Track record of success in {{COUNTRY_NAME}}.",
+        "[DE] **Compliance Ready:** Meet all local regulatory requirements.",
+        "[DE] **Integration Friendly:** Works with your existing tools and systems."
+      ],
+      "faq": [
+        {
+          "q": "[DE] What is included in CRM Management for {{CITY_NAME}} companies?",
+          "a": "[DE] Our CRM Management packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[DE] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[DE] We can deploy CRM Management for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[DE] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[DE] Yes, while we specialize in {{CITY_NAME}}, our CRM Management supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "fr": {
+      "intro": [
+        "[FR] A messy CRM costs you revenue every single day. We clean your data, automate your workflows, and build dashboards that actually make sense.",
+        "[FR] We merge duplicates, standardize formatting, enrich missing fields, and validate emails. Garbage out, Gold in.",
+        "[FR] Automate lead assignment, follow-up reminders, deal movement, and contract generation. Stop doing busy work."
+      ],
+      "pain_points": [
+        "[FR] Lack of specialized expertise in {{CITY_NAME}}",
+        "[FR] High costs of traditional solutions",
+        "[FR] Difficulty scaling operations",
+        "[FR] Time-consuming manual processes",
+        "[FR] Limited visibility into performance",
+        "[FR] Compliance and regulatory challenges in {{COUNTRY_NAME}}",
+        "[FR] Integration issues with existing systems",
+        "[FR] Inconsistent results and quality",
+        "[FR] Poor customer support and response times",
+        "[FR] Inability to compete with larger companies"
+      ],
+      "benefits": [
+        "[FR] **Rapid Deployment:** Get started in 48 hours or less.",
+        "[FR] **Local Expertise:** Deep understanding of the {{CITY_NAME}} market.",
+        "[FR] **Cost Effective:** Predictable pricing with no hidden fees.",
+        "[FR] **Scalable Solution:** Grows with your business needs.",
+        "[FR] **Expert Support:** Dedicated team available when you need them.",
+        "[FR] **Proven Results:** Track record of success in {{COUNTRY_NAME}}.",
+        "[FR] **Compliance Ready:** Meet all local regulatory requirements.",
+        "[FR] **Integration Friendly:** Works with your existing tools and systems."
+      ],
+      "faq": [
+        {
+          "q": "[FR] What is included in CRM Management for {{CITY_NAME}} companies?",
+          "a": "[FR] Our CRM Management packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[FR] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[FR] We can deploy CRM Management for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[FR] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[FR] Yes, while we specialize in {{CITY_NAME}}, our CRM Management supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    }
+  },
+  "sales-ops": {
+    "en": {
+      "intro": [
+        "Build a predictable revenue engine with our managed SDR teams. We handle the recruiting, training, and management—you get the qualified meetings.",
+        "Skip the hiring headaches and ramp-up time. Get instant access to top-tier sales talent and proven processes."
+      ],
+      "pain_points": [
+        "Lack of specialized expertise in {{CITY_NAME}}",
+        "High costs of traditional solutions",
+        "Difficulty scaling operations",
+        "Time-consuming manual processes",
+        "Limited visibility into performance",
+        "Compliance and regulatory challenges in {{COUNTRY_NAME}}",
+        "Integration issues with existing systems",
+        "Inconsistent results and quality",
+        "Poor customer support and response times",
+        "Inability to compete with larger companies"
+      ],
+      "benefits": [
+        "**Rapid Deployment:** Get started in 48 hours or less.",
+        "**Local Expertise:** Deep understanding of the {{CITY_NAME}} market.",
+        "**Cost Effective:** Predictable pricing with no hidden fees.",
+        "**Scalable Solution:** Grows with your business needs.",
+        "**Expert Support:** Dedicated team available when you need them.",
+        "**Proven Results:** Track record of success in {{COUNTRY_NAME}}.",
+        "**Compliance Ready:** Meet all local regulatory requirements.",
+        "**Integration Friendly:** Works with your existing tools and systems."
+      ],
+      "faq": [
+        {
+          "q": "What is included in Sales Operations for {{CITY_NAME}} companies?",
+          "a": "Our Sales Operations packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "How quickly can we get started in {{CITY_NAME}}?",
+          "a": "We can deploy Sales Operations for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "Do you support companies outside of {{CITY_NAME}}?",
+          "a": "Yes, while we specialize in {{CITY_NAME}}, our Sales Operations supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "de": {
+      "intro": [
+        "[DE] Build a predictable revenue engine with our managed SDR teams. We handle the recruiting, training, and management—you get the qualified meetings.",
+        "[DE] Skip the hiring headaches and ramp-up time. Get instant access to top-tier sales talent and proven processes."
+      ],
+      "pain_points": [
+        "[DE] Lack of specialized expertise in {{CITY_NAME}}",
+        "[DE] High costs of traditional solutions",
+        "[DE] Difficulty scaling operations",
+        "[DE] Time-consuming manual processes",
+        "[DE] Limited visibility into performance",
+        "[DE] Compliance and regulatory challenges in {{COUNTRY_NAME}}",
+        "[DE] Integration issues with existing systems",
+        "[DE] Inconsistent results and quality",
+        "[DE] Poor customer support and response times",
+        "[DE] Inability to compete with larger companies"
+      ],
+      "benefits": [
+        "[DE] **Rapid Deployment:** Get started in 48 hours or less.",
+        "[DE] **Local Expertise:** Deep understanding of the {{CITY_NAME}} market.",
+        "[DE] **Cost Effective:** Predictable pricing with no hidden fees.",
+        "[DE] **Scalable Solution:** Grows with your business needs.",
+        "[DE] **Expert Support:** Dedicated team available when you need them.",
+        "[DE] **Proven Results:** Track record of success in {{COUNTRY_NAME}}.",
+        "[DE] **Compliance Ready:** Meet all local regulatory requirements.",
+        "[DE] **Integration Friendly:** Works with your existing tools and systems."
+      ],
+      "faq": [
+        {
+          "q": "[DE] What is included in Sales Operations for {{CITY_NAME}} companies?",
+          "a": "[DE] Our Sales Operations packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[DE] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[DE] We can deploy Sales Operations for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[DE] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[DE] Yes, while we specialize in {{CITY_NAME}}, our Sales Operations supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "fr": {
+      "intro": [
+        "[FR] Build a predictable revenue engine with our managed SDR teams. We handle the recruiting, training, and management—you get the qualified meetings.",
+        "[FR] Skip the hiring headaches and ramp-up time. Get instant access to top-tier sales talent and proven processes."
+      ],
+      "pain_points": [
+        "[FR] Lack of specialized expertise in {{CITY_NAME}}",
+        "[FR] High costs of traditional solutions",
+        "[FR] Difficulty scaling operations",
+        "[FR] Time-consuming manual processes",
+        "[FR] Limited visibility into performance",
+        "[FR] Compliance and regulatory challenges in {{COUNTRY_NAME}}",
+        "[FR] Integration issues with existing systems",
+        "[FR] Inconsistent results and quality",
+        "[FR] Poor customer support and response times",
+        "[FR] Inability to compete with larger companies"
+      ],
+      "benefits": [
+        "[FR] **Rapid Deployment:** Get started in 48 hours or less.",
+        "[FR] **Local Expertise:** Deep understanding of the {{CITY_NAME}} market.",
+        "[FR] **Cost Effective:** Predictable pricing with no hidden fees.",
+        "[FR] **Scalable Solution:** Grows with your business needs.",
+        "[FR] **Expert Support:** Dedicated team available when you need them.",
+        "[FR] **Proven Results:** Track record of success in {{COUNTRY_NAME}}.",
+        "[FR] **Compliance Ready:** Meet all local regulatory requirements.",
+        "[FR] **Integration Friendly:** Works with your existing tools and systems."
+      ],
+      "faq": [
+        {
+          "q": "[FR] What is included in Sales Operations for {{CITY_NAME}} companies?",
+          "a": "[FR] Our Sales Operations packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[FR] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[FR] We can deploy Sales Operations for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[FR] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[FR] Yes, while we specialize in {{CITY_NAME}}, our Sales Operations supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    }
+  },
+  "managed-it": {
+    "en": {
+      "intro": [
+        "Empower your business with proactive IT support, bulletproof security, and expert infrastructure management. We handle the tech so you can focus on growth.",
+        "Professional helpdesk support and remote management for your entire team. We monitor your systems around the clock to prevent downtime before it happens.",
+        "Stay ahead of threats with regular security audits and vulnerability scanning. We identify weaknesses in your perimeter before attackers do."
+      ],
+      "pain_points": [
+        "Unlimited Remote Helpdesk Support",
+        "Proactive 24/7 Server & Network Monitoring",
+        "Device Management (MDM) for All Platforms",
+        "Patch Management & Software Updates",
+        "External & Internal Perimeter Scanning",
+        "Dark Web Monitoring for Credential Leaks",
+        "Compliance Readiness (GDPR, SOC2, ISO 27001)",
+        "Social Engineering & Phishing Simulations"
+      ],
+      "benefits": [
+        "**Rapid Deployment:** Get started in 48 hours or less.",
+        "**Local Expertise:** Deep understanding of the {{CITY_NAME}} market.",
+        "**Cost Effective:** Predictable pricing with no hidden fees.",
+        "**Scalable Solution:** Grows with your business needs.",
+        "**Expert Support:** Dedicated team available when you need them.",
+        "**Proven Results:** Track record of success in {{COUNTRY_NAME}}.",
+        "**Compliance Ready:** Meet all local regulatory requirements.",
+        "**Integration Friendly:** Works with your existing tools and systems."
+      ],
+      "faq": [
+        {
+          "q": "What is included in Managed IT & Cyber for {{CITY_NAME}} companies?",
+          "a": "Our Managed IT & Cyber packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "How quickly can we get started in {{CITY_NAME}}?",
+          "a": "We can deploy Managed IT & Cyber for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "Do you support companies outside of {{CITY_NAME}}?",
+          "a": "Yes, while we specialize in {{CITY_NAME}}, our Managed IT & Cyber supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "de": {
+      "intro": [
+        "[DE] Empower your business with proactive IT support, bulletproof security, and expert infrastructure management. We handle the tech so you can focus on growth.",
+        "[DE] Professional helpdesk support and remote management for your entire team. We monitor your systems around the clock to prevent downtime before it happens.",
+        "[DE] Stay ahead of threats with regular security audits and vulnerability scanning. We identify weaknesses in your perimeter before attackers do."
+      ],
+      "pain_points": [
+        "[DE] Unlimited Remote Helpdesk Support",
+        "[DE] Proactive 24/7 Server & Network Monitoring",
+        "[DE] Device Management (MDM) for All Platforms",
+        "[DE] Patch Management & Software Updates",
+        "[DE] External & Internal Perimeter Scanning",
+        "[DE] Dark Web Monitoring for Credential Leaks",
+        "[DE] Compliance Readiness (GDPR, SOC2, ISO 27001)",
+        "[DE] Social Engineering & Phishing Simulations"
+      ],
+      "benefits": [
+        "[DE] **Rapid Deployment:** Get started in 48 hours or less.",
+        "[DE] **Local Expertise:** Deep understanding of the {{CITY_NAME}} market.",
+        "[DE] **Cost Effective:** Predictable pricing with no hidden fees.",
+        "[DE] **Scalable Solution:** Grows with your business needs.",
+        "[DE] **Expert Support:** Dedicated team available when you need them.",
+        "[DE] **Proven Results:** Track record of success in {{COUNTRY_NAME}}.",
+        "[DE] **Compliance Ready:** Meet all local regulatory requirements.",
+        "[DE] **Integration Friendly:** Works with your existing tools and systems."
+      ],
+      "faq": [
+        {
+          "q": "[DE] What is included in Managed IT & Cyber for {{CITY_NAME}} companies?",
+          "a": "[DE] Our Managed IT & Cyber packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[DE] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[DE] We can deploy Managed IT & Cyber for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[DE] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[DE] Yes, while we specialize in {{CITY_NAME}}, our Managed IT & Cyber supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "fr": {
+      "intro": [
+        "[FR] Empower your business with proactive IT support, bulletproof security, and expert infrastructure management. We handle the tech so you can focus on growth.",
+        "[FR] Professional helpdesk support and remote management for your entire team. We monitor your systems around the clock to prevent downtime before it happens.",
+        "[FR] Stay ahead of threats with regular security audits and vulnerability scanning. We identify weaknesses in your perimeter before attackers do."
+      ],
+      "pain_points": [
+        "[FR] Unlimited Remote Helpdesk Support",
+        "[FR] Proactive 24/7 Server & Network Monitoring",
+        "[FR] Device Management (MDM) for All Platforms",
+        "[FR] Patch Management & Software Updates",
+        "[FR] External & Internal Perimeter Scanning",
+        "[FR] Dark Web Monitoring for Credential Leaks",
+        "[FR] Compliance Readiness (GDPR, SOC2, ISO 27001)",
+        "[FR] Social Engineering & Phishing Simulations"
+      ],
+      "benefits": [
+        "[FR] **Rapid Deployment:** Get started in 48 hours or less.",
+        "[FR] **Local Expertise:** Deep understanding of the {{CITY_NAME}} market.",
+        "[FR] **Cost Effective:** Predictable pricing with no hidden fees.",
+        "[FR] **Scalable Solution:** Grows with your business needs.",
+        "[FR] **Expert Support:** Dedicated team available when you need them.",
+        "[FR] **Proven Results:** Track record of success in {{COUNTRY_NAME}}.",
+        "[FR] **Compliance Ready:** Meet all local regulatory requirements.",
+        "[FR] **Integration Friendly:** Works with your existing tools and systems."
+      ],
+      "faq": [
+        {
+          "q": "[FR] What is included in Managed IT & Cyber for {{CITY_NAME}} companies?",
+          "a": "[FR] Our Managed IT & Cyber packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[FR] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[FR] We can deploy Managed IT & Cyber for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[FR] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[FR] Yes, while we specialize in {{CITY_NAME}}, our Managed IT & Cyber supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    }
+  },
+  "small-business-growth": {
+    "en": {
+      "intro": [
+        "We don't just send emails; we operate your local business development unit. We build the digital infrastructure and execute the territory development required to launch your brand in a new market."
+      ],
+      "pain_points": [
+        "Local Domain ProcurementRegion-specific domains (.ch, .de, .co.uk) to bypass filters & build trust.",
+        "Workspace Structure10 Google Workspaces (partners@, accounts@) for department verification.",
+        "Local PresenceLocal phone number provisioning and \"Virtual Office\" footprint.",
+        "Technical ComplianceFull DNS/DKIM/DMARC authentication for enterprise deliverability.",
+        "Competitor MappingAnalyzing incumbents to identify the specific market gap for your brand.",
+        "Cultural AdaptationRewriting messaging for local business etiquette (localization, not translation).",
+        "Persona DevelopmentCreating profiles for \"Regional Managers\" to appear as senior consultants.",
+        "Asset LocalizationAdapting sales collateral and signatures for the target region.",
+        "Ecosystem OutreachCampaigns targeting partners and multipliers, not just end-clients.",
+        "Multi-Channel TouchpointsEmail scripts + LinkedIn actions as a unified \"Business Development\" effort."
+      ],
+      "benefits": [
+        "**Local Domain Procurement:** Region-specific domains (.ch, .de, .co.uk) to\n                                    bypass filters & build trust.",
+        "**Workspace Structure:** 10 Google Workspaces (partners@, accounts@) for\n                                    department verification.",
+        "**Local Presence:** Local phone number provisioning and \"Virtual\n                                    Office\" footprint.",
+        "**Technical Compliance:** Full DNS/DKIM/DMARC authentication for\n                                    enterprise deliverability.",
+        "**Competitor Mapping:** Analyzing incumbents to identify the specific\n                                    market gap for your brand.",
+        "**Cultural Adaptation:** Rewriting messaging for local business\n                                    etiquette (localization, not translation).",
+        "**Persona Development:** Creating profiles for \"Regional Managers\" to\n                                    appear as senior consultants.",
+        "**Asset Localization:** Adapting sales collateral and signatures for\n                                    the target region."
+      ],
+      "faq": [
+        {
+          "q": "What is included in Small Business Growth for {{CITY_NAME}} companies?",
+          "a": "Our Small Business Growth packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "How quickly can we get started in {{CITY_NAME}}?",
+          "a": "We can deploy Small Business Growth for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "Do you support companies outside of {{CITY_NAME}}?",
+          "a": "Yes, while we specialize in {{CITY_NAME}}, our Small Business Growth supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "de": {
+      "intro": [
+        "[DE] We don't just send emails; we operate your local business development unit. We build the digital infrastructure and execute the territory development required to launch your brand in a new market."
+      ],
+      "pain_points": [
+        "[DE] Local Domain ProcurementRegion-specific domains (.ch, .de, .co.uk) to bypass filters & build trust.",
+        "[DE] Workspace Structure10 Google Workspaces (partners@, accounts@) for department verification.",
+        "[DE] Local PresenceLocal phone number provisioning and \"Virtual Office\" footprint.",
+        "[DE] Technical ComplianceFull DNS/DKIM/DMARC authentication for enterprise deliverability.",
+        "[DE] Competitor MappingAnalyzing incumbents to identify the specific market gap for your brand.",
+        "[DE] Cultural AdaptationRewriting messaging for local business etiquette (localization, not translation).",
+        "[DE] Persona DevelopmentCreating profiles for \"Regional Managers\" to appear as senior consultants.",
+        "[DE] Asset LocalizationAdapting sales collateral and signatures for the target region.",
+        "[DE] Ecosystem OutreachCampaigns targeting partners and multipliers, not just end-clients.",
+        "[DE] Multi-Channel TouchpointsEmail scripts + LinkedIn actions as a unified \"Business Development\" effort."
+      ],
+      "benefits": [
+        "[DE] **Local Domain Procurement:** Region-specific domains (.ch, .de, .co.uk) to\n                                    bypass filters & build trust.",
+        "[DE] **Workspace Structure:** 10 Google Workspaces (partners@, accounts@) for\n                                    department verification.",
+        "[DE] **Local Presence:** Local phone number provisioning and \"Virtual\n                                    Office\" footprint.",
+        "[DE] **Technical Compliance:** Full DNS/DKIM/DMARC authentication for\n                                    enterprise deliverability.",
+        "[DE] **Competitor Mapping:** Analyzing incumbents to identify the specific\n                                    market gap for your brand.",
+        "[DE] **Cultural Adaptation:** Rewriting messaging for local business\n                                    etiquette (localization, not translation).",
+        "[DE] **Persona Development:** Creating profiles for \"Regional Managers\" to\n                                    appear as senior consultants.",
+        "[DE] **Asset Localization:** Adapting sales collateral and signatures for\n                                    the target region."
+      ],
+      "faq": [
+        {
+          "q": "[DE] What is included in Small Business Growth for {{CITY_NAME}} companies?",
+          "a": "[DE] Our Small Business Growth packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[DE] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[DE] We can deploy Small Business Growth for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[DE] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[DE] Yes, while we specialize in {{CITY_NAME}}, our Small Business Growth supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "fr": {
+      "intro": [
+        "[FR] We don't just send emails; we operate your local business development unit. We build the digital infrastructure and execute the territory development required to launch your brand in a new market."
+      ],
+      "pain_points": [
+        "[FR] Local Domain ProcurementRegion-specific domains (.ch, .de, .co.uk) to bypass filters & build trust.",
+        "[FR] Workspace Structure10 Google Workspaces (partners@, accounts@) for department verification.",
+        "[FR] Local PresenceLocal phone number provisioning and \"Virtual Office\" footprint.",
+        "[FR] Technical ComplianceFull DNS/DKIM/DMARC authentication for enterprise deliverability.",
+        "[FR] Competitor MappingAnalyzing incumbents to identify the specific market gap for your brand.",
+        "[FR] Cultural AdaptationRewriting messaging for local business etiquette (localization, not translation).",
+        "[FR] Persona DevelopmentCreating profiles for \"Regional Managers\" to appear as senior consultants.",
+        "[FR] Asset LocalizationAdapting sales collateral and signatures for the target region.",
+        "[FR] Ecosystem OutreachCampaigns targeting partners and multipliers, not just end-clients.",
+        "[FR] Multi-Channel TouchpointsEmail scripts + LinkedIn actions as a unified \"Business Development\" effort."
+      ],
+      "benefits": [
+        "[FR] **Local Domain Procurement:** Region-specific domains (.ch, .de, .co.uk) to\n                                    bypass filters & build trust.",
+        "[FR] **Workspace Structure:** 10 Google Workspaces (partners@, accounts@) for\n                                    department verification.",
+        "[FR] **Local Presence:** Local phone number provisioning and \"Virtual\n                                    Office\" footprint.",
+        "[FR] **Technical Compliance:** Full DNS/DKIM/DMARC authentication for\n                                    enterprise deliverability.",
+        "[FR] **Competitor Mapping:** Analyzing incumbents to identify the specific\n                                    market gap for your brand.",
+        "[FR] **Cultural Adaptation:** Rewriting messaging for local business\n                                    etiquette (localization, not translation).",
+        "[FR] **Persona Development:** Creating profiles for \"Regional Managers\" to\n                                    appear as senior consultants.",
+        "[FR] **Asset Localization:** Adapting sales collateral and signatures for\n                                    the target region."
+      ],
+      "faq": [
+        {
+          "q": "[FR] What is included in Small Business Growth for {{CITY_NAME}} companies?",
+          "a": "[FR] Our Small Business Growth packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[FR] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[FR] We can deploy Small Business Growth for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[FR] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[FR] Yes, while we specialize in {{CITY_NAME}}, our Small Business Growth supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    }
+  },
+  "market-accelerator": {
+    "en": {
+      "intro": [
+        "READ BEFORE PROCEEDING: This program is designed for companies that want to stop relying on local sales partners or distributors.",
+        "If you are tired of paying high commissions to partners who are slow, hide information, or own your customer relationships, this service is for you. We replace them with a systematic, digital-first sales operation that you control.",
+        "We look for the customer, set up the meeting, and manage the offer process. You own the data. You own the relationship."
+      ],
+      "pain_points": [
+        "Direct Outreach: We contact them directly using your new local digital office.",
+        "Local Visibility: Your \"Virtual Branch\" appears in local searches.",
+        "Signal Capture: We track profile visits and reach out immediately.",
+        "Content Syndication: We distribute your case studies to relevant local industry groups.",
+        "Lower Cost Cheaper than giving away 20-30% margin to a distributor.",
+        "Full Transparency You see every conversation. No partner hiding the truth from you.",
+        "Direct Relationships The customers belong to you, not a third party.",
+        "Asset Building You are building a proprietary database of market contacts that increases your company's valuation.",
+        "Your distributors are slow to respond to your requests.",
+        "You have no direct access to end-customers."
+      ],
+      "benefits": [
+        "**READ BEFORE PROCEEDING::** This program is designed for companies that want to stop relying on\n            local sales partners or distributors.",
+        "**Systematic Targeting::** Precise list of\n                                                3,000+ verified decision makers aligned with your Ideal\n                                                Customer Profile.",
+        "**3,000+ verified decision makers:** Systematic Targeting: Precise list of\n                                                 aligned with your Ideal\n                                                Customer Profile.",
+        "**Direct Outreach::** We contact them\n                                                directly using your new local digital office.",
+        "**Volume & Consistency::** We generate\n                                                consistent activity week after week, ensuring your pipeline never dries\n                                                up.",
+        "**Local Visibility::** Your \"Virtual\n                                                Branch\" appears in local searches.",
+        "**Signal Capture::** We track profile\n                                                visits and reach out immediately.",
+        "**Content Syndication::** We distribute\n                                                your case studies to relevant local industry groups."
+      ],
+      "faq": [
+        {
+          "q": "What is included in Market Accelerator for {{CITY_NAME}} companies?",
+          "a": "Our Market Accelerator packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "How quickly can we get started in {{CITY_NAME}}?",
+          "a": "We can deploy Market Accelerator for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "Do you support companies outside of {{CITY_NAME}}?",
+          "a": "Yes, while we specialize in {{CITY_NAME}}, our Market Accelerator supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "de": {
+      "intro": [
+        "[DE] READ BEFORE PROCEEDING: This program is designed for companies that want to stop relying on local sales partners or distributors.",
+        "[DE] If you are tired of paying high commissions to partners who are slow, hide information, or own your customer relationships, this service is for you. We replace them with a systematic, digital-first sales operation that you control.",
+        "[DE] We look for the customer, set up the meeting, and manage the offer process. You own the data. You own the relationship."
+      ],
+      "pain_points": [
+        "[DE] Direct Outreach: We contact them directly using your new local digital office.",
+        "[DE] Local Visibility: Your \"Virtual Branch\" appears in local searches.",
+        "[DE] Signal Capture: We track profile visits and reach out immediately.",
+        "[DE] Content Syndication: We distribute your case studies to relevant local industry groups.",
+        "[DE] Lower Cost Cheaper than giving away 20-30% margin to a distributor.",
+        "[DE] Full Transparency You see every conversation. No partner hiding the truth from you.",
+        "[DE] Direct Relationships The customers belong to you, not a third party.",
+        "[DE] Asset Building You are building a proprietary database of market contacts that increases your company's valuation.",
+        "[DE] Your distributors are slow to respond to your requests.",
+        "[DE] You have no direct access to end-customers."
+      ],
+      "benefits": [
+        "[DE] **READ BEFORE PROCEEDING::** This program is designed for companies that want to stop relying on\n            local sales partners or distributors.",
+        "[DE] **Systematic Targeting::** Precise list of\n                                                3,000+ verified decision makers aligned with your Ideal\n                                                Customer Profile.",
+        "[DE] **3,000+ verified decision makers:** Systematic Targeting: Precise list of\n                                                 aligned with your Ideal\n                                                Customer Profile.",
+        "[DE] **Direct Outreach::** We contact them\n                                                directly using your new local digital office.",
+        "[DE] **Volume & Consistency::** We generate\n                                                consistent activity week after week, ensuring your pipeline never dries\n                                                up.",
+        "[DE] **Local Visibility::** Your \"Virtual\n                                                Branch\" appears in local searches.",
+        "[DE] **Signal Capture::** We track profile\n                                                visits and reach out immediately.",
+        "[DE] **Content Syndication::** We distribute\n                                                your case studies to relevant local industry groups."
+      ],
+      "faq": [
+        {
+          "q": "[DE] What is included in Market Accelerator for {{CITY_NAME}} companies?",
+          "a": "[DE] Our Market Accelerator packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[DE] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[DE] We can deploy Market Accelerator for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[DE] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[DE] Yes, while we specialize in {{CITY_NAME}}, our Market Accelerator supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    },
+    "fr": {
+      "intro": [
+        "[FR] READ BEFORE PROCEEDING: This program is designed for companies that want to stop relying on local sales partners or distributors.",
+        "[FR] If you are tired of paying high commissions to partners who are slow, hide information, or own your customer relationships, this service is for you. We replace them with a systematic, digital-first sales operation that you control.",
+        "[FR] We look for the customer, set up the meeting, and manage the offer process. You own the data. You own the relationship."
+      ],
+      "pain_points": [
+        "[FR] Direct Outreach: We contact them directly using your new local digital office.",
+        "[FR] Local Visibility: Your \"Virtual Branch\" appears in local searches.",
+        "[FR] Signal Capture: We track profile visits and reach out immediately.",
+        "[FR] Content Syndication: We distribute your case studies to relevant local industry groups.",
+        "[FR] Lower Cost Cheaper than giving away 20-30% margin to a distributor.",
+        "[FR] Full Transparency You see every conversation. No partner hiding the truth from you.",
+        "[FR] Direct Relationships The customers belong to you, not a third party.",
+        "[FR] Asset Building You are building a proprietary database of market contacts that increases your company's valuation.",
+        "[FR] Your distributors are slow to respond to your requests.",
+        "[FR] You have no direct access to end-customers."
+      ],
+      "benefits": [
+        "[FR] **READ BEFORE PROCEEDING::** This program is designed for companies that want to stop relying on\n            local sales partners or distributors.",
+        "[FR] **Systematic Targeting::** Precise list of\n                                                3,000+ verified decision makers aligned with your Ideal\n                                                Customer Profile.",
+        "[FR] **3,000+ verified decision makers:** Systematic Targeting: Precise list of\n                                                 aligned with your Ideal\n                                                Customer Profile.",
+        "[FR] **Direct Outreach::** We contact them\n                                                directly using your new local digital office.",
+        "[FR] **Volume & Consistency::** We generate\n                                                consistent activity week after week, ensuring your pipeline never dries\n                                                up.",
+        "[FR] **Local Visibility::** Your \"Virtual\n                                                Branch\" appears in local searches.",
+        "[FR] **Signal Capture::** We track profile\n                                                visits and reach out immediately.",
+        "[FR] **Content Syndication::** We distribute\n                                                your case studies to relevant local industry groups."
+      ],
+      "faq": [
+        {
+          "q": "[FR] What is included in Market Accelerator for {{CITY_NAME}} companies?",
+          "a": "[FR] Our Market Accelerator packages are tailored for businesses in {{CITY_NAME}}, providing comprehensive solutions that address local market needs while maintaining global standards."
+        },
+        {
+          "q": "[FR] How quickly can we get started in {{CITY_NAME}}?",
+          "a": "[FR] We can deploy Market Accelerator for your {{CITY_NAME}} business within 48 hours, ensuring minimal disruption to your operations."
+        },
+        {
+          "q": "[FR] Do you support companies outside of {{CITY_NAME}}?",
+          "a": "[FR] Yes, while we specialize in {{CITY_NAME}}, our Market Accelerator supports businesses throughout {{COUNTRY_NAME}} and globally."
+        }
+      ]
+    }
+  }
+}

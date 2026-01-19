@@ -1,0 +1,225 @@
+<!-- Wissens-Hub für Unternehmenswachstum Hero Section -->
+<section class="bg-gradient-to-br from-primary/20 via-base-100 to-secondary/20 relative overflow-hidden">
+    <!-- Background decoration -->
+    <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+    <div class="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 right-10 w-40 h-40 bg-secondary/10 rounded-full blur-3xl"></div>
+
+    <div class="container mx-auto px-6 py-12 relative z-10">
+        <div class="max-w-5xl mx-auto text-center">
+            <!-- Hero Header -->
+            <div class="mb-8 animate-fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 pt-8 leading-tight">
+                    <span class="gradient-header">Wachstums-Hub für Unternehmen</span>
+                </h1>
+
+                <p class="text-xl md:text-2xl text-base-content/80 mb-8 max-w-4xl mx-auto leading-relaxed">
+                    Strategische Einblicke für moderne Unternehmen. Meistern Sie
+                    <span class="font-bold text-primary">IT-Sicherheit</span>,
+                    <span class="font-bold text-secondary">Vertriebsbeschleunigung</span>,
+                    <span class="font-bold text-accent">Recruiting</span> und
+                    <span class="font-bold text-primary">KI-Innovation</span>.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- High-Impact Playbooks (Intent Links) -->
+<section class="section-spacing bg-base-100">
+    <div class="container mx-auto container-padding">
+        <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
+            <i data-lucide="target" class="w-8 h-8 text-primary"></i>
+            Hocheffektive Leitfäden
+        </h2>
+        <p class="text-base-content/70 mb-6">Schneller Zugriff auf die meistgefragten Leitfäden für Wachstum, Sicherheit
+            und Talentakquise.</p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <a class="btn btn-outline justify-start gap-3"
+                href="lead-scoring-saas-complete-guide.html">Lead-Scoring-Modell für B2B SaaS</a>
+            <a class="btn btn-outline justify-start gap-3" href="cross-channel-lead-generation-guide.html">Cross-Channel
+                Lead-Gen Roadmap</a>
+            <a class="btn btn-outline justify-start gap-3" href="pipeline-generation-complete-guide.html">90-Tage
+                Pipeline-Playbook</a>
+            <a class="btn btn-outline justify-start gap-3" href="sales-agent-europe-guide.html">Vertriebsmitarbeiter in
+                Europa einstellen</a>
+            <a class="btn btn-outline justify-start gap-3"
+                href="outsourced-sales-management-europe-guide.html">Ausgelagertes Vertriebsmanagement (EU)</a>
+            <a class="btn btn-outline justify-start gap-3" href="proposal-cpq-guide.html">Angebots- & CPQ-Vorlagen</a>
+        </div>
+    </div>
+</section>
+
+<!-- All Articles -->
+<section class="section-spacing bg-base-100">
+    <div class="container mx-auto container-padding">
+        <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+            <i data-lucide="library" class="w-8 h-8 text-secondary"></i>
+            Alle Artikel
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12" id="articleGrid">
+            <!-- Articles will be populated by JS -->
+        </div>
+
+        <div class="text-center mt-12">
+            <button id="showAllBtn" class="btn btn-primary btn-lg shadow-xl hover:scale-105 transition-transform">Alle
+                Artikel anzeigen</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- Final CTA Section -->
+<section class="section-spacing bg-primary relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-96 h-96 bg-secondary rounded-full blur-3xl translate-x-1/2 translate-y-1/2">
+        </div>
+    </div>
+
+    <div class="container mx-auto container-padding text-center relative z-10">
+        <h2 class="text-4xl md:text-6xl font-black mb-6 text-white">
+            Bereit, Ihre<br>Unternehmensinfrastruktur zu verbessern?
+        </h2>
+        <p class="text-xl mb-12 text-white/90 max-w-3xl mx-auto">
+            Bewältigen Sie nicht alles allein. Lassen Sie uns über Ihre Vertriebs-, IT- oder Recruiting-Bedürfnisse
+            sprechen.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{{BASE_PATH}}contact.html"
+                class="btn btn-lg bg-white text-primary hover:bg-white/90 border-none px-12 shadow-xl">
+                Kostenloses Strategiegespräch buchen
+            </a>
+            <a href="{{BASE_PATH}}solutions.html"
+                class="btn btn-lg btn-outline text-white border-white hover:bg-white/10 px-12">
+                Alle Lösungen ansehen
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- JavaScript for interactive features -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+    lucide.createIcons();
+    // Articles data for search and filtering
+    const allArticles = {{ BLOG_ARTICLES_JSON }};
+
+    let currentFilter = 'all';
+    let searchTerm = '';
+    let displayedCount = 9;
+
+    function filterAndDisplayArticles() {
+        let filteredArticles = allArticles;
+
+        if (searchTerm) {
+            filteredArticles = filteredArticles.filter(article =>
+                article.title.toLowerCase().includes(searchTerm) ||
+                article.tags.toLowerCase().includes(searchTerm) ||
+                article.excerpt.toLowerCase().includes(searchTerm)
+            );
+        }
+
+        // Display articles
+        const grid = document.getElementById('articleGrid');
+        const articlesToShow = filteredArticles.slice(0, displayedCount);
+
+        grid.innerHTML = articlesToShow.map(article => createArticleCard(article)).join('');
+
+        // Show/hide show all button
+        const showAllBtn = document.getElementById('showAllBtn');
+
+        if (filteredArticles.length <= displayedCount) {
+            if (showAllBtn) showAllBtn.style.display = 'none';
+        } else {
+            if (showAllBtn) {
+                showAllBtn.style.display = 'inline-block';
+                showAllBtn.innerHTML = `Alle Artikel anzeigen (${filteredArticles.length})`;
+            }
+        }
+    }
+
+    function createArticleCard(article) {
+        // Translate badge and read time
+        const badgeText = article.badge === 'New' ? 'Neu' : article.badge;
+        const readTime = article.readTime.replace('min read', 'Minuten gelesen');
+
+        return `
+            <article class="article-card buzz-card p-6 hover:shadow-xl transition-all duration-300" data-tags="${article.tags}">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="badge badge-primary">${badgeText}</span>
+                    <span class="text-xs text-base-content/60">${readTime}</span>
+                </div>
+                <h3 class="text-lg font-bold mb-3 leading-tight">${article.title}</h3>
+                <p class="text-sm text-base-content/70 mb-4 line-clamp-3">
+                    ${article.excerpt}
+                </p>
+                <div class="flex items-center justify-between">
+                    <a href="${article.url}" class="btn btn-primary btn-sm">Jetzt lesen</a>
+                    <span class="text-xs text-base-content/50">2026</span>
+                </div>
+            </article>
+        `;
+    }
+
+    // Show All
+    document.getElementById('showAllBtn').addEventListener('click', function () {
+        displayedCount = allArticles.length;
+        filterAndDisplayArticles();
+    });
+
+    // Initial load
+    filterAndDisplayArticles();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie schnell können wir mit der Zusammenarbeit beginnen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wir können in der Regel innerhalb von 1-2 Wochen nach unserem Erstgespräch beginnen. Wir richten alles Notwendige ein und liefern schnell Ergebnisse."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was unterscheidet Go Expandia von anderen Agenturen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wir kombinieren tiefe europäische Marktexpertise mit datengesteuerten Strategien und mehrsprachigen Fähigkeiten. Unser Team verfügt über mehr als 8 Jahre Erfahrung in der Unterstützung von Unternehmen bei der internationalen Skalierung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Arbeiten Sie mit Unternehmen jeder Größe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, wir arbeiten mit Startups, KMU und Großunternehmen. Unsere Lösungen sind skalierbar und auf Ihre spezifischen Geschäftsanforderungen und Wachstumsphase zugeschnitten."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie sieht Ihr Preismodell aus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wir bieten flexible Preise basierend auf Ihren spezifischen Bedürfnissen und Zielen. Kontaktieren Sie uns für eine kostenlose Beratung und ein individuelles Angebot, das auf Ihre Geschäftsziele zugeschnitten ist."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie messen Sie den Erfolg?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wir konzentrieren uns auf messbare KPIs einschließlich Lead-Generierung, Konversionsraten, ROI und Umsatzauswirkungen. Sie erhalten detaillierte Analysen und regelmäßige Leistungsberichte."
+      }
+    }
+  ]
+}
+</script>

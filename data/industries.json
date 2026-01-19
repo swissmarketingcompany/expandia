@@ -1,0 +1,450 @@
+[
+  {
+    "id": "b2b-lead-generation-manufacturing",
+    "slug": "b2b-lead-generation-manufacturing",
+    "name": "Manufacturing",
+    "title": "Industrial & Manufacturing Lead Generation | Expandia",
+    "description": "Find distributors, partners, and B2B buyers for your manufacturing business in Europe and globally.",
+    "image": "./assets/local/manufacturing-hero.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-consulting",
+    "slug": "b2b-lead-generation-consulting",
+    "name": "Consulting",
+    "title": "Lead Generation for Consulting Firms | Expandia",
+    "description": "Generate high-value consulting leads. Connect with decision-makers who need your expertise.",
+    "image": "./assets/local/consulting-hero.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-manufacturing",
+    "slug": "b2b-lead-generation-manufacturing",
+    "name": "Manufacturing",
+    "title": "Industrial & Manufacturing Lead Generation | Expandia",
+    "description": "Find distributors, partners, and B2B buyers for your manufacturing business in Europe and globally.",
+    "image": "./assets/local/manufacturing-hero.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-fintech",
+    "slug": "b2b-lead-generation-fintech",
+    "name": "FinTech",
+    "title": "B2B Lead Generation for FinTech | Expandia",
+    "description": "Specialized B2B lead generation for FinTech companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-cybersecurity",
+    "slug": "b2b-lead-generation-cybersecurity",
+    "name": "Cybersecurity",
+    "title": "B2B Lead Generation for Cybersecurity | Expandia",
+    "description": "Specialized B2B lead generation for Cybersecurity companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-artificial-intelligence",
+    "slug": "b2b-lead-generation-artificial-intelligence",
+    "name": "Artificial Intelligence",
+    "title": "B2B Lead Generation for Artificial Intelligence | Expandia",
+    "description": "Specialized B2B lead generation for Artificial Intelligence companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-cloud-computing",
+    "slug": "b2b-lead-generation-cloud-computing",
+    "name": "Cloud Computing",
+    "title": "B2B Lead Generation for Cloud Computing | Expandia",
+    "description": "Specialized B2B lead generation for Cloud Computing companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-data-analytics",
+    "slug": "b2b-lead-generation-data-analytics",
+    "name": "Data Analytics",
+    "title": "B2B Lead Generation for Data Analytics | Expandia",
+    "description": "Specialized B2B lead generation for Data Analytics companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-edtech",
+    "slug": "b2b-lead-generation-edtech",
+    "name": "EdTech",
+    "title": "B2B Lead Generation for EdTech | Expandia",
+    "description": "Specialized B2B lead generation for EdTech companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-healthtech",
+    "slug": "b2b-lead-generation-healthtech",
+    "name": "HealthTech",
+    "title": "B2B Lead Generation for HealthTech | Expandia",
+    "description": "Specialized B2B lead generation for HealthTech companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-martech",
+    "slug": "b2b-lead-generation-martech",
+    "name": "MarTech",
+    "title": "B2B Lead Generation for MarTech | Expandia",
+    "description": "Specialized B2B lead generation for MarTech companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-proptech",
+    "slug": "b2b-lead-generation-proptech",
+    "name": "PropTech",
+    "title": "B2B Lead Generation for PropTech | Expandia",
+    "description": "Specialized B2B lead generation for PropTech companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-devops",
+    "slug": "b2b-lead-generation-devops",
+    "name": "DevOps",
+    "title": "B2B Lead Generation for DevOps | Expandia",
+    "description": "Specialized B2B lead generation for DevOps companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-iot",
+    "slug": "b2b-lead-generation-iot",
+    "name": "IoT",
+    "title": "B2B Lead Generation for IoT | Expandia",
+    "description": "Specialized B2B lead generation for IoT companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-robotics",
+    "slug": "b2b-lead-generation-robotics",
+    "name": "Robotics",
+    "title": "B2B Lead Generation for Robotics | Expandia",
+    "description": "Specialized B2B lead generation for Robotics companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-blockchain",
+    "slug": "b2b-lead-generation-blockchain",
+    "name": "Blockchain",
+    "title": "B2B Lead Generation for Blockchain | Expandia",
+    "description": "Specialized B2B lead generation for Blockchain companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-ecommerce",
+    "slug": "b2b-lead-generation-ecommerce",
+    "name": "Ecommerce",
+    "title": "B2B Lead Generation for Ecommerce | Expandia",
+    "description": "Specialized B2B lead generation for Ecommerce companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-management-consulting",
+    "slug": "b2b-lead-generation-management-consulting",
+    "name": "Management Consulting",
+    "title": "B2B Lead Generation for Management Consulting | Expandia",
+    "description": "Specialized B2B lead generation for Management Consulting companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-legal-services",
+    "slug": "b2b-lead-generation-legal-services",
+    "name": "Legal Services",
+    "title": "B2B Lead Generation for Legal Services | Expandia",
+    "description": "Specialized B2B lead generation for Legal Services companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-accounting",
+    "slug": "b2b-lead-generation-accounting",
+    "name": "Accounting",
+    "title": "B2B Lead Generation for Accounting | Expandia",
+    "description": "Specialized B2B lead generation for Accounting companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-hr-staffing",
+    "slug": "b2b-lead-generation-hr-staffing",
+    "name": "HR & Staffing",
+    "title": "B2B Lead Generation for HR & Staffing | Expandia",
+    "description": "Specialized B2B lead generation for HR & Staffing companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-recruitment",
+    "slug": "b2b-lead-generation-recruitment",
+    "name": "Recruitment",
+    "title": "B2B Lead Generation for Recruitment | Expandia",
+    "description": "Specialized B2B lead generation for Recruitment companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-architecture",
+    "slug": "b2b-lead-generation-architecture",
+    "name": "Architecture",
+    "title": "B2B Lead Generation for Architecture | Expandia",
+    "description": "Specialized B2B lead generation for Architecture companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-engineering",
+    "slug": "b2b-lead-generation-engineering",
+    "name": "Engineering",
+    "title": "B2B Lead Generation for Engineering | Expandia",
+    "description": "Specialized B2B lead generation for Engineering companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-design-agencies",
+    "slug": "b2b-lead-generation-design-agencies",
+    "name": "Design Agencies",
+    "title": "B2B Lead Generation for Design Agencies | Expandia",
+    "description": "Specialized B2B lead generation for Design Agencies companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-marketing-agencies",
+    "slug": "b2b-lead-generation-marketing-agencies",
+    "name": "Marketing Agencies",
+    "title": "B2B Lead Generation for Marketing Agencies | Expandia",
+    "description": "Specialized B2B lead generation for Marketing Agencies companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-pr-agencies",
+    "slug": "b2b-lead-generation-pr-agencies",
+    "name": "PR Agencies",
+    "title": "B2B Lead Generation for PR Agencies | Expandia",
+    "description": "Specialized B2B lead generation for PR Agencies companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-automotive",
+    "slug": "b2b-lead-generation-automotive",
+    "name": "Automotive",
+    "title": "B2B Lead Generation for Automotive | Expandia",
+    "description": "Specialized B2B lead generation for Automotive companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-aerospace",
+    "slug": "b2b-lead-generation-aerospace",
+    "name": "Aerospace",
+    "title": "B2B Lead Generation for Aerospace | Expandia",
+    "description": "Specialized B2B lead generation for Aerospace companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-logistics",
+    "slug": "b2b-lead-generation-logistics",
+    "name": "Logistics",
+    "title": "B2B Lead Generation for Logistics | Expandia",
+    "description": "Specialized B2B lead generation for Logistics companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-supply-chain",
+    "slug": "b2b-lead-generation-supply-chain",
+    "name": "Supply Chain",
+    "title": "B2B Lead Generation for Supply Chain | Expandia",
+    "description": "Specialized B2B lead generation for Supply Chain companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-construction",
+    "slug": "b2b-lead-generation-construction",
+    "name": "Construction",
+    "title": "B2B Lead Generation for Construction | Expandia",
+    "description": "Specialized B2B lead generation for Construction companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-energy",
+    "slug": "b2b-lead-generation-energy",
+    "name": "Energy",
+    "title": "B2B Lead Generation for Energy | Expandia",
+    "description": "Specialized B2B lead generation for Energy companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-oil-gas",
+    "slug": "b2b-lead-generation-oil-gas",
+    "name": "Oil & Gas",
+    "title": "B2B Lead Generation for Oil & Gas | Expandia",
+    "description": "Specialized B2B lead generation for Oil & Gas companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-renewable-energy",
+    "slug": "b2b-lead-generation-renewable-energy",
+    "name": "Renewable Energy",
+    "title": "B2B Lead Generation for Renewable Energy | Expandia",
+    "description": "Specialized B2B lead generation for Renewable Energy companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-chemicals",
+    "slug": "b2b-lead-generation-chemicals",
+    "name": "Chemicals",
+    "title": "B2B Lead Generation for Chemicals | Expandia",
+    "description": "Specialized B2B lead generation for Chemicals companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-packaging",
+    "slug": "b2b-lead-generation-packaging",
+    "name": "Packaging",
+    "title": "B2B Lead Generation for Packaging | Expandia",
+    "description": "Specialized B2B lead generation for Packaging companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-textiles",
+    "slug": "b2b-lead-generation-textiles",
+    "name": "Textiles",
+    "title": "B2B Lead Generation for Textiles | Expandia",
+    "description": "Specialized B2B lead generation for Textiles companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-healthcare",
+    "slug": "b2b-lead-generation-healthcare",
+    "name": "Healthcare",
+    "title": "B2B Lead Generation for Healthcare | Expandia",
+    "description": "Specialized B2B lead generation for Healthcare companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-biotechnology",
+    "slug": "b2b-lead-generation-biotechnology",
+    "name": "Biotechnology",
+    "title": "B2B Lead Generation for Biotechnology | Expandia",
+    "description": "Specialized B2B lead generation for Biotechnology companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-pharmaceuticals",
+    "slug": "b2b-lead-generation-pharmaceuticals",
+    "name": "Pharmaceuticals",
+    "title": "B2B Lead Generation for Pharmaceuticals | Expandia",
+    "description": "Specialized B2B lead generation for Pharmaceuticals companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-medical-devices",
+    "slug": "b2b-lead-generation-medical-devices",
+    "name": "Medical Devices",
+    "title": "B2B Lead Generation for Medical Devices | Expandia",
+    "description": "Specialized B2B lead generation for Medical Devices companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-clinical-research",
+    "slug": "b2b-lead-generation-clinical-research",
+    "name": "Clinical Research",
+    "title": "B2B Lead Generation for Clinical Research | Expandia",
+    "description": "Specialized B2B lead generation for Clinical Research companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-banking",
+    "slug": "b2b-lead-generation-banking",
+    "name": "Banking",
+    "title": "B2B Lead Generation for Banking | Expandia",
+    "description": "Specialized B2B lead generation for Banking companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-insurance",
+    "slug": "b2b-lead-generation-insurance",
+    "name": "Insurance",
+    "title": "B2B Lead Generation for Insurance | Expandia",
+    "description": "Specialized B2B lead generation for Insurance companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-wealth-management",
+    "slug": "b2b-lead-generation-wealth-management",
+    "name": "Wealth Management",
+    "title": "B2B Lead Generation for Wealth Management | Expandia",
+    "description": "Specialized B2B lead generation for Wealth Management companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-private-equity",
+    "slug": "b2b-lead-generation-private-equity",
+    "name": "Private Equity",
+    "title": "B2B Lead Generation for Private Equity | Expandia",
+    "description": "Specialized B2B lead generation for Private Equity companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-venture-capital",
+    "slug": "b2b-lead-generation-venture-capital",
+    "name": "Venture Capital",
+    "title": "B2B Lead Generation for Venture Capital | Expandia",
+    "description": "Specialized B2B lead generation for Venture Capital companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-real-estate-investment",
+    "slug": "b2b-lead-generation-real-estate-investment",
+    "name": "Real Estate Investment",
+    "title": "B2B Lead Generation for Real Estate Investment | Expandia",
+    "description": "Specialized B2B lead generation for Real Estate Investment companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-wholesale",
+    "slug": "b2b-lead-generation-wholesale",
+    "name": "Wholesale",
+    "title": "B2B Lead Generation for Wholesale | Expandia",
+    "description": "Specialized B2B lead generation for Wholesale companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-telecommunications",
+    "slug": "b2b-lead-generation-telecommunications",
+    "name": "Telecommunications",
+    "title": "B2B Lead Generation for Telecommunications | Expandia",
+    "description": "Specialized B2B lead generation for Telecommunications companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-facilities-management",
+    "slug": "b2b-lead-generation-facilities-management",
+    "name": "Facilities Management",
+    "title": "B2B Lead Generation for Facilities Management | Expandia",
+    "description": "Specialized B2B lead generation for Facilities Management companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-security-services",
+    "slug": "b2b-lead-generation-security-services",
+    "name": "Security Services",
+    "title": "B2B Lead Generation for Security Services | Expandia",
+    "description": "Specialized B2B lead generation for Security Services companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-event-management",
+    "slug": "b2b-lead-generation-event-management",
+    "name": "Event Management",
+    "title": "B2B Lead Generation for Event Management | Expandia",
+    "description": "Specialized B2B lead generation for Event Management companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-corporate-training",
+    "slug": "b2b-lead-generation-corporate-training",
+    "name": "Corporate Training",
+    "title": "B2B Lead Generation for Corporate Training | Expandia",
+    "description": "Specialized B2B lead generation for Corporate Training companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "b2b-lead-generation-translation-services",
+    "slug": "b2b-lead-generation-translation-services",
+    "name": "Translation Services",
+    "title": "B2B Lead Generation for Translation Services | Expandia",
+    "description": "Specialized B2B lead generation for Translation Services companies. Fill your pipeline with qualified leads and sales meetings.",
+    "image": "./assets/local/default-industry.jpg"
+  }
+]

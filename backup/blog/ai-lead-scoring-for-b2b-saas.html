@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bumblebee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 Lead Scoring for B2B Software: How to Prioritize Deals with Predictive Models | Expandia Sales University</title>
+    <meta name="description" content="A practical guide to AI-powered lead scoring in B2B sales. Learn the data signals, models, implementation steps, and KPIs to prioritize high-probability deals and scale pipeline impact.">
+    <link href="../dist/css/output.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="apple-touch-icon" href="../favicon.png">
+    <link rel="canonical" href="https://www.goexpandia.com/blog/ai-lead-scoring-for-b2b-saas.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Expandia" />
+    <meta property="og:title" content="🎯 Lead Scoring for B2B Software: How to Prioritize Deals with Predictive Models | Expandia Sales University" />
+    <meta property="og:description" content="A practical guide to AI-powered lead scoring in B2B sales. Learn the data signals, models, implementation steps, and KPIs to prioritize high-probability deals and scale pipeline impact." />
+    <meta property="og:url" content="https://www.goexpandia.com/blog/ai-lead-scoring-for-b2b-saas.html" />
+    <meta property="og:image" content="https://www.goexpandia.com/favicon.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="🎯 Lead Scoring for B2B Software: How to Prioritize Deals with Predictive Models | Expandia Sales University" />
+    <meta name="twitter:description" content="A practical guide to AI-powered lead scoring in B2B sales. Learn the data signals, models, implementation steps, and KPIs to prioritize high-probability deals and scale pipeline impact." />
+    <meta name="twitter:image" content="https://www.goexpandia.com/favicon.png" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.goexpandia.com/blog/ai-lead-scoring-for-b2b-saas.html"},
+      "headline": "🎯 Lead Scoring for B2B Software: How to Prioritize Deals with Predictive Models",
+      "description": "A practical guide to AI-powered lead scoring in B2B sales. Learn the data signals, models, implementation steps, and KPIs to prioritize high-probability deals and scale pipeline impact.",
+      "image": "https://www.goexpandia.com/favicon.png",
+      "datePublished": "2025-08-09",
+      "dateModified": "2025-08-09",
+      "author": {"@type": "Organization", "name": "Expandia"},
+      "publisher": {"@type": "Organization", "name": "Expandia", "logo": {"@type": "ImageObject", "url": "https://www.goexpandia.com/favicon.png"}}
+    }
+    </script>
+</head>
+<body class="font-sans">
+    <!-- Navigation (unified) -->
+    <nav class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto container-padding">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
+                        </svg>
+                    </div>
+                    <!-- Mobile Menu -->
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-72">
+                        <li><a href="../index.html">Home</a></li>
+                        <li>
+                            <details>
+                                <summary class="font-semibold">Solutions</summary>
+                                <ul class="p-2">
+                                    <li><a href="../solutions.html">Our Sales Solutions</a></li>
+                                    <li><a href="../case-studies.html">Success Stories</a></li>
+                                </ul>
+                            </details>
+                        </li>
+                        <li>
+                            <details>
+                                <summary class="font-semibold">Company</summary>
+                                <ul class="p-2">
+                                    <li><a href="../about.html">About Us</a></li>
+                                    <li><a href="../contact.html">Contact Us</a></li>
+                                </ul>
+                            </details>
+                        </li>
+                        <li><a href="../blog/index.html" class="text-primary font-semibold">Sales University</a></li>
+                    </ul>
+                </div>
+                <a href="../index.html" class="btn btn-ghost hover:bg-transparent ml-0">
+                    <img src="../Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 md:h-10 w-auto transition-all duration-300 hover:scale-105 logo-bumblebee">
+                </a>
+            </div>
+            <!-- Desktop Mega Menu -->
+            <div class="navbar-center hidden lg:flex justify-center">
+                <ul class="menu menu-horizontal px-1">
+                    <li><a href="../index.html" class="btn btn-ghost font-semibold">Home</a></li>
+                    <li class="dropdown dropdown-hover">
+                        <div tabindex="0" role="button" class="btn btn-ghost font-semibold">Solutions
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                        <div tabindex="0" class="dropdown-content z-[1] card card-compact w-80 p-4 shadow-xl bg-base-100 border border-base-300">
+                            <div class="card-body">
+                                <h3 class="card-title text-primary mb-3">Sales Solutions & Services</h3>
+                                <div class="grid gap-2">
+                                    <a href="../solutions.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
+                                        <span class="text-xl">📞</span>
+                                        <div>
+                                            <div class="font-semibold">Sales as a Service</div>
+                                            <div class="text-sm text-base-content/60">Complete Sales Management</div>
+                                        </div>
+                                    </a>
+                                    <a href="../sales-protection-services.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
+                                        <span class="text-xl">🛡️</span>
+                                        <div>
+                                            <div class="font-semibold">Sales Protection Services</div>
+                                            <div class="text-sm text-base-content/60">Data Privacy & Threat Monitoring</div>
+                                        </div>
+                                    </a>
+                                    <a href="../case-studies.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
+                                        <span class="text-xl">📈</span>
+                                        <div>
+                                            <div class="font-semibold">Success Stories</div>
+                                            <div class="text-sm text-base-content/60">Real Results from Real Companies</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dropdown dropdown-hover">
+                        <div tabindex="0" role="button" class="btn btn-ghost font-semibold">Company
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                        <div tabindex="0" class="dropdown-content z-[1] card card-compact w-72 p-4 shadow-xl bg-base-100 border border-base-300">
+                            <div class="card-body">
+                                <h3 class="card-title text-primary mb-3">About Expandia</h3>
+                                <div class="grid gap-2">
+                                    <a href="../about.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
+                                        <span class="text-xl">👥</span>
+                                        <div>
+                                            <div class="font-semibold">About Us</div>
+                                            <div class="text-sm text-base-content/60">Our Mission</div>
+                                        </div>
+                                    </a>
+                                    <a href="../contact.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors">
+                                        <span class="text-xl">📞</span>
+                                        <div>
+                                            <div class="font-semibold">Contact Us</div>
+                                            <div class="text-sm text-base-content/60">Boost Your Sales</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="border-t border-base-300 mt-4 pt-4">
+                                    <a href="../contact.html" class="btn btn-primary btn-sm w-full buzz-button">Get Free Consultation</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="../blog/index.html" class="btn btn-ghost font-semibold text-primary">Sales University</a></li>
+                </ul>
+            </div>
+            <div class="navbar-end flex-none justify-end flex items-center">
+                <div class="dropdown dropdown-end mr-4">
+                    <div tabindex="0" role="button" class="btn btn-ghost btn-sm">
+                        <span id="current-flag">🇺🇸</span>
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-32 text-right">
+                        <li><a href="#" data-lang="en" class="lang-switch flex items-center gap-2 justify-end"><span>🇺🇸</span><span>English</span></a></li>
+                        <li><a href="#" data-lang="tr" class="lang-switch flex items-center gap-2 justify-end"><span>🇹🇷</span><span>Türkçe</span></a></li>
+                    </ul>
+                </div>
+                <a href="../contact.html" class="btn btn-primary buzz-button ml-2">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <section class="section-spacing">
+        <div class="container mx-auto container-padding">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl font-bold mb-6">🎯 Lead Scoring for B2B Software: How to Prioritize Deals with Predictive Models</h1>
+                <div class="prose prose-lg max-w-none">
+                    <p>
+                        AI-powered lead scoring helps sales teams focus time on the prospects most likely to convert. Instead of static point systems,
+                        predictive models analyze hundreds of data points—firmographic, technographic, behavioral, and intent signals—to produce a
+                        probability score for each account and contact. The result: higher win rates, faster cycles, and a consistent qualification
+                        framework that scales across teams.
+                    </p>
+
+                    <div class="alert alert-info mb-6">
+                        <div>
+                            <h3 class="font-bold">Why AI Lead Scoring Now</h3>
+                            <p>Top-performing B2B teams report 20–40% lift in conversion when switching from manual MQL rules to predictive scoring tied to pipeline outcomes.</p>
+                        </div>
+                    </div>
+
+                    <h2>🔎 Key Signals Your Model Should Use</h2>
+                    <ul>
+                        <li><strong>Firmographic:</strong> industry, HQ region, employee bands, funding stage, growth rate.</li>
+                        <li><strong>Technographic:</strong> CRM/MA stack (e.g., Salesforce, HubSpot), cloud provider, data-enrichment tools.</li>
+                        <li><strong>Behavioral:</strong> website journeys, content depth, repeat visits, demo requests, webinar attendance.</li>
+                        <li><strong>Intent & 3rd-Party:</strong> category searches, review site activity, competitor comparisons.</li>
+                        <li><strong>Deal Context:</strong> multi-threading, meeting cadence, email reply sentiment, stakeholder seniority.</li>
+                    </ul>
+
+                    <h2>🧠 Model Options (from Simple to Advanced)</h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="card bg-primary/10 border border-primary/20">
+                            <div class="card-body">
+                                <h3 class="card-title text-primary">Logistic Regression / Baselines</h3>
+                                <p>Great for explainability and speed. Start here to validate signal impact and build trust with sales leadership.</p>
+                                <ul class="text-sm">
+                                    <li>• Input: last 6–12 months of opportunities</li>
+                                    <li>• Output: win probability, top drivers</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card bg-secondary/10 border border-secondary/20">
+                            <div class="card-body">
+                                <h3 class="card-title text-secondary">Gradient Boosting / XGBoost</h3>
+                                <p>High-performing tabular models for noisy go-to-market data; handle nonlinear interactions well.</p>
+                                <ul class="text-sm">
+                                    <li>• Input: engineered features + intent feeds</li>
+                                    <li>• Output: probability + feature importance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>🛠️ Implementation in 30 Days (Pragmatic Roadmap)</h2>
+                    <ol>
+                        <li><strong>Data Audit:</strong> Map CRM fields, opportunity stages, conversion events; fix date/owner inconsistencies.</li>
+                        <li><strong>Define Positive Label:</strong> Won deals in last 12 months; exclude outliers (one-off legacy contracts).</li>
+                        <li><strong>Feature Engineering:</strong> Recency/frequency of engagement, ICP distance, persona seniority, channel of first touch.</li>
+                        <li><strong>Baseline Model:</strong> Split train/test, cross-validate, log AUC/PR, choose threshold for “A/B/C” grades.</li>
+                        <li><strong>Pilot Rollout:</strong> Route A-leads to top SDRs; compare speed-to-first-touch and meeting set rate vs control.</li>
+                        <li><strong>Feedback Loop:</strong> Add closed-lost reasons, competitor flags, and call sentiment back into the model monthly.</li>
+                    </ol>
+
+                    <h2>📊 KPIs That Prove Impact</h2>
+                    <div class="grid md:grid-cols-3 gap-6 mb-6">
+                        <div class="stat bg-base-200">
+                            <div class="stat-title">Demo-to-Opportunity</div>
+                            <div class="stat-value text-primary">+18%</div>
+                            <div class="stat-desc">Improvement after routing by score</div>
+                        </div>
+                        <div class="stat bg-base-200">
+                            <div class="stat-title">SDR Productivity</div>
+                            <div class="stat-value text-secondary">+27%</div>
+                            <div class="stat-desc">Meetings per rep per month</div>
+                        </div>
+                        <div class="stat bg-base-200">
+                            <div class="stat-title">Win Rate</div>
+                            <div class="stat-value text-accent">+11%</div>
+                            <div class="stat-desc">A-leads vs control</div>
+                        </div>
+                    </div>
+
+                    <h2>⚠️ Pitfalls to Avoid</h2>
+                    <ul>
+                        <li>❌ <strong>Static thresholds:</strong> Revisit cutoffs quarterly as market conditions change.</li>
+                        <li>❌ <strong>One-size-fits-all:</strong> Create separate models per segment (SMB, Mid, Enterprise).</li>
+                        <li>❌ <strong>Black box adoption:</strong> Share top predictive signals in the UI to build rep confidence.</li>
+                        <li>❌ <strong>Data drift:</strong> Monitor performance; retrain on a rolling window (e.g., last 9–12 months).</li>
+                    </ul>
+
+                    <h2>✅ Field-Ready Checklist</h2>
+                    <div class="card bg-base-200">
+                        <div class="card-body">
+                            <label class="label cursor-pointer"><span class="label-text">Map deal stages and standardize close reasons</span><input type="checkbox" class="checkbox checkbox-primary"/></label>
+                            <label class="label cursor-pointer"><span class="label-text">Define ICP and personas; tag in CRM</span><input type="checkbox" class="checkbox checkbox-primary"/></label>
+                            <label class="label cursor-pointer"><span class="label-text">Choose baseline model and success metrics</span><input type="checkbox" class="checkbox checkbox-primary"/></label>
+                            <label class="label cursor-pointer"><span class="label-text">Pilot with 1–2 SDR pods; compare vs control</span><input type="checkbox" class="checkbox checkbox-primary"/></label>
+                            <label class="label cursor-pointer"><span class="label-text">Retrain monthly; add new signals (intent, sentiment)</span><input type="checkbox" class="checkbox checkbox-primary"/></label>
+                        </div>
+                    </div>
+
+                    <div class="card bg-gradient-to-r from-secondary to-accent text-white shadow-xl mt-8">
+                        <div class="card-body text-center">
+                            <h3 class="card-title text-2xl justify-center mb-4">Need a Predictive Scoring Model Built Around Your Pipeline?</h3>
+                            <p class="mb-6">We design, train, and deploy AI lead scoring systems for B2B teams. Get a 2-week pilot with dashboard, alerts, and SDR routing.</p>
+                            <div class="card-actions justify-center">
+                                <a href="../contact.html" class="btn btn-primary btn-lg">Get Your Scoring Pilot</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (unified) -->
+    <footer class="footer-gradient text-white">
+        <div class="border-b border-white/10">
+            <div class="container mx-auto container-padding py-12">
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+                    <div class="text-center lg:text-left">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-2">Stay Updated with Sales Insights</h3>
+                        <p class="text-white/80">Get the latest sales strategies and industry updates.</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+                        <input type="email" placeholder="Enter your email" class="footer-newsletter-input">
+                        <button class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto container-padding py-16">
+            <div class="grid md:grid-cols-12 gap-8 mb-16">
+                <div class="md:col-span-4">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="../Expandia-main-logo-koyu-yesil.png" alt="Expandia" class="h-8 w-auto brightness-0 invert">
+                    </div>
+                    <p class="text-white/80 mb-6 text-lg">Your Partner in Sales Growth and Revenue Acceleration. We help businesses scale their sales operations with proven strategies and cutting-edge solutions.</p>
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/company/goexpandia.com/" class="footer-social-icon group" target="_blank" rel="noopener noreferrer">
+                            <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:col-span-2">
+                    <h4 class="text-lg font-bold mb-6">Solutions</h4>
+                    <ul class="space-y-4 text-white/80">
+                        <li><a href="../solutions.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>Sales as a Service</a></li>
+                        <li><a href="../sales-protection-services.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>Sales AI Solutions</a></li>
+                        <li><a href="../solutions.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>Lead Generation</a></li>
+                        <li><a href="../solutions.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>BuffSend Platform</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2">
+                    <h4 class="text-lg font-bold mb-6">Company</h4>
+                    <ul class="space-y-4 text-white/80">
+                        <li><a href="../case-studies.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>Success Stories</a></li>
+                        <li><a href="../about.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>About Us</a></li>
+                        <li><a href="../contact.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>Contact Us</a></li>
+                        <li><a href="../blog/" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>Blog</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-4">
+                    <h4 class="text-lg font-bold mb-6">Get in Touch</h4>
+                    <div class="footer-contact-card">
+                        <p class="text-white/80 mb-6">Ready to accelerate your sales growth? Let's discuss how we can help.</p>
+                        <a href="../contact.html" class="btn btn-primary w-full mb-6">Get Free Consultation</a>
+                        <div class="space-y-4">
+                            <a href="mailto:hello@goexpandia.com" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                hello@goexpandia.com
+                            </a>
+                            <a href="https://meetings-eu1.hubspot.com/oocak" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                Schedule a Call
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/60">
+                <div class="text-sm">&copy; 2024copy; 2025 Expandia. All rights reserved.</div>
+                <div class="flex gap-6 text-sm">
+                    <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-primary transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../src/js/index.js"></script>
+    <script>
+        const currentPath = window.location.pathname;
+        const currentFlag = document.getElementById('current-flag');
+        if (currentFlag) currentFlag.textContent = currentPath.includes('/tr/') ? '🇹🇷' : '🇺🇸';
+    </script>
+</body>
+</html>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/60">
+                <div class="text-sm">&copy; 2024copy; 2025 Expandia. All rights reserved.</div>
+                <div class="flex gap-6 text-sm">
+                    <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-primary transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../src/js/index.js"></script>
+    <script>
+        const currentPath = window.location.pathname;
+        const currentFlag = document.getElementById('current-flag');
+        if (currentFlag) currentFlag.textContent = currentPath.includes('/tr/') ? '🇹🇷' : '🇺🇸';
+    </script>
+</body>
+</html>
+

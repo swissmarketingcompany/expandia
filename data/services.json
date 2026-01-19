@@ -1,0 +1,173 @@
+[
+  {
+    "id": "turnkey-it",
+    "name": "Turnkey IT Infrastructure",
+    "slug_pattern": "turnkey-it-infrastructure-{{CITY_SLUG}}",
+    "title_template": "Turnkey IT Infrastructure {{CITY_NAME}} | Complete Setup in 48 Hours",
+    "description_template": "Complete IT infrastructure setup in {{CITY_NAME}}. Domain, email, security, and cloud systems delivered in 48 hours for businesses in {{COUNTRY_NAME}}.",
+    "icon": "server",
+    "template": "service-city-landing"
+  },
+  {
+    "id": "email-deliverability",
+    "name": "Email Deliverability Checkup",
+    "slug_pattern": "email-deliverability-checkup-{{CITY_SLUG}}",
+    "title_template": "Email Deliverability Checkup {{CITY_NAME}} | Inbox Optimization",
+    "description_template": "Professional email deliverability audit in {{CITY_NAME}}. SPF, DKIM, DMARC setup and inbox placement optimization for {{COUNTRY_NAME}} businesses.",
+    "icon": "mail-check",
+    "template": "service-city-landing"
+  },
+  {
+    "id": "secure-email",
+    "name": "Secure Email & Workplace Setup",
+    "slug_pattern": "secure-email-workplace-{{CITY_SLUG}}",
+    "title_template": "Secure Email Workplace {{CITY_NAME}} | Enterprise Email Security",
+    "description_template": "Enterprise-grade email security for {{CITY_NAME}} businesses. Google Workspace or Microsoft 365 with advanced threat protection for {{COUNTRY_NAME}} companies.",
+    "icon": "shield-check",
+    "template": "service-city-landing"
+  },
+  {
+    "id": "website-care",
+    "name": "Website Care Services",
+    "slug_pattern": "website-care-services-{{CITY_SLUG}}",
+    "title_template": "Website Care Services {{CITY_NAME}} | Maintenance & Support",
+    "description_template": "Professional website maintenance in {{CITY_NAME}}. Updates, security, backups, and support for {{COUNTRY_NAME}} business websites.",
+    "icon": "globe",
+    "template": "service-city-landing"
+  },
+  {
+    "id": "turnkey-growth",
+    "name": "Turnkey Growth Infrastructure",
+    "slug_pattern": "turnkey-growth-infrastructure-{{CITY_SLUG}}",
+    "title_template": "Turnkey Growth Infrastructure {{CITY_NAME}} | Sales & Marketing Setup",
+    "description_template": "Complete growth infrastructure in {{CITY_NAME}}. CRM, email automation, and sales tools configured in 48 hours for {{COUNTRY_NAME}} businesses.",
+    "icon": "trending-up",
+    "template": "service-city-landing"
+  },
+  {
+    "id": "cold-email",
+    "name": "Cold Email Infrastructure",
+    "slug_pattern": "cold-email-infrastructure-{{CITY_SLUG}}",
+    "title_template": "Cold Email Infrastructure {{CITY_NAME}} | Deliverability & Automation",
+    "description_template": "Professional cold email infrastructure in {{CITY_NAME}}. Domain setup, email warming, and deliverability optimization for {{COUNTRY_NAME}} outreach campaigns.",
+    "icon": "mail",
+    "template": "service-city-landing"
+  },
+  {
+    "id": "revops-infra",
+    "name": "RevOps Infrastructure",
+    "slug_pattern": "revops-infrastructure-{{CITY_SLUG}}",
+    "title_template": "RevOps Infrastructure {{CITY_NAME}} | CRM & Sales Automation",
+    "description_template": "Revenue operations infrastructure for {{CITY_NAME}} companies. CRM setup, sales automation, and pipeline management for {{COUNTRY_NAME}} businesses.",
+    "icon": "settings-2",
+    "template": "service-city-landing"
+  },
+  {
+    "id": "verified-leads",
+    "name": "Verified Lead List",
+    "slug_pattern": "verified-lead-list-{{CITY_SLUG}}",
+    "title_template": "Verified Lead List {{CITY_NAME}} | B2B Contact Database",
+    "description_template": "Verified B2B lead lists for {{CITY_NAME}}. Accurate contact data, decision-makers, and company information for {{COUNTRY_NAME}} market entry.",
+    "icon": "database",
+    "template": "service-city-landing"
+  },
+  {
+    "id": "ai-content",
+    "name": "AI Content Infrastructure",
+    "slug_pattern": "ai-content-infrastructure-{{CITY_SLUG}}",
+    "title_template": "AI Content Infrastructure {{CITY_NAME}} | Automated Content Creation",
+    "description_template": "AI-powered content infrastructure for {{CITY_NAME}} businesses. Automated blog posts, social media, and marketing content for {{COUNTRY_NAME}} markets.",
+    "icon": "file-text",
+    "template": "service-city-landing"
+  },
+  {
+    "id": "written-content",
+    "name": "Written Content Engine",
+    "slug_pattern": "written-content-engine-{{CITY_SLUG}}",
+    "title_template": "Written Content Engine {{CITY_NAME}} | Blogs & Articles",
+    "description_template": "Automated written content creation for {{CITY_NAME}} businesses. Blogs, articles, and social posts powered by AI for {{COUNTRY_NAME}} markets.",
+    "icon": "file-text",
+    "template": "service-city-landing"
+  },
+  {
+    "id": "image-content",
+    "name": "Image Content Engine",
+    "slug_pattern": "image-content-engine-{{CITY_SLUG}}",
+    "title_template": "Image Content Engine {{CITY_NAME}} | Graphics & Visuals",
+    "description_template": "AI-powered image and graphics creation for {{CITY_NAME}} businesses. Professional visuals, thumbnails, and social media graphics for {{COUNTRY_NAME}} brands.",
+    "icon": "image",
+    "template": "service-city-landing"
+  },
+  {
+    "id": "video-content",
+    "name": "Video Content Engine",
+    "slug_pattern": "video-content-engine-{{CITY_SLUG}}",
+    "title_template": "Video Content Engine {{CITY_NAME}} | AI Avatars & Videos",
+    "description_template": "AI-powered video creation for {{CITY_NAME}} businesses. AI avatars, product videos, and marketing content for {{COUNTRY_NAME}} companies.",
+    "icon": "video",
+    "template": "service-city-landing"
+  },
+  {
+    "id": "b2b-lead-gen",
+    "name": "B2B Lead Generation",
+    "slug_pattern": "b2b-lead-generation-{{CITY_SLUG}}",
+    "title_template": "B2B Lead Generation {{CITY_NAME}} | Qualified Sales Leads",
+    "description_template": "Professional B2B lead generation in {{CITY_NAME}}. Qualified sales leads and appointments for {{COUNTRY_NAME}} businesses.",
+    "icon": "users",
+    "template": "service-city-landing"
+  },
+  {
+    "id": "outreach-software",
+    "name": "Outreach Software Management",
+    "slug_pattern": "outreach-software-management-{{CITY_SLUG}}",
+    "title_template": "Outreach Software Management {{CITY_NAME}} | Expert Platform Setup",
+    "description_template": "Expert outreach software management for {{CITY_NAME}} businesses. Platform setup, optimization, and management for {{COUNTRY_NAME}} sales teams.",
+    "icon": "settings",
+    "template": "service-city-landing"
+  },
+  {
+    "id": "crm-management",
+    "name": "CRM Management",
+    "slug_pattern": "crm-management-{{CITY_SLUG}}",
+    "title_template": "CRM Management {{CITY_NAME}} | Expert CRM Optimization",
+    "description_template": "Professional CRM management and optimization for {{CITY_NAME}} businesses. HubSpot and Salesforce expertise for {{COUNTRY_NAME}} companies.",
+    "icon": "database",
+    "template": "service-city-landing"
+  },
+  {
+    "id": "sales-ops",
+    "name": "Sales Ops (Go Expandia)",
+    "slug_pattern": "sales-ops-{{CITY_SLUG}}",
+    "title_template": "Managed Sales Operations {{CITY_NAME}} | B2B Growth",
+    "description_template": "Managed B2B sales operations for {{CITY_NAME}} companies. Complete sales infrastructure and growth management for {{COUNTRY_NAME}} businesses.",
+    "icon": "trending-up",
+    "template": "service-city-landing"
+  },
+  {
+    "id": "managed-it",
+    "name": "Managed IT & Cyber",
+    "slug_pattern": "managed-it-services-{{CITY_SLUG}}",
+    "title_template": "Managed IT Services {{CITY_NAME}} | Cybersecurity & Support",
+    "description_template": "Enterprise-grade managed IT services and cybersecurity for {{CITY_NAME}} businesses. 24/7 support and protection for {{COUNTRY_NAME}} companies.",
+    "icon": "shield",
+    "template": "service-city-landing"
+  },
+  {
+    "id": "small-business-growth",
+    "name": "Small Business Growth",
+    "slug_pattern": "small-business-growth-{{CITY_SLUG}}",
+    "title_template": "Small Business Growth Program {{CITY_NAME}} | Market Foundation",
+    "description_template": "Market foundation program for small businesses in {{CITY_NAME}}. Strategic growth and market entry support for {{COUNTRY_NAME}} companies.",
+    "icon": "sprout",
+    "template": "service-city-landing"
+  },
+  {
+    "id": "market-accelerator",
+    "name": "Market Accelerator",
+    "slug_pattern": "market-accelerator-{{CITY_SLUG}}",
+    "title_template": "Market Accelerator Program {{CITY_NAME}} | Rapid Scale",
+    "description_template": "Rapid market acceleration for {{CITY_NAME}} businesses. Fast-track growth and scaling support for {{COUNTRY_NAME}} companies.",
+    "icon": "rocket",
+    "template": "service-city-landing"
+  }
+]

@@ -1,0 +1,872 @@
+{
+  "managed-it": {
+    "en": {
+      "intro": [
+        "In the fast-paced business environment of {{CITY_NAME}}, reliable IT infrastructure is not just a luxury—it's a necessity. Companies in {{COUNTRY_NAME}} are increasingly turning to Managed IT Services to streamline their operations, enhance security, and predict costs.",
+        "Navigating the complex technology landscape in {{CITY_NAME}} requires a partner who understands both the local market and global technology trends. Our Managed IT Services provide comprehensive support for businesses looking to scale without the headache of managing their own IT infrastructure.",
+        "Is your {{CITY_NAME}} business struggling with outdated technology, frequent downtime, or cybersecurity concerns? Our Managed IT Services offer a robust solution, providing 24/7 monitoring, strategic consulting, and rapid response support to keep your business running smoothly."
+      ],
+      "pain_points": [
+        "Unpredictable IT costs draining your budget",
+        "Frequent system downtime disrupting productivity",
+        "Lack of internal IT expertise to handle complex issues",
+        "Growing cybersecurity threats and compliance requirements",
+        "Slow response times from current support providers",
+        "Difficulty scaling technology with business growth",
+        "Outdated hardware and software slowing down employees",
+        "Data backup and disaster recovery concerns",
+        "Inefficient cloud migration strategies",
+        "Lack of strategic IT planning for the future"
+      ],
+      "benefits": [
+        "**Predictable Monthly Costs:** Move from CapEx to OpEx with flat-rate pricing.",
+        "**24/7/365 Monitoring:** We catch issues before they become problems.",
+        "**Enhanced Security:** Enterprise-grade protection for your data and network.",
+        "**Access to Experts:** specialized talent without the hiring costs.",
+        "**Focus on Core Business:** Let us handle the tech while you handle the growth.",
+        "**Scalability:** Services that grow as your {{CITY_NAME}} business grows.",
+        "**Compliance Adherence:** We help you meet GDPR, HIPAA, and other standards.",
+        "**Vendor Management:** We handle your ISPs, software vendors, and hardware suppliers."
+      ],
+      "faq": [
+        {
+          "q": "What is included in your Managed IT Services for {{CITY_NAME}} companies?",
+          "a": "Our packages include 24/7 monitoring, helpdesk support, cybersecurity protection, patch management, backup solutions, and strategic vCIO consulting."
+        },
+        {
+          "q": "How fast is your response time in {{CITY_NAME}}?",
+          "a": "We guarantee response times based on severity, often within 15 minutes for critical issues. Our local presence ensures we can be onsite if remote support isn't enough."
+        },
+        {
+          "q": "Do you support remote employees outside of {{CITY_NAME}}?",
+          "a": "Yes, our support infrastructure is cloud-first, meaning we can support your team whether they are in {{CITY_NAME}}, elsewhere in {{COUNTRY_NAME}}, or working globally."
+        }
+      ]
+    },
+    "de": {
+      "intro": [
+        "[DE] In the fast-paced business environment of {{CITY_NAME}}, reliable IT infrastructure is not just a luxury—it's a necessity. Companies in {{COUNTRY_NAME}} are increasingly turning to Managed IT Services to streamline their operations, enhance security, and predict costs.",
+        "[DE] Navigating the complex technology landscape in {{CITY_NAME}} requires a partner who understands both the local market and global technology trends. Our Managed IT Services provide comprehensive support for businesses looking to scale without the headache of managing their own IT infrastructure.",
+        "[DE] Is your {{CITY_NAME}} business struggling with outdated technology, frequent downtime, or cybersecurity concerns? Our Managed IT Services offer a robust solution, providing 24/7 monitoring, strategic consulting, and rapid response support to keep your business running smoothly."
+      ],
+      "pain_points": [
+        "[DE] Unpredictable IT costs draining your budget",
+        "[DE] Frequent system downtime disrupting productivity",
+        "[DE] Lack of internal IT expertise to handle complex issues",
+        "[DE] Growing cybersecurity threats and compliance requirements",
+        "[DE] Slow response times from current support providers",
+        "[DE] Difficulty scaling technology with business growth",
+        "[DE] Outdated hardware and software slowing down employees",
+        "[DE] Data backup and disaster recovery concerns",
+        "[DE] Inefficient cloud migration strategies",
+        "[DE] Lack of strategic IT planning for the future"
+      ],
+      "benefits": [
+        "[DE] **Predictable Monthly Costs:** Move from CapEx to OpEx with flat-rate pricing.",
+        "[DE] **24/7/365 Monitoring:** We catch issues before they become problems.",
+        "[DE] **Enhanced Security:** Enterprise-grade protection for your data and network.",
+        "[DE] **Access to Experts:** specialized talent without the hiring costs.",
+        "[DE] **Focus on Core Business:** Let us handle the tech while you handle the growth.",
+        "[DE] **Scalability:** Services that grow as your {{CITY_NAME}} business grows.",
+        "[DE] **Compliance Adherence:** We help you meet GDPR, HIPAA, and other standards.",
+        "[DE] **Vendor Management:** We handle your ISPs, software vendors, and hardware suppliers."
+      ],
+      "faq": [
+        {
+          "q": "[DE] What is included in your Managed IT Services for {{CITY_NAME}} companies?",
+          "a": "[DE] Our packages include 24/7 monitoring, helpdesk support, cybersecurity protection, patch management, backup solutions, and strategic vCIO consulting."
+        },
+        {
+          "q": "[DE] How fast is your response time in {{CITY_NAME}}?",
+          "a": "[DE] We guarantee response times based on severity, often within 15 minutes for critical issues. Our local presence ensures we can be onsite if remote support isn't enough."
+        },
+        {
+          "q": "[DE] Do you support remote employees outside of {{CITY_NAME}}?",
+          "a": "[DE] Yes, our support infrastructure is cloud-first, meaning we can support your team whether they are in {{CITY_NAME}}, elsewhere in {{COUNTRY_NAME}}, or working globally."
+        }
+      ]
+    },
+    "fr": {
+      "intro": [
+        "[FR] In the fast-paced business environment of {{CITY_NAME}}, reliable IT infrastructure is not just a luxury—it's a necessity. Companies in {{COUNTRY_NAME}} are increasingly turning to Managed IT Services to streamline their operations, enhance security, and predict costs.",
+        "[FR] Navigating the complex technology landscape in {{CITY_NAME}} requires a partner who understands both the local market and global technology trends. Our Managed IT Services provide comprehensive support for businesses looking to scale without the headache of managing their own IT infrastructure.",
+        "[FR] Is your {{CITY_NAME}} business struggling with outdated technology, frequent downtime, or cybersecurity concerns? Our Managed IT Services offer a robust solution, providing 24/7 monitoring, strategic consulting, and rapid response support to keep your business running smoothly."
+      ],
+      "pain_points": [
+        "[FR] Unpredictable IT costs draining your budget",
+        "[FR] Frequent system downtime disrupting productivity",
+        "[FR] Lack of internal IT expertise to handle complex issues",
+        "[FR] Growing cybersecurity threats and compliance requirements",
+        "[FR] Slow response times from current support providers",
+        "[FR] Difficulty scaling technology with business growth",
+        "[FR] Outdated hardware and software slowing down employees",
+        "[FR] Data backup and disaster recovery concerns",
+        "[FR] Inefficient cloud migration strategies",
+        "[FR] Lack of strategic IT planning for the future"
+      ],
+      "benefits": [
+        "[FR] **Predictable Monthly Costs:** Move from CapEx to OpEx with flat-rate pricing.",
+        "[FR] **24/7/365 Monitoring:** We catch issues before they become problems.",
+        "[FR] **Enhanced Security:** Enterprise-grade protection for your data and network.",
+        "[FR] **Access to Experts:** specialized talent without the hiring costs.",
+        "[FR] **Focus on Core Business:** Let us handle the tech while you handle the growth.",
+        "[FR] **Scalability:** Services that grow as your {{CITY_NAME}} business grows.",
+        "[FR] **Compliance Adherence:** We help you meet GDPR, HIPAA, and other standards.",
+        "[FR] **Vendor Management:** We handle your ISPs, software vendors, and hardware suppliers."
+      ],
+      "faq": [
+        {
+          "q": "[FR] What is included in your Managed IT Services for {{CITY_NAME}} companies?",
+          "a": "[FR] Our packages include 24/7 monitoring, helpdesk support, cybersecurity protection, patch management, backup solutions, and strategic vCIO consulting."
+        },
+        {
+          "q": "[FR] How fast is your response time in {{CITY_NAME}}?",
+          "a": "[FR] We guarantee response times based on severity, often within 15 minutes for critical issues. Our local presence ensures we can be onsite if remote support isn't enough."
+        },
+        {
+          "q": "[FR] Do you support remote employees outside of {{CITY_NAME}}?",
+          "a": "[FR] Yes, our support infrastructure is cloud-first, meaning we can support your team whether they are in {{CITY_NAME}}, elsewhere in {{COUNTRY_NAME}}, or working globally."
+        }
+      ]
+    },
+    "tr": {
+      "intro": [
+        "[TR] In the fast-paced business environment of {{CITY_NAME}}, reliable IT infrastructure is not just a luxury—it's a necessity. Companies in {{COUNTRY_NAME}} are increasingly turning to Managed IT Services to streamline their operations, enhance security, and predict costs.",
+        "[TR] Navigating the complex technology landscape in {{CITY_NAME}} requires a partner who understands both the local market and global technology trends. Our Managed IT Services provide comprehensive support for businesses looking to scale without the headache of managing their own IT infrastructure.",
+        "[TR] Is your {{CITY_NAME}} business struggling with outdated technology, frequent downtime, or cybersecurity concerns? Our Managed IT Services offer a robust solution, providing 24/7 monitoring, strategic consulting, and rapid response support to keep your business running smoothly."
+      ],
+      "pain_points": [
+        "[TR] Unpredictable IT costs draining your budget",
+        "[TR] Frequent system downtime disrupting productivity",
+        "[TR] Lack of internal IT expertise to handle complex issues",
+        "[TR] Growing cybersecurity threats and compliance requirements",
+        "[TR] Slow response times from current support providers",
+        "[TR] Difficulty scaling technology with business growth",
+        "[TR] Outdated hardware and software slowing down employees",
+        "[TR] Data backup and disaster recovery concerns",
+        "[TR] Inefficient cloud migration strategies",
+        "[TR] Lack of strategic IT planning for the future"
+      ],
+      "benefits": [
+        "[TR] **Predictable Monthly Costs:** Move from CapEx to OpEx with flat-rate pricing.",
+        "[TR] **24/7/365 Monitoring:** We catch issues before they become problems.",
+        "[TR] **Enhanced Security:** Enterprise-grade protection for your data and network.",
+        "[TR] **Access to Experts:** specialized talent without the hiring costs.",
+        "[TR] **Focus on Core Business:** Let us handle the tech while you handle the growth.",
+        "[TR] **Scalability:** Services that grow as your {{CITY_NAME}} business grows.",
+        "[TR] **Compliance Adherence:** We help you meet GDPR, HIPAA, and other standards.",
+        "[TR] **Vendor Management:** We handle your ISPs, software vendors, and hardware suppliers."
+      ],
+      "faq": [
+        {
+          "q": "[TR] What is included in your Managed IT Services for {{CITY_NAME}} companies?",
+          "a": "[TR] Our packages include 24/7 monitoring, helpdesk support, cybersecurity protection, patch management, backup solutions, and strategic vCIO consulting."
+        },
+        {
+          "q": "[TR] How fast is your response time in {{CITY_NAME}}?",
+          "a": "[TR] We guarantee response times based on severity, often within 15 minutes for critical issues. Our local presence ensures we can be onsite if remote support isn't enough."
+        },
+        {
+          "q": "[TR] Do you support remote employees outside of {{CITY_NAME}}?",
+          "a": "[TR] Yes, our support infrastructure is cloud-first, meaning we can support your team whether they are in {{CITY_NAME}}, elsewhere in {{COUNTRY_NAME}}, or working globally."
+        }
+      ]
+    }
+  },
+  "cybersecurity": {
+    "en": {
+      "intro": [
+        "Cyber threats in {{CITY_NAME}} are evolving rapidly. From ransomware to phishing, businesses in {{COUNTRY_NAME}} are under constant attack. Our Cybersecurity Services provide the shield you need to operate with confidence.",
+        "Protecting your digital assets is critical. Our {{CITY_NAME}}-based cybersecurity team delivers offensive and defensive security strategies, including VAPT (Vulnerability Assessment and Penetration Testing) and SOC services.",
+        "Don't wait for a breach to think about security. Proactive cybersecurity services in {{CITY_NAME}} can save your reputation and your bottom line. We bring enterprise-grade security to the mid-market."
+      ],
+      "pain_points": [
+        "Fear of ransomware attacks holding data hostage",
+        "Compliance with GDPR, CCPA, or local {{COUNTRY_NAME}} regulations",
+        "Employees falling for sophisticated phishing scams",
+        "Lack of visibility into network vulnerabilities",
+        "Insecure remote work setups",
+        "Unsecured IoT devices on the corporate network",
+        "No incident response plan in place",
+        "Third-party vendor risk management",
+        "Cloud security misconfigurations",
+        "Insider threats and data leakage"
+      ],
+      "benefits": [
+        "**Risk Reduction:** significantly lower the probability of a successful attack.",
+        "**Compliance:** Meet regulatory standards easily with our guidance.",
+        "**Business Continuity:** Ensure you can recover quickly if an incident occurs.",
+        "**Customer Trust:** Demonstrate to your clients in {{CITY_NAME}} that you take their data seriously.",
+        "**Real-time Detection:** Catch threats as they happen, not months later.",
+        "**Employee Awareness:** Turn your team into your first line of defense with training.",
+        "**Strategic Insight:** Understand your security posture with regular reporting.",
+        "**Cost Savings:** Preventing a breach is far cheaper than remediating one."
+      ],
+      "faq": [
+        {
+          "q": "Do I need a penetration test for my {{CITY_NAME}} business?",
+          "a": "If you handle sensitive data or want to meet compliance standards (like ISO 27001 or SOC 2), a regular pen test is essential to identify weaknesses."
+        },
+        {
+          "q": "How does your email security work?",
+          "a": "We implement multi-layered defense including AI-based filtering, SPF/DKIM/DMARC configuration, and user training to stop phishing at the source."
+        },
+        {
+          "q": "Can you help with {{COUNTRY_NAME}} specific data privacy laws?",
+          "a": "Absolutely. We are experts in local compliance regulations in {{COUNTRY_NAME}} and can guide your compliance journey."
+        }
+      ]
+    },
+    "de": {
+      "intro": [
+        "[DE] Cyber threats in {{CITY_NAME}} are evolving rapidly. From ransomware to phishing, businesses in {{COUNTRY_NAME}} are under constant attack. Our Cybersecurity Services provide the shield you need to operate with confidence.",
+        "[DE] Protecting your digital assets is critical. Our {{CITY_NAME}}-based cybersecurity team delivers offensive and defensive security strategies, including VAPT (Vulnerability Assessment and Penetration Testing) and SOC services.",
+        "[DE] Don't wait for a breach to think about security. Proactive cybersecurity services in {{CITY_NAME}} can save your reputation and your bottom line. We bring enterprise-grade security to the mid-market."
+      ],
+      "pain_points": [
+        "[DE] Fear of ransomware attacks holding data hostage",
+        "[DE] Compliance with GDPR, CCPA, or local {{COUNTRY_NAME}} regulations",
+        "[DE] Employees falling for sophisticated phishing scams",
+        "[DE] Lack of visibility into network vulnerabilities",
+        "[DE] Insecure remote work setups",
+        "[DE] Unsecured IoT devices on the corporate network",
+        "[DE] No incident response plan in place",
+        "[DE] Third-party vendor risk management",
+        "[DE] Cloud security misconfigurations",
+        "[DE] Insider threats and data leakage"
+      ],
+      "benefits": [
+        "[DE] **Risk Reduction:** significantly lower the probability of a successful attack.",
+        "[DE] **Compliance:** Meet regulatory standards easily with our guidance.",
+        "[DE] **Business Continuity:** Ensure you can recover quickly if an incident occurs.",
+        "[DE] **Customer Trust:** Demonstrate to your clients in {{CITY_NAME}} that you take their data seriously.",
+        "[DE] **Real-time Detection:** Catch threats as they happen, not months later.",
+        "[DE] **Employee Awareness:** Turn your team into your first line of defense with training.",
+        "[DE] **Strategic Insight:** Understand your security posture with regular reporting.",
+        "[DE] **Cost Savings:** Preventing a breach is far cheaper than remediating one."
+      ],
+      "faq": [
+        {
+          "q": "[DE] Do I need a penetration test for my {{CITY_NAME}} business?",
+          "a": "[DE] If you handle sensitive data or want to meet compliance standards (like ISO 27001 or SOC 2), a regular pen test is essential to identify weaknesses."
+        },
+        {
+          "q": "[DE] How does your email security work?",
+          "a": "[DE] We implement multi-layered defense including AI-based filtering, SPF/DKIM/DMARC configuration, and user training to stop phishing at the source."
+        },
+        {
+          "q": "[DE] Can you help with {{COUNTRY_NAME}} specific data privacy laws?",
+          "a": "[DE] Absolutely. We are experts in local compliance regulations in {{COUNTRY_NAME}} and can guide your compliance journey."
+        }
+      ]
+    },
+    "fr": {
+      "intro": [
+        "[FR] Cyber threats in {{CITY_NAME}} are evolving rapidly. From ransomware to phishing, businesses in {{COUNTRY_NAME}} are under constant attack. Our Cybersecurity Services provide the shield you need to operate with confidence.",
+        "[FR] Protecting your digital assets is critical. Our {{CITY_NAME}}-based cybersecurity team delivers offensive and defensive security strategies, including VAPT (Vulnerability Assessment and Penetration Testing) and SOC services.",
+        "[FR] Don't wait for a breach to think about security. Proactive cybersecurity services in {{CITY_NAME}} can save your reputation and your bottom line. We bring enterprise-grade security to the mid-market."
+      ],
+      "pain_points": [
+        "[FR] Fear of ransomware attacks holding data hostage",
+        "[FR] Compliance with GDPR, CCPA, or local {{COUNTRY_NAME}} regulations",
+        "[FR] Employees falling for sophisticated phishing scams",
+        "[FR] Lack of visibility into network vulnerabilities",
+        "[FR] Insecure remote work setups",
+        "[FR] Unsecured IoT devices on the corporate network",
+        "[FR] No incident response plan in place",
+        "[FR] Third-party vendor risk management",
+        "[FR] Cloud security misconfigurations",
+        "[FR] Insider threats and data leakage"
+      ],
+      "benefits": [
+        "[FR] **Risk Reduction:** significantly lower the probability of a successful attack.",
+        "[FR] **Compliance:** Meet regulatory standards easily with our guidance.",
+        "[FR] **Business Continuity:** Ensure you can recover quickly if an incident occurs.",
+        "[FR] **Customer Trust:** Demonstrate to your clients in {{CITY_NAME}} that you take their data seriously.",
+        "[FR] **Real-time Detection:** Catch threats as they happen, not months later.",
+        "[FR] **Employee Awareness:** Turn your team into your first line of defense with training.",
+        "[FR] **Strategic Insight:** Understand your security posture with regular reporting.",
+        "[FR] **Cost Savings:** Preventing a breach is far cheaper than remediating one."
+      ],
+      "faq": [
+        {
+          "q": "[FR] Do I need a penetration test for my {{CITY_NAME}} business?",
+          "a": "[FR] If you handle sensitive data or want to meet compliance standards (like ISO 27001 or SOC 2), a regular pen test is essential to identify weaknesses."
+        },
+        {
+          "q": "[FR] How does your email security work?",
+          "a": "[FR] We implement multi-layered defense including AI-based filtering, SPF/DKIM/DMARC configuration, and user training to stop phishing at the source."
+        },
+        {
+          "q": "[FR] Can you help with {{COUNTRY_NAME}} specific data privacy laws?",
+          "a": "[FR] Absolutely. We are experts in local compliance regulations in {{COUNTRY_NAME}} and can guide your compliance journey."
+        }
+      ]
+    },
+    "tr": {
+      "intro": [
+        "[TR] Cyber threats in {{CITY_NAME}} are evolving rapidly. From ransomware to phishing, businesses in {{COUNTRY_NAME}} are under constant attack. Our Cybersecurity Services provide the shield you need to operate with confidence.",
+        "[TR] Protecting your digital assets is critical. Our {{CITY_NAME}}-based cybersecurity team delivers offensive and defensive security strategies, including VAPT (Vulnerability Assessment and Penetration Testing) and SOC services.",
+        "[TR] Don't wait for a breach to think about security. Proactive cybersecurity services in {{CITY_NAME}} can save your reputation and your bottom line. We bring enterprise-grade security to the mid-market."
+      ],
+      "pain_points": [
+        "[TR] Fear of ransomware attacks holding data hostage",
+        "[TR] Compliance with GDPR, CCPA, or local {{COUNTRY_NAME}} regulations",
+        "[TR] Employees falling for sophisticated phishing scams",
+        "[TR] Lack of visibility into network vulnerabilities",
+        "[TR] Insecure remote work setups",
+        "[TR] Unsecured IoT devices on the corporate network",
+        "[TR] No incident response plan in place",
+        "[TR] Third-party vendor risk management",
+        "[TR] Cloud security misconfigurations",
+        "[TR] Insider threats and data leakage"
+      ],
+      "benefits": [
+        "[TR] **Risk Reduction:** significantly lower the probability of a successful attack.",
+        "[TR] **Compliance:** Meet regulatory standards easily with our guidance.",
+        "[TR] **Business Continuity:** Ensure you can recover quickly if an incident occurs.",
+        "[TR] **Customer Trust:** Demonstrate to your clients in {{CITY_NAME}} that you take their data seriously.",
+        "[TR] **Real-time Detection:** Catch threats as they happen, not months later.",
+        "[TR] **Employee Awareness:** Turn your team into your first line of defense with training.",
+        "[TR] **Strategic Insight:** Understand your security posture with regular reporting.",
+        "[TR] **Cost Savings:** Preventing a breach is far cheaper than remediating one."
+      ],
+      "faq": [
+        {
+          "q": "[TR] Do I need a penetration test for my {{CITY_NAME}} business?",
+          "a": "[TR] If you handle sensitive data or want to meet compliance standards (like ISO 27001 or SOC 2), a regular pen test is essential to identify weaknesses."
+        },
+        {
+          "q": "[TR] How does your email security work?",
+          "a": "[TR] We implement multi-layered defense including AI-based filtering, SPF/DKIM/DMARC configuration, and user training to stop phishing at the source."
+        },
+        {
+          "q": "[TR] Can you help with {{COUNTRY_NAME}} specific data privacy laws?",
+          "a": "[TR] Absolutely. We are experts in local compliance regulations in {{COUNTRY_NAME}} and can guide your compliance journey."
+        }
+      ]
+    }
+  },
+  "recruitment": {
+    "en": {
+      "intro": [
+        "Finding top talent in {{CITY_NAME}} is competitive. Our B2B Recruitment services specialize in sourcing high-impact sales, technical, and leadership candidates who can drive your business forward.",
+        "The cost of a bad hire is immense. In {{CITY_NAME}}'s dynamic market, you need a recruitment partner who understands your industry and culture. We use data-driven headhunting to find the hidden gems.",
+        "Scale your team with confidence. Whether you need a VP of Sales in {{CITY_NAME}} or a remote engineering team, our recruitment experts leverage a global network to fill your roles fast."
+      ],
+      "pain_points": [
+        "Long time-to-hire slowing down growth",
+        "Low quality of applicants from job boards",
+        "Candidates ghosting during the interview process",
+        "High turnover rates in sales teams",
+        "Difficulty assessing technical skills",
+        "Lack of employer branding in the {{CITY_NAME}} market",
+        "Salary negotiation challenges",
+        "Cultural misalignment with new hires",
+        "Time wasted screening unqualified resumes",
+        "Competition from larger tech giants"
+      ],
+      "benefits": [
+        "**Access to Passive Candidates:** We reach the 70% of talent not actively looking.",
+        "**Rigorous Screening:** We interview and vet candidates before you ever see them.",
+        "**Industry Expertise:** We speak the language of sales and tech.",
+        "**Faster Hires:** Reduce your time-to-fill by up to 50%.",
+        "**Retention Focus:** We match for culture and long-term fit.",
+        "**Market Intelligence:** Get salary and hiring trend data for {{CITY_NAME}}.",
+        "**Risk Mitigation:** Replacement guarantees on all placements.",
+        "**Scalable Support:** Hire one key role or build an entire department."
+      ],
+      "faq": [
+        {
+          "q": "What roles do you specialize in for {{CITY_NAME}} companies?",
+          "a": "We focus primarily on B2B Sales (SDR, AE, VP Sales), Marketing, Customer Success, and Technical roles (Software Engineers, DevOps, CTOs)."
+        },
+        {
+          "q": "How do you source candidates in {{CITY_NAME}}?",
+          "a": "We use a mix of AI-powered sourcing, direct headhunting on LinkedIn, and our proprietary database of pre-vetted professionals."
+        },
+        {
+          "q": "What is your fee structure?",
+          "a": "We operate on a contingency basis for most roles, meaning you only pay if we successfully find the right candidate for you."
+        }
+      ]
+    },
+    "de": {
+      "intro": [
+        "[DE] Finding top talent in {{CITY_NAME}} is competitive. Our B2B Recruitment services specialize in sourcing high-impact sales, technical, and leadership candidates who can drive your business forward.",
+        "[DE] The cost of a bad hire is immense. In {{CITY_NAME}}'s dynamic market, you need a recruitment partner who understands your industry and culture. We use data-driven headhunting to find the hidden gems.",
+        "[DE] Scale your team with confidence. Whether you need a VP of Sales in {{CITY_NAME}} or a remote engineering team, our recruitment experts leverage a global network to fill your roles fast."
+      ],
+      "pain_points": [
+        "[DE] Long time-to-hire slowing down growth",
+        "[DE] Low quality of applicants from job boards",
+        "[DE] Candidates ghosting during the interview process",
+        "[DE] High turnover rates in sales teams",
+        "[DE] Difficulty assessing technical skills",
+        "[DE] Lack of employer branding in the {{CITY_NAME}} market",
+        "[DE] Salary negotiation challenges",
+        "[DE] Cultural misalignment with new hires",
+        "[DE] Time wasted screening unqualified resumes",
+        "[DE] Competition from larger tech giants"
+      ],
+      "benefits": [
+        "[DE] **Access to Passive Candidates:** We reach the 70% of talent not actively looking.",
+        "[DE] **Rigorous Screening:** We interview and vet candidates before you ever see them.",
+        "[DE] **Industry Expertise:** We speak the language of sales and tech.",
+        "[DE] **Faster Hires:** Reduce your time-to-fill by up to 50%.",
+        "[DE] **Retention Focus:** We match for culture and long-term fit.",
+        "[DE] **Market Intelligence:** Get salary and hiring trend data for {{CITY_NAME}}.",
+        "[DE] **Risk Mitigation:** Replacement guarantees on all placements.",
+        "[DE] **Scalable Support:** Hire one key role or build an entire department."
+      ],
+      "faq": [
+        {
+          "q": "[DE] What roles do you specialize in for {{CITY_NAME}} companies?",
+          "a": "[DE] We focus primarily on B2B Sales (SDR, AE, VP Sales), Marketing, Customer Success, and Technical roles (Software Engineers, DevOps, CTOs)."
+        },
+        {
+          "q": "[DE] How do you source candidates in {{CITY_NAME}}?",
+          "a": "[DE] We use a mix of AI-powered sourcing, direct headhunting on LinkedIn, and our proprietary database of pre-vetted professionals."
+        },
+        {
+          "q": "[DE] What is your fee structure?",
+          "a": "[DE] We operate on a contingency basis for most roles, meaning you only pay if we successfully find the right candidate for you."
+        }
+      ]
+    },
+    "fr": {
+      "intro": [
+        "[FR] Finding top talent in {{CITY_NAME}} is competitive. Our B2B Recruitment services specialize in sourcing high-impact sales, technical, and leadership candidates who can drive your business forward.",
+        "[FR] The cost of a bad hire is immense. In {{CITY_NAME}}'s dynamic market, you need a recruitment partner who understands your industry and culture. We use data-driven headhunting to find the hidden gems.",
+        "[FR] Scale your team with confidence. Whether you need a VP of Sales in {{CITY_NAME}} or a remote engineering team, our recruitment experts leverage a global network to fill your roles fast."
+      ],
+      "pain_points": [
+        "[FR] Long time-to-hire slowing down growth",
+        "[FR] Low quality of applicants from job boards",
+        "[FR] Candidates ghosting during the interview process",
+        "[FR] High turnover rates in sales teams",
+        "[FR] Difficulty assessing technical skills",
+        "[FR] Lack of employer branding in the {{CITY_NAME}} market",
+        "[FR] Salary negotiation challenges",
+        "[FR] Cultural misalignment with new hires",
+        "[FR] Time wasted screening unqualified resumes",
+        "[FR] Competition from larger tech giants"
+      ],
+      "benefits": [
+        "[FR] **Access to Passive Candidates:** We reach the 70% of talent not actively looking.",
+        "[FR] **Rigorous Screening:** We interview and vet candidates before you ever see them.",
+        "[FR] **Industry Expertise:** We speak the language of sales and tech.",
+        "[FR] **Faster Hires:** Reduce your time-to-fill by up to 50%.",
+        "[FR] **Retention Focus:** We match for culture and long-term fit.",
+        "[FR] **Market Intelligence:** Get salary and hiring trend data for {{CITY_NAME}}.",
+        "[FR] **Risk Mitigation:** Replacement guarantees on all placements.",
+        "[FR] **Scalable Support:** Hire one key role or build an entire department."
+      ],
+      "faq": [
+        {
+          "q": "[FR] What roles do you specialize in for {{CITY_NAME}} companies?",
+          "a": "[FR] We focus primarily on B2B Sales (SDR, AE, VP Sales), Marketing, Customer Success, and Technical roles (Software Engineers, DevOps, CTOs)."
+        },
+        {
+          "q": "[FR] How do you source candidates in {{CITY_NAME}}?",
+          "a": "[FR] We use a mix of AI-powered sourcing, direct headhunting on LinkedIn, and our proprietary database of pre-vetted professionals."
+        },
+        {
+          "q": "[FR] What is your fee structure?",
+          "a": "[FR] We operate on a contingency basis for most roles, meaning you only pay if we successfully find the right candidate for you."
+        }
+      ]
+    },
+    "tr": {
+      "intro": [
+        "[TR] Finding top talent in {{CITY_NAME}} is competitive. Our B2B Recruitment services specialize in sourcing high-impact sales, technical, and leadership candidates who can drive your business forward.",
+        "[TR] The cost of a bad hire is immense. In {{CITY_NAME}}'s dynamic market, you need a recruitment partner who understands your industry and culture. We use data-driven headhunting to find the hidden gems.",
+        "[TR] Scale your team with confidence. Whether you need a VP of Sales in {{CITY_NAME}} or a remote engineering team, our recruitment experts leverage a global network to fill your roles fast."
+      ],
+      "pain_points": [
+        "[TR] Long time-to-hire slowing down growth",
+        "[TR] Low quality of applicants from job boards",
+        "[TR] Candidates ghosting during the interview process",
+        "[TR] High turnover rates in sales teams",
+        "[TR] Difficulty assessing technical skills",
+        "[TR] Lack of employer branding in the {{CITY_NAME}} market",
+        "[TR] Salary negotiation challenges",
+        "[TR] Cultural misalignment with new hires",
+        "[TR] Time wasted screening unqualified resumes",
+        "[TR] Competition from larger tech giants"
+      ],
+      "benefits": [
+        "[TR] **Access to Passive Candidates:** We reach the 70% of talent not actively looking.",
+        "[TR] **Rigorous Screening:** We interview and vet candidates before you ever see them.",
+        "[TR] **Industry Expertise:** We speak the language of sales and tech.",
+        "[TR] **Faster Hires:** Reduce your time-to-fill by up to 50%.",
+        "[TR] **Retention Focus:** We match for culture and long-term fit.",
+        "[TR] **Market Intelligence:** Get salary and hiring trend data for {{CITY_NAME}}.",
+        "[TR] **Risk Mitigation:** Replacement guarantees on all placements.",
+        "[TR] **Scalable Support:** Hire one key role or build an entire department."
+      ],
+      "faq": [
+        {
+          "q": "[TR] What roles do you specialize in for {{CITY_NAME}} companies?",
+          "a": "[TR] We focus primarily on B2B Sales (SDR, AE, VP Sales), Marketing, Customer Success, and Technical roles (Software Engineers, DevOps, CTOs)."
+        },
+        {
+          "q": "[TR] How do you source candidates in {{CITY_NAME}}?",
+          "a": "[TR] We use a mix of AI-powered sourcing, direct headhunting on LinkedIn, and our proprietary database of pre-vetted professionals."
+        },
+        {
+          "q": "[TR] What is your fee structure?",
+          "a": "[TR] We operate on a contingency basis for most roles, meaning you only pay if we successfully find the right candidate for you."
+        }
+      ]
+    }
+  },
+  "ai-studio": {
+    "en": {
+      "intro": [
+        "The future of content is AI. Our AI Creative Studio in {{CITY_NAME}} helps forward-thinking brands generate hyper-realistic video, audio, and visual content at scale. Stop filming, start generating.",
+        "Localization is key to global growth. For {{CITY_NAME}} companies expanding internationally, our AI video dubbing and lip-sync technology allows you to speak 30+ languages fluently without re-filming.",
+        "Create a digital twin of your CEO or top spokesperson. Our AI Studio services enable {{CITY_NAME}} executives to produce consistent, high-quality video updates without stepping foot in a studio."
+      ],
+      "pain_points": [
+        "High cost of traditional video production",
+        "Inability to scale video content for social media",
+        "Language barriers preventing global reach",
+        "Executive time constraints for video shoots",
+        "Inconsistent brand messaging across regions",
+        "Slow turnaround times for creative assets",
+        "High cost of professional voiceover talent",
+        "Difficulty keeping training materials up to date",
+        "Lack of engagement with text-based content",
+        "Need for personalized video outreach at scale"
+      ],
+      "benefits": [
+        "**Scale Content 10x:** Produce more video in less time.",
+        "**Global Reach:** Translate and lip-sync video into 30+ languages.",
+        "**Cost Efficiency:** a fraction of the cost of physical production.",
+        "**Consistency:** Your digital twin is always on brand and camera-ready.",
+        "**Personalization:** Create thousands of personalized videos for prospects.",
+        "**Speed:** Turn scripts into finished videos in minutes, not days.",
+        "**Engagement:** Boost conversion rates with rich media.",
+        "**Innovation:** Position your {{CITY_NAME}} brand as a tech leader."
+      ],
+      "faq": [
+        {
+          "q": "How realistic are the AI avatars?",
+          "a": "Extremely realistic. We use the latest generative AI models to create avatars that capture micro-expressions and natural movement, indistinguishable from real video in many contexts."
+        },
+        {
+          "q": "Can you localize my existing video content?",
+          "a": "Yes, we can take your existing English content and dub it into French, German, Spanish, etc., while modifying the lip movements to match the new language."
+        },
+        {
+          "q": "Is this suitable for corporate training in {{CITY_NAME}}?",
+          "a": "Perfectly suitable. It allows you to update training modules instantly by just changing the text script, rather than re-recording the instructor."
+        }
+      ]
+    },
+    "de": {
+      "intro": [
+        "[DE] The future of content is AI. Our AI Creative Studio in {{CITY_NAME}} helps forward-thinking brands generate hyper-realistic video, audio, and visual content at scale. Stop filming, start generating.",
+        "[DE] Localization is key to global growth. For {{CITY_NAME}} companies expanding internationally, our AI video dubbing and lip-sync technology allows you to speak 30+ languages fluently without re-filming.",
+        "[DE] Create a digital twin of your CEO or top spokesperson. Our AI Studio services enable {{CITY_NAME}} executives to produce consistent, high-quality video updates without stepping foot in a studio."
+      ],
+      "pain_points": [
+        "[DE] High cost of traditional video production",
+        "[DE] Inability to scale video content for social media",
+        "[DE] Language barriers preventing global reach",
+        "[DE] Executive time constraints for video shoots",
+        "[DE] Inconsistent brand messaging across regions",
+        "[DE] Slow turnaround times for creative assets",
+        "[DE] High cost of professional voiceover talent",
+        "[DE] Difficulty keeping training materials up to date",
+        "[DE] Lack of engagement with text-based content",
+        "[DE] Need for personalized video outreach at scale"
+      ],
+      "benefits": [
+        "[DE] **Scale Content 10x:** Produce more video in less time.",
+        "[DE] **Global Reach:** Translate and lip-sync video into 30+ languages.",
+        "[DE] **Cost Efficiency:** a fraction of the cost of physical production.",
+        "[DE] **Consistency:** Your digital twin is always on brand and camera-ready.",
+        "[DE] **Personalization:** Create thousands of personalized videos for prospects.",
+        "[DE] **Speed:** Turn scripts into finished videos in minutes, not days.",
+        "[DE] **Engagement:** Boost conversion rates with rich media.",
+        "[DE] **Innovation:** Position your {{CITY_NAME}} brand as a tech leader."
+      ],
+      "faq": [
+        {
+          "q": "[DE] How realistic are the AI avatars?",
+          "a": "[DE] Extremely realistic. We use the latest generative AI models to create avatars that capture micro-expressions and natural movement, indistinguishable from real video in many contexts."
+        },
+        {
+          "q": "[DE] Can you localize my existing video content?",
+          "a": "[DE] Yes, we can take your existing English content and dub it into French, German, Spanish, etc., while modifying the lip movements to match the new language."
+        },
+        {
+          "q": "[DE] Is this suitable for corporate training in {{CITY_NAME}}?",
+          "a": "[DE] Perfectly suitable. It allows you to update training modules instantly by just changing the text script, rather than re-recording the instructor."
+        }
+      ]
+    },
+    "fr": {
+      "intro": [
+        "[FR] The future of content is AI. Our AI Creative Studio in {{CITY_NAME}} helps forward-thinking brands generate hyper-realistic video, audio, and visual content at scale. Stop filming, start generating.",
+        "[FR] Localization is key to global growth. For {{CITY_NAME}} companies expanding internationally, our AI video dubbing and lip-sync technology allows you to speak 30+ languages fluently without re-filming.",
+        "[FR] Create a digital twin of your CEO or top spokesperson. Our AI Studio services enable {{CITY_NAME}} executives to produce consistent, high-quality video updates without stepping foot in a studio."
+      ],
+      "pain_points": [
+        "[FR] High cost of traditional video production",
+        "[FR] Inability to scale video content for social media",
+        "[FR] Language barriers preventing global reach",
+        "[FR] Executive time constraints for video shoots",
+        "[FR] Inconsistent brand messaging across regions",
+        "[FR] Slow turnaround times for creative assets",
+        "[FR] High cost of professional voiceover talent",
+        "[FR] Difficulty keeping training materials up to date",
+        "[FR] Lack of engagement with text-based content",
+        "[FR] Need for personalized video outreach at scale"
+      ],
+      "benefits": [
+        "[FR] **Scale Content 10x:** Produce more video in less time.",
+        "[FR] **Global Reach:** Translate and lip-sync video into 30+ languages.",
+        "[FR] **Cost Efficiency:** a fraction of the cost of physical production.",
+        "[FR] **Consistency:** Your digital twin is always on brand and camera-ready.",
+        "[FR] **Personalization:** Create thousands of personalized videos for prospects.",
+        "[FR] **Speed:** Turn scripts into finished videos in minutes, not days.",
+        "[FR] **Engagement:** Boost conversion rates with rich media.",
+        "[FR] **Innovation:** Position your {{CITY_NAME}} brand as a tech leader."
+      ],
+      "faq": [
+        {
+          "q": "[FR] How realistic are the AI avatars?",
+          "a": "[FR] Extremely realistic. We use the latest generative AI models to create avatars that capture micro-expressions and natural movement, indistinguishable from real video in many contexts."
+        },
+        {
+          "q": "[FR] Can you localize my existing video content?",
+          "a": "[FR] Yes, we can take your existing English content and dub it into French, German, Spanish, etc., while modifying the lip movements to match the new language."
+        },
+        {
+          "q": "[FR] Is this suitable for corporate training in {{CITY_NAME}}?",
+          "a": "[FR] Perfectly suitable. It allows you to update training modules instantly by just changing the text script, rather than re-recording the instructor."
+        }
+      ]
+    },
+    "tr": {
+      "intro": [
+        "[TR] The future of content is AI. Our AI Creative Studio in {{CITY_NAME}} helps forward-thinking brands generate hyper-realistic video, audio, and visual content at scale. Stop filming, start generating.",
+        "[TR] Localization is key to global growth. For {{CITY_NAME}} companies expanding internationally, our AI video dubbing and lip-sync technology allows you to speak 30+ languages fluently without re-filming.",
+        "[TR] Create a digital twin of your CEO or top spokesperson. Our AI Studio services enable {{CITY_NAME}} executives to produce consistent, high-quality video updates without stepping foot in a studio."
+      ],
+      "pain_points": [
+        "[TR] High cost of traditional video production",
+        "[TR] Inability to scale video content for social media",
+        "[TR] Language barriers preventing global reach",
+        "[TR] Executive time constraints for video shoots",
+        "[TR] Inconsistent brand messaging across regions",
+        "[TR] Slow turnaround times for creative assets",
+        "[TR] High cost of professional voiceover talent",
+        "[TR] Difficulty keeping training materials up to date",
+        "[TR] Lack of engagement with text-based content",
+        "[TR] Need for personalized video outreach at scale"
+      ],
+      "benefits": [
+        "[TR] **Scale Content 10x:** Produce more video in less time.",
+        "[TR] **Global Reach:** Translate and lip-sync video into 30+ languages.",
+        "[TR] **Cost Efficiency:** a fraction of the cost of physical production.",
+        "[TR] **Consistency:** Your digital twin is always on brand and camera-ready.",
+        "[TR] **Personalization:** Create thousands of personalized videos for prospects.",
+        "[TR] **Speed:** Turn scripts into finished videos in minutes, not days.",
+        "[TR] **Engagement:** Boost conversion rates with rich media.",
+        "[TR] **Innovation:** Position your {{CITY_NAME}} brand as a tech leader."
+      ],
+      "faq": [
+        {
+          "q": "[TR] How realistic are the AI avatars?",
+          "a": "[TR] Extremely realistic. We use the latest generative AI models to create avatars that capture micro-expressions and natural movement, indistinguishable from real video in many contexts."
+        },
+        {
+          "q": "[TR] Can you localize my existing video content?",
+          "a": "[TR] Yes, we can take your existing English content and dub it into French, German, Spanish, etc., while modifying the lip movements to match the new language."
+        },
+        {
+          "q": "[TR] Is this suitable for corporate training in {{CITY_NAME}}?",
+          "a": "[TR] Perfectly suitable. It allows you to update training modules instantly by just changing the text script, rather than re-recording the instructor."
+        }
+      ]
+    }
+  },
+  "revops": {
+    "en": {
+      "intro": [
+        "Revenue Operations (RevOps) is the engine of growth. For {{CITY_NAME}} companies, aligning Sales, Marketing, and Customer Success is crucial. Our RevOps consulting optimizes your tech stack and processes.",
+        "Data silos are killing your revenue. We integrate your CRM (HubSpot/Salesforce) with your marketing and support tools to provide a 360-degree view of the customer for your {{CITY_NAME}} team.",
+        "Stop guessing and start predicting. Our RevOps services bring data-driven decision making to your {{CITY_NAME}} business, ensuring every lead is tracked, nurtured, and closed efficiently."
+      ],
+      "pain_points": [
+        "Sales and Marketing teams fighting over lead quality",
+        "Messy CRM data and duplicate records",
+        "Lack of visibility into the sales pipeline",
+        "Manual data entry wasting sales time",
+        "Inaccurate revenue forecasting",
+        "Tools not talking to each other (Tech Stack bloat)",
+        "Leads falling through the cracks",
+        "Inconsistent sales processes",
+        "Difficulty measuring ROI of marketing campaigns",
+        "Slow onboarding of new sales reps"
+      ],
+      "benefits": [
+        "**Alignment:** Get everyone rowing in the same direction.",
+        "**Efficiency:** Automate manual tasks and workflows.",
+        "**Visibility:** Accurate dashboards and reporting.",
+        "**Scalability:** Processes that hold up as you grow.",
+        "**Data Hygiene:** Clean, reliable data you can trust.",
+        "**Revenue Growth:** Optimized funnels lead to more closed deals.",
+        "**Better CX:** Seamless handoffs between departments.",
+        "**Tech Optimization:** Get the most out of your expensive software."
+      ],
+      "faq": [
+        {
+          "q": "Do you work with HubSpot or Salesforce?",
+          "a": "We are experts in both. We can help with implementation, migration, cleanup, and advanced automation on both platforms."
+        },
+        {
+          "q": "What is the first step for a {{CITY_NAME}} company?",
+          "a": "We start with a comprehensive audit of your current tech stack, data quality, and team workflows to identify the biggest bottlenecks."
+        },
+        {
+          "q": "How is RevOps different from Sales Ops?",
+          "a": "Sales Ops focuses just on sales. RevOps breaks down the silos, looking at the entire customer lifecycle from marketing touchpoint to renewal and expansion."
+        }
+      ]
+    },
+    "de": {
+      "intro": [
+        "[DE] Revenue Operations (RevOps) is the engine of growth. For {{CITY_NAME}} companies, aligning Sales, Marketing, and Customer Success is crucial. Our RevOps consulting optimizes your tech stack and processes.",
+        "[DE] Data silos are killing your revenue. We integrate your CRM (HubSpot/Salesforce) with your marketing and support tools to provide a 360-degree view of the customer for your {{CITY_NAME}} team.",
+        "[DE] Stop guessing and start predicting. Our RevOps services bring data-driven decision making to your {{CITY_NAME}} business, ensuring every lead is tracked, nurtured, and closed efficiently."
+      ],
+      "pain_points": [
+        "[DE] Sales and Marketing teams fighting over lead quality",
+        "[DE] Messy CRM data and duplicate records",
+        "[DE] Lack of visibility into the sales pipeline",
+        "[DE] Manual data entry wasting sales time",
+        "[DE] Inaccurate revenue forecasting",
+        "[DE] Tools not talking to each other (Tech Stack bloat)",
+        "[DE] Leads falling through the cracks",
+        "[DE] Inconsistent sales processes",
+        "[DE] Difficulty measuring ROI of marketing campaigns",
+        "[DE] Slow onboarding of new sales reps"
+      ],
+      "benefits": [
+        "[DE] **Alignment:** Get everyone rowing in the same direction.",
+        "[DE] **Efficiency:** Automate manual tasks and workflows.",
+        "[DE] **Visibility:** Accurate dashboards and reporting.",
+        "[DE] **Scalability:** Processes that hold up as you grow.",
+        "[DE] **Data Hygiene:** Clean, reliable data you can trust.",
+        "[DE] **Revenue Growth:** Optimized funnels lead to more closed deals.",
+        "[DE] **Better CX:** Seamless handoffs between departments.",
+        "[DE] **Tech Optimization:** Get the most out of your expensive software."
+      ],
+      "faq": [
+        {
+          "q": "[DE] Do you work with HubSpot or Salesforce?",
+          "a": "[DE] We are experts in both. We can help with implementation, migration, cleanup, and advanced automation on both platforms."
+        },
+        {
+          "q": "[DE] What is the first step for a {{CITY_NAME}} company?",
+          "a": "[DE] We start with a comprehensive audit of your current tech stack, data quality, and team workflows to identify the biggest bottlenecks."
+        },
+        {
+          "q": "[DE] How is RevOps different from Sales Ops?",
+          "a": "[DE] Sales Ops focuses just on sales. RevOps breaks down the silos, looking at the entire customer lifecycle from marketing touchpoint to renewal and expansion."
+        }
+      ]
+    },
+    "fr": {
+      "intro": [
+        "[FR] Revenue Operations (RevOps) is the engine of growth. For {{CITY_NAME}} companies, aligning Sales, Marketing, and Customer Success is crucial. Our RevOps consulting optimizes your tech stack and processes.",
+        "[FR] Data silos are killing your revenue. We integrate your CRM (HubSpot/Salesforce) with your marketing and support tools to provide a 360-degree view of the customer for your {{CITY_NAME}} team.",
+        "[FR] Stop guessing and start predicting. Our RevOps services bring data-driven decision making to your {{CITY_NAME}} business, ensuring every lead is tracked, nurtured, and closed efficiently."
+      ],
+      "pain_points": [
+        "[FR] Sales and Marketing teams fighting over lead quality",
+        "[FR] Messy CRM data and duplicate records",
+        "[FR] Lack of visibility into the sales pipeline",
+        "[FR] Manual data entry wasting sales time",
+        "[FR] Inaccurate revenue forecasting",
+        "[FR] Tools not talking to each other (Tech Stack bloat)",
+        "[FR] Leads falling through the cracks",
+        "[FR] Inconsistent sales processes",
+        "[FR] Difficulty measuring ROI of marketing campaigns",
+        "[FR] Slow onboarding of new sales reps"
+      ],
+      "benefits": [
+        "[FR] **Alignment:** Get everyone rowing in the same direction.",
+        "[FR] **Efficiency:** Automate manual tasks and workflows.",
+        "[FR] **Visibility:** Accurate dashboards and reporting.",
+        "[FR] **Scalability:** Processes that hold up as you grow.",
+        "[FR] **Data Hygiene:** Clean, reliable data you can trust.",
+        "[FR] **Revenue Growth:** Optimized funnels lead to more closed deals.",
+        "[FR] **Better CX:** Seamless handoffs between departments.",
+        "[FR] **Tech Optimization:** Get the most out of your expensive software."
+      ],
+      "faq": [
+        {
+          "q": "[FR] Do you work with HubSpot or Salesforce?",
+          "a": "[FR] We are experts in both. We can help with implementation, migration, cleanup, and advanced automation on both platforms."
+        },
+        {
+          "q": "[FR] What is the first step for a {{CITY_NAME}} company?",
+          "a": "[FR] We start with a comprehensive audit of your current tech stack, data quality, and team workflows to identify the biggest bottlenecks."
+        },
+        {
+          "q": "[FR] How is RevOps different from Sales Ops?",
+          "a": "[FR] Sales Ops focuses just on sales. RevOps breaks down the silos, looking at the entire customer lifecycle from marketing touchpoint to renewal and expansion."
+        }
+      ]
+    },
+    "tr": {
+      "intro": [
+        "[TR] Revenue Operations (RevOps) is the engine of growth. For {{CITY_NAME}} companies, aligning Sales, Marketing, and Customer Success is crucial. Our RevOps consulting optimizes your tech stack and processes.",
+        "[TR] Data silos are killing your revenue. We integrate your CRM (HubSpot/Salesforce) with your marketing and support tools to provide a 360-degree view of the customer for your {{CITY_NAME}} team.",
+        "[TR] Stop guessing and start predicting. Our RevOps services bring data-driven decision making to your {{CITY_NAME}} business, ensuring every lead is tracked, nurtured, and closed efficiently."
+      ],
+      "pain_points": [
+        "[TR] Sales and Marketing teams fighting over lead quality",
+        "[TR] Messy CRM data and duplicate records",
+        "[TR] Lack of visibility into the sales pipeline",
+        "[TR] Manual data entry wasting sales time",
+        "[TR] Inaccurate revenue forecasting",
+        "[TR] Tools not talking to each other (Tech Stack bloat)",
+        "[TR] Leads falling through the cracks",
+        "[TR] Inconsistent sales processes",
+        "[TR] Difficulty measuring ROI of marketing campaigns",
+        "[TR] Slow onboarding of new sales reps"
+      ],
+      "benefits": [
+        "[TR] **Alignment:** Get everyone rowing in the same direction.",
+        "[TR] **Efficiency:** Automate manual tasks and workflows.",
+        "[TR] **Visibility:** Accurate dashboards and reporting.",
+        "[TR] **Scalability:** Processes that hold up as you grow.",
+        "[TR] **Data Hygiene:** Clean, reliable data you can trust.",
+        "[TR] **Revenue Growth:** Optimized funnels lead to more closed deals.",
+        "[TR] **Better CX:** Seamless handoffs between departments.",
+        "[TR] **Tech Optimization:** Get the most out of your expensive software."
+      ],
+      "faq": [
+        {
+          "q": "[TR] Do you work with HubSpot or Salesforce?",
+          "a": "[TR] We are experts in both. We can help with implementation, migration, cleanup, and advanced automation on both platforms."
+        },
+        {
+          "q": "[TR] What is the first step for a {{CITY_NAME}} company?",
+          "a": "[TR] We start with a comprehensive audit of your current tech stack, data quality, and team workflows to identify the biggest bottlenecks."
+        },
+        {
+          "q": "[TR] How is RevOps different from Sales Ops?",
+          "a": "[TR] Sales Ops focuses just on sales. RevOps breaks down the silos, looking at the entire customer lifecycle from marketing touchpoint to renewal and expansion."
+        }
+      ]
+    }
+  }
+}

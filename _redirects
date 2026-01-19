@@ -1,0 +1,11 @@
+# 301 Redirects for City Pages
+# Redirect old b2b-lead-generation-{city}.html URLs to new {city}.html URLs
+
+# English pages
+/b2b-lead-generation-*  /:splat  301
+
+# German pages
+/de/b2b-lead-generation-*  /de/:splat  301
+
+# French pages
+/fr/b2b-lead-generation-*  /fr/:splat  301
