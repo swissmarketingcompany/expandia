@@ -1,0 +1,173 @@
+<main>
+    <!-- Hero -->
+    <section class="section-spacing bg-gradient-to-br from-base-100 via-base-200 to-primary/5">
+        <div class="container mx-auto container-padding text-center">
+            <p class="text-sm uppercase tracking-wide text-primary mb-3">{{GLOSSARY_LABEL}}</p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                <span class="gradient-header">{{PAGE_TITLE_TEXT}}</span>
+            </h1>
+            <p class="text-lg text-base-content/80 max-w-2xl mx-auto mb-8">
+                {{PAGE_DESCRIPTION_TEXT}}
+            </p>
+        </div>
+    </section>
+
+    <!-- Search & Filter -->
+    <section class="py-8 bg-base-100 border-b border-base-200">
+        <div class="container mx-auto container-padding">
+            <!-- Search -->
+            <div class="max-w-2xl mx-auto mb-8">
+                <div class="relative">
+                    <input type="text" id="glossary-search" placeholder="Search terms..." class="input input-bordered w-full shadow-sm focus:input-primary">
+                </div>
+            </div>
+            
+            <!-- Categories -->
+            <div class="flex flex-wrap justify-center gap-2" id="glossary-categories">
+                <button class="btn btn-sm btn-active category-filter" data-category="all">All</button>
+                <button class="btn btn-sm btn-ghost category-filter" data-category="Sales">Sales</button>
+                <button class="btn btn-sm btn-ghost category-filter" data-category="Marketing">Marketing</button>
+                <button class="btn btn-sm btn-ghost category-filter" data-category="Technology">Technology</button>
+                <button class="btn btn-sm btn-ghost category-filter" data-category="Cybersecurity">Cybersecurity</button>
+                <button class="btn btn-sm btn-ghost category-filter" data-category="Recruitment">Recruitment</button>
+                <button class="btn btn-sm btn-ghost category-filter" data-category="RevOps">RevOps</button>
+                <button class="btn btn-sm btn-ghost category-filter" data-category="Business">Business</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Glossary List -->
+    <section class="section-spacing bg-base-100 min-h-[50vh]">
+        <div class="container mx-auto container-padding">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="glossary-grid">
+                {{GLOSSARY_LIST}}
+            </div>
+            <div id="no-results" class="hidden text-center py-12">
+                <p class="text-xl text-base-content/60">No terms found matching your criteria.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('glossary-search');
+            const categoryButtons = document.querySelectorAll('.category-filter');
+            const grid = document.getElementById('glossary-grid');
+            const cards = grid.getElementsByClassName('buzz-card'); // Expecting buzz-card class on links
+            const noResults = document.getElementById('no-results');
+            
+            let currentCategory = 'all';
+            let searchTerm = '';
+
+            function filter() {
+                let visibleCount = 0;
+                
+                Array.from(cards).forEach(card => {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    const definition = card.querySelector('p').textContent.toLowerCase();
+                    const category = card.getAttribute('data-category');
+                    
+                    const matchesSearch = title.includes(searchTerm) || definition.includes(searchTerm);
+                    const matchesCategory = currentCategory === 'all' || category === currentCategory;
+                    
+                    if (matchesSearch && matchesCategory) {
+                        card.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                if (visibleCount === 0) {
+                    noResults.classList.remove('hidden');
+                } else {
+                    noResults.classList.add('hidden');
+                }
+            }
+
+            searchInput.addEventListener('input', (e) => {
+                searchTerm = e.target.value.toLowerCase();
+                filter();
+            });
+
+            categoryButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active state
+                    categoryButtons.forEach(b => {
+                        b.classList.remove('btn-active');
+                        b.classList.add('btn-ghost');
+                    });
+                    btn.classList.remove('btn-ghost');
+                    btn.classList.add('btn-active');
+                    
+                    currentCategory = btn.getAttribute('data-category');
+                    filter();
+                });
+            });
+        });
+    </script>
+
+    <!-- CTA -->
+    <section class="section-spacing bg-primary text-white">
+        <div class="container mx-auto container-padding text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                {{CTA_TITLE}}
+            </h2>
+            <p class="max-w-2xl mx-auto mb-6 text-primary-content/90">
+                {{CTA_DESCRIPTION}}
+            </p>
+            <a href="contact.html" class="btn btn-secondary btn-lg buzz-button">
+                {{CTA_BUTTON}}
+            </a>
+        </div>
+    </section>
+</main>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How quickly can we start working together?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We can typically begin within 1-2 weeks after our initial consultation. We'll set up everything needed and start delivering results quickly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes Go Expandia different from other agencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We combine deep European market expertise with data-driven strategies and multilingual capabilities. Our team has 8+ years of experience helping businesses scale internationally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with companies of all sizes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we work with startups, SMEs, and enterprise companies. Our solutions are scalable and tailored to your specific business needs and growth stage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your pricing model?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer flexible pricing based on your specific needs and goals. Contact us for a free consultation and custom quote tailored to your business objectives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you measure success?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We focus on measurable KPIs including lead generation, conversion rates, ROI, and revenue impact. You'll receive detailed analytics and regular performance reports."
+      }
+    }
+  ]
+}
+</script>

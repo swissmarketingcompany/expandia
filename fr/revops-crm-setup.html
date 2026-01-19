@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="bumblebee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RevOps & Infrastructure CRM | HubSpot & Salesforce | Go Expandia</title>
+    <meta name="description" content="Rationalisez vos ventes et marketing avec une configuration RevOps et CRM experte. Alignez vos équipes et données.">
+    <meta name="keywords" content="revops, configuration CRM, implémentation HubSpot, conseil Salesforce">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Go Expandia">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.goexpandia.com/fr/revops-crm-setup.html">
+    
+    <!-- Hreflang Links -->
+    <link rel="alternate" hreflang="en" href="https://www.goexpandia.com/revops-crm-setup.html">
+    <link rel="alternate" hreflang="tr" href="https://www.goexpandia.com/">
+    <link rel="alternate" hreflang="de" href="https://www.goexpandia.com/de/revops-crm-setup.html">
+    <link rel="alternate" hreflang="fr" href="https://www.goexpandia.com/fr/revops-crm-setup.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.goexpandia.com/revops-crm-setup.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="RevOps & Infrastructure CRM | HubSpot & Salesforce | Go Expandia">
+    <meta property="og:description" content="Rationalisez vos ventes et marketing avec une configuration RevOps et CRM experte. Alignez vos équipes et données.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.goexpandia.com/fr/revops-crm-setup.html">
+    <meta property="og:image" content="https://www.goexpandia.com/go-expandia-logo.png">
+    <meta property="og:site_name" content="Go Expandia">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RevOps & Infrastructure CRM | HubSpot & Salesforce | Go Expandia">
+    <meta name="twitter:description" content="Rationalisez vos ventes et marketing avec une configuration RevOps et CRM experte. Alignez vos équipes et données.">
+    <meta name="twitter:image" content="https://www.goexpandia.com/go-expandia-logo.png">
+    
+    <link href="../dist/css/output.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="apple-touch-icon" href="../favicon.png">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XY2B6K4R6Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XY2B6K4R6Q');
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Vivus for SVG Animation -->
+    <script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Go Expandia",
+  "url": "https://www.goexpandia.com",
+  "logo": "https://www.goexpandia.com/go-expandia-logo.png",
+  "email": "hello@goexpandia.com",
+  "sameAs": [
+    "https://www.linkedin.com/company/103769699/"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+000-000-0000",
+    "contactType": "sales",
+    "areaServed": [
+      "EU",
+      "UK",
+      "US",
+      "MEA",
+      "APAC"
+    ],
+    "availableLanguage": [
+      "en",
+      "de",
+      "tr"
+    ]
+  }
+}
+    </script>
+    
+    <style>
+        .lucide { cursor: pointer; }
+    </style>
+
+    
+</head>
+<body class="font-sans">
+    <!-- Navigation - Premium Mega Menu -->
+<nav class="navbar bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-30 border-b border-gray-100">
+    <div class="container mx-auto px-4 lg:px-8 flex items-center justify-between h-16">
+        <a href="./index.html" class="flex-shrink-0">
+            <img src="../go-expandia-logo.png" alt="Expandia" class="h-12 md:h-14">
+        </a>
+        <div class="hidden lg:flex items-center gap-1">
+            <a href="./index.html"
+                class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50">Accueil</a>
+
+            <!-- Solutions Mega Menu -->
+            <div class="relative" id="solutions-dropdown">
+                <button onclick="toggleDropdown('solutions-menu')"
+                    class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
+                    Solutions
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="solutions-menu"
+                    class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
+                    style="width: 720px;">
+                    <div class="grid grid-cols-3 divide-x divide-gray-100">
+                        <div class="p-6">
+                            <h3
+                                class="text-xs font-bold text-primary uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center text-primary"><i
+                                        data-lucide="shield-check" class="w-4 h-4"></i></span>IT
+                                & Sécurité
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="./managed-it-services.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Services IT Gérés</span>
+                                        <p class="text-xs text-gray-500">Surveillance 24/7</p>
+                                    </a></li>
+                                <li><a href="./vulnerability-assessments.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Évaluation Sécurité</span>
+                                        <p class="text-xs text-gray-500">Tests d'intrusion</p>
+                                    </a></li>
+                                <li><a href="./email-security.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Sécurité E-mail</span>
+                                        <p class="text-xs text-gray-500">SPF, DKIM, DMARC</p>
+                                    </a></li>
+                                <li><a href="./website-care-plans.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Maintenance Web</span>
+                                        <p class="text-xs text-gray-500">Mises à jour</p>
+                                    </a></li>
+                            </ul>
+                        </div>
+                        <div class="p-6">
+                            <h3
+                                class="text-xs font-bold text-secondary uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center text-secondary"><i
+                                        data-lucide="trending-up" class="w-4 h-4"></i></span>Ventes
+                                & Croissance
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="./lead-generation-service.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Génération de Leads</span>
+                                        <p class="text-xs text-gray-500">B2B Outbound</p>
+                                    </a></li>
+                                <li><a href="./revops-crm-setup.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">RevOps & CRM</span>
+                                        <p class="text-xs text-gray-500">HubSpot, Salesforce</p>
+                                    </a></li>
+                                <li><a href="./lost-lead-reactivation.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Réactivation Leads</span>
+                                        <p class="text-xs text-gray-500">Réengager les leads</p>
+                                    </a></li>
+                                <li><a href="./speed-to-lead.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Speed-to-Lead</span>
+                                        <p class="text-xs text-gray-500">Moins de 5 min</p>
+                                    </a></li>
+
+                                <li><a href="./international-market-entry.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Entrée sur le Marché</span>
+                                        <p class="text-xs text-gray-500">Expansion internationale</p>
+                                    </a></li>
+                            </ul>
+                        </div>
+                        <div class="p-6">
+                            <h3
+                                class="text-xs font-bold text-accent uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded bg-accent/10 flex items-center justify-center text-accent"><i
+                                        data-lucide="users" class="w-4 h-4"></i></span>Recrutement
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="./recruitment.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Chasse de Têtes</span>
+                                        <p class="text-xs text-gray-500">Talents tech</p>
+                                    </a></li>
+                                <li><a href="./recruitment.html#staffing"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Transition</span>
+                                        <p class="text-xs text-gray-500">Temporaire</p>
+                                    </a></li>
+                                <li><a href="./corporate-digital-gifting.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Cadeaux d'Entreprise</span>
+                                        <p class="text-xs text-gray-500">Récompenses employés</p>
+                                    </a></li>
+                            </ul>
+                            <h3
+                                class="text-xs font-bold text-neutral uppercase tracking-wider mb-4 mt-6 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded bg-neutral/10 flex items-center justify-center text-neutral"><i
+                                        data-lucide="bot" class="w-4 h-4"></i></span>Studio
+                                IA
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="./ai-creative-studio.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Studio Créatif IA</span>
+                                        <p class="text-xs text-gray-500">Vidéo & Avatars</p>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 px-6 py-4 flex items-center justify-between border-t">
+                        <p class="text-sm text-gray-600">Pas sûr? Parlons-en.</p><a href="./contact.html"
+                            class="btn btn-primary btn-sm">Réserver un Appel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entreprise Mega Menu -->
+            <div class="relative" id="company-dropdown">
+                <button onclick="toggleDropdown('company-menu')"
+                    class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
+                    Entreprise
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="company-menu"
+                    class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
+                    style="width: 480px;">
+                    <div class="grid grid-cols-2 divide-x divide-gray-100">
+                        <div class="p-6">
+                            <h3
+                                class="text-xs font-bold text-primary uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center text-primary"><i
+                                        data-lucide="building-2" class="w-4 h-4"></i></span>À
+                                propos
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="./about.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Notre Histoire</span>
+                                        <p class="text-xs text-gray-500">Qui nous sommes</p>
+                                    </a></li>
+                                <li><a href="./vision-mission.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Vision & Mission</span>
+                                        <p class="text-xs text-gray-500">Notre objectif</p>
+                                    </a></li>
+                                <li><a href="./our-ethical-principles.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Éthique & Valeurs</span>
+                                        <p class="text-xs text-gray-500">Comment nous opérons</p>
+                                    </a></li>
+                            </ul>
+                        </div>
+                        <div class="p-6">
+                            <h3
+                                class="text-xs font-bold text-secondary uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center text-secondary"><i
+                                        data-lucide="library-big" class="w-4 h-4"></i></span>Ressources
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="./case-studies.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Études de Cas</span>
+                                        <p class="text-xs text-gray-500">Succès clients</p>
+                                    </a></li>
+                                <li><a href="./blog/index.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Blog & Insights</span>
+                                        <p class="text-xs text-gray-500">Conseils & tendances</p>
+                                    </a></li>
+                                <li><a href="./city-locations.html"
+                                        class="block p-3 rounded-xl hover:bg-gray-50"><span
+                                            class="text-sm font-semibold text-gray-900">Zones</span>
+                                        <p class="text-xs text-gray-500">Où nous opérons</p>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 px-6 py-4 flex items-center justify-between border-t">
+                        <p class="text-sm text-gray-600">Prêt à grandir?</p><a href="./contact.html"
+                            class="btn btn-primary btn-sm">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center gap-3">
+            <div class="dropdown dropdown-end hidden sm:block"><label tabindex="0"
+                    class="btn btn-ghost btn-sm gap-1 text-gray-600">🇫🇷<svg class="w-3 h-3" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg></label>
+                <ul tabindex="0"
+                    class="dropdown-content z-[999] menu p-2 shadow-lg bg-white rounded-xl border w-36 mt-2">
+                    <li><a href="../revops-crm-setup.html" data-lang="en" class="lang-switch text-sm">🇺🇸 English</a></li>
+
+                    <li><a href="../de/revops-crm-setup.html" data-lang="de" class="lang-switch text-sm">🇩🇪 Deutsch</a></li>
+                    <li><a href="../fr/revops-crm-setup.html" data-lang="fr" class="lang-switch text-sm">🇫🇷 Français</a></li>
+                </ul>
+            </div>
+            <a href="./contact.html"
+                class="btn btn-primary btn-sm lg:btn-md shadow-lg shadow-primary/20 hidden sm:inline-flex">Commencer</a>
+            <div class="lg:hidden relative">
+                <button onclick="toggleMobileMenu()" class="btn btn-ghost btn-sm"><svg class="w-6 h-6" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg></button>
+                <div id="mobile-menu"
+                    class="hidden fixed top-16 right-0 max-h-[500px] w-80 bg-white shadow-2xl z-[999] overflow-y-auto overscroll-contain border-l border-gray-100 rounded-bl-2xl">
+                    <ul class="menu p-3 w-full text-xs">
+                        <li class="mt-1">
+                            <span
+                                class="text-[10px] font-bold text-primary uppercase tracking-wider px-2 py-1 bg-primary/5 rounded-lg mb-1">IT
+                                & Sécurité</span>
+                            <ul class="pl-0 space-y-0.5">
+                                <li><a href="./managed-it-services.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Services IT</a></li>
+                                <li><a href="./vulnerability-assessments.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Sécurité</a></li>
+                                <li><a href="./email-security.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">E-mail</a></li>
+                                <li><a href="./website-care-plans.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Web</a></li>
+                            </ul>
+                        </li>
+                        <li class="mt-2">
+                            <span
+                                class="text-[10px] font-bold text-secondary uppercase tracking-wider px-2 py-1 bg-secondary/5 rounded-lg mb-1">Ventes</span>
+                            <ul class="pl-0 space-y-0.5">
+                                <li><a href="./lead-generation-service.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Lead-Gen</a></li>
+                                <li><a href="./revops-crm-setup.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">RevOps</a></li>
+                                <li><a href="./lost-lead-reactivation.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Réactivation</a></li>
+                                <li><a href="./speed-to-lead.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Speed-to-Lead</a></li>
+                            </ul>
+                        </li>
+                        <li class="mt-2">
+                            <span
+                                class="text-[10px] font-bold text-accent uppercase tracking-wider px-2 py-1 bg-accent/5 rounded-lg mb-1">Talent
+                                & IA</span>
+                            <ul class="pl-0 space-y-0.5">
+                                <li><a href="./recruitment.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Recrutement</a></li>
+                                <li><a href="./ai-creative-studio.html"
+                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Studio IA</a></li>
+                            </ul>
+                        </li>
+                        <li class="mt-2 pt-2 border-t border-gray-50">
+                            <a href="./contact.html"
+                                class="btn btn-primary btn-sm w-full text-xs min-h-0 h-9 font-bold shadow-sm">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
+    }
+    function toggleDropdown(menuId) {
+        const allMenus = ['solutions-menu', 'company-menu'];
+        allMenus.forEach(id => { const menu = document.getElementById(id); if (menu && id !== menuId) menu.classList.add('hidden'); });
+        document.getElementById(menuId)?.classList.toggle('hidden');
+    }
+    document.addEventListener('click', function (e) {
+        if (!document.getElementById('solutions-dropdown')?.contains(e.target)) document.getElementById('solutions-menu')?.classList.add('hidden');
+        if (!document.getElementById('company-dropdown')?.contains(e.target)) document.getElementById('company-menu')?.classList.add('hidden');
+    });
+</script>
+<script>
+    (function () {
+        function moveBanner() {
+            const nav = document.querySelector('nav.navbar');
+            if (!nav) return;
+            let prev = nav.previousElementSibling;
+            while (prev) {
+                if (prev.tagName === 'DIV') {
+                    nav.after(prev);
+                    prev.style.position = 'relative';
+                    prev.style.zIndex = '40';
+                    break;
+                }
+                prev = prev.previousElementSibling;
+            }
+        }
+        window.addEventListener('load', moveBanner);
+        document.addEventListener('DOMContentLoaded', moveBanner);
+        new MutationObserver(moveBanner).observe(document.body, { childList: true });
+    })();
+</script>
+    
+    <!-- RevOps & CRM Hero -->
+<section class="section-spacing bg-gradient-to-br from-base-100 via-secondary/10 to-base-200 relative overflow-hidden">
+    <div class="absolute top-20 right-20 w-72 h-72 bg-secondary/20 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-10 left-10 w-48 h-48 bg-primary/10 rounded-full blur-2xl"></div>
+
+    <div class="container mx-auto container-padding">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="animate-fade-in relative z-10">
+                <div
+                    class="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-4 py-2 rounded-full text-sm font-bold mb-6">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                        </path>
+                    </svg>
+                    Opérations de Revenus
+                </div>
+                <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
+                    <span class="text-secondary">RevOps</span><br>
+                    <span class="text-base-content">& Infrastructure CRM</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-base-content/80 mb-8 leading-relaxed">
+                    Les données cloisonnées sont l'ennemi de la croissance. Nous alignons vos équipes de vente, de
+                    marketing et de réussite au sein d'un moteur CRM unique et performant qui convertit.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="contact.html"
+                        class="btn btn-secondary btn-lg buzz-button px-10 shadow-lg shadow-secondary/25">
+                        Auditer Mon CRM
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                    <a href="#details" class="btn btn-outline btn-lg">Parcourir les Solutions</a>
+                </div>
+            </div>
+
+            <!-- Hero Visual -->
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+                    alt="CRM Dashboard Analytics" class="rounded-3xl shadow-2xl w-full object-cover aspect-[4/3]">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- The Three Pillars of RevOps -->
+<section id="details" class="section-spacing bg-base-100">
+    <div class="container mx-auto container-padding">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">Les Trois Piliers du RevOps</h2>
+            <p class="text-lg text-base-content/60 max-w-2xl mx-auto">Transformez vos opérations de revenus grâce à
+                notre méthodologie éprouvée.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div
+                class="buzz-card p-10 bg-white border border-base-200 hover:shadow-xl transition-all hover:-translate-y-2">
+                <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Conception de Pipeline</h3>
+                <p class="text-base-content/60">Nous transposons votre cycle de vente réel dans un flux de travail
+                    numérique, garantissant qu'aucun prospect n'est oublié et que chaque étape comporte des critères de
+                    sortie clairs.</p>
+            </div>
+            <div class="buzz-card p-10 bg-white border border-base-200 shadow-xl scale-105 relative">
+                <div
+                    class="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-white text-xs font-bold px-4 py-1 rounded-full">
+                    Populaire</div>
+                <div class="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Enrichissement des Données</h3>
+                <p class="text-base-content/60">Nettoyage et enrichissement automatisés de votre base de données. Nous
+                    intégrons automatiquement les données firmographiques, d'intention et technographiques.</p>
+            </div>
+            <div
+                class="buzz-card p-10 bg-white border border-base-200 hover:shadow-xl transition-all hover:-translate-y-2">
+                <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Rapports & BI</h3>
+                <p class="text-base-content/60">Des tableaux de bord personnalisés qui affichent vos coûts d'acquisition
+                    client (CAC) réels, la valeur à vie (LTV) et la vitesse de conversion. Des informations en temps
+                    réel pour la prise de décision exécutive.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Integration Showcase -->
+<section class="section-spacing bg-base-200 overflow-hidden">
+    <div class="container mx-auto container-padding">
+        <div class="flex flex-col lg:flex-row gap-16 items-center">
+            <div class="lg:w-1/2">
+                <h2 class="text-3xl md:text-5xl font-black mb-8 leading-tight">Nous construisons des écosystèmes, pas
+                    seulement des feuilles de calcul.</h2>
+                <p class="text-lg text-base-content/80 mb-10">
+                    Un CRM ne vaut que par les outils avec lesquels il communique. Nous sommes spécialisés dans les
+                    intégrations complexes qui font le pont entre votre développement commercial et votre équipe de
+                    closing.
+                </p>
+                <div class="space-y-4">
+                    <div
+                        class="flex items-center gap-4 p-5 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                        <span
+                            class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center font-bold text-secondary text-lg">01</span>
+                        <div>
+                            <span class="font-bold text-lg">Mise en œuvre HubSpot & Salesforce</span>
+                            <p class="text-sm text-base-content/60">Configuration et personnalisation de niveau Platinum
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center gap-4 p-5 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                        <span
+                            class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center font-bold text-secondary text-lg">02</span>
+                        <div>
+                            <span class="font-bold text-lg">Routage Automatisé des Prospects</span>
+                            <p class="text-sm text-base-content/60">Attribution par territoire avec logique de
+                                répartition équitable (round-robin)</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center gap-4 p-5 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                        <span
+                            class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center font-bold text-secondary text-lg">03</span>
+                        <div>
+                            <span class="font-bold text-lg">Synchronisation de l'automatisation Email/LinkedIn</span>
+                            <p class="text-sm text-base-content/60">Synchronisation bidirectionnelle avec vos outils de
+                                prospection</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-1/2 relative">
+                <div class="grid grid-cols-3 gap-4">
+                    <div
+                        class="aspect-square bg-white rounded-2xl shadow-lg flex items-center justify-center p-6 hover:shadow-xl transition-shadow">
+                        <img src="https://cdn.worldvectorlogo.com/logos/hubspot.svg" alt="HubSpot"
+                            class="w-full h-12 object-contain">
+                    </div>
+                    <div
+                        class="aspect-square bg-white rounded-2xl shadow-lg flex items-center justify-center p-6 hover:shadow-xl transition-shadow">
+                        <img src="https://cdn.worldvectorlogo.com/logos/salesforce-2.svg" alt="Salesforce"
+                            class="w-full h-12 object-contain">
+                    </div>
+                    <div
+                        class="aspect-square bg-white rounded-2xl shadow-lg flex items-center justify-center p-6 hover:shadow-xl transition-shadow">
+                        <img src="https://cdn.worldvectorlogo.com/logos/zapier.svg" alt="Zapier"
+                            class="w-full h-12 object-contain">
+                    </div>
+                    <div
+                        class="aspect-square bg-white rounded-2xl shadow-lg flex items-center justify-center p-6 hover:shadow-xl transition-shadow">
+                        <img src="https://cdn.worldvectorlogo.com/logos/make-logo-freelogovectors.xyz_.svg" alt="Make"
+                            class="w-full h-12 object-contain">
+                    </div>
+                    <div
+                        class="aspect-square bg-white rounded-2xl shadow-lg flex items-center justify-center p-6 hover:shadow-xl transition-shadow">
+                        <span class="text-2xl font-black text-gray-400">Apollo</span>
+                    </div>
+                    <div
+                        class="aspect-square bg-white rounded-2xl shadow-lg flex items-center justify-center p-6 hover:shadow-xl transition-shadow">
+                        <img src="https://cdn.worldvectorlogo.com/logos/slack-new-logo.svg" alt="Slack"
+                            class="w-full h-12 object-contain">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="section-spacing bg-secondary relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-96 h-96 bg-primary rounded-full blur-3xl translate-x-1/2 translate-y-1/2">
+        </div>
+    </div>
+
+    <div class="container mx-auto container-padding text-center relative z-10">
+        <h2 class="text-4xl md:text-5xl font-black mb-6 text-white">Arrêtez de vous battre avec vos données.</h2>
+        <p class="text-xl text-white/80 mb-10 max-w-2xl mx-auto">Obtenez un audit RevOps complet en 48 heures. Nous vous
+            montrerons où vos revenus s'échappent.</p>
+        <a href="contact.html"
+            class="btn btn-lg bg-white text-secondary hover:bg-white/90 border-none px-16 shadow-xl">Réserver Mon
+            Audit</a>
+    </div>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Dans quel délai pouvons-nous commencer à travailler ensemble ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nous pouvons généralement commencer dans un délai de 1 à 2 semaines après notre consultation initiale. Nous mettrons en place tout le nécessaire pour obtenir des résultats rapidement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qu'est-ce qui différencie Go Expandia des autres agences ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nous combinons une expertise approfondie du marché européen avec des stratégies axées sur les données et des capacités multilingues. Notre équipe possède plus de 8 ans d'expérience dans l'accompagnement des entreprises pour leur croissance internationale."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Travaillez-vous avec des entreprises de toutes tailles ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, nous travaillons avec des startups, des PME et des grandes entreprises. Nos solutions sont évolutives et adaptées à vos besoins spécifiques et à votre stade de croissance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quel est votre modèle de tarification ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nous proposons une tarification flexible basée sur vos besoins et objectifs spécifiques. Contactez-nous pour une consultation gratuite et un devis personnalisé adapté à votre entreprise."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment mesurez-vous le succès ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nous nous concentrons sur des indicateurs clés (KPI) mesurables, notamment la génération de prospects, les taux de conversion, le ROI et l'impact sur le chiffre d'affaires. Vous recevrez des rapports de performance réguliers."
+      }
+    }
+  ]
+}
+</script>
+</section>
+    
+    <!-- Footer -->
+<footer class="footer-gradient text-white">
+    <!-- Newsletter Section -->
+    <div class="border-b border-white/10">
+        <div class="container mx-auto container-padding py-12">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div class="text-center lg:text-left">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-2">Gardez une longueur d'avance avec Expandia</h3>
+                    <p class="text-white/80">Obtenez les dernières perspectives sur l'IT, la croissance et l'innovation
+                        IA.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+                    <form id="newsletter-form" class="flex gap-4 w-full">
+                        <input type="email" name="email" placeholder="Entrez votre email"
+                            class="footer-newsletter-input" required>
+                        <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
+                        <input type="text" name="math" inputmode="numeric" pattern="[0-9]+" placeholder="30+31="
+                            class="input input-bordered w-24 sm:w-28" required>
+                        <button type="submit" class="btn btn-primary">S'abonner</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Footer Content -->
+    <div class="container mx-auto container-padding py-16">
+        <div class="grid md:grid-cols-12 gap-8 mb-16">
+            <!-- Entreprise Info (Span 4) -->
+            <div class="md:col-span-4">
+                <div class="flex items-center gap-3 mb-6">
+                    <img src="../go-expandia-logo.png" alt="Expandia" class="h-8 w-auto brightness-0 invert">
+                </div>
+                <p class="text-white/80 mb-6 text-lg">
+                    Votre partenaire stratégique pour l'IT géré, la croissance des ventes, le recrutement spécialisé et
+                    l'innovation IA.
+                </p>
+                <div class="flex gap-4">
+                    <a href="https://www.linkedin.com/company/103769699/" class="footer-social-icon group"
+                        target="_blank" rel="noopener noreferrer">
+                        <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Solutions (Span 2) -->
+            <div class="md:col-span-2">
+                <h4 class="text-lg font-bold mb-6">Solutions</h4>
+                <ul class="space-y-4 text-white/80">
+                    <li><a href="./managed-it-services.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Services IT Gérés
+                        </a></li>
+                    <li><a href="./lead-generation-service.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Génération de Leads
+                        </a></li>
+                    <li><a href="./recruitment.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Recrutement
+                        </a></li>
+                    <li><a href="./ai-creative-studio.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Studio Créatif IA
+                        </a></li>
+                    <li><a href="./revops-crm-setup.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            RevOps & CRM
+                        </a></li>
+                </ul>
+            </div>
+
+            <!-- Entreprise (Span 2) -->
+            <div class="md:col-span-2">
+                <h4 class="text-lg font-bold mb-6">Entreprise</h4>
+                <ul class="space-y-4 text-white/80">
+                    <li><a href="./about.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            À Propos
+                        </a></li>
+                    <li><a href="./case-studies.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Études de Cas
+                        </a></li>
+                    <li><a href="./city-locations.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Zones
+                        </a></li>
+                    <li><a href="./blog/index.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Blog & Insights
+                        </a></li>
+                    <li><a href="./contact.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Contactez-nous
+                        </a></li>
+                </ul>
+            </div>
+
+            <!-- Contact (Span 4) -->
+            <div class="md:col-span-4">
+                <h4 class="text-lg font-bold mb-6">Entrer en Contact</h4>
+                <div class="footer-contact-card">
+                    <p class="text-white/80 mb-6">Prêt à accélérer votre croissance
+                        ? Discutons de la manière dont nous pouvons vous aider.</p>
+                    <a href="./contact.html" class="btn btn-primary w-full mb-6">Consultation Gratuite</a>
+                    <div class="space-y-4">
+                        <a href="mailto:hello@goexpandia.com"
+                            class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            hello@goexpandia.com
+                        </a>
+                        <a href="mailto:hello@goexpandia.com"
+                            class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            Email pour Planifier
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div
+            class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/60">
+            <div class="text-sm">
+                &copy; 2026 Expandia. Tous droits réservés.
+            </div>
+            <div class="flex gap-6 text-sm items-center">
+                <span class="text-white/60 text-xs">Partie de Remova Inc.</span>
+                <a href="./privacy-policy.html" class="hover:text-primary transition-colors">Politique de Confidentialité</a>
+                <a href="./terms-of-service.html" class="hover:text-primary transition-colors">Conditions d'Utilisation</a>
+                <a href="./cookie-policy.html" class="hover:text-primary transition-colors">Politique de Cookies</a>
+            </div>
+        </div>
+        <div class="mt-4 text-xs text-white/60 text-center">
+            Domaines autorisés : www.goexpandia.com · www.goexpandia.com · www.getexpandia.com · www.expandia.com.tr
+        </div>
+    </div>
+</footer>
+<script src="./dist/js/contact.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How quickly can we start working together?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We can typically begin within 1-2 weeks after our initial consultation. We'll set up everything needed and start delivering results quickly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes Expandia different from other agencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We combine deep European market expertise with data-driven strategies and multilingual capabilities. Our team has 8+ years of experience helping businesses scale internationally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with companies of all sizes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we work with startups, SMEs, and enterprise companies. Our solutions are scalable and tailored to your specific business needs and growth stage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your pricing model?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer flexible pricing based on your specific needs and goals. Contact us for a free consultation and custom quote tailored to your business objectives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you measure success?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We focus on measurable KPIs including lead generation, conversion rates, ROI, and revenue impact. You'll receive detailed analytics and regular performance reports."
+      }
+    }
+  ]
+}
+</script>
+    
+    <script src="../dist/js/index.js"></script>
+    
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6911e3f950ba1a195e0a2c28/1j9mu527m';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+    
+    <!-- Lucide Icons & Vivus Init -->
+    <script>
+      lucide.createIcons();
+      
+      // Initialize Vivus on hover for all Lucide icons
+      document.addEventListener('DOMContentLoaded', function() {
+          setTimeout(function() {
+              const icons = document.querySelectorAll('.lucide');
+              icons.forEach(icon => {
+                  // Only animate if it's an SVG
+                  if(icon.tagName.toLowerCase() === 'svg') {
+                      // Trigger animation on hover
+                      icon.parentElement.addEventListener('mouseenter', () => {
+                          new Vivus(icon, {
+                              duration: 50,
+                              type: 'oneByOne',
+                              start: 'autostart',
+                              animTimingFunction: Vivus.EASE
+                          });
+                      });
+                      
+                      // Also trigger on load for hero icons
+                      if (icon.closest('.buzz-card')) {
+                           new Vivus(icon, {
+                              duration: 100,
+                              type: 'oneByOne',
+                              start: 'autostart'
+                          });
+                      }
+                  }
+              });
+          }, 100);
+      });
+    </script>
+
+    
+</body>
+</html>

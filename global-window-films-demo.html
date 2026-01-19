@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dealer Prestige Marketing System - Global Window Films</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .sidebar {
+            transition: width 0.3s ease;
+        }
+        .sidebar-link {
+            transition: all 0.2s ease-in-out;
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+        }
+        .sidebar-link:hover, .sidebar-link.active {
+            background-color: #1e3a8a; /* A darker blue for hover/active */
+            color: #ffffff;
+            transform: translateX(4px);
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+        .tier-card {
+            border-left-width: 6px;
+        }
+        .tier-authorized { border-color: #60a5fa; } /* blue-400 */
+        .tier-premier { border-color: #22c55e; } /* green-500 */
+        .tier-premier-elite { border-color: #a855f7; } /* purple-500 */
+        .tier-platinum { border-color: #f59e0b; } /* amber-500 */
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .status-approved { background-color: #dcfce7; color: #166534; }
+        .status-pending { background-color: #fef9c3; color: #854d0e; }
+        .status-denied { background-color: #fee2e2; color: #991b1b; }
+    </style>
+    <!-- Breadcrumb Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.goexpandia.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Global Window Films Demo"
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-gray-100">
+
+    <div class="flex h-screen bg-gray-200">
+        <!-- Sidebar -->
+        <div class="sidebar fixed inset-y-0 left-0 w-64 bg-blue-900 text-white p-6 flex flex-col space-y-4 z-10">
+            <div class="flex items-center space-x-3 mb-6">
+                <svg class="w-10 h-10 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.796V6.204a2 2 0 00-2-2h-5.586a1 1 0 01-.707-.293l-2.414-2.414A2 2 0 009.207 1H4a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2v-4.204m-4-1.584l-4-4m4 0l-4 4m6-12v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V16m-4-4h4m4-4h4"></path></svg>
+                <span class="text-xl font-bold">Global Window Films</span>
+            </div>
+            <h2 class="text-sm font-semibold text-blue-200 uppercase tracking-wider">Dealer Panel</h2>
+            <nav class="flex-grow">
+                <a href="#dashboard" class="sidebar-link active">
+                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#tiers" class="sidebar-link">
+                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    <span>Tiers & Benefits</span>
+                </a>
+                <a href="#coop" class="sidebar-link">
+                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    <span>Marketing Co-op</span>
+                </a>
+                <a href="#rebate" class="sidebar-link">
+                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01M12 6v-1m0-1v-1m0 12a2 2 0 110-4 2 2 0 010 4zm0 0v1m0-1v-1m0-1v-1m0-1V6m6 6v1m0-1v-1m0-1V9m-6 12v-1m0-1v-1m0-1V9"></path></svg>
+                    <span>Growth Rebate</span>
+                </a>
+            </nav>
+
+<!-- Breadcrumbs -->
+<div class="bg-base-200 py-3">
+    <div class="container mx-auto container-padding">
+        <div class="breadcrumbs text-sm">
+            <ul>
+                <li><a href="../" class="link link-hover">Home</a></li>
+                <li class="text-base-content/60">Global Window Films Demo</li>
+            </ul>
+        </div>
+    </div>
+</div>
+            <div class="mt-auto">
+                <div class="bg-blue-800 p-4 rounded-lg text-center">
+                    <p class="text-sm text-blue-200">Need help?</p>
+                    <p class="text-white font-semibold">Contact your representative</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="flex-1 flex flex-col ml-64">
+            <header class="bg-white shadow-md p-4 flex justify-between items-center sticky top-0 z-5">
+                <h1 id="page-title" class="text-2xl font-bold text-gray-800">Dashboard</h1>
+                <div class="flex items-center space-x-4">
+                    <span class="text-gray-600 hidden sm:block">Welcome, <strong>Dealer ABC</strong></span>
+                    <img class="w-10 h-10 rounded-full" src="https://placehold.co/100x100/E2E8F0/4A5568?text=DA" alt="Dealer Avatar">
+                </div>
+            </header>
+
+            <main class="flex-1 p-6 overflow-y-auto">
+                <div id="content-area">
+                    <!-- Content will be injected here by JS -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- HTML TEMPLATES -->
+    <template id="dashboard-template">
+        <p class="text-lg text-gray-600 mb-6">This is your central hub for tracking marketing performance, co-op funds, and campaign success. Use the metrics below to make informed decisions and maximize your marketing ROI.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="card p-6">
+                <h3 class="text-gray-500 font-medium">Available Co-op Funds</h3>
+                <p class="text-3xl font-bold text-gray-800">$2,763.50</p>
+                <p class="text-sm text-gray-500 mt-2">$2,500 Used of $5,263.50 Total</p>
+            </div>
+            <div class="card p-6">
+                <h3 class="text-gray-500 font-medium">YTD Ad Spend</h3>
+                <p class="text-3xl font-bold text-gray-800">$2,500</p>
+                <p class="text-sm text-green-500 mt-2">+25% vs. last year</p>
+            </div>
+            <div class="card p-6">
+                <h3 class="text-gray-500 font-medium">Active Campaigns</h3>
+                <p class="text-3xl font-bold text-gray-800">4</p>
+                <p class="text-sm text-gray-500 mt-2">2 Digital, 1 Print, 1 Event</p>
+            </div>
+            <div class="card p-6">
+                <h3 class="text-gray-500 font-medium">Leads Generated</h3>
+                <p class="text-3xl font-bold text-gray-800">128</p>
+                <p class="text-sm text-green-500 mt-2">+15% vs. last month</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
+            <div class="lg:col-span-2 card p-6">
+                <h3 class="text-xl font-semibold mb-4 text-gray-700">Ad Spend Breakdown</h3>
+                <div class="h-80"><canvas id="adSpendChart"></canvas></div>
+            </div>
+            <div class="card p-6">
+                <h3 class="text-xl font-semibold mb-4 text-gray-700">Recent Co-op Claims</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="font-semibold text-gray-800">Q3 Social Media Campaign</p>
+                            <p class="text-sm text-gray-500">Submitted: Jul 15, 2023</p>
+                        </div>
+                        <span class="status-badge status-approved">Approved</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="font-semibold text-gray-800">Local Home Show Booth</p>
+                            <p class="text-sm text-gray-500">Submitted: Jul 22, 2023</p>
+                        </div>
+                        <span class="status-badge status-pending">Pending</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="font-semibold text-gray-800">Newspaper Ad - July</p>
+                            <p class="text-sm text-gray-500">Submitted: Jul 10, 2023</p>
+                        </div>
+                        <span class="status-badge status-denied">Denied</span>
+                    </div>
+                     <div class="flex items-center justify-between">
+                        <div>
+                            <p class="font-semibold text-gray-800">Google Ads - Q2</p>
+                            <p class="text-sm text-gray-500">Submitted: Jun 28, 2023</p>
+                        </div>
+                        <span class="status-badge status-approved">Approved</span>
+                    </div>
+                </div>
+                 <button class="mt-6 w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition">View All Claims</button>
+            </div>
+        </div>
+    </template>
+
+    <template id="tiers-template">
+        <h2 class="text-3xl font-bold text-gray-800 mb-2">Dealer Prestige Tiers & Benefits</h2>
+        <p class="text-lg text-gray-600 mb-8">Our tiered program is designed to recognize and reward your investment in the Global Window Films brand. As your qualifying purchases grow, you'll unlock more valuable benefits, including marketing funds and growth rebates. Find your current tier and see what it takes to reach the next level.</p>
+        <div id="tier-cards-container" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+            <!-- Tier Cards will be inserted here by JS -->
+        </div>
+    </template>
+
+    <template id="tier-card-template">
+        <div class="card flex flex-col">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold"></h3>
+                <p class="text-sm font-semibold uppercase tracking-wider"></p>
+            </div>
+            <div class="p-6 bg-gray-50 flex-grow">
+                <p class="text-gray-700 font-bold mb-2">Annual Purchase Level:</p>
+                <p class="text-2xl font-bold text-gray-900 mb-4"></p>
+                <p class="text-gray-700 font-bold mb-2">Key Benefits:</p>
+                <ul class="space-y-2 text-gray-600">
+                    <!-- Benefits will be inserted here -->
+                </ul>
+            </div>
+            <div class="p-6 border-t border-gray-200">
+                 <p class="text-gray-700 font-bold mb-2">Commitment:</p>
+                 <p class="text-gray-600"></p>
+            </div>
+        </div>
+    </template>
+
+    <template id="coop-template">
+        <div class="card p-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-2">Marketing Co-op Program</h2>
+            <p class="text-lg text-gray-600 mb-8">Accelerate your local marketing efforts with our co-op program. We partner with you by reimbursing a portion of your advertising costs, helping you generate more leads and grow your business. This page allows you to track your available funds and submit claims for reimbursement.</p>
+            
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg mb-8">
+                <h4 class="font-bold text-blue-800">How It Works</h4>
+                <p class="text-blue-700 mt-2">We will reimburse <strong>50%</strong> of your approved marketing costs for promoting qualifying Global Window Films products. Claims can be submitted from April 1st to December 15th of the reward year.</p>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-gray-700 mb-4">Your Co-op Status</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <p class="text-sm text-gray-500">Total YTD Purchases</p>
+                    <p class="text-2xl font-bold text-gray-800">$175,450.00</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <p class="text-sm text-gray-500">Max Co-op Allowance (3.0%)</p>
+                    <p class="text-2xl font-bold text-gray-800">$5,263.50</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <p class="text-sm text-gray-500">Remaining Funds</p>
+                    <p class="text-2xl font-bold text-green-600">$2,763.50</p>
+                </div>
+            </div>
+            
+            <button class="w-full md:w-auto bg-blue-600 text-white py-3 px-8 rounded-lg font-semibold hover:bg-blue-700 transition text-lg">Submit New Co-op Claim</button>
+        </div>
+    </template>
+
+    <template id="rebate-template">
+        <div class="card p-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-2">Annual Growth Rebate</h2>
+            <p class="text-lg text-gray-600 mb-8">Our success is tied to yours. The Annual Growth Rebate is a direct financial reward for dealers who significantly expand their business with us year-over-year. Meet the growth target to earn a cash rebate on your annual qualifying purchases.</p>
+
+            <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg mb-8">
+                <h4 class="font-bold text-green-800">Rebate Rates by Tier</h4>
+                 <ul class="list-disc list-inside mt-2 text-green-700">
+                    <li><strong>Premier:</strong> 1.0% of Reward Year purchases</li>
+                    <li><strong>Premier Elite:</strong> 1.5% of Reward Year purchases</li>
+                    <li><strong>Platinum:</strong> 2.0% of Reward Year purchases</li>
+                </ul>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-gray-700 mb-4">Your Growth Projection</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <p class="text-sm text-gray-500">Last Year's Purchases</p>
+                    <p class="text-2xl font-bold text-gray-800">$156,651.78</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <p class="text-sm text-gray-500">Growth Target (9%)</p>
+                    <p class="text-2xl font-bold text-gray-800">$170,750.44</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <p class="text-sm text-gray-500">Current YTD Purchases</p>
+                    <p class="text-2xl font-bold text-green-600">$175,450.00</p>
+                </div>
+            </div>
+            
+            <div class="text-center bg-gray-50 p-6 rounded-lg">
+                <p class="text-gray-600">Based on your current trajectory, your potential rebate is:</p>
+                <p class="text-4xl font-bold text-green-600 mt-2">$2,631.75</p>
+                <p class="text-sm text-gray-500 mt-1">(1.5% of $175,450.00)</p>
+            </div>
+        </div>
+    </template>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- DATA ---
+            const tierData = [
+                {
+                    name: 'Authorized',
+                    className: 'tier-authorized',
+                    purchaseLevel: '$10,000+',
+                    benefits: [
+                        'Phone and Email Listing',
+                        'Website Link on Dealer Locator',
+                        'Access to Prestige Films',
+                        'Access to Dealer Systems'
+                    ],
+                    commitment: 'Global Window Films as primary line.'
+                },
+                {
+                    name: 'Premier',
+                    className: 'tier-premier',
+                    purchaseLevel: '$60,000+',
+                    benefits: [
+                        '<strong>All Authorized benefits</strong>',
+                        '3.0% Co-op Allowance',
+                        '1.0% Growth Rebate'
+                    ],
+                    commitment: 'Market and carry Global Window Films only.'
+                },
+                {
+                    name: 'Premier Elite',
+                    className: 'tier-premier-elite',
+                    purchaseLevel: '$175,000+',
+                    benefits: [
+                        '<strong>All Premier benefits</strong>',
+                        '1.5% Growth Rebate'
+                    ],
+                    commitment: 'Market and carry Global Window Films only.'
+                },
+                {
+                    name: 'Platinum',
+                    className: 'tier-platinum',
+                    purchaseLevel: '$800,000+',
+                    benefits: [
+                        '<strong>All Premier Elite benefits</strong>',
+                        '2.0% Growth Rebate',
+                        'Joint Marketing & Sales Planning',
+                        'Early Access to New Products'
+                    ],
+                    commitment: 'Market and carry Global Window Films only.'
+                }
+            ];
+
+            // --- ELEMENTS ---
+            const contentArea = document.getElementById('content-area');
+            const pageTitle = document.getElementById('page-title');
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+            // --- ROUTER ---
+            const routes = {
+                '#dashboard': {
+                    templateId: 'dashboard-template',
+                    title: 'Dashboard',
+                    onLoad: loadDashboard
+                },
+                '#tiers': {
+                    templateId: 'tiers-template',
+                    title: 'Tiers & Benefits',
+                    onLoad: loadTiers
+                },
+                '#coop': {
+                    templateId: 'coop-template',
+                    title: 'Marketing Co-op',
+                    onLoad: () => {} // No special function needed
+                },
+                '#rebate': {
+                    templateId: 'rebate-template',
+                    title: 'Growth Rebate',
+                    onLoad: () => {} // No special function needed
+                }
+            };
+
+            function router() {
+                const hash = window.location.hash || '#dashboard';
+                const route = routes[hash];
+
+                if (route) {
+                    const template = document.getElementById(route.templateId);
+                    if (template) {
+                        contentArea.innerHTML = template.innerHTML;
+                        pageTitle.textContent = route.title;
+                        
+                        // Update active link
+                        sidebarLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === hash) {
+                                link.classList.add('active');
+                            }
+                        });
+
+                        // Run any specific JS for that page
+                        route.onLoad();
+                    }
+                }
+            }
+
+            // --- PAGE LOAD FUNCTIONS ---
+            function loadDashboard() {
+                const ctx = document.getElementById('adSpendChart')?.getContext('2d');
+                if (!ctx) return;
+                
+                new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Digital Ads', 'Local Print', 'Events', 'Social Media'],
+                        datasets: [{
+                            label: 'Ad Spend',
+                            data: [1250, 500, 350, 400],
+                            backgroundColor: [
+                                'rgb(59, 130, 246)',
+                                'rgb(34, 197, 94)',
+                                'rgb(245, 158, 11)',
+                                'rgb(168, 85, 247)',
+                            ],
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = context.label || '';
+                                        if (label) {
+                                            label += ': ';
+                                        }
+                                        if (context.parsed !== null) {
+                                            label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed);
+                                        }
+                                        return label;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            function loadTiers() {
+                const container = document.getElementById('tier-cards-container');
+                const template = document.getElementById('tier-card-template');
+                if (!container || !template) return;
+
+                container.innerHTML = ''; // Clear existing cards
+
+                tierData.forEach(tier => {
+                    const card = template.content.cloneNode(true);
+                    const cardElement = card.querySelector('.card');
+                    
+                    cardElement.classList.add(tier.className);
+                    card.querySelector('h3').textContent = tier.name;
+                    card.querySelector('.p-6 > p').textContent = tier.className.replace('tier-','').toUpperCase();
+                    card.querySelector('.p-6 > p').classList.add(`text-${tier.className.split('-')[1]}-500`);
+                    card.querySelector('.text-2xl.font-bold').textContent = tier.purchaseLevel;
+                    
+                    const benefitsList = card.querySelector('ul');
+                    tier.benefits.forEach(benefit => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `<svg class="inline w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>${benefit}`;
+                        benefitsList.appendChild(li);
+                    });
+
+                    card.querySelector('.border-t p:last-child').textContent = tier.commitment;
+
+                    container.appendChild(card);
+                });
+            }
+            
+            // --- INITIALIZATION ---
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    window.location.hash = link.getAttribute('href');
+                });
+            });
+
+            window.addEventListener('hashchange', router);
+            
+            // Initial load
+            router();
+        });
+    </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How quickly can we start working together?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We can typically begin within 1-2 weeks after our initial consultation. We'll set up everything needed and start delivering results quickly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes Expandia different from other agencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We combine deep European market expertise with data-driven strategies and multilingual capabilities. Our team has 8+ years of experience helping businesses scale internationally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with companies of all sizes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we work with startups, SMEs, and enterprise companies. Our solutions are scalable and tailored to your specific business needs and growth stage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your pricing model?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer flexible pricing based on your specific needs and goals. Contact us for a free consultation and custom quote tailored to your business objectives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you measure success?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We focus on measurable KPIs including lead generation, conversion rates, ROI, and revenue impact. You'll receive detailed analytics and regular performance reports."
+      }
+    }
+  ]
+}
+</script>
+</body>
+</html> 

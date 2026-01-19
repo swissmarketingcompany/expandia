@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bumblebee">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Scoring for B2B SaaS: 7-Point Model (2025) | Go Expandia</title>
+    <meta name="description"
+        content="Build a B2B SaaS lead scoring model that ranks intent, product-fit, and engagement. Includes sample weights, MQL/SQL thresholds, and rollout checklist.">
+    <link href="../dist/css/output.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="apple-touch-icon" href="../favicon.png">
+    <link rel="canonical" href="https://www.goexpandia.com/blog/lead-scoring-saas-complete-guide.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Go Go Expandia" />
+    <meta property="og:title" content="Lead Scoring for B2B SaaS: 7-Point Model (2025) | Go Expandia" />
+    <meta property="og:description"
+        content="Build a B2B SaaS lead scoring model that ranks intent, product-fit, and engagement. Includes sample weights, MQL/SQL thresholds, and rollout checklist." />
+    <meta property="og:url" content="https://www.goexpandia.com/blog/lead-scoring-saas-complete-guide.html" />
+    <meta property="og:image" content="https://www.goexpandia.com/favicon.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lead Scoring for B2B SaaS: 7-Point Model (2025) | Go Expandia" />
+    <meta name="twitter:description"
+        content="Build a B2B SaaS lead scoring model that ranks intent, product-fit, and engagement. Includes sample weights, MQL/SQL thresholds, and rollout checklist." />
+    <meta name="twitter:image" content="https://www.goexpandia.com/favicon.png" />
+
+    <!-- Article Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+      "timeRequired": "PT13M",
+      "wordCount": 2500,
+        "headline": "Lead Scoring for B2B SaaS: 7-Point Model (2025)",
+        "description": "Build a B2B SaaS lead scoring model that ranks intent, product-fit, and engagement. Includes sample weights, MQL/SQL thresholds, and rollout checklist.",
+        "author": {
+            "@type": "Organization",
+            "name": "Go Go Expandia",
+            "url": "https://www.goexpandia.com",
+            "sameAs": ["https://www.linkedin.com/company/103769699/"]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Go Go Expandia",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.goexpandia.com/Expandia-main-logo-koyu-yesil.png"
+            }
+        },
+        "datePublished": "2025-01-28",
+        "dateModified": "2025-10-03",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.goexpandia.com/blog/lead-scoring-saas-complete-guide.html"
+        },
+        "articleSection": "Lead Scoring",
+        "keywords": ["lead scoring for software", "b2b software lead scoring", "lead scoring models", "lead qualification", "sales qualified leads"]
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is lead scoring for B2B software?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Lead scoring for B2B software is a methodology that assigns numerical values to leads based on their demographic characteristics, behavioral actions, and engagement with your product. It helps software companies prioritize leads, identify sales-ready prospects, and optimize conversion rates by focusing on high-potential customers."
+                }
+            },
+            {
+                "@type": "Question", 
+                "name": "What are the key factors in lead scoring for software companies?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Key SaaS lead scoring factors include: Demographic fit (company size, industry, role), Behavioral signals (product usage, feature adoption, support interactions), Engagement metrics (email opens, content consumption, webinar attendance), and Intent signals (pricing page visits, competitor research, free trial signup)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do you implement lead scoring for SaaS companies?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Implementation involves: 1) Defining ideal customer profile (ICP), 2) Identifying scoring criteria and point values, 3) Setting up tracking and data collection, 4) Creating scoring models in your CRM/MAP, 5) Establishing score thresholds for different actions, 6) Training sales teams, and 7) Continuously optimizing based on conversion data."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <meta name="robots" content="index, follow">
+
+    <!-- Lordicon Script -->
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.goexpandia.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.goexpandia.com/blog/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Lead Scoring Saas Complete Guide"
+    }
+  ]
+}
+</script>
+</head>
+
+<body class="font-sans">
+    <!-- Navigation -->
+    {{HEADER_INCLUDE}}
+
+    <!-- Breadcrumbs -->
+    <div class="bg-base-200 py-3">
+        <div class="container mx-auto container-padding">
+            <div class="breadcrumbs text-sm">
+                <ul>
+                    <li><a href="../" class="link link-hover">Home</a></li>
+                    <li><a href="../blog/index.html" class="link link-hover">Blog</a></li>
+                    <li class="text-base-content/60">Lead Scoring Saas Complete Guide</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="section-spacing">
+        <div class="container mx-auto container-padding">
+            <div class="max-w-4xl mx-auto">
+                <!-- Hero Section -->
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">🎯 Lead Scoring for SaaS: Complete Implementation
+                        Guide</h1>
+                    <p class="text-xl text-base-content/80 mb-8">
+                        Build high-performing lead scoring models that identify your best prospects, increase sales
+                        efficiency by 50%,
+                        and accelerate revenue growth with data-driven prioritization.
+                    </p>
+                    <div class="stats shadow w-full max-w-3xl mx-auto mb-8">
+                        <div class="stat">
+                            <div class="stat-figure text-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    class="inline-block w-8 h-8 stroke-current">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <div class="stat-title">Sales Efficiency</div>
+                            <div class="stat-value text-primary">50%</div>
+                            <div class="stat-desc">Increase with lead scoring</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-figure text-secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    class="inline-block w-8 h-8 stroke-current">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="stat-title">Conversion Rate</div>
+                            <div class="stat-value text-secondary">192%</div>
+                            <div class="stat-desc">Improvement for scored leads</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-figure text-accent">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    class="inline-block w-8 h-8 stroke-current">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="stat-title">Revenue Impact</div>
+                            <div class="stat-value text-accent">18%</div>
+                            <div class="stat-desc">Average increase</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prose prose-lg max-w-none">
+                    <!-- Table of Contents -->
+                    <div class="card bg-base-100 border border-base-300 mb-8">
+                        <div class="card-body">
+                            <h2 class="card-title text-primary mb-4">📋 Table of Contents</h2>
+                            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <ul class="space-y-2">
+                                        <li><a href="#lead-scoring-fundamentals" class="link link-primary">1. Lead
+                                                Scoring Fundamentals</a></li>
+                                        <li><a href="#saas-scoring-models" class="link link-primary">2. SaaS Scoring
+                                                Models</a></li>
+                                        <li><a href="#scoring-calculator" class="link link-primary">3. Interactive Score
+                                                Calculator</a></li>
+                                        <li><a href="#implementation-guide" class="link link-primary">4. Implementation
+                                                Guide</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul class="space-y-2">
+                                        <li><a href="#advanced-strategies" class="link link-primary">5. Advanced
+                                                Strategies</a></li>
+                                        <li><a href="#platform-setup" class="link link-primary">6. Platform Setup</a>
+                                        </li>
+                                        <li><a href="#optimization-analytics" class="link link-primary">7. Optimization
+                                                & Analytics</a></li>
+                                        <li><a href="#common-mistakes" class="link link-primary">8. Common Mistakes to
+                                                Avoid</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lead Scoring Fundamentals -->
+                    <div id="lead-scoring-fundamentals" class="mb-12">
+                        <h2>📊 1. Lead Scoring Fundamentals for SaaS</h2>
+                        <p>
+                            Lead scoring is critical for SaaS companies due to complex buyer journeys, free trial
+                            models,
+                            and the need to identify high-value customers early in the funnel.
+                        </p>
+
+                        <div class="grid md:grid-cols-3 gap-6 my-8">
+                            <div class="card bg-primary/5 border border-primary/20">
+                                <div class="card-body">
+                                    <h3 class="card-title text-primary">🎯 Explicit Scoring</h3>
+                                    <p class="text-sm mb-4">Based on provided information</p>
+                                    <ul class="text-sm space-y-2">
+                                        <li><strong>Company Size:</strong> Employee count, revenue</li>
+                                        <li><strong>Industry:</strong> Vertical alignment</li>
+                                        <li><strong>Role/Title:</strong> Decision-making authority</li>
+                                        <li><strong>Geography:</strong> Target market fit</li>
+                                        <li><strong>Tech Stack:</strong> Tool compatibility</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card bg-secondary/5 border border-secondary/20">
+                                <div class="card-body">
+                                    <h3 class="card-title text-secondary">🔄 Implicit Scoring</h3>
+                                    <p class="text-sm mb-4">Based on behavioral signals</p>
+                                    <ul class="text-sm space-y-2">
+                                        <li><strong>Product Usage:</strong> Feature adoption, time spent</li>
+                                        <li><strong>Content Engagement:</strong> Downloads, views</li>
+                                        <li><strong>Email Activity:</strong> Opens, clicks, replies</li>
+                                        <li><strong>Website Behavior:</strong> Page visits, session depth</li>
+                                        <li><strong>Trial Actions:</strong> Setup completion, integrations</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card bg-accent/5 border border-accent/20">
+                                <div class="card-body">
+                                    <h3 class="card-title text-accent">⏰ Temporal Scoring</h3>
+                                    <p class="text-sm mb-4">Time-based indicators</p>
+                                    <ul class="text-sm space-y-2">
+                                        <li><strong>Recency:</strong> Recent activity weight</li>
+                                        <li><strong>Frequency:</strong> Engagement consistency</li>
+                                        <li><strong>Velocity:</strong> Progression speed</li>
+                                        <li><strong>Lifecycle Stage:</strong> Journey position</li>
+                                        <li><strong>Trial Timeline:</strong> Days remaining</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-info mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                class="stroke-current shrink-0 w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            "
+                            <div>
+                                <h3 class="font-bold">SaaS Scoring Rule</h3>
+                                <p>In SaaS, product usage signals are often 3-5x more predictive of conversion than
+                                    demographic data. Weight your scoring model accordingly.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SaaS Scoring Models -->
+                    <div id="saas-scoring-models" class="mb-12">
+                        <h2>🧠 2. SaaS Lead Scoring Models</h2>
+                        <p>
+                            Different SaaS business models require tailored scoring approaches. Choose the model that
+                            best fits
+                            your customer acquisition strategy and sales process.
+                        </p>
+
+                        <div class="overflow-x-auto my-8">
+                            <table class="table table-zebra w-full">
+                                <thead>
+                                    <tr>
+                                        <th>Scoring Factor</th>
+                                        <th>Points</th>
+                                        <th>Weight Rationale</th>
+                                        <th>SaaS Application</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Company Size (Employees)</strong></td>
+                                        <td>+10 to +25</td>
+                                        <td>Predictive of budget and need</td>
+                                        <td>Higher scores for target segments</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Free Trial Signup</strong></td>
+                                        <td>+15</td>
+                                        <td>Direct product interest</td>
+                                        <td>Strong conversion predictor</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Feature Adoption</strong></td>
+                                        <td>+5 per feature</td>
+                                        <td>Usage depth indicator</td>
+                                        <td>Core feature usage most important</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Pricing Page Visit</strong></td>
+                                        <td>+20</td>
+                                        <td>Purchase intent signal</td>
+                                        <td>Especially multiple visits</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Integration Setup</strong></td>
+                                        <td>+25</td>
+                                        <td>Implementation commitment</td>
+                                        <td>High switching cost indicator</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Support Interaction</strong></td>
+                                        <td>+10</td>
+                                        <td>Engagement with product</td>
+                                        <td>Usage obstacle or expansion</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3>📈 Progressive Scoring Framework</h3>
+                        <div class="timeline my-8">
+                            <div class="timeline-item">
+                                <div class="timeline-middle">
+                                    <div
+                                        class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
+                                        1</div>
+                                </div>
+                                <div class="timeline-start md:text-end mb-10">
+                                    <div class="text-lg font-bold">Awareness (0-25 points)</div>
+                                    <p class="text-sm mt-2">
+                                        Content downloads, email signups, social media follows.
+                                        Focus on demographic fit and initial interest signals.
+                                    </p>
+                                </div>
+                                <hr class="bg-primary">
+                            </div>
+                            <div class="timeline-item">
+                                <hr class="bg-primary">
+                                <div class="timeline-middle">
+                                    <div
+                                        class="bg-secondary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
+                                        2</div>
+                                </div>
+                                <div class="timeline-end mb-10">
+                                    <div class="text-lg font-bold">Interest (25-50 points)</div>
+                                    <p class="text-sm mt-2">
+                                        Free trial signup, demo requests, pricing page visits.
+                                        Strong intent signals that indicate solution evaluation.
+                                    </p>
+                                </div>
+                                <hr class="bg-secondary">
+                            </div>
+                            <div class="timeline-item">
+                                <hr class="bg-secondary">
+                                <div class="timeline-middle">
+                                    <div
+                                        class="bg-accent text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
+                                        3</div>
+                                </div>
+                                <div class="timeline-start md:text-end mb-10">
+                                    <div class="text-lg font-bold">Consideration (50-75 points)</div>
+                                    <p class="text-sm mt-2">
+                                        Active product usage, feature adoption, integration setup.
+                                        Hands-on evaluation with meaningful engagement.
+                                    </p>
+                                </div>
+                                <hr class="bg-accent">
+                            </div>
+                            <div class="timeline-item">
+                                <hr class="bg-accent">
+                                <div class="timeline-middle">
+                                    <div
+                                        class="bg-success text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
+                                        4</div>
+                                </div>
+                                <div class="timeline-end mb-10">
+                                    <div class="text-lg font-bold">Intent (75+ points)</div>
+                                    <p class="text-sm mt-2">
+                                        Sales conversations, contract discussions, team onboarding.
+                                        Clear buying signals requiring immediate sales attention.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Score Calculator -->
+                    <div id="scoring-calculator" class="mb-12">
+                        <h2>🧮 3. Interactive Lead Scoring Calculator</h2>
+                        <p>Calculate lead scores using our SaaS-optimized scoring model:</p>
+
+                        <div class="card bg-base-100 border border-base-300 my-8">
+                            <div class="card-body">
+                                <h3 class="card-title text-primary mb-4">🎯 SaaS Lead Score Calculator</h3>
+                                <div class="space-y-6">
+                                    <div class="grid md:grid-cols-2 gap-6">
+                                        <div class="space-y-4">
+                                            <h4 class="font-semibold">Demographic Factors</h4>
+                                            <div class="form-control">
+                                                <label class="label">
+                                                    <span class="label-text">Company Size</span>
+                                                </label>
+                                                <select id="companySize" class="select select-bordered">
+                                                    <option value="0">Unknown</option>
+                                                    <option value="5">1-10 employees</option>
+                                                    <option value="10">11-50 employees</option>
+                                                    <option value="20">51-200 employees</option>
+                                                    <option value="25">200+ employees</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-control">
+                                                <label class="label">
+                                                    <span class="label-text">Industry Fit</span>
+                                                </label>
+                                                <select id="industryFit" class="select select-bordered">
+                                                    <option value="0">Not a fit</option>
+                                                    <option value="5">Potential fit</option>
+                                                    <option value="15">Good fit</option>
+                                                    <option value="25">Perfect fit</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-control">
+                                                <label class="label">
+                                                    <span class="label-text">Job Role</span>
+                                                </label>
+                                                <select id="jobRole" class="select select-bordered">
+                                                    <option value="0">Individual contributor</option>
+                                                    <option value="10">Manager</option>
+                                                    <option value="20">Director/VP</option>
+                                                    <option value="25">C-Level</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="space-y-4">
+                                            <h4 class="font-semibold">Behavioral Factors</h4>
+                                            <div class="form-control">
+                                                <label class="cursor-pointer label justify-start gap-2">
+                                                    <input type="checkbox" id="freeTrialSignup"
+                                                        class="checkbox checkbox-primary">
+                                                    <span class="label-text">Free trial signup (+15)</span>
+                                                </label>
+                                            </div>
+
+                                            <div class="form-control">
+                                                <label class="cursor-pointer label justify-start gap-2">
+                                                    <input type="checkbox" id="pricingPageVisit"
+                                                        class="checkbox checkbox-primary">
+                                                    <span class="label-text">Pricing page visit (+20)</span>
+                                                </label>
+                                            </div>
+
+                                            <div class="form-control">
+                                                <label class="cursor-pointer label justify-start gap-2">
+                                                    <input type="checkbox" id="featureUsage"
+                                                        class="checkbox checkbox-primary">
+                                                    <span class="label-text">Used core features (+15)</span>
+                                                </label>
+                                            </div>
+
+                                            <div class="form-control">
+                                                <label class="cursor-pointer label justify-start gap-2">
+                                                    <input type="checkbox" id="integrationSetup"
+                                                        class="checkbox checkbox-primary">
+                                                    <span class="label-text">Set up integrations (+25)</span>
+                                                </label>
+                                            </div>
+
+                                            <div class="form-control">
+                                                <label class="cursor-pointer label justify-start gap-2">
+                                                    <input type="checkbox" id="supportInteraction"
+                                                        class="checkbox checkbox-primary">
+                                                    <span class="label-text">Contacted support (+10)</span>
+                                                </label>
+                                            </div>
+
+                                            <div class="form-control">
+                                                <label class="cursor-pointer label justify-start gap-2">
+                                                    <input type="checkbox" id="emailEngagement"
+                                                        class="checkbox checkbox-primary">
+                                                    <span class="label-text">High email engagement (+10)</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="grid md:grid-cols-3 gap-4">
+                                        <div class="card bg-primary/5 border border-primary/20 p-4">
+                                            <h4 class="font-semibold mb-2">📊 Total Score</h4>
+                                            <div class="flex items-center gap-4">
+                                                <div class="radial-progress text-primary" style="--value:0"
+                                                    id="totalScore">0</div>
+                                                <div class="flex-1">
+                                                    <div class="text-sm font-semibold" id="scoreGrade">Cold</div>
+                                                    <div class="text-xs text-base-content/70" id="scoreDescription">Low
+                                                        priority lead</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card bg-secondary/5 border border-secondary/20 p-4">
+                                            <h4 class="font-semibold mb-2">🎯 Recommended Action</h4>
+                                            <div id="recommendedAction" class="text-sm">
+                                                Continue nurturing with educational content and product information.
+                                            </div>
+                                        </div>
+
+                                        <div class="card bg-accent/5 border border-accent/20 p-4">
+                                            <h4 class="font-semibold mb-2">📈 Conversion Probability</h4>
+                                            <div id="conversionProb" class="text-sm">
+                                                <div class="font-semibold text-lg">2-5%</div>
+                                                <div class="text-xs">Expected conversion rate</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button onclick="calculateLeadScore()" class="btn btn-primary w-full">Calculate Lead
+                                        Score</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Implementation Guide -->
+                    <div id="implementation-guide" class="mb-12">
+                        <h2>🚀 4. Implementation Guide</h2>
+                        <p>Step-by-step process to implement lead scoring in your SaaS organization:</p>
+
+                        <div class="space-y-6 my-8">
+                            <div class="card bg-base-100 border border-base-300">
+                                <div class="card-body">
+                                    <h3 class="card-title text-primary">📋 Implementation Checklist</h3>
+                                    <div class="grid md:grid-cols-2 gap-6">
+                                        <div>
+                                            <h4 class="font-semibold mb-3">Phase 1: Foundation (Week 1-2)</h4>
+                                            <div class="space-y-2 text-sm">
+                                                <label class="cursor-pointer label justify-start gap-2">
+                                                    <input type="checkbox"
+                                                        class="checkbox checkbox-primary checkbox-sm">
+                                                    <span>Define ideal customer profile (ICP)</span>
+                                                </label>
+                                                <label class="cursor-pointer label justify-start gap-2">
+                                                    <input type="checkbox"
+                                                        class="checkbox checkbox-primary checkbox-sm">
+                                                    <span>Analyze historical conversion data</span>
+                                                </label>
+                                                <label class="cursor-pointer label justify-start gap-2">
+                                                    <input type="checkbox"
+                                                        class="checkbox checkbox-primary checkbox-sm">
+                                                    <span>Identify key behavioral indicators</span>
+                                                </label>
+                                                <label class="cursor-pointer label justify-start gap-2">
+                                                    <input type="checkbox"
+                                                        class="checkbox checkbox-primary checkbox-sm">
+                                                    <span>Map customer journey touchpoints</span>
+                                                </label>
+                                                <label class="cursor-pointer label justify-start gap-2">
+                                                    <input type="checkbox"
+                                                        class="checkbox checkbox-primary checkbox-sm">
+                                                    <span>Set up data tracking infrastructure</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <h4 class="font-semibold mb-3">Phase 2: Development (Week 3-4)</h4>
+                                            <div class="space-y-2 text-sm">
+                                                <label class="cursor-pointer label justify-start gap-2">
+                                                    <input type="checkbox"
+                                                        class="checkbox checkbox-secondary checkbox-sm">
+                                                    <span>Create scoring criteria and point values</span>
+                                                </label>
+                                                <label class="cursor-pointer label justify-start gap-2">
+                                                    <input type="checkbox"
+                                                        class="checkbox checkbox-secondary checkbox-sm">
+                                                    <span>Build scoring model in CRM/MAP</span>
+                                                </label>
+                                                <label class="cursor-pointer label justify-start gap-2">
+                                                    <input type="checkbox"
+                                                        class="checkbox checkbox-secondary checkbox-sm">
+                                                    <span>Set up automated score calculations</span>
+                                                </label>
+                                                <label class="cursor-pointer label justify-start gap-2">
+                                                    <input type="checkbox"
+                                                        class="checkbox checkbox-secondary checkbox-sm">
+                                                    <span>Define score thresholds and actions</span>
+                                                </label>
+                                                <label class="cursor-pointer label justify-start gap-2">
+                                                    <input type="checkbox"
+                                                        class="checkbox checkbox-secondary checkbox-sm">
+                                                    <span>Create sales notification workflows</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card bg-base-100 border border-base-300">
+                                <div class="card-body">
+                                    <h3 class="card-title text-secondary">🎯 Score Threshold Framework</h3>
+                                    <div class="overflow-x-auto">
+                                        <table class="table table-sm w-full">
+                                            <thead>
+                                                <tr>
+                                                    <th>Score Range</th>
+                                                    <th>Classification</th>
+                                                    <th>Action</th>
+                                                    <th>Owner</th>
+                                                    <th>Expected Conversion</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><strong>0-25</strong></td>
+                                                    <td>Cold Lead</td>
+                                                    <td>Marketing nurture sequences</td>
+                                                    <td>Marketing</td>
+                                                    <td>1-3%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>25-50</strong></td>
+                                                    <td>Warm Lead</td>
+                                                    <td>Targeted content, webinars</td>
+                                                    <td>Marketing</td>
+                                                    <td>5-10%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>50-75</strong></td>
+                                                    <td>Marketing Qualified Lead</td>
+                                                    <td>SDR outreach, demo offers</td>
+                                                    <td>SDR Team</td>
+                                                    <td>15-25%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>75+</strong></td>
+                                                    <td>Sales Qualified Lead</td>
+                                                    <td>Direct sales engagement</td>
+                                                    <td>Sales Team</td>
+                                                    <td>30-50%</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Call to Action -->
+                    <div class="card bg-gradient-to-br from-primary via-secondary to-accent text-white my-12">
+                        <div class="card-body text-center">
+                            <h2 class="card-title text-2xl justify-center mb-4">🎯 Ready to Implement Advanced Lead
+                                Scoring?</h2>
+                            <p class="text-lg mb-6">
+                                Get expert help building and optimizing lead scoring models that drive results.
+                                Our team will design custom scoring systems for your SaaS business.
+                            </p>
+                            <div class="card-actions justify-center">
+                                <a href="../contact.html" class="btn btn-white btn-lg">Get Lead Scoring Consultation</a>
+                                <a href="../solutions.html" class="btn btn-outline btn-white btn-lg">View Our
+                                    Services</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Section -->
+                    <div class="mb-12">
+                        <h2>❓ Frequently Asked Questions</h2>
+
+                        <div class="join join-vertical w-full my-6 not-prose">
+                            <div class="collapse collapse-arrow join-item border border-base-300">
+                                <input type="radio" name="faq-accordion" checked="checked" />
+                                <div class="collapse-title text-lg font-medium">
+                                    What is lead scoring for SaaS?
+                                </div>
+                                <div class="collapse-content">
+                                    <p>Lead scoring for SaaS is a methodology that assigns numerical values to leads
+                                        based on their demographic characteristics, behavioral actions, and engagement
+                                        with your software. It helps SaaS companies prioritize leads, identify
+                                        sales-ready prospects, and optimize conversion rates by focusing on
+                                        high-potential customers.</p>
+                                </div>
+                            </div>
+
+                            <div class="collapse collapse-arrow join-item border border-base-300">
+                                <input type="radio" name="faq-accordion" />
+                                <div class="collapse-title text-lg font-medium">
+                                    What are the key factors in SaaS lead scoring?
+                                </div>
+                                <div class="collapse-content">
+                                    <p>Key SaaS lead scoring factors include: Demographic fit (company size, industry,
+                                        role), Behavioral signals (product usage, feature adoption, support
+                                        interactions), Engagement metrics (email opens, content consumption, webinar
+                                        attendance), and Intent signals (pricing page visits, competitor research, free
+                                        trial signup).</p>
+                                </div>
+                            </div>
+
+                            <div class="collapse collapse-arrow join-item border border-base-300">
+                                <input type="radio" name="faq-accordion" />
+                                <div class="collapse-title text-lg font-medium">
+                                    How do you implement lead scoring for SaaS companies?
+                                </div>
+                                <div class="collapse-content">
+                                    <p>Implementation involves: 1) Defining ideal customer profile (ICP), 2) Identifying
+                                        scoring criteria and point values, 3) Setting up tracking and data collection,
+                                        4) Creating scoring models in your CRM/MAP, 5) Establishing score thresholds for
+                                        different actions, 6) Training sales teams, and 7) Continuously optimizing based
+                                        on conversion data.</p>
+                                </div>
+                            </div>
+
+                            <div class="collapse collapse-arrow join-item border border-base-300">
+                                <input type="radio" name="faq-accordion" />
+                                <div class="collapse-title text-lg font-medium">
+                                    What tools are best for SaaS lead scoring?
+                                </div>
+                                <div class="collapse-content">
+                                    <p>Top SaaS lead scoring tools include: HubSpot (comprehensive CRM with built-in
+                                        scoring), Salesforce with Pardot (enterprise-grade), Marketo (advanced B2B
+                                        automation), Pipedrive (simple scoring for smaller teams), and custom solutions
+                                        using tools like Segment for data collection and analysis. Choose based on
+                                        complexity needs and budget.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function calculateLeadScore() {
+            // Get demographic values
+            const companySize = parseInt(document.getElementById('companySize').value);
+            const industryFit = parseInt(document.getElementById('industryFit').value);
+            const jobRole = parseInt(document.getElementById('jobRole').value);
+
+            // Get behavioral checkboxes
+            const freeTrialSignup = document.getElementById('freeTrialSignup').checked ? 15 : 0;
+            const pricingPageVisit = document.getElementById('pricingPageVisit').checked ? 20 : 0;
+            const featureUsage = document.getElementById('featureUsage').checked ? 15 : 0;
+            const integrationSetup = document.getElementById('integrationSetup').checked ? 25 : 0;
+            const supportInteraction = document.getElementById('supportInteraction').checked ? 10 : 0;
+            const emailEngagement = document.getElementById('emailEngagement').checked ? 10 : 0;
+
+            // Calculate total score
+            const totalScore = companySize + industryFit + jobRole + freeTrialSignup +
+                pricingPageVisit + featureUsage + integrationSetup +
+                supportInteraction + emailEngagement;
+
+            // Update radial progress (max 150 points)
+            const progressValue = Math.min((totalScore / 150) * 100, 100);
+            document.getElementById('totalScore').style.setProperty('--value', progressValue);
+            document.getElementById('totalScore').textContent = totalScore;
+
+            // Determine grade and action
+            let grade, description, action, conversionProb;
+
+            if (totalScore < 25) {
+                grade = "Cold";
+                description = "Low priority lead";
+                action = "Continue nurturing with educational content and product information.";
+                conversionProb = "1-3%";
+            } else if (totalScore < 50) {
+                grade = "Warm";
+                description = "Developing interest";
+                action = "Targeted content delivery and webinar invitations.";
+                conversionProb = "5-10%";
+            } else if (totalScore < 75) {
+                grade = "Marketing Qualified";
+                description = "Ready for SDR outreach";
+                action = "SDR outreach with demo offers and personalized messaging.";
+                conversionProb = "15-25%";
+            } else {
+                grade = "Sales Qualified";
+                description = "High conversion potential";
+                action = "Immediate sales engagement with dedicated account executive.";
+                conversionProb = "30-50%";
+            }
+
+            // Update display
+            document.getElementById('scoreGrade').textContent = grade;
+            document.getElementById('scoreDescription').textContent = description;
+            document.getElementById('recommendedAction').textContent = action;
+            document.getElementById('conversionProb').innerHTML =
+                `<div class="font-semibold text-lg">${conversionProb}</div><div class="text-xs">Expected conversion rate</div>`;
+        }
+
+        // Calculate initial score
+        calculateLeadScore();
+
+        // Update score when inputs change
+        document.querySelectorAll('input, select').forEach(input => {
+            input.addEventListener('change', calculateLeadScore);
+        });
+    </script>
+
+    <div class="mt-12">
+        <h3 class="text-2xl font-bold mb-6 text-center">📚 Related Articles</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+
+            <div class="card bg-base-200 hover:shadow-lg transition-shadow">
+                <div class="card-body">
+
+                    <h4 class="card-title text-lg">
+                        <a href="https://www.goexpandia.com/blog/ai-lead-scoring-for-b2b-saas.html"
+                            class="hover:text-primary">
+                            Lead Scoring for B2B Software: How to Prioritize Deals with Predictive Models | Go Expandia
+                            Sales University
+                        </a>
+                    </h4>
+                    <p class="text-sm text-base-content/70">A practical guide to AI-powered lead scoring in B2B sales.
+                        Learn the data signals, models, implement...</p>
+                </div>
+            </div>
+
+            <div class="card bg-base-200 hover:shadow-lg transition-shadow">
+                <div class="card-body">
+                    <span class="badge badge-secondary mb-2">Low</span>
+                    <h4 class="card-title text-lg">
+                        <a href="https://www.goexpandia.com/blog/b2b-lead-generation-strategies-complete-guide.html"
+                            class="hover:text-primary">
+                            B2B Lead Generation Strategies: Complete 2025 Guide | Go Expandia
+                        </a>
+                    </h4>
+                    <p class="text-sm text-base-content/70">Master B2B lead generation strategies with our comprehensive
+                        guide. Proven tactics, ROI calculator, ...</p>
+                </div>
+            </div>
+
+            <div class="card bg-base-200 hover:shadow-lg transition-shadow">
+                <div class="card-body">
+                    <span class="badge badge-secondary mb-2">🎯 Lead Generation</span>
+                    <h4 class="card-title text-lg">
+                        <a href="https://www.goexpandia.com/blog/lead-generation-complete-guide-2025.html"
+                            class="hover:text-primary">
+                            Lead Generation Complete Guide 2025: B2B Strategy & Tactics | Go Expandia
+                        </a>
+                    </h4>
+                    <p class="text-sm text-base-content/70">Master lead generation with our complete 2025 guide. Learn
+                        proven B2B strategies, tactics, and tools...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{FOOTER_INCLUDE}}
+</body>
+
+</html>

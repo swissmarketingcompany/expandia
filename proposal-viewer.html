@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal - Expandia</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #loading-screen {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #e5e7eb 100%);
+            padding: 20px;
+        }
+        #loading-screen.hidden {
+            display: none;
+        }
+        #auth-screen {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #e5e7eb 100%);
+            padding: 20px;
+        }
+        #auth-screen.hidden {
+            display: none;
+        }
+        .auth-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+            padding: 40px;
+            max-width: 420px;
+            width: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        .auth-card h1 {
+            font-size: 28px;
+            margin: 8px 0;
+            color: #1f2937;
+        }
+        .auth-card .subtitle {
+            color: #6b7280;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1f2937;
+            font-size: 14px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #e0a82e;
+            box-shadow: 0 0 0 3px rgba(224, 168, 46, 0.1);
+        }
+        .btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 8px;
+            background: #e0a82e;
+            color: white;
+        }
+        .btn:hover {
+            background: #cc9925;
+        }
+        .error-msg {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            margin-bottom: 16px;
+            display: none;
+        }
+        .error-msg.show {
+            display: block;
+        }
+        .divider {
+            height: 1px;
+            background: #e5e7eb;
+            margin: 24px 0;
+        }
+        .footer-text {
+            text-align: center;
+            font-size: 13px;
+            color: #6b7280;
+        }
+        .footer-text a {
+            color: #e0a82e;
+            text-decoration: none;
+        }
+        .footer-text a:hover {
+            text-decoration: underline;
+        }
+        #offer-screen {
+            display: block;
+        }
+        #offer-screen.hidden {
+            display: none;
+        }
+        .offer-header {
+            background: #18182f;
+            color: white;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .offer-header-left {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .offer-header-right {
+            display: flex;
+            gap: 12px;
+        }
+        .offer-header button,
+        .offer-header a {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .offer-header button:hover,
+        .offer-header a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        @media print {
+            .offer-header,
+            .no-print {
+                display: none !important;
+            }
+        }
+        #not-found-screen {
+            display: none;
+        }
+        #not-found-screen.show {
+            display: flex;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #e5e7eb 100%);
+            padding: 20px;
+        }
+        .not-found-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+            padding: 40px;
+            text-align: center;
+            max-width: 420px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        .not-found-card h2 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: #1f2937;
+        }
+        .not-found-card p {
+            color: #6b7280;
+            margin-bottom: 24px;
+        }
+        .not-found-card a {
+            display: inline-block;
+            background: #e0a82e;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .not-found-card a:hover {
+            background: #cc9925;
+        }
+    </style>
+    <!-- Breadcrumb Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.goexpandia.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Proposal Viewer"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- Breadcrumbs -->
+<div class="bg-base-200 py-3">
+    <div class="container mx-auto container-padding">
+        <div class="breadcrumbs text-sm">
+            <ul>
+                <li><a href="../" class="link link-hover">Home</a></li>
+                <li class="text-base-content/60">Proposal Viewer</li>
+            </ul>
+        </div>
+    </div>
+</div>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div style="text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+            <div style="font-size: 48px; margin-bottom: 16px;">⏳</div>
+            <p style="color: #6b7280;">Loading proposal...</p>
+        </div>
+    </div>
+
+    <!-- Password Entry Screen -->
+    <div id="auth-screen" class="hidden">
+        <div class="auth-card">
+            <div style="text-align: center; margin-bottom: 24px;">
+                <img src="/Expandia-main-logo-koyu-yesil.png" alt="Expandia" style="height: 60px; width: auto; margin-bottom: 16px;">
+                <h1><span style="color: #e0a82e;">Secure</span> Proposal</h1>
+                <p class="subtitle">Enter the password to view this proposal</p>
+            </div>
+            <form id="password-form">
+                <div class="form-group">
+                    <label for="password-input">Password</label>
+                    <input type="password" id="password-input" placeholder="Enter password" required autofocus autocomplete="current-password">
+                </div>
+                <div class="error-msg" id="password-error">
+                    ❌ Incorrect password. Please try again.
+                </div>
+                <button type="submit" class="btn">Access Proposal</button>
+            </form>
+            <div class="divider"></div>
+            <div class="footer-text">
+                <p>Don't have the password?</p>
+                <p style="margin-top: 8px;">Contact: <a href="mailto:hello@goexpandia.com">hello@goexpandia.com</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Offer Content Screen -->
+    <div id="offer-screen">
+        <!-- Header -->
+        <div class="offer-header no-print">
+            <div class="offer-header-left">
+                <span style="color: #e0a82e;">e</span>xpandia
+            </div>
+            <div class="offer-header-right">
+                <button onclick="window.print()" class="no-print">🖨️ Print / PDF</button>
+                <a href="/">🏠 Home</a>
+            </div>
+        </div>
+
+        <!-- AI-Generated Content (Pure, Unmodified) -->
+        <div id="offer-content"></div>
+    </div>
+
+    <!-- Not Found Screen -->
+    <div id="not-found-screen">
+        <div class="not-found-card">
+            <div style="font-size: 48px; margin-bottom: 16px;">❌</div>
+            <h2>Proposal Not Found</h2>
+            <p>The proposal you're looking for doesn't exist or has been removed.</p>
+            <a href="/">Return to Home</a>
+        </div>
+    </div>
+
+    <script>
+        const offerId = window.location.pathname.split('/').pop();
+        
+        checkAuthentication();
+
+        async function checkAuthentication() {
+            try {
+                const response = await fetch(`/api/proposals/${offerId}/content`, {
+                    credentials: 'include'
+                });
+
+                if (response.ok) {
+                    const offer = await response.json();
+                    displayOffer(offer);
+                } else {
+                    document.getElementById('loading-screen').classList.add('hidden');
+                    document.getElementById('auth-screen').classList.remove('hidden');
+                }
+            } catch (error) {
+                console.error('Error checking authentication:', error);
+                document.getElementById('loading-screen').classList.add('hidden');
+                document.getElementById('not-found-screen').classList.add('show');
+            }
+        }
+
+        document.getElementById('password-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const password = document.getElementById('password-input').value;
+            const errorDiv = document.getElementById('password-error');
+            
+            errorDiv.classList.remove('show');
+
+            try {
+                const response = await fetch(`/api/proposals/${offerId}/auth`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'include',
+                    body: JSON.stringify({ password })
+                });
+
+                if (response.ok) {
+                    const contentResponse = await fetch(`/api/proposals/${offerId}/content`, {
+                        credentials: 'include'
+                    });
+                    
+                    if (contentResponse.ok) {
+                        const offer = await contentResponse.json();
+                        displayOffer(offer);
+                    }
+                } else {
+                    errorDiv.classList.add('show');
+                    document.getElementById('password-input').value = '';
+                    document.getElementById('password-input').focus();
+                }
+            } catch (error) {
+                console.error('Authentication error:', error);
+                errorDiv.classList.add('show');
+            }
+        });
+
+        function displayOffer(offer) {
+            // Remove auth and loading screens
+            document.getElementById('auth-screen').classList.add('hidden');
+            document.getElementById('loading-screen').classList.add('hidden');
+            // Offer screen is already visible by default, just make sure
+            document.getElementById('offer-screen').classList.remove('hidden');
+            
+            // Update title
+            document.title = `${offer.title} - ${offer.clientName} - Expandia`;
+            
+            // Create a wrapper div for the AI content
+            const contentDiv = document.getElementById('offer-content');
+            
+            // Create an iframe to sandbox the AI HTML and prevent CSS conflicts
+            const iframe = document.createElement('iframe');
+            iframe.style.cssText = `
+                width: 100%;
+                min-height: 100vh;
+                border: none;
+                margin: 0;
+                padding: 0;
+                display: block;
+            `;
+            iframe.id = 'offer-iframe';
+            
+            contentDiv.innerHTML = '';
+            contentDiv.appendChild(iframe);
+            
+            // Write AI HTML to iframe
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframeDoc.open();
+            iframeDoc.write(offer.htmlContent);
+            iframeDoc.close();
+            
+            // Adjust iframe height based on content
+            setTimeout(() => {
+                try {
+                    const height = iframe.contentDocument.documentElement.scrollHeight;
+                    iframe.style.height = (height + 20) + 'px';
+                } catch (e) {
+                    iframe.style.height = '100vh';
+                }
+            }, 500);
+        }
+        
+        function addControlsToHeader(offer) {
+            // This function is no longer needed, but keeping for compatibility
+            return;
+        }
+    </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How quickly can we start working together?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We can typically begin within 1-2 weeks after our initial consultation. We'll set up everything needed and start delivering results quickly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes Expandia different from other agencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We combine deep European market expertise with data-driven strategies and multilingual capabilities. Our team has 8+ years of experience helping businesses scale internationally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with companies of all sizes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we work with startups, SMEs, and enterprise companies. Our solutions are scalable and tailored to your specific business needs and growth stage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your pricing model?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer flexible pricing based on your specific needs and goals. Contact us for a free consultation and custom quote tailored to your business objectives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you measure success?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We focus on measurable KPIs including lead generation, conversion rates, ROI, and revenue impact. You'll receive detailed analytics and regular performance reports."
+      }
+    }
+  ]
+}
+</script>
+</body>
+</html>
+

@@ -1,0 +1,74 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Production builds
+dist/css/
+build/
+# Keep dist/js for GitHub Pages deployment
+!dist/js/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+.cursor/
+
+# Python files (for your PDF generators)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Temporary files
+tmp/
+temp/
+
+# Offer system - COMMIT offers to Git for persistence on Heroku
+# offers/*.json  <-- REMOVED: We need offers in Git or they're lost on Heroku
+!offers/.gitkeep 
+
+# Local fal.ai image generation helpers (never commit)
+fal-image-jobs.local.json
+AI_IMAGE_GENERATION_FAL.mdVISUAL_README.md

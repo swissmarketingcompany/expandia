@@ -1,0 +1,469 @@
+{
+  "index": {
+    "title": "Managed Sales Operations & B2B Growth Partner | Go Expandia",
+    "description": "Your strategic operations partner in Europe. We manage IT, sales, security, and recruitment so you can focus on strategy and growth.",
+    "keywords": "managed operations, sales as a service, IT operations, export market entry, business operations partner",
+    "translations": {
+      "tr": {
+        "title": "Yönetilen Satış Operasyonları & B2B Büyüme Ortağı | Go Expandia",
+        "description": "Avrupa'da stratejik operasyon ortağınız. Stratejinize ve büyümenize odaklanabilmeniz için BT, satış, güvenlik ve işe alımı yönetiyoruz.",
+        "keywords": "B2B lead üretimi Türkiye, ihracat satış danışmanlığı, randevu ayarlama hizmeti, Avrupa pazarı girişi"
+      },
+      "de": {
+        "title": "Managed Sales Operations & B2B Wachstumspartner | Go Expandia",
+        "description": "Ihr strategischer Operations-Partner in Europa. Wir verwalten IT, Vertrieb, Sicherheit und Recruiting, damit Sie sich auf Strategie und Wachstum konzentrieren können.",
+        "keywords": "B2B Lead-Generierung Deutschland, Terminvereinbarung Exporteure, europäischer Markteintritt, Verkaufsautomation Deutschland"
+      },
+      "fr": {
+        "title": "Opérations de Vente Gérées & Partenaire de Croissance B2B | Go Expandia",
+        "description": "Votre partenaire stratégique en opérations en Europe. Nous gérons l'IT, les ventes, la sécurité et le recrutement pour que vous puissiez vous concentrer sur la stratégie et la croissance.",
+        "keywords": "Génération de leads B2B France, conseil vente export, service de prise de rendez-vous, entrée sur le marché européen"
+      }
+    }
+  },
+  "solutions": {
+    "title": "End-to-End Sales Operations Solutions | Go Expandia",
+    "description": "Inbound lead generation and outbound lead generation tailored to your growth goals.",
+    "keywords": "export sales solutions, B2B consulting Europe, international sales services, European market expansion",
+    "translations": {
+      "tr": {
+        "title": "Uçtan Uca Satış Operasyon Çözümleri | Go Expandia",
+        "description": "Avrupa pazarları için B2B satış çözümleri. İhracat danışmanlığı, lead üretimi ve satış otomasyonu hizmetleri.",
+        "keywords": "B2B satış çözümleri, ihracat danışmanlığı, satış otomasyonu, Avrupa pazarları"
+      },
+      "de": {
+        "title": "End-to-End Vertriebsoperations-Lösungen | Go Expandia",
+        "description": "B2B Verkaufslösungen für europäische Märkte. Export-Beratung, Lead-Generierung und Verkaufsautomation.",
+        "keywords": "B2B Verkaufslösungen, Export Beratung, Verkaufsautomation, europäische Märkte"
+      },
+      "fr": {
+        "title": "Solutions d'Opérations de Vente de Bout en Bout | Go Expandia",
+        "description": "Solutions de vente B2B pour les marchés européens. Conseil export, génération de leads et services d'automatisation des ventes.",
+        "keywords": "solutions de vente B2B, conseil export, automatisation des ventes, marchés européens"
+      }
+    }
+  },
+  "about": {
+    "title": "About Us | Managed Operations Partner Europe | Go Expandia",
+    "description": "Lead generation agency in Europe. Inbound lead generation and outbound lead generation for predictable pipeline.",
+    "keywords": "lead generation agency Europe, inbound lead generation, outbound lead generation",
+    "translations": {
+      "tr": {
+        "title": "Hakkımızda | Yönetilen Operasyonlar Ortağı Avrupa | Go Expandia",
+        "description": "Avrupa'da faaliyet gösteren B2B lead generation ajansı. Inbound ve outbound programları ile büyüyün.",
+        "keywords": "B2B satış ajansı Avrupa, ihracat pazarı uzmanları, uluslararası satış danışmanlığı"
+      },
+      "de": {
+        "title": "Über uns | Managed Operations Partner Europa | Go Expandia",
+        "description": "B2B Lead-Generierung Agentur in Europa. Inbound und Outbound für planbare Pipeline.",
+        "keywords": "B2B Verkaufsagentur Europa, Export Marktspezialisten, internationale Verkaufsberatung"
+      },
+      "fr": {
+        "title": "À propos | Partenaire d'Opérations Gérées Europe | Go Expandia",
+        "description": "Agence de génération de leads B2B en Europe. Inbound et outbound pour un pipeline prévisible.",
+        "keywords": "agence de vente B2B Europe, spécialistes marché export, conseil vente international"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact | Sales Operations Consultation | Go Expandia",
+    "description": "Free consultation for inbound lead generation, outbound lead generation, and training. Build predictable pipeline fast.",
+    "keywords": "lead generation consultation, inbound lead generation, outbound lead generation, training",
+    "translations": {
+      "tr": {
+        "title": "İletişim | Satış Operasyonları Danışmanlığı | Go Expandia",
+        "description": "Inbound, outbound lead generation ve eğitim programları için ücretsiz danışmanlık. Planlı pipeline oluşturun.",
+        "keywords": "B2B lead üretimi danışmanlığı, ihracat satış konsültasyonu, uluslararası pazar girişi"
+      },
+      "de": {
+        "title": "Kontakt | Vertriebsoperations-Beratung | Go Expandia",
+        "description": "Kostenlose Beratung für Inbound, Outbound und Trainings. Planbare Pipeline aufbauen.",
+        "keywords": "B2B Lead-Generierung Beratung, Export Verkaufs Konsultation, internationaler Markteintritt"
+      },
+      "fr": {
+        "title": "Contact | Consultation Opérations de Vente | Go Expandia",
+        "description": "Consultation gratuite pour la génération de leads inbound, outbound et la formation. Construisez un pipeline prévisible.",
+        "keywords": "conseil génération de leads B2B, consultation vente export, entrée sur le marché international"
+      }
+    }
+  },
+  "case-studies": {
+    "title": "Success Stories | Managed Sales Results | Go Expandia",
+    "description": "Lead generation case studies and proof of results. Inbound and outbound program outcomes from our clients.",
+    "keywords": "lead generation success stories, inbound lead gen case studies, outbound lead gen results",
+    "translations": {
+      "tr": {
+        "title": "Başarı Hikayeleri | Yönetilen Satış Sonuçları | Go Expandia",
+        "description": "B2B lead generation başarı hikayeleri ve örnek çalışmalar. Inbound ve outbound program sonuçları.",
+        "keywords": "B2B satış başarı hikayeleri, ihracat pazarı örnek çalışmaları, uluslararası genişleme sonuçları"
+      },
+      "de": {
+        "title": "Erfolgsgeschichten | Managed Sales Ergebnisse | Go Expandia",
+        "description": "B2B Lead-Generierung Erfolgsgeschichten und Fallstudien. Inbound und Outbound Resultate.",
+        "keywords": "B2B Verkaufs Erfolgsgeschichten, Export Markt Fallstudien, internationale Expansion Ergebnisse"
+      },
+      "fr": {
+        "title": "Histoires de Réussite | Résultats de Vente Gérée | Go Expandia",
+        "description": "Histoires de réussite et études de cas de génération de leads B2B. Résultats des programmes inbound et outbound.",
+        "keywords": "histoires de réussite vente B2B, études de cas marché export, résultats expansion internationale"
+      }
+    }
+  },
+  "lead-generation-service": {
+    "title": "B2B Growth Services for Small Business & Enterprises | Go Expandia",
+    "description": "Lead generation services for small business and B2B companies. Inbound and outbound programs that build predictable pipeline and qualified sales opportunities.",
+    "keywords": "lead generation services for small business, B2B lead generation agency, inbound lead generation, outbound lead generation, automated lead generation solutions"
+  },
+  "appointment-setting-service": {
+    "title": "B2B Appointment Setting Services | Qualified Sales Meetings | Go Expandia",
+    "description": "B2B appointment setting services that fill your calendar with qualified meetings. Research, outbound sequences, and SDR calling for decision-makers in Europe and the USA.",
+    "keywords": "B2B appointment setting services, qualified sales meetings, SDR team, pipeline generation strategy, cold calling services for B2B"
+  },
+  "cold-email-agency": {
+    "title": "Cold Email Agency | Deliverability & Replies | Go Expandia",
+    "description": "High-deliverability cold email programs with research, personalization, sequencing, and reply-to-booking.",
+    "keywords": "cold email agency, deliverability, inboxing, b2b outreach"
+  },
+  "b2b-lead-generation-agency": {
+    "title": "B2B Growth Agency Europe & USA | Managed Sales | Go Expandia",
+    "description": "B2B lead generation agency for Europe and the USA. Generate qualified leads, book sales appointments, and grow pipeline for exporters and high-ticket B2B services.",
+    "keywords": "B2B lead generation Switzerland, B2B lead generation Europe, lead generation agency, best lead generation companies 2025, pay per lead generation agency"
+  },
+  "sales-development-agency": {
+    "title": "Outsourced Sales Development & SDR Teams | Go Expandia",
+    "description": "Outsourced sales development for B2B companies that need qualified opportunities, not just raw leads. SDR teams, pipeline generation, and sales development processes built for Europe and the USA.",
+    "keywords": "outsourced sales development, outsourced SDR teams, B2B sales development agency, pipeline generation strategy, sales development Europe"
+  },
+  "outbound-marketing-agency": {
+    "title": "Outbound Marketing Agency | Multi-Channel B2B Outreach | Go Expandia",
+    "description": "Outbound marketing agency focused on multi-channel B2B outreach. LinkedIn lead generation services, cold email campaigns, and outbound sequences that generate meetings with decision-makers.",
+    "keywords": "outbound marketing agency, LinkedIn lead generation services, cold email campaigns, B2B outreach, multi-channel outbound marketing"
+  },
+  "email-marketing-management": {
+    "title": "B2B Email Marketing Operations | Campaign Management | Go Expandia",
+    "description": "B2B email marketing management focused on lead generation and sales pipeline. Strategy, copy, and automation to turn email lists into qualified opportunities.",
+    "keywords": "email marketing lead generation, B2B email marketing, automated lead generation solutions, email marketing management, sales funnel conversion"
+  },
+  "email-automation": {
+    "title": "B2B Email Automation Services | Sales Automation | Go Expandia",
+    "description": "B2B email automation services that turn manual outreach into automated lead generation. Build nurture sequences, trigger-based campaigns, and sales automation for Europe and the USA.",
+    "keywords": "automated lead generation solutions, B2B email automation, email sequences, sales automation, lead nurturing workflows"
+  },
+  "prospect-finding-service": {
+    "title": "Prospect Finding Service | Qualified B2B Data & Lists | Go Expandia",
+    "description": "Prospect finding service providing qualified B2B data and account lists for Europe and the USA. Ideal customer profiling, research, and list-building that feeds your lead generation engine.",
+    "keywords": "B2B data providers Europe, qualified prospect lists, prospect finding service, target account lists, ideal customer profile research"
+  },
+  "outsourced-sales-team-service": {
+    "title": "Outsourced Sales Teams USA & Europe | Sales as a Service | Go Expandia",
+    "description": "Outsourced sales teams for B2B companies selling into Europe and the USA. SDRs, account executives, and appointment setters that operate as your Sales-as-a-Service team.",
+    "keywords": "outsourced sales teams USA, outsourced sales team, B2B sales as a service, sales outsourcing, high ticket closing services"
+  },
+  "distributor-finding": {
+    "title": "Distributor Finding Service | Europe Market Partners | Go Expandia",
+    "description": "Distributor finding service for European market entry. Identify, qualify, and secure distribution partners that can grow your revenue in new regions.",
+    "keywords": "distributor finding service, distributor lead generation, Europe market entry, export consulting, channel partners, distribution network"
+  },
+  "international-market-entry": {
+    "title": "International Market Entry Services | Europe & USA | Go Expandia",
+    "description": "International market entry services for companies expanding into Europe and the USA. Strategy, partner selection, and pipeline generation for new markets.",
+    "keywords": "international market entry services, US market entry services, Europe market entry, export consulting, international growth, market expansion strategy"
+  },
+  "export-marketing-consulting": {
+    "title": "Export Marketing Consulting | Europe & US Sales Growth | Go Expandia",
+    "description": "Export marketing consulting that connects your products with buyers across Europe and the USA. Positioning, messaging, and lead generation for export growth.",
+    "keywords": "export marketing consulting, export lead generation, Europe market entry, international sales strategy, global expansion"
+  },
+  "overseas-sales-consulting": {
+    "title": "Overseas Sales Consulting | B2B Expansion Strategy | Go Expandia",
+    "description": "Overseas sales consulting for B2B companies expanding beyond their home market. Strategy, buyer insights, and lead generation programs that create predictable overseas revenue.",
+    "keywords": "overseas sales consulting, B2B sales growth, international expansion strategy, overseas markets, sales consulting Europe"
+  },
+  "europe-market-entry": {
+    "title": "Europe Market Entry Services | Managed Sales Operations | Go Expandia",
+    "description": "Europe market entry services combined with B2B lead generation. From strategy and localization to pipeline generation across key hubs like Zurich, Berlin, and London.",
+    "keywords": "Europe market entry services, B2B lead generation Europe, sales agency Zurich, B2B lead gen agency Berlin, European expansion strategy"
+  },
+  "vision-mission": {
+    "title": "Vision & Mission | Go Expandia",
+    "description": "Go Expandia's vision and mission. Shaping the future of B2B sales development.",
+    "keywords": "Go Expandia vision, Go Expandia mission, B2B sales agency values",
+    "translations": {
+      "tr": {
+        "title": "Vizyon & Misyon | Go Expandia",
+        "description": "Go Expandia'nın vizyonu ve misyonu. B2B satış geliştirmenin geleceğini şekillendiriyoruz.",
+        "keywords": "Go Expandia vizyon, Go Expandia misyon, B2B satış ajansı değerleri"
+      },
+      "de": {
+        "title": "Vision & Mission | Go Expandia",
+        "description": "Go Expandias Vision und Mission. Wir gestalten die Zukunft der B2B-Vertriebsentwicklung.",
+        "keywords": "Go Expandia Vision, Go Expandia Mission, B2B-Verkaufsagentur Werte"
+      },
+      "fr": {
+        "title": "Vision & Mission | Go Expandia",
+        "description": "Vision et mission de Go Expandia. Façonner l'avenir du développement des ventes B2B.",
+        "keywords": "vision Go Expandia, mission Go Expandia, valeurs agence de vente B2B"
+      }
+    }
+  },
+  "our-ethical-principles": {
+    "title": "Our Ethical Principles | Go Expandia",
+    "description": "Go Expandia's ethical principles and values. The foundation of trust and integrity.",
+    "keywords": "Go Expandia ethical principles, business ethics, GDPR compliance, integrity",
+    "translations": {
+      "tr": {
+        "title": "Etik İlkelerimiz | Go Expandia",
+        "description": "Go Expandia'nın etik ilkeleri ve değerleri. Güven ve dürüstlüğün temeli.",
+        "keywords": "Go Expandia etik ilkeleri, iş etiği, KVKK uyumu, dürüstlük"
+      },
+      "de": {
+        "title": "Unsere ethischen Grundsätze | Go Expandia",
+        "description": "Go Expandias ethische Grundsätze und Werte. Die Grundlage von Vertrauen und Integrität.",
+        "keywords": "Go Expandia ethische Grundsätze, Geschäftsethik, DSGVO-Konformität, Integrität"
+      },
+      "fr": {
+        "title": "Nos Principes Éthiques | Go Expandia",
+        "description": "Principes éthiques et valeurs de Go Expandia. La base de la confiance et de l'intégrité.",
+        "keywords": "principes éthiques Go Expandia, éthique des affaires, conformité RGPD, intégrité"
+      }
+    }
+  },
+  "market-foundation-program": {
+    "title": "Market Foundation Program | Go Expandia",
+    "description": "Perfect for companies entering new markets. Build positioning, messaging and first qualified meetings.",
+    "keywords": "market entry, B2B sales program, lead generation, market development",
+    "translations": {
+      "tr": {
+        "title": "Pazar Temeli Programı | Go Expandia",
+        "description": "Yeni pazarlara giren şirketler için. Konumlandırma, mesajlaşma ve ilk nitelikli toplantılar.",
+        "keywords": "pazar girişi, B2B satış programı, lead generation, pazar geliştirme"
+      }
+    }
+  },
+  "market-accelerator-program": {
+    "title": "Market Accelerator Program | Go Expandia",
+    "description": "Dominate large markets fast. Aggressive outreach and scalable growth.",
+    "keywords": "market acceleration, rapid growth, B2B scaling, sales acceleration",
+    "translations": {
+      "tr": {
+        "title": "Pazar Hızlandırıcı Program | Go Expandia",
+        "description": "Büyük pazarlara hızla hakim olun. Agresif iletişim ve ölçeklenebilir büyüme.",
+        "keywords": "pazar hızlandırma, hızlı büyüme, B2B ölçeklendirme, satış hızlandırma"
+      }
+    }
+  },
+  "part-time-lead-generation-team": {
+    "title": "Part-Time Lead Generation Team | Go Expandia",
+    "description": "Dedicated team member for 5-50 headcount companies. 40 hours/month, low cost, high performance.",
+    "keywords": "part-time lead generation, part-time Lead Generation, outsourced sales, B2B team",
+    "translations": {
+      "tr": {
+        "title": "Part-Time Lead Generation Ekibi | Go Expandia",
+        "description": "5-50 kişilik şirketler için özel ekip üyesi. Ayda 40 saat, düşük maliyet, yüksek performans.",
+        "keywords": "part-time lead generation, part-time Lead Generation, dış kaynak satış, B2B ekip"
+      }
+    }
+  },
+  "corporate-digital-gifting": {
+    "title": "Corporate Digital Gifting | Netflix, Spotify, Disney+ | Go Expandia",
+    "description": "Gift Netflix, Spotify, Disney+, and dozens of global brands to your employees. Real usage tracking, multi-country support.",
+    "keywords": "corporate gifting, digital gift card, employee motivation, corporate promotion, Netflix gift, Spotify gift",
+    "translations": {
+      "tr": {
+        "title": "Kurumsal Dijital Hediye Paketleri | Netflix, Spotify, Disney+ | Go Expandia",
+        "description": "Netflix, Spotify, Disney+ ve onlarca global markayı çalışanlarınıza hediye edin. Gerçek kullanım takibi, çok ülke desteği.",
+        "keywords": "kurumsal hediye, dijital hediye kartı, çalışan motivasyonu, kurumsal promosyon"
+      },
+      "de": {
+        "title": "Unternehmens-Digitale Geschenke | Netflix, Spotify, Disney+ | Go Expandia",
+        "description": "Schenken Sie Netflix, Spotify, Disney+ und Dutzende globaler Marken an Ihre Mitarbeiter. Echtes Nutzungstracking, Multi-Land-Unterstützung.",
+        "keywords": "Unternehmensgeschenke, digitale Geschenkkarte, Mitarbeitermotivation, Unternehmenspromotion"
+      },
+      "fr": {
+        "title": "Cadeaux Numériques d'Entreprise | Netflix, Spotify, Disney+ | Go Expandia",
+        "description": "Offrez Netflix, Spotify, Disney+ et des dizaines de marques mondiales à vos employés. Suivi réel de l'utilisation, support multi-pays.",
+        "keywords": "cadeaux d'entreprise, carte cadeau numérique, motivation des employés, promotion d'entreprise"
+      }
+    }
+  },
+  "managed-it-services": {
+    "title": "Managed IT Services & Cybersecurity for B2B | Go Expandia",
+    "description": "Enterprise-grade Managed IT services and cybersecurity. Endpoint protection, cloud security, and technical support for high-growth companies.",
+    "keywords": "managed IT services, cybersecurity for business, MSP services, IT support Europe",
+    "translations": {
+      "de": {
+        "title": "Verwaltete IT-Dienste & Cybersicherheit für B2B | Go Expandia",
+        "description": "Verwaltete IT-Dienste und Cybersicherheit auf Unternehmensniveau. Endpoint-Schutz, Cloud-Sicherheit und technischer Support.",
+        "keywords": "verwaltete IT-Dienste, Cybersicherheit, MSP-Dienste, IT-Support Europa"
+      },
+      "fr": {
+        "title": "Services IT Gérés & Cybersécurité pour B2B | Go Expandia",
+        "description": "Services IT gérés et cybersécurité de niveau entreprise. Protection des endpoints, sécurité cloud et support technique.",
+        "keywords": "services IT gérés, cybersécurité, services MSP, support IT Europe"
+      }
+    }
+  },
+  "vulnerability-assessments": {
+    "title": "Vulnerability Assessments & Penetration Testing | Go Expandia",
+    "description": "Identify and fix security gaps before they are exploited. Comprehensive vulnerability scanning and assessment for your digital infrastructure.",
+    "keywords": "vulnerability assessment, pentesting, security audit, network security scan",
+    "translations": {
+      "de": {
+        "title": "Schwachstellen-Bewertung & Scans | Go Expandia",
+        "description": "Identifizieren und beheben Sie Sicherheitslücken, bevor sie ausgenutzt werden. Umfassendes Schwachstellen-Scanning.",
+        "keywords": "Schwachstellenbewertung, Pentesting, Sicherheitsaudit, Netzwerk-Sicherheitsscan"
+      },
+      "fr": {
+        "title": "Évaluations de Vulnérabilité & Tests de Pénétration | Go Expandia",
+        "description": "Identifiez et corrigez les failles de sécurité avant qu'elles ne soient exploitées. Analyse complète des vulnérabilités.",
+        "keywords": "évaluation vulnérabilité, pentesting, audit sécurité, scan sécurité réseau"
+      }
+    }
+  },
+  "email-security": {
+    "title": "Email Security & Global Deliverability Solutions | Go Expandia",
+    "description": "Protect your domain and ensure your emails reach the inbox. Expert email security, SPF/DKIM/DMARC setup, and deliverability optimization.",
+    "keywords": "email security, email deliverability, DMARC setup, spam protection",
+    "translations": {
+      "de": {
+        "title": "Email Security & globale Zustellbarkeit | Go Expandia",
+        "description": "Schützen Sie Ihre Domain und stellen Sie sicher, dass Ihre E-Mails im Posteingang ankommen. Experten-E-Mail-Sicherheit.",
+        "keywords": "E-Mail-Sicherheit, E-Mail-Zustellbarkeit, DMARC-Setup, Spam-Schutz"
+      },
+      "fr": {
+        "title": "Sécurité Email & Solutions de Délivrabilité Globale | Go Expandia",
+        "description": "Protégez votre domaine et assurez-vous que vos emails arrivent dans la boîte de réception. Sécurité email experte.",
+        "keywords": "sécurité email, délivrabilité email, configuration DMARC, protection spam"
+      }
+    }
+  },
+  "website-care-plans": {
+    "title": "Website Care Plans & Performance Optimization | Go Expandia",
+    "description": "Keep your website fast, secure, and always-on. Managed WordPress care, security updates, and performance tuning.",
+    "keywords": "website maintenance, website care plan, wordpress support, speed optimization",
+    "translations": {
+      "de": {
+        "title": "Website-Pflege & Performance-Pläne | Go Expandia",
+        "description": "Halten Sie Ihre Website schnell, sicher und immer verfügbar. Verwaltete WordPress-Pflege, Sicherheitsupdates.",
+        "keywords": "Website-Wartung, Website-Pflegeplan, WordPress-Support, Geschwindigkeitsoptimierung"
+      },
+      "fr": {
+        "title": "Plans de Maintenance Web & Optimisation des Performances | Go Expandia",
+        "description": "Gardez votre site web rapide, sécurisé et toujours en ligne. Maintenance WordPress gérée, mises à jour de sécurité.",
+        "keywords": "maintenance site web, plan de maintenance, support WordPress, optimisation vitesse"
+      }
+    }
+  },
+  "revops-crm-setup": {
+    "title": "RevOps & CRM Infrastructure Setup | HubSpot & Salesforce | Go Expandia",
+    "description": "Streamline your sales and marketing with expert RevOps and CRM setup. Align your teams and data for scalable growth.",
+    "keywords": "revops, CRM setup, HubSpot implementation, Salesforce consulting",
+    "translations": {
+      "de": {
+        "title": "RevOps & CRM-Infrastruktur | Go Expandia",
+        "description": "Optimieren Sie Vertrieb und Marketing mit Experten-RevOps und CRM-Setup. Richten Sie Ihre Teams und Daten aus.",
+        "keywords": "RevOps, CRM-Setup, HubSpot-Implementierung, Salesforce-Beratung"
+      },
+      "fr": {
+        "title": "RevOps & Infrastructure CRM | HubSpot & Salesforce | Go Expandia",
+        "description": "Rationalisez vos ventes et marketing avec une configuration RevOps et CRM experte. Alignez vos équipes et données.",
+        "keywords": "revops, configuration CRM, implémentation HubSpot, conseil Salesforce"
+      }
+    }
+  },
+  "lost-lead-reactivation": {
+    "title": "Lost Lead Reactivation | Recover Your Sales Pipeline | Go Expandia",
+    "description": "Turn your dormant CRM leads into closed deals. Professional reactivation sequences that resurface qualified opportunities.",
+    "keywords": "lead reactivation, CRM recovery, lost lead pipeline, sales recovery",
+    "translations": {
+      "de": {
+        "title": "Reaktivierung verlorener Leads | Go Expandia",
+        "description": "Verwandeln Sie Ihre ruhenden CRM-Leads in abgeschlossene Geschäfte. Professionelle Reaktivierungssequenzen.",
+        "keywords": "Lead-Reaktivierung, CRM-Wiederherstellung, verlorene Lead-Pipeline, Verkaufswiederherstellung"
+      },
+      "fr": {
+        "title": "Réactivation de Leads Perdus | Récupérez Votre Pipeline | Go Expandia",
+        "description": "Transformez vos leads CRM dormants en deals conclus. Séquences de réactivation professionnelles.",
+        "keywords": "réactivation leads, récupération CRM, pipeline leads perdus, récupération ventes"
+      }
+    }
+  },
+  "speed-to-lead": {
+    "title": "Cold Calling Service | Professional SDR Outreach | Go Expandia",
+    "description": "Professional cold calling service with native-speaking SDRs. Book qualified meetings directly on your calendar through phone outreach.",
+    "keywords": "cold calling service, SDR outreach, phone sales, B2B cold calling, appointment setting",
+    "translations": {
+      "de": {
+        "title": "Schnellreaktions-Engine für Leads | Go Expandia",
+        "description": "Professioneller Cold-Calling-Service mit muttersprachlichen SDRs. Buchen Sie qualifizierte Meetings direkt in Ihrem Kalender.",
+        "keywords": "Cold-Calling-Service, SDR-Outreach, Telefonverkauf, B2B Cold-Calling, Terminvereinbarung"
+      },
+      "fr": {
+        "title": "Service d'Appels à Froid | Prospection SDR Professionnelle | Go Expandia",
+        "description": "Service d'appels à froid professionnel avec des SDR natifs. Réservez des réunions qualifiées directement dans votre calendrier.",
+        "keywords": "service appels à froid, prospection SDR, vente téléphonique, appels à froid B2B, prise de rendez-vous"
+      }
+    }
+  },
+  "recruitment": {
+    "title": "B2B Recruitment & Specialized Headhunting | Go Expandia",
+    "description": "Find top-tier talent for sales, tech, and leadership roles. Specialized headhunting and safe bridge staffing solutions.",
+    "keywords": "B2B recruitment, headhunting, executive search, sales recruitment",
+    "translations": {
+      "de": {
+        "title": "Talente ohne Grenzen | Go Expandia",
+        "description": "Finden Sie erstklassige Talente für Vertriebs-, Tech- und Führungsrollen. Spezialisiertes Headhunting und sichere Überbrückungslösungen.",
+        "keywords": "B2B Recruiting, Headhunting, Executive Search, Vertriebsrecruiting"
+      },
+      "fr": {
+        "title": "Recrutement B2B & Chasse de Têtes Spécialisée | Go Expandia",
+        "description": "Trouvez des talents de premier plan pour les rôles de vente, tech et leadership. Chasse de têtes spécialisée et solutions de staffing.",
+        "keywords": "recrutement B2B, chasse de têtes, recherche de cadres, recrutement ventes"
+      }
+    }
+  },
+  "ai-creative-studio": {
+    "title": "AI Creative Studio | Video Localization & Digital Twins | Go Expandia",
+    "description": "The future of corporate content. AI video localization, hyper-realistic avatars, and brand-specific generative assets.",
+    "keywords": "AI video localization, AI avatars, digital twins, generative content studio",
+    "translations": {
+      "de": {
+        "title": "KI-Kreativstudio | Video-Lokalisierung & Digitale Zwillinge | Go Expandia",
+        "description": "Die Zukunft von Unternehmensinhalten. KI-Video-Lokalisierung, hyperrealistische Avatare und markenspezifische generative Assets.",
+        "keywords": "KI-Video-Lokalisierung, KI-Avatare, digitale Zwillinge, generatives Content-Studio"
+      },
+      "fr": {
+        "title": "Studio Créatif IA | Localisation Vidéo & Jumeaux Numériques | Go Expandia",
+        "description": "L'avenir du contenu d'entreprise. Localisation vidéo IA, avatars hyper-réalistes et assets génératifs spécifiques à la marque.",
+        "keywords": "localisation vidéo IA, avatars IA, jumeaux numériques, studio contenu génératif"
+      }
+    }
+  },
+  "city-locations": {
+    "title": "Global Managed Sales Operations Locations | Go Expandia",
+    "description": "Explore our B2B lead generation services across 80+ cities worldwide.",
+    "keywords": "B2B lead generation locations, global lead generation, local lead generation services"
+  },
+  "blog-index": {
+    "title": "Sales University - Sales Operations Resources | Go Expandia",
+    "description": "Master sales with our comprehensive Sales University. Expert-written articles on cold email, lead generation, sales psychology, and advanced sales techniques.",
+    "keywords": "sales training, b2b sales blog, lead generation resources, sales university",
+    "translations": {
+      "tr": {
+        "title": "Satış Üniversitesi - Satış Operasyonları Kaynakları | Go Expandia",
+        "description": "Kapsamlı Satış Üniversitemizle satışta ustalaşın. Soğuk e-posta, lead generation, satış psikolojisi ve ileri satış teknikleri üzerine uzman makaleler.",
+        "keywords": "satış eğitimi, b2b satış blogu, lead generation kaynakları, satış üniversitesi"
+      },
+      "de": {
+        "title": "Sales University - Vertriebsoperations-Ressourcen | Go Expandia",
+        "description": "Meistern Sie den Vertrieb mit unserer umfassenden Sales University. Expertenartikel zu Cold Email, Lead-Generierung, Verkaufspsychologie und fortgeschrittenen Verkaufstechniken.",
+        "keywords": "Vertriebstraining, B2B Vertriebsblog, Lead-Generierung Ressourcen, Sales University"
+      },
+      "fr": {
+        "title": "Sales University - Ressources d'Opérations de Vente | Go Expandia",
+        "description": "Maîtrisez la vente avec notre Sales University complète. Articles d'experts sur l'email froid, la génération de leads, la psychologie de vente et les techniques avancées.",
+        "keywords": "formation vente, blog vente b2b, ressources génération de leads, sales university"
+      }
+    }
+  }
+}
