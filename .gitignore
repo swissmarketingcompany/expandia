@@ -5,7 +5,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # Production builds
-dist/css/
+# dist/css/ (Committing this so it's available on deployment)
+!dist/css/output.css
 build/
 # Keep dist/js for GitHub Pages deployment
 !dist/js/
