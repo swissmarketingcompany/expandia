@@ -1922,8 +1922,17 @@ function generateSitemap() {
         });
     });
 
-    // Add City Pages
-    const cityPages = cities.map(c => `${c.slug}.html`);
+    // Add City Pages (B2B specific) - EN only for now as per buildCityPages logic
+    const cityPagesFull = cities.map(c => `${c.slug}.html`);
+
+    // Add Broad City Landing Pages (EN, DE, FR) as built by buildCityLandingPages
+    const broadCityPages = [];
+    cities.forEach(cityData => {
+        const citySlug = cityData.slug.replace('b2b-lead-generation-', '');
+        broadCityPages.push(`${citySlug}.html`); // EN
+        broadCityPages.push(`de/${citySlug}.html`); // DE
+        broadCityPages.push(`fr/${citySlug}.html`); // FR
+    });
 
     // REMOVED: Industry Pages - buildIndustryPages() function is disabled
     // const industryPages = industries.map(i => `${i.slug}.html`);
@@ -1972,7 +1981,7 @@ function generateSitemap() {
     glossaryPages.push('de/glossary/index.html');
     glossaryPages.push('fr/glossary/index.html');
 
-    const allPages = [...staticPages, ...localizedPages, ...cityPages, ...serviceCityPages, ...blogPages, ...glossaryPages];
+    const allPages = [...new Set([...staticPages, ...localizedPages, ...cityPagesFull, ...broadCityPages, ...serviceCityPages, ...blogPages, ...glossaryPages])];
 
     let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
