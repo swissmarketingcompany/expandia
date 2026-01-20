@@ -1,5 +1,31 @@
 [
   {
+    "id": "b2b-lead-generation-paris",
+    "slug": "b2b-lead-generation-paris",
+    "city": "Paris",
+    "country": "France",
+    "description": "B2B lead generation agency in Paris helping luxury, fashion, and corporate companies win qualified leads across France and globally.",
+    "image": "./assets/local/b2b-lead-generation-paris-hero.jpg",
+    "lat": 48.8566,
+    "lng": 2.3522,
+    "region": "Western Europe",
+    "landmark": "Eiffel Tower",
+    "population": "2,161,000"
+  },
+  {
+    "id": "b2b-lead-generation-london",
+    "slug": "b2b-lead-generation-london",
+    "city": "London",
+    "country": "United Kingdom",
+    "description": "B2B lead generation agency in London helping financial services, technology, and corporate companies win qualified leads across the UK and globally.",
+    "image": "./assets/local/b2b-lead-generation-london-hero.jpg",
+    "lat": 51.5074,
+    "lng": -0.1278,
+    "region": "Western Europe",
+    "landmark": "Tower Bridge",
+    "population": "8,982,000"
+  },
+  {
     "id": "b2b-lead-generation-chicago",
     "slug": "b2b-lead-generation-chicago",
     "city": "Chicago",

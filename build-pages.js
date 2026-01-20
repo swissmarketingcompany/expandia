@@ -15,6 +15,44 @@ const { applyTranslations } = require('./scripts/utils/translations');
 const { blogTopics } = require('./scripts/generate-blog-posts');
 const legacyBlogPosts = require('./data/legacy-blog-posts.json');
 
+// Helper to extract schemas from content and remove them to avoid duplicates in body
+function extractAndRemoveSchemas(content, templateName) {
+    const schemaRegex = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/gi;
+    let extractedSchemas = [];
+    let match;
+    let cleanContent = content;
+
+    while ((match = schemaRegex.exec(content)) !== null) {
+        const schemaContent = match[1].trim();
+        if (schemaContent === '{{SCHEMA_MARKUP}}') continue;
+
+        try {
+            const schemaJson = JSON.parse(schemaContent);
+            if (Array.isArray(schemaJson)) {
+                extractedSchemas = extractedSchemas.concat(schemaJson);
+            } else {
+                // Check if this is a Service schema with nested Organization in provider
+                // We'll extract it but mark it specially so deduplication knows to handle it
+                if (schemaJson["@type"] === "Service" && schemaJson.provider && schemaJson.provider["@type"] === "Organization") {
+                    // Don't extract the nested Organization separately
+                    extractedSchemas.push(schemaJson);
+                } else {
+                    extractedSchemas.push(schemaJson);
+                }
+            }
+        } catch (e) {
+            console.warn(`⚠️ Failed to parse schema in ${templateName}: ${e.message}`);
+        }
+    }
+
+    cleanContent = cleanContent.replace(schemaRegex, (m, p1) => {
+        if (p1.trim() === '{{SCHEMA_MARKUP}}') return m;
+        return '';
+    });
+
+    return { cleanContent, extractedSchemas };
+}
+
 // 🚨 BUILD SYSTEM WARNING
 console.log('\n🔧 EXPANDIA BUILD SYSTEM STARTING...');
 console.log('⚠️  WARNING: This will OVERWRITE generated HTML files!');
@@ -148,6 +186,21 @@ function getPageMetadata(templateName, lang = 'en') {
     return baseMeta;
 }
 
+const serviceMapping = {
+    'managed-it-services': 'turnkey-it',
+    'email-security': 'secure-email',
+    'website-care-plans': 'website-care',
+    'vulnerability-assessments': 'vulnerability-assessment',
+    'revops-crm-setup': 'revops',
+    'lost-lead-reactivation': 'lost-lead',
+    'ai-creative-studio': 'ai-creative-studio',
+    'recruitment': 'recruitment',
+    'market-foundation-program': 'market-foundation-program',
+    'market-accelerator-program': 'market-accelerator-program',
+    'part-time-lead-generation-team': 'part-time-lead-generation-team',
+    'lead-generation-service': 'b2b-leads'
+};
+
 function getHreflangUrls(templateName) {
     const urls = {
         'index': { en: '', de: 'de/', fr: 'fr/' },
@@ -210,15 +263,20 @@ function buildPage(templateName, outputName, lang = 'en') {
         return;
     }
 
+    let filePath = templatePath;
     if (!fs.existsSync(templatePath)) {
         const fallbackPath = `templates/${templateName}.html`;
         if (!fs.existsSync(fallbackPath)) {
             console.warn(`Template not found: ${templatePath}`);
             return;
         }
+        filePath = fallbackPath;
     }
 
-    let content = fs.existsSync(templatePath) ? fs.readFileSync(templatePath, 'utf8') : fs.readFileSync(`templates/${templateName}.html`, 'utf8');
+    const rawTemplateContent = fs.readFileSync(filePath, 'utf8');
+    const res = extractAndRemoveSchemas(rawTemplateContent, filePath);
+    let content = res.cleanContent;
+    const extractedSchemas = res.extractedSchemas;
 
     let htmlTemplate = createHTMLTemplate(lang);
     let pageNavigation = lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
@@ -307,9 +365,87 @@ function buildPage(templateName, outputName, lang = 'en') {
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, pageMetadata.keywords);
     htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, canonicalUrl);
 
-    // Schema
-    let schemaMarkup = JSON.stringify(generateOrganizationSchema(), null, 2);
-    htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, schemaMarkup);
+    // Schema - Aggregated
+    const orgSchema = generateOrganizationSchema();
+    let finalSchemas = [orgSchema];
+
+    // Add dynamic FAQ/Service schema if this is a mapped service page
+    const serviceKey = serviceMapping[templateName];
+    if (serviceKey && serviceContent[serviceKey] && serviceContent[serviceKey][lang]) {
+        const sData = serviceContent[serviceKey][lang];
+
+        // Add Service Schema (reference Organization by name, not nested object)
+        finalSchemas.push({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": pageMetadata.title.split('|')[0].trim(),
+            "provider": "Go Expandia",
+            "description": pageMetadata.description
+        });
+
+        if (sData.faq && sData.faq.length > 0) {
+            finalSchemas.push({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": sData.faq.map(f => {
+                    let question = f.q;
+                    let answer = f.a;
+
+                    // Root page cleanup: remove specific mentions of "for {{CITY}}" or "in {{CITY}}"
+                    question = question.replace(/\s(for|in|at|across)\s\{\{CITY_NAME\}\}/gi, '')
+                        .replace(/\s(in|across)\s\{\{COUNTRY_NAME\}\}/gi, '');
+                    answer = answer.replace(/\s(for|in|at|across)\s\{\{CITY_NAME\}\}/gi, '')
+                        .replace(/\s(in|across)\s\{\{COUNTRY_NAME\}\}/gi, '');
+
+                    // Final fallback replacements just in case
+                    question = question.replace(/\{\{CITY_NAME\}\}/g, 'your business').replace(/\{\{COUNTRY_NAME\}\}/g, 'your region');
+                    answer = answer.replace(/\{\{CITY_NAME\}\}/g, 'your business').replace(/\{\{COUNTRY_NAME\}\}/g, 'your region');
+
+                    return {
+                        "@type": "Question",
+                        "name": question,
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": answer
+                        }
+                    };
+                })
+            });
+        }
+    }
+
+    extractedSchemas.forEach(s => {
+        const schemas = s["@graph"] ? s["@graph"] : [s];
+
+        schemas.forEach(item => {
+            // Deduplicate Organization - but check if it's nested in a Service provider
+            if (item["@type"] === "Organization" && (item.name === "Go Expandia" || item.url === "https://www.goexpandia.com")) {
+                // Skip standalone Organization schemas, but Service schemas with nested Org are OK
+                return;
+            }
+
+            // For Service schemas, check if they have a nested Organization provider
+            // If so, we keep the Service but don't separately add the Organization
+            if (item["@type"] === "Service") {
+                // If we already generated a Service dynamically, skip this extracted one
+                if (serviceKey) {
+                    return;
+                }
+                // Keep the Service schema as-is (with its nested Organization provider)
+                finalSchemas.push(item);
+                return;
+            }
+
+            // Deduplicate FAQPage if we already have one from dynamic logic
+            if (item["@type"] === "FAQPage" && serviceKey) {
+                return;
+            }
+
+            finalSchemas.push(item);
+        });
+    });
+
+    htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, JSON.stringify(finalSchemas, null, 2));
 
     // Hreflang Tags in HEAD
     const hreflangUrls2 = getHreflangUrls(templateName);
@@ -373,6 +509,10 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
     let nav = lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
     let foot = lang === 'de' ? footerDE : lang === 'fr' ? footerFR : footerEN;
 
+    const res = extractAndRemoveSchemas(blogTemplate, templatePath);
+    let content = res.cleanContent;
+    const extractedSchemas = res.extractedSchemas;
+
     // Clean i18n
     nav = nav.replace(/\s*data-i18n="[^"]*"/g, '');
     foot = foot.replace(/\s*data-i18n="[^"]*"/g, '');
@@ -382,16 +522,16 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
     foot = foot.replace(/\{\{BASE_PATH\}\}/g, navPath);
 
     // Process includes
-    blogTemplate = blogTemplate.replace('{{HEADER_INCLUDE}}', nav);
-    blogTemplate = blogTemplate.replace('{{FOOTER_INCLUDE}}', foot);
+    content = content.replace('{{HEADER_INCLUDE}}', nav);
+    content = content.replace('{{FOOTER_INCLUDE}}', foot);
 
     // Turkish services path
     const turkishServicesPath = './';
-    blogTemplate = blogTemplate.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
+    content = content.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
 
     // Flag logic
     const currentFlag = lang === 'de' ? '🇩🇪' : lang === 'fr' ? '🇫🇷' : '🇺🇸';
-    blogTemplate = blogTemplate.replace(/<span id="current-flag">.*?<\/span>/g, `<span id="current-flag">${currentFlag}</span>`);
+    content = content.replace(/<span id="current-flag">.*?<\/span>/g, `<span id="current-flag">${currentFlag}</span>`);
 
     // Correct relative path logic for language switchers
     const getRelPath = (targetLang) => {
@@ -407,45 +547,41 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
         }
     };
 
-    blogTemplate = blogTemplate.replace(/href=["'][^"']*["']\s+data-lang="en"/g, `href="${getRelPath('en')}${templateName}.html" data-lang="en"`);
-    blogTemplate = blogTemplate.replace(/href=["'][^"']*["']\s+data-lang="tr"/g, `href="${getRelPath('tr')}${templateName}.html" data-lang="tr"`);
-    blogTemplate = blogTemplate.replace(/href=["'][^"']*["']\s+data-lang="de"/g, `href="${getRelPath('de')}${templateName}.html" data-lang="de"`);
-    blogTemplate = blogTemplate.replace(/href=["'][^"']*["']\s+data-lang="fr"/g, `href="${getRelPath('fr')}${templateName}.html" data-lang="fr"`);
-
-    // Fix paths in nav/footer
-    // blogTemplate = blogTemplate.replace(/\{\{BASE_PATH\}\}/g, navPath); // Moved above
+    content = content.replace(/href=["'][^"']*["']\s+data-lang="en"/g, `href="${getRelPath('en')}${templateName}.html" data-lang="en"`);
+    content = content.replace(/href=["'][^"']*["']\s+data-lang="tr"/g, `href="${getRelPath('tr')}${templateName}.html" data-lang="tr"`);
+    content = content.replace(/href=["'][^"']*["']\s+data-lang="de"/g, `href="${getRelPath('de')}${templateName}.html" data-lang="de"`);
+    content = content.replace(/href=["'][^"']*["']\s+data-lang="fr"/g, `href="${getRelPath('fr')}${templateName}.html" data-lang="fr"`);
 
     // Replace path placeholders
-    // Smart replacement: Assets use basePath, Links use navPath
-    blogTemplate = blogTemplate.replace(/(href|src)="\{\{BASE_PATH\}\}([^"]+\.(css|ico|png|jpg|jpeg|js|svg))"/g, `$1="${basePath}$2"`);
-    blogTemplate = blogTemplate.replace(/\{\{BASE_PATH\}\}/g, navPath);
-    blogTemplate = blogTemplate.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
+    content = content.replace(/(href|src)="\{\{BASE_PATH\}\}([^"]+\.(css|ico|png|jpg|jpeg|js|svg))"/g, `$1="${basePath}$2"`);
+    content = content.replace(/\{\{BASE_PATH\}\}/g, navPath);
+    content = content.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
 
     // Set active states for navigation
-    blogTemplate = blogTemplate.replace(/\{\{HOME_ACTIVE\}\}/g, '');
-    blogTemplate = blogTemplate.replace(/\{\{SOLUTIONS_ACTIVE\}\}/g, '');
-    blogTemplate = blogTemplate.replace(/\{\{ABOUT_ACTIVE\}\}/g, '');
-    blogTemplate = blogTemplate.replace(/\{\{CONTACT_ACTIVE\}\}/g, '');
-    blogTemplate = blogTemplate.replace(/\{\{BLOG_ACTIVE\}\}/g, 'text-primary');
+    content = content.replace(/\{\{HOME_ACTIVE\}\}/g, '');
+    content = content.replace(/\{\{SOLUTIONS_ACTIVE\}\}/g, '');
+    content = content.replace(/\{\{ABOUT_ACTIVE\}\}/g, '');
+    content = content.replace(/\{\{CONTACT_ACTIVE\}\}/g, '');
+    content = content.replace(/\{\{BLOG_ACTIVE\}\}/g, 'text-primary');
 
     // Clear mobile active states
-    blogTemplate = blogTemplate.replace(/\{\{HOME_MOBILE_ACTIVE\}\}/g, '');
-    blogTemplate = blogTemplate.replace(/\{\{SOLUTIONS_MOBILE_ACTIVE\}\}/g, '');
-    blogTemplate = blogTemplate.replace(/\{\{ABOUT_MOBILE_ACTIVE\}\}/g, '');
-    blogTemplate = blogTemplate.replace(/\{\{CONTACT_MOBILE_ACTIVE\}\}/g, '');
-    blogTemplate = blogTemplate.replace(/\{\{BLOG_MOBILE_ACTIVE\}\}/g, 'class="text-primary font-semibold"');
+    content = content.replace(/\{\{HOME_MOBILE_ACTIVE\}\}/g, '');
+    content = content.replace(/\{\{SOLUTIONS_MOBILE_ACTIVE\}\}/g, '');
+    content = content.replace(/\{\{ABOUT_MOBILE_ACTIVE\}\}/g, '');
+    content = content.replace(/\{\{CONTACT_MOBILE_ACTIVE\}\}/g, '');
+    content = content.replace(/\{\{BLOG_MOBILE_ACTIVE\}\}/g, 'class="text-primary font-semibold"');
 
     // Clear other placeholder states
-    blogTemplate = blogTemplate.replace(/\{\{SOLUTIONS_ITEM_ACTIVE\}\}/g, '');
-    blogTemplate = blogTemplate.replace(/\{\{CASESTUDIES_ITEM_ACTIVE\}\}/g, '');
-    blogTemplate = blogTemplate.replace(/\{\{ABOUT_ITEM_ACTIVE\}\}/g, '');
-    blogTemplate = blogTemplate.replace(/\{\{CONTACT_ITEM_ACTIVE\}\}/g, '');
-    blogTemplate = blogTemplate.replace(/\{\{CASESTUDIES_MOBILE_ACTIVE\}\}/g, '');
-    blogTemplate = blogTemplate.replace(/\{\{COMPANY_ACTIVE\}\}/g, '');
+    content = content.replace(/\{\{SOLUTIONS_ITEM_ACTIVE\}\}/g, '');
+    content = content.replace(/\{\{CASESTUDIES_ITEM_ACTIVE\}\}/g, '');
+    content = content.replace(/\{\{ABOUT_ITEM_ACTIVE\}\}/g, '');
+    content = content.replace(/\{\{CONTACT_ITEM_ACTIVE\}\}/g, '');
+    content = content.replace(/\{\{CASESTUDIES_MOBILE_ACTIVE\}\}/g, '');
+    content = content.replace(/\{\{COMPANY_ACTIVE\}\}/g, '');
 
     // Replace navigation page placeholders
-    blogTemplate = blogTemplate.replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html');
-    blogTemplate = blogTemplate.replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, 'our-ethical-principles.html');
+    content = content.replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html');
+    content = content.replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, 'our-ethical-principles.html');
 
     // Determine output path
     let outputPath;
@@ -463,7 +599,7 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
     const canonicalUrl = lang === 'en'
         ? `https://www.goexpandia.com/blog/${outputName}.html`
         : `https://www.goexpandia.com/${lang}/blog/${outputName}.html`;
-    blogTemplate = blogTemplate.replace(/\{\{CANONICAL_URL\}\}/g, canonicalUrl);
+    content = content.replace(/\{\{CANONICAL_URL\}\}/g, canonicalUrl);
 
     // --- Metadata Replacement Logic ---
     let pageTitle = 'Go Expandia Blog';
@@ -486,9 +622,9 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
     }
 
     // Apply replacements
-    blogTemplate = blogTemplate.replace(/\{\{PAGE_TITLE\}\}/g, pageTitle + ' | Go Expandia');
-    blogTemplate = blogTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, pageDesc);
-    blogTemplate = blogTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, pageKeywords);
+    content = content.replace(/\{\{PAGE_TITLE\}\}/g, pageTitle + ' | Go Expandia');
+    content = content.replace(/\{\{PAGE_DESCRIPTION\}\}/g, pageDesc);
+    content = content.replace(/\{\{PAGE_KEYWORDS\}\}/g, pageKeywords);
 
     // Ensure blog directory exists
     const blogDir = path.dirname(outputPath);
@@ -542,32 +678,49 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
         });
     </script>
 </body>`;
-    blogTemplate = blogTemplate.replace('</body>', lucideScript);
+    content = content.replace('</body>', lucideScript);
 
     // Fix related posts section: convert full URLs to relative paths
-    blogTemplate = blogTemplate.replace(/href="https:\/\/www\.goexpandia\.com\/blog\//g, 'href="');
+    content = content.replace(/href="https:\/\/www\.goexpandia\.com\/blog\//g, 'href="');
 
     // Fix related posts: ensure all cards have badges and clean structure
-    // Match cards without badges and add a default one
-    blogTemplate = blogTemplate.replace(
+    content = content.replace(
         /<div class="card bg-base-200 hover:shadow-lg transition-shadow">\s*<div class="card-body">\s*<h4 class="card-title/g,
         '<div class="card bg-base-200 hover:shadow-lg transition-shadow">\n                <div class="card-body">\n                    <span class="badge badge-primary mb-2">Article</span>\n                    <h4 class="card-title'
     );
 
     // Fix badge "Low" to proper category
-    blogTemplate = blogTemplate.replace(
+    content = content.replace(
         /<span class="badge badge-secondary mb-2">Low<\/span>/g,
         '<span class="badge badge-secondary mb-2">Lead Generation</span>'
     );
 
     // Clean up overly long titles in related posts (remove " | Go Expandia..." suffix)
-    // This handles titles like "Title | Go Expandia" or "Title | Go Expandia Sales University"
-    blogTemplate = blogTemplate.replace(
+    content = content.replace(
         /(<a href="[^"]*"[^>]*>)([^<]+?) \| Go Expandia[^<]*(<\/a>)/g,
         '$1$2$3'
     );
 
-    fs.writeFileSync(outputPath, blogTemplate, 'utf8');
+    // Schema - Aggregated for Blog
+    const orgSchema = generateOrganizationSchema();
+    let finalSchemas = [orgSchema];
+
+    extractedSchemas.forEach(s => {
+        if (s["@type"] === "Organization" && (s.name === "Go Expandia" || s.url === "https://www.goexpandia.com")) {
+            return;
+        }
+        finalSchemas.push(s);
+    });
+
+    const schemaString = `<script type="application/ld+json">\n${JSON.stringify(finalSchemas, null, 2)}\n</script>`;
+
+    if (content.includes('{{SCHEMA_MARKUP}}')) {
+        content = content.replace('{{SCHEMA_MARKUP}}', schemaString);
+    } else {
+        content = content.replace('</head>', `${schemaString}\n</head>`);
+    }
+
+    fs.writeFileSync(outputPath, content, 'utf8');
     console.log(`✅ Built blog post: ${outputPath}`);
 }
 
@@ -721,7 +874,9 @@ function buildServiceCityPages() {
 
                 // Build HTML
                 let htmlTemplate = createHTMLTemplate(lang);
-                let content = templateContent;
+                const res = extractAndRemoveSchemas(templateContent, `service-city-landing-template`);
+                let content = res.cleanContent;
+                const extractedSchemas = res.extractedSchemas;
 
                 // Replacements
                 content = content.replace(/\{\{SERVICE_NAME\}\}/g, service.name);
@@ -794,11 +949,11 @@ function buildServiceCityPages() {
                     );
                 }
 
-                const schema = {
+                const serviceSchema = {
                     "@context": "https://schema.org",
                     "@type": "Service",
                     "name": `${service.name} in ${city}`,
-                    "provider": { "@type": "Organization", "name": "Go Expandia", "url": "https://www.goexpandia.com" },
+                    "provider": "Go Expandia",
                     "areaServed": {
                         "@type": "City",
                         "name": city,
@@ -809,7 +964,30 @@ function buildServiceCityPages() {
                     },
                     "description": description
                 };
-                htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, JSON.stringify(schema, null, 2));
+
+                const faqSchema = {
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    "mainEntity": contentData.faq.map(item => ({
+                        "@type": "Question",
+                        "name": item.q.replace(/\{\{CITY_NAME\}\}/g, city).replace(/\{\{COUNTRY_NAME\}\}/g, country),
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": item.a.replace(/\{\{CITY_NAME\}\}/g, city).replace(/\{\{COUNTRY_NAME\}\}/g, country)
+                        }
+                    }))
+                };
+
+                // Schema - Aggregated
+                const orgSchema = generateOrganizationSchema();
+                let finalSchemas = [orgSchema, serviceSchema, faqSchema];
+
+                extractedSchemas.forEach(s => {
+                    if (s["@type"] === "Organization" || s["@type"] === "Service" || s["@type"] === "FAQPage") return;
+                    finalSchemas.push(s);
+                });
+
+                htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, JSON.stringify(finalSchemas, null, 2));
 
                 // Write File
                 const outputPath = lang === 'en' ? `${slug}.html` : `${lang}/${slug}.html`;
@@ -1131,7 +1309,9 @@ function buildCityPages() {
         const keywords = `B2B lead generation ${city}, corporate sales ${city}, ${country} B2B agency, appointment setting ${city}`;
 
         let htmlTemplate = createHTMLTemplate(lang);
-        let content = templateContent;
+        const res = extractAndRemoveSchemas(templateContent, `templates/city-landing.html`);
+        let content = res.cleanContent;
+        const extractedSchemas = res.extractedSchemas;
 
         // Calculate Nearby Cities
         const nearby = cities
@@ -1237,7 +1417,7 @@ function buildCityPages() {
             "@context": "https://schema.org",
             "@type": "Service",
             "name": `B2B Lead Generation Services in ${city}`,
-            "provider": { "@type": "Organization", "name": "Go Expandia", "url": "https://www.goexpandia.com" },
+            "provider": "Go Expandia",
             "areaServed": {
                 "@type": "City",
                 "name": city,
@@ -1262,7 +1442,17 @@ function buildCityPages() {
                 ]
             }
         };
-        htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, JSON.stringify(schema, null, 2));
+
+        // Schema - Aggregated
+        const orgSchema = generateOrganizationSchema();
+        let finalSchemas = [orgSchema, schema];
+
+        extractedSchemas.forEach(s => {
+            if (s["@type"] === "Organization" || s["@type"] === "Service") return;
+            finalSchemas.push(s);
+        });
+
+        htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, JSON.stringify(finalSchemas, null, 2));
 
         // Write file
         fs.writeFileSync(`${slug}.html`, htmlTemplate, 'utf8');
@@ -1521,7 +1711,9 @@ function buildGlossaryTerms() {
             if (!definition) definition = termData.definition;
 
             let htmlTemplate = createHTMLTemplate(lang);
-            let content = templateContent;
+            const res = extractAndRemoveSchemas(templateContent, `templates/glossary-term.html`);
+            let content = res.cleanContent;
+            const extractedSchemas = res.extractedSchemas;
 
             // Common Replacements
             content = content.replace(/\{\{TERM_NAME\}\}/g, termName);
@@ -1641,8 +1833,16 @@ function buildGlossaryTerms() {
                 }]
             };
 
-            const schema = [definedTermSchema, faqSchema];
-            htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, JSON.stringify(schema, null, 2));
+            // Schema - Aggregated
+            const orgSchema = generateOrganizationSchema();
+            let finalSchemas = [orgSchema, definedTermSchema, faqSchema];
+
+            extractedSchemas.forEach(s => {
+                if (s["@type"] === "Organization" || s["@type"] === "DefinedTerm" || s["@type"] === "FAQPage") return;
+                finalSchemas.push(s);
+            });
+
+            htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, JSON.stringify(finalSchemas, null, 2));
 
             // Write File
             let outputDir;
@@ -1832,7 +2032,8 @@ function buildCityLandingPages() {
                     : `Professional business growth services in ${city}. We help companies with IT infrastructure, lead generation, and AI content.`;
 
             // Create page content
-            let htmlTemplate = templateContent;
+            const { cleanContent: content, extractedSchemas } = extractAndRemoveSchemas(templateContent, `templates/city-landing.html`);
+            let htmlTemplate = content;
 
             // Replace placeholders
             htmlTemplate = htmlTemplate.replace(/{{PAGE_TITLE}}/g, title);
@@ -1846,11 +2047,65 @@ function buildCityLandingPages() {
             const uniqueContent = generateUniqueCityContent(city, country, region);
             htmlTemplate = htmlTemplate.replace(/{{UNIQUE_SEO_CONTENT}}/g, uniqueContent);
 
+            // Schema.org - Use proper schema generator
+            const orgSchema = generateOrganizationSchema();
+
+            const faqSchema = {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": `How quickly can you deploy growth services in ${city}?`,
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": `We typically deploy turnkey growth infrastructure in ${city} within 48 hours. This includes email systems, secure workplace setups, and initial lead lists.`
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": `Do you have a physical office in ${city}?`,
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": `Go Expandia is a remote-first American company with a distributed team. While we serve many clients in ${city}, we do not maintain a physical local office, allowing us to provide high-end US-market expertise at a flat rate.`
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": `Do you comply with ${country} data protection regulations?`,
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": `Yes, all our services for ${city} and ${country} are fully GDPR compliant and meet local privacy standards, ensuring your business data remains secure.`
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": `What results can we expect in the ${region} market?`,
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": `Clients in the ${region} region typically see a 3-4x increase in sales appointments within the first 90 days of deploying our full growth infrastructure.`
+                        }
+                    }
+                ]
+            };
+
+            // Aggregate all schemas
+            let finalSchemas = [orgSchema, faqSchema];
+            extractedSchemas.forEach(s => {
+                if (s["@type"] === "Organization" || s["@type"] === "FAQPage") return;
+                finalSchemas.push(s);
+            });
+
+            // Create proper HTML template with head
+            let fullHtmlTemplate = createHTMLTemplate(lang);
+            fullHtmlTemplate = fullHtmlTemplate.replace('{{MAIN_CONTENT}}', htmlTemplate);
+            fullHtmlTemplate = fullHtmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, JSON.stringify(finalSchemas, null, 2));
+
             // Hero image
             const heroImage = (lang === 'de' || lang === 'fr')
                 ? `../assets/local/b2b-lead-generation-${citySlug}-hero.jpg`
                 : `./assets/local/b2b-lead-generation-${citySlug}-hero.jpg`;
-            htmlTemplate = htmlTemplate.replace(/{{HERO_IMAGE}}/g, heroImage);
+            fullHtmlTemplate = fullHtmlTemplate.replace(/{{HERO_IMAGE}}/g, heroImage);
 
             // Navigation/Footer (Simple placeholder replacement)
             let pageNavigation = lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
@@ -1861,24 +2116,28 @@ function buildCityLandingPages() {
             pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
 
             // Replace placeholders
-            htmlTemplate = htmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
-            htmlTemplate = htmlTemplate.replace('{{FOOTER}}', pageFooter);
-            htmlTemplate = htmlTemplate.replace('{{LATEST_BLOG_POSTS}}', latestBlogPosts);
+            fullHtmlTemplate = fullHtmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
+            fullHtmlTemplate = fullHtmlTemplate.replace('{{FOOTER}}', pageFooter);
 
             const basePath = (lang === 'de' || lang === 'fr') ? '../' : './';
             const logoPath = (lang === 'de' || lang === 'fr') ? '../go-expandia-logo.png' : 'go-expandia-logo.png';
-            htmlTemplate = htmlTemplate.replace(/{{BASE_PATH}}/g, basePath);
-            htmlTemplate = htmlTemplate.replace(/{{LOGO_PATH}}/g, logoPath);
+            fullHtmlTemplate = fullHtmlTemplate.replace(/{{BASE_PATH}}/g, basePath);
+            fullHtmlTemplate = fullHtmlTemplate.replace(/{{LOGO_PATH}}/g, logoPath);
+
+            // Metadata
+            fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_TITLE}}/g, title);
+            fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_DESCRIPTION}}/g, description);
+            fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_KEYWORDS}}/g, `business growth services, B2B sales, IT infrastructure, AI content, ${country}, lead generation`);
 
             // Canonical URL
             const canonicalSlug = lang === 'en' ? `${citySlug}.html` : `${lang}/${citySlug}.html`;
-            htmlTemplate = htmlTemplate.replace(/{{CANONICAL_URL}}/g, `https://www.goexpandia.com/${canonicalSlug}`);
+            fullHtmlTemplate = fullHtmlTemplate.replace(/{{CANONICAL_URL}}/g, `https://www.goexpandia.com/${canonicalSlug}`);
 
             // Hreflang
-            htmlTemplate = htmlTemplate.replace(/{{PAGE_URL_EN}}/g, `${citySlug}.html`);
-            htmlTemplate = htmlTemplate.replace(/{{PAGE_URL_DE}}/g, `de/${citySlug}.html`);
-            htmlTemplate = htmlTemplate.replace(/{{PAGE_URL_FR}}/g, `fr/${citySlug}.html`);
-            htmlTemplate = htmlTemplate.replace(/{{PAGE_URL_TR}}/g, ``);
+            fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_URL_EN}}/g, `${citySlug}.html`);
+            fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_URL_DE}}/g, `de/${citySlug}.html`);
+            fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_URL_FR}}/g, `fr/${citySlug}.html`);
+            fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_URL_TR}}/g, ``);
 
             // Output path
             const outputPath = lang === 'en' ? `${citySlug}.html` : `${lang}/${citySlug}.html`;
@@ -1891,7 +2150,7 @@ function buildCityLandingPages() {
             }
 
             // Write file
-            fs.writeFileSync(outputPath, htmlTemplate, 'utf8');
+            fs.writeFileSync(outputPath, fullHtmlTemplate, 'utf8');
             pageCount++;
         });
     });

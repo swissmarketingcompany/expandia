@@ -55,25 +55,81 @@
     
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
-    {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Email Deliverability Checkup in Courbevoie",
-  "provider": {
+    [
+  {
+    "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Go Expandia",
-    "url": "https://www.goexpandia.com"
-  },
-  "areaServed": {
-    "@type": "City",
-    "name": "Courbevoie",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "France"
+    "url": "https://www.goexpandia.com",
+    "logo": "https://www.goexpandia.com/go-expandia-logo.png",
+    "email": "hello@goexpandia.com",
+    "sameAs": [
+      "https://www.linkedin.com/company/103769699/"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+000-000-0000",
+      "contactType": "sales",
+      "areaServed": [
+        "EU",
+        "UK",
+        "US",
+        "MEA",
+        "APAC"
+      ],
+      "availableLanguage": [
+        "en",
+        "de",
+        "tr"
+      ]
     }
   },
-  "description": "Professional email deliverability audit in Courbevoie. SPF, DKIM, DMARC setup and inbox placement optimization for France businesses."
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Email Deliverability Checkup in Courbevoie",
+    "provider": "Go Expandia",
+    "areaServed": {
+      "@type": "City",
+      "name": "Courbevoie",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "France"
+      }
+    },
+    "description": "Professional email deliverability audit in Courbevoie. SPF, DKIM, DMARC setup and inbox placement optimization for France businesses."
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "[DE] How do you diagnose email deliverability issues for Courbevoie businesses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "[DE] We perform a comprehensive audit including DNS record analysis, authentication protocol verification, blacklist checking, content analysis, and sending pattern review. Our tools test delivery across major email providers to identify specific issues affecting your Courbevoie company's email performance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "[DE] Can you fix deliverability issues without changing our email provider?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "[DE] Yes, most deliverability problems can be resolved through proper configuration and best practices regardless of your email provider. We work with all major platforms used in France including Microsoft 365, Google Workspace, and custom SMTP servers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "[DE] How long does it take to see improvements in Courbevoie?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "[DE] Technical fixes like DNS records show immediate improvement. Reputation-based improvements take 2-4 weeks as email providers observe your improved sending practices. We provide weekly progress reports showing measurable improvements in your Courbevoie email campaigns."
+        }
+      }
+    ]
+  }
+]
     </script>
     
     <style>
@@ -524,63 +580,73 @@
     });
 </script>
     
-    
-    <!-- Hero -->
-    <section class="section-spacing bg-gradient-to-br from-base-100 via-base-200 to-primary/5">
-        <div class="container mx-auto container-padding">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <p class="text-sm uppercase tracking-wide text-primary mb-3">Email Deliverability Checkup • Courbevoie</p>
-                    <h1 class="text-4xl md:text-5xl font-bold mb-6">
-                        <span class="gradient-header">Email Deliverability Checkup</span><br>
-                        <span class="text-base-content">in Courbevoie</span>
-                    </h1>
-                    <div class="text-lg text-base-content/80 mb-6 space-y-4">
-                        <p>[DE] Email deliverability can make or break your business communications in Courbevoie. When your carefully crafted messages land in spam folders instead of inboxes, you're losing opportunities, damaging your reputation, and wasting marketing budgets. Companies across France are discovering that email deliverability isn't just a technical issue—it's a critical business function that directly impacts revenue and customer relationships.</p>
+    <!-- Hero Section -->
+<section class="min-h-[60vh] bg-gradient-to-br from-buzz-warm via-base-100 to-buzz-light flex items-center pt-20">
+    <div class="container mx-auto container-padding">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="animate-fade-in">
+                <div class="flex items-center gap-2 mb-6">
+                    <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white">
+                        mail-check
+                    </div>
+                    <span class="text-xl font-bold text-primary">Email Deliverability Checkup</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
+                    Email Deliverability Checkup in <br>
+                    <span class="gradient-header">Courbevoie</span>
+                </h1>
+                <div class="text-xl md:text-2xl text-base-content/80 mb-8 leading-relaxed">
+                    <p>[DE] Email deliverability can make or break your business communications in Courbevoie. When your carefully crafted messages land in spam folders instead of inboxes, you're losing opportunities, damaging your reputation, and wasting marketing budgets. Companies across France are discovering that email deliverability isn't just a technical issue—it's a critical business function that directly impacts revenue and customer relationships.</p>
 <p>[DE] Our Email Deliverability Checkup service provides Courbevoie businesses with a comprehensive analysis of their email infrastructure, identifying and fixing the technical issues that prevent messages from reaching their intended recipients. We examine everything from DNS records and authentication protocols to content patterns and sending practices, providing actionable recommendations that improve inbox placement rates immediately.</p>
 <p>[DE] What makes our service essential for Courbevoie companies is our focus on sustainable deliverability. We don't just fix immediate problems—we implement long-term strategies that maintain high deliverability rates as your email volume grows. This includes proper domain warming, list hygiene practices, and compliance with France anti-spam regulations that protect your sender reputation for years to come.</p>
-                    </div>
-                    <div class="flex flex-col sm:flex-row gap-4 mt-8">
-                        <a href="contact.html" class="btn btn-primary btn-lg buzz-button w-full sm:w-auto">
-                            Get a Quote for Courbevoie
-                        </a>
-                        <a href="#benefits" class="btn btn-ghost btn-lg w-full sm:w-auto">
-                            Learn More ↓
-                        </a>
-                    </div>
                 </div>
-                <div class="space-y-6">
-                    <div class="rounded-2xl overflow-hidden shadow-xl border border-base-300 bg-white p-2">
-                        <div class="bg-base-100 rounded-xl overflow-hidden relative aspect-video flex items-center justify-center text-6xl">
-                            <i data-lucide="mail-check" class="w-32 h-32"></i>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="{{BASE_PATH}}contact.html" class="btn btn-primary btn-lg buzz-button">
+                        Get Free Consultation
+                    </a>
+                    <a href="#how-it-works" class="btn btn-outline btn-lg">
+                        How It Works
+                    </a>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100">
+                    <div class="flex items-center justify-between mb-8">
+                        <span class="text-sm font-bold text-gray-400 uppercase tracking-widest">Market Stats:
+                            Courbevoie</span>
+                        <span class="badge badge-success badge-outline">Live</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="p-6 bg-base-200 rounded-2xl">
+                            <div class="text-sm text-base-content/60 mb-1 leading-tight">Market Size</div>
+                            <div class="text-2xl font-black">223,450</div>
+                        </div>
+                        <div class="p-6 bg-base-200 rounded-2xl">
+                            <div class="text-sm text-base-content/60 mb-1 leading-tight">Key Landmark</div>
+                            <div class="text-2xl font-black truncate">Old Town</div>
                         </div>
                     </div>
-                    <div class="buzz-card p-6">
-                        <h2 class="text-xl font-bold mb-4">Why Courbevoie Businesses Choose Us</h2>
-                        <ul class="space-y-3 text-base-content/80 text-sm">
-                            <li class="flex gap-2 items-start"><span class="text-primary">✓</span> Serving the 223,450 businesses in Courbevoie</li>
-                            <li class="flex gap-2 items-start"><span class="text-primary">✓</span> Located near Old Town? We can meet locally.</li>
-                            <li class="flex gap-2 items-start"><span class="text-primary">✓</span> Global Expertise, Local Service</li>
-                            <li class="flex gap-2 items-start"><span class="text-primary">✓</span> Scalable Solutions for Growth</li>
-                            <li class="flex gap-2 items-start"><span class="text-primary">✓</span> Proven Track Record in France</li>
-                        </ul>
+                    <div class="mt-8 pt-8 border-t border-gray-100">
+                        <div class="flex items-center gap-4 text-sm text-base-content/70">
+                            <div class="w-4 h-4 bg-primary rounded-full animate-pulse"></div>
+                            <span>Currently taking projects in France</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Pain Points -->
-    <section class="section-spacing bg-base-100">
-        <div class="container mx-auto container-padding">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Common Challenges for Courbevoie Companies</h2>
-                <p class="text-base-content/80">
-                    Operating in Courbevoie comes with unique opportunities and challenges. Are you facing any of these issues?
-                </p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
+<!-- Content Section -->
+<section id="how-it-works" class="section-spacing bg-base-100">
+    <div class="container mx-auto container-padding">
+        <div class="grid lg:grid-cols-2 gap-16">
+            <!-- Pain Points -->
+            <div class="animate-on-scroll">
+                <h2 class="text-3xl font-bold mb-8">Challenges in Courbevoie</h2>
+                <div class="space-y-4">
+                    
                     <div class="flex gap-3 items-start">
                         <span class="text-error text-xl">⚠️</span>
                         <p>[DE] Important business emails ending up in spam folders</p>
@@ -631,23 +697,13 @@
                         <p>[DE] Marketing campaigns failing to reach target audience</p>
                     </div>
                 
+                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Benefits / Features -->
-    <section id="benefits" class="section-spacing bg-base-200">
-        <div class="container mx-auto container-padding">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
-                Our Email Deliverability Checkup Solution
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                <div class="space-y-6">
-                    <p class="text-lg">
-                        We don't just provide a service; we partner with your Courbevoie business to drive tangible results. Our approach is built on transparency, efficiency, and deep industry knowledge.
-                    </p>
-                    <div class="grid gap-4">
-                        
+            <!-- Benefits -->
+            <div class="animate-on-scroll">
+                <h2 class="text-3xl font-bold mb-8">Our Email Deliverability Checkup Solution</h2>
+                <div class="space-y-4">
+                    
                         <div class="flex gap-3">
                             <span class="text-secondary text-xl">✓</span>
                             <p><strong class="text-secondary-content">Inbox Placement:</strong>  Dramatically improve the percentage of emails reaching primary inboxes in Courbevoie.</p>
@@ -680,29 +736,20 @@
                             <span class="text-secondary text-xl">✓</span>
                             <p><strong class="text-secondary-content">ROI Improvement:</strong>  Better deliverability means more opens, clicks, and conversions from existing campaigns.</p>
                         </div>
-                    </div>
-                </div>
-                <div class="buzz-card p-8 bg-primary text-primary-content">
-                    <h3 class="text-2xl font-bold mb-4">Ready to Upgrade?</h3>
-                    <p class="mb-6 opacity-90">
-                        Stop letting inefficiencies hold your Courbevoie business back. Let's discuss how our Email Deliverability Checkup can help you achieve your goals this quarter.
-                    </p>
-                    <a href="contact.html" class="btn btn-white text-primary w-full">
-                        Schedule a Strategy Call
-                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- FAQ -->
-    <section class="section-spacing bg-base-100">
-        <div class="container mx-auto container-padding">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
-                Frequently Asked Questions
-            </h2>
-            <div class="max-w-3xl mx-auto space-y-4">
-                
+<!-- FAQ Section -->
+<section class="section-spacing bg-buzz-light">
+    <div class="container mx-auto container-padding">
+        <h2 class="text-4xl font-bold text-center mb-16 gradient-header">
+            Frequently Asked Questions
+        </h2>
+        <div class="max-w-3xl mx-auto space-y-4">
+            
                     <div class="collapse collapse-plus bg-base-200">
                         <input type="checkbox" /> 
                         <div class="collapse-title text-xl font-medium">
@@ -733,67 +780,25 @@
                         </div>
                     </div>
                 
-            </div>
         </div>
-    </section>
-
-    <!-- Nearby Cities CTA -->
-    <section class="section-spacing bg-base-200">
-        <div class="container mx-auto container-padding text-center">
-            <h2 class="text-2xl font-bold mb-6">Also Serving These Areas Near Courbevoie</h2>
-            <div class="flex flex-wrap justify-center gap-4 text-sm text-base-content/70">
-                
-            </div>
-        </div>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How does this service work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Our service follows a proven methodology: discovery and strategy, implementation and setup, execution and optimization, and ongoing support with regular reporting."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What results can we expect?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most clients see measurable improvements within 2-4 weeks. Results vary by service but typically include increased leads, better conversion rates, and improved ROI."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you provide ongoing support?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, we provide continuous optimization, performance monitoring, and strategic support to ensure long-term success and growth."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can this integrate with our existing tools?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Absolutely. We integrate seamlessly with popular platforms like HubSpot, Salesforce, Pipedrive, and other CRM and marketing tools."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What industries do you serve?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We serve B2B companies across technology, manufacturing, professional services, healthcare, finance, and many other industries."
-      }
-    }
-  ]
-}
-</script>
+    </div>
 </section>
+
+<!-- Nearby Cities CTA -->
+<section class="section-spacing bg-base-200">
+    <div class="container mx-auto container-padding text-center">
+        <h2 class="text-2xl font-bold mb-6">Also Serving These Areas Near Courbevoie</h2>
+        <div class="flex flex-wrap justify-center gap-4 text-sm text-base-content/70">
+            
+        </div>
+    </div>
+</section>
+
+
+<script>
+    lucide.createIcons();
+</script>
+
 
     
     <!-- Footer -->
