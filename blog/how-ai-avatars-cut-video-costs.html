@@ -125,11 +125,11 @@
                             </path>
                         </svg>
                     </button>
-                    <!-- Simplified menu for blog page context -->
                     <div id="services-menu"
                         class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
                         style="width: 800px;">
                         <div class="grid grid-cols-3 divide-x divide-gray-100">
+                            <!-- Column 1: Lead Generation -->
                             <div class="p-6">
                                 <a href="../lead-generation-services.html" class="block mb-4 group">
                                     <h3
@@ -147,9 +147,21 @@
                                                 class="text-sm font-semibold text-gray-900">B2B Lead
                                                 Generation</span>
                                             <p class="text-xs text-gray-500 mt-0.5">Targeted prospect outreach</p>
+                                        </a>
+                                    </li>
+                                    <li><a href="../crm-management.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">CRM Management</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Expert CRM optimization</p>
+                                        </a></li>
+                                    <li><a href="../cold-calling-services.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Cold Calling</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Professional appointment setting</p>
                                         </a></li>
                                 </ul>
                             </div>
+                            <!-- Column 2: Managed Operations -->
                             <div class="p-6">
                                 <a href="../managed-services.html" class="block mb-4 group">
                                     <h3
@@ -162,14 +174,29 @@
                                     </h3>
                                 </a>
                                 <ul class="space-y-1">
+                                    <li><a href="../sales-development-agency.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Sales Ops (Go
+                                                Expandia)</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Managed B2B Growth</p>
+                                        </a></li>
                                     <li><a href="../managed-it-services.html"
                                             class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
                                                 class="text-sm font-semibold text-gray-900">Managed IT &
                                                 Cyber</span>
                                             <p class="text-xs text-gray-500 mt-0.5">Security &amp; infrastructure</p>
+                                        </a>
+                                    </li>
+
+                                    <li><a href="../outreach-software-management.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Outreach Software
+                                                Management</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Expert platform management</p>
                                         </a></li>
                                 </ul>
                             </div>
+                            <!-- Column 3: Growth Programs -->
                             <div class="p-6">
                                 <a href="../growth-programs.html" class="block mb-4 group">
                                     <h3
@@ -181,36 +208,308 @@
                                         Growth Programs →
                                     </h3>
                                 </a>
+                                <ul class="space-y-1">
+                                    <li><a href="../market-foundation-program.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Market Foundation Program</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Small Business Growth</p>
+                                        </a></li>
+                                    <li><a href="../direct-market-growth.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Direct Market Growth</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Go Direct Strategy</p>
+                                        </a></li>
+                                </ul>
                             </div>
+                        </div>
+                        <!-- CTA Footer -->
+                        <div class="bg-gray-50 px-6 py-4 flex items-center justify-between border-t border-gray-100">
+                            <p class="text-sm text-gray-600">Find the right solution for your growth.</p>
+                            <a href="../contact.html" class="btn btn-primary btn-sm">Book a Call</a>
                         </div>
                     </div>
                 </div>
 
-                <a href="../blog/index.html"
-                    class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50">Blog</a>
-                <a href="../contact.html"
-                    class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50">Contact</a>
+                <!-- Products Mega Menu -->
+                <div class="relative" id="products-dropdown">
+                    <button onclick="toggleDropdown('products-menu')"
+                        class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
+                        Products
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="products-menu"
+                        class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
+                        style="width: 720px;">
+                        <div class="grid grid-cols-3 divide-x divide-gray-100">
+                            <!-- Column 1: Turnkey IT Infrastructure -->
+                            <div class="p-6">
+                                <a href="../turnkey-it-infrastructure.html">
+                                    <h3
+                                        class="text-xs font-bold text-primary uppercase tracking-wider mb-4 flex items-center gap-2 hover:text-primary/80 transition-colors cursor-pointer">
+                                        <span
+                                            class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center text-primary"><i
+                                                data-lucide="shield-check" class="w-4 h-4"></i></span>
+                                        Turnkey IT Infrastructure
+                                    </h3>
+                                </a>
+                                <ul class="space-y-1">
+                                    <li><a href="../email-deliverability-checkup.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Email Deliverability
+                                                Checkup</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Diagnose & fix spam issues</p>
+                                        </a></li>
+                                    <li><a href="../secure-email-workplace-setup.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Secure Email & Workplace
+                                                Setup</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Turnkey Microsoft/Google setup</p>
+                                        </a></li>
+                                    <li><a href="../website-care-services.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Website Care Services</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Maintenance & security</p>
+                                        </a></li>
+                                </ul>
+                            </div>
+                            <!-- Column 2: Turnkey Growth Infrastructure -->
+                            <div class="p-6">
+                                <a href="../turnkey-growth-infrastructure.html">
+                                    <h3
+                                        class="text-xs font-bold text-secondary uppercase tracking-wider mb-4 flex items-center gap-2 hover:text-secondary/80 transition-colors cursor-pointer">
+                                        <span
+                                            class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center text-secondary"><i
+                                                data-lucide="trending-up" class="w-4 h-4"></i></span>
+                                        Turnkey Growth Infrastructure
+                                    </h3>
+                                </a>
+                                <ul class="space-y-1">
+                                    <li><a href="../cold-email-infrastructure.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Cold Email
+                                                Infrastructure</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Automated outreach system</p>
+                                        </a></li>
+                                    <li><a href="../revops-infrastructure.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">RevOps Infrastructure</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">CRM & sales automation</p>
+                                        </a></li>
+                                    <li><a href="../verified-lead-list.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Verified Lead List</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">1,000 ready-to-call leads</p>
+                                        </a></li>
+                                </ul>
+                            </div>
+                            <!-- Column 3: AI Content -->
+                            <div class="p-6">
+                                <a href="../ai-content-infrastructure.html">
+                                    <h3
+                                        class="text-xs font-bold text-neutral uppercase tracking-wider mb-4 flex items-center gap-2 hover:text-neutral/80 transition-colors cursor-pointer">
+                                        <span
+                                            class="w-6 h-6 rounded bg-neutral/10 flex items-center justify-center text-neutral"><i
+                                                data-lucide="bot" class="w-4 h-4"></i></span>
+                                        AI Content Infrastructure
+                                    </h3>
+                                </a>
+                                <ul class="space-y-1">
+                                    <li><a href="../written-content-engine.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Written Content
+                                                Engine</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Blogs, articles, social posts</p>
+                                        </a></li>
+                                    <li><a href="../image-content-engine.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Image Content Engine</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Graphics, visuals, thumbnails</p>
+                                        </a></li>
+                                    <li><a href="../video-content-engine.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Video Content Engine</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">AI avatars, product videos</p>
+                                        </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- CTA Footer -->
+                        <div class="bg-gray-50 px-6 py-4 flex items-center justify-between border-t border-gray-100">
+                            <p class="text-sm text-gray-600">Not sure which service? Let's find the right fit together.
+                            </p>
+                            <a href="../contact.html" class="btn btn-primary btn-sm">Book a Call</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Company Mega Menu -->
+                <div class="relative" id="company-dropdown">
+                    <button onclick="toggleDropdown('company-menu')"
+                        class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
+                        Company
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="company-menu"
+                        class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
+                        style="width: 480px;">
+                        <div class="grid grid-cols-2 divide-x divide-gray-100">
+                            <!-- Column 1: About -->
+                            <div class="p-6">
+                                <h3
+                                    class="text-xs font-bold text-primary uppercase tracking-wider mb-4 flex items-center gap-2">
+                                    <span
+                                        class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center text-primary"><i
+                                            data-lucide="building-2" class="w-4 h-4"></i></span>
+                                    About Us
+                                </h3>
+                                <ul class="space-y-1">
+                                    <li><a href="../about.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                            <span class="text-sm font-semibold text-gray-900">Our Story</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Who we are & what we do</p>
+                                        </a></li>
+                                    <li><a href="../vision-mission.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                            <span class="text-sm font-semibold text-gray-900">Vision & Mission</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Our purpose and goals</p>
+                                        </a></li>
+                                    <li><a href="../our-ethical-principles.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                            <span class="text-sm font-semibold text-gray-900">Ethics & Values</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">How we operate</p>
+                                        </a></li>
+                                </ul>
+                            </div>
+                            <!-- Column 2: Resources -->
+                            <div class="p-6">
+                                <h3
+                                    class="text-xs font-bold text-secondary uppercase tracking-wider mb-4 flex items-center gap-2">
+                                    <span
+                                        class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center text-secondary"><i
+                                            data-lucide="library-big" class="w-4 h-4"></i></span>
+                                    Resources
+                                </h3>
+                                <ul class="space-y-1">
+
+                                    <li><a href="../blog/index.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Blog & Insights</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Tips, trends & guides</p>
+                                        </a></li>
+                                    <li><a href="../city-locations.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Locations</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Where we operate</p>
+                                        </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- CTA Footer -->
+                        <div class="bg-gray-50 px-6 py-4 flex items-center justify-between border-t border-gray-100">
+                            <p class="text-sm text-gray-600">Ready to grow your business?</p>
+                            <a href="../contact.html" class="btn btn-primary btn-sm">Get Started</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Right Side -->
             <div class="flex items-center gap-3">
+                <!-- Language Switcher -->
+                <div class="dropdown dropdown-end hidden sm:block">
+                    <label tabindex="0" class="btn btn-ghost btn-sm gap-1 text-gray-600">
+                        🇺🇸
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </label>
+                    <ul tabindex="0"
+                        class="dropdown-content z-[999] menu p-2 shadow-lg bg-white rounded-xl border border-gray-100 w-36 mt-2">
+                        <li><a href="../index.html" data-lang="en" class="lang-switch text-sm active">🇺🇸 English</a>
+                        </li>
+                        <li><a href="../de/index.html" data-lang="de" class="lang-switch text-sm">🇩🇪 Deutsch</a></li>
+                        <li><a href="../fr/index.html" data-lang="fr" class="lang-switch text-sm">🇫🇷 Français</a></li>
+                    </ul>
+                </div>
+
+                <!-- CTA Button -->
                 <a href="../contact.html"
                     class="btn btn-primary btn-sm lg:btn-md shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-shadow hidden sm:inline-flex">Get
                     Started</a>
+
                 <!-- Mobile Menu Button -->
                 <div class="lg:hidden relative">
                     <button onclick="toggleMobileMenu()" class="btn btn-ghost btn-sm">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16"></path>
+                                d="M4 6h16M4 12h16M4 18h16">
+                            </path>
                         </svg>
                     </button>
                     <div id="mobile-menu"
                         class="hidden fixed top-16 right-0 max-h-[500px] w-80 bg-white shadow-2xl z-[999] overflow-y-auto overscroll-contain border-l border-gray-100 rounded-bl-2xl">
                         <ul class="menu p-3 w-full text-xs">
-                            <li><a href="../index.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">Home</a></li>
-                            <li><a href="../blog/index.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">Blog</a></li>
-                            <li><a href="../contact.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">Contact</a></li>
+                            <!-- Products Section (Mobile) -->
+                            <li class="mt-1">
+                                <span
+                                    class="text-[10px] font-bold text-primary uppercase tracking-wider px-2 py-1 bg-primary/5 rounded-lg mb-1">Products</span>
+                                <ul class="pl-0 space-y-0.5">
+                                    <li><a href="../turnkey-it-infrastructure.html"
+                                            class="py-2 px-3 rounded-lg hover:bg-gray-50">Turnkey IT Infra</a></li>
+                                    <li><a href="../turnkey-growth-infrastructure.html"
+                                            class="py-2 px-3 rounded-lg hover:bg-gray-50">Turnkey Growth Infra</a></li>
+                                    <li><a href="../ai-content-infrastructure.html"
+                                            class="py-2 px-3 rounded-lg hover:bg-gray-50">AI Content Infra</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Services Section (Mobile) -->
+                            <li class="mt-2">
+                                <span
+                                    class="text-[10px] font-bold text-secondary uppercase tracking-wider px-2 py-1 bg-secondary/5 rounded-lg mb-1">Services</span>
+                                <ul class="pl-0 space-y-0.5">
+                                    <li><a href="../b2b-lead-generation-agency.html"
+                                            class="py-2 px-3 rounded-lg hover:bg-gray-50">B2B Lead Generation</a></li>
+                                    <li><a href="../outreach-software-management.html"
+                                            class="py-2 px-3 rounded-lg hover:bg-gray-50">Outreach Software Mgmt</a>
+                                    </li>
+                                    <li><a href="../crm-management.html"
+                                            class="py-2 px-3 rounded-lg hover:bg-gray-50">CRM Management</a></li>
+                                    <li><a href="../sales-development-agency.html"
+                                            class="py-2 px-3 rounded-lg hover:bg-gray-50">Managed Sales Ops (Go
+                                            Expandia)</a></li>
+                                    <li><a href="../managed-it-services.html"
+                                            class="py-2 px-3 rounded-lg hover:bg-gray-50">Managed IT Services</a></li>
+                                    <li><a href="../market-foundation-program.html"
+                                            class="py-2 px-3 rounded-lg hover:bg-gray-50">Market Foundation Program</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Company Section -->
+                            <li class="mt-4 pt-2 border-t border-gray-100">
+                                <span
+                                    class="text-[10px] font-bold text-gray-400 uppercase tracking-wider px-2 py-1 bg-gray-50 rounded-lg mb-1">Company</span>
+                                <ul class="pl-0 space-y-0.5">
+                                    <li><a href="../about.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">About
+                                            Us</a></li>
+
+                                    <li><a href="../contact.html"
+                                            class="py-2 px-3 rounded-lg hover:bg-gray-50">Contact</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="mt-2 pt-2 border-t border-gray-50">
+                                <a href="../contact.html"
+                                    class="btn btn-primary btn-sm w-full text-xs min-h-0 h-9 font-bold shadow-sm">Get
+                                    Started</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -222,11 +521,47 @@
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
+
+            if (!menu.classList.contains('hidden')) {
+                document.body.style.overflow = 'hidden';
+                if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+            } else {
+                document.body.style.overflow = '';
+                if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+            }
         }
+
         function toggleDropdown(menuId) {
+            // Updated to include new menus
+            const allMenus = ['services-menu', 'products-menu', 'company-menu'];
+            allMenus.forEach(id => {
+                const menu = document.getElementById(id);
+                if (menu && id !== menuId) {
+                    menu.classList.add('hidden');
+                }
+            });
             const menu = document.getElementById(menuId);
-            if (menu) menu.classList.toggle('hidden');
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
         }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function (e) {
+            const servicesDropdown = document.getElementById('services-dropdown');
+            const productsDropdown = document.getElementById('products-dropdown');
+            const companyDropdown = document.getElementById('company-dropdown');
+
+            if (servicesDropdown && !servicesDropdown.contains(e.target)) {
+                document.getElementById('services-menu')?.classList.add('hidden');
+            }
+            if (productsDropdown && !productsDropdown.contains(e.target)) {
+                document.getElementById('products-menu')?.classList.add('hidden');
+            }
+            if (companyDropdown && !companyDropdown.contains(e.target)) {
+                document.getElementById('company-menu')?.classList.add('hidden');
+            }
+        });
     </script>
 
     <main class="pt-24 pb-16">
