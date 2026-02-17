@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 Façons dont les PME se font pirater (et comment y remédier à faible coût) | Go Expandia</title>
+    <meta name="description"
+        content="Découvrez les 7 façons les plus courantes dont les petites entreprises se font pirater et des stratégies abordables et efficaces pour sécuriser votre PME contre les cybermenaces.">
+    <meta name="keywords"
+        content="cybersécurité PME, piratage petites entreprises, prévention phishing, solutions cybersécurité abordables, protection ransomware, pare-feu, MFA">
+    <link rel="canonical" href="https://www.goexpandia.com/fr/blog/7-ways-smes-get-hacked.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.goexpandia.com/fr/blog/7-ways-smes-get-hacked.html">
+    <meta property="og:title" content="7 Façons dont les PME se font pirater (et comment y remédier à faible coût) | Go Expandia">
+    <meta property="og:description"
+        content="Découvrez les 7 façons les plus courantes dont les petites entreprises se font pirater et des stratégies abordables et efficaces pour sécuriser votre PME contre les cybermenaces.">
+    <meta property="og:image" content="../../go-expandia-logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.goexpandia.com/fr/blog/7-ways-smes-get-hacked.html">
+    <meta property="twitter:title" content="7 Façons dont les PME se font pirater (et comment y remédier à faible coût) | Go Expandia">
+    <meta property="twitter:description"
+        content="Découvrez les 7 façons les plus courantes dont les petites entreprises se font pirater et des stratégies abordables et efficaces pour sécuriser votre PME contre les cybermenaces.">
+    <meta property="twitter:image" content="../../go-expandia-logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Styles -->
+    <link href="../../dist/css/output.css" rel="stylesheet">
+    <link href="../../src/css/custom.css" rel="stylesheet">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://www.goexpandia.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.goexpandia.com/fr/blog/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "7 façons dont les PME se font pirater"
+        }
+      ]
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Un antivirus gratuit est-il suffisant pour mon entreprise ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Même si c'est mieux que rien, les antivirus gratuits manquent souvent de fonctions critiques comme la protection contre les ransomwares, la gestion centralisée et le support en temps réel. Pour les entreprises, une protection endpoint payante offre une sécurité bien plus solide à faible coût."
+        }
+      }, {
+        "@type": "Question",
+        "name": "À quelle fréquence former les employés à la cybersécurité ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La formation cybersécurité doit être continue. Des ateliers trimestriels combinés à des simulations de phishing mensuelles sont recommandés pour maintenir un haut niveau de vigilance."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Quelle est la mesure la plus efficace et peu coûteuse pour améliorer la sécurité ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Activer l'authentification multifacteur (MFA) sur tous les comptes e-mail et professionnels. Elle permet de bloquer 99,9 % des attaques automatisées de compromission de compte et elle est souvent gratuite."
+        }
+      }]
+    }
+    </script>
+</head>
+
+<body class="font-sans antialiased text-gray-900 bg-white">
+    <!-- Navigation - Premium Mega Menu -->
+    <nav class="navbar bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-30 border-b border-gray-100">
+        <div class="container mx-auto px-4 lg:px-8 flex items-center justify-between h-16">
+            <!-- Logo -->
+            <a href="../index.html" class="flex-shrink-0">
+                <img src="../../go-expandia-logo.png" alt="Go Expandia" class="h-12 md:h-14">
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden lg:flex items-center gap-1">
+                <a href="../index.html"
+                    class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50">Accueil</a>
+
+                <!-- Services Mega Menu -->
+                <div class="relative" id="services-dropdown">
+                    <button onclick="toggleDropdown('services-menu')"
+                        class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
+                        Services
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <!-- Simplified menu for blog page context, matching main site structure would be ideal but keeping it simple for this file -->
+                    <div id="services-menu"
+                        class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
+                        style="width: 800px;">
+                        <div class="grid grid-cols-3 divide-x divide-gray-100">
+                            <div class="p-6">
+                                <a href="../lead-generation-services.html" class="block mb-4 group">
+                                    <h3
+                                        class="text-xs font-bold text-primary uppercase tracking-wider flex items-center gap-2 group-hover:text-primary/80 transition-colors">
+                                        <span
+                                            class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
+                                            <i data-lucide="users" class="w-4 h-4"></i>
+                                        </span>
+                                        Génération de Leads →
+                                    </h3>
+                                </a>
+                                <ul class="space-y-1">
+                                    <li><a href="../b2b-lead-generation-agency.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Génération de leads B2B</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Prospection ciblée</p>
+                                        </a></li>
+                                </ul>
+                            </div>
+                            <div class="p-6">
+                                <a href="../managed-services.html" class="block mb-4 group">
+                                    <h3
+                                        class="text-xs font-bold text-secondary uppercase tracking-wider flex items-center gap-2 group-hover:text-secondary/80 transition-colors">
+                                        <span
+                                            class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center text-secondary group-hover:bg-secondary/20 transition-colors">
+                                            <i data-lucide="settings" class="w-4 h-4"></i>
+                                        </span>
+                                        Opérations gérées →
+                                    </h3>
+                                </a>
+                                <ul class="space-y-1">
+                                    <li><a href="../managed-it-services.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">IT gérée et cybersécurité</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Sécurité et infrastructure</p>
+                                        </a></li>
+                                </ul>
+                            </div>
+                            <div class="p-6">
+                                <a href="../growth-programs.html" class="block mb-4 group">
+                                    <h3
+                                        class="text-xs font-bold text-neutral uppercase tracking-wider flex items-center gap-2 group-hover:text-neutral/80 transition-colors">
+                                        <span
+                                            class="w-6 h-6 rounded bg-neutral/10 flex items-center justify-center text-neutral group-hover:bg-neutral/20 transition-colors">
+                                            <i data-lucide="trending-up" class="w-4 h-4"></i>
+                                        </span>
+                                        Programmes de croissance →
+                                    </h3>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="../blog/index.html"
+                    class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50">Blog</a>
+                <a href="../contact.html"
+                    class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50">Contact</a>
+            </div>
+
+            <!-- Right Side -->
+            <div class="flex items-center gap-3">
+                <a href="../contact.html"
+                    class="btn btn-primary btn-sm lg:btn-md shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-shadow hidden sm:inline-flex">Commencer</a>
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden relative">
+                    <button onclick="toggleMobileMenu()" class="btn btn-ghost btn-sm">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                    <div id="mobile-menu"
+                        class="hidden fixed top-16 right-0 max-h-[500px] w-80 bg-white shadow-2xl z-[999] overflow-y-auto overscroll-contain border-l border-gray-100 rounded-bl-2xl">
+                        <ul class="menu p-3 w-full text-xs">
+                            <li><a href="../index.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">Accueil</a></li>
+                            <li><a href="../blog/index.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">Blog</a></li>
+                            <li><a href="../contact.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+        function toggleDropdown(menuId) {
+            const menu = document.getElementById(menuId);
+            if (menu) menu.classList.toggle('hidden');
+        }
+    </script>
+
+    <main class="pt-24 pb-16">
+        <article class="container mx-auto px-4 max-w-4xl">
+            <!-- Breadcrumb -->
+            <nav class="flex text-sm text-gray-500 mb-8" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                    <li class="inline-flex items-center">
+                        <a href="../index.html" class="inline-flex items-center hover:text-primary">
+                            <i data-lucide="home" class="w-4 h-4 mr-2"></i>
+                            Accueil
+                        </a>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+                            <a href="../blog/index.html" class="ml-1 md:ml-2 hover:text-primary">Blog</a>
+                        </div>
+                    </li>
+                    <li aria-current="page">
+                        <div class="flex items-center">
+                            <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+                            <span class="ml-1 md:ml-2 text-gray-700 font-medium truncate">7 façons dont les PME se font pirater</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+
+            <!-- Header -->
+            <header class="mb-12 text-center">
+                <span
+                    class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-primary uppercase bg-primary/10 rounded-full">
+                    CYBERSÉCURITÉ
+                </span>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">7 façons dont les PME se font pirater<br><span
+                        class="text-primary">(et comment y remédier à faible coût)</span></h1>
+                <div class="flex items-center justify-center gap-4 text-sm text-gray-500">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <span>2026-02-05</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="clock" class="w-4 h-4"></i>
+                        <span>6 min de lecture</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="prose prose-lg prose-primary mx-auto">
+                <p class="lead text-xl text-gray-600 mb-8">
+                    Les petites et moyennes entreprises (PME) pensent souvent qu'elles sont « trop petites pour être ciblées ».
+                    La réalité est tout l'inverse. Les pirates ciblent les PME précisément parce qu'elles ne disposent
+                    pas toujours des défenses robustes des grandes organisations. Bonne nouvelle : sécuriser votre
+                    entreprise ne nécessite pas un budget d'entreprise.
+                </p>
+
+                <h2>1. Attaques de phishing : la faille humaine</h2>
+                <p><strong>L'incident :</strong> Un employé reçoit un e-mail qui semble provenir de Microsoft ou d'un
+                    fournisseur, demandant de « vérifier les identifiants ». Un clic, et le pirate est à l'intérieur.</p>
+                <p><strong>La solution économique :</strong> Mettez en place des formations de sensibilisation régulières.
+                    Des outils comme GoPhish permettent de simuler des attaques gratuitement. Surtout, activez la MFA
+                    partout. Cela ne coûte souvent rien et bloque la majorité des attaques.</p>
+
+                <h2>2. Mots de passe faibles</h2>
+                <p><strong>L'incident :</strong> Les employés utilisent des mots de passe comme « Company123 » ou
+                    réutilisent le même mot de passe sur plusieurs sites. Si un site est compromis, l'entreprise l'est aussi.</p>
+                <p><strong>La solution économique :</strong> Appliquez une politique de mots de passe et utilisez un
+                    gestionnaire comme Bitwarden (version gratuite disponible) pour générer et stocker des mots de passe robustes.</p>
+
+                <h2>3. Logiciels non mis à jour</h2>
+                <p><strong>L'incident :</strong> Les systèmes d'exploitation ou des logiciels comme Adobe Reader restent
+                    obsolètes. Les pirates utilisent des outils automatisés pour détecter ces vulnérabilités connues.</p>
+                <p><strong>La solution économique :</strong> Activez les mises à jour automatiques sur tous les appareils.
+                    C'est gratuit et très efficace.</p>
+
+                <h2>4. Accès distant non sécurisé (RDP)</h2>
+                <p><strong>L'incident :</strong> Les entreprises exposent des ports RDP sur Internet pour permettre le
+                    télétravail sans VPN.</p>
+                <p><strong>La solution économique :</strong> N'exposez jamais RDP directement. Des bots malveillants
+                    scannent en permanence ces services. Utilisez un VPN simple ou des outils comme Cloudflare Tunnel
+                    (souvent gratuit pour les petites équipes).</p>
+
+                <h2>5. Absence de sauvegardes</h2>
+                <p><strong>L'incident :</strong> Un ransomware chiffre tous vos fichiers et exige une rançon.</p>
+                <p><strong>La solution économique :</strong> Appliquez la règle 3-2-1 : 3 copies des données, sur 2 supports
+                    différents, dont 1 hors site. OneDrive ou Google Drive (souvent déjà inclus) offrent la versioning,
+                    utile pour la récupération après ransomware.</p>
+
+                <h2>6. Dangers du Wi-Fi public</h2>
+                <p><strong>L'incident :</strong> Un employé travaille depuis un café et se connecte à un Wi-Fi public non
+                    sécurisé. Un pirate à proximité peut intercepter le trafic.</p>
+                <p><strong>La solution économique :</strong> Imposer l'usage d'un VPN en télétravail, ou à défaut le
+                    partage de connexion mobile, nettement plus sûr que le Wi-Fi public.</p>
+
+                <h2>7. Menaces internes (accidentelles ou malveillantes)</h2>
+                <p><strong>L'incident :</strong> Un employé quitte l'entreprise mais conserve l'accès au cloud et à l'e-mail.</p>
+                <p><strong>La solution économique :</strong> Mettez en place une checklist d'offboarding et révoquez les
+                    accès immédiatement au départ. Appliquez le principe du moindre privilège.</p>
+
+                <div class="bg-gray-50 p-8 rounded-2xl my-12 border border-gray-100">
+                    <h3 class="text-2xl font-bold mb-4">Besoin d'une solution clé en main ?</h3>
+                    <p class="mb-0">
+                        Gérer ces correctifs soi-même coûte peu, mais prend du temps. <a
+                            href="../managed-it-services.html" class="text-primary font-bold hover:underline">Les
+                            services IT gérés de Go Expandia</a> prennent en charge les mises à jour, la sécurité et la
+                        supervision, pour vous permettre de vous concentrer sur la croissance.
+                    </p>
+                </div>
+
+                <h2>FAQ</h2>
+
+                <div class="collapse collapse-plus bg-base-100 border border-base-200 rounded-box mb-4">
+                    <input type="radio" name="my-accordion-3" checked="checked" />
+                    <div class="collapse-title text-xl font-medium">
+                        Un antivirus gratuit est-il suffisant pour mon entreprise ?
+                    </div>
+                    <div class="collapse-content">
+                        <p>Mieux que rien, mais souvent insuffisant : les antivirus gratuits manquent de protection
+                            ransomware, de gestion centralisée et de support en temps réel. Une protection endpoint
+                            payante offre une sécurité bien plus solide à faible coût.</p>
+                    </div>
+                </div>
+
+                <div class="collapse collapse-plus bg-base-100 border border-base-200 rounded-box mb-4">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title text-xl font-medium">
+                        À quelle fréquence former mes employés à la cybersécurité ?
+                    </div>
+                    <div class="collapse-content">
+                        <p>La formation doit être continue. Des ateliers trimestriels combinés à des tests de phishing
+                            mensuels permettent de maintenir un haut niveau de vigilance.</p>
+                    </div>
+                </div>
+
+                <div class="collapse collapse-plus bg-base-100 border border-base-200 rounded-box mb-4">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title text-xl font-medium">
+                        Quelle est la mesure la plus efficace et peu coûteuse pour améliorer la sécurité ?
+                    </div>
+                    <div class="collapse-content">
+                        <p>Activer la MFA sur tous les comptes e-mail et professionnels. Elle bloque une grande partie
+                            des compromissions automatisées et est souvent gratuite.</p>
+                    </div>
+                </div>
+
+                <h2>Conclusion</h2>
+                <p>
+                    La cybersécurité n'a pas besoin d'exploser votre budget. En vous concentrant sur les fondamentaux
+                    (mises à jour, sauvegardes, mots de passe robustes et sensibilisation des équipes), vous pouvez
+                    éliminer la majorité des menaces qui touchent aujourd'hui les PME.
+                </p>
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-16 text-center bg-gradient-to-br from-primary/5 to-secondary/5 rounded-3xl p-12">
+                <h2 class="text-3xl font-bold mb-4">Sécurisez votre infrastructure dès aujourd'hui</h2>
+                <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+                    N'attendez pas une faille pour agir. Obtenez un audit sécurité gratuit avec Go Expandia.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="../contact.html" class="btn btn-primary btn-lg">
+                        Obtenir un audit gratuit
+                    </a>
+                    <a href="../managed-it-services.html" class="btn btn-outline btn-lg">
+                        Voir les produits IT
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer-gradient text-white">
+        <div class="container mx-auto container-padding py-12">
+            <div class="text-center">
+                <p class="text-white/80">&copy; 2026 Go Expandia. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
