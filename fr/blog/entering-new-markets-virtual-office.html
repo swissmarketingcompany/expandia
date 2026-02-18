@@ -712,14 +712,182 @@
         lucide.createIcons();
     </script>
 
-    <!-- Footer -->
-    <footer class="footer-gradient text-white">
+        <!-- Footer -->
+<footer class="footer-gradient text-white">
+    <!-- Newsletter Section -->
+    <div class="border-b border-white/10">
         <div class="container mx-auto container-padding py-12">
-            <div class="text-center">
-                <p class="text-white/80">&copy; 2026 Go Expandia. Tous droits réservés.</p>
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div class="text-center lg:text-left">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-2">Gardez une longueur d'avance avec Go Expandia</h3>
+                    <p class="text-white/80">Obtenez les dernières perspectives sur l'IT, la croissance d'entreprise et l'innovation IA.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+                    <form id="newsletter-form" class="flex gap-4 w-full">
+                        <input type="email" name="email" placeholder="Entrez votre e-mail" class="footer-newsletter-input"
+                            required>
+                        <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
+                        <input type="text" name="math" inputmode="numeric" pattern="[0-9]+" placeholder="30+31="
+                            class="input input-bordered w-24 sm:w-28" required>
+                        <button type="submit" class="btn btn-primary">S'abonner</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </footer>
+    </div>
+
+    <!-- Main Footer Content -->
+    <div class="container mx-auto container-padding py-16">
+        <div class="grid md:grid-cols-12 gap-8 mb-16">
+            <!-- Entreprise Info (Span 4) -->
+            <div class="md:col-span-4">
+                <div class="flex items-center gap-3 mb-6">
+                    <img src="../go-expandia-logo.png" alt="Go Expandia" class="h-14 w-auto brightness-0 invert">
+                </div>
+                <p class="text-white/80 mb-6 text-lg">
+                    Votre partenaire stratégique pour l'IT gérée, la croissance commerciale, le recrutement spécialisé et l'innovation IA.
+                </p>
+                <div class="flex gap-4">
+                    <a href="https://www.linkedin.com/company/103769699/" class="footer-social-icon group"
+                        target="_blank" rel="noopener noreferrer">
+                        <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Produits (Span 2) -->
+            <div class="md:col-span-2">
+                <h4 class="text-lg font-bold mb-6">Produits</h4>
+                <ul class="space-y-4 text-white/80">
+                    <li><a href="../../email-deliverability-checkup.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Délivrabilité e-mail
+                        </a></li>
+                    <li><a href="../../secure-email-workplace-setup.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            E-mail sécurisé & environnement de travail
+                        </a></li>
+                    <li><a href="../../website-care-services.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Services de maintenance web
+                        </a></li>
+                    <li><a href="../../cold-email-infrastructure.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Infra e-mails à froid
+                        </a></li>
+                    <li><a href="../../revops-infrastructure.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Infrastructure RevOps
+                        </a></li>
+                    <li><a href="../../verified-lead-list.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Liste de prospects vérifiés
+                        </a></li>
+                    <li><a href="../../written-content-engine.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Moteur de contenu écrit
+                        </a></li>
+                    <li><a href="../../image-content-engine.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Moteur de contenu image
+                        </a></li>
+                    <li><a href="../../video-content-engine.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Moteur de contenu vidéo
+                        </a></li>
+                </ul>
+            </div>
+
+            <!-- Entreprise (Span 2) -->
+            <div class="md:col-span-2">
+                <h4 class="text-lg font-bold mb-6">Entreprise</h4>
+                <ul class="space-y-4 text-white/80">
+                    <li><a href="../../about.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            À propos
+                        </a></li>
+
+                    <li><a href="../../city-locations.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Zones
+                        </a></li>
+                    <li><a href="../../blog/"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Blog et analyses
+                        </a></li>
+                    <li><a href="../../contact.html"
+                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="footer-link-dot"></span>
+                            Contactez-nous
+                        </a></li>
+                </ul>
+            </div>
+
+            <!-- Contact (Span 4) -->
+            <div class="md:col-span-4">
+                <h4 class="text-lg font-bold mb-6">Entrer en contact</h4>
+                <div class="footer-contact-card">
+                    <p class="text-white/80 mb-6">Prêt à accélérer votre croissance ?
+                        Discutons de la manière dont nous pouvons vous aider.</p>
+                    <a href="../../contact.html" class="btn btn-primary w-full mb-6">Obtenir une consultation gratuite</a>
+                    <div class="space-y-4">
+                        <a href="mailto:hello@goexpandia.com"
+                            class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            hello@goexpandia.com
+                        </a>
+                        <a href="mailto:hello@goexpandia.com"
+                            class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            E-mail pour planifier
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div
+            class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/60">
+            <div class="text-sm">
+                &copy; 2026 Go Expandia. Tous droits réservés.
+            </div>
+            <div class="flex gap-6 text-sm items-center">
+                <span class="text-white/60 text-xs">Fait partie de Remova Inc.</span>
+                <a href="../../privacy-policy.html" class="hover:text-primary transition-colors">Politique de confidentialité</a>
+                <a href="../../terms-of-service.html" class="hover:text-primary transition-colors">Conditions d'utilisation</a>
+                <a href="../../cookie-policy.html" class="hover:text-primary transition-colors">Politique de cookies</a>
+            </div>
+        </div>
+        <div class="mt-4 text-xs text-white/60 text-center">
+            Domaines autorisés : www.goexpandia.com www.expandia.ch
+        </div>
+    </div>
+</footer>
+
+
 
 </body>
 
