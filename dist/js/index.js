@@ -353,82 +353,67 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Language switching functions - STANDARDIZED FOR MULTILINGUAL SUPPORT
 function switchToEnglish() {
-    const path = window.location.pathname;
-    const origin = window.location.origin;
-
-    // Set user language preference to prevent auto-redirects
     localStorage.setItem('expandia_language_preference', 'en');
-
-    // Detect if already on English (not in any language subfolder)
-    const isOnEnglish = !path.includes('/de/') && !path.includes('/fr/') &&
-        !path.endsWith('/de') && !path.endsWith('/fr');
-
+    const path = window.location.pathname;
+    const isOnEnglish = !path.includes('/de/') && !path.includes('/fr/') && !path.endsWith('/de') && !path.endsWith('/fr');
     if (isOnEnglish) {
         console.log('Already on English version');
         return;
     }
 
-    // Extract the page name from current path
     let pageName = path.split('/').pop() || 'index.html';
-    if (pageName === '' || pageName === 'fr' || pageName === 'de') {
-        pageName = 'index.html';
-    }
+    if (pageName === '' || pageName === 'fr' || pageName === 'de') pageName = 'index.html';
 
-    // Build the English URL (no language prefix)
-    window.location.href = origin + '/' + pageName;
+    const baseURL = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1);
+    if (path.includes('/de/') || path.includes('/fr/')) {
+        window.location.href = baseURL + '../' + pageName;
+    } else {
+        window.location.href = baseURL + pageName;
+    }
 }
 
-
-
 function switchToGerman() {
-    const path = window.location.pathname;
-    const origin = window.location.origin;
-
-    // Set user language preference to prevent auto-redirects
     localStorage.setItem('expandia_language_preference', 'de');
-
-    // Detect current language from path
-    const isOnFrench = path.includes('/fr/') || path.endsWith('/fr');
+    const path = window.location.pathname;
     const isOnGerman = path.includes('/de/') || path.endsWith('/de');
-
     if (isOnGerman) {
         console.log('Already on German version');
         return;
     }
 
-    // Extract the page name from current path
     let pageName = path.split('/').pop() || 'index.html';
-    if (pageName === '' || pageName === 'fr' || pageName === 'de') {
-        pageName = 'index.html';
-    }
+    if (pageName === '' || pageName === 'fr' || pageName === 'de') pageName = 'index.html';
 
-    // Build the German URL
-    window.location.href = origin + '/de/' + pageName;
+    const baseURL = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1);
+    if (path.includes('/fr/')) {
+        window.location.href = baseURL + '../de/' + pageName;
+    } else if (path.includes('/de/')) {
+        window.location.href = baseURL + pageName; // fallback if somehow buggy
+    } else {
+        window.location.href = baseURL + 'de/' + pageName;
+    }
 }
 
 function switchToFrench() {
-    const path = window.location.pathname;
-    const origin = window.location.origin;
-
-    // Set user language preference to prevent auto-redirects
     localStorage.setItem('expandia_language_preference', 'fr');
-
-    // Detect if already on French
+    const path = window.location.pathname;
     const isOnFrench = path.includes('/fr/') || path.endsWith('/fr');
-
     if (isOnFrench) {
         console.log('Already on French version');
         return;
     }
 
-    // Extract the page name from current path
     let pageName = path.split('/').pop() || 'index.html';
-    if (pageName === '' || pageName === 'fr' || pageName === 'de') {
-        pageName = 'index.html';
-    }
+    if (pageName === '' || pageName === 'fr' || pageName === 'de') pageName = 'index.html';
 
-    // Build the French URL
-    window.location.href = origin + '/fr/' + pageName;
+    const baseURL = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1);
+    if (path.includes('/de/')) {
+        window.location.href = baseURL + '../fr/' + pageName;
+    } else if (path.includes('/fr/')) {
+        window.location.href = baseURL + pageName; // fallback
+    } else {
+        window.location.href = baseURL + 'fr/' + pageName;
+    }
 }
 
 // Geolocation-based language detection
@@ -629,19 +614,9 @@ function setupLanguageSwitching() {
     // Handle language switch clicks
     document.querySelectorAll('.lang-switch').forEach(link => {
         link.addEventListener('click', function (e) {
-            e.preventDefault();
             const lang = this.getAttribute('data-lang');
-
             // Save user's language preference
             localStorage.setItem('expandia_language_preference', lang);
-
-            if (lang === 'en') {
-                switchToEnglish();
-            } else if (lang === 'de') {
-                switchToGerman();
-            } else if (lang === 'fr') {
-                switchToFrench();
-            }
         });
     });
 
