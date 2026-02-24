@@ -141,1071 +141,1008 @@
 </head>
 <body class="font-sans">
     <!-- Navigation - Premium Mega Menu -->
-<nav class="navbar bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-30 border-b border-gray-100">
-    <div class="container mx-auto px-4 lg:px-8 flex items-center justify-between h-16">
-        <!-- Logo -->
-        <a href="./index.html" class="flex-shrink-0">
-            <img src="../go-expandia-logo.png" alt="Go Expandia" class="h-12 md:h-14">
-        </a>
+    <nav class="navbar bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-30 border-b border-gray-100">
+        <div class="container mx-auto px-4 lg:px-8 flex items-center justify-between h-16">
+            <!-- Logo -->
+            <a href="./index.html" class="flex-shrink-0">
+                <img src="../go-expandia-logo.png" alt="Go Expandia" class="h-12 md:h-14">
+            </a>
 
-        <!-- Desktop Navigation -->
-        <div class="hidden lg:flex items-center gap-1">
-            <a href="./index.html"
-                class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50">Startseite</a>
+            <!-- Desktop Navigation -->
+            <div class="hidden lg:flex items-center gap-1">
+                <a href="./index.html"
+                    class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50">Startseite</a>
 
-            <!-- Services Mega Menu -->
-            <div class="relative" id="services-dropdown">
-                <button onclick="toggleDropdown('services-menu')"
-                    class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
-                    Services
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <div id="services-menu"
-                    class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
-                    style="width: 800px;">
-                    <div class="grid grid-cols-3 divide-x divide-gray-100">
-                        <!-- Column 1: Lead-Generierung -->
-                        <div class="p-6">
-                            <a href="./lead-generation-services.html" class="block mb-4 group">
-                                <h3
-                                    class="text-xs font-bold text-primary uppercase tracking-wider flex items-center gap-2 group-hover:text-primary/80 transition-colors">
-                                    <span
-                                        class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
-                                        <i data-lucide="users" class="w-4 h-4"></i>
-                                    </span>
-                                    Lead-Generierung →
-                                </h3>
-                            </a>
-                            <ul class="space-y-1">
-                                <li><a href="./b2b-lead-generation-agency.html"
-                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
-                                            class="text-sm font-semibold text-gray-900">B2B-Potenzialkundengewinnung</span></a>
-                                </li>                                <li><a href="./crm-management.html"
-                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
-                                            class="text-sm font-semibold text-gray-900">CRM Management</span>
-                                        <p class="text-xs text-gray-500 mt-0.5">Expert CRM optimization</p>
-                                    </a></li>
-                            </ul>
+                <!-- Services Mega Menu -->
+                <div class="relative" id="services-dropdown">
+                    <button onclick="toggleDropdown('services-menu')"
+                        class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
+                        Dienstleistungen
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="services-menu"
+                        class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
+                        style="width: 800px;">
+                        <div class="grid grid-cols-3 divide-x divide-gray-100">
+                            <!-- Column 1: Lead Generation -->
+                            <div class="p-6">
+                                <a href="./lead-generation-services.html" class="block mb-4 group">
+                                    <h3
+                                        class="text-xs font-bold text-primary uppercase tracking-wider flex items-center gap-2 group-hover:text-primary/80 transition-colors">
+                                        <span
+                                            class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
+                                            <i data-lucide="users" class="w-4 h-4"></i>
+                                        </span>
+                                        Lead-Generierung →
+                                    </h3>
+                                </a>
+                                <ul class="space-y-1">
+                                    <li><a href="./b2b-lead-generation-agency.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">B2B Lead-Generierung</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Gezielte Ansprache von Interessenten
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li><a href="./crm-management.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">CRM-Management</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Experten-CRM-Optimierung</p>
+                                        </a></li>
+                                    <li><a href="./cold-calling-services.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Kaltakquise</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Professionelle Terminvereinbarung
+                                            </p>
+                                        </a></li>
+                                </ul>
+                            </div>
+                            <!-- Column 2: Managed Operations -->
+                            <div class="p-6">
+                                <a href="./managed-services.html" class="block mb-4 group">
+                                    <h3
+                                        class="text-xs font-bold text-secondary uppercase tracking-wider flex items-center gap-2 group-hover:text-secondary/80 transition-colors">
+                                        <span
+                                            class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center text-secondary group-hover:bg-secondary/20 transition-colors">
+                                            <i data-lucide="settings" class="w-4 h-4"></i>
+                                        </span>
+                                        Operatives Management →
+                                    </h3>
+                                </a>
+                                <ul class="space-y-1">
+                                    <li><a href="./sales-development-agency.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Vertriebs-Operations (Go
+                                                Expandia)</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Verwaltetes B2B-Wachstum</p>
+                                        </a></li>
+                                    <li><a href="./managed-it-services.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Betreute IT & Cyber</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Sicherheit &amp; Infrastruktur</p>
+                                        </a>
+                                    </li>
+
+                                    <li><a href="./outreach-software-management.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Outreach-Software-Verwaltung</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Experten-Plattform-Management</p>
+                                        </a></li>
+                                </ul>
+                            </div>
+                            <!-- Column 3: Growth Programs -->
+                            <div class="p-6">
+                                <a href="./growth-programs.html" class="block mb-4 group">
+                                    <h3
+                                        class="text-xs font-bold text-neutral uppercase tracking-wider flex items-center gap-2 group-hover:text-neutral/80 transition-colors">
+                                        <span
+                                            class="w-6 h-6 rounded bg-neutral/10 flex items-center justify-center text-neutral group-hover:bg-neutral/20 transition-colors">
+                                            <i data-lucide="trending-up" class="w-4 h-4"></i>
+                                        </span>
+                                        Wachstumsprogramme →
+                                    </h3>
+                                </a>
+                                <ul class="space-y-1">
+                                    <li><a href="./market-foundation-program.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Markt-Grundlagen-Programm</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Wachstum für Kleinunternehmen</p>
+                                        </a></li>
+                                    <li><a href="./direct-market-growth.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Direktes
+                                                Marktwachstum</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Direktvertriebsstrategie</p>
+                                        </a></li>
+                                </ul>
+                            </div>
                         </div>
-                        <!-- Column 2: Managed Operations -->
-                        <div class="p-6">
-                            <a href="./managed-services.html" class="block mb-4 group">
-                                <h3
-                                    class="text-xs font-bold text-secondary uppercase tracking-wider flex items-center gap-2 group-hover:text-secondary/80 transition-colors">
-                                    <span
-                                        class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center text-secondary group-hover:bg-secondary/20 transition-colors">
-                                        <i data-lucide="settings" class="w-4 h-4"></i>
-                                    </span>
-                                    Managed Operations →
-                                </h3>
-                            </a>
-                            <ul class="space-y-1">
-                                <li><a href="./sales-development-agency.html"
-                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
-                                            class="text-sm font-semibold text-gray-900">Sales Ops (Go Expandia)</span>
-                                        <p class="text-xs text-gray-500 mt-0.5">Managed B2B Growth</p>
-                                    </a></li>
-                                <li><a href="./managed-it-services.html"
-                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
-                                            class="text-sm font-semibold text-gray-900">Managed IT & Cyber</span></a>
-                                </li>
-                            
-                                <li><a href="./outreach-software-management.html"
-                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
-                                            class="text-sm font-semibold text-gray-900">Outreach Software
-                                            Management</span>
-                                        <p class="text-xs text-gray-500 mt-0.5">Expert platform management</p>
-                                    </a></li>
-                            </ul>
+                        <!-- CTA Footer -->
+                        <div class="bg-gray-50 px-6 py-4 flex items-center justify-between border-t border-gray-100">
+                            <p class="text-sm text-gray-600">Finden Sie die richtige Lösung für Ihr Wachstum.</p>
+                            <a href="./contact.html" class="btn btn-primary btn-sm">Gespräch vereinbaren</a>
                         </div>
-                        <!-- Column 3: Growth Programs -->
-                        <div class="p-6">
-                            <a href="./growth-programs.html" class="block mb-4 group">
-                                <h3
-                                    class="text-xs font-bold text-neutral uppercase tracking-wider flex items-center gap-2 group-hover:text-neutral/80 transition-colors">
-                                    <span
-                                        class="w-6 h-6 rounded bg-neutral/10 flex items-center justify-center text-neutral group-hover:bg-neutral/20 transition-colors">
-                                        <i data-lucide="trending-up" class="w-4 h-4"></i>
-                                    </span>
-                                    Growth Programs →
-                                </h3>
-                            </a>
-                            <ul class="space-y-1">
-                                <li><a href="./market-foundation-program.html"
-                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
-                                            class="text-sm font-semibold text-gray-900">Small Business Growth</span>
-                                        <p class="text-xs text-gray-500 mt-0.5">Market Foundation</p>
-                                    </a></li>
-                                <li><a href="./direct-market-growth.html"
-                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
-                                            class="text-sm font-semibold text-gray-900">Direct Market Growth</span>
-                                        <p class="text-xs text-gray-500 mt-0.5">Go Direct Strategy</p>
-                                    </a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- CTA Footer -->
-                    <div class="bg-gray-50 px-6 py-4 flex items-center justify-between border-t border-gray-100">
-                        <p class="text-sm text-gray-600">Find the right solution for your growth.</p>
-                        <a href="./contact.html" class="btn btn-primary btn-sm">Book a Call</a>
                     </div>
                 </div>
-            </div>
 
-            <!-- Products Mega Menu -->
-            <div class="relative" id="products-dropdown">
-                <button onclick="toggleDropdown('products-menu')"
-                    class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
-                    Products
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <div id="products-menu"
-                    class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
-                    style="width: 720px;">
-                    <div class="grid grid-cols-3 divide-x divide-gray-100">
-                        <!-- Column 1: Turnkey IT Infrastructure -->
-                        <div class="p-6">
-                            <a href="./turnkey-it-infrastructure.html">
+                <!-- Products Mega Menu -->
+                <div class="relative" id="products-dropdown">
+                    <button onclick="toggleDropdown('products-menu')"
+                        class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
+                        Produkte
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="products-menu"
+                        class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
+                        style="width: 720px;">
+                        <div class="grid grid-cols-3 divide-x divide-gray-100">
+                            <!-- Column 1: Schlüsselfertige IT-Infrastruktur -->
+                            <div class="p-6">
+                                <a href="./turnkey-it-infrastructure.html">
+                                    <h3
+                                        class="text-xs font-bold text-primary uppercase tracking-wider mb-4 flex items-center gap-2 hover:text-primary/80 transition-colors cursor-pointer">
+                                        <span
+                                            class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center text-primary"><i
+                                                data-lucide="shield-check" class="w-4 h-4"></i></span>
+                                        Schlüsselfertige IT-Infrastruktur
+                                    </h3>
+                                </a>
+                                <ul class="space-y-1">
+                                    <li><a href="./email-deliverability-checkup.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">E-Mail-Zustellbarkeits-Check</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Spam-Probleme diagnostizieren &
+                                                beheben</p>
+                                        </a></li>
+                                    <li><a href="./secure-email-workplace-setup.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Sicheres E-Mail- &
+                                                Arbeitsplatz-Setup</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Schlüsselfertiges
+                                                Microsoft/Google-Setup</p>
+                                        </a></li>
+                                    <li><a href="./website-care-services.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Website-Wartungsdienste</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Wartung & Sicherheit</p>
+                                        </a></li>
+                                </ul>
+                            </div>
+                            <!-- Column 2: Schlüsselfertige Wachstumsinfrastruktur -->
+                            <div class="p-6">
+                                <a href="./turnkey-growth-infrastructure.html">
+                                    <h3
+                                        class="text-xs font-bold text-secondary uppercase tracking-wider mb-4 flex items-center gap-2 hover:text-secondary/80 transition-colors cursor-pointer">
+                                        <span
+                                            class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center text-secondary"><i
+                                                data-lucide="trending-up" class="w-4 h-4"></i></span>
+                                        Schlüsselfertige Wachstumsinfrastruktur
+                                    </h3>
+                                </a>
+                                <ul class="space-y-1">
+                                    <li><a href="./cold-email-infrastructure.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Cold-Email-Infrastruktur</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Automatisiertes Outreach-System</p>
+                                        </a></li>
+                                    <li><a href="./revops-infrastructure.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">RevOps-Infrastruktur</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">CRM & Vertriebsautomatisierung</p>
+                                        </a></li>
+                                    <li><a href="./verified-lead-list.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Verifizierte
+                                                Lead-Liste</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">1.000 anrufbereite Leads</p>
+                                        </a></li>
+                                </ul>
+                            </div>
+                            <!-- Column 3: AI Content -->
+                            <div class="p-6">
+                                <a href="./ai-content-infrastructure.html">
+                                    <h3
+                                        class="text-xs font-bold text-neutral uppercase tracking-wider mb-4 flex items-center gap-2 hover:text-neutral/80 transition-colors cursor-pointer">
+                                        <span
+                                            class="w-6 h-6 rounded bg-neutral/10 flex items-center justify-center text-neutral"><i
+                                                data-lucide="bot" class="w-4 h-4"></i></span>
+                                        KI-Inhalt-Infrastruktur
+                                    </h3>
+                                </a>
+                                <ul class="space-y-1">
+                                    <li><a href="./written-content-engine.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Engine für
+                                                Textinhalte</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Blogs, Artikel, Social Posts</p>
+                                        </a></li>
+                                    <li><a href="./image-content-engine.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Engine für
+                                                Bildinhalte</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Grafiken, Visuals, Thumbnails</p>
+                                        </a></li>
+                                    <li><a href="./video-content-engine.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Engine für
+                                                Videoinhalte</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">KI-Avatare, Produktvideos</p>
+                                        </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- CTA Footer -->
+                        <div class="bg-gray-50 px-6 py-4 flex items-center justify-between border-t border-gray-100">
+                            <p class="text-sm text-gray-600">Unsicher, welcher Service passt? Finden wir es gemeinsam
+                                heraus.
+                            </p>
+                            <a href="./contact.html" class="btn btn-primary btn-sm">Gespräch vereinbaren</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Company Mega Menu -->
+                <div class="relative" id="company-dropdown">
+                    <button onclick="toggleDropdown('company-menu')"
+                        class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
+                        Unternehmen
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="company-menu"
+                        class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
+                        style="width: 480px;">
+                        <div class="grid grid-cols-2 divide-x divide-gray-100">
+                            <!-- Column 1: About -->
+                            <div class="p-6">
                                 <h3
-                                    class="text-xs font-bold text-primary uppercase tracking-wider mb-4 flex items-center gap-2 hover:text-primary/80 transition-colors cursor-pointer">
+                                    class="text-xs font-bold text-primary uppercase tracking-wider mb-4 flex items-center gap-2">
                                     <span
                                         class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center text-primary"><i
-                                            data-lucide="shield-check" class="w-4 h-4"></i></span>
-                                    Turnkey IT Infrastructure
+                                            data-lucide="building-2" class="w-4 h-4"></i></span>
+                                    Über uns
                                 </h3>
-                            </a>
-                            <ul class="space-y-1">
-                                <li><a href="./email-deliverability-checkup.html"
-                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
-                                            class="text-sm font-semibold text-gray-900">Email Deliverability
-                                            Checkup</span>
-                                        <p class="text-xs text-gray-500 mt-0.5">Diagnose & fix spam issues</p>
-                                    </a></li>
-                                <li><a href="./secure-email-workplace-setup.html"
-                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
-                                            class="text-sm font-semibold text-gray-900">Secure Email & Workplace
-                                            Setup</span>
-                                        <p class="text-xs text-gray-500 mt-0.5">Turnkey Microsoft/Google setup</p>
-                                    </a></li>
-                                <li><a href="./website-care-services.html"
-                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
-                                            class="text-sm font-semibold text-gray-900">Website Care Services</span>
-                                        <p class="text-xs text-gray-500 mt-0.5">Maintenance & security</p>
-                                    </a></li>
-                            </ul>
-                        </div>
-                        <!-- Column 2: Turnkey Growth Infrastructure -->
-                        <div class="p-6">
-                            <a href="./turnkey-growth-infrastructure.html">
+                                <ul class="space-y-1">
+                                    <li><a href="./about.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                            <span class="text-sm font-semibold text-gray-900">Unsere Geschichte</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Wer wir sind & was wir tun</p>
+                                        </a></li>
+                                    <li><a href="./vision-mission.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                            <span class="text-sm font-semibold text-gray-900">Vision & Mission</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Unser Zweck und Ziele</p>
+                                        </a></li>
+                                    <li><a href="./our-ethical-principles.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                            <span class="text-sm font-semibold text-gray-900">Ethik & Werte</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Wie wir arbeiten</p>
+                                        </a></li>
+                                </ul>
+                            </div>
+                            <!-- Column 2: Resources -->
+                            <div class="p-6">
                                 <h3
-                                    class="text-xs font-bold text-secondary uppercase tracking-wider mb-4 flex items-center gap-2 hover:text-secondary/80 transition-colors cursor-pointer">
+                                    class="text-xs font-bold text-secondary uppercase tracking-wider mb-4 flex items-center gap-2">
                                     <span
                                         class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center text-secondary"><i
-                                            data-lucide="trending-up" class="w-4 h-4"></i></span>
-                                    Turnkey Growth Infrastructure
+                                            data-lucide="library-big" class="w-4 h-4"></i></span>
+                                    Ressourcen
                                 </h3>
-                            </a>
-                            <ul class="space-y-1">
-                                <li><a href="./cold-email-infrastructure.html"
-                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
-                                            class="text-sm font-semibold text-gray-900">Cold‑Email Infrastructure</span>
-                                        <p class="text-xs text-gray-500 mt-0.5">Automated outreach system</p>
-                                    </a></li>
-                                <li><a href="./revops-infrastructure.html"
-                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
-                                            class="text-sm font-semibold text-gray-900">RevOps Infrastructure</span>
-                                        <p class="text-xs text-gray-500 mt-0.5">CRM & sales automation</p>
-                                    </a></li>
-                                <li><a href="./verified-lead-list.html"
-                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
-                                            class="text-sm font-semibold text-gray-900">Verified Lead List</span>
-                                        <p class="text-xs text-gray-500 mt-0.5">1,000 ready-to-call leads</p>
-                                    </a></li>
-                            </ul>
+                                <ul class="space-y-1">
+
+                                    <li><a href="./blog/index.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Blog & Einblicke</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Tipps, Trends & Guides</p>
+                                        </a></li>
+                                    <li><a href="./city-locations.html"
+                                            class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
+                                                class="text-sm font-semibold text-gray-900">Standorte</span>
+                                            <p class="text-xs text-gray-500 mt-0.5">Wo wir tätig sind</p>
+                                        </a></li>
+                                </ul>
+                            </div>
                         </div>
-                        <!-- Column 3: AI Content -->
-                        <div class="p-6">
-                            <a href="./ai-content-infrastructure.html">
-                                <h3
-                                    class="text-xs font-bold text-neutral uppercase tracking-wider mb-4 flex items-center gap-2 hover:text-neutral/80 transition-colors cursor-pointer">
-                                    <span
-                                        class="w-6 h-6 rounded bg-neutral/10 flex items-center justify-center text-neutral"><i
-                                            data-lucide="bot" class="w-4 h-4"></i></span>
-                                    AI Content Infrastructure
-                                </h3>
-                            </a>
-                            <ul class="space-y-1">
-                                <li><a href="./written-content-engine.html"
-                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
-                                            class="text-sm font-semibold text-gray-900">Written Content Engine</span>
-                                        <p class="text-xs text-gray-500 mt-0.5">Blogs, articles, social posts</p>
-                                    </a></li>
-                                <li><a href="./image-content-engine.html"
-                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
-                                            class="text-sm font-semibold text-gray-900">Image Content Engine</span>
-                                        <p class="text-xs text-gray-500 mt-0.5">Graphics, visuals, thumbnails</p>
-                                    </a></li>
-                                <li><a href="./video-content-engine.html"
-                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
-                                            class="text-sm font-semibold text-gray-900">Video Content Engine</span>
-                                        <p class="text-xs text-gray-500 mt-0.5">AI avatars, product videos</p>
-                                    </a></li>
-                            </ul>
+                        <!-- CTA Footer -->
+                        <div class="bg-gray-50 px-6 py-4 flex items-center justify-between border-t border-gray-100">
+                            <p class="text-sm text-gray-600">Bereit, Ihr Geschäft auszubauen?</p>
+                            <a href="./contact.html" class="btn btn-primary btn-sm">Loslegen</a>
                         </div>
-                    </div>
-                    <!-- CTA Footer -->
-                    <div class="bg-gray-50 px-6 py-4 flex items-center justify-between border-t border-gray-100">
-                        <p class="text-sm text-gray-600">Not sure which service? Let's find the right fit together.</p>
-                        <a href="./contact.html" class="btn btn-primary btn-sm">Book a Call</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Unternehmen Mega Menu -->
-            <div class="relative" id="company-dropdown">
-                <button onclick="toggleDropdown('company-menu')"
-                    class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
-                    Unternehmen
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <div id="company-menu"
-                    class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
-                    style="width: 480px;">
-                    <div class="grid grid-cols-2 divide-x divide-gray-100">
-                        <!-- Column 1: Über uns -->
-                        <div class="p-6">
-                            <h3
-                                class="text-xs font-bold text-primary uppercase tracking-wider mb-4 flex items-center gap-2">
-                                <span
-                                    class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center text-primary"><i
-                                        data-lucide="building-2" class="w-4 h-4"></i></span>
-                                Über uns
-                            </h3>
-                            <ul class="space-y-1">
-                                <li><a href="./about.html"
-                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
-                                        <span class="text-sm font-semibold text-gray-900">Our Story</span>
-                                        <p class="text-xs text-gray-500 mt-0.5">Who we are & what we do</p>
-                                    </a></li>
-                                <li><a href="./vision-mission.html"
-                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
-                                        <span class="text-sm font-semibold text-gray-900">Vision & Mission</span>
-                                        <p class="text-xs text-gray-500 mt-0.5">Our purpose and goals</p>
-                                    </a></li>
-                                <li><a href="./our-ethical-principles.html"
-                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
-                                        <span class="text-sm font-semibold text-gray-900">Ethics & Values</span>
-                                        <p class="text-xs text-gray-500 mt-0.5">How we operate</p>
-                                    </a></li>
-                            </ul>
-                        </div>
-                        <!-- Column 2: Ressourcen -->
-                        <div class="p-6">
-                            <h3
-                                class="text-xs font-bold text-secondary uppercase tracking-wider mb-4 flex items-center gap-2">
-                                <span
-                                    class="w-6 h-6 rounded bg-secondary/10 flex items-center justify-center text-secondary"><i
-                                        data-lucide="library-big" class="w-4 h-4"></i></span>
-                                Ressourcen
-                            </h3>
-                            <ul class="space-y-1">
+            <!-- Right Side -->
+            <div class="flex items-center gap-3">
+                <!-- Language Switcher -->
+                <div class="dropdown dropdown-end hidden sm:block">
+                    <label tabindex="0" class="btn btn-ghost btn-sm gap-1 text-gray-600">
+                        🇩🇪
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </label>
+                    <ul tabindex="0"
+                        class="dropdown-content z-[999] menu p-2 shadow-lg bg-white rounded-xl border border-gray-100 w-36 mt-2">
+                        <li><a href="../our-ethical-principles.html" data-lang="en" class="lang-switch text-sm">🇺🇸 English</a>
+                        </li>
+                        <li><a href="./our-ethical-principles.html" data-lang="de" class="lang-switch text-sm active">🇩🇪 Deutsch</a>
+                        </li>
+                        <li><a href="../fr/our-ethical-principles.html" data-lang="fr" class="lang-switch text-sm">🇫🇷 Français</a></li>
+                    </ul>
+                </div>
 
-                                <li><a href="./blog/index.html"
-                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
-                                            class="text-sm font-semibold text-gray-900">Blog & Insights</span>
-                                        <p class="text-xs text-gray-500 mt-0.5">Tips, trends & guides</p>
-                                    </a></li>
-                                <li><a href="./city-locations.html"
-                                        class="block p-3 rounded-xl hover:bg-gray-50 transition-colors"><span
-                                            class="text-sm font-semibold text-gray-900">Locations</span>
-                                        <p class="text-xs text-gray-500 mt-0.5">Where we operate</p>
-                                    </a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- CTA Footer -->
-                    <div class="bg-gray-50 px-6 py-4 flex items-center justify-between border-t border-gray-100">
-                        <p class="text-sm text-gray-600">Ready to grow your business?</p>
-                        <a href="./contact.html" class="btn btn-primary btn-sm">Jetzt starten</a>
+                <!-- CTA Button -->
+                <a href="./contact.html"
+                    class="btn btn-primary btn-sm lg:btn-md shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-shadow hidden sm:inline-flex">Loslegen</a>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden relative">
+                    <button onclick="toggleMobileMenu()" class="btn btn-ghost btn-sm">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="mobile-menu"
+                        class="hidden fixed top-16 right-0 max-h-[500px] w-80 bg-white shadow-2xl z-[999] overflow-y-auto overscroll-contain border-l border-gray-100 rounded-bl-2xl">
+                        <ul class="menu p-3 w-full text-xs">
+                            <!-- Products Section (Mobile) -->
+                            <li class="mt-1">
+                                <span
+                                    class="text-[10px] font-bold text-primary uppercase tracking-wider px-2 py-1 bg-primary/5 rounded-lg mb-1">Produkte</span>
+                                <ul class="pl-0 space-y-0.5">
+                                    <li><a href="./turnkey-it-infrastructure.html"
+                                            class="py-2 px-3 rounded-lg hover:bg-gray-50">Schlüsselfertige IT Infra</a>
+                                    </li>
+                                    <li><a href="./turnkey-growth-infrastructure.html"
+                                            class="py-2 px-3 rounded-lg hover:bg-gray-50">Schlüsselfertige Wachstums
+                                            Infra</a></li>
+                                    <li><a href="./ai-content-infrastructure.html"
+                                            class="py-2 px-3 rounded-lg hover:bg-gray-50">KI-Inhalt Infra</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Services Section (Mobile) -->
+                            <li class="mt-2">
+                                <span
+                                    class="text-[10px] font-bold text-secondary uppercase tracking-wider px-2 py-1 bg-secondary/5 rounded-lg mb-1">Dienstleistungen</span>
+                                <ul class="pl-0 space-y-0.5">
+                                    <li><a href="./b2b-lead-generation-agency.html"
+                                            class="py-2 px-3 rounded-lg hover:bg-gray-50">B2B Lead Generation</a></li>
+                                    <li><a href="./outreach-software-management.html"
+                                            class="py-2 px-3 rounded-lg hover:bg-gray-50">Outreach-Software-Verwaltung</a>
+                                    </li>
+                                    <li><a href="./crm-management.html"
+                                            class="py-2 px-3 rounded-lg hover:bg-gray-50">CRM-Management</a></li>
+                                    <li><a href="./sales-development-agency.html"
+                                            class="py-2 px-3 rounded-lg hover:bg-gray-50">Vertriebs-Operations (Go
+                                            Expandia)</a></li>
+                                    <li><a href="./managed-it-services.html"
+                                            class="py-2 px-3 rounded-lg hover:bg-gray-50">Betreute IT-Dienste</a></li>
+                                    <li><a href="./market-foundation-program.html"
+                                            class="py-2 px-3 rounded-lg hover:bg-gray-50">Markt-Grundlagen-Programm</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <!-- Company Section -->
+                            <li class="mt-4 pt-2 border-t border-gray-100">
+                                <span
+                                    class="text-[10px] font-bold text-gray-400 uppercase tracking-wider px-2 py-1 bg-gray-50 rounded-lg mb-1">Unternehmen</span>
+                                <ul class="pl-0 space-y-0.5">
+                                    <li><a href="./about.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">Über
+                                            uns</a></li>
+
+                                    <li><a href="./contact.html"
+                                            class="py-2 px-3 rounded-lg hover:bg-gray-50">Kontakt</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="mt-2 pt-2 border-t border-gray-50">
+                                <a href="./contact.html"
+                                    class="btn btn-primary btn-sm w-full text-xs min-h-0 h-9 font-bold shadow-sm">Loslegen</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
+    </nav>
 
-        <!-- Right Side -->
-        <div class="flex items-center gap-3">
-            <!-- Language Switcher -->
-            <div class="dropdown dropdown-end hidden sm:block">
-                <label tabindex="0" class="btn btn-ghost btn-sm gap-1 text-gray-600">
-                    🇺🇸
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </label>
-                <ul tabindex="0"
-                    class="dropdown-content z-[999] menu p-2 shadow-lg bg-white rounded-xl border border-gray-100 w-36 mt-2">
-                    <li><a href="../our-ethical-principles.html" data-lang="en" class="lang-switch text-sm active">🇺🇸 English</a></li>
-                    <li><a href="../de/our-ethical-principles.html" data-lang="de" class="lang-switch text-sm">🇩🇪 Deutsch</a></li>
-                    <li><a href="../fr/our-ethical-principles.html" data-lang="fr" class="lang-switch text-sm">🇫🇷 Français</a></li>
-                </ul>
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+
+            if (!menu.classList.contains('hidden')) {
+                document.body.style.overflow = 'hidden';
+                if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+            } else {
+                document.body.style.overflow = '';
+                if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+            }
+        }
+
+        function toggleDropdown(menuId) {
+            // Updated to include new menus
+            const allMenus = ['services-menu', 'products-menu', 'company-menu'];
+            allMenus.forEach(id => {
+                const menu = document.getElementById(id);
+                if (menu && id !== menuId) {
+                    menu.classList.add('hidden');
+                }
+            });
+            const menu = document.getElementById(menuId);
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
+        }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function (e) {
+            const servicesDropdown = document.getElementById('services-dropdown');
+            const productsDropdown = document.getElementById('products-dropdown');
+            const companyDropdown = document.getElementById('company-dropdown');
+
+            if (servicesDropdown && !servicesDropdown.contains(e.target)) {
+                document.getElementById('services-menu')?.classList.add('hidden');
+            }
+            if (productsDropdown && !productsDropdown.contains(e.target)) {
+                document.getElementById('products-menu')?.classList.add('hidden');
+            }
+            if (companyDropdown && !companyDropdown.contains(e.target)) {
+                document.getElementById('company-menu')?.classList.add('hidden');
+            }
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section
+        class="section-spacing bg-gradient-to-br from-buzz-warm via-base-100 to-buzz-light relative overflow-hidden">
+        <!-- Decorative blobs -->
+        <div class="absolute top-20 right-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 left-10 w-48 h-48 bg-secondary/10 rounded-full blur-2xl"></div>
+
+        <div class="container mx-auto container-padding overflow-visible z-10 relative">
+            <div class="text-center max-w-4xl mx-auto animate-fade-in">
+                <div
+                    class="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm border border-white/50 px-4 py-2 rounded-full text-sm font-bold mb-6 text-primary shadow-sm hover:shadow-md transition-shadow">
+                    <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                    Integrität Zuerst
+                </div>
+                <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+                    Unsere <span class="gradient-header">Ethischen Grundsätze</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-base-content/80 mb-10 leading-relaxed max-w-3xl mx-auto">
+                    Die Grundlage von Vertrauen und Integrität in allem, was wir tun.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#principles" class="btn btn-primary btn-lg buzz-button shadow-lg shadow-primary/25">
+                        Unsere Grundsätze
+                    </a>
+                    <a href="#commitment" class="btn btn-ghost btn-lg gap-2 group">
+                        Unser Versprechen <span
+                            class="group-hover:translate-y-1 transition-transform duration-300">↓</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="section-spacing bg-white">
+        <div class="container mx-auto container-padding">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Image Side -->
+                <div class="relative order-2 lg:order-1 animate-slide-up">
+                    <div class="absolute -top-10 -left-10 w-40 h-40 bg-secondary/10 rounded-full blur-3xl"></div>
+                    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
+                    <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-gray-100 group">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80"
+                            alt="Team Integrity"
+                            class="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Side -->
+                <div class="order-1 lg:order-2">
+                    <div
+                        class="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-4 py-2 rounded-full text-sm font-bold mb-6">
+                        <i data-lucide="shield" class="w-4 h-4"></i>
+                        Kernwerte
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-black mb-6">
+                        Vertrauen <span class="text-secondary">Aufbauen</span>
+                    </h2>
+                    <p class="text-lg text-base-content/80 mb-6 leading-relaxed">
+                        Bei Go Expandia glauben wir, dass nachhaltiges Unternehmenswachstum nur durch
+                        ethische Praktiken und transparente Beziehungen erreicht werden kann.
+                    </p>
+                    <p class="text-lg text-base-content/80 mb-8 leading-relaxed">
+                        Unsere ethischen Grundsätze leiten jede Entscheidung und jede Handlung, die wir im Namen unserer
+                        Kunden treffen.
+                        Wir verpflichten uns, die höchsten Standards in Bezug auf Integrität, Datenschutz und
+                        professionelles Verhalten einzuhalten.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ethical Principles Section -->
+    <section id="principles" class="section-spacing bg-white relative overflow-hidden">
+        <!-- Background Elements -->
+        <div
+            class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-base-100 to-base-100">
+        </div>
+
+        <div class="container mx-auto container-padding relative z-10">
+            <div class="text-center max-w-3xl mx-auto" style="margin-bottom: 6rem;">
+                <div
+                    class="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full text-sm font-bold mb-6 text-primary border border-primary/20">
+                    <i data-lucide="scale" class="w-4 h-4"></i>
+                    Ethik-Kodex
+                </div>
+                <h2 class="text-4xl md:text-5xl font-black mb-6">
+                    Unsere <span class="gradient-header">Kernverpflichtungen</span>
+                </h2>
+                <p class="text-lg text-base-content/80 leading-relaxed">
+                    Wir führen unser Geschäft nach diesen sechs Grundprinzipien.
+                </p>
             </div>
 
-            <!-- CTA Button -->
-            <a href="./contact.html"
-                class="btn btn-primary btn-sm lg:btn-md shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-shadow hidden sm:inline-flex">Get
-                Started</a>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Principle 1: Integrity -->
+                <div
+                    class="bg-white border border-base-200 p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden shadow-xl hover:shadow-2xl hover:border-primary/20 group h-full">
+                    <div
+                        class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i data-lucide="handshake" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Integrität in allen Beziehungen</h3>
+                    <p class="text-base-content/70 leading-relaxed mb-4">
+                        Wir pflegen alle unsere Geschäftsbeziehungen mit Ehrlichkeit, Transparenz und Respekt.
+                        Wir führen Interessenten oder Kunden niemals in die Irre und vertreten die
+                        Produkte und Dienstleistungen unserer Kunden immer wahrheitsgemäß.
+                    </p>
+                    <ul class="space-y-2 text-sm text-base-content/60">
+                        <li class="flex items-start gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-primary mt-0.5"></i> Ehrliche Kommunikation</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-primary mt-0.5"></i> Transparente Berichterstattung</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-primary mt-0.5"></i> Klare Vereinbarungen</li>
+                    </ul>
+                </div>
 
-            <!-- Mobile Menu Button -->
-            <div class="lg:hidden relative">
-                <button onclick="toggleMobileMenu()" class="btn btn-ghost btn-sm">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16">
-                        </path>
-                    </svg>
-                </button>
-                <div id="mobile-menu"
-                    class="hidden fixed top-16 right-0 max-h-[500px] w-80 bg-white shadow-2xl z-[999] overflow-y-auto overscroll-contain border-l border-gray-100 rounded-bl-2xl">
-                    <ul class="menu p-3 w-full text-xs">
-                        <!-- Products Section (Mobile) -->
-                        <li class="mt-1">
-                            <span
-                                class="text-[10px] font-bold text-primary uppercase tracking-wider px-2 py-1 bg-primary/5 rounded-lg mb-1">Products</span>
-                            <ul class="pl-0 space-y-0.5">
-                                <li><a href="./turnkey-it-infrastructure.html"
-                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Turnkey IT Infra</a></li>
-                                <li><a href="./turnkey-growth-infrastructure.html"
-                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Turnkey Growth Infra</a></li>
-                                <li><a href="./ai-content-infrastructure.html"
-                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">AI Content Infra</a></li>
-                            </ul>
-                        </li>
+                <!-- Principle 2: Data Privacy -->
+                <div
+                    class="bg-white border border-base-200 p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden shadow-xl hover:shadow-2xl hover:border-secondary/20 group h-full">
+                    <div
+                        class="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary mb-8 group-hover:bg-secondary group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i data-lucide="shield-check" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Datenschutz & Vertraulichkeit</h3>
+                    <p class="text-base-content/70 leading-relaxed mb-4">
+                        Wir respektieren und schützen die Privatsphäre aller Beteiligten. Kundeninformationen,
+                        Interessentendaten und Geschäftsinformationen werden mit größter Sorgfalt und
+                        in voller Übereinstimmung mit der DSGVO behandelt.
+                    </p>
+                    <ul class="space-y-2 text-sm text-base-content/60">
+                        <li class="flex items-start gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-secondary mt-0.5"></i> Vollständige DSGVO-Konformität</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-secondary mt-0.5"></i> Sichere Speicherung</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-secondary mt-0.5"></i> Strenge Vertraulichkeit</li>
+                    </ul>
+                </div>
 
-                        <!-- Services Section (Mobile) -->
-                        <li class="mt-2">
-                            <span
-                                class="text-[10px] font-bold text-secondary uppercase tracking-wider px-2 py-1 bg-secondary/5 rounded-lg mb-1">Services</span>
-                            <ul class="pl-0 space-y-0.5">
-                                <li><a href="./b2b-lead-generation-agency.html"
-                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">B2B-Potenzialkundengewinnung</a></li>
-                                <li><a href="./outreach-software-management.html"
-                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Outreach Software Mgmt</a></li>
-                                <li><a href="./crm-management.html"
-                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">CRM Management</a></li>
-                                <li><a href="./sales-development-agency.html"
-                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Managed Sales Ops (Go
-                                        Expandia)</a></li>
-                                <li><a href="./managed-it-services.html"
-                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Managed IT Services</a></li>
-                                <li><a href="./market-foundation-program.html"
-                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Small Business Growth</a></li>
-                            </ul>
-                        </li>
+                <!-- Principle 3: Fair Outreach -->
+                <div
+                    class="bg-white border border-base-200 p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden shadow-xl hover:shadow-2xl hover:border-accent/20 group h-full">
+                    <div
+                        class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center text-accent mb-8 group-hover:bg-accent group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i data-lucide="scale" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Faires & ethisches Outreach</h3>
+                    <p class="text-base-content/70 leading-relaxed mb-4">
+                        Unsere Outreach-Methoden sind immer respektvoll und entsprechen den Anti-Spam-Gesetzen.
+                        Wir glauben an den Aufbau echter Beziehungen, nicht an aggressive Taktiken.
+                    </p>
+                    <ul class="space-y-2 text-sm text-base-content/60">
+                        <li class="flex items-start gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-accent mt-0.5"></i> Relevante Kommunikation</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-accent mt-0.5"></i> Respektierung von Abmeldungen</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-accent mt-0.5"></i> Keine irreführenden Behauptungen</li>
+                    </ul>
+                </div>
 
-                        <!-- Unternehmen Section -->
-                        <li class="mt-4 pt-2 border-t border-gray-100">
-                            <span
-                                class="text-[10px] font-bold text-gray-400 uppercase tracking-wider px-2 py-1 bg-gray-50 rounded-lg mb-1">Unternehmen</span>
-                            <ul class="pl-0 space-y-0.5">
-                                <li><a href="./about.html"
-                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Über uns
-                                        Us</a></li>
+                <!-- Principle 4: Client Success -->
+                <div
+                    class="bg-white border border-base-200 p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden shadow-xl hover:shadow-2xl hover:border-primary/20 group h-full">
+                    <div
+                        class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i data-lucide="target" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Kundenerfolg an erster Stelle</h3>
+                    <p class="text-base-content/70 leading-relaxed mb-4">
+                        Wir priorisieren den Erfolg unserer Kunden gegenüber kurzfristigen Gewinnen. Wir bieten ehrliche
+                        Beratung, auch wenn dies bedeutet, Lösungen zu empfehlen, von denen wir finanziell nicht sofort
+                        profitieren.
+                    </p>
+                    <ul class="space-y-2 text-sm text-base-content/60">
+                        <li class="flex items-start gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-primary mt-0.5"></i> Objektive Empfehlungen</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-primary mt-0.5"></i> Ehrliche Einschätzungen</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-primary mt-0.5"></i> Langfristige Partnerschaften</li>
+                    </ul>
+                </div>
 
-                                <li><a href="./contact.html"
-                                        class="py-2 px-3 rounded-lg hover:bg-gray-50">Kontakt</a></li>
-                            </ul>
-                        </li>
+                <!-- Principle 5: Respekt gegenüber dem Wettbewerb -->
+                <div
+                    class="bg-white border border-base-200 p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden shadow-xl hover:shadow-2xl hover:border-secondary/20 group h-full">
+                    <div
+                        class="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary mb-8 group-hover:bg-secondary group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i data-lucide="users" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Respekt gegenüber dem Wettbewerb</h3>
+                    <p class="text-base-content/70 leading-relaxed mb-4">
+                        Go Expandia respektiert Geschäftsgeheimnisse und geistiges Eigentum. Wir beschaffen oder teilen
+                        niemals Kunden- oder Lieferantenlisten ohne Genehmigung. Wir stehen in einem fairen Wettbewerb.
+                    </p>
+                    <ul class="space-y-2 text-sm text-base-content/60">
+                        <li class="flex items-start gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-secondary mt-0.5"></i> Kein Diebstahl vertraulicher Daten</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-secondary mt-0.5"></i> Respekt für Rechte an geistigem Eigentum</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-secondary mt-0.5"></i> Faire Praktiken</li>
+                    </ul>
+                </div>
 
-                        <li class="mt-2 pt-2 border-t border-gray-50">
-                            <a href="./contact.html"
-                                class="btn btn-primary btn-sm w-full text-xs min-h-0 h-9 font-bold shadow-sm">Get
-                                Started</a>
-                        </li>
+                <!-- Principle 6: Soziale Verantwortung -->
+                <div
+                    class="bg-white border border-base-200 p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden shadow-xl hover:shadow-2xl hover:border-accent/20 group h-full">
+                    <div
+                        class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center text-accent mb-8 group-hover:bg-accent group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i data-lucide="heart" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Soziale Verantwortung</h3>
+                    <p class="text-base-content/70 leading-relaxed mb-4">
+                        Wir setzen uns dafür ein, einen positiven Einfluss auf Gesellschaft und Umwelt zu nehmen.
+                        Wir wählen die Kunden und Projekte, mit denen wir arbeiten, sorgfältig aus und stellen sicher,
+                        dass sie unseren Werten entsprechen.
+                    </p>
+                    <ul class="space-y-2 text-sm text-base-content/60">
+                        <li class="flex items-start gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-accent mt-0.5"></i> Nachhaltige Praktiken</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-accent mt-0.5"></i> Ethische Kundenauswahl</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-accent mt-0.5"></i> Unterstützung der Gemeinschaft</li>
                     </ul>
                 </div>
             </div>
         </div>
-    </div>
-</nav>
+    </section>
 
-<script>
-    function toggleMobileMenu() {
-        const menu = document.getElementById('mobile-menu');
-        menu.classList.toggle('hidden');
+    <!-- Commitment Section -->
+    <section id="commitment" class="section-spacing bg-base-100">
+        <div class="container mx-auto container-padding">
+            <div class="max-w-4xl mx-auto text-center">
+                <div
+                    class="inline-flex items-center gap-2 bg-neutral/10 text-neutral px-4 py-2 rounded-full text-sm font-bold mb-6">
+                    <i data-lucide="message-square" class="w-4 h-4"></i>
+                    Unser Versprechen
+                </div>
+                <h2 class="text-4xl md:text-5xl font-black mb-8">
+                    Unser Versprechen <span class="gradient-header">To You</span>
+                </h2>
+                <div class="prose lg:prose-xl mx-auto">
+                    <p class="text-lg text-base-content/80 leading-relaxed mb-6">
+                        Diese Grundsätze sind nicht nur Worte auf einem Stück Papier – sie bilden die Grundlage unserer täglichen
+                        Arbeit. Wir verpflichten uns den höchsten ethischen Standards, weil
+                        wir glauben, dass Vertrauen der Grundstein jeder erfolgreichen Partnerschaft ist.
+                    </p>
+                    <p class="text-lg text-base-content/80 leading-relaxed">
+                        Sollten Sie jemals Bedenken hinsichtlich unserer Praktiken haben oder etwas bemerken, das nicht mit
+                        diesen Prinzipien übereinstimmt, ermutigen wir Sie, sich bei uns zu melden. Wir verpflichten uns zur kontinuierlichen Verbesserung
+                        und zur Aufrechterhaltung des Vertrauens, das unsere Kunden in uns setzen.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        if (!menu.classList.contains('hidden')) {
-            document.body.style.overflow = 'hidden';
-            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
-        } else {
-            document.body.style.overflow = '';
-            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
-        }
-    }
-
-    function toggleDropdown(menuId) {
-        // Updated to include new menus
-        const allMenus = ['services-menu', 'products-menu', 'company-menu'];
-        allMenus.forEach(id => {
-            const menu = document.getElementById(id);
-            if (menu && id !== menuId) {
-                menu.classList.add('hidden');
-            }
-        });
-        const menu = document.getElementById(menuId);
-        if (menu) {
-            menu.classList.toggle('hidden');
-        }
-    }
-
-    // Close dropdowns when clicking outside
-    document.addEventListener('click', function (e) {
-        const servicesDropdown = document.getElementById('services-dropdown');
-        const productsDropdown = document.getElementById('products-dropdown');
-        const companyDropdown = document.getElementById('company-dropdown');
-
-        if (servicesDropdown && !servicesDropdown.contains(e.target)) {
-            document.getElementById('services-menu')?.classList.add('hidden');
-        }
-        if (productsDropdown && !productsDropdown.contains(e.target)) {
-            document.getElementById('products-menu')?.classList.add('hidden');
-        }
-        if (companyDropdown && !companyDropdown.contains(e.target)) {
-            document.getElementById('company-menu')?.classList.add('hidden');
-        }
-    });
-</script>
-    
-    <!-- Hero Section -->
-<section class="section-spacing bg-gradient-to-br from-buzz-warm via-base-100 to-buzz-light">
-    <div class="container mx-auto container-padding">
-        <div class="text-center max-w-4xl mx-auto animate-fade-in">
-            <h1 class="text-5xl md:text-5xl md:text-7xl font-bold mb-6">
-                <span class="gradient-header">Unsere Ethischen Grundsätze</span>
-            </h1>
-            <p class="text-xl md:text-xl md:text-2xl text-base-content/80 mb-8 leading-relaxed">
-                Die Grundlage von Vertrauen und Integrität in allem, was wir tun
+    <!-- CTA Section -->
+    <section class="section-spacing bg-primary relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div
+                class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2">
+            </div>
+            <div
+                class="absolute bottom-0 right-0 w-96 h-96 bg-secondary rounded-full blur-3xl translate-x-1/2 translate-y-1/2">
+            </div>
+        </div>
+        <div class="container mx-auto container-padding relative z-10 text-center">
+            <h2 class="text-4xl md:text-5xl font-black mb-6 text-white max-w-3xl mx-auto">
+                Arbeiten Sie mit einem ethischen Team
+            </h2>
+            <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Arbeiten Sie mit einem Partner für Vertriebsentwicklung, dem Sie vertrauen können. Lassen Sie uns besprechen, wie wir
+                Ihrem Unternehmen mit Integrität und Exzellenz zum Wachstum verhelfen können.
             </p>
-        </div>
-    </div>
-</section>
-
-<!-- Introduction Section -->
-<section class="section-spacing bg-base-100">
-    <div class="container mx-auto container-padding">
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="prose lg:prose-xl mx-auto">
-                <p class="text-lg text-base-content/80 leading-relaxed">
-                    Bei Go Expandia glauben wir, dass nachhaltiges Unternehmenswachstum nur durch
-                    ethische Praktiken und transparente Beziehungen erreicht werden kann. Unsere ethischen Grundsätze
-                    leiten jede Entscheidung und jede Handlung, die wir im Namen unserer Kunden treffen.
-                </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="contact.html"
+                    class="btn btn-white text-primary btn-lg hover:bg-gray-100 border-none shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all">
+                    Kostenlose Beratung erhalten
+                </a>
+                <a href="about.html" class="btn btn-outline text-white hover:bg-white/20 hover:border-white btn-lg">
+                    Mehr über uns erfahren
+                </a>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Ethical Principles Section -->
-<section class="section-spacing bg-buzz-light">
-    <div class="container mx-auto container-padding">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-4xl md:text-4xl md:text-5xl font-bold mb-12 gradient-header text-center">Unsere Ethischen
-                Kernverpflichtungen</h2>
-
-            <div class="space-y-8">
-                <!-- Principle 1 -->
-                <div class="buzz-card p-8">
-                    <div class="flex items-start gap-4">
-                        <div class="text-4xl md:text-4xl flex-shrink-0">🤝</div>
-                        <div>
-                            <h3 class="text-2xl md:text-2xl font-bold mb-4 text-primary">Integrität in Allen Beziehungen
-                            </h3>
-                            <p class="text-base-content/80 leading-relaxed mb-4">
-                                Wir führen alle unsere Geschäftsbeziehungen mit Ehrlichkeit, Transparenz und Respekt.
-                                Wir führen Interessenten oder Kunden niemals in die Irre und vertreten die
-                                Produkte und Dienstleistungen unserer Kunden immer wahrheitsgemäß.
-                            </p>
-                            <ul class="list-disc list-inside space-y-2 text-base-content/70">
-                                <li>Ehrliche Kommunikation in allen Interaktionen</li>
-                                <li>Transparente Berichterstattung aller Aktivitäten und Ergebnisse</li>
-                                <li>Klare und faire vertragliche Vereinbarungen</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Principle 2 -->
-                <div class="buzz-card p-8">
-                    <div class="flex items-start gap-4">
-                        <div class="text-4xl md:text-4xl flex-shrink-0">🔒</div>
-                        <div>
-                            <h3 class="text-2xl md:text-2xl font-bold mb-4 text-secondary">Datenschutz & Vertraulichkeit
-                            </h3>
-                            <p class="text-base-content/80 leading-relaxed mb-4">
-                                Wir respektieren und schützen die Privatsphäre aller Beteiligten. Kundeninformationen,
-                                Interessentendaten und Geschäftsinformationen werden mit größter Sorgfalt behandelt und
-                                in voller Übereinstimmung mit der DSGVO und anderen geltenden Vorschriften.
-                            </p>
-                            <ul class="list-disc list-inside space-y-2 text-base-content/70">
-                                <li>Vollständige DSGVO-Konformität bei allen Datenverarbeitungen</li>
-                                <li>Sichere Speicherung und Handhabung sensibler Informationen</li>
-                                <li>Respekt für Opt-out-Anfragen und Datenschutzpräferenzen</li>
-                                <li>Nicht-Offenlegung von Geschäftsgeheimnissen der Kunden</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Principle 3 -->
-                <div class="buzz-card p-8">
-                    <div class="flex items-start gap-4">
-                        <div class="text-4xl md:text-4xl flex-shrink-0">⚖️</div>
-                        <div>
-                            <h3 class="text-2xl md:text-2xl font-bold mb-4 text-accent">Faires & Ethisches Outreach</h3>
-                            <p class="text-base-content/80 leading-relaxed mb-4">
-                                Unsere Outreach-Methoden sind immer respektvoll und entsprechen Anti-Spam-Gesetzen
-                                und Best Practices der Branche. Wir glauben an den Aufbau echter Beziehungen,
-                                nicht an aggressive Taktiken.
-                            </p>
-                            <ul class="list-disc list-inside space-y-2 text-base-content/70">
-                                <li>Personalisierte, relevante Kommunikation</li>
-                                <li>Respekt für "Nicht kontaktieren"-Präferenzen</li>
-                                <li>Einhaltung von CAN-SPAM, DSGVO und anderen Vorschriften</li>
-                                <li>Keine irreführenden Betreffzeilen oder falschen Behauptungen</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Principle 4 -->
-                <div class="buzz-card p-8">
-                    <div class="flex items-start gap-4">
-                        <div class="text-4xl md:text-4xl flex-shrink-0">🎯</div>
-                        <div>
-                            <h3 class="text-2xl md:text-2xl font-bold mb-4 text-primary">Kundenerfolg Zuerst</h3>
-                            <p class="text-base-content/80 leading-relaxed mb-4">
-                                Wir priorisieren den Erfolg unserer Kunden über kurzfristige Gewinne. Wir geben ehrliche
-                                Ratschläge, auch wenn dies bedeutet, Lösungen zu empfehlen, die uns nicht unmittelbar
-                                finanziell zugutekommen.
-                            </p>
-                            <ul class="list-disc list-inside space-y-2 text-base-content/70">
-                                <li>Objektive Empfehlungen basierend auf Kundenbedürfnissen</li>
-                                <li>Ehrliche Einschätzung dessen, was funktioniert und was nicht</li>
-                                <li>Langfristiger Partnerschaftsfokus statt schneller Gewinne</li>
-                                <li>Kontinuierliche Optimierung für bessere Ergebnisse</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Principle 5 -->
-                <div class="buzz-card p-8">
-                    <div class="flex items-start gap-4">
-                        <div class="text-4xl md:text-4xl flex-shrink-0">🌍</div>
-                        <div>
-                            <h3 class="text-2xl md:text-2xl font-bold mb-4 text-secondary">Respekt für Wettbewerb</h3>
-                            <p class="text-base-content/80 leading-relaxed mb-4">
-                                Go Expandia respektiert Geschäftsgeheimnisse und DSGVO-Vorschriften. Wir beschaffen oder
-                                teilen
-                                niemals Kunden- oder Lieferantenlisten ohne entsprechende Genehmigung. Wir konkurrieren
-                                fair und
-                                respektieren Rechte an geistigem Eigentum.
-                            </p>
-                            <ul class="list-disc list-inside space-y-2 text-base-content/70">
-                                <li>Keine Beschaffung vertraulicher Wettbewerberinformationen</li>
-                                <li>Respekt für geistiges Eigentum und Geschäftsgeheimnisse</li>
-                                <li>Faire Wettbewerbspraktiken</li>
-                                <li>Ethische Interessentensuche und Datenbeschaffung</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Principle 6 -->
-                <div class="buzz-card p-8">
-                    <div class="flex items-start gap-4">
-                        <div class="text-4xl md:text-4xl flex-shrink-0">💚</div>
-                        <div>
-                            <h3 class="text-2xl md:text-2xl font-bold mb-4 text-accent">Soziale Verantwortung</h3>
-                            <p class="text-base-content/80 leading-relaxed mb-4">
-                                Wir sind verpflichtet, einen positiven Einfluss auf Gesellschaft und Umwelt zu nehmen.
-                                Wir wählen sorgfältig die Kunden und Projekte aus, mit denen wir arbeiten, um die
-                                Übereinstimmung
-                                mit unseren Werten sicherzustellen.
-                            </p>
-                            <ul class="list-disc list-inside space-y-2 text-base-content/70">
-                                <li>Nachhaltige Geschäftspraktiken</li>
-                                <li>Ethische Kundenauswahl</li>
-                                <li>Unterstützung für Vielfalt und Inklusion</li>
-                                <li>Gemeinschaftsengagement und Unterstützung</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Commitment Section -->
-<section class="section-spacing bg-base-100">
-    <div class="container mx-auto container-padding">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl md:text-4xl md:text-5xl font-bold mb-8 gradient-header">Unser Versprechen an Sie</h2>
-            <div class="prose lg:prose-xl mx-auto">
-                <p class="text-lg text-base-content/80 leading-relaxed">
-                    Diese Grundsätze sind nicht nur Worte auf Papier—sie sind die Grundlage unserer täglichen Arbeit.
-                    Wir halten uns an die höchsten ethischen Standards, weil
-                    wir glauben, dass Vertrauen der Grundstein jeder erfolgreichen Partnerschaft ist.
-                </p>
-                <p class="text-lg text-base-content/80 leading-relaxed">
-                    Wenn Sie jemals Bedenken bezüglich unserer Praktiken haben oder etwas sehen, das nicht mit
-                    diesen Grundsätzen übereinstimmt, ermutigen wir Sie, sich zu melden. Wir sind verpflichtet zur
-                    kontinuierlichen Verbesserung
-                    und zum Erhalt des Vertrauens, das unsere Kunden in uns setzen.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- CTA Section -->
-<section class="section-spacing bg-gradient-to-br from-primary/10 to-secondary/10">
-    <div class="container mx-auto container-padding text-center">
-        <h2 class="text-4xl md:text-4xl md:text-5xl font-bold mb-6 gradient-header">Partner mit einem Ethischen Team
-        </h2>
-        <p class="text-xl md:text-xl text-base-content/80 mb-8 max-w-3xl mx-auto">
-            Arbeiten Sie mit einem Vertriebsentwicklungspartner, dem Sie vertrauen können. Lassen Sie uns besprechen,
-            wie wir
-            Ihr Unternehmen mit Integrität und Exzellenz wachsen lassen können.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="contact.html" class="btn btn-primary btn-lg buzz-button">
-                Kostenlose Beratung Erhalten
-            </a>
-            <a href="about.html" class="btn btn-outline btn-lg">
-                Mehr Über Uns Erfahren
-            </a>
-        </div>
-    </div>
-</section>
-
-
-
-<!-- Footer -->
-<footer class="footer-gradient text-white">
-    <!-- Newsletter Section -->
-    <div class="border-b border-white/10">
-        <div class="container mx-auto container-padding py-12">
-            <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
-                <div class="text-center lg:text-left">
-                    <h3 class="text-2xl md:text-3xl font-bold mb-2">Bleiben Sie vorne mit Expandia</h3>
-                    <p class="text-white/80">Erhalten Sie die neuesten Einblicke in IT, Geschäftswachstum und
-                        KI-Innovation.</p>
-                </div>
-                <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-                    <form id="newsletter-form" class="flex gap-4 w-full">
-                        <input type="email" name="email" placeholder="Geben Sie Ihre E-Mail ein"
-                            class="footer-newsletter-input" required>
-                        <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
-                        <input type="text" name="math" inputmode="numeric" pattern="[0-9]+" placeholder="30+31="
-                            class="input input-bordered w-24 sm:w-28" required>
-                        <button type="submit" class="btn btn-primary">Abonnieren</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Footer Content -->
-    <div class="container mx-auto container-padding py-16">
-        <div class="grid md:grid-cols-12 gap-8 mb-16">
-            <!-- Unternehmen Info (Span 4) -->
-            <div class="md:col-span-4">
-                <div class="flex items-center gap-3 mb-6">
-                    <img src="../go-expandia-logo.png" alt="Expandia" class="h-8 w-auto brightness-0 invert">
-                </div>
-                <p class="text-white/80 mb-6 text-lg">
-                    Ihr strategischer Partner für Managed IT, Umsatzwachstum, spezialisierte Rekrutierung und
-                    KI-Innovation.
-                </p>
-                <div class="flex gap-4">
-                    <a href="https://www.linkedin.com/company/103769699/" class="footer-social-icon group"
-                        target="_blank" rel="noopener noreferrer">
-                        <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" fill="currentColor"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Produkte (Span 2) -->
-            <div class="md:col-span-2">
-                <h4 class="text-lg font-bold mb-6">Produkte</h4>
-                <ul class="space-y-4 text-white/80">
-                    <li><a href="./email-deliverability-checkup.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Email-Zustellbarkeits-Check
-                        </a></li>
-                    <li><a href="./secure-email-workplace-setup.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Sicherer E-Mail & Arbeitsplatz
-                        </a></li>
-                    <li><a href="./website-care-services.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Website-Wartungsservice
-                        </a></li>
-                    <li><a href="./cold-email-infrastructure.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Kalt-E-Mail-Infrastruktur
-                        </a></li>
-                    <li><a href="./revops-infrastructure.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            RevOps-Infrastruktur
-                        </a></li>
-                    <li><a href="./verified-lead-list.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Verifizierte Lead-Liste
-                        </a></li>
-                    <li><a href="./written-content-engine.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Schriftliche Content-Engine
-                        </a></li>
-                    <li><a href="./image-content-engine.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Bild-Content-Engine
-                        </a></li>
-                    <li><a href="./video-content-engine.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Video-Content-Engine
-                        </a></li>
-                </ul>
-            </div>
-
-            <!-- Unternehmen (Span 2) -->
-            <div class="md:col-span-2">
-                <h4 class="text-lg font-bold mb-6">Unternehmen</h4>
-                <ul class="space-y-4 text-white/80">
-                    <li><a href="./about.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Über uns
-                        </a></li>
-
-                    <li><a href="./city-locations.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Standorte
-                        </a></li>
-                    <li><a href="./blog/index.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Blog & Insights
-                        </a></li>
-                    <li><a href="./contact.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Kontakt
-                        </a></li>
-                </ul>
-            </div>
-
-            <!-- Kontakt (Span 4) -->
-            <div class="md:col-span-4">
-                <h4 class="text-lg font-bold mb-6">Kontakt aufnehmen</h4>
-                <div class="footer-contact-card">
-                    <p class="text-white/80 mb-6">Bereit, Ihr Wachstum zu
-                        beschleunigen? Lassen Sie uns besprechen, wie wir helfen können.</p>
-                    <a href="./contact.html" class="btn btn-primary w-full mb-6">Kostenlose Beratung</a>
-                    <div class="space-y-4">
-                        <a href="mailto:hello@goexpandia.com"
-                            class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                            hello@goexpandia.com
-                        </a>
-                        <a href="mailto:hello@goexpandia.com"
-                            class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                            Gespräch buchen
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Bottom Bar -->
-        <div
-            class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/60">
-            <div class="text-sm">
-                &copy; 2026 Expandia. Alle Rechte vorbehalten.
-            </div>
-            <div class="flex gap-6 text-sm items-center">
-                <span class="text-white/60 text-xs">Teil von Remova Inc.</span>
-                <a href="./privacy-policy.html" class="hover:text-primary transition-colors">Datenschutzrichtlinie</a>
-                <a href="./terms-of-service.html" class="hover:text-primary transition-colors">Nutzungsbedingungen</a>
-                <a href="./cookie-policy.html" class="hover:text-primary transition-colors">Cookie-Richtlinie</a>
-            </div>
-        </div>
-        <div class="mt-4 text-xs text-white/60 text-center">
-            Zugelassene Domains: www.goexpandia.com www.expandia.ch
-        </div>
-    </div>
-</footer>
-<script src="./dist/js/contact.js"></script>
-
-
-    
     <!-- Footer -->
-<footer class="footer-gradient text-white">
-    <!-- Newsletter Section -->
-    <div class="border-b border-white/10">
-        <div class="container mx-auto container-padding py-12">
-            <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
-                <div class="text-center lg:text-left">
-                    <h3 class="text-2xl md:text-3xl font-bold mb-2">Bleiben Sie vorne mit Expandia</h3>
-                    <p class="text-white/80">Erhalten Sie die neuesten Einblicke in IT, Geschäftswachstum und
-                        KI-Innovation.</p>
-                </div>
-                <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-                    <form id="newsletter-form" class="flex gap-4 w-full">
-                        <input type="email" name="email" placeholder="Geben Sie Ihre E-Mail ein"
-                            class="footer-newsletter-input" required>
-                        <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
-                        <input type="text" name="math" inputmode="numeric" pattern="[0-9]+" placeholder="30+31="
-                            class="input input-bordered w-24 sm:w-28" required>
-                        <button type="submit" class="btn btn-primary">Abonnieren</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Footer Content -->
-    <div class="container mx-auto container-padding py-16">
-        <div class="grid md:grid-cols-12 gap-8 mb-16">
-            <!-- Unternehmen Info (Span 4) -->
-            <div class="md:col-span-4">
-                <div class="flex items-center gap-3 mb-6">
-                    <img src="../go-expandia-logo.png" alt="Expandia" class="h-8 w-auto brightness-0 invert">
-                </div>
-                <p class="text-white/80 mb-6 text-lg">
-                    Ihr strategischer Partner für Managed IT, Umsatzwachstum, spezialisierte Rekrutierung und
-                    KI-Innovation.
-                </p>
-                <div class="flex gap-4">
-                    <a href="https://www.linkedin.com/company/103769699/" class="footer-social-icon group"
-                        target="_blank" rel="noopener noreferrer">
-                        <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" fill="currentColor"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Produkte (Span 2) -->
-            <div class="md:col-span-2">
-                <h4 class="text-lg font-bold mb-6">Produkte</h4>
-                <ul class="space-y-4 text-white/80">
-                    <li><a href="./email-deliverability-checkup.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Email-Zustellbarkeits-Check
-                        </a></li>
-                    <li><a href="./secure-email-workplace-setup.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Sicherer E-Mail & Arbeitsplatz
-                        </a></li>
-                    <li><a href="./website-care-services.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Website-Wartungsservice
-                        </a></li>
-                    <li><a href="./cold-email-infrastructure.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Kalt-E-Mail-Infrastruktur
-                        </a></li>
-                    <li><a href="./revops-infrastructure.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            RevOps-Infrastruktur
-                        </a></li>
-                    <li><a href="./verified-lead-list.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Verifizierte Lead-Liste
-                        </a></li>
-                    <li><a href="./written-content-engine.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Schriftliche Content-Engine
-                        </a></li>
-                    <li><a href="./image-content-engine.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Bild-Content-Engine
-                        </a></li>
-                    <li><a href="./video-content-engine.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Video-Content-Engine
-                        </a></li>
-                </ul>
-            </div>
-
-            <!-- Unternehmen (Span 2) -->
-            <div class="md:col-span-2">
-                <h4 class="text-lg font-bold mb-6">Unternehmen</h4>
-                <ul class="space-y-4 text-white/80">
-                    <li><a href="./about.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Über uns
-                        </a></li>
-
-                    <li><a href="./city-locations.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Standorte
-                        </a></li>
-                    <li><a href="./blog/index.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Blog & Insights
-                        </a></li>
-                    <li><a href="./contact.html"
-                            class="footer-link hover:text-primary transition-colors flex items-center gap-2">
-                            <span class="footer-link-dot"></span>
-                            Kontakt
-                        </a></li>
-                </ul>
-            </div>
-
-            <!-- Kontakt (Span 4) -->
-            <div class="md:col-span-4">
-                <h4 class="text-lg font-bold mb-6">Kontakt aufnehmen</h4>
-                <div class="footer-contact-card">
-                    <p class="text-white/80 mb-6">Bereit, Ihr Wachstum zu
-                        beschleunigen? Lassen Sie uns besprechen, wie wir helfen können.</p>
-                    <a href="./contact.html" class="btn btn-primary w-full mb-6">Kostenlose Beratung</a>
-                    <div class="space-y-4">
-                        <a href="mailto:hello@goexpandia.com"
-                            class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                            hello@goexpandia.com
-                        </a>
-                        <a href="mailto:hello@goexpandia.com"
-                            class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                            Gespräch buchen
-                        </a>
+    <footer class="footer-gradient text-white">
+        <!-- Newsletter Section -->
+        <div class="border-b border-white/10">
+            <div class="container mx-auto container-padding py-12">
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+                    <div class="text-center lg:text-left">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-2">Mit Go Expandia einen Schritt voraus</h3>
+                        <p class="text-white/80">Erhalten Sie die neuesten Einblicke in IT, Unternehmenswachstum und
+                            KI-Innovation.</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+                        <form id="newsletter-form" class="flex gap-4 w-full">
+                            <input type="email" name="email" placeholder="Ihre E-Mail eingeben"
+                                class="footer-newsletter-input" required>
+                            <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
+                            <input type="text" name="math" inputmode="numeric" pattern="[0-9]+" placeholder="30+31="
+                                class="input input-bordered w-24 sm:w-28" required>
+                            <button type="submit" class="btn btn-primary">Abonnieren</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Bottom Bar -->
-        <div
-            class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/60">
-            <div class="text-sm">
-                &copy; 2026 Expandia. Alle Rechte vorbehalten.
+        <!-- Main Footer Content -->
+        <div class="container mx-auto container-padding py-16">
+            <div class="grid md:grid-cols-12 gap-8 mb-16">
+                <!-- Company Info (Span 4) -->
+                <div class="md:col-span-4">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="../go-expandia-logo.png" alt="Go Expandia" class="h-14 w-auto brightness-0 invert">
+                    </div>
+                    <p class="text-white/80 mb-6 text-lg">
+                        Ihr strategischer Partner für Managed IT, Vertriebswachstum, spezialisiertes Recruiting und
+                        KI-Innovation.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/company/103769699/" class="footer-social-icon group"
+                            target="_blank" rel="noopener noreferrer">
+                            <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors"
+                                fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Products (Span 2) -->
+                <div class="md:col-span-2">
+                    <h4 class="text-lg font-bold mb-6">Produkte</h4>
+                    <ul class="space-y-4 text-white/80">
+                        <li><a href="./email-deliverability-checkup.html"
+                                class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                                <span class="footer-link-dot"></span>
+                                E-Mail-Zustellbarkeit
+                            </a></li>
+                        <li><a href="./secure-email-workplace-setup.html"
+                                class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                                <span class="footer-link-dot"></span>
+                                Sicheres E-Mail & Arbeitsplatz
+                            </a></li>
+                        <li><a href="./website-care-services.html"
+                                class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                                <span class="footer-link-dot"></span>
+                                Website-Wartungsdienste
+                            </a></li>
+                        <li><a href="./cold-email-infrastructure.html"
+                                class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                                <span class="footer-link-dot"></span>
+                                Cold-Email-Infrastruktur
+                            </a></li>
+                        <li><a href="./revops-infrastructure.html"
+                                class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                                <span class="footer-link-dot"></span>
+                                RevOps-Infrastruktur
+                            </a></li>
+                        <li><a href="./verified-lead-list.html"
+                                class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                                <span class="footer-link-dot"></span>
+                                Verifizierte Lead-Liste
+                            </a></li>
+                        <li><a href="./written-content-engine.html"
+                                class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                                <span class="footer-link-dot"></span>
+                                Engine für Textinhalte
+                            </a></li>
+                        <li><a href="./image-content-engine.html"
+                                class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                                <span class="footer-link-dot"></span>
+                                Engine für Bildinhalte
+                            </a></li>
+                        <li><a href="./video-content-engine.html"
+                                class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                                <span class="footer-link-dot"></span>
+                                Engine für Videoinhalte
+                            </a></li>
+                    </ul>
+                </div>
+
+                <!-- Company (Span 2) -->
+                <div class="md:col-span-2">
+                    <h4 class="text-lg font-bold mb-6">Unternehmen</h4>
+                    <ul class="space-y-4 text-white/80">
+                        <li><a href="./about.html"
+                                class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                                <span class="footer-link-dot"></span>
+                                Über uns
+                            </a></li>
+
+                        <li><a href="./city-locations.html"
+                                class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                                <span class="footer-link-dot"></span>
+                                Locations
+                            </a></li>
+                        <li><a href="./blog/"
+                                class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                                <span class="footer-link-dot"></span>
+                                Blog & Einblicke
+                            </a></li>
+                        <li><a href="./contact.html"
+                                class="footer-link hover:text-primary transition-colors flex items-center gap-2">
+                                <span class="footer-link-dot"></span>
+                                Kontakt aufnehmen
+                            </a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact (Span 4) -->
+                <div class="md:col-span-4">
+                    <h4 class="text-lg font-bold mb-6">In Kontakt kommen</h4>
+                    <div class="footer-contact-card">
+                        <p class="text-white/80 mb-6">Bereit, Ihr Wachstum zu beschleunigen?
+                            Lassen Sie uns darüber sprechen, wie wir helfen können.</p>
+                        <a href="./contact.html" class="btn btn-primary w-full mb-6">Kostenloses Beratungsgespräch</a>
+                        <div class="space-y-4">
+                            <a href="mailto:hello@goexpandia.com"
+                                class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                                hello@goexpandia.com
+                            </a>
+                            <a href="mailto:hello@goexpandia.com"
+                                class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                                E-Mail schreiben
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="flex gap-6 text-sm items-center">
-                <span class="text-white/60 text-xs">Teil von Remova Inc.</span>
-                <a href="./privacy-policy.html" class="hover:text-primary transition-colors">Datenschutzrichtlinie</a>
-                <a href="./terms-of-service.html" class="hover:text-primary transition-colors">Nutzungsbedingungen</a>
-                <a href="./cookie-policy.html" class="hover:text-primary transition-colors">Cookie-Richtlinie</a>
+
+            <!-- Bottom Bar -->
+            <div
+                class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/60">
+                <div class="text-sm">
+                    &copy; 2026 Go Expandia. Alle Rechte vorbehalten.
+                </div>
+                <div class="flex gap-6 text-sm items-center">
+                    <span class="text-white/60 text-xs">Teil von Remova Inc.</span>
+                    <a href="./privacy-policy.html"
+                        class="hover:text-primary transition-colors">Datenschutzrichtlinie</a>
+                    <a href="./terms-of-service.html"
+                        class="hover:text-primary transition-colors">Nutzungsbedingungen</a>
+                    <a href="./cookie-policy.html" class="hover:text-primary transition-colors">Cookie-Richtlinie</a>
+                </div>
+            </div>
+            <div class="mt-4 text-xs text-white/60 text-center">
+                Authorized domains: www.goexpandia.com www.expandia.ch
             </div>
         </div>
-        <div class="mt-4 text-xs text-white/60 text-center">
-            Zugelassene Domains: www.goexpandia.com www.expandia.ch
-        </div>
-    </div>
-</footer>
-<script src="./dist/js/contact.js"></script>
-    
+    </footer>
+    <script src="../dist/js/contact.js"></script>
+
     <script src="../dist/js/index.js"></script>
-    
+
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/6911e3f950ba1a195e0a2c28/1j9mu527m';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/6911e3f950ba1a195e0a2c28/1j9mu527m';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
     </script>
     <!--End of Tawk.to Script-->
-    
+
     <!-- Lucide Icons & Vivus Init -->
     <script>
-      lucide.createIcons();
-      
-      // Initialize Vivus on hover for all Lucide icons
-      document.addEventListener('DOMContentLoaded', function() {
-          setTimeout(function() {
-              const icons = document.querySelectorAll('.lucide');
-              icons.forEach(icon => {
-                  // Only animate if it's an SVG
-                  if(icon.tagName.toLowerCase() === 'svg') {
-                      // Trigger animation on hover
-                      icon.parentElement.addEventListener('mouseenter', () => {
-                          new Vivus(icon, {
-                              duration: 50,
-                              type: 'oneByOne',
-                              start: 'autostart',
-                              animTimingFunction: Vivus.EASE
-                          });
-                      });
-                      
-                      // Also trigger on load for hero icons
-                      if (icon.closest('.buzz-card')) {
-                           new Vivus(icon, {
-                              duration: 100,
-                              type: 'oneByOne',
-                              start: 'autostart'
-                          });
-                      }
-                  }
-              });
-          }, 100);
-      });
+        lucide.createIcons();
+
+        // Initialize Vivus on hover for all Lucide icons
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function () {
+                const icons = document.querySelectorAll('.lucide');
+                icons.forEach(icon => {
+                    // Only animate if it's an SVG
+                    if (icon.tagName.toLowerCase() === 'svg') {
+                        // Trigger animation on hover
+                        icon.parentElement.addEventListener('mouseenter', () => {
+                            new Vivus(icon, {
+                                duration: 50,
+                                type: 'oneByOne',
+                                start: 'autostart',
+                                animTimingFunction: Vivus.EASE
+                            });
+                        });
+
+                        // Also trigger on load for hero icons
+                        if (icon.closest('.buzz-card')) {
+                            new Vivus(icon, {
+                                duration: 100,
+                                type: 'oneByOne',
+                                start: 'autostart'
+                            });
+                        }
+                    }
+                });
+            }, 100);
+        });
     </script>
 
-    
+
+
+    <!-- Init Lucide Icons -->
+    <script>
+        lucide.createIcons();
+        if (typeof Vivus !== 'undefined') {
+            new Vivus('my-svg-id', { duration: 200, file: 'link/to/my.svg' }); // Optional if needed
+        }
+    </script>
 </body>
 </html>
