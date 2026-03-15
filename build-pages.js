@@ -822,7 +822,7 @@ function buildServiceCityPages() {
                 const painPoints = contentData.pain_points.map(point => `
                     <div class="flex gap-3 items-start">
                         <span class="text-error text-xl">⚠️</span>
-                        <p>${point.replace(/\{\{CITY_NAME\}\}/g, city)}</p>
+                        <p>${point.replace(/\{\{CITY_NAME\}\}/g, city).replace(/\{\{COUNTRY_NAME\}\}/g, country)}</p>
                     </div>
                 `).join('');
 
@@ -833,10 +833,10 @@ function buildServiceCityPages() {
                         return `
                         <div class="flex gap-3">
                             <span class="text-secondary text-xl">✓</span>
-                            <p><strong class="text-secondary-content">${parts[1]}</strong> ${parts[2].replace(/\{\{CITY_NAME\}\}/g, city)}</p>
+                            <p><strong class="text-secondary-content">${parts[1]}</strong> ${parts[2].replace(/\{\{CITY_NAME\}\}/g, city).replace(/\{\{COUNTRY_NAME\}\}/g, country)}</p>
                         </div>`;
                     }
-                    return `<p>${benefit}</p>`;
+                    return `<p>${benefit.replace(/\{\{CITY_NAME\}\}/g, city).replace(/\{\{COUNTRY_NAME\}\}/g, country)}</p>`;
                 }).join('');
 
                 const faq = contentData.faq.map(item => `
@@ -877,12 +877,14 @@ function buildServiceCityPages() {
                 const res = extractAndRemoveSchemas(templateContent, `service-city-landing-template`);
                 let content = res.cleanContent;
                 const extractedSchemas = res.extractedSchemas;
+                const basePath = (lang === 'de' || lang === 'fr') ? '../' : './';
 
                 // Replacements
                 content = content.replace(/\{\{SERVICE_NAME\}\}/g, service.name);
                 content = content.replace(/\{\{SERVICE_ICON\}\}/g, service.icon);
                 content = content.replace(/\{\{CITY_NAME\}\}/g, city);
                 content = content.replace(/\{\{COUNTRY_NAME\}\}/g, country);
+                content = content.replace(/\{\{BASE_PATH\}\}/g, basePath);
                 content = content.replace('{{INTRO_TEXT}}', intro);
                 content = content.replace('{{PAIN_POINTS_LIST}}', painPoints);
                 content = content.replace('{{BENEFITS_LIST}}', benefits);
@@ -899,7 +901,6 @@ function buildServiceCityPages() {
                 pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
                 pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
 
-                const basePath = (lang === 'de' || lang === 'fr') ? '../' : './';
                 const logoPath = (lang === 'de' || lang === 'fr') ? '../go-expandia-logo.png' : 'go-expandia-logo.png';
                 htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
                 const turkishServicesPath = './';
@@ -1347,6 +1348,9 @@ function buildCityPages() {
         // Intro paragraph (unique per region, mentions city)
         const introParagraph = `We help B2B companies reach corporate enterprises, manufacturers, and industrial buyers across ${region}. Whether you're targeting decision-makers in ${city} or expanding across ${country}, our lead generation services deliver qualified sales meetings with buyers who have genuine interest and budget.`;
 
+        // Common replacements
+        const basePath = './';
+
         // Replace all placeholders
         content = content.replace(/\{\{CITY_NAME\}\}/g, city);
         content = content.replace(/\{\{COUNTRY_NAME\}\}/g, country);
@@ -1355,6 +1359,9 @@ function buildCityPages() {
         content = content.replace(/\{\{HERO_IMAGE\}\}/g, image);
         content = content.replace(/\{\{CITY_SLUG\}\}/g, slug);
         content = content.replace(/\{\{NEARBY_CITIES\}\}/g, nearbyHtml);
+        content = content.replace(/\{\{BASE_PATH\}\}/g, basePath);
+        content = content.replace(/\{\{LATEST_BLOG_POSTS\}\}/g, latestBlogPosts.replace(/\{\{BASE_PATH\}\}/g, basePath));
+        content = content.replace(/\{\{FOOTER\}\}/g, '');
 
         // Dynamic content from region
         content = content.replace(/\{\{TARGET_HEADLINE\}\}/g, regionData.targetHeadline);
@@ -1384,7 +1391,6 @@ function buildCityPages() {
         let pageFooter = footerEN;
 
         // Common replacements
-        const basePath = './';
         const logoPath = 'go-expandia-logo.png';
         htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
 
@@ -2042,6 +2048,12 @@ function buildCityLandingPages() {
             htmlTemplate = htmlTemplate.replace(/{{COUNTRY_NAME}}/g, country);
             htmlTemplate = htmlTemplate.replace(/{{REGION_NAME}}/g, region);
             htmlTemplate = htmlTemplate.replace(/{{LANDMARK}}/g, landmark);
+            const basePath = (lang === 'de' || lang === 'fr') ? '../' : './';
+            htmlTemplate = htmlTemplate.replace(/{{BASE_PATH}}/g, basePath);
+            htmlTemplate = htmlTemplate.replace(/{{VISION_MISSION_PAGE}}/g, 'vision-mission.html');
+            htmlTemplate = htmlTemplate.replace(/{{ETHICAL_PRINCIPLES_PAGE}}/g, 'our-ethical-principles.html');
+            htmlTemplate = htmlTemplate.replace(/{{LATEST_BLOG_POSTS}}/g, latestBlogPosts.replace(/{{BASE_PATH}}/g, basePath));
+            htmlTemplate = htmlTemplate.replace(/{{FOOTER}}/g, '');
 
             // Generate and insert unique SEO content
             const uniqueContent = generateUniqueCityContent(city, country, region);
@@ -2115,12 +2127,17 @@ function buildCityLandingPages() {
             pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
             pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
 
+            const logoPath = (lang === 'de' || lang === 'fr') ? '../go-expandia-logo.png' : 'go-expandia-logo.png';
+            pageNavigation = pageNavigation.replace(/{{BASE_PATH}}/g, basePath);
+            pageNavigation = pageNavigation.replace(/{{VISION_MISSION_PAGE}}/g, 'vision-mission.html');
+            pageNavigation = pageNavigation.replace(/{{ETHICAL_PRINCIPLES_PAGE}}/g, 'our-ethical-principles.html');
+            pageNavigation = pageNavigation.replace(/{{LOGO_PATH}}/g, logoPath);
+            pageFooter = pageFooter.replace(/{{BASE_PATH}}/g, basePath);
+            pageFooter = pageFooter.replace(/{{LOGO_PATH}}/g, logoPath);
+
             // Replace placeholders
             fullHtmlTemplate = fullHtmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
             fullHtmlTemplate = fullHtmlTemplate.replace('{{FOOTER}}', pageFooter);
-
-            const basePath = (lang === 'de' || lang === 'fr') ? '../' : './';
-            const logoPath = (lang === 'de' || lang === 'fr') ? '../go-expandia-logo.png' : 'go-expandia-logo.png';
             fullHtmlTemplate = fullHtmlTemplate.replace(/{{BASE_PATH}}/g, basePath);
             fullHtmlTemplate = fullHtmlTemplate.replace(/{{LOGO_PATH}}/g, logoPath);
 
