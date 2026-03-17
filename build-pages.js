@@ -768,6 +768,122 @@ function deg2rad(deg) {
     return deg * (Math.PI / 180);
 }
 
+function sanitizeLandmark(landmark, cityName) {
+    const value = (landmark || '').trim();
+    const generic = new Set(['City Center', 'Central Business District', 'the city center', 'City centre']);
+    if (!value || generic.has(value)) {
+        return `${cityName} business hub`;
+    }
+    return value;
+}
+
+function buildServiceFocusedContent(serviceName) {
+    const serviceLower = serviceName.toLowerCase();
+    return {
+        intro: [
+            `Businesses in {{CITY_NAME}} need ${serviceLower} that is measurable, fast to deploy, and aligned with local buying behavior in {{COUNTRY_NAME}}.`,
+            `Our team builds and manages a practical ${serviceLower} system so your team can focus on pipeline, delivery, and client growth instead of tool friction.`,
+            `We tailor implementation, reporting, and optimization for {{CITY_NAME}} so you can scale with predictable execution and clear ROI.`
+        ],
+        pain_points: [
+            `Inconsistent execution and unclear ownership across ${serviceLower} workflows in {{CITY_NAME}}.`,
+            `Low visibility into performance signals, making it hard to improve conversion outcomes in {{COUNTRY_NAME}}.`,
+            `Too much manual work and fragmented tooling that slows growth and increases operating cost.`
+        ],
+        benefits: [
+            `**Operational Clarity:** We map and standardize your ${serviceLower} workflow for consistent delivery in {{CITY_NAME}}.`,
+            `**Faster Iteration:** Continuous testing and optimization improves quality, speed, and conversion performance over time.`,
+            `**Measurable Results:** Clear dashboards and reporting tie activity to pipeline and revenue outcomes in {{COUNTRY_NAME}}.`
+        ],
+        faq: [
+            {
+                q: `What is included in your ${serviceName} setup for {{CITY_NAME}} businesses?`,
+                a: `We provide setup, implementation, workflow design, KPI tracking, and ongoing optimization tailored to your team, market, and goals in {{CITY_NAME}}.`
+            },
+            {
+                q: `How long does it take to launch and see first results in {{CITY_NAME}}?`,
+                a: `Most clients launch the core system quickly, then see progressive improvement as we optimize targeting, messaging, and execution quality.`
+            },
+            {
+                q: `Can you adapt the program for our sector in {{COUNTRY_NAME}}?`,
+                a: `Yes. We tailor strategy, operations, and reporting to your ICP, sales motion, and compliance needs in {{COUNTRY_NAME}}.`
+            }
+        ]
+    };
+}
+
+function normalizeServiceContent(service, contentData) {
+    if (!contentData) return contentData;
+
+    const joinedIntro = (contentData.intro || []).join(' ');
+    const joinedFaq = (contentData.faq || []).map(item => `${item.q} ${item.a}`).join(' ');
+    const hasITMismatch = /Turnkey IT Infrastructure/i.test(`${joinedIntro} ${joinedFaq}`);
+
+    if (service.id !== 'turnkey-it' && hasITMismatch) {
+        return buildServiceFocusedContent(service.name);
+    }
+
+    return contentData;
+}
+
+
+function clearUnresolvedTemplateTokens(html) {
+    return html.replace(/\{\{[^{}]+\}\}/g, '');
+}
+
+function removeEmptyNearbySection(content) {
+    return content.replace(/\n<!-- Nearby Cities -->[\s\S]*?<\/section>\s*/g, '\n');
+}
+
+
+
+// Whitelist for high-potential Service x City pages (derived from SEO opportunity list)
+// Note: non-service pages (blog/contact/solutions/etc.) are handled by other build steps.
+const PRIORITY_SERVICE_CITY_PATHS = new Set([
+    'managed-it-services-coventry',
+    'managed-it-services-springfield',
+    'managed-it-services-glasgow',
+    'managed-it-services-dudley',
+    'managed-it-services-gold-coast',
+    'managed-it-services-edinburgh',
+    'managed-it-services-honolulu',
+    'managed-it-services-buffalo',
+    'de/managed-it-services-charleston',
+    'managed-it-services-plymouth',
+    'managed-it-services-elk-grove',
+    'turnkey-it-infrastructure-philadelphia',
+    'managed-it-services-columbia',
+    'managed-it-services-provo',
+    'de/website-care-services-wolverhampton',
+    'managed-it-services-chandler',
+    'website-care-services-liverpool',
+    'managed-it-services-charleston',
+    'managed-it-services-fort-collins',
+    'managed-it-services-lincoln',
+    'managed-it-services-canberra',
+    'managed-it-services-port-st-lucie',
+    'de/managed-it-services-baghdad',
+    'website-care-services-rotterdam',
+    'de/managed-it-services-mnster',
+    'fr/managed-it-services-cardiff',
+    'managed-it-services-kingston-upon-hull',
+    'managed-it-services-st-louis',
+    'managed-it-services-swansea',
+    'managed-it-services-baton-rouge',
+    'managed-it-services-modesto',
+    'de/managed-it-services-doncaster',
+    'managed-it-services-gainesville',
+    'fr/website-care-services-edinburgh',
+    'turnkey-it-infrastructure-miami',
+    'managed-it-services-aberdeen',
+    'managed-it-services-santa-clarita',
+    'de/managed-it-services-oldenburg',
+    'b2b-lead-generation-st-louis',
+    'managed-it-services-baltimore',
+    'b2b-lead-generation-dublin',
+    'managed-it-services-lafayette'
+]);
+
 // -------------------------------------------------------------------------
 // NEW: Build Service x City Pages (Multi-Language)
 // -------------------------------------------------------------------------
@@ -782,9 +898,10 @@ function buildServiceCityPages() {
     languages.forEach(lang => {
         services.forEach(service => {
             // Get content for specific language, fallback to EN if missing
-            const contentData = (serviceContent[service.id] && serviceContent[service.id][lang])
+            const rawContentData = (serviceContent[service.id] && serviceContent[service.id][lang])
                 ? serviceContent[service.id][lang]
                 : (serviceContent[service.id] ? serviceContent[service.id]['en'] : null);
+            const contentData = normalizeServiceContent(service, rawContentData);
 
             if (!contentData) {
                 console.warn(`No content found for service ID: ${service.id} (Lang: ${lang})`);
@@ -872,6 +989,11 @@ function buildServiceCityPages() {
                     return `<a href="./${nearbySlug}.html" class="link link-hover hover:text-primary transition-colors">${c.city}</a>`;
                 }).join(' • ');
 
+                const generatedPath = lang === 'en' ? slug : `${lang}/${slug}`;
+                if (!PRIORITY_SERVICE_CITY_PATHS.has(generatedPath)) {
+                    return;
+                }
+
                 // Build HTML
                 let htmlTemplate = createHTMLTemplate(lang);
                 const res = extractAndRemoveSchemas(templateContent, `service-city-landing-template`);
@@ -891,7 +1013,11 @@ function buildServiceCityPages() {
                 content = content.replace('{{FAQ_LIST}}', faq);
                 content = content.replace('{{NEARBY_CITIES_LINKS}}', nearbyLinks);
                 content = content.replace(/\{\{CITY_POPULATION\}\}/g, cityData.population || 'growing');
-                content = content.replace(/\{\{CITY_LANDMARK\}\}/g, cityData.landmark || 'the city center');
+                content = content.replace(/\{\{CITY_LANDMARK\}\}/g, sanitizeLandmark(cityData.landmark, city));
+
+                if (!nearbyLinks.trim()) {
+                    content = content.replace(/\n<!-- Nearby Cities CTA -->[\s\S]*?<\/section>\n\n/, '\n');
+                }
 
                 // Navigation/Footer
                 let pageNavigation = lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
@@ -1360,6 +1486,10 @@ function buildCityPages() {
         content = content.replace(/\{\{CITY_SLUG\}\}/g, slug);
         content = content.replace(/\{\{NEARBY_CITIES\}\}/g, nearbyHtml);
         content = content.replace(/\{\{BASE_PATH\}\}/g, basePath);
+
+        if (!nearbyHtml.trim()) {
+            content = removeEmptyNearbySection(content);
+        }
         content = content.replace(/\{\{LATEST_BLOG_POSTS\}\}/g, latestBlogPosts.replace(/\{\{BASE_PATH\}\}/g, basePath));
         content = content.replace(/\{\{FOOTER\}\}/g, '');
 
@@ -1459,6 +1589,7 @@ function buildCityPages() {
         });
 
         htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, JSON.stringify(finalSchemas, null, 2));
+        htmlTemplate = clearUnresolvedTemplateTokens(htmlTemplate);
 
         // Write file
         fs.writeFileSync(`${slug}.html`, htmlTemplate, 'utf8');

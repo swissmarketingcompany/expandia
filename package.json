@@ -8,7 +8,8 @@
     "build:pages": "node build-pages.js",
     "build": "npm run build:css && npm run build:js && npm run build:pages",
     "test": "echo 'No tests specified'",
-    "audit:placeholders": "node scripts/audit-generated-placeholders.js"
+    "audit:placeholders": "node scripts/audit-generated-placeholders.js",
+    "audit:city-content": "node scripts/audit-city-landing-content.js"
   },
   "engines": {
     "node": ">=18.0.0",
