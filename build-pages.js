@@ -836,6 +836,54 @@ function removeEmptyNearbySection(content) {
 }
 
 
+
+// Whitelist for high-potential Service x City pages (derived from SEO opportunity list)
+// Note: non-service pages (blog/contact/solutions/etc.) are handled by other build steps.
+const PRIORITY_SERVICE_CITY_PATHS = new Set([
+    'managed-it-services-coventry',
+    'managed-it-services-springfield',
+    'managed-it-services-glasgow',
+    'managed-it-services-dudley',
+    'managed-it-services-gold-coast',
+    'managed-it-services-edinburgh',
+    'managed-it-services-honolulu',
+    'managed-it-services-buffalo',
+    'de/managed-it-services-charleston',
+    'managed-it-services-plymouth',
+    'managed-it-services-elk-grove',
+    'turnkey-it-infrastructure-philadelphia',
+    'managed-it-services-columbia',
+    'managed-it-services-provo',
+    'de/website-care-services-wolverhampton',
+    'managed-it-services-chandler',
+    'website-care-services-liverpool',
+    'managed-it-services-charleston',
+    'managed-it-services-fort-collins',
+    'managed-it-services-lincoln',
+    'managed-it-services-canberra',
+    'managed-it-services-port-st-lucie',
+    'de/managed-it-services-baghdad',
+    'website-care-services-rotterdam',
+    'de/managed-it-services-mnster',
+    'fr/managed-it-services-cardiff',
+    'managed-it-services-kingston-upon-hull',
+    'managed-it-services-st-louis',
+    'managed-it-services-swansea',
+    'managed-it-services-baton-rouge',
+    'managed-it-services-modesto',
+    'de/managed-it-services-doncaster',
+    'managed-it-services-gainesville',
+    'fr/website-care-services-edinburgh',
+    'turnkey-it-infrastructure-miami',
+    'managed-it-services-aberdeen',
+    'managed-it-services-santa-clarita',
+    'de/managed-it-services-oldenburg',
+    'b2b-lead-generation-st-louis',
+    'managed-it-services-baltimore',
+    'b2b-lead-generation-dublin',
+    'managed-it-services-lafayette'
+]);
+
 // -------------------------------------------------------------------------
 // NEW: Build Service x City Pages (Multi-Language)
 // -------------------------------------------------------------------------
@@ -940,6 +988,11 @@ function buildServiceCityPages() {
                     // Yes.
                     return `<a href="./${nearbySlug}.html" class="link link-hover hover:text-primary transition-colors">${c.city}</a>`;
                 }).join(' • ');
+
+                const generatedPath = lang === 'en' ? slug : `${lang}/${slug}`;
+                if (!PRIORITY_SERVICE_CITY_PATHS.has(generatedPath)) {
+                    return;
+                }
 
                 // Build HTML
                 let htmlTemplate = createHTMLTemplate(lang);
