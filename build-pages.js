@@ -94,7 +94,7 @@ console.log(`✅ Successfully loaded footers for all languages`);
 console.log(`✅ Successfully loaded latest blog posts snippet`);
 
 function normalizeCitySlug(slug) {
-    return slug.replace(/^b2b-lead-generation-/, '');
+    return slug;
 }
 
 // Function to generate unique SEO content for each city
@@ -111,34 +111,34 @@ function generateUniqueCityContent(cityName, countryName, regionName) {
     // Content variations - 5 different templates
     const templates = [
         {
-            p1: `${cityName} represents a dynamic business environment in ${regionName}, where companies are increasingly leveraging technology to gain competitive advantages. The ${countryName} market demands sophisticated growth infrastructure, particularly as businesses in ${cityName} navigate digital transformation and market expansion challenges.`,
-            p2: `Go Expandia delivers enterprise-grade growth solutions tailored for ${cityName}'s business landscape. Our comprehensive suite includes secure IT infrastructure deployment, high-performance lead generation systems, and AI-driven content automation. We've designed our services specifically to address the unique operational demands of companies operating in ${countryName}.`,
-            p3: `From startups establishing their foothold in ${cityName} to established enterprises scaling across ${regionName}, our rapid 48-hour deployment model eliminates traditional infrastructure bottlenecks. Our cold email systems deliver qualified leads while our RevOps platform streamlines your entire sales operation, providing ${cityName} businesses with the technical foundation needed for sustainable growth.`,
-            p4: `${cityName} companies partnering with Go Expandia access institutional-grade technology previously available only to large corporations. With comprehensive 5-year technical support and a portfolio exceeding 100 specialized growth products, we function as your dedicated infrastructure partner. Join forward-thinking ${cityName} businesses accelerating their market presence through Go Expandia's proven systems and deep ${countryName} market expertise.`
+            p1: `${cityName} represents a dynamic business environment in ${regionName}, where companies are increasingly leveraging technology to gain competitive advantages. The ${countryName} market demands sophisticated infrastructure, particularly as businesses in ${cityName} navigate digital transformation and operational modernization.`,
+            p2: `Go Expandia delivers enterprise-grade technology solutions tailored for ${cityName}'s business landscape. Our comprehensive suite includes secure IT infrastructure deployment, enterprise AI automation, and custom software development. We've designed our services specifically to address the unique operational demands of companies in ${countryName}.`,
+            p3: `From startups establishing their foothold in ${cityName} to established enterprises scaling across ${regionName}, our rapid 48-hour deployment model eliminates traditional infrastructure bottlenecks. We install and configure IT systems, AI workspaces, and custom software without lengthy development cycles, so your team can operate from day one.`,
+            p4: `${cityName} companies partnering with Go Expandia access institutional-grade technology previously available only to large corporations. With comprehensive 5-year technical support and a portfolio exceeding 100 specialized solutions, we function as your dedicated infrastructure partner throughout ${countryName} and beyond.`
         },
         {
-            p1: `As a key commercial center in ${regionName}, ${cityName} offers substantial opportunities for businesses ready to scale. However, success in the ${countryName} market requires more than ambition—it demands robust technical infrastructure and systematic growth processes that many ${cityName} companies struggle to implement efficiently.`,
-            p2: `Our turnkey infrastructure services eliminate these barriers for ${cityName} businesses. Go Expandia provides complete IT security frameworks, automated lead acquisition systems, and scalable content production capabilities. Each solution is configured for the specific regulatory and operational requirements of the ${countryName} market, ensuring compliance and optimal performance.`,
-            p3: `Whether you're launching operations in ${cityName} or expanding throughout ${regionName}, our infrastructure-as-a-service model delivers immediate capability. Deploy enterprise email systems, activate automated outreach campaigns, or implement comprehensive CRM solutions—all within 48 hours. ${cityName} businesses gain the technical capabilities typically requiring months of development and significant capital investment.`,
-            p4: `Companies in ${cityName} benefit from our extensive product ecosystem and sustained technical partnership. Beyond initial deployment, our 5-year support commitment ensures your infrastructure evolves with your business. With over 100 growth products available, ${cityName} enterprises can continuously enhance their capabilities. Experience the competitive advantage that comes from having dedicated growth infrastructure expertise in ${countryName}.`
+            p1: `As a key commercial center in ${regionName}, ${cityName} offers substantial opportunities for businesses ready to scale. However, success in the ${countryName} market requires more than ambition—it demands robust technical infrastructure and secure systems that many ${cityName} companies struggle to implement efficiently.`,
+            p2: `Our turnkey infrastructure services eliminate these barriers for ${cityName} businesses. Go Expandia provides complete IT security frameworks, enterprise AI infrastructure, and custom software built for your operational requirements. Each solution is configured for the specific regulatory and operational needs of the ${countryName} market.`,
+            p3: `Whether you're launching operations in ${cityName} or expanding throughout ${regionName}, our infrastructure-as-a-service model delivers immediate capability. Deploy Microsoft 365, activate AI automation, or integrate your ERP and CRM systems—all within 48 hours. ${cityName} businesses gain technical capabilities typically requiring months of development.`,
+            p4: `Companies in ${cityName} benefit from our extensive product ecosystem and sustained technical partnership. Beyond initial deployment, our 5-year support commitment ensures your infrastructure evolves with your business. With over 100 solutions available, ${cityName} enterprises can continuously enhance their capabilities in ${countryName}.`
         },
         {
-            p1: `${cityName} stands at the intersection of traditional business practices and modern digital commerce in ${regionName}. Companies here face the dual challenge of maintaining operational excellence while adopting new technologies that drive growth. This transformation requires specialized infrastructure that most ${cityName} businesses find difficult to develop internally.`,
-            p2: `Go Expandia bridges this gap with ready-to-deploy growth infrastructure designed for ${cityName}'s market dynamics. Our services span secure workplace technology, systematic lead generation, and automated content creation—all calibrated for ${countryName} business requirements. We understand the specific challenges of operating in ${regionName} and deliver solutions that work from day one.`,
-            p3: `For ${cityName} businesses, speed matters. Our 48-hour deployment standard means you can activate critical growth systems without lengthy implementation cycles. From cold email infrastructure generating qualified prospects to RevOps platforms managing your entire revenue operation, we provide the technical foundation that ${cityName} companies need to compete effectively in ${regionName} and beyond.`,
-            p4: `${cityName} enterprises choosing Go Expandia gain more than technology—they gain a strategic infrastructure partner. Our 5-year technical support ensures continuous optimization, while our 100+ product portfolio provides solutions for every growth stage. Join successful ${cityName} businesses that have transformed their market approach through systematic infrastructure deployment and expert ${countryName} market guidance.`
+            p1: `${cityName} stands at the intersection of traditional business practices and modern digital operations in ${regionName}. Companies here face the dual challenge of maintaining operational excellence while adopting secure technology that drives efficiency. This transformation requires specialized infrastructure that most ${cityName} businesses find difficult to build internally.`,
+            p2: `Go Expandia bridges this gap with ready-to-deploy infrastructure designed for ${cityName}'s market. Our services span secure workplace technology, enterprise AI systems, and custom software development—all calibrated for ${countryName} compliance requirements. We understand the specific challenges of operating in ${regionName} and deliver solutions that work from day one.`,
+            p3: `For ${cityName} businesses, speed matters. Our 48-hour deployment standard means you can activate critical systems without lengthy implementation cycles. From endpoint security and cloud migration to on-premise AI and custom dashboards, we provide the technical foundation that ${cityName} companies need to operate effectively in ${regionName}.`,
+            p4: `${cityName} enterprises choosing Go Expandia gain more than technology—they gain a strategic infrastructure partner. Our 5-year technical support ensures continuous optimization, while our 100+ product portfolio provides solutions for every growth stage. Join ${cityName} businesses that have transformed their operations through systematic infrastructure deployment.`
         },
         {
-            p1: `The business landscape in ${cityName} continues evolving rapidly, creating both opportunities and challenges for companies in ${regionName}. Success increasingly depends on having the right technical infrastructure to support growth initiatives, yet many ${cityName} businesses lack the resources or expertise to build these systems effectively.`,
-            p2: `This is where Go Expandia delivers value for ${cityName} companies. We provide complete, turnkey infrastructure covering IT security, lead generation automation, and AI-powered content systems. Each solution is specifically configured for ${countryName} market conditions, regulatory requirements, and business practices, ensuring seamless integration with your existing operations.`,
-            p3: `${cityName} businesses can deploy enterprise-grade systems in just 48 hours, bypassing the traditional development timeline. Whether implementing cold email infrastructure for systematic outreach, RevOps platforms for sales optimization, or secure workplace technology, companies in ${cityName} gain immediate operational capability. This rapid deployment model is particularly valuable in ${regionName}'s competitive markets.`,
-            p4: `Beyond initial implementation, ${cityName} companies receive sustained technical partnership through our 5-year support commitment. Our portfolio of 100+ growth products ensures you have access to advanced capabilities as your business scales. Experience how dedicated growth infrastructure expertise transforms business development for ${cityName} enterprises operating in ${countryName}.`
+            p1: `The business landscape in ${cityName} continues evolving rapidly, creating both opportunities and challenges for companies in ${regionName}. Success increasingly depends on having the right technical infrastructure to support growth, yet many ${cityName} businesses lack the resources or expertise to build secure, scalable systems.`,
+            p2: `This is where Go Expandia delivers value for ${cityName} companies. We provide complete, turnkey infrastructure covering IT security, AI automation, and custom software. Each solution is specifically configured for ${countryName} market conditions and regulatory requirements, ensuring seamless integration with your existing operations.`,
+            p3: `${cityName} businesses can deploy enterprise-grade systems in just 48 hours, bypassing traditional development timelines. Whether securing endpoints, migrating to the cloud, building an internal AI workspace, or modernizing a legacy system, companies in ${cityName} gain immediate operational capability. This rapid deployment model is particularly valuable in ${regionName}'s competitive markets.`,
+            p4: `Beyond initial implementation, ${cityName} companies receive sustained technical partnership through our 5-year support commitment. Our portfolio of 100+ solutions ensures you have access to advanced capabilities as your business scales. Experience how dedicated infrastructure expertise transforms operations for ${cityName} enterprises in ${countryName}.`
         },
         {
-            p1: `${cityName} has emerged as an important business hub within ${regionName}, attracting companies seeking growth opportunities in ${countryName}. However, scaling successfully requires more than market access—it demands sophisticated infrastructure for lead generation, customer engagement, and operational efficiency that many ${cityName} businesses find challenging to develop.`,
-            p2: `Go Expandia specializes in delivering this infrastructure to ${cityName} companies. Our comprehensive solutions include enterprise IT security, automated lead generation systems, and AI-driven content production. We've engineered each service specifically for ${countryName} market requirements, providing ${cityName} businesses with tools that work effectively from implementation.`,
-            p3: `Speed defines our approach. ${cityName} businesses can activate complete growth infrastructure within 48 hours, eliminating lengthy development cycles. From cold email systems generating qualified leads to RevOps platforms streamlining sales processes, we deliver the technical foundation that ${cityName} companies need for competitive advantage in ${regionName}.`,
-            p4: `Partnering with Go Expandia gives ${cityName} businesses access to enterprise technology and sustained expertise. Our 5-year technical support ensures your infrastructure remains optimized, while our 100+ product portfolio provides continuous capability enhancement. Join ${cityName} companies that have accelerated their growth through systematic infrastructure deployment and specialized ${countryName} market knowledge.`
+            p1: `${cityName} has emerged as an important business hub within ${regionName}, attracting companies seeking growth opportunities in ${countryName}. However, scaling successfully requires more than market access—it demands sophisticated infrastructure for IT security, AI-powered operations, and custom software that many ${cityName} businesses find challenging to develop.`,
+            p2: `Go Expandia specializes in delivering this infrastructure to ${cityName} companies. Our comprehensive solutions include enterprise IT security, corporate AI infrastructure, and custom-built applications. We've engineered each service for ${countryName} market requirements, providing ${cityName} businesses with tools that work effectively from day one.`,
+            p3: `Speed defines our approach. ${cityName} businesses can activate complete infrastructure within 48 hours, eliminating lengthy development cycles. From Microsoft 365 and zero-trust security to agentic AI workflows and ERP integrations, we deliver the technical foundation that ${cityName} companies need for competitive advantage in ${regionName}.`,
+            p4: `Partnering with Go Expandia gives ${cityName} businesses access to enterprise technology and sustained expertise. Our 5-year technical support ensures your infrastructure remains optimized, while our 100+ solution portfolio provides continuous capability enhancement. Join ${cityName} companies that have accelerated their operations through systematic, expert-led infrastructure deployment.`
         }
     ];
 
@@ -427,13 +427,701 @@ const SERVICE_CATEGORIES = {
     }
 };
 
+const SOLUTION_PAGE_BLUEPRINTS = {
+    'managed-it-services': {
+        category: 'it-solutions',
+        hero: {
+            badge: 'Secure. Compliant. Enterprise-grade.',
+            titlePrefix: 'IT Solutions',
+            titleSuffix: 'That Keep Teams Online',
+            description: 'We build secure, uninterrupted, and plug-and-play cloud and network infrastructure for companies that need reliability, protection, and support.',
+            image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80',
+            alt: 'Enterprise IT infrastructure',
+            primaryCtaText: 'Get Free IT Audit',
+            primaryCtaLink: 'contact.html',
+            secondaryCtaText: 'Explore Capabilities',
+            secondaryCtaLink: '#capabilities'
+        },
+        sections: [
+            {
+                type: 'cards',
+                id: 'capabilities',
+                sectionClass: 'bg-base-100',
+                heading: 'Everything Your IT Stack Needs',
+                intro: 'From Microsoft 365 management to disaster recovery, we cover the full operating layer.',
+                gridClass: 'md:grid-cols-2',
+                cards: [
+                    { title: 'Microsoft 365 & Workspace Management', description: 'End-to-end setup, licensing, and administration for your corporate email and office stack.', borderClass: 'border-primary' },
+                    { title: 'Cloud Architecture & Azure Transition', description: 'Migrate on-premise servers to secure and scalable Azure or AWS environments.', borderClass: 'border-secondary' },
+                    { title: 'Endpoint Security', description: 'Centralized protection for corporate laptops, desktops, and mobile devices.', borderClass: 'border-accent' },
+                    { title: 'Advanced Email Security', description: 'Automated defense against phishing, ransomware, spoofing, and spam attacks.', borderClass: 'border-primary' },
+                    { title: 'Zero Trust Architecture', description: 'Strong authentication and access controls that reduce internal and external attack paths.', borderClass: 'border-secondary' },
+                    { title: 'Disaster Recovery & Business Continuity', description: 'Backups and restore workflows designed to recover data in seconds, not days.', borderClass: 'border-neutral' },
+                    { title: 'Continuous Vulnerability Scanning', description: 'Autonomous scanning that identifies security flaws before attackers do.', borderClass: 'border-primary' },
+                    { title: 'GDPR Compliance Infrastructure', description: 'Logging and technical controls aligned with European and local privacy standards.', borderClass: 'border-secondary' },
+                    { title: 'Secure Network & VPN Setup', description: 'High-speed, encrypted connectivity for remote teams and branch offices.', borderClass: 'border-accent' },
+                    { title: '24/7 IT Support & Monitoring', description: 'Remote helpdesk and monitoring that responds instantly when issues appear.', borderClass: 'border-neutral' }
+                ]
+            },
+            {
+                type: 'split',
+                id: 'why-choose-us',
+                sectionClass: 'bg-base-200',
+                heading: 'Infrastructure the Business Can Depend On',
+                bullets: [
+                    { icon: 'shield-check', title: 'Enterprise security by default', description: 'We harden the stack from day one, not after problems show up.' },
+                    { icon: 'clock-3', title: 'Fast deployment', description: 'We move quickly from assessment to implementation so your team can operate without delay.' },
+                    { icon: 'headphones', title: 'Always-on support', description: '24/7 monitoring and a support path that actually resolves issues.' }
+                ],
+                image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
+                alt: 'Managed IT support'
+            }
+        ],
+        cta: {
+            heading: 'Need a secure IT foundation?',
+            description: 'We can design the stack, migrate the systems, and keep them running.',
+            buttonText: 'Book the IT Audit'
+        }
+    },
+    'ai-content-infrastructure': {
+        category: 'ai-solutions',
+        hero: {
+            badge: 'AI automation with data control',
+            titlePrefix: 'AI Solutions',
+            titleSuffix: 'for Enterprise Teams',
+            description: 'We reduce operational headcount costs and speed up decisions by deploying secure AI systems that fit your workflows and data rules.',
+            image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
+            alt: 'Enterprise AI infrastructure',
+            primaryCtaText: 'Build AI Infrastructure',
+            primaryCtaLink: '#infrastructure',
+            secondaryCtaText: 'See AI Automation',
+            secondaryCtaLink: '#automation'
+        },
+        sections: [
+            {
+                type: 'split',
+                id: 'infrastructure',
+                sectionClass: 'bg-white',
+                heading: 'Corporate AI infrastructure, built for your company',
+                intro: 'We set up company-specific AI workspaces, on-premise models, and AI safety layers so your teams can work with confidence.',
+                leftCards: [
+                    { title: 'Corporate AI Infrastructure Setup', description: 'Secure workspaces connected to your workflow.' },
+                    { title: 'AI Data Security Layer', description: 'Stop sensitive data from training external LLMs.', id: 'security-layer' }
+                ],
+                image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80',
+                alt: 'AI operations dashboard'
+            },
+            {
+                type: 'cards',
+                id: 'automation',
+                sectionClass: 'bg-base-100',
+                heading: 'What AI can automate',
+                intro: 'We focus on systems that actually reduce manual work and improve decision speed.',
+                gridClass: 'md:grid-cols-2 lg:grid-cols-3',
+                cards: [
+                    { title: 'Agentic AI Development', description: 'Autonomous agents that execute tasks in ERP and CRM systems under company rules.' },
+                    { title: 'Smart Factory Optimization', description: 'Analyze IoT and SCADA data to reduce idle time and energy waste.' },
+                    { title: 'Sales & Marketing Automation', description: 'Instant lead qualification, proposals, and faster sales-cycle execution.' },
+                    { title: 'Customer Service Automation', description: 'Voice and chat assistants that handle routine dealer and customer questions.' },
+                    { title: 'Data Silo Automation', description: 'Capture PDFs, Excel sheets, and email data into ERP and CRM systems automatically.' },
+                    { title: 'Operational Load Reduction', description: 'Offload repetitive paperwork and manual processing to AI-enabled workflows.' }
+                ]
+            }
+        ],
+        cta: {
+            heading: 'Ready for AI that fits your operations?',
+            description: 'We build secure AI systems that improve speed without sacrificing control.',
+            buttonText: 'Talk to an AI Architect'
+        }
+    },
+    'custom-software-development': {
+        category: 'custom-software',
+        hero: {
+            badge: 'Modern systems for modern teams',
+            titlePrefix: 'Custom Software',
+            titleSuffix: 'Built Around Your Company',
+            description: 'We design and build business software that connects your systems, removes manual work, and gives teams the interfaces they need to move faster.',
+            image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&q=80',
+            alt: 'Custom software development',
+            primaryCtaText: 'Discuss Your Build',
+            primaryCtaLink: 'contact.html',
+            secondaryCtaText: 'View Capabilities',
+            secondaryCtaLink: '#capabilities'
+        },
+        sections: [
+            {
+                type: 'cards',
+                id: 'capabilities',
+                sectionClass: 'bg-base-100',
+                heading: 'What We Build',
+                intro: 'Custom software, integrations, dashboards, portals, and internal tools that fit your processes instead of forcing new ones.',
+                gridClass: 'md:grid-cols-2 lg:grid-cols-3',
+                cards: [
+                    { id: 'erp-crm-integrations', title: 'ERP / CRM Integrations', description: 'Connect SAP, Salesforce, Odoo, and other systems into a single reliable workflow.' },
+                    { title: 'Digital Engineering', description: 'Algorithms and engineering software that accelerate prototyping and R&D.' },
+                    { title: 'Dealer & Customer Portals', description: 'Self-service platforms for orders, stock, service requests, and account access.' },
+                    { title: 'Human-in-the-Loop QA', description: 'AI-speed testing with expert review for data, content, and critical workflows.' },
+                    { id: 'legacy-modernization', title: 'Legacy Modernization', description: 'Move old software onto modern cloud architecture without losing data or continuity.' },
+                    { id: 'bi-dashboards', title: 'BI Dashboards & Internal Apps', description: 'Real-time reporting interfaces and operational apps for teams in the field and office.' },
+                    { id: 'internal-applications', title: 'Internal Operational Applications', description: 'Mobile and web apps for technicians, sales teams, and back-office operations.' },
+                    { title: 'Corporate Website Development', description: 'Fast, structured corporate websites built to support marketing and sales operations.' },
+                    { title: 'MVP Development', description: 'Build a working prototype in weeks to validate new business ideas before scaling.' }
+                ]
+            },
+            {
+                type: 'split',
+                id: 'data-architecture',
+                sectionClass: 'bg-base-200',
+                heading: 'Custom Data Architecture',
+                intro: 'Clean, categorize, and structure your company data so future AI integrations can use it safely and effectively.',
+                bullets: [
+                    { icon: 'database', title: 'Database design and normalization', description: 'Model data for maintainability and operational clarity.' },
+                    { icon: 'workflow', title: 'Data cleansing and transformation pipelines', description: 'Prepare fragmented data for reliable use across systems.' },
+                    { icon: 'layout-dashboard', title: 'ERP / CRM-ready schema planning', description: 'Structure tables and relationships around business workflows.' },
+                    { icon: 'shield-check', title: 'AI-ready data governance', description: 'Create the control layer needed for safe future AI use.' }
+                ],
+                panel: {
+                    title: 'Build path',
+                    description: 'We start with your operational pain points, map the workflow, then ship the smallest reliable version first.',
+                    steps: [
+                        'Discovery and process mapping',
+                        'Architecture and integration design',
+                        'Build, test, and launch'
+                    ]
+                }
+            }
+        ],
+        cta: {
+            heading: 'Ready to build the software your team actually needs?',
+            description: 'We can modernize what you have or design the new system from scratch.',
+            buttonText: 'Start the Project'
+        }
+    }
+};
+
+function renderSolutionCardsSection(section) {
+    const cardsHtml = section.cards.map((card, index) => {
+        const borderClass = card.borderClass || ['border-primary', 'border-secondary', 'border-accent', 'border-neutral'][index % 4];
+        const idAttr = card.id ? ` id="${card.id}"` : '';
+        return `
+            <div${idAttr} class="buzz-card p-8 bg-white shadow-lg border-t-4 ${borderClass}">
+                <h3 class="text-2xl font-bold mb-3">${card.title}</h3>
+                <p class="text-base-content/70">${card.description}</p>
+            </div>`;
+    }).join('');
+
+    return `
+<section${section.id ? ` id="${section.id}"` : ''} class="section-spacing ${section.sectionClass || 'bg-base-100'}">
+    <div class="container mx-auto container-padding">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">${section.heading}</h2>
+            <p class="text-lg text-base-content/60 max-w-3xl mx-auto">${section.intro}</p>
+        </div>
+
+        <div class="grid grid-cols-1 ${section.gridClass || 'md:grid-cols-2'} gap-8">
+            ${cardsHtml}
+        </div>
+    </div>
+</section>`;
+}
+
+function renderSolutionSplitSection(section) {
+    const stepStyles = [
+        'bg-primary/10 text-primary',
+        'bg-secondary/10 text-secondary',
+        'bg-neutral/10 text-neutral'
+    ];
+
+    const bulletsHtml = (section.bullets || []).map((item) => `
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="${item.icon || 'check'}" class="w-6 h-6 text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2">${item.title}</h4>
+                            <p class="text-gray-600">${item.description}</p>
+                        </div>
+                    </div>`).join('');
+
+    const leftCardsHtml = (section.leftCards || []).map((item, index) => `
+                        <div${item.id ? ` id="${item.id}"` : ''} class="p-6 bg-base-100 rounded-2xl">
+                            <h3 class="font-bold mb-2">${item.title}</h3>
+                            <p class="text-sm text-base-content/60">${item.description}</p>
+                        </div>`).join('');
+
+    const panelHtml = section.panel ? `
+                <div class="bg-white p-8 rounded-3xl shadow-xl">
+                    <h3 class="text-2xl font-bold mb-4">${section.panel.title}</h3>
+                    <p class="text-base-content/70 mb-6">${section.panel.description}</p>
+                    <div class="space-y-4">
+                        ${section.panel.steps.map((step, index) => `
+                            <div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full ${stepStyles[index] || stepStyles[0]} flex items-center justify-center font-bold">${index + 1}</span><span>${step}</span></div>
+                        `).join('')}
+                    </div>
+                </div>` : '';
+
+    const rightHtml = section.image ? `
+            <div class="relative">
+                <img src="${section.image}" alt="${section.alt || ''}" class="rounded-3xl shadow-2xl w-full object-cover aspect-square">
+            </div>` : panelHtml;
+
+    const leftHtml = section.leftCards && section.leftCards.length ? `
+            <div class="space-y-6">
+                <h2 class="text-3xl md:text-5xl font-black leading-tight">${section.heading}</h2>
+                ${section.intro ? `<p class="text-lg text-base-content/70">${section.intro}</p>` : ''}
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    ${leftCardsHtml}
+                </div>
+            </div>` : `
+            <div class="space-y-6">
+                <h2 class="text-3xl md:text-5xl font-black leading-tight">${section.heading}</h2>
+                ${section.intro ? `<p class="text-lg text-base-content/70">${section.intro}</p>` : ''}
+                <div class="space-y-6">
+                    ${bulletsHtml}
+                </div>
+            </div>`;
+
+    const splitContent = section.reverse ? `${rightHtml}${leftHtml}` : `${leftHtml}${rightHtml}`;
+    return `
+<section${section.id ? ` id="${section.id}"` : ''} class="section-spacing ${section.sectionClass || 'bg-base-200'}">
+    <div class="container mx-auto container-padding">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            ${splitContent}
+        </div>
+    </div>
+</section>`;
+}
+
+function renderSolutionPageCTA(section) {
+    return `
+<section class="section-spacing bg-primary text-white">
+    <div class="container mx-auto container-padding text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">${section.heading}</h2>
+        <p class="text-xl mb-8 opacity-90 max-w-3xl mx-auto">${section.description}</p>
+        <a href="contact.html" class="btn btn-white btn-lg text-primary border-none">${section.buttonText}</a>
+    </div>
+</section>`;
+}
+
+function renderSolutionProblemsSection(section) {
+    const itemsHtml = section.problems.map((problem, index) => `
+        <div class="flex items-start gap-4 p-6 bg-white rounded-2xl shadow-sm border border-red-100">
+            <div class="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i data-lucide="${problem.icon || 'alert-circle'}" class="w-5 h-5 text-red-500"></i>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg mb-1">${problem.title}</h3>
+                <p class="text-base-content/70 text-sm">${problem.description}</p>
+            </div>
+        </div>`).join('');
+
+    return `
+<section${section.id ? ` id="${section.id}"` : ''} class="section-spacing ${section.sectionClass || 'bg-base-100'}">
+    <div class="container mx-auto container-padding">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">${section.heading}</h2>
+            <p class="text-lg text-base-content/60 max-w-3xl mx-auto">${section.intro}</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            ${itemsHtml}
+        </div>
+    </div>
+</section>`;
+}
+
+function renderSolutionProcessSection(section) {
+    const stepsHtml = section.steps.map((step, index) => `
+        <div class="flex flex-col items-center text-center relative">
+            <div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-primary/25">
+                <span class="text-2xl font-black text-white">${index + 1}</span>
+            </div>
+            ${index < section.steps.length - 1 ? '<div class="hidden lg:block absolute top-8 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-0.5 bg-primary/20"></div>' : ''}
+            <h3 class="text-xl font-bold mb-3">${step.title}</h3>
+            <p class="text-base-content/70">${step.description}</p>
+        </div>`).join('');
+
+    return `
+<section${section.id ? ` id="${section.id}"` : ''} class="section-spacing ${section.sectionClass || 'bg-base-200'}">
+    <div class="container mx-auto container-padding">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">${section.heading}</h2>
+            <p class="text-lg text-base-content/60 max-w-3xl mx-auto">${section.intro}</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+            ${stepsHtml}
+        </div>
+    </div>
+</section>`;
+}
+
+function renderSolutionFaqSection(section) {
+    const faqItems = section.items.map((item, index) => `
+                    <div class="collapse collapse-plus bg-base-200">
+                        <input type="checkbox" ${index === 0 ? 'checked' : ''} />
+                        <div class="collapse-title text-xl font-medium">${item.q}</div>
+                        <div class="collapse-content">
+                            <p>${item.a}</p>
+                        </div>
+                    </div>`).join('');
+
+    return `
+<section${section.id ? ` id="${section.id}"` : ''} class="section-spacing ${section.sectionClass || 'bg-base-100'}">
+    <div class="container mx-auto container-padding">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">${section.heading}</h2>
+            <p class="text-lg text-base-content/60 max-w-3xl mx-auto">${section.intro}</p>
+        </div>
+        <div class="space-y-4 max-w-4xl mx-auto">
+            ${faqItems}
+        </div>
+    </div>
+</section>`;
+}
+
+function buildSolutionPageContent(templateName) {
+    const blueprint = SOLUTION_PAGE_BLUEPRINTS[templateName];
+    if (!blueprint) {
+        return null;
+    }
+
+    const sections = blueprint.sections.map(section => {
+        if (section.type === 'cards') {
+            return renderSolutionCardsSection(section);
+        }
+        if (section.type === 'split') {
+            return renderSolutionSplitSection(section);
+        }
+        if (section.type === 'faq') {
+            return renderSolutionFaqSection(section);
+        }
+        return '';
+    });
+
+    return {
+        hero: blueprint.hero,
+        section_1: sections[0] || '',
+        section_2: sections[1] || '',
+        section_3: sections[2] || '',
+        cta: renderSolutionPageCTA(blueprint.cta),
+        category: blueprint.category
+    };
+}
+
+function stripServiceDescription(description) {
+    return description
+        .replace(/\s*in\s*\{\{CITY_NAME\}\}/gi, '')
+        .replace(/\s*in\s*\{\{COUNTRY_NAME\}\}/gi, '')
+        .replace(/\{\{CITY_NAME\}\}/g, '')
+        .replace(/\{\{COUNTRY_NAME\}\}/g, '')
+        .replace(/\s+/g, ' ')
+        .replace(/\s([,.;:!?])/g, '$1')
+        .trim();
+}
+
+function parseBenefitText(text) {
+    const match = text.match(/^\*\*(.+?)\*\*:\s*(.+)$/);
+    if (match) {
+        return { title: match[1], description: match[2] };
+    }
+    return { title: text.replace(/\*\*/g, ''), description: '' };
+}
+
+const SERVICE_PROBLEMS = {
+    'microsoft-365-workspace-management': [
+        { icon: 'mail-x', title: 'Email chaos across devices', description: 'Your team uses personal emails or outdated inboxes. Licenses are untracked, access is inconsistent.' },
+        { icon: 'key-round', title: 'No control over who has access', description: 'Former employees still have active accounts. Nobody knows the full list of licenses in use.' },
+        { icon: 'cloud-off', title: 'Files stored in the wrong place', description: 'Documents live on local drives, USB sticks, or personal cloud accounts instead of a secure shared space.' }
+    ],
+    'cloud-architecture-azure-transition': [
+        { icon: 'server-crash', title: 'You still run physical servers', description: 'Hardware failures, maintenance costs, and the risk of losing everything if a server dies.' },
+        { icon: 'trending-up', title: 'Scaling is slow and expensive', description: 'Every time your business grows, you have to buy more hardware. It costs too much and takes too long.' },
+        { icon: 'shield-off', title: 'Backups are unreliable', description: 'Your data lives in one place. If something goes wrong, recovery is slow or impossible.' }
+    ],
+    'endpoint-security': [
+        { icon: 'laptop-2', title: 'Devices are unprotected', description: 'Staff laptops and phones have no centralized protection. One infected device can compromise the whole network.' },
+        { icon: 'wifi-off', title: 'Remote workers create blind spots', description: 'When people work from home or travel, you have no visibility into what threats they face.' },
+        { icon: 'eye-off', title: 'No alert when something goes wrong', description: 'You find out about security incidents days or weeks later, long after damage has been done.' }
+    ],
+    'advanced-email-security': [
+        { icon: 'fish', title: 'Phishing emails reach inboxes', description: 'Realistic fake emails trick staff into clicking dangerous links or sharing passwords.' },
+        { icon: 'mail-warning', title: 'Ransomware delivered by email', description: 'Attachments carry malware that can lock your files and demand payment to restore access.' },
+        { icon: 'user-x', title: 'Emails impersonating your company', description: 'Attackers send emails pretending to be you, damaging your reputation with clients and suppliers.' }
+    ],
+    'zero-trust-architecture': [
+        { icon: 'unlock', title: 'Too much internal access', description: 'Employees can access files and systems they do not need for their job, creating unnecessary risk.' },
+        { icon: 'user-check', title: 'Weak or shared passwords', description: 'Accounts rely on simple passwords or one password used across multiple systems.' },
+        { icon: 'network', title: 'No verification for internal traffic', description: 'Once inside the network, anything goes. An attacker or malware spreads without challenge.' }
+    ],
+    'disaster-recovery-business-continuity': [
+        { icon: 'zap-off', title: 'No backup plan for outages', description: 'If power fails, a server crashes, or ransomware hits, your team cannot work and data may be gone.' },
+        { icon: 'clock', title: 'Recovery takes days', description: 'When incidents happen, restoring systems takes so long the business loses significant revenue.' },
+        { icon: 'archive-x', title: 'Backups exist but have never been tested', description: 'You have backups, but nobody knows if they actually work until it is too late.' }
+    ],
+    'continuous-vulnerability-scanning': [
+        { icon: 'binoculars', title: 'You only find problems after an attack', description: 'Security gaps go unnoticed until a hacker exploits them and your data is already compromised.' },
+        { icon: 'git-branch', title: 'New software creates new risks', description: 'Every software update or new tool can introduce vulnerabilities that are invisible without scanning.' },
+        { icon: 'siren', title: 'No early warning system', description: 'There is no automated way to know when something is wrong before it becomes a serious incident.' }
+    ],
+    'gdpr-compliance-infrastructure': [
+        { icon: 'file-warning', title: 'You handle personal data without proper controls', description: 'Customer and employee data is stored in ways that do not meet legal requirements.' },
+        { icon: 'scale', title: 'Risk of fines', description: 'GDPR violations can result in significant penalties. Without the right infrastructure, you are exposed.' },
+        { icon: 'clipboard-x', title: 'No audit trail for data access', description: 'You cannot show regulators or clients who accessed what data or when.' }
+    ],
+    'secure-network-vpn-setup': [
+        { icon: 'wifi', title: 'Staff connect on unsecured networks', description: 'Remote workers use public Wi-Fi or home routers with no protection, exposing company data.' },
+        { icon: 'split', title: 'No separation between office locations', description: 'Branch offices connect directly to the main network with no security boundaries between them.' },
+        { icon: 'lock-open', title: 'Sensitive systems are reachable from anywhere', description: 'Without a VPN, internal tools and servers are exposed to the open internet.' }
+    ],
+    'it-support-monitoring': [
+        { icon: 'phone-off', title: 'Support is slow when things break', description: 'When IT problems happen, nobody responds quickly and your team loses hours waiting for a fix.' },
+        { icon: 'eye-off', title: 'Problems are invisible until users complain', description: 'There is no system watching your infrastructure 24/7 to catch issues before they affect your team.' },
+        { icon: 'headphones', title: 'No dedicated IT contact', description: 'Staff have no clear person or service to call when they need help with a technology problem.' }
+    ],
+    'corporate-ai-infrastructure-setup': [
+        { icon: 'shield-alert', title: 'Staff use public AI tools with company data', description: 'Employees paste sensitive internal documents into ChatGPT and similar tools with no oversight.' },
+        { icon: 'git-merge', title: 'No AI integrated into your workflows', description: 'Your team uses AI as individuals with no connection to your actual business systems or processes.' },
+        { icon: 'building-2', title: 'Generic AI does not know your business', description: 'Public tools have no knowledge of your products, clients, or internal processes, limiting their value.' }
+    ],
+    'on-premise-ai-setup': [
+        { icon: 'cloud-off', title: 'Sensitive data cannot go to the cloud', description: 'Legal, financial, or industrial data that must stay on your servers cannot be used with public AI.' },
+        { icon: 'server', title: 'Regulatory restrictions apply', description: 'Your industry or country has rules about where data can be processed and stored.' },
+        { icon: 'wifi-off', title: 'No internet access in your environment', description: 'Air-gapped facilities or high-security environments cannot connect to external AI services.' }
+    ],
+    'ai-data-security-layer': [
+        { icon: 'leak', title: 'Confidential data leaks into AI models', description: 'When staff use public AI tools, your client data and trade secrets may be used to train external systems.' },
+        { icon: 'user-x', title: 'No policy enforcement', description: 'There is no technical barrier stopping employees from sending sensitive files to external AI platforms.' },
+        { icon: 'eye', title: 'No visibility into AI usage', description: 'You have no way to see what your team is sharing with external AI tools or what risks that creates.' }
+    ],
+    'agentic-ai-development': [
+        { icon: 'repeat', title: 'Repetitive tasks consume your team', description: 'Staff manually update records, send follow-ups, and process the same type of data entry every day.' },
+        { icon: 'layers', title: 'Workflows span too many systems', description: 'A single process touches five different tools and requires manual steps between each one.' },
+        { icon: 'clock', title: 'Delays cost you business', description: 'Slow human-driven processes mean leads go cold, approvals take too long, and deadlines are missed.' }
+    ],
+    'smart-factory-optimization': [
+        { icon: 'activity', title: 'Machines sit idle without warning', description: 'You only know a machine has a problem when it has already stopped or produced defective output.' },
+        { icon: 'zap', title: 'High energy costs with no clear reason', description: 'Energy consumption is high but there is no data to show what is consuming the most or when.' },
+        { icon: 'bar-chart', title: 'Production planning is guesswork', description: 'Scheduling is based on experience rather than real data from your machines and production line.' }
+    ],
+    'sales-marketing-automation': [
+        { icon: 'inbox', title: 'Inbound leads go cold', description: 'Leads come in but nobody follows up fast enough. By the time sales contacts them, the interest is gone.' },
+        { icon: 'file-text', title: 'Proposals take too long to prepare', description: 'Assembling a proposal requires hours of manual work that delays the whole sales cycle.' },
+        { icon: 'funnel', title: 'No clear view of your pipeline', description: 'You have no reliable way to see which leads are progressing and which have been forgotten.' }
+    ],
+    'customer-service-automation': [
+        { icon: 'clock-3', title: 'Customers wait too long for answers', description: 'Simple questions about opening hours, order status, or pricing require a human to respond every time.' },
+        { icon: 'headphones', title: 'Support team overwhelmed with routine queries', description: 'Your team spends most of the day answering the same questions instead of handling complex issues.' },
+        { icon: 'moon', title: 'No support outside business hours', description: 'Customers from other time zones or urgent weekend needs get no response until the next working day.' }
+    ],
+    'data-silos-automation': [
+        { icon: 'database-zap', title: 'Data lives in dozens of different places', description: 'Emails, spreadsheets, PDFs, and forms all contain different pieces of the same data with no connection.' },
+        { icon: 'keyboard', title: 'Staff re-enter data manually', description: 'Information is typed into one system, then retyped into another. Mistakes are common and time is wasted.' },
+        { icon: 'search-x', title: 'No single source of truth', description: 'Different departments have different versions of the same data, causing confusion and wrong decisions.' }
+    ],
+    'operational-load-reduction': [
+        { icon: 'hourglass', title: 'Too much time on low-value work', description: 'Your team spends hours every day on tasks that do not require skill or judgment — just time.' },
+        { icon: 'users', title: 'Headcount grows faster than revenue', description: 'As the business scales, the amount of manual work grows at the same rate as customer volume.' },
+        { icon: 'frown', title: 'Good people are stuck doing bad work', description: 'Talented staff spend most of their time on paperwork and admin instead of the work they were hired to do.' }
+    ],
+    'custom-erp-crm-integrations': [
+        { icon: 'plug-zap', title: 'Your tools do not talk to each other', description: 'Your CRM has one version of customer data, your accounting system has another. Neither is complete.' },
+        { icon: 'copy', title: 'Same data entered in multiple systems', description: 'Every order, client, or invoice is entered by hand into two or three different platforms.' },
+        { icon: 'alert-triangle', title: 'Errors from manual data transfer', description: 'When humans copy data between systems, mistakes happen. Wrong prices, wrong names, wrong addresses.' }
+    ],
+    'digital-engineering-rd-software': [
+        { icon: 'calculator', title: 'Engineers rely on generic tools', description: 'Your team uses Excel or off-the-shelf software to do work that needs a custom calculation or simulation tool.' },
+        { icon: 'timer', title: 'R&D processes are slow', description: 'Design iterations take longer than they should because the tools do not match the specific workflow.' },
+        { icon: 'refresh-ccw', title: 'No way to automate test cycles', description: 'Every test run requires manual setup, making it hard to run experiments quickly at scale.' }
+    ],
+    'b2b-dealer-customer-portals': [
+        { icon: 'phone', title: 'Dealers call for everything', description: 'Dealers and clients contact your team to check prices, availability, and order status multiple times a day.' },
+        { icon: 'folders', title: 'Orders come in by email and phone', description: 'There is no system for clients to place orders themselves, so everything goes through your staff.' },
+        { icon: 'user-cog', title: 'Account management is entirely manual', description: 'Updating customer details, raising invoices, and tracking service requests all happen by hand.' }
+    ],
+    'human-in-the-loop-ai-testing': [
+        { icon: 'bot', title: 'Automated testing misses nuanced errors', description: 'Scripts and tools can check for obvious failures but miss context errors, tone problems, and edge cases.' },
+        { icon: 'files', title: 'QA is a bottleneck before every release', description: 'Manual review of large datasets or content batches takes weeks, delaying projects and launches.' },
+        { icon: 'x-circle', title: 'Mistakes reach clients', description: 'Without a robust review process, errors in data, content, or outputs damage your reputation.' }
+    ],
+    'legacy-system-modernization': [
+        { icon: 'server-crash', title: 'Old software is slow and unreliable', description: 'Your system crashes, runs slowly, and is built on technology that vendors no longer support.' },
+        { icon: 'lock', title: 'You cannot add new features', description: 'The existing system is so rigid that adding even small improvements takes months and huge cost.' },
+        { icon: 'hard-drive', title: 'Data is trapped in an old format', description: 'Years of valuable business data sits inside a system that cannot easily export or connect to modern tools.' }
+    ],
+    'enterprise-bi-dashboards': [
+        { icon: 'table-2', title: 'Reports live in spreadsheets', description: 'Every Monday someone manually pulls numbers from three systems and puts them into a spreadsheet.' },
+        { icon: 'timer', title: 'Decisions wait for data', description: 'Managers ask for a number and get it two days later after someone has had time to run the report.' },
+        { icon: 'puzzle', title: 'Data from different sources does not match', description: 'Sales says one revenue figure, finance says another. Nobody is sure which is correct.' }
+    ],
+    'internal-operational-applications': [
+        { icon: 'clipboard-list', title: 'Field staff use paper', description: 'Technicians, delivery workers, or inspectors fill in paper forms that then have to be re-entered into a computer.' },
+        { icon: 'wifi-off', title: 'No mobile access to company systems', description: 'Staff in the warehouse or on site cannot access the tools they need from their phone or tablet.' },
+        { icon: 'layers-3', title: 'Fragmented tools for internal processes', description: 'Different departments use different apps that do not connect, creating gaps in operational data.' }
+    ],
+    'corporate-website-development': [
+        { icon: 'turtle', title: 'Your website is slow', description: 'Pages take more than 3 seconds to load, losing visitors before they even see what you do.' },
+        { icon: 'search', title: 'Visitors cannot find you', description: 'Your site does not rank in search results for the things your customers are looking for.' },
+        { icon: 'mouse-pointer-x', title: 'No one takes action on your site', description: 'People visit but do not call, fill out a form, or enquire. The site does not convert visitors into leads.' }
+    ],
+    'mvp-development-corporate-spinoff': [
+        { icon: 'piggy-bank', title: 'Afraid to invest before validating', description: 'You have a new business idea but do not want to build the full product before knowing users want it.' },
+        { icon: 'clock', title: 'Time to market is too slow', description: 'By the time a full product is built, the market opportunity may have already moved on.' },
+        { icon: 'git-fork', title: 'Hard to get budget for unproven ideas', description: 'Stakeholders want proof the idea works before committing resources to a full development cycle.' }
+    ],
+    'custom-data-architecture-database-design': [
+        { icon: 'database-zap', title: 'Your data is a mess', description: 'Duplicate records, inconsistent formats, and missing values make your data unreliable for any serious use.' },
+        { icon: 'ban', title: 'AI tools cannot use your data', description: 'You want to use AI but your data is too fragmented and unstructured to feed into any model.' },
+        { icon: 'activity', title: 'Reports are slow and inaccurate', description: 'Queries take too long to run because the database was never designed for how it is actually being used.' }
+    ]
+};
+
+const SERVICE_PROCESSES = {
+    'it-solutions': [
+        { title: 'We assess your current setup', description: 'We review your existing tools, access controls, and infrastructure to understand what is in place and what is missing.' },
+        { title: 'We design and deploy the solution', description: 'We configure, migrate, or build what is needed — with minimal disruption to your day-to-day operations.' },
+        { title: 'We monitor and support it ongoing', description: 'After go-live, we stay connected with 24/7 monitoring and a direct line your team can use when they need help.' }
+    ],
+    'ai-solutions': [
+        { title: 'We map the workflow to automate', description: 'We identify which tasks, decisions, or data flows will benefit most from AI and where the biggest wins are.' },
+        { title: 'We build and connect the solution', description: 'We develop and integrate the AI system into your existing tools, with data protection built in from the start.' },
+        { title: 'We test, train, and hand over', description: 'We run the system with your real data, train your team on how to use it, and ensure everything works as expected.' }
+    ],
+    'custom-software': [
+        { title: 'We understand how your business works', description: 'We start by mapping your processes, pain points, and constraints before writing a single line of code.' },
+        { title: 'We build the smallest version that solves the problem', description: 'We ship a working version fast, get feedback, and iterate — rather than spending months building in the dark.' },
+        { title: 'We support and evolve it with you', description: 'After launch, we stay on hand to fix issues, add features, and make sure the software keeps working as you grow.' }
+    ]
+};
+
+function buildGenericServiceBlueprint(service, lang = 'en') {
+    const categoryMeta = getLocalizedCategoryMeta(service.category, lang);
+    const categoryContent = serviceContent[service.category] && (serviceContent[service.category][lang] || serviceContent[service.category].en);
+    if (!categoryMeta || !categoryContent) {
+        return null;
+    }
+
+    const heroImageMap = {
+        'it-solutions': 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80',
+        'ai-solutions': 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
+        'custom-software': 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&q=80'
+    };
+
+    const heroDescription = stripServiceDescription(service.description_template || service.title_template || service.name);
+    const benefits = (categoryContent.benefits || []).map(parseBenefitText);
+    const faqItems = (categoryContent.faq || []).slice(0, 4);
+    const serviceProblems = SERVICE_PROBLEMS[service.id] || [];
+    const processSteps = SERVICE_PROCESSES[service.category] || SERVICE_PROCESSES['it-solutions'];
+
+    const rawSections = [
+        // Section 1: Problems
+        ...(serviceProblems.length > 0 ? [{
+            type: 'problems',
+            id: 'problems',
+            sectionClass: 'bg-base-200',
+            heading: 'Does this sound familiar?',
+            intro: `These are the most common situations that lead companies to us for ${service.name.toLowerCase()}.`,
+            problems: serviceProblems
+        }] : []),
+        // Section 2: What we cover
+        {
+            type: 'cards',
+            id: 'capabilities',
+            sectionClass: 'bg-base-100',
+            heading: 'What we actually do',
+            intro: heroDescription,
+            gridClass: 'md:grid-cols-2',
+            cards: [
+                { title: 'What you get', description: heroDescription, borderClass: 'border-primary' },
+                { title: 'The end result', description: categoryMeta.promise, borderClass: 'border-secondary' },
+                { title: 'Who this is for', description: `Any company that is dealing with the problems above and needs ${service.name.toLowerCase()} done right the first time.`, borderClass: 'border-accent' },
+                { title: 'How we approach it', description: `We start with your specific situation, not a generic template. Every delivery is designed around your processes, your team, and your constraints.`, borderClass: 'border-neutral' }
+            ]
+        },
+        // Section 3: Benefits / Why choose us
+        {
+            type: 'split',
+            id: 'why-it-matters',
+            sectionClass: 'bg-base-200',
+            heading: 'What changes when we take care of this',
+            intro: `The practical difference ${service.name.toLowerCase()} makes once it is properly in place.`,
+            bullets: benefits.slice(0, 3).map((item, index) => ({
+                icon: ['shield-check', 'clock-3', 'layers-3'][index] || 'check',
+                title: item.title,
+                description: item.description
+            })),
+            image: heroImageMap[service.category] || heroImageMap['custom-software'],
+            alt: service.name
+        },
+        // Section 4: Process
+        {
+            type: 'process',
+            id: 'process',
+            sectionClass: 'bg-base-100',
+            heading: 'How we work',
+            intro: 'A straightforward process with no surprises.',
+            steps: processSteps
+        },
+        // Section 5: FAQ
+        {
+            type: 'faq',
+            id: 'faq',
+            sectionClass: 'bg-base-200',
+            heading: 'Common questions',
+            intro: `Answers to what companies usually ask before getting started with ${service.name.toLowerCase()}.`,
+            items: faqItems
+        }
+    ];
+
+    const renderedSections = rawSections.map(section => {
+        if (section.type === 'problems') return renderSolutionProblemsSection(section);
+        if (section.type === 'cards') return renderSolutionCardsSection(section);
+        if (section.type === 'split') return renderSolutionSplitSection(section);
+        if (section.type === 'process') return renderSolutionProcessSection(section);
+        if (section.type === 'faq') return renderSolutionFaqSection(section);
+        return '';
+    });
+
+    const ctaObj = {
+        heading: `Ready to fix this?`,
+        description: `We can scope, design, and deliver ${service.name.toLowerCase()} for your team. No obligation, no jargon.`,
+        buttonText: 'Talk to us'
+    };
+
+    return {
+        hero: {
+            badge: categoryMeta.label,
+            titlePrefix: service.name,
+            titleSuffix: '',
+            description: heroDescription,
+            image: heroImageMap[service.category] || heroImageMap['custom-software'],
+            alt: service.name,
+            primaryCtaText: 'Get in touch',
+            primaryCtaLink: 'contact.html',
+            secondaryCtaText: 'See all solutions',
+            secondaryCtaLink: 'solutions.html'
+        },
+        section_1: renderedSections[0] || '',
+        section_2: renderedSections[1] || '',
+        section_3: renderedSections[2] || '',
+        section_4: renderedSections[3] || '',
+        section_5: renderedSections[4] || '',
+        section_6: renderedSections[5] || '',
+        cta: renderSolutionPageCTA(ctaObj),
+        category: service.category
+    };
+}
+
+const LEGACY_LEAD_GEN_AGENCY = ['b2b', 'lead', 'generation', 'agency'].join('-');
+
 const LEGACY_REDIRECT_ONLY_PAGES = new Set([
+    'managed-it-services',
+    'ai-content-infrastructure',
+    'custom-software-development',
     'services',
     'case-studies',
     'lead-generation-services',
     'managed-services',
     'growth-programs',
-    'b2b-lead-generation-agency',
+    LEGACY_LEAD_GEN_AGENCY,
     'crm-management',
     'fractional-bizdev-team',
     'inbound-lead-generation',
@@ -466,12 +1154,15 @@ const LEGACY_REDIRECT_ONLY_PAGES = new Set([
 ]);
 
 const LEGACY_REDIRECT_TARGETS = {
+    'managed-it-services': 'solutions',
+    'ai-content-infrastructure': 'solutions',
+    'custom-software-development': 'solutions',
     'services': 'solutions',
     'case-studies': 'solutions',
     'lead-generation-services': 'solutions',
     'managed-services': 'managed-it-services',
     'growth-programs': 'solutions',
-    'b2b-lead-generation-agency': 'solutions',
+    [LEGACY_LEAD_GEN_AGENCY]: 'solutions',
     'crm-management': 'custom-software-development',
     'fractional-bizdev-team': 'solutions',
     'inbound-lead-generation': 'solutions',
@@ -503,6 +1194,119 @@ const LEGACY_REDIRECT_TARGETS = {
     'turnkey-growth-infrastructure': 'solutions'
 };
 
+const LEGACY_DELETED_SERVICE_PAGES = new Set([
+  "ai-creative-studio",
+  "appointment-setting-service",
+  "cold-email-agency",
+  "cold-email-infrastructure",
+  "corporate-digital-gifting",
+  "crm-management",
+  "distributor-finding",
+  "email-automation",
+  "email-deliverability-checkup",
+  "email-marketing-management",
+  "email-security",
+  "europe-market-entry",
+  "export-marketing-consulting",
+  "fractional-bizdev-team",
+  "growth-programs",
+  "image-content-engine",
+  "inbound-lead-generation",
+  "international-market-entry",
+  "lead-generation-service",
+  "lead-generation-services",
+  "lost-lead-reactivation",
+  "managed-services",
+  "market-accelerator-program",
+  "market-foundation-program",
+  "markt-beschleuniger-programm",
+  "markt-grundlagen-programm",
+  "onboarding",
+  "outbound-lead-generation",
+  "outbound-marketing-agency",
+  "outreach-software-management",
+  "outsourced-sales-team-service",
+  "overseas-sales-consulting",
+  "part-time-lead-generation-team",
+  "prospect-finding-service",
+  "recruitment",
+  "revops-crm-setup",
+  "revops-infrastructure",
+  "sales-development-agency",
+  "sales-protection-services",
+  "schutzdienstleistungen",
+  "secure-email-workplace-setup",
+  "speed-to-lead",
+  "teilzeit-bizdev-team",
+  "turnkey-growth-infrastructure",
+  "turnkey-it-infrastructure",
+  "usa-pr-service",
+  "verified-lead-list",
+  "video-content-engine",
+  "vulnerability-assessments",
+  "website-care-plans",
+  "website-care-services",
+  "written-content-engine"
+]);
+const LEGACY_DELETED_SERVICE_TARGETS = {
+  "ai-creative-studio": "ai-content-infrastructure",
+  "appointment-setting-service": "solutions",
+  "cold-email-agency": "solutions",
+  "cold-email-infrastructure": "managed-it-services",
+  "corporate-digital-gifting": "solutions",
+  "crm-management": "custom-software-development",
+  "distributor-finding": "solutions",
+  "email-automation": "solutions",
+  "email-deliverability-checkup": "managed-it-services",
+  "email-marketing-management": "solutions",
+  "email-security": "managed-it-services",
+  "europe-market-entry": "solutions",
+  "export-marketing-consulting": "solutions",
+  "fractional-bizdev-team": "solutions",
+  "growth-programs": "solutions",
+  "image-content-engine": "ai-content-infrastructure",
+  "inbound-lead-generation": "solutions",
+  "international-market-entry": "solutions",
+  "lead-generation-service": "solutions",
+  "lead-generation-services": "solutions",
+  "lost-lead-reactivation": "ai-content-infrastructure",
+  "managed-services": "solutions",
+  "market-accelerator-program": "solutions",
+  "market-foundation-program": "solutions",
+  "markt-beschleuniger-programm": "solutions",
+  "markt-grundlagen-programm": "solutions",
+  "onboarding": "solutions",
+  "outbound-lead-generation": "solutions",
+  "outbound-marketing-agency": "solutions",
+  "outreach-software-management": "custom-software-development",
+  "outsourced-sales-team-service": "solutions",
+  "overseas-sales-consulting": "solutions",
+  "part-time-lead-generation-team": "solutions",
+  "prospect-finding-service": "solutions",
+  "recruitment": "ai-content-infrastructure",
+  "revops-crm-setup": "ai-content-infrastructure",
+  "revops-infrastructure": "ai-content-infrastructure",
+  "sales-development-agency": "solutions",
+  "sales-protection-services": "solutions",
+  "schutzdienstleistungen": "solutions",
+  "secure-email-workplace-setup": "managed-it-services",
+  "speed-to-lead": "solutions",
+  "teilzeit-bizdev-team": "solutions",
+  "turnkey-growth-infrastructure": "custom-software-development",
+  "turnkey-it-infrastructure": "managed-it-services",
+  "usa-pr-service": "solutions",
+  "verified-lead-list": "ai-content-infrastructure",
+  "video-content-engine": "ai-content-infrastructure",
+  "vulnerability-assessments": "managed-it-services",
+  "website-care-plans": "managed-it-services",
+  "website-care-services": "managed-it-services",
+  "written-content-engine": "ai-content-infrastructure"
+};
+LEGACY_DELETED_SERVICE_PAGES.forEach((page) => LEGACY_REDIRECT_ONLY_PAGES.add(page));
+Object.entries(LEGACY_DELETED_SERVICE_TARGETS).forEach(([source, target]) => {
+    LEGACY_REDIRECT_TARGETS[source] = target;
+});
+
 const serviceMapping = {
     'managed-it-services': 'it-solutions',
     'email-security': 'it-solutions',
@@ -522,6 +1326,14 @@ const serviceMapping = {
 };
 
 function getHreflangUrls(templateName) {
+    if (services.some(service => service.id === templateName)) {
+        return {
+            en: `${templateName}.html`,
+            de: `de/${templateName}.html`,
+            fr: `fr/${templateName}.html`
+        };
+    }
+
     const urls = {
         'index': { en: '', de: 'de/', fr: 'fr/' },
         'solutions': { en: 'solutions.html', de: 'de/solutions.html', fr: 'fr/solutions.html' },
@@ -681,7 +1493,7 @@ function buildPage(templateName, outputName, lang = 'en') {
     }
 
     // Flag logic
-    const currentFlag = lang === 'tr' ? '🇹🇷' : lang === 'de' ? '🇩🇪' : lang === 'fr' ? '🇫🇷' : '🇺🇸';
+    const currentFlag = lang === 'tr' ? 'TR' : lang === 'de' ? 'DE' : lang === 'fr' ? 'FR' : 'EN';
     pageNavigation = pageNavigation.replace(/<span id="current-flag">.*?<\/span>/g, `<span id="current-flag">${currentFlag}</span>`);
 
     // Get active states for navigation
@@ -831,6 +1643,191 @@ function buildPage(templateName, outputName, lang = 'en') {
     console.log(`✅ Built ${outputPath}`);
 }
 
+function buildSolutionPage(templateName, outputName, lang = 'en') {
+    if (LEGACY_REDIRECT_ONLY_PAGES.has(templateName)) {
+        return;
+    }
+
+    const service = services.find((item) => item.id === templateName);
+    const blueprint = buildSolutionPageContent(templateName) || (service ? buildGenericServiceBlueprint(service, lang) : null);
+    if (!blueprint) {
+        console.warn(`Solution page blueprint not found for ${templateName}`);
+        return;
+    }
+
+    const templatePath = 'templates/solution-page.html';
+    if (!fs.existsSync(templatePath)) {
+        console.warn(`Solution page template not found: ${templatePath}`);
+        return;
+    }
+
+    const rawTemplateContent = fs.readFileSync(templatePath, 'utf8');
+    const res = extractAndRemoveSchemas(rawTemplateContent, templatePath);
+    let content = res.cleanContent;
+    const extractedSchemas = res.extractedSchemas;
+
+    let htmlTemplate = createHTMLTemplate(lang);
+    let pageNavigation = lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
+    let pageFooter = lang === 'de' ? footerDE : lang === 'fr' ? footerFR : footerEN;
+
+    content = content.replace(/\s*data-i18n="[^"]*"/g, '');
+    pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
+    pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
+
+    const depth = outputName.split('/').length - 1;
+    let relativePrefix = '';
+    for (let i = 0; i < depth; i++) {
+        relativePrefix += '../';
+    }
+    const navPath = relativePrefix || './';
+
+    if (lang !== 'en') {
+        relativePrefix += '../';
+    }
+    const basePath = relativePrefix || './';
+    const logoPath = basePath + 'go-expandia-logo.png';
+
+    htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
+    pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, navPath);
+    pageNavigation = pageNavigation.replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html');
+    pageNavigation = pageNavigation.replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, 'our-ethical-principles.html');
+    pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
+    pageNavigation = pageNavigation.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, './');
+    pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, navPath);
+    pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
+    pageFooter = pageFooter.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, './');
+    content = content.replace(/\{\{BASE_PATH\}\}/g, basePath);
+
+    content = content
+        .replace(/\{\{HERO_BADGE\}\}/g, blueprint.hero.badge)
+        .replace(/\{\{HERO_TITLE_PREFIX\}\}/g, blueprint.hero.titlePrefix)
+        .replace(/\{\{HERO_TITLE_SUFFIX\}\}/g, blueprint.hero.titleSuffix)
+        .replace(/\{\{HERO_DESCRIPTION\}\}/g, blueprint.hero.description)
+        .replace(/\{\{PRIMARY_CTA_TEXT\}\}/g, blueprint.hero.primaryCtaText)
+        .replace(/\{\{PRIMARY_CTA_LINK\}\}/g, blueprint.hero.primaryCtaLink)
+        .replace(/\{\{SECONDARY_CTA_TEXT\}\}/g, blueprint.hero.secondaryCtaText)
+        .replace(/\{\{SECONDARY_CTA_LINK\}\}/g, blueprint.hero.secondaryCtaLink)
+        .replace(/\{\{HERO_IMAGE\}\}/g, blueprint.hero.image)
+        .replace(/\{\{HERO_IMAGE_ALT\}\}/g, blueprint.hero.alt)
+        .replace(/\{\{SECTION_1\}\}/g, blueprint.section_1 || '')
+        .replace(/\{\{SECTION_2\}\}/g, blueprint.section_2 || '')
+        .replace(/\{\{SECTION_3\}\}/g, blueprint.section_3 || '')
+        .replace(/\{\{SECTION_4\}\}/g, blueprint.section_4 || '')
+        .replace(/\{\{SECTION_5\}\}/g, blueprint.section_5 || '')
+        .replace(/\{\{SECTION_6\}\}/g, blueprint.section_6 || '')
+        .replace(/\{\{CTA_SECTION\}\}/g, blueprint.cta || '');
+
+    if (lang === 'de') {
+        pageNavigation = applyTranslations(pageNavigation, 'de');
+        pageFooter = applyTranslations(pageFooter, 'de');
+        content = applyTranslations(content, 'de');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/solutions\.html/g, 'href="./solutions.html');
+    } else if (lang === 'fr') {
+        pageNavigation = applyTranslations(pageNavigation, 'fr');
+        pageFooter = applyTranslations(pageFooter, 'fr');
+        content = applyTranslations(content, 'fr');
+        pageNavigation = pageNavigation.replace(/href="\.\.\/solutions\.html/g, 'href="./solutions.html');
+    }
+
+    const currentFlag = lang === 'de' ? 'DE' : lang === 'fr' ? 'FR' : 'EN';
+    pageNavigation = pageNavigation.replace(/<span id="current-flag">.*?<\/span>/g, `<span id="current-flag">${currentFlag}</span>`);
+
+    const activeStates = getActiveStates('solutions');
+    for (const [key, value] of Object.entries(activeStates)) {
+        pageNavigation = pageNavigation.replace(new RegExp(`\\{\\{${key}\\}\}`, 'g'), value);
+    }
+
+    const hrefUrls = getHreflangUrls(templateName);
+    const relPrefix = lang === 'en' ? './' : '../';
+    let enLink = hrefUrls.en || 'index.html';
+    if (enLink === '') enLink = 'index.html';
+    pageNavigation = pageNavigation.replace(/href=["'][^"']*["']\s+data-lang="en"/g, `href="${relPrefix}${enLink}" data-lang="en"`);
+    let trLink = hrefUrls.tr || 'tr/index.html';
+    if (trLink.endsWith('/')) trLink += 'index.html';
+    pageNavigation = pageNavigation.replace(/href=["'][^"']*["']\s+data-lang="tr"/g, `href="${relPrefix}${trLink}" data-lang="tr"`);
+    let deLink = hrefUrls.de || 'de/index.html';
+    if (deLink.endsWith('/')) deLink += 'index.html';
+    pageNavigation = pageNavigation.replace(/href=["'][^"']*["']\s+data-lang="de"/g, `href="${relPrefix}${deLink}" data-lang="de"`);
+    let frLink = hrefUrls.fr || 'fr/index.html';
+    if (frLink.endsWith('/')) frLink += 'index.html';
+    pageNavigation = pageNavigation.replace(/href=["'][^"']*["']\s+data-lang="fr"/g, `href="${relPrefix}${frLink}" data-lang="fr"`);
+
+    htmlTemplate = htmlTemplate.split('{{NAVIGATION}}').join(pageNavigation);
+    htmlTemplate = htmlTemplate.split('{{MAIN_CONTENT}}').join(content);
+    htmlTemplate = htmlTemplate.split('{{FOOTER}}').join(pageFooter);
+
+    const pageMetadata = getPageMetadata(templateName, lang);
+    const canonicalUrl = lang === 'en' ? `https://www.goexpandia.com/${outputName}.html` : `https://www.goexpandia.com/${lang}/${outputName}.html`;
+
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, pageMetadata.title);
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, pageMetadata.description);
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, pageMetadata.keywords);
+    htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, canonicalUrl);
+
+    const categoryKey = blueprint.category;
+    const serviceKey = categoryKey;
+    const serviceData = serviceKey && serviceContent[serviceKey] && serviceContent[serviceKey][lang]
+        ? serviceContent[serviceKey][lang]
+        : serviceContent[serviceKey] && serviceContent[serviceKey]['en'];
+
+    const orgSchema = generateOrganizationSchema();
+    let finalSchemas = [orgSchema];
+
+    if (serviceData && serviceData.faq && serviceData.faq.length > 0) {
+        finalSchemas.push({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": serviceData.faq.map(f => {
+                let question = f.q;
+                let answer = f.a;
+                question = question.replace(/\s(for|in|at|across)\s\{\{CITY_NAME\}\}/gi, '')
+                    .replace(/\s(in|across)\s\{\{COUNTRY_NAME\}\}/gi, '');
+                answer = answer.replace(/\s(for|in|at|across)\s\{\{CITY_NAME\}\}/gi, '')
+                    .replace(/\s(in|across)\s\{\{COUNTRY_NAME\}\}/gi, '');
+                question = question.replace(/\{\{CITY_NAME\}\}/g, 'your business').replace(/\{\{COUNTRY_NAME\}\}/g, 'your region');
+                answer = answer.replace(/\{\{CITY_NAME\}\}/g, 'your business').replace(/\{\{COUNTRY_NAME\}\}/g, 'your region');
+                return {
+                    "@type": "Question",
+                    "name": question,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": answer
+                    }
+                };
+            })
+        });
+    }
+
+    extractedSchemas.forEach(s => {
+        const schemas = s["@graph"] ? s["@graph"] : [s];
+        schemas.forEach(item => {
+            if (item["@type"] === "Organization" && (item.name === "Go Expandia" || item.url === "https://www.goexpandia.com")) {
+                return;
+            }
+            if (item["@type"] === "FAQPage" && serviceKey) {
+                return;
+            }
+            finalSchemas.push(item);
+        });
+    });
+
+    htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, JSON.stringify(finalSchemas, null, 2));
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, hrefUrls.en);
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, '');
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, hrefUrls.de);
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, hrefUrls.fr || 'fr/');
+    htmlTemplate = clearUnresolvedTemplateTokens(htmlTemplate);
+
+    const outputPath = lang === 'en' ? `${outputName}.html` : `${lang}/${outputName}.html`;
+    const dir = path.dirname(outputPath);
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+    }
+
+    fs.writeFileSync(outputPath, htmlTemplate, 'utf8');
+    console.log(`✅ Built ${outputPath}`);
+}
+
 // Blog Post Building Function
 function buildBlogPost(templateName, outputName, lang = 'en') {
     // console.log(`🏗️  Building blog post: ${outputName} (${lang.toUpperCase()})`);
@@ -883,7 +1880,7 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
     content = content.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
 
     // Flag logic
-    const currentFlag = lang === 'de' ? '🇩🇪' : lang === 'fr' ? '🇫🇷' : '🇺🇸';
+    const currentFlag = lang === 'de' ? 'DE' : lang === 'fr' ? 'FR' : 'EN';
     content = content.replace(/<span id="current-flag">.*?<\/span>/g, `<span id="current-flag">${currentFlag}</span>`);
 
     // Correct relative path logic for language switchers
@@ -1236,7 +2233,7 @@ function buildServiceCityPages() {
     console.log('\n🏗️  Building Service x City Landing Pages (Multi-Language)...');
 
     // Read the mega template
-    const templateContent = fs.readFileSync('templates/service-city-landing.html', 'utf8');
+    const templateContent = fs.readFileSync('templates/city-landing.html', 'utf8');
     let pageCount = 0;
     const languages = ['en', 'de', 'fr'];
 
@@ -1341,7 +2338,7 @@ function buildServiceCityPages() {
 
                 // Build HTML
                 let htmlTemplate = createHTMLTemplate(lang);
-                const res = extractAndRemoveSchemas(templateContent, `service-city-landing-template`);
+                const res = extractAndRemoveSchemas(templateContent, `city-landing-template`);
                 let content = res.cleanContent;
                 const extractedSchemas = res.extractedSchemas;
                 const basePath = (lang === 'de' || lang === 'fr') ? '../' : './';
@@ -1398,7 +2395,7 @@ function buildServiceCityPages() {
                 }
 
                 // Flag logic
-                const currentFlag = lang === 'de' ? '🇩🇪' : lang === 'fr' ? '🇫🇷' : '🇺🇸';
+                const currentFlag = lang === 'de' ? 'DE' : lang === 'fr' ? 'FR' : 'EN';
                 pageNavigation = pageNavigation.replace(/<span id="current-flag">.*?<\/span>/g, `<span id="current-flag">${currentFlag}</span>`);
 
                 htmlTemplate = htmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
@@ -1506,7 +2503,7 @@ function buildServiceIndustryCityPages() {
 
                     // Slug: service-industry-city.html
                     // E.g. managed-it-services-fintech-london.html
-                    const slug = `${service.slug_pattern.replace('-{{CITY_SLUG}}', '')}-${industry.slug.replace('b2b-lead-generation-', '')}-${cityData.slug.replace('b2b-lead-generation-', '')}`;
+                    const slug = `${service.slug_pattern.replace('-{{CITY_SLUG}}', '')}-${industry.slug}-${cityData.slug}`;
 
                     // Determine title/desc based on language (Simplified for this massive scale)
                     let title = `${service.name} for ${industry.name} in ${city}`;
@@ -2513,7 +3510,7 @@ function buildCityLandingPages() {
             const region = cityData.region || 'Europe';
             const landmark = cityData.landmark || 'the city center';
 
-            // Generate clean city slug (remove b2b-lead-generation- prefix if exists)
+            // Generate clean city slug
             let citySlug = normalizeCitySlug(cityData.slug);
 
             // Build page title and description
@@ -2601,8 +3598,8 @@ function buildCityLandingPages() {
 
             // Hero image
             const heroImage = (lang === 'de' || lang === 'fr')
-                ? `../assets/local/b2b-lead-generation-${citySlug}-hero.jpg`
-                : `./assets/local/b2b-lead-generation-${citySlug}-hero.jpg`;
+                ? `../assets/local/default-city.jpg`
+                : `./assets/local/default-city.jpg`;
             fullHtmlTemplate = fullHtmlTemplate.replace(/{{HERO_IMAGE}}/g, heroImage);
 
             // Navigation/Footer (Simple placeholder replacement)
@@ -2683,6 +3680,13 @@ function generateSitemap() {
     const legacyStaticPages = new Set(Object.keys(LEGACY_REDIRECT_TARGETS).map(page => `${page}.html`));
     const filteredStaticPages = staticPages.filter(page => !legacyStaticPages.has(page));
 
+    const solutionPages = [];
+    services.forEach(service => {
+        solutionPages.push(`${service.id}.html`);
+        solutionPages.push(`de/${service.id}.html`);
+        solutionPages.push(`fr/${service.id}.html`);
+    });
+
     // Add DE/FR versions (removed TR as it's no longer supported)
     const languages = ['de', 'fr'];
     const localizedPages = [];
@@ -2709,7 +3713,7 @@ function generateSitemap() {
     // services.forEach(service => {
     //     topIndustries.forEach(industry => {
     //         topCities.forEach(cityData => {
-    //             const slug = `${service.slug_pattern.replace('-{{CITY_SLUG}}', '')}-${industry.slug.replace('b2b-lead-generation-', '')}-${cityData.slug.replace('b2b-lead-generation-', '')}`;
+    //             const slug = `${service.slug_pattern.replace('-{{CITY_SLUG}}', '')}-${industry.slug}-${cityData.slug}`;
     //             serviceIndustryCityPages.push(`${slug}.html`); // EN
     //             serviceIndustryCityPages.push(`de/${slug}.html`); // DE
     //             serviceIndustryCityPages.push(`fr/${slug}.html`); // FR
@@ -2737,7 +3741,7 @@ function generateSitemap() {
     glossaryPages.push('de/glossary/index.html');
     glossaryPages.push('fr/glossary/index.html');
 
-    const allPages = [...new Set([...filteredStaticPages, ...localizedPages, ...broadCityPages, ...blogPages, ...glossaryPages])];
+    const allPages = [...new Set([...filteredStaticPages, ...solutionPages, ...localizedPages, ...broadCityPages, ...blogPages, ...glossaryPages])];
 
     let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
@@ -2776,6 +3780,9 @@ function buildLegacyRedirectRules() {
 
     cities.forEach(city => {
         const cleanSlug = normalizeCitySlug(city.slug);
+        if (cleanSlug === city.slug) {
+            return;
+        }
         languages.forEach(lang => {
             const sourcePath = lang === 'en' ? `/${city.slug}.html` : `/${lang}/${city.slug}.html`;
             const targetPath = lang === 'en' ? `/${cleanSlug}.html` : `/${lang}/${cleanSlug}.html`;
@@ -2834,6 +3841,9 @@ function cleanupLegacyRedirectOutputs() {
 
     cities.forEach(city => {
         const cleanSlug = normalizeCitySlug(city.slug);
+        if (cleanSlug === city.slug) {
+            return;
+        }
         languages.forEach(lang => {
             const retiredPaths = [
                 lang === 'en' ? `${city.slug}.html` : `${lang}/${city.slug}.html`
@@ -2868,69 +3878,8 @@ buildPage('contact', 'contact', 'en');
 buildPage('onboarding', 'onboarding', 'en');
 buildPage('vision-mission', 'vision-mission', 'en');
 buildPage('our-ethical-principles', 'our-ethical-principles', 'en');
-buildPage('market-foundation-program', 'market-foundation-program', 'en');
-buildPage('market-accelerator-program', 'market-accelerator-program', 'en');
-buildPage('part-time-lead-generation-team', 'part-time-lead-generation-team', 'en');
-
-// Build Service Category Pages
-buildPage('lead-generation-services', 'lead-generation-services', 'en');
-buildPage('managed-services', 'managed-services', 'en');
-buildPage('growth-programs', 'growth-programs', 'en');
-
-
-// Build English service pages
-console.log('Building English service pages...');
-buildPage('crm-management', 'crm-management', 'en');
-buildPage('fractional-bizdev-team', 'fractional-bizdev-team', 'en');
-buildPage('inbound-lead-generation', 'inbound-lead-generation', 'en');
-buildPage('outbound-lead-generation', 'outbound-lead-generation', 'en');
-buildPage('sales-development-agency', 'sales-development-agency', 'en');
-buildPage('outbound-marketing-agency', 'outbound-marketing-agency', 'en');
-buildPage('outreach-software-management', 'outreach-software-management', 'en');
-buildPage('lead-generation-service', 'lead-generation-service', 'en');
-buildPage('prospect-finding-service', 'prospect-finding-service', 'en');
-buildPage('appointment-setting-service', 'appointment-setting-service', 'en');
-buildPage('cold-email-agency', 'cold-email-agency', 'en');
-buildPage('sales-protection-services', 'sales-protection-services', 'en');
-buildPage('outsourced-sales-team-service', 'outsourced-sales-team-service', 'en');
-buildPage('email-automation', 'email-automation', 'en');
-buildPage('email-marketing-management', 'email-marketing-management', 'en');
-buildPage('export-marketing-consulting', 'export-marketing-consulting', 'en');
-buildPage('international-market-entry', 'international-market-entry', 'en');
-buildPage('distributor-finding', 'distributor-finding', 'en');
-buildPage('overseas-sales-consulting', 'overseas-sales-consulting', 'en');
-buildPage('europe-market-entry', 'europe-market-entry', 'en');
-buildPage('corporate-digital-gifting', 'corporate-digital-gifting', 'en');
-buildPage('usa-pr-service', 'usa-pr-service', 'en');
-
-// Build New Pillar Pages (English)
-console.log('Building New Pillar Pages (English)...');
-buildPage('managed-it-services', 'managed-it-services', 'en');
-buildPage('vulnerability-assessments', 'vulnerability-assessments', 'en');
-buildPage('email-security', 'email-security', 'en');
-buildPage('website-care-plans', 'website-care-plans', 'en');
-buildPage('revops-crm-setup', 'revops-crm-setup', 'en');
-buildPage('lost-lead-reactivation', 'lost-lead-reactivation', 'en');
-buildPage('speed-to-lead', 'speed-to-lead', 'en');
-buildPage('recruitment', 'recruitment', 'en');
-buildPage('ai-creative-studio', 'ai-creative-studio', 'en');
-
-// Build New Infrastructure Category Pages
-buildPage('turnkey-it-infrastructure', 'turnkey-it-infrastructure', 'en');
-buildPage('turnkey-growth-infrastructure', 'turnkey-growth-infrastructure', 'en');
-buildPage('ai-content-infrastructure', 'ai-content-infrastructure', 'en');
-buildPage('custom-software-development', 'custom-software-development', 'en');
-
-// Build New Infrastructure Product Pages
-buildPage('cold-email-infrastructure', 'cold-email-infrastructure', 'en');
-buildPage('revops-infrastructure', 'revops-infrastructure', 'en');
-buildPage('verified-lead-list', 'verified-lead-list', 'en');
-buildPage('email-deliverability-checkup', 'email-deliverability-checkup', 'en');
-buildPage('secure-email-workplace-setup', 'secure-email-workplace-setup', 'en');
-buildPage('website-care-services', 'website-care-services', 'en');
-buildPage('written-content-engine', 'written-content-engine', 'en');
-buildPage('image-content-engine', 'image-content-engine', 'en');
-buildPage('video-content-engine', 'video-content-engine', 'en');
+// Build Approved Solution Pages (English)
+services.forEach(service => buildSolutionPage(service.id, service.id, 'en'));
 
 buildPage('blog-index', 'blog/index', 'en');
 
@@ -2946,42 +3895,8 @@ buildPage('case-studies', 'case-studies', 'de');
 buildPage('schutzdienstleistungen', 'schutzdienstleistungen', 'de');
 buildPage('vision-mission', 'vision-mission', 'de');
 buildPage('our-ethical-principles', 'our-ethical-principles', 'de');
-buildPage('markt-grundlagen-programm', 'markt-grundlagen-programm', 'de');
-buildPage('markt-beschleuniger-programm', 'markt-beschleuniger-programm', 'de');
-buildPage('teilzeit-bizdev-team', 'teilzeit-bizdev-team', 'de');
-// Build German service pages
-buildPage('lead-generation-service', 'lead-generation-service', 'de');
-buildPage('international-market-entry', 'international-market-entry', 'de');
-buildPage('corporate-digital-gifting', 'corporate-digital-gifting', 'de');
-// Build New Pillar Pages (German)
-buildPage('managed-it-services', 'managed-it-services', 'de');
-buildPage('vulnerability-assessments', 'vulnerability-assessments', 'de');
-buildPage('email-security', 'email-security', 'de');
-buildPage('website-care-plans', 'website-care-plans', 'de');
-buildPage('revops-crm-setup', 'revops-crm-setup', 'de');
-buildPage('lost-lead-reactivation', 'lost-lead-reactivation', 'de');
-buildPage('speed-to-lead', 'speed-to-lead', 'de');
-buildPage('recruitment', 'recruitment', 'de');
-buildPage('ai-creative-studio', 'ai-creative-studio', 'de');
-buildPage('blog-index', 'blog/index', 'de');
-// Build Missing Solutions Pages (English Filenames for Menu Compatibility)
-buildPage('sales-development-agency', 'sales-development-agency', 'de');
-buildPage('revops-infrastructure', 'revops-infrastructure', 'de');
-buildPage('market-foundation-program', 'market-foundation-program', 'de');
-// Build Missing Products Pages (English Filenames)
-buildPage('turnkey-it-infrastructure', 'turnkey-it-infrastructure', 'de');
-buildPage('turnkey-growth-infrastructure', 'turnkey-growth-infrastructure', 'de');
-buildPage('ai-content-infrastructure', 'ai-content-infrastructure', 'de');
-buildPage('custom-software-development', 'custom-software-development', 'de');
-buildPage('email-deliverability-checkup', 'email-deliverability-checkup', 'de');
-buildPage('secure-email-workplace-setup', 'secure-email-workplace-setup', 'de');
-buildPage('website-care-services', 'website-care-services', 'de');
-buildPage('cold-email-infrastructure', 'cold-email-infrastructure', 'de');
-buildPage('verified-lead-list', 'verified-lead-list', 'de');
-buildPage('written-content-engine', 'written-content-engine', 'de');
-buildPage('image-content-engine', 'image-content-engine', 'de');
-buildPage('video-content-engine', 'video-content-engine', 'de');
-buildPage('market-accelerator-program', 'market-accelerator-program', 'de');
+// Build Approved Solution Pages (German)
+services.forEach(service => buildSolutionPage(service.id, service.id, 'de'));
 
 // Build French pages
 console.log('Building French pages...');
@@ -2992,41 +3907,12 @@ buildPage('contact', 'contact', 'fr');
 buildPage('case-studies', 'case-studies', 'fr');
 buildPage('vision-mission', 'vision-mission', 'fr');
 buildPage('our-ethical-principles', 'our-ethical-principles', 'fr');
-buildPage('market-foundation-program', 'market-foundation-program', 'fr');
-buildPage('market-accelerator-program', 'market-accelerator-program', 'fr');
-buildPage('part-time-lead-generation-team', 'part-time-lead-generation-team', 'fr');
-// Build New Pillar Pages (French)
-buildPage('managed-it-services', 'managed-it-services', 'fr');
-buildPage('vulnerability-assessments', 'vulnerability-assessments', 'fr');
-buildPage('email-security', 'email-security', 'fr');
-buildPage('website-care-plans', 'website-care-plans', 'fr');
-buildPage('revops-crm-setup', 'revops-crm-setup', 'fr');
-buildPage('lost-lead-reactivation', 'lost-lead-reactivation', 'fr');
-buildPage('speed-to-lead', 'speed-to-lead', 'fr');
-buildPage('recruitment', 'recruitment', 'fr');
-buildPage('ai-creative-studio', 'ai-creative-studio', 'fr');
-buildPage('blog-index', 'blog/index', 'fr');
-// Build Missing Solutions Pages
-buildPage('sales-development-agency', 'sales-development-agency', 'fr');
-buildPage('revops-infrastructure', 'revops-infrastructure', 'fr');
-buildPage('lead-generation-service', 'lead-generation-service', 'fr');
-// Build Missing Products Pages
-buildPage('turnkey-it-infrastructure', 'turnkey-it-infrastructure', 'fr');
-buildPage('turnkey-growth-infrastructure', 'turnkey-growth-infrastructure', 'fr');
-buildPage('ai-content-infrastructure', 'ai-content-infrastructure', 'fr');
-buildPage('custom-software-development', 'custom-software-development', 'fr');
-buildPage('email-deliverability-checkup', 'email-deliverability-checkup', 'fr');
-buildPage('secure-email-workplace-setup', 'secure-email-workplace-setup', 'fr');
-buildPage('website-care-services', 'website-care-services', 'fr');
-buildPage('cold-email-infrastructure', 'cold-email-infrastructure', 'fr');
-buildPage('verified-lead-list', 'verified-lead-list', 'fr');
-buildPage('written-content-engine', 'written-content-engine', 'fr');
-buildPage('image-content-engine', 'image-content-engine', 'fr');
-buildPage('video-content-engine', 'video-content-engine', 'fr');
+// Build Approved Solution Pages (French)
+services.forEach(service => buildSolutionPage(service.id, service.id, 'fr'));
 
 // Call new functions
 buildCityLandingPages(); // NEW: Generic city pages showcasing all 19 services
-// Deprecated for SEO migration: city pages now live on clean city slugs without b2b-lead-generation- prefix.
+// Deprecated for SEO migration: city pages now live on clean city slugs.
 // buildCityPages();
 // REMOVED: Industry landing pages - focusing on city-specific pages only
 // buildIndustryPages();

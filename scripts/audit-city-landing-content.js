@@ -11,7 +11,7 @@ const services = JSON.parse(fs.readFileSync(path.join(ROOT_DIR, 'data/services.j
 function getActiveLandingPageSet() {
   const pageSet = new Set();
   for (const city of cities) {
-    const citySlug = city.slug.replace('b2b-lead-generation-', '');
+    const citySlug = city.slug;
     for (const service of services) {
       if (!service.slug_pattern) continue;
       pageSet.add(`${service.slug_pattern.replace('{{CITY_SLUG}}', citySlug)}.html`);

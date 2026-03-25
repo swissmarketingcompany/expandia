@@ -23,16 +23,16 @@ function buildCityLandingPages() {
 
             // Build page title and description
             const title = lang === 'de'
-                ? `Geschäftswachstum Services in ${city} | Go Expandia`
+                ? `Enterprise IT & KI-Lösungen in ${city} | Go Expandia`
                 : lang === 'fr'
-                    ? `Services de Croissance d'Entreprise à ${city} | Go Expandia`
-                    : `Business Growth Services in ${city} | Go Expandia`;
+                    ? `Solutions IT & IA d'Entreprise à ${city} | Go Expandia`
+                    : `Enterprise IT & AI Solutions in ${city} | Go Expandia`;
 
             const description = lang === 'de'
-                ? `Professionelle Geschäftswachstum-Services in ${city}. Wir helfen Unternehmen mit IT-Infrastruktur, Lead-Generierung und KI-Content.`
+                ? `Professionelle IT-Infrastruktur, KI-Automatisierung und maßgeschneiderte Softwareentwicklung in ${city}. Go Expandia liefert sichere, skalierbare Systeme für Unternehmen in ${country}.`
                 : lang === 'fr'
-                    ? `Services professionnels de croissance d'entreprise à ${city}. Nous aidons les entreprises avec l'infrastructure IT, la génération de leads et le contenu IA.`
-                    : `Professional business growth services in ${city}. We help companies with IT infrastructure, lead generation, and AI content.`;
+                    ? `Infrastructure IT sécurisée, automatisation IA et développement logiciel sur mesure à ${city}. Go Expandia fournit des systèmes d'entreprise évolutifs en ${country}.`
+                    : `Secure IT infrastructure, AI automation, and custom software development in ${city}. Go Expandia delivers enterprise-grade systems for companies in ${country}.`;
 
             // Create page content
             let htmlTemplate = templateContent;
