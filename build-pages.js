@@ -2572,44 +2572,19 @@ function buildCityLandingPages() {
 
             // Schema.org - Use proper schema generator
             const orgSchema = generateOrganizationSchema();
+            const cityCopy = getCityPageCopy(lang);
 
             const faqSchema = {
                 "@context": "https://schema.org",
                 "@type": "FAQPage",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": `How quickly can you deploy growth services in ${city}?`,
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": `We typically deploy turnkey growth infrastructure in ${city} within 48 hours. This includes email systems, secure workplace setups, and initial lead lists.`
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": `Do you have a physical office in ${city}?`,
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": `Go Expandia is a remote-first American company with a distributed team. While we serve many clients in ${city}, we do not maintain a physical local office, allowing us to provide high-end US-market expertise at a flat rate.`
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": `Do you comply with ${country} data protection regulations?`,
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": `Yes, all our services for ${city} and ${country} are fully GDPR compliant and meet local privacy standards, ensuring your business data remains secure.`
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": `What results can we expect in the ${region} market?`,
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": `Clients in the ${region} region typically see a 3-4x increase in sales appointments within the first 90 days of deploying our full growth infrastructure.`
-                        }
+                "mainEntity": cityCopy.faq.map(item => ({
+                    "@type": "Question",
+                    "name": item.q.replace(/\{\{CITY_NAME\}\}/g, city).replace(/\{\{COUNTRY_NAME\}\}/g, country).replace(/\{\{REGION_NAME\}\}/g, region),
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": item.a.replace(/\{\{CITY_NAME\}\}/g, city).replace(/\{\{COUNTRY_NAME\}\}/g, country).replace(/\{\{REGION_NAME\}\}/g, region)
                     }
-                ]
+                }))
             };
 
             // Aggregate all schemas
