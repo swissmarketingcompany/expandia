@@ -174,6 +174,225 @@ function generateUniqueCityContent(cityName, countryName, regionName) {
                 </div>`;
 }
 
+const LOCALIZED_CATEGORY_COPY = {
+    en: {
+        'it-solutions': { label: 'IT Solutions', promise: 'secure, uninterrupted, enterprise-grade plug-and-play cloud and network infrastructure.' },
+        'ai-solutions': { label: 'AI Solutions', promise: 'reduce operational headcount costs and accelerate decision-making with secure enterprise AI.' },
+        'custom-software': { label: 'Custom Software Development', promise: 'modernize bulky structures and build tailored business intelligence and engineering software.' }
+    },
+    de: {
+        'it-solutions': { label: 'IT-Lösungen', promise: 'sichere, unterbrechungsfreie Cloud- und Netzwerk-Infrastruktur in Unternehmensqualität.' },
+        'ai-solutions': { label: 'KI-Lösungen', promise: 'reduzieren Sie operative Personalkosten und beschleunigen Sie Entscheidungen mit sicherer Unternehmens-KI.' },
+        'custom-software': { label: 'Individuelle Softwareentwicklung', promise: 'modernisieren Sie komplexe Strukturen und bauen Sie maßgeschneiderte Business-Intelligence- und Engineering-Software.' }
+    },
+    fr: {
+        'it-solutions': { label: 'Solutions IT', promise: 'une infrastructure cloud et réseau sécurisée, continue et prête à l’emploi, de niveau entreprise.' },
+        'ai-solutions': { label: 'Solutions IA', promise: 'réduisez les coûts opérationnels et accélérez la prise de décision avec une IA d’entreprise sécurisée.' },
+        'custom-software': { label: 'Développement logiciel sur mesure', promise: 'modernisez des structures lourdes et créez des logiciels métiers et d’ingénierie adaptés à vos besoins.' }
+    }
+};
+
+function getLocalizedCategoryMeta(category, lang = 'en') {
+    return (LOCALIZED_CATEGORY_COPY[lang] && LOCALIZED_CATEGORY_COPY[lang][category]) ||
+        LOCALIZED_CATEGORY_COPY.en[category] ||
+        SERVICE_CATEGORIES[category] ||
+        { label: 'Solutions', promise: 'deliver secure, scalable infrastructure.' };
+}
+
+const CITY_LANDING_COPY = {
+    en: {
+        breadcrumbHome: 'Home',
+        breadcrumbLocations: 'Locations',
+        heroTitle: 'Enterprise Solutions',
+        heroButton: 'Get Free Analysis',
+        heroSecondary: 'Explore Categories',
+        whyTitle: 'Why {{CITY_NAME}}?',
+        whyBody: '{{CITY_NAME}} sits in the {{REGION_NAME}} market, where teams need secure systems, faster automation, and software that can scale with their operations.',
+        localHeading: 'Built for local delivery, global standards',
+        cardTitle: 'Three core categories',
+        cardSubtitles: { it: 'Security and infrastructure', ai: 'Automation and control', software: 'Build and integration' },
+        servicesTitle: 'Solutions for {{CITY_NAME}}',
+        servicesBody: 'Choose the category that matches your current priority and expand as your operations grow.',
+        seoHeading: 'Enterprise delivery in {{CITY_NAME}}, {{COUNTRY_NAME}}',
+        faqTitle: 'Frequently Asked Questions',
+        faqBody: 'Common questions from teams evaluating IT, AI, and custom software delivery.',
+        faq: [
+            { q: 'How quickly can you start?', a: 'We can usually begin after the initial discovery and scope review, then move quickly into implementation.' },
+            { q: 'What kinds of projects do you support?', a: 'We work on infrastructure, AI automation, system integrations, internal tools, portals, and modernization projects.' },
+            { q: 'Do you provide remote delivery?', a: 'Yes. Our delivery model is designed for remote implementation, monitoring, and support across regions.' },
+            { q: 'How do you handle compliance?', a: 'We account for data protection, logging, access control, and recovery requirements as part of the build.' }
+        ]
+    },
+    de: {
+        breadcrumbHome: 'Startseite',
+        breadcrumbLocations: 'Standorte',
+        heroTitle: 'Unternehmenslösungen',
+        heroButton: 'Kostenlose Analyse anfordern',
+        heroSecondary: 'Kategorien ansehen',
+        whyTitle: 'Warum {{CITY_NAME}}?',
+        whyBody: '{{CITY_NAME}} liegt im Markt von {{REGION_NAME}}, wo Teams sichere Systeme, schnellere Automatisierung und skalierbare Software brauchen.',
+        localHeading: 'Für lokale Umsetzung, nach globalen Standards',
+        cardTitle: 'Drei Kernkategorien',
+        cardSubtitles: { it: 'Sicherheit und Infrastruktur', ai: 'Automatisierung und Kontrolle', software: 'Entwicklung und Integration' },
+        servicesTitle: 'Lösungen für {{CITY_NAME}}',
+        servicesBody: 'Wählen Sie die Kategorie, die aktuell am wichtigsten ist, und erweitern Sie bei Bedarf Schritt für Schritt.',
+        seoHeading: 'Unternehmensumsetzung in {{CITY_NAME}}, {{COUNTRY_NAME}}',
+        faqTitle: 'Häufig gestellte Fragen',
+        faqBody: 'Häufige Fragen von Teams, die IT-, KI- und Software-Services bewerten.',
+        faq: [
+            { q: 'Wie schnell können Sie starten?', a: 'In der Regel beginnen wir nach der ersten Analyse und Scope-Abstimmung und gehen dann zügig in die Umsetzung.' },
+            { q: 'Welche Arten von Projekten unterstützen Sie?', a: 'Wir arbeiten an Infrastruktur, KI-Automatisierung, Systemintegrationen, internen Tools, Portalen und Modernisierungsvorhaben.' },
+            { q: 'Bieten Sie Remote-Umsetzung an?', a: 'Ja. Unser Delivery-Modell ist für Remote-Implementierung, Monitoring und Support über Regionen hinweg ausgelegt.' },
+            { q: 'Wie gehen Sie mit Compliance um?', a: 'Wir berücksichtigen Datenschutz, Logging, Zugriffskontrolle und Recovery-Anforderungen als Teil der Umsetzung.' }
+        ]
+    },
+    fr: {
+        breadcrumbHome: 'Accueil',
+        breadcrumbLocations: 'Villes',
+        heroTitle: 'Solutions d’entreprise',
+        heroButton: 'Obtenir une analyse gratuite',
+        heroSecondary: 'Découvrir les catégories',
+        whyTitle: 'Pourquoi {{CITY_NAME}} ?',
+        whyBody: '{{CITY_NAME}} se situe sur le marché de {{REGION_NAME}}, où les équipes ont besoin de systèmes sécurisés, d’automatisation plus rapide et de logiciels capables de suivre leur croissance.',
+        localHeading: 'Pensé pour une exécution locale, selon des standards globaux',
+        cardTitle: 'Trois catégories clés',
+        cardSubtitles: { it: 'Sécurité et infrastructure', ai: 'Automatisation et contrôle', software: 'Développement et intégration' },
+        servicesTitle: 'Solutions pour {{CITY_NAME}}',
+        servicesBody: 'Choisissez la catégorie la plus prioritaire aujourd’hui, puis faites évoluer la stack au rythme de votre activité.',
+        seoHeading: 'Déploiement d’entreprise à {{CITY_NAME}}, {{COUNTRY_NAME}}',
+        faqTitle: 'Questions fréquentes',
+        faqBody: 'Les questions les plus courantes des équipes qui évaluent des services IT, IA et logiciels sur mesure.',
+        faq: [
+            { q: 'Sous quel délai pouvez-vous démarrer ?', a: 'Nous commençons généralement après l’analyse initiale et la validation du périmètre, puis passons rapidement à l’exécution.' },
+            { q: 'Quels types de projets prenez-vous en charge ?', a: 'Nous intervenons sur l’infrastructure, l’automatisation IA, les intégrations systèmes, les outils internes, les portails et les projets de modernisation.' },
+            { q: 'Proposez-vous une exécution à distance ?', a: 'Oui. Notre modèle de delivery est conçu pour l’implémentation à distance, la supervision et le support multi-régions.' },
+            { q: 'Comment gérez-vous la conformité ?', a: 'Nous intégrons la protection des données, le logging, le contrôle d’accès et les besoins de reprise dans la conception.' }
+        ]
+    }
+};
+
+const SERVICE_CITY_COPY = {
+    en: {
+        getConsultation: 'Get Free Consultation',
+        howItWorks: 'How It Works',
+        marketStats: 'Market Stats',
+        marketSize: 'Market Size',
+        marketFocus: 'Market Focus',
+        currentlyTaking: 'Currently taking projects in {{COUNTRY_NAME}}',
+        challenges: 'Challenges in {{CITY_NAME}}',
+        solution: 'Our {{SERVICE_NAME}} Solution',
+        faqTitle: 'Frequently Asked Questions',
+        nearbyTitle: 'Also Serving These Areas Near {{CITY_NAME}}'
+    },
+    de: {
+        getConsultation: 'Kostenlose Beratung',
+        howItWorks: 'So funktioniert es',
+        marketStats: 'Marktdaten',
+        marketSize: 'Marktgröße',
+        marketFocus: 'Marktfokus',
+        currentlyTaking: 'Aktuell verfügbar für Projekte in {{COUNTRY_NAME}}',
+        challenges: 'Herausforderungen in {{CITY_NAME}}',
+        solution: 'Unsere {{SERVICE_NAME}}-Lösung',
+        faqTitle: 'Häufig gestellte Fragen',
+        nearbyTitle: 'Auch aktiv in diesen Gebieten nahe {{CITY_NAME}}'
+    },
+    fr: {
+        getConsultation: 'Obtenir une consultation gratuite',
+        howItWorks: 'Comment ça marche',
+        marketStats: 'Données du marché',
+        marketSize: 'Taille du marché',
+        marketFocus: 'Focus du marché',
+        currentlyTaking: 'Nous prenons actuellement des projets dans {{COUNTRY_NAME}}',
+        challenges: 'Défis à {{CITY_NAME}}',
+        solution: 'Notre solution {{SERVICE_NAME}}',
+        faqTitle: 'Questions fréquentes',
+        nearbyTitle: 'Nous intervenons aussi dans ces zones près de {{CITY_NAME}}'
+    }
+};
+
+function getCityPageCopy(lang = 'en') {
+    return CITY_LANDING_COPY[lang] || CITY_LANDING_COPY.en;
+}
+
+function getServiceCityCopy(lang = 'en') {
+    return SERVICE_CITY_COPY[lang] || SERVICE_CITY_COPY.en;
+}
+
+function generateLocalizedCityContent(cityName, countryName, regionName, lang = 'en') {
+    if (lang === 'en') {
+        return generateUniqueCityContent(cityName, countryName, regionName);
+    }
+
+    const templates = {
+        de: [
+            `${cityName} ist ein dynamischer Wirtschaftsstandort in ${regionName}, in dem Unternehmen Technologie gezielt einsetzen, um sich einen Wettbewerbsvorteil zu verschaffen.`,
+            `Go Expandia liefert für ${cityName} sichere IT-Infrastruktur, KI-Automatisierung und maßgeschneiderte Software, die auf die Anforderungen von Unternehmen in ${countryName} zugeschnitten ist.`,
+            `Von der schnellen Bereitstellung bis zur laufenden Optimierung helfen wir Unternehmen in ${cityName}, interne Abläufe zu beschleunigen und ihre Systeme belastbar zu skalieren.`,
+            `Mit Go Expandia erhalten ${cityName}-Unternehmen eine technische Partnerschaft, die auf langfristige Stabilität, Compliance und Wachstum ausgelegt ist.`
+        ],
+        fr: [
+            `${cityName} représente un environnement économique dynamique dans ${regionName}, où les entreprises utilisent la technologie pour gagner en compétitivité.`,
+            `Go Expandia fournit à ${cityName} une infrastructure IT sécurisée, de l’automatisation IA et des logiciels sur mesure adaptés aux besoins des entreprises de ${countryName}.`,
+            `Du déploiement rapide à l’optimisation continue, nous aidons les entreprises de ${cityName} à accélérer leurs opérations et à faire évoluer leurs systèmes de façon fiable.`,
+            `Avec Go Expandia, les entreprises de ${cityName} bénéficient d’un partenaire technique pensé pour la stabilité, la conformité et la croissance à long terme.`
+        ]
+    };
+
+    const selected = templates[lang] || templates.de;
+    return `
+                <div class="prose prose-lg max-w-none text-base-content/80">
+                    <p class="mb-4">${selected[0]}</p>
+                    <p class="mb-4">${selected[1]}</p>
+                    <p class="mb-4">${selected[2]}</p>
+                    <p class="mb-4">${selected[3]}</p>
+                </div>`;
+}
+
+function replaceCityLandingCopy(content, lang = 'en') {
+    const copy = getCityPageCopy(lang);
+    return content
+        .replace(/Home/g, copy.breadcrumbHome)
+        .replace(/Locations/g, copy.breadcrumbLocations)
+        .replace(/Enterprise Solutions/g, copy.heroTitle)
+        .replace(/Get Free Analysis/g, copy.heroButton)
+        .replace(/Explore Categories/g, copy.heroSecondary)
+        .replace(/Why \{\{CITY_NAME\}\}\?/g, copy.whyTitle)
+        .replace(/\{\{CITY_NAME\}\} sits in the \{\{REGION_NAME\}\} market, where teams need secure systems, faster automation, and software that can scale with their operations\./g, copy.whyBody)
+        .replace(/Built for local delivery, global standards/g, copy.localHeading)
+        .replace(/Three core categories/g, copy.cardTitle)
+        .replace(/Security and infrastructure/g, copy.cardSubtitles.it)
+        .replace(/Automation and control/g, copy.cardSubtitles.ai)
+        .replace(/Build and integration/g, copy.cardSubtitles.software)
+        .replace(/Solutions for \{\{CITY_NAME\}\}/g, copy.servicesTitle)
+        .replace(/Choose the category that matches your current priority and expand as your operations grow\./g, copy.servicesBody)
+        .replace(/Enterprise delivery in \{\{CITY_NAME\}\}, \{\{COUNTRY_NAME\}\}/g, copy.seoHeading)
+        .replace(/Frequently Asked Questions/g, copy.faqTitle)
+        .replace(/Common questions from teams evaluating IT, AI, and custom software delivery\./g, copy.faqBody)
+        .replace(/How quickly can you start\?/g, copy.faq[0].q)
+        .replace(/We can usually begin after the initial discovery and scope review, then move quickly into implementation\./g, copy.faq[0].a)
+        .replace(/What kinds of projects do you support\?/g, copy.faq[1].q)
+        .replace(/We work on infrastructure, AI automation, system integrations, internal tools, portals, and modernization projects\./g, copy.faq[1].a)
+        .replace(/Do you provide remote delivery\?/g, copy.faq[2].q)
+        .replace(/Yes\. Our delivery model is designed for remote implementation, monitoring, and support across regions\./g, copy.faq[2].a)
+        .replace(/How do you handle compliance\?/g, copy.faq[3].q)
+        .replace(/We account for data protection, logging, access control, and recovery requirements as part of the build\./g, copy.faq[3].a);
+}
+
+function replaceServiceCityCopy(content, lang = 'en') {
+    const copy = getServiceCityCopy(lang);
+    return content
+        .replace(/Get Free Consultation/g, copy.getConsultation)
+        .replace(/How It Works/g, copy.howItWorks)
+        .replace(/Market Stats/g, copy.marketStats)
+        .replace(/Market Size/g, copy.marketSize)
+        .replace(/Market Focus/g, copy.marketFocus)
+        .replace(/Currently taking projects in \{\{COUNTRY_NAME\}\}/g, copy.currentlyTaking)
+        .replace(/Challenges in \{\{CITY_NAME\}\}/g, copy.challenges)
+        .replace(/Our \{\{SERVICE_NAME\}\} Solution/g, copy.solution)
+        .replace(/Frequently Asked Questions/g, copy.faqTitle)
+        .replace(/Also Serving These Areas Near \{\{CITY_NAME\}\}/g, copy.nearbyTitle);
+}
+
 function getPageMetadata(templateName, lang = 'en') {
     // Get base metadata from JSON
     const baseMeta = metadata[templateName] || metadata['index'];
@@ -1035,7 +1254,7 @@ function buildServiceCityPages() {
                 // Replace dynamic parts in slug
                 let slug = service.slug_pattern.replace('{{CITY_SLUG}}', cityData.slug.replace('b2b-lead-generation-', ''));
 
-                const categoryMeta = SERVICE_CATEGORIES[service.category] || { label: 'Solutions', promise: 'deliver secure, scalable infrastructure.' };
+                const categoryMeta = getLocalizedCategoryMeta(service.category, lang);
 
                 // Determine title/desc based on language
                 let titleTemplate = service.title_template;
@@ -1142,6 +1361,7 @@ function buildServiceCityPages() {
                 if (!nearbyLinks.trim()) {
                     content = content.replace(/\n<!-- Nearby Cities CTA -->[\s\S]*?<\/section>\n\n/, '\n');
                 }
+                content = replaceServiceCityCopy(content, lang);
                 if (lang !== 'en') {
                     content = applyTranslations(content, lang);
                 }
@@ -2324,9 +2544,10 @@ function buildCityLandingPages() {
             htmlTemplate = htmlTemplate.replace(/\{\{\s*FOOTER\s*\}\}/g, '');
 
             // Generate and insert unique SEO content
-            const uniqueContent = generateUniqueCityContent(city, country, region);
+            const uniqueContent = generateLocalizedCityContent(city, country, region, lang);
             htmlTemplate = htmlTemplate.replace(/{{UNIQUE_SEO_CONTENT}}/g, uniqueContent);
             const categoryCardsHtml = Object.entries(SERVICE_CATEGORIES).map(([slug, meta]) => {
+                const localizedMeta = getLocalizedCategoryMeta(slug, lang);
                 const featuredServices = services
                     .filter(service => service.category === slug)
                     .slice(0, 3)
@@ -2337,12 +2558,13 @@ function buildCityLandingPages() {
                         <div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                             <i data-lucide="${meta.icon}" class="w-6 h-6 text-primary"></i>
                         </div>
-                        <h3 class="text-2xl font-bold mb-3">${meta.label}</h3>
-                        <p class="text-base-content/70 mb-4">${meta.promise}</p>
+                        <h3 class="text-2xl font-bold mb-3">${localizedMeta.label}</h3>
+                        <p class="text-base-content/70 mb-4">${localizedMeta.promise}</p>
                         <ul class="space-y-1 mb-0">${featuredServices}</ul>
                     </a>`;
             }).join('');
             htmlTemplate = htmlTemplate.replace(/{{SERVICE_LINKS}}/g, categoryCardsHtml);
+            htmlTemplate = replaceCityLandingCopy(htmlTemplate, lang);
 
             // Schema.org - Use proper schema generator
             const orgSchema = generateOrganizationSchema();
