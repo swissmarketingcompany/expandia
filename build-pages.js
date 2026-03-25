@@ -2725,17 +2725,6 @@ function generateSitemap() {
     // REMOVED: Industry Pages - buildIndustryPages() function is disabled
     // const industryPages = industries.map(i => `${i.slug}.html`);
 
-    // Re-enabled: Service x City Pages (these pages are bringing in clients)
-    const serviceCityPages = [];
-    services.forEach(service => {
-        cities.forEach(city => {
-            const slug = service.slug_pattern.replace('{{CITY_SLUG}}', city.slug.replace('b2b-lead-generation-', ''));
-            serviceCityPages.push(`${slug}.html`); // EN
-            serviceCityPages.push(`de/${slug}.html`); // DE
-            serviceCityPages.push(`fr/${slug}.html`); // FR
-        });
-    });
-
     // REMOVED: Service x Industry x City Pages - too complex, focusing on Service x City only
     // const serviceIndustryCityPages = [];
     // services.forEach(service => {
@@ -2769,7 +2758,7 @@ function generateSitemap() {
     glossaryPages.push('de/glossary/index.html');
     glossaryPages.push('fr/glossary/index.html');
 
-    const allPages = [...new Set([...filteredStaticPages, ...localizedPages, ...broadCityPages, ...serviceCityPages, ...blogPages, ...glossaryPages])];
+    const allPages = [...new Set([...filteredStaticPages, ...localizedPages, ...broadCityPages, ...blogPages, ...glossaryPages])];
 
     let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
@@ -2806,6 +2795,31 @@ function buildLegacyRedirectRules() {
         });
     });
 
+    cities.forEach(city => {
+        const cleanSlug = city.slug.replace('b2b-lead-generation-', '');
+        languages.forEach(lang => {
+            const sourcePath = lang === 'en' ? `/${city.slug}.html` : `/${lang}/${city.slug}.html`;
+            const targetPath = lang === 'en' ? `/${cleanSlug}.html` : `/${lang}/${cleanSlug}.html`;
+            lines.push(`${sourcePath}  ${targetPath}  301`);
+        });
+    });
+
+    PRIORITY_SERVICE_CITY_PATHS.forEach(sourceSlug => {
+        const matchedCity = cities.find(city => {
+            const cleanSlug = city.slug.replace('b2b-lead-generation-', '');
+            return sourceSlug.endsWith(`-${cleanSlug}`);
+        });
+
+        if (!matchedCity) return;
+
+        const cleanSlug = matchedCity.slug.replace('b2b-lead-generation-', '');
+        languages.forEach(lang => {
+            const sourcePath = lang === 'en' ? `/${sourceSlug}.html` : `/${lang}/${sourceSlug}.html`;
+            const targetPath = lang === 'en' ? `/${cleanSlug}.html` : `/${lang}/${cleanSlug}.html`;
+            lines.push(`${sourcePath}  ${targetPath}  301`);
+        });
+    });
+
     return lines.join('\n') + '\n';
 }
 
@@ -2833,6 +2847,29 @@ function cleanupLegacyRedirectOutputs() {
     LEGACY_REDIRECT_ONLY_PAGES.forEach(page => {
         languages.forEach(lang => {
             const filePath = lang === 'en' ? `${page}.html` : `${lang}/${page}.html`;
+            if (fs.existsSync(filePath)) {
+                fs.unlinkSync(filePath);
+            }
+        });
+    });
+
+    cities.forEach(city => {
+        const cleanSlug = city.slug.replace('b2b-lead-generation-', '');
+        languages.forEach(lang => {
+            const retiredPaths = [
+                lang === 'en' ? `${city.slug}.html` : `${lang}/${city.slug}.html`
+            ];
+            retiredPaths.forEach(filePath => {
+                if (fs.existsSync(filePath)) {
+                    fs.unlinkSync(filePath);
+                }
+            });
+        });
+    });
+
+    PRIORITY_SERVICE_CITY_PATHS.forEach(sourceSlug => {
+        languages.forEach(lang => {
+            const filePath = lang === 'en' ? `${sourceSlug}.html` : `${lang}/${sourceSlug}.html`;
             if (fs.existsSync(filePath)) {
                 fs.unlinkSync(filePath);
             }
@@ -3017,8 +3054,8 @@ buildCityLandingPages(); // NEW: Generic city pages showcasing all 19 services
 // buildCityPages();
 // REMOVED: Industry landing pages - focusing on city-specific pages only
 // buildIndustryPages();
-// Re-enabled: These pages are bringing in clients
-buildServiceCityPages();
+// RETIRED: Service x City pages and legacy lead-gen city pages are no longer generated
+// buildServiceCityPages();
 // REMOVED: Service x Industry x City pages - too complex, focusing on Service x City only
 // buildServiceIndustryCityPages();
 buildCityLocationsPage();
