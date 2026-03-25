@@ -186,19 +186,116 @@ function getPageMetadata(templateName, lang = 'en') {
     return baseMeta;
 }
 
+const SERVICE_CATEGORIES = {
+    'it-solutions': {
+        label: 'IT Solutions',
+        promise: 'secure, uninterrupted, enterprise-grade plug-and-play cloud and network infrastructure.',
+        icon: 'shield-check'
+    },
+    'ai-solutions': {
+        label: 'AI Solutions',
+        promise: "reduce operational headcount costs and accelerate decision-making with secure enterprise AI.",
+        icon: 'bot'
+    },
+    'custom-software': {
+        label: 'Custom Software Development',
+        promise: 'modernize bulky structures and build tailored business intelligence and engineering software.',
+        icon: 'code-2'
+    }
+};
+
+const LEGACY_REDIRECT_ONLY_PAGES = new Set([
+    'services',
+    'case-studies',
+    'lead-generation-services',
+    'managed-services',
+    'growth-programs',
+    'b2b-lead-generation-agency',
+    'crm-management',
+    'fractional-bizdev-team',
+    'inbound-lead-generation',
+    'outbound-lead-generation',
+    'sales-development-agency',
+    'outbound-marketing-agency',
+    'outreach-software-management',
+    'lead-generation-service',
+    'prospect-finding-service',
+    'appointment-setting-service',
+    'cold-email-agency',
+    'sales-protection-services',
+    'outsourced-sales-team-service',
+    'email-automation',
+    'email-marketing-management',
+    'speed-to-lead',
+    'secure-email-workplace-setup',
+    'schutzdienstleistungen',
+    'export-marketing-consulting',
+    'international-market-entry',
+    'distributor-finding',
+    'overseas-sales-consulting',
+    'europe-market-entry',
+    'corporate-digital-gifting',
+    'usa-pr-service',
+    'market-foundation-program',
+    'market-accelerator-program',
+    'part-time-lead-generation-team',
+    'turnkey-growth-infrastructure'
+]);
+
+const LEGACY_REDIRECT_TARGETS = {
+    'services': 'solutions',
+    'case-studies': 'solutions',
+    'lead-generation-services': 'solutions',
+    'managed-services': 'managed-it-services',
+    'growth-programs': 'solutions',
+    'b2b-lead-generation-agency': 'solutions',
+    'crm-management': 'custom-software-development',
+    'fractional-bizdev-team': 'solutions',
+    'inbound-lead-generation': 'solutions',
+    'outbound-lead-generation': 'solutions',
+    'sales-development-agency': 'solutions',
+    'outbound-marketing-agency': 'solutions',
+    'outreach-software-management': 'custom-software-development',
+    'lead-generation-service': 'solutions',
+    'prospect-finding-service': 'solutions',
+    'appointment-setting-service': 'solutions',
+    'cold-email-agency': 'solutions',
+    'sales-protection-services': 'solutions',
+    'outsourced-sales-team-service': 'solutions',
+    'email-automation': 'ai-content-infrastructure',
+    'email-marketing-management': 'ai-content-infrastructure',
+    'speed-to-lead': 'solutions',
+    'secure-email-workplace-setup': 'managed-it-services',
+    'schutzdienstleistungen': 'managed-it-services',
+    'export-marketing-consulting': 'solutions',
+    'international-market-entry': 'solutions',
+    'distributor-finding': 'solutions',
+    'overseas-sales-consulting': 'solutions',
+    'europe-market-entry': 'solutions',
+    'corporate-digital-gifting': 'solutions',
+    'usa-pr-service': 'solutions',
+    'market-foundation-program': 'solutions',
+    'market-accelerator-program': 'solutions',
+    'part-time-lead-generation-team': 'solutions',
+    'turnkey-growth-infrastructure': 'solutions'
+};
+
 const serviceMapping = {
-    'managed-it-services': 'turnkey-it',
-    'email-security': 'secure-email',
-    'website-care-plans': 'website-care',
-    'vulnerability-assessments': 'vulnerability-assessment',
-    'revops-crm-setup': 'revops',
-    'lost-lead-reactivation': 'lost-lead',
-    'ai-creative-studio': 'ai-creative-studio',
-    'recruitment': 'recruitment',
-    'market-foundation-program': 'market-foundation-program',
-    'market-accelerator-program': 'market-accelerator-program',
-    'part-time-lead-generation-team': 'part-time-lead-generation-team',
-    'lead-generation-service': 'b2b-leads'
+    'managed-it-services': 'it-solutions',
+    'email-security': 'it-solutions',
+    'turnkey-it-infrastructure': 'it-solutions',
+    'ai-content-infrastructure': 'ai-solutions',
+    'website-care-plans': 'custom-software',
+    'vulnerability-assessments': 'it-solutions',
+    'revops-crm-setup': 'custom-software',
+    'lost-lead-reactivation': 'ai-solutions',
+    'ai-creative-studio': 'ai-solutions',
+    'recruitment': 'custom-software',
+    'market-foundation-program': 'custom-software',
+    'market-accelerator-program': 'custom-software',
+    'part-time-lead-generation-team': 'custom-software',
+    'lead-generation-service': 'custom-software',
+    'custom-software-development': 'custom-software'
 };
 
 function getHreflangUrls(templateName) {
@@ -209,6 +306,10 @@ function getHreflangUrls(templateName) {
         'contact': { en: 'contact.html', de: 'de/contact.html', fr: 'fr/contact.html' },
 
         'managed-it-services': { en: 'managed-it-services.html', de: 'de/managed-it-services.html', fr: 'fr/managed-it-services.html' },
+        'turnkey-it-infrastructure': { en: 'turnkey-it-infrastructure.html', de: 'de/turnkey-it-infrastructure.html', fr: 'fr/turnkey-it-infrastructure.html' },
+        'ai-content-infrastructure': { en: 'ai-content-infrastructure.html', de: 'de/ai-content-infrastructure.html', fr: 'fr/ai-content-infrastructure.html' },
+        'turnkey-growth-infrastructure': { en: 'turnkey-growth-infrastructure.html', de: 'de/turnkey-growth-infrastructure.html', fr: 'fr/turnkey-growth-infrastructure.html' },
+        'custom-software-development': { en: 'custom-software-development.html', de: 'de/custom-software-development.html', fr: 'fr/custom-software-development.html' },
         'vulnerability-assessments': { en: 'vulnerability-assessments.html', de: 'de/vulnerability-assessments.html', fr: 'fr/vulnerability-assessments.html' },
         'email-security': { en: 'email-security.html', de: 'de/email-security.html', fr: 'fr/email-security.html' },
         'website-care-plans': { en: 'website-care-plans.html', de: 'de/website-care-plans.html', fr: 'fr/website-care-plans.html' },
@@ -217,6 +318,8 @@ function getHreflangUrls(templateName) {
         'speed-to-lead': { en: 'speed-to-lead.html', de: 'de/speed-to-lead.html', fr: 'fr/speed-to-lead.html' },
         'recruitment': { en: 'recruitment.html', de: 'de/recruitment.html', fr: 'fr/recruitment.html' },
         'ai-creative-studio': { en: 'ai-creative-studio.html', de: 'de/ai-creative-studio.html', fr: 'fr/ai-creative-studio.html' },
+        'city-locations': { en: 'city-locations.html', de: 'de/city-locations.html', fr: 'fr/city-locations.html' },
+        'blog-index': { en: 'blog/index.html', de: 'de/blog/index.html', fr: 'fr/blog/index.html' },
         'vision-mission': { en: 'vision-mission.html', de: 'de/vision-mission.html', fr: 'fr/vision-mission.html' },
         'vizyon-misyon': { en: 'vision-mission.html', de: 'de/vision-mission.html', fr: 'fr/vision-mission.html' },
         'our-ethical-principles': { en: 'our-ethical-principles.html', de: 'de/our-ethical-principles.html', fr: 'fr/our-ethical-principles.html' },
@@ -256,11 +359,34 @@ function getActiveStates(templateName) {
 }
 
 function buildPage(templateName, outputName, lang = 'en') {
-    const templateDir = lang === 'de' || lang === 'fr' ? `templates/${lang}/` : 'templates/';
-    const templatePath = `${templateDir}${templateName}.html`;
-
-    if (lang === 'fr' && !fs.existsSync(templatePath)) {
+    if (LEGACY_REDIRECT_ONLY_PAGES.has(templateName)) {
         return;
+    }
+
+    const templateDir = lang === 'de' || lang === 'fr' ? `templates/${lang}/` : 'templates/';
+    let templatePath = `${templateDir}${templateName}.html`;
+    const nativeLocalizedTemplates = new Set([
+        'index',
+        'solutions',
+        'managed-it-services',
+        'turnkey-it-infrastructure',
+        'ai-content-infrastructure',
+        'custom-software-development',
+        'city-locations'
+    ]);
+    const forceEnglishTemplates = new Set([
+        'index',
+        'solutions',
+        'managed-it-services',
+        'email-security',
+        'turnkey-growth-infrastructure',
+        'blog-index'
+    ]);
+
+    if ((lang === 'de' || lang === 'fr') && forceEnglishTemplates.has(templateName)) {
+        // Use the English source template for these core pages so the updated taxonomy
+        // stays centralized and the translation pass can keep localized pages in sync.
+        templatePath = `templates/${templateName}.html`;
     }
 
     let filePath = templatePath;
@@ -318,12 +444,16 @@ function buildPage(templateName, outputName, lang = 'en') {
     if (lang === 'de') {
         pageNavigation = applyTranslations(pageNavigation, 'de');
         pageFooter = applyTranslations(pageFooter, 'de');
-        content = applyTranslations(content, 'de');
+        if (!nativeLocalizedTemplates.has(templateName)) {
+            content = applyTranslations(content, 'de');
+        }
         pageNavigation = pageNavigation.replace(/href="\.\.\/solutions\.html/g, 'href="./solutions.html');
     } else if (lang === 'fr') {
         pageNavigation = applyTranslations(pageNavigation, 'fr');
         pageFooter = applyTranslations(pageFooter, 'fr');
-        content = applyTranslations(content, 'fr');
+        if (!nativeLocalizedTemplates.has(templateName)) {
+            content = applyTranslations(content, 'fr');
+        }
         pageNavigation = pageNavigation.replace(/href="\.\.\/solutions\.html/g, 'href="./solutions.html');
     }
 
@@ -812,17 +942,22 @@ function buildServiceFocusedContent(serviceName) {
     };
 }
 
+function getServiceContentFor(service, lang = 'en') {
+    const byId = serviceContent[service.id] && serviceContent[service.id][lang];
+    if (byId) return byId;
+
+    const categoryKey = service.category || serviceMapping[service.id];
+    const byCategory = categoryKey && serviceContent[categoryKey] && serviceContent[categoryKey][lang];
+    if (byCategory) return byCategory;
+
+    const categoryFallback = categoryKey && serviceContent[categoryKey] && serviceContent[categoryKey]['en'];
+    if (categoryFallback) return categoryFallback;
+
+    return null;
+}
+
 function normalizeServiceContent(service, contentData) {
-    if (!contentData) return contentData;
-
-    const joinedIntro = (contentData.intro || []).join(' ');
-    const joinedFaq = (contentData.faq || []).map(item => `${item.q} ${item.a}`).join(' ');
-    const hasITMismatch = /Turnkey IT Infrastructure/i.test(`${joinedIntro} ${joinedFaq}`);
-
-    if (service.id !== 'turnkey-it' && hasITMismatch) {
-        return buildServiceFocusedContent(service.name);
-    }
-
+    if (!contentData) return buildServiceFocusedContent(service.name);
     return contentData;
 }
 
@@ -840,48 +975,35 @@ function removeEmptyNearbySection(content) {
 // Whitelist for high-potential Service x City pages (derived from SEO opportunity list)
 // Note: non-service pages (blog/contact/solutions/etc.) are handled by other build steps.
 const PRIORITY_SERVICE_CITY_PATHS = new Set([
-    'managed-it-services-coventry',
-    'managed-it-services-springfield',
-    'managed-it-services-glasgow',
-    'managed-it-services-dudley',
-    'managed-it-services-gold-coast',
-    'managed-it-services-edinburgh',
-    'managed-it-services-honolulu',
-    'managed-it-services-buffalo',
-    'de/managed-it-services-charleston',
-    'managed-it-services-plymouth',
-    'managed-it-services-elk-grove',
-    'turnkey-it-infrastructure-philadelphia',
-    'managed-it-services-columbia',
-    'managed-it-services-provo',
-    'de/website-care-services-wolverhampton',
-    'managed-it-services-chandler',
-    'website-care-services-liverpool',
-    'managed-it-services-charleston',
-    'managed-it-services-fort-collins',
-    'managed-it-services-lincoln',
-    'managed-it-services-canberra',
-    'managed-it-services-port-st-lucie',
-    'de/managed-it-services-baghdad',
-    'website-care-services-rotterdam',
-    'de/managed-it-services-mnster',
-    'fr/managed-it-services-cardiff',
-    'managed-it-services-kingston-upon-hull',
-    'managed-it-services-st-louis',
-    'managed-it-services-swansea',
-    'managed-it-services-baton-rouge',
-    'managed-it-services-modesto',
-    'de/managed-it-services-doncaster',
-    'managed-it-services-gainesville',
-    'fr/website-care-services-edinburgh',
-    'turnkey-it-infrastructure-miami',
-    'managed-it-services-aberdeen',
-    'managed-it-services-santa-clarita',
-    'de/managed-it-services-oldenburg',
-    'b2b-lead-generation-st-louis',
-    'managed-it-services-baltimore',
-    'b2b-lead-generation-dublin',
-    'managed-it-services-lafayette'
+    'microsoft-365-workspace-management-london',
+    'cloud-architecture-azure-transition-zurich',
+    'endpoint-security-new-york',
+    'advanced-email-security-dubai',
+    'zero-trust-architecture-berlin',
+    'disaster-recovery-business-continuity-istanbul',
+    'continuous-vulnerability-scanning-frankfurt',
+    'gdpr-compliance-infrastructure-amsterdam',
+    'secure-network-vpn-setup-barcelona',
+    'it-support-monitoring-chicago',
+    'corporate-ai-infrastructure-setup-london',
+    'on-premise-ai-setup-zurich',
+    'ai-data-security-layer-berlin',
+    'agentic-ai-development-paris',
+    'smart-factory-optimization-stuttgart',
+    'sales-marketing-automation-new-york',
+    'customer-service-automation-dallas',
+    'data-silos-automation-madrid',
+    'operational-load-reduction-amsterdam',
+    'custom-erp-crm-integrations-london',
+    'digital-engineering-rd-software-zurich',
+    'b2b-dealer-customer-portals-paris',
+    'human-in-the-loop-ai-testing-berlin',
+    'legacy-system-modernization-chicago',
+    'enterprise-bi-dashboards-new-york',
+    'internal-operational-applications-istanbul',
+    'corporate-website-development-amsterdam',
+    'mvp-development-corporate-spinoff-dubai',
+    'custom-data-architecture-database-design-frankfurt'
 ]);
 
 // -------------------------------------------------------------------------
@@ -897,10 +1019,8 @@ function buildServiceCityPages() {
 
     languages.forEach(lang => {
         services.forEach(service => {
-            // Get content for specific language, fallback to EN if missing
-            const rawContentData = (serviceContent[service.id] && serviceContent[service.id][lang])
-                ? serviceContent[service.id][lang]
-                : (serviceContent[service.id] ? serviceContent[service.id]['en'] : null);
+            // Get content for specific language, fallback to category content or EN if missing
+            const rawContentData = getServiceContentFor(service, lang);
             const contentData = normalizeServiceContent(service, rawContentData);
 
             if (!contentData) {
@@ -914,6 +1034,8 @@ function buildServiceCityPages() {
 
                 // Replace dynamic parts in slug
                 let slug = service.slug_pattern.replace('{{CITY_SLUG}}', cityData.slug.replace('b2b-lead-generation-', ''));
+
+                const categoryMeta = SERVICE_CATEGORIES[service.category] || { label: 'Solutions', promise: 'deliver secure, scalable infrastructure.' };
 
                 // Determine title/desc based on language
                 let titleTemplate = service.title_template;
@@ -1012,11 +1134,16 @@ function buildServiceCityPages() {
                 content = content.replace('{{BENEFITS_LIST}}', benefits);
                 content = content.replace('{{FAQ_LIST}}', faq);
                 content = content.replace('{{NEARBY_CITIES_LINKS}}', nearbyLinks);
+                content = content.replace(/\{\{SERVICE_CATEGORY\}\}/g, categoryMeta.label);
+                content = content.replace(/\{\{SERVICE_CATEGORY_PROMISE\}\}/g, categoryMeta.promise);
                 content = content.replace(/\{\{CITY_POPULATION\}\}/g, cityData.population || 'growing');
                 content = content.replace(/\{\{CITY_LANDMARK\}\}/g, sanitizeLandmark(cityData.landmark, city));
 
                 if (!nearbyLinks.trim()) {
                     content = content.replace(/\n<!-- Nearby Cities CTA -->[\s\S]*?<\/section>\n\n/, '\n');
+                }
+                if (lang !== 'en') {
+                    content = applyTranslations(content, lang);
                 }
 
                 // Navigation/Footer
@@ -1057,7 +1184,7 @@ function buildServiceCityPages() {
                 // Metadata & Schema
                 htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, title);
                 htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, description);
-                htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, `${service.name} ${city}, ${service.name} Agency ${city}, ${country} B2B Services`);
+                htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, `${service.name} ${city}, ${categoryMeta.label} ${city}, ${country} enterprise solutions`);
 
                 const canonicalSlug = lang === 'en' ? `${slug}.html` : `${lang}/${slug}.html`;
                 htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.goexpandia.com/${canonicalSlug}`);
@@ -1450,13 +1577,16 @@ function buildCityPages() {
             .sort((a, b) => a.distance - b.distance)
             .slice(0, 4);
 
-        const nearbyHtml = nearby.map(c => `
-            <a href="${c.slug}.html" class="block p-4 rounded-lg border border-base-300 hover:border-primary transition-all group bg-base-100">
+        const nearbyHtml = nearby.map(c => {
+            const nearbySlug = c.slug.replace('b2b-lead-generation-', '');
+            return `
+            <a href="${nearbySlug}.html" class="block p-4 rounded-lg border border-base-300 hover:border-primary transition-all group bg-base-100">
                 <div class="font-bold text-lg group-hover:text-primary">${c.city}</div>
                 <div class="text-sm text-base-content/60">${c.country}</div>
                 <div class="text-xs text-base-content/40 mt-1">${Math.round(c.distance)} km away</div>
             </a>
-        `).join('');
+        `;
+        }).join('');
 
         // Generate Service Links for this City
         const serviceLinksHtml = services.map(service => {
@@ -1716,7 +1846,7 @@ function buildCityLocationsPage() {
         name: c.city,
         lat: c.lat || 0,
         lng: c.lng || 0,
-        url: `./${c.slug}.html`,
+        url: `./${c.slug.replace('b2b-lead-generation-', '')}.html`,
         region: c.region || 'Global'
     }));
 
@@ -1799,6 +1929,8 @@ function buildCityLocationsPage() {
     const logoPath = 'go-expandia-logo.png';
     htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
     pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
+    pageNavigation = pageNavigation.replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html');
+    pageNavigation = pageNavigation.replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, 'our-ethical-principles.html');
     pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
     pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
     pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
@@ -1812,7 +1944,12 @@ function buildCityLocationsPage() {
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, pageMetadata.description);
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, pageMetadata.keywords);
     htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, 'https://www.goexpandia.com/city-locations.html');
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, 'city-locations.html');
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, '');
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, 'de/city-locations.html');
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, 'fr/city-locations.html');
     htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, '{}'); // TODO: Add schema
+    htmlTemplate = clearUnresolvedTemplateTokens(htmlTemplate);
 
     fs.writeFileSync('city-locations.html', htmlTemplate, 'utf8');
     console.log(`✅ Built city-locations.html`);
@@ -2157,16 +2294,16 @@ function buildCityLandingPages() {
 
             // Build page title and description
             const title = lang === 'de'
-                ? `Geschäftswachstum Services in ${city} | Go Expandia`
+                ? `IT-, KI- und Softwarelösungen in ${city} | Go Expandia`
                 : lang === 'fr'
-                    ? `Services de Croissance d'Entreprise à ${city} | Go Expandia`
-                    : `Business Growth Services in ${city} | Go Expandia`;
+                    ? `Solutions IT, IA et Logiciels à ${city} | Go Expandia`
+                    : `IT, AI & Custom Software Solutions in ${city} | Go Expandia`;
 
             const description = lang === 'de'
-                ? `Professionelle Geschäftswachstum-Services in ${city}. Wir helfen Unternehmen mit IT-Infrastruktur, Lead-Generierung und KI-Content.`
+                ? `Unternehmenslösungen in ${city} für IT, KI-Automatisierung und individuelle Softwareentwicklung.`
                 : lang === 'fr'
-                    ? `Services professionnels de croissance d'entreprise à ${city}. Nous aidons les entreprises avec l'infrastructure IT, la génération de leads et le contenu IA.`
-                    : `Professional business growth services in ${city}. We help companies with IT infrastructure, lead generation, and AI content.`;
+                    ? `Solutions d'entreprise à ${city} pour l'IT, l'automatisation IA et le développement logiciel sur mesure.`
+                    : `Enterprise solutions in ${city} for IT infrastructure, AI automation, and custom software development.`;
 
             // Create page content
             const { cleanContent: content, extractedSchemas } = extractAndRemoveSchemas(templateContent, `templates/city-landing.html`);
@@ -2183,12 +2320,29 @@ function buildCityLandingPages() {
             htmlTemplate = htmlTemplate.replace(/{{BASE_PATH}}/g, basePath);
             htmlTemplate = htmlTemplate.replace(/{{VISION_MISSION_PAGE}}/g, 'vision-mission.html');
             htmlTemplate = htmlTemplate.replace(/{{ETHICAL_PRINCIPLES_PAGE}}/g, 'our-ethical-principles.html');
-            htmlTemplate = htmlTemplate.replace(/{{LATEST_BLOG_POSTS}}/g, latestBlogPosts.replace(/{{BASE_PATH}}/g, basePath));
-            htmlTemplate = htmlTemplate.replace(/{{FOOTER}}/g, '');
+            htmlTemplate = htmlTemplate.replace(/\{\{\s*LATEST_BLOG_POSTS\s*\}\}/g, latestBlogPosts.replace(/{{BASE_PATH}}/g, basePath));
+            htmlTemplate = htmlTemplate.replace(/\{\{\s*FOOTER\s*\}\}/g, '');
 
             // Generate and insert unique SEO content
             const uniqueContent = generateUniqueCityContent(city, country, region);
             htmlTemplate = htmlTemplate.replace(/{{UNIQUE_SEO_CONTENT}}/g, uniqueContent);
+            const categoryCardsHtml = Object.entries(SERVICE_CATEGORIES).map(([slug, meta]) => {
+                const featuredServices = services
+                    .filter(service => service.category === slug)
+                    .slice(0, 3)
+                    .map(service => `<li class="text-sm text-base-content/70">${service.name}</li>`)
+                    .join('');
+                return `
+                    <a href="${slug === 'custom-software' ? 'custom-software-development.html' : 'solutions.html'}" class="buzz-card p-8 bg-white shadow-lg hover:shadow-xl transition-all block">
+                        <div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                            <i data-lucide="${meta.icon}" class="w-6 h-6 text-primary"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">${meta.label}</h3>
+                        <p class="text-base-content/70 mb-4">${meta.promise}</p>
+                        <ul class="space-y-1 mb-0">${featuredServices}</ul>
+                    </a>`;
+            }).join('');
+            htmlTemplate = htmlTemplate.replace(/{{SERVICE_LINKS}}/g, categoryCardsHtml);
 
             // Schema.org - Use proper schema generator
             const orgSchema = generateOrganizationSchema();
@@ -2241,7 +2395,7 @@ function buildCityLandingPages() {
 
             // Create proper HTML template with head
             let fullHtmlTemplate = createHTMLTemplate(lang);
-            fullHtmlTemplate = fullHtmlTemplate.replace('{{MAIN_CONTENT}}', htmlTemplate);
+            fullHtmlTemplate = fullHtmlTemplate.replace(/\{\{\s*MAIN_CONTENT\s*\}\}/g, htmlTemplate);
             fullHtmlTemplate = fullHtmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, JSON.stringify(finalSchemas, null, 2));
 
             // Hero image
@@ -2267,15 +2421,15 @@ function buildCityLandingPages() {
             pageFooter = pageFooter.replace(/{{LOGO_PATH}}/g, logoPath);
 
             // Replace placeholders
-            fullHtmlTemplate = fullHtmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
-            fullHtmlTemplate = fullHtmlTemplate.replace('{{FOOTER}}', pageFooter);
+            fullHtmlTemplate = fullHtmlTemplate.replace(/\{\{\s*NAVIGATION\s*\}\}/g, pageNavigation);
+            fullHtmlTemplate = fullHtmlTemplate.replace(/\{\{\s*FOOTER\s*\}\}/g, pageFooter);
             fullHtmlTemplate = fullHtmlTemplate.replace(/{{BASE_PATH}}/g, basePath);
             fullHtmlTemplate = fullHtmlTemplate.replace(/{{LOGO_PATH}}/g, logoPath);
 
             // Metadata
             fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_TITLE}}/g, title);
             fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_DESCRIPTION}}/g, description);
-            fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_KEYWORDS}}/g, `business growth services, B2B sales, IT infrastructure, AI content, ${country}, lead generation`);
+            fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_KEYWORDS}}/g, `IT solutions, AI solutions, custom software development, ${country}, enterprise technology`);
 
             // Canonical URL
             const canonicalSlug = lang === 'en' ? `${citySlug}.html` : `${lang}/${citySlug}.html`;
@@ -2286,6 +2440,9 @@ function buildCityLandingPages() {
             fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_URL_DE}}/g, `de/${citySlug}.html`);
             fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_URL_FR}}/g, `fr/${citySlug}.html`);
             fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_URL_TR}}/g, ``);
+
+            // Safety net: remove any unresolved {{TOKEN}} placeholders before writing.
+            fullHtmlTemplate = clearUnresolvedTemplateTokens(fullHtmlTemplate);
 
             // Output path
             const outputPath = lang === 'en' ? `${citySlug}.html` : `${lang}/${citySlug}.html`;
@@ -2317,20 +2474,22 @@ function generateSitemap() {
         'index.html', 'about.html', 'solutions.html', 'contact.html', 'case-studies.html',
         'managed-it-services.html', 'vulnerability-assessments.html', 'email-security.html',
         'website-care-plans.html', 'revops-crm-setup.html', 'lost-lead-reactivation.html',
-        'speed-to-lead.html', 'recruitment.html', 'ai-creative-studio.html', 'city-locations.html'
+        'speed-to-lead.html', 'recruitment.html', 'ai-creative-studio.html',
+        'turnkey-it-infrastructure.html', 'ai-content-infrastructure.html',
+        'custom-software-development.html', 'city-locations.html'
     ];
+
+    const legacyStaticPages = new Set(Object.keys(LEGACY_REDIRECT_TARGETS).map(page => `${page}.html`));
+    const filteredStaticPages = staticPages.filter(page => !legacyStaticPages.has(page));
 
     // Add DE/FR versions (removed TR as it's no longer supported)
     const languages = ['de', 'fr'];
     const localizedPages = [];
     languages.forEach(lang => {
-        staticPages.forEach(page => {
+        filteredStaticPages.forEach(page => {
             localizedPages.push(`${lang}/${page}`);
         });
     });
-
-    // Add City Pages (B2B specific) - EN only for now as per buildCityPages logic
-    const cityPagesFull = cities.map(c => `${c.slug}.html`);
 
     // Add Broad City Landing Pages (EN, DE, FR) as built by buildCityLandingPages
     const broadCityPages = [];
@@ -2388,7 +2547,7 @@ function generateSitemap() {
     glossaryPages.push('de/glossary/index.html');
     glossaryPages.push('fr/glossary/index.html');
 
-    const allPages = [...new Set([...staticPages, ...localizedPages, ...cityPagesFull, ...broadCityPages, ...serviceCityPages, ...blogPages, ...glossaryPages])];
+    const allPages = [...new Set([...filteredStaticPages, ...localizedPages, ...broadCityPages, ...serviceCityPages, ...blogPages, ...glossaryPages])];
 
     let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
@@ -2407,6 +2566,56 @@ function generateSitemap() {
 
     fs.writeFileSync('sitemap.xml', sitemapContent);
     console.log(`✅ Generated sitemap.xml with ${allPages.length} URLs`);
+}
+
+function buildLegacyRedirectRules() {
+    const languages = ['en', 'de', 'fr'];
+    const lines = [
+        '# 301 Redirects for Deprecated Legacy Service URLs',
+        '# Generated by build-pages.js. Keep these redirects long-term.',
+        ''
+    ];
+
+    Object.entries(LEGACY_REDIRECT_TARGETS).forEach(([source, target]) => {
+        languages.forEach(lang => {
+            const sourcePath = lang === 'en' ? `/${source}.html` : `/${lang}/${source}.html`;
+            const targetPath = lang === 'en' ? `/${target}.html` : `/${lang}/${target}.html`;
+            lines.push(`${sourcePath}  ${targetPath}  301`);
+        });
+    });
+
+    return lines.join('\n') + '\n';
+}
+
+function writeRedirectsFile() {
+    const redirectsPath = '_redirects';
+    const legacyBlockStart = '# BEGIN AUTO-GENERATED LEGACY SERVICE REDIRECTS';
+    const legacyBlockEnd = '# END AUTO-GENERATED LEGACY SERVICE REDIRECTS';
+    const generatedBlock = `${legacyBlockStart}\n${buildLegacyRedirectRules()}${legacyBlockEnd}\n`;
+
+    let existing = '';
+    if (fs.existsSync(redirectsPath)) {
+        existing = fs.readFileSync(redirectsPath, 'utf8');
+        const legacyBlockRegex = new RegExp(`${legacyBlockStart}[\\s\\S]*?${legacyBlockEnd}\\n?`, 'm');
+        existing = existing.replace(legacyBlockRegex, '').trimEnd();
+    }
+
+    const nextContent = `${existing}\n\n${generatedBlock}`.trimStart();
+    fs.writeFileSync(redirectsPath, nextContent, 'utf8');
+    console.log(`✅ Wrote legacy redirect rules to ${redirectsPath}`);
+}
+
+function cleanupLegacyRedirectOutputs() {
+    const languages = ['en', 'de', 'fr'];
+
+    LEGACY_REDIRECT_ONLY_PAGES.forEach(page => {
+        languages.forEach(lang => {
+            const filePath = lang === 'en' ? `${page}.html` : `${lang}/${page}.html`;
+            if (fs.existsSync(filePath)) {
+                fs.unlinkSync(filePath);
+            }
+        });
+    });
 }
 
 
@@ -2473,6 +2682,7 @@ buildPage('ai-creative-studio', 'ai-creative-studio', 'en');
 buildPage('turnkey-it-infrastructure', 'turnkey-it-infrastructure', 'en');
 buildPage('turnkey-growth-infrastructure', 'turnkey-growth-infrastructure', 'en');
 buildPage('ai-content-infrastructure', 'ai-content-infrastructure', 'en');
+buildPage('custom-software-development', 'custom-software-development', 'en');
 
 // Build New Infrastructure Product Pages
 buildPage('cold-email-infrastructure', 'cold-email-infrastructure', 'en');
@@ -2526,6 +2736,7 @@ buildPage('market-foundation-program', 'market-foundation-program', 'de');
 buildPage('turnkey-it-infrastructure', 'turnkey-it-infrastructure', 'de');
 buildPage('turnkey-growth-infrastructure', 'turnkey-growth-infrastructure', 'de');
 buildPage('ai-content-infrastructure', 'ai-content-infrastructure', 'de');
+buildPage('custom-software-development', 'custom-software-development', 'de');
 buildPage('email-deliverability-checkup', 'email-deliverability-checkup', 'de');
 buildPage('secure-email-workplace-setup', 'secure-email-workplace-setup', 'de');
 buildPage('website-care-services', 'website-care-services', 'de');
@@ -2568,6 +2779,7 @@ buildPage('lead-generation-service', 'lead-generation-service', 'fr');
 buildPage('turnkey-it-infrastructure', 'turnkey-it-infrastructure', 'fr');
 buildPage('turnkey-growth-infrastructure', 'turnkey-growth-infrastructure', 'fr');
 buildPage('ai-content-infrastructure', 'ai-content-infrastructure', 'fr');
+buildPage('custom-software-development', 'custom-software-development', 'fr');
 buildPage('email-deliverability-checkup', 'email-deliverability-checkup', 'fr');
 buildPage('secure-email-workplace-setup', 'secure-email-workplace-setup', 'fr');
 buildPage('website-care-services', 'website-care-services', 'fr');
@@ -2579,7 +2791,8 @@ buildPage('video-content-engine', 'video-content-engine', 'fr');
 
 // Call new functions
 buildCityLandingPages(); // NEW: Generic city pages showcasing all 19 services
-buildCityPages();
+// Deprecated for SEO migration: city pages now live on clean city slugs without b2b-lead-generation- prefix.
+// buildCityPages();
 // REMOVED: Industry landing pages - focusing on city-specific pages only
 // buildIndustryPages();
 // Re-enabled: These pages are bringing in clients
@@ -2591,6 +2804,8 @@ buildBlogPosts();
 buildGlossaryTerms(); // NEW
 buildGlossaryIndex(); // NEW
 generateSitemap();
+cleanupLegacyRedirectOutputs();
+writeRedirectsFile();
 
 console.log('\n🎉 BUILD COMPLETE with enhanced SEO!');
 console.log('📁 Generated files have been updated from templates/');

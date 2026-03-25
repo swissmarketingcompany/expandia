@@ -1,45 +1,45 @@
 {
   "index": {
-    "title": "Growth Infrastructure | Lead Generation, Cold Emailing, IT Consulting | Go Expandia",
-    "description": "Secure high-ticket deals in the US, UK, & EU. We build rapid Growth Infrastructure, Managed Sales systems, and IT solutions. Start closing bigger deals in 48 hours.",
-    "keywords": "Growth Infrastructure, Managed Sales, IT Consulting, B2B Lead Generation, Cold Emailing, RevOps, High Ticket Sales, US Market Expansion, EU Business Development, Sales Automation, 48 Hour Delivery, Rapid Scale, Enterprise Sales Systems, Go Expandia",
+    "title": "IT Solutions, AI Solutions & Custom Software | Go Expandia",
+    "description": "We build secure IT infrastructure, enterprise AI systems, and custom software that removes operational friction and helps teams move faster.",
+    "keywords": "IT Solutions, AI Solutions, Custom Software Development, Azure migration, endpoint security, AI automation, ERP integration, enterprise dashboards, Go Expandia",
     "translations": {
       "tr": {
-        "title": "Yönetilen Satış Operasyonları & B2B Büyüme Ortağı | Go Expandia",
-        "description": "Avrupa'da stratejik operasyon ortağınız. Stratejinize ve büyümenize odaklanabilmeniz için BT, satış, güvenlik ve işe alımı yönetiyoruz.",
-        "keywords": "B2B lead üretimi Türkiye, ihracat satış danışmanlığı, randevu ayarlama hizmeti, Avrupa pazarı girişi"
+        "title": "IT, Yapay Zeka ve Özel Yazılım Çözümleri | Go Expandia",
+        "description": "Güvenli IT altyapısı, kurumsal yapay zeka sistemleri ve operasyonel sürtünmeyi azaltan özel yazılımlar geliştiriyoruz.",
+        "keywords": "IT çözümleri, yapay zeka çözümleri, özel yazılım geliştirme, Azure geçişi, kurumsal otomasyon"
       },
       "de": {
-        "title": "Managed Sales Operations & B2B Wachstumspartner | Go Expandia",
-        "description": "Ihr strategischer Operations-Partner in Europa. Wir verwalten IT, Vertrieb, Sicherheit und Recruiting, damit Sie sich auf Strategie und Wachstum konzentrieren können.",
-        "keywords": "B2B Lead-Generierung Deutschland, Terminvereinbarung Exporteure, europäischer Markteintritt, Verkaufsautomation Deutschland"
+        "title": "IT-, KI- und Softwarelösungen | Go Expandia",
+        "description": "Wir bauen sichere IT-Infrastruktur, Enterprise-KI-Systeme und individuelle Software, die operative Reibung reduziert und Teams schneller macht.",
+        "keywords": "IT-Lösungen, KI-Lösungen, kundenspezifische Softwareentwicklung, Azure-Migration, Endpunktsicherheit"
       },
       "fr": {
-        "title": "Opérations de Vente Gérées & Partenaire de Croissance B2B | Go Expandia",
-        "description": "Votre partenaire stratégique en opérations en Europe. Nous gérons l'IT, les ventes, la sécurité et le recrutement pour que vous puissiez vous concentrer sur la stratégie et la croissance.",
-        "keywords": "Génération de leads B2B France, conseil vente export, service de prise de rendez-vous, entrée sur le marché européen"
+        "title": "Solutions IT, IA et Logiciels Sur Mesure | Go Expandia",
+        "description": "Nous construisons des infrastructures IT sécurisées, des systèmes IA d'entreprise et des logiciels sur mesure qui réduisent la friction opérationnelle.",
+        "keywords": "solutions IT, solutions IA, développement logiciel sur mesure, migration Azure, sécurité des terminaux"
       }
     }
   },
   "solutions": {
-    "title": "End-to-End Sales Operations Solutions | Go Expandia",
-    "description": "Inbound lead generation and outbound lead generation tailored to your growth goals.",
-    "keywords": "export sales solutions, B2B consulting Europe, international sales services, European market expansion",
+    "title": "IT Solutions, AI Solutions & Custom Software | Go Expandia",
+    "description": "Explore our three core service categories: secure IT solutions, enterprise AI automation, and custom software development.",
+    "keywords": "IT solutions, AI solutions, custom software development, enterprise infrastructure, automation",
     "translations": {
       "tr": {
-        "title": "Uçtan Uca Satış Operasyon Çözümleri | Go Expandia",
-        "description": "Avrupa pazarları için B2B satış çözümleri. İhracat danışmanlığı, lead üretimi ve satış otomasyonu hizmetleri.",
-        "keywords": "B2B satış çözümleri, ihracat danışmanlığı, satış otomasyonu, Avrupa pazarları"
+        "title": "IT, Yapay Zeka ve Özel Yazılım Çözümleri | Go Expandia",
+        "description": "Güvenli IT çözümleri, kurumsal yapay zeka otomasyonu ve özel yazılım geliştirme kategorilerimizi keşfedin.",
+        "keywords": "IT çözümleri, yapay zeka çözümleri, özel yazılım geliştirme, kurumsal altyapı"
       },
       "de": {
-        "title": "End-to-End Vertriebsoperations-Lösungen | Go Expandia",
-        "description": "B2B Verkaufslösungen für europäische Märkte. Export-Beratung, Lead-Generierung und Verkaufsautomation.",
-        "keywords": "B2B Verkaufslösungen, Export Beratung, Verkaufsautomation, europäische Märkte"
+        "title": "IT-, KI- und Softwarelösungen | Go Expandia",
+        "description": "Entdecken Sie unsere drei Kernkategorien: sichere IT-Lösungen, Enterprise-KI-Automatisierung und individuelle Softwareentwicklung.",
+        "keywords": "IT-Lösungen, KI-Lösungen, kundenspezifische Softwareentwicklung, Unternehmensinfrastruktur"
       },
       "fr": {
-        "title": "Solutions d'Opérations de Vente de Bout en Bout | Go Expandia",
-        "description": "Solutions de vente B2B pour les marchés européens. Conseil export, génération de leads et services d'automatisation des ventes.",
-        "keywords": "solutions de vente B2B, conseil export, automatisation des ventes, marchés européens"
+        "title": "Solutions IT, IA et Logiciels Sur Mesure | Go Expandia",
+        "description": "Découvrez nos trois catégories principales : solutions IT sécurisées, automatisation IA d'entreprise et développement logiciel sur mesure.",
+        "keywords": "solutions IT, solutions IA, développement logiciel sur mesure, infrastructure d'entreprise"
       }
     }
   },
@@ -312,9 +312,9 @@
     }
   },
   "managed-it-services": {
-    "title": "Managed IT Services & Cybersecurity for B2B | Go Expandia",
-    "description": "Enterprise-grade Managed IT services and cybersecurity. Endpoint protection, cloud security, and technical support for high-growth companies.",
-    "keywords": "managed IT services, cybersecurity for business, MSP services, IT support Europe",
+    "title": "Managed IT Services | IT Solutions | Go Expandia",
+    "description": "Enterprise-grade managed IT services for secure infrastructure, endpoint protection, cloud migration, and 24/7 support.",
+    "keywords": "managed IT services, IT solutions, endpoint security, cloud migration, 24/7 support",
     "translations": {
       "de": {
         "title": "Verwaltete IT-Dienste & Cybersicherheit für B2B | Go Expandia",
@@ -346,9 +346,9 @@
     }
   },
   "email-security": {
-    "title": "Email Security & Global Deliverability Solutions | Go Expandia",
-    "description": "Protect your domain and ensure your emails reach the inbox. Expert email security, SPF/DKIM/DMARC setup, and deliverability optimization.",
-    "keywords": "email security, email deliverability, DMARC setup, spam protection",
+    "title": "Advanced Email Security | IT Solutions | Go Expandia",
+    "description": "Advanced email security for businesses that need phishing protection, deliverability controls, and enterprise-grade inbox safety.",
+    "keywords": "email security, advanced email security, DMARC setup, spam protection, phishing defense",
     "translations": {
       "de": {
         "title": "Email Security & globale Zustellbarkeit | Go Expandia",
@@ -465,9 +465,9 @@
     }
   },
   "city-locations": {
-    "title": "Global Managed Sales Operations Locations | Go Expandia",
-    "description": "Explore our B2B lead generation services across 80+ cities worldwide.",
-    "keywords": "B2B lead generation locations, global lead generation, local lead generation services"
+    "title": "Global Locations | IT, AI & Custom Software | Go Expandia",
+    "description": "Explore our global city footprint for IT solutions, AI automation, and custom software development.",
+    "keywords": "global locations, IT solutions cities, AI automation cities, custom software development"
   },
   "blog-index": {
     "title": "Sales University - Sales Operations Resources | Go Expandia",
@@ -488,6 +488,75 @@
         "title": "Sales University - Ressources d'Opérations de Vente | Go Expandia",
         "description": "Maîtrisez la vente avec notre Sales University complète. Articles d'experts sur l'email froid, la génération de leads, la psychologie de vente et les techniques avancées.",
         "keywords": "formation vente, blog vente b2b, ressources génération de leads, sales university"
+      }
+    }
+  },
+  "custom-software-development": {
+    "title": "Custom Software Development | Go Expandia",
+    "description": "Custom ERP, CRM, BI, portal, MVP, and modernization projects designed around your company's actual workflows.",
+    "keywords": "custom software development, ERP integration, CRM integration, BI dashboards, MVP development",
+    "translations": {
+      "de": {
+        "title": "Individuelle Softwareentwicklung | Go Expandia",
+        "description": "Individuelle ERP-, CRM-, BI-, Portal-, MVP- und Modernisierungsprojekte, die auf Ihre realen Prozesse zugeschnitten sind.",
+        "keywords": "individuelle Softwareentwicklung, ERP-Integration, CRM-Integration, BI-Dashboards, MVP-Entwicklung"
+      },
+      "fr": {
+        "title": "Développement Logiciel Sur Mesure | Go Expandia",
+        "description": "Projets ERP, CRM, BI, portail, MVP et modernisation conçus autour des workflows réels de votre entreprise.",
+        "keywords": "développement logiciel sur mesure, intégration ERP, intégration CRM, tableaux de bord BI, développement MVP"
+      }
+    }
+  }
+  ,
+  "turnkey-it-infrastructure": {
+    "title": "Turnkey IT Infrastructure | Go Expandia",
+    "description": "Secure, enterprise-grade IT infrastructure deployment for cloud, network, security, and remote work environments.",
+    "keywords": "IT infrastructure, cloud deployment, network security, endpoint security, business continuity",
+    "translations": {
+      "de": {
+        "title": "Schlüsselfertige IT-Infrastruktur | Go Expandia",
+        "description": "Sichere IT-Infrastruktur für Unternehmen in Cloud-, Netzwerk-, Sicherheits- und Remote-Arbeitsumgebungen.",
+        "keywords": "IT-Infrastruktur, Cloud-Deployment, Netzwerksicherheit, Endpunktsicherheit, Geschäftskontinuität"
+      },
+      "fr": {
+        "title": "Infrastructure Informatique Clé en Main | Go Expandia",
+        "description": "Infrastructure informatique sécurisée et de niveau entreprise pour le cloud, les réseaux, la sécurité et le télétravail.",
+        "keywords": "infrastructure informatique, déploiement cloud, sécurité réseau, sécurité des terminaux, continuité d’activité"
+      }
+    }
+  },
+  "ai-content-infrastructure": {
+    "title": "AI Content Infrastructure | Go Expandia",
+    "description": "Secure enterprise AI workspaces, automation layers, and data flows for AI-assisted operations.",
+    "keywords": "AI infrastructure, enterprise AI, automation, data security, AI workspaces",
+    "translations": {
+      "de": {
+        "title": "KI-Content-Infrastruktur | Go Expandia",
+        "description": "Sichere KI-Arbeitsumgebungen, Automatisierungsebenen und Datenflüsse für KI-gestützte Abläufe.",
+        "keywords": "KI-Infrastruktur, Unternehmens-KI, Automatisierung, Datensicherheit, KI-Arbeitsplätze"
+      },
+      "fr": {
+        "title": "Infrastructure de Contenu IA | Go Expandia",
+        "description": "Espaces de travail IA sécurisés, couches d’automatisation et flux de données pour les opérations assistées par IA.",
+        "keywords": "infrastructure IA, IA d’entreprise, automatisation, sécurité des données, espaces de travail IA"
+      }
+    }
+  },
+  "turnkey-growth-infrastructure": {
+    "title": "Turnkey Growth Infrastructure | Go Expandia",
+    "description": "Legacy growth infrastructure for automated sales, outreach, and revenue operations.",
+    "keywords": "growth infrastructure, revenue operations, outreach automation, sales automation",
+    "translations": {
+      "de": {
+        "title": "Schlüsselfertige Wachstumsinfrastruktur | Go Expandia",
+        "description": "Bewährte Wachstumsinfrastruktur für automatisierten Vertrieb, Outreach und Revenue Operations.",
+        "keywords": "Wachstumsinfrastruktur, Revenue Operations, Outreach-Automatisierung, Vertriebsautomatisierung"
+      },
+      "fr": {
+        "title": "Infrastructure de Croissance Clé en Main | Go Expandia",
+        "description": "Infrastructure de croissance éprouvée pour les ventes automatisées, l’outreach et les opérations de revenus.",
+        "keywords": "infrastructure de croissance, revenue operations, automatisation outreach, automatisation des ventes"
       }
     }
   }

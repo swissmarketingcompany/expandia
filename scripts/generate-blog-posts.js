@@ -424,8 +424,8 @@ function generateContent(topic, lang) {
                     <a href="{{BASE_PATH}}contact.html" class="btn btn-primary btn-lg">
                         ${lang === 'tr' ? 'İletişime Geç' : lang === 'de' ? 'Kontakt' : lang === 'fr' ? 'Contactez-nous' : 'Contact Us'}
                     </a>
-                    <a href="{{BASE_PATH}}services.html" class="btn btn-outline btn-lg">
-                        ${lang === 'tr' ? 'Hizmetler' : lang === 'de' ? 'Dienstleistungen' : lang === 'fr' ? 'Services' : 'View Services'}
+                    <a href="{{BASE_PATH}}solutions.html" class="btn btn-outline btn-lg">
+                        ${lang === 'tr' ? 'Kategorileri Gör' : lang === 'de' ? 'Kategorien ansehen' : lang === 'fr' ? 'Voir les catégories' : 'View Categories'}
                     </a>
                 </div>
             </div>

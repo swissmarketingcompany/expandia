@@ -1,173 +1,292 @@
 [
   {
-    "id": "turnkey-it",
-    "name": "Turnkey IT Infrastructure",
-    "slug_pattern": "turnkey-it-infrastructure-{{CITY_SLUG}}",
-    "title_template": "Turnkey IT Infrastructure {{CITY_NAME}} | Complete Setup in 48 Hours",
-    "description_template": "Complete IT infrastructure setup in {{CITY_NAME}}. Domain, email, security, and cloud systems delivered in 48 hours for businesses in {{COUNTRY_NAME}}.",
-    "icon": "server",
-    "template": "service-city-landing"
-  },
-  {
-    "id": "email-deliverability",
-    "name": "Email Deliverability Checkup",
-    "slug_pattern": "email-deliverability-checkup-{{CITY_SLUG}}",
-    "title_template": "Email Deliverability Checkup {{CITY_NAME}} | Inbox Optimization",
-    "description_template": "Professional email deliverability audit in {{CITY_NAME}}. SPF, DKIM, DMARC setup and inbox placement optimization for {{COUNTRY_NAME}} businesses.",
-    "icon": "mail-check",
-    "template": "service-city-landing"
-  },
-  {
-    "id": "secure-email",
-    "name": "Secure Email & Workplace Setup",
-    "slug_pattern": "secure-email-workplace-{{CITY_SLUG}}",
-    "title_template": "Secure Email Workplace {{CITY_NAME}} | Enterprise Email Security",
-    "description_template": "Enterprise-grade email security for {{CITY_NAME}} businesses. Google Workspace or Microsoft 365 with advanced threat protection for {{COUNTRY_NAME}} companies.",
-    "icon": "shield-check",
-    "template": "service-city-landing"
-  },
-  {
-    "id": "website-care",
-    "name": "Website Care Services",
-    "slug_pattern": "website-care-services-{{CITY_SLUG}}",
-    "title_template": "Website Care Services {{CITY_NAME}} | Maintenance & Support",
-    "description_template": "Professional website maintenance in {{CITY_NAME}}. Updates, security, backups, and support for {{COUNTRY_NAME}} business websites.",
-    "icon": "globe",
-    "template": "service-city-landing"
-  },
-  {
-    "id": "turnkey-growth",
-    "name": "Turnkey Growth Infrastructure",
-    "slug_pattern": "turnkey-growth-infrastructure-{{CITY_SLUG}}",
-    "title_template": "Turnkey Growth Infrastructure {{CITY_NAME}} | Sales & Marketing Setup",
-    "description_template": "Complete growth infrastructure in {{CITY_NAME}}. CRM, email automation, and sales tools configured in 48 hours for {{COUNTRY_NAME}} businesses.",
-    "icon": "trending-up",
-    "template": "service-city-landing"
-  },
-  {
-    "id": "cold-email",
-    "name": "Cold Email Infrastructure",
-    "slug_pattern": "cold-email-infrastructure-{{CITY_SLUG}}",
-    "title_template": "Cold Email Infrastructure {{CITY_NAME}} | Deliverability & Automation",
-    "description_template": "Professional cold email infrastructure in {{CITY_NAME}}. Domain setup, email warming, and deliverability optimization for {{COUNTRY_NAME}} outreach campaigns.",
+    "id": "microsoft-365-workspace-management",
+    "name": "Microsoft 365 & Workspace Management",
+    "slug_pattern": "microsoft-365-workspace-management-{{CITY_SLUG}}",
+    "title_template": "Microsoft 365 & Workspace Management {{CITY_NAME}} | Secure Setup",
+    "description_template": "End-to-end Microsoft 365 and workspace management in {{CITY_NAME}} for enterprise email, licensing, and cloud collaboration.",
     "icon": "mail",
-    "template": "service-city-landing"
+    "template": "service-city-landing",
+    "category": "it-solutions"
   },
   {
-    "id": "revops-infra",
-    "name": "RevOps Infrastructure",
-    "slug_pattern": "revops-infrastructure-{{CITY_SLUG}}",
-    "title_template": "RevOps Infrastructure {{CITY_NAME}} | CRM & Sales Automation",
-    "description_template": "Revenue operations infrastructure for {{CITY_NAME}} companies. CRM setup, sales automation, and pipeline management for {{COUNTRY_NAME}} businesses.",
-    "icon": "settings-2",
-    "template": "service-city-landing"
+    "id": "cloud-architecture-azure-transition",
+    "name": "Cloud Architecture & Azure Transition",
+    "slug_pattern": "cloud-architecture-azure-transition-{{CITY_SLUG}}",
+    "title_template": "Cloud Architecture {{CITY_NAME}} | Azure & AWS Migration",
+    "description_template": "Cloud architecture and Azure/AWS migration in {{CITY_NAME}} for secure, scalable infrastructure modernization.",
+    "icon": "cloud",
+    "template": "service-city-landing",
+    "category": "it-solutions"
   },
   {
-    "id": "verified-leads",
-    "name": "Verified Lead List",
-    "slug_pattern": "verified-lead-list-{{CITY_SLUG}}",
-    "title_template": "Verified Lead List {{CITY_NAME}} | B2B Contact Database",
-    "description_template": "Verified B2B lead lists for {{CITY_NAME}}. Accurate contact data, decision-makers, and company information for {{COUNTRY_NAME}} market entry.",
-    "icon": "database",
-    "template": "service-city-landing"
-  },
-  {
-    "id": "ai-content",
-    "name": "AI Content Infrastructure",
-    "slug_pattern": "ai-content-infrastructure-{{CITY_SLUG}}",
-    "title_template": "AI Content Infrastructure {{CITY_NAME}} | Automated Content Creation",
-    "description_template": "AI-powered content infrastructure for {{CITY_NAME}} businesses. Automated blog posts, social media, and marketing content for {{COUNTRY_NAME}} markets.",
-    "icon": "file-text",
-    "template": "service-city-landing"
-  },
-  {
-    "id": "written-content",
-    "name": "Written Content Engine",
-    "slug_pattern": "written-content-engine-{{CITY_SLUG}}",
-    "title_template": "Written Content Engine {{CITY_NAME}} | Blogs & Articles",
-    "description_template": "Automated written content creation for {{CITY_NAME}} businesses. Blogs, articles, and social posts powered by AI for {{COUNTRY_NAME}} markets.",
-    "icon": "file-text",
-    "template": "service-city-landing"
-  },
-  {
-    "id": "image-content",
-    "name": "Image Content Engine",
-    "slug_pattern": "image-content-engine-{{CITY_SLUG}}",
-    "title_template": "Image Content Engine {{CITY_NAME}} | Graphics & Visuals",
-    "description_template": "AI-powered image and graphics creation for {{CITY_NAME}} businesses. Professional visuals, thumbnails, and social media graphics for {{COUNTRY_NAME}} brands.",
-    "icon": "image",
-    "template": "service-city-landing"
-  },
-  {
-    "id": "video-content",
-    "name": "Video Content Engine",
-    "slug_pattern": "video-content-engine-{{CITY_SLUG}}",
-    "title_template": "Video Content Engine {{CITY_NAME}} | AI Avatars & Videos",
-    "description_template": "AI-powered video creation for {{CITY_NAME}} businesses. AI avatars, product videos, and marketing content for {{COUNTRY_NAME}} companies.",
-    "icon": "video",
-    "template": "service-city-landing"
-  },
-  {
-    "id": "b2b-lead-gen",
-    "name": "B2B Lead Generation",
-    "slug_pattern": "b2b-lead-generation-{{CITY_SLUG}}",
-    "title_template": "B2B Lead Generation {{CITY_NAME}} | Qualified Sales Leads",
-    "description_template": "Professional B2B lead generation in {{CITY_NAME}}. Qualified sales leads and appointments for {{COUNTRY_NAME}} businesses.",
-    "icon": "users",
-    "template": "service-city-landing"
-  },
-  {
-    "id": "outreach-software",
-    "name": "Outreach Software Management",
-    "slug_pattern": "outreach-software-management-{{CITY_SLUG}}",
-    "title_template": "Outreach Software Management {{CITY_NAME}} | Expert Platform Setup",
-    "description_template": "Expert outreach software management for {{CITY_NAME}} businesses. Platform setup, optimization, and management for {{COUNTRY_NAME}} sales teams.",
-    "icon": "settings",
-    "template": "service-city-landing"
-  },
-  {
-    "id": "crm-management",
-    "name": "CRM Management",
-    "slug_pattern": "crm-management-{{CITY_SLUG}}",
-    "title_template": "CRM Management {{CITY_NAME}} | Expert CRM Optimization",
-    "description_template": "Professional CRM management and optimization for {{CITY_NAME}} businesses. HubSpot and Salesforce expertise for {{COUNTRY_NAME}} companies.",
-    "icon": "database",
-    "template": "service-city-landing"
-  },
-  {
-    "id": "sales-ops",
-    "name": "Sales Ops (Go Expandia)",
-    "slug_pattern": "sales-ops-{{CITY_SLUG}}",
-    "title_template": "Managed Sales Operations {{CITY_NAME}} | B2B Growth",
-    "description_template": "Managed B2B sales operations for {{CITY_NAME}} companies. Complete sales infrastructure and growth management for {{COUNTRY_NAME}} businesses.",
-    "icon": "trending-up",
-    "template": "service-city-landing"
-  },
-  {
-    "id": "managed-it",
-    "name": "Managed IT & Cyber",
-    "slug_pattern": "managed-it-services-{{CITY_SLUG}}",
-    "title_template": "Managed IT Services {{CITY_NAME}} | Cybersecurity & Support",
-    "description_template": "Enterprise-grade managed IT services and cybersecurity for {{CITY_NAME}} businesses. 24/7 support and protection for {{COUNTRY_NAME}} companies.",
+    "id": "endpoint-security",
+    "name": "Endpoint Security",
+    "slug_pattern": "endpoint-security-{{CITY_SLUG}}",
+    "title_template": "Endpoint Security {{CITY_NAME}} | Next-Gen Protection",
+    "description_template": "Centralized endpoint security in {{CITY_NAME}} for corporate computers and mobile devices.",
     "icon": "shield",
-    "template": "service-city-landing"
+    "template": "service-city-landing",
+    "category": "it-solutions"
   },
   {
-    "id": "small-business-growth",
-    "name": "Small Business Growth",
-    "slug_pattern": "small-business-growth-{{CITY_SLUG}}",
-    "title_template": "Small Business Growth Program {{CITY_NAME}} | Market Foundation",
-    "description_template": "Market foundation program for small businesses in {{CITY_NAME}}. Strategic growth and market entry support for {{COUNTRY_NAME}} companies.",
-    "icon": "sprout",
-    "template": "service-city-landing"
+    "id": "advanced-email-security",
+    "name": "Advanced Email Security",
+    "slug_pattern": "advanced-email-security-{{CITY_SLUG}}",
+    "title_template": "Advanced Email Security {{CITY_NAME}} | Anti-Phishing Shield",
+    "description_template": "Automated phishing, ransomware, and spam protection for email systems in {{CITY_NAME}}.",
+    "icon": "mail-check",
+    "template": "service-city-landing",
+    "category": "it-solutions"
   },
   {
-    "id": "market-accelerator",
-    "name": "Market Accelerator",
-    "slug_pattern": "market-accelerator-{{CITY_SLUG}}",
-    "title_template": "Market Accelerator Program {{CITY_NAME}} | Rapid Scale",
-    "description_template": "Rapid market acceleration for {{CITY_NAME}} businesses. Fast-track growth and scaling support for {{COUNTRY_NAME}} companies.",
+    "id": "zero-trust-architecture",
+    "name": "Zero Trust Architecture",
+    "slug_pattern": "zero-trust-architecture-{{CITY_SLUG}}",
+    "title_template": "Zero Trust Architecture {{CITY_NAME}} | Secure Access",
+    "description_template": "Zero trust authentication and access control architectures for {{CITY_NAME}} businesses.",
+    "icon": "lock",
+    "template": "service-city-landing",
+    "category": "it-solutions"
+  },
+  {
+    "id": "disaster-recovery-business-continuity",
+    "name": "Disaster Recovery & Business Continuity",
+    "slug_pattern": "disaster-recovery-business-continuity-{{CITY_SLUG}}",
+    "title_template": "Disaster Recovery {{CITY_NAME}} | Business Continuity",
+    "description_template": "Backup and recovery infrastructures in {{CITY_NAME}} that restore data quickly after cyberattacks or crashes.",
+    "icon": "refresh-cw",
+    "template": "service-city-landing",
+    "category": "it-solutions"
+  },
+  {
+    "id": "continuous-vulnerability-scanning",
+    "name": "Continuous Vulnerability Scanning",
+    "slug_pattern": "continuous-vulnerability-scanning-{{CITY_SLUG}}",
+    "title_template": "Continuous Vulnerability Scanning {{CITY_NAME}} | Proactive Security",
+    "description_template": "Autonomous vulnerability scanning in {{CITY_NAME}} to detect security flaws before attackers do.",
+    "icon": "scan-search",
+    "template": "service-city-landing",
+    "category": "it-solutions"
+  },
+  {
+    "id": "gdpr-compliance-infrastructure",
+    "name": "GDPR Compliance Infrastructure",
+    "slug_pattern": "gdpr-compliance-infrastructure-{{CITY_SLUG}}",
+    "title_template": "GDPR Compliance Infrastructure {{CITY_NAME}} | Logging & Controls",
+    "description_template": "Technical infrastructure and logging architecture in {{CITY_NAME}} aligned with GDPR and local privacy standards.",
+    "icon": "file-check",
+    "template": "service-city-landing",
+    "category": "it-solutions"
+  },
+  {
+    "id": "secure-network-vpn-setup",
+    "name": "Secure Network & VPN Setup",
+    "slug_pattern": "secure-network-vpn-setup-{{CITY_SLUG}}",
+    "title_template": "Secure Network & VPN Setup {{CITY_NAME}} | Remote Access",
+    "description_template": "Secure, high-speed VPN and network design in {{CITY_NAME}} for remote teams and branch offices.",
+    "icon": "network",
+    "template": "service-city-landing",
+    "category": "it-solutions"
+  },
+  {
+    "id": "it-support-monitoring",
+    "name": "24/7 IT Support & Monitoring",
+    "slug_pattern": "it-support-monitoring-{{CITY_SLUG}}",
+    "title_template": "24/7 IT Support {{CITY_NAME}} | Helpdesk & Monitoring",
+    "description_template": "Remote helpdesk and monitoring in {{CITY_NAME}} that continuously watches infrastructure and responds instantly.",
+    "icon": "headphones",
+    "template": "service-city-landing",
+    "category": "it-solutions"
+  },
+  {
+    "id": "corporate-ai-infrastructure-setup",
+    "name": "Corporate AI Infrastructure Setup",
+    "slug_pattern": "corporate-ai-infrastructure-setup-{{CITY_SLUG}}",
+    "title_template": "Corporate AI Infrastructure {{CITY_NAME}} | Secure Workspaces",
+    "description_template": "Company-specific AI workspaces in {{CITY_NAME}} integrated into secure workflows for teams.",
+    "icon": "brain",
+    "template": "service-city-landing",
+    "category": "ai-solutions"
+  },
+  {
+    "id": "on-premise-ai-setup",
+    "name": "On-Premise AI Setup",
+    "slug_pattern": "on-premise-ai-setup-{{CITY_SLUG}}",
+    "title_template": "On-Premise AI Setup {{CITY_NAME}} | Local-Only Models",
+    "description_template": "Localized AI models in {{CITY_NAME}} running only on your servers for sensitive industrial and financial data.",
+    "icon": "server-cog",
+    "template": "service-city-landing",
+    "category": "ai-solutions"
+  },
+  {
+    "id": "ai-data-security-layer",
+    "name": "AI Data Security Layer",
+    "slug_pattern": "ai-data-security-layer-{{CITY_SLUG}}",
+    "title_template": "AI Data Security Layer {{CITY_NAME}} | Safety Shield",
+    "description_template": "Protect corporate data in {{CITY_NAME}} from being used to train external LLMs and protect trade secrets.",
+    "icon": "shield-alert",
+    "template": "service-city-landing",
+    "category": "ai-solutions"
+  },
+  {
+    "id": "agentic-ai-development",
+    "name": "Agentic AI Development",
+    "slug_pattern": "agentic-ai-development-{{CITY_SLUG}}",
+    "title_template": "Agentic AI Development {{CITY_NAME}} | Autonomous Workflows",
+    "description_template": "Autonomous AI agents in {{CITY_NAME}} that execute tasks in ERP and CRM systems based on company rules.",
+    "icon": "workflow",
+    "template": "service-city-landing",
+    "category": "ai-solutions"
+  },
+  {
+    "id": "smart-factory-optimization",
+    "name": "Smart Factory Optimization",
+    "slug_pattern": "smart-factory-optimization-{{CITY_SLUG}}",
+    "title_template": "Smart Factory Optimization {{CITY_NAME}} | AI + IoT Insights",
+    "description_template": "AI insights for production, machine, and IoT data in {{CITY_NAME}} to reduce idle time and energy costs.",
+    "icon": "factory",
+    "template": "service-city-landing",
+    "category": "ai-solutions"
+  },
+  {
+    "id": "sales-marketing-automation",
+    "name": "Sales & Marketing Automation",
+    "slug_pattern": "sales-marketing-automation-{{CITY_SLUG}}",
+    "title_template": "Sales & Marketing Automation {{CITY_NAME}} | RevOps AI",
+    "description_template": "AI workflows in {{CITY_NAME}} that qualify inbound leads, draft proposals, and compress sales cycles.",
+    "icon": "megaphone",
+    "template": "service-city-landing",
+    "category": "ai-solutions"
+  },
+  {
+    "id": "customer-service-automation",
+    "name": "Customer Service Automation",
+    "slug_pattern": "customer-service-automation-{{CITY_SLUG}}",
+    "title_template": "Customer Service Automation {{CITY_NAME}} | Conversational AI",
+    "description_template": "Voice and chat assistants in {{CITY_NAME}} that handle routine customer and dealer queries in seconds.",
+    "icon": "message-circle",
+    "template": "service-city-landing",
+    "category": "ai-solutions"
+  },
+  {
+    "id": "data-silos-automation",
+    "name": "Breaking Down Data Silos",
+    "slug_pattern": "data-silos-automation-{{CITY_SLUG}}",
+    "title_template": "Data Automation {{CITY_NAME}} | Breaking Down Silos",
+    "description_template": "Workflows in {{CITY_NAME}} that cleanse and input scattered PDF, Excel, and email data into ERP and CRM systems.",
+    "icon": "database",
+    "template": "service-city-landing",
+    "category": "ai-solutions"
+  },
+  {
+    "id": "operational-load-reduction",
+    "name": "Operational Load Reduction",
+    "slug_pattern": "operational-load-reduction-{{CITY_SLUG}}",
+    "title_template": "Operational Load Reduction {{CITY_NAME}} | Staff Augmentation by AI",
+    "description_template": "AI systems in {{CITY_NAME}} that increase team productivity by offloading manual paperwork and repetitive tasks.",
+    "icon": "layers-3",
+    "template": "service-city-landing",
+    "category": "ai-solutions"
+  },
+  {
+    "id": "custom-erp-crm-integrations",
+    "name": "Custom ERP/CRM Integrations",
+    "slug_pattern": "custom-erp-crm-integrations-{{CITY_SLUG}}",
+    "title_template": "Custom ERP/CRM Integrations {{CITY_NAME}} | API Connections",
+    "description_template": "Unify disconnected software in {{CITY_NAME}} with custom ERP and CRM integrations across SAP, Salesforce, Odoo, and more.",
+    "icon": "link-2",
+    "template": "service-city-landing",
+    "category": "custom-software"
+  },
+  {
+    "id": "digital-engineering-rd-software",
+    "name": "Digital Engineering Software",
+    "slug_pattern": "digital-engineering-rd-software-{{CITY_SLUG}}",
+    "title_template": "Digital Engineering Software {{CITY_NAME}} | R&D Acceleration",
+    "description_template": "Custom R&D software in {{CITY_NAME}} that accelerates design, prototyping, and time-to-market.",
+    "icon": "drafting-compass",
+    "template": "service-city-landing",
+    "category": "custom-software"
+  },
+  {
+    "id": "b2b-dealer-customer-portals",
+    "name": "B2B Dealer & Customer Portals",
+    "slug_pattern": "b2b-dealer-customer-portals-{{CITY_SLUG}}",
+    "title_template": "Dealer & Customer Portals {{CITY_NAME}} | Connected Customers",
+    "description_template": "Self-service portals in {{CITY_NAME}} that let customers and dealers manage orders, stock, and support.",
+    "icon": "panel-top",
+    "template": "service-city-landing",
+    "category": "custom-software"
+  },
+  {
+    "id": "human-in-the-loop-ai-testing",
+    "name": "Human-in-the-Loop AI Testing",
+    "slug_pattern": "human-in-the-loop-ai-testing-{{CITY_SLUG}}",
+    "title_template": "Human-in-the-Loop AI Testing {{CITY_NAME}} | QA",
+    "description_template": "Quality assurance in {{CITY_NAME}} that tests datasets and digital assets at AI speed with human validation.",
+    "icon": "badge-check",
+    "template": "service-city-landing",
+    "category": "custom-software"
+  },
+  {
+    "id": "legacy-system-modernization",
+    "name": "Legacy System Modernization",
+    "slug_pattern": "legacy-system-modernization-{{CITY_SLUG}}",
+    "title_template": "Legacy System Modernization {{CITY_NAME}} | Zero-Loss Migration",
+    "description_template": "Move 20-year-old software in {{CITY_NAME}} to modern cloud architectures with zero data loss.",
+    "icon": "refresh-ccw",
+    "template": "service-city-landing",
+    "category": "custom-software"
+  },
+  {
+    "id": "enterprise-bi-dashboards",
+    "name": "Enterprise BI & Dashboards",
+    "slug_pattern": "enterprise-bi-dashboards-{{CITY_SLUG}}",
+    "title_template": "Enterprise BI Dashboards {{CITY_NAME}} | Real-Time Reporting",
+    "description_template": "Custom reporting dashboards in {{CITY_NAME}} that unify financial, production, and sales data in real time.",
+    "icon": "bar-chart-3",
+    "template": "service-city-landing",
+    "category": "custom-software"
+  },
+  {
+    "id": "internal-operational-applications",
+    "name": "Internal Operational Applications",
+    "slug_pattern": "internal-operational-applications-{{CITY_SLUG}}",
+    "title_template": "Internal Operational Apps {{CITY_NAME}} | Field & Sales Tools",
+    "description_template": "Mobile and web applications in {{CITY_NAME}} built for field technicians and sales teams.",
+    "icon": "tablet-smartphone",
+    "template": "service-city-landing",
+    "category": "custom-software"
+  },
+  {
+    "id": "corporate-website-development",
+    "name": "Corporate Website Development",
+    "slug_pattern": "corporate-website-development-{{CITY_SLUG}}",
+    "title_template": "Corporate Website Development {{CITY_NAME}} | Modern Web Presence",
+    "description_template": "Modern corporate website development in {{CITY_NAME}} built for performance, lead capture, and trust.",
+    "icon": "globe",
+    "template": "service-city-landing",
+    "category": "custom-software"
+  },
+  {
+    "id": "mvp-development-corporate-spinoff",
+    "name": "MVP Development",
+    "slug_pattern": "mvp-development-corporate-spinoff-{{CITY_SLUG}}",
+    "title_template": "MVP Development {{CITY_NAME}} | Corporate Spinoff Prototype",
+    "description_template": "Build a working prototype in {{CITY_NAME}} in weeks to test your new business idea.",
     "icon": "rocket",
-    "template": "service-city-landing"
+    "template": "service-city-landing",
+    "category": "custom-software"
+  },
+  {
+    "id": "custom-data-architecture-database-design",
+    "name": "Custom Data Architecture & Database Design",
+    "slug_pattern": "custom-data-architecture-database-design-{{CITY_SLUG}}",
+    "title_template": "Custom Data Architecture {{CITY_NAME}} | Database Design",
+    "description_template": "Cleansing, categorizing, and structuring data in {{CITY_NAME}} for future AI integrations.",
+    "icon": "database",
+    "template": "service-city-landing",
+    "category": "custom-software"
   }
 ]
