@@ -93,6 +93,10 @@ console.log(`✅ Successfully loaded headers for all languages`);
 console.log(`✅ Successfully loaded footers for all languages`);
 console.log(`✅ Successfully loaded latest blog posts snippet`);
 
+function normalizeCitySlug(slug) {
+    return slug.replace(/^b2b-lead-generation-/, '');
+}
+
 // Function to generate unique SEO content for each city
 function generateUniqueCityContent(cityName, countryName, regionName) {
     // Categorize cities for targeted content
@@ -1252,7 +1256,7 @@ function buildServiceCityPages() {
                 const country = cityData.country;
 
                 // Replace dynamic parts in slug
-                let slug = service.slug_pattern.replace('{{CITY_SLUG}}', cityData.slug.replace('b2b-lead-generation-', ''));
+                let slug = service.slug_pattern.replace('{{CITY_SLUG}}', normalizeCitySlug(cityData.slug));
 
                 const categoryMeta = getLocalizedCategoryMeta(service.category, lang);
 
@@ -1320,7 +1324,7 @@ function buildServiceCityPages() {
                     .slice(0, 5);
 
                 const nearbyLinks = nearby.map(c => {
-                    const nearbySlug = service.slug_pattern.replace('{{CITY_SLUG}}', c.slug.replace('b2b-lead-generation-', ''));
+                    const nearbySlug = service.slug_pattern.replace('{{CITY_SLUG}}', normalizeCitySlug(c.slug));
                     // Handle relative linking for subdirectories
                     const linkPrefix = lang === 'en' ? './' : '../';
                     // If we are in a lang folder, we link to other pages in THAT lang folder (conceptually). 
@@ -1798,7 +1802,7 @@ function buildCityPages() {
             .slice(0, 4);
 
         const nearbyHtml = nearby.map(c => {
-            const nearbySlug = c.slug.replace('b2b-lead-generation-', '');
+            const nearbySlug = normalizeCitySlug(c.slug);
             return `
             <a href="${nearbySlug}.html" class="block p-4 rounded-lg border border-base-300 hover:border-primary transition-all group bg-base-100">
                 <div class="font-bold text-lg group-hover:text-primary">${c.city}</div>
@@ -1810,7 +1814,7 @@ function buildCityPages() {
 
         // Generate Service Links for this City
         const serviceLinksHtml = services.map(service => {
-            const serviceSlug = service.slug_pattern.replace('{{CITY_SLUG}}', cityData.slug.replace('b2b-lead-generation-', ''));
+            const serviceSlug = service.slug_pattern.replace('{{CITY_SLUG}}', normalizeCitySlug(cityData.slug));
             return `
             <a href="${serviceSlug}.html" class="flex items-center gap-4 p-4 rounded-xl bg-base-100 border border-base-300 hover:border-primary hover:shadow-md transition-all group">
                 <div class="text-2xl"><i data-lucide="${service.icon}"></i></div>
@@ -2066,7 +2070,7 @@ function buildCityLocationsPage() {
         name: c.city,
         lat: c.lat || 0,
         lng: c.lng || 0,
-        url: `./${c.slug.replace('b2b-lead-generation-', '')}.html`,
+        url: `./${normalizeCitySlug(c.slug)}.html`,
         region: c.region || 'Global'
     }));
 
@@ -2510,7 +2514,7 @@ function buildCityLandingPages() {
             const landmark = cityData.landmark || 'the city center';
 
             // Generate clean city slug (remove b2b-lead-generation- prefix if exists)
-            let citySlug = cityData.slug.replace('b2b-lead-generation-', '');
+            let citySlug = normalizeCitySlug(cityData.slug);
 
             // Build page title and description
             const title = lang === 'de'
@@ -2716,7 +2720,7 @@ function generateSitemap() {
     // Add Broad City Landing Pages (EN, DE, FR) as built by buildCityLandingPages
     const broadCityPages = [];
     cities.forEach(cityData => {
-        const citySlug = cityData.slug.replace('b2b-lead-generation-', '');
+        const citySlug = normalizeCitySlug(cityData.slug);
         broadCityPages.push(`${citySlug}.html`); // EN
         broadCityPages.push(`de/${citySlug}.html`); // DE
         broadCityPages.push(`fr/${citySlug}.html`); // FR
@@ -2796,7 +2800,7 @@ function buildLegacyRedirectRules() {
     });
 
     cities.forEach(city => {
-        const cleanSlug = city.slug.replace('b2b-lead-generation-', '');
+        const cleanSlug = normalizeCitySlug(city.slug);
         languages.forEach(lang => {
             const sourcePath = lang === 'en' ? `/${city.slug}.html` : `/${lang}/${city.slug}.html`;
             const targetPath = lang === 'en' ? `/${cleanSlug}.html` : `/${lang}/${cleanSlug}.html`;
@@ -2806,13 +2810,13 @@ function buildLegacyRedirectRules() {
 
     PRIORITY_SERVICE_CITY_PATHS.forEach(sourceSlug => {
         const matchedCity = cities.find(city => {
-            const cleanSlug = city.slug.replace('b2b-lead-generation-', '');
+            const cleanSlug = normalizeCitySlug(city.slug);
             return sourceSlug.endsWith(`-${cleanSlug}`);
         });
 
         if (!matchedCity) return;
 
-        const cleanSlug = matchedCity.slug.replace('b2b-lead-generation-', '');
+        const cleanSlug = normalizeCitySlug(matchedCity.slug);
         languages.forEach(lang => {
             const sourcePath = lang === 'en' ? `/${sourceSlug}.html` : `/${lang}/${sourceSlug}.html`;
             const targetPath = lang === 'en' ? `/${cleanSlug}.html` : `/${lang}/${cleanSlug}.html`;
@@ -2854,7 +2858,7 @@ function cleanupLegacyRedirectOutputs() {
     });
 
     cities.forEach(city => {
-        const cleanSlug = city.slug.replace('b2b-lead-generation-', '');
+        const cleanSlug = normalizeCitySlug(city.slug);
         languages.forEach(lang => {
             const retiredPaths = [
                 lang === 'en' ? `${city.slug}.html` : `${lang}/${city.slug}.html`
@@ -2901,7 +2905,6 @@ buildPage('growth-programs', 'growth-programs', 'en');
 
 // Build English service pages
 console.log('Building English service pages...');
-buildPage('b2b-lead-generation-agency', 'b2b-lead-generation-agency', 'en');
 buildPage('crm-management', 'crm-management', 'en');
 buildPage('fractional-bizdev-team', 'fractional-bizdev-team', 'en');
 buildPage('inbound-lead-generation', 'inbound-lead-generation', 'en');
@@ -2987,7 +2990,6 @@ buildPage('recruitment', 'recruitment', 'de');
 buildPage('ai-creative-studio', 'ai-creative-studio', 'de');
 buildPage('blog-index', 'blog/index', 'de');
 // Build Missing Solutions Pages (English Filenames for Menu Compatibility)
-buildPage('b2b-lead-generation-agency', 'b2b-lead-generation-agency', 'de');
 buildPage('sales-development-agency', 'sales-development-agency', 'de');
 buildPage('revops-infrastructure', 'revops-infrastructure', 'de');
 buildPage('market-foundation-program', 'market-foundation-program', 'de');
@@ -3030,7 +3032,6 @@ buildPage('recruitment', 'recruitment', 'fr');
 buildPage('ai-creative-studio', 'ai-creative-studio', 'fr');
 buildPage('blog-index', 'blog/index', 'fr');
 // Build Missing Solutions Pages
-buildPage('b2b-lead-generation-agency', 'b2b-lead-generation-agency', 'fr');
 buildPage('sales-development-agency', 'sales-development-agency', 'fr');
 buildPage('revops-infrastructure', 'revops-infrastructure', 'fr');
 buildPage('lead-generation-service', 'lead-generation-service', 'fr');
