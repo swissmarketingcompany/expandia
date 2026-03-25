@@ -1118,17 +1118,12 @@ const LEGACY_REDIRECT_ONLY_PAGES = new Set([
     'custom-software-development',
     'services',
     'case-studies',
-    'lead-generation-services',
-    'managed-services',
-    'growth-programs',
     LEGACY_LEAD_GEN_AGENCY,
     'crm-management',
     'fractional-bizdev-team',
     'inbound-lead-generation',
     'outbound-lead-generation',
-    'sales-development-agency',
     'outbound-marketing-agency',
-    'outreach-software-management',
     'lead-generation-service',
     'prospect-finding-service',
     'appointment-setting-service',
@@ -1149,8 +1144,7 @@ const LEGACY_REDIRECT_ONLY_PAGES = new Set([
     'usa-pr-service',
     'market-foundation-program',
     'market-accelerator-program',
-    'part-time-lead-generation-team',
-    'turnkey-growth-infrastructure'
+    'part-time-lead-generation-team'
 ]);
 
 const LEGACY_REDIRECT_TARGETS = {
@@ -1159,17 +1153,12 @@ const LEGACY_REDIRECT_TARGETS = {
     'custom-software-development': 'solutions',
     'services': 'solutions',
     'case-studies': 'solutions',
-    'lead-generation-services': 'solutions',
-    'managed-services': 'solutions',
-    'growth-programs': 'solutions',
     [LEGACY_LEAD_GEN_AGENCY]: 'solutions',
     'crm-management': 'custom-software-development',
     'fractional-bizdev-team': 'solutions',
     'inbound-lead-generation': 'solutions',
     'outbound-lead-generation': 'solutions',
-    'sales-development-agency': 'solutions',
     'outbound-marketing-agency': 'solutions',
-    'outreach-software-management': 'solutions',
     'lead-generation-service': 'solutions',
     'prospect-finding-service': 'solutions',
     'appointment-setting-service': 'solutions',
@@ -1190,29 +1179,37 @@ const LEGACY_REDIRECT_TARGETS = {
     'usa-pr-service': 'solutions',
     'market-foundation-program': 'solutions',
     'market-accelerator-program': 'solutions',
-    'part-time-lead-generation-team': 'solutions',
-    'turnkey-growth-infrastructure': 'solutions'
+    'part-time-lead-generation-team': 'solutions'
 };
 
 const LEGACY_DELETED_SERVICE_PAGES = new Set([
   "ai-creative-studio",
+  "b2b-dealer-customer-portals",
   "appointment-setting-service",
   "cold-email-agency",
   "cold-email-infrastructure",
   "corporate-digital-gifting",
+  "corporate-website-development",
   "crm-management",
+  "custom-data-architecture-database-design",
+  "custom-erp-crm-integrations",
   "distributor-finding",
+  "digital-engineering-rd-software",
   "email-automation",
   "email-deliverability-checkup",
   "email-marketing-management",
   "email-security",
+  "enterprise-bi-dashboards",
   "europe-market-entry",
   "export-marketing-consulting",
   "fractional-bizdev-team",
   "growth-programs",
+  "human-in-the-loop-ai-testing",
   "image-content-engine",
   "inbound-lead-generation",
+  "internal-operational-applications",
   "international-market-entry",
+  "legacy-system-modernization",
   "lead-generation-service",
   "lead-generation-services",
   "lost-lead-reactivation",
@@ -1221,7 +1218,9 @@ const LEGACY_DELETED_SERVICE_PAGES = new Set([
   "market-foundation-program",
   "markt-beschleuniger-programm",
   "markt-grundlagen-programm",
+  "mvp-development-corporate-spinoff",
   "onboarding",
+  "unternehmens-digitale-geschenke",
   "outbound-lead-generation",
   "outbound-marketing-agency",
   "outreach-software-management",
@@ -1240,6 +1239,7 @@ const LEGACY_DELETED_SERVICE_PAGES = new Set([
   "teilzeit-bizdev-team",
   "turnkey-growth-infrastructure",
   "turnkey-it-infrastructure",
+  "usa-pr-dienst",
   "usa-pr-service",
   "verified-lead-list",
   "video-content-engine",
@@ -1251,22 +1251,30 @@ const LEGACY_DELETED_SERVICE_PAGES = new Set([
 const LEGACY_DELETED_SERVICE_TARGETS = {
   "ai-creative-studio": "ai-content-infrastructure",
   "appointment-setting-service": "solutions",
+  "b2b-dealer-customer-portals": "solutions",
   "cold-email-agency": "solutions",
   "cold-email-infrastructure": "solutions",
   "corporate-digital-gifting": "solutions",
+  "corporate-website-development": "solutions",
   "crm-management": "custom-software-development",
+  "custom-data-architecture-database-design": "solutions",
+  "custom-erp-crm-integrations": "solutions",
   "distributor-finding": "solutions",
+  "digital-engineering-rd-software": "solutions",
   "email-automation": "solutions",
-  "email-deliverability-checkup": "managed-it-services",
+  "email-deliverability-checkup": "solutions",
   "email-marketing-management": "solutions",
-  "email-security": "managed-it-services",
+  "email-security": "solutions",
+  "enterprise-bi-dashboards": "solutions",
   "europe-market-entry": "solutions",
   "export-marketing-consulting": "solutions",
   "fractional-bizdev-team": "solutions",
   "growth-programs": "solutions",
   "image-content-engine": "ai-content-infrastructure",
   "inbound-lead-generation": "solutions",
+  "internal-operational-applications": "solutions",
   "international-market-entry": "solutions",
+  "legacy-system-modernization": "solutions",
   "lead-generation-service": "solutions",
   "lead-generation-services": "solutions",
   "lost-lead-reactivation": "ai-content-infrastructure",
@@ -1276,6 +1284,7 @@ const LEGACY_DELETED_SERVICE_TARGETS = {
   "markt-beschleuniger-programm": "solutions",
   "markt-grundlagen-programm": "solutions",
   "onboarding": "solutions",
+  "unternehmens-digitale-geschenke": "solutions",
   "outbound-lead-generation": "solutions",
   "outbound-marketing-agency": "solutions",
   "outreach-software-management": "solutions",
@@ -1294,18 +1303,90 @@ const LEGACY_DELETED_SERVICE_TARGETS = {
   "teilzeit-bizdev-team": "solutions",
   "turnkey-growth-infrastructure": "solutions",
   "turnkey-it-infrastructure": "solutions",
+  "usa-pr-dienst": "solutions",
   "usa-pr-service": "solutions",
   "verified-lead-list": "ai-content-infrastructure",
   "video-content-engine": "ai-content-infrastructure",
-  "vulnerability-assessments": "managed-it-services",
-  "website-care-plans": "managed-it-services",
-  "website-care-services": "managed-it-services",
+  "vulnerability-assessments": "solutions",
+  "website-care-plans": "solutions",
+  "website-care-services": "solutions",
   "written-content-engine": "ai-content-infrastructure"
 };
 LEGACY_DELETED_SERVICE_PAGES.forEach((page) => LEGACY_REDIRECT_ONLY_PAGES.add(page));
 Object.entries(LEGACY_DELETED_SERVICE_TARGETS).forEach(([source, target]) => {
     LEGACY_REDIRECT_TARGETS[source] = target;
 });
+Object.keys(LEGACY_REDIRECT_TARGETS).forEach((source) => {
+    if (source !== 'solutions') {
+        LEGACY_REDIRECT_TARGETS[source] = 'solutions';
+    }
+});
+delete LEGACY_REDIRECT_TARGETS.solutions;
+
+const LEGACY_CATEGORY_ANCHORS = {
+    'managed-it-services': '#it-solutions',
+    'vulnerability-assessments': '#it-solutions',
+    'email-security': '#it-solutions',
+    'website-care-plans': '#custom-software',
+    'website-care-services': '#custom-software',
+    'revops-crm-setup': '#custom-software',
+    'ai-content-infrastructure': '#ai-solutions',
+    'custom-software-development': '#custom-software',
+    'b2b-dealer-customer-portals': '#custom-software',
+    'corporate-website-development': '#custom-software',
+    'custom-data-architecture-database-design': '#custom-software',
+    'custom-erp-crm-integrations': '#custom-software',
+    'digital-engineering-rd-software': '#custom-software',
+    'enterprise-bi-dashboards': '#custom-software',
+    'human-in-the-loop-ai-testing': '#custom-software',
+    'internal-operational-applications': '#custom-software',
+    'legacy-system-modernization': '#custom-software',
+    'mvp-development-corporate-spinoff': '#custom-software'
+};
+
+function applyLanguageSwitcherLinks(markup, links) {
+    const resultLinks = {
+        en: links.en || '#',
+        tr: links.tr || '#',
+        de: links.de || '#',
+        fr: links.fr || '#'
+    };
+
+    return markup
+        .replace(/href=["'][^"']*["']\s+data-lang="en"/g, `href="${resultLinks.en}" data-lang="en"`)
+        .replace(/href=["'][^"']*["']\s+data-lang="tr"/g, `href="${resultLinks.tr}" data-lang="tr"`)
+        .replace(/href=["'][^"']*["']\s+data-lang="de"/g, `href="${resultLinks.de}" data-lang="de"`)
+        .replace(/href=["'][^"']*["']\s+data-lang="fr"/g, `href="${resultLinks.fr}" data-lang="fr"`);
+}
+
+function rewriteLegacyHrefTargets(html) {
+    return html.replace(/href=(["'])([^"']+)\1/g, (match, quote, url) => {
+        if (/^(#|mailto:|tel:|javascript:|https?:\/\/)/i.test(url)) {
+            return match;
+        }
+
+        const [pathPart, hashPart] = url.split('#');
+        const [pathname, query] = pathPart.split('?');
+        if (!pathname || !pathname.endsWith('.html')) {
+            return match;
+        }
+
+        const slashIndex = pathname.lastIndexOf('/');
+        const prefix = slashIndex >= 0 ? pathname.slice(0, slashIndex + 1) : '';
+        const fileName = slashIndex >= 0 ? pathname.slice(slashIndex + 1) : pathname;
+        const slug = fileName.replace(/\.html$/, '');
+
+        if (!LEGACY_REDIRECT_ONLY_PAGES.has(slug)) {
+            return match;
+        }
+
+        const anchor = LEGACY_CATEGORY_ANCHORS[slug] || '';
+        const nextPath = `${prefix}solutions.html${anchor}`;
+        const nextUrl = query ? `${nextPath}?${query}` : nextPath;
+        const preserveHash = anchor ? '' : (hashPart ? `#${hashPart}` : '');
+        return `href=${quote}${nextUrl}${preserveHash}${quote}`;
+    });
+}
 
 const serviceMapping = {
     'managed-it-services': 'it-solutions',
@@ -1504,19 +1585,23 @@ function buildPage(templateName, outputName, lang = 'en') {
 
     // Hreflang logic for switcher
     const hrefUrls = getHreflangUrls(templateName);
-    const relPrefix = lang === 'en' ? './' : '../';
+    const relPrefix = outputName.includes('/')
+        ? '../'.repeat(outputName.split('/').length - 1)
+        : (lang === 'en' ? './' : '../');
     let enLink = hrefUrls.en || 'index.html';
     if (enLink === '') enLink = 'index.html';
-    pageNavigation = pageNavigation.replace(/href=["'][^"']*["']\s+data-lang="en"/g, `href="${relPrefix}${enLink}" data-lang="en"`);
     let trLink = hrefUrls.tr || 'tr/index.html';
     if (trLink.endsWith('/')) trLink += 'index.html';
-    pageNavigation = pageNavigation.replace(/href=["'][^"']*["']\s+data-lang="tr"/g, `href="${relPrefix}${trLink}" data-lang="tr"`);
     let deLink = hrefUrls.de || 'de/index.html';
     if (deLink.endsWith('/')) deLink += 'index.html';
-    pageNavigation = pageNavigation.replace(/href=["'][^"']*["']\s+data-lang="de"/g, `href="${relPrefix}${deLink}" data-lang="de"`);
     let frLink = hrefUrls.fr || 'fr/index.html';
     if (frLink.endsWith('/')) frLink += 'index.html';
-    pageNavigation = pageNavigation.replace(/href=["'][^"']*["']\s+data-lang="fr"/g, `href="${relPrefix}${frLink}" data-lang="fr"`);
+    pageNavigation = applyLanguageSwitcherLinks(pageNavigation, {
+        en: `${relPrefix}${enLink}`,
+        tr: `${relPrefix}${trLink}`,
+        de: `${relPrefix}${deLink}`,
+        fr: `${relPrefix}${frLink}`
+    });
 
     htmlTemplate = htmlTemplate.split('{{NAVIGATION}}').join(pageNavigation);
     htmlTemplate = htmlTemplate.split('{{MAIN_CONTENT}}').join(content);
@@ -1638,6 +1723,8 @@ function buildPage(templateName, outputName, lang = 'en') {
         htmlTemplate = htmlTemplate.replace('{{BLOG_ARTICLES_JSON}}', JSON.stringify(combinedArticles));
     }
 
+    htmlTemplate = rewriteLegacyHrefTargets(htmlTemplate);
+
     let outputPath = lang === 'en' ? `${outputName}.html` : `${lang}/${outputName}.html`;
     fs.writeFileSync(outputPath, htmlTemplate, 'utf8');
     console.log(`✅ Built ${outputPath}`);
@@ -1741,16 +1828,18 @@ function buildSolutionPage(templateName, outputName, lang = 'en') {
     const relPrefix = lang === 'en' ? './' : '../';
     let enLink = hrefUrls.en || 'index.html';
     if (enLink === '') enLink = 'index.html';
-    pageNavigation = pageNavigation.replace(/href=["'][^"']*["']\s+data-lang="en"/g, `href="${relPrefix}${enLink}" data-lang="en"`);
     let trLink = hrefUrls.tr || 'tr/index.html';
     if (trLink.endsWith('/')) trLink += 'index.html';
-    pageNavigation = pageNavigation.replace(/href=["'][^"']*["']\s+data-lang="tr"/g, `href="${relPrefix}${trLink}" data-lang="tr"`);
     let deLink = hrefUrls.de || 'de/index.html';
     if (deLink.endsWith('/')) deLink += 'index.html';
-    pageNavigation = pageNavigation.replace(/href=["'][^"']*["']\s+data-lang="de"/g, `href="${relPrefix}${deLink}" data-lang="de"`);
     let frLink = hrefUrls.fr || 'fr/index.html';
     if (frLink.endsWith('/')) frLink += 'index.html';
-    pageNavigation = pageNavigation.replace(/href=["'][^"']*["']\s+data-lang="fr"/g, `href="${relPrefix}${frLink}" data-lang="fr"`);
+    pageNavigation = applyLanguageSwitcherLinks(pageNavigation, {
+        en: `${relPrefix}${enLink}`,
+        tr: `${relPrefix}${trLink}`,
+        de: `${relPrefix}${deLink}`,
+        fr: `${relPrefix}${frLink}`
+    });
 
     htmlTemplate = htmlTemplate.split('{{NAVIGATION}}').join(pageNavigation);
     htmlTemplate = htmlTemplate.split('{{MAIN_CONTENT}}').join(content);
@@ -1817,6 +1906,8 @@ function buildSolutionPage(templateName, outputName, lang = 'en') {
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, hrefUrls.de);
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, hrefUrls.fr || 'fr/');
     htmlTemplate = clearUnresolvedTemplateTokens(htmlTemplate);
+
+    htmlTemplate = rewriteLegacyHrefTargets(htmlTemplate);
 
     const outputPath = lang === 'en' ? `${outputName}.html` : `${lang}/${outputName}.html`;
     const dir = path.dirname(outputPath);
@@ -1897,10 +1988,12 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
         }
     };
 
-    content = content.replace(/href=["'][^"']*["']\s+data-lang="en"/g, `href="${getRelPath('en')}${templateName}.html" data-lang="en"`);
-    content = content.replace(/href=["'][^"']*["']\s+data-lang="tr"/g, `href="${getRelPath('tr')}${templateName}.html" data-lang="tr"`);
-    content = content.replace(/href=["'][^"']*["']\s+data-lang="de"/g, `href="${getRelPath('de')}${templateName}.html" data-lang="de"`);
-    content = content.replace(/href=["'][^"']*["']\s+data-lang="fr"/g, `href="${getRelPath('fr')}${templateName}.html" data-lang="fr"`);
+            content = applyLanguageSwitcherLinks(content, {
+                en: `${getRelPath('en')}${templateName}.html`,
+                tr: `${getRelPath('tr')}${templateName}.html`,
+                de: `${getRelPath('de')}${templateName}.html`,
+                fr: `${getRelPath('fr')}${templateName}.html`
+            });
 
     // Replace path placeholders
     content = content.replace(/(href|src)="\{\{BASE_PATH\}\}([^"]+\.(css|ico|png|jpg|jpeg|js|svg))"/g, `$1="${basePath}$2"`);
@@ -2070,7 +2163,8 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
         content = content.replace('</head>', `${schemaString}\n</head>`);
     }
 
-    fs.writeFileSync(outputPath, content, 'utf8');
+            content = rewriteLegacyHrefTargets(content);
+            fs.writeFileSync(outputPath, content, 'utf8');
     console.log(`✅ Built blog post: ${outputPath}`);
 }
 
@@ -3153,6 +3247,11 @@ function buildCityLocationsPage() {
     pageNavigation = pageNavigation.replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html');
     pageNavigation = pageNavigation.replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, 'our-ethical-principles.html');
     pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
+    pageNavigation = applyLanguageSwitcherLinks(pageNavigation, {
+        en: './city-locations.html',
+        de: './de/city-locations.html',
+        fr: './fr/city-locations.html'
+    });
     pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
     pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
 
@@ -3171,9 +3270,197 @@ function buildCityLocationsPage() {
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, 'fr/city-locations.html');
     htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, '{}'); // TODO: Add schema
     htmlTemplate = clearUnresolvedTemplateTokens(htmlTemplate);
+    htmlTemplate = rewriteLegacyHrefTargets(htmlTemplate);
 
     fs.writeFileSync('city-locations.html', htmlTemplate, 'utf8');
     console.log(`✅ Built city-locations.html`);
+}
+
+function normalizeLanguageSwitchPlaceholders() {
+    const roots = ['.', 'de', 'fr', 'blog', 'de/blog', 'fr/blog', 'glossary', 'de/glossary', 'fr/glossary'];
+    const htmlFiles = [];
+
+    function collectHtmlFiles(dir) {
+        if (!fs.existsSync(dir)) return;
+        fs.readdirSync(dir, { withFileTypes: true }).forEach(entry => {
+            const fullPath = path.join(dir, entry.name);
+            if (entry.isDirectory()) {
+                collectHtmlFiles(fullPath);
+                return;
+            }
+            if (entry.isFile() && entry.name.endsWith('.html')) {
+                htmlFiles.push(fullPath);
+            }
+        });
+    }
+
+    roots.forEach(collectHtmlFiles);
+
+    const fileSet = new Set(htmlFiles.map(file => file.replace(/\\/g, '/')));
+    const hasFile = (candidate) => fileSet.has(candidate.replace(/\\/g, '/'));
+    const tryResolveExistingHref = (normalizedPath, hrefValue) => {
+        const [pathAndQuery, hashPart] = hrefValue.split('#');
+        const [pathOnly, queryPart] = pathAndQuery.split('?');
+        const clean = pathOnly;
+        const tryPaths = [];
+        const push = (candidate) => {
+            if (candidate && !tryPaths.includes(candidate)) {
+                tryPaths.push(candidate);
+            }
+        };
+
+        push(clean);
+
+        if (!clean.startsWith('./') && !clean.startsWith('../') && !clean.startsWith('/')) {
+            for (let depth = 0; depth <= 3; depth += 1) {
+                push(`${'../'.repeat(depth)}${clean}`);
+            }
+        }
+        if (clean.startsWith('./')) {
+            const localTarget = clean.slice(2);
+            for (let depth = 1; depth <= 3; depth += 1) {
+                push(`${'../'.repeat(depth)}${localTarget}`);
+            }
+        }
+
+        push(clean.replace(/^(\.\.\/)de\//, '$1'));
+        push(clean.replace(/^(\.\.\/)fr\//, '$1'));
+        push(clean.replace(/^\.\/de\//, './'));
+        push(clean.replace(/^\.\/fr\//, './'));
+        push(clean.replace(/\/glossary\/solutions\.html$/, '/solutions.html'));
+        if (!normalizedPath.includes('/') && clean.startsWith('../')) {
+            push(clean.replace(/^(\.\.\/)+/, ''));
+            push(`./${clean.replace(/^(\.\.\/)+/, '')}`);
+        }
+
+        for (const candidate of tryPaths) {
+            const resolved = path.posix.normalize(path.posix.join(path.posix.dirname(normalizedPath), candidate));
+            if (hasFile(resolved)) {
+                const withQuery = queryPart ? `${candidate}?${queryPart}` : candidate;
+                return hashPart ? `${withQuery}#${hashPart}` : withQuery;
+            }
+        }
+        return hrefValue;
+    };
+
+    const buildLinksForFile = (normalizedPath) => {
+        const pathPosix = normalizedPath.replace(/\\/g, '/');
+        const fileName = path.posix.basename(pathPosix);
+
+        const blogMatch = pathPosix.match(/^(?:(de|fr)\/)?blog\/([^/]+\.html)$/);
+        if (blogMatch) {
+            const lang = blogMatch[1] || 'en';
+            const slugFile = blogMatch[2];
+            const enExists = hasFile(`blog/${slugFile}`);
+            const deExists = hasFile(`de/blog/${slugFile}`);
+            const frExists = hasFile(`fr/blog/${slugFile}`);
+
+            if (lang === 'en') {
+                return {
+                    en: `./${enExists ? slugFile : 'index.html'}`,
+                    de: `../de/blog/${deExists ? slugFile : 'index.html'}`,
+                    fr: `../fr/blog/${frExists ? slugFile : 'index.html'}`
+                };
+            }
+            if (lang === 'de') {
+                return {
+                    en: `../../blog/${enExists ? slugFile : 'index.html'}`,
+                    de: `./${deExists ? slugFile : 'index.html'}`,
+                    fr: `../../fr/blog/${frExists ? slugFile : 'index.html'}`
+                };
+            }
+            return {
+                en: `../../blog/${enExists ? slugFile : 'index.html'}`,
+                de: `../../de/blog/${deExists ? slugFile : 'index.html'}`,
+                fr: `./${frExists ? slugFile : 'index.html'}`
+            };
+        }
+
+        const glossaryMatch = pathPosix.match(/^(?:(de|fr)\/)?glossary\/([^/]+\.html)$/);
+        if (glossaryMatch) {
+            const lang = glossaryMatch[1] || 'en';
+            const slugFile = glossaryMatch[2];
+            const enExists = hasFile(`glossary/${slugFile}`);
+            const deExists = hasFile(`de/glossary/${slugFile}`);
+            const frExists = hasFile(`fr/glossary/${slugFile}`);
+
+            if (lang === 'en') {
+                return {
+                    en: `./${enExists ? slugFile : 'index.html'}`,
+                    de: `../de/glossary/${deExists ? slugFile : 'index.html'}`,
+                    fr: `../fr/glossary/${frExists ? slugFile : 'index.html'}`
+                };
+            }
+            if (lang === 'de') {
+                return {
+                    en: `../../glossary/${enExists ? slugFile : 'index.html'}`,
+                    de: `./${deExists ? slugFile : 'index.html'}`,
+                    fr: `../../fr/glossary/${frExists ? slugFile : 'index.html'}`
+                };
+            }
+            return {
+                en: `../../glossary/${enExists ? slugFile : 'index.html'}`,
+                de: `../../de/glossary/${deExists ? slugFile : 'index.html'}`,
+                fr: `./${frExists ? slugFile : 'index.html'}`
+            };
+        }
+
+        const deRootMatch = pathPosix.match(/^de\/([^/]+\.html)$/);
+        if (deRootMatch) {
+            const slugFile = deRootMatch[1];
+            return {
+                en: `../${hasFile(slugFile) ? slugFile : 'index.html'}`,
+                de: `./${slugFile}`,
+                fr: `../fr/${hasFile(`fr/${slugFile}`) ? slugFile : 'index.html'}`
+            };
+        }
+        const frRootMatch = pathPosix.match(/^fr\/([^/]+\.html)$/);
+        if (frRootMatch) {
+            const slugFile = frRootMatch[1];
+            return {
+                en: `../${hasFile(slugFile) ? slugFile : 'index.html'}`,
+                de: `../de/${hasFile(`de/${slugFile}`) ? slugFile : 'index.html'}`,
+                fr: `./${slugFile}`
+            };
+        }
+
+        return {
+            en: `./${fileName}`,
+            de: `./de/${hasFile(`de/${fileName}`) ? fileName : 'index.html'}`,
+            fr: `./fr/${hasFile(`fr/${fileName}`) ? fileName : 'index.html'}`
+        };
+    };
+
+    htmlFiles.forEach(filePath => {
+        const normalized = filePath.replace(/\\/g, '/');
+        let html = fs.readFileSync(filePath, 'utf8');
+        let changed = false;
+        const rewrittenLegacyLinks = rewriteLegacyHrefTargets(html);
+        if (rewrittenLegacyLinks !== html) {
+            html = rewrittenLegacyLinks;
+            changed = true;
+        }
+        if (/href=["']#["']\s+data-lang="(en|de|fr)"/.test(html)) {
+            html = applyLanguageSwitcherLinks(html, buildLinksForFile(normalized));
+            changed = true;
+        }
+
+        html = html.replace(/href=(["'])([^"']+\.html(?:[?#][^"']*)?)\1/g, (match, quote, hrefValue) => {
+            if (/^(https?:|mailto:|tel:|javascript:|#)/i.test(hrefValue)) {
+                return match;
+            }
+            const nextValue = tryResolveExistingHref(normalized, hrefValue);
+            if (nextValue !== hrefValue) {
+                changed = true;
+                return `href=${quote}${nextValue}${quote}`;
+            }
+            return match;
+        });
+
+        if (changed) {
+            fs.writeFileSync(filePath, html, 'utf8');
+        }
+    });
 }
 
 // -------------------------------------------------------------------------
@@ -3284,6 +3571,24 @@ function buildGlossaryTerms() {
                 pageNavigation = applyTranslations(pageNavigation, lang);
                 pageFooter = applyTranslations(pageFooter, lang);
             }
+            const termLangLinks = lang === 'en'
+                ? {
+                    en: `./${termData.slug}.html`,
+                    de: `../de/glossary/${termData.slug}.html`,
+                    fr: `../fr/glossary/${termData.slug}.html`
+                }
+                : lang === 'de'
+                    ? {
+                        en: `../../glossary/${termData.slug}.html`,
+                        de: `./${termData.slug}.html`,
+                        fr: `../../fr/glossary/${termData.slug}.html`
+                    }
+                    : {
+                        en: `../../glossary/${termData.slug}.html`,
+                        de: `../../de/glossary/${termData.slug}.html`,
+                        fr: `./${termData.slug}.html`
+                    };
+            pageNavigation = applyLanguageSwitcherLinks(pageNavigation, termLangLinks);
 
             htmlTemplate = htmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
             htmlTemplate = htmlTemplate.replace('{{MAIN_CONTENT}}', content);
@@ -3351,6 +3656,7 @@ function buildGlossaryTerms() {
                 fs.mkdirSync(outputDir, { recursive: true });
             }
 
+            htmlTemplate = rewriteLegacyHrefTargets(htmlTemplate);
             fs.writeFileSync(`${outputDir}/${termData.slug}.html`, htmlTemplate, 'utf8');
         });
     });
@@ -3451,6 +3757,24 @@ function buildGlossaryIndex() {
             pageNavigation = applyTranslations(pageNavigation, lang);
             pageFooter = applyTranslations(pageFooter, lang);
         }
+        const indexLangLinks = lang === 'en'
+            ? {
+                en: './index.html',
+                de: '../de/glossary/index.html',
+                fr: '../fr/glossary/index.html'
+            }
+            : lang === 'de'
+                ? {
+                    en: '../../glossary/index.html',
+                    de: './index.html',
+                    fr: '../../fr/glossary/index.html'
+                }
+                : {
+                    en: '../../glossary/index.html',
+                    de: '../../de/glossary/index.html',
+                    fr: './index.html'
+                };
+        pageNavigation = applyLanguageSwitcherLinks(pageNavigation, indexLangLinks);
 
         htmlTemplate = htmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
         htmlTemplate = htmlTemplate.replace('{{MAIN_CONTENT}}', content);
@@ -3485,6 +3809,7 @@ function buildGlossaryIndex() {
             fs.mkdirSync(outputDir, { recursive: true });
         }
 
+        htmlTemplate = rewriteLegacyHrefTargets(htmlTemplate);
         fs.writeFileSync(`${outputDir}/index.html`, htmlTemplate, 'utf8');
     });
     console.log(`✅ Built Glossary Index pages.`);
@@ -3555,7 +3880,7 @@ function buildCityLandingPages() {
                     .map(service => `<li class="text-sm text-base-content/70">${service.name}</li>`)
                     .join('');
                 return `
-                    <a href="${slug === 'custom-software' ? 'custom-software-development.html' : 'solutions.html'}" class="buzz-card p-8 bg-white shadow-lg hover:shadow-xl transition-all block">
+                    <a href="solutions.html#${slug}" class="buzz-card p-8 bg-white shadow-lg hover:shadow-xl transition-all block">
                         <div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                             <i data-lucide="${meta.icon}" class="w-6 h-6 text-primary"></i>
                         </div>
@@ -3615,6 +3940,24 @@ function buildCityLandingPages() {
             pageNavigation = pageNavigation.replace(/{{VISION_MISSION_PAGE}}/g, 'vision-mission.html');
             pageNavigation = pageNavigation.replace(/{{ETHICAL_PRINCIPLES_PAGE}}/g, 'our-ethical-principles.html');
             pageNavigation = pageNavigation.replace(/{{LOGO_PATH}}/g, logoPath);
+            const cityLangLinks = lang === 'en'
+                ? {
+                    en: `./${citySlug}.html`,
+                    de: `./de/${citySlug}.html`,
+                    fr: `./fr/${citySlug}.html`
+                }
+                : lang === 'de'
+                    ? {
+                        en: `../${citySlug}.html`,
+                        de: `./${citySlug}.html`,
+                        fr: `../fr/${citySlug}.html`
+                    }
+                    : {
+                        en: `../${citySlug}.html`,
+                        de: `../de/${citySlug}.html`,
+                        fr: `./${citySlug}.html`
+                    };
+            pageNavigation = applyLanguageSwitcherLinks(pageNavigation, cityLangLinks);
             pageFooter = pageFooter.replace(/{{BASE_PATH}}/g, basePath);
             pageFooter = pageFooter.replace(/{{LOGO_PATH}}/g, logoPath);
 
@@ -3641,6 +3984,7 @@ function buildCityLandingPages() {
 
             // Safety net: remove any unresolved {{TOKEN}} placeholders before writing.
             fullHtmlTemplate = clearUnresolvedTemplateTokens(fullHtmlTemplate);
+            fullHtmlTemplate = rewriteLegacyHrefTargets(fullHtmlTemplate);
 
             // Output path
             const outputPath = lang === 'en' ? `${citySlug}.html` : `${lang}/${citySlug}.html`;
@@ -3669,12 +4013,8 @@ function generateSitemap() {
 
     // List of static pages
     const staticPages = [
-        'index.html', 'about.html', 'solutions.html', 'contact.html', 'case-studies.html',
-        'managed-it-services.html', 'vulnerability-assessments.html', 'email-security.html',
-        'website-care-plans.html', 'revops-crm-setup.html', 'lost-lead-reactivation.html',
-        'speed-to-lead.html', 'recruitment.html', 'ai-creative-studio.html',
-        'ai-content-infrastructure.html',
-        'custom-software-development.html', 'city-locations.html'
+        'index.html', 'about.html', 'solutions.html', 'contact.html', 'city-locations.html',
+        'vision-mission.html', 'our-ethical-principles.html'
     ];
 
     const legacyStaticPages = new Set(Object.keys(LEGACY_REDIRECT_TARGETS).map(page => `${page}.html`));
@@ -3771,6 +4111,9 @@ function buildLegacyRedirectRules() {
     ];
 
     Object.entries(LEGACY_REDIRECT_TARGETS).forEach(([source, target]) => {
+        if (!source || source === target) {
+            return;
+        }
         languages.forEach(lang => {
             const sourcePath = lang === 'en' ? `/${source}.html` : `/${lang}/${source}.html`;
             const targetPath = lang === 'en' ? `/${target}.html` : `/${lang}/${target}.html`;
@@ -3895,6 +4238,7 @@ buildPage('case-studies', 'case-studies', 'de');
 buildPage('schutzdienstleistungen', 'schutzdienstleistungen', 'de');
 buildPage('vision-mission', 'vision-mission', 'de');
 buildPage('our-ethical-principles', 'our-ethical-principles', 'de');
+buildPage('city-locations', 'city-locations', 'de');
 // Build Approved Solution Pages (German)
 services.forEach(service => buildSolutionPage(service.id, service.id, 'de'));
 
@@ -3907,6 +4251,7 @@ buildPage('contact', 'contact', 'fr');
 buildPage('case-studies', 'case-studies', 'fr');
 buildPage('vision-mission', 'vision-mission', 'fr');
 buildPage('our-ethical-principles', 'our-ethical-principles', 'fr');
+buildPage('city-locations', 'city-locations', 'fr');
 // Build Approved Solution Pages (French)
 services.forEach(service => buildSolutionPage(service.id, service.id, 'fr'));
 
@@ -3924,6 +4269,7 @@ buildCityLocationsPage();
 buildBlogPosts();
 buildGlossaryTerms(); // NEW
 buildGlossaryIndex(); // NEW
+normalizeLanguageSwitchPlaceholders();
 generateSitemap();
 cleanupLegacyRedirectOutputs();
 writeRedirectsFile();

@@ -13,19 +13,6 @@
     "population": "4,697,000"
   },
   {
-    "id": "rawalpindi",
-    "slug": "rawalpindi",
-    "city": "Rawalpindi",
-    "country": "Pakistan",
-    "description": "Enterprise solutions in Rawalpindi for secure IT infrastructure, AI automation, and custom software development across Pakistan and the Asia / APAC market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 33.5651,
-    "lng": 73.0169,
-    "region": "Asia / APAC",
-    "landmark": "City Center",
-    "population": "2,098,000"
-  },
-  {
     "id": "busan",
     "slug": "busan",
     "city": "Busan",
@@ -63,58 +50,6 @@
     "region": "Asia / APAC",
     "landmark": "City Center",
     "population": "4,046,000"
-  },
-  {
-    "id": "zhengzhou",
-    "slug": "zhengzhou",
-    "city": "Zhengzhou",
-    "country": "China",
-    "description": "Enterprise solutions in Zhengzhou for secure IT infrastructure, AI automation, and custom software development across China and the Asia / APAC market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 34.7466,
-    "lng": 113.6253,
-    "region": "Asia / APAC",
-    "landmark": "City Center",
-    "population": "6,650,000"
-  },
-  {
-    "id": "surat",
-    "slug": "surat",
-    "city": "Surat",
-    "country": "India",
-    "description": "Enterprise solutions in Surat for secure IT infrastructure, AI automation, and custom software development across India and the Asia / APAC market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 21.1702,
-    "lng": 72.8311,
-    "region": "Asia / APAC",
-    "landmark": "City Center",
-    "population": "7,784,000"
-  },
-  {
-    "id": "kolkata",
-    "slug": "kolkata",
-    "city": "Kolkata",
-    "country": "India",
-    "description": "Enterprise solutions in Kolkata for secure IT infrastructure, AI automation, and custom software development across India and the Asia / APAC market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 22.5726,
-    "lng": 88.3639,
-    "region": "Asia / APAC",
-    "landmark": "City Center",
-    "population": "15,133,000"
-  },
-  {
-    "id": "yangon",
-    "slug": "yangon",
-    "city": "Yangon",
-    "country": "Myanmar",
-    "description": "Enterprise solutions in Yangon for secure IT infrastructure, AI automation, and custom software development across Myanmar and the Asia / APAC market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 16.8661,
-    "lng": 96.1951,
-    "region": "Asia / APAC",
-    "landmark": "City Center",
-    "population": "5,427,000"
   },
   {
     "id": "ankara",
@@ -169,32 +104,6 @@
     "population": "7,676,000"
   },
   {
-    "id": "foshan",
-    "slug": "foshan",
-    "city": "Foshan",
-    "country": "China",
-    "description": "Enterprise solutions in Foshan for secure IT infrastructure, AI automation, and custom software development across China and the Asia / APAC market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 23.0215,
-    "lng": 113.1214,
-    "region": "Asia / APAC",
-    "landmark": "City Center",
-    "population": "9,498,000"
-  },
-  {
-    "id": "faisalabad",
-    "slug": "faisalabad",
-    "city": "Faisalabad",
-    "country": "Pakistan",
-    "description": "Enterprise solutions in Faisalabad for secure IT infrastructure, AI automation, and custom software development across Pakistan and the Asia / APAC market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 31.4504,
-    "lng": 73.135,
-    "region": "Asia / APAC",
-    "landmark": "City Center",
-    "population": "3,542,000"
-  },
-  {
     "id": "hyderabad",
     "slug": "hyderabad",
     "city": "Hyderabad",
@@ -208,19 +117,6 @@
     "population": "10,534,000"
   },
   {
-    "id": "changsha",
-    "slug": "changsha",
-    "city": "Changsha",
-    "country": "China",
-    "description": "Enterprise solutions in Changsha for secure IT infrastructure, AI automation, and custom software development across China and the Asia / APAC market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 28.2282,
-    "lng": 112.9388,
-    "region": "Asia / APAC",
-    "landmark": "City Center",
-    "population": "8,393,000"
-  },
-  {
     "id": "chennai",
     "slug": "chennai",
     "city": "Chennai",
@@ -232,19 +128,6 @@
     "region": "Asia / APAC",
     "landmark": "City Center",
     "population": "11,503,000"
-  },
-  {
-    "id": "baghdad",
-    "slug": "baghdad",
-    "city": "Baghdad",
-    "country": "Iraq",
-    "description": "Enterprise solutions in Baghdad for secure IT infrastructure, AI automation, and custom software development across Iraq and the Middle East market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 33.3152,
-    "lng": 44.3661,
-    "region": "Middle East",
-    "landmark": "City Center",
-    "population": "6,926,000"
   },
   {
     "id": "hong-kong",
@@ -273,45 +156,6 @@
     "population": "10,360,000"
   },
   {
-    "id": "ho-chi-minh-city",
-    "slug": "ho-chi-minh-city",
-    "city": "Ho Chi Minh City",
-    "country": "Vietnam",
-    "description": "Enterprise solutions in Ho Chi Minh City for secure IT infrastructure, AI automation, and custom software development across Vietnam and the Asia / APAC market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 10.8231,
-    "lng": 106.6297,
-    "region": "Asia / APAC",
-    "landmark": "City Center",
-    "population": "8,993,000"
-  },
-  {
-    "id": "shenyang",
-    "slug": "shenyang",
-    "city": "Shenyang",
-    "country": "China",
-    "description": "Enterprise solutions in Shenyang for secure IT infrastructure, AI automation, and custom software development across China and the Asia / APAC market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 41.8057,
-    "lng": 123.4315,
-    "region": "Asia / APAC",
-    "landmark": "City Center",
-    "population": "7,495,000"
-  },
-  {
-    "id": "tehran",
-    "slug": "tehran",
-    "city": "Tehran",
-    "country": "Iran",
-    "description": "Enterprise solutions in Tehran for secure IT infrastructure, AI automation, and custom software development across Iran and the Middle East market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 35.6892,
-    "lng": 51.389,
-    "region": "Middle East",
-    "landmark": "City Center",
-    "population": "9,381,000"
-  },
-  {
     "id": "nanjing",
     "slug": "nanjing",
     "city": "Nanjing",
@@ -323,32 +167,6 @@
     "region": "Asia / APAC",
     "landmark": "City Center",
     "population": "9,314,000"
-  },
-  {
-    "id": "chongqing",
-    "slug": "chongqing",
-    "city": "Chongqing",
-    "country": "China",
-    "description": "Enterprise solutions in Chongqing for secure IT infrastructure, AI automation, and custom software development across China and the Asia / APAC market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 29.4316,
-    "lng": 106.9123,
-    "region": "Asia / APAC",
-    "landmark": "City Center",
-    "population": "16,382,000"
-  },
-  {
-    "id": "dongguan",
-    "slug": "dongguan",
-    "city": "Dongguan",
-    "country": "China",
-    "description": "Enterprise solutions in Dongguan for secure IT infrastructure, AI automation, and custom software development across China and the Asia / APAC market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 23.0205,
-    "lng": 113.7518,
-    "region": "Asia / APAC",
-    "landmark": "City Center",
-    "population": "7,429,000"
   },
   {
     "id": "bengaluru",
@@ -377,19 +195,6 @@
     "population": "12,328,000"
   },
   {
-    "id": "tianjin",
-    "slug": "tianjin",
-    "city": "Tianjin",
-    "country": "China",
-    "description": "Enterprise solutions in Tianjin for secure IT infrastructure, AI automation, and custom software development across China and the Asia / APAC market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 39.0842,
-    "lng": 117.2008,
-    "region": "Asia / APAC",
-    "landmark": "City Center",
-    "population": "13,866,000"
-  },
-  {
     "id": "wuhan",
     "slug": "wuhan",
     "city": "Wuhan",
@@ -416,32 +221,6 @@
     "population": "9,776,000"
   },
   {
-    "id": "lahore",
-    "slug": "lahore",
-    "city": "Lahore",
-    "country": "Pakistan",
-    "description": "Enterprise solutions in Lahore for secure IT infrastructure, AI automation, and custom software development across Pakistan and the Asia / APAC market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 31.5204,
-    "lng": 74.3587,
-    "region": "Asia / APAC",
-    "landmark": "City Center",
-    "population": "13,095,000"
-  },
-  {
-    "id": "jakarta",
-    "slug": "jakarta",
-    "city": "Jakarta",
-    "country": "Indonesia",
-    "description": "Enterprise solutions in Jakarta for secure IT infrastructure, AI automation, and custom software development across Indonesia and the Asia / APAC market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": -6.1751,
-    "lng": 106.865,
-    "region": "Asia / APAC",
-    "landmark": "City Center",
-    "population": "10,562,000"
-  },
-  {
     "id": "chengdu",
     "slug": "chengdu",
     "city": "Chengdu",
@@ -466,19 +245,6 @@
     "region": "Asia / APAC",
     "landmark": "City Center",
     "population": "37,393,000"
-  },
-  {
-    "id": "dhaka",
-    "slug": "dhaka",
-    "city": "Dhaka",
-    "country": "Bangladesh",
-    "description": "Enterprise solutions in Dhaka for secure IT infrastructure, AI automation, and custom software development across Bangladesh and the Asia / APAC market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 23.8103,
-    "lng": 90.4125,
-    "region": "Asia / APAC",
-    "landmark": "City Center",
-    "population": "22,478,000"
   },
   {
     "id": "shenzhen",
@@ -531,19 +297,6 @@
     "region": "Asia / APAC",
     "landmark": "City Center",
     "population": "15,305,000"
-  },
-  {
-    "id": "karachi",
-    "slug": "karachi",
-    "city": "Karachi",
-    "country": "Pakistan",
-    "description": "Enterprise solutions in Karachi for secure IT infrastructure, AI automation, and custom software development across Pakistan and the Asia / APAC market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 24.8607,
-    "lng": 67.0011,
-    "region": "Asia / APAC",
-    "landmark": "City Center",
-    "population": "16,051,000"
   },
   {
     "id": "beijing",
@@ -2418,89 +2171,11 @@
     "population": "272,830"
   },
   {
-    "id": "north-tyneside",
-    "slug": "north-tyneside",
-    "city": "North Tyneside",
-    "country": "United Kingdom",
-    "description": "Enterprise solutions in North Tyneside for secure IT infrastructure, AI automation, and custom software development across United Kingdom and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "Western Europe",
-    "landmark": "City Centre",
-    "population": "272,830"
-  },
-  {
-    "id": "north-somerset",
-    "slug": "north-somerset",
-    "city": "North Somerset",
-    "country": "United Kingdom",
-    "description": "Enterprise solutions in North Somerset for secure IT infrastructure, AI automation, and custom software development across United Kingdom and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "Western Europe",
-    "landmark": "City Centre",
-    "population": "272,830"
-  },
-  {
-    "id": "fort-de-france",
-    "slug": "fort-de-france",
-    "city": "Fort-de-France",
-    "country": "France",
-    "description": "Enterprise solutions in Fort-de-France for secure IT infrastructure, AI automation, and custom software development across France and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "Western Europe",
-    "landmark": "Old Town",
-    "population": "272,830"
-  },
-  {
-    "id": "noisy-le-grand",
-    "slug": "noisy-le-grand",
-    "city": "Noisy-le-Grand",
-    "country": "France",
-    "description": "Enterprise solutions in Noisy-le-Grand for secure IT infrastructure, AI automation, and custom software development across France and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "Western Europe",
-    "landmark": "Old Town",
-    "population": "272,830"
-  },
-  {
-    "id": "ivry-sur-seine",
-    "slug": "ivry-sur-seine",
-    "city": "Ivry-sur-Seine",
-    "country": "France",
-    "description": "Enterprise solutions in Ivry-sur-Seine for secure IT infrastructure, AI automation, and custom software development across France and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "Western Europe",
-    "landmark": "Old Town",
-    "population": "272,830"
-  },
-  {
     "id": "wolverhampton",
     "slug": "wolverhampton",
     "city": "Wolverhampton",
     "country": "United Kingdom",
     "description": "Enterprise solutions in Wolverhampton for secure IT infrastructure, AI automation, and custom software development across United Kingdom and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "Western Europe",
-    "landmark": "City Centre",
-    "population": "260,485"
-  },
-  {
-    "id": "aberdeenshire",
-    "slug": "aberdeenshire",
-    "city": "Aberdeenshire",
-    "country": "United Kingdom",
-    "description": "Enterprise solutions in Aberdeenshire for secure IT infrastructure, AI automation, and custom software development across United Kingdom and the Western Europe market.",
     "image": "./assets/local/default-city.jpg",
     "lat": 0,
     "lng": 0,
@@ -2522,37 +2197,11 @@
     "population": "260,485"
   },
   {
-    "id": "county-durham",
-    "slug": "county-durham",
-    "city": "County Durham",
-    "country": "United Kingdom",
-    "description": "Enterprise solutions in County Durham for secure IT infrastructure, AI automation, and custom software development across United Kingdom and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "Western Europe",
-    "landmark": "City Centre",
-    "population": "260,485"
-  },
-  {
     "id": "saint-tienne",
     "slug": "saint-tienne",
     "city": "Saint-Étienne",
     "country": "France",
     "description": "Enterprise solutions in Saint-Étienne for secure IT infrastructure, AI automation, and custom software development across France and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "Western Europe",
-    "landmark": "Old Town",
-    "population": "260,485"
-  },
-  {
-    "id": "aubervilliers",
-    "slug": "aubervilliers",
-    "city": "Aubervilliers",
-    "country": "France",
-    "description": "Enterprise solutions in Aubervilliers for secure IT infrastructure, AI automation, and custom software development across France and the Western Europe market.",
     "image": "./assets/local/default-city.jpg",
     "lat": 0,
     "lng": 0,
@@ -2572,19 +2221,6 @@
     "region": "Western Europe",
     "landmark": "Old Town",
     "population": "260,485"
-  },
-  {
-    "id": "renfrewshire",
-    "slug": "renfrewshire",
-    "city": "Renfrewshire",
-    "country": "United Kingdom",
-    "description": "Enterprise solutions in Renfrewshire for secure IT infrastructure, AI automation, and custom software development across United Kingdom and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "Western Europe",
-    "landmark": "City Centre",
-    "population": "248,140"
   },
   {
     "id": "peterborough",
@@ -2613,19 +2249,6 @@
     "population": "248,140"
   },
   {
-    "id": "saint-pierre",
-    "slug": "saint-pierre",
-    "city": "Saint-Pierre",
-    "country": "France",
-    "description": "Enterprise solutions in Saint-Pierre for secure IT infrastructure, AI automation, and custom software development across France and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "Western Europe",
-    "landmark": "Old Town",
-    "population": "248,140"
-  },
-  {
     "id": "montpellier",
     "slug": "montpellier",
     "city": "Montpellier",
@@ -2636,19 +2259,6 @@
     "lng": 3.8767,
     "region": "Western Europe",
     "landmark": "Old Town",
-    "population": "235,795"
-  },
-  {
-    "id": "east-riding",
-    "slug": "east-riding",
-    "city": "East Riding",
-    "country": "United Kingdom",
-    "description": "Enterprise solutions in East Riding for secure IT infrastructure, AI automation, and custom software development across United Kingdom and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "Western Europe",
-    "landmark": "City Centre",
     "population": "235,795"
   },
   {
@@ -2688,32 +2298,6 @@
     "lng": 0,
     "region": "Western Europe",
     "landmark": "City Centre",
-    "population": "235,795"
-  },
-  {
-    "id": "saint-denis",
-    "slug": "saint-denis",
-    "city": "Saint-Denis",
-    "country": "France",
-    "description": "Enterprise solutions in Saint-Denis for secure IT infrastructure, AI automation, and custom software development across France and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "Western Europe",
-    "landmark": "Old Town",
-    "population": "235,795"
-  },
-  {
-    "id": "saint-denis",
-    "slug": "saint-denis",
-    "city": "Saint-Denis",
-    "country": "France",
-    "description": "Enterprise solutions in Saint-Denis for secure IT infrastructure, AI automation, and custom software development across France and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "Western Europe",
-    "landmark": "Old Town",
     "population": "235,795"
   },
   {
@@ -2795,19 +2379,6 @@
     "population": "223,450"
   },
   {
-    "id": "calderdale",
-    "slug": "calderdale",
-    "city": "Calderdale",
-    "country": "United Kingdom",
-    "description": "Enterprise solutions in Calderdale for secure IT infrastructure, AI automation, and custom software development across United Kingdom and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "Western Europe",
-    "landmark": "City Centre",
-    "population": "223,450"
-  },
-  {
     "id": "portsmouth",
     "slug": "portsmouth",
     "city": "Portsmouth",
@@ -2834,32 +2405,6 @@
     "population": "223,450"
   },
   {
-    "id": "newborough",
-    "slug": "newborough",
-    "city": "Newborough",
-    "country": "United Kingdom",
-    "description": "Enterprise solutions in Newborough for secure IT infrastructure, AI automation, and custom software development across United Kingdom and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "Western Europe",
-    "landmark": "City Centre",
-    "population": "223,450"
-  },
-  {
-    "id": "argenteuil",
-    "slug": "argenteuil",
-    "city": "Argenteuil",
-    "country": "France",
-    "description": "Enterprise solutions in Argenteuil for secure IT infrastructure, AI automation, and custom software development across France and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "Western Europe",
-    "landmark": "Old Town",
-    "population": "223,450"
-  },
-  {
     "id": "courbevoie",
     "slug": "courbevoie",
     "city": "Courbevoie",
@@ -2878,19 +2423,6 @@
     "city": "Versailles",
     "country": "France",
     "description": "Enterprise solutions in Versailles for secure IT infrastructure, AI automation, and custom software development across France and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "Western Europe",
-    "landmark": "Old Town",
-    "population": "223,450"
-  },
-  {
-    "id": "vnissieux",
-    "slug": "vnissieux",
-    "city": "Vénissieux",
-    "country": "France",
-    "description": "Enterprise solutions in Vénissieux for secure IT infrastructure, AI automation, and custom software development across France and the Western Europe market.",
     "image": "./assets/local/default-city.jpg",
     "lat": 0,
     "lng": 0,
@@ -2990,19 +2522,6 @@
     "population": "211,105"
   },
   {
-    "id": "wakefield",
-    "slug": "wakefield",
-    "city": "Wakefield",
-    "country": "United Kingdom",
-    "description": "Enterprise solutions in Wakefield for secure IT infrastructure, AI automation, and custom software development across United Kingdom and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "Western Europe",
-    "landmark": "City Centre",
-    "population": "211,105"
-  },
-  {
     "id": "leicester",
     "slug": "leicester",
     "city": "Leicester",
@@ -3086,19 +2605,6 @@
     "city": "St Helens",
     "country": "United Kingdom",
     "description": "Enterprise solutions in St Helens for secure IT infrastructure, AI automation, and custom software development across United Kingdom and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "Western Europe",
-    "landmark": "City Centre",
-    "population": "211,105"
-  },
-  {
-    "id": "wokingham",
-    "slug": "wokingham",
-    "city": "Wokingham",
-    "country": "United Kingdom",
-    "description": "Enterprise solutions in Wokingham for secure IT infrastructure, AI automation, and custom software development across United Kingdom and the Western Europe market.",
     "image": "./assets/local/default-city.jpg",
     "lat": 0,
     "lng": 0,
@@ -4420,71 +3926,6 @@
     "population": "297,520"
   },
   {
-    "id": "huntington-beach",
-    "slug": "huntington-beach",
-    "city": "Huntington Beach",
-    "country": "United States",
-    "description": "Enterprise solutions in Huntington Beach for secure IT infrastructure, AI automation, and custom software development across United States and the North America market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "North America",
-    "landmark": "Downtown Business District",
-    "population": "297,520"
-  },
-  {
-    "id": "rancho-cucamonga",
-    "slug": "rancho-cucamonga",
-    "city": "Rancho Cucamonga",
-    "country": "United States",
-    "description": "Enterprise solutions in Rancho Cucamonga for secure IT infrastructure, AI automation, and custom software development across United States and the North America market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "North America",
-    "landmark": "Downtown Business District",
-    "population": "297,520"
-  },
-  {
-    "id": "west-valley-city",
-    "slug": "west-valley-city",
-    "city": "West Valley City",
-    "country": "United States",
-    "description": "Enterprise solutions in West Valley City for secure IT infrastructure, AI automation, and custom software development across United States and the North America market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "North America",
-    "landmark": "Downtown Business District",
-    "population": "297,520"
-  },
-  {
-    "id": "sterling-heights",
-    "slug": "sterling-heights",
-    "city": "Sterling Heights",
-    "country": "United States",
-    "description": "Enterprise solutions in Sterling Heights for secure IT infrastructure, AI automation, and custom software development across United States and the North America market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "North America",
-    "landmark": "Downtown Business District",
-    "population": "297,520"
-  },
-  {
-    "id": "north-las-vegas",
-    "slug": "north-las-vegas",
-    "city": "North Las Vegas",
-    "country": "United States",
-    "description": "Enterprise solutions in North Las Vegas for secure IT infrastructure, AI automation, and custom software development across United States and the North America market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "North America",
-    "landmark": "Downtown Business District",
-    "population": "285,175"
-  },
-  {
     "id": "fort-lauderdale",
     "slug": "fort-lauderdale",
     "city": "Fort Lauderdale",
@@ -4550,32 +3991,6 @@
     "population": "272,830"
   },
   {
-    "id": "port-st-lucie",
-    "slug": "port-st-lucie",
-    "city": "Port St. Lucie",
-    "country": "United States",
-    "description": "Enterprise solutions in Port St. Lucie for secure IT infrastructure, AI automation, and custom software development across United States and the North America market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "North America",
-    "landmark": "Downtown Business District",
-    "population": "272,830"
-  },
-  {
-    "id": "pembroke-pines",
-    "slug": "pembroke-pines",
-    "city": "Pembroke Pines",
-    "country": "United States",
-    "description": "Enterprise solutions in Pembroke Pines for secure IT infrastructure, AI automation, and custom software development across United States and the North America market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "North America",
-    "landmark": "Downtown Business District",
-    "population": "272,830"
-  },
-  {
     "id": "san-francisco",
     "slug": "san-francisco",
     "city": "San Francisco",
@@ -4615,45 +4030,6 @@
     "population": "260,485"
   },
   {
-    "id": "richmond-hill",
-    "slug": "richmond-hill",
-    "city": "Richmond Hill",
-    "country": "Canada",
-    "description": "Enterprise solutions in Richmond Hill for secure IT infrastructure, AI automation, and custom software development across Canada and the North America market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "North America",
-    "landmark": "Central Business District",
-    "population": "260,485"
-  },
-  {
-    "id": "moreno-valley",
-    "slug": "moreno-valley",
-    "city": "Moreno Valley",
-    "country": "United States",
-    "description": "Enterprise solutions in Moreno Valley for secure IT infrastructure, AI automation, and custom software development across United States and the North America market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "North America",
-    "landmark": "Downtown Business District",
-    "population": "260,485"
-  },
-  {
-    "id": "grand-prairie",
-    "slug": "grand-prairie",
-    "city": "Grand Prairie",
-    "country": "United States",
-    "description": "Enterprise solutions in Grand Prairie for secure IT infrastructure, AI automation, and custom software development across United States and the North America market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "North America",
-    "landmark": "Downtown Business District",
-    "population": "260,485"
-  },
-  {
     "id": "overland-park",
     "slug": "overland-park",
     "city": "Overland Park",
@@ -4672,45 +4048,6 @@
     "city": "Santa Clarita",
     "country": "United States",
     "description": "Enterprise solutions in Santa Clarita for secure IT infrastructure, AI automation, and custom software development across United States and the North America market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "North America",
-    "landmark": "Downtown Business District",
-    "population": "260,485"
-  },
-  {
-    "id": "thousand-oaks",
-    "slug": "thousand-oaks",
-    "city": "Thousand Oaks",
-    "country": "United States",
-    "description": "Enterprise solutions in Thousand Oaks for secure IT infrastructure, AI automation, and custom software development across United States and the North America market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "North America",
-    "landmark": "Downtown Business District",
-    "population": "260,485"
-  },
-  {
-    "id": "coral-springs",
-    "slug": "coral-springs",
-    "city": "Coral Springs",
-    "country": "United States",
-    "description": "Enterprise solutions in Coral Springs for secure IT infrastructure, AI automation, and custom software development across United States and the North America market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "North America",
-    "landmark": "Downtown Business District",
-    "population": "260,485"
-  },
-  {
-    "id": "miami-gardens",
-    "slug": "miami-gardens",
-    "city": "Miami Gardens",
-    "country": "United States",
-    "description": "Enterprise solutions in Miami Gardens for secure IT infrastructure, AI automation, and custom software development across United States and the North America market.",
     "image": "./assets/local/default-city.jpg",
     "lat": 0,
     "lng": 0,
@@ -4758,19 +4095,6 @@
     "population": "248,140"
   },
   {
-    "id": "fayetteville",
-    "slug": "fayetteville",
-    "city": "Fayetteville",
-    "country": "United States",
-    "description": "Enterprise solutions in Fayetteville for secure IT infrastructure, AI automation, and custom software development across United States and the North America market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "North America",
-    "landmark": "Downtown Business District",
-    "population": "248,140"
-  },
-  {
     "id": "grand-rapids",
     "slug": "grand-rapids",
     "city": "Grand Rapids",
@@ -4782,83 +4106,5 @@
     "region": "North America",
     "landmark": "Downtown Business District",
     "population": "248,140"
-  },
-  {
-    "id": "garden-grove",
-    "slug": "garden-grove",
-    "city": "Garden Grove",
-    "country": "United States",
-    "description": "Enterprise solutions in Garden Grove for secure IT infrastructure, AI automation, and custom software development across United States and the North America market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "North America",
-    "landmark": "Downtown Business District",
-    "population": "248,140"
-  },
-  {
-    "id": "kahramanmaras",
-    "slug": "kahramanmaras",
-    "city": "Kahramanmaras",
-    "country": "Turkey",
-    "description": "Enterprise solutions in Kahramanmaras for secure IT infrastructure, AI automation, and custom software development across Turkey and the Turkey market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "Turkey",
-    "landmark": "Central Business District",
-    "population": "260,485"
-  },
-  {
-    "id": "diyarbakir",
-    "slug": "diyarbakir",
-    "city": "Diyarbakir",
-    "country": "Turkey",
-    "description": "Enterprise solutions in Diyarbakir for secure IT infrastructure, AI automation, and custom software development across Turkey and the Turkey market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "Turkey",
-    "landmark": "Central Business District",
-    "population": "223,450"
-  },
-  {
-    "id": "gaziantep",
-    "slug": "gaziantep",
-    "city": "Gaziantep",
-    "country": "Turkey",
-    "description": "Enterprise solutions in Gaziantep for secure IT infrastructure, AI automation, and custom software development across Turkey and the Turkey market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "Turkey",
-    "landmark": "Central Business District",
-    "population": "211,105"
-  },
-  {
-    "id": "eskisehir",
-    "slug": "eskisehir",
-    "city": "Eskisehir",
-    "country": "Turkey",
-    "description": "Enterprise solutions in Eskisehir for secure IT infrastructure, AI automation, and custom software development across Turkey and the Turkey market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "Turkey",
-    "landmark": "Central Business District",
-    "population": "211,105"
-  },
-  {
-    "id": "sanliurfa",
-    "slug": "sanliurfa",
-    "city": "Sanliurfa",
-    "country": "Turkey",
-    "description": "Enterprise solutions in Sanliurfa for secure IT infrastructure, AI automation, and custom software development across Turkey and the Turkey market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
-    "region": "Turkey",
-    "landmark": "Central Business District",
-    "population": "211,105"
   }
 ]
