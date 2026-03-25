@@ -60,7 +60,7 @@ def translate_content(content):
     return content
 
 def main():
-    with open('managed-services.html', 'r', encoding='utf-8') as f:
+    with open('solutions.html', 'r', encoding='utf-8') as f:
         en_content = f.read()
 
     with open('de/index.html', 'r', encoding='utf-8') as f:
@@ -91,7 +91,7 @@ def main():
         de_head = de_head.replace('href="./', 'href="../')
         de_head = de_head.replace('src="./', 'src="../')
         # Update canonical
-        de_head = de_head.replace('https://www.goexpandia.com/managed-services.html', 'https://www.goexpandia.com/de/managed-services.html')
+        de_head = de_head.replace('https://www.goexpandia.com/solutions.html', 'https://www.goexpandia.com/de/solutions.html')
     else:
         de_head = ""
 
@@ -103,18 +103,18 @@ def main():
     # line 43: <link href="../dist/css/output.css" ...> (Correct)
     
     # Update language switcher in de_header
-    de_header = de_header.replace('<li><a href="../index.html" data-lang="en"', '<li><a href="../managed-services.html" data-lang="en"')
-    de_header = de_header.replace('<li><a href="./index.html" data-lang="de"', '<li><a href="./managed-services.html" data-lang="de"')
-    de_header = de_header.replace('<li><a href="../fr/index.html" data-lang="fr"', '<li><a href="../fr/managed-services.html" data-lang="fr"')
+    de_header = de_header.replace('<li><a href="../index.html" data-lang="en"', '<li><a href="../solutions.html" data-lang="en"')
+    de_header = de_header.replace('<li><a href="./index.html" data-lang="de"', '<li><a href="./solutions.html" data-lang="de"')
+    de_header = de_header.replace('<li><a href="../fr/index.html" data-lang="fr"', '<li><a href="../fr/solutions.html" data-lang="fr"')
 
     # Fix body asset paths
     de_body = de_body.replace('src="./', 'src="../')
     de_body = de_body.replace('href="./', 'href="../')
     # Special cases for links to other pages which should stay in de/
     de_body = de_body.replace('href="../contact.html"', 'href="./contact.html"')
-    de_body = de_body.replace('href="../sales-development-agency.html"', 'href="./sales-development-agency.html"')
+    de_body = de_body.replace('href="../solutions.html"', 'href="./solutions.html"')
     de_body = de_body.replace('href="../managed-it-services.html"', 'href="./managed-it-services.html"')
-    de_body = de_body.replace('href="../outreach-software-management.html"', 'href="./outreach-software-management.html"')
+    de_body = de_body.replace('href="../solutions.html"', 'href="./solutions.html"')
 
     # Construct final content
     final_content = f"""<!DOCTYPE html>
@@ -178,7 +178,7 @@ def main():
 </body>
 </html>"""
 
-    with open('de/managed-services.html', 'w', encoding='utf-8') as f:
+    with open('de/solutions.html', 'w', encoding='utf-8') as f:
         f.write(final_content)
 
 if __name__ == '__main__':

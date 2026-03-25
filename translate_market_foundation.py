@@ -119,7 +119,7 @@ german_content = translate_content(english_content)
 # Adjust relative paths
 german_content = german_content.replace('href="contact.html"', 'href="./contact.html"')
 german_content = german_content.replace('href="index.html"', 'href="./index.html"')
-german_content = german_content.replace('href="growth-programs.html"', 'href="./growth-programs.html"')
+german_content = german_content.replace('href="solutions.html"', 'href="./solutions.html"')
 german_content = german_content.replace('href="solutions.html"', 'href="./solutions.html"')
 
 # Construct Meta

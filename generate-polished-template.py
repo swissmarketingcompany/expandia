@@ -344,7 +344,7 @@ template_content = f"""<!DOCTYPE html>
                             <p class="text-lg text-base-content/70 mb-8 italic">
                                 For most {{{{CITY_NAME}}}} businesses, we recommend the complete Turnkey Growth Infrastructure package.
                             </p>
-                            <a href="{{{{BASE_PATH}}}}turnkey-growth-infrastructure.html" class="btn btn-secondary btn-md rounded-2xl px-10 btn-pulse">
+                            <a href="{{{{BASE_PATH}}}}solutions.html" class="btn btn-secondary btn-md rounded-2xl px-10 btn-pulse">
                                 View Full Package
                             </a>
                         </div>

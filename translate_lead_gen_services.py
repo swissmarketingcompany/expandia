@@ -2,7 +2,7 @@ import re
 
 def main():
     # 1. Read the English original
-    with open('/Users/busraocak/expandia/lead-generation-services.html', 'r', encoding='utf-8') as f:
+    with open('/Users/busraocak/expandia/solutions.html', 'r', encoding='utf-8') as f:
         en_content = f.read()
 
     # 2. Read the German index.html to extract its head (partially, but maybe it's better to just reuse English head and translate), header, and footer.
@@ -29,8 +29,8 @@ def main():
         head_content, flags=re.DOTALL
     )
     head_content = head_content.replace(
-        '<link rel="canonical" href="https://www.goexpandia.com/lead-generation-services.html">',
-        '<link rel="canonical" href="https://www.goexpandia.com/de/lead-generation-services.html">'
+        '<link rel="canonical" href="https://www.goexpandia.com/solutions.html">',
+        '<link rel="canonical" href="https://www.goexpandia.com/de/solutions.html">'
     )
     head_content = head_content.replace(
         '<meta property="og:title"\n        content="Growth Infrastructure | Lead Generation, Cold Emailing, IT Consulting | Go Expandia">',
@@ -42,8 +42,8 @@ def main():
         head_content, flags=re.DOTALL
     )
     head_content = head_content.replace(
-        '<meta property="og:url" content="https://www.goexpandia.com/lead-generation-services.html">',
-        '<meta property="og:url" content="https://www.goexpandia.com/de/lead-generation-services.html">'
+        '<meta property="og:url" content="https://www.goexpandia.com/solutions.html">',
+        '<meta property="og:url" content="https://www.goexpandia.com/de/solutions.html">'
     )
     head_content = head_content.replace(
         '<meta name="twitter:title"\n        content="Growth Infrastructure | Lead Generation, Cold Emailing, IT Consulting | Go Expandia">',
@@ -64,10 +64,10 @@ def main():
         r'<ul tabindex="0"\s*class="dropdown-content.*?</ul>',
         '''<ul tabindex="0"
                         class="dropdown-content z-[999] menu p-2 shadow-lg bg-white rounded-xl border border-gray-100 w-36 mt-2">
-                        <li><a href="../lead-generation-services.html" data-lang="en" class="lang-switch text-sm">🇺🇸 English</a>
+                        <li><a href="../solutions.html" data-lang="en" class="lang-switch text-sm">🇺🇸 English</a>
                         </li>
-                        <li><a href="./lead-generation-services.html" data-lang="de" class="lang-switch text-sm active">🇩🇪 Deutsch</a></li>
-                        <li><a href="../fr/lead-generation-services.html" data-lang="fr" class="lang-switch text-sm">🇫🇷 Français</a></li>
+                        <li><a href="./solutions.html" data-lang="de" class="lang-switch text-sm active">🇩🇪 Deutsch</a></li>
+                        <li><a href="../fr/solutions.html" data-lang="fr" class="lang-switch text-sm">🇫🇷 Français</a></li>
                     </ul>''',
         de_nav,
         flags=re.DOTALL
@@ -137,7 +137,7 @@ def main():
     {de_footer}
 '''
 
-    with open('/Users/busraocak/expandia/de/lead-generation-services.html', 'w', encoding='utf-8') as f:
+    with open('/Users/busraocak/expandia/de/solutions.html', 'w', encoding='utf-8') as f:
         f.write(final_html)
 
     print("Generation complete")

@@ -174,7 +174,7 @@ def main():
                 <div class="bg-gray-50 p-8 rounded-2xl my-12 border border-gray-100">
                     <h3 class="text-2xl font-bold mb-4">Optimieren Sie noch heute Ihr Speed-to-Lead</h3>
                     <p class="mb-0">
-                        Die <a href="../turnkey-growth-infrastructure.html"
+                        Die <a href="../solutions.html"
                             class="text-secondary font-bold hover:underline">Automatisierte Wachstumsinfrastruktur</a>
                         von Go Expandia umfasst sofortige Lead-Weiterleitung und Auto-Response-Systeme. Wir bauen die Maschine, die in Sekunden antwortet, damit Sie Geschäfte in Stunden abschließen können.
                     </p>
@@ -228,7 +228,7 @@ def main():
                     <a href="../contact.html" class="btn btn-secondary btn-lg">
                         Mit einem Experten sprechen
                     </a>
-                    <a href="../turnkey-growth-infrastructure.html" class="btn btn-outline btn-lg">
+                    <a href="../solutions.html" class="btn btn-outline btn-lg">
                         Wachstums-Tools ansehen
                     </a>
                 </div>
