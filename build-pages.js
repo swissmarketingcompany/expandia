@@ -94,7 +94,15 @@ console.log(`✅ Successfully loaded footers for all languages`);
 console.log(`✅ Successfully loaded latest blog posts snippet`);
 
 function normalizeCitySlug(slug) {
-    return slug;
+    return String(slug || '')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/['’\\.]/g, '')
+        .replace(/&/g, ' and ')
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+        .replace(/-+/g, '-');
 }
 
 // Function to generate unique SEO content for each city
@@ -1323,6 +1331,9 @@ Object.keys(LEGACY_REDIRECT_TARGETS).forEach((source) => {
 });
 delete LEGACY_REDIRECT_TARGETS.solutions;
 
+const RETIRED_CITY_SLUGS = new Set();
+const RETIRED_CITY_REDIRECT_TARGET = 'city-locations';
+
 const LEGACY_CATEGORY_ANCHORS = {
     'managed-it-services': '#it-solutions',
     'vulnerability-assessments': '#it-solutions',
@@ -2450,7 +2461,7 @@ function buildServiceCityPages() {
                 content = content.replace('{{NEARBY_CITIES_LINKS}}', nearbyLinks);
                 content = content.replace(/\{\{SERVICE_CATEGORY\}\}/g, categoryMeta.label);
                 content = content.replace(/\{\{SERVICE_CATEGORY_PROMISE\}\}/g, categoryMeta.promise);
-                content = content.replace(/\{\{CITY_POPULATION\}\}/g, cityData.population || 'growing');
+                content = content.replace(/\{\{CITY_POPULATION\}\}/g, 'established');
                 content = content.replace(/\{\{CITY_LANDMARK\}\}/g, sanitizeLandmark(cityData.landmark, city));
 
                 if (!nearbyLinks.trim()) {
@@ -4149,6 +4160,16 @@ function buildLegacyRedirectRules() {
         });
     });
 
+    RETIRED_CITY_SLUGS.forEach((slug) => {
+        languages.forEach((lang) => {
+            const sourcePath = lang === 'en' ? `/${slug}.html` : `/${lang}/${slug}.html`;
+            const targetPath = lang === 'en'
+                ? `/${RETIRED_CITY_REDIRECT_TARGET}.html`
+                : `/${lang}/${RETIRED_CITY_REDIRECT_TARGET}.html`;
+            lines.push(`${sourcePath}  ${targetPath}  301`);
+        });
+    });
+
     return lines.join('\n') + '\n';
 }
 
@@ -4202,6 +4223,15 @@ function cleanupLegacyRedirectOutputs() {
     PRIORITY_SERVICE_CITY_PATHS.forEach(sourceSlug => {
         languages.forEach(lang => {
             const filePath = lang === 'en' ? `${sourceSlug}.html` : `${lang}/${sourceSlug}.html`;
+            if (fs.existsSync(filePath)) {
+                fs.unlinkSync(filePath);
+            }
+        });
+    });
+
+    RETIRED_CITY_SLUGS.forEach((slug) => {
+        languages.forEach((lang) => {
+            const filePath = lang === 'en' ? `${slug}.html` : `${lang}/${slug}.html`;
             if (fs.existsSync(filePath)) {
                 fs.unlinkSync(filePath);
             }

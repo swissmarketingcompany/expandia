@@ -9,8 +9,7 @@
     "lat": 48.8566,
     "lng": 2.3522,
     "region": "Western Europe",
-    "landmark": "Eiffel Tower",
-    "population": "2,161,000"
+    "landmark": "Eiffel Tower"
   },
   {
     "id": "london",
@@ -22,8 +21,7 @@
     "lat": 51.5074,
     "lng": -0.1278,
     "region": "Western Europe",
-    "landmark": "Tower Bridge",
-    "population": "8,982,000"
+    "landmark": "Tower Bridge"
   },
   {
     "id": "chicago",
@@ -35,8 +33,7 @@
     "lat": 41.8781,
     "lng": -87.6298,
     "region": "North America",
-    "landmark": "Downtown Business District",
-    "population": "186,415"
+    "landmark": "Chicago business district"
   },
   {
     "id": "dallas",
@@ -48,8 +45,7 @@
     "lat": 32.7767,
     "lng": -96.797,
     "region": "North America",
-    "landmark": "Downtown Business District",
-    "population": "174,070"
+    "landmark": "Dallas business district"
   },
   {
     "id": "houston",
@@ -61,8 +57,7 @@
     "lat": 29.7604,
     "lng": -95.3698,
     "region": "North America",
-    "landmark": "Downtown Business District",
-    "population": "186,415"
+    "landmark": "Houston business district"
   },
   {
     "id": "los-angeles",
@@ -74,8 +69,7 @@
     "lat": 34.0522,
     "lng": -118.2437,
     "region": "North America",
-    "landmark": "Downtown Business District",
-    "population": "235,795"
+    "landmark": "Los Angeles business district"
   },
   {
     "id": "new-york",
@@ -87,8 +81,7 @@
     "lat": 40.7128,
     "lng": -74.006,
     "region": "North America",
-    "landmark": "Empire State Building",
-    "population": "198,760"
+    "landmark": "Empire State Building"
   },
   {
     "id": "birmingham",
@@ -100,8 +93,7 @@
     "lat": 52.4862,
     "lng": -1.8904,
     "region": "Western Europe",
-    "landmark": "City Centre",
-    "population": "223,450"
+    "landmark": "City Centre"
   },
   {
     "id": "bristol",
@@ -113,8 +105,7 @@
     "lat": 51.4545,
     "lng": -2.5879,
     "region": "Western Europe",
-    "landmark": "City Centre",
-    "population": "186,415"
+    "landmark": "City Centre"
   },
   {
     "id": "edinburgh",
@@ -126,8 +117,7 @@
     "lat": 55.9533,
     "lng": -3.1883,
     "region": "Western Europe",
-    "landmark": "City Centre",
-    "population": "211,105"
+    "landmark": "City Centre"
   },
   {
     "id": "glasgow",
@@ -139,8 +129,7 @@
     "lat": 55.8642,
     "lng": -4.2518,
     "region": "Western Europe",
-    "landmark": "City Centre",
-    "population": "186,415"
+    "landmark": "City Centre"
   },
   {
     "id": "leeds",
@@ -152,8 +141,7 @@
     "lat": 53.8008,
     "lng": -1.5491,
     "region": "Western Europe",
-    "landmark": "City Centre",
-    "population": "161,725"
+    "landmark": "Leeds business district"
   },
   {
     "id": "berlin",
@@ -165,21 +153,19 @@
     "lat": 52.52,
     "lng": 13.405,
     "region": "DACH",
-    "landmark": "Brandenburg Gate",
-    "population": "174,070"
+    "landmark": "Brandenburg Gate"
   },
   {
     "id": "cologne",
     "slug": "cologne",
     "city": "Cologne",
     "country": "Germany",
-    "description": "Enterprise solutions in Cologne for secure IT infrastructure, AI automation, and custom software development across Germany and the DACH market.",
+    "description": "Enterprise solutions in Cologne for secure IT infrastructure, AI automation, and custom software development across Germany and the Western Europe market.",
     "image": "./assets/local/default-city.jpg",
     "lat": 50.9375,
     "lng": 6.9603,
-    "region": "DACH",
-    "landmark": "Marktplatz",
-    "population": "186,415"
+    "region": "Western Europe",
+    "landmark": "Cologne business district"
   },
   {
     "id": "hamburg",
@@ -191,21 +177,19 @@
     "lat": 53.5511,
     "lng": 9.9937,
     "region": "DACH",
-    "landmark": "Marktplatz",
-    "population": "186,415"
+    "landmark": "Marktplatz"
   },
   {
     "id": "munich",
     "slug": "munich",
     "city": "Munich",
     "country": "Germany",
-    "description": "Enterprise solutions in Munich for secure IT infrastructure, AI automation, and custom software development across Germany and the DACH market.",
+    "description": "Enterprise solutions in Munich for secure IT infrastructure, AI automation, and custom software development across Germany and the Western Europe market.",
     "image": "./assets/local/default-city.jpg",
     "lat": 48.1351,
     "lng": 11.582,
-    "region": "DACH",
-    "landmark": "Marienplatz",
-    "population": "174,070"
+    "region": "Western Europe",
+    "landmark": "Munich business district"
   },
   {
     "id": "frankfurt",
@@ -214,11 +198,10 @@
     "country": "Germany",
     "description": "Enterprise solutions in Frankfurt for secure IT infrastructure, AI automation, and custom software development across Germany and the DACH market.",
     "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
+    "lat": 52.34714,
+    "lng": 14.55062,
     "region": "DACH",
-    "landmark": "Marktplatz",
-    "population": "211,105"
+    "landmark": "Marktplatz"
   },
   {
     "id": "bordeaux",
@@ -230,8 +213,7 @@
     "lat": 44.8378,
     "lng": -0.5792,
     "region": "Western Europe",
-    "landmark": "Old Town",
-    "population": "198,760"
+    "landmark": "Old Town"
   },
   {
     "id": "lille",
@@ -243,8 +225,7 @@
     "lat": 50.6292,
     "lng": 3.0573,
     "region": "Western Europe",
-    "landmark": "Old Town",
-    "population": "161,725"
+    "landmark": "Old Town"
   },
   {
     "id": "lyon",
@@ -256,8 +237,7 @@
     "lat": 45.764,
     "lng": 4.8357,
     "region": "Western Europe",
-    "landmark": "Old Town",
-    "population": "149,380"
+    "landmark": "Old Town"
   },
   {
     "id": "marseille",
@@ -269,8 +249,7 @@
     "lat": 43.2965,
     "lng": 5.3698,
     "region": "Western Europe",
-    "landmark": "Old Town",
-    "population": "211,105"
+    "landmark": "Old Town"
   },
   {
     "id": "montpellier",
@@ -282,8 +261,7 @@
     "lat": 43.6108,
     "lng": 3.8767,
     "region": "Western Europe",
-    "landmark": "Old Town",
-    "population": "235,795"
+    "landmark": "Old Town"
   },
   {
     "id": "toronto",
@@ -292,11 +270,10 @@
     "country": "Canada",
     "description": "Enterprise solutions in Toronto for secure IT infrastructure, AI automation, and custom software development across Canada and the North America market.",
     "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
+    "lat": 43.70643,
+    "lng": -79.39864,
     "region": "North America",
-    "landmark": "CN Tower",
-    "population": "186,415"
+    "landmark": "CN Tower"
   },
   {
     "id": "montreal",
@@ -305,11 +282,10 @@
     "country": "Canada",
     "description": "Enterprise solutions in Montreal for secure IT infrastructure, AI automation, and custom software development across Canada and the North America market.",
     "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
+    "lat": 45.50884,
+    "lng": -73.58781,
     "region": "North America",
-    "landmark": "Central Business District",
-    "population": "198,760"
+    "landmark": "Montreal business district"
   },
   {
     "id": "calgary",
@@ -318,11 +294,10 @@
     "country": "Canada",
     "description": "Enterprise solutions in Calgary for secure IT infrastructure, AI automation, and custom software development across Canada and the North America market.",
     "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
+    "lat": 51.05011,
+    "lng": -114.08529,
     "region": "North America",
-    "landmark": "Central Business District",
-    "population": "186,415"
+    "landmark": "Calgary business district"
   },
   {
     "id": "ottawa",
@@ -331,11 +306,10 @@
     "country": "Canada",
     "description": "Enterprise solutions in Ottawa for secure IT infrastructure, AI automation, and custom software development across Canada and the North America market.",
     "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
+    "lat": 45.41117,
+    "lng": -75.69812,
     "region": "North America",
-    "landmark": "Central Business District",
-    "population": "174,070"
+    "landmark": "Ottawa business district"
   },
   {
     "id": "edmonton",
@@ -344,11 +318,10 @@
     "country": "Canada",
     "description": "Enterprise solutions in Edmonton for secure IT infrastructure, AI automation, and custom software development across Canada and the North America market.",
     "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
+    "lat": 53.55014,
+    "lng": -113.46871,
     "region": "North America",
-    "landmark": "Central Business District",
-    "population": "198,760"
+    "landmark": "Edmonton business district"
   },
   {
     "id": "sydney",
@@ -357,11 +330,10 @@
     "country": "Australia",
     "description": "Enterprise solutions in Sydney for secure IT infrastructure, AI automation, and custom software development across Australia and the APAC market.",
     "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
+    "lat": -33.86785,
+    "lng": 151.20732,
     "region": "APAC",
-    "landmark": "Opera House",
-    "population": "174,070"
+    "landmark": "Opera House"
   },
   {
     "id": "melbourne",
@@ -370,11 +342,10 @@
     "country": "Australia",
     "description": "Enterprise solutions in Melbourne for secure IT infrastructure, AI automation, and custom software development across Australia and the APAC market.",
     "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
+    "lat": -37.814,
+    "lng": 144.96332,
     "region": "APAC",
-    "landmark": "Central Business District",
-    "population": "211,105"
+    "landmark": "Melbourne business district"
   },
   {
     "id": "brisbane",
@@ -383,11 +354,10 @@
     "country": "Australia",
     "description": "Enterprise solutions in Brisbane for secure IT infrastructure, AI automation, and custom software development across Australia and the APAC market.",
     "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
+    "lat": -27.46794,
+    "lng": 153.02809,
     "region": "APAC",
-    "landmark": "Central Business District",
-    "population": "198,760"
+    "landmark": "Brisbane business district"
   },
   {
     "id": "perth",
@@ -396,11 +366,10 @@
     "country": "Australia",
     "description": "Enterprise solutions in Perth for secure IT infrastructure, AI automation, and custom software development across Australia and the APAC market.",
     "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
+    "lat": -31.95224,
+    "lng": 115.8614,
     "region": "APAC",
-    "landmark": "Central Business District",
-    "population": "161,725"
+    "landmark": "Perth business district"
   },
   {
     "id": "adelaide",
@@ -409,11 +378,10 @@
     "country": "Australia",
     "description": "Enterprise solutions in Adelaide for secure IT infrastructure, AI automation, and custom software development across Australia and the APAC market.",
     "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
+    "lat": -34.92866,
+    "lng": 138.59863,
     "region": "APAC",
-    "landmark": "Central Business District",
-    "population": "198,760"
+    "landmark": "Adelaide business district"
   },
   {
     "id": "basel",
@@ -425,8 +393,7 @@
     "lat": 47.5596,
     "lng": 7.5886,
     "region": "DACH",
-    "landmark": "Central Business District",
-    "population": "161,725"
+    "landmark": "Basel business district"
   },
   {
     "id": "bern",
@@ -438,8 +405,7 @@
     "lat": 46.9481,
     "lng": 7.4474,
     "region": "DACH",
-    "landmark": "Central Business District",
-    "population": "149,380"
+    "landmark": "Bern business district"
   },
   {
     "id": "geneva",
@@ -451,8 +417,7 @@
     "lat": 46.2044,
     "lng": 6.1432,
     "region": "DACH",
-    "landmark": "Central Business District",
-    "population": "174,070"
+    "landmark": "Geneva business district"
   },
   {
     "id": "lausanne",
@@ -464,8 +429,7 @@
     "lat": 46.5197,
     "lng": 6.6323,
     "region": "DACH",
-    "landmark": "Central Business District",
-    "population": "198,760"
+    "landmark": "Lausanne business district"
   },
   {
     "id": "lucerne",
@@ -477,8 +441,7 @@
     "lat": 47.0502,
     "lng": 8.3093,
     "region": "DACH",
-    "landmark": "Central Business District",
-    "population": "186,415"
+    "landmark": "Lucerne business district"
   },
   {
     "id": "amsterdam",
@@ -490,8 +453,7 @@
     "lat": 52.3676,
     "lng": 4.9041,
     "region": "Western Europe",
-    "landmark": "Rijksmuseum",
-    "population": "211,105"
+    "landmark": "Rijksmuseum"
   },
   {
     "id": "rotterdam",
@@ -503,8 +465,7 @@
     "lat": 51.9244,
     "lng": 4.4777,
     "region": "Western Europe",
-    "landmark": "Central Business District",
-    "population": "211,105"
+    "landmark": "Rotterdam business district"
   },
   {
     "id": "the-hague",
@@ -516,8 +477,7 @@
     "lat": 52.0705,
     "lng": 4.3007,
     "region": "Western Europe",
-    "landmark": "Central Business District",
-    "population": "211,105"
+    "landmark": "The Hague business district"
   },
   {
     "id": "utrecht",
@@ -526,11 +486,10 @@
     "country": "Netherlands",
     "description": "Enterprise solutions in Utrecht for secure IT infrastructure, AI automation, and custom software development across Netherlands and the Western Europe market.",
     "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
+    "lat": 52.09083,
+    "lng": 5.12222,
     "region": "Western Europe",
-    "landmark": "Central Business District",
-    "population": "186,415"
+    "landmark": "Utrecht business district"
   },
   {
     "id": "eindhoven",
@@ -539,24 +498,22 @@
     "country": "Netherlands",
     "description": "Enterprise solutions in Eindhoven for secure IT infrastructure, AI automation, and custom software development across Netherlands and the Western Europe market.",
     "image": "./assets/local/default-city.jpg",
-    "lat": 0,
-    "lng": 0,
+    "lat": 51.44083,
+    "lng": 5.47778,
     "region": "Western Europe",
-    "landmark": "Central Business District",
-    "population": "211,105"
+    "landmark": "Eindhoven business district"
   },
   {
     "id": "ankara",
     "slug": "ankara",
     "city": "Ankara",
     "country": "Turkey",
-    "description": "Enterprise solutions in Ankara for secure IT infrastructure, AI automation, and custom software development across Turkey and the Turkey market.",
+    "description": "Enterprise solutions in Ankara for secure IT infrastructure, AI automation, and custom software development across Turkey and the Western Asia market.",
     "image": "./assets/local/default-city.jpg",
     "lat": 39.9334,
     "lng": 32.8597,
-    "region": "Turkey",
-    "landmark": "Central Business District",
-    "population": "174,070"
+    "region": "Western Asia",
+    "landmark": "Ankara business district"
   },
   {
     "id": "antalya",
@@ -568,8 +525,7 @@
     "lat": 36.8969,
     "lng": 30.7133,
     "region": "Turkey",
-    "landmark": "Central Business District",
-    "population": "186,415"
+    "landmark": "Antalya business district"
   },
   {
     "id": "barcelona",
@@ -581,8 +537,7 @@
     "lat": 41.3851,
     "lng": 2.1734,
     "region": "Southern Europe",
-    "landmark": "Sagrada Familia",
-    "population": "211,105"
+    "landmark": "Sagrada Familia"
   },
   {
     "id": "belgrade",
@@ -594,8 +549,7 @@
     "lat": 44.7866,
     "lng": 20.4489,
     "region": "Eastern Europe",
-    "landmark": "Central Business District",
-    "population": "198,760"
+    "landmark": "Belgrade business district"
   },
   {
     "id": "bergen",
@@ -607,8 +561,7 @@
     "lat": 60.3913,
     "lng": 5.3221,
     "region": "Scandinavia",
-    "landmark": "Central Business District",
-    "population": "174,070"
+    "landmark": "Bergen business district"
   },
   {
     "id": "bratislava",
@@ -620,8 +573,7 @@
     "lat": 48.1486,
     "lng": 17.1077,
     "region": "Eastern Europe",
-    "landmark": "Central Business District",
-    "population": "223,450"
+    "landmark": "Bratislava business district"
   },
   {
     "id": "bucharest",
@@ -633,8 +585,7 @@
     "lat": 44.4268,
     "lng": 26.1025,
     "region": "Eastern Europe",
-    "landmark": "Central Business District",
-    "population": "211,105"
+    "landmark": "Bucharest business district"
   },
   {
     "id": "budapest",
@@ -646,8 +597,7 @@
     "lat": 47.4979,
     "lng": 19.0402,
     "region": "Eastern Europe",
-    "landmark": "Central Business District",
-    "population": "198,760"
+    "landmark": "Budapest business district"
   },
   {
     "id": "bursa",
@@ -659,8 +609,7 @@
     "lat": 40.1826,
     "lng": 29.0665,
     "region": "Turkey",
-    "landmark": "Central Business District",
-    "population": "161,725"
+    "landmark": "Bursa business district"
   },
   {
     "id": "cork",
@@ -672,7 +621,6 @@
     "lat": 51.8985,
     "lng": -8.4756,
     "region": "Western Europe",
-    "landmark": "Central Business District",
-    "population": "149,380"
+    "landmark": "Cork business district"
   }
 ]
