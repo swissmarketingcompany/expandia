@@ -1,0 +1,275 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "Go Expandia" [ref=e4] [cursor=pointer]:
+        - /url: ./index.html
+        - img "Go Expandia" [ref=e5]
+      - generic [ref=e6]:
+        - link "Home" [ref=e7] [cursor=pointer]:
+          - /url: ./index.html
+        - button "Solutions" [ref=e9] [cursor=pointer]:
+          - text: Solutions
+          - img [ref=e10]
+        - link "Blog" [ref=e12] [cursor=pointer]:
+          - /url: ./blog/index.html
+        - button "Company" [ref=e14] [cursor=pointer]:
+          - text: Company
+          - img [ref=e15]
+      - link "Contact" [ref=e18] [cursor=pointer]:
+        - /url: ./contact.html
+  - generic [ref=e21]:
+    - heading "Enterprise Infrastructure That Scales With You" [level=1] [ref=e22]:
+      - text: Enterprise Infrastructure
+      - text: That Scales With You
+    - paragraph [ref=e23]: Scale with secure AI integration and custom software development.
+    - generic [ref=e24]:
+      - link "Get Free Consultation" [ref=e25] [cursor=pointer]:
+        - /url: contact.html
+      - generic [ref=e26]: • Secure AI • Custom Software • Compliance-Ready Delivery
+  - generic [ref=e28]:
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - img [ref=e31] [cursor=pointer]
+        - text: Professional Services
+      - heading "Two Core Categories" [level=2] [ref=e34]
+      - paragraph [ref=e35]: Secure AI integration and custom software built around how your company works.
+    - generic [ref=e36]:
+      - generic [ref=e37]:
+        - heading "AI Solutions" [level=3] [ref=e38]:
+          - img [ref=e40] [cursor=pointer]
+          - text: AI Solutions
+        - generic [ref=e43]:
+          - link "Corporate AI Setup Private AI workspace for your company — data stays yours. Learn More" [ref=e44] [cursor=pointer]:
+            - /url: corporate-ai-infrastructure-setup.html
+            - heading "Corporate AI Setup" [level=4] [ref=e45]
+            - paragraph [ref=e46]: Private AI workspace for your company — data stays yours.
+            - generic [ref=e47]:
+              - text: Learn More
+              - img [ref=e48]
+          - link "On-Premise AI Setup AI that runs on your own servers — no data leaves your building. Learn More" [ref=e50] [cursor=pointer]:
+            - /url: on-premise-ai-setup.html
+            - heading "On-Premise AI Setup" [level=4] [ref=e51]
+            - paragraph [ref=e52]: AI that runs on your own servers — no data leaves your building.
+            - generic [ref=e53]:
+              - text: Learn More
+              - img [ref=e54]
+          - link "AI Data Security Layer Stop confidential data leaking into public AI tools. Learn More" [ref=e56] [cursor=pointer]:
+            - /url: ai-data-security-layer.html
+            - heading "AI Data Security Layer" [level=4] [ref=e57]
+            - paragraph [ref=e58]: Stop confidential data leaking into public AI tools.
+            - generic [ref=e59]:
+              - text: Learn More
+              - img [ref=e60]
+          - link "AI Automation Agents AI that executes tasks in your software automatically. Learn More" [ref=e62] [cursor=pointer]:
+            - /url: agentic-ai-development.html
+            - heading "AI Automation Agents" [level=4] [ref=e63]
+            - paragraph [ref=e64]: AI that executes tasks in your software automatically.
+            - generic [ref=e65]:
+              - text: Learn More
+              - img [ref=e66]
+      - generic [ref=e68]:
+        - heading "Custom Software Development" [level=3] [ref=e69]:
+          - img [ref=e71] [cursor=pointer]
+          - text: Custom Software Development
+        - generic [ref=e75]:
+          - link "ERP & CRM Integrations Connect your tools so data flows automatically between them. Learn More" [ref=e76] [cursor=pointer]:
+            - /url: custom-erp-crm-integrations.html
+            - heading "ERP & CRM Integrations" [level=4] [ref=e77]
+            - paragraph [ref=e78]: Connect your tools so data flows automatically between them.
+            - generic [ref=e79]:
+              - text: Learn More
+              - img [ref=e80]
+          - link "Engineering & R&D Software Custom calculation and simulation tools for technical teams. Learn More" [ref=e82] [cursor=pointer]:
+            - /url: digital-engineering-rd-software.html
+            - heading "Engineering & R&D Software" [level=4] [ref=e83]
+            - paragraph [ref=e84]: Custom calculation and simulation tools for technical teams.
+            - generic [ref=e85]:
+              - text: Learn More
+              - img [ref=e86]
+          - link "B2B Dealer & Customer Portals Self-service portals so clients manage their own accounts. Learn More" [ref=e88] [cursor=pointer]:
+            - /url: b2b-dealer-customer-portals.html
+            - heading "B2B Dealer & Customer Portals" [level=4] [ref=e89]
+            - paragraph [ref=e90]: Self-service portals so clients manage their own accounts.
+            - generic [ref=e91]:
+              - text: Learn More
+              - img [ref=e92]
+          - link "Legacy System Modernization Replace old software without losing your existing data. Learn More" [ref=e94] [cursor=pointer]:
+            - /url: legacy-system-modernization.html
+            - heading "Legacy System Modernization" [level=4] [ref=e95]
+            - paragraph [ref=e96]: Replace old software without losing your existing data.
+            - generic [ref=e97]:
+              - text: Learn More
+              - img [ref=e98]
+          - link "BI Dashboards & Reporting See all your business data in real time on one screen. Learn More" [ref=e100] [cursor=pointer]:
+            - /url: enterprise-bi-dashboards.html
+            - heading "BI Dashboards & Reporting" [level=4] [ref=e101]
+            - paragraph [ref=e102]: See all your business data in real time on one screen.
+            - generic [ref=e103]:
+              - text: Learn More
+              - img [ref=e104]
+          - link "Internal Operational Apps Web and mobile apps built for how your team actually works. Learn More" [ref=e106] [cursor=pointer]:
+            - /url: internal-operational-applications.html
+            - heading "Internal Operational Apps" [level=4] [ref=e107]
+            - paragraph [ref=e108]: Web and mobile apps built for how your team actually works.
+            - generic [ref=e109]:
+              - text: Learn More
+              - img [ref=e110]
+          - link "Corporate Website Development Fast, professional sites that convert visitors into enquiries. Learn More" [ref=e112] [cursor=pointer]:
+            - /url: corporate-website-development.html
+            - heading "Corporate Website Development" [level=4] [ref=e113]
+            - paragraph [ref=e114]: Fast, professional sites that convert visitors into enquiries.
+            - generic [ref=e115]:
+              - text: Learn More
+              - img [ref=e116]
+          - link "MVP Development Test your product idea with real users before the full build. Learn More" [ref=e118] [cursor=pointer]:
+            - /url: mvp-development-corporate-spinoff.html
+            - heading "MVP Development" [level=4] [ref=e119]
+            - paragraph [ref=e120]: Test your product idea with real users before the full build.
+            - generic [ref=e121]:
+              - text: Learn More
+              - img [ref=e122]
+          - link "Data Architecture & Database Design Structure your data properly so it's accurate and AI-ready. Learn More" [ref=e124] [cursor=pointer]:
+            - /url: custom-data-architecture-database-design.html
+            - heading "Data Architecture & Database Design" [level=4] [ref=e125]
+            - paragraph [ref=e126]: Structure your data properly so it's accurate and AI-ready.
+            - generic [ref=e127]:
+              - text: Learn More
+              - img [ref=e128]
+  - generic [ref=e131]:
+    - generic [ref=e132]:
+      - generic [ref=e133]:
+        - img [ref=e134] [cursor=pointer]
+        - text: Core Solutions
+      - heading "Ready to Deploy" [level=2] [ref=e138]
+      - paragraph [ref=e139]: Practical systems for AI integration and custom software teams.
+    - generic [ref=e140]:
+      - generic [ref=e141]:
+        - link "AI Infrastructure" [ref=e142] [cursor=pointer]:
+          - /url: solutions.html#ai-solutions
+          - heading "AI Infrastructure" [level=3] [ref=e143]:
+            - img [ref=e145]
+            - text: AI Infrastructure
+        - generic [ref=e148]:
+          - link "Corporate AI Setup Private AI workspace for your company" [ref=e149] [cursor=pointer]:
+            - /url: solutions.html#ai-solutions
+            - heading "Corporate AI Setup" [level=4] [ref=e150]
+            - paragraph [ref=e151]: Private AI workspace for your company
+          - link "AI Data Security Layer Keep sensitive data out of public models" [ref=e152] [cursor=pointer]:
+            - /url: solutions.html#ai-solutions
+            - heading "AI Data Security Layer" [level=4] [ref=e153]
+            - paragraph [ref=e154]: Keep sensitive data out of public models
+          - link "Agentic AI Workflows Automations that execute company rules" [ref=e155] [cursor=pointer]:
+            - /url: solutions.html#ai-solutions
+            - heading "Agentic AI Workflows" [level=4] [ref=e156]
+            - paragraph [ref=e157]: Automations that execute company rules
+      - generic [ref=e158]:
+        - link "Custom Software" [ref=e159] [cursor=pointer]:
+          - /url: solutions.html#custom-software
+          - heading "Custom Software" [level=3] [ref=e160]:
+            - img [ref=e162]
+            - text: Custom Software
+        - generic [ref=e166]:
+          - link "ERP & CRM Integrations Connect your tools and sync data automatically" [ref=e167] [cursor=pointer]:
+            - /url: solutions.html#custom-software
+            - heading "ERP & CRM Integrations" [level=4] [ref=e168]
+            - paragraph [ref=e169]: Connect your tools and sync data automatically
+          - link "BI Dashboards See business data in real time" [ref=e170] [cursor=pointer]:
+            - /url: solutions.html#custom-software
+            - heading "BI Dashboards" [level=4] [ref=e171]
+            - paragraph [ref=e172]: See business data in real time
+          - link "Legacy Modernization Replace old software without losing data" [ref=e173] [cursor=pointer]:
+            - /url: solutions.html#custom-software
+            - heading "Legacy Modernization" [level=4] [ref=e174]
+            - paragraph [ref=e175]: Replace old software without losing data
+  - generic [ref=e177]:
+    - heading "Ready to Transform Your Business?" [level=2] [ref=e178]
+    - paragraph [ref=e179]: Whether you need AI integration or custom software, we have the right solution.
+    - link "Get Started" [ref=e181] [cursor=pointer]:
+      - /url: contact.html
+  - contentinfo [ref=e182]:
+    - generic [ref=e185]:
+      - generic [ref=e186]:
+        - heading "Stay Ahead with Go Expandia" [level=3] [ref=e187]
+        - paragraph [ref=e188]: Get the latest insights on IT solutions, AI automation, and custom software.
+      - generic [ref=e190]:
+        - textbox "Enter your email" [ref=e191]
+        - textbox "30+31=" [ref=e192]
+        - button "Subscribe" [ref=e193] [cursor=pointer]
+    - generic [ref=e194]:
+      - generic [ref=e195]:
+        - generic [ref=e196]:
+          - img "Go Expandia" [ref=e198]
+          - paragraph [ref=e199]: Your strategic partner for secure IT infrastructure, enterprise AI systems, and custom software delivery.
+          - link [ref=e201] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/103769699/
+            - img [ref=e202]
+        - generic [ref=e204]:
+          - heading "Solutions" [level=4] [ref=e205]
+          - list [ref=e206]:
+            - listitem [ref=e207]:
+              - link "AI Solutions" [ref=e208] [cursor=pointer]:
+                - /url: ./solutions.html#ai-solutions
+                - text: AI Solutions
+            - listitem [ref=e210]:
+              - link "Custom Software" [ref=e211] [cursor=pointer]:
+                - /url: ./solutions.html#custom-software
+                - text: Custom Software
+            - listitem [ref=e213]:
+              - link "Locations" [ref=e214] [cursor=pointer]:
+                - /url: ./city-locations.html
+                - text: Locations
+        - generic [ref=e216]:
+          - heading "Company" [level=4] [ref=e217]
+          - list [ref=e218]:
+            - listitem [ref=e219]:
+              - link "About Us" [ref=e220] [cursor=pointer]:
+                - /url: ./about.html
+                - text: About Us
+            - listitem [ref=e222]:
+              - link "Blog & Insights" [ref=e223] [cursor=pointer]:
+                - /url: ./blog/index.html
+                - text: Blog & Insights
+            - listitem [ref=e225]:
+              - link "Contact Us" [ref=e226] [cursor=pointer]:
+                - /url: ./contact.html
+                - text: Contact Us
+        - generic [ref=e228]:
+          - heading "Get in Touch" [level=4] [ref=e229]
+          - generic [ref=e230]:
+            - paragraph [ref=e231]: Ready to modernize your operations? Let’s discuss the right stack.
+            - link "Get Free Consultation" [ref=e232] [cursor=pointer]:
+              - /url: ./contact.html
+            - generic [ref=e233]:
+              - link "hello@goexpandia.com" [ref=e234] [cursor=pointer]:
+                - /url: mailto:hello@goexpandia.com
+                - img [ref=e235]
+                - text: hello@goexpandia.com
+              - link "Email to Schedule" [ref=e237] [cursor=pointer]:
+                - /url: mailto:hello@goexpandia.com
+                - img [ref=e238]
+                - text: Email to Schedule
+      - generic [ref=e240]:
+        - generic [ref=e241]: © 2026 Go Expandia. All rights reserved.
+        - generic [ref=e242]:
+          - generic [ref=e243]: Part of Remova Inc.
+          - link "Privacy Policy" [ref=e244] [cursor=pointer]:
+            - /url: ./privacy-policy.html
+          - link "Terms of Service" [ref=e245] [cursor=pointer]:
+            - /url: ./terms-of-service.html
+          - link "Cookie Policy" [ref=e246] [cursor=pointer]:
+            - /url: ./cookie-policy.html
+      - generic [ref=e247]: "Authorized domains: www.goexpandia.com www.expandia.ch"
+  - generic:
+    - iframe [ref=e248]:
+      - generic [ref=f2e3]:
+        - generic [ref=f2e9]: "1"
+        - button "Chat widget" [ref=f2e4] [cursor=pointer]:
+          - img "Opens Chat This icon Opens the chat window." [ref=f2e7]
+    - iframe [ref=e250]:
+      - button "Hello there! What's up? Contact Sales Contact HR Just Browsing..." [ref=f4e7] [cursor=pointer]:
+        - paragraph [ref=f4e13]:
+          - generic [ref=f4e14]: Hello there! What's up?
+        - generic [ref=f4e16]:
+          - button "Contact Sales" [ref=f4e18]
+          - button "Contact HR" [ref=f4e20]
+          - button "Just Browsing..." [ref=f4e22]

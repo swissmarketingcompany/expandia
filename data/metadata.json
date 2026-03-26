@@ -1,45 +1,45 @@
 {
   "index": {
-    "title": "IT Solutions, AI Solutions & Custom Software | Go Expandia",
-    "description": "We build secure IT infrastructure, enterprise AI systems, and custom software that removes operational friction and helps teams move faster.",
-    "keywords": "IT Solutions, AI Solutions, Custom Software Development, Azure migration, endpoint security, AI automation, ERP integration, enterprise dashboards, Go Expandia",
+    "title": "AI Integration & Custom Software | Go Expandia",
+    "description": "We build secure AI systems and custom software that removes operational friction and helps teams move faster.",
+    "keywords": "AI integration, AI solutions, custom software development, AI automation, ERP integration, enterprise dashboards, Go Expandia",
     "translations": {
       "tr": {
-        "title": "IT, Yapay Zeka ve Özel Yazılım Çözümleri | Go Expandia",
-        "description": "Güvenli IT altyapısı, kurumsal yapay zeka sistemleri ve operasyonel sürtünmeyi azaltan özel yazılımlar geliştiriyoruz.",
-        "keywords": "IT çözümleri, yapay zeka çözümleri, özel yazılım geliştirme, Azure geçişi, kurumsal otomasyon"
+        "title": "Yapay Zeka Entegrasyonu ve Özel Yazılım | Go Expandia",
+        "description": "Operasyonel sürtünmeyi azaltan ve ekipleri hızlandıran güvenli yapay zeka sistemleri ile özel yazılımlar geliştiriyoruz.",
+        "keywords": "yapay zeka entegrasyonu, yapay zeka çözümleri, özel yazılım geliştirme, kurumsal otomasyon"
       },
       "de": {
-        "title": "IT-, KI- und Softwarelösungen | Go Expandia",
-        "description": "Wir bauen sichere IT-Infrastruktur, Enterprise-KI-Systeme und individuelle Software, die operative Reibung reduziert und Teams schneller macht.",
-        "keywords": "IT-Lösungen, KI-Lösungen, kundenspezifische Softwareentwicklung, Azure-Migration, Endpunktsicherheit"
+        "title": "KI-Integration & Individuelle Software | Go Expandia",
+        "description": "Wir bauen sichere KI-Systeme und individuelle Software, die operative Reibung reduziert und Teams schneller macht.",
+        "keywords": "KI-Integration, KI-Lösungen, kundenspezifische Softwareentwicklung, Unternehmensautomatisierung"
       },
       "fr": {
-        "title": "Solutions IT, IA et Logiciels Sur Mesure | Go Expandia",
-        "description": "Nous construisons des infrastructures IT sécurisées, des systèmes IA d'entreprise et des logiciels sur mesure qui réduisent la friction opérationnelle.",
-        "keywords": "solutions IT, solutions IA, développement logiciel sur mesure, migration Azure, sécurité des terminaux"
+        "title": "Intégration IA et Logiciel Sur Mesure | Go Expandia",
+        "description": "Nous construisons des systèmes IA sécurisés et des logiciels sur mesure qui réduisent la friction opérationnelle.",
+        "keywords": "intégration IA, solutions IA, développement logiciel sur mesure, automatisation d'entreprise"
       }
     }
   },
   "solutions": {
-    "title": "IT Solutions, AI Solutions & Custom Software | Go Expandia",
-    "description": "Explore our three core service categories: secure IT solutions, enterprise AI automation, and custom software development.",
-    "keywords": "IT solutions, AI solutions, custom software development, enterprise infrastructure, automation",
+    "title": "AI Solutions & Custom Software | Go Expandia",
+    "description": "Explore our two core service categories: secure AI solutions and custom software development.",
+    "keywords": "AI solutions, custom software development, enterprise infrastructure, automation",
     "translations": {
       "tr": {
-        "title": "IT, Yapay Zeka ve Özel Yazılım Çözümleri | Go Expandia",
-        "description": "Güvenli IT çözümleri, kurumsal yapay zeka otomasyonu ve özel yazılım geliştirme kategorilerimizi keşfedin.",
-        "keywords": "IT çözümleri, yapay zeka çözümleri, özel yazılım geliştirme, kurumsal altyapı"
+        "title": "Yapay Zeka ve Özel Yazılım Çözümleri | Go Expandia",
+        "description": "Güvenli yapay zeka çözümleri ve özel yazılım geliştirme kategorilerimizi keşfedin.",
+        "keywords": "yapay zeka çözümleri, özel yazılım geliştirme, kurumsal altyapı"
       },
       "de": {
-        "title": "IT-, KI- und Softwarelösungen | Go Expandia",
-        "description": "Entdecken Sie unsere drei Kernkategorien: sichere IT-Lösungen, Enterprise-KI-Automatisierung und individuelle Softwareentwicklung.",
-        "keywords": "IT-Lösungen, KI-Lösungen, kundenspezifische Softwareentwicklung, Unternehmensinfrastruktur"
+        "title": "KI- und Softwarelösungen | Go Expandia",
+        "description": "Entdecken Sie unsere zwei Kernkategorien: sichere KI-Lösungen und individuelle Softwareentwicklung.",
+        "keywords": "KI-Lösungen, kundenspezifische Softwareentwicklung, Unternehmensinfrastruktur"
       },
       "fr": {
-        "title": "Solutions IT, IA et Logiciels Sur Mesure | Go Expandia",
-        "description": "Découvrez nos trois catégories principales : solutions IT sécurisées, automatisation IA d'entreprise et développement logiciel sur mesure.",
-        "keywords": "solutions IT, solutions IA, développement logiciel sur mesure, infrastructure d'entreprise"
+        "title": "Solutions IA et Logiciels Sur Mesure | Go Expandia",
+        "description": "Découvrez nos deux catégories principales : solutions IA sécurisées et développement logiciel sur mesure.",
+        "keywords": "solutions IA, développement logiciel sur mesure, infrastructure d'entreprise"
       }
     }
   },

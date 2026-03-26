@@ -120,33 +120,33 @@ function generateUniqueCityContent(cityName, countryName, regionName) {
     const templates = [
         {
             p1: `${cityName} represents a dynamic business environment in ${regionName}, where companies are increasingly leveraging technology to gain competitive advantages. The ${countryName} market demands sophisticated infrastructure, particularly as businesses in ${cityName} navigate digital transformation and operational modernization.`,
-            p2: `Go Expandia delivers enterprise-grade technology solutions tailored for ${cityName}'s business landscape. Our comprehensive suite includes secure IT infrastructure deployment, enterprise AI automation, and custom software development. We've designed our services specifically to address the unique operational demands of companies in ${countryName}.`,
-            p3: `From startups establishing their foothold in ${cityName} to established enterprises scaling across ${regionName}, our rapid 48-hour deployment model eliminates traditional infrastructure bottlenecks. We install and configure IT systems, AI workspaces, and custom software without lengthy development cycles, so your team can operate from day one.`,
+            p2: `Go Expandia delivers enterprise-grade technology solutions tailored for ${cityName}'s business landscape. Our comprehensive suite includes enterprise AI automation and custom software development. We've designed our services specifically to address the unique operational demands of companies in ${countryName}.`,
+            p3: `From startups establishing their foothold in ${cityName} to established enterprises scaling across ${regionName}, our rapid 48-hour deployment model eliminates traditional infrastructure bottlenecks. We configure AI workspaces and custom software without lengthy development cycles, so your team can operate from day one.`,
             p4: `${cityName} companies partnering with Go Expandia access institutional-grade technology previously available only to large corporations. With comprehensive 5-year technical support and a portfolio exceeding 100 specialized solutions, we function as your dedicated infrastructure partner throughout ${countryName} and beyond.`
         },
         {
             p1: `As a key commercial center in ${regionName}, ${cityName} offers substantial opportunities for businesses ready to scale. However, success in the ${countryName} market requires more than ambition—it demands robust technical infrastructure and secure systems that many ${cityName} companies struggle to implement efficiently.`,
-            p2: `Our turnkey infrastructure services eliminate these barriers for ${cityName} businesses. Go Expandia provides complete IT security frameworks, enterprise AI infrastructure, and custom software built for your operational requirements. Each solution is configured for the specific regulatory and operational needs of the ${countryName} market.`,
-            p3: `Whether you're launching operations in ${cityName} or expanding throughout ${regionName}, our infrastructure-as-a-service model delivers immediate capability. Deploy Microsoft 365, activate AI automation, or integrate your ERP and CRM systems—all within 48 hours. ${cityName} businesses gain technical capabilities typically requiring months of development.`,
-            p4: `Companies in ${cityName} benefit from our extensive product ecosystem and sustained technical partnership. Beyond initial deployment, our 5-year support commitment ensures your infrastructure evolves with your business. With over 100 solutions available, ${cityName} enterprises can continuously enhance their capabilities in ${countryName}.`
+            p2: `Our turnkey technology services eliminate these barriers for ${cityName} businesses. Go Expandia provides enterprise AI infrastructure and custom software built for your operational requirements. Each solution is configured for the specific regulatory and operational needs of the ${countryName} market.`,
+            p3: `Whether you're launching operations in ${cityName} or expanding throughout ${regionName}, our infrastructure-as-a-service model delivers immediate capability. Activate AI automation or integrate your ERP and CRM systems—all within 48 hours. ${cityName} businesses gain technical capabilities typically requiring months of development.`,
+            p4: `Companies in ${cityName} benefit from our extensive product ecosystem and sustained technical partnership. Beyond initial deployment, our 5-year support commitment ensures your systems evolve with your business. With over 100 solutions available, ${cityName} enterprises can continuously enhance their capabilities in ${countryName}.`
         },
         {
             p1: `${cityName} stands at the intersection of traditional business practices and modern digital operations in ${regionName}. Companies here face the dual challenge of maintaining operational excellence while adopting secure technology that drives efficiency. This transformation requires specialized infrastructure that most ${cityName} businesses find difficult to build internally.`,
             p2: `Go Expandia bridges this gap with ready-to-deploy infrastructure designed for ${cityName}'s market. Our services span secure workplace technology, enterprise AI systems, and custom software development—all calibrated for ${countryName} compliance requirements. We understand the specific challenges of operating in ${regionName} and deliver solutions that work from day one.`,
-            p3: `For ${cityName} businesses, speed matters. Our 48-hour deployment standard means you can activate critical systems without lengthy implementation cycles. From endpoint security and cloud migration to on-premise AI and custom dashboards, we provide the technical foundation that ${cityName} companies need to operate effectively in ${regionName}.`,
-            p4: `${cityName} enterprises choosing Go Expandia gain more than technology—they gain a strategic infrastructure partner. Our 5-year technical support ensures continuous optimization, while our 100+ product portfolio provides solutions for every growth stage. Join ${cityName} businesses that have transformed their operations through systematic infrastructure deployment.`
+            p3: `For ${cityName} businesses, speed matters. Our 48-hour deployment standard means you can activate critical systems without lengthy implementation cycles. From on-premise AI and custom dashboards to system integration projects, we provide the technical foundation that ${cityName} companies need to operate effectively in ${regionName}.`,
+            p4: `${cityName} enterprises choosing Go Expandia gain more than technology—they gain a strategic software partner. Our 5-year technical support ensures continuous optimization, while our 100+ product portfolio provides solutions for every growth stage. Join ${cityName} businesses that have transformed their operations through systematic digital deployment.`
         },
         {
             p1: `The business landscape in ${cityName} continues evolving rapidly, creating both opportunities and challenges for companies in ${regionName}. Success increasingly depends on having the right technical infrastructure to support growth, yet many ${cityName} businesses lack the resources or expertise to build secure, scalable systems.`,
-            p2: `This is where Go Expandia delivers value for ${cityName} companies. We provide complete, turnkey infrastructure covering IT security, AI automation, and custom software. Each solution is specifically configured for ${countryName} market conditions and regulatory requirements, ensuring seamless integration with your existing operations.`,
-            p3: `${cityName} businesses can deploy enterprise-grade systems in just 48 hours, bypassing traditional development timelines. Whether securing endpoints, migrating to the cloud, building an internal AI workspace, or modernizing a legacy system, companies in ${cityName} gain immediate operational capability. This rapid deployment model is particularly valuable in ${regionName}'s competitive markets.`,
-            p4: `Beyond initial implementation, ${cityName} companies receive sustained technical partnership through our 5-year support commitment. Our portfolio of 100+ solutions ensures you have access to advanced capabilities as your business scales. Experience how dedicated infrastructure expertise transforms operations for ${cityName} enterprises in ${countryName}.`
+            p2: `This is where Go Expandia delivers value for ${cityName} companies. We provide enterprise AI automation and custom software. Each solution is specifically configured for ${countryName} market conditions and regulatory requirements, ensuring seamless integration with your existing operations.`,
+            p3: `${cityName} businesses can deploy enterprise-grade systems in just 48 hours, bypassing traditional development timelines. Whether building an internal AI workspace or modernizing a legacy system, companies in ${cityName} gain immediate operational capability. This rapid deployment model is particularly valuable in ${regionName}'s competitive markets.`,
+            p4: `Beyond initial implementation, ${cityName} companies receive sustained technical partnership through our 5-year support commitment. Our portfolio of 100+ solutions ensures you have access to advanced capabilities as your business scales. Experience how dedicated software expertise transforms operations for ${cityName} enterprises in ${countryName}.`
         },
         {
-            p1: `${cityName} has emerged as an important business hub within ${regionName}, attracting companies seeking growth opportunities in ${countryName}. However, scaling successfully requires more than market access—it demands sophisticated infrastructure for IT security, AI-powered operations, and custom software that many ${cityName} businesses find challenging to develop.`,
-            p2: `Go Expandia specializes in delivering this infrastructure to ${cityName} companies. Our comprehensive solutions include enterprise IT security, corporate AI infrastructure, and custom-built applications. We've engineered each service for ${countryName} market requirements, providing ${cityName} businesses with tools that work effectively from day one.`,
-            p3: `Speed defines our approach. ${cityName} businesses can activate complete infrastructure within 48 hours, eliminating lengthy development cycles. From Microsoft 365 and zero-trust security to agentic AI workflows and ERP integrations, we deliver the technical foundation that ${cityName} companies need for competitive advantage in ${regionName}.`,
-            p4: `Partnering with Go Expandia gives ${cityName} businesses access to enterprise technology and sustained expertise. Our 5-year technical support ensures your infrastructure remains optimized, while our 100+ solution portfolio provides continuous capability enhancement. Join ${cityName} companies that have accelerated their operations through systematic, expert-led infrastructure deployment.`
+            p1: `${cityName} has emerged as an important business hub within ${regionName}, attracting companies seeking growth opportunities in ${countryName}. However, scaling successfully requires more than market access—it demands sophisticated AI systems and custom software that many ${cityName} businesses find challenging to develop.`,
+            p2: `Go Expandia specializes in delivering this technology to ${cityName} companies. Our comprehensive solutions include corporate AI infrastructure and custom-built applications. We've engineered each service for ${countryName} market requirements, providing ${cityName} businesses with tools that work effectively from day one.`,
+            p3: `Speed defines our approach. ${cityName} businesses can activate complete systems within 48 hours, eliminating lengthy development cycles. From agentic AI workflows to ERP integrations, we deliver the technical foundation that ${cityName} companies need for competitive advantage in ${regionName}.`,
+            p4: `Partnering with Go Expandia gives ${cityName} businesses access to advanced technology and sustained expertise. Our 5-year technical support ensures your systems remain optimized, while our 100+ solution portfolio provides continuous capability enhancement. Join ${cityName} companies that have accelerated their operations through systematic, expert-led digital deployment.`
         }
     ];
 
@@ -188,17 +188,14 @@ function generateUniqueCityContent(cityName, countryName, regionName) {
 
 const LOCALIZED_CATEGORY_COPY = {
     en: {
-        'it-solutions': { label: 'IT Solutions', promise: 'secure, uninterrupted, enterprise-grade plug-and-play cloud and network infrastructure.' },
         'ai-solutions': { label: 'AI Solutions', promise: 'reduce operational headcount costs and accelerate decision-making with secure enterprise AI.' },
         'custom-software': { label: 'Custom Software Development', promise: 'modernize bulky structures and build tailored business intelligence and engineering software.' }
     },
     de: {
-        'it-solutions': { label: 'IT-Lösungen', promise: 'sichere, unterbrechungsfreie Cloud- und Netzwerk-Infrastruktur in Unternehmensqualität.' },
         'ai-solutions': { label: 'KI-Lösungen', promise: 'reduzieren Sie operative Personalkosten und beschleunigen Sie Entscheidungen mit sicherer Unternehmens-KI.' },
         'custom-software': { label: 'Individuelle Softwareentwicklung', promise: 'modernisieren Sie komplexe Strukturen und bauen Sie maßgeschneiderte Business-Intelligence- und Engineering-Software.' }
     },
     fr: {
-        'it-solutions': { label: 'Solutions IT', promise: 'une infrastructure cloud et réseau sécurisée, continue et prête à l’emploi, de niveau entreprise.' },
         'ai-solutions': { label: 'Solutions IA', promise: 'réduisez les coûts opérationnels et accélérez la prise de décision avec une IA d’entreprise sécurisée.' },
         'custom-software': { label: 'Développement logiciel sur mesure', promise: 'modernisez des structures lourdes et créez des logiciels métiers et d’ingénierie adaptés à vos besoins.' }
     }
@@ -219,15 +216,15 @@ const CITY_LANDING_COPY = {
         heroButton: 'Get Free Analysis',
         heroSecondary: 'Explore Categories',
         whyTitle: 'Why {{CITY_NAME}}?',
-        whyBody: '{{CITY_NAME}} sits in the {{REGION_NAME}} market, where teams need secure systems, faster automation, and software that can scale with their operations.',
+        whyBody: '{{CITY_NAME}} sits in the {{REGION_NAME}} market, where teams need secure AI systems, faster automation, and software that can scale with their operations.',
         localHeading: 'Built for local delivery, global standards',
-        cardTitle: 'Three core categories',
-        cardSubtitles: { it: 'Security and infrastructure', ai: 'Automation and control', software: 'Build and integration' },
+        cardTitle: 'Two core categories',
+        cardSubtitles: { ai: 'Automation and control', software: 'Build and integration' },
         servicesTitle: 'Solutions for {{CITY_NAME}}',
         servicesBody: 'Choose the category that matches your current priority and expand as your operations grow.',
         seoHeading: 'Enterprise delivery in {{CITY_NAME}}, {{COUNTRY_NAME}}',
         faqTitle: 'Frequently Asked Questions',
-        faqBody: 'Common questions from teams evaluating IT, AI, and custom software delivery.',
+        faqBody: 'Common questions from teams evaluating AI and custom software delivery.',
         faq: [
             { q: 'How quickly can you start?', a: 'We can usually begin after the initial discovery and scope review, then move quickly into implementation.' },
             { q: 'What kinds of projects do you support?', a: 'We work on infrastructure, AI automation, system integrations, internal tools, portals, and modernization projects.' },
@@ -242,15 +239,15 @@ const CITY_LANDING_COPY = {
         heroButton: 'Kostenlose Analyse anfordern',
         heroSecondary: 'Kategorien ansehen',
         whyTitle: 'Warum {{CITY_NAME}}?',
-        whyBody: '{{CITY_NAME}} liegt im Markt von {{REGION_NAME}}, wo Teams sichere Systeme, schnellere Automatisierung und skalierbare Software brauchen.',
+        whyBody: '{{CITY_NAME}} liegt im Markt von {{REGION_NAME}}, wo Teams sichere KI-Systeme, schnellere Automatisierung und skalierbare Software brauchen.',
         localHeading: 'Für lokale Umsetzung, nach globalen Standards',
-        cardTitle: 'Drei Kernkategorien',
-        cardSubtitles: { it: 'Sicherheit und Infrastruktur', ai: 'Automatisierung und Kontrolle', software: 'Entwicklung und Integration' },
+        cardTitle: 'Zwei Kernkategorien',
+        cardSubtitles: { ai: 'Automatisierung und Kontrolle', software: 'Entwicklung und Integration' },
         servicesTitle: 'Lösungen für {{CITY_NAME}}',
         servicesBody: 'Wählen Sie die Kategorie, die aktuell am wichtigsten ist, und erweitern Sie bei Bedarf Schritt für Schritt.',
         seoHeading: 'Unternehmensumsetzung in {{CITY_NAME}}, {{COUNTRY_NAME}}',
         faqTitle: 'Häufig gestellte Fragen',
-        faqBody: 'Häufige Fragen von Teams, die IT-, KI- und Software-Services bewerten.',
+        faqBody: 'Häufige Fragen von Teams, die KI- und Software-Services bewerten.',
         faq: [
             { q: 'Wie schnell können Sie starten?', a: 'In der Regel beginnen wir nach der ersten Analyse und Scope-Abstimmung und gehen dann zügig in die Umsetzung.' },
             { q: 'Welche Arten von Projekten unterstützen Sie?', a: 'Wir arbeiten an Infrastruktur, KI-Automatisierung, Systemintegrationen, internen Tools, Portalen und Modernisierungsvorhaben.' },
@@ -265,15 +262,15 @@ const CITY_LANDING_COPY = {
         heroButton: 'Obtenir une analyse gratuite',
         heroSecondary: 'Découvrir les catégories',
         whyTitle: 'Pourquoi {{CITY_NAME}} ?',
-        whyBody: '{{CITY_NAME}} se situe sur le marché de {{REGION_NAME}}, où les équipes ont besoin de systèmes sécurisés, d’automatisation plus rapide et de logiciels capables de suivre leur croissance.',
+        whyBody: '{{CITY_NAME}} se situe sur le marché de {{REGION_NAME}}, où les équipes ont besoin de systèmes IA sécurisés, d’automatisation plus rapide et de logiciels capables de suivre leur croissance.',
         localHeading: 'Pensé pour une exécution locale, selon des standards globaux',
-        cardTitle: 'Trois catégories clés',
-        cardSubtitles: { it: 'Sécurité et infrastructure', ai: 'Automatisation et contrôle', software: 'Développement et intégration' },
+        cardTitle: 'Deux catégories clés',
+        cardSubtitles: { ai: 'Automatisation et contrôle', software: 'Développement et intégration' },
         servicesTitle: 'Solutions pour {{CITY_NAME}}',
         servicesBody: 'Choisissez la catégorie la plus prioritaire aujourd’hui, puis faites évoluer la stack au rythme de votre activité.',
         seoHeading: 'Déploiement d’entreprise à {{CITY_NAME}}, {{COUNTRY_NAME}}',
         faqTitle: 'Questions fréquentes',
-        faqBody: 'Les questions les plus courantes des équipes qui évaluent des services IT, IA et logiciels sur mesure.',
+        faqBody: 'Les questions les plus courantes des équipes qui évaluent des services IA et logiciels sur mesure.',
         faq: [
             { q: 'Sous quel délai pouvez-vous démarrer ?', a: 'Nous commençons généralement après l’analyse initiale et la validation du périmètre, puis passons rapidement à l’exécution.' },
             { q: 'Quels types de projets prenez-vous en charge ?', a: 'Nous intervenons sur l’infrastructure, l’automatisation IA, les intégrations systèmes, les outils internes, les portails et les projets de modernisation.' },
@@ -338,13 +335,13 @@ function generateLocalizedCityContent(cityName, countryName, regionName, lang = 
     const templates = {
         de: [
             `${cityName} ist ein dynamischer Wirtschaftsstandort in ${regionName}, in dem Unternehmen Technologie gezielt einsetzen, um sich einen Wettbewerbsvorteil zu verschaffen.`,
-            `Go Expandia liefert für ${cityName} sichere IT-Infrastruktur, KI-Automatisierung und maßgeschneiderte Software, die auf die Anforderungen von Unternehmen in ${countryName} zugeschnitten ist.`,
+            `Go Expandia liefert für ${cityName} sichere KI-Integration und maßgeschneiderte Software, die auf die Anforderungen von Unternehmen in ${countryName} zugeschnitten ist.`,
             `Von der schnellen Bereitstellung bis zur laufenden Optimierung helfen wir Unternehmen in ${cityName}, interne Abläufe zu beschleunigen und ihre Systeme belastbar zu skalieren.`,
             `Mit Go Expandia erhalten ${cityName}-Unternehmen eine technische Partnerschaft, die auf langfristige Stabilität, Compliance und Wachstum ausgelegt ist.`
         ],
         fr: [
             `${cityName} représente un environnement économique dynamique dans ${regionName}, où les entreprises utilisent la technologie pour gagner en compétitivité.`,
-            `Go Expandia fournit à ${cityName} une infrastructure IT sécurisée, de l’automatisation IA et des logiciels sur mesure adaptés aux besoins des entreprises de ${countryName}.`,
+            `Go Expandia fournit à ${cityName} une intégration IA sécurisée et des logiciels sur mesure adaptés aux besoins des entreprises de ${countryName}.`,
             `Du déploiement rapide à l’optimisation continue, nous aidons les entreprises de ${cityName} à accélérer leurs opérations et à faire évoluer leurs systèmes de façon fiable.`,
             `Avec Go Expandia, les entreprises de ${cityName} bénéficient d’un partenaire technique pensé pour la stabilité, la conformité et la croissance à long terme.`
         ]
@@ -369,17 +366,16 @@ function replaceCityLandingCopy(content, lang = 'en') {
         .replace(/Get Free Analysis/g, copy.heroButton)
         .replace(/Explore Categories/g, copy.heroSecondary)
         .replace(/Why \{\{CITY_NAME\}\}\?/g, copy.whyTitle)
-        .replace(/\{\{CITY_NAME\}\} sits in the \{\{REGION_NAME\}\} market, where teams need secure systems, faster automation, and software that can scale with their operations\./g, copy.whyBody)
+        .replace(/\{\{CITY_NAME\}\} sits in the \{\{REGION_NAME\}\} market, where teams need secure AI systems, faster automation, and software that can scale with their operations\./g, copy.whyBody)
         .replace(/Built for local delivery, global standards/g, copy.localHeading)
-        .replace(/Three core categories/g, copy.cardTitle)
-        .replace(/Security and infrastructure/g, copy.cardSubtitles.it)
+        .replace(/Two core categories/g, copy.cardTitle)
         .replace(/Automation and control/g, copy.cardSubtitles.ai)
         .replace(/Build and integration/g, copy.cardSubtitles.software)
         .replace(/Solutions for \{\{CITY_NAME\}\}/g, copy.servicesTitle)
         .replace(/Choose the category that matches your current priority and expand as your operations grow\./g, copy.servicesBody)
         .replace(/Enterprise delivery in \{\{CITY_NAME\}\}, \{\{COUNTRY_NAME\}\}/g, copy.seoHeading)
         .replace(/Frequently Asked Questions/g, copy.faqTitle)
-        .replace(/Common questions from teams evaluating IT, AI, and custom software delivery\./g, copy.faqBody)
+        .replace(/Common questions from teams evaluating AI and custom software delivery\./g, copy.faqBody)
         .replace(/How quickly can you start\?/g, copy.faq[0].q)
         .replace(/We can usually begin after the initial discovery and scope review, then move quickly into implementation\./g, copy.faq[0].a)
         .replace(/What kinds of projects do you support\?/g, copy.faq[1].q)
@@ -418,11 +414,6 @@ function getPageMetadata(templateName, lang = 'en') {
 }
 
 const SERVICE_CATEGORIES = {
-    'it-solutions': {
-        label: 'IT Solutions',
-        promise: 'secure, uninterrupted, enterprise-grade plug-and-play cloud and network infrastructure.',
-        icon: 'shield-check'
-    },
     'ai-solutions': {
         label: 'AI Solutions',
         promise: "reduce operational headcount costs and accelerate decision-making with secure enterprise AI.",
@@ -983,11 +974,6 @@ const SERVICE_PROBLEMS = {
 };
 
 const SERVICE_PROCESSES = {
-    'it-solutions': [
-        { title: 'We assess your current setup', description: 'We review your existing tools, access controls, and infrastructure to understand what is in place and what is missing.' },
-        { title: 'We design and deploy the solution', description: 'We configure, migrate, or build what is needed — with minimal disruption to your day-to-day operations.' },
-        { title: 'We monitor and support it ongoing', description: 'After go-live, we stay connected with 24/7 monitoring and a direct line your team can use when they need help.' }
-    ],
     'ai-solutions': [
         { title: 'We map the workflow to automate', description: 'We identify which tasks, decisions, or data flows will benefit most from AI and where the biggest wins are.' },
         { title: 'We build and connect the solution', description: 'We develop and integrate the AI system into your existing tools, with data protection built in from the start.' },
@@ -1009,7 +995,6 @@ function buildGenericServiceBlueprint(service, lang = 'en') {
     }
 
     const heroImageMap = {
-        'it-solutions': 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80',
         'ai-solutions': 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
         'custom-software': 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&q=80'
     };
@@ -1018,7 +1003,7 @@ function buildGenericServiceBlueprint(service, lang = 'en') {
     const benefits = (categoryContent.benefits || []).map(parseBenefitText);
     const faqItems = (categoryContent.faq || []).slice(0, 4);
     const serviceProblems = SERVICE_PROBLEMS[service.id] || [];
-    const processSteps = SERVICE_PROCESSES[service.category] || SERVICE_PROCESSES['it-solutions'];
+    const processSteps = SERVICE_PROCESSES[service.category] || SERVICE_PROCESSES['custom-software'];
 
     const rawSections = [
         // Section 1: Problems
@@ -1350,13 +1335,31 @@ REACTIVATED_SERVICE_PAGES.forEach((slug) => {
     delete LEGACY_REDIRECT_TARGETS[slug];
 });
 
+const DECOMMISSIONED_IT_SERVICE_PAGES = [
+    'microsoft-365-workspace-management',
+    'cloud-architecture-azure-transition',
+    'endpoint-security',
+    'advanced-email-security',
+    'zero-trust-architecture',
+    'disaster-recovery-business-continuity',
+    'continuous-vulnerability-scanning',
+    'gdpr-compliance-infrastructure',
+    'secure-network-vpn-setup',
+    'it-support-monitoring'
+];
+
+DECOMMISSIONED_IT_SERVICE_PAGES.forEach((slug) => {
+    LEGACY_REDIRECT_ONLY_PAGES.add(slug);
+    LEGACY_REDIRECT_TARGETS[slug] = 'solutions';
+});
+
 const RETIRED_CITY_SLUGS = new Set();
 const RETIRED_CITY_REDIRECT_TARGET = 'city-locations';
 
 const LEGACY_CATEGORY_ANCHORS = {
-    'managed-it-services': '#it-solutions',
-    'vulnerability-assessments': '#it-solutions',
-    'email-security': '#it-solutions',
+    'managed-it-services': '',
+    'vulnerability-assessments': '',
+    'email-security': '',
     'website-care-plans': '#custom-software',
     'website-care-services': '#custom-software',
     'revops-crm-setup': '#custom-software',
@@ -2227,7 +2230,7 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
 // Blog Post Building Function
 function buildBlogPosts() {
     console.log('\n🏗️  Building Blog Posts (Multi-Language)...');
-    const languages = ['en'];
+    const languages = ['en', 'de', 'fr'];
     let totalBuilt = 0;
 
     // Use English templates as the master list
@@ -2385,7 +2388,7 @@ function buildServiceCityPages() {
     // Read the mega template
     const templateContent = fs.readFileSync('templates/city-landing.html', 'utf8');
     let pageCount = 0;
-    const languages = ['en'];
+    const languages = ['en', 'de', 'fr'];
 
     languages.forEach(lang => {
         services.forEach(service => {
@@ -2642,7 +2645,7 @@ function buildServiceIndustryCityPages() {
     // Read the mega template
     const templateContent = fs.readFileSync('templates/service-industry-city-landing.html', 'utf8');
     let pageCount = 0;
-    const languages = ['en'];
+    const languages = ['en', 'de', 'fr'];
 
     languages.forEach(lang => {
         services.forEach(service => {
@@ -3881,7 +3884,7 @@ function buildCityLandingPages() {
     const top250Cities = JSON.parse(fs.readFileSync('data/cities-top250.json', 'utf8'));
     const templateContent = fs.readFileSync('templates/city-landing.html', 'utf8');
 
-    const languages = ['en'];
+    const languages = ['en', 'de', 'fr'];
     let pageCount = 0;
 
     languages.forEach(lang => {
@@ -3896,16 +3899,16 @@ function buildCityLandingPages() {
 
             // Build page title and description
             const title = lang === 'de'
-                ? `IT-, KI- und Softwarelösungen in ${city} | Go Expandia`
+                ? `KI- und Softwarelösungen in ${city} | Go Expandia`
                 : lang === 'fr'
-                    ? `Solutions IT, IA et Logiciels à ${city} | Go Expandia`
-                    : `IT, AI & Custom Software Solutions in ${city} | Go Expandia`;
+                    ? `Solutions IA et Logiciels à ${city} | Go Expandia`
+                    : `AI & Custom Software Solutions in ${city} | Go Expandia`;
 
             const description = lang === 'de'
-                ? `Unternehmenslösungen in ${city} für IT, KI-Automatisierung und individuelle Softwareentwicklung.`
+                ? `Unternehmenslösungen in ${city} für KI-Integration und individuelle Softwareentwicklung.`
                 : lang === 'fr'
-                    ? `Solutions d'entreprise à ${city} pour l'IT, l'automatisation IA et le développement logiciel sur mesure.`
-                    : `Enterprise solutions in ${city} for IT infrastructure, AI automation, and custom software development.`;
+                    ? `Solutions d'entreprise à ${city} pour l'intégration IA et le développement logiciel sur mesure.`
+                    : `Enterprise solutions in ${city} for AI integration and custom software development.`;
 
             // Create page content
             const { cleanContent: content, extractedSchemas } = extractAndRemoveSchemas(templateContent, `templates/city-landing.html`);
@@ -4026,7 +4029,7 @@ function buildCityLandingPages() {
             // Metadata
             fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_TITLE}}/g, title);
             fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_DESCRIPTION}}/g, description);
-            fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_KEYWORDS}}/g, `IT solutions, AI solutions, custom software development, ${country}, enterprise technology`);
+            fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_KEYWORDS}}/g, `AI solutions, custom software development, ${country}, enterprise technology`);
 
             // Canonical URL
             const canonicalSlug = lang === 'en' ? `${citySlug}.html` : `${lang}/${citySlug}.html`;
@@ -4300,6 +4303,16 @@ buildPage('our-ethical-principles', 'our-ethical-principles', 'en');
 services.forEach(service => buildSolutionPage(service.id, service.id, 'en'));
 
 buildPage('blog-index', 'blog/index', 'en');
+
+// Build localized core pages so updates to the shared taxonomy propagate consistently.
+['de', 'fr'].forEach(lang => {
+    buildPage('index', 'index', lang);
+    buildPage('about', 'about', lang);
+    buildPage('solutions', 'solutions', lang);
+    buildPage('contact', 'contact', lang);
+    buildPage('vision-mission', 'vision-mission', lang);
+    buildPage('our-ethical-principles', 'our-ethical-principles', lang);
+});
 
 
 
