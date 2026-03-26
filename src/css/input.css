@@ -6,11 +6,11 @@
 /* Golden Buzz Custom Components */
 @layer components {
   .gradient-header {
-    @apply bg-gradient-to-r from-buzz-primary to-buzz-secondary bg-clip-text text-transparent;
+    @apply text-buzz-primary;
   }
 
   .credit-badge {
-    @apply bg-buzz-gradient shadow-buzz hover:shadow-buzz-lg transition-all duration-300 transform hover:scale-105;
+    @apply bg-buzz-primary text-white shadow-buzz hover:shadow-buzz-lg transition-all duration-300 transform hover:scale-105;
   }
 
   .buzz-button {
@@ -43,7 +43,7 @@
   }
 
   .buzz-hero {
-    @apply bg-buzz-gradient min-h-screen flex items-center justify-center;
+    @apply bg-buzz-primary min-h-screen flex items-center justify-center text-white;
   }
 
   .icon-feature {
@@ -372,11 +372,11 @@ html {
 }
 
 .logo-carousel::before {
-  @apply left-0 bg-gradient-to-r from-white to-transparent;
+  @apply left-0 bg-white/95;
 }
 
 .logo-carousel::after {
-  @apply right-0 bg-gradient-to-l from-white to-transparent;
+  @apply right-0 bg-white/95;
 }
 
 /* Footer Styles */
@@ -407,7 +407,7 @@ html {
 /* Gradient background for footer */
 body>footer.footer-gradient {
   @apply text-white;
-  background: linear-gradient(to bottom right, #3d4451, #2d3440) !important;
+  background: #2d3440 !important;
   color: white !important;
 }
 
@@ -476,9 +476,9 @@ body>footer.footer-gradient {
 }
 
 .client-success-carousel::before {
-  @apply left-0 bg-gradient-to-r from-white to-transparent;
+  @apply left-0 bg-white/95;
 }
 
 .client-success-carousel::after {
-  @apply right-0 bg-gradient-to-l from-white to-transparent;
+  @apply right-0 bg-white/95;
 }
