@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{PAGE_TITLE}}</title>
+    <meta name="description" content="{{PAGE_DESCRIPTION}}">
+    <meta name="keywords" content="{{PAGE_KEYWORDS}}">
+    <link rel="canonical" href="{{CANONICAL_URL}}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{CANONICAL_URL}}">
+    <meta property="og:title" content="{{PAGE_TITLE}}">
+    <meta property="og:description" content="{{PAGE_DESCRIPTION}}">
+    <meta property="og:image" content="{{LOGO_PATH}}">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{CANONICAL_URL}}">
+    <meta property="twitter:title" content="{{PAGE_TITLE}}">
+    <meta property="twitter:description" content="{{PAGE_DESCRIPTION}}">
+    <meta property="twitter:image" content="{{LOGO_PATH}}">
+    <link rel="icon" href="{{BASE_PATH}}favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="{{BASE_PATH}}dist/css/output.css" rel="stylesheet">
+</head>
+<body class="font-sans antialiased text-gray-900 bg-white">
+    {{HEADER_INCLUDE}}
+
+    <main class="pt-24 pb-16">
+        <article class="container mx-auto px-4 max-w-4xl">
+            <header class="mb-12 text-center">
+                <span class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-primary uppercase bg-primary/10 rounded-full">IT MANAGEMENT PLAYBOOK</span>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">AI Service Desk Copilot: IT Support Playbook</h1>
+                <div class="flex items-center justify-center gap-4 text-sm text-gray-500">
+                    <div class="flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4"></i><span>2026</span></div>
+                    <div class="flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4"></i><span>8 min read</span></div>
+                </div>
+            </header>
+
+            <div class="prose prose-lg prose-primary mx-auto">
+                <p class="lead text-xl text-gray-600 mb-8">The service desk is where employee experience and IT performance meet. Yet most teams still lose hours to repetitive triage, inconsistent ticket routing, and dependency on a few senior engineers. An AI copilot can remove this bottleneck if it is implemented as an operational system, not as a chatbot experiment. This playbook explains how to do that.</p>
+
+                <h2>What This Playbook Delivers</h2>
+                <ul>
+                    <li>A practical rollout model for AI-assisted ticket intake, diagnosis, and resolution workflows.</li>
+                    <li>Guardrails that keep automation safe, auditable, and compliant with enterprise controls.</li>
+                    <li>A KPI framework that proves business value in the first 90 days.</li>
+                </ul>
+
+                <h2>Common Service Desk Reality Before AI</h2>
+                <p>Support queues usually contain a predictable pattern: password resets, access requests, VPN issues, endpoint configuration problems, mailbox quotas, and recurring software errors. These tickets are high volume and low novelty. Teams know what to do, but they lose time collecting context and repeating steps. Meanwhile, business users wait and confidence in IT declines.</p>
+                <p>The main failure point is not skill. It is workflow design. Tickets arrive with missing details, categorization is inconsistent, and escalation rules are manual. This creates avoidable work before technical troubleshooting even begins.</p>
+
+                <h2>Operating Model: Copilot First, Autonomous Actions Later</h2>
+                <p>Start with a copilot model where AI assists agents, not replaces them. In phase one, AI summarizes tickets, suggests root causes, recommends known fixes, and drafts user communications. Human agents approve every response. In phase two, AI handles low-risk automated tasks through policy-bound actions, such as account unlocks or known software restart procedures.</p>
+                <p>This staged approach protects service quality and builds trust. Teams can measure real performance gains before introducing broader automation rights.</p>
+
+                <h2>Step 1: Build a High-Quality Knowledge Base</h2>
+                <p>A service desk copilot is only as useful as the knowledge it can access. Consolidate and clean your runbooks, knowledge articles, standard operating procedures, and incident postmortems. Remove duplicates, archive obsolete procedures, and assign content owners by domain.</p>
+                <p>For each article, include version, last updated date, affected systems, and decision boundaries. AI answers become safer when documentation contains explicit “when to escalate” rules, not only technical instructions.</p>
+
+                <h2>Step 2: Instrument Ticket Intake and Context Capture</h2>
+                <p>Before AI reasoning, improve intake quality. Add mandatory ticket fields for device type, user location, system impacted, error messages, and urgency. AI should enrich this data, not guess it from weak inputs. Use dynamic forms to reduce back-and-forth with users.</p>
+                <p>A strong intake workflow can cut first-response time by itself. Combined with AI summarization, it can reduce initial diagnosis cycles by 30 to 50 percent for recurring ticket classes.</p>
+
+                <h2>Step 3: Define Action Boundaries and Human Approval Rules</h2>
+                <p>Not all tasks should be automated immediately. Define three action classes:</p>
+                <ul>
+                    <li><strong>Assist only:</strong> AI suggests response and runbook, agent executes.</li>
+                    <li><strong>Conditional automation:</strong> AI can execute after policy checks and approval click.</li>
+                    <li><strong>Prohibited automation:</strong> privileged access changes, financial-impacting systems, and unresolved security alerts.</li>
+                </ul>
+                <p>These boundaries should be approved by IT operations and security leadership together. If security is not involved early, implementation will stall later.</p>
+
+                <h2>Step 4: Integrate with ITSM, Identity, and Endpoint Systems</h2>
+                <p>A useful copilot needs controlled integrations with your ITSM platform, identity provider, endpoint management tools, and monitoring stack. Integration design should prioritize observability and rollback. Every AI-driven action must be logged with who approved it, what was executed, and which policy allowed it.</p>
+                <p>This is where many projects fail: teams build a conversational front-end without production-grade orchestration behind it. Treat integrations as core architecture, not optional enhancements.</p>
+
+                <h2>Step 5: Launch with Two High-Volume Ticket Domains</h2>
+                <p>Do not launch across the entire service desk at once. Start with two domains where runbooks are mature and risk is manageable, such as account access and device troubleshooting. This keeps scope realistic and makes performance measurement clear.</p>
+                <p>Define success thresholds before go-live, including first response time, mean time to resolve, re-open rate, CSAT, and agent handle time. Baseline these metrics for at least four weeks pre-launch.</p>
+
+                <h2>90-Day KPI Scorecard</h2>
+                <ul>
+                    <li>First response time reduction by 25 percent or more.</li>
+                    <li>Mean time to resolution reduction by 20 percent or more.</li>
+                    <li>Ticket re-open rate below baseline after week six.</li>
+                    <li>Agent productivity increase measured by tickets resolved per shift.</li>
+                    <li>Employee satisfaction improvement in post-ticket surveys.</li>
+                </ul>
+
+                <h2>Governance and Reliability Checklist</h2>
+                <ul>
+                    <li>Weekly quality review of AI suggestions and rejected responses.</li>
+                    <li>Monthly knowledge base hygiene cycle with stale content removal.</li>
+                    <li>Security review for integration permissions and secrets handling.</li>
+                    <li>Incident drill for incorrect AI action and rollback execution.</li>
+                    <li>Bias and consistency review for user communication tone and clarity.</li>
+                </ul>
+
+                <h2>Common Pitfalls</h2>
+                <p>The most common mistake is pushing autonomous automation too early. If documentation is weak, AI will confidently suggest inconsistent fixes. Another frequent issue is measuring only speed metrics while ignoring quality. Fast but incorrect responses increase re-open tickets and erode trust quickly.</p>
+                <p>A third pitfall is no ownership model for knowledge quality. If no team owns article freshness, copilot quality declines within one quarter.</p>
+
+                <h2>FAQ</h2>
+                <h3>Will AI reduce the size of our service desk team?</h3>
+                <p>In most enterprise environments, the first benefit is better throughput and faster resolution, not immediate team reduction. Teams usually reallocate effort from repetitive work to higher complexity support and infrastructure improvement.</p>
+                <h3>How do we keep responses accurate?</h3>
+                <p>Accuracy comes from three controls: curated knowledge sources, confidence thresholds for AI suggestions, and mandatory human approval for higher-risk actions.</p>
+                <h3>What is a realistic timeline?</h3>
+                <p>Most organizations can run a controlled pilot in 6 to 10 weeks and move into broader production rollout in the next quarter if quality metrics hold.</p>
+
+                <h2>Conclusion</h2>
+                <p>An AI service desk copilot is not a generic chatbot project. It is an IT operations transformation program. Teams that combine structured intake, clean runbooks, policy-based automation, and disciplined KPI tracking can deliver visible service improvements within one quarter while maintaining control and security.</p>
+            </div>
+
+            <div class="mt-16 text-center bg-gradient-to-br from-primary/5 to-secondary/5 rounded-3xl p-12">
+                <h2 class="text-3xl font-bold mb-4">Planning an AI support rollout?</h2>
+                <p class="text-gray-600 mb-8 max-w-2xl mx-auto">Go Expandia helps IT teams design secure AI copilots integrated with service desk, endpoint, and identity operations.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="{{BASE_PATH}}contact.html" class="btn btn-primary btn-lg">Contact Us</a>
+                    <a href="{{BASE_PATH}}solutions.html" class="btn btn-outline btn-lg">View Solutions</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <script>lucide.createIcons();</script>
+    {{FOOTER_INCLUDE}}
+</body>
+</html>

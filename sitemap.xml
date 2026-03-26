@@ -565,90 +565,6 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.goexpandia.com/de/index.html</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/de/about.html</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/de/solutions.html</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/de/contact.html</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/de/city-locations.html</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/de/vision-mission.html</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/de/our-ethical-principles.html</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/fr/index.html</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/fr/about.html</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/fr/solutions.html</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/fr/contact.html</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/fr/city-locations.html</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/fr/vision-mission.html</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/fr/our-ethical-principles.html</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://www.goexpandia.com/jeddah.html</loc>
         <lastmod>2026-03-26</lastmod>
         <changefreq>weekly</changefreq>
@@ -6349,6 +6265,12 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://www.goexpandia.com/blog/ai-governance-operating-model-playbook.html</loc>
+        <lastmod>2026-03-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://www.goexpandia.com/blog/ai-in-b2b-marketing-video.html</loc>
         <lastmod>2026-03-26</lastmod>
         <changefreq>weekly</changefreq>
@@ -6356,6 +6278,12 @@
     </url>
     <url>
         <loc>https://www.goexpandia.com/blog/ai-marketing-strategy-guide.html</loc>
+        <lastmod>2026-03-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.goexpandia.com/blog/ai-service-desk-copilot-playbook.html</loc>
         <lastmod>2026-03-26</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>

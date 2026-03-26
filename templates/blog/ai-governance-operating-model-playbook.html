@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{PAGE_TITLE}}</title>
+    <meta name="description" content="{{PAGE_DESCRIPTION}}">
+    <meta name="keywords" content="{{PAGE_KEYWORDS}}">
+    <link rel="canonical" href="{{CANONICAL_URL}}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{CANONICAL_URL}}">
+    <meta property="og:title" content="{{PAGE_TITLE}}">
+    <meta property="og:description" content="{{PAGE_DESCRIPTION}}">
+    <meta property="og:image" content="{{LOGO_PATH}}">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{CANONICAL_URL}}">
+    <meta property="twitter:title" content="{{PAGE_TITLE}}">
+    <meta property="twitter:description" content="{{PAGE_DESCRIPTION}}">
+    <meta property="twitter:image" content="{{LOGO_PATH}}">
+    <link rel="icon" href="{{BASE_PATH}}favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="{{BASE_PATH}}dist/css/output.css" rel="stylesheet">
+</head>
+<body class="font-sans antialiased text-gray-900 bg-white">
+    {{HEADER_INCLUDE}}
+
+    <main class="pt-24 pb-16">
+        <article class="container mx-auto px-4 max-w-4xl">
+            <nav class="flex text-sm text-gray-500 mb-8" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                    <li class="inline-flex items-center">
+                        <a href="{{BASE_PATH}}index.html" class="inline-flex items-center hover:text-primary"><i data-lucide="home" class="w-4 h-4 mr-2"></i>Home</a>
+                    </li>
+                    <li><div class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i><a href="{{BASE_PATH}}blog/index.html" class="ml-1 md:ml-2 hover:text-primary">Blog</a></div></li>
+                    <li aria-current="page"><div class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i><span class="ml-1 md:ml-2 text-gray-700 font-medium truncate">AI Governance Operating Model</span></div></li>
+                </ol>
+            </nav>
+
+            <header class="mb-12 text-center">
+                <span class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-primary uppercase bg-primary/10 rounded-full">AI MANAGEMENT PLAYBOOK</span>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">AI Governance Operating Model: Enterprise Playbook</h1>
+                <div class="flex items-center justify-center gap-4 text-sm text-gray-500">
+                    <div class="flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4"></i><span>2026</span></div>
+                    <div class="flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4"></i><span>8 min read</span></div>
+                </div>
+            </header>
+
+            <div class="prose prose-lg prose-primary mx-auto">
+                <p class="lead text-xl text-gray-600 mb-8">Most companies do not fail with AI because models are weak. They fail because ownership is unclear, risk controls are bolted on too late, and teams cannot decide which use cases deserve production investment. This playbook gives leadership teams a practical operating model to govern AI without slowing execution.</p>
+
+                <h2>TL;DR for Leadership Teams</h2>
+                <ul>
+                    <li>Build one accountable AI operating council with product, IT, security, legal, and business leaders.</li>
+                    <li>Classify AI use cases by impact and risk before procurement or development starts.</li>
+                    <li>Standardize a release gate: data readiness, model validation, human review, and rollback plan.</li>
+                    <li>Track four core outcomes monthly: value created, adoption, incidents, and unit economics.</li>
+                </ul>
+
+                <h2>Why an Operating Model Matters Now</h2>
+                <p>In many enterprises, teams launch pilots in parallel, each with different prompts, model providers, data rules, and quality criteria. The result looks innovative for one quarter, then creates fragmentation in the next two. Procurement sees duplicate spend, security sees unknown data flows, and business teams lose trust when outputs vary across departments. A governance operating model solves this by giving teams a shared decision system, not a pile of policy PDFs.</p>
+                <p>The objective is not to centralize all AI delivery in one department. The objective is to centralize standards and accountability while execution stays close to business operations. This balance is the difference between fast scale and slow chaos.</p>
+
+                <h2>Design Principle: Federated Control, Local Execution</h2>
+                <p>Use a federated model where each business domain owns its AI backlog and outcomes, but shared control points are enforced centrally. Think of it as a product platform model for AI operations. Domain teams can move quickly, but they must pass through common controls for security, legal risk, model quality, and budget approval.</p>
+                <p>A practical structure includes one enterprise AI council, one AI platform team, and multiple domain AI squads. The council defines risk tiers and decision rights. The platform team provides approved tooling, observability, and prompt libraries. Domain squads translate high-level policy into real workflow improvements in finance, support, sales, and operations.</p>
+
+                <h2>Step 1: Define AI Decision Rights in 30 Days</h2>
+                <p>Most organizations underestimate how much friction comes from ambiguous ownership. Start by writing a one-page RACI for AI decisions. Include who can approve new use cases, who can approve new model providers, who can sign off on production launch, and who owns post-launch incident response.</p>
+                <p>Set a weekly governance cadence for the first 90 days. Keep meetings short and decision-oriented. Every use case should have an executive sponsor, a technical owner, and a risk owner. If a proposal does not have all three, it does not enter delivery.</p>
+
+                <h2>Step 2: Introduce a Three-Tier Risk Classification</h2>
+                <p>Not every AI use case deserves the same controls. Use three tiers:</p>
+                <ul>
+                    <li>Tier 1: Low risk and low impact internal productivity helpers.</li>
+                    <li>Tier 2: Medium risk process automation affecting customer communication or financial records.</li>
+                    <li>Tier 3: High risk use cases with regulatory exposure, high-value transactions, or sensitive personal data.</li>
+                </ul>
+                <p>Each tier should map to a different release gate. Tier 1 can move in days. Tier 2 should include formal QA and monitoring. Tier 3 must include legal review, control testing, and a human override by design. This structure keeps momentum while protecting the enterprise.</p>
+
+                <h2>Step 3: Standardize the AI Release Gate</h2>
+                <p>Create a single release checklist used by all teams. Keep it short enough to use and strict enough to matter. A strong baseline includes:</p>
+                <ul>
+                    <li>Data quality evidence and source lineage.</li>
+                    <li>Prompt and model versioning with reproducible test runs.</li>
+                    <li>Performance thresholds for accuracy, consistency, and safety.</li>
+                    <li>Human-in-the-loop escalation rules for uncertain outputs.</li>
+                    <li>Operational rollback and incident playbook.</li>
+                </ul>
+                <p>Do not treat this as a compliance artifact. Treat it as production readiness. AI systems fail in operations, not in slide decks. The release gate is your operational contract between business and IT.</p>
+
+                <h2>Step 4: Build a Single AI Portfolio Dashboard</h2>
+                <p>Executives need one view of all active AI initiatives. Without it, you cannot compare value creation across departments or detect duplicated investments. Your portfolio dashboard should answer five questions in one minute: what is live, what is in pilot, what is blocked, what is at risk, and what is delivering measurable value.</p>
+                <p>Track both value and control metrics. Value without control is risky. Control without value kills adoption. The best dashboards combine business KPIs with operational reliability and governance health.</p>
+
+                <h2>Suggested KPI Set for the First 2 Quarters</h2>
+                <ul>
+                    <li>Business value: hours saved, cost avoided, or revenue acceleration per use case.</li>
+                    <li>Adoption: weekly active users and repeat usage in target teams.</li>
+                    <li>Risk: number of incidents by severity and mean time to resolution.</li>
+                    <li>Economics: cost per successful task and total monthly AI run rate.</li>
+                    <li>Quality: output acceptance rate and human rework ratio.</li>
+                </ul>
+
+                <h2>90-Day Implementation Roadmap</h2>
+                <p><strong>Days 1-30:</strong> Stand up the council, define decision rights, classify existing use cases, and freeze ungoverned production deployments. <strong>Days 31-60:</strong> Launch the release gate, move top three use cases into controlled production, and instrument monitoring. <strong>Days 61-90:</strong> Publish enterprise dashboard, run first value and risk review, then prioritize the next wave based on measured outcomes.</p>
+                <p>The first 90 days are not about maximum feature delivery. They are about proving that AI can scale with control and visible value. Once that trust exists, delivery speed increases naturally.</p>
+
+                <h2>Common Failure Modes and How to Avoid Them</h2>
+                <ul>
+                    <li>Policy-heavy, execution-light governance that slows teams but reduces no real risk.</li>
+                    <li>Tool-first decisions where model licenses are purchased before use-case qualification.</li>
+                    <li>No owner for model behavior drift after launch.</li>
+                    <li>Success metrics focused only on pilot demos instead of business outcomes.</li>
+                    <li>No decommissioning process for low-value AI features.</li>
+                </ul>
+                <p>Build governance as an operating rhythm, not an annual committee exercise. The best AI programs iterate controls as fast as they iterate workflows.</p>
+
+                <h2>Executive FAQ</h2>
+                <h3>Do we need a Chief AI Officer before starting?</h3>
+                <p>No. You need clear decision rights before you need a new title. Many companies start with a cross-functional council chaired by CIO, COO, or CTO leadership.</p>
+                <h3>Should all AI use cases go through central review?</h3>
+                <p>All use cases should be registered centrally, but review depth should depend on risk tier. Keep low-risk experimentation fast while protecting high-risk workloads.</p>
+                <h3>How do we avoid innovation slowdown?</h3>
+                <p>Provide approved model and data pathways so teams can build quickly inside guardrails. Standardized controls reduce delay more than ad hoc approvals.</p>
+
+                <h2>Conclusion</h2>
+                <p>An AI governance operating model is not a legal checkbox. It is a business scaling system. If your organization wants AI to move from isolated pilots to repeatable enterprise impact, define decision rights, enforce release quality, and manage AI as a portfolio. That is how leadership turns AI from experimentation cost into operational advantage.</p>
+            </div>
+
+            <div class="mt-16 text-center bg-gradient-to-br from-primary/5 to-secondary/5 rounded-3xl p-12">
+                <h2 class="text-3xl font-bold mb-4">Need help operationalizing AI governance?</h2>
+                <p class="text-gray-600 mb-8 max-w-2xl mx-auto">Go Expandia designs governance-ready AI infrastructure, rollout frameworks, and control layers for enterprise teams.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="{{BASE_PATH}}contact.html" class="btn btn-primary btn-lg">Contact Us</a>
+                    <a href="{{BASE_PATH}}solutions.html" class="btn btn-outline btn-lg">View Solutions</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <script>lucide.createIcons();</script>
+    {{FOOTER_INCLUDE}}
+</body>
+</html>
