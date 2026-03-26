@@ -1746,6 +1746,18 @@ function buildPage(templateName, outputName, lang = 'en') {
             readTime: "5 min read"
         }));
 
+        const featuredPlaybookUrls = new Set([
+            'ai-governance-operating-model-playbook.html',
+            'ai-service-desk-copilot-playbook.html',
+            'ai-change-management-adoption-playbook.html',
+            'enterprise-rag-knowledge-ops-playbook.html',
+            'ai-finops-cost-control-playbook.html',
+            'zero-trust-identity-management-playbook.html',
+            'incident-response-automation-itops-playbook.html',
+            'microsoft-365-device-security-playbook.html',
+            'it-service-management-modernization-playbook.html'
+        ]);
+
         const isLeadGenerationArticle = (article) => {
             const haystack = `${article.title || ''} ${article.url || ''} ${article.tags || ''} ${article.excerpt || ''}`.toLowerCase();
             return (
@@ -1758,7 +1770,9 @@ function buildPage(templateName, outputName, lang = 'en') {
         };
 
         // Keep new AI/IT management playbooks first and remove lead-generation focused posts.
-        const filteredNewArticles = newArticles.filter(article => !isLeadGenerationArticle(article));
+        const filteredNewArticles = newArticles.filter(
+            article => !isLeadGenerationArticle(article) && !featuredPlaybookUrls.has(article.url)
+        );
         const filteredLegacyArticles = legacyBlogPosts.filter(article => !isLeadGenerationArticle(article));
         const combinedArticles = [...filteredNewArticles, ...filteredLegacyArticles];
 
