@@ -6265,6 +6265,18 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://www.goexpandia.com/blog/ai-change-management-adoption-playbook.html</loc>
+        <lastmod>2026-03-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.goexpandia.com/blog/ai-finops-cost-control-playbook.html</loc>
+        <lastmod>2026-03-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://www.goexpandia.com/blog/ai-governance-operating-model-playbook.html</loc>
         <lastmod>2026-03-26</lastmod>
         <changefreq>weekly</changefreq>
@@ -6451,6 +6463,12 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://www.goexpandia.com/blog/enterprise-rag-knowledge-ops-playbook.html</loc>
+        <lastmod>2026-03-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://www.goexpandia.com/blog/future-marketing-trends-2025-guide.html</loc>
         <lastmod>2026-03-26</lastmod>
         <changefreq>weekly</changefreq>
@@ -6487,6 +6505,12 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://www.goexpandia.com/blog/incident-response-automation-itops-playbook.html</loc>
+        <lastmod>2026-03-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://www.goexpandia.com/blog/influencer-marketing-guide.html</loc>
         <lastmod>2026-03-26</lastmod>
         <changefreq>weekly</changefreq>
@@ -6518,6 +6542,12 @@
     </url>
     <url>
         <loc>https://www.goexpandia.com/blog/internet-marketing-service-near-me-guide.html</loc>
+        <lastmod>2026-03-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.goexpandia.com/blog/it-service-management-modernization-playbook.html</loc>
         <lastmod>2026-03-26</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -6590,6 +6620,12 @@
     </url>
     <url>
         <loc>https://www.goexpandia.com/blog/marketing-strategy-complete-guide.html</loc>
+        <lastmod>2026-03-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.goexpandia.com/blog/microsoft-365-device-security-playbook.html</loc>
         <lastmod>2026-03-26</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -6782,6 +6818,12 @@
     </url>
     <url>
         <loc>https://www.goexpandia.com/blog/wordpress-security-best-practices.html</loc>
+        <lastmod>2026-03-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.goexpandia.com/blog/zero-trust-identity-management-playbook.html</loc>
         <lastmod>2026-03-26</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>

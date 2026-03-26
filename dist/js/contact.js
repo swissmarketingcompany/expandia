@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const DESTINATION_EMAIL = 'omaycompany@gmail.com';
+    const DESTINATION_EMAIL = 'hello@goexpandia.com';
 
     // --- 1. FAQ Functionality (Keep existing) ---
     const faqItems = document.querySelectorAll('.collapse input[type="checkbox"]');
