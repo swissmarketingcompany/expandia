@@ -188,8 +188,8 @@ function generateUniqueCityContent(cityName, countryName, regionName) {
 
 const LOCALIZED_CATEGORY_COPY = {
     en: {
-        'ai-solutions': { label: 'AI Solutions', promise: 'reduce operational headcount costs and accelerate decision-making with secure enterprise AI.' },
-        'custom-software': { label: 'Custom Software Development', promise: 'modernize bulky structures and build tailored business intelligence and engineering software.' }
+        'ai-solutions': { label: 'AI Support for Companies', promise: 'find the best places to use AI, make a clear plan, and help teams use it well.' },
+        'custom-software': { label: 'AI Delivery and Support', promise: 'build the tools and workflows around AI, then keep them working.' }
     },
     de: {
         'ai-solutions': { label: 'KI-Lösungen', promise: 'reduzieren Sie operative Personalkosten und beschleunigen Sie Entscheidungen mit sicherer Unternehmens-KI.' },
@@ -415,13 +415,13 @@ function getPageMetadata(templateName, lang = 'en') {
 
 const SERVICE_CATEGORIES = {
     'ai-solutions': {
-        label: 'AI Solutions',
-        promise: "reduce operational headcount costs and accelerate decision-making with secure enterprise AI.",
+        label: 'AI Support for Companies',
+        promise: 'find the best opportunities, make a clear plan, and train teams to use AI well.',
         icon: 'bot'
     },
     'custom-software': {
-        label: 'Custom Software Development',
-        promise: 'modernize bulky structures and build tailored business intelligence and engineering software.',
+        label: 'AI Delivery and Support',
+        promise: 'build the tools and workflows around AI, then keep them working.',
         icon: 'code-2'
     }
 };
@@ -975,14 +975,14 @@ const SERVICE_PROBLEMS = {
 
 const SERVICE_PROCESSES = {
     'ai-solutions': [
-        { title: 'We map the workflow to automate', description: 'We identify which tasks, decisions, or data flows will benefit most from AI and where the biggest wins are.' },
-        { title: 'We build and connect the solution', description: 'We develop and integrate the AI system into your existing tools, with data protection built in from the start.' },
-        { title: 'We test, train, and hand over', description: 'We run the system with your real data, train your team on how to use it, and ensure everything works as expected.' }
+        { title: 'We review the business need', description: 'We start with the real business question instead of jumping to a random tool.' },
+        { title: 'We make the next step clear', description: 'We turn the findings into a simple order of work the business can actually follow.' },
+        { title: 'We help people use it well', description: 'We train the team and keep things practical from the start.' }
     ],
     'custom-software': [
-        { title: 'We understand how your business works', description: 'We start by mapping your processes, pain points, and constraints before writing a single line of code.' },
-        { title: 'We build the smallest version that solves the problem', description: 'We ship a working version fast, get feedback, and iterate — rather than spending months building in the dark.' },
-        { title: 'We support and evolve it with you', description: 'After launch, we stay on hand to fix issues, add features, and make sure the software keeps working as you grow.' }
+        { title: 'We scope the work clearly', description: 'We make the delivery boundaries simple before we start building.' },
+        { title: 'We build the working setup', description: 'We build the tool, the workflow, and the connections around it.' },
+        { title: 'We support it after launch', description: 'We stay available to fix, improve, and clean up the work over time.' }
     ]
 };
 
@@ -1000,10 +1000,22 @@ function buildGenericServiceBlueprint(service, lang = 'en') {
     };
 
     const heroDescription = stripServiceDescription(service.description_template || service.title_template || service.name);
-    const benefits = (categoryContent.benefits || []).map(parseBenefitText);
-    const faqItems = (categoryContent.faq || []).slice(0, 4);
-    const serviceProblems = SERVICE_PROBLEMS[service.id] || [];
-    const processSteps = SERVICE_PROCESSES[service.category] || SERVICE_PROCESSES['custom-software'];
+    const normalizeBenefit = (item) => {
+        if (typeof item === 'string') return parseBenefitText(item);
+        if (item && typeof item === 'object') {
+            return {
+                title: item.title || '',
+                description: item.description || ''
+            };
+        }
+        return { title: '', description: '' };
+    };
+    const benefits = ((service.outcomes && service.outcomes.length ? service.outcomes : categoryContent.benefits || [])
+        .map(normalizeBenefit))
+        .filter(item => item.title || item.description);
+    const faqItems = ((service.faq && service.faq.length ? service.faq : categoryContent.faq || [])).slice(0, 4);
+    const serviceProblems = service.problems || SERVICE_PROBLEMS[service.id] || [];
+    const processSteps = service.process_steps || SERVICE_PROCESSES[service.category] || SERVICE_PROCESSES['custom-software'];
 
     const rawSections = [
         // Section 1: Problems
@@ -1020,14 +1032,14 @@ function buildGenericServiceBlueprint(service, lang = 'en') {
             type: 'cards',
             id: 'capabilities',
             sectionClass: 'bg-base-100',
-            heading: 'What we actually do',
+            heading: 'What you get',
             intro: heroDescription,
             gridClass: 'md:grid-cols-2',
             cards: [
-                { title: 'What you get', description: heroDescription, borderClass: 'border-primary' },
-                { title: 'The end result', description: categoryMeta.promise, borderClass: 'border-secondary' },
-                { title: 'Who this is for', description: `Any company that is dealing with the problems above and needs ${service.name.toLowerCase()} done right the first time.`, borderClass: 'border-accent' },
-                { title: 'How we approach it', description: `We start with your specific situation, not a generic template. Every delivery is designed around your processes, your team, and your constraints.`, borderClass: 'border-neutral' }
+                { title: 'What this service is', description: heroDescription, borderClass: 'border-primary' },
+                { title: 'How you buy it', description: service.commercial_model || 'We scope the work around the business need.', borderClass: 'border-secondary' },
+                { title: 'Starting price', description: service.starting_price || 'Custom quote', borderClass: 'border-accent' },
+                { title: 'Good fit if', description: service.good_fit || `You need ${service.name.toLowerCase()} done properly, in plain English, with no wasted motion.`, borderClass: 'border-neutral' }
             ]
         },
         // Section 3: Benefits / Why choose us
@@ -1035,8 +1047,8 @@ function buildGenericServiceBlueprint(service, lang = 'en') {
             type: 'split',
             id: 'why-it-matters',
             sectionClass: 'bg-base-200',
-            heading: 'What changes when we take care of this',
-            intro: `The practical difference ${service.name.toLowerCase()} makes once it is properly in place.`,
+            heading: 'What changes when this is in place',
+            intro: `The practical difference ${service.name.toLowerCase()} makes once it is working properly.`,
             bullets: benefits.slice(0, 3).map((item, index) => ({
                 icon: ['shield-check', 'clock-3', 'layers-3'][index] || 'check',
                 title: item.title,
@@ -1075,14 +1087,14 @@ function buildGenericServiceBlueprint(service, lang = 'en') {
     });
 
     const ctaObj = {
-        heading: `Ready to fix this?`,
-        description: `We can scope, design, and deliver ${service.name.toLowerCase()} for your team. No obligation, no jargon.`,
+        heading: `Ready to start with ${service.name}?`,
+        description: `We can scope ${service.name.toLowerCase()} in plain English and help you start with the part that matters most.`,
         buttonText: 'Talk to us'
     };
 
     return {
         hero: {
-            badge: categoryMeta.label,
+            badge: service.badge || categoryMeta.label,
             titlePrefix: service.name,
             titleSuffix: '',
             description: heroDescription,
@@ -1177,7 +1189,12 @@ const LEGACY_REDIRECT_TARGETS = {
 };
 
 const LEGACY_DELETED_SERVICE_PAGES = new Set([
+  "agentic-ai-development",
+  "ai-data-security-layer",
   "ai-creative-studio",
+  "corporate-ai-infrastructure-setup",
+  "customer-service-automation",
+  "data-silos-automation",
   "b2b-dealer-customer-portals",
   "appointment-setting-service",
   "cold-email-agency",
@@ -1213,7 +1230,9 @@ const LEGACY_DELETED_SERVICE_PAGES = new Set([
   "markt-beschleuniger-programm",
   "markt-grundlagen-programm",
   "mvp-development-corporate-spinoff",
+  "on-premise-ai-setup",
   "onboarding",
+  "operational-load-reduction",
   "unternehmens-digitale-geschenke",
   "outbound-lead-generation",
   "outbound-marketing-agency",
@@ -1226,9 +1245,11 @@ const LEGACY_DELETED_SERVICE_PAGES = new Set([
   "revops-crm-setup",
   "revops-infrastructure",
   "sales-development-agency",
+  "sales-marketing-automation",
   "sales-protection-services",
   "schutzdienstleistungen",
   "secure-email-workplace-setup",
+  "smart-factory-optimization",
   "speed-to-lead",
   "teilzeit-bizdev-team",
   "turnkey-growth-infrastructure",
@@ -1243,16 +1264,21 @@ const LEGACY_DELETED_SERVICE_PAGES = new Set([
   "written-content-engine"
 ]);
 const LEGACY_DELETED_SERVICE_TARGETS = {
+  "agentic-ai-development": "solutions",
+  "ai-data-security-layer": "solutions",
   "ai-creative-studio": "ai-content-infrastructure",
   "appointment-setting-service": "solutions",
   "b2b-dealer-customer-portals": "solutions",
   "cold-email-agency": "solutions",
   "cold-email-infrastructure": "solutions",
+  "corporate-ai-infrastructure-setup": "solutions",
   "corporate-digital-gifting": "solutions",
   "corporate-website-development": "solutions",
   "crm-management": "custom-software-development",
   "custom-data-architecture-database-design": "solutions",
   "custom-erp-crm-integrations": "solutions",
+  "customer-service-automation": "solutions",
+  "data-silos-automation": "solutions",
   "distributor-finding": "solutions",
   "digital-engineering-rd-software": "solutions",
   "email-automation": "solutions",
@@ -1278,6 +1304,8 @@ const LEGACY_DELETED_SERVICE_TARGETS = {
   "markt-beschleuniger-programm": "solutions",
   "markt-grundlagen-programm": "solutions",
   "onboarding": "solutions",
+  "on-premise-ai-setup": "solutions",
+  "operational-load-reduction": "solutions",
   "unternehmens-digitale-geschenke": "solutions",
   "outbound-lead-generation": "solutions",
   "outbound-marketing-agency": "solutions",
@@ -1290,9 +1318,11 @@ const LEGACY_DELETED_SERVICE_TARGETS = {
   "revops-crm-setup": "ai-content-infrastructure",
   "revops-infrastructure": "ai-content-infrastructure",
   "sales-development-agency": "solutions",
+  "sales-marketing-automation": "solutions",
   "sales-protection-services": "solutions",
   "schutzdienstleistungen": "solutions",
   "secure-email-workplace-setup": "solutions",
+  "smart-factory-optimization": "solutions",
   "speed-to-lead": "solutions",
   "teilzeit-bizdev-team": "solutions",
   "turnkey-growth-infrastructure": "solutions",
@@ -1317,18 +1347,7 @@ Object.keys(LEGACY_REDIRECT_TARGETS).forEach((source) => {
 });
 delete LEGACY_REDIRECT_TARGETS.solutions;
 
-const REACTIVATED_SERVICE_PAGES = [
-    'b2b-dealer-customer-portals',
-    'corporate-website-development',
-    'custom-data-architecture-database-design',
-    'custom-erp-crm-integrations',
-    'digital-engineering-rd-software',
-    'enterprise-bi-dashboards',
-    'human-in-the-loop-ai-testing',
-    'internal-operational-applications',
-    'legacy-system-modernization',
-    'mvp-development-corporate-spinoff'
-];
+const REACTIVATED_SERVICE_PAGES = [];
 
 REACTIVATED_SERVICE_PAGES.forEach((slug) => {
     LEGACY_REDIRECT_ONLY_PAGES.delete(slug);
@@ -1443,8 +1462,8 @@ function getHreflangUrls(templateName) {
     if (services.some(service => service.id === templateName)) {
         return {
             en: `${templateName}.html`,
-            de: `de/${templateName}.html`,
-            fr: `fr/${templateName}.html`
+            de: 'de/solutions.html',
+            fr: 'fr/solutions.html'
         };
     }
 
@@ -4240,7 +4259,7 @@ function writeRedirectsFile() {
 }
 
 function cleanupLegacyRedirectOutputs() {
-    const languages = ['en'];
+    const languages = ['en', 'de', 'fr'];
 
     LEGACY_REDIRECT_ONLY_PAGES.forEach(page => {
         languages.forEach(lang => {

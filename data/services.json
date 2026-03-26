@@ -1,192 +1,367 @@
 [
   {
-    "id": "corporate-ai-infrastructure-setup",
-    "name": "Corporate AI Infrastructure Setup",
-    "slug_pattern": "corporate-ai-infrastructure-setup-{{CITY_SLUG}}",
-    "title_template": "Corporate AI Setup {{CITY_NAME}} | Your Company's Own AI Environment",
-    "description_template": "We build a private AI workspace for your company where your team can use AI tools safely, without your business data leaving your control.",
-    "icon": "brain",
+    "id": "ai-opportunity-review",
+    "name": "AI Opportunity Review",
+    "slug_pattern": "ai-opportunity-review-{{CITY_SLUG}}",
+    "title_template": "AI Opportunity Review {{CITY_NAME}} | Find Where AI Can Make or Save Money",
+    "description_template": "You give us the right business material. We hide private personal data and sensitive details where needed, then use our own AI review system to find where AI can increase revenue, reduce cost, improve cash flow, and remove waste.",
+    "icon": "search",
     "template": "city-landing",
-    "category": "ai-solutions"
+    "category": "ai-solutions",
+    "badge": "Service 1",
+    "commercial_model": "Fixed-fee review",
+    "starting_price": "Starts at EUR 3,000",
+    "good_fit": "You know AI matters, but you do not want to guess where to start.",
+    "outcomes": [
+      {
+        "title": "Clear priorities",
+        "description": "You see where AI can create the biggest business value first."
+      },
+      {
+        "title": "Less guesswork",
+        "description": "You stop chasing random tools and focus on real opportunities."
+      },
+      {
+        "title": "Safer starting point",
+        "description": "Private details are hidden where needed before the review starts."
+      }
+    ],
+    "problems": [
+      {
+        "icon": "circle-help",
+        "title": "You know AI is important but the next step is unclear",
+        "description": "Your team has tried public AI tools, but nobody knows what the real business opportunity is."
+      },
+      {
+        "icon": "coins",
+        "title": "You want real business results, not just faster typing",
+        "description": "The goal is more revenue, lower cost, better cash flow, and better control."
+      },
+      {
+        "icon": "folder",
+        "title": "Your business knowledge is spread across too many files and systems",
+        "description": "Important information exists, but nobody has reviewed it properly through an AI lens."
+      }
+    ],
+    "process_steps": [
+      {
+        "title": "You share the right material",
+        "description": "We collect the business material we need and remove private details where needed."
+      },
+      {
+        "title": "We run the review",
+        "description": "Our own AI review system looks for places where AI can make or save money."
+      },
+      {
+        "title": "We give you a clear shortlist",
+        "description": "You get the best opportunities in simple business language, not theory."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Do we need to prepare perfect data first?",
+        "a": "No. We work with the material you already have and organize the review around it."
+      },
+      {
+        "q": "Do you handle private or sensitive information carefully?",
+        "a": "Yes. We hide private personal data and sensitive details where needed before review."
+      },
+      {
+        "q": "What do we get at the end?",
+        "a": "You get a simple list of the best AI opportunities for your business and which ones deserve attention first."
+      }
+    ]
   },
   {
-    "id": "on-premise-ai-setup",
-    "name": "On-Premise AI Setup",
-    "slug_pattern": "on-premise-ai-setup-{{CITY_SLUG}}",
-    "title_template": "On-Premise AI Setup {{CITY_NAME}} | AI That Runs on Your Servers",
-    "description_template": "We install AI models directly on your own servers so your sensitive business data never leaves your building or gets sent to outside services.",
-    "icon": "server-cog",
+    "id": "ai-plan",
+    "name": "AI Plan",
+    "slug_pattern": "ai-plan-{{CITY_SLUG}}",
+    "title_template": "AI Plan {{CITY_NAME}} | Turn Good AI Ideas Into a Real Plan",
+    "description_template": "We turn the findings into a simple working plan. We decide what to do first, what can be a short project, what should be monthly support, what budget makes sense, and how the work should move over time.",
+    "icon": "map",
     "template": "city-landing",
-    "category": "ai-solutions"
+    "category": "ai-solutions",
+    "badge": "Service 2",
+    "commercial_model": "Fixed-fee planning service",
+    "starting_price": "Starts at EUR 2,000",
+    "good_fit": "You already have ideas, but you need a clear order, budget, and business model before building.",
+    "outcomes": [
+      {
+        "title": "Simple next steps",
+        "description": "You know what to do now, what to do later, and what to ignore."
+      },
+      {
+        "title": "Clear buying model",
+        "description": "We shape the work as a short project, a monthly service, or a mix of both."
+      },
+      {
+        "title": "Better spending",
+        "description": "You stop wasting money on work that should not come first."
+      }
+    ],
+    "problems": [
+      {
+        "icon": "shuffle",
+        "title": "Too many AI ideas are competing at once",
+        "description": "Different teams want different things and nobody knows what comes first."
+      },
+      {
+        "icon": "wallet",
+        "title": "Budget decisions are hard without a plan",
+        "description": "You need a simple commercial model before you commit to build work."
+      },
+      {
+        "icon": "calendar-range",
+        "title": "You want movement, but not chaos",
+        "description": "The business needs a clear order of work so the rollout stays practical."
+      }
+    ],
+    "process_steps": [
+      {
+        "title": "We review the opportunities",
+        "description": "We take the findings and rank them by business value, effort, and urgency."
+      },
+      {
+        "title": "We shape the work",
+        "description": "We decide what should be fixed-fee work, what should be monthly work, and what should wait."
+      },
+      {
+        "title": "You get the plan",
+        "description": "You get a simple plan with order, scope, and a clear commercial path."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can we buy this without the review first?",
+        "a": "Yes. If you already know enough about the business case, we can start with the plan."
+      },
+      {
+        "q": "Do you tell us whether something should be a project or a monthly service?",
+        "a": "Yes. That is one of the main reasons for this service."
+      },
+      {
+        "q": "Is this a strategy deck?",
+        "a": "No. This is a working plan for real delivery."
+      }
+    ]
   },
   {
-    "id": "ai-data-security-layer",
-    "name": "AI Data Security Layer",
-    "slug_pattern": "ai-data-security-layer-{{CITY_SLUG}}",
-    "title_template": "AI Data Security {{CITY_NAME}} | Stop Data Leaks to AI Tools",
-    "description_template": "We add a protection layer that stops your employees from accidentally sharing confidential company data with public AI tools like ChatGPT.",
-    "icon": "shield-alert",
+    "id": "ai-build-setup",
+    "name": "AI Build & Setup",
+    "slug_pattern": "ai-build-setup-{{CITY_SLUG}}",
+    "title_template": "AI Build & Setup {{CITY_NAME}} | Build the Tools and Workflows Around AI",
+    "description_template": "We do the real work. We build the tools, software, automations, and workflows around AI, then connect them to the way your business already works.",
+    "icon": "wrench",
     "template": "city-landing",
-    "category": "ai-solutions"
+    "category": "custom-software",
+    "badge": "Service 3",
+    "commercial_model": "Fixed-price project or monthly build partner",
+    "starting_price": "Projects start at EUR 8,000. Monthly work starts at EUR 4,000.",
+    "good_fit": "You already know what should be built and want a team to set it up properly.",
+    "outcomes": [
+      {
+        "title": "Real delivery",
+        "description": "Ideas turn into working tools and working business flows."
+      },
+      {
+        "title": "Better fit",
+        "description": "The work is shaped around how your company already operates."
+      },
+      {
+        "title": "Less friction",
+        "description": "The new setup is connected to the tools and processes your team already uses."
+      }
+    ],
+    "problems": [
+      {
+        "icon": "briefcase",
+        "title": "You know what needs to be built, but nobody is building it",
+        "description": "The business is clear on direction, but the delivery is stuck."
+      },
+      {
+        "icon": "blocks",
+        "title": "Your current tools do not work together well",
+        "description": "The value is blocked because the systems, steps, and ownership are fragmented."
+      },
+      {
+        "icon": "hourglass",
+        "title": "Internal teams are already full",
+        "description": "The work matters, but there is no spare time to design, build, and set it up properly."
+      }
+    ],
+    "process_steps": [
+      {
+        "title": "We scope the build",
+        "description": "We turn the plan into clear work with clear boundaries."
+      },
+      {
+        "title": "We build and connect it",
+        "description": "We set up the tools, software, and workflows around AI."
+      },
+      {
+        "title": "We launch it properly",
+        "description": "We test the work, fix the rough edges, and get it ready for daily use."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Do you only work on new systems?",
+        "a": "No. We can also improve or extend systems you already have."
+      },
+      {
+        "q": "Can this be bought as a monthly service instead of one big project?",
+        "a": "Yes. We can shape the build work around your timeline and budget."
+      },
+      {
+        "q": "Do you also set up the workflow around the tool?",
+        "a": "Yes. We do not stop at the tool itself. We set up how the work should run around it."
+      }
+    ]
   },
   {
-    "id": "agentic-ai-development",
-    "name": "Agentic AI Development",
-    "slug_pattern": "agentic-ai-development-{{CITY_SLUG}}",
-    "title_template": "AI Automation Agents {{CITY_NAME}} | AI That Does the Work",
-    "description_template": "We build AI systems that carry out tasks on their own inside your business software — things like updating records, sending follow-ups, or processing orders — without anyone having to do it manually.",
-    "icon": "workflow",
+    "id": "ai-training",
+    "name": "AI Training",
+    "slug_pattern": "ai-training-{{CITY_SLUG}}",
+    "title_template": "AI Training {{CITY_NAME}} | Train Your Team to Use AI Properly",
+    "description_template": "We train your team on the new setup, on existing AI tools, or on both. The goal is simple: better use, better output, better decisions, and more value from the tools you already pay for.",
+    "icon": "graduation-cap",
     "template": "city-landing",
-    "category": "ai-solutions"
+    "category": "ai-solutions",
+    "badge": "Service 4",
+    "commercial_model": "Standalone workshop or monthly training plan",
+    "starting_price": "Starts at EUR 1,500",
+    "good_fit": "Your team has access to AI tools, but usage is weak, messy, or inconsistent.",
+    "outcomes": [
+      {
+        "title": "Better team use",
+        "description": "People understand what to do, what not to do, and how to get better results."
+      },
+      {
+        "title": "More value from existing tools",
+        "description": "The tools you already pay for start creating more business value."
+      },
+      {
+        "title": "Stronger adoption",
+        "description": "The new setup becomes part of daily work instead of being ignored."
+      }
+    ],
+    "problems": [
+      {
+        "icon": "users",
+        "title": "People have access to AI but do not use it well",
+        "description": "The tool is there, but the business is not getting much value from it."
+      },
+      {
+        "icon": "triangle-alert",
+        "title": "Team usage is inconsistent",
+        "description": "Some people use AI too much, some avoid it, and nobody follows the same good habits."
+      },
+      {
+        "icon": "piggy-bank",
+        "title": "You are paying for tools without strong return",
+        "description": "Without training, even good tools stay underused."
+      }
+    ],
+    "process_steps": [
+      {
+        "title": "We look at the current level",
+        "description": "We check what people already know and where the gaps are."
+      },
+      {
+        "title": "We train around real work",
+        "description": "We keep the sessions practical and tied to the jobs your team actually does."
+      },
+      {
+        "title": "We help the habits stick",
+        "description": "We make sure the learning turns into daily use."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can we buy training without buying build work?",
+        "a": "Yes. Training can be a standalone service."
+      },
+      {
+        "q": "Can you train teams on tools they already use?",
+        "a": "Yes. We can train around your current setup."
+      },
+      {
+        "q": "Is this only for technical teams?",
+        "a": "No. We can train business teams as well."
+      }
+    ]
   },
   {
-    "id": "smart-factory-optimization",
-    "name": "Smart Factory Optimization",
-    "slug_pattern": "smart-factory-optimization-{{CITY_SLUG}}",
-    "title_template": "Smart Factory AI {{CITY_NAME}} | Cut Downtime & Energy Costs",
-    "description_template": "We connect AI to your production machines and factory data to reduce downtime, cut energy waste, and help your team make better decisions on the factory floor.",
-    "icon": "factory",
+    "id": "ai-support",
+    "name": "AI Support",
+    "slug_pattern": "ai-support-{{CITY_SLUG}}",
+    "title_template": "AI Support {{CITY_NAME}} | Keep Your AI Tools and Workflows Working",
+    "description_template": "We stay on after launch or step in when you already have something running. We fix issues, improve results, support difficult cases, and help the setup keep working as the business changes.",
+    "icon": "life-buoy",
     "template": "city-landing",
-    "category": "ai-solutions"
-  },
-  {
-    "id": "sales-marketing-automation",
-    "name": "Sales & Marketing Automation",
-    "slug_pattern": "sales-marketing-automation-{{CITY_SLUG}}",
-    "title_template": "Sales & Marketing Automation {{CITY_NAME}} | Close Deals Faster",
-    "description_template": "We use AI to automatically sort incoming leads, draft proposals, and speed up your sales process so your team can focus on closing instead of admin work.",
-    "icon": "megaphone",
-    "template": "city-landing",
-    "category": "ai-solutions"
-  },
-  {
-    "id": "customer-service-automation",
-    "name": "Customer Service Automation",
-    "slug_pattern": "customer-service-automation-{{CITY_SLUG}}",
-    "title_template": "Customer Service AI {{CITY_NAME}} | Instant Answers for Customers",
-    "description_template": "We build AI chat and voice assistants that answer common customer questions instantly, 24/7, so your team only handles the cases that really need a human.",
-    "icon": "message-circle",
-    "template": "city-landing",
-    "category": "ai-solutions"
-  },
-  {
-    "id": "data-silos-automation",
-    "name": "Breaking Down Data Silos",
-    "slug_pattern": "data-silos-automation-{{CITY_SLUG}}",
-    "title_template": "Data Automation {{CITY_NAME}} | Connect Your Scattered Information",
-    "description_template": "We use AI to automatically pull data from emails, PDFs, and spreadsheets and push it into your business software, so nothing falls through the cracks.",
-    "icon": "database",
-    "template": "city-landing",
-    "category": "ai-solutions"
-  },
-  {
-    "id": "operational-load-reduction",
-    "name": "Operational Load Reduction",
-    "slug_pattern": "operational-load-reduction-{{CITY_SLUG}}",
-    "title_template": "AI Workload Reduction {{CITY_NAME}} | Less Repetitive Work for Your Team",
-    "description_template": "We identify the most time-consuming repetitive tasks in your business and automate them with AI, freeing up your team to focus on work that actually matters.",
-    "icon": "layers-3",
-    "template": "city-landing",
-    "category": "ai-solutions"
-  },
-  {
-    "id": "custom-erp-crm-integrations",
-    "name": "Custom ERP/CRM Integrations",
-    "slug_pattern": "custom-erp-crm-integrations-{{CITY_SLUG}}",
-    "title_template": "ERP & CRM Integration {{CITY_NAME}} | Connect Your Business Tools",
-    "description_template": "We connect your separate business tools — like your accounting software, CRM, and inventory system — so data flows between them automatically instead of being re-entered by hand.",
-    "icon": "link-2",
-    "template": "city-landing",
-    "category": "custom-software"
-  },
-  {
-    "id": "digital-engineering-rd-software",
-    "name": "Digital Engineering Software",
-    "slug_pattern": "digital-engineering-rd-software-{{CITY_SLUG}}",
-    "title_template": "Engineering Software {{CITY_NAME}} | Custom R&D Tools",
-    "description_template": "We build custom software for engineering and R&D teams that need calculation tools, simulation apps, or design software built specifically for their work.",
-    "icon": "drafting-compass",
-    "template": "city-landing",
-    "category": "custom-software"
-  },
-  {
-    "id": "b2b-dealer-customer-portals",
-    "name": "B2B Dealer & Customer Portals",
-    "slug_pattern": "b2b-dealer-customer-portals-{{CITY_SLUG}}",
-    "title_template": "Dealer & Customer Portal {{CITY_NAME}} | Self-Service for Your Clients",
-    "description_template": "We build a private online portal where your dealers and customers can place orders, check stock, submit service requests, and manage their account without calling your team.",
-    "icon": "panel-top",
-    "template": "city-landing",
-    "category": "custom-software"
-  },
-  {
-    "id": "human-in-the-loop-ai-testing",
-    "name": "Human-in-the-Loop AI Testing",
-    "slug_pattern": "human-in-the-loop-ai-testing-{{CITY_SLUG}}",
-    "title_template": "AI-Assisted QA Testing {{CITY_NAME}} | Fast Checks, Human Review",
-    "description_template": "We combine AI-powered automated testing with human review to check your data, content, or digital products quickly and catch mistakes that machines miss.",
-    "icon": "badge-check",
-    "template": "city-landing",
-    "category": "custom-software"
-  },
-  {
-    "id": "legacy-system-modernization",
-    "name": "Legacy System Modernization",
-    "slug_pattern": "legacy-system-modernization-{{CITY_SLUG}}",
-    "title_template": "Legacy System Upgrade {{CITY_NAME}} | Replace Old Software Without Data Loss",
-    "description_template": "We replace outdated or unsupported software with a modern system your team can actually use, without losing any of your existing data.",
-    "icon": "refresh-ccw",
-    "template": "city-landing",
-    "category": "custom-software"
-  },
-  {
-    "id": "enterprise-bi-dashboards",
-    "name": "Enterprise BI & Dashboards",
-    "slug_pattern": "enterprise-bi-dashboards-{{CITY_SLUG}}",
-    "title_template": "Reporting Dashboards {{CITY_NAME}} | See Your Business in Real Time",
-    "description_template": "We build custom dashboards that show your sales, production, and financial data in real time on a single screen, so managers can make decisions fast.",
-    "icon": "bar-chart-3",
-    "template": "city-landing",
-    "category": "custom-software"
-  },
-  {
-    "id": "internal-operational-applications",
-    "name": "Internal Operational Applications",
-    "slug_pattern": "internal-operational-applications-{{CITY_SLUG}}",
-    "title_template": "Internal Apps {{CITY_NAME}} | Tools Built for Your Team",
-    "description_template": "We build web and mobile apps for your staff — whether they're in the field, at a warehouse, or in the office — that match how they actually work.",
-    "icon": "tablet-smartphone",
-    "template": "city-landing",
-    "category": "custom-software"
-  },
-  {
-    "id": "corporate-website-development",
-    "name": "Corporate Website Development",
-    "slug_pattern": "corporate-website-development-{{CITY_SLUG}}",
-    "title_template": "Corporate Website {{CITY_NAME}} | Modern Site That Converts",
-    "description_template": "We build fast, professional corporate websites designed to make a strong first impression, explain what you do, and turn visitors into enquiries.",
-    "icon": "globe",
-    "template": "city-landing",
-    "category": "custom-software"
-  },
-  {
-    "id": "mvp-development-corporate-spinoff",
-    "name": "MVP Development",
-    "slug_pattern": "mvp-development-corporate-spinoff-{{CITY_SLUG}}",
-    "title_template": "MVP Development {{CITY_NAME}} | Test Your Idea Before You Scale",
-    "description_template": "We build a working, stripped-down version of your product idea in a few weeks so you can test it with real users before investing in the full build.",
-    "icon": "rocket",
-    "template": "city-landing",
-    "category": "custom-software"
-  },
-  {
-    "id": "custom-data-architecture-database-design",
-    "name": "Custom Data Architecture & Database Design",
-    "slug_pattern": "custom-data-architecture-database-design-{{CITY_SLUG}}",
-    "title_template": "Database Design {{CITY_NAME}} | Clean Data Structure for Your Business",
-    "description_template": "We organize and structure your company data properly so it's accurate, easy to access, and ready to be used by AI tools or reporting systems in the future.",
-    "icon": "database",
-    "template": "city-landing",
-    "category": "custom-software"
+    "category": "custom-software",
+    "badge": "Service 5",
+    "commercial_model": "Monthly support or pay-as-you-go help",
+    "starting_price": "Starts at EUR 1,500 per month or EUR 150 per hour",
+    "good_fit": "You already have AI tools or workflows and need reliable help to keep them useful.",
+    "outcomes": [
+      {
+        "title": "Less downtime",
+        "description": "Problems are fixed before they turn into bigger business issues."
+      },
+      {
+        "title": "Better long-term value",
+        "description": "The setup keeps improving instead of slowly becoming dead weight."
+      },
+      {
+        "title": "Help when things get messy",
+        "description": "You have a clear place to go when the work becomes difficult or unusual."
+      }
+    ],
+    "problems": [
+      {
+        "icon": "wrench",
+        "title": "You already have AI running but it needs help",
+        "description": "The first launch is done, but the business still needs support."
+      },
+      {
+        "icon": "shield",
+        "title": "Nobody owns the hard edge cases",
+        "description": "When something unusual happens, the team does not know who should fix it."
+      },
+      {
+        "icon": "refresh-cw",
+        "title": "The business keeps changing",
+        "description": "Without support, the setup falls behind the way the company actually works."
+      }
+    ],
+    "process_steps": [
+      {
+        "title": "We review what is already in place",
+        "description": "We look at the current setup and the current problems."
+      },
+      {
+        "title": "We fix and improve",
+        "description": "We handle support issues and make the setup stronger over time."
+      },
+      {
+        "title": "We stay available",
+        "description": "You get ongoing help based on the support model that fits you best."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can we buy support without buying the build from you first?",
+        "a": "Yes. We can support setups that were built elsewhere."
+      },
+      {
+        "q": "Do you only offer monthly support?",
+        "a": "No. We can also help on a pay-as-you-go basis for specific needs."
+      },
+      {
+        "q": "Can support include improvements, not just fixes?",
+        "a": "Yes. Support can include small improvements and ongoing cleanup."
+      }
+    ]
   }
 ]

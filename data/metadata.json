@@ -1,8 +1,8 @@
 {
   "index": {
-    "title": "AI Integration & Custom Software | Go Expandia",
-    "description": "We build secure AI systems and custom software that removes operational friction and helps teams move faster.",
-    "keywords": "AI integration, AI solutions, custom software development, AI automation, ERP integration, enterprise dashboards, Go Expandia",
+    "title": "AI Support for Companies | Go Expandia",
+    "description": "We help companies find where AI can make or save money, build the right tools, train teams, and support the work after launch.",
+    "keywords": "AI support for companies, AI opportunity review, AI plan, AI build and setup, AI training, AI support, Go Expandia",
     "translations": {
       "tr": {
         "title": "Yapay Zeka Entegrasyonu ve Özel Yazılım | Go Expandia",
@@ -22,9 +22,9 @@
     }
   },
   "solutions": {
-    "title": "AI Solutions & Custom Software | Go Expandia",
-    "description": "Explore our two core service categories: secure AI solutions and custom software development.",
-    "keywords": "AI solutions, custom software development, enterprise infrastructure, automation",
+    "title": "AI Support Services | Go Expandia",
+    "description": "One main solution, five simple services: AI Opportunity Review, AI Plan, AI Build and Setup, AI Training, and AI Support.",
+    "keywords": "AI services, AI support services, AI opportunity review, AI plan, AI build and setup, AI training, AI support",
     "translations": {
       "tr": {
         "title": "Yapay Zeka ve Özel Yazılım Çözümleri | Go Expandia",
@@ -42,6 +42,31 @@
         "keywords": "solutions IA, développement logiciel sur mesure, infrastructure d'entreprise"
       }
     }
+  },
+  "ai-opportunity-review": {
+    "title": "AI Opportunity Review | Go Expandia",
+    "description": "We review your business material, hide private details where needed, and find the best places to use AI first.",
+    "keywords": "AI opportunity review, AI business review, AI use case discovery, AI audit"
+  },
+  "ai-plan": {
+    "title": "AI Plan | Go Expandia",
+    "description": "We turn AI opportunities into a simple plan with clear order, budget shape, and delivery path.",
+    "keywords": "AI plan, AI roadmap, AI rollout plan, AI project planning"
+  },
+  "ai-build-setup": {
+    "title": "AI Build & Setup | Go Expandia",
+    "description": "We build the tools, workflows, and software around AI and connect them to the way your business works.",
+    "keywords": "AI build, AI setup, AI implementation, AI workflow development, AI software setup"
+  },
+  "ai-training": {
+    "title": "AI Training | Go Expandia",
+    "description": "We train teams to use AI tools properly so the business gets more value from them.",
+    "keywords": "AI training, AI team training, business AI training, AI adoption training"
+  },
+  "ai-support": {
+    "title": "AI Support | Go Expandia",
+    "description": "We support AI tools and workflows after launch or step in to help with setups you already have.",
+    "keywords": "AI support, AI maintenance, AI workflow support, AI help service"
   },
   "about": {
     "title": "About Us | Managed Operations Partner Europe | Go Expandia",

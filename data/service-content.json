@@ -2,34 +2,38 @@
   "ai-solutions": {
     "en": {
       "intro": [
-        "We reduce operational load and increase decision speed with secure AI systems designed for the modern enterprise.",
-        "From on-premise models and AI data protection layers to agentic workflows, conversational AI, and smart factory optimization, we help teams execute faster without losing control of data.",
-        "Our AI Solutions category is built for companies that want automation, intelligence, and clear governance in one stack."
+        "Most companies know public AI tools. That is only the first step.",
+        "We help companies move from simple AI use to real business use with a clear review, a clear plan, real delivery, training, and support.",
+        "The goal is simple: use AI to make more money, reduce cost, improve cash flow, and run the business better."
       ],
       "pain_points": [
-        "Teams wasting time on repetitive manual work",
-        "Sensitive data at risk when employees use public AI tools",
-        "Disconnected data sources delaying action and insight",
-        "Slow customer response times and missed opportunities",
-        "No AI governance layer to keep automation safe"
+        "AI use inside the company is random and unstructured",
+        "Leaders do not know where AI can create real business value first",
+        "Good ideas are not turning into clear plans or working tools",
+        "Teams have access to AI but do not use it well",
+        "AI setups are hard to maintain without ongoing support"
       ],
       "benefits": [
-        "**Data Protection:** AI layers that keep trade secrets and customer data inside your environment.",
-        "**Operational Speed:** Automations and agents that remove bottlenecks across sales, service, and operations.",
-        "**Practical Intelligence:** AI systems integrated into real workflows, not isolated demos."
+        "**Clear Direction:** Start with the best business opportunities instead of random tools.",
+        "**Real Delivery:** Turn AI ideas into working tools, workflows, and daily use.",
+        "**Long-Term Value:** Keep improving the setup with training and support after launch."
       ],
       "faq": [
         {
-          "q": "How is your AI Solutions category different from generic AI consulting?",
-          "a": "We build usable, secure AI infrastructure and workflows that plug into your business systems instead of giving strategy slides only."
+          "q": "Do we need to know exactly what we want before talking to you?",
+          "a": "No. We can start with the review and help you find the right first move."
         },
         {
-          "q": "Can the AI run only on our servers?",
-          "a": "Yes. We support on-premise and closed-network deployments for sensitive data and regulated environments."
+          "q": "Can we start small?",
+          "a": "Yes. Many companies start with one review, one plan, one build, one training session, or one support need."
         },
         {
-          "q": "Do you handle AI safety and data protection?",
-          "a": "Yes. We design data shields and governance layers that prevent sensitive information from leaking into external models."
+          "q": "Can you work with tools we already have?",
+          "a": "Yes. We can build around your current tools and support what is already in place."
+        },
+        {
+          "q": "Do you only work on full delivery?",
+          "a": "No. Training and support can also be bought as standalone services."
         }
       ]
     },
@@ -103,34 +107,34 @@
   "custom-software-development": {
     "en": {
       "intro": [
-        "We modernize bulky systems and build custom software that fits how your company actually operates.",
-        "From ERP/CRM integrations and BI dashboards to internal apps, portals, MVPs, and legacy modernization, we design software around your processes instead of forcing your teams to adapt to generic tools.",
-        "Our Custom Software Development category helps companies unify systems, remove manual work, and create software assets that compound over time."
+        "Some companies need a clear plan. Some already know what should be built.",
+        "We build the AI tools, software pieces, and workflows that turn the plan into something real.",
+        "Then we keep the setup working with support, fixes, and small improvements over time."
       ],
       "pain_points": [
-        "Disconnected tools and repeated data entry across systems",
-        "Legacy software that is slow, risky, or expensive to maintain",
-        "No single source of truth for financial, sales, and production data",
-        "Customers and dealers lacking self-service digital experiences",
-        "New ideas blocked by the cost and time of building prototypes"
+        "Good AI ideas are blocked because nobody is building them",
+        "Internal teams do not have time to handle setup and follow-through",
+        "Existing workflows are messy and hard to connect to AI",
+        "Tools lose value after launch because support is missing",
+        "Small issues keep growing because nobody owns them"
       ],
       "benefits": [
-        "**Connected Systems:** APIs and custom software that unify your business stack.",
-        "**Modern Architecture:** Legacy tools migrated to maintainable cloud-native foundations.",
-        "**Operational Visibility:** Dashboards and apps that help teams act on real-time data."
+        "**Working Systems:** The ideas become real tools and real workflow changes.",
+        "**Better Fit:** The setup is shaped around the way your business already works.",
+        "**Ongoing Help:** Support keeps the system useful after the first launch."
       ],
       "faq": [
         {
-          "q": "What kind of software do you build?",
-          "a": "We build integrations, portals, dashboards, internal apps, MVPs, database architecture, QA workflows, and modernization projects."
+          "q": "Can you build around our current systems?",
+          "a": "Yes. We can work with what you already have and improve it step by step."
         },
         {
-          "q": "Can you work with our existing ERP and CRM tools?",
-          "a": "Yes. We connect systems like SAP, Salesforce, and Odoo into one operational environment."
+          "q": "Do you only work on large projects?",
+          "a": "No. Build work can be shaped as a project or as monthly delivery."
         },
         {
-          "q": "Do you also modernize legacy systems?",
-          "a": "Yes. We migrate old systems into modern architectures with a focus on data safety and business continuity."
+          "q": "Can support include improvements as well as fixes?",
+          "a": "Yes. Support can include cleanup, fixes, and small improvements over time."
         }
       ]
     },
