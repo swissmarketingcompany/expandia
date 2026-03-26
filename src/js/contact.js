@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const DESTINATION_EMAIL = 'omaycompany@gmail.com';
 
     // --- 1. FAQ Functionality (Keep existing) ---
     const faqItems = document.querySelectorAll('.collapse input[type="checkbox"]');
@@ -62,7 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const payload = {
                 email: formData.get('email'),
-                message: fullMessage
+                message: fullMessage,
+                to: DESTINATION_EMAIL
             };
 
             try {
@@ -118,7 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // C. PAYLOAD
             const payload = {
                 email: formData.get('email'),
-                message: 'Newsletter Subscription Request' // Static message for newsletter
+                message: 'Newsletter Subscription Request', // Static message for newsletter
+                to: DESTINATION_EMAIL
             };
 
             try {

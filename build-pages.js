@@ -1002,7 +1002,8 @@ const SERVICE_PROCESSES = {
 
 function buildGenericServiceBlueprint(service, lang = 'en') {
     const categoryMeta = getLocalizedCategoryMeta(service.category, lang);
-    const categoryContent = serviceContent[service.category] && (serviceContent[service.category][lang] || serviceContent[service.category].en);
+    const categoryContentKey = service.category === 'custom-software' ? 'custom-software-development' : service.category;
+    const categoryContent = serviceContent[categoryContentKey] && (serviceContent[categoryContentKey][lang] || serviceContent[categoryContentKey].en);
     if (!categoryMeta || !categoryContent) {
         return null;
     }
@@ -1330,6 +1331,24 @@ Object.keys(LEGACY_REDIRECT_TARGETS).forEach((source) => {
     }
 });
 delete LEGACY_REDIRECT_TARGETS.solutions;
+
+const REACTIVATED_SERVICE_PAGES = [
+    'b2b-dealer-customer-portals',
+    'corporate-website-development',
+    'custom-data-architecture-database-design',
+    'custom-erp-crm-integrations',
+    'digital-engineering-rd-software',
+    'enterprise-bi-dashboards',
+    'human-in-the-loop-ai-testing',
+    'internal-operational-applications',
+    'legacy-system-modernization',
+    'mvp-development-corporate-spinoff'
+];
+
+REACTIVATED_SERVICE_PAGES.forEach((slug) => {
+    LEGACY_REDIRECT_ONLY_PAGES.delete(slug);
+    delete LEGACY_REDIRECT_TARGETS[slug];
+});
 
 const RETIRED_CITY_SLUGS = new Set();
 const RETIRED_CITY_REDIRECT_TARGET = 'city-locations';
@@ -1727,9 +1746,21 @@ function buildPage(templateName, outputName, lang = 'en') {
             readTime: "5 min read"
         }));
 
-        // Combine new and legacy (legacy mostly EN, could filter or translate if needed)
-        // We put NEW articles FIRST as requested
-        const combinedArticles = [...newArticles, ...legacyBlogPosts];
+        const isLeadGenerationArticle = (article) => {
+            const haystack = `${article.title || ''} ${article.url || ''} ${article.tags || ''} ${article.excerpt || ''}`.toLowerCase();
+            return (
+                haystack.includes('lead generation') ||
+                haystack.includes('lead-gen') ||
+                haystack.includes('lead scoring') ||
+                haystack.includes('speed-to-lead') ||
+                haystack.includes('pipeline generation')
+            );
+        };
+
+        // Keep new AI/IT management playbooks first and remove lead-generation focused posts.
+        const filteredNewArticles = newArticles.filter(article => !isLeadGenerationArticle(article));
+        const filteredLegacyArticles = legacyBlogPosts.filter(article => !isLeadGenerationArticle(article));
+        const combinedArticles = [...filteredNewArticles, ...filteredLegacyArticles];
 
         htmlTemplate = htmlTemplate.replace('{{BLOG_ARTICLES_JSON}}', JSON.stringify(combinedArticles));
     }

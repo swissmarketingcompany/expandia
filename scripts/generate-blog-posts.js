@@ -6,6 +6,97 @@ const serviceContent = require('../data/service-content.json');
 const languages = ['en', 'de', 'fr', 'tr'];
 
 const blogTopics = [
+    // AI & IT Management Playbooks (priority order)
+    {
+        slug: 'ai-governance-operating-model-playbook',
+        serviceId: 'ai-studio',
+        title: {
+            en: 'AI Governance Operating Model: Enterprise Playbook',
+            de: 'KI-Governance-Betriebsmodell: Enterprise-Playbook',
+            fr: 'Modèle opérationnel de gouvernance IA : Playbook entreprise',
+            tr: 'Yapay Zeka Yönetişim İşletim Modeli: Kurumsal Rehber'
+        }
+    },
+    {
+        slug: 'ai-service-desk-copilot-playbook',
+        serviceId: 'ai-studio',
+        title: {
+            en: 'AI Service Desk Copilot: IT Support Playbook',
+            de: 'KI-Service-Desk-Copilot: IT-Support-Playbook',
+            fr: 'Copilote IA pour service desk : Playbook support IT',
+            tr: 'Yapay Zeka Servis Masası Copilotu: BT Destek Rehberi'
+        }
+    },
+    {
+        slug: 'ai-change-management-adoption-playbook',
+        serviceId: 'ai-studio',
+        title: {
+            en: 'AI Change Management and Adoption: Leadership Playbook',
+            de: 'KI-Change-Management und Adoption: Leadership-Playbook',
+            fr: 'Conduite du changement IA et adoption : Playbook leadership',
+            tr: 'Yapay Zeka Değişim Yönetimi ve Benimseme: Liderlik Rehberi'
+        }
+    },
+    {
+        slug: 'enterprise-rag-knowledge-ops-playbook',
+        serviceId: 'ai-studio',
+        title: {
+            en: 'Enterprise RAG and Knowledge Operations: Implementation Playbook',
+            de: 'Enterprise RAG und Knowledge Operations: Implementierungs-Playbook',
+            fr: 'RAG entreprise et opérations de connaissance : Playbook mise en oeuvre',
+            tr: 'Kurumsal RAG ve Bilgi Operasyonları: Uygulama Rehberi'
+        }
+    },
+    {
+        slug: 'ai-finops-cost-control-playbook',
+        serviceId: 'ai-studio',
+        title: {
+            en: 'AI FinOps and Cost Control: CFO-Ready Playbook',
+            de: 'AI FinOps und Kostenkontrolle: CFO-Playbook',
+            fr: 'AI FinOps et maîtrise des coûts : Playbook orienté CFO',
+            tr: 'Yapay Zeka FinOps ve Maliyet Kontrolü: CFO Odaklı Rehber'
+        }
+    },
+    {
+        slug: 'zero-trust-identity-management-playbook',
+        serviceId: 'cybersecurity',
+        title: {
+            en: 'Zero Trust Identity Management: Security Playbook',
+            de: 'Zero-Trust-Identitätsmanagement: Security-Playbook',
+            fr: 'Gestion des identités Zero Trust : Playbook sécurité',
+            tr: 'Zero Trust Kimlik Yönetimi: Güvenlik Rehberi'
+        }
+    },
+    {
+        slug: 'incident-response-automation-itops-playbook',
+        serviceId: 'managed-it',
+        title: {
+            en: 'Incident Response Automation: Modern ITOps Playbook',
+            de: 'Incident-Response-Automatisierung: Modernes ITOps-Playbook',
+            fr: 'Automatisation de la réponse aux incidents : Playbook ITOps',
+            tr: 'Olay Müdahalesi Otomasyonu: Modern ITOps Rehberi'
+        }
+    },
+    {
+        slug: 'microsoft-365-device-security-playbook',
+        serviceId: 'managed-it',
+        title: {
+            en: 'Microsoft 365 and Endpoint Security Management: Playbook',
+            de: 'Microsoft 365 und Endpoint Security Management: Playbook',
+            fr: 'Microsoft 365 et gestion de la sécurité des terminaux : Playbook',
+            tr: 'Microsoft 365 ve Uç Nokta Güvenlik Yönetimi: Rehber'
+        }
+    },
+    {
+        slug: 'it-service-management-modernization-playbook',
+        serviceId: 'managed-it',
+        title: {
+            en: 'IT Service Management Modernization: 12-Month Playbook',
+            de: 'Modernisierung des IT-Service-Managements: 12-Monats-Playbook',
+            fr: 'Modernisation de la gestion des services IT : Playbook 12 mois',
+            tr: 'BT Hizmet Yönetimi Modernizasyonu: 12 Aylık Rehber'
+        }
+    },
     // Managed IT
     {
         slug: 'why-managed-it-services-are-essential-2026',
