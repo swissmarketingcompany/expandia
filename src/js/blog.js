@@ -29,12 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (activeFilter === filter) {
                 // Deactivate current filter
                 activeFilter = null;
-                btn.classList.remove('btn-primary', 'btn-secondary', 'btn-accent', 'btn-info', 'btn-warning', 'btn-success', 'btn-error');
+                btn.classList.remove('btn-primary', 'btn-primary', 'btn-primary', 'btn-primary', 'btn-primary', 'btn-primary', 'btn-primary');
                 btn.classList.add('btn-outline');
             } else {
                 // Clear all active states
                 filterBtns.forEach(b => {
-                    b.classList.remove('btn-primary', 'btn-secondary', 'btn-accent', 'btn-info', 'btn-warning', 'btn-success', 'btn-error');
+                    b.classList.remove('btn-primary', 'btn-primary', 'btn-primary', 'btn-primary', 'btn-primary', 'btn-primary', 'btn-primary');
                     b.classList.add('btn-outline');
                 });
                 
@@ -44,12 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Add the appropriate color class based on the hover class
                 if (btn.classList.contains('hover:btn-primary')) btn.classList.add('btn-primary');
-                else if (btn.classList.contains('hover:btn-secondary')) btn.classList.add('btn-secondary');
-                else if (btn.classList.contains('hover:btn-accent')) btn.classList.add('btn-accent');
-                else if (btn.classList.contains('hover:btn-info')) btn.classList.add('btn-info');
-                else if (btn.classList.contains('hover:btn-warning')) btn.classList.add('btn-warning');
-                else if (btn.classList.contains('hover:btn-success')) btn.classList.add('btn-success');
-                else if (btn.classList.contains('hover:btn-error')) btn.classList.add('btn-error');
+                else if (btn.classList.contains('hover:btn-primary')) btn.classList.add('btn-primary');
+                else if (btn.classList.contains('hover:btn-primary')) btn.classList.add('btn-primary');
+                else if (btn.classList.contains('hover:btn-primary')) btn.classList.add('btn-primary');
+                else if (btn.classList.contains('hover:btn-primary')) btn.classList.add('btn-primary');
+                else if (btn.classList.contains('hover:btn-primary')) btn.classList.add('btn-primary');
+                else if (btn.classList.contains('hover:btn-primary')) btn.classList.add('btn-primary');
                 else btn.classList.add('btn-primary'); // fallback
             }
 
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         clearFiltersBtn.addEventListener('click', () => {
             activeFilter = null;
             filterBtns.forEach(btn => {
-                btn.classList.remove('btn-primary', 'btn-secondary', 'btn-accent', 'btn-info', 'btn-warning', 'btn-success', 'btn-error');
+                btn.classList.remove('btn-primary', 'btn-primary', 'btn-primary', 'btn-primary', 'btn-primary', 'btn-primary', 'btn-primary');
                 btn.classList.add('btn-outline');
             });
             performFilter();

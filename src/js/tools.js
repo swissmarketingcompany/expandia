@@ -865,14 +865,14 @@ function generateAssessmentRecommendations(scores, overallScore) {
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-marker bg-secondary"></div>
+                    <div class="timeline-marker bg-primary"></div>
                     <div class="timeline-content">
                         <h4 class="font-bold">Month 3-4: Pilot Implementation</h4>
                         <p class="text-sm text-base-content/70">Launch first AI solution with limited scope</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-marker bg-accent"></div>
+                    <div class="timeline-marker bg-primary"></div>
                     <div class="timeline-content">
                         <h4 class="font-bold">Month 5-6: Scale & Optimize</h4>
                         <p class="text-sm text-base-content/70">Expand successful pilots and implement additional solutions</p>
@@ -883,7 +883,7 @@ function generateAssessmentRecommendations(scores, overallScore) {
         roadmap = `
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-marker bg-warning"></div>
+                    <div class="timeline-marker bg-primary"></div>
                     <div class="timeline-content">
                         <h4 class="font-bold">Month 1-3: Foundation Building</h4>
                         <p class="text-sm text-base-content/70">Address infrastructure and team readiness gaps</p>
@@ -897,7 +897,7 @@ function generateAssessmentRecommendations(scores, overallScore) {
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-marker bg-secondary"></div>
+                    <div class="timeline-marker bg-primary"></div>
                     <div class="timeline-content">
                         <h4 class="font-bold">Month 7-9: Pilot Launch</h4>
                         <p class="text-sm text-base-content/70">Implement first AI solution with careful monitoring</p>
@@ -908,14 +908,14 @@ function generateAssessmentRecommendations(scores, overallScore) {
         roadmap = `
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-marker bg-error"></div>
+                    <div class="timeline-marker bg-primary"></div>
                     <div class="timeline-content">
                         <h4 class="font-bold">Month 1-6: Readiness Building</h4>
                         <p class="text-sm text-base-content/70">Focus on data, technology, and organizational readiness</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-marker bg-warning"></div>
+                    <div class="timeline-marker bg-primary"></div>
                     <div class="timeline-content">
                         <h4 class="font-bold">Month 7-9: AI Education & Planning</h4>
                         <p class="text-sm text-base-content/70">Team training and AI strategy development</p>

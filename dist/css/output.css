@@ -2977,22 +2977,6 @@ html{
     --btn-color: var(--fallback-n);
   }
 
-  .btn-info{
-    --btn-color: var(--fallback-in);
-  }
-
-  .btn-success{
-    --btn-color: var(--fallback-su);
-  }
-
-  .btn-warning{
-    --btn-color: var(--fallback-wa);
-  }
-
-  .btn-error{
-    --btn-color: var(--fallback-er);
-  }
-
   .prose :where(code):not(:where([class~="not-prose"] *, pre *)){
     background-color: var(--fallback-b3,oklch(var(--b3)/1));
   }
@@ -3063,22 +3047,6 @@ html{
   .btn-neutral{
     --btn-color: var(--n);
   }
-
-  .btn-info{
-    --btn-color: var(--in);
-  }
-
-  .btn-success{
-    --btn-color: var(--su);
-  }
-
-  .btn-warning{
-    --btn-color: var(--wa);
-  }
-
-  .btn-error{
-    --btn-color: var(--er);
-  }
 }
 
 .btn-secondary{
@@ -3097,30 +3065,6 @@ html{
   --tw-text-opacity: 1;
   color: var(--fallback-nc,oklch(var(--nc)/var(--tw-text-opacity)));
   outline-color: var(--fallback-n,oklch(var(--n)/1));
-}
-
-.btn-info{
-  --tw-text-opacity: 1;
-  color: var(--fallback-inc,oklch(var(--inc)/var(--tw-text-opacity)));
-  outline-color: var(--fallback-in,oklch(var(--in)/1));
-}
-
-.btn-success{
-  --tw-text-opacity: 1;
-  color: var(--fallback-suc,oklch(var(--suc)/var(--tw-text-opacity)));
-  outline-color: var(--fallback-su,oklch(var(--su)/1));
-}
-
-.btn-warning{
-  --tw-text-opacity: 1;
-  color: var(--fallback-wac,oklch(var(--wac)/var(--tw-text-opacity)));
-  outline-color: var(--fallback-wa,oklch(var(--wa)/1));
-}
-
-.btn-error{
-  --tw-text-opacity: 1;
-  color: var(--fallback-erc,oklch(var(--erc)/var(--tw-text-opacity)));
-  outline-color: var(--fallback-er,oklch(var(--er)/1));
 }
 
 .btn.glass{
@@ -4866,14 +4810,14 @@ details.collapse summary::-webkit-details-marker{
 
 .input-error{
   --tw-border-opacity: 1;
-  border-color: var(--fallback-er,oklch(var(--er)/var(--tw-border-opacity, 1)));
+  border-color: var(--fallback-p,oklch(var(--p)/var(--tw-border-opacity, 1)));
 }
 
 .input-error:focus{
   --tw-border-opacity: 1;
-  border-color: var(--fallback-er,oklch(var(--er)/var(--tw-border-opacity, 1)));
+  border-color: var(--fallback-p,oklch(var(--p)/var(--tw-border-opacity, 1)));
   --tw-ring-opacity: 1;
-  --tw-ring-color: var(--fallback-er,oklch(var(--er)/var(--tw-ring-opacity, 1)));
+  --tw-ring-color: var(--fallback-p,oklch(var(--p)/var(--tw-ring-opacity, 1)));
 }
 
 .service-card{
@@ -5961,11 +5905,6 @@ details.collapse summary::-webkit-details-marker{
   background-color: rgb(255 249 230 / var(--tw-bg-opacity, 1));
 }
 
-.bg-error{
-  --tw-bg-opacity: 1;
-  background-color: var(--fallback-er,oklch(var(--er)/var(--tw-bg-opacity, 1)));
-}
-
 .bg-gray-100{
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
@@ -6042,11 +5981,6 @@ details.collapse summary::-webkit-details-marker{
   background-color: var(--fallback-s,oklch(var(--s)/0.05));
 }
 
-.bg-warning{
-  --tw-bg-opacity: 1;
-  background-color: var(--fallback-wa,oklch(var(--wa)/var(--tw-bg-opacity, 1)));
-}
-
 .bg-warning\/10{
   background-color: var(--fallback-wa,oklch(var(--wa)/0.1));
 }
@@ -6105,6 +6039,10 @@ details.collapse summary::-webkit-details-marker{
 
 .to-buzz-light{
   --tw-gradient-to: #f8fafc var(--tw-gradient-to-position);
+}
+
+.to-primary{
+  --tw-gradient-to: var(--fallback-p,oklch(var(--p)/1)) var(--tw-gradient-to-position);
 }
 
 .to-secondary{
@@ -7368,179 +7306,11 @@ body>footer.footer-gradient{
       border-color: color-mix(in oklab, var(--fallback-p,oklch(var(--p)/1)) 90%, black);
     }
   }
-
-  .hover\:btn-secondary:hover.btn-outline:hover{
-    --tw-text-opacity: 1;
-    color: var(--fallback-sc,oklch(var(--sc)/var(--tw-text-opacity)));
-  }
-
-  @supports (color: color-mix(in oklab, black, black)){
-    .hover\:btn-secondary:hover.btn-outline:hover{
-      background-color: color-mix(in oklab, var(--fallback-s,oklch(var(--s)/1)) 90%, black);
-      border-color: color-mix(in oklab, var(--fallback-s,oklch(var(--s)/1)) 90%, black);
-    }
-  }
-
-  .hover\:btn-secondary:hover.btn-outline:hover{
-    --tw-text-opacity: 1;
-    color: var(--fallback-sc,oklch(var(--sc)/var(--tw-text-opacity)));
-  }
-
-  @supports (color: color-mix(in oklab, black, black)){
-    .hover\:btn-secondary:hover.btn-outline:hover{
-      background-color: color-mix(in oklab, var(--fallback-s,oklch(var(--s)/1)) 90%, black);
-      border-color: color-mix(in oklab, var(--fallback-s,oklch(var(--s)/1)) 90%, black);
-    }
-  }
-
-  .hover\:btn-accent:hover.btn-outline:hover{
-    --tw-text-opacity: 1;
-    color: var(--fallback-ac,oklch(var(--ac)/var(--tw-text-opacity)));
-  }
-
-  @supports (color: color-mix(in oklab, black, black)){
-    .hover\:btn-accent:hover.btn-outline:hover{
-      background-color: color-mix(in oklab, var(--fallback-a,oklch(var(--a)/1)) 90%, black);
-      border-color: color-mix(in oklab, var(--fallback-a,oklch(var(--a)/1)) 90%, black);
-    }
-  }
-
-  .hover\:btn-accent:hover.btn-outline:hover{
-    --tw-text-opacity: 1;
-    color: var(--fallback-ac,oklch(var(--ac)/var(--tw-text-opacity)));
-  }
-
-  @supports (color: color-mix(in oklab, black, black)){
-    .hover\:btn-accent:hover.btn-outline:hover{
-      background-color: color-mix(in oklab, var(--fallback-a,oklch(var(--a)/1)) 90%, black);
-      border-color: color-mix(in oklab, var(--fallback-a,oklch(var(--a)/1)) 90%, black);
-    }
-  }
-
-  .hover\:btn-success:hover.btn-outline:hover{
-    --tw-text-opacity: 1;
-    color: var(--fallback-suc,oklch(var(--suc)/var(--tw-text-opacity)));
-  }
-
-  @supports (color: color-mix(in oklab, black, black)){
-    .hover\:btn-success:hover.btn-outline:hover{
-      background-color: color-mix(in oklab, var(--fallback-su,oklch(var(--su)/1)) 90%, black);
-      border-color: color-mix(in oklab, var(--fallback-su,oklch(var(--su)/1)) 90%, black);
-    }
-  }
-
-  .hover\:btn-success:hover.btn-outline:hover{
-    --tw-text-opacity: 1;
-    color: var(--fallback-suc,oklch(var(--suc)/var(--tw-text-opacity)));
-  }
-
-  @supports (color: color-mix(in oklab, black, black)){
-    .hover\:btn-success:hover.btn-outline:hover{
-      background-color: color-mix(in oklab, var(--fallback-su,oklch(var(--su)/1)) 90%, black);
-      border-color: color-mix(in oklab, var(--fallback-su,oklch(var(--su)/1)) 90%, black);
-    }
-  }
-
-  .hover\:btn-info:hover.btn-outline:hover{
-    --tw-text-opacity: 1;
-    color: var(--fallback-inc,oklch(var(--inc)/var(--tw-text-opacity)));
-  }
-
-  @supports (color: color-mix(in oklab, black, black)){
-    .hover\:btn-info:hover.btn-outline:hover{
-      background-color: color-mix(in oklab, var(--fallback-in,oklch(var(--in)/1)) 90%, black);
-      border-color: color-mix(in oklab, var(--fallback-in,oklch(var(--in)/1)) 90%, black);
-    }
-  }
-
-  .hover\:btn-info:hover.btn-outline:hover{
-    --tw-text-opacity: 1;
-    color: var(--fallback-inc,oklch(var(--inc)/var(--tw-text-opacity)));
-  }
-
-  @supports (color: color-mix(in oklab, black, black)){
-    .hover\:btn-info:hover.btn-outline:hover{
-      background-color: color-mix(in oklab, var(--fallback-in,oklch(var(--in)/1)) 90%, black);
-      border-color: color-mix(in oklab, var(--fallback-in,oklch(var(--in)/1)) 90%, black);
-    }
-  }
-
-  .hover\:btn-warning:hover.btn-outline:hover{
-    --tw-text-opacity: 1;
-    color: var(--fallback-wac,oklch(var(--wac)/var(--tw-text-opacity)));
-  }
-
-  @supports (color: color-mix(in oklab, black, black)){
-    .hover\:btn-warning:hover.btn-outline:hover{
-      background-color: color-mix(in oklab, var(--fallback-wa,oklch(var(--wa)/1)) 90%, black);
-      border-color: color-mix(in oklab, var(--fallback-wa,oklch(var(--wa)/1)) 90%, black);
-    }
-  }
-
-  .hover\:btn-warning:hover.btn-outline:hover{
-    --tw-text-opacity: 1;
-    color: var(--fallback-wac,oklch(var(--wac)/var(--tw-text-opacity)));
-  }
-
-  @supports (color: color-mix(in oklab, black, black)){
-    .hover\:btn-warning:hover.btn-outline:hover{
-      background-color: color-mix(in oklab, var(--fallback-wa,oklch(var(--wa)/1)) 90%, black);
-      border-color: color-mix(in oklab, var(--fallback-wa,oklch(var(--wa)/1)) 90%, black);
-    }
-  }
-
-  .hover\:btn-error:hover.btn-outline:hover{
-    --tw-text-opacity: 1;
-    color: var(--fallback-erc,oklch(var(--erc)/var(--tw-text-opacity)));
-  }
-
-  @supports (color: color-mix(in oklab, black, black)){
-    .hover\:btn-error:hover.btn-outline:hover{
-      background-color: color-mix(in oklab, var(--fallback-er,oklch(var(--er)/1)) 90%, black);
-      border-color: color-mix(in oklab, var(--fallback-er,oklch(var(--er)/1)) 90%, black);
-    }
-  }
-
-  .hover\:btn-error:hover.btn-outline:hover{
-    --tw-text-opacity: 1;
-    color: var(--fallback-erc,oklch(var(--erc)/var(--tw-text-opacity)));
-  }
-
-  @supports (color: color-mix(in oklab, black, black)){
-    .hover\:btn-error:hover.btn-outline:hover{
-      background-color: color-mix(in oklab, var(--fallback-er,oklch(var(--er)/1)) 90%, black);
-      border-color: color-mix(in oklab, var(--fallback-er,oklch(var(--er)/1)) 90%, black);
-    }
-  }
 }
 
 @supports not (color: oklch(0% 0 0)){
   .hover\:btn-primary:hover{
     --btn-color: var(--fallback-p);
-  }
-
-  .hover\:btn-secondary:hover{
-    --btn-color: var(--fallback-s);
-  }
-
-  .hover\:btn-accent:hover{
-    --btn-color: var(--fallback-a);
-  }
-
-  .hover\:btn-info:hover{
-    --btn-color: var(--fallback-in);
-  }
-
-  .hover\:btn-success:hover{
-    --btn-color: var(--fallback-su);
-  }
-
-  .hover\:btn-warning:hover{
-    --btn-color: var(--fallback-wa);
-  }
-
-  .hover\:btn-error:hover{
-    --btn-color: var(--fallback-er);
   }
 }
 
@@ -7548,36 +7318,6 @@ body>footer.footer-gradient{
   .hover\:btn-primary:hover.btn-outline.btn-active{
     background-color: color-mix(in oklab, var(--fallback-p,oklch(var(--p)/1)) 90%, black);
     border-color: color-mix(in oklab, var(--fallback-p,oklch(var(--p)/1)) 90%, black);
-  }
-
-  .hover\:btn-secondary:hover.btn-outline.btn-active{
-    background-color: color-mix(in oklab, var(--fallback-s,oklch(var(--s)/1)) 90%, black);
-    border-color: color-mix(in oklab, var(--fallback-s,oklch(var(--s)/1)) 90%, black);
-  }
-
-  .hover\:btn-accent:hover.btn-outline.btn-active{
-    background-color: color-mix(in oklab, var(--fallback-a,oklch(var(--a)/1)) 90%, black);
-    border-color: color-mix(in oklab, var(--fallback-a,oklch(var(--a)/1)) 90%, black);
-  }
-
-  .hover\:btn-success:hover.btn-outline.btn-active{
-    background-color: color-mix(in oklab, var(--fallback-su,oklch(var(--su)/1)) 90%, black);
-    border-color: color-mix(in oklab, var(--fallback-su,oklch(var(--su)/1)) 90%, black);
-  }
-
-  .hover\:btn-info:hover.btn-outline.btn-active{
-    background-color: color-mix(in oklab, var(--fallback-in,oklch(var(--in)/1)) 90%, black);
-    border-color: color-mix(in oklab, var(--fallback-in,oklch(var(--in)/1)) 90%, black);
-  }
-
-  .hover\:btn-warning:hover.btn-outline.btn-active{
-    background-color: color-mix(in oklab, var(--fallback-wa,oklch(var(--wa)/1)) 90%, black);
-    border-color: color-mix(in oklab, var(--fallback-wa,oklch(var(--wa)/1)) 90%, black);
-  }
-
-  .hover\:btn-error:hover.btn-outline.btn-active{
-    background-color: color-mix(in oklab, var(--fallback-er,oklch(var(--er)/1)) 90%, black);
-    border-color: color-mix(in oklab, var(--fallback-er,oklch(var(--er)/1)) 90%, black);
   }
 }
 
@@ -7591,66 +7331,6 @@ body>footer.footer-gradient{
   .hover\:btn-primary:hover{
     --btn-color: var(--p);
   }
-
-  .hover\:btn-secondary:hover{
-    --btn-color: var(--s);
-  }
-
-  .hover\:btn-accent:hover{
-    --btn-color: var(--a);
-  }
-
-  .hover\:btn-info:hover{
-    --btn-color: var(--in);
-  }
-
-  .hover\:btn-success:hover{
-    --btn-color: var(--su);
-  }
-
-  .hover\:btn-warning:hover{
-    --btn-color: var(--wa);
-  }
-
-  .hover\:btn-error:hover{
-    --btn-color: var(--er);
-  }
-}
-
-.hover\:btn-secondary:hover{
-  --tw-text-opacity: 1;
-  color: var(--fallback-sc,oklch(var(--sc)/var(--tw-text-opacity)));
-  outline-color: var(--fallback-s,oklch(var(--s)/1));
-}
-
-.hover\:btn-accent:hover{
-  --tw-text-opacity: 1;
-  color: var(--fallback-ac,oklch(var(--ac)/var(--tw-text-opacity)));
-  outline-color: var(--fallback-a,oklch(var(--a)/1));
-}
-
-.hover\:btn-info:hover{
-  --tw-text-opacity: 1;
-  color: var(--fallback-inc,oklch(var(--inc)/var(--tw-text-opacity)));
-  outline-color: var(--fallback-in,oklch(var(--in)/1));
-}
-
-.hover\:btn-success:hover{
-  --tw-text-opacity: 1;
-  color: var(--fallback-suc,oklch(var(--suc)/var(--tw-text-opacity)));
-  outline-color: var(--fallback-su,oklch(var(--su)/1));
-}
-
-.hover\:btn-warning:hover{
-  --tw-text-opacity: 1;
-  color: var(--fallback-wac,oklch(var(--wac)/var(--tw-text-opacity)));
-  outline-color: var(--fallback-wa,oklch(var(--wa)/1));
-}
-
-.hover\:btn-error:hover{
-  --tw-text-opacity: 1;
-  color: var(--fallback-erc,oklch(var(--erc)/var(--tw-text-opacity)));
-  outline-color: var(--fallback-er,oklch(var(--er)/1));
 }
 
 .hover\:btn-primary:hover.btn-outline{
@@ -7661,66 +7341,6 @@ body>footer.footer-gradient{
 .hover\:btn-primary:hover.btn-outline.btn-active{
   --tw-text-opacity: 1;
   color: var(--fallback-pc,oklch(var(--pc)/var(--tw-text-opacity)));
-}
-
-.hover\:btn-secondary:hover.btn-outline{
-  --tw-text-opacity: 1;
-  color: var(--fallback-s,oklch(var(--s)/var(--tw-text-opacity)));
-}
-
-.hover\:btn-secondary:hover.btn-outline.btn-active{
-  --tw-text-opacity: 1;
-  color: var(--fallback-sc,oklch(var(--sc)/var(--tw-text-opacity)));
-}
-
-.hover\:btn-accent:hover.btn-outline{
-  --tw-text-opacity: 1;
-  color: var(--fallback-a,oklch(var(--a)/var(--tw-text-opacity)));
-}
-
-.hover\:btn-accent:hover.btn-outline.btn-active{
-  --tw-text-opacity: 1;
-  color: var(--fallback-ac,oklch(var(--ac)/var(--tw-text-opacity)));
-}
-
-.hover\:btn-success:hover.btn-outline{
-  --tw-text-opacity: 1;
-  color: var(--fallback-su,oklch(var(--su)/var(--tw-text-opacity)));
-}
-
-.hover\:btn-success:hover.btn-outline.btn-active{
-  --tw-text-opacity: 1;
-  color: var(--fallback-suc,oklch(var(--suc)/var(--tw-text-opacity)));
-}
-
-.hover\:btn-info:hover.btn-outline{
-  --tw-text-opacity: 1;
-  color: var(--fallback-in,oklch(var(--in)/var(--tw-text-opacity)));
-}
-
-.hover\:btn-info:hover.btn-outline.btn-active{
-  --tw-text-opacity: 1;
-  color: var(--fallback-inc,oklch(var(--inc)/var(--tw-text-opacity)));
-}
-
-.hover\:btn-warning:hover.btn-outline{
-  --tw-text-opacity: 1;
-  color: var(--fallback-wa,oklch(var(--wa)/var(--tw-text-opacity)));
-}
-
-.hover\:btn-warning:hover.btn-outline.btn-active{
-  --tw-text-opacity: 1;
-  color: var(--fallback-wac,oklch(var(--wac)/var(--tw-text-opacity)));
-}
-
-.hover\:btn-error:hover.btn-outline{
-  --tw-text-opacity: 1;
-  color: var(--fallback-er,oklch(var(--er)/var(--tw-text-opacity)));
-}
-
-.hover\:btn-error:hover.btn-outline.btn-active{
-  --tw-text-opacity: 1;
-  color: var(--fallback-erc,oklch(var(--erc)/var(--tw-text-opacity)));
 }
 
 @media (min-width: 1024px){

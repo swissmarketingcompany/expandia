@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // CTA Section Button Handlers
     function setupCTAButtons() {
         // Find CTA section buttons
-        const ctaSection = document.querySelector('.bg-gradient-to-r.from-primary.to-secondary');
+        const ctaSection = document.querySelector('.bg-gradient-to-r.from-primary.to-primary');
         if (ctaSection) {
             const ctaButtons = ctaSection.querySelectorAll('.btn');
 
@@ -122,11 +122,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-gray-600">Conversion Rate:</span>
-                        <span class="font-semibold text-secondary">94.2%</span>
+                        <span class="font-semibold text-primary">94.2%</span>
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-gray-600">Qualified Leads:</span>
-                        <span class="font-semibold text-accent">1,247</span>
+                        <span class="font-semibold text-primary">1,247</span>
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-gray-600">Revenue Growth:</span>
@@ -526,7 +526,7 @@ function showLanguageNotification(suggestedLanguage, redirectCallback) {
                 <span>${message}</span>
             </div>
             <div class="flex gap-2">
-                <button id="accept-language" class="btn btn-sm btn-secondary">
+                <button id="accept-language" class="btn btn-sm btn-primary">
                     ${acceptText}
                 </button>
                 <button id="decline-language" class="btn btn-sm btn-ghost">

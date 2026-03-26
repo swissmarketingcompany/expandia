@@ -35,11 +35,11 @@
 
   /* Form error styles */
   .input-error {
-    @apply border-error focus:border-error;
+    @apply border-primary focus:border-primary;
   }
 
   .input-error:focus {
-    @apply ring-error;
+    @apply ring-primary;
   }
 
   .buzz-hero {
