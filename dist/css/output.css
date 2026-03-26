@@ -822,15 +822,15 @@ html{
 }
 
 :root{
-  --p: 53.5822% 0.210044 23.065707;
-  --pc: 90.7164% 0.042009 23.065707;
-  --sc: 90.7164% 0.042009 23.065707;
-  --ac: 90.7164% 0.042009 23.065707;
+  --p: 17.7638% 0 0;
+  --pc: 83.5528% 0 0;
+  --sc: 83.5528% 0 0;
+  --ac: 83.5528% 0 0;
   --nc: 87.7082% 0.004808 262.829219;
-  --inc: 90.7164% 0.042009 23.065707;
-  --suc: 90.7164% 0.042009 23.065707;
-  --wac: 90.7164% 0.042009 23.065707;
-  --erc: 90.7164% 0.042009 23.065707;
+  --inc: 83.5528% 0 0;
+  --suc: 83.5528% 0 0;
+  --wac: 83.5528% 0 0;
+  --erc: 83.5528% 0 0;
   --rounded-box: 1rem;
   --rounded-btn: 0.5rem;
   --rounded-badge: 1.9rem;
@@ -840,17 +840,17 @@ html{
   --border-btn: 1px;
   --tab-border: 1px;
   --tab-radius: 0.5rem;
-  --s: 53.5822% 0.210044 23.065707;
-  --a: 53.5822% 0.210044 23.065707;
+  --s: 17.7638% 0 0;
+  --a: 17.7638% 0 0;
   --n: 38.5412% 0.024038 262.829219;
   --b1: 100% 0 0;
   --b2: 96.1151% 0 0;
   --b3: 92.4169% 0.00108 197.137559;
   --bc: 27.8078% 0.029596 256.847952;
-  --in: 53.5822% 0.210044 23.065707;
-  --su: 53.5822% 0.210044 23.065707;
-  --wa: 53.5822% 0.210044 23.065707;
-  --er: 53.5822% 0.210044 23.065707;
+  --in: 17.7638% 0 0;
+  --su: 17.7638% 0 0;
+  --wa: 17.7638% 0 0;
+  --er: 17.7638% 0 0;
 }
 
 .container{
@@ -2854,24 +2854,6 @@ html{
   color: var(--fallback-pc,oklch(var(--pc)/var(--tw-text-opacity)));
 }
 
-.badge-secondary{
-  --tw-border-opacity: 1;
-  border-color: var(--fallback-s,oklch(var(--s)/var(--tw-border-opacity)));
-  --tw-bg-opacity: 1;
-  background-color: var(--fallback-s,oklch(var(--s)/var(--tw-bg-opacity)));
-  --tw-text-opacity: 1;
-  color: var(--fallback-sc,oklch(var(--sc)/var(--tw-text-opacity)));
-}
-
-.badge-accent{
-  --tw-border-opacity: 1;
-  border-color: var(--fallback-a,oklch(var(--a)/var(--tw-border-opacity)));
-  --tw-bg-opacity: 1;
-  background-color: var(--fallback-a,oklch(var(--a)/var(--tw-bg-opacity)));
-  --tw-text-opacity: 1;
-  color: var(--fallback-ac,oklch(var(--ac)/var(--tw-text-opacity)));
-}
-
 .badge-outline.badge-neutral{
   --tw-text-opacity: 1;
   color: var(--fallback-n,oklch(var(--n)/var(--tw-text-opacity)));
@@ -2880,16 +2862,6 @@ html{
 .badge-outline.badge-primary{
   --tw-text-opacity: 1;
   color: var(--fallback-p,oklch(var(--p)/var(--tw-text-opacity)));
-}
-
-.badge-outline.badge-secondary{
-  --tw-text-opacity: 1;
-  color: var(--fallback-s,oklch(var(--s)/var(--tw-text-opacity)));
-}
-
-.badge-outline.badge-accent{
-  --tw-text-opacity: 1;
-  color: var(--fallback-a,oklch(var(--a)/var(--tw-text-opacity)));
 }
 
 .btm-nav > *:where(.active){
@@ -2969,10 +2941,6 @@ html{
     --btn-color: var(--fallback-s);
   }
 
-  .btn-accent{
-    --btn-color: var(--fallback-a);
-  }
-
   .btn-neutral{
     --btn-color: var(--fallback-n);
   }
@@ -3040,10 +3008,6 @@ html{
     --btn-color: var(--s);
   }
 
-  .btn-accent{
-    --btn-color: var(--a);
-  }
-
   .btn-neutral{
     --btn-color: var(--n);
   }
@@ -3053,12 +3017,6 @@ html{
   --tw-text-opacity: 1;
   color: var(--fallback-sc,oklch(var(--sc)/var(--tw-text-opacity)));
   outline-color: var(--fallback-s,oklch(var(--s)/1));
-}
-
-.btn-accent{
-  --tw-text-opacity: 1;
-  color: var(--fallback-ac,oklch(var(--ac)/var(--tw-text-opacity)));
-  outline-color: var(--fallback-a,oklch(var(--a)/1));
 }
 
 .btn-neutral{
@@ -4713,13 +4671,13 @@ details.collapse summary::-webkit-details-marker{
 
 .gradient-header{
   --tw-text-opacity: 1;
-  color: rgb(203 16 44 / var(--tw-text-opacity, 1));
+  color: rgb(17 17 17 / var(--tw-text-opacity, 1));
 }
 
 .credit-badge{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   --tw-bg-opacity: 1;
-  background-color: rgb(203 16 44 / var(--tw-bg-opacity, 1));
+  background-color: rgb(17 17 17 / var(--tw-bg-opacity, 1));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
   --tw-shadow: 0 25px 50px -12px rgba(251, 191, 36, 0.25);
@@ -7645,11 +7603,6 @@ body>footer.footer-gradient{
   border-color: var(--fallback-p,oklch(var(--p)/var(--tw-border-opacity, 1)));
 }
 
-.hover\:border-secondary:hover{
-  --tw-border-opacity: 1;
-  border-color: var(--fallback-s,oklch(var(--s)/var(--tw-border-opacity, 1)));
-}
-
 .hover\:bg-gray-50:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
@@ -7771,11 +7724,6 @@ body>footer.footer-gradient{
 
 .group:hover .group-hover\:text-primary\/80{
   color: var(--fallback-p,oklch(var(--p)/0.8));
-}
-
-.group:hover .group-hover\:text-secondary{
-  --tw-text-opacity: 1;
-  color: var(--fallback-s,oklch(var(--s)/var(--tw-text-opacity, 1)));
 }
 
 .group:hover .group-hover\:text-secondary\/80{
