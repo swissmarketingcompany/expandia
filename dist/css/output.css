@@ -824,13 +824,13 @@ html{
 :root{
   --p: 53.5822% 0.210044 23.065707;
   --pc: 90.7164% 0.042009 23.065707;
-  --sc: 16.8349% 0.030928 85.034206;
-  --ac: 13.7947% 0.023113 186.09731;
+  --sc: 90.7164% 0.042009 23.065707;
+  --ac: 90.7164% 0.042009 23.065707;
   --nc: 87.7082% 0.004808 262.829219;
-  --inc: 15.1705% 0.027481 231.6166;
-  --suc: 15.4663% 0.030576 163.102898;
-  --wac: 16.6604% 0.032836 83.424292;
-  --erc: 14.2439% 0.032979 22.150603;
+  --inc: 90.7164% 0.042009 23.065707;
+  --suc: 90.7164% 0.042009 23.065707;
+  --wac: 90.7164% 0.042009 23.065707;
+  --erc: 90.7164% 0.042009 23.065707;
   --rounded-box: 1rem;
   --rounded-btn: 0.5rem;
   --rounded-badge: 1.9rem;
@@ -840,17 +840,17 @@ html{
   --border-btn: 1px;
   --tab-border: 1px;
   --tab-radius: 0.5rem;
-  --s: 84.1747% 0.154638 85.034206;
-  --a: 68.9733% 0.115563 186.09731;
+  --s: 53.5822% 0.210044 23.065707;
+  --a: 53.5822% 0.210044 23.065707;
   --n: 38.5412% 0.024038 262.829219;
   --b1: 100% 0 0;
   --b2: 96.1151% 0 0;
   --b3: 92.4169% 0.00108 197.137559;
   --bc: 27.8078% 0.029596 256.847952;
-  --in: 75.8525% 0.137405 231.6166;
-  --su: 77.3316% 0.152882 163.102898;
-  --wa: 83.302% 0.164179 83.424292;
-  --er: 71.2196% 0.164893 22.150603;
+  --in: 53.5822% 0.210044 23.065707;
+  --su: 53.5822% 0.210044 23.065707;
+  --wa: 53.5822% 0.210044 23.065707;
+  --er: 53.5822% 0.210044 23.065707;
 }
 
 .container{
@@ -6080,12 +6080,6 @@ details.collapse summary::-webkit-details-marker{
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
-.from-base-100{
-  --tw-gradient-from: var(--fallback-b1,oklch(var(--b1)/1)) var(--tw-gradient-from-position);
-  --tw-gradient-to: var(--fallback-b1,oklch(var(--b1)/0)) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
 .from-buzz-warm{
   --tw-gradient-from: #fff9e6 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 249 230 / 0) var(--tw-gradient-to-position);
@@ -6107,19 +6101,6 @@ details.collapse summary::-webkit-details-marker{
 .via-base-100{
   --tw-gradient-to: var(--fallback-b1,oklch(var(--b1)/0))  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--fallback-b1,oklch(var(--b1)/1)) var(--tw-gradient-via-position), var(--tw-gradient-to);
-}
-
-.via-primary\/5{
-  --tw-gradient-to: rgb(255 255 255 / 0)  var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--fallback-p,oklch(var(--p)/0.05)) var(--tw-gradient-via-position), var(--tw-gradient-to);
-}
-
-.to-base-100{
-  --tw-gradient-to: var(--fallback-b1,oklch(var(--b1)/1)) var(--tw-gradient-to-position);
-}
-
-.to-base-200{
-  --tw-gradient-to: var(--fallback-b2,oklch(var(--b2)/1)) var(--tw-gradient-to-position);
 }
 
 .to-buzz-light{

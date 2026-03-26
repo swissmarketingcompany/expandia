@@ -10,8 +10,8 @@ module.exports = {
       colors: {
         // Golden Buzz Palette
         'buzz-primary': '#cb102c',
-        'buzz-secondary': '#f9c23c',
-        'buzz-accent': '#1fb2a6',
+        'buzz-secondary': '#a30d24',
+        'buzz-accent': '#cb102c',
         'buzz-neutral': '#3d4451',
         'buzz-neutral-dark': '#2d3440',
         'buzz-warm': '#fff9e6',
@@ -59,17 +59,17 @@ module.exports = {
       {
         bumblebee: {
           "primary": "#cb102c",
-          "secondary": "#f9c23c",
-          "accent": "#1fb2a6",
+          "secondary": "#cb102c",
+          "accent": "#cb102c",
           "neutral": "#3d4451",
           "base-100": "#ffffff",
           "base-200": "#f2f2f2",
           "base-300": "#e5e6e6",
           "base-content": "#1f2937",
-          "info": "#3abff8",
-          "success": "#36d399",
-          "warning": "#fbbd23",
-          "error": "#f87272",
+          "info": "#cb102c",
+          "success": "#cb102c",
+          "warning": "#cb102c",
+          "error": "#cb102c",
         }
       }
     ],
