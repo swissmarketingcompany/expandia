@@ -214,33 +214,6 @@
     <!-- JavaScript for smooth interactions -->
     <script src="../src/js/index.js"></script>
     <script>
-        // Language switching functionality for blog posts
-        function changeLanguage(lang) {
-            const currentPath = window.location.pathname;
-            if (lang === 'tr') {
-                // Redirect to Turkish version
-                const trPath = currentPath.replace('/blog/', '/tr/blog/');
-                if (trPath !== currentPath) {
-                    window.location.href = trPath;
-                }
-            } else {
-                // Redirect to English version
-                const enPath = currentPath.replace('/tr/blog/', '/blog/');
-                if (enPath !== currentPath) {
-                    window.location.href = enPath;
-                }
-            }
-        }
-
-        // Update current flag based on current language
-        const currentPath = window.location.pathname;
-        const currentFlag = document.getElementById('current-flag');
-        if (currentPath.includes('/tr/')) {
-            currentFlag.textContent = 'TR';
-        } else {
-            currentFlag.textContent = 'EN';
-        }
-
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
