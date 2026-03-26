@@ -9,9 +9,9 @@ module.exports = {
     extend: {
       colors: {
         // Golden Buzz Palette
-        'buzz-primary': '#111111',
-        'buzz-secondary': '#111111',
-        'buzz-accent': '#111111',
+        'buzz-primary': '#cb102c',
+        'buzz-secondary': '#a30d24',
+        'buzz-accent': '#cb102c',
         'buzz-neutral': '#3d4451',
         'buzz-neutral-dark': '#2d3440',
         'buzz-warm': '#fff9e6',
@@ -21,8 +21,8 @@ module.exports = {
         'sans': ['Inter', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
-        'buzz-gradient': 'linear-gradient(90deg, #111111 0%, #000000 100%)',
-        'buzz-hero': 'linear-gradient(135deg, #000000 0%, #111111 50%, #222222 100%)',
+        'buzz-gradient': 'linear-gradient(90deg, #cb102c 0%, #dc2626 100%)',
+        'buzz-hero': 'linear-gradient(135deg, #991b1b 0%, #cb102c 50%, #dc2626 100%)',
       },
       animation: {
         'bounce-subtle': 'bounce-subtle 2s infinite',
@@ -58,18 +58,18 @@ module.exports = {
     themes: [
       {
         bumblebee: {
-          "primary": "#111111",
-          "secondary": "#111111",
-          "accent": "#111111",
+          "primary": "#cb102c",
+          "secondary": "#cb102c",
+          "accent": "#cb102c",
           "neutral": "#3d4451",
           "base-100": "#ffffff",
           "base-200": "#f2f2f2",
           "base-300": "#e5e6e6",
           "base-content": "#1f2937",
-          "info": "#111111",
-          "success": "#111111",
-          "warning": "#111111",
-          "error": "#111111",
+          "info": "#cb102c",
+          "success": "#cb102c",
+          "warning": "#cb102c",
+          "error": "#cb102c",
         }
       }
     ],
