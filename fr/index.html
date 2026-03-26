@@ -389,7 +389,7 @@
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <a href="../ai-opportunity-review.html" class="buzz-card p-6 bg-white shadow-xl hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-primary">
                 <div class="text-sm font-bold text-primary mb-3">Service 1</div>
                 <h3 class="text-xl font-bold mb-3 text-base-content">AI Opportunity Review</h3>
@@ -430,6 +430,18 @@
                 </p>
                 <p class="text-sm font-bold text-base-content">From EUR 1,500 per month</p>
             </a>
+            <div class="buzz-card p-6 bg-primary text-white shadow-xl border-t-4 border-white/40 flex flex-col justify-between">
+                <div>
+                    <div class="text-sm font-bold text-white/80 mb-3">Next Step</div>
+                    <h3 class="text-xl font-bold mb-3">Not sure where to begin?</h3>
+                    <p class="text-sm text-white/85 mb-4">
+                        Start with the review. It is the simplest way to find the best first AI move for your business.
+                    </p>
+                </div>
+                <div class="pt-2">
+                    <a href="contact.html" class="btn bg-white text-primary hover:bg-white/90 border-none w-full">Talk to Us</a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -531,34 +543,42 @@
         </div>
 
         <div class="space-y-4 max-w-4xl mx-auto">
-            <div class="collapse collapse-arrow bg-white shadow-lg">
-                <input type="radio" name="home-faq" checked="checked">
-                <div class="collapse-title text-xl font-medium">We already use ChatGPT or Gemini. Do we still need this?</div>
-                <div class="collapse-content">
+            <details class="group bg-white shadow-lg rounded-2xl px-6 py-2" open>
+                <summary class="list-none cursor-pointer py-4 text-xl font-medium flex items-center justify-between gap-4">
+                    <span>We already use ChatGPT or Gemini. Do we still need this?</span>
+                    <span class="text-primary text-2xl leading-none">+</span>
+                </summary>
+                <div class="pb-4 text-base-content/80">
                     <p>Yes, if you want the next step. Public AI tools are useful, but they are only the beginning. The next step is using AI inside the business with a clear goal, clear setup, and clear ownership.</p>
                 </div>
-            </div>
-            <div class="collapse collapse-arrow bg-white shadow-lg">
-                <input type="radio" name="home-faq">
-                <div class="collapse-title text-xl font-medium">We do not know where to start.</div>
-                <div class="collapse-content">
+            </details>
+            <details class="group bg-white shadow-lg rounded-2xl px-6 py-2">
+                <summary class="list-none cursor-pointer py-4 text-xl font-medium flex items-center justify-between gap-4">
+                    <span>We do not know where to start.</span>
+                    <span class="text-primary text-2xl leading-none">+</span>
+                </summary>
+                <div class="pb-4 text-base-content/80">
                     <p>That is why the first service exists. We start with the review and show you where AI matters most.</p>
                 </div>
-            </div>
-            <div class="collapse collapse-arrow bg-white shadow-lg">
-                <input type="radio" name="home-faq">
-                <div class="collapse-title text-xl font-medium">We only need training.</div>
-                <div class="collapse-content">
+            </details>
+            <details class="group bg-white shadow-lg rounded-2xl px-6 py-2">
+                <summary class="list-none cursor-pointer py-4 text-xl font-medium flex items-center justify-between gap-4">
+                    <span>We only need training.</span>
+                    <span class="text-primary text-2xl leading-none">+</span>
+                </summary>
+                <div class="pb-4 text-base-content/80">
                     <p>That is fine. Training can be bought on its own.</p>
                 </div>
-            </div>
-            <div class="collapse collapse-arrow bg-white shadow-lg">
-                <input type="radio" name="home-faq">
-                <div class="collapse-title text-xl font-medium">We already have something running and only need support.</div>
-                <div class="collapse-content">
+            </details>
+            <details class="group bg-white shadow-lg rounded-2xl px-6 py-2">
+                <summary class="list-none cursor-pointer py-4 text-xl font-medium flex items-center justify-between gap-4">
+                    <span>We already have something running and only need support.</span>
+                    <span class="text-primary text-2xl leading-none">+</span>
+                </summary>
+                <div class="pb-4 text-base-content/80">
                     <p>That is also fine. Support can be bought on its own, even if the setup was built elsewhere.</p>
                 </div>
-            </div>
+            </details>
         </div>
     </div>
 </section>

@@ -527,27 +527,33 @@
         </div>
         <div class="space-y-4 max-w-4xl mx-auto">
             
-                    <div class="collapse collapse-plus bg-base-200">
-                        <input type="checkbox" checked />
-                        <div class="collapse-title text-xl font-medium">Can we buy this without the review first?</div>
-                        <div class="collapse-content">
+                    <details class="group bg-base-200 rounded-2xl px-6 py-2 shadow-sm" open>
+                        <summary class="list-none cursor-pointer py-4 text-xl font-medium flex items-center justify-between gap-4">
+                            <span>Can we buy this without the review first?</span>
+                            <span class="text-primary text-2xl leading-none">+</span>
+                        </summary>
+                        <div class="pb-4 text-base-content/80">
                             <p>Yes. If you already know enough about the business case, we can start with the plan.</p>
                         </div>
-                    </div>
-                    <div class="collapse collapse-plus bg-base-200">
-                        <input type="checkbox"  />
-                        <div class="collapse-title text-xl font-medium">Do you tell us whether something should be a project or a monthly service?</div>
-                        <div class="collapse-content">
+                    </details>
+                    <details class="group bg-base-200 rounded-2xl px-6 py-2 shadow-sm" >
+                        <summary class="list-none cursor-pointer py-4 text-xl font-medium flex items-center justify-between gap-4">
+                            <span>Do you tell us whether something should be a project or a monthly service?</span>
+                            <span class="text-primary text-2xl leading-none">+</span>
+                        </summary>
+                        <div class="pb-4 text-base-content/80">
                             <p>Yes. That is one of the main reasons for this service.</p>
                         </div>
-                    </div>
-                    <div class="collapse collapse-plus bg-base-200">
-                        <input type="checkbox"  />
-                        <div class="collapse-title text-xl font-medium">Is this a strategy deck?</div>
-                        <div class="collapse-content">
+                    </details>
+                    <details class="group bg-base-200 rounded-2xl px-6 py-2 shadow-sm" >
+                        <summary class="list-none cursor-pointer py-4 text-xl font-medium flex items-center justify-between gap-4">
+                            <span>Is this a strategy deck?</span>
+                            <span class="text-primary text-2xl leading-none">+</span>
+                        </summary>
+                        <div class="pb-4 text-base-content/80">
                             <p>No. This is a working plan for real delivery.</p>
                         </div>
-                    </div>
+                    </details>
         </div>
     </div>
 </section>
