@@ -90,9 +90,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- 3. Newsletter Form Handler ---
-    const newsletterForm = document.getElementById('newsletter-form');
+    const newsletterForms = document.querySelectorAll('form#newsletter-form');
     
-    if (newsletterForm) {
+    newsletterForms.forEach((newsletterForm) => {
         newsletterForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
@@ -151,5 +151,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 2000);
             }
         });
-    }
+    });
 });
