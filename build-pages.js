@@ -720,7 +720,7 @@ const SOLUTION_PAGE_BLUEPRINTS = {
             titlePrefix: 'AI Opportunity Review',
             titleSuffix: '',
             description: 'We run the Data Dump Model on your company data, generate PDF reports, and define where AI should be implemented first.',
-            image: 'https://images.unsplash.com/photo-1551281044-8b5bd15c8d7c?w=800&q=80',
+            image: './assets/images/about-team-hive.png',
             alt: 'AI opportunity review and data analysis',
             primaryCtaText: 'Start Review',
             primaryCtaLink: 'contact.html',
