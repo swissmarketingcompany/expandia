@@ -401,16 +401,133 @@ function replaceServiceCityCopy(content, lang = 'en') {
         .replace(/Also Serving These Areas Near \{\{CITY_NAME\}\}/g, copy.nearbyTitle);
 }
 
+const BUSINESS_MODEL_DEFAULT_KEYWORDS = 'AI support for companies, AI opportunity review, AI plan, AI build and setup, AI training, AI support, business AI';
+
+const PAGE_METADATA_OVERRIDES = {
+    index: {
+        title: 'AI Support for Companies | Go Expandia',
+        description: 'We help companies find where AI can make or save money, build the right tools, train teams, and support the work after launch.',
+        keywords: BUSINESS_MODEL_DEFAULT_KEYWORDS
+    },
+    solutions: {
+        title: 'AI Support Services for Companies | 5 Simple Services | Go Expandia',
+        description: 'One main solution with five simple services: AI Opportunity Review, AI Plan, AI Build & Setup, AI Training, and AI Support.',
+        keywords: BUSINESS_MODEL_DEFAULT_KEYWORDS
+    },
+    'ai-opportunity-review': {
+        title: 'AI Opportunity Review | Data Dump Model | Go Expandia',
+        description: 'Service 1. We run your business data through our Data Dump model, hide sensitive details, and show where AI can increase revenue, reduce cost, and improve cash flow first.',
+        keywords: 'AI opportunity review, Data Dump model, AI use case discovery, business AI analysis, AI revenue and cost improvement'
+    },
+    'ai-plan': {
+        title: 'AI Plan | Go Expandia',
+        description: 'Service 2. We turn findings into a simple working plan with clear order, clear buying model, and clear next steps.',
+        keywords: 'AI plan, AI rollout plan, AI project roadmap, AI business model planning'
+    },
+    'ai-build-setup': {
+        title: 'AI Build & Setup | Real Business Applications | Go Expandia',
+        description: 'Service 3. We build real AI applications, software, and workflows around your business and connect them to your daily operations.',
+        keywords: 'AI build and setup, AI applications, AI workflow automation, AI implementation service'
+    },
+    'ai-training': {
+        title: 'AI Training | Go Expandia',
+        description: 'Service 4. We train your team on new AI tools, existing tools, or both so usage is clear and results improve.',
+        keywords: 'AI training, AI team training, business AI adoption, practical AI training'
+    },
+    'ai-support': {
+        title: 'AI Support | Go Expandia',
+        description: 'Service 5. We support new or existing AI setups, fix issues, improve outputs, and handle edge cases over time.',
+        keywords: 'AI support, AI maintenance, AI workflow support, ongoing AI operations'
+    },
+    about: {
+        title: 'About Go Expandia | AI Support for Companies',
+        description: 'We help companies use AI in a real business way: find opportunities, build applications, train teams, and support long-term performance.',
+        keywords: BUSINESS_MODEL_DEFAULT_KEYWORDS
+    },
+    contact: {
+        title: 'Contact Go Expandia | Start Your AI Project',
+        description: 'Talk to us about the 5 services: AI Opportunity Review, AI Plan, AI Build & Setup, AI Training, and AI Support.',
+        keywords: BUSINESS_MODEL_DEFAULT_KEYWORDS
+    },
+    'vision-mission': {
+        title: 'Vision & Mission | AI Support for Companies | Go Expandia',
+        description: 'Our mission is simple: help companies use AI to improve revenue, cost, cash flow, and operational control through practical delivery.',
+        keywords: BUSINESS_MODEL_DEFAULT_KEYWORDS
+    },
+    'our-ethical-principles': {
+        title: 'Our Ethical Principles | Go Expandia',
+        description: 'We build AI systems with clear data handling, honest communication, and practical business value.',
+        keywords: 'AI ethics, responsible AI delivery, data handling, business AI governance'
+    },
+    'city-locations': {
+        title: 'AI Support Locations | 5 Services in 250+ Cities | Go Expandia',
+        description: 'See where we deliver our 5 AI services: opportunity review, planning, build & setup, training, and support.',
+        keywords: 'AI support locations, AI services by city, AI opportunity review cities, AI build setup cities'
+    },
+    'blog-index': {
+        title: 'AI Business Operations Blog | Go Expandia',
+        description: 'Practical articles on using AI to increase revenue, collect payments faster, reduce costs, and run operations with better control.',
+        keywords: 'AI business blog, AI operations, AI revenue improvement, AI cost reduction, AI support for companies'
+    }
+};
+
 function getPageMetadata(templateName, lang = 'en') {
     // Get base metadata from JSON
     const baseMeta = metadata[templateName] || metadata['index'];
 
     // Check for translations in JSON
+    let resolvedMeta = baseMeta;
     if (baseMeta.translations && baseMeta.translations[lang]) {
-        return { ...baseMeta, ...baseMeta.translations[lang] };
+        resolvedMeta = { ...baseMeta, ...baseMeta.translations[lang] };
     }
 
-    return baseMeta;
+    const overrideMeta = PAGE_METADATA_OVERRIDES[templateName];
+    if (overrideMeta) {
+        resolvedMeta = { ...resolvedMeta, ...overrideMeta };
+    }
+
+    if (!resolvedMeta.keywords) {
+        resolvedMeta.keywords = BUSINESS_MODEL_DEFAULT_KEYWORDS;
+    }
+
+    return resolvedMeta;
+}
+
+function escapeHtmlAttr(value = '') {
+    return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+}
+
+function upsertHeadTag(content, matcher, replacement) {
+    if (matcher.test(content)) {
+        return content.replace(matcher, replacement);
+    }
+
+    if (!content.includes('</head>')) {
+        return content;
+    }
+
+    return content.replace('</head>', `    ${replacement}\n</head>`);
+}
+
+function enforceSeoMetaTags(content, pageTitle, pageDescription, pageKeywords) {
+    const escapedTitle = escapeHtmlAttr(pageTitle);
+    const escapedDescription = escapeHtmlAttr(pageDescription);
+    const escapedKeywords = escapeHtmlAttr(pageKeywords);
+
+    let next = content;
+    next = upsertHeadTag(next, /<title>[\s\S]*?<\/title>/i, `<title>${escapedTitle}</title>`);
+    next = upsertHeadTag(next, /<meta\s+name=["']description["'][^>]*>/i, `<meta name="description" content="${escapedDescription}">`);
+    next = upsertHeadTag(next, /<meta\s+name=["']keywords["'][^>]*>/i, `<meta name="keywords" content="${escapedKeywords}">`);
+    next = upsertHeadTag(next, /<meta\s+property=["']og:title["'][^>]*>/i, `<meta property="og:title" content="${escapedTitle}" />`);
+    next = upsertHeadTag(next, /<meta\s+property=["']og:description["'][^>]*>/i, `<meta property="og:description" content="${escapedDescription}" />`);
+    next = upsertHeadTag(next, /<meta\s+(?:name|property)=["']twitter:title["'][^>]*>/i, `<meta name="twitter:title" content="${escapedTitle}" />`);
+    next = upsertHeadTag(next, /<meta\s+(?:name|property)=["']twitter:description["'][^>]*>/i, `<meta name="twitter:description" content="${escapedDescription}" />`);
+
+    return next;
 }
 
 const SERVICE_CATEGORIES = {
@@ -2562,29 +2679,16 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
     content = content.replace(/\{\{CANONICAL_URL\}\}/g, canonicalUrl);
 
     // --- Metadata Replacement Logic ---
-    let pageTitle = 'Go Expandia Blog';
-    let pageDesc = 'Deep dive into B2B sales, lead generation, and operations strategies.';
-    let pageKeywords = 'B2B sales, lead generation, Go Expandia blog';
-
-    // 1. Check generated blog topics
-    const topic = blogTopics.find(t => t.slug === templateName);
-    if (topic) {
-        pageTitle = topic.title[lang] || topic.title['en'];
-        pageDesc = pageTitle + '. Read expert insights on Go Expandia Blog.';
-    }
-    // 2. Check legacy posts
-    else {
-        const legacy = legacyBlogPosts.find(p => p.url === templateName + '.html' || p.url === templateName);
-        if (legacy) {
-            pageTitle = legacy.title;
-            pageDesc = legacy.excerpt;
-        }
-    }
+    let pageKeywords = 'AI business operations, AI opportunity review, AI plan, AI build and setup, AI training, AI support';
 
     // Apply replacements
-    content = content.replace(/\{\{PAGE_TITLE\}\}/g, pageTitle + ' | Go Expandia');
-    content = content.replace(/\{\{PAGE_DESCRIPTION\}\}/g, pageDesc);
+    const fullBlogMetaTitle = 'AI Business Operations Article | AI Support for Companies | Go Expandia';
+    const fullBlogMetaDesc = 'Practical AI guide from Go Expandia\'s 5-service model: review, plan, build, training, and support for real business results.';
+
+    content = content.replace(/\{\{PAGE_TITLE\}\}/g, fullBlogMetaTitle);
+    content = content.replace(/\{\{PAGE_DESCRIPTION\}\}/g, fullBlogMetaDesc);
     content = content.replace(/\{\{PAGE_KEYWORDS\}\}/g, pageKeywords);
+    content = enforceSeoMetaTags(content, fullBlogMetaTitle, fullBlogMetaDesc, pageKeywords);
 
     // Ensure blog directory exists
     const blogDir = path.dirname(outputPath);
@@ -4112,12 +4216,12 @@ function buildGlossaryTerms() {
             htmlTemplate = htmlTemplate.replace('{{FOOTER}}', pageFooter);
 
             // Metadata
-            const pageTitle = `${termName} - Definition & Business Context | Go Expandia Glossary`;
-            const pageDesc = `What is ${termName}? Definition and business importance for ${termData.category}.`;
+            const pageTitle = `${termName} | AI Business Glossary | Go Expandia`;
+            const pageDesc = `Plain-language definition of ${termName} for teams using AI to improve revenue, costs, cash flow, and operations.`;
 
             htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, pageTitle);
             htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, pageDesc);
-            htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, `${termName} definition, what is ${termName}, ${termName} meaning, ${termData.category} glossary`);
+            htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, `${termName} definition, AI glossary, business AI terms, AI operations glossary`);
 
             const canonicalSlug = lang === 'en' ? `glossary/${termData.slug}.html` : `${lang}/glossary/${termData.slug}.html`;
             htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.goexpandia.com/${canonicalSlug}`);
@@ -4193,8 +4297,8 @@ function buildGlossaryIndex() {
         const labels = {
             en: {
                 glossary: 'Glossary',
-                title: 'Business & Tech Glossary',
-                desc: 'Comprehensive definitions for key terms in B2B marketing, sales, and technology.',
+                title: 'AI Business Glossary',
+                desc: 'Simple definitions for AI terms used in business operations, automation, and delivery.',
                 ctaTitle: 'Ready to Scale?', ctaDesc: 'Let us help you implement these strategies.', ctaBtn: 'Get Started'
             },
             de: {
@@ -4300,7 +4404,7 @@ function buildGlossaryIndex() {
         // Metadata
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, label.title + ' | Go Expandia');
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, label.desc);
-        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, 'glossary, terms, definitions, B2B, sales, marketing');
+        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, 'AI glossary, AI terms, business AI definitions, automation glossary');
 
         const canonicalSlug = lang === 'en' ? `glossary/index.html` : `${lang}/glossary/index.html`;
         htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.goexpandia.com/${canonicalSlug}`);
@@ -4357,16 +4461,16 @@ function buildCityLandingPages() {
 
             // Build page title and description
             const title = lang === 'de'
-                ? `KI- und Softwarelösungen in ${city} | Go Expandia`
+                ? `KI-Services in ${city} | 5 einfache Services | Go Expandia`
                 : lang === 'fr'
-                    ? `Solutions IA et Logiciels à ${city} | Go Expandia`
-                    : `AI & Custom Software Solutions in ${city} | Go Expandia`;
+                    ? `Services IA à ${city} | 5 services simples | Go Expandia`
+                    : `AI Support Services in ${city} | 5 Simple Services | Go Expandia`;
 
             const description = lang === 'de'
-                ? `Unternehmenslösungen in ${city} für KI-Integration und individuelle Softwareentwicklung.`
+                ? `Wir helfen Unternehmen in ${city} mit 5 einfachen KI-Services: Analyse, Plan, Build & Setup, Training und Support.`
                 : lang === 'fr'
-                    ? `Solutions d'entreprise à ${city} pour l'intégration IA et le développement logiciel sur mesure.`
-                    : `Enterprise solutions in ${city} for AI integration and custom software development.`;
+                    ? `Nous aidons les entreprises à ${city} avec 5 services IA simples : revue, plan, build & setup, formation et support.`
+                    : `We help companies in ${city} with 5 simple AI services: review, plan, build & setup, training, and support.`;
 
             // Create page content
             const { cleanContent: content, extractedSchemas } = extractAndRemoveSchemas(templateContent, `templates/city-landing.html`);
@@ -4487,7 +4591,7 @@ function buildCityLandingPages() {
             // Metadata
             fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_TITLE}}/g, title);
             fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_DESCRIPTION}}/g, description);
-            fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_KEYWORDS}}/g, `AI solutions, custom software development, ${country}, enterprise technology`);
+            fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_KEYWORDS}}/g, `AI support services ${city}, AI opportunity review ${city}, AI build and setup ${city}, AI training ${city}, AI support ${city}`);
 
             // Canonical URL
             const canonicalSlug = lang === 'en' ? `${citySlug}.html` : `${lang}/${citySlug}.html`;
@@ -4626,6 +4730,17 @@ function buildLegacyRedirectRules() {
         '# Generated by build-pages.js. Keep these redirects long-term.',
         ''
     ];
+
+    const forcedLegacyPaths = [
+        { source: '/cold-calling-services.html', target: '/ai-opportunity-review.html' },
+        { source: '/blog/why-speed-to-lead-matters.html', target: '/blog/index.html' }
+    ];
+
+    forcedLegacyPaths.forEach(({ source, target }) => {
+        lines.push(`${source}  ${target}  301!`);
+    });
+
+    lines.push('');
 
     Object.entries(LEGACY_REDIRECT_TARGETS).forEach(([source, target]) => {
         if (!source || source === target) {
