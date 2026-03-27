@@ -564,72 +564,6 @@
     "landmark": "Tower Bridge"
   },
   {
-    "id": "monchengladbach",
-    "slug": "monchengladbach",
-    "city": "Mönchengladbach",
-    "country": "Germany",
-    "description": "Enterprise solutions in Mönchengladbach for secure IT infrastructure, AI automation, and custom software development across Germany and the DACH market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 51.18539,
-    "lng": 6.44172,
-    "region": "DACH",
-    "landmark": "Marktplatz",
-    "legacySlugs": [
-      "mnchengladbach"
-    ]
-  },
-  {
-    "id": "gelsenkirchen",
-    "slug": "gelsenkirchen",
-    "city": "Gelsenkirchen",
-    "country": "Germany",
-    "description": "Enterprise solutions in Gelsenkirchen for secure IT infrastructure, AI automation, and custom software development across Germany and the DACH market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 51.50508,
-    "lng": 7.09654,
-    "region": "DACH",
-    "landmark": "Marktplatz"
-  },
-  {
-    "id": "braunschweig",
-    "slug": "braunschweig",
-    "city": "Braunschweig",
-    "country": "Germany",
-    "description": "Enterprise solutions in Braunschweig for secure IT infrastructure, AI automation, and custom software development across Germany and the DACH market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 52.31917,
-    "lng": 10.55611,
-    "region": "DACH",
-    "landmark": "Marktplatz"
-  },
-  {
-    "id": "ludwigshafen",
-    "slug": "ludwigshafen",
-    "city": "Ludwigshafen",
-    "country": "Germany",
-    "description": "Enterprise solutions in Ludwigshafen for secure IT infrastructure, AI automation, and custom software development across Germany and the DACH market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 47.81663,
-    "lng": 9.06138,
-    "region": "DACH",
-    "landmark": "Marktplatz"
-  },
-  {
-    "id": "saarbrucken",
-    "slug": "saarbrucken",
-    "city": "Saarbrücken",
-    "country": "Germany",
-    "description": "Enterprise solutions in Saarbrücken for secure IT infrastructure, AI automation, and custom software development across Germany and the DACH market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 49.23262,
-    "lng": 7.00982,
-    "region": "DACH",
-    "landmark": "Marktplatz",
-    "legacySlugs": [
-      "saarbrcken"
-    ]
-  },
-  {
     "id": "dusseldorf",
     "slug": "dusseldorf",
     "city": "Düsseldorf",
@@ -643,30 +577,6 @@
     "legacySlugs": [
       "dsseldorf"
     ]
-  },
-  {
-    "id": "oberhausen",
-    "slug": "oberhausen",
-    "city": "Oberhausen",
-    "country": "Germany",
-    "description": "Enterprise solutions in Oberhausen for secure IT infrastructure, AI automation, and custom software development across Germany and the DACH market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 51.47805,
-    "lng": 6.8625,
-    "region": "DACH",
-    "landmark": "Marktplatz"
-  },
-  {
-    "id": "leverkusen",
-    "slug": "leverkusen",
-    "city": "Leverkusen",
-    "country": "Germany",
-    "description": "Enterprise solutions in Leverkusen for secure IT infrastructure, AI automation, and custom software development across Germany and the DACH market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 51.0303,
-    "lng": 6.98432,
-    "region": "DACH",
-    "landmark": "Marktplatz"
   },
   {
     "id": "heidelberg",
@@ -713,30 +623,6 @@
     "image": "./assets/local/default-city.jpg",
     "lat": 49.45421,
     "lng": 11.07752,
-    "region": "DACH",
-    "landmark": "Marktplatz"
-  },
-  {
-    "id": "wuppertal",
-    "slug": "wuppertal",
-    "city": "Wuppertal",
-    "country": "Germany",
-    "description": "Enterprise solutions in Wuppertal for secure IT infrastructure, AI automation, and custom software development across Germany and the DACH market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 51.25627,
-    "lng": 7.14816,
-    "region": "DACH",
-    "landmark": "Marktplatz"
-  },
-  {
-    "id": "bielefeld",
-    "slug": "bielefeld",
-    "city": "Bielefeld",
-    "country": "Germany",
-    "description": "Enterprise solutions in Bielefeld for secure IT infrastructure, AI automation, and custom software development across Germany and the DACH market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 52.03333,
-    "lng": 8.53333,
     "region": "DACH",
     "landmark": "Marktplatz"
   },
@@ -852,18 +738,6 @@
     "landmark": "Marktplatz"
   },
   {
-    "id": "kingston-upon-hull",
-    "slug": "kingston-upon-hull",
-    "city": "Kingston upon Hull",
-    "country": "United Kingdom",
-    "description": "Enterprise solutions in Kingston upon Hull for secure IT infrastructure, AI automation, and custom software development across United Kingdom and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 53.7446,
-    "lng": -0.33525,
-    "region": "Western Europe",
-    "landmark": "City Centre"
-  },
-  {
     "id": "clermont-ferrand",
     "slug": "clermont-ferrand",
     "city": "Clermont-Ferrand",
@@ -876,18 +750,6 @@
     "landmark": "Old Town"
   },
   {
-    "id": "southend-on-sea",
-    "slug": "southend-on-sea",
-    "city": "Southend-on-Sea",
-    "country": "United Kingdom",
-    "description": "Enterprise solutions in Southend-on-Sea for secure IT infrastructure, AI automation, and custom software development across United Kingdom and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 51.53782,
-    "lng": 0.71433,
-    "region": "Western Europe",
-    "landmark": "City Centre"
-  },
-  {
     "id": "aix-en-provence",
     "slug": "aix-en-provence",
     "city": "Aix-en-Provence",
@@ -898,30 +760,6 @@
     "lng": 5.44973,
     "region": "Western Europe",
     "landmark": "Old Town"
-  },
-  {
-    "id": "stoke-on-trent",
-    "slug": "stoke-on-trent",
-    "city": "Stoke-on-Trent",
-    "country": "United Kingdom",
-    "description": "Enterprise solutions in Stoke-on-Trent for secure IT infrastructure, AI automation, and custom software development across United Kingdom and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 53.00415,
-    "lng": -2.18538,
-    "region": "Western Europe",
-    "landmark": "City Centre"
-  },
-  {
-    "id": "wolverhampton",
-    "slug": "wolverhampton",
-    "city": "Wolverhampton",
-    "country": "United Kingdom",
-    "description": "Enterprise solutions in Wolverhampton for secure IT infrastructure, AI automation, and custom software development across United Kingdom and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 52.58547,
-    "lng": -2.12296,
-    "region": "Western Europe",
-    "landmark": "City Centre"
   },
   {
     "id": "milton-keynes",
@@ -951,18 +789,6 @@
     ]
   },
   {
-    "id": "peterborough",
-    "slug": "peterborough",
-    "city": "Peterborough",
-    "country": "United Kingdom",
-    "description": "Enterprise solutions in Peterborough for secure IT infrastructure, AI automation, and custom software development across United Kingdom and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 52.57364,
-    "lng": -0.24777,
-    "region": "Western Europe",
-    "landmark": "City Centre"
-  },
-  {
     "id": "montpellier",
     "slug": "montpellier",
     "city": "Montpellier",
@@ -983,30 +809,6 @@
     "image": "./assets/local/default-city.jpg",
     "lat": 50.90395,
     "lng": -1.40428,
-    "region": "Western Europe",
-    "landmark": "City Centre"
-  },
-  {
-    "id": "northampton",
-    "slug": "northampton",
-    "city": "Northampton",
-    "country": "United Kingdom",
-    "description": "Enterprise solutions in Northampton for secure IT infrastructure, AI automation, and custom software development across United Kingdom and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 52.25,
-    "lng": -0.88333,
-    "region": "Western Europe",
-    "landmark": "City Centre"
-  },
-  {
-    "id": "bournemouth",
-    "slug": "bournemouth",
-    "city": "Bournemouth",
-    "country": "United Kingdom",
-    "description": "Enterprise solutions in Bournemouth for secure IT infrastructure, AI automation, and custom software development across United Kingdom and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 50.72048,
-    "lng": -1.8795,
     "region": "Western Europe",
     "landmark": "City Centre"
   },
@@ -1047,18 +849,6 @@
     "landmark": "Old Town"
   },
   {
-    "id": "sunderland",
-    "slug": "sunderland",
-    "city": "Sunderland",
-    "country": "United Kingdom",
-    "description": "Enterprise solutions in Sunderland for secure IT infrastructure, AI automation, and custom software development across United Kingdom and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 54.90465,
-    "lng": -1.38222,
-    "region": "Western Europe",
-    "landmark": "City Centre"
-  },
-  {
     "id": "nottingham",
     "slug": "nottingham",
     "city": "Nottingham",
@@ -1067,30 +857,6 @@
     "image": "./assets/local/default-city.jpg",
     "lat": 52.9536,
     "lng": -1.15047,
-    "region": "Western Europe",
-    "landmark": "City Centre"
-  },
-  {
-    "id": "portsmouth",
-    "slug": "portsmouth",
-    "city": "Portsmouth",
-    "country": "United Kingdom",
-    "description": "Enterprise solutions in Portsmouth for secure IT infrastructure, AI automation, and custom software development across United Kingdom and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 50.79899,
-    "lng": -1.09125,
-    "region": "Western Europe",
-    "landmark": "City Centre"
-  },
-  {
-    "id": "warrington",
-    "slug": "warrington",
-    "city": "Warrington",
-    "country": "United Kingdom",
-    "description": "Enterprise solutions in Warrington for secure IT infrastructure, AI automation, and custom software development across United Kingdom and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 53.39254,
-    "lng": -2.58024,
     "region": "Western Europe",
     "landmark": "City Centre"
   },
@@ -1203,18 +969,6 @@
     "landmark": "City Centre"
   },
   {
-    "id": "st-helens",
-    "slug": "st-helens",
-    "city": "St Helens",
-    "country": "United Kingdom",
-    "description": "Enterprise solutions in St Helens for secure IT infrastructure, AI automation, and custom software development across United Kingdom and the Western Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 53.45,
-    "lng": -2.73333,
-    "region": "Western Europe",
-    "landmark": "City Centre"
-  },
-  {
     "id": "eindhoven",
     "slug": "eindhoven",
     "city": "Eindhoven",
@@ -1314,18 +1068,6 @@
     "landmark": "L'Hospitalet business district"
   },
   {
-    "id": "las-palmas",
-    "slug": "las-palmas",
-    "city": "Las Palmas",
-    "country": "Spain",
-    "description": "Enterprise solutions in Las Palmas for secure IT infrastructure, AI automation, and custom software development across Spain and the Southern Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 28.1235,
-    "lng": -15.4363,
-    "region": "Southern Europe",
-    "landmark": "Las Palmas business district"
-  },
-  {
     "id": "valladolid",
     "slug": "valladolid",
     "city": "Valladolid",
@@ -1336,18 +1078,6 @@
     "lng": -4.72372,
     "region": "Southern Europe",
     "landmark": "Valladolid business district"
-  },
-  {
-    "id": "santa-cruz",
-    "slug": "santa-cruz",
-    "city": "Santa Cruz",
-    "country": "Spain",
-    "description": "Enterprise solutions in Santa Cruz for secure IT infrastructure, AI automation, and custom software development across Spain and the Southern Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 28.46824,
-    "lng": -16.25462,
-    "region": "Southern Europe",
-    "landmark": "Santa Cruz business district"
   },
   {
     "id": "barcelona",

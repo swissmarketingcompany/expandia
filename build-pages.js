@@ -163,6 +163,30 @@ const RETIRED_EASTERN_EUROPE_CITY_SLUGS = [
     'gliwice',
     'ostrava'
 ];
+const RETIRED_CONSERVATIVE_TRIM_CITY_SLUGS = [
+    'monchengladbach',
+    'gelsenkirchen',
+    'braunschweig',
+    'ludwigshafen',
+    'saarbrucken',
+    'oberhausen',
+    'leverkusen',
+    'wuppertal',
+    'bielefeld',
+    'kingston-upon-hull',
+    'southend-on-sea',
+    'stoke-on-trent',
+    'wolverhampton',
+    'peterborough',
+    'northampton',
+    'bournemouth',
+    'sunderland',
+    'portsmouth',
+    'warrington',
+    'st-helens',
+    'las-palmas',
+    'santa-cruz'
+];
 const rawCities = require('./data/cities-top250.json');
 const cities = rawCities.filter((city) => Number(city.lng) <= ANKARA_LONGITUDE_CUTOFF);
 const industries = require('./data/industries.json');
@@ -286,6 +310,9 @@ if (RETIRED_LOW_POP_CITY_SLUGS.length > 0) {
 }
 if (RETIRED_EASTERN_EUROPE_CITY_SLUGS.length > 0) {
     console.log(`🧹 Retiring ${RETIRED_EASTERN_EUROPE_CITY_SLUGS.length} Eastern Europe/Balkan city slugs for cleanup/redirects.`);
+}
+if (RETIRED_CONSERVATIVE_TRIM_CITY_SLUGS.length > 0) {
+    console.log(`🧹 Retiring ${RETIRED_CONSERVATIVE_TRIM_CITY_SLUGS.length} conservative-trim city slugs for cleanup/redirects.`);
 }
 
 // Function to generate unique SEO content for each city
@@ -2234,7 +2261,8 @@ const RETIRED_CITY_SLUGS = new Set([
     'rhondda-cynon-taf',
     ...EAST_OF_ANKARA_CITY_SLUGS,
     ...RETIRED_LOW_POP_CITY_SLUGS,
-    ...RETIRED_EASTERN_EUROPE_CITY_SLUGS
+    ...RETIRED_EASTERN_EUROPE_CITY_SLUGS,
+    ...RETIRED_CONSERVATIVE_TRIM_CITY_SLUGS
 ]);
 const RETIRED_CITY_REDIRECT_TARGET = 'city-locations';
 
