@@ -70,7 +70,75 @@ const RETIRED_LOW_POP_CITY_SLUGS = [
     'la-rochelle',
     'gateshead',
     'szombathely',
-    'stockton-on-tees'
+    'stockton-on-tees',
+    'kristiansand',
+    'rotherham',
+    'nyiregyhaza',
+    'offenbach',
+    'pforzheim',
+    'perugia',
+    'ingolstadt',
+    'heilbronn',
+    'gottingen',
+    'recklinghausen',
+    'wolfsburg',
+    'salerno',
+    'vasteras',
+    'regensburg',
+    'villeurbanne',
+    'ferrara',
+    'innsbruck',
+    'stockport',
+    'darmstadt',
+    'bremerhaven',
+    'st-gallen',
+    'winterthur',
+    'klagenfurt',
+    'reutlingen',
+    'boulogne-billancourt',
+    'asnieres-sur-seine',
+    'aulnay-sous-bois',
+    'vitry-sur-seine',
+    'courbevoie',
+    'versailles',
+    'doncaster',
+    'perpignan',
+    'ravenna',
+    'funchal',
+    'helsingborg',
+    'fredrikstad',
+    'norrkoping',
+    'jonkoping',
+    'drammen',
+    'sandnes',
+    'ceske-budejovice',
+    'hradec-kralove',
+    'usti-nad-labem',
+    'szekesfehervar',
+    'pardubice',
+    'kecskemet',
+    'wichita',
+    'tampa',
+    'bakersfield',
+    'tulsa',
+    'minneapolis',
+    'oakland',
+    'long-beach',
+    'miami',
+    'raleigh',
+    'omaha',
+    'kansas-city',
+    'mesa',
+    'colorado-springs',
+    'fort-lauderdale',
+    'virginia-beach',
+    'corpus-christi',
+    'st-petersburg',
+    'salt-lake-city',
+    'winston-salem',
+    'overland-park',
+    'santa-clarita',
+    'grand-rapids'
 ];
 const rawCities = require('./data/cities-top250.json');
 const cities = rawCities.filter((city) => Number(city.lng) <= ANKARA_LONGITUDE_CUTOFF);
@@ -3965,15 +4033,28 @@ function buildCityLocationsPage() {
     </style>`;
 
     // Prepare Script Content (Leaflet JS + Logic)
-    // Transform cities data for JS
-    const citiesForJs = cities.map(c => ({
-        name: c.city,
-        country: c.country || '',
-        lat: c.lat || 0,
-        lng: c.lng || 0,
-        url: `./${normalizeCitySlug(c.city)}.html`,
-        region: c.region || 'Global'
-    }));
+    // Transform cities data for JS and prepend main office (Delaware)
+    const mainOffice = {
+        name: 'Delaware Main Office',
+        country: 'United States',
+        lat: 39.7391,
+        lng: -75.5398,
+        url: './contact.html',
+        region: 'Main Office',
+        isMainOffice: true
+    };
+    const citiesForJs = [
+        mainOffice,
+        ...cities.map(c => ({
+            name: c.city,
+            country: c.country || '',
+            lat: c.lat || 0,
+            lng: c.lng || 0,
+            url: `./${normalizeCitySlug(c.city)}.html`,
+            region: c.region || 'Global',
+            isMainOffice: false
+        }))
+    ];
 
     const scriptContent = `
     <!-- Leaflet JS -->
@@ -3991,6 +4072,7 @@ function buildCityLocationsPage() {
         }).addTo(map);
         
         const regionColors = {
+            'Main Office': '#111827',
             'DACH': '#cb102c',
             'Western Europe': '#e86100',
             'Southern Europe': '#ff6b35',
@@ -4003,7 +4085,15 @@ function buildCityLocationsPage() {
             'Europe': '#95a5a6'
         };
 
-        function createCustomIcon(color) {
+        function createCustomIcon(color, isMainOffice = false) {
+            if (isMainOffice) {
+                return L.divIcon({
+                    className: 'city-marker',
+                    html: \`<div style="width: 24px; height: 24px; background-color: \${color}; border: 3px solid white; border-radius: 0.4rem; box-shadow: 0 2px 10px rgba(0,0,0,0.35); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; font-weight: 700;">★</div>\`,
+                    iconSize: [24, 24],
+                    iconAnchor: [12, 12]
+                });
+            }
             return L.divIcon({
                 className: 'city-marker',
                 html: \`<div style="width: 20px; height: 20px; background-color: \${color}; border: 3px solid white; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.3); transition: all 0.3s ease;"></div>\`,
@@ -4015,15 +4105,17 @@ function buildCityLocationsPage() {
         cities.forEach(city => {
             if(city.lat === 0 && city.lng === 0) return;
             const color = regionColors[city.region] || '#ff6b35';
-            const icon = createCustomIcon(color);
+            const icon = createCustomIcon(color, city.isMainOffice);
             const marker = L.marker([city.lat, city.lng], { icon: icon }).addTo(map);
+            const ctaLabel = city.isMainOffice ? 'Contact Main Office →' : 'View Services →';
+            const subtitle = city.isMainOffice ? 'Main Office • Delaware' : city.region;
             
             const popupContent = \`
                 <div class="custom-popup">
                     <h3>\${city.name}</h3>
                     <p style="margin: 0.25rem 0; color: #666;">\${city.country}</p>
-                    <p style="margin: 0.25rem 0 0.5rem; color: #666;">\${city.region}</p>
-                    <a href="\${city.url}" style="display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; background-color: #f9c23c; color: #000; border-radius: 0.25rem; font-weight: 600; text-decoration: none;">View Services →</a>
+                    <p style="margin: 0.25rem 0 0.5rem; color: #666;">\${subtitle}</p>
+                    <a href="\${city.url}" style="display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; background-color: #f9c23c; color: #000; border-radius: 0.25rem; font-weight: 600; text-decoration: none;">\${ctaLabel}</a>
                 </div>
             \`;
             marker.bindPopup(popupContent);
@@ -4031,16 +4123,26 @@ function buildCityLocationsPage() {
         });
 
         const cityListContainer = document.getElementById('city-list');
-        cities.sort((a, b) => a.name.localeCompare(b.name)).forEach(city => {
+        const mainOffice = cities.find(city => city.isMainOffice);
+        const regularCities = cities.filter(city => !city.isMainOffice).sort((a, b) => a.name.localeCompare(b.name));
+        const orderedCities = mainOffice ? [mainOffice, ...regularCities] : regularCities;
+
+        orderedCities.forEach(city => {
             const cityCard = document.createElement('a');
             cityCard.href = city.url;
-            cityCard.className = 'buzz-card p-4 hover:scale-105 transition-transform cursor-pointer';
+            cityCard.className = city.isMainOffice
+                ? 'buzz-card p-4 border-2 border-primary/40 bg-primary/5 hover:scale-105 transition-transform cursor-pointer'
+                : 'buzz-card p-4 hover:scale-105 transition-transform cursor-pointer';
+            const listSubtitle = city.isMainOffice ? 'United States • Main Office (Delaware)' : \`\${city.country} • \${city.region}\`;
+            const markerDot = city.isMainOffice
+                ? \`<div class="w-4 h-4 rounded-md flex items-center justify-center text-[10px] font-bold text-white" style="background-color: \${regionColors[city.region] || '#111827'};">★</div>\`
+                : \`<div class="w-3 h-3 rounded-full" style="background-color: \${regionColors[city.region] || '#ff6b35'};"></div>\`;
             cityCard.innerHTML = \`
                 <div class="flex items-center gap-3">
-                    <div class="w-3 h-3 rounded-full" style="background-color: \${regionColors[city.region] || '#ff6b35'};"></div>
+                    \${markerDot}
                     <div>
                         <h3 class="font-semibold">\${city.name}</h3>
-                        <p class="text-sm text-base-content/60">\${city.country} • \${city.region}</p>
+                        <p class="text-sm text-base-content/60">\${listSubtitle}</p>
                     </div>
                 </div>
             \`;
