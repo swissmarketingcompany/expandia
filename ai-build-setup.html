@@ -320,7 +320,7 @@
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="contact.html" class="btn btn-primary btn-lg buzz-button shadow-lg shadow-primary/25">Talk to Us</a>
-                    <a href="#microapps" class="btn btn-outline btn-lg">Try the Microapps</a>
+                    <a href="#data-dump-model" class="btn btn-outline btn-lg">See Data Dump Model</a>
                 </div>
             </div>
             <div class="relative">
@@ -336,362 +336,312 @@
     <div class="container mx-auto container-padding">
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-5xl font-bold mb-4">What This Service Really Means</h2>
-            <p class="text-lg text-base-content/60 max-w-3xl mx-auto">This is the part where ideas become working agent tools, approval flows, and day-to-day software.</p>
+            <p class="text-lg text-base-content/60 max-w-3xl mx-auto">Everything starts from our Data Dump Model, then we build applications on top of it.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             
             <div class="buzz-card p-8 bg-white shadow-lg border-t-4 border-primary">
-                <h3 class="text-2xl font-bold mb-3">What we build</h3>
-                <p class="text-base-content/70">Agent workstations, approval tools, operating dashboards, internal apps, and workflow software around AI.</p>
+                <h3 class="text-2xl font-bold mb-3">Step 1: Data Dump</h3>
+                <p class="text-base-content/70">You upload large company data by domain. We analyze it and deliver structured PDF reports.</p>
+            </div>
+            <div class="buzz-card p-8 bg-white shadow-lg border-t-4 border-secondary">
+                <h3 class="text-2xl font-bold mb-3">Step 2: AI Applications</h3>
+                <p class="text-base-content/70">From those reports, we build the right AI tools and workflows for your business.</p>
             </div>
             <div class="buzz-card p-8 bg-white shadow-lg border-t-4 border-secondary">
                 <h3 class="text-2xl font-bold mb-3">How you buy it</h3>
                 <p class="text-base-content/70">Fixed-price project or monthly build partner, depending on how much work you want to move at once.</p>
             </div>
             <div class="buzz-card p-8 bg-white shadow-lg border-t-4 border-accent">
-                <h3 class="text-2xl font-bold mb-3">Starting price</h3>
-                <p class="text-base-content/70">Projects start at EUR 8,000. Monthly build work starts at EUR 4,000.</p>
-            </div>
-            <div class="buzz-card p-8 bg-white shadow-lg border-t-4 border-neutral">
-                <h3 class="text-2xl font-bold mb-3">Good fit if</h3>
-                <p class="text-base-content/70">You want AI to do real work in finance, sales, legal, support, or operations, not just answer prompts.</p>
+                <h3 class="text-2xl font-bold mb-3">Output format</h3>
+                <p class="text-base-content/70">Every Data Dump PDF has two parts: analysis of current data and where to implement AI first.</p>
             </div>
         </div>
     </div>
 </section>
 
-<section id="microapps" class="section-spacing bg-base-100">
+<section id="data-dump-model" class="section-spacing bg-base-100">
     <div class="container mx-auto container-padding">
         <div class="text-center mb-12">
             <h2 class="text-4xl md:text-5xl font-black mb-4">
-                <span class="gradient-header">Live Agent Demos</span>
+                <span class="gradient-header">Data Dump Model</span>
             </h2>
-            <p class="text-base text-base-content/60 max-w-2xl mx-auto">Tap around. See what AI agents actually do.</p>
+            <p class="text-base text-base-content/60 max-w-3xl mx-auto">
+                Every tool starts here. We process large domain datasets and generate PDF reports with: current-data analysis + where to implement AI.
+            </p>
+            <p class="text-sm text-base-content/50 max-w-2xl mx-auto mt-2">
+                Built for high-volume company datasets where generic public assistants usually hit file limits.
+            </p>
         </div>
 
-        <div class="grid gap-6 lg:grid-cols-3">
+        <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+            <div class="buzz-card p-8 bg-white shadow-xl border-t-4 border-primary">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-2xl font-bold">Data Dump Flow</h3>
+                    <span class="badge badge-primary">Demo</span>
+                </div>
 
-            <!-- EXPENSE APPROVER -->
-            <div class="buzz-card overflow-hidden bg-white shadow-xl" id="demo-expenses">
-                <div class="px-5 pt-5 pb-4 border-b border-base-200">
-                    <div class="flex items-center justify-between gap-3">
-                        <h3 class="text-lg font-bold">Expense Approver</h3>
-                        <span class="badge badge-primary badge-sm">Finance</span>
+                <label class="text-sm font-semibold text-base-content block mb-2">Analysis domain</label>
+                <select id="dump-domain" class="select select-bordered w-full mb-4">
+                    <option value="revenue">Revenue Collection</option>
+                    <option value="finance">Financial Data Analysis</option>
+                    <option value="sales">Sales Analysis</option>
+                    <option value="supply">Supply Chain Analysis</option>
+                    <option value="product">Product Analysis</option>
+                    <option value="invoice">Invoice Analysis</option>
+                    <option value="timesheet">Timesheet Analysis</option>
+                    <option value="employee">Employee Performance Analysis</option>
+                    <option value="energy">Energy Cost Analysis</option>
+                    <option value="production">Production Line Analysis</option>
+                    <option value="manufacturing">Manufacturing Analysis</option>
+                </select>
+
+                <div class="rounded-2xl border-2 border-dashed border-base-300 bg-base-50 p-6 text-center mb-4">
+                    <p class="text-sm font-semibold text-base-content">Dump your data here</p>
+                    <p class="text-xs text-base-content/50 mt-1">Up to 1 TB per run</p>
+                </div>
+
+                <div class="space-y-3 mb-5" id="dump-steps">
+                    <div class="flex items-center gap-3 rounded-xl bg-base-100 px-4 py-3 border border-base-200">
+                        <span id="step-upload-dot" class="w-2.5 h-2.5 rounded-full bg-base-300"></span>
+                        <span class="text-sm font-medium text-base-content/70">Data intake</span>
+                    </div>
+                    <div class="flex items-center gap-3 rounded-xl bg-base-100 px-4 py-3 border border-base-200">
+                        <span id="step-analysis-dot" class="w-2.5 h-2.5 rounded-full bg-base-300"></span>
+                        <span class="text-sm font-medium text-base-content/70">Deep analysis</span>
+                    </div>
+                    <div class="flex items-center gap-3 rounded-xl bg-base-100 px-4 py-3 border border-base-200">
+                        <span id="step-pdf-dot" class="w-2.5 h-2.5 rounded-full bg-base-300"></span>
+                        <span class="text-sm font-medium text-base-content/70">PDF report generation</span>
                     </div>
                 </div>
-                <div class="p-5">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="text-center">
-                            <p class="text-3xl font-black text-primary" id="exp-approved">0</p>
-                            <p class="text-[10px] uppercase tracking-widest text-base-content/40 mt-1">Approved</p>
-                        </div>
-                        <div class="text-center">
-                            <p class="text-3xl font-black text-base-content/30" id="exp-pending">5</p>
-                            <p class="text-[10px] uppercase tracking-widest text-base-content/40 mt-1">Pending</p>
-                        </div>
-                        <div class="text-center">
-                            <p class="text-3xl font-black text-red-400" id="exp-flagged">0</p>
-                            <p class="text-[10px] uppercase tracking-widest text-base-content/40 mt-1">Flagged</p>
-                        </div>
-                    </div>
 
-                    <div id="exp-queue" class="space-y-2">
-                    </div>
-
-                    <div id="exp-done-msg" class="hidden text-center py-6">
-                        <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                            <svg class="w-7 h-7 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        </div>
-                        <p class="font-bold text-base-content/80">Queue cleared</p>
-                        <button type="button" id="exp-reset" class="btn btn-xs btn-ghost text-primary mt-2">Reset demo</button>
-                    </div>
-
-                    <div class="mt-4 rounded-xl bg-base-200/60 px-3 py-2 flex items-center justify-between">
-                        <p class="text-xs text-base-content/50">Total approved</p>
-                        <p class="text-sm font-bold text-primary" id="exp-total">EUR 0</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SUPPORT TRIAGE -->
-            <div class="buzz-card overflow-hidden bg-white shadow-xl" id="demo-triage">
-                <div class="px-5 pt-5 pb-4 border-b border-base-200">
-                    <div class="flex items-center justify-between gap-3">
-                        <h3 class="text-lg font-bold">Support Triage</h3>
-                        <span class="badge badge-secondary badge-sm">Operations</span>
-                    </div>
-                </div>
-                <div class="p-5">
-                    <div id="triage-inbox" class="space-y-2 mb-4">
-                    </div>
-
-                    <div id="triage-running" class="hidden text-center py-4">
-                        <div class="w-10 h-10 border-4 border-primary/30 border-t-primary rounded-full animate-spin mx-auto mb-3"></div>
-                        <p class="text-sm font-medium text-base-content/60">Sorting tickets…</p>
-                    </div>
-
-                    <div id="triage-result" class="hidden space-y-3">
-                        <div class="flex items-center gap-3">
-                            <span class="w-2.5 h-2.5 rounded-full bg-red-400 flex-shrink-0"></span>
-                            <div class="flex-1 h-2 bg-base-200 rounded-full overflow-hidden"><div class="h-full bg-red-400 rounded-full transition-all duration-700" id="bar-urgent" style="width:0%"></div></div>
-                            <span class="text-xs font-bold text-red-400 w-8 text-right" id="count-urgent">0</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="w-2.5 h-2.5 rounded-full bg-amber-400 flex-shrink-0"></span>
-                            <div class="flex-1 h-2 bg-base-200 rounded-full overflow-hidden"><div class="h-full bg-amber-400 rounded-full transition-all duration-700" id="bar-medium" style="width:0%"></div></div>
-                            <span class="text-xs font-bold text-amber-400 w-8 text-right" id="count-medium">0</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="w-2.5 h-2.5 rounded-full bg-green-400 flex-shrink-0"></span>
-                            <div class="flex-1 h-2 bg-base-200 rounded-full overflow-hidden"><div class="h-full bg-green-400 rounded-full transition-all duration-700" id="bar-low" style="width:0%"></div></div>
-                            <span class="text-xs font-bold text-green-400 w-8 text-right" id="count-low">0</span>
-                        </div>
-                        <div class="mt-2 rounded-xl bg-base-200/60 px-3 py-2 flex items-center justify-between">
-                            <p class="text-xs text-base-content/50">Time saved</p>
-                            <p class="text-sm font-bold text-secondary" id="triage-saved">~45 min</p>
-                        </div>
-                        <button type="button" id="triage-reset" class="btn btn-xs btn-ghost text-secondary w-full mt-1">Reset demo</button>
-                    </div>
-
-                    <button type="button" id="triage-run" class="btn btn-secondary btn-sm w-full">Sort 8 tickets</button>
+                <div class="flex gap-3">
+                    <button id="dump-run" type="button" class="btn btn-primary flex-1">Run Data Dump</button>
+                    <button id="dump-reset" type="button" class="btn btn-ghost hidden">Reset</button>
                 </div>
             </div>
 
-            <!-- INVOICE SCANNER -->
-            <div class="buzz-card overflow-hidden bg-white shadow-xl" id="demo-invoices">
-                <div class="px-5 pt-5 pb-4 border-b border-base-200">
-                    <div class="flex items-center justify-between gap-3">
-                        <h3 class="text-lg font-bold">Invoice Scanner</h3>
-                        <span class="badge badge-accent badge-sm">Accounting</span>
+            <div class="buzz-card p-8 bg-base-50 shadow-lg border-t-4 border-primary">
+                <h3 class="text-2xl font-bold mb-5">PDF Output</h3>
+
+                <div id="dump-pdf-card" class="rounded-2xl bg-white border border-base-200 p-5 mb-4 opacity-60">
+                    <p class="text-xs uppercase tracking-wider text-base-content/50 mb-2">Report file</p>
+                    <p id="dump-pdf-name" class="font-bold text-base-content/50">Waiting for analysis...</p>
+                    <p class="text-xs text-base-content/50 mt-2">Ready in approx. 3 days</p>
+                    <p id="dump-taskline" class="text-xs text-base-content/60 mt-1">Task recommendations appear after report generation.</p>
+                </div>
+
+                <div id="dump-findings" class="space-y-3 opacity-60">
+                    <div class="rounded-xl bg-white border border-base-200 p-4">
+                        <p class="text-xs uppercase tracking-wider text-primary mb-1">Analysis of existing data</p>
+                        <p id="dump-analysis-text" class="text-sm text-base-content/60">Run the Data Dump to generate findings.</p>
+                    </div>
+                    <div class="rounded-xl bg-white border border-base-200 p-4">
+                        <p class="text-xs uppercase tracking-wider text-primary mb-1">Where to implement AI</p>
+                        <p id="dump-ai-text" class="text-sm text-base-content/60">AI implementation priorities appear here.</p>
                     </div>
                 </div>
-                <div class="p-5">
-                    <div id="inv-stack" class="grid grid-cols-3 gap-2 mb-4">
-                    </div>
 
-                    <div id="inv-scanning" class="hidden text-center py-4">
-                        <div class="w-10 h-10 border-4 border-accent/30 border-t-accent rounded-full animate-spin mx-auto mb-3"></div>
-                        <p class="text-sm font-medium text-base-content/60">Reading invoice…</p>
-                    </div>
-
-                    <div id="inv-extracted" class="hidden">
-                        <div class="rounded-xl bg-base-200/60 p-3 space-y-2">
-                            <div class="flex justify-between"><span class="text-xs text-base-content/50">Vendor</span><span class="text-xs font-bold" id="inv-vendor">—</span></div>
-                            <div class="flex justify-between"><span class="text-xs text-base-content/50">Amount</span><span class="text-xs font-bold text-accent" id="inv-amount">—</span></div>
-                            <div class="flex justify-between"><span class="text-xs text-base-content/50">Due</span><span class="text-xs font-bold" id="inv-due">—</span></div>
-                            <div class="flex justify-between"><span class="text-xs text-base-content/50">Category</span><span class="text-xs font-bold" id="inv-cat">—</span></div>
-                        </div>
-                        <div class="flex items-center gap-2 mt-3 justify-center">
-                            <span class="w-2 h-2 rounded-full bg-green-400"></span>
-                            <span class="text-xs text-green-600 font-medium">Auto-matched to ERP</span>
-                        </div>
-                    </div>
-
-                    <div class="mt-4 rounded-xl bg-base-200/60 px-3 py-2 flex items-center justify-between">
-                        <p class="text-xs text-base-content/50">Scanned today</p>
-                        <p class="text-sm font-bold text-accent" id="inv-count">0 / 6</p>
-                    </div>
+                <div id="dump-reanalysis" class="mt-4 rounded-xl bg-white border border-base-200 p-4 hidden">
+                    <p class="text-xs uppercase tracking-wider text-base-content/50 mb-2">Re-analysis mode</p>
+                    <p class="text-sm text-base-content/70">Next run can reuse this PDF plus new data, so full reprocessing is not required.</p>
                 </div>
             </div>
+        </div>
 
+        <div class="mt-12">
+            <h3 class="text-3xl md:text-4xl font-black mb-3 text-center">Data Dump Models</h3>
+            <p class="text-base text-base-content/60 text-center mb-8">Domain-specific analysis models used as the base layer.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="buzz-card p-5 bg-white shadow-sm border border-base-200"><p class="font-semibold">Revenue Collection</p></div>
+                <div class="buzz-card p-5 bg-white shadow-sm border border-base-200"><p class="font-semibold">Financial Data Analysis</p></div>
+                <div class="buzz-card p-5 bg-white shadow-sm border border-base-200"><p class="font-semibold">Sales Analysis</p></div>
+                <div class="buzz-card p-5 bg-white shadow-sm border border-base-200"><p class="font-semibold">Supply Chain Analysis</p></div>
+                <div class="buzz-card p-5 bg-white shadow-sm border border-base-200"><p class="font-semibold">Product Analysis</p></div>
+                <div class="buzz-card p-5 bg-white shadow-sm border border-base-200"><p class="font-semibold">Invoice Analysis</p></div>
+                <div class="buzz-card p-5 bg-white shadow-sm border border-base-200"><p class="font-semibold">Timesheet Analysis</p></div>
+                <div class="buzz-card p-5 bg-white shadow-sm border border-base-200"><p class="font-semibold">Employee Performance Analysis</p></div>
+                <div class="buzz-card p-5 bg-white shadow-sm border border-base-200"><p class="font-semibold">Energy Cost Analysis</p></div>
+                <div class="buzz-card p-5 bg-white shadow-sm border border-base-200"><p class="font-semibold">Production Line Analysis</p></div>
+                <div class="buzz-card p-5 bg-white shadow-sm border border-base-200"><p class="font-semibold">Manufacturing Analysis</p></div>
+            </div>
         </div>
     </div>
-
-    <style>
-        #demo-expenses .exp-row { display:flex; align-items:center; gap:0.5rem; padding:0.5rem 0.75rem; border-radius:0.75rem; background:oklch(0.97 0 0); transition:all 0.3s ease; }
-        #demo-expenses .exp-row.done { opacity:0; max-height:0; padding:0; margin:0; overflow:hidden; }
-        #demo-expenses .exp-icon { width:2rem; height:2rem; border-radius:0.5rem; display:flex; align-items:center; justify-content:center; font-size:0.8rem; flex-shrink:0; }
-        #demo-expenses .exp-label { flex:1; font-size:0.8rem; font-weight:600; color:oklch(0.35 0 0); }
-        #demo-expenses .exp-amt { font-size:0.8rem; font-weight:700; color:oklch(0.35 0 0); margin-right:0.25rem; }
-        #demo-expenses .exp-btn { width:1.75rem; height:1.75rem; border-radius:50%; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:0.7rem; transition:transform 0.15s; }
-        #demo-expenses .exp-btn:hover { transform:scale(1.15); }
-        #demo-expenses .exp-yes { background:oklch(0.85 0.15 145); color:oklch(0.35 0.15 145); }
-        #demo-expenses .exp-no { background:oklch(0.90 0.10 25); color:oklch(0.45 0.15 25); }
-        @keyframes pop-in { from { transform:scale(0.8); opacity:0; } to { transform:scale(1); opacity:1; } }
-        #demo-triage .triage-ticket { display:flex; align-items:center; gap:0.5rem; padding:0.5rem 0.75rem; border-radius:0.75rem; background:oklch(0.97 0 0); font-size:0.75rem; font-weight:500; color:oklch(0.45 0 0); }
-        #demo-invoices .inv-doc { aspect-ratio:3/4; border-radius:0.75rem; display:flex; align-items:center; justify-content:center; font-size:0.65rem; font-weight:600; cursor:pointer; transition:all 0.2s; border:2px solid transparent; }
-        #demo-invoices .inv-doc:hover { transform:translateY(-2px); box-shadow:0 4px 12px oklch(0 0 0/0.1); }
-        #demo-invoices .inv-doc.scanned { border-color:oklch(0.7 0.15 160); background:oklch(0.95 0.05 160)!important; color:oklch(0.4 0.1 160)!important; }
-    </style>
-
-    <script>
-        (() => {
-            /* ── EXPENSE APPROVER ── */
-            const expenses = [
-                { label: 'Team lunch', amount: 340, icon: '🍽️', bg: 'oklch(0.92 0.08 80)' },
-                { label: 'SaaS license', amount: 1200, icon: '💻', bg: 'oklch(0.90 0.08 260)' },
-                { label: 'Flight BER→ZRH', amount: 489, icon: '✈️', bg: 'oklch(0.92 0.06 200)' },
-                { label: 'Office supplies', amount: 95, icon: '📎', bg: 'oklch(0.93 0.06 50)' },
-                { label: 'Client dinner', amount: 780, icon: '🥂', bg: 'oklch(0.91 0.08 350)' }
-            ];
-            let expApproved = 0, expFlagged = 0, expTotal = 0, expPending = expenses.length;
-            const expQueue = document.getElementById('exp-queue');
-            const expDoneMsg = document.getElementById('exp-done-msg');
-
-            function renderExpenses() {
-                expQueue.innerHTML = expenses.map((e, i) =>
-                    '<div class="exp-row" id="exp-r-' + i + '">' +
-                    '<div class="exp-icon" style="background:' + e.bg + '">' + e.icon + '</div>' +
-                    '<span class="exp-label">' + e.label + '</span>' +
-                    '<span class="exp-amt">€' + e.amount + '</span>' +
-                    '<button class="exp-btn exp-yes" data-idx="' + i + '" data-act="yes">✓</button>' +
-                    '<button class="exp-btn exp-no" data-idx="' + i + '" data-act="no">✕</button>' +
-                    '</div>'
-                ).join('');
-            }
-            renderExpenses();
-
-            function updateExpCounters() {
-                document.getElementById('exp-approved').textContent = expApproved;
-                document.getElementById('exp-pending').textContent = expPending;
-                document.getElementById('exp-flagged').textContent = expFlagged;
-                document.getElementById('exp-total').textContent = 'EUR ' + expTotal.toLocaleString();
-            }
-
-            expQueue.addEventListener('click', function(e) {
-                const btn = e.target.closest('.exp-btn');
-                if (!btn) return;
-                const idx = parseInt(btn.dataset.idx);
-                const act = btn.dataset.act;
-                const row = document.getElementById('exp-r-' + idx);
-                if (!row || row.classList.contains('done')) return;
-
-                if (act === 'yes') { expApproved++; expTotal += expenses[idx].amount; }
-                else { expFlagged++; }
-                expPending--;
-                row.classList.add('done');
-                updateExpCounters();
-
-                if (expPending <= 0) {
-                    setTimeout(function() { expQueue.classList.add('hidden'); expDoneMsg.classList.remove('hidden'); }, 350);
-                }
-            });
-
-            document.getElementById('exp-reset').addEventListener('click', function() {
-                expApproved = 0; expFlagged = 0; expTotal = 0; expPending = expenses.length;
-                updateExpCounters();
-                expDoneMsg.classList.add('hidden');
-                expQueue.classList.remove('hidden');
-                renderExpenses();
-            });
-
-
-            /* ── SUPPORT TRIAGE ── */
-            const tickets = [
-                { label: 'Server down – EU', pri: 'urgent' },
-                { label: 'Login issue', pri: 'medium' },
-                { label: 'Password reset', pri: 'low' },
-                { label: 'API timeout', pri: 'urgent' },
-                { label: 'Billing question', pri: 'low' },
-                { label: 'Data export fail', pri: 'medium' },
-                { label: 'SSL cert expiry', pri: 'urgent' },
-                { label: 'UI bug report', pri: 'low' }
-            ];
-            const priColors = { urgent: 'oklch(0.75 0.15 25)', medium: 'oklch(0.80 0.12 80)', low: 'oklch(0.82 0.12 145)' };
-            const triageInbox = document.getElementById('triage-inbox');
-            const triageRun = document.getElementById('triage-run');
-            const triageRunning = document.getElementById('triage-running');
-            const triageResult = document.getElementById('triage-result');
-
-            function renderInbox() {
-                triageInbox.innerHTML = tickets.map(function(t) {
-                    return '<div class="triage-ticket"><span style="width:6px;height:6px;border-radius:50%;background:oklch(0.7 0 0);flex-shrink:0"></span>' + t.label + '</div>';
-                }).join('');
-            }
-            renderInbox();
-
-            triageRun.addEventListener('click', function() {
-                triageRun.classList.add('hidden');
-                triageInbox.classList.add('hidden');
-                triageRunning.classList.remove('hidden');
-
-                setTimeout(function() {
-                    triageRunning.classList.add('hidden');
-                    triageResult.classList.remove('hidden');
-
-                    var counts = { urgent: 0, medium: 0, low: 0 };
-                    tickets.forEach(function(t) { counts[t.pri]++; });
-                    var total = tickets.length;
-
-                    setTimeout(function() {
-                        document.getElementById('bar-urgent').style.width = (counts.urgent / total * 100) + '%';
-                        document.getElementById('bar-medium').style.width = (counts.medium / total * 100) + '%';
-                        document.getElementById('bar-low').style.width = (counts.low / total * 100) + '%';
-                        document.getElementById('count-urgent').textContent = counts.urgent;
-                        document.getElementById('count-medium').textContent = counts.medium;
-                        document.getElementById('count-low').textContent = counts.low;
-                    }, 100);
-                }, 1400);
-            });
-
-            document.getElementById('triage-reset').addEventListener('click', function() {
-                triageResult.classList.add('hidden');
-                triageInbox.classList.remove('hidden');
-                triageRun.classList.remove('hidden');
-                document.getElementById('bar-urgent').style.width = '0%';
-                document.getElementById('bar-medium').style.width = '0%';
-                document.getElementById('bar-low').style.width = '0%';
-                renderInbox();
-            });
-
-
-            /* ── INVOICE SCANNER ── */
-            const invoices = [
-                { vendor: 'TechParts GmbH', amount: 'EUR 4,320', due: 'Apr 12', cat: 'Hardware', color: 'oklch(0.90 0.08 260)' },
-                { vendor: 'CloudServ AG', amount: 'EUR 1,850', due: 'Apr 15', cat: 'SaaS', color: 'oklch(0.90 0.08 200)' },
-                { vendor: 'OfficeMax Ltd', amount: 'EUR 620', due: 'Apr 18', cat: 'Supplies', color: 'oklch(0.92 0.06 80)' },
-                { vendor: 'LegalPro SA', amount: 'EUR 3,100', due: 'Apr 20', cat: 'Services', color: 'oklch(0.90 0.08 350)' },
-                { vendor: 'DataLink Corp', amount: 'EUR 7,500', due: 'Apr 22', cat: 'Infrastructure', color: 'oklch(0.88 0.08 145)' },
-                { vendor: 'PrintWorks KG', amount: 'EUR 290', due: 'Apr 25', cat: 'Marketing', color: 'oklch(0.92 0.06 50)' }
-            ];
-            let invScanned = 0;
-            const invStack = document.getElementById('inv-stack');
-            const invScanning = document.getElementById('inv-scanning');
-            const invExtracted = document.getElementById('inv-extracted');
-
-            function renderInvStack() {
-                invStack.innerHTML = invoices.map(function(inv, i) {
-                    var cls = i < invScanned ? ' scanned' : '';
-                    return '<div class="inv-doc' + cls + '" data-inv="' + i + '" style="background:' + (i < invScanned ? '' : inv.color) + ';color:oklch(0.45 0 0)">' +
-                        '<span>' + (i < invScanned ? '✓' : 'PDF') + '</span></div>';
-                }).join('');
-            }
-            renderInvStack();
-
-            invStack.addEventListener('click', function(e) {
-                var doc = e.target.closest('.inv-doc');
-                if (!doc) return;
-                var idx = parseInt(doc.dataset.inv);
-                if (idx !== invScanned) return;
-
-                invExtracted.classList.add('hidden');
-                invScanning.classList.remove('hidden');
-
-                setTimeout(function() {
-                    invScanning.classList.add('hidden');
-                    var inv = invoices[idx];
-                    document.getElementById('inv-vendor').textContent = inv.vendor;
-                    document.getElementById('inv-amount').textContent = inv.amount;
-                    document.getElementById('inv-due').textContent = inv.due;
-                    document.getElementById('inv-cat').textContent = inv.cat;
-                    invExtracted.classList.remove('hidden');
-                    invExtracted.style.animation = 'pop-in 0.3s ease';
-
-                    invScanned++;
-                    document.getElementById('inv-count').textContent = invScanned + ' / ' + invoices.length;
-                    renderInvStack();
-                }, 900);
-            });
-        })();
-    </script>
 </section>
+
+<section id="ai-applications" class="section-spacing bg-base-200">
+    <div class="container mx-auto container-padding">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-black mb-4">
+                <span class="gradient-header">Applications of AI</span>
+            </h2>
+            <p class="text-base text-base-content/60 max-w-3xl mx-auto">
+                After Data Dump reporting, we implement AI where impact is highest.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="buzz-card p-6 bg-white shadow-lg border-t-4 border-primary">
+                <h3 class="text-xl font-bold mb-2">Revenue Collection Automation</h3>
+                <p class="text-sm text-base-content/70">Collections workflows, reminder logic, and escalation paths from receivables analysis.</p>
+            </div>
+            <div class="buzz-card p-6 bg-white shadow-lg border-t-4 border-secondary">
+                <h3 class="text-xl font-bold mb-2">Finance Decision Workflows</h3>
+                <p class="text-sm text-base-content/70">Budget, cost, and cashflow automation based on financial data findings.</p>
+            </div>
+            <div class="buzz-card p-6 bg-white shadow-lg border-t-4 border-accent">
+                <h3 class="text-xl font-bold mb-2">Sales Performance Systems</h3>
+                <p class="text-sm text-base-content/70">Pipeline, conversion, and pricing improvement workflows driven by sales analysis.</p>
+            </div>
+            <div class="buzz-card p-6 bg-white shadow-lg border-t-4 border-primary">
+                <h3 class="text-xl font-bold mb-2">Supply Chain Optimization</h3>
+                <p class="text-sm text-base-content/70">Procurement, stock, and delay-reduction workflows from supply chain data.</p>
+            </div>
+            <div class="buzz-card p-6 bg-white shadow-lg border-t-4 border-secondary">
+                <h3 class="text-xl font-bold mb-2">Invoice and Timesheet Controls</h3>
+                <p class="text-sm text-base-content/70">Validation, exception handling, and approval flows for finance operations.</p>
+            </div>
+            <div class="buzz-card p-6 bg-white shadow-lg border-t-4 border-accent">
+                <h3 class="text-xl font-bold mb-2">Operations and Manufacturing AI</h3>
+                <p class="text-sm text-base-content/70">Energy, production line, and manufacturing improvement systems from plant-level data.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    (() => {
+        const runBtn = document.getElementById('dump-run');
+        const resetBtn = document.getElementById('dump-reset');
+        const domainSelect = document.getElementById('dump-domain');
+        const uploadDot = document.getElementById('step-upload-dot');
+        const analysisDot = document.getElementById('step-analysis-dot');
+        const pdfDot = document.getElementById('step-pdf-dot');
+        const pdfCard = document.getElementById('dump-pdf-card');
+        const findings = document.getElementById('dump-findings');
+        const analysisText = document.getElementById('dump-analysis-text');
+        const aiText = document.getElementById('dump-ai-text');
+        const pdfName = document.getElementById('dump-pdf-name');
+        const taskline = document.getElementById('dump-taskline');
+        const reanalysis = document.getElementById('dump-reanalysis');
+
+        const models = {
+            revenue: {
+                name: 'Revenue Collection',
+                analysis: 'Receivables show delay concentration in top accounts and weak follow-up timing.',
+                ai: 'Start with collection workflow automation and promise-to-pay tracking.'
+            },
+            finance: {
+                name: 'Financial Data Analysis',
+                analysis: 'Cost variance and cashflow pressure points are concentrated in recurring spend clusters.',
+                ai: 'Start with finance anomaly alerts and approval-path automation.'
+            },
+            sales: {
+                name: 'Sales Analysis',
+                analysis: 'Pipeline leakage appears between quote stage and final approval stage.',
+                ai: 'Start with quote follow-up automation and blocker-routing workflows.'
+            },
+            supply: {
+                name: 'Supply Chain Analysis',
+                analysis: 'Lead-time volatility is highest in selected supplier and transport nodes.',
+                ai: 'Start with delay prediction and replenishment prioritization workflows.'
+            },
+            product: {
+                name: 'Product Analysis',
+                analysis: 'Margin and return signals show uneven performance across product groups.',
+                ai: 'Start with product-priority recommendation and lifecycle optimization.'
+            },
+            invoice: {
+                name: 'Invoice Analysis',
+                analysis: 'Invoice exceptions are driven by mismatch and late validation patterns.',
+                ai: 'Start with invoice validation automation and exception routing.'
+            },
+            timesheet: {
+                name: 'Timesheet Analysis',
+                analysis: 'Timesheet quality and approval delays vary heavily by team and period.',
+                ai: 'Start with timesheet compliance checks and approval acceleration.'
+            },
+            employee: {
+                name: 'Employee Performance Analysis',
+                analysis: 'Output distribution indicates role-level bottlenecks and uneven workload.',
+                ai: 'Start with performance support workflows and manager task signals.'
+            },
+            energy: {
+                name: 'Energy Cost Analysis',
+                analysis: 'Energy peaks are tied to specific operating windows and idle-load behavior.',
+                ai: 'Start with peak-load reduction and operating schedule optimization.'
+            },
+            production: {
+                name: 'Production Line Analysis',
+                analysis: 'Throughput loss clusters around micro-stops and changeover timing.',
+                ai: 'Start with downtime prediction and line-balance workflow automation.'
+            },
+            manufacturing: {
+                name: 'Manufacturing Analysis',
+                analysis: 'Yield and scrap data show process drift in repeat production cycles.',
+                ai: 'Start with process drift detection and corrective action routing.'
+            }
+        };
+
+        function resetUI() {
+            uploadDot.className = 'w-2.5 h-2.5 rounded-full bg-base-300';
+            analysisDot.className = 'w-2.5 h-2.5 rounded-full bg-base-300';
+            pdfDot.className = 'w-2.5 h-2.5 rounded-full bg-base-300';
+            pdfCard.classList.add('opacity-60');
+            findings.classList.add('opacity-60');
+            reanalysis.classList.add('hidden');
+            pdfName.textContent = 'Waiting for analysis...';
+            taskline.textContent = 'Task recommendations appear after report generation.';
+            analysisText.textContent = 'Run the Data Dump to generate findings.';
+            aiText.textContent = 'AI implementation priorities appear here.';
+            runBtn.disabled = false;
+            runBtn.textContent = 'Run Data Dump';
+            resetBtn.classList.add('hidden');
+        }
+
+        function completeDot(dot) {
+            dot.className = 'w-2.5 h-2.5 rounded-full bg-primary';
+        }
+
+        runBtn.addEventListener('click', () => {
+            const key = domainSelect.value;
+            const selected = models[key];
+            runBtn.disabled = true;
+            runBtn.textContent = 'Processing...';
+
+            resetUI();
+            runBtn.disabled = true;
+            runBtn.textContent = 'Processing...';
+
+            setTimeout(() => completeDot(uploadDot), 450);
+            setTimeout(() => completeDot(analysisDot), 1300);
+            setTimeout(() => completeDot(pdfDot), 2200);
+
+            setTimeout(() => {
+                pdfCard.classList.remove('opacity-60');
+                findings.classList.remove('opacity-60');
+                reanalysis.classList.remove('hidden');
+                pdfName.textContent = selected.name + ' - Data Dump Report.pdf';
+                taskline.textContent = 'AI task list generated from this report.';
+                analysisText.textContent = selected.analysis;
+                aiText.textContent = selected.ai;
+                runBtn.textContent = 'Done';
+                resetBtn.classList.remove('hidden');
+            }, 2500);
+        });
+
+        resetBtn.addEventListener('click', resetUI);
+        resetUI();
+    })();
+</script>
 
 <section id="build-process" class="section-spacing bg-base-200">
     <div class="container mx-auto container-padding">
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-5xl font-bold mb-4">How We Turn This Into Real Delivery</h2>
-            <p class="text-lg text-base-content/60 max-w-3xl mx-auto">These are not toy prompt boxes. They show how an agent does work, what it reports, and where your team stays in control.</p>
+            <p class="text-lg text-base-content/60 max-w-3xl mx-auto">The Data Dump model is the foundation. Then we build and deploy.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
             
@@ -700,24 +650,24 @@
                 <span class="text-2xl font-black text-white">1</span>
             </div>
             <div class="hidden lg:block absolute top-8 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-0.5 bg-primary/20"></div>
-            <h3 class="text-xl font-bold mb-3">We pick the first useful app</h3>
-            <p class="text-base-content/70">We choose the app that creates the clearest business value first.</p>
+            <h3 class="text-xl font-bold mb-3">Data Dump and report generation</h3>
+            <p class="text-base-content/70">We process high-volume company data and generate domain PDF reports.</p>
         </div>
         <div class="flex flex-col items-center text-center relative">
             <div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-primary/25">
                 <span class="text-2xl font-black text-white">2</span>
             </div>
             <div class="hidden lg:block absolute top-8 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-0.5 bg-primary/20"></div>
-            <h3 class="text-xl font-bold mb-3">We shape it around your rules</h3>
-            <p class="text-base-content/70">We connect the tool to your wording, your logic, your workflow, and your team.</p>
+            <h3 class="text-xl font-bold mb-3">AI roadmap from report findings</h3>
+            <p class="text-base-content/70">We pick priority automation and application opportunities from those reports.</p>
         </div>
         <div class="flex flex-col items-center text-center relative">
             <div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-primary/25">
                 <span class="text-2xl font-black text-white">3</span>
             </div>
             
-            <h3 class="text-xl font-bold mb-3">We launch and improve it</h3>
-            <p class="text-base-content/70">Once people start using it, we refine the details and keep building from there.</p>
+            <h3 class="text-xl font-bold mb-3">Build, launch, and support</h3>
+            <p class="text-base-content/70">We implement the selected AI applications and keep improving them over time.</p>
         </div>
         </div>
     </div>
@@ -727,44 +677,44 @@
     <div class="container mx-auto container-padding">
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-5xl font-bold mb-4">Common Questions</h2>
-            <p class="text-lg text-base-content/60 max-w-3xl mx-auto">What companies usually ask once they see agent-style apps instead of simple prompt tools.</p>
+            <p class="text-lg text-base-content/60 max-w-3xl mx-auto">What companies ask about Data Dump and implementation.</p>
         </div>
         <div class="space-y-4 max-w-4xl mx-auto">
             
                     <details class="group bg-base-200 rounded-2xl px-6 py-2 shadow-sm" open>
                         <summary class="list-none cursor-pointer py-4 text-xl font-medium flex items-center justify-between gap-4">
-                            <span>Are these real products?</span>
+                            <span>What does each Data Dump PDF include?</span>
                             <span class="text-primary text-2xl leading-none">+</span>
                         </summary>
                         <div class="pb-4 text-base-content/80">
-                            <p>These are live product-style demos. The client version would connect to real systems, real data, and real approval rules.</p>
+                            <p>Two things: analysis of your existing data and clear recommendations on where to implement AI first.</p>
                         </div>
                     </details>
                     <details class="group bg-base-200 rounded-2xl px-6 py-2 shadow-sm" >
                         <summary class="list-none cursor-pointer py-4 text-xl font-medium flex items-center justify-between gap-4">
-                            <span>Can you connect these apps to our systems?</span>
+                            <span>Do we need to upload data every time?</span>
                             <span class="text-primary text-2xl leading-none">+</span>
                         </summary>
                         <div class="pb-4 text-base-content/80">
-                            <p>Yes. The useful version is usually the connected version, not the standalone demo version.</p>
+                            <p>No. For re-analysis, we use previous PDF reports plus new data where needed.</p>
                         </div>
                     </details>
                     <details class="group bg-base-200 rounded-2xl px-6 py-2 shadow-sm" >
                         <summary class="list-none cursor-pointer py-4 text-xl font-medium flex items-center justify-between gap-4">
-                            <span>Do we need a big platform first?</span>
+                            <span>Can you handle large datasets?</span>
                             <span class="text-primary text-2xl leading-none">+</span>
                         </summary>
                         <div class="pb-4 text-base-content/80">
-                            <p>No. Many companies start with one agent workflow around one problem, then expand once the value is clear.</p>
+                            <p>Yes. This model is designed for large enterprise datasets and structured domain analysis.</p>
                         </div>
                     </details>
                     <details class="group bg-base-200 rounded-2xl px-6 py-2 shadow-sm" >
                         <summary class="list-none cursor-pointer py-4 text-xl font-medium flex items-center justify-between gap-4">
-                            <span>Can these be internal tools only?</span>
+                            <span>What happens after reporting?</span>
                             <span class="text-primary text-2xl leading-none">+</span>
                         </summary>
                         <div class="pb-4 text-base-content/80">
-                            <p>Yes. Many of the best first builds are internal tools for finance, sales, legal, operations, or support teams.</p>
+                            <p>We move into implementation: applications, automations, workflows, team rollout, and support.</p>
                         </div>
                     </details>
         </div>
@@ -777,7 +727,7 @@
 <section class="section-spacing bg-primary text-white">
     <div class="container mx-auto container-padding text-center">
         <h2 class="text-4xl md:text-5xl font-bold mb-6">Want this kind of app built for your business?</h2>
-        <p class="text-xl mb-8 opacity-90 max-w-3xl mx-auto">We can start with one useful microapp, or we can build a larger workflow around it. The best first move depends on where the business value is.</p>
+        <p class="text-xl mb-8 opacity-90 max-w-3xl mx-auto">Start with the Data Dump Model, get your reports, then build the highest-value AI applications.</p>
         <a href="contact.html" class="btn btn-white btn-lg text-primary border-none">Start the Build</a>
     </div>
 </section>
