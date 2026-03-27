@@ -530,6 +530,89 @@ function enforceSeoMetaTags(content, pageTitle, pageDescription, pageKeywords) {
     return next;
 }
 
+function enforceCanonicalMeta(content, canonicalUrl) {
+    let next = content;
+    next = upsertHeadTag(next, /<link\s+rel=["']canonical["'][^>]*>/i, `<link rel="canonical" href="${canonicalUrl}">`);
+    next = upsertHeadTag(next, /<meta\s+property=["']og:url["'][^>]*>/i, `<meta property="og:url" content="${canonicalUrl}" />`);
+    next = upsertHeadTag(next, /<meta\s+(?:name|property)=["']twitter:url["'][^>]*>/i, `<meta property="twitter:url" content="${canonicalUrl}" />`);
+    return next;
+}
+
+function cleanHtmlText(value) {
+    return String(value || '')
+        .replace(/<[^>]*>/g, ' ')
+        .replace(/&nbsp;/gi, ' ')
+        .replace(/&amp;/gi, '&')
+        .replace(/&quot;/gi, '"')
+        .replace(/&#39;/gi, "'")
+        .replace(/&lt;/gi, '<')
+        .replace(/&gt;/gi, '>')
+        .replace(/\{\{[^{}]+\}\}/g, '')
+        .replace(/\*\*/g, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
+function slugToReadableTitle(slug) {
+    const acronyms = new Set(['ai', 'it', 'b2b', 'seo', 'crm', 'cpq', 'rag', 'm365', 'revops', 'finops', 'uk', 'us']);
+    return String(slug || '')
+        .split('-')
+        .filter(Boolean)
+        .map(part => {
+            const lower = part.toLowerCase();
+            if (acronyms.has(lower)) return lower.toUpperCase();
+            if (/^\d+$/.test(lower)) return lower;
+            return lower.charAt(0).toUpperCase() + lower.slice(1);
+        })
+        .join(' ');
+}
+
+function deriveBlogMeta(content, outputName) {
+    const genericTitle = 'AI Business Operations Article | AI Support for Companies | Go Expandia';
+    const genericDesc = 'Practical AI guide from Go Expandia\'s 5-service model: review, plan, build, training, and support for real business results.';
+    const genericKeywords = 'AI business operations, AI opportunity review, AI plan, AI build and setup, AI training, AI support';
+
+    const titleMatch = content.match(/<title>([\s\S]*?)<\/title>/i);
+    const h1Match = content.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+    const descMatch = content.match(/<meta\s+name=["']description["']\s+content=["']([^"']*)["'][^>]*>/i);
+    const keywordsMatch = content.match(/<meta\s+name=["']keywords["']\s+content=["']([^"']*)["'][^>]*>/i);
+    const leadMatch = content.match(/<p[^>]*class=["'][^"']*lead[^"']*["'][^>]*>([\s\S]*?)<\/p>/i);
+    const firstParagraphMatch = content.match(/<p[^>]*>([\s\S]*?)<\/p>/i);
+
+    const h1Text = cleanHtmlText(h1Match ? h1Match[1] : '');
+    const fallbackTitleBase = h1Text || slugToReadableTitle(outputName) || 'Business Growth Guide';
+
+    let title = cleanHtmlText(titleMatch ? titleMatch[1] : '');
+    if (!title || title === genericTitle || title.includes('{{PAGE_TITLE}}')) {
+        title = `${fallbackTitleBase} | Go Expandia`;
+    } else if (!/go expandia/i.test(title)) {
+        title = `${title} | Go Expandia`;
+    }
+
+    let description = cleanHtmlText(descMatch ? descMatch[1] : '');
+    if (!description || description === genericDesc || description.includes('{{PAGE_DESCRIPTION}}')) {
+        const fallbackParagraph = cleanHtmlText(leadMatch ? leadMatch[1] : (firstParagraphMatch ? firstParagraphMatch[1] : ''));
+        description = fallbackParagraph || `${fallbackTitleBase} practical guide for business teams.`;
+    }
+    if (description.length > 160) {
+        description = `${description.slice(0, 157).replace(/\s+\S*$/, '')}...`;
+    }
+
+    let keywords = cleanHtmlText(keywordsMatch ? keywordsMatch[1] : '');
+    if (!keywords || keywords === genericKeywords || keywords.includes('{{PAGE_KEYWORDS}}')) {
+        const stopWords = new Set(['the', 'and', 'for', 'with', 'from', 'that', 'this', 'your', 'are', 'how', 'what', 'why', 'into', 'over', 'under', 'than', 'when', 'where', 'guide', 'complete']);
+        const candidateWords = `${fallbackTitleBase} ${description}`
+            .toLowerCase()
+            .replace(/[^a-z0-9\s]/g, ' ')
+            .split(/\s+/)
+            .filter(word => word.length > 3 && !stopWords.has(word));
+        const uniqueWords = [...new Set(candidateWords)].slice(0, 8);
+        keywords = [...uniqueWords, 'go expandia'].join(', ');
+    }
+
+    return { title, description, keywords };
+}
+
 const SERVICE_CATEGORIES = {
     'ai-solutions': {
         label: 'AI Support for Companies',
@@ -2016,10 +2099,11 @@ const serviceMapping = {
 
 function getHreflangUrls(templateName) {
     if (services.some(service => service.id === templateName)) {
+        const enPath = `${templateName}.html`;
         return {
-            en: `${templateName}.html`,
-            de: 'de/solutions.html',
-            fr: 'fr/solutions.html'
+            en: enPath,
+            de: enPath,
+            fr: enPath
         };
     }
 
@@ -2043,7 +2127,7 @@ function getHreflangUrls(templateName) {
         'recruitment': { en: 'recruitment.html', de: 'de/recruitment.html', fr: 'fr/recruitment.html' },
         'ai-creative-studio': { en: 'ai-creative-studio.html', de: 'de/ai-creative-studio.html', fr: 'fr/ai-creative-studio.html' },
         'city-locations': { en: 'city-locations.html', de: 'de/city-locations.html', fr: 'fr/city-locations.html' },
-        'blog-index': { en: 'blog/index.html', de: 'de/blog/index.html', fr: 'fr/blog/index.html' },
+        'blog-index': { en: 'blog/index.html', de: 'blog/index.html', fr: 'blog/index.html' },
         'vision-mission': { en: 'vision-mission.html', de: 'de/vision-mission.html', fr: 'fr/vision-mission.html' },
         'vizyon-misyon': { en: 'vision-mission.html', de: 'de/vision-mission.html', fr: 'fr/vision-mission.html' },
         'our-ethical-principles': { en: 'our-ethical-principles.html', de: 'de/our-ethical-principles.html', fr: 'fr/our-ethical-principles.html' },
@@ -2065,7 +2149,13 @@ function getHreflangUrls(templateName) {
         'usa-pr-dienst': { en: 'usa-pr-service.html', de: 'de/usa-pr-dienst.html', fr: 'fr/usa-pr-service.html' },
         'international-market-entry': { en: 'international-market-entry.html', de: 'de/international-market-entry.html', fr: 'fr/international-market-entry.html' }
     };
-    return urls[templateName] || urls['index'];
+    const resolved = urls[templateName] || urls['index'];
+    const enPath = resolved.en || '';
+    return {
+        en: enPath,
+        de: enPath,
+        fr: enPath
+    };
 }
 
 function getActiveStates(templateName) {
@@ -2200,9 +2290,9 @@ function buildPage(templateName, outputName, lang = 'en') {
     if (enLink === '') enLink = 'index.html';
     let trLink = hrefUrls.tr || 'tr/index.html';
     if (trLink.endsWith('/')) trLink += 'index.html';
-    let deLink = hrefUrls.de || 'de/index.html';
+    let deLink = hrefUrls.de || 'index.html';
     if (deLink.endsWith('/')) deLink += 'index.html';
-    let frLink = hrefUrls.fr || 'fr/index.html';
+    let frLink = hrefUrls.fr || 'index.html';
     if (frLink.endsWith('/')) frLink += 'index.html';
     pageNavigation = applyLanguageSwitcherLinks(pageNavigation, {
         en: `${relPrefix}${enLink}`,
@@ -2310,7 +2400,7 @@ function buildPage(templateName, outputName, lang = 'en') {
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, hreflangUrls2.en);
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, '');
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, hreflangUrls2.de);
-    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, hreflangUrls2.fr || 'fr/');
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, hreflangUrls2.fr);
 
 
     // Dynamic Blog Index Injection
@@ -2464,9 +2554,9 @@ function buildSolutionPage(templateName, outputName, lang = 'en') {
     if (enLink === '') enLink = 'index.html';
     let trLink = hrefUrls.tr || 'tr/index.html';
     if (trLink.endsWith('/')) trLink += 'index.html';
-    let deLink = hrefUrls.de || 'de/index.html';
+    let deLink = hrefUrls.de || 'index.html';
     if (deLink.endsWith('/')) deLink += 'index.html';
-    let frLink = hrefUrls.fr || 'fr/index.html';
+    let frLink = hrefUrls.fr || 'index.html';
     if (frLink.endsWith('/')) frLink += 'index.html';
     pageNavigation = applyLanguageSwitcherLinks(pageNavigation, {
         en: `${relPrefix}${enLink}`,
@@ -2538,7 +2628,7 @@ function buildSolutionPage(templateName, outputName, lang = 'en') {
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, hrefUrls.en);
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, '');
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, hrefUrls.de);
-    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, hrefUrls.fr || 'fr/');
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, hrefUrls.fr);
     htmlTemplate = clearUnresolvedTemplateTokens(htmlTemplate);
 
     htmlTemplate = rewriteLegacyHrefTargets(htmlTemplate);
@@ -2554,35 +2644,28 @@ function buildSolutionPage(templateName, outputName, lang = 'en') {
 }
 
 // Blog Post Building Function
-function buildBlogPost(templateName, outputName, lang = 'en') {
-    // console.log(`🏗️  Building blog post: ${outputName} (${lang.toUpperCase()})`);
+function buildBlogPost(templateName, outputName) {
+    // console.log(`🏗️  Building blog post: ${outputName}`);
 
-    const basePath = lang === 'en' ? '../' : '../../';
+    const basePath = '../';
     const navPath = '../';
-    const logoPath = lang === 'en' ? '../go-expandia-logo.png' : '../../go-expandia-logo.png';
+    const logoPath = '../go-expandia-logo.png';
 
     // Read blog post template
     let blogTemplate;
-    const templateDir = lang === 'en' ? 'templates/blog' : `templates/${lang}/blog`;
+    const templateDir = 'templates/blog';
     const templatePath = `${templateDir}/${templateName}.html`;
 
     if (fs.existsSync(templatePath)) {
         blogTemplate = fs.readFileSync(templatePath, 'utf8');
     } else {
-        // Fallback to EN if language template not found (optional, but good for safety)
-        const fallbackPath = `templates/blog/${templateName}.html`;
-        if (fs.existsSync(fallbackPath)) {
-            blogTemplate = fs.readFileSync(fallbackPath, 'utf8');
-            // TODO: Apply translations here if we rely on fallback
-        } else {
-            console.log(`⚠️  Blog template ${templatePath} not found`);
-            return;
-        }
+        console.log(`⚠️  Blog template ${templatePath} not found`);
+        return;
     }
 
-    // Select Navigation/Footer based on language
-    let nav = lang === 'de' ? navigationDE : lang === 'fr' ? navigationFR : navigationEN;
-    let foot = lang === 'de' ? footerDE : lang === 'fr' ? footerFR : footerEN;
+    // Blog pages are now EN-only.
+    let nav = navigationEN;
+    let foot = footerEN;
 
     const res = extractAndRemoveSchemas(blogTemplate, templatePath);
     let content = res.cleanContent;
@@ -2605,29 +2688,15 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
     content = content.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
 
     // Flag logic
-    const currentFlag = lang === 'de' ? 'DE' : lang === 'fr' ? 'FR' : 'EN';
+    const currentFlag = 'EN';
     content = content.replace(/<span id="current-flag">.*?<\/span>/g, `<span id="current-flag">${currentFlag}</span>`);
 
-    // Correct relative path logic for language switchers
-    const getRelPath = (targetLang) => {
-        if (lang === 'en') {
-            // From blog/
-            if (targetLang === 'en') return './';
-            return `../${targetLang}/blog/`;
-        } else {
-            // From {lang}/blog/
-            if (targetLang === lang) return './';
-            if (targetLang === 'en') return '../../blog/';
-            return `../../${targetLang}/blog/`;
-        }
-    };
-
-            content = applyLanguageSwitcherLinks(content, {
-                en: `${getRelPath('en')}${templateName}.html`,
-                tr: `${getRelPath('tr')}${templateName}.html`,
-                de: `${getRelPath('de')}${templateName}.html`,
-                fr: `${getRelPath('fr')}${templateName}.html`
-            });
+    content = applyLanguageSwitcherLinks(content, {
+        en: `./${templateName}.html`,
+        tr: './index.html',
+        de: './index.html',
+        fr: './index.html'
+    });
 
     // Replace path placeholders
     content = content.replace(/(href|src)="\{\{BASE_PATH\}\}([^"]+\.(css|ico|png|jpg|jpeg|js|svg))"/g, `$1="${basePath}$2"`);
@@ -2660,35 +2729,18 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
     content = content.replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html');
     content = content.replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, 'our-ethical-principles.html');
 
-    // Determine output path
-    let outputPath;
-    if (lang === 'tr') {
-        outputPath = `tr/blog/${outputName}.html`;
-    } else if (lang === 'de') {
-        outputPath = `de/blog/${outputName}.html`;
-    } else if (lang === 'fr') {
-        outputPath = `fr/blog/${outputName}.html`;
-    } else {
-        outputPath = `blog/${outputName}.html`;
-    }
+    const outputPath = `blog/${outputName}.html`;
 
-    // Canonical tag logic
-    const canonicalUrl = lang === 'en'
-        ? `https://www.goexpandia.com/blog/${outputName}.html`
-        : `https://www.goexpandia.com/${lang}/blog/${outputName}.html`;
+    const canonicalUrl = `https://www.goexpandia.com/blog/${outputName}.html`;
     content = content.replace(/\{\{CANONICAL_URL\}\}/g, canonicalUrl);
+    content = enforceCanonicalMeta(content, canonicalUrl);
+    content = content.replace(/https:\/\/www\.goexpandia\.com\/templates\/blog\/index\.html/g, 'https://www.goexpandia.com/blog/index.html');
 
-    // --- Metadata Replacement Logic ---
-    let pageKeywords = 'AI business operations, AI opportunity review, AI plan, AI build and setup, AI training, AI support';
-
-    // Apply replacements
-    const fullBlogMetaTitle = 'AI Business Operations Article | AI Support for Companies | Go Expandia';
-    const fullBlogMetaDesc = 'Practical AI guide from Go Expandia\'s 5-service model: review, plan, build, training, and support for real business results.';
-
-    content = content.replace(/\{\{PAGE_TITLE\}\}/g, fullBlogMetaTitle);
-    content = content.replace(/\{\{PAGE_DESCRIPTION\}\}/g, fullBlogMetaDesc);
-    content = content.replace(/\{\{PAGE_KEYWORDS\}\}/g, pageKeywords);
-    content = enforceSeoMetaTags(content, fullBlogMetaTitle, fullBlogMetaDesc, pageKeywords);
+    const pageMeta = deriveBlogMeta(content, outputName);
+    content = content.replace(/\{\{PAGE_TITLE\}\}/g, pageMeta.title);
+    content = content.replace(/\{\{PAGE_DESCRIPTION\}\}/g, pageMeta.description);
+    content = content.replace(/\{\{PAGE_KEYWORDS\}\}/g, pageMeta.keywords);
+    content = enforceSeoMetaTags(content, pageMeta.title, pageMeta.description, pageMeta.keywords);
 
     // Ensure blog directory exists
     const blogDir = path.dirname(outputPath);
@@ -2759,6 +2811,13 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
         '<span class="badge badge-secondary mb-2">Lead Generation</span>'
     );
 
+    // Normalize stray template/markdown artifacts if present.
+    content = content
+        .replace(/\{\{CITY_NAME\}\}/g, 'your market')
+        .replace(/\{\{COUNTRY_NAME\}\}/g, 'your region')
+        .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    content = clearUnresolvedTemplateTokens(content);
+
     // Clean up overly long titles in related posts (remove " | Go Expandia..." suffix)
     content = content.replace(
         /(<a href="[^"]*"[^>]*>)([^<]+?) \| Go Expandia[^<]*(<\/a>)/g,
@@ -2791,8 +2850,8 @@ function buildBlogPost(templateName, outputName, lang = 'en') {
 
 // Blog Post Building Function
 function buildBlogPosts() {
-    console.log('\n🏗️  Building Blog Posts (Multi-Language)...');
-    const languages = ['en', 'de', 'fr'];
+    console.log('\n🏗️  Building Blog Posts (EN Only)...');
+    const languages = ['en'];
     let totalBuilt = 0;
 
     // Use English templates as the master list
@@ -2807,7 +2866,7 @@ function buildBlogPosts() {
     languages.forEach(lang => {
         files.forEach(file => {
             const templateName = file.replace('.html', '');
-            buildBlogPost(templateName, templateName, lang);
+            buildBlogPost(templateName, templateName);
         });
         console.log(`✅ Built ${files.length} blog posts for ${lang.toUpperCase()}.`);
         totalBuilt += files.length;
@@ -2945,12 +3004,12 @@ const PRIORITY_SERVICE_CITY_PATHS = new Set([
 // NEW: Build Service x City Pages (Multi-Language)
 // -------------------------------------------------------------------------
 function buildServiceCityPages() {
-    console.log('\n🏗️  Building Service x City Landing Pages (Multi-Language)...');
+    console.log('\n🏗️  Building Service x City Landing Pages (EN Only)...');
 
     // Read the mega template
     const templateContent = fs.readFileSync('templates/city-landing.html', 'utf8');
     let pageCount = 0;
-    const languages = ['en', 'de', 'fr'];
+    const languages = ['en'];
 
     languages.forEach(lang => {
         services.forEach(service => {
@@ -3128,8 +3187,8 @@ function buildServiceCityPages() {
                 // Hreflang logic
                 htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, `${slug}.html`);
                 htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, ``);
-                htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, `de/${slug}.html`);
-                htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, `fr/${slug}.html`);
+                htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, `${slug}.html`);
+                htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, `${slug}.html`);
 
                 // Fix missing FR hreflang in template logic (hacky patch based on previous code)
                 if (!htmlTemplate.includes('hreflang="fr"')) {
@@ -3870,8 +3929,8 @@ function buildCityLocationsPage() {
     pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
     pageNavigation = applyLanguageSwitcherLinks(pageNavigation, {
         en: './city-locations.html',
-        de: './de/city-locations.html',
-        fr: './fr/city-locations.html'
+        de: './city-locations.html',
+        fr: './city-locations.html'
     });
     pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
     pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
@@ -3887,8 +3946,8 @@ function buildCityLocationsPage() {
     htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, 'https://www.goexpandia.com/city-locations.html');
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, 'city-locations.html');
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, '');
-    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, 'de/city-locations.html');
-    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, 'fr/city-locations.html');
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, 'city-locations.html');
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, 'city-locations.html');
     htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, '{}'); // TODO: Add schema
     htmlTemplate = clearUnresolvedTemplateTokens(htmlTemplate);
     htmlTemplate = rewriteLegacyHrefTargets(htmlTemplate);
@@ -3898,7 +3957,7 @@ function buildCityLocationsPage() {
 }
 
 function normalizeLanguageSwitchPlaceholders() {
-    const roots = ['.', 'de', 'fr', 'blog', 'de/blog', 'fr/blog', 'glossary', 'de/glossary', 'fr/glossary'];
+    const roots = ['.', 'blog', 'glossary'];
     const htmlFiles = [];
 
     function collectHtmlFiles(dir) {
@@ -3975,25 +4034,27 @@ function normalizeLanguageSwitchPlaceholders() {
             const enExists = hasFile(`blog/${slugFile}`);
             const deExists = hasFile(`de/blog/${slugFile}`);
             const frExists = hasFile(`fr/blog/${slugFile}`);
+            const deIndexExists = hasFile('de/blog/index.html');
+            const frIndexExists = hasFile('fr/blog/index.html');
 
             if (lang === 'en') {
                 return {
                     en: `./${enExists ? slugFile : 'index.html'}`,
-                    de: `../de/blog/${deExists ? slugFile : 'index.html'}`,
-                    fr: `../fr/blog/${frExists ? slugFile : 'index.html'}`
+                    de: `./${enExists ? slugFile : 'index.html'}`,
+                    fr: `./${enExists ? slugFile : 'index.html'}`
                 };
             }
             if (lang === 'de') {
                 return {
                     en: `../../blog/${enExists ? slugFile : 'index.html'}`,
-                    de: `./${deExists ? slugFile : 'index.html'}`,
-                    fr: `../../fr/blog/${frExists ? slugFile : 'index.html'}`
+                    de: `../../blog/${enExists ? slugFile : 'index.html'}`,
+                    fr: `../../blog/${enExists ? slugFile : 'index.html'}`
                 };
             }
             return {
                 en: `../../blog/${enExists ? slugFile : 'index.html'}`,
-                de: `../../de/blog/${deExists ? slugFile : 'index.html'}`,
-                fr: `./${frExists ? slugFile : 'index.html'}`
+                de: `../../blog/${enExists ? slugFile : 'index.html'}`,
+                fr: `../../blog/${enExists ? slugFile : 'index.html'}`
             };
         }
 
@@ -4008,21 +4069,21 @@ function normalizeLanguageSwitchPlaceholders() {
             if (lang === 'en') {
                 return {
                     en: `./${enExists ? slugFile : 'index.html'}`,
-                    de: `../de/glossary/${deExists ? slugFile : 'index.html'}`,
-                    fr: `../fr/glossary/${frExists ? slugFile : 'index.html'}`
+                    de: `./${enExists ? slugFile : 'index.html'}`,
+                    fr: `./${enExists ? slugFile : 'index.html'}`
                 };
             }
             if (lang === 'de') {
                 return {
                     en: `../../glossary/${enExists ? slugFile : 'index.html'}`,
-                    de: `./${deExists ? slugFile : 'index.html'}`,
-                    fr: `../../fr/glossary/${frExists ? slugFile : 'index.html'}`
+                    de: `../../glossary/${enExists ? slugFile : 'index.html'}`,
+                    fr: `../../glossary/${enExists ? slugFile : 'index.html'}`
                 };
             }
             return {
                 en: `../../glossary/${enExists ? slugFile : 'index.html'}`,
-                de: `../../de/glossary/${deExists ? slugFile : 'index.html'}`,
-                fr: `./${frExists ? slugFile : 'index.html'}`
+                de: `../../glossary/${enExists ? slugFile : 'index.html'}`,
+                fr: `../../glossary/${enExists ? slugFile : 'index.html'}`
             };
         }
 
@@ -4031,8 +4092,8 @@ function normalizeLanguageSwitchPlaceholders() {
             const slugFile = deRootMatch[1];
             return {
                 en: `../${hasFile(slugFile) ? slugFile : 'index.html'}`,
-                de: `./${slugFile}`,
-                fr: `../fr/${hasFile(`fr/${slugFile}`) ? slugFile : 'index.html'}`
+                de: `../${hasFile(slugFile) ? slugFile : 'index.html'}`,
+                fr: `../${hasFile(slugFile) ? slugFile : 'index.html'}`
             };
         }
         const frRootMatch = pathPosix.match(/^fr\/([^/]+\.html)$/);
@@ -4040,15 +4101,15 @@ function normalizeLanguageSwitchPlaceholders() {
             const slugFile = frRootMatch[1];
             return {
                 en: `../${hasFile(slugFile) ? slugFile : 'index.html'}`,
-                de: `../de/${hasFile(`de/${slugFile}`) ? slugFile : 'index.html'}`,
-                fr: `./${slugFile}`
+                de: `../${hasFile(slugFile) ? slugFile : 'index.html'}`,
+                fr: `../${hasFile(slugFile) ? slugFile : 'index.html'}`
             };
         }
 
         return {
             en: `./${fileName}`,
-            de: `./de/${hasFile(`de/${fileName}`) ? fileName : 'index.html'}`,
-            fr: `./fr/${hasFile(`fr/${fileName}`) ? fileName : 'index.html'}`
+            de: `./${fileName}`,
+            fr: `./${fileName}`
         };
     };
 
@@ -4195,19 +4256,19 @@ function buildGlossaryTerms() {
             const termLangLinks = lang === 'en'
                 ? {
                     en: `./${termData.slug}.html`,
-                    de: `../de/glossary/${termData.slug}.html`,
-                    fr: `../fr/glossary/${termData.slug}.html`
+                    de: `./${termData.slug}.html`,
+                    fr: `./${termData.slug}.html`
                 }
                 : lang === 'de'
                     ? {
                         en: `../../glossary/${termData.slug}.html`,
-                        de: `./${termData.slug}.html`,
-                        fr: `../../fr/glossary/${termData.slug}.html`
+                        de: `../../glossary/${termData.slug}.html`,
+                        fr: `../../glossary/${termData.slug}.html`
                     }
                     : {
                         en: `../../glossary/${termData.slug}.html`,
-                        de: `../../de/glossary/${termData.slug}.html`,
-                        fr: `./${termData.slug}.html`
+                        de: `../../glossary/${termData.slug}.html`,
+                        fr: `../../glossary/${termData.slug}.html`
                     };
             pageNavigation = applyLanguageSwitcherLinks(pageNavigation, termLangLinks);
 
@@ -4229,8 +4290,8 @@ function buildGlossaryTerms() {
             // Hreflang
             htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, `glossary/${termData.slug}.html`);
             htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, `tr/glossary/${termData.slug}.html`);
-            htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, `de/glossary/${termData.slug}.html`);
-            htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, `fr/glossary/${termData.slug}.html`);
+            htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, `glossary/${termData.slug}.html`);
+            htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, `glossary/${termData.slug}.html`);
 
             // Schema
             const definedTermSchema = {
@@ -4381,19 +4442,19 @@ function buildGlossaryIndex() {
         const indexLangLinks = lang === 'en'
             ? {
                 en: './index.html',
-                de: '../de/glossary/index.html',
-                fr: '../fr/glossary/index.html'
+                de: './index.html',
+                fr: './index.html'
             }
             : lang === 'de'
                 ? {
                     en: '../../glossary/index.html',
-                    de: './index.html',
-                    fr: '../../fr/glossary/index.html'
+                    de: '../../glossary/index.html',
+                    fr: '../../glossary/index.html'
                 }
                 : {
                     en: '../../glossary/index.html',
-                    de: '../../de/glossary/index.html',
-                    fr: './index.html'
+                    de: '../../glossary/index.html',
+                    fr: '../../glossary/index.html'
                 };
         pageNavigation = applyLanguageSwitcherLinks(pageNavigation, indexLangLinks);
 
@@ -4412,8 +4473,8 @@ function buildGlossaryIndex() {
         // Hreflang
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, `glossary/index.html`);
         htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, `tr/glossary/index.html`);
-        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, `de/glossary/index.html`);
-        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, `fr/glossary/index.html`);
+        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, `glossary/index.html`);
+        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, `glossary/index.html`);
 
         // Schema
         htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, '{}');
@@ -4440,13 +4501,13 @@ function buildGlossaryIndex() {
 // BUILD CITY LANDING PAGES (Generic pages showcasing all 19 services)
 // -------------------------------------------------------------------------
 function buildCityLandingPages() {
-    console.log('\n🏙️  Building Generic City Landing Pages (Multi-Language)...');
+    console.log('\n🏙️  Building Generic City Landing Pages (EN Only)...');
 
     // Load top 250 cities
     const top250Cities = JSON.parse(fs.readFileSync('data/cities-top250.json', 'utf8'));
     const templateContent = fs.readFileSync('templates/city-landing.html', 'utf8');
 
-    const languages = ['en', 'de', 'fr'];
+    const languages = ['en'];
     let pageCount = 0;
 
     languages.forEach(lang => {
@@ -4564,19 +4625,19 @@ function buildCityLandingPages() {
             const cityLangLinks = lang === 'en'
                 ? {
                     en: `./${citySlug}.html`,
-                    de: `./de/${citySlug}.html`,
-                    fr: `./fr/${citySlug}.html`
+                    de: `./${citySlug}.html`,
+                    fr: `./${citySlug}.html`
                 }
                 : lang === 'de'
                     ? {
                         en: `../${citySlug}.html`,
-                        de: `./${citySlug}.html`,
-                        fr: `../fr/${citySlug}.html`
+                        de: `../${citySlug}.html`,
+                        fr: `../${citySlug}.html`
                     }
                     : {
                         en: `../${citySlug}.html`,
-                        de: `../de/${citySlug}.html`,
-                        fr: `./${citySlug}.html`
+                        de: `../${citySlug}.html`,
+                        fr: `../${citySlug}.html`
                     };
             pageNavigation = applyLanguageSwitcherLinks(pageNavigation, cityLangLinks);
             pageFooter = pageFooter.replace(/{{BASE_PATH}}/g, basePath);
@@ -4599,8 +4660,8 @@ function buildCityLandingPages() {
 
             // Hreflang
             fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_URL_EN}}/g, `${citySlug}.html`);
-            fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_URL_DE}}/g, `de/${citySlug}.html`);
-            fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_URL_FR}}/g, `fr/${citySlug}.html`);
+            fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_URL_DE}}/g, `${citySlug}.html`);
+            fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_URL_FR}}/g, `${citySlug}.html`);
             fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_URL_TR}}/g, ``);
 
             // Safety net: remove any unresolved {{TOKEN}} placeholders before writing.
@@ -4644,8 +4705,6 @@ function generateSitemap() {
     const solutionPages = [];
     services.forEach(service => {
         solutionPages.push(`${service.id}.html`);
-        solutionPages.push(`de/${service.id}.html`);
-        solutionPages.push(`fr/${service.id}.html`);
     });
 
     // Add DE/FR versions (removed TR as it's no longer supported)
@@ -4662,8 +4721,6 @@ function generateSitemap() {
     cities.forEach(cityData => {
         const citySlug = normalizeCitySlug(cityData.slug);
         broadCityPages.push(`${citySlug}.html`); // EN
-        broadCityPages.push(`de/${citySlug}.html`); // DE
-        broadCityPages.push(`fr/${citySlug}.html`); // FR
     });
 
     // REMOVED: Industry Pages - buildIndustryPages() function is disabled
@@ -4695,12 +4752,8 @@ function generateSitemap() {
     const glossaryPages = [];
     glossary.forEach(term => {
         glossaryPages.push(`glossary/${term.slug}.html`); // EN
-        glossaryPages.push(`de/glossary/${term.slug}.html`); // DE
-        glossaryPages.push(`fr/glossary/${term.slug}.html`); // FR
     });
     glossaryPages.push('glossary/index.html');
-    glossaryPages.push('de/glossary/index.html');
-    glossaryPages.push('fr/glossary/index.html');
 
     const allPages = [...new Set([...filteredStaticPages, ...solutionPages, ...localizedPages, ...broadCityPages, ...blogPages, ...glossaryPages])];
 
@@ -4813,7 +4866,7 @@ function writeRedirectsFile() {
 }
 
 function cleanupLegacyRedirectOutputs() {
-    const languages = ['en', 'de', 'fr'];
+    const languages = ['en'];
 
     LEGACY_REDIRECT_ONLY_PAGES.forEach(page => {
         languages.forEach(lang => {
@@ -4876,18 +4929,6 @@ buildPage('our-ethical-principles', 'our-ethical-principles', 'en');
 services.forEach(service => buildSolutionPage(service.id, service.id, 'en'));
 
 buildPage('blog-index', 'blog/index', 'en');
-
-// Build localized core pages so updates to the shared taxonomy propagate consistently.
-['de', 'fr'].forEach(lang => {
-    buildPage('index', 'index', lang);
-    buildPage('about', 'about', lang);
-    buildPage('solutions', 'solutions', lang);
-    buildPage('contact', 'contact', lang);
-    buildPage('vision-mission', 'vision-mission', lang);
-    buildPage('our-ethical-principles', 'our-ethical-principles', lang);
-});
-
-
 
 // Call new functions
 buildCityLandingPages(); // NEW: Generic city pages showcasing all 19 services
