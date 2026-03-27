@@ -247,12 +247,6 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.goexpandia.com/zagreb.html</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://www.goexpandia.com/krakow.html</loc>
         <lastmod>2026-03-27</lastmod>
         <changefreq>weekly</changefreq>
@@ -289,12 +283,6 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.goexpandia.com/sofia.html</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://www.goexpandia.com/prague.html</loc>
         <lastmod>2026-03-27</lastmod>
         <changefreq>weekly</changefreq>
@@ -319,12 +307,6 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.goexpandia.com/minsk.html</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://www.goexpandia.com/vienna.html</loc>
         <lastmod>2026-03-27</lastmod>
         <changefreq>weekly</changefreq>
@@ -344,12 +326,6 @@
     </url>
     <url>
         <loc>https://www.goexpandia.com/madrid.html</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/saint-petersburg.html</loc>
         <lastmod>2026-03-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -985,18 +961,6 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.goexpandia.com/czestochowa.html</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/cluj-napoca.html</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://www.goexpandia.com/bratislava.html</loc>
         <lastmod>2026-03-27</lastmod>
         <changefreq>weekly</changefreq>
@@ -1009,55 +973,7 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.goexpandia.com/ljubljana.html</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/bydgoszcz.html</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/bialystok.html</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/sosnowiec.html</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/timisoara.html</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/constanta.html</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/belgrade.html</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://www.goexpandia.com/budapest.html</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/szczecin.html</loc>
         <lastmod>2026-03-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -1069,49 +985,7 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.goexpandia.com/debrecen.html</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/ploiesti.html</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/tallinn.html</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/vilnius.html</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://www.goexpandia.com/wroclaw.html</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/rzeszow.html</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/gliwice.html</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.goexpandia.com/ostrava.html</loc>
         <lastmod>2026-03-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>

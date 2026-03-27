@@ -348,18 +348,6 @@
     "landmark": "Lviv business district"
   },
   {
-    "id": "zagreb",
-    "slug": "zagreb",
-    "city": "Zagreb",
-    "country": "Croatia",
-    "description": "Enterprise solutions in Zagreb for secure IT infrastructure, AI automation, and custom software development across Croatia and the Southern Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 45.815,
-    "lng": 15.9819,
-    "region": "Southern Europe",
-    "landmark": "Zagreb business district"
-  },
-  {
     "id": "krakow",
     "slug": "krakow",
     "city": "Krakow",
@@ -432,18 +420,6 @@
     "landmark": "Cologne business district"
   },
   {
-    "id": "sofia",
-    "slug": "sofia",
-    "city": "Sofia",
-    "country": "Bulgaria",
-    "description": "Enterprise solutions in Sofia for secure IT infrastructure, AI automation, and custom software development across Bulgaria and the Eastern Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 42.6977,
-    "lng": 23.3219,
-    "region": "Eastern Europe",
-    "landmark": "Sofia business district"
-  },
-  {
     "id": "prague",
     "slug": "prague",
     "city": "Prague",
@@ -492,18 +468,6 @@
     "landmark": "Warsaw business district"
   },
   {
-    "id": "minsk",
-    "slug": "minsk",
-    "city": "Minsk",
-    "country": "Belarus",
-    "description": "Enterprise solutions in Minsk for secure IT infrastructure, AI automation, and custom software development across Belarus and the Eastern Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 53.9045,
-    "lng": 27.5615,
-    "region": "Eastern Europe",
-    "landmark": "Minsk business district"
-  },
-  {
     "id": "vienna",
     "slug": "vienna",
     "city": "Vienna",
@@ -550,18 +514,6 @@
     "lng": -3.7038,
     "region": "Southern Europe",
     "landmark": "Madrid business district"
-  },
-  {
-    "id": "saint-petersburg",
-    "slug": "saint-petersburg",
-    "city": "Saint Petersburg",
-    "country": "Russia",
-    "description": "Enterprise solutions in Saint Petersburg for secure IT infrastructure, AI automation, and custom software development across Russia and the Eastern Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 59.9343,
-    "lng": 30.3351,
-    "region": "Eastern Europe",
-    "landmark": "Saint Petersburg business district"
   },
   {
     "id": "istanbul",
@@ -1860,30 +1812,6 @@
     "landmark": "Tampere business district"
   },
   {
-    "id": "czestochowa",
-    "slug": "czestochowa",
-    "city": "Czestochowa",
-    "country": "Poland",
-    "description": "Enterprise solutions in Czestochowa for secure IT infrastructure, AI automation, and custom software development across Poland and the Eastern Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 50.79646,
-    "lng": 19.12409,
-    "region": "Eastern Europe",
-    "landmark": "Czestochowa business district"
-  },
-  {
-    "id": "cluj-napoca",
-    "slug": "cluj-napoca",
-    "city": "Cluj-Napoca",
-    "country": "Romania",
-    "description": "Enterprise solutions in Cluj-Napoca for secure IT infrastructure, AI automation, and custom software development across Romania and the Eastern Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 46.76667,
-    "lng": 23.6,
-    "region": "Eastern Europe",
-    "landmark": "Cluj-Napoca business district"
-  },
-  {
     "id": "bratislava",
     "slug": "bratislava",
     "city": "Bratislava",
@@ -1908,90 +1836,6 @@
     "landmark": "Bucharest business district"
   },
   {
-    "id": "ljubljana",
-    "slug": "ljubljana",
-    "city": "Ljubljana",
-    "country": "Slovenia",
-    "description": "Enterprise solutions in Ljubljana for secure IT infrastructure, AI automation, and custom software development across Slovenia and the Eastern Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 46.0569,
-    "lng": 14.5058,
-    "region": "Eastern Europe",
-    "landmark": "Ljubljana business district"
-  },
-  {
-    "id": "bydgoszcz",
-    "slug": "bydgoszcz",
-    "city": "Bydgoszcz",
-    "country": "Poland",
-    "description": "Enterprise solutions in Bydgoszcz for secure IT infrastructure, AI automation, and custom software development across Poland and the Eastern Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 53.1235,
-    "lng": 18.00762,
-    "region": "Eastern Europe",
-    "landmark": "Bydgoszcz business district"
-  },
-  {
-    "id": "bialystok",
-    "slug": "bialystok",
-    "city": "Bialystok",
-    "country": "Poland",
-    "description": "Enterprise solutions in Bialystok for secure IT infrastructure, AI automation, and custom software development across Poland and the Eastern Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 53.13333,
-    "lng": 23.16433,
-    "region": "Eastern Europe",
-    "landmark": "Bialystok business district"
-  },
-  {
-    "id": "sosnowiec",
-    "slug": "sosnowiec",
-    "city": "Sosnowiec",
-    "country": "Poland",
-    "description": "Enterprise solutions in Sosnowiec for secure IT infrastructure, AI automation, and custom software development across Poland and the Eastern Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 50.28682,
-    "lng": 19.10385,
-    "region": "Eastern Europe",
-    "landmark": "Sosnowiec business district"
-  },
-  {
-    "id": "timisoara",
-    "slug": "timisoara",
-    "city": "Timisoara",
-    "country": "Romania",
-    "description": "Enterprise solutions in Timisoara for secure IT infrastructure, AI automation, and custom software development across Romania and the Eastern Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 45.75372,
-    "lng": 21.22571,
-    "region": "Eastern Europe",
-    "landmark": "Timisoara business district"
-  },
-  {
-    "id": "constanta",
-    "slug": "constanta",
-    "city": "Constanta",
-    "country": "Romania",
-    "description": "Enterprise solutions in Constanta for secure IT infrastructure, AI automation, and custom software development across Romania and the Eastern Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 44.18073,
-    "lng": 28.63432,
-    "region": "Eastern Europe",
-    "landmark": "Constanta business district"
-  },
-  {
-    "id": "belgrade",
-    "slug": "belgrade",
-    "city": "Belgrade",
-    "country": "Serbia",
-    "description": "Enterprise solutions in Belgrade for secure IT infrastructure, AI automation, and custom software development across Serbia and the Eastern Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 44.7866,
-    "lng": 20.4489,
-    "region": "Eastern Europe",
-    "landmark": "Belgrade business district"
-  },
-  {
     "id": "budapest",
     "slug": "budapest",
     "city": "Budapest",
@@ -2002,18 +1846,6 @@
     "lng": 19.0402,
     "region": "Eastern Europe",
     "landmark": "Budapest business district"
-  },
-  {
-    "id": "szczecin",
-    "slug": "szczecin",
-    "city": "Szczecin",
-    "country": "Poland",
-    "description": "Enterprise solutions in Szczecin for secure IT infrastructure, AI automation, and custom software development across Poland and the Eastern Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 53.42894,
-    "lng": 14.55302,
-    "region": "Eastern Europe",
-    "landmark": "Szczecin business district"
   },
   {
     "id": "katowice",
@@ -2028,54 +1860,6 @@
     "landmark": "Katowice business district"
   },
   {
-    "id": "debrecen",
-    "slug": "debrecen",
-    "city": "Debrecen",
-    "country": "Hungary",
-    "description": "Enterprise solutions in Debrecen for secure IT infrastructure, AI automation, and custom software development across Hungary and the Eastern Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 47.53167,
-    "lng": 21.62444,
-    "region": "Eastern Europe",
-    "landmark": "Debrecen business district"
-  },
-  {
-    "id": "ploiesti",
-    "slug": "ploiesti",
-    "city": "Ploiesti",
-    "country": "Romania",
-    "description": "Enterprise solutions in Ploiesti for secure IT infrastructure, AI automation, and custom software development across Romania and the Eastern Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 44.95,
-    "lng": 26.01667,
-    "region": "Eastern Europe",
-    "landmark": "Ploiesti business district"
-  },
-  {
-    "id": "tallinn",
-    "slug": "tallinn",
-    "city": "Tallinn",
-    "country": "Estonia",
-    "description": "Enterprise solutions in Tallinn for secure IT infrastructure, AI automation, and custom software development across Estonia and the Eastern Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 59.437,
-    "lng": 24.7536,
-    "region": "Eastern Europe",
-    "landmark": "Tallinn business district"
-  },
-  {
-    "id": "vilnius",
-    "slug": "vilnius",
-    "city": "Vilnius",
-    "country": "Lithuania",
-    "description": "Enterprise solutions in Vilnius for secure IT infrastructure, AI automation, and custom software development across Lithuania and the Eastern Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 54.6872,
-    "lng": 25.2797,
-    "region": "Eastern Europe",
-    "landmark": "Vilnius business district"
-  },
-  {
     "id": "wroclaw",
     "slug": "wroclaw",
     "city": "Wroclaw",
@@ -2086,42 +1870,6 @@
     "lng": 17.0385,
     "region": "Eastern Europe",
     "landmark": "Wroclaw business district"
-  },
-  {
-    "id": "rzeszow",
-    "slug": "rzeszow",
-    "city": "Rzeszow",
-    "country": "Poland",
-    "description": "Enterprise solutions in Rzeszow for secure IT infrastructure, AI automation, and custom software development across Poland and the Eastern Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 50.04132,
-    "lng": 21.99901,
-    "region": "Eastern Europe",
-    "landmark": "Rzeszow business district"
-  },
-  {
-    "id": "gliwice",
-    "slug": "gliwice",
-    "city": "Gliwice",
-    "country": "Poland",
-    "description": "Enterprise solutions in Gliwice for secure IT infrastructure, AI automation, and custom software development across Poland and the Eastern Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 50.29761,
-    "lng": 18.67658,
-    "region": "Eastern Europe",
-    "landmark": "Gliwice business district"
-  },
-  {
-    "id": "ostrava",
-    "slug": "ostrava",
-    "city": "Ostrava",
-    "country": "Czech Republic",
-    "description": "Enterprise solutions in Ostrava for secure IT infrastructure, AI automation, and custom software development across Czech Republic and the Eastern Europe market.",
-    "image": "./assets/local/default-city.jpg",
-    "lat": 49.83465,
-    "lng": 18.28204,
-    "region": "Eastern Europe",
-    "landmark": "Ostrava business district"
   },
   {
     "id": "san-francisco",

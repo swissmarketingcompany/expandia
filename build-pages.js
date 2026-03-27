@@ -140,6 +140,29 @@ const RETIRED_LOW_POP_CITY_SLUGS = [
     'santa-clarita',
     'grand-rapids'
 ];
+const RETIRED_EASTERN_EUROPE_CITY_SLUGS = [
+    'zagreb',
+    'sofia',
+    'minsk',
+    'saint-petersburg',
+    'czestochowa',
+    'cluj-napoca',
+    'ljubljana',
+    'bydgoszcz',
+    'bialystok',
+    'sosnowiec',
+    'timisoara',
+    'constanta',
+    'belgrade',
+    'szczecin',
+    'debrecen',
+    'ploiesti',
+    'tallinn',
+    'vilnius',
+    'rzeszow',
+    'gliwice',
+    'ostrava'
+];
 const rawCities = require('./data/cities-top250.json');
 const cities = rawCities.filter((city) => Number(city.lng) <= ANKARA_LONGITUDE_CUTOFF);
 const industries = require('./data/industries.json');
@@ -260,6 +283,9 @@ if (EAST_OF_ANKARA_CITY_SLUGS.length > 0) {
 }
 if (RETIRED_LOW_POP_CITY_SLUGS.length > 0) {
     console.log(`🧹 Retiring ${RETIRED_LOW_POP_CITY_SLUGS.length} low-population city slugs for cleanup/redirects.`);
+}
+if (RETIRED_EASTERN_EUROPE_CITY_SLUGS.length > 0) {
+    console.log(`🧹 Retiring ${RETIRED_EASTERN_EUROPE_CITY_SLUGS.length} Eastern Europe/Balkan city slugs for cleanup/redirects.`);
 }
 
 // Function to generate unique SEO content for each city
@@ -2207,7 +2233,8 @@ const RETIRED_CITY_SLUGS = new Set([
     'south-lanarkshire',
     'rhondda-cynon-taf',
     ...EAST_OF_ANKARA_CITY_SLUGS,
-    ...RETIRED_LOW_POP_CITY_SLUGS
+    ...RETIRED_LOW_POP_CITY_SLUGS,
+    ...RETIRED_EASTERN_EUROPE_CITY_SLUGS
 ]);
 const RETIRED_CITY_REDIRECT_TARGET = 'city-locations';
 
@@ -4079,9 +4106,7 @@ function buildCityLocationsPage() {
             'Scandinavia': '#4a90e2',
             'Eastern Europe': '#9b59b6',
             'North America': '#e74c3c',
-            'Middle East': '#f39c12',
             'Western Asia': '#16a085',
-            'Asia / APAC': '#2ecc71',
             'Europe': '#95a5a6'
         };
 
