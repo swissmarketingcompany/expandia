@@ -616,13 +616,13 @@ const SOLUTION_PAGE_BLUEPRINTS = {
                 id: 'what-you-get',
                 sectionClass: 'bg-base-100',
                 heading: 'What This Service Really Means',
-                intro: 'This is the part where ideas become tools people can click and use.',
+                intro: 'This is the part where ideas become working agent tools, approval flows, and day-to-day software.',
                 gridClass: 'md:grid-cols-2',
                 cards: [
-                    { title: 'What we build', description: 'Small internal apps, workflow helpers, checkers, drafting tools, support tools, and other practical software around AI.', borderClass: 'border-primary' },
+                    { title: 'What we build', description: 'Agent workstations, approval tools, operating dashboards, internal apps, and workflow software around AI.', borderClass: 'border-primary' },
                     { title: 'How you buy it', description: 'Fixed-price project or monthly build partner, depending on how much work you want to move at once.', borderClass: 'border-secondary' },
                     { title: 'Starting price', description: 'Projects start at EUR 8,000. Monthly build work starts at EUR 4,000.', borderClass: 'border-accent' },
-                    { title: 'Good fit if', description: 'You already know what should be built and you want a team to turn it into working tools fast.', borderClass: 'border-neutral' }
+                    { title: 'Good fit if', description: 'You want AI to do real work in finance, sales, legal, support, or operations, not just answer prompts.', borderClass: 'border-neutral' }
                 ]
             },
             {
@@ -634,7 +634,7 @@ const SOLUTION_PAGE_BLUEPRINTS = {
                 id: 'build-process',
                 sectionClass: 'bg-base-200',
                 heading: 'How We Turn This Into Real Delivery',
-                intro: 'The point is not to show six random demos. The point is to show how fast small apps can become part of the business.',
+                intro: 'These are not toy prompt boxes. They show how an agent does work, what it reports, and where your team stays in control.',
                 steps: [
                     { title: 'We pick the first useful app', description: 'We choose the app that creates the clearest business value first.' },
                     { title: 'We shape it around your rules', description: 'We connect the tool to your wording, your logic, your workflow, and your team.' },
@@ -646,12 +646,12 @@ const SOLUTION_PAGE_BLUEPRINTS = {
                 id: 'build-faq',
                 sectionClass: 'bg-base-100',
                 heading: 'Common Questions',
-                intro: 'What companies usually ask once they see the demos.',
+                intro: 'What companies usually ask once they see agent-style apps instead of simple prompt tools.',
                 items: [
-                    { q: 'Are these real products?', a: 'These are small live demos to show the kind of microapps we can build. The client version would be shaped around real business rules and real data.' },
+                    { q: 'Are these real products?', a: 'These are live product-style demos. The client version would connect to real systems, real data, and real approval rules.' },
                     { q: 'Can you connect these apps to our systems?', a: 'Yes. The useful version is usually the connected version, not the standalone demo version.' },
-                    { q: 'Do we need a big platform first?', a: 'No. Many companies start with one small app that solves one clear problem.' },
-                    { q: 'Can these be internal tools only?', a: 'Yes. Many of the best first apps are internal tools for finance, sales, legal, operations, or support teams.' }
+                    { q: 'Do we need a big platform first?', a: 'No. Many companies start with one agent workflow around one problem, then expand once the value is clear.' },
+                    { q: 'Can these be internal tools only?', a: 'Yes. Many of the best first builds are internal tools for finance, sales, legal, operations, or support teams.' }
                 ]
             }
         ],
@@ -849,488 +849,267 @@ function renderSolutionHtmlSection(section) {
 }
 
 function buildAiBuildSetupDemosSection() {
+    const demos = [
+        {
+            id: 'collections',
+            title: 'Collections',
+            badge: 'Finance',
+            pitch: 'Calls, chases, reports.',
+            stats: [
+                { label: 'Due', value: 'EUR 214K' },
+                { label: 'Risk', value: '12' },
+                { label: 'Plans', value: '4' }
+            ],
+            actions: [
+                { id: 'round', label: 'Round' },
+                { id: 'plan', label: 'Plan' },
+                { id: 'report', label: 'Report' }
+            ],
+            states: {
+                round: {
+                    screen: 'live queue',
+                    status: 'running',
+                    title: 'Morning round',
+                    summary: 'Calls and reminders done.',
+                    done: '6 accounts touched.',
+                    next: '1 plan needs approval.',
+                    tags: ['EUR 39K today', '2 escalations']
+                },
+                plan: {
+                    screen: 'approval',
+                    status: 'waiting',
+                    title: 'Plan draft',
+                    summary: 'Terms prepared for sign-off.',
+                    done: '3 dates drafted.',
+                    next: 'Approve or escalate.',
+                    tags: ['1 click send', 'Full trail saved']
+                },
+                report: {
+                    screen: 'cfo view',
+                    status: 'ready',
+                    title: 'Daily report',
+                    summary: 'Cash in, risk, blockers.',
+                    done: 'EUR 64K secured.',
+                    next: 'Review tomorrow rules.',
+                    tags: ['Less chasing', 'One queue']
+                }
+            }
+        },
+        {
+            id: 'quotes',
+            title: 'Quotes',
+            badge: 'Sales',
+            pitch: 'Prepares, follows, closes.',
+            stats: [
+                { label: 'Deals', value: '18' },
+                { label: 'Wait', value: '2' },
+                { label: 'Risk', value: '3' }
+            ],
+            actions: [
+                { id: 'offer', label: 'Offer' },
+                { id: 'block', label: 'Block' },
+                { id: 'close', label: 'Close' }
+            ],
+            states: {
+                offer: {
+                    screen: 'offer desk',
+                    status: 'ready',
+                    title: 'Offer pack',
+                    summary: 'Price, stock, timing set.',
+                    done: 'Quote pack built.',
+                    next: 'Approve send.',
+                    tags: ['Faster quotes', 'Rules stay clean']
+                },
+                block: {
+                    screen: 'deal watch',
+                    status: 'alert',
+                    title: 'Blockers found',
+                    summary: 'The stuck deals are surfaced.',
+                    done: '2 deals rescued.',
+                    next: 'Clear price and lead time.',
+                    tags: ['Less dead pipeline', 'Ops alerted']
+                },
+                close: {
+                    screen: 'close plan',
+                    status: 'active',
+                    title: 'Close plan',
+                    summary: 'Next step path built.',
+                    done: '7-day sequence set.',
+                    next: 'Launch follow-up.',
+                    tags: ['Better conversion', 'Less admin']
+                }
+            }
+        },
+        {
+            id: 'contracts',
+            title: 'Contracts',
+            badge: 'Legal',
+            pitch: 'Scans, drafts, routes.',
+            stats: [
+                { label: 'Today', value: '7' },
+                { label: 'Flags', value: '3' },
+                { label: 'Saved', value: '9h' }
+            ],
+            actions: [
+                { id: 'scan', label: 'Scan' },
+                { id: 'draft', label: 'Draft' },
+                { id: 'memo', label: 'Memo' }
+            ],
+            states: {
+                scan: {
+                    screen: 'risk scan',
+                    status: 'done',
+                    title: 'Risk scan',
+                    summary: 'Clauses checked vs policy.',
+                    done: '3 issues flagged.',
+                    next: 'Legal reviews only flags.',
+                    tags: ['Faster review', 'Less hidden risk']
+                },
+                draft: {
+                    screen: 'fallback',
+                    status: 'ready',
+                    title: 'Fallback draft',
+                    summary: 'Preferred wording inserted.',
+                    done: 'Redline ready.',
+                    next: 'Send back fast.',
+                    tags: ['Legal stays in control', 'Plain review']
+                },
+                memo: {
+                    screen: 'board memo',
+                    status: 'ready',
+                    title: 'Risk memo',
+                    summary: 'Short decision memo ready.',
+                    done: '3 risks summarized.',
+                    next: 'Leadership reads first.',
+                    tags: ['Clear decisions', 'Less delay']
+                }
+            }
+        }
+    ];
+
+    const cardsHtml = demos.map((demo) => {
+        const statCards = demo.stats.map((stat) => `
+                    <div class="rounded-xl bg-white/8 px-3 py-2">
+                        <p class="text-[10px] uppercase tracking-[0.18em] text-white/45">${stat.label}</p>
+                        <p class="mt-1 text-sm font-semibold text-white">${stat.value}</p>
+                    </div>`).join('');
+
+        const actionButtons = demo.actions.map((action, actionIndex) => `
+                    <button type="button" data-agent-step="${action.id}" class="btn btn-xs ${actionIndex === 0 ? 'btn-primary' : 'btn-ghost text-white/75 hover:text-white hover:bg-white/10 border border-white/15'}">${action.label}</button>`).join('');
+
+        return `
+            <div class="buzz-card overflow-hidden bg-white shadow-xl" data-agent="${demo.id}">
+                <div class="px-5 pt-5 pb-4 border-b border-base-200">
+                    <div class="flex items-center justify-between gap-3">
+                        <div>
+                            <h3 class="text-lg font-bold">${demo.title} Agent</h3>
+                            <p class="text-sm text-base-content/55">${demo.pitch}</p>
+                        </div>
+                        <span class="badge badge-primary badge-sm">${demo.badge}</span>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <div class="rounded-[28px] bg-neutral p-4 text-white shadow-inner">
+                        <div class="flex items-center justify-between gap-3 mb-3">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-white/45" data-agent-screen></p>
+                            <span class="rounded-full border border-white/15 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-white/70" data-agent-status></span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2 mb-3">
+                            ${statCards}
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            ${actionButtons}
+                        </div>
+                        <div class="rounded-2xl bg-white/8 p-3">
+                            <div class="flex items-start justify-between gap-3">
+                                <div>
+                                    <p class="text-[10px] uppercase tracking-[0.18em] text-white/45">Now</p>
+                                    <h4 class="mt-1 text-base font-semibold text-white" data-agent-title></h4>
+                                </div>
+                                <span class="text-[10px] uppercase tracking-[0.18em] text-white/45">Northwind</span>
+                            </div>
+                            <p class="mt-2 text-sm text-white/70" data-agent-summary></p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 mt-3">
+                            <div class="rounded-2xl bg-white/8 p-3">
+                                <p class="text-[10px] uppercase tracking-[0.18em] text-white/45 mb-1">Done</p>
+                                <p class="text-sm text-white" data-agent-done></p>
+                            </div>
+                            <div class="rounded-2xl bg-white/8 p-3">
+                                <p class="text-[10px] uppercase tracking-[0.18em] text-white/45 mb-1">Next</p>
+                                <p class="text-sm text-white" data-agent-next></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-4" data-agent-tags></div>
+                </div>
+            </div>`;
+    }).join('');
+
     return `
 <section id="microapps" class="section-spacing bg-base-100">
     <div class="container mx-auto container-padding">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-6xl font-black mb-6">
-                <span class="gradient-header">Try Small</span><br>
-                <span class="text-base-content">AI Microapps</span>
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-black mb-4">
+                <span class="gradient-header">Live Agent Demos</span>
             </h2>
-            <p class="text-xl text-base-content/70 max-w-3xl mx-auto">
-                These are simple live demos. Click, change the fields, and see the kind of small business apps we can build around AI.
-            </p>
-            <p class="text-sm text-base-content/50 mt-4">Example company used below: Northwind Components Ltd.</p>
+            <p class="text-base text-base-content/60 max-w-2xl mx-auto">Small product views. Click around.</p>
         </div>
 
-        <div class="space-y-10">
-            <div class="grid lg:grid-cols-2 gap-8 items-stretch">
-                <div class="buzz-card p-8 bg-white shadow-xl">
-                    <div class="flex items-center justify-between mb-6">
-                        <div>
-                            <p class="text-xs font-bold uppercase tracking-wider text-primary mb-2">Microapp 1</p>
-                            <h3 class="text-2xl font-bold">AI Revenue Collection Agent</h3>
-                        </div>
-                        <span class="badge badge-primary">Live Demo</span>
-                    </div>
-                    <div class="space-y-4">
-                        <label class="block">
-                            <span class="text-sm font-semibold text-base-content">Customer name</span>
-                            <input id="collections-customer" class="input input-bordered w-full mt-1" value="Northwind Retail Group">
-                        </label>
-                        <div class="grid sm:grid-cols-2 gap-4">
-                            <label class="block">
-                                <span class="text-sm font-semibold text-base-content">Invoice amount</span>
-                                <input id="collections-amount" class="input input-bordered w-full mt-1" value="18450">
-                            </label>
-                            <label class="block">
-                                <span class="text-sm font-semibold text-base-content">Days late</span>
-                                <input id="collections-days" class="input input-bordered w-full mt-1" value="17">
-                            </label>
-                        </div>
-                        <label class="block">
-                            <span class="text-sm font-semibold text-base-content">Customer tone</span>
-                            <select id="collections-tone" class="select select-bordered w-full mt-1">
-                                <option value="friendly">Friendly</option>
-                                <option value="neutral" selected>Neutral</option>
-                                <option value="strict">Strict</option>
-                            </select>
-                        </label>
-                        <button id="collections-run" class="btn btn-primary w-full">Generate Follow-Up</button>
-                        <div class="bg-base-50 rounded-2xl p-5 border border-base-200">
-                            <p class="text-xs font-bold uppercase tracking-wider text-primary mb-2">Output</p>
-                            <pre id="collections-output" class="whitespace-pre-wrap text-sm text-base-content/80 font-sans">Click the button to generate a payment follow-up.</pre>
-                        </div>
-                    </div>
-                </div>
-                <div class="buzz-card p-8 bg-base-50 shadow-lg border-t-4 border-primary">
-                    <p class="text-xs font-bold uppercase tracking-wider text-primary mb-3">What this shows</p>
-                    <h3 class="text-2xl font-bold mb-4">A small app with a clear business use</h3>
-                    <p class="text-base-content/70 mb-4">
-                        This is not “AI for fun.” This is a small working tool around a real business task: getting cash in faster.
-                    </p>
-                    <ul class="space-y-3 text-base-content/70">
-                        <li>It helps finance teams follow up faster.</li>
-                        <li>It keeps tone and message structure consistent.</li>
-                        <li>It turns one business rule into a tool people can actually use.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-8 items-stretch">
-                <div class="buzz-card p-8 bg-base-50 shadow-lg border-t-4 border-primary order-2 lg:order-1">
-                    <p class="text-xs font-bold uppercase tracking-wider text-primary mb-3">What this shows</p>
-                    <h3 class="text-2xl font-bold mb-4">A call helper for sales or collections</h3>
-                    <p class="text-base-content/70 mb-4">
-                        This kind of microapp gives teams a ready call opening, a short question path, and a clean close. It keeps the conversation focused.
-                    </p>
-                    <ul class="space-y-3 text-base-content/70">
-                        <li>Good for call teams who need consistency.</li>
-                        <li>Useful for outbound sales, support, or payment collection.</li>
-                        <li>Easy to connect later to CRM or calling tools.</li>
-                    </ul>
-                </div>
-                <div class="buzz-card p-8 bg-white shadow-xl order-1 lg:order-2">
-                    <div class="flex items-center justify-between mb-6">
-                        <div>
-                            <p class="text-xs font-bold uppercase tracking-wider text-primary mb-2">Microapp 2</p>
-                            <h3 class="text-2xl font-bold">AI Calling Agent</h3>
-                        </div>
-                        <span class="badge badge-primary">Live Demo</span>
-                    </div>
-                    <div class="space-y-4">
-                        <label class="block">
-                            <span class="text-sm font-semibold text-base-content">Call goal</span>
-                            <select id="calling-goal" class="select select-bordered w-full mt-1">
-                                <option value="payment">Payment follow-up</option>
-                                <option value="quote" selected>Quote follow-up</option>
-                                <option value="demo">Demo booking</option>
-                            </select>
-                        </label>
-                        <label class="block">
-                            <span class="text-sm font-semibold text-base-content">Contact name</span>
-                            <input id="calling-contact" class="input input-bordered w-full mt-1" value="Elena Fischer">
-                        </label>
-                        <label class="block">
-                            <span class="text-sm font-semibold text-base-content">Main issue</span>
-                            <input id="calling-issue" class="input input-bordered w-full mt-1" value="waiting for internal approval">
-                        </label>
-                        <button id="calling-run" class="btn btn-primary w-full">Build Call Script</button>
-                        <div class="bg-base-50 rounded-2xl p-5 border border-base-200">
-                            <p class="text-xs font-bold uppercase tracking-wider text-primary mb-2">Output</p>
-                            <pre id="calling-output" class="whitespace-pre-wrap text-sm text-base-content/80 font-sans">Click the button to build a simple call script.</pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-8 items-stretch">
-                <div class="buzz-card p-8 bg-white shadow-xl">
-                    <div class="flex items-center justify-between mb-6">
-                        <div>
-                            <p class="text-xs font-bold uppercase tracking-wider text-primary mb-2">Microapp 3</p>
-                            <h3 class="text-2xl font-bold">AI Quote Preparer</h3>
-                        </div>
-                        <span class="badge badge-primary">Live Demo</span>
-                    </div>
-                    <div class="space-y-4">
-                        <label class="block">
-                            <span class="text-sm font-semibold text-base-content">Customer</span>
-                            <input id="quote-customer" class="input input-bordered w-full mt-1" value="Northwind Components Ltd.">
-                        </label>
-                        <div class="grid sm:grid-cols-3 gap-4">
-                            <label class="block">
-                                <span class="text-sm font-semibold text-base-content">Line items</span>
-                                <input id="quote-items" class="input input-bordered w-full mt-1" value="3">
-                            </label>
-                            <label class="block">
-                                <span class="text-sm font-semibold text-base-content">Unit price</span>
-                                <input id="quote-price" class="input input-bordered w-full mt-1" value="2400">
-                            </label>
-                            <label class="block">
-                                <span class="text-sm font-semibold text-base-content">Discount %</span>
-                                <input id="quote-discount" class="input input-bordered w-full mt-1" value="8">
-                            </label>
-                        </div>
-                        <button id="quote-run" class="btn btn-primary w-full">Prepare Quote</button>
-                        <div class="bg-base-50 rounded-2xl p-5 border border-base-200">
-                            <p class="text-xs font-bold uppercase tracking-wider text-primary mb-2">Output</p>
-                            <pre id="quote-output" class="whitespace-pre-wrap text-sm text-base-content/80 font-sans">Click the button to prepare a quote summary.</pre>
-                        </div>
-                    </div>
-                </div>
-                <div class="buzz-card p-8 bg-base-50 shadow-lg border-t-4 border-primary">
-                    <p class="text-xs font-bold uppercase tracking-wider text-primary mb-3">What this shows</p>
-                    <h3 class="text-2xl font-bold mb-4">A quote helper your sales team can use right away</h3>
-                    <p class="text-base-content/70 mb-4">
-                        The point is not the math. The point is turning a repeat sales task into a simple app with a fast output.
-                    </p>
-                    <ul class="space-y-3 text-base-content/70">
-                        <li>Good for reducing sales admin time.</li>
-                        <li>Easy to connect to products, prices, and approval rules later.</li>
-                        <li>Useful as a first internal AI app.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-8 items-stretch">
-                <div class="buzz-card p-8 bg-base-50 shadow-lg border-t-4 border-primary order-2 lg:order-1">
-                    <p class="text-xs font-bold uppercase tracking-wider text-primary mb-3">What this shows</p>
-                    <h3 class="text-2xl font-bold mb-4">A checking tool for finance teams</h3>
-                    <p class="text-base-content/70 mb-4">
-                        Many useful AI apps are simple checkers. They reduce missed details before work goes out.
-                    </p>
-                    <ul class="space-y-3 text-base-content/70">
-                        <li>Good for proforma invoices and export paperwork.</li>
-                        <li>Useful where small misses create bigger delays.</li>
-                        <li>Simple enough to deploy fast and improve over time.</li>
-                    </ul>
-                </div>
-                <div class="buzz-card p-8 bg-white shadow-xl order-1 lg:order-2">
-                    <div class="flex items-center justify-between mb-6">
-                        <div>
-                            <p class="text-xs font-bold uppercase tracking-wider text-primary mb-2">Microapp 4</p>
-                            <h3 class="text-2xl font-bold">AI Proforma Invoice Checker</h3>
-                        </div>
-                        <span class="badge badge-primary">Live Demo</span>
-                    </div>
-                    <div class="space-y-4">
-                        <label class="block">
-                            <span class="text-sm font-semibold text-base-content">Destination market</span>
-                            <select id="invoice-market" class="select select-bordered w-full mt-1">
-                                <option value="eu" selected>EU</option>
-                                <option value="uk">UK</option>
-                                <option value="gcc">GCC</option>
-                            </select>
-                        </label>
-                        <div class="grid sm:grid-cols-2 gap-3">
-                            <label class="label cursor-pointer justify-start gap-3">
-                                <input id="invoice-incoterm" type="checkbox" class="checkbox checkbox-primary" checked>
-                                <span class="label-text">Incoterm added</span>
-                            </label>
-                            <label class="label cursor-pointer justify-start gap-3">
-                                <input id="invoice-vat" type="checkbox" class="checkbox checkbox-primary" checked>
-                                <span class="label-text">VAT / tax line added</span>
-                            </label>
-                            <label class="label cursor-pointer justify-start gap-3">
-                                <input id="invoice-bank" type="checkbox" class="checkbox checkbox-primary">
-                                <span class="label-text">Bank details added</span>
-                            </label>
-                            <label class="label cursor-pointer justify-start gap-3">
-                                <input id="invoice-weight" type="checkbox" class="checkbox checkbox-primary">
-                                <span class="label-text">Weight / shipment data added</span>
-                            </label>
-                        </div>
-                        <button id="invoice-run" class="btn btn-primary w-full">Check Invoice</button>
-                        <div class="bg-base-50 rounded-2xl p-5 border border-base-200">
-                            <p class="text-xs font-bold uppercase tracking-wider text-primary mb-2">Output</p>
-                            <pre id="invoice-output" class="whitespace-pre-wrap text-sm text-base-content/80 font-sans">Click the button to check the invoice.</pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-8 items-stretch">
-                <div class="buzz-card p-8 bg-white shadow-xl">
-                    <div class="flex items-center justify-between mb-6">
-                        <div>
-                            <p class="text-xs font-bold uppercase tracking-wider text-primary mb-2">Microapp 5</p>
-                            <h3 class="text-2xl font-bold">AI Contract Checker &amp; Creator</h3>
-                        </div>
-                        <span class="badge badge-primary">Live Demo</span>
-                    </div>
-                    <div class="space-y-4">
-                        <label class="block">
-                            <span class="text-sm font-semibold text-base-content">Contract type</span>
-                            <select id="contract-type" class="select select-bordered w-full mt-1">
-                                <option value="msa" selected>Master service agreement</option>
-                                <option value="nda">NDA</option>
-                                <option value="supplier">Supplier agreement</option>
-                            </select>
-                        </label>
-                        <div class="grid sm:grid-cols-2 gap-4">
-                            <label class="block">
-                                <span class="text-sm font-semibold text-base-content">Payment term</span>
-                                <input id="contract-term" class="input input-bordered w-full mt-1" value="30 days">
-                            </label>
-                            <label class="block">
-                                <span class="text-sm font-semibold text-base-content">Liability cap</span>
-                                <input id="contract-cap" class="input input-bordered w-full mt-1" value="12 months fees">
-                            </label>
-                        </div>
-                        <button id="contract-run" class="btn btn-primary w-full">Create Draft Notes</button>
-                        <div class="bg-base-50 rounded-2xl p-5 border border-base-200">
-                            <p class="text-xs font-bold uppercase tracking-wider text-primary mb-2">Output</p>
-                            <pre id="contract-output" class="whitespace-pre-wrap text-sm text-base-content/80 font-sans">Click the button to build contract notes.</pre>
-                        </div>
-                    </div>
-                </div>
-                <div class="buzz-card p-8 bg-base-50 shadow-lg border-t-4 border-primary">
-                    <p class="text-xs font-bold uppercase tracking-wider text-primary mb-3">What this shows</p>
-                    <h3 class="text-2xl font-bold mb-4">A legal and ops helper with clear rules</h3>
-                    <p class="text-base-content/70 mb-4">
-                        AI apps work well when the business rules are clear. This kind of helper speeds up first-pass drafting and checking.
-                    </p>
-                    <ul class="space-y-3 text-base-content/70">
-                        <li>Good for standard agreements and repeat checks.</li>
-                        <li>Useful before legal review, not instead of it.</li>
-                        <li>Easy to shape around your own clauses later.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-8 items-stretch">
-                <div class="buzz-card p-8 bg-base-50 shadow-lg border-t-4 border-primary order-2 lg:order-1">
-                    <p class="text-xs font-bold uppercase tracking-wider text-primary mb-3">What this shows</p>
-                    <h3 class="text-2xl font-bold mb-4">Two simple internal helpers</h3>
-                    <p class="text-base-content/70 mb-4">
-                        Some apps are about checking rules. Others are about helping people work through data faster. Both are useful.
-                    </p>
-                    <ul class="space-y-3 text-base-content/70">
-                        <li>Compliance checker for rule-based review.</li>
-                        <li>Data clerk for quick tagging and action notes.</li>
-                        <li>Good examples of small AI apps that become daily tools.</li>
-                    </ul>
-                </div>
-                <div class="grid sm:grid-cols-2 gap-6 order-1 lg:order-2">
-                    <div class="buzz-card p-6 bg-white shadow-xl">
-                        <p class="text-xs font-bold uppercase tracking-wider text-primary mb-2">Microapp 6A</p>
-                        <h3 class="text-xl font-bold mb-4">AI Compliance Checker</h3>
-                        <label class="block mb-3">
-                            <span class="text-sm font-semibold text-base-content">Region</span>
-                            <select id="compliance-region" class="select select-bordered w-full mt-1">
-                                <option value="eu" selected>EU</option>
-                                <option value="uk">UK</option>
-                                <option value="us">US</option>
-                            </select>
-                        </label>
-                        <label class="block mb-4">
-                            <span class="text-sm font-semibold text-base-content">Data type</span>
-                            <select id="compliance-data" class="select select-bordered w-full mt-1">
-                                <option value="customer" selected>Customer data</option>
-                                <option value="employee">Employee data</option>
-                                <option value="finance">Finance data</option>
-                            </select>
-                        </label>
-                        <button id="compliance-run" class="btn btn-primary w-full mb-4">Run Check</button>
-                        <pre id="compliance-output" class="whitespace-pre-wrap text-sm text-base-content/80 font-sans bg-base-50 rounded-2xl p-4 border border-base-200">Click the button to run a basic check.</pre>
-                    </div>
-                    <div class="buzz-card p-6 bg-white shadow-xl">
-                        <p class="text-xs font-bold uppercase tracking-wider text-primary mb-2">Microapp 6B</p>
-                        <h3 class="text-xl font-bold mb-4">AI Data Clerk</h3>
-                        <label class="block mb-3">
-                            <span class="text-sm font-semibold text-base-content">Incoming note</span>
-                            <textarea id="clerk-note" class="textarea textarea-bordered w-full mt-1 h-28">Customer says shipment arrived short by 4 units and wants replacement this week.</textarea>
-                        </label>
-                        <button id="clerk-run" class="btn btn-primary w-full mb-4">Sort Note</button>
-                        <pre id="clerk-output" class="whitespace-pre-wrap text-sm text-base-content/80 font-sans bg-base-50 rounded-2xl p-4 border border-base-200">Click the button to sort the note.</pre>
-                    </div>
-                </div>
-            </div>
+        <div class="grid gap-6 lg:grid-cols-3">
+            ${cardsHtml}
         </div>
     </div>
 
     <script>
         (() => {
-            const money = (value) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(Number(value || 0));
+            const demos = ${JSON.stringify(demos)};
+            const renderTags = (items) => items.map((item) => '<span class="rounded-full border border-base-200 bg-base-100 px-3 py-1.5 text-xs font-medium text-base-content/75">' + item + '</span>').join('');
 
-            const collectionsRun = document.getElementById('collections-run');
-            if (collectionsRun) {
-                collectionsRun.addEventListener('click', () => {
-                    const customer = document.getElementById('collections-customer').value || 'Customer';
-                    const amount = money(document.getElementById('collections-amount').value);
-                    const days = Number(document.getElementById('collections-days').value || 0);
-                    const tone = document.getElementById('collections-tone').value;
-                    const opener = tone === 'friendly'
-                        ? 'Hope you are well.'
-                        : tone === 'strict'
-                            ? 'This is a formal payment reminder.'
-                            : 'Following up on the open balance below.';
-                    document.getElementById('collections-output').textContent =
-\`Subject: Follow-up on overdue invoice
+            demos.forEach((demo) => {
+                const container = document.querySelector('[data-agent="' + demo.id + '"]');
+                if (!container) return;
 
-\${opener}
+                const screenEl = container.querySelector('[data-agent-screen]');
+                const statusEl = container.querySelector('[data-agent-status]');
+                const titleEl = container.querySelector('[data-agent-title]');
+                const summaryEl = container.querySelector('[data-agent-summary]');
+                const doneEl = container.querySelector('[data-agent-done]');
+                const nextEl = container.querySelector('[data-agent-next]');
+                const tagsEl = container.querySelector('[data-agent-tags]');
+                const buttons = Array.from(container.querySelectorAll('[data-agent-step]'));
 
-Customer: \${customer}
-Open amount: \${amount}
-Days late: \${days}
+                const setActiveButton = (activeId) => {
+                    buttons.forEach((button) => {
+                        const isActive = button.getAttribute('data-agent-step') === activeId;
+                        button.className = 'btn btn-xs ' + (isActive
+                            ? 'btn-primary'
+                            : 'btn-ghost text-white/75 hover:text-white hover:bg-white/10 border border-white/15');
+                    });
+                };
 
-Suggested next action:
-- Send reminder today
-- Offer call within 24 hours
-- Escalate if unpaid after 5 more days\`;
+                const renderState = (stateId) => {
+                    const state = demo.states[stateId];
+                    if (!state) return;
+
+                    screenEl.textContent = state.screen;
+                    statusEl.textContent = state.status;
+                    titleEl.textContent = state.title;
+                    summaryEl.textContent = state.summary;
+                    doneEl.textContent = state.done;
+                    nextEl.textContent = state.next;
+                    tagsEl.innerHTML = renderTags(state.tags);
+                    setActiveButton(stateId);
+                };
+
+                buttons.forEach((button) => {
+                    button.addEventListener('click', () => {
+                        renderState(button.getAttribute('data-agent-step'));
+                    });
                 });
-            }
 
-            const callingRun = document.getElementById('calling-run');
-            if (callingRun) {
-                callingRun.addEventListener('click', () => {
-                    const goal = document.getElementById('calling-goal').value;
-                    const contact = document.getElementById('calling-contact').value || 'Contact';
-                    const issue = document.getElementById('calling-issue').value || 'open issue';
-                    const goalLine = goal === 'payment'
-                        ? 'I am calling to help close the open payment item.'
-                        : goal === 'demo'
-                            ? 'I am calling to see if we can set a short demo.'
-                            : 'I am calling to follow up on the quote you received.';
-                    document.getElementById('calling-output').textContent =
-\`Call opener:
-Hi \${contact}, this is Maria from Northwind Components.
-\${goalLine}
-
-Main question:
-I understand the current blocker is: \${issue}. Is that still correct?
-
-Close:
-What is the simplest next step we can agree on today?\`;
-                });
-            }
-
-            const quoteRun = document.getElementById('quote-run');
-            if (quoteRun) {
-                quoteRun.addEventListener('click', () => {
-                    const customer = document.getElementById('quote-customer').value || 'Customer';
-                    const items = Number(document.getElementById('quote-items').value || 0);
-                    const price = Number(document.getElementById('quote-price').value || 0);
-                    const discount = Number(document.getElementById('quote-discount').value || 0);
-                    const subtotal = items * price;
-                    const discountValue = subtotal * (discount / 100);
-                    const total = subtotal - discountValue;
-                    document.getElementById('quote-output').textContent =
-\`Quote summary for \${customer}
-
-Items: \${items}
-Unit price: \${money(price)}
-Subtotal: \${money(subtotal)}
-Discount: \${discount}% (-\${money(discountValue)})
-Quoted total: \${money(total)}
-
-Suggested note:
-Prepared as a quick draft for internal review before sending.\`;
-                });
-            }
-
-            const invoiceRun = document.getElementById('invoice-run');
-            if (invoiceRun) {
-                invoiceRun.addEventListener('click', () => {
-                    const market = document.getElementById('invoice-market').value.toUpperCase();
-                    const checks = [
-                        ['Incoterm', document.getElementById('invoice-incoterm').checked],
-                        ['VAT / tax line', document.getElementById('invoice-vat').checked],
-                        ['Bank details', document.getElementById('invoice-bank').checked],
-                        ['Weight / shipment data', document.getElementById('invoice-weight').checked]
-                    ];
-                    const missing = checks.filter(([, ok]) => !ok).map(([label]) => '- ' + label);
-                    document.getElementById('invoice-output').textContent =
-\`Market: \${market}
-
-Status: \${missing.length ? 'Needs attention' : 'Looks complete for first review'}
-
-\${missing.length ? 'Missing items:\\n' + missing.join('\\n') : 'No missing items selected.'}\`;
-                });
-            }
-
-            const contractRun = document.getElementById('contract-run');
-            if (contractRun) {
-                contractRun.addEventListener('click', () => {
-                    const type = document.getElementById('contract-type').value;
-                    const term = document.getElementById('contract-term').value || '30 days';
-                    const cap = document.getElementById('contract-cap').value || '12 months fees';
-                    document.getElementById('contract-output').textContent =
-\`Draft notes
-
-Contract type: \${type}
-Payment term: \${term}
-Liability cap: \${cap}
-
-Suggested clause focus:
-- Payment timing must be clear
-- Liability cap should match deal size
-- Termination path should be simple
-
-Use this as a first draft note before legal review.\`;
-                });
-            }
-
-            const complianceRun = document.getElementById('compliance-run');
-            if (complianceRun) {
-                complianceRun.addEventListener('click', () => {
-                    const region = document.getElementById('compliance-region').value.toUpperCase();
-                    const data = document.getElementById('compliance-data').value;
-                    document.getElementById('compliance-output').textContent =
-\`Basic check result
-
-Region: \${region}
-Data type: \${data}
-
-Main checks:
-- Confirm access control
-- Confirm retention rule
-- Confirm export / sharing limits
-
-Next step:
-Flag anything high-risk for human review.\`;
-                });
-            }
-
-            const clerkRun = document.getElementById('clerk-run');
-            if (clerkRun) {
-                clerkRun.addEventListener('click', () => {
-                    const note = document.getElementById('clerk-note').value || '';
-                    const lower = note.toLowerCase();
-                    const queue = lower.includes('shipment') ? 'Operations' : lower.includes('invoice') ? 'Finance' : 'Support';
-                    const priority = lower.includes('this week') || lower.includes('urgent') ? 'High' : 'Normal';
-                    document.getElementById('clerk-output').textContent =
-\`Sorted note
-
-Queue: \${queue}
-Priority: \${priority}
-Suggested tags: customer issue, follow-up needed
-
-Clean summary:
-\${note}\`;
-                });
-            }
+                renderState(demo.actions[0].id);
+            });
         })();
     </script>
 </section>`;
