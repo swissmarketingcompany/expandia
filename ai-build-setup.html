@@ -367,245 +367,321 @@
             <h2 class="text-4xl md:text-5xl font-black mb-4">
                 <span class="gradient-header">Live Agent Demos</span>
             </h2>
-            <p class="text-base text-base-content/60 max-w-2xl mx-auto">Small product views. Click around.</p>
+            <p class="text-base text-base-content/60 max-w-2xl mx-auto">Tap around. See what AI agents actually do.</p>
         </div>
 
         <div class="grid gap-6 lg:grid-cols-3">
-            
-            <div class="buzz-card overflow-hidden bg-white shadow-xl" data-agent="collections">
+
+            <!-- EXPENSE APPROVER -->
+            <div class="buzz-card overflow-hidden bg-white shadow-xl" id="demo-expenses">
                 <div class="px-5 pt-5 pb-4 border-b border-base-200">
                     <div class="flex items-center justify-between gap-3">
-                        <div>
-                            <h3 class="text-lg font-bold">Collections Agent</h3>
-                            <p class="text-sm text-base-content/55">Calls, chases, reports.</p>
-                        </div>
+                        <h3 class="text-lg font-bold">Expense Approver</h3>
                         <span class="badge badge-primary badge-sm">Finance</span>
                     </div>
                 </div>
                 <div class="p-5">
-                    <div class="rounded-[28px] bg-neutral p-4 text-white shadow-inner">
-                        <div class="flex items-center justify-between gap-3 mb-3">
-                            <p class="text-[10px] uppercase tracking-[0.2em] text-white/45" data-agent-screen></p>
-                            <span class="rounded-full border border-white/15 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-white/70" data-agent-status></span>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="text-center">
+                            <p class="text-3xl font-black text-primary" id="exp-approved">0</p>
+                            <p class="text-[10px] uppercase tracking-widest text-base-content/40 mt-1">Approved</p>
                         </div>
-                        <div class="grid grid-cols-3 gap-2 mb-3">
-                            
-                    <div class="rounded-xl bg-white/8 px-3 py-2">
-                        <p class="text-[10px] uppercase tracking-[0.18em] text-white/45">Due</p>
-                        <p class="mt-1 text-sm font-semibold text-white">EUR 214K</p>
-                    </div>
-                    <div class="rounded-xl bg-white/8 px-3 py-2">
-                        <p class="text-[10px] uppercase tracking-[0.18em] text-white/45">Risk</p>
-                        <p class="mt-1 text-sm font-semibold text-white">12</p>
-                    </div>
-                    <div class="rounded-xl bg-white/8 px-3 py-2">
-                        <p class="text-[10px] uppercase tracking-[0.18em] text-white/45">Plans</p>
-                        <p class="mt-1 text-sm font-semibold text-white">4</p>
-                    </div>
+                        <div class="text-center">
+                            <p class="text-3xl font-black text-base-content/30" id="exp-pending">5</p>
+                            <p class="text-[10px] uppercase tracking-widest text-base-content/40 mt-1">Pending</p>
                         </div>
-                        <div class="flex flex-wrap gap-2 mb-3">
-                            
-                    <button type="button" data-agent-step="round" class="btn btn-xs btn-primary">Round</button>
-                    <button type="button" data-agent-step="plan" class="btn btn-xs btn-ghost text-white/75 hover:text-white hover:bg-white/10 border border-white/15">Plan</button>
-                    <button type="button" data-agent-step="report" class="btn btn-xs btn-ghost text-white/75 hover:text-white hover:bg-white/10 border border-white/15">Report</button>
-                        </div>
-                        <div class="rounded-2xl bg-white/8 p-3">
-                            <div class="flex items-start justify-between gap-3">
-                                <div>
-                                    <p class="text-[10px] uppercase tracking-[0.18em] text-white/45">Now</p>
-                                    <h4 class="mt-1 text-base font-semibold text-white" data-agent-title></h4>
-                                </div>
-                                <span class="text-[10px] uppercase tracking-[0.18em] text-white/45">Northwind</span>
-                            </div>
-                            <p class="mt-2 text-sm text-white/70" data-agent-summary></p>
-                        </div>
-                        <div class="grid grid-cols-2 gap-2 mt-3">
-                            <div class="rounded-2xl bg-white/8 p-3">
-                                <p class="text-[10px] uppercase tracking-[0.18em] text-white/45 mb-1">Done</p>
-                                <p class="text-sm text-white" data-agent-done></p>
-                            </div>
-                            <div class="rounded-2xl bg-white/8 p-3">
-                                <p class="text-[10px] uppercase tracking-[0.18em] text-white/45 mb-1">Next</p>
-                                <p class="text-sm text-white" data-agent-next></p>
-                            </div>
+                        <div class="text-center">
+                            <p class="text-3xl font-black text-red-400" id="exp-flagged">0</p>
+                            <p class="text-[10px] uppercase tracking-widest text-base-content/40 mt-1">Flagged</p>
                         </div>
                     </div>
-                    <div class="flex flex-wrap gap-2 mt-4" data-agent-tags></div>
+
+                    <div id="exp-queue" class="space-y-2">
+                    </div>
+
+                    <div id="exp-done-msg" class="hidden text-center py-6">
+                        <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-7 h-7 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        </div>
+                        <p class="font-bold text-base-content/80">Queue cleared</p>
+                        <button type="button" id="exp-reset" class="btn btn-xs btn-ghost text-primary mt-2">Reset demo</button>
+                    </div>
+
+                    <div class="mt-4 rounded-xl bg-base-200/60 px-3 py-2 flex items-center justify-between">
+                        <p class="text-xs text-base-content/50">Total approved</p>
+                        <p class="text-sm font-bold text-primary" id="exp-total">EUR 0</p>
+                    </div>
                 </div>
             </div>
-            <div class="buzz-card overflow-hidden bg-white shadow-xl" data-agent="quotes">
+
+            <!-- SUPPORT TRIAGE -->
+            <div class="buzz-card overflow-hidden bg-white shadow-xl" id="demo-triage">
                 <div class="px-5 pt-5 pb-4 border-b border-base-200">
                     <div class="flex items-center justify-between gap-3">
-                        <div>
-                            <h3 class="text-lg font-bold">Quotes Agent</h3>
-                            <p class="text-sm text-base-content/55">Prepares, follows, closes.</p>
-                        </div>
-                        <span class="badge badge-primary badge-sm">Sales</span>
+                        <h3 class="text-lg font-bold">Support Triage</h3>
+                        <span class="badge badge-secondary badge-sm">Operations</span>
                     </div>
                 </div>
                 <div class="p-5">
-                    <div class="rounded-[28px] bg-neutral p-4 text-white shadow-inner">
-                        <div class="flex items-center justify-between gap-3 mb-3">
-                            <p class="text-[10px] uppercase tracking-[0.2em] text-white/45" data-agent-screen></p>
-                            <span class="rounded-full border border-white/15 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-white/70" data-agent-status></span>
-                        </div>
-                        <div class="grid grid-cols-3 gap-2 mb-3">
-                            
-                    <div class="rounded-xl bg-white/8 px-3 py-2">
-                        <p class="text-[10px] uppercase tracking-[0.18em] text-white/45">Deals</p>
-                        <p class="mt-1 text-sm font-semibold text-white">18</p>
+                    <div id="triage-inbox" class="space-y-2 mb-4">
                     </div>
-                    <div class="rounded-xl bg-white/8 px-3 py-2">
-                        <p class="text-[10px] uppercase tracking-[0.18em] text-white/45">Wait</p>
-                        <p class="mt-1 text-sm font-semibold text-white">2</p>
+
+                    <div id="triage-running" class="hidden text-center py-4">
+                        <div class="w-10 h-10 border-4 border-primary/30 border-t-primary rounded-full animate-spin mx-auto mb-3"></div>
+                        <p class="text-sm font-medium text-base-content/60">Sorting tickets…</p>
                     </div>
-                    <div class="rounded-xl bg-white/8 px-3 py-2">
-                        <p class="text-[10px] uppercase tracking-[0.18em] text-white/45">Risk</p>
-                        <p class="mt-1 text-sm font-semibold text-white">3</p>
+
+                    <div id="triage-result" class="hidden space-y-3">
+                        <div class="flex items-center gap-3">
+                            <span class="w-2.5 h-2.5 rounded-full bg-red-400 flex-shrink-0"></span>
+                            <div class="flex-1 h-2 bg-base-200 rounded-full overflow-hidden"><div class="h-full bg-red-400 rounded-full transition-all duration-700" id="bar-urgent" style="width:0%"></div></div>
+                            <span class="text-xs font-bold text-red-400 w-8 text-right" id="count-urgent">0</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-2.5 h-2.5 rounded-full bg-amber-400 flex-shrink-0"></span>
+                            <div class="flex-1 h-2 bg-base-200 rounded-full overflow-hidden"><div class="h-full bg-amber-400 rounded-full transition-all duration-700" id="bar-medium" style="width:0%"></div></div>
+                            <span class="text-xs font-bold text-amber-400 w-8 text-right" id="count-medium">0</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-2.5 h-2.5 rounded-full bg-green-400 flex-shrink-0"></span>
+                            <div class="flex-1 h-2 bg-base-200 rounded-full overflow-hidden"><div class="h-full bg-green-400 rounded-full transition-all duration-700" id="bar-low" style="width:0%"></div></div>
+                            <span class="text-xs font-bold text-green-400 w-8 text-right" id="count-low">0</span>
+                        </div>
+                        <div class="mt-2 rounded-xl bg-base-200/60 px-3 py-2 flex items-center justify-between">
+                            <p class="text-xs text-base-content/50">Time saved</p>
+                            <p class="text-sm font-bold text-secondary" id="triage-saved">~45 min</p>
+                        </div>
+                        <button type="button" id="triage-reset" class="btn btn-xs btn-ghost text-secondary w-full mt-1">Reset demo</button>
                     </div>
-                        </div>
-                        <div class="flex flex-wrap gap-2 mb-3">
-                            
-                    <button type="button" data-agent-step="offer" class="btn btn-xs btn-primary">Offer</button>
-                    <button type="button" data-agent-step="block" class="btn btn-xs btn-ghost text-white/75 hover:text-white hover:bg-white/10 border border-white/15">Block</button>
-                    <button type="button" data-agent-step="close" class="btn btn-xs btn-ghost text-white/75 hover:text-white hover:bg-white/10 border border-white/15">Close</button>
-                        </div>
-                        <div class="rounded-2xl bg-white/8 p-3">
-                            <div class="flex items-start justify-between gap-3">
-                                <div>
-                                    <p class="text-[10px] uppercase tracking-[0.18em] text-white/45">Now</p>
-                                    <h4 class="mt-1 text-base font-semibold text-white" data-agent-title></h4>
-                                </div>
-                                <span class="text-[10px] uppercase tracking-[0.18em] text-white/45">Northwind</span>
-                            </div>
-                            <p class="mt-2 text-sm text-white/70" data-agent-summary></p>
-                        </div>
-                        <div class="grid grid-cols-2 gap-2 mt-3">
-                            <div class="rounded-2xl bg-white/8 p-3">
-                                <p class="text-[10px] uppercase tracking-[0.18em] text-white/45 mb-1">Done</p>
-                                <p class="text-sm text-white" data-agent-done></p>
-                            </div>
-                            <div class="rounded-2xl bg-white/8 p-3">
-                                <p class="text-[10px] uppercase tracking-[0.18em] text-white/45 mb-1">Next</p>
-                                <p class="text-sm text-white" data-agent-next></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mt-4" data-agent-tags></div>
+
+                    <button type="button" id="triage-run" class="btn btn-secondary btn-sm w-full">Sort 8 tickets</button>
                 </div>
             </div>
-            <div class="buzz-card overflow-hidden bg-white shadow-xl" data-agent="contracts">
+
+            <!-- INVOICE SCANNER -->
+            <div class="buzz-card overflow-hidden bg-white shadow-xl" id="demo-invoices">
                 <div class="px-5 pt-5 pb-4 border-b border-base-200">
                     <div class="flex items-center justify-between gap-3">
-                        <div>
-                            <h3 class="text-lg font-bold">Contracts Agent</h3>
-                            <p class="text-sm text-base-content/55">Scans, drafts, routes.</p>
-                        </div>
-                        <span class="badge badge-primary badge-sm">Legal</span>
+                        <h3 class="text-lg font-bold">Invoice Scanner</h3>
+                        <span class="badge badge-accent badge-sm">Accounting</span>
                     </div>
                 </div>
                 <div class="p-5">
-                    <div class="rounded-[28px] bg-neutral p-4 text-white shadow-inner">
-                        <div class="flex items-center justify-between gap-3 mb-3">
-                            <p class="text-[10px] uppercase tracking-[0.2em] text-white/45" data-agent-screen></p>
-                            <span class="rounded-full border border-white/15 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-white/70" data-agent-status></span>
-                        </div>
-                        <div class="grid grid-cols-3 gap-2 mb-3">
-                            
-                    <div class="rounded-xl bg-white/8 px-3 py-2">
-                        <p class="text-[10px] uppercase tracking-[0.18em] text-white/45">Today</p>
-                        <p class="mt-1 text-sm font-semibold text-white">7</p>
+                    <div id="inv-stack" class="grid grid-cols-3 gap-2 mb-4">
                     </div>
-                    <div class="rounded-xl bg-white/8 px-3 py-2">
-                        <p class="text-[10px] uppercase tracking-[0.18em] text-white/45">Flags</p>
-                        <p class="mt-1 text-sm font-semibold text-white">3</p>
+
+                    <div id="inv-scanning" class="hidden text-center py-4">
+                        <div class="w-10 h-10 border-4 border-accent/30 border-t-accent rounded-full animate-spin mx-auto mb-3"></div>
+                        <p class="text-sm font-medium text-base-content/60">Reading invoice…</p>
                     </div>
-                    <div class="rounded-xl bg-white/8 px-3 py-2">
-                        <p class="text-[10px] uppercase tracking-[0.18em] text-white/45">Saved</p>
-                        <p class="mt-1 text-sm font-semibold text-white">9h</p>
-                    </div>
+
+                    <div id="inv-extracted" class="hidden">
+                        <div class="rounded-xl bg-base-200/60 p-3 space-y-2">
+                            <div class="flex justify-between"><span class="text-xs text-base-content/50">Vendor</span><span class="text-xs font-bold" id="inv-vendor">—</span></div>
+                            <div class="flex justify-between"><span class="text-xs text-base-content/50">Amount</span><span class="text-xs font-bold text-accent" id="inv-amount">—</span></div>
+                            <div class="flex justify-between"><span class="text-xs text-base-content/50">Due</span><span class="text-xs font-bold" id="inv-due">—</span></div>
+                            <div class="flex justify-between"><span class="text-xs text-base-content/50">Category</span><span class="text-xs font-bold" id="inv-cat">—</span></div>
                         </div>
-                        <div class="flex flex-wrap gap-2 mb-3">
-                            
-                    <button type="button" data-agent-step="scan" class="btn btn-xs btn-primary">Scan</button>
-                    <button type="button" data-agent-step="draft" class="btn btn-xs btn-ghost text-white/75 hover:text-white hover:bg-white/10 border border-white/15">Draft</button>
-                    <button type="button" data-agent-step="memo" class="btn btn-xs btn-ghost text-white/75 hover:text-white hover:bg-white/10 border border-white/15">Memo</button>
-                        </div>
-                        <div class="rounded-2xl bg-white/8 p-3">
-                            <div class="flex items-start justify-between gap-3">
-                                <div>
-                                    <p class="text-[10px] uppercase tracking-[0.18em] text-white/45">Now</p>
-                                    <h4 class="mt-1 text-base font-semibold text-white" data-agent-title></h4>
-                                </div>
-                                <span class="text-[10px] uppercase tracking-[0.18em] text-white/45">Northwind</span>
-                            </div>
-                            <p class="mt-2 text-sm text-white/70" data-agent-summary></p>
-                        </div>
-                        <div class="grid grid-cols-2 gap-2 mt-3">
-                            <div class="rounded-2xl bg-white/8 p-3">
-                                <p class="text-[10px] uppercase tracking-[0.18em] text-white/45 mb-1">Done</p>
-                                <p class="text-sm text-white" data-agent-done></p>
-                            </div>
-                            <div class="rounded-2xl bg-white/8 p-3">
-                                <p class="text-[10px] uppercase tracking-[0.18em] text-white/45 mb-1">Next</p>
-                                <p class="text-sm text-white" data-agent-next></p>
-                            </div>
+                        <div class="flex items-center gap-2 mt-3 justify-center">
+                            <span class="w-2 h-2 rounded-full bg-green-400"></span>
+                            <span class="text-xs text-green-600 font-medium">Auto-matched to ERP</span>
                         </div>
                     </div>
-                    <div class="flex flex-wrap gap-2 mt-4" data-agent-tags></div>
+
+                    <div class="mt-4 rounded-xl bg-base-200/60 px-3 py-2 flex items-center justify-between">
+                        <p class="text-xs text-base-content/50">Scanned today</p>
+                        <p class="text-sm font-bold text-accent" id="inv-count">0 / 6</p>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 
+    <style>
+        #demo-expenses .exp-row { display:flex; align-items:center; gap:0.5rem; padding:0.5rem 0.75rem; border-radius:0.75rem; background:oklch(0.97 0 0); transition:all 0.3s ease; }
+        #demo-expenses .exp-row.done { opacity:0; max-height:0; padding:0; margin:0; overflow:hidden; }
+        #demo-expenses .exp-icon { width:2rem; height:2rem; border-radius:0.5rem; display:flex; align-items:center; justify-content:center; font-size:0.8rem; flex-shrink:0; }
+        #demo-expenses .exp-label { flex:1; font-size:0.8rem; font-weight:600; color:oklch(0.35 0 0); }
+        #demo-expenses .exp-amt { font-size:0.8rem; font-weight:700; color:oklch(0.35 0 0); margin-right:0.25rem; }
+        #demo-expenses .exp-btn { width:1.75rem; height:1.75rem; border-radius:50%; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:0.7rem; transition:transform 0.15s; }
+        #demo-expenses .exp-btn:hover { transform:scale(1.15); }
+        #demo-expenses .exp-yes { background:oklch(0.85 0.15 145); color:oklch(0.35 0.15 145); }
+        #demo-expenses .exp-no { background:oklch(0.90 0.10 25); color:oklch(0.45 0.15 25); }
+        @keyframes pop-in { from { transform:scale(0.8); opacity:0; } to { transform:scale(1); opacity:1; } }
+        #demo-triage .triage-ticket { display:flex; align-items:center; gap:0.5rem; padding:0.5rem 0.75rem; border-radius:0.75rem; background:oklch(0.97 0 0); font-size:0.75rem; font-weight:500; color:oklch(0.45 0 0); }
+        #demo-invoices .inv-doc { aspect-ratio:3/4; border-radius:0.75rem; display:flex; align-items:center; justify-content:center; font-size:0.65rem; font-weight:600; cursor:pointer; transition:all 0.2s; border:2px solid transparent; }
+        #demo-invoices .inv-doc:hover { transform:translateY(-2px); box-shadow:0 4px 12px oklch(0 0 0/0.1); }
+        #demo-invoices .inv-doc.scanned { border-color:oklch(0.7 0.15 160); background:oklch(0.95 0.05 160)!important; color:oklch(0.4 0.1 160)!important; }
+    </style>
+
     <script>
         (() => {
-            const demos = [{"id":"collections","title":"Collections","badge":"Finance","pitch":"Calls, chases, reports.","stats":[{"label":"Due","value":"EUR 214K"},{"label":"Risk","value":"12"},{"label":"Plans","value":"4"}],"actions":[{"id":"round","label":"Round"},{"id":"plan","label":"Plan"},{"id":"report","label":"Report"}],"states":{"round":{"screen":"live queue","status":"running","title":"Morning round","summary":"Calls and reminders done.","done":"6 accounts touched.","next":"1 plan needs approval.","tags":["EUR 39K today","2 escalations"]},"plan":{"screen":"approval","status":"waiting","title":"Plan draft","summary":"Terms prepared for sign-off.","done":"3 dates drafted.","next":"Approve or escalate.","tags":["1 click send","Full trail saved"]},"report":{"screen":"cfo view","status":"ready","title":"Daily report","summary":"Cash in, risk, blockers.","done":"EUR 64K secured.","next":"Review tomorrow rules.","tags":["Less chasing","One queue"]}}},{"id":"quotes","title":"Quotes","badge":"Sales","pitch":"Prepares, follows, closes.","stats":[{"label":"Deals","value":"18"},{"label":"Wait","value":"2"},{"label":"Risk","value":"3"}],"actions":[{"id":"offer","label":"Offer"},{"id":"block","label":"Block"},{"id":"close","label":"Close"}],"states":{"offer":{"screen":"offer desk","status":"ready","title":"Offer pack","summary":"Price, stock, timing set.","done":"Quote pack built.","next":"Approve send.","tags":["Faster quotes","Rules stay clean"]},"block":{"screen":"deal watch","status":"alert","title":"Blockers found","summary":"The stuck deals are surfaced.","done":"2 deals rescued.","next":"Clear price and lead time.","tags":["Less dead pipeline","Ops alerted"]},"close":{"screen":"close plan","status":"active","title":"Close plan","summary":"Next step path built.","done":"7-day sequence set.","next":"Launch follow-up.","tags":["Better conversion","Less admin"]}}},{"id":"contracts","title":"Contracts","badge":"Legal","pitch":"Scans, drafts, routes.","stats":[{"label":"Today","value":"7"},{"label":"Flags","value":"3"},{"label":"Saved","value":"9h"}],"actions":[{"id":"scan","label":"Scan"},{"id":"draft","label":"Draft"},{"id":"memo","label":"Memo"}],"states":{"scan":{"screen":"risk scan","status":"done","title":"Risk scan","summary":"Clauses checked vs policy.","done":"3 issues flagged.","next":"Legal reviews only flags.","tags":["Faster review","Less hidden risk"]},"draft":{"screen":"fallback","status":"ready","title":"Fallback draft","summary":"Preferred wording inserted.","done":"Redline ready.","next":"Send back fast.","tags":["Legal stays in control","Plain review"]},"memo":{"screen":"board memo","status":"ready","title":"Risk memo","summary":"Short decision memo ready.","done":"3 risks summarized.","next":"Leadership reads first.","tags":["Clear decisions","Less delay"]}}}];
-            const renderTags = (items) => items.map((item) => '<span class="rounded-full border border-base-200 bg-base-100 px-3 py-1.5 text-xs font-medium text-base-content/75">' + item + '</span>').join('');
+            /* ── EXPENSE APPROVER ── */
+            const expenses = [
+                { label: 'Team lunch', amount: 340, icon: '🍽️', bg: 'oklch(0.92 0.08 80)' },
+                { label: 'SaaS license', amount: 1200, icon: '💻', bg: 'oklch(0.90 0.08 260)' },
+                { label: 'Flight BER→ZRH', amount: 489, icon: '✈️', bg: 'oklch(0.92 0.06 200)' },
+                { label: 'Office supplies', amount: 95, icon: '📎', bg: 'oklch(0.93 0.06 50)' },
+                { label: 'Client dinner', amount: 780, icon: '🥂', bg: 'oklch(0.91 0.08 350)' }
+            ];
+            let expApproved = 0, expFlagged = 0, expTotal = 0, expPending = expenses.length;
+            const expQueue = document.getElementById('exp-queue');
+            const expDoneMsg = document.getElementById('exp-done-msg');
 
-            demos.forEach((demo) => {
-                const container = document.querySelector('[data-agent="' + demo.id + '"]');
-                if (!container) return;
+            function renderExpenses() {
+                expQueue.innerHTML = expenses.map((e, i) =>
+                    '<div class="exp-row" id="exp-r-' + i + '">' +
+                    '<div class="exp-icon" style="background:' + e.bg + '">' + e.icon + '</div>' +
+                    '<span class="exp-label">' + e.label + '</span>' +
+                    '<span class="exp-amt">€' + e.amount + '</span>' +
+                    '<button class="exp-btn exp-yes" data-idx="' + i + '" data-act="yes">✓</button>' +
+                    '<button class="exp-btn exp-no" data-idx="' + i + '" data-act="no">✕</button>' +
+                    '</div>'
+                ).join('');
+            }
+            renderExpenses();
 
-                const screenEl = container.querySelector('[data-agent-screen]');
-                const statusEl = container.querySelector('[data-agent-status]');
-                const titleEl = container.querySelector('[data-agent-title]');
-                const summaryEl = container.querySelector('[data-agent-summary]');
-                const doneEl = container.querySelector('[data-agent-done]');
-                const nextEl = container.querySelector('[data-agent-next]');
-                const tagsEl = container.querySelector('[data-agent-tags]');
-                const buttons = Array.from(container.querySelectorAll('[data-agent-step]'));
+            function updateExpCounters() {
+                document.getElementById('exp-approved').textContent = expApproved;
+                document.getElementById('exp-pending').textContent = expPending;
+                document.getElementById('exp-flagged').textContent = expFlagged;
+                document.getElementById('exp-total').textContent = 'EUR ' + expTotal.toLocaleString();
+            }
 
-                const setActiveButton = (activeId) => {
-                    buttons.forEach((button) => {
-                        const isActive = button.getAttribute('data-agent-step') === activeId;
-                        button.className = 'btn btn-xs ' + (isActive
-                            ? 'btn-primary'
-                            : 'btn-ghost text-white/75 hover:text-white hover:bg-white/10 border border-white/15');
-                    });
-                };
+            expQueue.addEventListener('click', function(e) {
+                const btn = e.target.closest('.exp-btn');
+                if (!btn) return;
+                const idx = parseInt(btn.dataset.idx);
+                const act = btn.dataset.act;
+                const row = document.getElementById('exp-r-' + idx);
+                if (!row || row.classList.contains('done')) return;
 
-                const renderState = (stateId) => {
-                    const state = demo.states[stateId];
-                    if (!state) return;
+                if (act === 'yes') { expApproved++; expTotal += expenses[idx].amount; }
+                else { expFlagged++; }
+                expPending--;
+                row.classList.add('done');
+                updateExpCounters();
 
-                    screenEl.textContent = state.screen;
-                    statusEl.textContent = state.status;
-                    titleEl.textContent = state.title;
-                    summaryEl.textContent = state.summary;
-                    doneEl.textContent = state.done;
-                    nextEl.textContent = state.next;
-                    tagsEl.innerHTML = renderTags(state.tags);
-                    setActiveButton(stateId);
-                };
+                if (expPending <= 0) {
+                    setTimeout(function() { expQueue.classList.add('hidden'); expDoneMsg.classList.remove('hidden'); }, 350);
+                }
+            });
 
-                buttons.forEach((button) => {
-                    button.addEventListener('click', () => {
-                        renderState(button.getAttribute('data-agent-step'));
-                    });
-                });
+            document.getElementById('exp-reset').addEventListener('click', function() {
+                expApproved = 0; expFlagged = 0; expTotal = 0; expPending = expenses.length;
+                updateExpCounters();
+                expDoneMsg.classList.add('hidden');
+                expQueue.classList.remove('hidden');
+                renderExpenses();
+            });
 
-                renderState(demo.actions[0].id);
+
+            /* ── SUPPORT TRIAGE ── */
+            const tickets = [
+                { label: 'Server down – EU', pri: 'urgent' },
+                { label: 'Login issue', pri: 'medium' },
+                { label: 'Password reset', pri: 'low' },
+                { label: 'API timeout', pri: 'urgent' },
+                { label: 'Billing question', pri: 'low' },
+                { label: 'Data export fail', pri: 'medium' },
+                { label: 'SSL cert expiry', pri: 'urgent' },
+                { label: 'UI bug report', pri: 'low' }
+            ];
+            const priColors = { urgent: 'oklch(0.75 0.15 25)', medium: 'oklch(0.80 0.12 80)', low: 'oklch(0.82 0.12 145)' };
+            const triageInbox = document.getElementById('triage-inbox');
+            const triageRun = document.getElementById('triage-run');
+            const triageRunning = document.getElementById('triage-running');
+            const triageResult = document.getElementById('triage-result');
+
+            function renderInbox() {
+                triageInbox.innerHTML = tickets.map(function(t) {
+                    return '<div class="triage-ticket"><span style="width:6px;height:6px;border-radius:50%;background:oklch(0.7 0 0);flex-shrink:0"></span>' + t.label + '</div>';
+                }).join('');
+            }
+            renderInbox();
+
+            triageRun.addEventListener('click', function() {
+                triageRun.classList.add('hidden');
+                triageInbox.classList.add('hidden');
+                triageRunning.classList.remove('hidden');
+
+                setTimeout(function() {
+                    triageRunning.classList.add('hidden');
+                    triageResult.classList.remove('hidden');
+
+                    var counts = { urgent: 0, medium: 0, low: 0 };
+                    tickets.forEach(function(t) { counts[t.pri]++; });
+                    var total = tickets.length;
+
+                    setTimeout(function() {
+                        document.getElementById('bar-urgent').style.width = (counts.urgent / total * 100) + '%';
+                        document.getElementById('bar-medium').style.width = (counts.medium / total * 100) + '%';
+                        document.getElementById('bar-low').style.width = (counts.low / total * 100) + '%';
+                        document.getElementById('count-urgent').textContent = counts.urgent;
+                        document.getElementById('count-medium').textContent = counts.medium;
+                        document.getElementById('count-low').textContent = counts.low;
+                    }, 100);
+                }, 1400);
+            });
+
+            document.getElementById('triage-reset').addEventListener('click', function() {
+                triageResult.classList.add('hidden');
+                triageInbox.classList.remove('hidden');
+                triageRun.classList.remove('hidden');
+                document.getElementById('bar-urgent').style.width = '0%';
+                document.getElementById('bar-medium').style.width = '0%';
+                document.getElementById('bar-low').style.width = '0%';
+                renderInbox();
+            });
+
+
+            /* ── INVOICE SCANNER ── */
+            const invoices = [
+                { vendor: 'TechParts GmbH', amount: 'EUR 4,320', due: 'Apr 12', cat: 'Hardware', color: 'oklch(0.90 0.08 260)' },
+                { vendor: 'CloudServ AG', amount: 'EUR 1,850', due: 'Apr 15', cat: 'SaaS', color: 'oklch(0.90 0.08 200)' },
+                { vendor: 'OfficeMax Ltd', amount: 'EUR 620', due: 'Apr 18', cat: 'Supplies', color: 'oklch(0.92 0.06 80)' },
+                { vendor: 'LegalPro SA', amount: 'EUR 3,100', due: 'Apr 20', cat: 'Services', color: 'oklch(0.90 0.08 350)' },
+                { vendor: 'DataLink Corp', amount: 'EUR 7,500', due: 'Apr 22', cat: 'Infrastructure', color: 'oklch(0.88 0.08 145)' },
+                { vendor: 'PrintWorks KG', amount: 'EUR 290', due: 'Apr 25', cat: 'Marketing', color: 'oklch(0.92 0.06 50)' }
+            ];
+            let invScanned = 0;
+            const invStack = document.getElementById('inv-stack');
+            const invScanning = document.getElementById('inv-scanning');
+            const invExtracted = document.getElementById('inv-extracted');
+
+            function renderInvStack() {
+                invStack.innerHTML = invoices.map(function(inv, i) {
+                    var cls = i < invScanned ? ' scanned' : '';
+                    return '<div class="inv-doc' + cls + '" data-inv="' + i + '" style="background:' + (i < invScanned ? '' : inv.color) + ';color:oklch(0.45 0 0)">' +
+                        '<span>' + (i < invScanned ? '✓' : 'PDF') + '</span></div>';
+                }).join('');
+            }
+            renderInvStack();
+
+            invStack.addEventListener('click', function(e) {
+                var doc = e.target.closest('.inv-doc');
+                if (!doc) return;
+                var idx = parseInt(doc.dataset.inv);
+                if (idx !== invScanned) return;
+
+                invExtracted.classList.add('hidden');
+                invScanning.classList.remove('hidden');
+
+                setTimeout(function() {
+                    invScanning.classList.add('hidden');
+                    var inv = invoices[idx];
+                    document.getElementById('inv-vendor').textContent = inv.vendor;
+                    document.getElementById('inv-amount').textContent = inv.amount;
+                    document.getElementById('inv-due').textContent = inv.due;
+                    document.getElementById('inv-cat').textContent = inv.cat;
+                    invExtracted.classList.remove('hidden');
+                    invExtracted.style.animation = 'pop-in 0.3s ease';
+
+                    invScanned++;
+                    document.getElementById('inv-count').textContent = invScanned + ' / ' + invoices.length;
+                    renderInvStack();
+                }, 900);
             });
         })();
     </script>
