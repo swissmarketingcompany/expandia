@@ -596,16 +596,16 @@ const SOLUTION_PAGE_BLUEPRINTS = {
             buttonText: 'Start the Project'
         }
     },
-    'ai-build-setup': {
-        category: 'custom-software',
+    'ai-opportunity-review': {
+        category: 'ai-solutions',
         hero: {
-            badge: 'Service 3',
-            titlePrefix: 'AI Build & Setup',
+            badge: 'Service 1',
+            titlePrefix: 'AI Opportunity Review',
             titleSuffix: '',
-            description: 'We build the tools, software, automations, and workflows around AI, then connect them to the way your business already works.',
-            image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&q=80',
-            alt: 'AI microapps and workflow setup',
-            primaryCtaText: 'Talk to Us',
+            description: 'We run the Data Dump Model on your company data, generate PDF reports, and define where AI should be implemented first.',
+            image: 'https://images.unsplash.com/photo-1551281044-8b5bd15c8d7c?w=800&q=80',
+            alt: 'AI opportunity review and data analysis',
+            primaryCtaText: 'Start Review',
             primaryCtaLink: 'contact.html',
             secondaryCtaText: 'See Data Dump Model',
             secondaryCtaLink: '#data-dump-model'
@@ -613,32 +613,97 @@ const SOLUTION_PAGE_BLUEPRINTS = {
         sections: [
             {
                 type: 'cards',
-                id: 'what-you-get',
+                id: 'review-overview',
                 sectionClass: 'bg-base-100',
-                heading: 'What This Service Really Means',
-                intro: 'Everything starts from our Data Dump Model, then we build applications on top of it.',
+                heading: 'How Service 1 Works',
+                intro: 'Everything starts with Data Dump analysis before any build work.',
                 gridClass: 'md:grid-cols-2',
                 cards: [
-                    { title: 'Step 1: Data Dump', description: 'You upload large company data by domain. We analyze it and deliver structured PDF reports.', borderClass: 'border-primary' },
-                    { title: 'Step 2: AI Applications', description: 'From those reports, we build the right AI tools and workflows for your business.', borderClass: 'border-secondary' },
-                    { title: 'How you buy it', description: 'Fixed-price project or monthly build partner, depending on how much work you want to move at once.', borderClass: 'border-secondary' },
-                    { title: 'Output format', description: 'Every Data Dump PDF has two parts: analysis of current data and where to implement AI first.', borderClass: 'border-accent' }
+                    { title: 'Domain Data Dump', description: 'You upload company data by business domain: finance, sales, operations, production, and more.', borderClass: 'border-primary' },
+                    { title: 'Deep Analysis', description: 'We process large datasets and analyze current business state with domain-level detail.', borderClass: 'border-secondary' },
+                    { title: 'PDF Report Output', description: 'Each report contains current-data analysis and clear AI implementation opportunities.', borderClass: 'border-accent' },
+                    { title: 'Priority Task List', description: 'Reports become the AI task queue used for planning and implementation services.', borderClass: 'border-neutral' }
                 ]
             },
             {
                 type: 'html',
-                html: buildAiBuildSetupDemosSection()
+                html: buildDataDumpModelSection()
+            },
+            {
+                type: 'process',
+                id: 'review-process',
+                sectionClass: 'bg-base-200',
+                heading: 'Output of Service 1',
+                intro: 'You leave this stage with clear data-backed direction.',
+                steps: [
+                    { title: 'Analyze company data', description: 'Data Dump processing turns raw business files into structured findings.' },
+                    { title: 'Generate domain PDF reports', description: 'Each report shows existing performance and where AI will create impact.' },
+                    { title: 'Move into implementation', description: 'Approved priorities feed directly into Service 2 planning and Service 3 build.' }
+                ]
+            },
+            {
+                type: 'faq',
+                id: 'review-faq',
+                sectionClass: 'bg-base-100',
+                heading: 'Common Questions',
+                intro: 'Questions about AI Opportunity Review and Data Dump.',
+                items: [
+                    { q: 'What does each PDF include?', a: 'Two things: analysis of your existing data and where to implement AI first.' },
+                    { q: 'Can we run new analysis later?', a: 'Yes. We can use previous PDF reports with new data for faster re-analysis.' },
+                    { q: 'Do you support large datasets?', a: 'Yes. The model is designed for high-volume enterprise data processing.' },
+                    { q: 'What is next after this review?', a: 'We move from report outputs into roadmap planning and implementation.' }
+                ]
+            }
+        ],
+        cta: {
+            heading: 'Ready to Run AI Opportunity Review?',
+            description: 'Start with Data Dump, get your reports, and define the right AI implementation path.',
+            buttonText: 'Start Opportunity Review'
+        }
+    },
+    'ai-build-setup': {
+        category: 'custom-software',
+        hero: {
+            badge: 'Service 3',
+            titlePrefix: 'AI Build & Setup',
+            titleSuffix: '',
+            description: 'We implement the approved AI opportunities as working tools, software, automations, and workflows.',
+            image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&q=80',
+            alt: 'AI microapps and workflow setup',
+            primaryCtaText: 'Talk to Us',
+            primaryCtaLink: 'contact.html',
+            secondaryCtaText: 'See Applications',
+            secondaryCtaLink: '#real-business-applications'
+        },
+        sections: [
+            {
+                type: 'cards',
+                id: 'what-you-get',
+                sectionClass: 'bg-base-100',
+                heading: 'What This Service Really Means',
+                intro: 'This service turns approved opportunities into deployed AI applications.',
+                gridClass: 'md:grid-cols-2',
+                cards: [
+                    { title: 'Workflow Build', description: 'We build the software and automation flows defined by your approved AI priorities.', borderClass: 'border-primary' },
+                    { title: 'System Integration', description: 'We connect applications to your real systems and data sources.', borderClass: 'border-secondary' },
+                    { title: 'Rollout and Training', description: 'We deploy for teams and make sure daily usage is practical and consistent.', borderClass: 'border-accent' },
+                    { title: 'Support and Iteration', description: 'We fix, improve, and expand based on real usage after launch.', borderClass: 'border-neutral' }
+                ]
+            },
+            {
+                type: 'html',
+                html: buildRealBusinessApplicationsSection()
             },
             {
                 type: 'process',
                 id: 'build-process',
                 sectionClass: 'bg-base-200',
                 heading: 'How We Turn This Into Real Delivery',
-                intro: 'The Data Dump model is the foundation. Then we build and deploy.',
+                intro: 'Clear build flow from backlog to production use.',
                 steps: [
-                    { title: 'Data Dump and report generation', description: 'We process high-volume company data and generate domain PDF reports.' },
-                    { title: 'AI roadmap from report findings', description: 'We pick priority automation and application opportunities from those reports.' },
-                    { title: 'Build, launch, and support', description: 'We implement the selected AI applications and keep improving them over time.' }
+                    { title: 'Translate priorities into scope', description: 'We convert approved opportunities into delivery scope and milestones.' },
+                    { title: 'Build and integrate', description: 'We develop the tools and connect them into your business workflow.' },
+                    { title: 'Deploy and optimize', description: 'We launch, support users, and improve based on real outcomes.' }
                 ]
             },
             {
@@ -646,18 +711,18 @@ const SOLUTION_PAGE_BLUEPRINTS = {
                 id: 'build-faq',
                 sectionClass: 'bg-base-100',
                 heading: 'Common Questions',
-                intro: 'What companies ask about Data Dump and implementation.',
+                intro: 'Questions about implementation and rollout.',
                 items: [
-                    { q: 'What does each Data Dump PDF include?', a: 'Two things: analysis of your existing data and clear recommendations on where to implement AI first.' },
-                    { q: 'Do we need to upload data every time?', a: 'No. For re-analysis, we use previous PDF reports plus new data where needed.' },
-                    { q: 'Can you handle large datasets?', a: 'Yes. This model is designed for large enterprise datasets and structured domain analysis.' },
-                    { q: 'What happens after reporting?', a: 'We move into implementation: applications, automations, workflows, team rollout, and support.' }
+                    { q: 'Do you only build from your own review output?', a: 'No. We can also implement from existing client requirements and approved internal plans.' },
+                    { q: 'Can you integrate with our current systems?', a: 'Yes. Integration is part of delivery for most projects.' },
+                    { q: 'Do we need to launch everything at once?', a: 'No. We typically deploy in stages and expand after validation.' },
+                    { q: 'Do you provide support after launch?', a: 'Yes. Ongoing support and iteration are part of our delivery model.' }
                 ]
             }
         ],
         cta: {
             heading: 'Want this kind of app built for your business?',
-            description: 'Start with the Data Dump Model, get your reports, then build the highest-value AI applications.',
+            description: 'Bring approved AI priorities and we will turn them into working systems.',
             buttonText: 'Start the Build'
         }
     }
@@ -848,7 +913,7 @@ function renderSolutionHtmlSection(section) {
     return section.html || '';
 }
 
-function buildAiBuildSetupDemosSection() {
+function buildDataDumpModelSection() {
     return `
 <section id="data-dump-model" class="section-spacing bg-base-100">
     <div class="container mx-auto container-padding">
@@ -955,46 +1020,6 @@ function buildAiBuildSetupDemosSection() {
                 <div class="buzz-card p-5 bg-white shadow-sm border border-base-200"><p class="font-semibold">Energy Cost Analysis</p></div>
                 <div class="buzz-card p-5 bg-white shadow-sm border border-base-200"><p class="font-semibold">Production Line Analysis</p></div>
                 <div class="buzz-card p-5 bg-white shadow-sm border border-base-200"><p class="font-semibold">Manufacturing Analysis</p></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="ai-applications" class="section-spacing bg-base-200">
-    <div class="container mx-auto container-padding">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl md:text-5xl font-black mb-4">
-                <span class="gradient-header">Applications of AI</span>
-            </h2>
-            <p class="text-base text-base-content/60 max-w-3xl mx-auto">
-                After Data Dump reporting, we implement AI where impact is highest.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="buzz-card p-6 bg-white shadow-lg border-t-4 border-primary">
-                <h3 class="text-xl font-bold mb-2">Revenue Collection Automation</h3>
-                <p class="text-sm text-base-content/70">Collections workflows, reminder logic, and escalation paths from receivables analysis.</p>
-            </div>
-            <div class="buzz-card p-6 bg-white shadow-lg border-t-4 border-secondary">
-                <h3 class="text-xl font-bold mb-2">Finance Decision Workflows</h3>
-                <p class="text-sm text-base-content/70">Budget, cost, and cashflow automation based on financial data findings.</p>
-            </div>
-            <div class="buzz-card p-6 bg-white shadow-lg border-t-4 border-accent">
-                <h3 class="text-xl font-bold mb-2">Sales Performance Systems</h3>
-                <p class="text-sm text-base-content/70">Pipeline, conversion, and pricing improvement workflows driven by sales analysis.</p>
-            </div>
-            <div class="buzz-card p-6 bg-white shadow-lg border-t-4 border-primary">
-                <h3 class="text-xl font-bold mb-2">Supply Chain Optimization</h3>
-                <p class="text-sm text-base-content/70">Procurement, stock, and delay-reduction workflows from supply chain data.</p>
-            </div>
-            <div class="buzz-card p-6 bg-white shadow-lg border-t-4 border-secondary">
-                <h3 class="text-xl font-bold mb-2">Invoice and Timesheet Controls</h3>
-                <p class="text-sm text-base-content/70">Validation, exception handling, and approval flows for finance operations.</p>
-            </div>
-            <div class="buzz-card p-6 bg-white shadow-lg border-t-4 border-accent">
-                <h3 class="text-xl font-bold mb-2">Operations and Manufacturing AI</h3>
-                <p class="text-sm text-base-content/70">Energy, production line, and manufacturing improvement systems from plant-level data.</p>
             </div>
         </div>
     </div>
@@ -1125,6 +1150,61 @@ function buildAiBuildSetupDemosSection() {
         resetUI();
     })();
 </script>`;
+}
+
+function buildRealBusinessApplicationsSection() {
+    return `
+<section id="real-business-applications" class="section-spacing bg-base-200">
+    <div class="container mx-auto container-padding">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-black mb-4">
+                <span class="gradient-header">Real Business Applications of AI</span>
+            </h2>
+            <p class="text-base text-base-content/60 max-w-3xl mx-auto">
+                Implementation layer for Service 3. We turn approved opportunities into working business applications.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="buzz-card p-6 bg-white shadow-lg border-t-4 border-primary">
+                <h3 class="text-xl font-bold mb-2">Revenue Collection Application</h3>
+                <p class="text-sm text-base-content/70">Automated follow-up, promise-to-pay tracking, and escalation management.</p>
+            </div>
+            <div class="buzz-card p-6 bg-white shadow-lg border-t-4 border-secondary">
+                <h3 class="text-xl font-bold mb-2">Financial Data Application</h3>
+                <p class="text-sm text-base-content/70">Cost control workflows, anomaly detection, and finance decision automation.</p>
+            </div>
+            <div class="buzz-card p-6 bg-white shadow-lg border-t-4 border-accent">
+                <h3 class="text-xl font-bold mb-2">Sales Analysis Application</h3>
+                <p class="text-sm text-base-content/70">Pipeline recovery, quote follow-up, and conversion optimization workflows.</p>
+            </div>
+            <div class="buzz-card p-6 bg-white shadow-lg border-t-4 border-primary">
+                <h3 class="text-xl font-bold mb-2">Supply Chain Application</h3>
+                <p class="text-sm text-base-content/70">Delay prediction, replenishment priorities, and procurement intelligence.</p>
+            </div>
+            <div class="buzz-card p-6 bg-white shadow-lg border-t-4 border-secondary">
+                <h3 class="text-xl font-bold mb-2">Product Analysis Application</h3>
+                <p class="text-sm text-base-content/70">Margin insights, lifecycle actions, and product performance recommendations.</p>
+            </div>
+            <div class="buzz-card p-6 bg-white shadow-lg border-t-4 border-accent">
+                <h3 class="text-xl font-bold mb-2">Invoice and Timesheet Application</h3>
+                <p class="text-sm text-base-content/70">Validation controls, exception routing, and approval acceleration.</p>
+            </div>
+            <div class="buzz-card p-6 bg-white shadow-lg border-t-4 border-primary">
+                <h3 class="text-xl font-bold mb-2">Employee Performance Application</h3>
+                <p class="text-sm text-base-content/70">Manager signals, workload balancing, and productivity improvement workflows.</p>
+            </div>
+            <div class="buzz-card p-6 bg-white shadow-lg border-t-4 border-secondary">
+                <h3 class="text-xl font-bold mb-2">Energy Cost Application</h3>
+                <p class="text-sm text-base-content/70">Peak reduction, energy optimization, and operational schedule improvements.</p>
+            </div>
+            <div class="buzz-card p-6 bg-white shadow-lg border-t-4 border-accent">
+                <h3 class="text-xl font-bold mb-2">Production and Manufacturing Application</h3>
+                <p class="text-sm text-base-content/70">Downtime reduction, throughput stability, and process drift correction workflows.</p>
+            </div>
+        </div>
+    </div>
+</section>`;
 }
 
 function buildSolutionPageContent(templateName) {
