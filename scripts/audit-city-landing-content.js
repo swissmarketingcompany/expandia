@@ -6,16 +6,24 @@ const path = require('path');
 const ROOT_DIR = process.cwd();
 
 const cities = JSON.parse(fs.readFileSync(path.join(ROOT_DIR, 'data/cities-top250.json'), 'utf8'));
-const services = JSON.parse(fs.readFileSync(path.join(ROOT_DIR, 'data/services.json'), 'utf8'));
+
+function normalizeCitySlug(value) {
+  return String(value || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/['’\\.]/g, '')
+    .replace(/&/g, ' and ')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .replace(/-+/g, '-');
+}
 
 function getActiveLandingPageSet() {
   const pageSet = new Set();
   for (const city of cities) {
-    const citySlug = city.slug;
-    for (const service of services) {
-      if (!service.slug_pattern) continue;
-      pageSet.add(`${service.slug_pattern.replace('{{CITY_SLUG}}', citySlug)}.html`);
-    }
+    const citySlug = normalizeCitySlug(city.city || city.slug);
+    pageSet.add(`${citySlug}.html`);
   }
   return pageSet;
 }
@@ -42,7 +50,7 @@ function extractStats(content) {
   const hasKeyLandmark = content.includes('Key Landmark');
   const hasCityCenter = content.includes('City Center');
   const hasCentralBusinessDistrict = content.includes('Central Business District');
-  const hasServiceMismatch = /What exactly is included in the Turnkey IT Infrastructure for|Our Turnkey IT Infrastructure service eliminates/i.test(content);
+  const hasServiceMismatch = /Turnkey IT Infrastructure/i.test(content);
   const hasIconTextLeak = />(\s*)(users|file-text)(\s*)<\/div>/i.test(content);
   const hasFaqHeading = /Frequently Asked Questions|FAQ Section/i.test(content);
 

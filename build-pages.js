@@ -2,7 +2,78 @@
 
 const fs = require('fs');
 const path = require('path');
-const cities = require('./data/cities-top250.json'); // Using curated top 250 cities
+const ANKARA_LONGITUDE_CUTOFF = 32.8597;
+const RETIRED_EAST_OF_ANKARA_CITY_SLUGS = [
+    'jeddah',
+    'busan',
+    'yokohama',
+    'new-taipei-city',
+    'singapore',
+    'ahmedabad',
+    'riyadh',
+    'hyderabad',
+    'chennai',
+    'hong-kong',
+    'hangzhou',
+    'nanjing',
+    'bengaluru',
+    'xian',
+    'wuhan',
+    'seoul',
+    'chengdu',
+    'tokyo',
+    'shenzhen',
+    'mumbai',
+    'delhi',
+    'guangzhou',
+    'beijing',
+    'shanghai',
+    'zaporizhzhia',
+    'saratov',
+    'donetsk',
+    'dnipro',
+    'volgograd',
+    'perm',
+    'voronezh',
+    'yerevan',
+    'krasnodar',
+    'rostov-on-don',
+    'ufa',
+    'samara',
+    'tbilisi',
+    'nizhny-novgorod',
+    'kazan',
+    'kharkiv',
+    'baku',
+    'moscow'
+];
+const RETIRED_LOW_POP_CITY_SLUGS = [
+    'sankt-polten',
+    'roskilde',
+    'waterford',
+    'biel-bienne',
+    'sarpsborg',
+    'horsens',
+    'neuilly-sur-seine',
+    'issy-les-moulineaux',
+    'kolding',
+    'levallois-perret',
+    'la-seyne-sur-mer',
+    'villeneuve-dascq',
+    'randers',
+    'saint-nazaire',
+    'vila-nova-de-gaia',
+    'esbjerg',
+    'saint-maur-des-fosses',
+    'rueil-malmaison',
+    'champigny-sur-marne',
+    'la-rochelle',
+    'gateshead',
+    'szombathely',
+    'stockton-on-tees'
+];
+const rawCities = require('./data/cities-top250.json');
+const cities = rawCities.filter((city) => Number(city.lng) <= ANKARA_LONGITUDE_CUTOFF);
 const industries = require('./data/industries.json');
 const services = require('./data/services.json');
 const serviceContent = require('./data/service-content.json');
@@ -105,48 +176,66 @@ function normalizeCitySlug(slug) {
         .replace(/-+/g, '-');
 }
 
+const EAST_OF_ANKARA_CITY_SLUGS = Array.from(new Set([
+    ...RETIRED_EAST_OF_ANKARA_CITY_SLUGS,
+    ...rawCities
+        .filter((city) => Number(city.lng) > ANKARA_LONGITUDE_CUTOFF)
+        .map((city) => normalizeCitySlug(city.city || city.slug))
+]));
+
+if (EAST_OF_ANKARA_CITY_SLUGS.length > 0) {
+    const rawEastCount = rawCities.filter((city) => Number(city.lng) > ANKARA_LONGITUDE_CUTOFF).length;
+    if (rawEastCount > 0) {
+        console.warn(`⚠️ Excluding ${rawEastCount} cities east of Ankara (lng > ${ANKARA_LONGITUDE_CUTOFF}).`);
+    }
+    console.log(`🧹 Retiring ${EAST_OF_ANKARA_CITY_SLUGS.length} east-of-Ankara city slugs for cleanup/redirects.`);
+}
+if (RETIRED_LOW_POP_CITY_SLUGS.length > 0) {
+    console.log(`🧹 Retiring ${RETIRED_LOW_POP_CITY_SLUGS.length} low-population city slugs for cleanup/redirects.`);
+}
+
 // Function to generate unique SEO content for each city
 function generateUniqueCityContent(cityName, countryName, regionName) {
-    // Categorize cities for targeted content
-    const techHubs = ['San Francisco', 'Austin', 'Seattle', 'Berlin', 'Tel Aviv', 'Bangalore', 'Singapore', 'Tokyo'];
-    const financialCenters = ['New York', 'London', 'Hong Kong', 'Frankfurt', 'Zurich', 'Dubai', 'Singapore'];
-    const manufacturingCities = ['Detroit', 'Stuttgart', 'Nagoya', 'Turin', 'Manchester'];
+    // Categorize cities for targeted messaging
+    const techHubs = ['San Francisco', 'Austin', 'Seattle', 'Berlin', 'Singapore', 'Tokyo', 'Bengaluru'];
+    const financialCenters = ['New York', 'London', 'Hong Kong', 'Frankfurt', 'Zurich', 'Dubai'];
+    const industrialCities = ['Detroit', 'Stuttgart', 'Turin', 'Manchester'];
 
     const isTechHub = techHubs.includes(cityName);
     const isFinancial = financialCenters.includes(cityName);
-    const isManufacturing = manufacturingCities.includes(cityName);
+    const isIndustrial = industrialCities.includes(cityName);
 
-    // Content variations - 5 different templates
+    // Content variations centered on the 5-step AI business model
     const templates = [
         {
-            p1: `${cityName} represents a dynamic business environment in ${regionName}, where companies are increasingly leveraging technology to gain competitive advantages. The ${countryName} market demands sophisticated infrastructure, particularly as businesses in ${cityName} navigate digital transformation and operational modernization.`,
-            p2: `Go Expandia delivers enterprise-grade technology solutions tailored for ${cityName}'s business landscape. Our comprehensive suite includes enterprise AI automation and custom software development. We've designed our services specifically to address the unique operational demands of companies in ${countryName}.`,
-            p3: `From startups establishing their foothold in ${cityName} to established enterprises scaling across ${regionName}, our rapid 48-hour deployment model eliminates traditional infrastructure bottlenecks. We configure AI workspaces and custom software without lengthy development cycles, so your team can operate from day one.`,
-            p4: `${cityName} companies partnering with Go Expandia access institutional-grade technology previously available only to large corporations. With comprehensive 5-year technical support and a portfolio exceeding 100 specialized solutions, we function as your dedicated infrastructure partner throughout ${countryName} and beyond.`
+            p1: `${cityName} is a high-momentum market in ${regionName}, where teams are under pressure to reduce manual work and move decisions faster. Companies in ${countryName} need practical AI implementation, not vague innovation projects.`,
+            p2: `Our model in ${cityName} is simple: AI Opportunity Review, AI Plan, Build & Setup, Training, and Support. This gives leadership a clear path from analysis to execution, without adding process overhead.`,
+            p3: `Instead of forcing long transformation programs, we sequence implementation into manageable service steps so teams in ${cityName} can start with one priority workflow and expand with confidence.`,
+            p4: `This approach helps ${cityName} companies create measurable operational gains while keeping governance, rollout pace, and team adoption under control across ${countryName}.`
         },
         {
-            p1: `As a key commercial center in ${regionName}, ${cityName} offers substantial opportunities for businesses ready to scale. However, success in the ${countryName} market requires more than ambition—it demands robust technical infrastructure and secure systems that many ${cityName} companies struggle to implement efficiently.`,
-            p2: `Our turnkey technology services eliminate these barriers for ${cityName} businesses. Go Expandia provides enterprise AI infrastructure and custom software built for your operational requirements. Each solution is configured for the specific regulatory and operational needs of the ${countryName} market.`,
-            p3: `Whether you're launching operations in ${cityName} or expanding throughout ${regionName}, our infrastructure-as-a-service model delivers immediate capability. Activate AI automation or integrate your ERP and CRM systems—all within 48 hours. ${cityName} businesses gain technical capabilities typically requiring months of development.`,
-            p4: `Companies in ${cityName} benefit from our extensive product ecosystem and sustained technical partnership. Beyond initial deployment, our 5-year support commitment ensures your systems evolve with your business. With over 100 solutions available, ${cityName} enterprises can continuously enhance their capabilities in ${countryName}.`
+            p1: `${cityName} is an important commercial center in ${regionName}. To stay competitive in ${countryName}, teams need repeatable AI execution with accountable milestones.`,
+            p2: `The 5-step model used in ${cityName} starts with a data-backed review, then a scoped plan, then build and setup, followed by workforce training and ongoing support.`,
+            p3: `This structure makes budgets easier to control and keeps stakeholders aligned on what gets implemented first, what gets deferred, and how success is measured.`,
+            p4: `For companies in ${cityName}, it means AI delivery becomes an operational program with clear ownership rather than scattered one-off initiatives.`
         },
         {
-            p1: `${cityName} stands at the intersection of traditional business practices and modern digital operations in ${regionName}. Companies here face the dual challenge of maintaining operational excellence while adopting secure technology that drives efficiency. This transformation requires specialized infrastructure that most ${cityName} businesses find difficult to build internally.`,
-            p2: `Go Expandia bridges this gap with ready-to-deploy infrastructure designed for ${cityName}'s market. Our services span secure workplace technology, enterprise AI systems, and custom software development—all calibrated for ${countryName} compliance requirements. We understand the specific challenges of operating in ${regionName} and deliver solutions that work from day one.`,
-            p3: `For ${cityName} businesses, speed matters. Our 48-hour deployment standard means you can activate critical systems without lengthy implementation cycles. From on-premise AI and custom dashboards to system integration projects, we provide the technical foundation that ${cityName} companies need to operate effectively in ${regionName}.`,
-            p4: `${cityName} enterprises choosing Go Expandia gain more than technology—they gain a strategic software partner. Our 5-year technical support ensures continuous optimization, while our 100+ product portfolio provides solutions for every growth stage. Join ${cityName} businesses that have transformed their operations through systematic digital deployment.`
+            p1: `${cityName} combines established operations with growing pressure for automation. Businesses in ${regionName} need a delivery model that is both fast and controllable.`,
+            p2: `Our five services for ${cityName} teams map directly to execution stages: identify opportunities, set priorities, implement systems, train teams, and keep outcomes stable with support.`,
+            p3: `The model is built for cross-functional organizations where finance, operations, sales, and IT must coordinate around one AI roadmap in ${countryName}.`,
+            p4: `By using staged implementation, companies in ${cityName} can reduce risk, improve adoption, and scale AI capabilities in a way that makes commercial sense.`
         },
         {
-            p1: `The business landscape in ${cityName} continues evolving rapidly, creating both opportunities and challenges for companies in ${regionName}. Success increasingly depends on having the right technical infrastructure to support growth, yet many ${cityName} businesses lack the resources or expertise to build secure, scalable systems.`,
-            p2: `This is where Go Expandia delivers value for ${cityName} companies. We provide enterprise AI automation and custom software. Each solution is specifically configured for ${countryName} market conditions and regulatory requirements, ensuring seamless integration with your existing operations.`,
-            p3: `${cityName} businesses can deploy enterprise-grade systems in just 48 hours, bypassing traditional development timelines. Whether building an internal AI workspace or modernizing a legacy system, companies in ${cityName} gain immediate operational capability. This rapid deployment model is particularly valuable in ${regionName}'s competitive markets.`,
-            p4: `Beyond initial implementation, ${cityName} companies receive sustained technical partnership through our 5-year support commitment. Our portfolio of 100+ solutions ensures you have access to advanced capabilities as your business scales. Experience how dedicated software expertise transforms operations for ${cityName} enterprises in ${countryName}.`
+            p1: `The pace of change in ${cityName} is high, and teams in ${regionName} need practical AI leverage without long planning cycles.`,
+            p2: `Our business model for ${cityName} focuses on five clear services that move companies from “what should we automate?” to “this is now running in production.”`,
+            p3: `Every step has a defined output, so leaders in ${countryName} can track progress, control scope, and connect implementation work to operational KPIs.`,
+            p4: `This keeps AI adoption realistic for growing teams in ${cityName} while still enabling enterprise-level process improvements.`
         },
         {
-            p1: `${cityName} has emerged as an important business hub within ${regionName}, attracting companies seeking growth opportunities in ${countryName}. However, scaling successfully requires more than market access—it demands sophisticated AI systems and custom software that many ${cityName} businesses find challenging to develop.`,
-            p2: `Go Expandia specializes in delivering this technology to ${cityName} companies. Our comprehensive solutions include corporate AI infrastructure and custom-built applications. We've engineered each service for ${countryName} market requirements, providing ${cityName} businesses with tools that work effectively from day one.`,
-            p3: `Speed defines our approach. ${cityName} businesses can activate complete systems within 48 hours, eliminating lengthy development cycles. From agentic AI workflows to ERP integrations, we deliver the technical foundation that ${cityName} companies need for competitive advantage in ${regionName}.`,
-            p4: `Partnering with Go Expandia gives ${cityName} businesses access to advanced technology and sustained expertise. Our 5-year technical support ensures your systems remain optimized, while our 100+ solution portfolio provides continuous capability enhancement. Join ${cityName} companies that have accelerated their operations through systematic, expert-led digital deployment.`
+            p1: `${cityName} has strong growth potential in ${regionName}, but execution quality determines whether AI investments produce real business impact.`,
+            p2: `For companies in ${countryName}, the most effective approach is phased: review opportunities, design a prioritized plan, implement workflows, train users, and sustain results with ongoing support.`,
+            p3: `This is the operating model we use with teams in ${cityName} so delivery stays measurable and aligned with commercial goals.`,
+            p4: `As priorities evolve, the same five-service framework helps ${cityName} organizations expand implementation without losing focus or implementation quality.`
         }
     ];
 
@@ -156,7 +245,7 @@ function generateUniqueCityContent(cityName, countryName, regionName) {
         templateIndex = 0; // More tech-focused language
     } else if (isFinancial) {
         templateIndex = 1; // More formal, business-focused
-    } else if (isManufacturing) {
+    } else if (isIndustrial) {
         templateIndex = 2; // Industrial transformation focus
     } else {
         // Use hash of city name for consistent but varied selection
@@ -212,24 +301,24 @@ const CITY_LANDING_COPY = {
     en: {
         breadcrumbHome: 'Home',
         breadcrumbLocations: 'Locations',
-        heroTitle: 'Enterprise Solutions',
+        heroTitle: 'AI Services for Business Teams',
         heroButton: 'Get Free Analysis',
-        heroSecondary: 'Explore Categories',
+        heroSecondary: 'Explore 5 Services',
         whyTitle: 'Why {{CITY_NAME}}?',
-        whyBody: '{{CITY_NAME}} sits in the {{REGION_NAME}} market, where teams need secure AI systems, faster automation, and software that can scale with their operations.',
-        localHeading: 'Built for local delivery, global standards',
-        cardTitle: 'Two core categories',
-        cardSubtitles: { ai: 'Automation and control', software: 'Build and integration' },
-        servicesTitle: 'Solutions for {{CITY_NAME}}',
-        servicesBody: 'Choose the category that matches your current priority and expand as your operations grow.',
-        seoHeading: 'Enterprise delivery in {{CITY_NAME}}, {{COUNTRY_NAME}}',
+        whyBody: '{{CITY_NAME}} sits in the {{REGION_NAME}} market, where teams need a practical AI rollout model they can execute step by step.',
+        localHeading: 'Built for local teams with a clear 5-step model',
+        cardTitle: 'Five simple services',
+        cardSubtitles: { ai: 'From review to support', software: 'Execution you can measure' },
+        servicesTitle: 'Start AI delivery in {{CITY_NAME}}',
+        servicesBody: 'Pick your first service, then expand with the same model as your operations grow.',
+        seoHeading: 'AI delivery in {{CITY_NAME}}, {{COUNTRY_NAME}}',
         faqTitle: 'Frequently Asked Questions',
-        faqBody: 'Common questions from teams evaluating AI and custom software delivery.',
+        faqBody: 'Common questions from teams evaluating our 5-service AI model.',
         faq: [
-            { q: 'How quickly can you start?', a: 'We can usually begin after the initial discovery and scope review, then move quickly into implementation.' },
-            { q: 'What kinds of projects do you support?', a: 'We work on infrastructure, AI automation, system integrations, internal tools, portals, and modernization projects.' },
-            { q: 'Do you provide remote delivery?', a: 'Yes. Our delivery model is designed for remote implementation, monitoring, and support across regions.' },
-            { q: 'How do you handle compliance?', a: 'We account for data protection, logging, access control, and recovery requirements as part of the build.' }
+            { q: 'How quickly can we start Service 1 (Review)?', a: 'Most teams can start with the AI Opportunity Review after a short kickoff and data handover alignment.' },
+            { q: 'Can we start from a later service instead?', a: 'Yes. If you already have analysis and priorities, we can begin with planning, build and setup, training, or support.' },
+            { q: 'Do you deliver remotely for teams in {{CITY_NAME}}?', a: 'Yes. The model is built for remote-first delivery with structured milestones and regular working sessions.' },
+            { q: 'How do you keep implementation compliant and secure?', a: 'Security controls, access boundaries, and data handling requirements are integrated into each service stage.' }
         ]
     },
     de: {
@@ -460,7 +549,7 @@ const PAGE_METADATA_OVERRIDES = {
         keywords: 'AI ethics, responsible AI delivery, data handling, business AI governance'
     },
     'city-locations': {
-        title: 'AI Support Locations | 5 Services in 250+ Cities | Go Expandia',
+        title: 'AI Support Locations | 5 Services by City | Go Expandia',
         description: 'See where we deliver our 5 AI services: opportunity review, planning, build & setup, training, and support.',
         keywords: 'AI support locations, AI services by city, AI opportunity review cities, AI build setup cities'
     },
@@ -625,6 +714,39 @@ const SERVICE_CATEGORIES = {
         icon: 'code-2'
     }
 };
+
+const CITY_MODEL_SERVICES = [
+    {
+        slug: 'ai-opportunity-review',
+        title: '1. AI Opportunity Review',
+        summary: 'Find high-impact automation opportunities using your real operating data.',
+        icon: 'search-check'
+    },
+    {
+        slug: 'ai-plan',
+        title: '2. AI Plan',
+        summary: 'Define priorities, timeline, ownership, and KPI targets before implementation.',
+        icon: 'map'
+    },
+    {
+        slug: 'ai-build-setup',
+        title: '3. Build & Setup',
+        summary: 'Implement AI workflows and integrations that match your operating model.',
+        icon: 'wrench'
+    },
+    {
+        slug: 'ai-training',
+        title: '4. Training',
+        summary: 'Train teams so adoption is consistent and operationally useful.',
+        icon: 'graduation-cap'
+    },
+    {
+        slug: 'ai-support',
+        title: '5. Support',
+        summary: 'Maintain, optimize, and expand the AI system as priorities evolve.',
+        icon: 'life-buoy'
+    }
+];
 
 const SOLUTION_PAGE_BLUEPRINTS = {
     'managed-it-services': {
@@ -2011,7 +2133,14 @@ DECOMMISSIONED_IT_SERVICE_PAGES.forEach((slug) => {
     LEGACY_REDIRECT_TARGETS[slug] = 'solutions';
 });
 
-const RETIRED_CITY_SLUGS = new Set();
+const RETIRED_CITY_SLUGS = new Set([
+    'south-gloucestershire',
+    'north-lanarkshire',
+    'south-lanarkshire',
+    'rhondda-cynon-taf',
+    ...EAST_OF_ANKARA_CITY_SLUGS,
+    ...RETIRED_LOW_POP_CITY_SLUGS
+]);
 const RETIRED_CITY_REDIRECT_TARGET = 'city-locations';
 
 const LEGACY_CATEGORY_ANCHORS = {
@@ -3839,9 +3968,10 @@ function buildCityLocationsPage() {
     // Transform cities data for JS
     const citiesForJs = cities.map(c => ({
         name: c.city,
+        country: c.country || '',
         lat: c.lat || 0,
         lng: c.lng || 0,
-        url: `./${normalizeCitySlug(c.slug)}.html`,
+        url: `./${normalizeCitySlug(c.city)}.html`,
         region: c.region || 'Global'
     }));
 
@@ -3861,13 +3991,16 @@ function buildCityLocationsPage() {
         }).addTo(map);
         
         const regionColors = {
-            'DACH': '#f9c23c',
+            'DACH': '#cb102c',
             'Western Europe': '#e86100',
             'Southern Europe': '#ff6b35',
             'Scandinavia': '#4a90e2',
             'Eastern Europe': '#9b59b6',
             'North America': '#e74c3c',
-            'Turkey': '#95a5a6'
+            'Middle East': '#f39c12',
+            'Western Asia': '#16a085',
+            'Asia / APAC': '#2ecc71',
+            'Europe': '#95a5a6'
         };
 
         function createCustomIcon(color) {
@@ -3888,7 +4021,8 @@ function buildCityLocationsPage() {
             const popupContent = \`
                 <div class="custom-popup">
                     <h3>\${city.name}</h3>
-                    <p style="margin: 0.5rem 0; color: #666;">\${city.region}</p>
+                    <p style="margin: 0.25rem 0; color: #666;">\${city.country}</p>
+                    <p style="margin: 0.25rem 0 0.5rem; color: #666;">\${city.region}</p>
                     <a href="\${city.url}" style="display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; background-color: #f9c23c; color: #000; border-radius: 0.25rem; font-weight: 600; text-decoration: none;">View Services →</a>
                 </div>
             \`;
@@ -3906,7 +4040,7 @@ function buildCityLocationsPage() {
                     <div class="w-3 h-3 rounded-full" style="background-color: \${regionColors[city.region] || '#ff6b35'};"></div>
                     <div>
                         <h3 class="font-semibold">\${city.name}</h3>
-                        <p class="text-sm text-base-content/60">\${city.region}</p>
+                        <p class="text-sm text-base-content/60">\${city.country} • \${city.region}</p>
                     </div>
                 </div>
             \`;
@@ -4498,13 +4632,13 @@ function buildGlossaryIndex() {
 }
 
 // -------------------------------------------------------------------------
-// BUILD CITY LANDING PAGES (Generic pages showcasing all 19 services)
+// BUILD CITY LANDING PAGES (5-step AI business model)
 // -------------------------------------------------------------------------
 function buildCityLandingPages() {
     console.log('\n🏙️  Building Generic City Landing Pages (EN Only)...');
 
-    // Load top 250 cities
-    const top250Cities = JSON.parse(fs.readFileSync('data/cities-top250.json', 'utf8'));
+    // Use filtered city list (west of Ankara cutoff)
+    const top250Cities = cities;
     const templateContent = fs.readFileSync('templates/city-landing.html', 'utf8');
 
     const languages = ['en'];
@@ -4517,8 +4651,8 @@ function buildCityLandingPages() {
             const region = cityData.region || 'Europe';
             const landmark = cityData.landmark || 'the city center';
 
-            // Generate clean city slug
-            let citySlug = normalizeCitySlug(cityData.slug);
+            // Generate clean city slug from city name
+            const citySlug = normalizeCitySlug(cityData.city);
 
             // Build page title and description
             const title = lang === 'de'
@@ -4554,21 +4688,14 @@ function buildCityLandingPages() {
             // Generate and insert unique SEO content
             const uniqueContent = generateLocalizedCityContent(city, country, region, lang);
             htmlTemplate = htmlTemplate.replace(/{{UNIQUE_SEO_CONTENT}}/g, uniqueContent);
-            const categoryCardsHtml = Object.entries(SERVICE_CATEGORIES).map(([slug, meta]) => {
-                const localizedMeta = getLocalizedCategoryMeta(slug, lang);
-                const featuredServices = services
-                    .filter(service => service.category === slug)
-                    .slice(0, 3)
-                    .map(service => `<li class="text-sm text-base-content/70">${service.name}</li>`)
-                    .join('');
+            const categoryCardsHtml = CITY_MODEL_SERVICES.map(serviceStep => {
                 return `
-                    <a href="solutions.html#${slug}" class="buzz-card p-8 bg-white shadow-lg hover:shadow-xl transition-all block">
+                    <a href="${basePath}${serviceStep.slug}.html" class="buzz-card p-8 bg-white shadow-lg hover:shadow-xl transition-all block">
                         <div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-                            <i data-lucide="${meta.icon}" class="w-6 h-6 text-primary"></i>
+                            <i data-lucide="${serviceStep.icon}" class="w-6 h-6 text-primary"></i>
                         </div>
-                        <h3 class="text-2xl font-bold mb-3">${localizedMeta.label}</h3>
-                        <p class="text-base-content/70 mb-4">${localizedMeta.promise}</p>
-                        <ul class="space-y-1 mb-0">${featuredServices}</ul>
+                        <h3 class="text-2xl font-bold mb-3">${serviceStep.title}</h3>
+                        <p class="text-base-content/70 mb-0">${serviceStep.summary}</p>
                     </a>`;
             }).join('');
             htmlTemplate = htmlTemplate.replace(/{{SERVICE_LINKS}}/g, categoryCardsHtml);
@@ -4830,14 +4957,19 @@ function buildLegacyRedirectRules() {
     });
 
     cities.forEach(city => {
-        const cleanSlug = normalizeCitySlug(city.slug);
-        if (cleanSlug === city.slug) {
-            return;
-        }
-        languages.forEach(lang => {
-            const sourcePath = lang === 'en' ? `/${city.slug}.html` : `/${lang}/${city.slug}.html`;
-            const targetPath = lang === 'en' ? `/${cleanSlug}.html` : `/${lang}/${cleanSlug}.html`;
-            lines.push(`${sourcePath}  ${targetPath}  301`);
+        const canonicalSlug = normalizeCitySlug(city.city || city.slug);
+        const legacySlugs = new Set([
+            city.slug,
+            ...(Array.isArray(city.legacySlugs) ? city.legacySlugs : [])
+        ]);
+
+        legacySlugs.forEach((legacySlug) => {
+            if (!legacySlug || legacySlug === canonicalSlug) return;
+            languages.forEach(lang => {
+                const sourcePath = lang === 'en' ? `/${legacySlug}.html` : `/${lang}/${legacySlug}.html`;
+                const targetPath = lang === 'en' ? `/${canonicalSlug}.html` : `/${lang}/${canonicalSlug}.html`;
+                lines.push(`${sourcePath}  ${targetPath}  301`);
+            });
         });
     });
 
@@ -4901,15 +5033,16 @@ function cleanupLegacyRedirectOutputs() {
     });
 
     cities.forEach(city => {
-        const cleanSlug = normalizeCitySlug(city.slug);
-        if (cleanSlug === city.slug) {
-            return;
-        }
-        languages.forEach(lang => {
-            const retiredPaths = [
-                lang === 'en' ? `${city.slug}.html` : `${lang}/${city.slug}.html`
-            ];
-            retiredPaths.forEach(filePath => {
+        const canonicalSlug = normalizeCitySlug(city.city || city.slug);
+        const legacySlugs = new Set([
+            city.slug,
+            ...(Array.isArray(city.legacySlugs) ? city.legacySlugs : [])
+        ]);
+
+        legacySlugs.forEach((legacySlug) => {
+            if (!legacySlug || legacySlug === canonicalSlug) return;
+            languages.forEach(lang => {
+                const filePath = lang === 'en' ? `${legacySlug}.html` : `${lang}/${legacySlug}.html`;
                 if (fs.existsSync(filePath)) {
                     fs.unlinkSync(filePath);
                 }

@@ -4,7 +4,25 @@ Curate top 250 cities from the full cities.json file.
 Focus on major business hubs across regions.
 """
 
+import argparse
 import json
+import sys
+
+ANKARA_LONGITUDE_CUTOFF = 32.8597
+MIN_POPULATION = 80000
+
+parser = argparse.ArgumentParser(description="Regenerate curated city list from data/cities.json")
+parser.add_argument(
+    "--force",
+    action="store_true",
+    help="required safety flag; prevents accidental overwrite of data/cities-top250.json",
+)
+args = parser.parse_args()
+
+if not args.force:
+    print("⛔ Refusing to regenerate city list without --force.")
+    print("Reason: accidental runs can overwrite curated city quality filters.")
+    sys.exit(1)
 
 # Load current cities
 with open('data/cities.json', 'r', encoding='utf-8') as f:
@@ -26,6 +44,22 @@ region_quotas = {
 # Group cities by region
 cities_by_region = {}
 for city in all_cities:
+    try:
+        lng = float(city.get("lng", 0))
+    except Exception:
+        lng = 0.0
+    pop_raw = str(city.get("population", "0"))
+    try:
+        pop = int(pop_raw.replace(",", ""))
+    except Exception:
+        pop = 0
+
+    # Align with build filters to avoid reintroducing low-quality/out-of-scope cities.
+    if lng > ANKARA_LONGITUDE_CUTOFF:
+        continue
+    if pop < MIN_POPULATION:
+        continue
+
     region = city.get('region', 'Other')
     if region not in cities_by_region:
         cities_by_region[region] = []

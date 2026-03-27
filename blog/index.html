@@ -216,27 +216,43 @@
                     </svg>
                 </button>
                 <div id="company-menu"
-                    class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
-                    style="width: 420px;">
-                    <div class="grid grid-cols-1 divide-y divide-gray-100">
-                        <div class="p-4">
-                            <a href="../about.html" class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
-                                <span class="text-sm font-semibold text-gray-900">About Us</span>
-                                <p class="text-xs text-gray-500 mt-0.5">Who we are and what we do</p>
-                            </a>
-                            <a href="../vision-mission.html" class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
-                                <span class="text-sm font-semibold text-gray-900">Vision &amp; Mission</span>
-                                <p class="text-xs text-gray-500 mt-0.5">Our direction and values</p>
-                            </a>
-                            <a href="../our-ethical-principles.html" class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
-                                <span class="text-sm font-semibold text-gray-900">Ethics &amp; Values</span>
-                                <p class="text-xs text-gray-500 mt-0.5">How we operate</p>
-                            </a>
-                            <a href="../city-locations.html" class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
-                                <span class="text-sm font-semibold text-gray-900">Locations</span>
-                                <p class="text-xs text-gray-500 mt-0.5">Locations overview and city coverage</p>
-                            </a>
-                        </div>
+                    class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden max-h-[78vh] overflow-y-auto"
+                    style="width: min(760px, calc(100vw - 2rem));">
+                    <div class="p-6 md:p-7">
+                        <a href="../about.html" class="inline-flex items-center gap-2 mb-5 group">
+                            <span class="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
+                                <i data-lucide="building-2" class="w-4 h-4"></i>
+                            </span>
+                            <h3 class="text-sm font-bold text-primary uppercase tracking-wider group-hover:text-primary/80 transition-colors">
+                                Company
+                            </h3>
+                        </a>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <li>
+                                <a href="../about.html" class="block rounded-xl border border-gray-100 p-4 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                                    <span class="block text-base font-bold text-gray-900">About Us</span>
+                                    <p class="mt-1 text-sm text-gray-600">Who we are and what we do.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../vision-mission.html" class="block rounded-xl border border-gray-100 p-4 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                                    <span class="block text-base font-bold text-gray-900">Vision &amp; Mission</span>
+                                    <p class="mt-1 text-sm text-gray-600">Our direction, mission, and long-term goals.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../our-ethical-principles.html" class="block rounded-xl border border-gray-100 p-4 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                                    <span class="block text-base font-bold text-gray-900">Ethics &amp; Values</span>
+                                    <p class="mt-1 text-sm text-gray-600">How we operate and make decisions.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../city-locations.html" class="block rounded-xl border border-gray-100 p-4 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                                    <span class="block text-base font-bold text-gray-900">Locations</span>
+                                    <p class="mt-1 text-sm text-gray-600">Locations overview and city coverage.</p>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
