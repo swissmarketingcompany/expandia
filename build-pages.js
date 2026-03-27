@@ -532,9 +532,9 @@ function enforceSeoMetaTags(content, pageTitle, pageDescription, pageKeywords) {
 
 function enforceCanonicalMeta(content, canonicalUrl) {
     let next = content;
-    next = upsertHeadTag(next, /<link\s+rel=["']canonical["'][^>]*>/i, `<link rel="canonical" href="${canonicalUrl}">`);
-    next = upsertHeadTag(next, /<meta\s+property=["']og:url["'][^>]*>/i, `<meta property="og:url" content="${canonicalUrl}" />`);
-    next = upsertHeadTag(next, /<meta\s+(?:name|property)=["']twitter:url["'][^>]*>/i, `<meta property="twitter:url" content="${canonicalUrl}" />`);
+    next = upsertHeadTag(next, /<link\s+[^>]*rel=["']canonical["'][^>]*>/i, `<link rel="canonical" href="${canonicalUrl}">`);
+    next = upsertHeadTag(next, /<meta\s+[^>]*property=["']og:url["'][^>]*>/i, `<meta property="og:url" content="${canonicalUrl}" />`);
+    next = upsertHeadTag(next, /<meta\s+[^>]*(?:name|property)=["']twitter:url["'][^>]*>/i, `<meta property="twitter:url" content="${canonicalUrl}" />`);
     return next;
 }
 
@@ -2796,8 +2796,8 @@ function buildBlogPost(templateName, outputName) {
 </body>`;
     content = content.replace('</body>', lucideScript);
 
-    // Fix related posts section: convert full URLs to relative paths
-    content = content.replace(/href="https:\/\/www\.goexpandia\.com\/blog\//g, 'href="');
+    // Fix related post links: convert absolute blog hrefs to relative only for anchors.
+    content = content.replace(/(<a\b[^>]*\shref=")https:\/\/www\.goexpandia\.com\/blog\//gi, '$1');
 
     // Fix related posts: ensure all cards have badges and clean structure
     content = content.replace(
@@ -4786,7 +4786,30 @@ function buildLegacyRedirectRules() {
 
     const forcedLegacyPaths = [
         { source: '/cold-calling-services.html', target: '/ai-opportunity-review.html' },
-        { source: '/blog/why-speed-to-lead-matters.html', target: '/blog/index.html' }
+        { source: '/blog/why-speed-to-lead-matters.html', target: '/blog/index.html' },
+        { source: '/blog/mastering-cold-email-deliverability.html', target: '/blog/cross-channel-lead-generation-guide.html' },
+        { source: '/blog/psychological-triggers-sales.html', target: '/blog/marketing-psychology-guide.html' },
+        { source: '/blog/sales-psychology-cialdini-principles-in-b2b.html', target: '/blog/marketing-psychology-guide.html' },
+        { source: '/blog/lead-generation-strategies.html', target: '/blog/lead-generation-strategies-2026-complete-guide.html' },
+        { source: '/blog/cross-channel-lead-generation-complete-guide.html', target: '/blog/cross-channel-lead-generation-guide.html' },
+        { source: '/blog/digital-transformation-sales-operations.html', target: '/blog/pipeline-generation-complete-guide.html' },
+        { source: '/blog/data-driven-sales-forecasting-methods.html', target: '/blog/pipeline-generation-complete-guide.html' },
+        { source: '/blog/ai-lead-scoring-for-b2b-saas.html', target: '/blog/lead-scoring-saas-complete-guide.html' },
+        { source: '/blog/ai-sales-forecasting-pipeline-accuracy.html', target: '/blog/pipeline-generation-complete-guide.html' },
+        { source: '/blog/b2b-customer-acquisition-guide.html', target: '/blog/what-is-business-development-complete-guide.html' },
+        { source: '/blog/sales-process-optimization-guide.html', target: '/blog/proposal-cpq-guide.html' },
+        { source: '/blog/sales-process-engineering-optimization.html', target: '/blog/proposal-cpq-guide.html' },
+        { source: '/blog/lead-nurturing-conversion.html', target: '/blog/cross-channel-lead-generation-guide.html' },
+        { source: '/blog/ai-pricing-optimization-dynamic-discounts.html', target: '/blog/proposal-cpq-guide.html' },
+        { source: '/blog/habit-formation-sales-process-compliance.html', target: '/blog/proposal-cpq-guide.html' },
+        { source: '/blog/ai-cold-email-personalization-at-scale.html', target: '/blog/cross-channel-lead-generation-guide.html' },
+        { source: '/blog/marketing-automation-lead-generation.html', target: '/blog/lead-generation-strategies-2026-complete-guide.html' },
+        { source: '/blog/social-media-lead-generation.html', target: '/blog/cross-channel-lead-generation-guide.html' },
+        { source: '/blog/advanced-negotiation-strategies-complex-deals.html', target: '/blog/sales-agent-europe-guide.html' },
+        { source: '/blog/sales-as-a-service-guide.html', target: '/blog/outsourced-sales-management-europe-guide.html' },
+        { source: '/blog/email-personalization-at-scale.html', target: '/blog/cross-channel-lead-generation-guide.html' },
+        { source: '/blog/pricing-pilot-design-and-fees.html', target: '/blog/proposal-cpq-guide.html' },
+        { source: '/blog/revenue-operations-optimization-strategies.html', target: '/blog/what-is-revops.html' }
     ];
 
     forcedLegacyPaths.forEach(({ source, target }) => {

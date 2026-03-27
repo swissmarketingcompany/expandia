@@ -136,55 +136,48 @@
                 </button>
                 <div id="services-menu"
                     class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden max-h-[78vh] overflow-y-auto"
-                    style="width: 620px;">
-                    <div class="grid grid-cols-2 divide-x divide-gray-100">
-                        <div class="p-6">
-                            <a href="../solutions.html" class="block mb-4 group">
-                                <h3 class="text-xs font-bold text-primary uppercase tracking-wider flex items-center gap-2 group-hover:text-primary/80 transition-colors">
-                                    <span class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
-                                        <i data-lucide="sparkles" class="w-4 h-4"></i>
-                                    </span>
-                                    The 5 Services
-                                </h3>
-                            </a>
-                            <ul class="space-y-1">
-                                <li><a href="../ai-opportunity-review.html" class="block p-2 rounded-lg text-sm font-semibold text-gray-900 hover:bg-gray-50 transition-colors">AI Opportunity Review</a></li>
-                                <li><a href="../ai-plan.html" class="block p-2 rounded-lg text-sm font-semibold text-gray-900 hover:bg-gray-50 transition-colors">AI Plan</a></li>
-                                <li><a href="../ai-build-setup.html" class="block p-2 rounded-lg text-sm font-semibold text-gray-900 hover:bg-gray-50 transition-colors">AI Build &amp; Setup</a></li>
-                                <li><a href="../ai-training.html" class="block p-2 rounded-lg text-sm font-semibold text-gray-900 hover:bg-gray-50 transition-colors">AI Training</a></li>
-                                <li><a href="../ai-support.html" class="block p-2 rounded-lg text-sm font-semibold text-gray-900 hover:bg-gray-50 transition-colors">AI Support</a></li>
-                            </ul>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xs font-bold text-neutral uppercase tracking-wider flex items-center gap-2 mb-4">
-                                <span class="w-6 h-6 rounded bg-neutral/10 flex items-center justify-center text-neutral">
-                                    <i data-lucide="wallet" class="w-4 h-4"></i>
-                                </span>
-                                How It Works
+                    style="width: min(760px, calc(100vw - 2rem));">
+                    <div class="p-6 md:p-7">
+                        <a href="../solutions.html" class="inline-flex items-center gap-2 mb-5 group">
+                            <span class="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
+                                <i data-lucide="sparkles" class="w-4 h-4"></i>
+                            </span>
+                            <h3 class="text-sm font-bold text-primary uppercase tracking-wider group-hover:text-primary/80 transition-colors">
+                                The 5 Services
                             </h3>
-                            <div class="space-y-4 text-sm text-gray-700">
-                                <div class="p-3 rounded-xl bg-gray-50">
-                                    <p class="font-semibold mb-1">Step 1</p>
-                                    <p>We review where AI can make or save money.</p>
-                                </div>
-                                <div class="p-3 rounded-xl bg-gray-50">
-                                    <p class="font-semibold mb-1">Step 2</p>
-                                    <p>We turn that into a simple working plan.</p>
-                                </div>
-                                <div class="p-3 rounded-xl bg-gray-50">
-                                    <p class="font-semibold mb-1">Step 3</p>
-                                    <p>We build, train, and support based on what fits best.</p>
-                                </div>
-                                <div class="p-3 rounded-xl bg-primary/5 border border-primary/10">
-                                    <p class="font-semibold text-primary mb-1">Buying model</p>
-                                    <p>Fixed-fee review and plan. Project build. Monthly training or support.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 px-6 py-4 flex items-center justify-between border-t border-gray-100">
-                        <p class="text-sm text-gray-600">Ready for the next step after public AI tools?</p>
-                        <a href="../contact.html" class="btn btn-primary btn-sm">Talk to Us</a>
+                        </a>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <li>
+                                <a href="../ai-opportunity-review.html" class="block rounded-xl border border-gray-100 p-4 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                                    <span class="block text-base font-bold text-gray-900">AI Opportunity Review</span>
+                                    <p class="mt-1 text-sm text-gray-600">Find where AI can grow revenue or reduce cost.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../ai-plan.html" class="block rounded-xl border border-gray-100 p-4 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                                    <span class="block text-base font-bold text-gray-900">AI Plan</span>
+                                    <p class="mt-1 text-sm text-gray-600">Turn opportunities into a clear, practical roadmap.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../ai-build-setup.html" class="block rounded-xl border border-gray-100 p-4 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                                    <span class="block text-base font-bold text-gray-900">AI Build &amp; Setup</span>
+                                    <p class="mt-1 text-sm text-gray-600">Build and integrate the right AI workflows and tools.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../ai-training.html" class="block rounded-xl border border-gray-100 p-4 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                                    <span class="block text-base font-bold text-gray-900">AI Training</span>
+                                    <p class="mt-1 text-sm text-gray-600">Train teams to use AI effectively in daily work.</p>
+                                </a>
+                            </li>
+                            <li class="md:col-span-2">
+                                <a href="../ai-support.html" class="block rounded-xl border border-gray-100 p-4 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                                    <span class="block text-base font-bold text-gray-900">AI Support</span>
+                                    <p class="mt-1 text-sm text-gray-600">Get ongoing improvements, fixes, and expert guidance.</p>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -363,17 +356,17 @@
             <h2 class="text-2xl font-bold mb-8 text-center">Related Terms</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <a href="./customer-lifetime-value-clv.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Customer Lifetime Value (CLV)</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Customer Lifetime Value (CLV) is a fundamental concept in sales, referring to strategies or metrics used to drive revenue and manage customer relationships.</p>
+                <a href="./blockchain.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Blockchain</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Blockchain is a technology term that describes systems, software, or methodologies used to build and maintain digital solutions.</p>
                 </a>
-                <a href="./mobile-app-development.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Mobile App Development</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Mobile App Development is a technology term that describes systems, software, or methodologies used to build and maintain digital solutions.</p>
+                <a href="./cybersecurity.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Cybersecurity</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Cybersecurity is a technology term that describes systems, software, or methodologies used to build and maintain digital solutions.</p>
                 </a>
-                <a href="./performance-marketing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Performance Marketing</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">Performance Marketing plays a key role in marketing by helping businesses reach their target audience and measure campaign success.</p>
+                <a href="./candidate-sourcing.html" class="buzz-card p-6 block hover:border-primary transition-colors group">
+                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">Candidate Sourcing</h3>
+                    <p class="text-sm text-base-content/60 line-clamp-3">Candidate Sourcing relates to the recruitment process, involving the attraction, selection, and onboarding of qualified candidates.</p>
                 </a>
             </div>
         </div>
