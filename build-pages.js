@@ -654,6 +654,11 @@ const PAGE_METADATA_OVERRIDES = {
         description: 'We help companies use AI in a real business way: find opportunities, build applications, train teams, and support long-term performance.',
         keywords: BUSINESS_MODEL_DEFAULT_KEYWORDS
     },
+    'our-business-model': {
+        title: 'Our Business Model | Go Expandia',
+        description: 'See how Go Expandia analyzes company data, finds the right AI opportunities, builds the software, and trains teams for adoption.',
+        keywords: BUSINESS_MODEL_DEFAULT_KEYWORDS
+    },
     contact: {
         title: 'Contact Go Expandia | Start Your AI Project',
         description: 'Talk to us about the 5 services: AI Opportunity Review, AI Plan, AI Build & Setup, AI Training, and AI Support.',
@@ -2363,6 +2368,7 @@ function getHreflangUrls(templateName) {
         'index': { en: '', de: 'de/', fr: 'fr/' },
         'solutions': { en: 'solutions.html', de: 'de/solutions.html', fr: 'fr/solutions.html' },
         'about': { en: 'about.html', de: 'de/about.html', fr: 'fr/about.html' },
+        'our-business-model': { en: 'our-business-model.html', de: 'de/our-business-model.html', fr: 'fr/our-business-model.html' },
         'contact': { en: 'contact.html', de: 'de/contact.html', fr: 'fr/contact.html' },
 
         'managed-it-services': { en: 'managed-it-services.html', de: 'de/managed-it-services.html', fr: 'fr/managed-it-services.html' },
@@ -2413,6 +2419,7 @@ function getHreflangUrls(templateName) {
 function getActiveStates(templateName) {
     const activeStates = {
         'index': { 'HOME_ACTIVE': 'text-primary', 'HOME_MOBILE_ACTIVE': 'class="font-semibold text-primary"' },
+        'our-business-model': {},
         'solutions': { 'SOLUTIONS_ACTIVE': 'text-primary', 'SOLUTIONS_MOBILE_ACTIVE': 'class="font-semibold text-primary"', 'SOLUTIONS_ITEM_ACTIVE': 'bg-primary/10 border border-primary/20' },
         'about': { 'COMPANY_ACTIVE': 'text-primary', 'ABOUT_MOBILE_ACTIVE': 'class="font-semibold text-primary"', 'ABOUT_ITEM_ACTIVE': 'bg-primary/10 border border-primary/20' },
         'contact': { 'COMPANY_ACTIVE': 'text-primary', 'CONTACT_MOBILE_ACTIVE': 'class="font-semibold text-primary"', 'CONTACT_ITEM_ACTIVE': 'bg-primary/10 border border-primary/20' },
@@ -4977,7 +4984,7 @@ function generateSitemap() {
 
     // List of static pages
     const staticPages = [
-        'index.html', 'about.html', 'solutions.html', 'contact.html', 'city-locations.html',
+        'index.html', 'about.html', 'our-business-model.html', 'solutions.html', 'contact.html', 'city-locations.html',
         'vision-mission.html', 'our-ethical-principles.html'
     ];
 
@@ -5231,6 +5238,7 @@ function cleanupLegacyRedirectOutputs() {
 console.log('Building English pages...');
 buildPage('index', 'index', 'en');
 buildPage('about', 'about', 'en');
+buildPage('our-business-model', 'our-business-model', 'en');
 buildPage('solutions', 'solutions', 'en');
 buildPage('contact', 'contact', 'en');
 buildPage('onboarding', 'onboarding', 'en');
