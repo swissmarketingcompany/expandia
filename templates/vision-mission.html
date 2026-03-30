@@ -1,38 +1,133 @@
 <!-- Hero Section -->
-<section class="section-spacing bg-gradient-to-br from-buzz-warm via-base-100 to-buzz-light">
+<section class="section-spacing bg-buzz-warm relative overflow-hidden">
+    <div class="absolute top-20 right-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-10 left-10 w-48 h-48 bg-primary/10 rounded-full blur-2xl"></div>
+
     <div class="container mx-auto container-padding">
-        <div class="text-center max-w-4xl mx-auto animate-fade-in">
-            <h1 class="text-5xl md:text-5xl md:text-7xl font-bold mb-6">
-                <span class="gradient-header">Vision & Mission</span>
-            </h1>
-            <p class="text-xl md:text-xl md:text-2xl text-base-content/80 mb-8 leading-relaxed">
-                Shaping the future of B2B sales development
-            </p>
+        <div class="grid lg:grid-cols-2 gap-12 items-center animate-fade-in relative z-10">
+            <div class="text-left">
+                <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold mb-6">
+                    <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                    The strategy behind our AI adoption model
+                </div>
+                <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+                    <span class="gradient-header">Vision & Mission</span><br>
+                    <span class="text-base-content">built around practical AI adoption.</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-base-content/80 mb-10 leading-relaxed">
+                    We are not here to add more noise to the AI conversation. We are here to help B2B companies make AI real,
+                    useful, and repeatable inside the business.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="contact.html" class="btn btn-primary btn-lg buzz-button shadow-lg shadow-primary/25">
+                        Book a Demo
+                    </a>
+                    <a href="about.html" class="btn btn-lg btn-outline border-primary text-primary hover:bg-primary hover:text-white">
+                        Read About Us
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative group">
+                <div class="absolute -inset-4 bg-primary/20 rounded-[2rem] blur-2xl group-hover:bg-primary/30 transition-colors duration-500"></div>
+                <div class="relative aspect-[4/5] bg-neutral rounded-3xl overflow-hidden shadow-2xl border border-white/10 group-hover:scale-[1.01] transition-transform duration-500">
+                    <img src="./assets/images/revops_infrastructure_dashboard.png" alt="Go Expandia AI infrastructure dashboard" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/28"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-24 h-24 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border-2 border-white/40 shadow-2xl">
+                            <div class="w-0 h-0 border-t-[15px] border-t-transparent border-l-[25px] border-l-white border-b-[15px] border-b-transparent ml-2"></div>
+                        </div>
+                    </div>
+                    <div class="absolute left-6 right-6 bottom-6">
+                        <div class="bg-white/12 backdrop-blur-md border border-white/20 rounded-2xl p-5 text-white">
+                            <p class="text-xs uppercase tracking-[0.2em] text-white/70 mb-2">Our North Star</p>
+                            <h2 class="text-2xl md:text-3xl font-black mb-2">Practical. Precise. Permanent.</h2>
+                            <p class="text-sm md:text-base text-white/80">
+                                Every project should help the company use AI in a way the team can understand, trust, and keep using.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Vision Section with Vertical Image -->
+<!-- Outcome Strip -->
+<section class="py-12 bg-white border-b border-base-200">
+    <div class="container mx-auto container-padding">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="text-center p-6 rounded-2xl bg-base-50 hover:shadow-lg transition-all duration-300">
+                <div class="text-3xl md:text-4xl font-black text-primary mb-2">Vision</div>
+                <p class="font-bold text-base-content/80">A company that runs on AI with clarity</p>
+            </div>
+            <div class="text-center p-6 rounded-2xl bg-base-50 hover:shadow-lg transition-all duration-300">
+                <div class="text-3xl md:text-4xl font-black text-primary mb-2">Mission</div>
+                <p class="font-bold text-base-content/80">Adopt AI in a practical, lasting way</p>
+            </div>
+            <div class="text-center p-6 rounded-2xl bg-base-50 hover:shadow-lg transition-all duration-300">
+                <div class="text-3xl md:text-4xl font-black text-primary mb-2">Method</div>
+                <p class="font-bold text-base-content/80">Data first, build second, adoption always</p>
+            </div>
+            <div class="text-center p-6 rounded-2xl bg-base-50 hover:shadow-lg transition-all duration-300">
+                <div class="text-3xl md:text-4xl font-black text-primary mb-2">Trust</div>
+                <p class="font-bold text-base-content/80">Live demos and transparent process</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Vision Section -->
 <section class="section-spacing bg-base-100">
     <div class="container mx-auto container-padding">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-cols-2 gap-12 items-center">
-            <div class="order-2 lg:order-1">
-                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1470&auto=format&fit=crop"
-                    alt="Vision - Team collaboration" class="rounded-lg shadow-lg w-full h-[600px] object-cover">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+            <div class="space-y-6">
+                <div class="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-4 py-2 rounded-full text-sm font-bold">
+                    <span class="w-2 h-2 bg-secondary rounded-full"></span>
+                    Our Vision
+                </div>
+                <h2 class="text-4xl md:text-6xl font-black leading-tight">
+                    <span class="gradient-header">Make AI a normal part of how B2B companies operate.</span>
+                </h2>
+                <p class="text-xl text-base-content/80 leading-relaxed">
+                    The goal is not to experiment with AI for the sake of novelty. The goal is to help companies use AI as a
+                    reliable business capability that improves day-to-day execution.
+                </p>
+                <p class="text-lg text-base-content/75 leading-relaxed">
+                    We want companies to move from curiosity to control: clear data handling, clear opportunities, clear software,
+                    and a team that knows how to use the system after launch.
+                </p>
             </div>
-            <div class="prose lg:prose-xl order-1 lg:order-2">
-                <h2 class="text-4xl md:text-4xl md:text-5xl font-bold mb-6 gradient-header">Our Vision</h2>
-                <p class="text-lg text-base-content/80 leading-relaxed">
-                    To be the leading partner for B2B companies seeking sustainable growth in international markets.
-                    We envision a world where businesses of all sizes can confidently expand their reach,
-                    build meaningful relationships, and achieve predictable revenue growth through strategic
-                    sales development.
-                </p>
-                <p class="text-lg text-base-content/80 leading-relaxed">
-                    We strive to transform the way companies approach business development by combining
-                    human expertise with data-driven strategies, making high-performance sales accessible
-                    and effective for every organization.
-                </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="buzz-card p-6 bg-white shadow-xl border-t-4 border-primary">
+                    <div class="text-sm font-bold text-primary mb-3">Clarity</div>
+                    <h3 class="text-2xl font-bold mb-3">Know where AI fits</h3>
+                    <p class="text-base-content/70 leading-relaxed">
+                        The first step is seeing the business clearly enough to find the real AI gaps instead of guessing.
+                    </p>
+                </div>
+                <div class="buzz-card p-6 bg-white shadow-xl border-t-4 border-secondary">
+                    <div class="text-sm font-bold text-secondary mb-3">Control</div>
+                    <h3 class="text-2xl font-bold mb-3">Keep ownership inside the company</h3>
+                    <p class="text-base-content/70 leading-relaxed">
+                        AI only lasts when the team can actually understand, operate, and maintain what is built.
+                    </p>
+                </div>
+                <div class="buzz-card p-6 bg-white shadow-xl border-t-4 border-accent">
+                    <div class="text-sm font-bold text-accent mb-3">Impact</div>
+                    <h3 class="text-2xl font-bold mb-3">Target the highest-value work</h3>
+                    <p class="text-base-content/70 leading-relaxed">
+                        We focus on the parts of the business where AI can make the biggest practical difference.
+                    </p>
+                </div>
+                <div class="buzz-card p-6 bg-white shadow-xl border-t-4 border-primary">
+                    <div class="text-sm font-bold text-primary mb-3">Longevity</div>
+                    <h3 class="text-2xl font-bold mb-3">Build for permanent adoption</h3>
+                    <p class="text-base-content/70 leading-relaxed">
+                        The final outcome should not be a demo. It should be a system the company continues using.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -41,157 +136,156 @@
 <!-- Mission Section -->
 <section class="section-spacing bg-buzz-light">
     <div class="container mx-auto container-padding">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl md:text-4xl md:text-5xl font-bold mb-8 gradient-header text-center">Our Mission</h2>
-            <div class="prose lg:prose-xl mx-auto">
-                <p class="text-lg text-base-content/80 leading-relaxed">
-                    To empower businesses of all sizes to achieve their full revenue potential through expert-led
-                    sales services and intelligent automation. We believe that by providing a combination of
-                    strategic guidance, operational excellence, and cutting-edge tools, we can level the playing
-                    field and make high-performance sales accessible to everyone.
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-black mb-6">
+                <span class="gradient-header">Our Mission</span>
+            </h2>
+            <p class="text-xl text-base-content/80 max-w-3xl mx-auto">
+                Help B2B companies adopt AI in a practical, precise, and permanent way.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="buzz-card p-7 bg-white shadow-xl border-t-4 border-primary">
+                <div class="text-sm font-bold text-primary mb-3">01</div>
+                <h3 class="text-2xl font-bold mb-3">Practical</h3>
+                <p class="text-base-content/70 leading-relaxed">
+                    We focus on what actually works inside a real business environment, not on generic AI talk.
                 </p>
             </div>
 
-            <!-- Mission Points -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:grid-cols-3 gap-8 mt-12">
-                <div class="buzz-card p-6 text-center">
-                    <div class="text-4xl md:text-4xl mb-4">✨</div>
-                    <h3 class="text-xl md:text-xl font-bold mb-3 text-primary">Results-Driven</h3>
-                    <p class="text-base-content/70">
-                        We measure success by the revenue impact we create for your business.
-                    </p>
-                </div>
-                <div class="buzz-card p-6 text-center">
-                    <div class="text-4xl md:text-4xl mb-4">💎</div>
-                    <h3 class="text-xl md:text-xl font-bold mb-3 text-secondary">Partnership Focus</h3>
-                    <p class="text-base-content/70">
-                        Your growth is our primary success metric. We succeed when you succeed.
-                    </p>
-                </div>
-                <div class="buzz-card p-6 text-center">
-                    <div class="text-4xl md:text-4xl mb-4">🚀</div>
-                    <h3 class="text-xl md:text-xl font-bold mb-3 text-accent">Innovation First</h3>
-                    <p class="text-base-content/70">
-                        We continuously adopt the latest methodologies to keep you ahead.
-                    </p>
-                </div>
+            <div class="buzz-card p-7 bg-white shadow-xl border-t-4 border-secondary">
+                <div class="text-sm font-bold text-secondary mb-3">02</div>
+                <h3 class="text-2xl font-bold mb-3">Precise</h3>
+                <p class="text-base-content/70 leading-relaxed">
+                    We identify the exact data, workflow, and implementation point where AI can make the biggest difference.
+                </p>
+            </div>
+
+            <div class="buzz-card p-7 bg-white shadow-xl border-t-4 border-accent">
+                <div class="text-sm font-bold text-accent mb-3">03</div>
+                <h3 class="text-2xl font-bold mb-3">Permanent</h3>
+                <p class="text-base-content/70 leading-relaxed">
+                    We do not treat adoption as a handoff. We make sure the team is trained and the system sticks.
+                </p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Our Approach Section -->
+<!-- Execution Model -->
 <section class="section-spacing bg-base-100">
     <div class="container mx-auto container-padding">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl md:text-4xl md:text-5xl font-bold mb-8 gradient-header">Our Approach</h2>
-            <div class="prose lg:prose-xl mx-auto text-left">
-                <p>
-                    At Go Expandia, we believe that sustainable business growth comes from a perfect balance
-                    of strategy, execution, and continuous optimization. Our approach is built on three pillars:
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-black mb-6">
+                <span class="gradient-header">How We Execute The Mission</span>
+            </h2>
+            <p class="text-xl text-base-content/80 max-w-3xl mx-auto">
+                Strategy only matters when it turns into a process your team can run.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="buzz-card p-6 bg-white shadow-xl border-t-4 border-primary">
+                <div class="text-sm font-bold text-primary mb-3">Step 1</div>
+                <h3 class="text-xl font-bold mb-3">Find the right opportunity</h3>
+                <p class="text-base-content/70 leading-relaxed">
+                    We start with your data and your business reality to identify where AI can create the most value.
                 </p>
+            </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:grid-cols-1 gap-6 mt-8 not-prose">
-                    <div class="buzz-card p-6">
-                        <h3 class="text-2xl md:text-2xl font-bold mb-3 text-primary flex items-center gap-3">
-                            <span>⚡</span> Strategic Planning
-                        </h3>
-                        <p class="text-base-content/70">
-                            We start by understanding your business, target market, and growth objectives.
-                            Our team develops a customized strategy that aligns with your goals and leverages
-                            proven methodologies for maximum impact.
-                        </p>
-                    </div>
+            <div class="buzz-card p-6 bg-white shadow-xl border-t-4 border-primary">
+                <div class="text-sm font-bold text-primary mb-3">Step 2</div>
+                <h3 class="text-xl font-bold mb-3">Build the solution</h3>
+                <p class="text-base-content/70 leading-relaxed">
+                    We create the custom AI-powered software or workflow designed for that specific opportunity.
+                </p>
+            </div>
 
-                    <div class="buzz-card p-6">
-                        <h3 class="text-2xl md:text-2xl font-bold mb-3 text-secondary flex items-center gap-3">
-                            <span>🧩</span> Expert Execution
-                        </h3>
-                        <p class="text-base-content/70">
-                            Our experienced sales professionals become an extension of your team,
-                            implementing campaigns, engaging prospects, and nurturing relationships that
-                            drive revenue growth.
-                        </p>
-                    </div>
+            <div class="buzz-card p-6 bg-white shadow-xl border-t-4 border-primary">
+                <div class="text-sm font-bold text-primary mb-3">Step 3</div>
+                <h3 class="text-xl font-bold mb-3">Train the team</h3>
+                <p class="text-base-content/70 leading-relaxed">
+                    We make sure the people who will use the system know how to use it well and confidently.
+                </p>
+            </div>
 
-                    <div class="buzz-card p-6">
-                        <h3 class="text-2xl md:text-2xl font-bold mb-3 text-accent flex items-center gap-3">
-                            <span>📈</span> Continuous Optimization
-                        </h3>
-                        <p class="text-base-content/70">
-                            We measure everything, analyze results, and continuously refine our approach
-                            to ensure you're getting the best possible ROI from your sales development investment.
-                        </p>
-                    </div>
-                </div>
+            <div class="buzz-card p-6 bg-white shadow-xl border-t-4 border-primary">
+                <div class="text-sm font-bold text-primary mb-3">Step 4</div>
+                <h3 class="text-xl font-bold mb-3">Repeat until the company is AI-powered</h3>
+                <p class="text-base-content/70 leading-relaxed">
+                    We move from one gap to the next until AI becomes part of how the company works.
+                </p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- CTA Section -->
-<section class="section-spacing bg-gradient-to-br from-primary/10 to-secondary/10">
+<section class="section-spacing bg-primary text-white">
     <div class="container mx-auto container-padding text-center">
-        <h2 class="text-4xl md:text-4xl md:text-5xl font-bold mb-6 gradient-header">Join Us on the Journey</h2>
-        <p class="text-xl md:text-xl text-base-content/80 mb-8 max-w-3xl mx-auto">
-            Let's work together to unlock your company's full revenue potential.
-            Get in touch for a free consultation and discover how we can accelerate your growth.
+        <h2 class="text-4xl md:text-6xl font-black mb-6">
+            Ready to turn this into action?
+        </h2>
+        <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90 leading-relaxed">
+            Book a demo and see how our vision and mission translate into a working AI adoption process.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="contact.html" class="btn btn-primary btn-lg buzz-button">
-                Get Free Consultation
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="contact.html" class="btn btn-secondary btn-lg">
+                Book a Demo
             </a>
-            <a href="solutions.html" class="btn btn-outline btn-lg">
-                Explore Our Solutions
+            <a href="about.html" class="btn btn-outline btn-lg border-white text-white hover:bg-white hover:text-primary">
+                About Go Expandia
             </a>
         </div>
     </div>
-    <script type="application/ld+json">
+</section>
+
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How quickly can we start working together?",
+      "name": "What is Go Expandia's vision?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We can typically begin within 1-2 weeks after our initial consultation. We'll set up everything needed and start delivering results quickly."
+        "text": "Our vision is to make AI a normal, reliable part of how B2B companies operate."
       }
     },
     {
       "@type": "Question",
-      "name": "What makes Go Expandia different from other agencies?",
+      "name": "What is Go Expandia's mission?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We combine deep European market expertise with data-driven strategies and multilingual capabilities. Our team has 8+ years of experience helping businesses scale internationally."
+        "text": "Our mission is to help B2B companies adopt AI in a practical, precise, and permanent way."
       }
     },
     {
       "@type": "Question",
-      "name": "Do you work with companies of all sizes?",
+      "name": "How do you make AI adoption permanent?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, we work with startups, SMEs, and enterprise companies. Our solutions are scalable and tailored to your specific business needs and growth stage."
+        "text": "We build around the business data, create the right software, and train the team so the system can keep running after handoff."
       }
     },
     {
       "@type": "Question",
-      "name": "What is your pricing model?",
+      "name": "Do you start with strategy or implementation?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We offer flexible pricing based on your specific needs and goals. Contact us for a free consultation and custom quote tailored to your business objectives."
+        "text": "We start with the data and the business opportunity, then move into implementation once the right gap is clear."
       }
     },
     {
       "@type": "Question",
-      "name": "How do you measure success?",
+      "name": "Can we book a demo before deciding on a project?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We focus on measurable KPIs including lead generation, conversion rates, ROI, and revenue impact. You'll receive detailed analytics and regular performance reports."
+        "text": "Yes. The demo shows how the process works and helps clarify the first implementation path."
       }
     }
   ]
 }
 </script>
-</section>

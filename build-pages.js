@@ -650,9 +650,9 @@ const PAGE_METADATA_OVERRIDES = {
         keywords: 'AI support, AI maintenance, AI workflow support, ongoing AI operations'
     },
     about: {
-        title: 'About Go Expandia | AI Support for Companies',
-        description: 'We help companies use AI in a real business way: find opportunities, build applications, train teams, and support long-term performance.',
-        keywords: BUSINESS_MODEL_DEFAULT_KEYWORDS
+        title: 'About Us | Go Expandia',
+        description: 'Go Expandia helps B2B companies turn data into practical AI systems with a Data Dump Model, custom software, and team training.',
+        keywords: 'AI transformation company, B2B AI adoption, Data Dump Model, custom AI software, AI training, practical AI implementation'
     },
     'our-business-model': {
         title: 'Our Business Model | Go Expandia',
@@ -665,13 +665,13 @@ const PAGE_METADATA_OVERRIDES = {
         keywords: BUSINESS_MODEL_DEFAULT_KEYWORDS
     },
     'vision-mission': {
-        title: 'Vision & Mission | AI Support for Companies | Go Expandia',
-        description: 'Our mission is simple: help companies use AI to improve revenue, cost, cash flow, and operational control through practical delivery.',
+        title: 'Vision & Mission | Go Expandia',
+        description: 'See how Go Expandia turns a practical AI adoption model into a clear vision, mission, and operating approach for B2B companies.',
         keywords: BUSINESS_MODEL_DEFAULT_KEYWORDS
     },
     'our-ethical-principles': {
         title: 'Our Ethical Principles | Go Expandia',
-        description: 'We build AI systems with clear data handling, honest communication, and practical business value.',
+        description: 'We build AI systems with transparency, privacy boundaries, verifiable analysis, and responsible implementation.',
         keywords: 'AI ethics, responsible AI delivery, data handling, business AI governance'
     },
     'city-locations': {
