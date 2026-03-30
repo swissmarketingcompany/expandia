@@ -1067,8 +1067,8 @@ const SOLUTION_PAGE_BLUEPRINTS = {
                 intro: 'Everything starts with Data Dump analysis before any build work.',
                 gridClass: 'md:grid-cols-2',
                 cards: [
-                    { title: 'Domain Data Dump', description: 'You upload company data by business domain: finance, sales, operations, production, and more.', borderClass: 'border-primary' },
-                    { title: 'Deep Analysis', description: 'We process large datasets and analyze current business state with domain-level detail.', borderClass: 'border-secondary' },
+                    { title: 'Department Data Dump', description: 'You upload company data by business department: finance, sales, operations, production, and more.', borderClass: 'border-primary' },
+                    { title: 'Deep Analysis', description: 'We process large datasets and analyze current business state with department-level detail.', borderClass: 'border-secondary' },
                     { title: 'PDF Report Output', description: 'Each report contains current-data analysis and clear AI implementation opportunities.', borderClass: 'border-accent' },
                     { title: 'Priority Task List', description: 'Reports become the AI task queue used for planning and implementation services.', borderClass: 'border-neutral' }
                 ]
@@ -1085,7 +1085,7 @@ const SOLUTION_PAGE_BLUEPRINTS = {
                 intro: 'You leave this stage with clear data-backed direction.',
                 steps: [
                     { title: 'Analyze company data', description: 'Data Dump processing turns raw business files into structured findings.' },
-                    { title: 'Generate domain PDF reports', description: 'Each report shows existing performance and where AI will create impact.' },
+                    { title: 'Generate department PDF reports', description: 'Each report shows existing performance and where AI will create impact.' },
                     { title: 'Move into implementation', description: 'Approved priorities feed directly into Service 2 planning and Service 3 build.' }
                 ]
             },
@@ -1370,7 +1370,7 @@ function buildDataDumpModelSection() {
                 <span class="gradient-header">Data Dump Model</span>
             </h2>
             <p class="text-base text-base-content/60 max-w-3xl mx-auto">
-                Every engagement starts here. We process large domain datasets and generate structured PDF reports — covering current-state analysis and where to implement AI first.
+                Every engagement starts here. We process large department datasets and generate structured PDF reports — covering current-state analysis and where to implement AI first.
             </p>
             <p class="text-sm text-base-content/50 max-w-2xl mx-auto mt-2">
                 Built for high-volume company datasets where generic public assistants hit file limits.
@@ -1398,7 +1398,7 @@ function buildDataDumpModelSection() {
                 flex-direction: column;
             }
             @media (min-width: 1024px) { .ddm-arrow-v { display: none; } }
-            .ddm-domain-pill {
+            .ddm-dept-pill {
                 display: flex;
                 align-items: center;
                 gap: 10px;
@@ -1412,13 +1412,13 @@ function buildDataDumpModelSection() {
                 transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
                 box-shadow: 0 1px 4px rgba(0,0,0,0.05);
             }
-            .ddm-domain-pill:hover { border-color: var(--color-primary, #570df8); box-shadow: 0 4px 16px rgba(87,13,248,0.10); transform: translateX(3px); }
-            .ddm-domain-icon {
+            .ddm-dept-pill:hover { border-color: var(--color-primary, #570df8); box-shadow: 0 4px 16px rgba(87,13,248,0.10); transform: translateX(3px); }
+            .ddm-dept-icon {
                 width: 28px; height: 28px; border-radius: 8px;
                 background: linear-gradient(135deg, rgba(87,13,248,0.12), rgba(87,13,248,0.06));
                 display: flex; align-items: center; justify-content: center; flex-shrink: 0;
             }
-            .ddm-domain-icon svg { width: 14px; height: 14px; color: var(--color-primary, #570df8); stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+            .ddm-dept-icon svg { width: 14px; height: 14px; color: var(--color-primary, #570df8); stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
             .ddm-engine {
                 background: linear-gradient(135deg, #570df8, #7c3aed);
                 border-radius: 20px;
@@ -1503,19 +1503,19 @@ function buildDataDumpModelSection() {
         <div class="ddm-diagram">
             <!-- Left: Input Domains -->
             <div style="min-width:0; flex:1;">
-                <div class="text-xs font-bold text-base-content/50 uppercase tracking-wider mb-4 text-center lg:text-left pl-1">Company Data Domains</div>
+                <div class="text-xs font-bold text-base-content/50 uppercase tracking-wider mb-4 text-center lg:text-left pl-1">Company Data Departments</div>
                 <div class="ddm-col">
-                    <div class="ddm-domain-pill"><div class="ddm-domain-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>Revenue Collection</div>
-                    <div class="ddm-domain-pill"><div class="ddm-domain-icon"><svg viewBox="0 0 24 24"><path d="M3 3h18v18H3z M8 12h8M8 8h8M8 16h5"/></svg></div>Financial Data</div>
-                    <div class="ddm-domain-pill"><div class="ddm-domain-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>Sales Analysis</div>
-                    <div class="ddm-domain-pill"><div class="ddm-domain-icon"><svg viewBox="0 0 24 24"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3m-1 9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-6a2 2 0 0 0-2 2z"/></svg></div>Supply Chain</div>
-                    <div class="ddm-domain-pill"><div class="ddm-domain-icon"><svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM1 9h22M1 15h22"/></svg></div>Invoice Analysis</div>
-                    <div class="ddm-domain-pill"><div class="ddm-domain-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg></div>Employee Performance</div>
-                    <div class="ddm-domain-pill"><div class="ddm-domain-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>Energy Cost</div>
-                    <div class="ddm-domain-pill"><div class="ddm-domain-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>Production Line</div>
-                    <div class="ddm-domain-pill"><div class="ddm-domain-icon"><svg viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div>Timesheets</div>
-                    <div class="ddm-domain-pill"><div class="ddm-domain-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>Product Analysis</div>
-                    <div class="ddm-domain-pill"><div class="ddm-domain-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>Manufacturing</div>
+                    <div class="ddm-dept-pill"><div class="ddm-dept-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>Revenue Collection</div>
+                    <div class="ddm-dept-pill"><div class="ddm-dept-icon"><svg viewBox="0 0 24 24"><path d="M3 3h18v18H3z M8 12h8M8 8h8M8 16h5"/></svg></div>Financial Data</div>
+                    <div class="ddm-dept-pill"><div class="ddm-dept-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>Sales Analysis</div>
+                    <div class="ddm-dept-pill"><div class="ddm-dept-icon"><svg viewBox="0 0 24 24"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3m-1 9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-6a2 2 0 0 0-2 2z"/></svg></div>Supply Chain</div>
+                    <div class="ddm-dept-pill"><div class="ddm-dept-icon"><svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM1 9h22M1 15h22"/></svg></div>Invoice Analysis</div>
+                    <div class="ddm-dept-pill"><div class="ddm-dept-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg></div>Employee Performance</div>
+                    <div class="ddm-dept-pill"><div class="ddm-dept-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>Energy Cost</div>
+                    <div class="ddm-dept-pill"><div class="ddm-dept-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>Production Line</div>
+                    <div class="ddm-dept-pill"><div class="ddm-dept-icon"><svg viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div>Timesheets</div>
+                    <div class="ddm-dept-pill"><div class="ddm-dept-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>Product Analysis</div>
+                    <div class="ddm-dept-pill"><div class="ddm-dept-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>Manufacturing</div>
                 </div>
             </div>
 
@@ -1538,7 +1538,7 @@ function buildDataDumpModelSection() {
                         <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M12 8v4l3 3" stroke="rgba(255,255,255,0.9)" fill="none"/><circle cx="12" cy="12" r="3" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.8)"/><path d="M12 6V4M12 20v-2M6 12H4M20 12h-2" stroke="rgba(255,255,255,0.6)"/></svg>
                     </div>
                     <div style="font-weight:800; font-size:15px; margin-bottom:4px; position:relative;">Data Dump Engine</div>
-                    <div style="font-size:11px; opacity:0.8; position:relative; line-height:1.5;">High-volume processing<br>Sensitive data masked<br>Domain-level analysis</div>
+                    <div style="font-size:11px; opacity:0.8; position:relative; line-height:1.5;">High-volume processing<br>Sensitive data masked<br>Department-level analysis</div>
                     <div style="margin-top:14px; display:flex; gap:6px; justify-content:center; flex-wrap:wrap; position:relative;">
                         <span style="background:rgba(255,255,255,0.15); font-size:10px; padding:3px 8px; border-radius:6px; font-weight:600;">Up to 1 TB</span>
                         <span style="background:rgba(255,255,255,0.15); font-size:10px; padding:3px 8px; border-radius:6px; font-weight:600;">≈ 3 days</span>
@@ -1559,7 +1559,7 @@ function buildDataDumpModelSection() {
 
             <!-- Right: Outputs -->
             <div style="min-width:0; flex:1;">
-                <div class="text-xs font-bold text-base-content/50 uppercase tracking-wider mb-4 text-center lg:text-left pl-1">Output Per Domain</div>
+                <div class="text-xs font-bold text-base-content/50 uppercase tracking-wider mb-4 text-center lg:text-left pl-1">Output Per Department</div>
                 <div class="ddm-col" style="gap:16px;">
 
                     <div class="ddm-output-card" style="border-color: rgba(87,13,248,0.2); background: linear-gradient(135deg, rgba(87,13,248,0.03), white);">
@@ -1567,8 +1567,8 @@ function buildDataDumpModelSection() {
                             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                             PDF Report
                         </div>
-                        <div style="font-weight:700; font-size:15px; margin-bottom:6px; color:#111827;">Domain Analysis Report</div>
-                        <div style="font-size:13px; color:#6b7280; line-height:1.6;">Current-state performance breakdown — what the data shows about how the domain is running today.</div>
+                        <div style="font-weight:700; font-size:15px; margin-bottom:6px; color:#111827;">Department Analysis Report</div>
+                        <div style="font-size:13px; color:#6b7280; line-height:1.6;">Current-state performance breakdown — what the data shows about how the department is running today.</div>
                         <div style="margin-top:12px; display:flex; gap:6px; flex-wrap:wrap;">
                             <span class="ddm-tag" style="background:#f3f4f6; color:#374151;">Trends</span>
                             <span class="ddm-tag" style="background:#f3f4f6; color:#374151;">Bottlenecks</span>
