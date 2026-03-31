@@ -2024,4 +2024,53 @@
 <script src="../dist/js/contact.js"></script>
 
 
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+        
+        // FAQ Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.collapse');
+            faqItems.forEach(item => {
+                const title = item.querySelector('.collapse-title');
+                const content = item.querySelector('.collapse-content');
+                const input = item.querySelector('input[type="radio"], input[type="checkbox"]');
+                
+                if (title && content) {
+                    // Initially hide all content except the first one
+                    if (!input || !input.checked) {
+                        content.style.display = 'none';
+                    }
+                    
+                    title.style.cursor = 'pointer';
+                    title.addEventListener('click', function() {
+                        const isOpen = content.style.display !== 'none';
+                        
+                        // Close all other FAQs if using radio buttons
+                        if (input && input.type === 'radio') {
+                            const allItems = document.querySelectorAll('.collapse');
+                            allItems.forEach(otherItem => {
+                                const otherContent = otherItem.querySelector('.collapse-content');
+                                const otherInput = otherItem.querySelector('input[type="radio"]');
+                                if (otherContent && otherItem !== item) {
+                                    otherContent.style.display = 'none';
+                                    if (otherInput) otherInput.checked = false;
+                                }
+                            });
+                        }
+                        
+                        // Toggle current item
+                        content.style.display = isOpen ? 'none' : 'block';
+                        if (input) input.checked = !isOpen;
+                    });
+                }
+            });
+        });
+    </script>
+
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/145104780.js"></script>
+    <!-- End of HubSpot Embed Code -->
+</body>
 </html>

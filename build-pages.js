@@ -3265,6 +3265,10 @@ function buildBlogPost(templateName, outputName) {
             });
         });
     </script>
+
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/145104780.js"></script>
+    <!-- End of HubSpot Embed Code -->
 </body>`;
     content = content.replace('</body>', lucideScript);
 
@@ -4465,6 +4469,72 @@ function buildCityLocationsPage() {
     console.log(`✅ Built city-locations.html`);
 }
 
+function injectHubSpotEmbed(content) {
+    if (content.includes('id="hs-script-loader"')) {
+        return content;
+    }
+
+    const hubSpotEmbed = `<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/145104780.js"></script>
+<!-- End of HubSpot Embed Code -->`;
+
+    const lower = content.toLowerCase();
+    const bodyIndex = lower.lastIndexOf('</body>');
+    if (bodyIndex !== -1) {
+        return `${content.slice(0, bodyIndex)}\n\n    ${hubSpotEmbed}\n${content.slice(bodyIndex)}`;
+    }
+
+    const htmlIndex = lower.lastIndexOf('</html>');
+    if (htmlIndex !== -1) {
+        return `${content.slice(0, htmlIndex)}\n\n    ${hubSpotEmbed}\n${content.slice(htmlIndex)}`;
+    }
+
+    return `${content}\n\n${hubSpotEmbed}\n`;
+}
+
+function ensureHubSpotEmbedOnPublishedPages() {
+    const outputFiles = new Set();
+
+    fs.readdirSync('.', { withFileTypes: true }).forEach(entry => {
+        if (entry.isFile() && entry.name.endsWith('.html')) {
+            outputFiles.add(entry.name);
+        }
+    });
+
+    const outputDirs = ['blog', 'glossary', 'de', 'fr'];
+    const collectRecursive = (dirPath) => {
+        if (!fs.existsSync(dirPath)) return;
+        fs.readdirSync(dirPath, { withFileTypes: true }).forEach(entry => {
+            const fullPath = path.join(dirPath, entry.name);
+            if (entry.isDirectory()) {
+                collectRecursive(fullPath);
+                return;
+            }
+            if (entry.isFile() && entry.name.endsWith('.html')) {
+                outputFiles.add(fullPath);
+            }
+        });
+    };
+
+    outputDirs.forEach(collectRecursive);
+
+    let updatedCount = 0;
+    outputFiles.forEach(filePath => {
+        const current = fs.readFileSync(filePath, 'utf8');
+        const next = injectHubSpotEmbed(current);
+        if (next !== current) {
+            fs.writeFileSync(filePath, next, 'utf8');
+            updatedCount += 1;
+        }
+    });
+
+    if (updatedCount > 0) {
+        console.log(`✅ Injected HubSpot embed into ${updatedCount} HTML files.`);
+    } else {
+        console.log('✅ HubSpot embed already present in all published HTML files.');
+    }
+}
+
 function normalizeLanguageSwitchPlaceholders() {
     const roots = ['.', 'blog', 'glossary'];
     const htmlFiles = [];
@@ -5477,6 +5547,7 @@ buildBlogPosts();
 buildGlossaryTerms(); // NEW
 buildGlossaryIndex(); // NEW
 normalizeLanguageSwitchPlaceholders();
+ensureHubSpotEmbedOnPublishedPages();
 generateSitemap();
 cleanupLegacyRedirectOutputs();
 writeRedirectsFile();

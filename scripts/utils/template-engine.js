@@ -182,6 +182,10 @@ function createHTMLTemplate(lang = 'en', headContent = '', scriptContent = '') {
     </script>
 
     ${scriptContent}
+    
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/145104780.js"></script>
+    <!-- End of HubSpot Embed Code -->
 </body>
 </html>`;
 }
