@@ -7,6 +7,7 @@
     "build:js": "mkdir -p dist/js && cp src/js/*.js dist/js/",
     "build:pages": "node build-pages.js",
     "build": "npm run build:css && npm run build:js && npm run build:pages",
+    "generate:nano-banana-blog-images": "node scripts/generate-nano-banana-blog-images.mjs",
     "indexnow:submit": "node scripts/submit-indexnow.js",
     "test": "echo 'No tests specified'",
     "audit:placeholders": "node scripts/audit-generated-placeholders.js",
@@ -35,6 +36,7 @@
     "url": "https://github.com/swissmarketingcompany/expandia.git"
   },
   "devDependencies": {
+    "@google/genai": "^2.2.0",
     "@remotion/cli": "^4.0.461",
     "cheerio": "^1.1.2",
     "react": "^19.2.6",
