@@ -64,7 +64,7 @@
       },
       {
         "q": "Can you work with the tools we already use?",
-        "a": "Yes. We usually build around the systems already in place, such as CRM, email, forms, spreadsheets, databases, and internal software."
+        "a": "Yes. We usually build around the systems already in place, such as CRM, email, forms, spreadsheets, databases, and internal tools."
       },
       {
         "q": "Do all automations run without people?",
@@ -223,7 +223,7 @@
     "name": "Custom AI Solutions for Businesses",
     "slug_pattern": "custom-ai-solutions-for-businesses-{{CITY_SLUG}}",
     "title_template": "Custom AI Solutions for Businesses {{CITY_NAME}} | Practical AI Systems",
-    "description_template": "We build custom AI solutions for businesses that need tailored software, workflow automation, AI agents, dashboards, data analysis, and internal tools instead of generic AI products.",
+    "description_template": "We build custom AI solutions for businesses that need tailored AI systems, workflow automation, AI agents, dashboards, data analysis, and internal tools instead of generic AI products.",
     "icon": "blocks",
     "template": "city-landing",
     "category": "custom-software",
@@ -258,7 +258,7 @@
       },
       {
         "icon": "hammer",
-        "title": "The idea needs real software",
+        "title": "The idea needs a real AI system",
         "description": "The business needs an application, integration, dashboard, or workflow, not only prompts or advice."
       }
     ],
@@ -269,7 +269,7 @@
       },
       {
         "title": "We build the system",
-        "description": "We create the software, integrations, AI layer, workflows, and interface needed for the use case."
+        "description": "We create the AI system, integrations, AI layer, workflows, and interface needed for the use case."
       },
       {
         "title": "We launch and improve",
@@ -279,10 +279,10 @@
     "faq": [
       {
         "q": "What makes this different from AI automation?",
-        "a": "AI automation usually improves a workflow. Custom AI solutions can include larger software builds, dashboards, data systems, agents, integrations, and internal applications."
+        "a": "AI automation usually improves a workflow. Custom AI solutions can include larger AI system builds, dashboards, data systems, agents, integrations, and internal applications."
       },
       {
-        "q": "Can you build around our existing software?",
+        "q": "Can you build around our existing systems?",
         "a": "Yes. Most custom AI projects connect to existing systems rather than replacing everything."
       },
       {
@@ -442,7 +442,7 @@
     "name": "AI Build & Setup",
     "slug_pattern": "ai-build-setup-{{CITY_SLUG}}",
     "title_template": "AI Build & Setup {{CITY_NAME}} | Build the Tools and Workflows Around AI",
-    "description_template": "We do the real work. We build the tools, software, automations, and workflows around AI, then connect them to the way your business already works.",
+    "description_template": "We do the real work. We build the tools, AI systems, automations, and workflows around AI, then connect them to the way your business already works.",
     "icon": "wrench",
     "template": "city-landing",
     "category": "custom-software",
@@ -488,7 +488,7 @@
       },
       {
         "title": "We build and connect it",
-        "description": "We set up the tools, software, and workflows around AI."
+        "description": "We set up the tools, AI systems, and workflows around AI."
       },
       {
         "title": "We launch it properly",

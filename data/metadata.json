@@ -60,8 +60,8 @@
   },
   "custom-ai-solutions-for-businesses": {
     "title": "Custom AI Solutions for Businesses | Go Expandia",
-    "description": "Custom AI solutions for businesses that need tailored AI software, workflow automation, agents, dashboards, and internal tools.",
-    "keywords": "custom AI solutions for businesses, custom AI development, AI solutions, AI software development, AI agency"
+    "description": "Custom AI solutions for businesses that need tailored AI systems, workflow automation, agents, dashboards, and internal tools.",
+    "keywords": "custom AI solutions for businesses, custom AI development, AI solutions, AI systems development, AI agency"
   },
   "ai-opportunity-review": {
     "title": "AI Opportunity Review | Go Expandia",
@@ -75,8 +75,8 @@
   },
   "ai-build-setup": {
     "title": "AI Build & Setup | Go Expandia",
-    "description": "We build the tools, workflows, and software around AI and connect them to the way your business works.",
-    "keywords": "AI build, AI setup, AI implementation, AI workflow development, AI software setup"
+    "description": "We build the tools, workflows, and AI systems around AI and connect them to the way your business works.",
+    "keywords": "AI build, AI setup, AI implementation, AI workflow development, AI system setup"
   },
   "ai-training": {
     "title": "AI Training | Go Expandia",
@@ -112,8 +112,8 @@
   },
   "our-business-model": {
     "title": "Our Business Model | Go Expandia",
-    "description": "Learn how Go Expandia identifies AI opportunities from your company data, builds the right software, and trains your team for adoption.",
-    "keywords": "AI business model, AI opportunity analysis, AI implementation partner, custom AI software, Go Expandia"
+    "description": "Learn how Go Expandia identifies AI opportunities from your company data, builds the right AI systems, and trains your team for adoption.",
+    "keywords": "AI business model, AI opportunity analysis, AI implementation partner, custom AI solutions, Go Expandia"
   },
   "contact": {
     "title": "Contact | Sales Operations Consultation | Go Expandia",
@@ -510,9 +510,9 @@
     }
   },
   "city-locations": {
-    "title": "Global Locations | IT, AI & Custom Software | Go Expandia",
-    "description": "Explore our global city footprint for IT solutions, AI automation, and custom software development.",
-    "keywords": "global locations, IT solutions cities, AI automation cities, custom software development"
+    "title": "AI Agency Locations | Go Expandia",
+    "description": "Explore our global city footprint for AI automation, AI consulting, agent development, and custom AI solutions.",
+    "keywords": "AI agency locations, AI automation cities, AI consulting cities, AI agent development"
   },
   "blog-index": {
     "title": "Sales University - Sales Operations Resources | Go Expandia",

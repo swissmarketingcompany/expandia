@@ -640,8 +640,8 @@ const PAGE_METADATA_OVERRIDES = {
     },
     'custom-ai-solutions-for-businesses': {
         title: 'Custom AI Solutions for Businesses | Go Expandia',
-        description: 'Custom AI solutions for businesses that need tailored AI software, workflow automation, agents, dashboards, and internal tools.',
-        keywords: 'custom AI solutions for businesses, custom AI development, AI solutions, AI software development'
+        description: 'Custom AI solutions for businesses that need tailored AI systems, workflow automation, agents, dashboards, and internal tools.',
+        keywords: 'custom AI solutions for businesses, custom AI development, AI solutions, AI systems development'
     },
     'ai-opportunity-review': {
         title: 'AI Opportunity Review | Big Data Analysis | Go Expandia',
@@ -655,7 +655,7 @@ const PAGE_METADATA_OVERRIDES = {
     },
     'ai-build-setup': {
         title: 'AI Build & Setup | Real Business Applications | Go Expandia',
-        description: 'Service 3. We build real AI applications, software, and workflows around your business and connect them to your daily operations.',
+        description: 'Service 3. We build real AI applications, systems, and workflows around your business and connect them to your daily operations.',
         keywords: 'AI build and setup, AI applications, AI workflow automation, AI implementation service'
     },
     'ai-training': {
@@ -671,7 +671,7 @@ const PAGE_METADATA_OVERRIDES = {
     about: {
         title: 'About Us | Go Expandia',
         description: 'Go Expandia is an AI agency helping B2B companies automate workflows, build AI agents, and launch custom AI solutions.',
-        keywords: 'AI agency, B2B AI adoption, AI automation agency, custom AI software, AI agent development'
+        keywords: 'AI agency, B2B AI adoption, AI automation agency, custom AI solutions, AI agent development'
     },
     'our-business-model': {
         title: 'Our Business Model | Go Expandia',
@@ -1145,7 +1145,7 @@ const SOLUTION_PAGE_BLUEPRINTS = {
             badge: 'Service 3',
             titlePrefix: 'AI Build & Setup',
             titleSuffix: '',
-            description: 'We implement the approved AI opportunities as working tools, software, automations, and workflows.',
+            description: 'We implement the approved AI opportunities as working tools, AI systems, automations, and workflows.',
             image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&q=80',
             alt: 'AI microapps and workflow setup',
             primaryCtaText: 'Talk to Us',
@@ -1162,7 +1162,7 @@ const SOLUTION_PAGE_BLUEPRINTS = {
                 intro: 'This service turns approved opportunities into deployed AI applications.',
                 gridClass: 'md:grid-cols-2',
                 cards: [
-                    { title: 'Workflow Build', description: 'We build the software and automation flows defined by your approved AI priorities.', borderClass: 'border-primary' },
+                    { title: 'Workflow Build', description: 'We build the AI systems and automation flows defined by your approved AI priorities.', borderClass: 'border-primary' },
                     { title: 'System Integration', description: 'We connect applications to your real systems and data sources.', borderClass: 'border-secondary' },
                     { title: 'Rollout and Training', description: 'We deploy for teams and make sure daily usage is practical and consistent.', borderClass: 'border-accent' },
                     { title: 'Support and Iteration', description: 'We fix, improve, and expand based on real usage after launch.', borderClass: 'border-neutral' }
