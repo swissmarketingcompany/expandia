@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Go Expandia | Customer Presentation</title>
+  <meta name="description" content="Customer-facing Go Expandia presentation: AI support for companies.">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, noai, noimageai">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <style>
+    :root {
+      --bg: #efe8dc;
+      --paper: #fffaf1;
+      --paper-strong: #f8f1e3;
+      --ink: #18202b;
+      --muted: #596272;
+      --line: rgba(24, 32, 43, 0.12);
+      --red: #cb102c;
+      --red-deep: #8e0e24;
+      --burgundy: #5b1326;
+      --burgundy-deep: #271824;
+      --gold: #ecd7ac;
+      --white: #ffffff;
+      --shadow: 0 34px 80px rgba(24, 32, 43, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(203, 16, 44, 0.14), transparent 30rem),
+        radial-gradient(circle at bottom left, rgba(236, 215, 172, 0.72), transparent 24rem),
+        linear-gradient(180deg, #f4ecdd 0%, #ece6dc 100%);
+    }
+
+    body.is-locked {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .progress-wrap {
+      position: fixed;
+      z-index: 60;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 0.28rem;
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(90deg, var(--red), #f04d67);
+      transition: width 180ms ease;
+    }
+
+    .toolbar {
+      position: fixed;
+      z-index: 50;
+      bottom: 1rem;
+      left: 50%;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 0.95rem;
+      border-radius: 999px;
+      background: rgba(25, 29, 39, 0.8);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
+      transform: translateX(-50%);
+    }
+
+    .toolbar strong {
+      display: block;
+      font-size: 0.92rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .toolbar span {
+      display: block;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    .toolbar button,
+    .toolbar a {
+      border: 0;
+      background: rgba(255, 255, 255, 0.1);
+      color: inherit;
+      font: inherit;
+      padding: 0.58rem 0.9rem;
+      border-radius: 999px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 160ms ease, transform 160ms ease;
+    }
+
+    .gate {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      background:
+        radial-gradient(circle at top right, rgba(203, 16, 44, 0.18), transparent 30rem),
+        linear-gradient(145deg, #211722 0%, #5b1326 46%, #8a0f25 100%);
+    }
+
+    .gate[hidden] {
+      display: none;
+    }
+
+    .gate-card {
+      width: min(100%, 34rem);
+      padding: 2rem;
+      border-radius: 1.8rem;
+      background: rgba(255, 250, 241, 0.96);
+      color: var(--ink);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.26);
+      border: 1px solid rgba(24, 32, 43, 0.12);
+    }
+
+    .gate-card h2 {
+      max-width: none;
+      font-size: 2.2rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .gate-card p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .gate-form {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.8rem;
+      margin-top: 1.35rem;
+    }
+
+    .gate-input {
+      width: 100%;
+      border: 1px solid rgba(24, 32, 43, 0.16);
+      border-radius: 1rem;
+      padding: 0.95rem 1rem;
+      font: inherit;
+      font-size: 1rem;
+      color: var(--ink);
+      background: #fff;
+    }
+
+    .gate-button {
+      border: 0;
+      border-radius: 1rem;
+      padding: 0.95rem 1.15rem;
+      background: var(--red);
+      color: #fff;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .gate-error {
+      min-height: 1.2rem;
+      margin-top: 0.8rem;
+      font-size: 0.94rem;
+      color: var(--red-deep);
+    }
+
+    .gate-note {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .toolbar button:hover,
+    .toolbar a:hover {
+      background: rgba(255, 255, 255, 0.18);
+      transform: translateY(-1px);
+    }
+
+    .deck {
+      width: min(96vw, 114rem);
+      margin: 0 auto;
+      padding: 4rem 0 5rem;
+    }
+
+    .slide {
+      position: relative;
+      width: 1600px;
+      min-height: 900px;
+      margin: 0 auto 2rem;
+      padding: 3rem 3.1rem 2.4rem;
+      border-radius: 2.2rem;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.94), rgba(255,250,241,0.98)),
+        var(--paper);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transform-origin: top center;
+      scroll-margin-top: 1rem;
+    }
+
+    .slide::before,
+    .slide::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      pointer-events: none;
+    }
+
+    .slide::before {
+      width: 22rem;
+      height: 22rem;
+      top: -7rem;
+      right: -7rem;
+      background: radial-gradient(circle, rgba(203, 16, 44, 0.16), rgba(203, 16, 44, 0));
+    }
+
+    .slide::after {
+      width: 16rem;
+      height: 16rem;
+      bottom: -6rem;
+      left: -5rem;
+      background: radial-gradient(circle, rgba(236, 215, 172, 0.8), rgba(236, 215, 172, 0));
+    }
+
+    .slide-dark {
+      color: var(--white);
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.08), transparent 24rem),
+        linear-gradient(145deg, var(--burgundy-deep) 0%, var(--burgundy) 46%, #8a0f25 100%);
+    }
+
+    .slide-dark .lede,
+    .slide-dark .footer-line,
+    .slide-dark .micro-note,
+    .slide-dark .card p,
+    .slide-dark .panel p,
+    .slide-dark .metric-sub,
+    .slide-dark .service-step p,
+    .slide-dark .use-case p {
+      color: rgba(255,255,255,0.82);
+    }
+
+    .slide-dark .card,
+    .slide-dark .panel,
+    .slide-dark .hero-summary,
+    .slide-dark .use-case,
+    .slide-dark .service-step {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.14);
+    }
+
+    .slide-dark .metric,
+    .slide-dark .pricing-card {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.14);
+    }
+
+    .slide-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1.35rem;
+      height: 100%;
+    }
+
+    .span-12 { grid-column: span 12; }
+    .span-8 { grid-column: span 8; }
+    .span-7 { grid-column: span 7; }
+    .span-6 { grid-column: span 6; }
+    .span-5 { grid-column: span 5; }
+    .span-4 { grid-column: span 4; }
+
+    .slide-number {
+      position: absolute;
+      z-index: 2;
+      top: 2.2rem;
+      right: 2.4rem;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(24, 32, 43, 0.55);
+    }
+
+    .slide-dark .slide-number {
+      color: rgba(255,255,255,0.64);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 0.68rem;
+      height: 0.68rem;
+      border-radius: 999px;
+      background: var(--red);
+      box-shadow: 0 0 0 0.28rem rgba(203, 16, 44, 0.14);
+    }
+
+    .slide-dark .eyebrow {
+      color: rgba(255,255,255,0.9);
+    }
+
+    .slide-dark .eyebrow::before {
+      background: #ffdfe5;
+      box-shadow: 0 0 0 0.28rem rgba(255,255,255,0.14);
+    }
+
+    h1,
+    h2,
+    h3,
+    p,
+    ul {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 4.8rem;
+      line-height: 0.93;
+      letter-spacing: -0.06em;
+      max-width: 11ch;
+    }
+
+    h2 {
+      font-size: 3rem;
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      max-width: 13ch;
+    }
+
+    h3 {
+      font-size: 1.36rem;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.55rem;
+    }
+
+    .accent {
+      color: var(--red);
+    }
+
+    .slide-dark .accent {
+      color: #ffd8df;
+    }
+
+    .lede {
+      max-width: 50rem;
+      font-size: 1.24rem;
+      line-height: 1.52;
+      color: var(--muted);
+    }
+
+    .micro-note {
+      font-size: 0.96rem;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+
+    .logo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.95rem;
+      padding: 0.95rem 1.05rem;
+      border-radius: 1.35rem;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .logo-badge img {
+      height: 2.2rem;
+      width: auto;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .chip {
+      padding: 0.72rem 0.95rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.8);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .slide-dark .chip {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.14);
+      color: #fff;
+    }
+
+    .hero-summary,
+    .card,
+    .panel,
+    .use-case,
+    .pricing-card {
+      border: 1px solid var(--line);
+      border-radius: 1.5rem;
+      background: rgba(255,255,255,0.82);
+      padding: 1.2rem 1.2rem 1.1rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-summary {
+      padding: 1.45rem 1.5rem;
+      max-width: 43rem;
+    }
+
+    .pricing-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-summary p {
+      font-size: 1.07rem;
+      line-height: 1.55;
+    }
+
+    .card strong,
+    .panel strong,
+    .pricing-card strong,
+    .use-case strong {
+      display: block;
+      margin-bottom: 0.38rem;
+      font-size: 0.92rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+
+    .slide-dark .card strong,
+    .slide-dark .panel strong,
+    .slide-dark .pricing-card strong,
+    .slide-dark .use-case strong {
+      color: #ffd8df;
+    }
+
+    .card p,
+    .panel p,
+    .pricing-card p,
+    .use-case p {
+      font-size: 1rem;
+      line-height: 1.48;
+      color: var(--muted);
+    }
+
+    .cards-2,
+    .cards-3,
+    .cards-4 {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .cards-2 { grid-template-columns: repeat(2, 1fr); }
+    .cards-3 { grid-template-columns: repeat(3, 1fr); }
+    .cards-4 { grid-template-columns: repeat(4, 1fr); }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 1.45rem;
+      background: rgba(255,255,255,0.88);
+      padding: 1.15rem 1.05rem;
+    }
+
+    .metric-value {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      color: var(--ink);
+    }
+
+    .slide-dark .metric-value {
+      color: #fff;
+    }
+
+    .metric-sub {
+      margin-top: 0.35rem;
+      font-size: 0.95rem;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+
+    .outcome-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .outcome {
+      padding: 1rem 1.05rem;
+      border-radius: 1.35rem;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.9);
+    }
+
+    .outcome h3 {
+      font-size: 1.22rem;
+      margin-bottom: 0.3rem;
+      color: var(--red);
+    }
+
+    .outcome p {
+      font-size: 0.95rem;
+      line-height: 1.42;
+      color: var(--muted);
+    }
+
+    .service-ladder {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+    }
+
+    .service-step {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 1.2rem 1rem 1.05rem;
+      border-radius: 1.45rem;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.9);
+      min-height: 16.5rem;
+    }
+
+    .service-step::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -0.7rem;
+      width: 1.3rem;
+      height: 1.3rem;
+      transform: translateY(-50%) rotate(45deg);
+      background: rgba(203, 16, 44, 0.18);
+      border-radius: 0.2rem;
+    }
+
+    .service-step:last-child::after {
+      display: none;
+    }
+
+    .service-index {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.3rem;
+      height: 2.3rem;
+      margin-bottom: 0.8rem;
+      border-radius: 999px;
+      background: var(--red);
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .service-step p {
+      font-size: 0.98rem;
+      line-height: 1.44;
+      color: var(--muted);
+    }
+
+    .service-price {
+      display: block;
+      margin-top: 1rem;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .slide-dark .service-price {
+      color: #fff;
+    }
+
+    .offer-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      width: fit-content;
+      margin-top: auto;
+      padding: 0.88rem 1.05rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(203, 16, 44, 0.98), rgba(232, 62, 91, 0.92));
+      border: 1px solid rgba(203, 16, 44, 0.28);
+      box-shadow: 0 0.85rem 1.8rem rgba(203, 16, 44, 0.18);
+      color: #fff;
+      font-size: 0.92rem;
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+
+    .slide-dark .offer-link {
+      background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.1));
+      border-color: rgba(255,255,255,0.16);
+      box-shadow: 0 0.85rem 1.8rem rgba(0, 0, 0, 0.18);
+      color: #fff;
+    }
+
+    .offer-link .offer-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.8rem;
+      height: 1.8rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      flex: 0 0 auto;
+    }
+
+    .offer-link .offer-icon svg {
+      width: 0.9rem;
+      height: 0.9rem;
+      fill: currentColor;
+    }
+
+    .offer-link .offer-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.08rem;
+      line-height: 1.1;
+    }
+
+    .offer-link .offer-title {
+      font-size: 0.86rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .offer-link .offer-subtitle {
+      font-size: 0.67rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      opacity: 0.82;
+    }
+
+    .offer-note {
+      margin-top: 0.45rem;
+      font-size: 0.72rem;
+      line-height: 1.35;
+      color: var(--muted);
+    }
+
+    .slide-dark .offer-note {
+      color: rgba(255,255,255,0.78);
+    }
+
+    .image-panel {
+      position: relative;
+      height: 100%;
+      min-height: 19rem;
+      border-radius: 1.9rem;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .image-panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(16,20,28,0.08), rgba(16,20,28,0.48));
+    }
+
+    .image-caption {
+      position: absolute;
+      left: 1.2rem;
+      right: 1.2rem;
+      bottom: 1.1rem;
+      padding: 0.95rem 1rem;
+      border-radius: 1.1rem;
+      background: rgba(255,250,241,0.95);
+      color: var(--ink);
+      font-size: 0.96rem;
+      line-height: 1.44;
+      box-shadow: 0 14px 30px rgba(24, 32, 43, 0.12);
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+    }
+
+    .timeline-step {
+      position: relative;
+      padding: 1.1rem 1.05rem 1rem;
+      border-radius: 1.35rem;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.9);
+    }
+
+    .timeline-step::before {
+      content: "";
+      position: absolute;
+      top: 1.55rem;
+      right: -0.6rem;
+      width: 1.2rem;
+      height: 1px;
+      background: rgba(203, 16, 44, 0.32);
+    }
+
+    .timeline-step:last-child::before {
+      display: none;
+    }
+
+    .timeline-step small {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+
+    .timeline-step p {
+      font-size: 0.96rem;
+      line-height: 1.42;
+      color: var(--muted);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--ink);
+      margin-bottom: 0.45rem;
+    }
+
+    .slide-dark .price {
+      color: #fff;
+    }
+
+    .pricing-list {
+      padding-left: 1.1rem;
+      margin-top: 0.8rem;
+    }
+
+    .pricing-list li,
+    .bullet-list li {
+      margin-bottom: 0.62rem;
+      font-size: 0.98rem;
+      line-height: 1.42;
+    }
+
+    .bullet-list {
+      padding-left: 1.15rem;
+    }
+
+    .footer-line {
+      position: absolute;
+      z-index: 2;
+      right: 2.4rem;
+      bottom: 1.28rem;
+      left: 2.4rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.78rem;
+      color: rgba(24, 32, 43, 0.56);
+    }
+
+    .footer-line .right {
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 1700px) {
+      .slide {
+        transform: scale(calc((100vw - 4rem) / 1600));
+        margin-bottom: calc(-900px + ((100vw - 4rem) / 1600) * 900px + 2rem);
+      }
+    }
+
+    @media (max-width: 1280px) {
+      .toolbar {
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        top: auto;
+        justify-content: space-between;
+        border-radius: 1.25rem;
+        transform: none;
+      }
+    }
+
+    @media print {
+      @page {
+        size: 16in 9in;
+        margin: 0;
+      }
+
+      body {
+        background: #fff;
+      }
+
+      .toolbar,
+      .progress-wrap {
+        display: none !important;
+      }
+
+      .deck {
+        width: auto;
+        margin: 0;
+        padding: 0;
+      }
+
+      .slide {
+        width: 16in;
+        min-height: 9in;
+        height: 9in;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        page-break-after: always;
+        break-after: page;
+        transform: none !important;
+      }
+
+      .slide:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="gate" id="presentation-gate">
+    <div class="gate-card">
+      <div class="eyebrow">Protected Page</div>
+      <h2>Enter password</h2>
+      <p>This presentation is private. Enter the password to view it.</p>
+      <form class="gate-form" id="gate-form">
+        <input type="text" name="username" autocomplete="username" tabindex="-1" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" aria-hidden="true">
+        <input class="gate-input" id="gate-password" name="password" type="password" autocomplete="current-password" placeholder="Password" required>
+        <button class="gate-button" type="submit">Open</button>
+      </form>
+      <div class="gate-error" id="gate-error"></div>
+      <div class="gate-note">This route is also marked as no-index and no-AI for crawlers.</div>
+    </div>
+  </div>
+
+  <div class="progress-wrap" aria-hidden="true">
+    <div class="progress-bar" id="progress-bar"></div>
+  </div>
+
+  <div class="toolbar" aria-label="Presentation controls">
+    <div>
+      <strong id="toolbar-title">Slide 1</strong>
+      <span id="toolbar-subtitle">Go Expandia customer presentation</span>
+    </div>
+    <button type="button" id="prev-slide">Prev</button>
+    <button type="button" id="next-slide">Next</button>
+    <a href="#" onclick="window.print(); return false;">Print / Save PDF</a>
+  </div>
+
+  <main class="deck" id="deck">
+    <section class="slide slide-dark" id="slide-1" data-title="AI Support for Companies">
+      <div class="slide-number">01 / 12</div>
+      <div class="slide-grid">
+        <div class="span-7" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div class="logo-badge">
+              <img src="../go-expandia-logo.png" alt="Go Expandia logo">
+              <div>
+                <div class="eyebrow" style="margin-bottom:0.2rem;">Go Expandia</div>
+                <p class="micro-note">AI support for companies</p>
+              </div>
+            </div>
+            <div style="height:2rem;"></div>
+            <h1>AI Support <span class="accent">for Companies.</span></h1>
+            <div style="height:1rem;"></div>
+            <p class="lede">Turn scattered AI usage into a practical business system: clear priorities, the right workflows, real implementation, team adoption, and support after launch.</p>
+            <div style="height:1.2rem;"></div>
+            <div class="chip-row">
+              <div class="chip">Review</div>
+              <div class="chip">Plan</div>
+              <div class="chip">Build &amp; Setup</div>
+              <div class="chip">Training</div>
+              <div class="chip">Support</div>
+            </div>
+          </div>
+
+          <div class="hero-summary">
+            <p><strong style="display:block; margin-bottom:0.42rem; font-size:0.92rem; letter-spacing:0.14em; text-transform:uppercase;">What we do</strong>We help B2B companies find where AI can make or save money, turn that into a clear plan, build the right tools and workflows, train the team, and support the work after launch.</p>
+          </div>
+        </div>
+
+        <div class="span-5">
+          <div class="image-panel" style="min-height:100%;">
+            <img src="../assets/images/revops_team_presentation.png" alt="Team presentation">
+            <div class="image-overlay"></div>
+            <div class="image-caption">A practical path from public AI tools to real business use.</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-line">
+        <div>Go Expandia</div>
+        <div class="right">goexpandia.com</div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-2" data-title="Who we are">
+      <div class="slide-number">02 / 12</div>
+      <div class="slide-grid">
+        <div class="span-7" style="display:flex; flex-direction:column; gap:1rem;">
+          <div class="eyebrow">Introduction</div>
+          <h2>We are an AI laboratory with deep managed-services roots.</h2>
+          <p class="lede">We were founded as a managed services company in 2005. In 2025, we started our AI lab, Remova, to build our own secure AI infrastructure and develop solutions on top of it.</p>
+          <div class="cards-3">
+            <div class="card">
+              <strong>Founded</strong>
+              <p>Started in 2005 as a managed services company.</p>
+            </div>
+            <div class="card">
+              <strong>AI lab</strong>
+              <p>Started Remova in 2025 as our AI laboratory and core technology base.</p>
+            </div>
+            <div class="card">
+              <strong>Today</strong>
+              <p>We work mainly with medium to large manufacturers to improve business processes.</p>
+            </div>
+          </div>
+          <div class="panel">
+            <strong>Main markets</strong>
+            <p>Our main markets are Scandinavia, Switzerland, and Poland.</p>
+          </div>
+        </div>
+
+        <div class="span-5" style="display:flex; flex-direction:column; gap:1rem;">
+          <div class="image-panel" style="min-height:27rem;">
+            <img src="../assets/images/revops_team_presentation.png" alt="Team working session">
+            <div class="image-overlay"></div>
+            <div class="image-caption">Managed-services discipline first, AI laboratory capability on top.</div>
+          </div>
+          <div class="cards-2">
+            <div class="card">
+              <strong>Typical client</strong>
+              <p>Medium to large manufacturers with real process complexity.</p>
+            </div>
+            <div class="card">
+              <strong>What we improve</strong>
+              <p>Business processes, workflows, and the systems around them.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-line">
+        <div>Founded 2005 • AI lab started 2025</div>
+        <div class="right">Scandinavia • Switzerland • Poland</div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-3" data-title="Products and technology">
+      <div class="slide-number">03 / 12</div>
+      <div class="slide-grid">
+        <div class="span-12" style="display:flex; flex-direction:column; gap:1rem;">
+          <div class="eyebrow">Products and technology</div>
+          <h2>We build products, services, and infrastructure together.</h2>
+          <p class="lede">We have three products, and we build our services on top of the same technology base. Our goal is to be as self-sufficient as possible on technology.</p>
+          <div class="cards-3">
+            <div class="card">
+              <strong>1. Remova</strong>
+              <p>Our flagship product: secure enterprise AI infrastructure for large organizations.</p>
+            </div>
+            <div class="card">
+              <strong>2. Expandia</strong>
+              <p>Helps companies with managed services, with the help of AI.</p>
+            </div>
+            <div class="card">
+              <strong>3. Buffsend</strong>
+              <p>An AI-based CRM system that handles email marketing and calling with AI.</p>
+            </div>
+          </div>
+          <div class="cards-2">
+            <div class="panel">
+              <strong>Our technology</strong>
+              <p>About 90% of our activities are done on technologies we developed ourselves. We aim to become completely self-sufficient on technology.</p>
+            </div>
+            <div class="panel">
+              <strong>How we create products and services</strong>
+              <p>We find the problem, or a client brings it to us. Then we use our own infrastructure, Remova, to build the solution, secure it with guardrails, launch in about a week, and iterate continuously.</p>
+            </div>
+          </div>
+          <div class="cards-3">
+            <div class="card">
+              <strong>Guardrails</strong>
+              <p>We secure services with guardrails. That is where a large part of our expertise sits.</p>
+            </div>
+            <div class="card">
+              <strong>Fast creation</strong>
+              <p>We can create solutions in a week or so, then improve them continuously.</p>
+            </div>
+            <div class="card">
+              <strong>Never finished</strong>
+              <p>We do not treat products as finished. We evolve them continuously as AI evolves.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-line">
+        <div>Remova • Expandia • Buffsend</div>
+        <div class="right">Built on our own technology stack</div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-4" data-title="Most companies have AI activity, not an operating model">
+      <div class="slide-number">04 / 12</div>
+      <div class="slide-grid">
+        <div class="span-8" style="display:flex; flex-direction:column; gap:1rem;">
+          <div class="eyebrow">The situation</div>
+          <h2>Most companies have AI activity, not an operating model.</h2>
+          <p class="lede">Teams are already experimenting with ChatGPT, Gemini, and similar tools. The harder part is turning that activity into a safe, structured, measurable way of working.</p>
+          <div class="metric-grid">
+            <div class="metric">
+              <div class="metric-value">78%</div>
+              <p class="metric-sub">of organizations already use AI in at least one business function.</p>
+            </div>
+            <div class="metric">
+              <div class="metric-value">71%</div>
+              <p class="metric-sub">regularly use generative AI in at least one business function.</p>
+            </div>
+            <div class="metric">
+              <div class="metric-value">21%</div>
+              <p class="metric-sub">have fundamentally redesigned at least some workflows around gen AI.</p>
+            </div>
+            <div class="metric">
+              <div class="metric-value">85%</div>
+              <p class="metric-sub">of leaders cite data quality as a major challenge to AI strategy.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="span-4" style="display:flex; flex-direction:column; gap:1rem;">
+          <div class="card">
+            <strong>What buyers feel</strong>
+            <p>“We know AI matters.”<br>“We do not know what to do first.”<br>“We need a safe, practical next step.”</p>
+          </div>
+          <div class="cards-2">
+            <div class="card">
+              <strong>Random usage</strong>
+              <p>Different teams use AI differently, with no shared model.</p>
+            </div>
+            <div class="card">
+              <strong>Unclear priorities</strong>
+              <p>Good ideas compete, but nobody knows what will create value first.</p>
+            </div>
+            <div class="card">
+              <strong>Privacy risk</strong>
+              <p>Sensitive information and public tools create understandable hesitation.</p>
+            </div>
+            <div class="card">
+              <strong>Weak adoption</strong>
+              <p>Even promising solutions fail if the team does not use them properly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-line">
+        <div>Selected market context from McKinsey 2025 and KPMG 2025</div>
+        <div class="right">Go Expandia</div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-5" data-title="We turn AI curiosity into operating leverage">
+      <div class="slide-number">05 / 12</div>
+      <div class="slide-grid">
+        <div class="span-7" style="display:flex; flex-direction:column; gap:1rem;">
+          <div class="eyebrow">Our approach</div>
+          <h2>We turn AI curiosity into operating leverage.</h2>
+          <p class="lede">Go Expandia starts with business value, not tool enthusiasm. We look for where AI can improve revenue, reduce cost, improve cash flow, and give the business more control.</p>
+          <div class="outcome-strip">
+            <div class="outcome">
+              <h3>Revenue</h3>
+              <p>Find where AI can help growth, response speed, conversion, and expansion.</p>
+            </div>
+            <div class="outcome">
+              <h3>Cost</h3>
+              <p>Reduce repetitive work, admin drag, and inefficient handoffs.</p>
+            </div>
+            <div class="outcome">
+              <h3>Cash</h3>
+              <p>Improve visibility, follow-up discipline, and operational flow.</p>
+            </div>
+            <div class="outcome">
+              <h3>Control</h3>
+              <p>Train the team, define boundaries, and keep the system working.</p>
+            </div>
+          </div>
+          <div class="panel">
+            <strong>What makes this work</strong>
+            <p>Our proprietary Big Data Analysis process runs on top of Remova.org, our product and core technology platform. That is how we analyze business data deeply and uncover real AI opportunities, gaps, and business value.</p>
+          </div>
+        </div>
+
+        <div class="span-5" style="display:flex; flex-direction:column; gap:1rem;">
+          <div class="cards-2">
+            <div class="card">
+              <strong>Business first</strong>
+              <p>We start with value, priorities, and workflows, not random AI features.</p>
+            </div>
+            <div class="card">
+              <strong>Clear order</strong>
+              <p>Review, plan, build, train, support. The path is easy to understand.</p>
+            </div>
+            <div class="card">
+              <strong>Real delivery</strong>
+              <p>We do the actual implementation work. We do not stop at ideas.</p>
+            </div>
+            <div class="card">
+              <strong>Built to last</strong>
+              <p>The system only matters if the team can use it after launch.</p>
+            </div>
+          </div>
+          <div class="image-panel">
+            <img src="../assets/images/revops_infrastructure_dashboard.png" alt="Dashboard">
+            <div class="image-overlay"></div>
+            <div class="image-caption">Data first. Build second. Adoption always.</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-line">
+        <div>AI support for companies</div>
+        <div class="right">Revenue • Cost • Cash • Control</div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-6" data-title="The 5 services and what they do">
+      <div class="slide-number">06 / 12</div>
+      <div class="slide-grid">
+        <div class="span-12" style="display:flex; flex-direction:column; gap:1rem;">
+          <div class="eyebrow">The model</div>
+          <h2>The 5 services and what they do.</h2>
+          <p class="lede">Each service solves a different part of the AI adoption problem. You can buy one service, combine several, or use the full path from review to support.</p>
+          <div class="service-ladder">
+            <div class="service-step">
+              <div class="service-index">1</div>
+              <h3>AI Opportunity Review</h3>
+              <p>Use your business material and Big Data Analysis to find the best AI opportunities first.</p>
+              <a class="offer-link" href="mailto:hello@goexpandia.com?subject=Ask%20for%20an%20offer%20-%20AI%20Opportunity%20Review">
+                <span class="offer-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v.6l-10 6.67L2 6.6V6a1 1 0 0 1 1-1Zm19 4.02V18a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V9.02l9.45 6.3a1 1 0 0 0 1.1 0L22 9.02Z"/></svg>
+                </span>
+                <span class="offer-copy">
+                  <span class="offer-title">Ask for an offer</span>
+                  <span class="offer-subtitle">Send a direct email</span>
+                </span>
+              </a>
+              <div class="offer-note">Reach us directly at hello@goexpandia.com.</div>
+            </div>
+            <div class="service-step">
+              <div class="service-index">2</div>
+              <h3>AI Plan</h3>
+              <p>Turn the findings into a working roadmap, clear priorities, and a practical buying model.</p>
+              <a class="offer-link" href="mailto:hello@goexpandia.com?subject=Ask%20for%20an%20offer%20-%20AI%20Plan">
+                <span class="offer-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v.6l-10 6.67L2 6.6V6a1 1 0 0 1 1-1Zm19 4.02V18a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V9.02l9.45 6.3a1 1 0 0 0 1.1 0L22 9.02Z"/></svg>
+                </span>
+                <span class="offer-copy">
+                  <span class="offer-title">Ask for an offer</span>
+                  <span class="offer-subtitle">Send a direct email</span>
+                </span>
+              </a>
+              <div class="offer-note">Reach us directly at hello@goexpandia.com.</div>
+            </div>
+            <div class="service-step">
+              <div class="service-index">3</div>
+              <h3>AI Build &amp; Setup</h3>
+              <p>Build the tools, automations, and workflows around the opportunity you choose.</p>
+              <a class="offer-link" href="mailto:hello@goexpandia.com?subject=Ask%20for%20an%20offer%20-%20AI%20Build%20and%20Setup">
+                <span class="offer-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v.6l-10 6.67L2 6.6V6a1 1 0 0 1 1-1Zm19 4.02V18a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V9.02l9.45 6.3a1 1 0 0 0 1.1 0L22 9.02Z"/></svg>
+                </span>
+                <span class="offer-copy">
+                  <span class="offer-title">Ask for an offer</span>
+                  <span class="offer-subtitle">Send a direct email</span>
+                </span>
+              </a>
+              <div class="offer-note">Reach us directly at hello@goexpandia.com.</div>
+            </div>
+            <div class="service-step">
+              <div class="service-index">4</div>
+              <h3>AI Training</h3>
+              <p>Train your team to use the new setup properly and get more value from AI in daily work.</p>
+              <a class="offer-link" href="mailto:hello@goexpandia.com?subject=Ask%20for%20an%20offer%20-%20AI%20Training">
+                <span class="offer-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v.6l-10 6.67L2 6.6V6a1 1 0 0 1 1-1Zm19 4.02V18a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V9.02l9.45 6.3a1 1 0 0 0 1.1 0L22 9.02Z"/></svg>
+                </span>
+                <span class="offer-copy">
+                  <span class="offer-title">Ask for an offer</span>
+                  <span class="offer-subtitle">Send a direct email</span>
+                </span>
+              </a>
+              <div class="offer-note">Reach us directly at hello@goexpandia.com.</div>
+            </div>
+            <div class="service-step">
+              <div class="service-index">5</div>
+              <h3>AI Support</h3>
+              <p>Improve results, fix issues, support hard cases, and keep the system useful over time.</p>
+              <a class="offer-link" href="mailto:hello@goexpandia.com?subject=Ask%20for%20an%20offer%20-%20AI%20Support">
+                <span class="offer-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v.6l-10 6.67L2 6.6V6a1 1 0 0 1 1-1Zm19 4.02V18a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V9.02l9.45 6.3a1 1 0 0 0 1.1 0L22 9.02Z"/></svg>
+                </span>
+                <span class="offer-copy">
+                  <span class="offer-title">Ask for an offer</span>
+                  <span class="offer-subtitle">Send a direct email</span>
+                </span>
+              </a>
+              <div class="offer-note">Reach us directly at hello@goexpandia.com.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-line">
+        <div>Clear offer</div>
+        <div class="right">Five services • one operating model</div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-7" data-title="Big Data Analysis">
+      <div class="slide-number">07 / 12</div>
+      <div class="slide-grid">
+        <div class="span-7" style="display:flex; flex-direction:column; gap:1rem;">
+          <div class="eyebrow">Central to our services</div>
+          <h2>Big Data Analysis is how we find the right AI opportunities.</h2>
+          <p class="lede">Most companies sit on a large amount of business data, but it is spread across documents, reports, workflows, customer material, and operational records. Our proprietary Big Data Analysis process turns that material into clear AI opportunities, not surface-level summaries.</p>
+          <div class="cards-3">
+            <div class="card">
+              <strong>What goes in</strong>
+              <p>Documents, reports, process records, internal workflows, customer information, and other operational material.</p>
+            </div>
+            <div class="card">
+              <strong>What the process does</strong>
+              <p>Analyzes the data deeply to uncover AI opportunities, gaps, and business value.</p>
+            </div>
+            <div class="card">
+              <strong>What comes out</strong>
+              <p>A clear shortlist of where AI can make or save money and what deserves attention first.</p>
+            </div>
+          </div>
+          <div class="timeline" style="grid-template-columns:repeat(3,1fr);">
+            <div class="timeline-step">
+              <small>Step 1</small>
+              <h3>You send the data</h3>
+              <p>It can be clean, messy, partial, or spread across systems. We start from reality.</p>
+            </div>
+            <div class="timeline-step">
+              <small>Step 2</small>
+              <h3>We run the analysis</h3>
+              <p>Big Data Analysis reviews the material and identifies high-value AI gaps.</p>
+            </div>
+            <div class="timeline-step">
+              <small>Step 3</small>
+              <h3>We shape the next move</h3>
+              <p>The findings become the review, the plan, and the basis for implementation.</p>
+            </div>
+          </div>
+          </div>
+
+        <div class="span-5" style="display:flex; flex-direction:column; gap:1rem;">
+          <div class="image-panel" style="min-height:28rem;">
+            <img src="../assets/images/secure_workplace_dashboard.png" alt="Data analysis dashboard">
+            <div class="image-overlay"></div>
+            <div class="image-caption">Big Data Analysis runs on top of Remova.org and powers the review and planning work.</div>
+          </div>
+          <div class="panel">
+            <strong>Important point</strong>
+            <p>You do not need perfect data before we start. We can work with the data you already have and identify what is usable, what is missing, and where AI can create the most impact.</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-line">
+        <div>Proprietary Big Data Analysis</div>
+        <div class="right">Big-data analysis, not surface summaries</div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-8" data-title="What each service is for">
+      <div class="slide-number">08 / 12</div>
+      <div class="slide-grid">
+        <div class="span-12" style="display:flex; flex-direction:column; gap:1rem;">
+          <div class="eyebrow">Service fit</div>
+          <h2>What each service is for.</h2>
+          <p class="lede">Each service has a different job. This is the clearest way to understand what to buy and when to buy it.</p>
+          <div class="cards-3">
+            <div class="card">
+              <strong>AI Opportunity Review</strong>
+              <p>Best when AI matters, but the next step is unclear. Output: the best opportunities, in clear business language.</p>
+            </div>
+            <div class="card">
+              <strong>AI Plan</strong>
+              <p>Best when you need order, budget logic, and a practical rollout path before building.</p>
+            </div>
+            <div class="card">
+              <strong>AI Build &amp; Setup</strong>
+              <p>Best when you know what should be built and want a team to deliver it properly.</p>
+            </div>
+          </div>
+          <div class="cards-2">
+            <div class="card">
+              <strong>AI Training</strong>
+              <p>Best when the team has access to AI tools, but usage is weak, messy, or inconsistent.</p>
+            </div>
+            <div class="card">
+              <strong>AI Support</strong>
+              <p>Best when AI is already in motion and you need reliable help, fixes, and ongoing improvement.</p>
+            </div>
+          </div>
+          <div class="panel">
+            <strong>Simple buying rule</strong>
+            <p>If you need clarity, start with the review. If the direction is already clear, we can move directly into the plan, the build, the training, or support.</p>
+          </div>
+          <div class="cards-3">
+            <div class="card">
+              <strong>Start small</strong>
+              <p>Buy one service on its own if that is all you need right now.</p>
+            </div>
+            <div class="card">
+              <strong>Combine services</strong>
+              <p>Move from review to plan to build when you want a structured rollout.</p>
+            </div>
+            <div class="card">
+              <strong>Stay monthly</strong>
+              <p>Keep momentum with ongoing support, improvements, and follow-on work.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-line">
+        <div>Crystal-clear service fit</div>
+        <div class="right">Buy one service or the full path</div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-9" data-title="Examples of where AI can create value">
+      <div class="slide-number">09 / 12</div>
+      <div class="slide-grid">
+        <div class="span-12" style="display:flex; flex-direction:column; gap:1rem;">
+          <div class="eyebrow">Examples</div>
+          <h2>Examples of where AI can create value.</h2>
+          <p class="lede">Every company is different, which is why the review matters. But the same opportunity patterns appear again and again inside B2B operations.</p>
+          <div class="cards-4">
+            <div class="use-case">
+              <strong>Sales follow-up</strong>
+              <h3>Faster response and stronger follow-through</h3>
+              <p>Support qualification, meeting prep, proposal drafting, and next-step discipline.</p>
+            </div>
+            <div class="use-case">
+              <strong>Internal knowledge</strong>
+              <h3>Better answers from the material you already have</h3>
+              <p>Use SOPs, docs, reports, and internal knowledge to reduce searching and repetition.</p>
+            </div>
+            <div class="use-case">
+              <strong>Customer operations</strong>
+              <h3>More consistent service workflows</h3>
+              <p>Help teams triage requests, draft replies, and escalate the right cases faster.</p>
+            </div>
+            <div class="use-case">
+              <strong>Operations and reporting</strong>
+              <h3>Less manual work and better visibility</h3>
+              <p>Automate repetitive steps, summarize activity, and improve decision speed.</p>
+            </div>
+          </div>
+          <div class="panel">
+            <strong>Important point</strong>
+            <p>We do not force generic AI use cases onto the business. We look for the opportunities that fit your data, your workflows, and your priorities.</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-line">
+        <div>Illustrative opportunity types</div>
+        <div class="right">The review decides priority</div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-10" data-title="Why companies choose Go Expandia">
+      <div class="slide-number">10 / 12</div>
+      <div class="slide-grid">
+        <div class="span-7" style="display:flex; flex-direction:column; gap:1rem;">
+          <div class="eyebrow">Why Go Expandia</div>
+          <h2>Why companies choose Go Expandia.</h2>
+          <p class="lede">The difference is not just technical. It is the way the work is framed, bought, delivered, and kept useful after launch.</p>
+          <div class="cards-2">
+            <div class="card">
+              <strong>Business-first</strong>
+              <p>We start with business value and operating reality, not generic AI talk.</p>
+            </div>
+            <div class="card">
+              <strong>Built on Remova</strong>
+              <p>We build our solutions on top of Remova.org, our product and core technology platform.</p>
+            </div>
+            <div class="card">
+              <strong>Real delivery</strong>
+              <p>We do the actual implementation work instead of stopping at slides.</p>
+            </div>
+            <div class="card">
+              <strong>Privacy boundaries</strong>
+              <p>We define safe working boundaries before the analysis starts.</p>
+            </div>
+            <div class="card">
+              <strong>Start small</strong>
+              <p>You can begin with one service instead of buying a full program upfront.</p>
+            </div>
+            <div class="card">
+              <strong>Support after launch</strong>
+              <p>We stay involved to improve results, handle edge cases, and support adoption.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="span-5" style="display:flex; flex-direction:column; gap:1rem;">
+          <div class="image-panel" style="min-height:26rem;">
+            <img src="../assets/images/secure_workplace_dashboard.png" alt="Secure workplace dashboard">
+            <div class="image-overlay"></div>
+            <div class="image-caption">Practical. Precise. Permanent.</div>
+          </div>
+          <div class="panel">
+            <strong>What you are not buying</strong>
+            <p>Not another vague AI workshop. Not a random prompt library. Not a tool-first experiment with no path to daily use.</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-line">
+        <div>Clear offer • real delivery • long-term value</div>
+        <div class="right">Go Expandia</div>
+      </div>
+    </section>
+
+    <section class="slide slide-dark" id="slide-11" data-title="How you can buy from us">
+      <div class="slide-number">11 / 12</div>
+      <div class="slide-grid">
+        <div class="span-12" style="display:flex; flex-direction:column; gap:1rem;">
+          <div class="eyebrow">Commercial model</div>
+          <h2>How you can buy from us.</h2>
+          <p class="lede">You do not need to buy everything at once. The commercial model is designed to make the first step simple and the later steps flexible.</p>
+          <div class="pricing-grid">
+            <div class="pricing-card">
+              <strong>Fixed-fee start</strong>
+              <p>Simple starting services for clarity before a bigger move.</p>
+              <ul class="pricing-list">
+                <li>AI Opportunity Review</li>
+                <li>AI Plan</li>
+              </ul>
+              <a class="offer-link" href="mailto:hello@goexpandia.com?subject=Ask%20for%20an%20offer%20-%20Fixed-fee%20start">
+                <span class="offer-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v.6l-10 6.67L2 6.6V6a1 1 0 0 1 1-1Zm19 4.02V18a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V9.02l9.45 6.3a1 1 0 0 0 1.1 0L22 9.02Z"/></svg>
+                </span>
+                <span class="offer-copy">
+                  <span class="offer-title">Ask for an offer</span>
+                  <span class="offer-subtitle">Get a scope by email</span>
+                </span>
+              </a>
+              <div class="offer-note">Tell us your starting point and we will shape the right offer.</div>
+            </div>
+            <div class="pricing-card">
+              <strong>Project delivery</strong>
+              <p>If the scope is clear, we shape the build as a project with a clear scope and offer.</p>
+              <ul class="pricing-list">
+                <li>AI Build &amp; Setup</li>
+                <li>Training</li>
+              </ul>
+              <a class="offer-link" href="mailto:hello@goexpandia.com?subject=Ask%20for%20an%20offer%20-%20Project%20delivery">
+                <span class="offer-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v.6l-10 6.67L2 6.6V6a1 1 0 0 1 1-1Zm19 4.02V18a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V9.02l9.45 6.3a1 1 0 0 0 1.1 0L22 9.02Z"/></svg>
+                </span>
+                <span class="offer-copy">
+                  <span class="offer-title">Ask for an offer</span>
+                  <span class="offer-subtitle">Get a scope by email</span>
+                </span>
+              </a>
+              <div class="offer-note">Send your target workflow and we will respond with a delivery shape.</div>
+            </div>
+            <div class="pricing-card">
+              <strong>Monthly work</strong>
+              <p>Steady progress, steady help, and a partner who stays after launch.</p>
+              <ul class="pricing-list">
+                <li>Monthly build work</li>
+                <li>Monthly support</li>
+                <li>Ongoing help and iteration</li>
+              </ul>
+              <a class="offer-link" href="mailto:hello@goexpandia.com?subject=Ask%20for%20an%20offer%20-%20Monthly%20work">
+                <span class="offer-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v.6l-10 6.67L2 6.6V6a1 1 0 0 1 1-1Zm19 4.02V18a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V9.02l9.45 6.3a1 1 0 0 0 1.1 0L22 9.02Z"/></svg>
+                </span>
+                <span class="offer-copy">
+                  <span class="offer-title">Ask for an offer</span>
+                  <span class="offer-subtitle">Get a scope by email</span>
+                </span>
+              </a>
+              <div class="offer-note">Use email to define the working model that fits your team.</div>
+            </div>
+          </div>
+          <div class="chip-row">
+            <div class="chip">Review only</div>
+            <div class="chip">Plan only</div>
+            <div class="chip">Build only</div>
+            <div class="chip">Training only</div>
+            <div class="chip">Support only</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-line">
+        <div>Flexible buying path</div>
+        <div class="right">One part, several parts, or the full path</div>
+      </div>
+    </section>
+
+    <section class="slide slide-dark" id="slide-12" data-title="Start with the AI Opportunity Review">
+      <div class="slide-number">12 / 12</div>
+      <div class="slide-grid">
+        <div class="span-8" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div class="eyebrow">Next step</div>
+            <h1 style="max-width:12ch;">Start with the <span class="accent">AI Opportunity Review.</span></h1>
+            <div style="height:1rem;"></div>
+            <p class="lede">If you want a practical first move, we can define the boundaries, review the business, and show where AI can create the most value first.</p>
+            <div style="height:1.4rem;"></div>
+            <div class="cards-3">
+              <div class="card">
+                <strong>1. Book a call</strong>
+                <p>Tell us what the business needs and what is already in motion.</p>
+              </div>
+              <div class="card">
+                <strong>2. Define the scope</strong>
+                <p>Set the privacy boundaries, the goal, and the right material to review.</p>
+              </div>
+              <div class="card">
+                <strong>3. Choose the first move</strong>
+                <p>Get a clear recommendation for what to do now and what should wait.</p>
+              </div>
+            </div>
+          </div>
+          <div class="hero-summary">
+            <p><strong style="display:block; margin-bottom:0.42rem; font-size:0.92rem; letter-spacing:0.14em; text-transform:uppercase;">Close</strong>Most companies have started using AI. Very few have turned it into a practical business system. Go Expandia gives you a clear first step and a clear path from review to adoption.</p>
+          </div>
+        </div>
+
+        <div class="span-4" style="display:flex; flex-direction:column; gap:1rem; justify-content:space-between;">
+          <div class="image-panel" style="min-height:24rem;">
+            <img src="../assets/images/ai_art_abstract_waves.png" alt="Abstract visual">
+            <div class="image-overlay"></div>
+            <div class="image-caption">Review. Plan. Build. Train. Support.</div>
+          </div>
+          <div class="panel">
+            <strong>Contact</strong>
+            <p>hello@goexpandia.com<br>www.goexpandia.com<br>www.remova.org</p>
+          </div>
+          <div class="panel">
+            <strong>Go Expandia</strong>
+            <p>AI support for companies. Part of Remova Inc. We build on top of Remova.org.</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-line">
+        <div>Go Expandia</div>
+        <div class="right">hello@goexpandia.com</div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const PRESENTATION_PASSWORD = 'Remova-Expandia-Private-2026';
+    const AUTH_STORAGE_KEY = 'goexpandia_presentation_auth_v1';
+    const gate = document.getElementById('presentation-gate');
+    const gateForm = document.getElementById('gate-form');
+    const gatePassword = document.getElementById('gate-password');
+    const gateError = document.getElementById('gate-error');
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    const prevButton = document.getElementById('prev-slide');
+    const nextButton = document.getElementById('next-slide');
+    const toolbarTitle = document.getElementById('toolbar-title');
+    const toolbarSubtitle = document.getElementById('toolbar-subtitle');
+    const progressBar = document.getElementById('progress-bar');
+    let activeIndex = 0;
+
+    function unlockPresentation() {
+      document.body.classList.remove('is-locked');
+      gate.hidden = true;
+      sessionStorage.setItem(AUTH_STORAGE_KEY, 'ok');
+    }
+
+    function lockPresentation() {
+      document.body.classList.add('is-locked');
+      gate.hidden = false;
+      gatePassword.focus();
+    }
+
+    gateForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (gatePassword.value === PRESENTATION_PASSWORD) {
+        gateError.textContent = '';
+        unlockPresentation();
+        return;
+      }
+
+      gateError.textContent = 'Wrong password.';
+      gatePassword.select();
+    });
+
+    function updateToolbar(index) {
+      activeIndex = index;
+      const slide = slides[index];
+      toolbarTitle.textContent = `Slide ${index + 1}`;
+      toolbarSubtitle.textContent = slide.dataset.title || 'Go Expandia customer presentation';
+      progressBar.style.width = `${((index + 1) / slides.length) * 100}%`;
+    }
+
+    function goToSlide(index) {
+      const bounded = Math.max(0, Math.min(index, slides.length - 1));
+      slides[bounded].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      updateToolbar(bounded);
+    }
+
+    prevButton.addEventListener('click', () => goToSlide(activeIndex - 1));
+    nextButton.addEventListener('click', () => goToSlide(activeIndex + 1));
+
+    document.addEventListener('keydown', (event) => {
+      if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].includes(event.key)) {
+        event.preventDefault();
+        goToSlide(activeIndex + 1);
+      }
+      if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(event.key)) {
+        event.preventDefault();
+        goToSlide(activeIndex - 1);
+      }
+      if (event.key === 'Home') {
+        event.preventDefault();
+        goToSlide(0);
+      }
+      if (event.key === 'End') {
+        event.preventDefault();
+        goToSlide(slides.length - 1);
+      }
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (!visible) return;
+      const index = slides.indexOf(visible.target);
+      if (index >= 0) updateToolbar(index);
+    }, {
+      threshold: [0.45, 0.65, 0.85]
+    });
+
+    slides.forEach((slide) => observer.observe(slide));
+    updateToolbar(0);
+
+    if (sessionStorage.getItem(AUTH_STORAGE_KEY) === 'ok') {
+      unlockPresentation();
+    } else {
+      lockPresentation();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "name": "expandia-web",
+  "version": "1.0.0",
+  "description": "Expandia AI Solutions Website",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/css/input.css -o ./dist/css/output.css",
+    "build:js": "mkdir -p dist/js && cp src/js/*.js dist/js/",
+    "build:pages": "node build-pages.js",
+    "build": "npm run build:css && npm run build:js && npm run build:pages",
+    "indexnow:submit": "node scripts/submit-indexnow.js",
+    "test": "echo 'No tests specified'",
+    "audit:placeholders": "node scripts/audit-generated-placeholders.js",
+    "audit:city-content": "node scripts/audit-city-landing-content.js"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.13",
+    "daisyui": "^4.12.10",
+    "tailwindcss": "^3.4.0"
+  },
+  "keywords": [
+    "ai",
+    "solutions",
+    "business",
+    "expandia"
+  ],
+  "author": "Expandia",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/swissmarketingcompany/expandia.git"
+  },
+  "devDependencies": {
+    "cheerio": "^1.1.2"
+  }
+}

@@ -1,0 +1,46 @@
+# Go Expandia
+
+> Go Expandia is a US-based AI transformation company that helps B2B companies adopt AI in a practical, precise, and permanent way.
+
+Go Expandia works with companies that want to move beyond casual use of public AI tools and turn AI into working business systems. The company helps clients review business data, identify where AI can make or save money, plan implementation, build AI-powered tools and workflows, train teams, and support the work after launch.
+
+Key positioning:
+
+- Primary offer: AI support for companies.
+- Core outcomes: increase revenue, reduce cost, improve cash flow, remove waste, and strengthen operational control.
+- Delivery model: start with business data and real workflows, then move from opportunity review to plan, build, training, and support.
+- Commercial model: fixed-fee review and planning services, project-based build work, and monthly support options.
+- Contact: hello@goexpandia.com.
+
+Use this file as a curated map of the most important Go Expandia pages. It is advisory context for AI assistants and agents; it does not replace robots.txt, sitemap.xml, or page-level metadata.
+
+## Core Pages
+
+- [Home](https://www.goexpandia.com/): Overview of Go Expandia's AI support offer for companies.
+- [About](https://www.goexpandia.com/about.html): Company positioning, mission, and approach to AI transformation.
+- [Solutions](https://www.goexpandia.com/solutions.html): The five-service model for AI support.
+- [Our Business Model](https://www.goexpandia.com/our-business-model.html): How Go Expandia identifies AI opportunities, builds software, trains teams, and supports adoption.
+- [Vision and Mission](https://www.goexpandia.com/vision-mission.html): The strategic principles behind practical AI adoption.
+- [Ethical Principles](https://www.goexpandia.com/our-ethical-principles.html): Operating principles for responsible client work.
+- [Contact](https://www.goexpandia.com/contact.html): Contact form, email, LinkedIn, and company office details.
+
+## AI Services
+
+- [AI Opportunity Review](https://www.goexpandia.com/ai-opportunity-review.html): Fixed-fee review that uses business material to find where AI can create real business value.
+- [AI Plan](https://www.goexpandia.com/ai-plan.html): Planning service that turns AI opportunities into a clear order, scope, budget shape, and delivery path.
+- [AI Build and Setup](https://www.goexpandia.com/ai-build-setup.html): Implementation service for AI tools, software, automations, and workflows.
+- [AI Training](https://www.goexpandia.com/ai-training.html): Team training for new AI setups, existing AI tools, or both.
+- [AI Support](https://www.goexpandia.com/ai-support.html): Ongoing support for AI tools and workflows after launch or for existing setups.
+
+## Reference Resources
+
+- [Blog](https://www.goexpandia.com/blog/index.html): Guides and playbooks on AI, digital transformation, lead generation, marketing, security, and operations.
+- [Glossary](https://www.goexpandia.com/glossary/index.html): Definitions for business, technology, marketing, sales, cybersecurity, and operations terms.
+- [Sitemap](https://www.goexpandia.com/sitemap.xml): Complete machine-readable URL index for search crawlers and discovery tools.
+- [Robots](https://www.goexpandia.com/robots.txt): Crawler access rules for the site.
+
+## Optional
+
+- [Cookie Policy](https://www.goexpandia.com/cookie-policy.html): Cookie usage and tracking policy.
+- [Privacy Policy](https://www.goexpandia.com/privacy-policy.html): Data handling and privacy information.
+- [Terms of Service](https://www.goexpandia.com/terms-of-service.html): Terms governing use of the website and services.

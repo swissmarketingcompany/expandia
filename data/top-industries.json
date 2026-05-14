@@ -1,0 +1,154 @@
+[
+  {
+    "id": "manufacturing",
+    "slug": "manufacturing",
+    "name": "Manufacturing",
+    "title": "Enterprise Manufacturing Solutions | Go Expandia",
+    "description": "Enterprise solutions for Manufacturing companies, including secure IT infrastructure, AI automation, and custom software development.",
+    "image": "./assets/local/manufacturing-hero.jpg"
+  },
+  {
+    "id": "consulting",
+    "slug": "consulting",
+    "name": "Consulting",
+    "title": "Enterprise Consulting Solutions | Go Expandia",
+    "description": "Enterprise solutions for Consulting companies, including secure IT infrastructure, AI automation, and custom software development.",
+    "image": "./assets/local/consulting-hero.jpg"
+  },
+  {
+    "id": "manufacturing",
+    "slug": "manufacturing",
+    "name": "Manufacturing",
+    "title": "Enterprise Manufacturing Solutions | Go Expandia",
+    "description": "Enterprise solutions for Manufacturing companies, including secure IT infrastructure, AI automation, and custom software development.",
+    "image": "./assets/local/manufacturing-hero.jpg"
+  },
+  {
+    "id": "fintech",
+    "slug": "fintech",
+    "name": "FinTech",
+    "title": "Enterprise FinTech Solutions | Go Expandia",
+    "description": "Enterprise solutions for FinTech companies, including secure IT infrastructure, AI automation, and custom software development.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "cybersecurity",
+    "slug": "cybersecurity",
+    "name": "Cybersecurity",
+    "title": "Enterprise Cybersecurity Solutions | Go Expandia",
+    "description": "Enterprise solutions for Cybersecurity companies, including secure IT infrastructure, AI automation, and custom software development.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "artificial-intelligence",
+    "slug": "artificial-intelligence",
+    "name": "Artificial Intelligence",
+    "title": "Enterprise Artificial Intelligence Solutions | Go Expandia",
+    "description": "Enterprise solutions for Artificial Intelligence companies, including secure IT infrastructure, AI automation, and custom software development.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "cloud-computing",
+    "slug": "cloud-computing",
+    "name": "Cloud Computing",
+    "title": "Enterprise Cloud Computing Solutions | Go Expandia",
+    "description": "Enterprise solutions for Cloud Computing companies, including secure IT infrastructure, AI automation, and custom software development.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "data-analytics",
+    "slug": "data-analytics",
+    "name": "Data Analytics",
+    "title": "Enterprise Data Analytics Solutions | Go Expandia",
+    "description": "Enterprise solutions for Data Analytics companies, including secure IT infrastructure, AI automation, and custom software development.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "edtech",
+    "slug": "edtech",
+    "name": "EdTech",
+    "title": "Enterprise EdTech Solutions | Go Expandia",
+    "description": "Enterprise solutions for EdTech companies, including secure IT infrastructure, AI automation, and custom software development.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "healthtech",
+    "slug": "healthtech",
+    "name": "HealthTech",
+    "title": "Enterprise HealthTech Solutions | Go Expandia",
+    "description": "Enterprise solutions for HealthTech companies, including secure IT infrastructure, AI automation, and custom software development.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "martech",
+    "slug": "martech",
+    "name": "MarTech",
+    "title": "Enterprise MarTech Solutions | Go Expandia",
+    "description": "Enterprise solutions for MarTech companies, including secure IT infrastructure, AI automation, and custom software development.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "proptech",
+    "slug": "proptech",
+    "name": "PropTech",
+    "title": "Enterprise PropTech Solutions | Go Expandia",
+    "description": "Enterprise solutions for PropTech companies, including secure IT infrastructure, AI automation, and custom software development.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "devops",
+    "slug": "devops",
+    "name": "DevOps",
+    "title": "Enterprise DevOps Solutions | Go Expandia",
+    "description": "Enterprise solutions for DevOps companies, including secure IT infrastructure, AI automation, and custom software development.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "iot",
+    "slug": "iot",
+    "name": "IoT",
+    "title": "Enterprise IoT Solutions | Go Expandia",
+    "description": "Enterprise solutions for IoT companies, including secure IT infrastructure, AI automation, and custom software development.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "robotics",
+    "slug": "robotics",
+    "name": "Robotics",
+    "title": "Enterprise Robotics Solutions | Go Expandia",
+    "description": "Enterprise solutions for Robotics companies, including secure IT infrastructure, AI automation, and custom software development.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "blockchain",
+    "slug": "blockchain",
+    "name": "Blockchain",
+    "title": "Enterprise Blockchain Solutions | Go Expandia",
+    "description": "Enterprise solutions for Blockchain companies, including secure IT infrastructure, AI automation, and custom software development.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "ecommerce",
+    "slug": "ecommerce",
+    "name": "Ecommerce",
+    "title": "Enterprise Ecommerce Solutions | Go Expandia",
+    "description": "Enterprise solutions for Ecommerce companies, including secure IT infrastructure, AI automation, and custom software development.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "management-consulting",
+    "slug": "management-consulting",
+    "name": "Management Consulting",
+    "title": "Enterprise Management Consulting Solutions | Go Expandia",
+    "description": "Enterprise solutions for Management Consulting companies, including secure IT infrastructure, AI automation, and custom software development.",
+    "image": "./assets/local/default-industry.jpg"
+  },
+  {
+    "id": "legal-services",
+    "slug": "legal-services",
+    "name": "Legal Services",
+    "title": "Enterprise Legal Services Solutions | Go Expandia",
+    "description": "Enterprise solutions for Legal Services companies, including secure IT infrastructure, AI automation, and custom software development.",
+    "image": "./assets/local/default-industry.jpg"
+  }
+]

@@ -1,0 +1,8 @@
+/presentation
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet, noimageindex
+
+/presentation/
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet, noimageindex
+
+/presentation/*
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet, noimageindex

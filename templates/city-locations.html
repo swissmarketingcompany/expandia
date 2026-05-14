@@ -1,0 +1,77 @@
+<!-- Hero Section -->
+<section class="py-12 md:py-16 bg-buzz-warm">
+    <div class="container mx-auto container-padding">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                <span class="gradient-header">Cities We Serve</span><br>
+                <span class="text-base-content">Using Our 5-Step AI Business Model</span>
+            </h1>
+            <p class="text-lg md:text-xl text-base-content/80 max-w-3xl mx-auto mb-8">
+                Explore our location coverage across {{CITY_COUNT}}+ cities worldwide.
+                Each city page shows how local teams can start with AI review, plan, build and setup, training, and support.
+            </p>
+            <p class="text-base md:text-lg text-base-content/70 max-w-2xl mx-auto">
+                Main office: Delaware, United States.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Interactive Map Section -->
+<section class="bg-base-100">
+    <div class="map-container">
+        <div id="map"></div>
+        <div class="map-legend">
+            <h3 class="font-bold mb-3 text-sm">Regions</h3>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #111827; border-radius: 0.35rem;"></div>
+                <span class="text-xs">Main Office (Delaware)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #cb102c;"></div>
+                <span class="text-xs">DACH</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #e86100;"></div>
+                <span class="text-xs">Western Europe</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #ff6b35;"></div>
+                <span class="text-xs">Southern Europe</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #4a90e2;"></div>
+                <span class="text-xs">Scandinavia</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #9b59b6;"></div>
+                <span class="text-xs">Eastern Europe</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #e74c3c;"></div>
+                <span class="text-xs">North America</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #16a085;"></div>
+                <span class="text-xs">Western Asia</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #95a5a6;"></div>
+                <span class="text-xs">Europe</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- City List Section -->
+<section class="section-spacing bg-base-200">
+    <div class="container mx-auto container-padding">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">All Locations</h2>
+        <p class="text-center text-base-content/70 max-w-3xl mx-auto mb-8">
+            Use the map or browse the list to find the city page most relevant to your market.
+        </p>
+        <div id="city-list" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <!-- Cities will be populated by JavaScript -->
+        </div>
+    </div>
+</section>

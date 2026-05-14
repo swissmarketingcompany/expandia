@@ -1,0 +1,192 @@
+<!-- Navigation -->
+<nav class="navbar bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-30 border-b border-gray-100">
+    <div class="container mx-auto px-4 lg:px-8 flex items-center justify-between h-16">
+        <a href="{{BASE_PATH}}index.html" class="flex-shrink-0">
+            <img src="{{LOGO_PATH}}" alt="Go Expandia" class="h-12 md:h-14">
+        </a>
+
+        <div class="hidden lg:flex items-center gap-1">
+            <a href="{{BASE_PATH}}index.html"
+                class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50">Home</a>
+
+            <div class="relative" id="services-dropdown">
+                <button onclick="toggleDropdown('services-menu')"
+                    class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
+                    Solutions
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="services-menu"
+                    class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
+                    style="width: 560px;">
+                    <div class="grid grid-cols-2 divide-x divide-gray-100">
+                        <div class="p-6">
+                            <a href="{{BASE_PATH}}ai-content-infrastructure.html" class="block mb-4 group">
+                                <h3 class="text-xs font-bold text-primary uppercase tracking-wider flex items-center gap-2 group-hover:text-primary/80 transition-colors">
+                                    <span class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
+                                        <i data-lucide="bot" class="w-4 h-4"></i>
+                                    </span>
+                                    AI Solutions
+                                </h3>
+                            </a>
+                            <ul class="space-y-1">
+                                <li><a href="{{BASE_PATH}}corporate-ai-infrastructure-setup.html" class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                    <span class="text-sm font-semibold text-gray-900">Corporate AI Infrastructure Setup</span>
+                                    <p class="text-xs text-gray-500 mt-0.5">Secure company AI environments</p>
+                                </a></li>
+                                <li><a href="{{BASE_PATH}}ai-data-security-layer.html" class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                    <span class="text-sm font-semibold text-gray-900">AI Data Security Layer</span>
+                                    <p class="text-xs text-gray-500 mt-0.5">Keep data out of external LLMs</p>
+                                </a></li>
+                                <li><a href="{{BASE_PATH}}agentic-ai-development.html" class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                    <span class="text-sm font-semibold text-gray-900">Agentic AI Development</span>
+                                    <p class="text-xs text-gray-500 mt-0.5">Automate repeatable tasks</p>
+                                </a></li>
+                            </ul>
+                        </div>
+                        <div class="p-6">
+                            <a href="{{BASE_PATH}}custom-software-development.html" class="block mb-4 group">
+                                <h3 class="text-xs font-bold text-neutral uppercase tracking-wider flex items-center gap-2 group-hover:text-neutral/80 transition-colors">
+                                    <span class="w-6 h-6 rounded bg-neutral/10 flex items-center justify-center text-neutral group-hover:bg-neutral/20 transition-colors">
+                                        <i data-lucide="code-2" class="w-4 h-4"></i>
+                                    </span>
+                                    Custom Software
+                                </h3>
+                            </a>
+                            <ul class="space-y-1">
+                                <li><a href="{{BASE_PATH}}custom-erp-crm-integrations.html" class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                    <span class="text-sm font-semibold text-gray-900">ERP / CRM Integrations</span>
+                                    <p class="text-xs text-gray-500 mt-0.5">Connect core systems</p>
+                                </a></li>
+                                <li><a href="{{BASE_PATH}}enterprise-bi-dashboards.html" class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                    <span class="text-sm font-semibold text-gray-900">Enterprise BI & Dashboards</span>
+                                    <p class="text-xs text-gray-500 mt-0.5">Real-time reporting</p>
+                                </a></li>
+                                <li><a href="{{BASE_PATH}}legacy-system-modernization.html" class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                    <span class="text-sm font-semibold text-gray-900">Legacy Modernization</span>
+                                    <p class="text-xs text-gray-500 mt-0.5">Modernize old software</p>
+                                </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 px-6 py-4 flex items-center justify-between border-t border-gray-100">
+                        <p class="text-sm text-gray-600">Ready to map the right solution set?</p>
+                        <a href="{{BASE_PATH}}contact.html" class="btn btn-primary btn-sm">Book a Call</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative" id="company-dropdown">
+                <button onclick="toggleDropdown('company-menu')"
+                    class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
+                    Company
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="company-menu"
+                    class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
+                    style="width: 420px;">
+                    <div class="grid grid-cols-1 divide-y divide-gray-100">
+                        <div class="p-4">
+                            <a href="{{BASE_PATH}}about.html" class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                <span class="text-sm font-semibold text-gray-900">About Us</span>
+                                <p class="text-xs text-gray-500 mt-0.5">Who we are and what we do</p>
+                            </a>
+                            <a href="{{BASE_PATH}}{{VISION_MISSION_PAGE}}" class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                <span class="text-sm font-semibold text-gray-900">Vision & Mission</span>
+                                <p class="text-xs text-gray-500 mt-0.5">Our direction and values</p>
+                            </a>
+                            <a href="{{BASE_PATH}}{{ETHICAL_PRINCIPLES_PAGE}}" class="block p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                                <span class="text-sm font-semibold text-gray-900">Ethics & Values</span>
+                                <p class="text-xs text-gray-500 mt-0.5">How we operate</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+
+            <a href="{{BASE_PATH}}contact.html"
+                class="btn btn-primary btn-sm lg:btn-md shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-shadow hidden sm:inline-flex">Contact</a>
+
+            <div class="lg:hidden relative">
+                <button onclick="toggleMobileMenu()" class="btn btn-ghost btn-sm">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <div id="mobile-menu"
+                    class="hidden fixed top-16 right-0 max-h-[500px] w-80 bg-white shadow-2xl z-[999] overflow-y-auto overscroll-contain border-l border-gray-100 rounded-bl-2xl">
+                    <ul class="menu p-3 w-full text-xs">
+                        <li><a href="{{BASE_PATH}}index.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">Home</a></li>
+                        <li><a href="{{BASE_PATH}}solutions.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">Solutions</a></li>
+                        <li class="mt-2">
+                            <span class="text-[10px] font-bold text-primary uppercase tracking-wider px-2 py-1 bg-primary/5 rounded-lg mb-1">Solutions</span>
+                            <ul class="pl-0 space-y-0.5">
+                                <li><a href="{{BASE_PATH}}solutions.html#ai-solutions" class="py-2 px-3 rounded-lg hover:bg-gray-50">AI Solutions</a></li>
+                                <li><a href="{{BASE_PATH}}solutions.html#custom-software" class="py-2 px-3 rounded-lg hover:bg-gray-50">Custom Software</a></li>
+                            </ul>
+                        </li>
+                        <li class="mt-4 pt-2 border-t border-gray-100">
+                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider px-2 py-1 bg-gray-50 rounded-lg mb-1">Company</span>
+                            <ul class="pl-0 space-y-0.5">
+                                <li><a href="{{BASE_PATH}}about.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">About Us</a></li>
+                                <li><a href="{{BASE_PATH}}contact.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">Contact</a></li>
+                            </ul>
+                        </li>
+                        <li class="mt-2 pt-2 border-t border-gray-50">
+                            <a href="{{BASE_PATH}}contact.html"
+                                class="btn btn-primary btn-sm w-full text-xs min-h-0 h-9 font-bold shadow-sm">Get Started</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
+    }
+
+    function toggleDropdown(menuId) {
+        const allMenus = ['services-menu', 'company-menu'];
+        allMenus.forEach(id => {
+            const menu = document.getElementById(id);
+            if (menu && id !== menuId) {
+                menu.classList.add('hidden');
+            }
+        });
+        const menu = document.getElementById(menuId);
+        if (menu) {
+            menu.classList.toggle('hidden');
+        }
+    }
+
+    document.addEventListener('click', function (e) {
+        const servicesDropdown = document.getElementById('services-dropdown');
+        const companyDropdown = document.getElementById('company-dropdown');
+
+        if (servicesDropdown && !servicesDropdown.contains(e.target)) {
+            document.getElementById('services-menu')?.classList.add('hidden');
+        }
+        if (companyDropdown && !companyDropdown.contains(e.target)) {
+            document.getElementById('company-menu')?.classList.add('hidden');
+        }
+    });
+</script>
