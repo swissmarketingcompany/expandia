@@ -382,7 +382,7 @@
                 </div>
             </div>
             <div class="relative">
-                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80"
+                <img src="./assets/images/revops_infrastructure_dashboard.png"
                     alt="AI Agent Development" class="rounded-3xl shadow-2xl w-full object-cover aspect-[4/3]">
             </div>
         </div>
@@ -497,7 +497,7 @@
                 </div>
             </div>
             <div class="relative">
-                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80" alt="AI Agent Development" class="rounded-3xl shadow-2xl w-full object-cover aspect-square">
+                <img src="./assets/images/revops_infrastructure_dashboard.png" alt="AI Agent Development" class="rounded-3xl shadow-2xl w-full object-cover aspect-square">
             </div>
         </div>
     </div>
@@ -706,11 +706,14 @@
     
     <!-- Lucide Icons & Vivus Init -->
     <script>
-      lucide.createIcons();
+      if (window.lucide && typeof window.lucide.createIcons === 'function') {
+          window.lucide.createIcons();
+      }
       
       // Initialize Vivus on hover for all Lucide icons
       document.addEventListener('DOMContentLoaded', function() {
           setTimeout(function() {
+              if (!window.Vivus) return;
               const icons = document.querySelectorAll('.lucide');
               icons.forEach(icon => {
                   // Only animate if it's an SVG

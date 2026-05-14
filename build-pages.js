@@ -1018,7 +1018,7 @@ const SOLUTION_PAGE_BLUEPRINTS = {
             titlePrefix: 'Custom Software',
             titleSuffix: 'Built Around Your Company',
             description: 'We design and build business software that connects your systems, removes manual work, and gives teams the interfaces they need to move faster.',
-            image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&q=80',
+            image: './assets/images/expandia managed operations.png',
             alt: 'Custom software development',
             primaryCtaText: 'Discuss Your Build',
             primaryCtaLink: 'contact.html',
@@ -1146,7 +1146,7 @@ const SOLUTION_PAGE_BLUEPRINTS = {
             titlePrefix: 'AI Build & Setup',
             titleSuffix: '',
             description: 'We implement the approved AI opportunities as working tools, AI systems, automations, and workflows.',
-            image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&q=80',
+            image: './assets/images/expandia managed operations.png',
             alt: 'AI microapps and workflow setup',
             primaryCtaText: 'Talk to Us',
             primaryCtaLink: 'contact.html',
@@ -2117,8 +2117,8 @@ function buildGenericServiceBlueprint(service, lang = 'en') {
     }
 
     const heroImageMap = {
-        'ai-solutions': 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
-        'custom-software': 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&q=80'
+        'ai-solutions': './assets/images/revops_infrastructure_dashboard.png',
+        'custom-software': './assets/images/expandia managed operations.png'
     };
 
     const heroDescription = stripServiceDescription(service.description_template || service.title_template || service.name);
@@ -3284,7 +3284,9 @@ function buildBlogPost(templateName, outputName) {
     const lucideScript = `
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
-        lucide.createIcons();
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+            window.lucide.createIcons();
+        }
         
         // FAQ Toggle Functionality
         document.addEventListener('DOMContentLoaded', function() {
@@ -4655,12 +4657,29 @@ function ensureHubSpotEmbedOnPublishedPages() {
 function normalizeLanguageSwitchPlaceholders() {
     const roots = ['.', 'blog', 'glossary'];
     const htmlFiles = [];
+    const ignoredDirs = new Set([
+        '.git',
+        '.github',
+        '.playwright-cli',
+        'assets',
+        'data',
+        'dist',
+        'includes',
+        'node_modules',
+        'output',
+        'scripts',
+        'src',
+        'templates'
+    ]);
 
     function collectHtmlFiles(dir) {
         if (!fs.existsSync(dir)) return;
         fs.readdirSync(dir, { withFileTypes: true }).forEach(entry => {
             const fullPath = path.join(dir, entry.name);
             if (entry.isDirectory()) {
+                if (ignoredDirs.has(entry.name)) {
+                    return;
+                }
                 collectHtmlFiles(fullPath);
                 return;
             }

@@ -700,11 +700,6 @@
     </div>
 </section>
 
-<script src="https://unpkg.com/lucide@latest"></script>
-<script>
-    lucide.createIcons();
-</script>
-
     
     <!-- Footer -->
 <footer class="footer-gradient text-white">
@@ -823,11 +818,14 @@
     
     <!-- Lucide Icons & Vivus Init -->
     <script>
-      lucide.createIcons();
+      if (window.lucide && typeof window.lucide.createIcons === 'function') {
+          window.lucide.createIcons();
+      }
       
       // Initialize Vivus on hover for all Lucide icons
       document.addEventListener('DOMContentLoaded', function() {
           setTimeout(function() {
+              if (!window.Vivus) return;
               const icons = document.querySelectorAll('.lucide');
               icons.forEach(icon => {
                   // Only animate if it's an SVG

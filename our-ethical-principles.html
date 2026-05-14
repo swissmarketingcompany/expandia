@@ -419,19 +419,19 @@
     <div class="container mx-auto container-padding">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div class="text-center p-6 rounded-2xl bg-base-50 hover:shadow-lg transition-all duration-300">
-                <div class="text-3xl md:text-4xl font-black text-primary mb-2">Clear</div>
+                <div class="text-2xl sm:text-3xl md:text-4xl font-black text-primary mb-2 break-words">Clear</div>
                 <p class="font-bold text-base-content/80">No hidden steps or vague claims</p>
             </div>
             <div class="text-center p-6 rounded-2xl bg-base-50 hover:shadow-lg transition-all duration-300">
-                <div class="text-3xl md:text-4xl font-black text-primary mb-2">Private</div>
+                <div class="text-2xl sm:text-3xl md:text-4xl font-black text-primary mb-2 break-words">Private</div>
                 <p class="font-bold text-base-content/80">Boundaries and NDA first</p>
             </div>
             <div class="text-center p-6 rounded-2xl bg-base-50 hover:shadow-lg transition-all duration-300">
-                <div class="text-3xl md:text-4xl font-black text-primary mb-2">Verifiable</div>
+                <div class="text-2xl sm:text-3xl md:text-4xl font-black text-primary mb-2 break-words">Verifiable</div>
                 <p class="font-bold text-base-content/80">Live demos and walkable analysis</p>
             </div>
             <div class="text-center p-6 rounded-2xl bg-base-50 hover:shadow-lg transition-all duration-300">
-                <div class="text-3xl md:text-4xl font-black text-primary mb-2">Responsible</div>
+                <div class="text-2xl sm:text-3xl md:text-4xl font-black text-primary mb-2 break-words">Responsible</div>
                 <p class="font-bold text-base-content/80">Systems built for real adoption</p>
             </div>
         </div>
@@ -696,11 +696,14 @@
     
     <!-- Lucide Icons & Vivus Init -->
     <script>
-      lucide.createIcons();
+      if (window.lucide && typeof window.lucide.createIcons === 'function') {
+          window.lucide.createIcons();
+      }
       
       // Initialize Vivus on hover for all Lucide icons
       document.addEventListener('DOMContentLoaded', function() {
           setTimeout(function() {
+              if (!window.Vivus) return;
               const icons = document.querySelectorAll('.lucide');
               icons.forEach(icon => {
                   // Only animate if it's an SVG

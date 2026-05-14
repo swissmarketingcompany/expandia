@@ -154,11 +154,14 @@ function createHTMLTemplate(lang = 'en', headContent = '', scriptContent = '') {
     
     <!-- Lucide Icons & Vivus Init -->
     <script>
-      lucide.createIcons();
+      if (window.lucide && typeof window.lucide.createIcons === 'function') {
+          window.lucide.createIcons();
+      }
       
       // Initialize Vivus on hover for all Lucide icons
       document.addEventListener('DOMContentLoaded', function() {
           setTimeout(function() {
+              if (!window.Vivus) return;
               const icons = document.querySelectorAll('.lucide');
               icons.forEach(icon => {
                   // Only animate if it's an SVG

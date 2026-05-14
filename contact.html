@@ -129,7 +129,7 @@
         "name": "How do you ensure ROI on our investment?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We align every project to measurable outcomes such as reduced downtime, faster response times, lower manual workload, and improved service quality. You get clear milestones and performance tracking from kickoff."
+          "text": "We align every project to measurable outcomes such as lower manual workload, faster response times, fewer handoff delays, better output quality, and clearer adoption metrics. You get clear milestones and performance tracking from kickoff."
         }
       },
       {
@@ -504,7 +504,7 @@
             <div class="mt-8 p-4 bg-base-200 rounded-xl max-w-md mx-auto">
                 <p class="text-sm text-base-content/70">
                     <span class="font-semibold text-primary">Part of Remova Inc.</span><br>
-                    A trusted partner in digital transformation
+                    A trusted partner for practical AI adoption
                 </p>
             </div>
         </div>
@@ -560,7 +560,7 @@
                         <span class="text-primary text-2xl leading-none">+</span>
                     </summary>
                     <div class="pb-4 text-base-content/80">
-                        <p>We align every project to measurable outcomes such as reduced downtime, faster response times, lower manual workload, and improved service quality. You get clear milestones and performance tracking from kickoff.</p>
+                        <p>We align every project to measurable outcomes such as lower manual workload, faster response times, fewer handoff delays, better output quality, and clearer adoption metrics. You get clear milestones and performance tracking from kickoff.</p>
                     </div>
                 </details>
 
@@ -696,11 +696,14 @@
     
     <!-- Lucide Icons & Vivus Init -->
     <script>
-      lucide.createIcons();
+      if (window.lucide && typeof window.lucide.createIcons === 'function') {
+          window.lucide.createIcons();
+      }
       
       // Initialize Vivus on hover for all Lucide icons
       document.addEventListener('DOMContentLoaded', function() {
           setTimeout(function() {
+              if (!window.Vivus) return;
               const icons = document.querySelectorAll('.lucide');
               icons.forEach(icon => {
                   // Only animate if it's an SVG
