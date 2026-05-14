@@ -21,7 +21,6 @@ const brand = {
     line: '#eaded5',
     green: '#197a55',
     blue: '#2f6fdb',
-    amber: '#c47b00',
 };
 
 const clamp = {
@@ -31,33 +30,33 @@ const clamp = {
 
 const ease = (frame: number, from: number, to: number) => interpolate(frame, [from, to], [0, 1], clamp);
 
-const pop = (start: number) => {
+const usePop = (start: number, distance = 28) => {
     const frame = useCurrentFrame();
     const { fps } = useVideoConfig();
     const value = spring({
         frame: frame - start,
         fps,
-        config: { damping: 18, stiffness: 150, mass: 0.82 },
+        config: { damping: 20, stiffness: 160, mass: 0.78 },
     });
 
     return {
-        opacity: ease(frame, start, start + 12),
-        transform: `translateY(${interpolate(value, [0, 1], [24, 0])}px) scale(${interpolate(value, [0, 1], [0.96, 1])})`,
+        opacity: ease(frame, start, start + 16),
+        transform: `translateY(${interpolate(value, [0, 1], [distance, 0])}px) scale(${interpolate(value, [0, 1], [0.97, 1])})`,
     };
 };
 
-const Shell = ({ children, label }: { children: React.ReactNode; label: string }) => {
+const Layout = ({ children, eyebrow }: { children: React.ReactNode; eyebrow: string }) => {
     const frame = useCurrentFrame();
-    const drift = interpolate(frame, [0, 660], [0, 36], clamp);
+    const drift = interpolate(frame, [0, 540], [0, 34], clamp);
 
     return (
         <AbsoluteFill
             style={{
                 background: brand.cream,
                 backgroundImage:
-                    'linear-gradient(rgba(203,16,44,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(203,16,44,0.05) 1px, transparent 1px)',
-                backgroundSize: '42px 42px',
-                backgroundPosition: `${-drift}px ${-drift * 0.6}px`,
+                    'linear-gradient(135deg, rgba(203,16,44,0.08) 0%, rgba(255,255,255,0) 42%), linear-gradient(rgba(20,27,42,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(20,27,42,0.045) 1px, transparent 1px)',
+                backgroundSize: '100% 100%, 46px 46px, 46px 46px',
+                backgroundPosition: `0 0, ${-drift}px ${-drift * 0.7}px, ${-drift}px ${-drift * 0.7}px`,
                 color: brand.ink,
                 fontFamily: 'Inter, Arial, sans-serif',
                 overflow: 'hidden',
@@ -67,362 +66,362 @@ const Shell = ({ children, label }: { children: React.ReactNode; label: string }
                 style={{
                     position: 'absolute',
                     top: 34,
-                    left: 46,
-                    right: 46,
-                    height: 54,
+                    left: 52,
+                    right: 52,
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'space-between',
-                    fontWeight: 950,
+                    justifyContent: 'flex-end',
+                    zIndex: 5,
                 }}
             >
-                <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-                    <div
-                        style={{
-                            width: 34,
-                            height: 34,
-                            borderRadius: 9,
-                            background: brand.red,
-                            color: brand.white,
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            fontSize: 26,
-                        }}
-                    >
-                        +
-                    </div>
-                    <div style={{ fontSize: 26, color: brand.red }}>go expandia</div>
-                </div>
                 <div
                     style={{
                         border: `1px solid ${brand.line}`,
-                        background: 'rgba(255,255,255,0.82)',
-                        padding: '12px 18px',
-                        borderRadius: 16,
+                        background: 'rgba(255,255,255,0.84)',
+                        padding: '11px 18px',
+                        borderRadius: 999,
                         color: brand.slate,
-                        fontSize: 20,
+                        fontSize: 19,
+                        fontWeight: 900,
                     }}
                 >
-                    {label}
+                    {eyebrow}
                 </div>
+            </div>
+            <div
+                style={{
+                    position: 'absolute',
+                    left: 52,
+                    right: 52,
+                    bottom: 30,
+                    height: 7,
+                    borderRadius: 99,
+                    background: '#efdfd6',
+                    overflow: 'hidden',
+                    zIndex: 5,
+                }}
+            >
+                <div
+                    style={{
+                        width: `${interpolate(frame, [0, 539], [0, 100], clamp)}%`,
+                        height: '100%',
+                        background: brand.red,
+                        borderRadius: 99,
+                    }}
+                />
             </div>
             {children}
         </AbsoluteFill>
     );
 };
 
-const Pill = ({ children, color = brand.red }: { children: React.ReactNode; color?: string }) => (
+const Label = ({ children, tone = brand.red }: { children: React.ReactNode; tone?: string }) => (
     <div
         style={{
             display: 'inline-flex',
             alignItems: 'center',
             gap: 10,
-            padding: '11px 16px',
-            borderRadius: 999,
-            background: `${color}16`,
-            border: `1px solid ${color}35`,
-            color,
-            fontSize: 22,
-            fontWeight: 950,
             width: 'fit-content',
+            borderRadius: 999,
+            background: `${tone}17`,
+            border: `1px solid ${tone}36`,
+            color: tone,
+            padding: '11px 17px',
+            fontSize: 21,
+            fontWeight: 950,
         }}
     >
-        <span style={{ width: 9, height: 9, borderRadius: 99, background: color }} />
+        <span style={{ width: 9, height: 9, borderRadius: 99, background: tone }} />
         {children}
     </div>
 );
 
-const Panel = ({ children, style = {} }: { children: React.ReactNode; style?: React.CSSProperties }) => (
+const BigNumber = ({ value, color }: { value: string; color: string }) => (
     <div
         style={{
-            background: 'rgba(255,255,255,0.94)',
-            border: `1px solid ${brand.line}`,
-            borderRadius: 22,
-            boxShadow: '0 22px 56px rgba(20,27,42,0.13)',
-            ...style,
+            width: 92,
+            height: 92,
+            borderRadius: 24,
+            background: color,
+            color: brand.white,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: 46,
+            fontWeight: 950,
+            boxShadow: `0 18px 42px ${color}33`,
         }}
     >
-        {children}
+        {value}
     </div>
 );
 
-const Progress = () => {
-    const frame = useCurrentFrame();
-    const width = interpolate(frame, [0, 659], [0, 100], clamp);
-    return (
-        <div style={{ position: 'absolute', left: 46, right: 46, bottom: 28, height: 7, borderRadius: 99, background: '#efdfd6', overflow: 'hidden' }}>
-            <div style={{ width: `${width}%`, height: '100%', background: brand.red, borderRadius: 99 }} />
+const MarketingScene = ({
+    eyebrow,
+    step,
+    question,
+    answer,
+    color,
+    children,
+}: {
+    eyebrow: string;
+    step: string;
+    question: string;
+    answer: string;
+    color: string;
+    children: React.ReactNode;
+}) => (
+    <Layout eyebrow={eyebrow}>
+        <div style={{ position: 'absolute', left: 84, top: 142, width: 660, ...usePop(0) }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 18 }}>
+                <BigNumber value={step} color={color} />
+                <Label tone={color}>AI automation agency</Label>
+            </div>
+            <h1
+                style={{
+                    margin: '34px 0 22px',
+                    fontSize: 76,
+                    lineHeight: 0.94,
+                    fontWeight: 950,
+                    maxWidth: 700,
+                }}
+            >
+                {question}
+            </h1>
+            <p
+                style={{
+                    margin: 0,
+                    fontSize: 34,
+                    lineHeight: 1.22,
+                    color: brand.slate,
+                    fontWeight: 760,
+                    maxWidth: 665,
+                }}
+            >
+                {answer}
+            </p>
         </div>
-    );
-};
+        {children}
+    </Layout>
+);
 
-const SearchScene = () => {
+const DefinitionVisual = () => {
     const frame = useCurrentFrame();
-    const query = 'ai automation agency near me';
-    const count = Math.floor(interpolate(frame, [18, 84], [0, query.length], clamp));
-    const results = ['Workflow audit', 'AI agent build', 'Human approval', 'ROI dashboard'];
-
-    return (
-        <Shell label="search intent">
-            <div style={{ position: 'absolute', left: 74, top: 142, width: 600, ...pop(0) }}>
-                <Pill>Scene 1: buyer intent</Pill>
-                <h1 style={{ margin: '24px 0 18px', fontSize: 70, lineHeight: 0.96, fontWeight: 950 }}>
-                    They are not searching for AI hype.
-                </h1>
-                <p style={{ margin: 0, fontSize: 31, lineHeight: 1.28, color: brand.slate }}>
-                    They want a local-feeling partner who can understand the workflow and launch the pilot.
-                </p>
-            </div>
-            <Panel style={{ position: 'absolute', right: 74, top: 148, width: 510, padding: 26, ...pop(24) }}>
-                <div
-                    style={{
-                        height: 62,
-                        borderRadius: 18,
-                        border: `2px solid ${brand.red}`,
-                        display: 'flex',
-                        alignItems: 'center',
-                        padding: '0 20px',
-                        fontSize: 26,
-                        fontWeight: 950,
-                    }}
-                >
-                    {query.slice(0, count)}
-                    <span style={{ color: brand.red }}>{frame % 26 < 13 ? '|' : ''}</span>
-                </div>
-                <div style={{ display: 'grid', gap: 12, marginTop: 22 }}>
-                    {results.map((item, index) => {
-                        const reveal = ease(frame, 88 + index * 12, 104 + index * 12);
-                        return (
-                            <div
-                                key={item}
-                                style={{
-                                    opacity: reveal,
-                                    transform: `translateX(${interpolate(reveal, [0, 1], [28, 0])}px)`,
-                                    padding: '14px 16px',
-                                    borderRadius: 15,
-                                    background: index === 0 ? '#fde8df' : '#f8fafc',
-                                    border: `1px solid ${index === 0 ? `${brand.red}40` : '#e2e8f0'}`,
-                                    fontSize: 24,
-                                    fontWeight: 950,
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: 12,
-                                }}
-                            >
-                                <span style={{ width: 20, height: 20, borderRadius: 6, background: [brand.red, brand.blue, brand.amber, brand.green][index] }} />
-                                {item}
-                            </div>
-                        );
-                    })}
-                </div>
-            </Panel>
-            <Progress />
-        </Shell>
-    );
-};
-
-const MovingCard = ({ title, caption, color, index }: { title: string; caption: string; color: string; index: number }) => {
-    const frame = useCurrentFrame();
-    const phase = (frame + index * 18) % 86;
-    const lift = interpolate(phase, [0, 43, 86], [0, -12, 0]);
-
-    return (
-        <div
-            style={{
-                padding: 18,
-                borderRadius: 18,
-                border: `2px solid ${color}`,
-                background: brand.white,
-                transform: `translateY(${lift}px)`,
-                boxShadow: `0 16px 32px ${color}25`,
-            }}
-        >
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                <span style={{ width: 18, height: 18, borderRadius: 6, background: color }} />
-                <div style={{ fontSize: 27, fontWeight: 950 }}>{title}</div>
-            </div>
-            <div style={{ marginTop: 8, fontSize: 19, color: brand.muted, lineHeight: 1.25 }}>{caption}</div>
-        </div>
-    );
-};
-
-const WorkflowScene = () => {
-    const frame = useCurrentFrame();
-    const flow = ease(frame, 35, 152);
-
-    return (
-        <Shell label="workflow audit">
-            <div style={{ position: 'absolute', left: 72, top: 132, right: 72, ...pop(0) }}>
-                <Pill color={brand.blue}>Scene 2: workflow audit</Pill>
-                <h2 style={{ margin: '22px 0 0', fontSize: 60, lineHeight: 1, fontWeight: 950 }}>
-                    Map the stuck handoff before building anything.
-                </h2>
-            </div>
-            <Panel style={{ position: 'absolute', left: 72, right: 72, top: 302, height: 312, padding: 30, ...pop(25) }}>
-                <div style={{ position: 'absolute', left: 256, right: 256, top: 150, height: 5, borderRadius: 99, background: '#eaded5' }}>
-                    <div style={{ width: `${flow * 100}%`, height: '100%', borderRadius: 99, background: brand.red }} />
-                </div>
-                <div
-                    style={{
-                        position: 'absolute',
-                        left: interpolate(flow, [0, 1], [236, 994]),
-                        top: 132,
-                        width: 42,
-                        height: 42,
-                        borderRadius: 14,
-                        background: brand.red,
-                        color: brand.white,
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: 24,
-                        fontWeight: 950,
-                        boxShadow: '0 14px 28px rgba(203,16,44,0.28)',
-                    }}
-                >
-                    AI
-                </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 28, position: 'relative', zIndex: 2 }}>
-                    <MovingCard title="CRM" caption="lead owners and follow-ups" color={brand.red} index={0} />
-                    <MovingCard title="Inbox" caption="requests and replies" color={brand.blue} index={1} />
-                    <MovingCard title="Docs" caption="invoices and PDFs" color={brand.amber} index={2} />
-                    <MovingCard title="Ops" caption="approvals and updates" color={brand.green} index={3} />
-                </div>
-                <div style={{ marginTop: 30, display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 18 }}>
-                    {[
-                        ['manual routing', 78, brand.red],
-                        ['re-entry risk', 66, brand.amber],
-                        ['response lag', 84, brand.blue],
-                    ].map(([label, value, color]) => (
-                        <div key={label as string}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 18, color: brand.slate, fontWeight: 900, marginBottom: 8 }}>
-                                <span>{label}</span>
-                                <span>{value}%</span>
-                            </div>
-                            <div style={{ height: 9, borderRadius: 99, background: '#f0e2d9' }}>
-                                <div style={{ height: '100%', width: `${interpolate(frame, [48, 150], [0, Number(value)], clamp)}%`, borderRadius: 99, background: color as string }} />
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </Panel>
-            <Progress />
-        </Shell>
-    );
-};
-
-const AgentScene = () => {
-    const frame = useCurrentFrame();
-    const tasks = [
-        ['Draft lead reply', 'approve', brand.amber],
-        ['Flag invoice mismatch', 'escalate', brand.red],
-        ['Route support ticket', 'auto-route', brand.green],
-        ['Update CRM record', 'approved', brand.blue],
+    const items = [
+        ['Repetitive work', brand.blue],
+        ['AI workflows', brand.red],
+        ['Time saved', brand.green],
     ] as const;
 
     return (
-        <Shell label="AI agent controls">
-            <div style={{ position: 'absolute', left: 72, top: 130, width: 520, ...pop(0) }}>
-                <Pill color={brand.amber}>Scene 3: controlled agent</Pill>
-                <h2 style={{ margin: '22px 0 16px', fontSize: 58, lineHeight: 1, fontWeight: 950 }}>
-                    The agent moves the queue. People approve the risky actions.
-                </h2>
-                <p style={{ fontSize: 28, lineHeight: 1.28, color: brand.slate, margin: 0 }}>
-                    Every action has a source, a policy check, and a human gate when it matters.
-                </p>
-            </div>
-            <Panel style={{ position: 'absolute', right: 72, top: 130, width: 590, padding: 25, ...pop(22) }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
-                    <div style={{ fontSize: 32, fontWeight: 950 }}>Task queue</div>
-                    <div style={{ padding: '10px 14px', borderRadius: 999, color: brand.green, background: '#e4f4ed', fontSize: 20, fontWeight: 950 }}>pilot live</div>
-                </div>
-                {tasks.map(([task, status, color], index) => {
-                    const reveal = ease(frame, 38 + index * 20, 54 + index * 20);
-                    const pulse = interpolate((frame + index * 9) % 50, [0, 25, 50], [1, 1.05, 1]);
-                    return (
+        <div style={{ position: 'absolute', right: 74, top: 166, width: 430, height: 390 }}>
+            {items.map(([label, color], index) => {
+                const reveal = ease(frame, 28 + index * 14, 50 + index * 14);
+                const y = index * 116;
+                return (
+                    <div
+                        key={label}
+                        style={{
+                            position: 'absolute',
+                            left: index === 1 ? 34 : 0,
+                            top: y,
+                            width: 395,
+                            padding: '24px 26px',
+                            borderRadius: 22,
+                            background: brand.white,
+                            border: `2px solid ${color}35`,
+                            boxShadow: '0 20px 46px rgba(20,27,42,0.12)',
+                            opacity: reveal,
+                            transform: `translateX(${interpolate(reveal, [0, 1], [42, 0])}px)`,
+                        }}
+                    >
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+                            <span style={{ width: 20, height: 20, borderRadius: 7, background: color }} />
+                            <span style={{ fontSize: 28, fontWeight: 950 }}>{label}</span>
+                        </div>
+                    </div>
+                );
+            })}
+        </div>
+    );
+};
+
+const StartVisual = () => {
+    const frame = useCurrentFrame();
+    const steps = [
+        ['Map', 'one workflow'],
+        ['Pick', 'one use case'],
+        ['Launch', 'one pilot'],
+    ] as const;
+
+    return (
+        <div style={{ position: 'absolute', right: 70, top: 154, width: 460, height: 430 }}>
+            <div
+                style={{
+                    position: 'absolute',
+                    left: 82,
+                    top: 62,
+                    bottom: 62,
+                    width: 6,
+                    borderRadius: 99,
+                    background: '#eaded5',
+                }}
+            />
+            <div
+                style={{
+                    position: 'absolute',
+                    left: 82,
+                    top: 62,
+                    width: 6,
+                    height: `${interpolate(frame, [24, 145], [0, 306], clamp)}px`,
+                    borderRadius: 99,
+                    background: brand.red,
+                }}
+            />
+            {steps.map(([title, caption], index) => {
+                const reveal = ease(frame, 28 + index * 28, 54 + index * 28);
+                return (
+                    <div
+                        key={title}
+                        style={{
+                            position: 'absolute',
+                            top: 28 + index * 128,
+                            left: 0,
+                            right: 0,
+                            display: 'grid',
+                            gridTemplateColumns: '88px 1fr',
+                            gap: 24,
+                            alignItems: 'center',
+                            opacity: reveal,
+                            transform: `translateY(${interpolate(reveal, [0, 1], [28, 0])}px)`,
+                        }}
+                    >
                         <div
-                            key={task}
                             style={{
-                                opacity: reveal,
-                                transform: `translateX(${interpolate(reveal, [0, 1], [35, 0])}px) scale(${pulse})`,
-                                display: 'grid',
-                                gridTemplateColumns: '1fr auto',
+                                width: 72,
+                                height: 72,
+                                borderRadius: 22,
+                                background: index === 2 ? brand.red : brand.white,
+                                border: `2px solid ${index === 2 ? brand.red : brand.line}`,
+                                color: index === 2 ? brand.white : brand.red,
+                                display: 'flex',
                                 alignItems: 'center',
-                                gap: 16,
-                                padding: '18px 0',
-                                borderTop: index === 0 ? 'none' : `1px solid ${brand.line}`,
+                                justifyContent: 'center',
+                                fontSize: 30,
+                                fontWeight: 950,
+                                boxShadow: '0 18px 42px rgba(20,27,42,0.12)',
                             }}
                         >
-                            <div>
-                                <div style={{ fontSize: 25, fontWeight: 950 }}>{task}</div>
-                                <div style={{ fontSize: 18, color: brand.muted, marginTop: 5 }}>source linked, log saved</div>
-                            </div>
-                            <div style={{ padding: '10px 13px', borderRadius: 13, background: `${color}18`, color, fontSize: 19, fontWeight: 950 }}>
-                                {status}
-                            </div>
+                            {index + 1}
                         </div>
-                    );
-                })}
-            </Panel>
-            <Progress />
-        </Shell>
+                        <div
+                            style={{
+                                padding: '20px 22px',
+                                borderRadius: 22,
+                                background: brand.white,
+                                border: `1px solid ${brand.line}`,
+                                boxShadow: '0 18px 42px rgba(20,27,42,0.10)',
+                            }}
+                        >
+                            <div style={{ fontSize: 31, fontWeight: 950 }}>{title}</div>
+                            <div style={{ marginTop: 4, fontSize: 22, color: brand.slate, fontWeight: 800 }}>{caption}</div>
+                        </div>
+                    </div>
+                );
+            })}
+        </div>
     );
 };
 
-const ResultScene = () => {
+const CtaScene = () => {
     const frame = useCurrentFrame();
-    const metrics = [
-        ['42h', 'manual work removed', brand.red],
-        ['38%', 'faster first response', brand.green],
-        ['18', 'exceptions caught', brand.blue],
-    ] as const;
+    const pulse = interpolate(frame % 54, [0, 27, 54], [1, 1.035, 1]);
 
     return (
-        <Shell label="measured rollout">
-            <div style={{ position: 'absolute', left: 84, right: 84, top: 130, textAlign: 'center', ...pop(0) }}>
-                <Pill color={brand.green}>Scene 4: measurable pilot</Pill>
-                <h2 style={{ margin: '24px auto 12px', fontSize: 68, lineHeight: 0.96, maxWidth: 1010, fontWeight: 950 }}>
-                    Ship the pilot. Measure the operating result.
-                </h2>
-                <p style={{ margin: '0 auto', fontSize: 29, color: brand.slate, lineHeight: 1.28, maxWidth: 850 }}>
-                    This is what a serious AI automation agency should prove before scaling the system.
-                </p>
-            </div>
-            <div style={{ position: 'absolute', left: 92, right: 92, top: 388, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 22 }}>
-                {metrics.map(([number, label, color], index) => {
-                    const reveal = ease(frame, 40 + index * 20, 72 + index * 20);
-                    return (
-                        <Panel key={label} style={{ padding: 30, textAlign: 'center', borderTop: `8px solid ${color}`, opacity: reveal, transform: `translateY(${interpolate(reveal, [0, 1], [30, 0])}px)` }}>
-                            <div style={{ fontSize: 62, fontWeight: 950, color }}>{number}</div>
-                            <div style={{ marginTop: 8, fontSize: 23, color: brand.slate, fontWeight: 900 }}>{label}</div>
-                        </Panel>
-                    );
-                })}
-            </div>
-            <div style={{ position: 'absolute', left: 0, right: 0, bottom: 64, display: 'flex', justifyContent: 'center', ...pop(128) }}>
-                <div style={{ background: brand.red, color: brand.white, borderRadius: 18, padding: '22px 34px', fontSize: 30, fontWeight: 950, boxShadow: '0 18px 44px rgba(203,16,44,0.28)' }}>
-                    goexpandia.com/contact
+        <Layout eyebrow="next step">
+            <div style={{ position: 'absolute', inset: '120px 82px 82px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ maxWidth: 1020, textAlign: 'center', ...usePop(0, 18) }}>
+                    <Label tone={brand.red}>Start with one high-value workflow</Label>
+                    <h1
+                        style={{
+                            margin: '30px auto 22px',
+                            fontSize: 82,
+                            lineHeight: 0.94,
+                            fontWeight: 950,
+                            maxWidth: 1020,
+                        }}
+                    >
+                        Ready to automate the work slowing your team down?
+                    </h1>
+                    <p
+                        style={{
+                            margin: '0 auto 34px',
+                            fontSize: 33,
+                            lineHeight: 1.22,
+                            color: brand.slate,
+                            fontWeight: 760,
+                            maxWidth: 820,
+                        }}
+                    >
+                        Book an AI automation call and we will identify the first pilot worth building.
+                    </p>
+                    <div
+                        style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            padding: '24px 40px',
+                            borderRadius: 20,
+                            background: brand.red,
+                            color: brand.white,
+                            fontSize: 34,
+                            fontWeight: 950,
+                            transform: `scale(${pulse})`,
+                            boxShadow: '0 24px 56px rgba(203,16,44,0.30)',
+                        }}
+                    >
+                        goexpandia.com/contact
+                    </div>
                 </div>
             </div>
-            <Progress />
-        </Shell>
+        </Layout>
     );
 };
+
+const SceneOne = () => (
+    <MarketingScene
+        eyebrow="quick answer"
+        step="1"
+        question="What is an AI Automation Agency?"
+        answer="A partner that finds repetitive work, connects your tools, and builds AI workflows that save time."
+        color={brand.red}
+    >
+        <DefinitionVisual />
+    </MarketingScene>
+);
+
+const SceneTwo = () => (
+    <MarketingScene
+        eyebrow="starting point"
+        step="2"
+        question="How can we start?"
+        answer="We map one workflow, choose one high-value use case, and launch a focused pilot in weeks."
+        color={brand.blue}
+    >
+        <StartVisual />
+    </MarketingScene>
+);
 
 export const AiAutomationAgencyNearMeVideo = () => (
     <AbsoluteFill>
-        <Sequence from={0} durationInFrames={150}>
-            <SearchScene />
+        <Sequence from={0} durationInFrames={180}>
+            <SceneOne />
         </Sequence>
-        <Sequence from={150} durationInFrames={165}>
-            <WorkflowScene />
+        <Sequence from={180} durationInFrames={180}>
+            <SceneTwo />
         </Sequence>
-        <Sequence from={315} durationInFrames={180}>
-            <AgentScene />
-        </Sequence>
-        <Sequence from={495} durationInFrames={165}>
-            <ResultScene />
+        <Sequence from={360} durationInFrames={180}>
+            <CtaScene />
         </Sequence>
     </AbsoluteFill>
 );
@@ -431,7 +430,7 @@ const Root = () => (
     <Composition
         id="AiAutomationAgencyNearMe"
         component={AiAutomationAgencyNearMeVideo}
-        durationInFrames={660}
+        durationInFrames={540}
         fps={30}
         width={1280}
         height={720}
