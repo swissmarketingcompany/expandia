@@ -5449,7 +5449,13 @@ function generateSitemap() {
     //     });
     // });
 
-    const allPages = [...new Set([...filteredStaticPages, ...solutionPages, ...localizedPages, ...broadCityPages])];
+    const blogPages = fs.existsSync('blog')
+        ? fs.readdirSync('blog')
+            .filter(file => file.endsWith('.html'))
+            .map(file => `blog/${file}`)
+        : [];
+
+    const allPages = [...new Set([...filteredStaticPages, ...solutionPages, ...localizedPages, ...broadCityPages, ...blogPages])];
 
     let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
@@ -5687,6 +5693,9 @@ buildPage('vision-mission', 'vision-mission', 'en');
 buildPage('our-ethical-principles', 'our-ethical-principles', 'en');
 // Build Approved Solution Pages (English)
 services.forEach(service => buildSolutionPage(service.id, service.id, 'en'));
+
+// Build blog posts from templates/blog into blog/.
+buildBlogPosts();
 
 // City landing pages are decommissioned.
 // buildCityLandingPages();
