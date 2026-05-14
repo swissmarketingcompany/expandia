@@ -1,5 +1,297 @@
 [
   {
+    "id": "ai-automation-agency",
+    "name": "AI Automation Agency",
+    "slug_pattern": "ai-automation-agency-{{CITY_SLUG}}",
+    "title_template": "AI Automation Agency {{CITY_NAME}} | Automate Workflows With AI",
+    "description_template": "We act as your AI automation agency, designing and building automations that remove manual work, connect business tools, and turn repetitive workflows into reliable systems.",
+    "icon": "workflow",
+    "template": "city-landing",
+    "category": "ai-solutions",
+    "badge": "Main Service",
+    "commercial_model": "Project delivery or monthly automation partner",
+    "starting_price": "Projects start at EUR 8,000. Monthly automation work starts at EUR 4,000.",
+    "good_fit": "Your team loses time to repeated admin, follow-up, reporting, handoffs, or tool-to-tool work.",
+    "outcomes": [
+      {
+        "title": "Less manual work",
+        "description": "Repetitive tasks move from people to reliable AI-assisted workflows."
+      },
+      {
+        "title": "Faster operations",
+        "description": "Lead routing, reporting, support, approvals, and internal handoffs happen with less delay."
+      },
+      {
+        "title": "Connected systems",
+        "description": "Your CRM, inbox, forms, spreadsheets, databases, and internal tools work together."
+      }
+    ],
+    "problems": [
+      {
+        "icon": "repeat",
+        "title": "The same tasks happen every day",
+        "description": "Your team copies data, sends follow-ups, updates records, prepares reports, or moves work between tools by hand."
+      },
+      {
+        "icon": "git-merge",
+        "title": "Workflows break between systems",
+        "description": "Important work depends on people remembering the next step because your tools are not connected properly."
+      },
+      {
+        "icon": "timer",
+        "title": "Slow handoffs cost revenue and focus",
+        "description": "Leads wait, approvals stall, customer requests sit open, and managers lack current information."
+      }
+    ],
+    "process_steps": [
+      {
+        "title": "We map the workflow",
+        "description": "We identify the repeated tasks, decisions, tools, and exceptions that shape the process."
+      },
+      {
+        "title": "We build the automation",
+        "description": "We connect the systems, add AI where it improves the workflow, and keep human review where judgment is needed."
+      },
+      {
+        "title": "We monitor and improve",
+        "description": "We test the automation, handle edge cases, and keep improving it as the business changes."
+      }
+    ],
+    "faq": [
+      {
+        "q": "What does an AI automation agency actually build?",
+        "a": "We build workflow automations, AI-assisted processes, data routing, reporting flows, support flows, sales follow-up systems, and internal tools that reduce manual work."
+      },
+      {
+        "q": "Can you work with the tools we already use?",
+        "a": "Yes. We usually build around the systems already in place, such as CRM, email, forms, spreadsheets, databases, and internal software."
+      },
+      {
+        "q": "Do all automations run without people?",
+        "a": "No. Some steps should stay human-in-the-loop. We design the workflow so AI handles repeatable work and people handle judgment, approval, and exceptions."
+      }
+    ]
+  },
+  {
+    "id": "ai-consulting-services",
+    "name": "AI Consulting Services",
+    "slug_pattern": "ai-consulting-services-{{CITY_SLUG}}",
+    "title_template": "AI Consulting Services {{CITY_NAME}} | Practical AI Strategy and Roadmaps",
+    "description_template": "We provide practical AI consulting services for companies that need clear priorities, realistic use cases, data boundaries, budget shape, and a delivery roadmap before building.",
+    "icon": "brain-circuit",
+    "template": "city-landing",
+    "category": "ai-solutions",
+    "badge": "Supporting Service",
+    "commercial_model": "Fixed-fee consulting sprint or monthly advisory",
+    "starting_price": "Consulting sprints start at EUR 3,000.",
+    "good_fit": "You know AI matters, but you need a serious plan before spending on tools or development.",
+    "outcomes": [
+      {
+        "title": "Clear AI priorities",
+        "description": "You know which AI opportunities are worth doing first and which ones should wait."
+      },
+      {
+        "title": "Lower implementation risk",
+        "description": "Data, privacy, workflow, team, and budget questions are handled before the build starts."
+      },
+      {
+        "title": "Practical roadmap",
+        "description": "You get a sequence of work that can move from review to build and support."
+      }
+    ],
+    "problems": [
+      {
+        "icon": "circle-help",
+        "title": "Everyone has AI ideas, but no clear order",
+        "description": "Different teams want different tools and nobody knows which use case has the strongest business case."
+      },
+      {
+        "icon": "wallet",
+        "title": "Budget is hard to approve without a plan",
+        "description": "Leadership needs scope, expected value, timeline, and risk before committing to AI work."
+      },
+      {
+        "icon": "shield-question",
+        "title": "Data and privacy rules are unclear",
+        "description": "Teams want to use AI but do not know what data can be used safely or how the workflow should be controlled."
+      }
+    ],
+    "process_steps": [
+      {
+        "title": "We review the business context",
+        "description": "We look at goals, workflows, current tools, pain points, data sources, and operating constraints."
+      },
+      {
+        "title": "We rank the opportunities",
+        "description": "We compare use cases by impact, effort, risk, dependency, and speed to value."
+      },
+      {
+        "title": "We define the roadmap",
+        "description": "You get a practical plan with the first project, supporting work, and next-stage opportunities."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is this strategy only, or do you also build?",
+        "a": "We do both. Consulting can be bought on its own, or it can lead directly into automation, AI agent development, or custom AI solution delivery."
+      },
+      {
+        "q": "Do we need clean data before starting?",
+        "a": "No. Part of the work is understanding what data exists, what is usable, and what needs cleanup or protection."
+      },
+      {
+        "q": "Can you help us choose what not to build?",
+        "a": "Yes. A good AI plan should remove bad ideas as clearly as it prioritizes good ones."
+      }
+    ]
+  },
+  {
+    "id": "ai-agent-development",
+    "name": "AI Agent Development",
+    "slug_pattern": "ai-agent-development-{{CITY_SLUG}}",
+    "title_template": "AI Agent Development {{CITY_NAME}} | Build AI Agents for Business Workflows",
+    "description_template": "We design and build AI agents for business workflows, including research agents, support agents, sales assistants, internal copilots, and task-routing agents with clear human controls.",
+    "icon": "bot",
+    "template": "city-landing",
+    "category": "ai-solutions",
+    "badge": "Supporting Service",
+    "commercial_model": "Agent prototype, production build, or monthly improvement partner",
+    "starting_price": "Agent prototypes start at EUR 5,000. Production builds start at EUR 10,000.",
+    "good_fit": "You want AI to carry out repeatable business tasks, not only answer one-off prompts.",
+    "outcomes": [
+      {
+        "title": "Task-focused AI agents",
+        "description": "Agents are built around specific jobs, tools, data sources, permissions, and expected outputs."
+      },
+      {
+        "title": "Human control",
+        "description": "Review steps, approval rules, escalation paths, and logging are designed into the workflow."
+      },
+      {
+        "title": "Business integration",
+        "description": "Agents connect to the systems and processes your team already uses."
+      }
+    ],
+    "problems": [
+      {
+        "icon": "message-square-more",
+        "title": "Generic chatbots are not enough",
+        "description": "Your team needs AI that can follow a workflow, use business context, and produce structured output."
+      },
+      {
+        "icon": "list-checks",
+        "title": "Tasks need judgment and repeatability",
+        "description": "The work is too structured to stay fully manual, but too important to automate carelessly."
+      },
+      {
+        "icon": "plug-zap",
+        "title": "The agent needs access to real tools",
+        "description": "A useful agent must connect with CRM, ticketing, documents, databases, email, or internal systems."
+      }
+    ],
+    "process_steps": [
+      {
+        "title": "We define the agent job",
+        "description": "We decide exactly what the agent should do, what it should not do, and when a person must review."
+      },
+      {
+        "title": "We build and connect it",
+        "description": "We create the prompts, tools, data access, workflow logic, logging, and user interface needed for daily use."
+      },
+      {
+        "title": "We test edge cases",
+        "description": "We evaluate outputs, improve instructions, add guardrails, and prepare the agent for real work."
+      }
+    ],
+    "faq": [
+      {
+        "q": "What kind of AI agents can you build?",
+        "a": "We can build research agents, sales assistants, support agents, operations copilots, document-processing agents, routing agents, and internal workflow agents."
+      },
+      {
+        "q": "Can agents use our company data?",
+        "a": "Yes, when the data boundaries are clear. We design access, permissions, logging, and privacy rules around the business need."
+      },
+      {
+        "q": "Do agents replace the team?",
+        "a": "Usually no. The best business agents remove repetitive work, prepare decisions, route tasks, and support the team while keeping human control where it matters."
+      }
+    ]
+  },
+  {
+    "id": "custom-ai-solutions-for-businesses",
+    "name": "Custom AI Solutions for Businesses",
+    "slug_pattern": "custom-ai-solutions-for-businesses-{{CITY_SLUG}}",
+    "title_template": "Custom AI Solutions for Businesses {{CITY_NAME}} | Practical AI Systems",
+    "description_template": "We build custom AI solutions for businesses that need tailored software, workflow automation, AI agents, dashboards, data analysis, and internal tools instead of generic AI products.",
+    "icon": "blocks",
+    "template": "city-landing",
+    "category": "custom-software",
+    "badge": "Supporting Service",
+    "commercial_model": "Fixed-scope project or monthly AI product team",
+    "starting_price": "Custom AI solution projects start at EUR 10,000.",
+    "good_fit": "Your use case is specific to your business and cannot be solved well by a generic AI tool.",
+    "outcomes": [
+      {
+        "title": "Tailored AI systems",
+        "description": "The solution is built around your workflow, data, users, and business rules."
+      },
+      {
+        "title": "Production-ready delivery",
+        "description": "The work includes implementation, testing, handover, and practical adoption support."
+      },
+      {
+        "title": "Long-term improvement",
+        "description": "The system can keep improving as the company learns what creates value."
+      }
+    ],
+    "problems": [
+      {
+        "icon": "box",
+        "title": "Generic AI tools do not fit the business",
+        "description": "Off-the-shelf tools cannot follow your process, access the right data, or match the way your team works."
+      },
+      {
+        "icon": "database",
+        "title": "Data is useful but hard to activate",
+        "description": "The company has documents, records, reports, or operational data, but no AI system that can use it properly."
+      },
+      {
+        "icon": "hammer",
+        "title": "The idea needs real software",
+        "description": "The business needs an application, integration, dashboard, or workflow, not only prompts or advice."
+      }
+    ],
+    "process_steps": [
+      {
+        "title": "We define the use case",
+        "description": "We clarify users, inputs, outputs, data boundaries, business rules, and success measures."
+      },
+      {
+        "title": "We build the system",
+        "description": "We create the software, integrations, AI layer, workflows, and interface needed for the use case."
+      },
+      {
+        "title": "We launch and improve",
+        "description": "We test the system, train the team, monitor outputs, and improve the setup after launch."
+      }
+    ],
+    "faq": [
+      {
+        "q": "What makes this different from AI automation?",
+        "a": "AI automation usually improves a workflow. Custom AI solutions can include larger software builds, dashboards, data systems, agents, integrations, and internal applications."
+      },
+      {
+        "q": "Can you build around our existing software?",
+        "a": "Yes. Most custom AI projects connect to existing systems rather than replacing everything."
+      },
+      {
+        "q": "Do you support the system after launch?",
+        "a": "Yes. Support, improvements, and monthly delivery can be included if the solution needs ongoing ownership."
+      }
+    ]
+  },
+  {
     "id": "ai-opportunity-review",
     "name": "AI Opportunity Review",
     "slug_pattern": "ai-opportunity-review-{{CITY_SLUG}}",

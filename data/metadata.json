@@ -1,8 +1,8 @@
 {
   "index": {
-    "title": "AI Support for Companies | Go Expandia",
-    "description": "We help companies find where AI can make or save money, build the right tools, train teams, and support the work after launch.",
-    "keywords": "AI support for companies, AI opportunity review, AI plan, AI build and setup, AI training, AI support, Go Expandia",
+    "title": "AI Agency for Business Automation | Go Expandia",
+    "description": "Go Expandia is an AI agency building custom automations, AI agents, consulting roadmaps, and AI solutions for businesses.",
+    "keywords": "AI agency, AI automation agency, AI consulting services, AI agent development, custom AI solutions for businesses, Go Expandia",
     "translations": {
       "tr": {
         "title": "Yapay Zeka Entegrasyonu ve Özel Yazılım | Go Expandia",
@@ -22,9 +22,9 @@
     }
   },
   "solutions": {
-    "title": "AI Support Services | Go Expandia",
-    "description": "One main solution, five simple services: AI Opportunity Review, AI Plan, AI Build and Setup, AI Training, and AI Support.",
-    "keywords": "AI services, AI support services, AI opportunity review, AI plan, AI build and setup, AI training, AI support",
+    "title": "AI Agency Services | Go Expandia",
+    "description": "Explore Go Expandia's AI agency services: AI automation agency, AI consulting, AI agent development, and custom AI solutions for businesses.",
+    "keywords": "AI agency services, AI automation agency, AI consulting services, AI agent development, custom AI solutions for businesses",
     "translations": {
       "tr": {
         "title": "Yapay Zeka ve Özel Yazılım Çözümleri | Go Expandia",
@@ -42,6 +42,26 @@
         "keywords": "solutions IA, développement logiciel sur mesure, infrastructure d'entreprise"
       }
     }
+  },
+  "ai-automation-agency": {
+    "title": "AI Automation Agency | Go Expandia",
+    "description": "AI automation agency for businesses that need workflow automation, AI-assisted operations, connected tools, and less manual work.",
+    "keywords": "AI automation agency, AI automation services, workflow automation AI, business AI automation, AI agency"
+  },
+  "ai-consulting-services": {
+    "title": "AI Consulting Services | Go Expandia",
+    "description": "Practical AI consulting services for companies that need clear priorities, realistic use cases, data boundaries, and a delivery roadmap.",
+    "keywords": "AI consulting services, AI consulting, artificial intelligence consulting, AI strategy consulting, AI agency"
+  },
+  "ai-agent-development": {
+    "title": "AI Agent Development | Go Expandia",
+    "description": "AI agent development for business workflows, internal copilots, support agents, sales assistants, research agents, and task-routing agents.",
+    "keywords": "AI agent development, AI agents for business, AI agent agency, AI agent development company, business AI agents"
+  },
+  "custom-ai-solutions-for-businesses": {
+    "title": "Custom AI Solutions for Businesses | Go Expandia",
+    "description": "Custom AI solutions for businesses that need tailored AI software, workflow automation, agents, dashboards, and internal tools.",
+    "keywords": "custom AI solutions for businesses, custom AI development, AI solutions, AI software development, AI agency"
   },
   "ai-opportunity-review": {
     "title": "AI Opportunity Review | Go Expandia",

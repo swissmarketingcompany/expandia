@@ -610,18 +610,38 @@ function replaceServiceCityCopy(content, lang = 'en') {
         .replace(/Also Serving These Areas Near \{\{CITY_NAME\}\}/g, copy.nearbyTitle);
 }
 
-const BUSINESS_MODEL_DEFAULT_KEYWORDS = 'AI support for companies, AI opportunity review, AI plan, AI build and setup, AI training, AI support, business AI';
+const BUSINESS_MODEL_DEFAULT_KEYWORDS = 'AI agency, AI automation agency, AI consulting services, AI agent development, custom AI solutions for businesses, business AI automation';
 
 const PAGE_METADATA_OVERRIDES = {
     index: {
-        title: 'AI Support for Companies | Go Expandia',
-        description: 'We help companies find where AI can make or save money, build the right tools, train teams, and support the work after launch.',
-        keywords: 'AI support for companies, business AI implementation, AI consulting for B2B, AI opportunity review, AI rollout support'
+        title: 'AI Agency for Business Automation | Go Expandia',
+        description: 'Go Expandia is an AI agency building custom automations, AI agents, consulting roadmaps, and AI solutions for businesses.',
+        keywords: 'AI agency, AI automation agency, AI consulting services, AI agent development, custom AI solutions for businesses'
     },
     solutions: {
-        title: 'AI Support Services for Companies | 5 Simple Services | Go Expandia',
-        description: 'One main solution with five simple services: AI Opportunity Review, AI Plan, AI Build & Setup, AI Training, and AI Support.',
-        keywords: 'AI support services, AI opportunity review, AI plan, AI build setup, AI training, AI support retainer'
+        title: 'AI Agency Services | Go Expandia',
+        description: 'AI agency services for automation, consulting, AI agent development, and custom AI solutions for businesses.',
+        keywords: 'AI agency services, AI automation agency, AI consulting services, AI agent development, custom AI solutions'
+    },
+    'ai-automation-agency': {
+        title: 'AI Automation Agency | Go Expandia',
+        description: 'AI automation agency for businesses that need workflow automation, AI-assisted operations, connected tools, and less manual work.',
+        keywords: 'AI automation agency, AI automation services, workflow automation AI, business AI automation'
+    },
+    'ai-consulting-services': {
+        title: 'AI Consulting Services | Go Expandia',
+        description: 'Practical AI consulting services for companies that need clear priorities, realistic use cases, data boundaries, and a delivery roadmap.',
+        keywords: 'AI consulting services, AI consulting, artificial intelligence consulting, AI strategy consulting'
+    },
+    'ai-agent-development': {
+        title: 'AI Agent Development | Go Expandia',
+        description: 'AI agent development for business workflows, internal copilots, support agents, sales assistants, research agents, and task-routing agents.',
+        keywords: 'AI agent development, AI agents for business, AI agent agency, AI agent development company'
+    },
+    'custom-ai-solutions-for-businesses': {
+        title: 'Custom AI Solutions for Businesses | Go Expandia',
+        description: 'Custom AI solutions for businesses that need tailored AI software, workflow automation, agents, dashboards, and internal tools.',
+        keywords: 'custom AI solutions for businesses, custom AI development, AI solutions, AI software development'
     },
     'ai-opportunity-review': {
         title: 'AI Opportunity Review | Big Data Analysis | Go Expandia',
@@ -650,18 +670,18 @@ const PAGE_METADATA_OVERRIDES = {
     },
     about: {
         title: 'About Us | Go Expandia',
-        description: 'Go Expandia helps B2B companies turn data into practical AI systems with Big Data Analysis, custom software, and team training.',
-        keywords: 'AI transformation company, B2B AI adoption, Big Data Analysis, custom AI software, AI training, practical AI implementation'
+        description: 'Go Expandia is an AI agency helping B2B companies automate workflows, build AI agents, and launch custom AI solutions.',
+        keywords: 'AI agency, B2B AI adoption, AI automation agency, custom AI software, AI agent development'
     },
     'our-business-model': {
         title: 'Our Business Model | Go Expandia',
-        description: 'See how Go Expandia analyzes company data, finds the right AI opportunities, builds the software, and trains teams for adoption.',
-        keywords: 'AI business model, staged AI implementation, AI roadmap for companies, AI adoption model, AI delivery framework'
+        description: 'See how Go Expandia works as an AI agency: consulting, automation, AI agent development, custom AI solutions, and ongoing support.',
+        keywords: 'AI agency business model, AI automation agency, AI consulting services, AI agent development, custom AI solutions'
     },
     contact: {
         title: 'Contact Go Expandia | Start Your AI Project',
-        description: 'Talk to us about the 5 services: AI Opportunity Review, AI Plan, AI Build & Setup, AI Training, and AI Support.',
-        keywords: 'contact AI consulting company, start AI project, AI support consultation, AI implementation contact'
+        description: 'Talk to Go Expandia about AI automation, AI consulting, AI agent development, or custom AI solutions for your business.',
+        keywords: 'contact AI agency, start AI automation project, AI consulting contact, AI agent development contact'
     },
     'vision-mission': {
         title: 'Vision & Mission | Go Expandia',
@@ -674,9 +694,9 @@ const PAGE_METADATA_OVERRIDES = {
         keywords: 'AI ethics, responsible AI delivery, data handling, business AI governance'
     },
     'city-locations': {
-        title: 'AI Support Locations | 5 Services by City | Go Expandia',
-        description: 'See where we deliver our 5 AI services: opportunity review, planning, build & setup, training, and support.',
-        keywords: 'AI support locations, AI services by city, AI opportunity review cities, AI build setup cities'
+        title: 'AI Agency Locations | Go Expandia',
+        description: 'See where we deliver AI agency services including automation, consulting, AI agents, and custom AI solutions.',
+        keywords: 'AI agency locations, AI automation by city, AI consulting by city, AI agent development locations'
     },
     'blog-index': {
         title: 'AI Business Operations Blog | Go Expandia',
@@ -2126,7 +2146,7 @@ function buildGenericServiceBlueprint(service, lang = 'en') {
             id: 'problems',
             sectionClass: 'bg-base-200',
             heading: 'Does this sound familiar?',
-            intro: `These are the most common situations that lead companies to us for ${service.name.toLowerCase()}.`,
+            intro: `These are the most common situations that lead companies to us for ${service.name}.`,
             problems: serviceProblems
         }] : []),
         // Section 2: What we cover
@@ -2150,7 +2170,7 @@ function buildGenericServiceBlueprint(service, lang = 'en') {
             id: 'why-it-matters',
             sectionClass: 'bg-base-200',
             heading: 'What changes when this is in place',
-            intro: `The practical difference ${service.name.toLowerCase()} makes once it is working properly.`,
+            intro: `The practical difference ${service.name} makes once it is working properly.`,
             bullets: benefits.slice(0, 3).map((item, index) => ({
                 icon: ['shield-check', 'clock-3', 'layers-3'][index] || 'check',
                 title: item.title,
@@ -2174,7 +2194,7 @@ function buildGenericServiceBlueprint(service, lang = 'en') {
             id: 'faq',
             sectionClass: 'bg-base-200',
             heading: 'Common questions',
-            intro: `Answers to what companies usually ask before getting started with ${service.name.toLowerCase()}.`,
+            intro: `Answers to what companies usually ask before getting started with ${service.name}.`,
             items: faqItems
         }
     ];
@@ -2198,7 +2218,7 @@ function buildGenericServiceBlueprint(service, lang = 'en') {
 
     const ctaObj = {
         heading: `Ready to start with ${service.name}?`,
-        description: `We can scope ${service.name.toLowerCase()} in plain English and help you start with the part that matters most.`,
+        description: `We can scope ${service.name} in plain English and help you start with the part that matters most.`,
         buttonText: 'Talk to us'
     };
 
