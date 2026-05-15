@@ -676,6 +676,22 @@
                         </div>
 
                         <aside class="lg:sticky lg:top-24 space-y-5">
+                            <div class="buzz-card p-5 bg-white shadow-xl border border-primary/15">
+                                <p class="text-sm font-bold uppercase tracking-wide text-primary mb-2">Free checkup</p>
+                                <h2 class="text-2xl font-black mb-2">Get an AI automation checkup.</h2>
+                                <p class="text-sm text-base-content/70 mb-4">Drop your email and we will send a quick first-pass review of what your team should automate first.</p>
+                                <form class="space-y-3" data-lead-capture="ai-checkup">
+                                    <input type="email" name="email" class="input input-bordered w-full" placeholder="Work email" required>
+                                    <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
+                                    <button type="submit" class="btn btn-primary w-full">Get Free Checkup</button>
+                                    <p class="text-xs text-base-content/60">No spam. We use this to reply with the checkup.</p>
+                                    <p class="text-sm text-base-content/70 min-h-5" data-lead-status></p>
+                                </form>
+                                <div class="rounded-lg bg-primary/10 border border-primary/20 p-3 mt-4">
+                                    <p class="text-xs font-bold uppercase tracking-wide text-primary/80 mb-1">Bonus window closes in</p>
+                                    <p class="text-2xl font-black text-primary tabular-nums leading-none" data-countdown="ai-checkup" data-countdown-minutes="8">08:00</p>
+                                </div>
+                            </div>
                             <div class="buzz-card p-6 bg-white shadow-xl border border-base-200">
                                 <p class="text-sm font-bold text-primary mb-3">Article contents</p>
                                 <ul class="space-y-2 text-sm">
@@ -693,22 +709,6 @@
                                 <p class="text-white/80 mb-5">We can map your workflow, identify the strongest AI use case, and turn it into a practical pilot.</p>
                                 <a href="../contact.html" class="btn bg-white text-primary border-white hover:bg-base-100">Book a Call</a>
                             </div>
-                            <div class="buzz-card p-6 bg-white shadow-xl border border-primary/15">
-                                <p class="text-sm font-bold uppercase tracking-wide text-primary mb-3">Free checkup</p>
-                                <h2 class="text-2xl font-black mb-3">Get an AI automation checkup.</h2>
-                                <p class="text-base-content/70 mb-5">Drop your email and we will send a quick first-pass review of what your team should automate first.</p>
-                                <div class="rounded-xl bg-primary/10 border border-primary/20 p-4 mb-5">
-                                    <p class="text-xs font-bold uppercase tracking-wide text-primary/80 mb-1">Bonus window closes in</p>
-                                    <p class="text-3xl font-black text-primary tabular-nums" data-countdown="ai-checkup" data-countdown-minutes="8">08:00</p>
-                                </div>
-                                <form class="space-y-3" data-lead-capture="ai-checkup">
-                                    <input type="email" name="email" class="input input-bordered w-full" placeholder="Work email" required>
-                                    <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
-                                    <button type="submit" class="btn btn-primary w-full">Get Free Checkup</button>
-                                    <p class="text-xs text-base-content/60">No spam. We use this to reply with the checkup.</p>
-                                    <p class="text-sm text-base-content/70 min-h-5" data-lead-status></p>
-                                </form>
-                            </div>
                         </aside>
                     </div>
                 </div>
@@ -716,30 +716,30 @@
 
             <section class="section-spacing bg-base-100">
                 <div class="container mx-auto container-padding">
-                    <div class="max-w-5xl mx-auto">
-                        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
-                            <div>
-                                <p class="text-sm font-bold uppercase tracking-wide text-primary mb-3">Related posts</p>
-                                <h2 class="text-3xl md:text-4xl font-black">Keep planning your AI automation project</h2>
-                            </div>
-                            <a href="../solutions.html" class="btn btn-outline border-primary text-primary hover:bg-primary hover:text-white w-full md:w-auto">View all AI services</a>
+                    <div class="max-w-6xl mx-auto">
+                        <div class="text-center max-w-3xl mx-auto mb-8">
+                            <p class="text-sm font-bold uppercase tracking-wide text-primary mb-3">Related posts</p>
+                            <h2 class="text-3xl md:text-4xl font-black">Keep planning your AI automation project</h2>
                         </div>
                         <div class="grid md:grid-cols-3 gap-5">
-                            <a href="../ai-automation-agency.html" class="group p-6 rounded-xl border border-base-200 bg-white shadow-sm hover:border-primary/30 hover:shadow-xl transition-all">
+                            <a href="../ai-automation-agency.html" class="group p-6 rounded-lg border border-base-200 bg-white shadow-sm hover:border-primary/30 hover:shadow-xl transition-all">
                                 <p class="text-xs font-bold uppercase tracking-wide text-primary mb-3">Main service</p>
                                 <h3 class="text-xl font-black mb-3 group-hover:text-primary transition-colors">AI Automation Agency</h3>
                                 <p class="text-base-content/70">See how Go Expandia maps workflows, removes manual work, and launches practical automation pilots.</p>
                             </a>
-                            <a href="../ai-agent-development.html" class="group p-6 rounded-xl border border-base-200 bg-white shadow-sm hover:border-primary/30 hover:shadow-xl transition-all">
+                            <a href="../ai-agent-development.html" class="group p-6 rounded-lg border border-base-200 bg-white shadow-sm hover:border-primary/30 hover:shadow-xl transition-all">
                                 <p class="text-xs font-bold uppercase tracking-wide text-primary mb-3">Agent build</p>
                                 <h3 class="text-xl font-black mb-3 group-hover:text-primary transition-colors">AI Agent Development</h3>
                                 <p class="text-base-content/70">Explore controlled AI agents for task queues, research, support, approvals, and business operations.</p>
                             </a>
-                            <a href="../ai-consulting-services.html" class="group p-6 rounded-xl border border-base-200 bg-white shadow-sm hover:border-primary/30 hover:shadow-xl transition-all">
+                            <a href="../ai-consulting-services.html" class="group p-6 rounded-lg border border-base-200 bg-white shadow-sm hover:border-primary/30 hover:shadow-xl transition-all">
                                 <p class="text-xs font-bold uppercase tracking-wide text-primary mb-3">Strategy</p>
                                 <h3 class="text-xl font-black mb-3 group-hover:text-primary transition-colors">AI Consulting Services</h3>
                                 <p class="text-base-content/70">Plan the right use cases, governance, data access, budget, and rollout path before investing in AI.</p>
                             </a>
+                        </div>
+                        <div class="text-center mt-8">
+                            <a href="../solutions.html" class="btn btn-outline border-primary text-primary hover:bg-primary hover:text-white w-full sm:w-auto">View all AI services</a>
                         </div>
                     </div>
                 </div>
