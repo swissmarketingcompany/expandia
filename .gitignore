@@ -76,3 +76,7 @@ AI_IMAGE_GENERATION_FAL.mdVISUAL_README.md
 
 # Playwright CLI artifacts
 .playwright-cli/
+
+# Local Codex/agent working files
+go-expandia-skills/
+output/
