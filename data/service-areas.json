@@ -248,6 +248,54 @@
     "lng": -0.3763
   },
   {
+    "id": "porto",
+    "city": "Porto",
+    "country": "Portugal",
+    "market": "Europe",
+    "lat": 41.1579,
+    "lng": -8.6291
+  },
+  {
+    "id": "seville",
+    "city": "Seville",
+    "country": "Spain",
+    "market": "Europe",
+    "lat": 37.3891,
+    "lng": -5.9845
+  },
+  {
+    "id": "florence",
+    "city": "Florence",
+    "country": "Italy",
+    "market": "Europe",
+    "lat": 43.7696,
+    "lng": 11.2558
+  },
+  {
+    "id": "krakow",
+    "city": "Krakow",
+    "country": "Poland",
+    "market": "Europe",
+    "lat": 50.0647,
+    "lng": 19.945
+  },
+  {
+    "id": "tallinn",
+    "city": "Tallinn",
+    "country": "Estonia",
+    "market": "Europe",
+    "lat": 59.437,
+    "lng": 24.7536
+  },
+  {
+    "id": "riga",
+    "city": "Riga",
+    "country": "Latvia",
+    "market": "Europe",
+    "lat": 56.9496,
+    "lng": 24.1052
+  },
+  {
     "id": "new-york",
     "city": "New York",
     "state": "NY",

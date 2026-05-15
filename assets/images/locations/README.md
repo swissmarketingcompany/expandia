@@ -1,6 +1,6 @@
 # Location hero image sources
 
-These city hero images are local copies of real city photography from Unsplash. They are used on the manually maintained `*-ai-agency` service-area landing pages.
+These city hero images are local copies of real city photography from Unsplash and Wikimedia-hosted city pages. They are used on the manually maintained `*-ai-agency` service-area landing pages.
 
 - Amsterdam: https://unsplash.com/photos/KNSvGgGitnM
 - Berlin: https://unsplash.com/photos/cQ41AMy31Zw
@@ -32,3 +32,33 @@ These city hero images are local copies of real city photography from Unsplash. 
 - Budapest: https://unsplash.com/photos/SjOD2HIclgw
 - Manchester: https://unsplash.com/photos/NXtGjC7osPs
 - Edinburgh: https://unsplash.com/photos/txPjoirZ3RY
+- Istanbul: https://en.wikipedia.org/wiki/Istanbul
+- Marseille: https://en.wikipedia.org/wiki/Marseille
+- Naples: https://en.wikipedia.org/wiki/Naples
+- Bucharest: https://en.wikipedia.org/wiki/Bucharest
+- Porto: https://en.wikipedia.org/wiki/Porto
+- Seville: https://en.wikipedia.org/wiki/Seville
+- Florence: https://en.wikipedia.org/wiki/Florence
+- Krakow: https://en.wikipedia.org/wiki/Krak%C3%B3w
+- Tallinn: https://en.wikipedia.org/wiki/Tallinn
+- Riga: https://en.wikipedia.org/wiki/Riga
+- Barcelona AI agency: https://en.wikipedia.org/wiki/Barcelona
+- New York: https://en.wikipedia.org/wiki/New_York_City
+- Los Angeles: https://en.wikipedia.org/wiki/Los_Angeles
+- Chicago: https://en.wikipedia.org/wiki/Chicago
+- Houston: https://en.wikipedia.org/wiki/Houston
+- Phoenix: https://en.wikipedia.org/wiki/Phoenix,_Arizona
+- Philadelphia: https://en.wikipedia.org/wiki/Philadelphia
+- San Antonio: https://en.wikipedia.org/wiki/San_Antonio
+- San Diego: https://en.wikipedia.org/wiki/San_Diego
+- Dallas: https://en.wikipedia.org/wiki/Dallas
+- Jacksonville: https://en.wikipedia.org/wiki/Jacksonville,_Florida
+- Fort Worth: https://en.wikipedia.org/wiki/Fort_Worth,_Texas
+- San Jose: https://en.wikipedia.org/wiki/San_Jose,_California
+- Austin: https://en.wikipedia.org/wiki/Austin,_Texas
+- Charlotte: https://en.wikipedia.org/wiki/Charlotte,_North_Carolina
+- Columbus: https://en.wikipedia.org/wiki/Columbus,_Ohio
+- Toronto: https://en.wikipedia.org/wiki/Toronto
+- Montreal: https://en.wikipedia.org/wiki/Montreal
+- Sydney: https://en.wikipedia.org/wiki/Sydney
+- Melbourne: https://en.wikipedia.org/wiki/Melbourne
