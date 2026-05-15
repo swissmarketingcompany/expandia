@@ -2711,7 +2711,17 @@ function getActiveStates(templateName) {
         'zurich-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' },
         'stockholm-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' },
         'dublin-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' },
-        'lisbon-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' }
+        'lisbon-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' },
+        'rome-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' },
+        'vienna-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' },
+        'copenhagen-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' },
+        'prague-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' },
+        'munich-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' },
+        'hamburg-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' },
+        'brussels-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' },
+        'oslo-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' },
+        'helsinki-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' },
+        'warsaw-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' }
     };
     return activeStates[templateName] || activeStates['index'];
 }
@@ -5914,6 +5924,9 @@ function generateSitemap() {
         'london-ai-agency.html', 'paris-ai-agency.html', 'berlin-ai-agency.html', 'madrid-ai-agency.html',
         'amsterdam-ai-agency.html', 'milan-ai-agency.html', 'zurich-ai-agency.html', 'stockholm-ai-agency.html',
         'dublin-ai-agency.html', 'lisbon-ai-agency.html',
+        'rome-ai-agency.html', 'vienna-ai-agency.html', 'copenhagen-ai-agency.html', 'prague-ai-agency.html',
+        'munich-ai-agency.html', 'hamburg-ai-agency.html', 'brussels-ai-agency.html', 'oslo-ai-agency.html',
+        'helsinki-ai-agency.html', 'warsaw-ai-agency.html',
         'vision-mission.html', 'our-ethical-principles.html'
     ];
 
@@ -6206,6 +6219,16 @@ buildPage('zurich-ai-agency', 'zurich-ai-agency', 'en');
 buildPage('stockholm-ai-agency', 'stockholm-ai-agency', 'en');
 buildPage('dublin-ai-agency', 'dublin-ai-agency', 'en');
 buildPage('lisbon-ai-agency', 'lisbon-ai-agency', 'en');
+buildPage('rome-ai-agency', 'rome-ai-agency', 'en');
+buildPage('vienna-ai-agency', 'vienna-ai-agency', 'en');
+buildPage('copenhagen-ai-agency', 'copenhagen-ai-agency', 'en');
+buildPage('prague-ai-agency', 'prague-ai-agency', 'en');
+buildPage('munich-ai-agency', 'munich-ai-agency', 'en');
+buildPage('hamburg-ai-agency', 'hamburg-ai-agency', 'en');
+buildPage('brussels-ai-agency', 'brussels-ai-agency', 'en');
+buildPage('oslo-ai-agency', 'oslo-ai-agency', 'en');
+buildPage('helsinki-ai-agency', 'helsinki-ai-agency', 'en');
+buildPage('warsaw-ai-agency', 'warsaw-ai-agency', 'en');
 // Build Approved Solution Pages (English)
 services.forEach(service => buildSolutionPage(service.id, service.id, 'en'));
 
