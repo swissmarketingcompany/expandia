@@ -201,6 +201,7 @@ const { createHTMLTemplate, generateOrganizationSchema, generateBreadcrumbSchema
 const { applyTranslations } = require('./scripts/utils/translations');
 const { blogTopics } = require('./scripts/generate-blog-posts');
 const legacyBlogPosts = require('./data/legacy-blog-posts.json');
+const blogCatalog = require('./data/blog-posts.json');
 
 // Helper to extract schemas from content and remove them to avoid duplicates in body
 function extractAndRemoveSchemas(content, templateName) {
@@ -874,6 +875,243 @@ function deriveBlogMeta(content, outputName) {
     }
 
     return { title, description, keywords };
+}
+
+function getBlogCategory(categoryKey) {
+    return blogCatalog.categories[categoryKey] || {
+        label: 'AI Business Operations',
+        description: 'Practical AI business operations articles from Go Expandia.',
+        keywords: 'AI business operations, AI automation, AI consulting'
+    };
+}
+
+function getBlogPostInfo(slug) {
+    const post = blogCatalog.posts[slug] || {};
+    const category = getBlogCategory(post.category);
+    return {
+        slug,
+        title: post.title || slugToReadableTitle(slug),
+        description: post.description || `${slugToReadableTitle(slug)} from Go Expandia.`,
+        excerpt: post.excerpt || post.description || `${slugToReadableTitle(slug)} from Go Expandia.`,
+        keywords: post.keywords || category.keywords,
+        categoryKey: post.category || 'ai-automation',
+        category,
+        badge: post.badge || category.label,
+        readTime: post.readTime || '10 min read',
+        image: post.image || 'go-expandia-logo.png',
+        published: post.published || '2026-05-15',
+        modified: post.modified || post.published || '2026-05-15'
+    };
+}
+
+function getPublishedBlogSlugs() {
+    const templateDir = 'templates/blog';
+    if (!fs.existsSync(templateDir)) return [];
+
+    return fs.readdirSync(templateDir)
+        .filter(file => file.endsWith('.html'))
+        .map(file => file.replace(/\.html$/, ''))
+        .filter(slug => !REMOVED_BLOG_POST_SLUGS.has(slug))
+        .sort((a, b) => {
+            const categoryCompare = getBlogPostInfo(a).category.label.localeCompare(getBlogPostInfo(b).category.label);
+            if (categoryCompare !== 0) return categoryCompare;
+            return getBlogPostInfo(a).title.localeCompare(getBlogPostInfo(b).title);
+        });
+}
+
+function getPublishedBlogPosts() {
+    return getPublishedBlogSlugs().map(slug => getBlogPostInfo(slug));
+}
+
+function renderBlogCategoryLinks(activeCategoryKey = '') {
+    const allActive = activeCategoryKey ? 'border-base-200 bg-white text-base-content hover:border-primary/30' : 'border-primary bg-primary text-white';
+    const links = [
+        `<a href="{{BASE_PATH}}blog/" class="inline-flex items-center rounded-full border px-4 py-2 text-sm font-bold transition-colors ${allActive}">All articles</a>`
+    ];
+
+    Object.entries(blogCatalog.categories).forEach(([categoryKey, category]) => {
+        const isActive = categoryKey === activeCategoryKey;
+        const activeClass = isActive ? 'border-primary bg-primary text-white' : 'border-base-200 bg-white text-base-content hover:border-primary/30';
+        links.push(`<a href="{{BASE_PATH}}blog/categories/${categoryKey}.html" class="inline-flex items-center rounded-full border px-4 py-2 text-sm font-bold transition-colors ${activeClass}">${escapeHtmlText(category.label)}</a>`);
+    });
+
+    return links.join('\n                ');
+}
+
+function renderBlogCategoryList(activeCategoryKey = '') {
+    return Object.entries(blogCatalog.categories).map(([categoryKey, category]) => {
+        const count = getPublishedBlogPosts().filter(post => post.categoryKey === categoryKey).length;
+        const activeClass = categoryKey === activeCategoryKey ? 'text-primary' : 'text-base-content hover:text-primary';
+        return `<li><a href="{{BASE_PATH}}blog/categories/${categoryKey}.html" class="flex items-center justify-between gap-3 font-bold ${activeClass}"><span>${escapeHtmlText(category.label)}</span><span class="text-sm text-base-content/50">${count}</span></a></li>`;
+    }).join('\n                            ');
+}
+
+function renderBlogPostCards(posts) {
+    return posts.map(post => `
+                        <article class="buzz-card bg-white border border-base-200 p-6 md:p-7 shadow-sm hover:shadow-xl transition-shadow">
+                            <div class="flex flex-wrap items-center gap-3 text-sm font-bold text-base-content/60 mb-4">
+                                <a href="{{BASE_PATH}}blog/categories/${post.categoryKey}.html" class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-primary">${escapeHtmlText(post.category.label)}</a>
+                                <span>${escapeHtmlText(post.readTime)}</span>
+                            </div>
+                            <h2 class="text-2xl md:text-3xl font-black leading-tight mb-3">
+                                <a href="{{BASE_PATH}}blog/${post.slug}.html" class="hover:text-primary transition-colors">${escapeHtmlText(post.title)}</a>
+                            </h2>
+                            <p class="text-base-content/70 leading-relaxed mb-5">${escapeHtmlText(post.excerpt)}</p>
+                            <a href="{{BASE_PATH}}blog/${post.slug}.html" class="inline-flex items-center gap-2 font-black text-primary">
+                                Read article
+                                <span aria-hidden="true">-></span>
+                            </a>
+                        </article>`).join('\n');
+}
+
+function buildBlogListingPage({ outputName, categoryKey = '' }) {
+    const templatePath = 'templates/blog-listing.html';
+    if (!fs.existsSync(templatePath)) {
+        console.warn(`Blog listing template not found: ${templatePath}`);
+        return;
+    }
+
+    const allPosts = getPublishedBlogPosts();
+    const category = categoryKey ? getBlogCategory(categoryKey) : null;
+    const posts = categoryKey ? allPosts.filter(post => post.categoryKey === categoryKey) : allPosts;
+    if (categoryKey && posts.length === 0) return;
+
+    const depth = outputName.split('/').length - 1;
+    const basePath = depth > 0 ? '../'.repeat(depth) : './';
+    const canonicalUrl = `https://www.goexpandia.com${toCanonicalPath(outputName.replace(/\/index$/, '/index'))}`;
+    const canonicalPath = toCanonicalPath(outputName.replace(/\/index$/, '/index')).replace(/^\//, '');
+    const pageTitle = category
+        ? `${category.label} Articles | Go Expandia Blog`
+        : 'AI Business Operations Blog | Go Expandia';
+    const pageDescription = category
+        ? category.description
+        : 'Practical Go Expandia articles on AI automation, AI consulting, business process automation, workflow software, AI agents, and custom AI solutions.';
+    const pageKeywords = category
+        ? category.keywords
+        : 'AI automation blog, AI consulting blog, business process automation, workflow automation, AI agents, custom AI solutions';
+
+    let content = fs.readFileSync(templatePath, 'utf8')
+        .replace(/\{\{BREADCRUMB_CURRENT\}\}/g, category ? category.label : 'Blog')
+        .replace(/\{\{BLOG_EYEBROW\}\}/g, category ? 'Blog category' : 'Go Expandia blog')
+        .replace(/\{\{BLOG_HEADING\}\}/g, category ? `${category.label} Articles` : 'AI Business Operations Blog')
+        .replace(/\{\{BLOG_INTRO\}\}/g, category ? category.description : pageDescription)
+        .replace(/\{\{BLOG_CATEGORY_LINKS\}\}/g, renderBlogCategoryLinks(categoryKey))
+        .replace(/\{\{BLOG_CATEGORY_LIST\}\}/g, renderBlogCategoryList(categoryKey))
+        .replace(/\{\{BLOG_POST_CARDS\}\}/g, renderBlogPostCards(posts))
+        .replace(/\{\{BASE_PATH\}\}/g, basePath);
+
+    let nav = navigationEN.replace(/\s*data-i18n="[^"]*"/g, '');
+    let foot = footerEN.replace(/\s*data-i18n="[^"]*"/g, '');
+    nav = nav.replace(/\{\{BASE_PATH\}\}/g, basePath)
+        .replace(/\{\{LOGO_PATH\}\}/g, `${basePath}go-expandia-logo.png`)
+        .replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html')
+        .replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, 'our-ethical-principles.html')
+        .replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, './');
+    foot = foot.replace(/\{\{BASE_PATH\}\}/g, basePath)
+        .replace(/\{\{LOGO_PATH\}\}/g, `${basePath}go-expandia-logo.png`)
+        .replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, './');
+
+    let html = createHTMLTemplate('en');
+    html = html.replace(/\{\{BASE_PATH\}\}/g, basePath)
+        .replace(/\{\{NAVIGATION\}\}/g, nav)
+        .replace(/\{\{MAIN_CONTENT\}\}/g, content)
+        .replace(/\{\{FOOTER\}\}/g, foot)
+        .replace(/\{\{PAGE_TITLE\}\}/g, pageTitle)
+        .replace(/\{\{PAGE_DESCRIPTION\}\}/g, pageDescription)
+        .replace(/\{\{PAGE_KEYWORDS\}\}/g, pageKeywords)
+        .replace(/\{\{CANONICAL_URL\}\}/g, canonicalUrl)
+        .replace(/\{\{PAGE_URL_EN\}\}/g, canonicalPath)
+        .replace(/\{\{PAGE_URL_TR\}\}/g, '')
+        .replace(/\{\{PAGE_URL_DE\}\}/g, canonicalPath)
+        .replace(/\{\{PAGE_URL_FR\}\}/g, canonicalPath);
+
+    const itemList = posts.map((post, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "url": `https://www.goexpandia.com/blog/${post.slug}.html`,
+        "name": post.title
+    }));
+    const schemas = [
+        generateOrganizationSchema(),
+        {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": category ? `${category.label} Articles` : 'AI Business Operations Blog',
+            "description": pageDescription,
+            "url": canonicalUrl,
+            "mainEntity": {
+                "@type": "ItemList",
+                "itemListElement": itemList
+            }
+        },
+        generateBreadcrumbSchema(category ? [
+            { name: 'Home', url: 'https://www.goexpandia.com/' },
+            { name: 'Blog', url: 'https://www.goexpandia.com/blog/' },
+            { name: category.label, url: canonicalUrl }
+        ] : [
+            { name: 'Home', url: 'https://www.goexpandia.com/' },
+            { name: 'Blog', url: canonicalUrl }
+        ])
+    ];
+    html = html.replace(/\{\{SCHEMA_MARKUP\}\}/g, JSON.stringify(schemas, null, 2));
+    html = clearUnresolvedTemplateTokens(html);
+
+    const outputPath = `${outputName}.html`;
+    const outputDir = path.dirname(outputPath);
+    if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
+    fs.writeFileSync(outputPath, html, 'utf8');
+    console.log(`✅ Built blog listing page: ${outputPath}`);
+}
+
+function buildBlogListingPages() {
+    buildBlogListingPage({ outputName: 'blog/index' });
+    Object.keys(blogCatalog.categories).forEach(categoryKey => {
+        buildBlogListingPage({ outputName: `blog/categories/${categoryKey}`, categoryKey });
+    });
+}
+
+function decorateBlogSchemas(schemas, pageMeta, canonicalUrl, blogInfo) {
+    const decorate = (schema) => {
+        if (!schema || typeof schema !== 'object') return schema;
+        if (Array.isArray(schema)) return schema.map(decorate);
+        if (Array.isArray(schema['@graph'])) {
+            schema['@graph'] = schema['@graph'].map(decorate);
+            return schema;
+        }
+        const schemaTypes = Array.isArray(schema['@type']) ? schema['@type'] : [schema['@type']];
+        if (schemaTypes.some(type => ['BlogPosting', 'Article', 'NewsArticle'].includes(type))) {
+            schema.articleSection = blogInfo.category.label;
+            schema.keywords = pageMeta.keywords;
+            schema.url = canonicalUrl;
+            schema.mainEntityOfPage = canonicalUrl;
+            schema.isPartOf = {
+                "@type": "Blog",
+                "name": "Go Expandia Blog",
+                "url": "https://www.goexpandia.com/blog/"
+            };
+            schema.about = [
+                { "@type": "Thing", "name": blogInfo.category.label },
+                { "@type": "Thing", "name": "AI automation" },
+                { "@type": "Thing", "name": "Business operations" }
+            ];
+        }
+        return schema;
+    };
+    return schemas.map(decorate);
+}
+
+function enforceBlogCategoryMeta(content, blogInfo) {
+    const escapedCategory = escapeHtmlAttr(blogInfo.category.label);
+    let next = upsertHeadTag(content, /<meta\s+property=["']article:section["'][^>]*>/i, `<meta property="article:section" content="${escapedCategory}">`);
+    next = upsertHeadTag(next, /<meta\s+name=["']category["'][^>]*>/i, `<meta name="category" content="${escapedCategory}">`);
+    next = upsertHeadTag(next, /<meta\s+property=["']article:tag["'][^>]*>/i, `<meta property="article:tag" content="${escapeHtmlAttr(blogInfo.keywords)}">`);
+    const categoryLink = `<span aria-hidden="true">|</span>\n                                <a href="../blog/categories/${blogInfo.categoryKey}.html" class="text-primary hover:text-primary/80">${escapeHtmlText(blogInfo.category.label)}</a>`;
+    if (!next.includes(`blog/categories/${blogInfo.categoryKey}.html`) && next.includes('<span>16 min read</span>')) {
+        next = next.replace(/(<span>\d+\s+min read<\/span>)/, `$1\n                                ${categoryLink}`);
+    } else if (!next.includes(`blog/categories/${blogInfo.categoryKey}.html`) && next.includes('min read</span>')) {
+        next = next.replace(/(<span>[^<]*min read<\/span>)/, `$1\n                                ${categoryLink}`);
+    }
+    return next;
 }
 
 const SERVICE_CATEGORIES = {
@@ -3353,11 +3591,18 @@ function buildBlogPost(templateName, outputName) {
     content = enforceCanonicalMeta(content, canonicalUrl);
     content = content.replace(/https:\/\/www\.goexpandia\.com\/templates\/blog\/index\.html/g, 'https://www.goexpandia.com/blog/index.html');
 
-    const pageMeta = deriveBlogMeta(content, outputName);
+    const blogInfo = getBlogPostInfo(outputName);
+    const derivedMeta = deriveBlogMeta(content, outputName);
+    const pageMeta = {
+        title: /go expandia/i.test(blogInfo.title) ? blogInfo.title : `${blogInfo.title} | Go Expandia`,
+        description: blogInfo.description || derivedMeta.description,
+        keywords: blogInfo.keywords || derivedMeta.keywords
+    };
     content = content.replace(/\{\{PAGE_TITLE\}\}/g, pageMeta.title);
     content = content.replace(/\{\{PAGE_DESCRIPTION\}\}/g, pageMeta.description);
     content = content.replace(/\{\{PAGE_KEYWORDS\}\}/g, pageMeta.keywords);
     content = enforceSeoMetaTags(content, pageMeta.title, pageMeta.description, pageMeta.keywords);
+    content = enforceBlogCategoryMeta(content, { ...blogInfo, keywords: pageMeta.keywords });
 
     // Ensure blog directory exists
     const blogDir = path.dirname(outputPath);
@@ -3457,6 +3702,7 @@ function buildBlogPost(templateName, outputName) {
         }
         finalSchemas.push(s);
     });
+    finalSchemas = decorateBlogSchemas(finalSchemas, pageMeta, canonicalUrl, blogInfo);
 
     const schemaString = `<script type="application/ld+json">\n${JSON.stringify(finalSchemas, null, 2)}\n</script>`;
 
@@ -5951,6 +6197,42 @@ function buildCityLandingPages() {
     console.log(`✅ Built ${pageCount} generic city landing pages.`);
 }
 
+function collectHtmlFilesRecursive(rootDir) {
+    const results = [];
+    if (!fs.existsSync(rootDir)) return results;
+
+    fs.readdirSync(rootDir, { withFileTypes: true }).forEach(entry => {
+        const fullPath = path.join(rootDir, entry.name);
+        if (entry.isDirectory()) {
+            results.push(...collectHtmlFilesRecursive(fullPath));
+            return;
+        }
+        if (entry.isFile() && entry.name.endsWith('.html')) {
+            results.push(fullPath.split(path.sep).join('/'));
+        }
+    });
+
+    return results.sort();
+}
+
+function writeBlogSitemap(blogPages, baseUrl, today) {
+    const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${blogPages.map(page => {
+        const canonicalLocPath = toCanonicalPath(page.replace(/\.html$/, ''));
+        return `
+    <url>
+        <loc>${baseUrl}${canonicalLocPath}</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>${page === 'blog/index.html' ? '0.9' : '0.7'}</priority>
+    </url>`;
+    }).join('')}
+</urlset>`;
+
+    fs.writeFileSync('blog-sitemap.xml', sitemapContent);
+    console.log(`✅ Generated blog-sitemap.xml with ${blogPages.length} URLs`);
+}
+
 function generateSitemap() {
     console.log('\n🗺️  Generating Sitemap...');
 
@@ -6017,11 +6299,7 @@ function generateSitemap() {
     //     });
     // });
 
-    const blogPages = fs.existsSync('blog')
-        ? fs.readdirSync('blog')
-            .filter(file => file.endsWith('.html'))
-            .map(file => `blog/${file}`)
-        : [];
+    const blogPages = collectHtmlFilesRecursive('blog');
 
     const allPages = [...new Set([...filteredStaticPages, ...solutionPages, ...localizedPages, ...broadCityPages, ...blogPages])];
 
@@ -6043,6 +6321,7 @@ function generateSitemap() {
 
     fs.writeFileSync('sitemap.xml', sitemapContent);
     console.log(`✅ Generated sitemap.xml with ${allPages.length} URLs`);
+    writeBlogSitemap(blogPages, baseUrl, today);
 }
 
 function buildLegacyRedirectRules() {
@@ -6325,6 +6604,7 @@ services.forEach(service => buildSolutionPage(service.id, service.id, 'en'));
 
 // Build blog posts from templates/blog into blog/.
 buildBlogPosts();
+buildBlogListingPages();
 
 // City landing pages are decommissioned.
 // buildCityLandingPages();

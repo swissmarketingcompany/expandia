@@ -1,0 +1,56 @@
+<main class="bg-base-100 text-base-content">
+    <section class="bg-buzz-warm section-spacing overflow-hidden">
+        <div class="container mx-auto container-padding">
+            <nav class="hidden md:block text-sm breadcrumbs mb-6" aria-label="Breadcrumb">
+                <ol class="flex flex-wrap gap-2 text-base-content/60">
+                    <li><a class="hover:text-primary" href="{{BASE_PATH}}index.html">Home</a></li>
+                    <li>/</li>
+                    <li class="text-base-content">{{BREADCRUMB_CURRENT}}</li>
+                </ol>
+            </nav>
+            <div class="max-w-4xl">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-bold text-sm mb-6">
+                    <span class="w-2.5 h-2.5 rounded-full bg-primary" aria-hidden="true"></span>
+                    {{BLOG_EYEBROW}}
+                </div>
+                <h1 class="text-4xl md:text-6xl font-black leading-tight mb-6">{{BLOG_HEADING}}</h1>
+                <p class="max-w-3xl text-xl md:text-2xl text-base-content/80 leading-relaxed">{{BLOG_INTRO}}</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-8 bg-white border-y border-base-200">
+        <div class="container mx-auto container-padding">
+            <div class="flex flex-wrap gap-3" aria-label="Blog categories">
+                {{BLOG_CATEGORY_LINKS}}
+            </div>
+        </div>
+    </section>
+
+    <section class="section-spacing">
+        <div class="container mx-auto container-padding">
+            <div class="grid lg:grid-cols-[0.72fr_0.28fr] gap-10 items-start">
+                <div>
+                    <div class="grid gap-6">
+                        {{BLOG_POST_CARDS}}
+                    </div>
+                </div>
+                <aside class="lg:sticky lg:top-24 space-y-6">
+                    <div class="buzz-card bg-white border border-base-200 p-6 shadow-sm">
+                        <h2 class="text-2xl font-black mb-3">Find the right guide</h2>
+                        <p class="text-base-content/70 leading-relaxed mb-5">
+                            Browse articles by the decision you are making now: automation opportunity, consulting partner, software category, or workflow rollout.
+                        </p>
+                        <a href="{{BASE_PATH}}contact.html" class="btn btn-primary w-full">Talk to Us</a>
+                    </div>
+                    <div class="buzz-card bg-primary/5 border border-primary/15 p-6">
+                        <h2 class="text-xl font-black mb-4">Categories</h2>
+                        <ul class="space-y-3">
+                            {{BLOG_CATEGORY_LIST}}
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+</main>

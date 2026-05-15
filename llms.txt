@@ -34,7 +34,7 @@ Use this file as a curated map of the most important Go Expandia pages. It is ad
 
 ## Reference Resources
 
-- [Blog](https://www.goexpandia.com/blog/index.html): Guides and playbooks on AI, digital transformation, lead generation, marketing, security, and operations.
+- [Blog](https://www.goexpandia.com/blog/): Categorized guides on AI automation, AI consulting, business process automation, AI tools, and workflow software.
 - [Glossary](https://www.goexpandia.com/glossary/index.html): Definitions for business, technology, marketing, sales, cybersecurity, and operations terms.
 - [Sitemap](https://www.goexpandia.com/sitemap.xml): Complete machine-readable URL index for search crawlers and discovery tools.
 - [Robots](https://www.goexpandia.com/robots.txt): Crawler access rules for the site.

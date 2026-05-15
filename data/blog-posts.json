@@ -1,0 +1,110 @@
+{
+  "categories": {
+    "ai-automation": {
+      "label": "AI Automation",
+      "description": "Practical articles about AI automation, AI workflow automation, AI agents, and turning repeated business work into controlled systems.",
+      "keywords": "AI automation, AI workflow automation, AI agents, AI automation agency, business automation with AI"
+    },
+    "ai-consulting": {
+      "label": "AI Consulting",
+      "description": "Guides for choosing AI consulting partners, planning AI implementation, and reducing project risk before build work starts.",
+      "keywords": "AI consulting, AI consulting company, AI implementation partner, AI strategy, AI roadmap"
+    },
+    "business-process-automation": {
+      "label": "Business Process Automation",
+      "description": "Buyer guides for business process automation, workflow automation software, AI automation tools, integrations, rollout, and support.",
+      "keywords": "business process automation, workflow automation software, automation software, AI automation software"
+    },
+    "ai-tools": {
+      "label": "AI Tools",
+      "description": "Tool comparisons and software selection guides for companies evaluating AI automation platforms, document AI, agents, reporting, and workflow builders.",
+      "keywords": "AI tools, AI automation tools, workflow tools, AI software, business automation tools"
+    }
+  },
+  "posts": {
+    "ai-automation-agency-near-me": {
+      "title": "AI Automation Agency Near Me: 15-Point Checklist",
+      "description": "Use this AI automation agency near me checklist to choose a local AI partner for workflow automation, AI agents, privacy, ROI, and support.",
+      "excerpt": "A practical checklist for choosing an AI automation partner with the right workflow, agent, privacy, ROI, and support fit.",
+      "keywords": "ai automation agency near me, local ai automation agency, ai agency near me, ai workflow automation, ai agent development, ai consulting services, custom ai solutions",
+      "category": "ai-automation",
+      "badge": "Checklist",
+      "readTime": "15 min read",
+      "image": "assets/images/ai-automation-agency-near-me-hero.png",
+      "published": "2026-05-15",
+      "modified": "2026-05-15"
+    },
+    "ai-automation-tools": {
+      "title": "AI Automation Tools: 15 Tool Types",
+      "description": "Compare 15 types of AI automation tools and learn when software is enough versus when you need an AI automation agency for strategy, build, and rollout.",
+      "excerpt": "Understand the main AI automation tool categories and when a company needs agency help instead of another software subscription.",
+      "keywords": "AI automation tools, best AI automation tools, AI automation agency, AI workflow automation, AI agent development, business process automation",
+      "category": "ai-tools",
+      "badge": "Tools",
+      "readTime": "16 min read",
+      "image": "assets/images/ai-consulting-company-partner-scorecard.png",
+      "published": "2026-05-15",
+      "modified": "2026-05-15"
+    },
+    "ai-consulting-company": {
+      "title": "AI Consulting Company: Choose the Right Partner",
+      "description": "Learn how to choose an AI consulting company with a 15-point checklist covering strategy, data, pilots, AI agents, automation, security, cost, and ROI.",
+      "excerpt": "A buyer checklist for comparing AI consulting companies across strategy, workflow design, pilots, governance, cost, and rollout support.",
+      "keywords": "ai consulting company, ai consulting services, ai automation agency, custom ai solutions, ai agent development, ai implementation services, ai consultants",
+      "category": "ai-consulting",
+      "badge": "Buyer Guide",
+      "readTime": "15 min read",
+      "image": "assets/images/ai-consulting-company-evaluation-map.png",
+      "published": "2026-05-15",
+      "modified": "2026-05-15"
+    },
+    "ai-workflow-automation": {
+      "title": "AI Workflow Automation: 15 Processes to Automate",
+      "description": "See 15 business processes to automate first with AI workflow automation, from lead routing and support triage to invoices, reporting, CRM, and approvals.",
+      "excerpt": "A practical guide to the first workflows worth automating with AI, including risk, ROI, guardrails, and rollout advice.",
+      "keywords": "ai workflow automation, workflow automation, workflow automation tools, ai automation tools, ai automation software, workflow automation examples, ai automation examples",
+      "category": "ai-automation",
+      "badge": "Workflow Guide",
+      "readTime": "16 min read",
+      "image": "assets/images/ai-automation-workflow-map.png",
+      "published": "2026-05-15",
+      "modified": "2026-05-15"
+    },
+    "business-process-automation-software": {
+      "title": "Business Process Automation Software: Buyer Guide",
+      "description": "A buyer guide for business process automation software, covering workflow fit, AI features, integrations, security, reporting, cost, and rollout.",
+      "excerpt": "A buyer guide for choosing process automation software that fits real workflows, integrations, reporting, governance, and rollout needs.",
+      "keywords": "business process automation software, business process automation tools, workflow automation software, AI automation software, AI automation agency",
+      "category": "business-process-automation",
+      "badge": "Software Guide",
+      "readTime": "15 min read",
+      "image": "assets/images/ai-automation-roi-dashboard.png",
+      "published": "2026-05-15",
+      "modified": "2026-05-15"
+    },
+    "business-process-automation-with-ai": {
+      "title": "Business Process Automation With AI",
+      "description": "Learn what to automate with business process automation and AI, from lead routing and support to invoices, reporting, documents, approvals, and CRM.",
+      "excerpt": "A practical list of business processes that are strong candidates for AI automation, plus rollout and risk guidance.",
+      "keywords": "business process automation, business process automation with AI, AI automation agency, AI workflow automation, AI consulting services, custom AI solutions",
+      "category": "ai-automation",
+      "badge": "Use Cases",
+      "readTime": "16 min read",
+      "image": "assets/images/ai-agent-human-approval.png",
+      "published": "2026-05-15",
+      "modified": "2026-05-15"
+    },
+    "workflow-automation-software-vs-ai-automation-agency": {
+      "title": "Workflow Automation Software vs AI Agency",
+      "description": "Compare workflow automation software with an AI agency across cost, speed, control, customization, integrations, AI agents, support, and ROI.",
+      "excerpt": "A comparison guide for deciding when workflow automation software is enough and when an AI automation agency is the better partner.",
+      "keywords": "workflow automation software, AI automation agency, workflow automation tools, AI automation tools, AI workflow automation, business process automation",
+      "category": "business-process-automation",
+      "badge": "Comparison",
+      "readTime": "15 min read",
+      "image": "assets/images/ai-consulting-company-rollout-dashboard.png",
+      "published": "2026-05-15",
+      "modified": "2026-05-15"
+    }
+  }
+}
