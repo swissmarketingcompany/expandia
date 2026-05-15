@@ -4807,6 +4807,29 @@ function buildServiceAreasPage() {
                 min-height: 390px;
             }
         }
+
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .service-map-page {
+            width: 100vw;
+            height: calc(100vh - 4rem);
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #dbe4ee;
+        }
+
+        .service-map-page .service-area-map {
+            width: 100vw;
+            height: calc(100vh - 4rem) !important;
+            min-height: 0 !important;
+            border: 0;
+            z-index: 1;
+        }
     </style>`;
 
     const scriptContent = `
@@ -4819,32 +4842,19 @@ function buildServiceAreasPage() {
             if (!window.L) return;
 
             const serviceAreas = ${JSON.stringify(serviceAreas)};
-            const marketOrder = ['All', 'Europe', 'United States', 'Canada', 'Australia'];
             const marketColors = {
-                All: '#0f172a',
                 Europe: '#cb102c',
                 'United States': '#2563eb',
                 Canada: '#16a34a',
                 Australia: '#f59e0b'
             };
             const mapElement = document.getElementById('service-area-map');
-            const filterElement = document.getElementById('service-area-filters');
-            const listElement = document.getElementById('service-area-list');
-            const searchElement = document.getElementById('service-area-search');
-            const resetElement = document.getElementById('service-area-reset');
-            const selectedNameElement = document.getElementById('selected-area-name');
-            const selectedMetaElement = document.getElementById('selected-area-meta');
-            const selectedCtaElement = document.getElementById('selected-area-cta');
+            if (!mapElement) return;
 
-            let activeMarket = 'All';
-            let searchQuery = '';
-            let selectedId = null;
-            const markers = new Map();
-            const markerLayer = L.layerGroup();
             const allBounds = L.latLngBounds(serviceAreas.map(area => [area.lat, area.lng]));
 
             const map = L.map(mapElement, {
-                scrollWheelZoom: false,
+                scrollWheelZoom: true,
                 worldCopyJump: true,
                 minZoom: 2
             });
@@ -4853,8 +4863,6 @@ function buildServiceAreasPage() {
                 attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
                 maxZoom: 18
             }).addTo(map);
-            markerLayer.addTo(map);
-            map.fitBounds(allBounds.pad(0.08), { maxZoom: 4 });
 
             function escapeHtml(value) {
                 return String(value || '')
@@ -4874,7 +4882,7 @@ function buildServiceAreasPage() {
             }
 
             function createIcon(area, isSelected) {
-                const color = marketColors[area.market] || marketColors.All;
+                const color = marketColors[area.market] || '#0f172a';
                 return L.divIcon({
                     className: '',
                     html: '<div class="service-marker-pin' + (isSelected ? ' is-selected' : '') + '" style="--marker-color: ' + color + ';"></div>',
@@ -4884,156 +4892,36 @@ function buildServiceAreasPage() {
                 });
             }
 
-            function filteredAreas() {
-                const normalizedQuery = searchQuery.trim().toLowerCase();
-                return serviceAreas.filter(area => {
-                    const marketMatches = activeMarket === 'All' || area.market === activeMarket;
-                    const queryTarget = [area.city, area.state, area.country, area.market].filter(Boolean).join(' ').toLowerCase();
-                    return marketMatches && (!normalizedQuery || queryTarget.includes(normalizedQuery));
-                });
-            }
-
-            function renderFilters() {
-                const counts = serviceAreas.reduce((acc, area) => {
-                    acc[area.market] = (acc[area.market] || 0) + 1;
-                    return acc;
-                }, { All: serviceAreas.length });
-
-                filterElement.innerHTML = marketOrder.map(market => {
-                    const color = marketColors[market] || marketColors.All;
-                    const activeClass = market === activeMarket ? ' is-active' : '';
-                    return '<button type="button" class="service-filter-button' + activeClass + '" data-market="' + escapeHtml(market) + '" style="--filter-color: ' + color + ';">' +
-                        '<span class="inline-flex items-center gap-2 min-w-0"><span class="service-filter-dot"></span><span class="truncate">' + escapeHtml(market) + '</span></span>' +
-                        '<span class="text-base-content/50">' + (counts[market] || 0) + '</span>' +
-                    '</button>';
-                }).join('');
-
-                filterElement.querySelectorAll('button[data-market]').forEach(button => {
-                    button.addEventListener('click', function () {
-                        activeMarket = this.getAttribute('data-market');
-                        selectedId = null;
-                        render();
-                        fitToCurrentAreas();
-                    });
-                });
-            }
-
-            function renderMarkers() {
-                markerLayer.clearLayers();
-                markers.clear();
-
-                filteredAreas().forEach(area => {
-                    const marker = L.marker([area.lat, area.lng], {
-                        icon: createIcon(area, area.id === selectedId)
-                    });
-                    const color = marketColors[area.market] || marketColors.All;
-                    marker.bindPopup(
-                        '<div class="service-popup-inner">' +
-                            '<div class="flex items-center gap-2 mb-2"><span class="w-3 h-3 rounded-full" style="background-color: ' + color + ';"></span><strong class="text-base-content">' + escapeHtml(area.city) + '</strong></div>' +
-                            '<p class="text-sm text-base-content/65 mb-1">' + escapeHtml(areaMeta(area)) + '</p>' +
-                            '<p class="text-sm text-base-content/65 mb-3">Remote AI service area, not an office.</p>' +
-                            '<a class="btn btn-primary btn-sm w-full" href="' + contactUrl(area) + '">Start in ' + escapeHtml(area.city) + '</a>' +
-                        '</div>',
-                        { className: 'service-area-popup' }
-                    );
-                    marker.on('click', function () {
-                        selectArea(area, false);
-                    });
-                    marker.addTo(markerLayer);
-                    markers.set(area.id, marker);
-                });
-            }
-
-            function renderList() {
-                const areas = filteredAreas();
-                if (!areas.length) {
-                    listElement.innerHTML = '<div class="rounded-lg bg-base-200 p-4 text-sm text-base-content/65">No matching service areas.</div>';
-                    return;
-                }
-
-                listElement.innerHTML = areas.map(area => {
-                    const color = marketColors[area.market] || marketColors.All;
-                    const selectedClass = area.id === selectedId ? ' is-selected' : '';
-                    return '<button type="button" class="service-area-row' + selectedClass + '" data-area-id="' + escapeHtml(area.id) + '" style="--row-color: ' + color + ';">' +
-                        '<span class="flex items-start gap-3">' +
-                            '<span class="w-3 h-3 rounded-full mt-1.5 flex-none" style="background-color: ' + color + ';"></span>' +
-                            '<span class="min-w-0">' +
-                                '<span class="block font-black text-base-content leading-tight">' + escapeHtml(area.city) + '</span>' +
-                                '<span class="block text-sm text-base-content/55 truncate">' + escapeHtml(areaMeta(area)) + ' - ' + escapeHtml(area.market) + '</span>' +
-                            '</span>' +
-                        '</span>' +
-                    '</button>';
-                }).join('');
-
-                listElement.querySelectorAll('button[data-area-id]').forEach(button => {
-                    button.addEventListener('click', function () {
-                        const area = serviceAreas.find(item => item.id === this.getAttribute('data-area-id'));
-                        if (area) selectArea(area, true);
-                    });
-                });
-            }
-
-            function selectArea(area, shouldFly) {
-                selectedId = area.id;
-                selectedNameElement.textContent = area.city;
-                selectedMetaElement.textContent = areaMeta(area) + ' - Remote AI service area, not an office.';
-                selectedCtaElement.href = contactUrl(area);
-                selectedCtaElement.innerHTML = '<i data-lucide="calendar" class="w-4 h-4"></i> Start in ' + escapeHtml(area.city);
-
-                renderMarkers();
-                renderList();
-
-                const marker = markers.get(area.id);
-                if (marker) {
-                    if (shouldFly) {
-                        map.flyTo([area.lat, area.lng], Math.max(map.getZoom(), 6), { duration: 0.8 });
-                    }
-                    marker.openPopup();
-                }
-
-                if (window.lucide && typeof window.lucide.createIcons === 'function') {
-                    window.lucide.createIcons();
-                }
-            }
-
-            function fitToCurrentAreas() {
-                const areas = filteredAreas();
-                if (!areas.length) return;
-                const bounds = L.latLngBounds(areas.map(area => [area.lat, area.lng]));
-                map.fitBounds(bounds.pad(0.12), { maxZoom: activeMarket === 'All' && !searchQuery ? 4 : 6 });
-            }
-
-            function resetSelection() {
-                activeMarket = 'All';
-                searchQuery = '';
-                selectedId = null;
-                searchElement.value = '';
-                selectedNameElement.textContent = 'All service areas';
-                selectedMetaElement.textContent = serviceAreas.length + ' city markets across Europe, the United States, Canada, and Australia.';
-                selectedCtaElement.href = 'contact.html';
-                selectedCtaElement.innerHTML = '<i data-lucide="calendar" class="w-4 h-4"></i> Start a Project';
-                render();
-                map.fitBounds(allBounds.pad(0.08), { maxZoom: 4 });
-            }
-
-            function render() {
-                renderFilters();
-                renderMarkers();
-                renderList();
-                if (window.lucide && typeof window.lucide.createIcons === 'function') {
-                    window.lucide.createIcons();
-                }
-            }
-
-            searchElement.addEventListener('input', function () {
-                searchQuery = this.value;
-                selectedId = null;
-                render();
-                fitToCurrentAreas();
+            serviceAreas.forEach(area => {
+                const color = marketColors[area.market] || '#0f172a';
+                const marker = L.marker([area.lat, area.lng], {
+                    icon: createIcon(area, false)
+                }).addTo(map);
+                marker.bindPopup(
+                    '<div class="service-popup-inner">' +
+                        '<div class="flex items-center gap-2 mb-2"><span class="w-3 h-3 rounded-full" style="background-color: ' + color + ';"></span><strong class="text-base-content">' + escapeHtml(area.city) + '</strong></div>' +
+                        '<p class="text-sm text-base-content/65 mb-1">' + escapeHtml(areaMeta(area)) + '</p>' +
+                        '<p class="text-sm text-base-content/65 mb-3">Remote AI service area, not an office.</p>' +
+                        '<a class="btn btn-primary btn-sm w-full" href="' + contactUrl(area) + '">Start in ' + escapeHtml(area.city) + '</a>' +
+                    '</div>',
+                    { className: 'service-area-popup' }
+                );
             });
 
-            resetElement.addEventListener('click', resetSelection);
-            render();
+            function fitMap() {
+                map.invalidateSize();
+                map.fitBounds(allBounds.pad(0.08), { maxZoom: 4, animate: false });
+            }
+
+            window.Tawk_API = window.Tawk_API || {};
+            window.Tawk_API.onLoad = function () {
+                if (typeof window.Tawk_API.hideWidget === 'function') {
+                    window.Tawk_API.hideWidget();
+                }
+            };
+
+            requestAnimationFrame(fitMap);
+            window.addEventListener('resize', fitMap);
         });
     </script>`;
 
@@ -5067,7 +4955,7 @@ function buildServiceAreasPage() {
 
     htmlTemplate = htmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
     htmlTemplate = htmlTemplate.replace('{{MAIN_CONTENT}}', content);
-    htmlTemplate = htmlTemplate.replace('{{FOOTER}}', pageFooter);
+    htmlTemplate = htmlTemplate.replace('{{FOOTER}}', '');
 
     const pageMetadata = getPageMetadata('service-areas', lang);
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, pageMetadata.title);
@@ -5105,6 +4993,7 @@ function buildServiceAreasPage() {
     htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, JSON.stringify(serviceAreaSchema, null, 2));
     htmlTemplate = clearUnresolvedTemplateTokens(htmlTemplate);
     htmlTemplate = rewriteLegacyHrefTargets(htmlTemplate);
+    htmlTemplate = htmlTemplate.replace(/[ \t]+$/gm, '');
 
     fs.writeFileSync('service-areas.html', htmlTemplate, 'utf8');
     console.log(`✅ Built service-areas.html with ${serviceAreas.length} service areas.`);
