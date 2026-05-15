@@ -24,6 +24,36 @@
     <section id="barcelona-ai-guide" class="bg-buzz-light py-16 md:py-20">
         <div class="barcelona-main-layout mx-auto max-w-6xl px-8 sm:px-10 lg:px-14">
             <div class="barcelona-guide-copy max-w-none">
+                <div class="barcelona-services-strip" aria-label="Go Expandia AI services">
+                    <p class="barcelona-services-eyebrow">Our Services</p>
+                    <div class="barcelona-services-grid">
+                        <a href="{{BASE_PATH}}ai-automation-agency.html">
+                            <span>AI Automation</span>
+                            <small>Remove repeated manual work from daily operations.</small>
+                        </a>
+                        <a href="{{BASE_PATH}}ai-consulting-services.html">
+                            <span>AI Consulting</span>
+                            <small>Prioritize the right use cases, tools, and delivery plan.</small>
+                        </a>
+                        <a href="{{BASE_PATH}}ai-agent-development.html">
+                            <span>AI Agents</span>
+                            <small>Build controlled agents with review, handoff, and logging.</small>
+                        </a>
+                        <a href="{{BASE_PATH}}custom-ai-solutions-for-businesses.html">
+                            <span>Custom AI Solutions</span>
+                            <small>Create workflow tools around your data and business rules.</small>
+                        </a>
+                        <a href="{{BASE_PATH}}solutions.html">
+                            <span>AI Training</span>
+                            <small>Help teams use AI systems safely and consistently.</small>
+                        </a>
+                        <a href="{{BASE_PATH}}contact.html">
+                            <span>AI Support</span>
+                            <small>Improve live workflows after launch with ongoing support.</small>
+                        </a>
+                    </div>
+                </div>
+
                 <h2>Barcelona AI services guide for companies and AI users</h2>
                 <p>
                     Barcelona is a practical city for AI adoption because business demand, digital talent, research infrastructure, multilingual operations, and international commerce meet in one compact metropolitan area. Companies based in the city often need AI for very concrete reasons: faster customer response, less manual administration, clearer sales follow-up, better data retrieval, sharper reporting, and more reliable handoffs between teams. The best AI projects in Barcelona are not abstract showcases. They are operational systems that help people do normal work faster, with fewer mistakes, in the languages and tools the company already uses.
@@ -389,6 +419,7 @@
     .barcelona-guide-copy > h4,
     .barcelona-guide-copy > h5,
     .barcelona-guide-copy > p,
+    .barcelona-guide-copy > .barcelona-services-strip,
     .barcelona-guide-copy > .barcelona-reader-panel,
     .barcelona-guide-copy > .barcelona-process-grid {
         max-width: 820px;
@@ -444,6 +475,67 @@
         font-weight: 800;
         text-decoration: underline;
         text-underline-offset: 0.18em;
+    }
+
+    .barcelona-services-strip {
+        margin: 0 0 3rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.5rem;
+        background: #ffffff;
+        padding: clamp(1rem, 2vw, 1.35rem);
+        box-shadow: 0 18px 48px rgba(15, 23, 42, 0.07);
+    }
+
+    .barcelona-services-eyebrow {
+        margin: 0 0 1rem;
+        color: #c70f2e;
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+        line-height: 1.2;
+        text-transform: uppercase;
+    }
+
+    .barcelona-services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.75rem;
+    }
+
+    .barcelona-services-grid a {
+        display: flex;
+        min-height: 8rem;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.5rem;
+        background: #f8fafc;
+        padding: 1rem;
+        color: #0f172a;
+        text-decoration: none;
+        transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+    }
+
+    .barcelona-services-grid a:hover {
+        border-color: rgba(199, 15, 46, 0.45);
+        box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+        transform: translateY(-1px);
+    }
+
+    .barcelona-services-grid span {
+        color: #0f172a;
+        font-size: 1rem;
+        font-weight: 900;
+        line-height: 1.2;
+    }
+
+    .barcelona-services-grid small {
+        display: block;
+        margin-top: 0.75rem;
+        color: #64748b;
+        font-size: 0.86rem;
+        font-weight: 600;
+        line-height: 1.45;
     }
 
     .barcelona-reader-panel,
@@ -535,11 +627,28 @@
         .barcelona-guide-copy > h4,
         .barcelona-guide-copy > h5,
         .barcelona-guide-copy > p,
+        .barcelona-guide-copy > .barcelona-services-strip,
         .barcelona-guide-copy > .barcelona-reader-panel,
         .barcelona-guide-copy > .barcelona-process-grid,
         .barcelona-image-block picture,
         .barcelona-image-block img {
             max-width: none;
+        }
+    }
+
+    @media (max-width: 860px) {
+        .barcelona-services-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 560px) {
+        .barcelona-services-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .barcelona-services-grid a {
+            min-height: 0;
         }
     }
 
