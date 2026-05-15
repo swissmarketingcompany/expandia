@@ -22,3 +22,13 @@ These city hero images are local copies of real city photography from Unsplash. 
 - Oslo: https://unsplash.com/photos/HlEXt81M140
 - Helsinki: https://unsplash.com/photos/EKyP0tS1VBQ
 - Warsaw: https://unsplash.com/photos/yuRskJsfJYM
+- Frankfurt: https://unsplash.com/photos/7ZX_iX9jME8
+- Cologne: https://unsplash.com/photos/2mqqvfGVK8A
+- Rotterdam: https://unsplash.com/photos/mzrPiJ2Rnxc
+- Antwerp: https://unsplash.com/photos/Bre_WT3s8-c
+- Lyon: https://unsplash.com/photos/FG873s1mCII
+- Valencia: https://unsplash.com/photos/_pmI9VMJlbw
+- Athens: https://unsplash.com/photos/w42QbX_dMiw
+- Budapest: https://unsplash.com/photos/SjOD2HIclgw
+- Manchester: https://unsplash.com/photos/NXtGjC7osPs
+- Edinburgh: https://unsplash.com/photos/txPjoirZ3RY
