@@ -2677,7 +2677,11 @@ function getHreflangUrls(templateName) {
         'usa-pr-dienst': { en: 'usa-pr-service.html', de: 'de/usa-pr-dienst.html', fr: 'fr/usa-pr-service.html' },
         'international-market-entry': { en: 'international-market-entry.html', de: 'de/international-market-entry.html', fr: 'fr/international-market-entry.html' }
     };
-    const resolved = urls[templateName] || urls['index'];
+    const resolved = urls[templateName] || {
+        en: `${templateName}.html`,
+        de: `${templateName}.html`,
+        fr: `${templateName}.html`
+    };
     const enPath = resolved.en || '';
     return {
         en: enPath,
@@ -2697,7 +2701,17 @@ function getActiveStates(templateName) {
         'vision-mission': { 'COMPANY_ACTIVE': 'text-primary', 'VISION_MOBILE_ACTIVE': 'class="font-semibold text-primary"', 'VISION_ITEM_ACTIVE': 'bg-primary/10 border border-primary/20' },
         'our-ethical-principles': { 'COMPANY_ACTIVE': 'text-primary', 'ETHICS_MOBILE_ACTIVE': 'class="font-semibold text-primary"', 'ETHICS_ITEM_ACTIVE': 'bg-primary/10 border border-primary/20' },
         'city-locations': { 'SOLUTIONS_ACTIVE': 'text-primary' },
-        'service-areas': { 'COMPANY_ACTIVE': 'text-primary' }
+        'service-areas': { 'COMPANY_ACTIVE': 'text-primary' },
+        'london-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' },
+        'paris-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' },
+        'berlin-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' },
+        'madrid-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' },
+        'amsterdam-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' },
+        'milan-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' },
+        'zurich-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' },
+        'stockholm-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' },
+        'dublin-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' },
+        'lisbon-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' }
     };
     return activeStates[templateName] || activeStates['index'];
 }
@@ -5896,7 +5910,11 @@ function generateSitemap() {
     // List of static pages
     const staticPages = [
         'index.html', 'about.html', 'our-business-model.html', 'solutions.html', 'contact.html',
-        'service-areas.html', 'barcelona-ai-services.html', 'vision-mission.html', 'our-ethical-principles.html'
+        'service-areas.html', 'barcelona-ai-services.html',
+        'london-ai-agency.html', 'paris-ai-agency.html', 'berlin-ai-agency.html', 'madrid-ai-agency.html',
+        'amsterdam-ai-agency.html', 'milan-ai-agency.html', 'zurich-ai-agency.html', 'stockholm-ai-agency.html',
+        'dublin-ai-agency.html', 'lisbon-ai-agency.html',
+        'vision-mission.html', 'our-ethical-principles.html'
     ];
 
     const legacyStaticPages = new Set(Object.keys(LEGACY_REDIRECT_TARGETS).map(page => `${page}.html`));
@@ -6178,6 +6196,16 @@ buildPage('onboarding', 'onboarding', 'en');
 buildPage('vision-mission', 'vision-mission', 'en');
 buildPage('our-ethical-principles', 'our-ethical-principles', 'en');
 buildPage('barcelona-ai-services', 'barcelona-ai-services', 'en');
+buildPage('london-ai-agency', 'london-ai-agency', 'en');
+buildPage('paris-ai-agency', 'paris-ai-agency', 'en');
+buildPage('berlin-ai-agency', 'berlin-ai-agency', 'en');
+buildPage('madrid-ai-agency', 'madrid-ai-agency', 'en');
+buildPage('amsterdam-ai-agency', 'amsterdam-ai-agency', 'en');
+buildPage('milan-ai-agency', 'milan-ai-agency', 'en');
+buildPage('zurich-ai-agency', 'zurich-ai-agency', 'en');
+buildPage('stockholm-ai-agency', 'stockholm-ai-agency', 'en');
+buildPage('dublin-ai-agency', 'dublin-ai-agency', 'en');
+buildPage('lisbon-ai-agency', 'lisbon-ai-agency', 'en');
 // Build Approved Solution Pages (English)
 services.forEach(service => buildSolutionPage(service.id, service.id, 'en'));
 
