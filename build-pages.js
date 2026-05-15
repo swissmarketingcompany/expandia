@@ -704,6 +704,11 @@ const PAGE_METADATA_OVERRIDES = {
         description: 'Explore Go Expandia service areas across 50 major cities in Europe, the United States, Canada, and Australia for AI automation, consulting, agents, and custom AI solutions.',
         keywords: 'AI agency service areas, AI automation locations, AI consulting service areas, AI agents by city, custom AI solutions locations'
     },
+    'barcelona-ai-services': {
+        title: 'AI Services in Barcelona | Business AI Guide | Go Expandia',
+        description: 'A practical Barcelona AI services landing page and guide for businesses, AI users, and assistants researching AI automation, consulting, agents, and custom AI solutions.',
+        keywords: 'AI services Barcelona, AI agency Barcelona, AI automation Barcelona, AI consulting Barcelona, AI agents Barcelona, custom AI solutions Barcelona'
+    },
     'blog-index': {
         title: 'AI Business Operations Blog | Go Expandia',
         description: 'Practical articles on using AI to increase revenue, collect payments faster, reduce costs, and run operations with better control.',
@@ -2649,6 +2654,7 @@ function getHreflangUrls(templateName) {
         'ai-creative-studio': { en: 'ai-creative-studio.html', de: 'de/ai-creative-studio.html', fr: 'fr/ai-creative-studio.html' },
         'city-locations': { en: 'city-locations.html', de: 'de/city-locations.html', fr: 'fr/city-locations.html' },
         'service-areas': { en: 'service-areas.html', de: 'service-areas.html', fr: 'service-areas.html' },
+        'barcelona-ai-services': { en: 'barcelona-ai-services.html', de: 'barcelona-ai-services.html', fr: 'barcelona-ai-services.html' },
         'blog-index': { en: 'blog/', de: 'blog/', fr: 'blog/' },
         'vision-mission': { en: 'vision-mission.html', de: 'de/vision-mission.html', fr: 'fr/vision-mission.html' },
         'vizyon-misyon': { en: 'vision-mission.html', de: 'de/vision-mission.html', fr: 'fr/vision-mission.html' },
@@ -5890,7 +5896,7 @@ function generateSitemap() {
     // List of static pages
     const staticPages = [
         'index.html', 'about.html', 'our-business-model.html', 'solutions.html', 'contact.html',
-        'service-areas.html', 'vision-mission.html', 'our-ethical-principles.html'
+        'service-areas.html', 'barcelona-ai-services.html', 'vision-mission.html', 'our-ethical-principles.html'
     ];
 
     const legacyStaticPages = new Set(Object.keys(LEGACY_REDIRECT_TARGETS).map(page => `${page}.html`));
@@ -6171,6 +6177,7 @@ buildPage('contact', 'contact', 'en');
 buildPage('onboarding', 'onboarding', 'en');
 buildPage('vision-mission', 'vision-mission', 'en');
 buildPage('our-ethical-principles', 'our-ethical-principles', 'en');
+buildPage('barcelona-ai-services', 'barcelona-ai-services', 'en');
 // Build Approved Solution Pages (English)
 services.forEach(service => buildSolutionPage(service.id, service.id, 'en'));
 

@@ -8,6 +8,7 @@
     "build:pages": "node build-pages.js",
     "build": "npm run build:css && npm run build:js && npm run build:pages",
     "generate:nano-banana-blog-images": "node scripts/generate-nano-banana-blog-images.mjs",
+    "generate:barcelona-ai-images": "node scripts/generate-barcelona-ai-images.mjs",
     "indexnow:submit": "node scripts/submit-indexnow.js",
     "test": "echo 'No tests specified'",
     "audit:placeholders": "node scripts/audit-generated-placeholders.js",

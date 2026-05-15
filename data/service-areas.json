@@ -160,6 +160,94 @@
     "lng": 18.0686
   },
   {
+    "id": "lisbon",
+    "city": "Lisbon",
+    "country": "Portugal",
+    "market": "Europe",
+    "lat": 38.7223,
+    "lng": -9.1393
+  },
+  {
+    "id": "dublin",
+    "city": "Dublin",
+    "country": "Ireland",
+    "market": "Europe",
+    "lat": 53.3498,
+    "lng": -6.2603
+  },
+  {
+    "id": "copenhagen",
+    "city": "Copenhagen",
+    "country": "Denmark",
+    "market": "Europe",
+    "lat": 55.6761,
+    "lng": 12.5683
+  },
+  {
+    "id": "oslo",
+    "city": "Oslo",
+    "country": "Norway",
+    "market": "Europe",
+    "lat": 59.9139,
+    "lng": 10.7522
+  },
+  {
+    "id": "helsinki",
+    "city": "Helsinki",
+    "country": "Finland",
+    "market": "Europe",
+    "lat": 60.1699,
+    "lng": 24.9384
+  },
+  {
+    "id": "zurich",
+    "city": "Zurich",
+    "country": "Switzerland",
+    "market": "Europe",
+    "lat": 47.3769,
+    "lng": 8.5417
+  },
+  {
+    "id": "frankfurt",
+    "city": "Frankfurt",
+    "country": "Germany",
+    "market": "Europe",
+    "lat": 50.1109,
+    "lng": 8.6821
+  },
+  {
+    "id": "cologne",
+    "city": "Cologne",
+    "country": "Germany",
+    "market": "Europe",
+    "lat": 50.9375,
+    "lng": 6.9603
+  },
+  {
+    "id": "lyon",
+    "city": "Lyon",
+    "country": "France",
+    "market": "Europe",
+    "lat": 45.764,
+    "lng": 4.8357
+  },
+  {
+    "id": "marseille",
+    "city": "Marseille",
+    "country": "France",
+    "market": "Europe",
+    "lat": 43.2965,
+    "lng": 5.3698
+  },
+  {
+    "id": "valencia",
+    "city": "Valencia",
+    "country": "Spain",
+    "market": "Europe",
+    "lat": 39.4699,
+    "lng": -0.3763
+  },
+  {
     "id": "new-york",
     "city": "New York",
     "state": "NY",
@@ -313,60 +401,6 @@
     "lng": -73.5673
   },
   {
-    "id": "calgary",
-    "city": "Calgary",
-    "state": "AB",
-    "country": "Canada",
-    "market": "Canada",
-    "lat": 51.0447,
-    "lng": -114.0719
-  },
-  {
-    "id": "ottawa",
-    "city": "Ottawa",
-    "state": "ON",
-    "country": "Canada",
-    "market": "Canada",
-    "lat": 45.4215,
-    "lng": -75.6972
-  },
-  {
-    "id": "edmonton",
-    "city": "Edmonton",
-    "state": "AB",
-    "country": "Canada",
-    "market": "Canada",
-    "lat": 53.5461,
-    "lng": -113.4938
-  },
-  {
-    "id": "winnipeg",
-    "city": "Winnipeg",
-    "state": "MB",
-    "country": "Canada",
-    "market": "Canada",
-    "lat": 49.8951,
-    "lng": -97.1384
-  },
-  {
-    "id": "mississauga",
-    "city": "Mississauga",
-    "state": "ON",
-    "country": "Canada",
-    "market": "Canada",
-    "lat": 43.589,
-    "lng": -79.6441
-  },
-  {
-    "id": "vancouver",
-    "city": "Vancouver",
-    "state": "BC",
-    "country": "Canada",
-    "market": "Canada",
-    "lat": 49.2827,
-    "lng": -123.1207
-  },
-  {
     "id": "sydney",
     "city": "Sydney",
     "state": "NSW",
@@ -383,50 +417,5 @@
     "market": "Australia",
     "lat": -37.8136,
     "lng": 144.9631
-  },
-  {
-    "id": "brisbane",
-    "city": "Brisbane",
-    "state": "QLD",
-    "country": "Australia",
-    "market": "Australia",
-    "lat": -27.4698,
-    "lng": 153.0251
-  },
-  {
-    "id": "perth",
-    "city": "Perth",
-    "state": "WA",
-    "country": "Australia",
-    "market": "Australia",
-    "lat": -31.9523,
-    "lng": 115.8613
-  },
-  {
-    "id": "adelaide",
-    "city": "Adelaide",
-    "state": "SA",
-    "country": "Australia",
-    "market": "Australia",
-    "lat": -34.9285,
-    "lng": 138.6007
-  },
-  {
-    "id": "gold-coast",
-    "city": "Gold Coast",
-    "state": "QLD",
-    "country": "Australia",
-    "market": "Australia",
-    "lat": -28.0167,
-    "lng": 153.4
-  },
-  {
-    "id": "canberra",
-    "city": "Canberra",
-    "state": "ACT",
-    "country": "Australia",
-    "market": "Australia",
-    "lat": -35.2809,
-    "lng": 149.13
   }
 ]
