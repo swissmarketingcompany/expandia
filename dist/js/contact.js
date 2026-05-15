@@ -89,7 +89,99 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 3. Newsletter Form Handler ---
+    // --- 3. Blog Lead Capture Forms ---
+    const countdownEls = document.querySelectorAll('[data-countdown]');
+
+    countdownEls.forEach((countdownEl) => {
+        const minutes = Number(countdownEl.dataset.countdownMinutes || 8);
+        const durationMs = Math.max(minutes, 1) * 60 * 1000;
+        const expiresAt = Date.now() + durationMs;
+
+        const renderCountdown = () => {
+            const remainingMs = Math.max(0, expiresAt - Date.now());
+            const totalSeconds = Math.ceil(remainingMs / 1000);
+            const mins = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
+            const secs = String(totalSeconds % 60).padStart(2, '0');
+            countdownEl.textContent = `${mins}:${secs}`;
+
+            if (remainingMs <= 0) {
+                window.clearInterval(timer);
+            }
+        };
+
+        const timer = window.setInterval(renderCountdown, 1000);
+        renderCountdown();
+    });
+
+    const leadCaptureForms = document.querySelectorAll('form[data-lead-capture]');
+
+    leadCaptureForms.forEach((leadForm) => {
+        leadForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(leadForm);
+            const statusEl = leadForm.querySelector('[data-lead-status]');
+            const btn = leadForm.querySelector('button[type="submit"]');
+            const originalText = btn ? btn.textContent : 'Submit';
+
+            if (formData.get('website')) {
+                leadForm.reset();
+                if (statusEl) statusEl.textContent = 'Thanks. We will send your checkup shortly.';
+                return;
+            }
+
+            if (statusEl) statusEl.textContent = 'Sending...';
+            if (btn) {
+                btn.textContent = 'Sending...';
+                btn.disabled = true;
+            }
+
+            const payload = {
+                email: formData.get('email'),
+                message: [
+                    'Free AI Automation Checkup Request',
+                    `Source: ${leadForm.dataset.leadCapture || 'blog lead capture'}`,
+                    `Page: ${window.location.href}`,
+                    'Request: Visitor asked for a quick first-pass review of what their team should automate first.'
+                ].join('\n'),
+                to: DESTINATION_EMAIL
+            };
+
+            try {
+                const resp = await fetch('https://expandia-contact-form.omaycompany.workers.dev/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await resp.json().catch(() => ({}));
+
+                if (resp.ok) {
+                    leadForm.reset();
+                    if (statusEl) statusEl.textContent = 'Thanks. We will send your checkup shortly.';
+                    if (btn) btn.textContent = 'Sent';
+                } else {
+                    if (statusEl) statusEl.textContent = data.message || 'Submission failed. Please try again.';
+                    if (btn) btn.textContent = originalText;
+                }
+            } catch (err) {
+                console.error(err);
+                if (statusEl) statusEl.textContent = 'Server error. Please try again later.';
+                if (btn) btn.textContent = originalText;
+            } finally {
+                if (btn) {
+                    window.setTimeout(() => {
+                        btn.disabled = false;
+                        if (btn.textContent === 'Sent') {
+                            btn.textContent = originalText;
+                        }
+                    }, 2000);
+                }
+            }
+        });
+    });
+
+    // --- 4. Newsletter Form Handler ---
     const newsletterForms = document.querySelectorAll('form#newsletter-form');
     
     newsletterForms.forEach((newsletterForm) => {
