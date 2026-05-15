@@ -193,6 +193,7 @@ const industries = require('./data/industries.json');
 const services = require('./data/services.json');
 const serviceContent = require('./data/service-content.json');
 const topCities = require('./data/top-cities.json');
+const serviceAreas = require('./data/service-areas.json');
 const topIndustries = require('./data/top-industries.json');
 const glossary = require('./data/glossary.json');
 const metadata = require('./data/metadata.json');
@@ -698,6 +699,11 @@ const PAGE_METADATA_OVERRIDES = {
         description: 'See where we deliver AI agency services including automation, consulting, AI agents, and custom AI solutions.',
         keywords: 'AI agency locations, AI automation by city, AI consulting by city, AI agent development locations'
     },
+    'service-areas': {
+        title: 'Service Areas | AI Agency Locations | Go Expandia',
+        description: 'Explore Go Expandia service areas across 50 major cities in Europe, the United States, Canada, and Australia for AI automation, consulting, agents, and custom AI solutions.',
+        keywords: 'AI agency service areas, AI automation locations, AI consulting service areas, AI agents by city, custom AI solutions locations'
+    },
     'blog-index': {
         title: 'AI Business Operations Blog | Go Expandia',
         description: 'Practical articles on using AI to increase revenue, collect payments faster, reduce costs, and run operations with better control.',
@@ -742,6 +748,13 @@ function escapeHtmlAttr(value = '') {
     return String(value)
         .replace(/&/g, '&amp;')
         .replace(/"/g, '&quot;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+}
+
+function escapeHtmlText(value = '') {
+    return String(value)
+        .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;');
 }
@@ -2635,6 +2648,7 @@ function getHreflangUrls(templateName) {
         'recruitment': { en: 'recruitment.html', de: 'de/recruitment.html', fr: 'fr/recruitment.html' },
         'ai-creative-studio': { en: 'ai-creative-studio.html', de: 'de/ai-creative-studio.html', fr: 'fr/ai-creative-studio.html' },
         'city-locations': { en: 'city-locations.html', de: 'de/city-locations.html', fr: 'fr/city-locations.html' },
+        'service-areas': { en: 'service-areas.html', de: 'service-areas.html', fr: 'service-areas.html' },
         'blog-index': { en: 'blog/', de: 'blog/', fr: 'blog/' },
         'vision-mission': { en: 'vision-mission.html', de: 'de/vision-mission.html', fr: 'fr/vision-mission.html' },
         'vizyon-misyon': { en: 'vision-mission.html', de: 'de/vision-mission.html', fr: 'fr/vision-mission.html' },
@@ -2676,7 +2690,8 @@ function getActiveStates(templateName) {
 
         'vision-mission': { 'COMPANY_ACTIVE': 'text-primary', 'VISION_MOBILE_ACTIVE': 'class="font-semibold text-primary"', 'VISION_ITEM_ACTIVE': 'bg-primary/10 border border-primary/20' },
         'our-ethical-principles': { 'COMPANY_ACTIVE': 'text-primary', 'ETHICS_MOBILE_ACTIVE': 'class="font-semibold text-primary"', 'ETHICS_ITEM_ACTIVE': 'bg-primary/10 border border-primary/20' },
-        'city-locations': { 'SOLUTIONS_ACTIVE': 'text-primary' }
+        'city-locations': { 'SOLUTIONS_ACTIVE': 'text-primary' },
+        'service-areas': { 'COMPANY_ACTIVE': 'text-primary' }
     };
     return activeStates[templateName] || activeStates['index'];
 }
@@ -4519,6 +4534,582 @@ function buildCityLocationsPage() {
     console.log(`✅ Built city-locations.html`);
 }
 
+function formatServiceAreaMeta(area) {
+    return [area.state, area.country].filter(Boolean).join(', ');
+}
+
+function generateServiceAreaGroups() {
+    const marketOrder = ['Europe', 'United States', 'Canada', 'Australia'];
+    const marketColors = {
+        Europe: '#cb102c',
+        'United States': '#2563eb',
+        Canada: '#16a34a',
+        Australia: '#f59e0b'
+    };
+
+    return marketOrder.map(market => {
+        const areas = serviceAreas.filter(area => area.market === market);
+        const areaItems = areas.map(area => `
+                    <li class="flex items-start justify-between gap-3 py-2 border-b border-base-200 last:border-b-0">
+                        <span class="font-semibold text-base-content">${escapeHtmlText(area.city)}</span>
+                        <span class="text-sm text-base-content/55 text-right">${escapeHtmlText(formatServiceAreaMeta(area))}</span>
+                    </li>`).join('');
+
+        return `
+            <section class="rounded-lg border border-base-200 bg-white p-5 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="w-3 h-3 rounded-full" style="background-color: ${marketColors[market]};"></span>
+                    <div>
+                        <h3 class="text-xl font-black text-base-content">${escapeHtmlText(market)}</h3>
+                        <p class="text-sm text-base-content/60">${areas.length} service areas</p>
+                    </div>
+                </div>
+                <ul>
+                    ${areaItems}
+                </ul>
+            </section>`;
+    }).join('\n');
+}
+
+function buildServiceAreasPage() {
+    console.log('\n🏗️  Building Service Areas Page...');
+
+    const templateContent = fs.readFileSync('templates/service-areas.html', 'utf8');
+    const lang = 'en';
+    const marketCounts = serviceAreas.reduce((acc, area) => {
+        acc[area.market] = (acc[area.market] || 0) + 1;
+        return acc;
+    }, {});
+
+    const headContent = `
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin="">
+    <style>
+        .service-area-tool {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(320px, 390px);
+            gap: 1rem;
+            align-items: stretch;
+        }
+
+        .service-map-frame {
+            position: relative;
+            min-width: 0;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            border: 1px solid rgba(15, 23, 42, 0.12);
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.16);
+            background: #dbe4ee;
+        }
+
+        .service-area-map {
+            width: 100%;
+            min-height: 640px;
+            height: min(78vh, 760px);
+            z-index: 1;
+        }
+
+        .service-map-badge {
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            z-index: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.55rem 0.75rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            background: rgba(15, 23, 42, 0.82);
+            color: #fff;
+            font-size: 0.8125rem;
+            font-weight: 800;
+            box-shadow: 0 12px 24px rgba(15, 23, 42, 0.22);
+            backdrop-filter: blur(10px);
+        }
+
+        .service-area-controls {
+            border-radius: 0.5rem;
+            border: 1px solid rgba(15, 23, 42, 0.12);
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            min-height: 640px;
+            height: min(78vh, 760px);
+            overflow: hidden;
+        }
+
+        .service-area-controls > div:last-child {
+            flex: 1 1 auto;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-filter-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.5rem;
+        }
+
+        .service-filter-button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+            min-height: 2.75rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(15, 23, 42, 0.12);
+            background: #fff;
+            padding: 0.55rem 0.65rem;
+            color: #1f2937;
+            font-size: 0.8125rem;
+            font-weight: 800;
+            transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+        }
+
+        .service-filter-button:hover,
+        .service-filter-button.is-active {
+            border-color: var(--filter-color);
+            box-shadow: 0 8px 22px rgba(15, 23, 42, 0.12);
+            transform: translateY(-1px);
+        }
+
+        .service-filter-button.is-active {
+            background: color-mix(in srgb, var(--filter-color) 10%, white);
+        }
+
+        .service-filter-dot {
+            width: 0.6rem;
+            height: 0.6rem;
+            flex: 0 0 auto;
+            border-radius: 999px;
+            background: var(--filter-color);
+        }
+
+        .service-area-selected {
+            border-radius: 0.5rem;
+            border: 1px solid rgba(203, 16, 44, 0.2);
+            background: #fff8f8;
+            padding: 1rem;
+        }
+
+        .service-area-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            flex: 1 1 auto;
+            min-height: 0;
+            max-height: none;
+            overflow: auto;
+            padding-right: 0.25rem;
+        }
+
+        .service-area-row {
+            width: 100%;
+            min-height: 3.75rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(15, 23, 42, 0.1);
+            background: #fff;
+            padding: 0.7rem 0.8rem;
+            text-align: left;
+            transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+        }
+
+        .service-area-row:hover,
+        .service-area-row.is-selected {
+            border-color: var(--row-color);
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .service-marker-pin {
+            width: 1.35rem;
+            height: 1.35rem;
+            border-radius: 999px;
+            background: var(--marker-color);
+            border: 3px solid #fff;
+            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.32);
+            position: relative;
+        }
+
+        .service-marker-pin::after {
+            content: "";
+            position: absolute;
+            inset: -0.42rem;
+            border: 1px solid var(--marker-color);
+            border-radius: 999px;
+            opacity: 0.32;
+        }
+
+        .service-marker-pin.is-selected {
+            width: 1.65rem;
+            height: 1.65rem;
+            box-shadow: 0 12px 26px rgba(15, 23, 42, 0.42);
+        }
+
+        .service-area-popup .leaflet-popup-content-wrapper {
+            border-radius: 0.5rem;
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+        }
+
+        .service-area-popup .leaflet-popup-content {
+            margin: 0;
+            width: 240px !important;
+        }
+
+        .service-popup-inner {
+            padding: 1rem;
+        }
+
+        .service-area-popup .service-popup-inner a.btn {
+            color: #fff !important;
+            text-decoration: none;
+        }
+
+        @media (max-width: 1023px) {
+            .service-area-tool {
+                grid-template-columns: 1fr;
+            }
+
+            .service-area-controls {
+                height: auto;
+                min-height: 0;
+                overflow: visible;
+            }
+
+            .service-area-controls > div:last-child {
+                display: block;
+            }
+
+            .service-area-map {
+                height: 58vh;
+                min-height: 420px;
+            }
+
+            .service-area-list {
+                max-height: 22rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .service-filter-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-area-map {
+                height: 68vh;
+                min-height: 390px;
+            }
+        }
+    </style>`;
+
+    const scriptContent = `
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!window.L) return;
+
+            const serviceAreas = ${JSON.stringify(serviceAreas)};
+            const marketOrder = ['All', 'Europe', 'United States', 'Canada', 'Australia'];
+            const marketColors = {
+                All: '#0f172a',
+                Europe: '#cb102c',
+                'United States': '#2563eb',
+                Canada: '#16a34a',
+                Australia: '#f59e0b'
+            };
+            const mapElement = document.getElementById('service-area-map');
+            const filterElement = document.getElementById('service-area-filters');
+            const listElement = document.getElementById('service-area-list');
+            const searchElement = document.getElementById('service-area-search');
+            const resetElement = document.getElementById('service-area-reset');
+            const selectedNameElement = document.getElementById('selected-area-name');
+            const selectedMetaElement = document.getElementById('selected-area-meta');
+            const selectedCtaElement = document.getElementById('selected-area-cta');
+
+            let activeMarket = 'All';
+            let searchQuery = '';
+            let selectedId = null;
+            const markers = new Map();
+            const markerLayer = L.layerGroup();
+            const allBounds = L.latLngBounds(serviceAreas.map(area => [area.lat, area.lng]));
+
+            const map = L.map(mapElement, {
+                scrollWheelZoom: false,
+                worldCopyJump: true,
+                minZoom: 2
+            });
+
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+                maxZoom: 18
+            }).addTo(map);
+            markerLayer.addTo(map);
+            map.fitBounds(allBounds.pad(0.08), { maxZoom: 4 });
+
+            function escapeHtml(value) {
+                return String(value || '')
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#39;');
+            }
+
+            function areaMeta(area) {
+                return [area.state, area.country].filter(Boolean).join(', ');
+            }
+
+            function contactUrl(area) {
+                return 'contact.html?service-area=' + encodeURIComponent(area.city + ', ' + area.country);
+            }
+
+            function createIcon(area, isSelected) {
+                const color = marketColors[area.market] || marketColors.All;
+                return L.divIcon({
+                    className: '',
+                    html: '<div class="service-marker-pin' + (isSelected ? ' is-selected' : '') + '" style="--marker-color: ' + color + ';"></div>',
+                    iconSize: isSelected ? [27, 27] : [22, 22],
+                    iconAnchor: isSelected ? [13, 13] : [11, 11],
+                    popupAnchor: [0, -10]
+                });
+            }
+
+            function filteredAreas() {
+                const normalizedQuery = searchQuery.trim().toLowerCase();
+                return serviceAreas.filter(area => {
+                    const marketMatches = activeMarket === 'All' || area.market === activeMarket;
+                    const queryTarget = [area.city, area.state, area.country, area.market].filter(Boolean).join(' ').toLowerCase();
+                    return marketMatches && (!normalizedQuery || queryTarget.includes(normalizedQuery));
+                });
+            }
+
+            function renderFilters() {
+                const counts = serviceAreas.reduce((acc, area) => {
+                    acc[area.market] = (acc[area.market] || 0) + 1;
+                    return acc;
+                }, { All: serviceAreas.length });
+
+                filterElement.innerHTML = marketOrder.map(market => {
+                    const color = marketColors[market] || marketColors.All;
+                    const activeClass = market === activeMarket ? ' is-active' : '';
+                    return '<button type="button" class="service-filter-button' + activeClass + '" data-market="' + escapeHtml(market) + '" style="--filter-color: ' + color + ';">' +
+                        '<span class="inline-flex items-center gap-2 min-w-0"><span class="service-filter-dot"></span><span class="truncate">' + escapeHtml(market) + '</span></span>' +
+                        '<span class="text-base-content/50">' + (counts[market] || 0) + '</span>' +
+                    '</button>';
+                }).join('');
+
+                filterElement.querySelectorAll('button[data-market]').forEach(button => {
+                    button.addEventListener('click', function () {
+                        activeMarket = this.getAttribute('data-market');
+                        selectedId = null;
+                        render();
+                        fitToCurrentAreas();
+                    });
+                });
+            }
+
+            function renderMarkers() {
+                markerLayer.clearLayers();
+                markers.clear();
+
+                filteredAreas().forEach(area => {
+                    const marker = L.marker([area.lat, area.lng], {
+                        icon: createIcon(area, area.id === selectedId)
+                    });
+                    const color = marketColors[area.market] || marketColors.All;
+                    marker.bindPopup(
+                        '<div class="service-popup-inner">' +
+                            '<div class="flex items-center gap-2 mb-2"><span class="w-3 h-3 rounded-full" style="background-color: ' + color + ';"></span><strong class="text-base-content">' + escapeHtml(area.city) + '</strong></div>' +
+                            '<p class="text-sm text-base-content/65 mb-1">' + escapeHtml(areaMeta(area)) + '</p>' +
+                            '<p class="text-sm text-base-content/65 mb-3">Remote AI service area, not an office.</p>' +
+                            '<a class="btn btn-primary btn-sm w-full" href="' + contactUrl(area) + '">Start in ' + escapeHtml(area.city) + '</a>' +
+                        '</div>',
+                        { className: 'service-area-popup' }
+                    );
+                    marker.on('click', function () {
+                        selectArea(area, false);
+                    });
+                    marker.addTo(markerLayer);
+                    markers.set(area.id, marker);
+                });
+            }
+
+            function renderList() {
+                const areas = filteredAreas();
+                if (!areas.length) {
+                    listElement.innerHTML = '<div class="rounded-lg bg-base-200 p-4 text-sm text-base-content/65">No matching service areas.</div>';
+                    return;
+                }
+
+                listElement.innerHTML = areas.map(area => {
+                    const color = marketColors[area.market] || marketColors.All;
+                    const selectedClass = area.id === selectedId ? ' is-selected' : '';
+                    return '<button type="button" class="service-area-row' + selectedClass + '" data-area-id="' + escapeHtml(area.id) + '" style="--row-color: ' + color + ';">' +
+                        '<span class="flex items-start gap-3">' +
+                            '<span class="w-3 h-3 rounded-full mt-1.5 flex-none" style="background-color: ' + color + ';"></span>' +
+                            '<span class="min-w-0">' +
+                                '<span class="block font-black text-base-content leading-tight">' + escapeHtml(area.city) + '</span>' +
+                                '<span class="block text-sm text-base-content/55 truncate">' + escapeHtml(areaMeta(area)) + ' - ' + escapeHtml(area.market) + '</span>' +
+                            '</span>' +
+                        '</span>' +
+                    '</button>';
+                }).join('');
+
+                listElement.querySelectorAll('button[data-area-id]').forEach(button => {
+                    button.addEventListener('click', function () {
+                        const area = serviceAreas.find(item => item.id === this.getAttribute('data-area-id'));
+                        if (area) selectArea(area, true);
+                    });
+                });
+            }
+
+            function selectArea(area, shouldFly) {
+                selectedId = area.id;
+                selectedNameElement.textContent = area.city;
+                selectedMetaElement.textContent = areaMeta(area) + ' - Remote AI service area, not an office.';
+                selectedCtaElement.href = contactUrl(area);
+                selectedCtaElement.innerHTML = '<i data-lucide="calendar" class="w-4 h-4"></i> Start in ' + escapeHtml(area.city);
+
+                renderMarkers();
+                renderList();
+
+                const marker = markers.get(area.id);
+                if (marker) {
+                    if (shouldFly) {
+                        map.flyTo([area.lat, area.lng], Math.max(map.getZoom(), 6), { duration: 0.8 });
+                    }
+                    marker.openPopup();
+                }
+
+                if (window.lucide && typeof window.lucide.createIcons === 'function') {
+                    window.lucide.createIcons();
+                }
+            }
+
+            function fitToCurrentAreas() {
+                const areas = filteredAreas();
+                if (!areas.length) return;
+                const bounds = L.latLngBounds(areas.map(area => [area.lat, area.lng]));
+                map.fitBounds(bounds.pad(0.12), { maxZoom: activeMarket === 'All' && !searchQuery ? 4 : 6 });
+            }
+
+            function resetSelection() {
+                activeMarket = 'All';
+                searchQuery = '';
+                selectedId = null;
+                searchElement.value = '';
+                selectedNameElement.textContent = 'All service areas';
+                selectedMetaElement.textContent = serviceAreas.length + ' city markets across Europe, the United States, Canada, and Australia.';
+                selectedCtaElement.href = 'contact.html';
+                selectedCtaElement.innerHTML = '<i data-lucide="calendar" class="w-4 h-4"></i> Start a Project';
+                render();
+                map.fitBounds(allBounds.pad(0.08), { maxZoom: 4 });
+            }
+
+            function render() {
+                renderFilters();
+                renderMarkers();
+                renderList();
+                if (window.lucide && typeof window.lucide.createIcons === 'function') {
+                    window.lucide.createIcons();
+                }
+            }
+
+            searchElement.addEventListener('input', function () {
+                searchQuery = this.value;
+                selectedId = null;
+                render();
+                fitToCurrentAreas();
+            });
+
+            resetElement.addEventListener('click', resetSelection);
+            render();
+        });
+    </script>`;
+
+    let htmlTemplate = createHTMLTemplate(lang, headContent, scriptContent);
+    let content = templateContent
+        .replace(/\{\{SERVICE_AREA_COUNT\}\}/g, String(serviceAreas.length))
+        .replace(/\{\{EUROPE_COUNT\}\}/g, String(marketCounts.Europe || 0))
+        .replace(/\{\{USA_COUNT\}\}/g, String(marketCounts['United States'] || 0))
+        .replace(/\{\{CANADA_COUNT\}\}/g, String(marketCounts.Canada || 0))
+        .replace(/\{\{AUSTRALIA_COUNT\}\}/g, String(marketCounts.Australia || 0))
+        .replace(/\{\{SERVICE_AREA_GROUPS\}\}/g, generateServiceAreaGroups());
+
+    let pageNavigation = navigationEN;
+    let pageFooter = footerEN;
+    const basePath = './';
+    const logoPath = 'go-expandia-logo.png';
+    htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
+    pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
+    pageNavigation = pageNavigation.replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html');
+    pageNavigation = pageNavigation.replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, 'our-ethical-principles.html');
+    pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
+    pageNavigation = pageNavigation.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, './');
+    pageNavigation = applyLanguageSwitcherLinks(pageNavigation, {
+        en: './service-areas.html',
+        de: './service-areas.html',
+        fr: './service-areas.html'
+    });
+    pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
+    pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
+    pageFooter = pageFooter.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, './');
+
+    htmlTemplate = htmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
+    htmlTemplate = htmlTemplate.replace('{{MAIN_CONTENT}}', content);
+    htmlTemplate = htmlTemplate.replace('{{FOOTER}}', pageFooter);
+
+    const pageMetadata = getPageMetadata('service-areas', lang);
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, pageMetadata.title);
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, pageMetadata.description);
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, pageMetadata.keywords);
+    htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, 'https://www.goexpandia.com/service-areas.html');
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, 'service-areas.html');
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, '');
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, 'service-areas.html');
+    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, 'service-areas.html');
+
+    const serviceAreaSchema = [
+        generateOrganizationSchema(),
+        generateBreadcrumbSchema([
+            { name: 'Home', url: 'https://www.goexpandia.com/' },
+            { name: 'Service Areas', url: 'https://www.goexpandia.com/service-areas.html' }
+        ]),
+        {
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            name: 'AI agency service areas',
+            serviceType: 'AI automation, AI consulting, AI agents, custom AI solutions, AI training, and AI support',
+            provider: {
+                '@type': 'Organization',
+                name: 'Go Expandia',
+                url: 'https://www.goexpandia.com/'
+            },
+            areaServed: serviceAreas.map(area => ({
+                '@type': 'City',
+                name: `${area.city}, ${formatServiceAreaMeta(area)}`
+            }))
+        }
+    ];
+
+    htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, JSON.stringify(serviceAreaSchema, null, 2));
+    htmlTemplate = clearUnresolvedTemplateTokens(htmlTemplate);
+    htmlTemplate = rewriteLegacyHrefTargets(htmlTemplate);
+
+    fs.writeFileSync('service-areas.html', htmlTemplate, 'utf8');
+    console.log(`✅ Built service-areas.html with ${serviceAreas.length} service areas.`);
+}
+
 function collectPublishedHtmlFiles() {
     const outputFiles = new Set();
 
@@ -5410,7 +6001,7 @@ function generateSitemap() {
     // List of static pages
     const staticPages = [
         'index.html', 'about.html', 'our-business-model.html', 'solutions.html', 'contact.html',
-        'vision-mission.html', 'our-ethical-principles.html'
+        'service-areas.html', 'vision-mission.html', 'our-ethical-principles.html'
     ];
 
     const legacyStaticPages = new Set(Object.keys(LEGACY_REDIRECT_TARGETS).map(page => `${page}.html`));
@@ -5514,7 +6105,7 @@ function buildLegacyRedirectRules() {
         { source: '/blog/email-personalization-at-scale.html', target: '/blog/cross-channel-lead-generation-guide.html' },
         { source: '/blog/pricing-pilot-design-and-fees.html', target: '/blog/proposal-cpq-guide.html' },
         { source: '/blog/revenue-operations-optimization-strategies.html', target: '/blog/what-is-revops.html' },
-        { source: '/city-locations.html', target: '/solutions.html' }
+        { source: '/city-locations.html', target: '/service-areas.html' }
     ];
 
     forcedLegacyPaths.forEach(({ source, target }) => {
@@ -5708,6 +6299,7 @@ buildBlogPosts();
 // REMOVED: Service x Industry x City pages - too complex, focusing on Service x City only
 // buildServiceIndustryCityPages();
 // buildCityLocationsPage();
+buildServiceAreasPage();
 normalizeLanguageSwitchPlaceholders();
 ensureClarityTrackingOnPublishedPages();
 ensureHubSpotEmbedOnPublishedPages();

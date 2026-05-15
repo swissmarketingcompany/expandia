@@ -1,0 +1,135 @@
+<!-- Service Areas Hero -->
+<section class="bg-slate-950 text-white">
+    <div class="container mx-auto container-padding pt-16 md:pt-20 pb-10 md:pb-14">
+        <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-end">
+            <div>
+                <div class="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-full text-sm font-bold mb-6 border border-white/15">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-primary"></i>
+                    Locations
+                </div>
+                <h1 class="text-4xl md:text-6xl font-black leading-tight mb-6">
+                    AI service areas across major business cities.
+                </h1>
+                <p class="text-lg md:text-xl text-white/78 leading-relaxed max-w-3xl">
+                    Go Expandia delivers AI automation, AI consulting, AI agents, custom AI solutions, training, and support for teams in major markets across Europe, the United States, Canada, and Australia.
+                </p>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+                <div class="rounded-lg bg-white/8 border border-white/12 p-4">
+                    <p class="text-3xl md:text-4xl font-black text-primary">{{SERVICE_AREA_COUNT}}</p>
+                    <p class="text-sm text-white/70">service-area cities</p>
+                </div>
+                <div class="rounded-lg bg-white/8 border border-white/12 p-4">
+                    <p class="text-3xl md:text-4xl font-black text-primary">4</p>
+                    <p class="text-sm text-white/70">covered markets</p>
+                </div>
+                <div class="rounded-lg bg-white/8 border border-white/12 p-4">
+                    <p class="text-3xl md:text-4xl font-black text-primary">0</p>
+                    <p class="text-sm text-white/70">office claims</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Service Area Map -->
+<section id="map" class="bg-buzz-light py-8 md:py-12">
+    <div class="container mx-auto container-padding">
+        <div class="mb-6 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <div>
+                <h2 class="text-3xl md:text-5xl font-black mb-3">
+                    <span class="gradient-header">Interactive Service Map</span>
+                </h2>
+                <p class="text-base md:text-lg text-base-content/70 max-w-3xl">
+                    The pins show remote-capable service areas, not office locations.
+                </p>
+            </div>
+            <a href="contact.html" class="btn btn-primary w-full md:w-auto">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                Talk to Us
+            </a>
+        </div>
+
+        <div class="service-area-tool">
+            <div class="service-map-frame">
+                <div id="service-area-map" class="service-area-map" aria-label="Interactive map of Go Expandia service areas"></div>
+                <div class="service-map-badge">
+                    <i data-lucide="radio-tower" class="w-4 h-4"></i>
+                    Remote delivery coverage
+                </div>
+            </div>
+
+            <aside class="service-area-controls" aria-label="Service area controls">
+                <div>
+                    <label for="service-area-search" class="text-xs font-bold uppercase tracking-[0.18em] text-base-content/50">Find a city</label>
+                    <div class="relative mt-2">
+                        <i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-base-content/40"></i>
+                        <input id="service-area-search" type="search" class="input input-bordered w-full pl-10" placeholder="Search city or country">
+                    </div>
+                </div>
+
+                <div>
+                    <p class="text-xs font-bold uppercase tracking-[0.18em] text-base-content/50 mb-3">Market</p>
+                    <div id="service-area-filters" class="service-filter-grid"></div>
+                </div>
+
+                <div class="service-area-selected">
+                    <p class="text-xs font-bold uppercase tracking-[0.18em] text-base-content/50 mb-2">Selected area</p>
+                    <h3 id="selected-area-name" class="text-2xl font-black text-base-content">All service areas</h3>
+                    <p id="selected-area-meta" class="text-sm text-base-content/65 mt-1">50 city markets across Europe, the United States, Canada, and Australia.</p>
+                    <a id="selected-area-cta" href="contact.html" class="btn btn-primary btn-sm mt-4 w-full">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        Start a Project
+                    </a>
+                </div>
+
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <p class="text-xs font-bold uppercase tracking-[0.18em] text-base-content/50">Locations</p>
+                        <button id="service-area-reset" type="button" class="btn btn-ghost btn-xs">
+                            <i data-lucide="crosshair" class="w-4 h-4"></i>
+                            Fit map
+                        </button>
+                    </div>
+                    <div id="service-area-list" class="service-area-list"></div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<!-- Service Area Groups -->
+<section class="section-spacing bg-base-100">
+    <div class="container mx-auto container-padding">
+        <div class="max-w-4xl mb-12">
+            <h2 class="text-3xl md:text-5xl font-black mb-4">
+                <span class="gradient-header">50 Major Service Areas</span>
+            </h2>
+            <p class="text-lg text-base-content/75 leading-relaxed">
+                These cities represent priority business markets where we can support AI implementation remotely. We can still work with companies outside this list when the project fit is right.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+            {{SERVICE_AREA_GROUPS}}
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="section-spacing bg-slate-950 text-white">
+    <div class="container mx-auto container-padding">
+        <div class="grid lg:grid-cols-[1fr_auto] gap-8 items-center">
+            <div>
+                <h2 class="text-3xl md:text-5xl font-black mb-4">Need AI delivery in your market?</h2>
+                <p class="text-lg text-white/75 max-w-3xl">
+                    Tell us where your team is based and what workflow needs to change. We will map the right AI agency path across review, plan, build, training, and support.
+                </p>
+            </div>
+            <a href="contact.html" class="btn btn-primary btn-lg">
+                <i data-lucide="message-square" class="w-5 h-5"></i>
+                Contact Go Expandia
+            </a>
+        </div>
+    </div>
+</section>
