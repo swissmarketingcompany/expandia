@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+    <url>
+        <loc>https://www.goexpandia.com/blog/ai-automation-agency-near-me.html</loc>
+        <video:video>
+            <video:thumbnail_loc>https://www.goexpandia.com/assets/images/ai-automation-agency-near-me-hero.png</video:thumbnail_loc>
+            <video:title>AI Automation Agency Near Me Explainer</video:title>
+            <video:description>A short marketing explainer answering what an AI automation agency is, how a first pilot starts, and when to book a call.</video:description>
+            <video:content_loc>https://www.goexpandia.com/assets/videos/ai-automation-agency-near-me.mp4</video:content_loc>
+            <video:duration>18</video:duration>
+            <video:publication_date>2026-05-14</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+            <video:tag>AI automation agency</video:tag>
+            <video:tag>AI agent development</video:tag>
+            <video:tag>workflow automation</video:tag>
+        </video:video>
+    </url>
+</urlset>

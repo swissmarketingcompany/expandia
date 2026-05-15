@@ -4,6 +4,9 @@
 /fr/*  /:splat  301!
 /de/*  /:splat  301!
 
+# Canonical blog URL
+/blog/ai-automation-agency-near-me/  /blog/ai-automation-agency-near-me.html  301!
+
 # Removed low-priority city pages: redirect to city locations index
 /baghdad.html  /solutions.html  301
 /b2b-lead-generation-baghdad.html  /solutions.html  301

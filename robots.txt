@@ -18,6 +18,7 @@ Disallow: /check-templates.js
 Disallow: /requirements.txt
 
 Sitemap: https://www.goexpandia.com/sitemap.xml
+Sitemap: https://www.goexpandia.com/video-sitemap.xml
 
 User-agent: SemrushBot
 Disallow: /
