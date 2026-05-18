@@ -70,6 +70,18 @@
       "published": "2026-05-15",
       "modified": "2026-05-15"
     },
+    "agentic-workflows": {
+      "title": "Agentic Workflows: 15 Business Examples",
+      "description": "See 15 agentic workflows businesses can automate first, with examples for sales, support, finance, reporting, approvals, onboarding, and governance.",
+      "excerpt": "A practical guide to the first agentic workflows worth automating with AI agents, human review, integrations, and measurable business value.",
+      "keywords": "agentic workflows, agentic workflow, AI workflows, AI workflow automation, AI agents, AI automation agency, AI agent development, business process automation",
+      "category": "ai-automation",
+      "badge": "Agentic Guide",
+      "readTime": "17 min read",
+      "image": "assets/images/ai-automation-workflow-map.png",
+      "published": "2026-05-18",
+      "modified": "2026-05-18"
+    },
     "business-process-automation-software": {
       "title": "Business Process Automation Software: Buyer Guide",
       "description": "A buyer guide for business process automation software, covering workflow fit, AI features, integrations, security, reporting, cost, and rollout.",

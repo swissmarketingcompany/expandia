@@ -4854,6 +4854,44 @@ function formatServiceAreaMeta(area) {
     return [area.state, area.country].filter(Boolean).join(', ');
 }
 
+function formatServiceAreaSlug(slug) {
+    return slug
+        .split('-')
+        .filter(Boolean)
+        .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+        .join(' ');
+}
+
+function collectServiceAreaPageLinks() {
+    const serviceAreaById = new Map(serviceAreas.map(area => [area.id, area]));
+    const templateFiles = fs.readdirSync('templates')
+        .filter(file => file.endsWith('-ai-agency.html'))
+        .sort();
+
+    return templateFiles.map(file => {
+        const id = file.replace(/-ai-agency\.html$/, '');
+        const area = serviceAreaById.get(id);
+        return {
+            id,
+            city: area ? area.city : formatServiceAreaSlug(id),
+            meta: area ? formatServiceAreaMeta(area) : 'AI agency service area',
+            market: area ? area.market : 'Europe',
+            url: `${id}-ai-agency.html`
+        };
+    }).sort((a, b) => a.city.localeCompare(b.city));
+}
+
+function generateServiceAreaDirectoryLinks(serviceAreaPageLinks) {
+    return `
+            <div class="service-area-directory-grid">
+                ${serviceAreaPageLinks.map(page => `
+                    <a href="./${page.url}">
+                        <span>${escapeHtmlText(page.city)}</span>
+                        <small>${escapeHtmlText(page.meta)}</small>
+                    </a>`).join('')}
+            </div>`;
+}
+
 function generateServiceAreaGroups() {
     const marketOrder = ['Europe', 'United States', 'Canada', 'Australia'];
     const marketColors = {
@@ -4867,7 +4905,7 @@ function generateServiceAreaGroups() {
         const areas = serviceAreas.filter(area => area.market === market);
         const areaItems = areas.map(area => `
                     <li class="flex items-start justify-between gap-3 py-2 border-b border-base-200 last:border-b-0">
-                        <span class="font-semibold text-base-content">${escapeHtmlText(area.city)}</span>
+                        <a href="./${area.id}-ai-agency.html" class="font-semibold text-base-content hover:text-primary">${escapeHtmlText(area.city)}</a>
                         <span class="text-sm text-base-content/55 text-right">${escapeHtmlText(formatServiceAreaMeta(area))}</span>
                     </li>`).join('');
 
@@ -4892,6 +4930,7 @@ function buildServiceAreasPage() {
 
     const templateContent = fs.readFileSync('templates/service-areas.html', 'utf8');
     const lang = 'en';
+    const serviceAreaPageLinks = collectServiceAreaPageLinks();
     const marketCounts = serviceAreas.reduce((acc, area) => {
         acc[area.market] = (acc[area.market] || 0) + 1;
         return acc;
@@ -5088,6 +5127,102 @@ function buildServiceAreasPage() {
             text-decoration: none;
         }
 
+        .service-area-directory {
+            position: absolute;
+            left: 1rem;
+            bottom: 1rem;
+            z-index: 600;
+            width: min(420px, calc(100vw - 2rem));
+            max-height: min(52vh, 28rem);
+            overflow: hidden;
+            border: 1px solid rgba(15, 23, 42, 0.16);
+            border-radius: 0.5rem;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 18px 44px rgba(15, 23, 42, 0.18);
+            backdrop-filter: blur(12px);
+        }
+
+        .service-area-directory[open] {
+            overflow: auto;
+        }
+
+        .service-area-directory summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            min-height: 3rem;
+            padding: 0.85rem 1rem;
+            color: #0f172a;
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 900;
+            list-style: none;
+        }
+
+        .service-area-directory summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .service-area-directory summary::after {
+            content: "+";
+            color: #cb102c;
+            font-size: 1.15rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .service-area-directory[open] summary::after {
+            content: "-";
+        }
+
+        .service-area-directory-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.45rem;
+            max-height: 22rem;
+            overflow: auto;
+            padding: 0 0.85rem 0.85rem;
+        }
+
+        .service-area-directory-grid a {
+            display: block;
+            min-width: 0;
+            border-radius: 0.45rem;
+            border: 1px solid rgba(15, 23, 42, 0.1);
+            background: #fff;
+            padding: 0.55rem 0.65rem;
+            color: #0f172a;
+            text-decoration: none;
+            transition: border-color 160ms ease, transform 160ms ease;
+        }
+
+        .service-area-directory-grid a:hover {
+            border-color: #cb102c;
+            transform: translateY(-1px);
+        }
+
+        .service-area-directory-grid span {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 0.8rem;
+            font-weight: 900;
+            line-height: 1.25;
+        }
+
+        .service-area-directory-grid small {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin-top: 0.15rem;
+            color: #64748b;
+            font-size: 0.68rem;
+            line-height: 1.2;
+        }
+
         @media (max-width: 1023px) {
             .service-area-tool {
                 grid-template-columns: 1fr;
@@ -5122,6 +5257,17 @@ function buildServiceAreasPage() {
                 height: 68vh;
                 min-height: 390px;
             }
+
+            .service-area-directory {
+                left: 0.75rem;
+                right: 0.75rem;
+                bottom: 0.75rem;
+                width: auto;
+            }
+
+            .service-area-directory-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         html,
@@ -5131,6 +5277,7 @@ function buildServiceAreasPage() {
         }
 
         .service-map-page {
+            position: relative;
             width: 100vw;
             height: calc(100vh - 4rem);
             margin: 0;
@@ -5197,6 +5344,10 @@ function buildServiceAreasPage() {
                 return 'contact.html?service-area=' + encodeURIComponent(area.city + ', ' + area.country);
             }
 
+            function cityPageUrl(area) {
+                return area.id + '-ai-agency.html';
+            }
+
             function createIcon(area, isSelected) {
                 const color = marketColors[area.market] || '#0f172a';
                 return L.divIcon({
@@ -5218,7 +5369,8 @@ function buildServiceAreasPage() {
                         '<div class="flex items-center gap-2 mb-2"><span class="w-3 h-3 rounded-full" style="background-color: ' + color + ';"></span><strong class="text-base-content">' + escapeHtml(area.city) + '</strong></div>' +
                         '<p class="text-sm text-base-content/65 mb-1">' + escapeHtml(areaMeta(area)) + '</p>' +
                         '<p class="text-sm text-base-content/65 mb-3">Remote AI service area, not an office.</p>' +
-                        '<a class="btn btn-primary btn-sm w-full" href="' + contactUrl(area) + '">Start in ' + escapeHtml(area.city) + '</a>' +
+                        '<a class="btn btn-primary btn-sm w-full mb-2" href="' + cityPageUrl(area) + '">View ' + escapeHtml(area.city) + ' page</a>' +
+                        '<a class="text-sm font-bold text-primary hover:underline" href="' + contactUrl(area) + '">Start in ' + escapeHtml(area.city) + '</a>' +
                     '</div>',
                     { className: 'service-area-popup' }
                 );
@@ -5248,6 +5400,7 @@ function buildServiceAreasPage() {
         .replace(/\{\{USA_COUNT\}\}/g, String(marketCounts['United States'] || 0))
         .replace(/\{\{CANADA_COUNT\}\}/g, String(marketCounts.Canada || 0))
         .replace(/\{\{AUSTRALIA_COUNT\}\}/g, String(marketCounts.Australia || 0))
+        .replace(/\{\{SERVICE_AREA_LINKS\}\}/g, generateServiceAreaDirectoryLinks(serviceAreaPageLinks))
         .replace(/\{\{SERVICE_AREA_GROUPS\}\}/g, generateServiceAreaGroups());
 
     let pageNavigation = navigationEN;
@@ -5302,6 +5455,17 @@ function buildServiceAreasPage() {
             areaServed: serviceAreas.map(area => ({
                 '@type': 'City',
                 name: `${area.city}, ${formatServiceAreaMeta(area)}`
+            }))
+        },
+        {
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            name: 'Go Expandia AI agency service area pages',
+            itemListElement: serviceAreaPageLinks.map((page, index) => ({
+                '@type': 'ListItem',
+                position: index + 1,
+                name: `${page.city} AI agency service area`,
+                url: `https://www.goexpandia.com/${page.url}`
             }))
         }
     ];
