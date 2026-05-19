@@ -31,8 +31,8 @@
       "badge": "Checklist",
       "readTime": "15 min read",
       "image": "assets/images/ai-automation-agency-near-me-hero.png",
-      "published": "2026-05-15",
-      "modified": "2026-05-15"
+      "published": "2026-03-03",
+      "modified": "2026-03-03"
     },
     "ai-automation-tools": {
       "title": "AI Automation Tools: 15 Tool Types",
@@ -43,8 +43,92 @@
       "badge": "Tools",
       "readTime": "16 min read",
       "image": "assets/images/ai-consulting-company-partner-scorecard.png",
-      "published": "2026-05-15",
-      "modified": "2026-05-15"
+      "published": "2026-02-18",
+      "modified": "2026-02-18"
+    },
+    "best-ai-tools-for-business": {
+      "title": "Best AI Tools for Business",
+      "description": "Compare the best AI tools for business and learn which ones are safe for DIY use versus which need agency strategy and rollout support.",
+      "excerpt": "A practical buyer guide to AI tool categories for business, including productivity assistants, workflow platforms, AI agents, and custom AI solutions.",
+      "keywords": "best AI tools for business, AI tools for business, business AI tools, AI automation agency, AI workflow automation, AI agents, custom AI solutions",
+      "category": "ai-tools",
+      "badge": "Buyer Guide",
+      "readTime": "18 min read",
+      "image": "assets/images/best-ai-tools-for-business-hero.png",
+      "published": "2026-05-12",
+      "modified": "2026-05-12"
+    },
+    "ai-agents-for-business": {
+      "title": "AI Agents for Business: Use Cases and Costs",
+      "description": "See real AI agent use cases for business, cost ranges, implementation steps, risks, and when to use an agency for rollout.",
+      "excerpt": "A practical guide to AI agents for business, including real use cases, planning cost ranges, implementation steps, guardrails, and agency-fit advice.",
+      "keywords": "AI agents for business, AI agents, business AI agents, AI agent development, AI automation agency, AI workflow automation, AI agent implementation",
+      "category": "ai-automation",
+      "badge": "Agent Guide",
+      "readTime": "18 min read",
+      "image": "assets/images/ai-agents-for-business-hero.png",
+      "published": "2026-05-16",
+      "modified": "2026-05-16"
+    },
+    "ai-agent-platform-vs-ai-automation-agency": {
+      "title": "AI Agent Platform vs AI Automation Agency",
+      "description": "Compare AI agent platforms and AI automation agencies across cost, speed, workflow design, integrations, guardrails, rollout, support, and ROI.",
+      "excerpt": "A practical buyer guide for deciding whether to use an AI agent platform, hire an AI automation agency, or combine both for a safer workflow pilot.",
+      "keywords": "AI agent platform, AI automation agency, AI agent development, AI agents, AI workflow automation, custom AI solutions, AI consulting services",
+      "category": "ai-tools",
+      "badge": "Comparison",
+      "readTime": "17 min read",
+      "image": "assets/images/ai-consulting-company-partner-scorecard.png",
+      "published": "2026-03-31",
+      "modified": "2026-03-31"
+    },
+    "ai-agent-builder-no-code-vs-agency": {
+      "title": "AI Agent Builder: No-Code vs Agency",
+      "description": "Learn when to use a no-code AI agent builder, when to hire an agency, and how to choose the right path for workflow automation and AI agents.",
+      "excerpt": "A practical guide for deciding whether a no-code AI agent builder is enough or whether your workflow needs agency implementation support.",
+      "keywords": "AI agent builder, no-code AI agent builder, AI automation agency, AI agent development, AI agents, AI workflow automation, custom AI solutions",
+      "category": "ai-tools",
+      "badge": "Builder Guide",
+      "readTime": "17 min read",
+      "image": "assets/images/ai-agent-builder-no-code-vs-agency.png",
+      "published": "2026-04-08",
+      "modified": "2026-04-08"
+    },
+    "ai-sales-agent-workflows": {
+      "title": "AI Sales Agent: 12 Workflows to Automate",
+      "description": "See 12 sales workflows to automate first with AI sales agents, from lead routing and follow-up drafts to CRM cleanup, renewals, proposals, and forecasts.",
+      "excerpt": "A practical guide to the first sales workflows worth automating with AI sales agents, human review, CRM updates, and measurable pipeline impact.",
+      "keywords": "AI sales agent, AI sales agents, sales AI agent, AI sales automation, AI agent development, sales workflow automation, AI automation agency",
+      "category": "ai-automation",
+      "badge": "Sales Guide",
+      "readTime": "18 min read",
+      "image": "assets/images/ai-sales-agent-workflows-hero.png",
+      "published": "2026-04-16",
+      "modified": "2026-04-16"
+    },
+    "ai-customer-service-automation": {
+      "title": "AI Customer Service Automation Guide",
+      "description": "Learn what to automate with AI customer service automation without hurting support quality, including triage, drafts, routing, and reporting.",
+      "excerpt": "A quality-first guide to support workflows that can be automated with AI agents while protecting accuracy, escalation, empathy, and customer trust.",
+      "keywords": "AI customer service automation, customer service automation, AI support automation, AI customer support, AI agent development, support workflow automation, AI automation agency",
+      "category": "ai-automation",
+      "badge": "Support Guide",
+      "readTime": "18 min read",
+      "image": "assets/images/ai-customer-service-automation-hero.png",
+      "published": "2026-04-24",
+      "modified": "2026-04-24"
+    },
+    "invoice-automation-with-ai": {
+      "title": "Invoice Automation With AI: AP Guide",
+      "description": "Learn how to automate AP and document processing with AI, including invoice intake, extraction, matching, approvals, ERP posting, and reporting.",
+      "excerpt": "A practical AP automation guide for using AI to process invoices, extract data, match POs, route exceptions, and keep finance controls intact.",
+      "keywords": "invoice automation with AI, invoice automation, AP automation, accounts payable automation, document processing AI, invoice processing automation, AI automation agency",
+      "category": "business-process-automation",
+      "badge": "AP Guide",
+      "readTime": "18 min read",
+      "image": "assets/images/invoice-automation-with-ai-hero.png",
+      "published": "2026-05-01",
+      "modified": "2026-05-01"
     },
     "ai-consulting-company": {
       "title": "AI Consulting Company: Choose the Right Partner",
@@ -55,8 +139,8 @@
       "badge": "Buyer Guide",
       "readTime": "15 min read",
       "image": "assets/images/ai-consulting-company-evaluation-map.png",
-      "published": "2026-05-15",
-      "modified": "2026-05-15"
+      "published": "2025-12-04",
+      "modified": "2025-12-04"
     },
     "ai-workflow-automation": {
       "title": "AI Workflow Automation: 15 Processes to Automate",
@@ -67,8 +151,20 @@
       "badge": "Workflow Guide",
       "readTime": "16 min read",
       "image": "assets/images/ai-automation-workflow-map.png",
-      "published": "2026-05-15",
-      "modified": "2026-05-15"
+      "published": "2026-02-04",
+      "modified": "2026-02-04"
+    },
+    "ai-workflows-practical-guide": {
+      "title": "AI Workflows: Practical Guide",
+      "description": "Learn how business teams can plan AI workflows with clear triggers, data, AI tasks, human review, system updates, and ROI tracking.",
+      "excerpt": "A practical guide for business teams that want to design AI workflows with clear owners, data, review rules, system updates, and measurable outcomes.",
+      "keywords": "AI workflows, AI workflow, AI workflow automation, AI automation agency, business workflows, AI agents, custom AI solutions, workflow automation",
+      "category": "ai-automation",
+      "badge": "Workflow Guide",
+      "readTime": "18 min read",
+      "image": "assets/images/ai-workflows-practical-guide-hero.png",
+      "published": "2026-05-07",
+      "modified": "2026-05-07"
     },
     "agentic-workflows": {
       "title": "Agentic Workflows: 15 Business Examples",
@@ -79,8 +175,8 @@
       "badge": "Agentic Guide",
       "readTime": "17 min read",
       "image": "assets/images/ai-automation-workflow-map.png",
-      "published": "2026-05-18",
-      "modified": "2026-05-18"
+      "published": "2026-03-17",
+      "modified": "2026-03-17"
     },
     "business-process-automation-software": {
       "title": "Business Process Automation Software: Buyer Guide",
@@ -91,20 +187,20 @@
       "badge": "Software Guide",
       "readTime": "15 min read",
       "image": "assets/images/ai-automation-roi-dashboard.png",
-      "published": "2026-05-15",
-      "modified": "2026-05-15"
+      "published": "2025-12-16",
+      "modified": "2025-12-16"
     },
     "business-process-automation-with-ai": {
       "title": "Business Process Automation With AI",
       "description": "Learn what to automate with business process automation and AI, from lead routing and support to invoices, reporting, documents, approvals, and CRM.",
       "excerpt": "A practical list of business processes that are strong candidates for AI automation, plus rollout and risk guidance.",
       "keywords": "business process automation, business process automation with AI, AI automation agency, AI workflow automation, AI consulting services, custom AI solutions",
-      "category": "ai-automation",
+      "category": "business-process-automation",
       "badge": "Use Cases",
       "readTime": "16 min read",
       "image": "assets/images/ai-agent-human-approval.png",
-      "published": "2026-05-15",
-      "modified": "2026-05-15"
+      "published": "2026-01-21",
+      "modified": "2026-01-21"
     },
     "workflow-automation-software-vs-ai-automation-agency": {
       "title": "Workflow Automation Software vs AI Agency",
@@ -115,8 +211,8 @@
       "badge": "Comparison",
       "readTime": "15 min read",
       "image": "assets/images/ai-consulting-company-rollout-dashboard.png",
-      "published": "2026-05-15",
-      "modified": "2026-05-15"
+      "published": "2026-01-06",
+      "modified": "2026-01-06"
     }
   }
 }

@@ -6379,14 +6379,25 @@ function collectHtmlFilesRecursive(rootDir) {
     return results.sort();
 }
 
+function getSitemapLastmodForPage(page, fallbackDate) {
+    if (!page.startsWith('blog/') || page.includes('/categories/')) {
+        return fallbackDate;
+    }
+
+    const slug = path.basename(page, '.html');
+    const post = blogCatalog.posts && blogCatalog.posts[slug];
+    return (post && post.modified) || fallbackDate;
+}
+
 function writeBlogSitemap(blogPages, baseUrl, today) {
     const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${blogPages.map(page => {
         const canonicalLocPath = toCanonicalPath(page.replace(/\.html$/, ''));
+        const lastmod = getSitemapLastmodForPage(page, today);
         return `
     <url>
         <loc>${baseUrl}${canonicalLocPath}</loc>
-        <lastmod>${today}</lastmod>
+        <lastmod>${lastmod}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>${page === 'blog/index.html' ? '0.9' : '0.7'}</priority>
     </url>`;
@@ -6472,10 +6483,11 @@ function generateSitemap() {
 
     allPages.forEach(page => {
         const canonicalLocPath = toCanonicalPath(page.replace(/\.html$/, ''));
+        const lastmod = getSitemapLastmodForPage(page, today);
         sitemapContent += `
     <url>
         <loc>${baseUrl}${canonicalLocPath}</loc>
-        <lastmod>${today}</lastmod>
+        <lastmod>${lastmod}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>${page === 'index.html' ? '1.0' : '0.8'}</priority>
     </url>`;
