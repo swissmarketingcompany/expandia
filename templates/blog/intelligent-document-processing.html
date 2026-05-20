@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="expandia">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Document Processing Guide | Go Expandia</title>
+    <meta name="description" content="Learn how intelligent document processing uses AI to read, route, review, validate, and automate business documents with human controls.">
+    <meta name="keywords" content="intelligent document processing, IDP, AI document processing, document automation, document processing AI, business process automation, AI automation agency">
+    <link rel="canonical" href="{{CANONICAL_URL}}">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Intelligent Document Processing: How AI Reads, Routes, and Reviews Business Documents">
+    <meta property="og:description" content="A practical guide to AI document processing, routing, human review, integrations, controls, and rollout planning.">
+    <meta property="og:url" content="{{CANONICAL_URL}}">
+    <meta property="og:image" content="https://www.goexpandia.com/assets/images/intelligent-document-processing-hero.png">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="893">
+    <meta property="article:published_time" content="2026-05-20">
+    <meta property="article:modified_time" content="2026-05-20">
+    <meta property="article:author" content="Bailey Roque">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Intelligent Document Processing Guide">
+    <meta name="twitter:description" content="Use this guide to plan AI document processing workflows with routing, review, validation, and business controls.">
+    <meta name="twitter:image" content="https://www.goexpandia.com/assets/images/intelligent-document-processing-hero.png">
+    <link rel="icon" type="image/png" href="{{BASE_PATH}}favicon.png">
+    <link href="{{BASE_PATH}}dist/css/output.css" rel="stylesheet">
+    <style>
+        .article-prose p { margin-bottom: 1.25rem; line-height: 1.8; }
+        .article-prose ul, .article-prose ol { margin: 1rem 0 1.5rem; padding-left: 1.5rem; }
+        .article-prose li { margin-bottom: 0.65rem; line-height: 1.7; }
+        .article-prose h2, .article-prose h3, .article-prose h4, .article-prose h5 { scroll-margin-top: 6rem; }
+    </style>
+    {{SCHEMA_MARKUP}}
+</head>
+<body class="bg-base-100 text-base-content overflow-x-hidden">
+    {{HEADER_INCLUDE}}
+
+    <main>
+        <article class="article-prose">
+            <section class="bg-buzz-warm section-spacing overflow-hidden">
+                <div class="container mx-auto container-padding">
+                    <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
+                        <div>
+                            <nav class="hidden md:block text-sm breadcrumbs mb-6" aria-label="Breadcrumb">
+                                <ol class="flex flex-wrap gap-2 text-base-content/60">
+                                    <li><a class="hover:text-primary" href="{{BASE_PATH}}index.html">Home</a></li>
+                                    <li>/</li>
+                                    <li><a class="hover:text-primary" href="{{BASE_PATH}}blog/index.html">Blog</a></li>
+                                    <li>/</li>
+                                    <li class="text-base-content">Intelligent document processing</li>
+                                </ol>
+                            </nav>
+                            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-bold text-sm mb-6">
+                                <span class="w-2.5 h-2.5 rounded-full bg-primary" aria-hidden="true"></span>
+                                Document AI implementation guide
+                            </div>
+                            <h1 class="text-3xl sm:text-4xl md:text-6xl font-black leading-tight mb-6 break-words">
+                                Intelligent Document Processing: How AI Reads, Routes, and Reviews Business Documents
+                            </h1>
+                            <p class="lead text-xl md:text-2xl text-base-content/80 mb-8 leading-relaxed">
+                                Intelligent document processing turns invoices, forms, contracts, applications, claims, and attachments into structured work. The best systems read the file, extract the right fields, route exceptions, and keep humans in control of important decisions.
+                            </p>
+                            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm font-semibold text-base-content/70 mb-8">
+                                <address class="not-italic">By <a href="{{BASE_PATH}}about.html" rel="author" class="text-primary hover:text-primary/80">Bailey Roque</a></address>
+                                <span aria-hidden="true">|</span>
+                                <time datetime="2026-05-20">Updated May 20, 2026</time>
+                                <span aria-hidden="true">|</span>
+                                <span>18 min read</span>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <a href="{{BASE_PATH}}contact.html" class="btn btn-primary btn-lg buzz-button w-full sm:w-auto whitespace-normal h-auto min-h-14 px-4 text-center leading-tight">Map My Document Workflow</a>
+                                <a href="{{BASE_PATH}}custom-ai-solutions.html" class="btn btn-outline btn-lg border-primary text-primary hover:bg-primary hover:text-white w-full sm:w-auto whitespace-normal h-auto min-h-14 px-4 text-center leading-tight">See Custom AI Solutions</a>
+                            </div>
+                        </div>
+                        <div class="buzz-card bg-white shadow-2xl overflow-hidden border border-primary/10">
+                            <picture>
+                                <source srcset="{{BASE_PATH}}assets/images/intelligent-document-processing-hero.avif" type="image/avif">
+                                <source srcset="{{BASE_PATH}}assets/images/intelligent-document-processing-hero.webp" type="image/webp">
+                                <img src="{{BASE_PATH}}assets/images/intelligent-document-processing-hero.png" alt="Intelligent document processing workflow showing document intake, extraction, validation, routing, and human review" width="1600" height="893" loading="eager" fetchpriority="high" decoding="async" class="w-full h-auto object-cover">
+                            </picture>
+                            <div class="p-6">
+                                <p class="text-sm font-bold text-primary mb-2">Best first pilot</p>
+                                <p class="text-base-content/70">Start with a frequent document type that has clear fields, clear owners, and an easy human review path.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-12 bg-white border-y border-base-200">
+                <div class="container mx-auto container-padding">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div class="p-5 rounded-xl bg-base-100 border border-base-200">
+                            <p class="text-sm text-base-content/60">Primary keyword</p>
+                            <p class="font-bold">Intelligent document processing</p>
+                        </div>
+                        <div class="p-5 rounded-xl bg-base-100 border border-base-200">
+                            <p class="text-sm text-base-content/60">Search intent</p>
+                            <p class="font-bold">Implementation guide</p>
+                        </div>
+                        <div class="p-5 rounded-xl bg-base-100 border border-base-200">
+                            <p class="text-sm text-base-content/60">Best first workflow</p>
+                            <p class="font-bold">Document intake</p>
+                        </div>
+                        <div class="p-5 rounded-xl bg-base-100 border border-base-200">
+                            <p class="text-sm text-base-content/60">Main service</p>
+                            <p class="font-bold">Custom AI Solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-spacing bg-base-100">
+                <div class="container mx-auto container-padding">
+                    <div class="grid lg:grid-cols-[0.72fr_0.28fr] gap-10 items-start">
+                        <div class="max-w-4xl min-w-0" style="min-width: 0; max-width: 100%;">
+                            <div class="buzz-card p-6 md:p-8 bg-primary/5 border border-primary/15 mb-10">
+                                <h2 class="text-3xl font-black mb-4">TL;DR</h2>
+                                <p class="text-lg text-base-content/80">
+                                    Intelligent document processing uses AI to classify documents, extract fields, validate information, route work, prepare summaries, and update business systems. It is useful for invoices, order forms, contracts, applications, claims, onboarding documents, compliance packets, HR records, vendor documents, shipping papers, and document-heavy support queues. The safest rollout does not let AI approve everything. It uses confidence thresholds, source references, exception queues, approval rules, and human review for low-confidence fields, regulated documents, contracts, financial decisions, and any workflow where a wrong extraction could create real business risk.
+                                </p>
+                            </div>
+
+                            <div id="checkup-top" class="my-10 rounded-2xl border border-primary/20 bg-primary/5 p-6 md:p-8">
+                                <p class="text-sm font-bold uppercase tracking-wide text-primary mb-3">Free document workflow check</p>
+                                <h2 class="text-2xl md:text-3xl font-black mb-3">Find your first intelligent document processing pilot.</h2>
+                                <p class="text-base-content/75 mb-5">Drop your email and we will send a first-pass recommendation for the safest document workflow to automate first.</p>
+                                <form class="grid gap-3 sm:grid-cols-[1fr_auto]" data-lead-capture="ai-checkup">
+                                    <input type="email" name="email" class="input input-bordered w-full" placeholder="Work email" required>
+                                    <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
+                                    <button type="submit" class="btn btn-primary whitespace-normal h-auto min-h-12">Get Free Check</button>
+                                </form>
+                                <p class="mt-3 text-sm text-base-content/60">No spam. We use this to reply with the recommendation.</p>
+                            </div>
+
+                            <p>
+                                Intelligent document processing matters because business documents are still where a large amount of operational work begins. A customer sends a form. A supplier emails an invoice. A candidate uploads a document. A vendor sends a certificate. A client signs a contract. A support case arrives with attachments. Someone inside the company then has to open the file, read it, decide what it is, copy fields into another system, check for missing information, route it to the right owner, and follow up when something is wrong.
+                            </p>
+                            <p>
+                                That repeated handling is slow, easy to lose, and hard to measure. It also creates hidden risk. A copied invoice total can be wrong. A contract renewal date can be missed. A customer application can sit in the wrong inbox. A compliance document can be accepted without the right review. A support attachment can be ignored because nobody knew it changed the priority of the case.
+                            </p>
+                            <p>
+                                Intelligent document processing, often shortened to IDP, is the practical use of AI document processing, rules, workflow automation, and human review to turn files into structured business actions. The goal is not to remove every person from document work. The goal is to make every document easier to understand, easier to route, easier to validate, and easier to audit.
+                            </p>
+                            <p>
+                                This guide explains how AI reads, routes, and reviews business documents. It is written for operations leaders, finance teams, service businesses, B2B companies, agencies, founders, and department heads that want better document automation without creating a blind approval machine.
+                            </p>
+
+                            <h2 id="quick-answer" class="text-3xl md:text-4xl font-black mt-12 mb-5">Quick Answer: IDP Turns Documents Into Reviewed Work</h2>
+                            <p>
+                                Intelligent document processing is a workflow that receives a document, identifies what kind of document it is, extracts the important fields, validates those fields against business rules or source systems, routes the document to the right queue, and asks for human review when confidence is low or the decision is sensitive.
+                            </p>
+                            <p>
+                                A useful IDP workflow does not stop at optical character recognition. OCR reads visible text. Intelligent document processing adds business context. It can recognize that a PDF is a supplier invoice, find the vendor name, invoice number, tax amount, currency, due date, purchase order, and line items, compare that information against existing records, flag mismatches, prepare an approval packet, and send the exception to the accounts payable owner.
+                            </p>
+                            <p>
+                                The same pattern applies beyond finance. A contract workflow can extract parties, renewal dates, notice periods, payment terms, liability language, and signature status. A customer onboarding workflow can extract identity details, business information, uploaded certificates, missing fields, and approval status. A support workflow can read attachments and route the case to the right product specialist.
+                            </p>
+                            <p>
+                                The important point is control. AI should prepare document work and reduce manual handling, but it should not silently make high-risk decisions. Strong IDP systems show the source document, field confidence, validation status, reviewer notes, routing history, and system updates.
+                            </p>
+
+                            <div class="my-8 w-full max-w-full overflow-x-auto rounded-2xl border border-base-200 bg-white shadow-sm" style="max-width: 100%; overflow-x: auto;">
+                                <table class="table min-w-[900px]" style="min-width: 900px; width: 100%;">
+                                    <thead class="bg-primary/5 text-base-content">
+                                        <tr>
+                                            <th class="text-sm font-black uppercase tracking-wide">Document stage</th>
+                                            <th class="text-sm font-black uppercase tracking-wide">Good IDP</th>
+                                            <th class="text-sm font-black uppercase tracking-wide">Bad IDP</th>
+                                            <th class="text-sm font-black uppercase tracking-wide">Best control</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="font-bold">Read</td>
+                                            <td>Classifies the document and extracts fields with source references.</td>
+                                            <td>Copies text without knowing what the file means.</td>
+                                            <td>Show confidence and source snippets.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-bold">Route</td>
+                                            <td>Sends the file to the right owner, queue, or system.</td>
+                                            <td>Drops files into generic folders or inboxes.</td>
+                                            <td>Use clear routing rules and exception queues.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-bold">Review</td>
+                                            <td>Asks humans to check low-confidence or high-risk fields.</td>
+                                            <td>Auto-approves fields nobody has validated.</td>
+                                            <td>Use approval thresholds and audit trails.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-bold">Update</td>
+                                            <td>Posts clean, approved data into the right business system.</td>
+                                            <td>Writes messy or duplicate records.</td>
+                                            <td>Validate before write access expands.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h2 id="what-is" class="text-3xl md:text-4xl font-black mt-12 mb-5">What Is Intelligent Document Processing?</h2>
+                            <p>
+                                Intelligent document processing is the combination of document capture, AI reading, classification, extraction, validation, workflow routing, human review, and system updates. It helps teams process structured, semi-structured, and unstructured business documents with less manual work.
+                            </p>
+                            <p>
+                                Structured documents follow a fixed format. A form with the same fields in the same place is structured. Semi-structured documents have a pattern but not always the same layout. Invoices are a common example because they usually contain similar fields, but each supplier may use a different design. Unstructured documents are harder. Contracts, long emails, reports, statements, and case files may contain important information buried inside paragraphs, attachments, tables, or scanned pages.
+                            </p>
+                            <p>
+                                Older document automation often depended on templates. If the invoice looked a certain way, the software could pull the same box from the same location. That still works for some documents, but it breaks when layouts change. AI document processing can read documents more flexibly. It can understand labels, nearby text, table structures, dates, totals, clauses, and business context better than a simple template.
+                            </p>
+                            <p>
+                                That does not mean every file is easy. Poor scans, handwritten notes, rotated pages, missing pages, inconsistent labels, merged PDFs, screenshots, and unclear attachments still create errors. A mature IDP workflow expects those errors and routes them to review instead of hiding them.
+                            </p>
+                            <p>
+                                A helpful way to think about IDP is that it turns a document into a work item. The document comes in as a file. It leaves as a structured packet: document type, extracted fields, validation results, missing information, confidence levels, source references, reviewer notes, next owner, and the action that should happen next.
+                            </p>
+
+                            <h2 id="where-it-fits" class="text-3xl md:text-4xl font-black mt-12 mb-5">Where IDP Fits in a Business Automation Stack</h2>
+                            <p>
+                                Intelligent document processing should sit between document intake and the systems that run the business. Intake may come from email, web forms, portals, shared folders, scanners, customer uploads, vendor inboxes, support tickets, CRMs, ERPs, or document management systems. The output may go to accounting software, a CRM, a help desk, a case management system, a contract repository, a task manager, a database, or a reporting dashboard.
+                            </p>
+                            <p>
+                                A document automation project fails when the AI is treated as a separate tool instead of a workflow. Reading the document is only one part. The workflow also needs to decide what happens after the file is read. Does the invoice need approval? Does the contract need legal review? Does the onboarding form need missing information? Does the certificate need renewal tracking? Does the support attachment change the case priority?
+                            </p>
+                            <p>
+                                This is why IDP often belongs inside a broader business process automation plan. The best result is not a folder full of extracted JSON. The best result is cleaner handoff, fewer missed documents, faster review, better system records, and a clear audit trail.
+                            </p>
+                            <p>
+                                In practical terms, IDP should have five layers. First, intake captures the file and metadata. Second, AI reads and classifies the document. Third, validation checks extracted data against rules and source systems. Fourth, routing sends the work to the correct owner or queue. Fifth, review and reporting show what happened, where documents are blocked, and which fields need process improvement.
+                            </p>
+
+                            <h2 id="how-ai-reads" class="text-3xl md:text-4xl font-black mt-12 mb-5">How AI Reads, Routes, and Reviews Documents</h2>
+                            <p>
+                                The reading step starts with capture. The workflow receives the file, normalizes it, and prepares it for analysis. That may include splitting merged documents, detecting pages, correcting rotation, reading text from scans, identifying tables, and preserving the original file so reviewers can see the source.
+                            </p>
+                            <p>
+                                Classification comes next. The system decides whether the document is an invoice, contract, form, claim, certificate, purchase order, receipt, identity document, statement, report, shipping paper, or something else. Classification matters because each document type needs different fields and different business rules.
+                            </p>
+                            <p>
+                                Extraction is where AI pulls key fields out of the file. For an invoice, that may include supplier, invoice number, date, due date, total, currency, tax, purchase order reference, line items, and bank details. For a contract, it may include party names, effective date, renewal date, notice period, payment terms, governing law, and signature status. For an application form, it may include applicant details, eligibility answers, uploaded evidence, and missing fields.
+                            </p>
+                            <p>
+                                Validation is the quality gate. Extracted fields should be checked before the workflow trusts them. The system can compare the vendor name against approved vendors, match an invoice to a purchase order, check whether a tax ID format looks valid, confirm whether a contract renewal date is in the future, detect duplicate invoice numbers, or flag missing signatures.
+                            </p>
+                            <p>
+                                Routing turns the reading result into action. A clean invoice can go to standard approval. A mismatched invoice can go to an exception queue. A contract with unusual terms can go to legal. A customer application with missing evidence can trigger a request for more information. A support ticket with a technical attachment can route to the product team.
+                            </p>
+                            <p>
+                                Review keeps people responsible for decisions that matter. Reviewers should not have to re-read the whole document from scratch every time. They should see the extracted fields, source highlights, confidence levels, validation checks, and a clear accept or correct path. When they correct the data, the workflow should store that correction and make it visible for audit and improvement.
+                            </p>
+
+                            <figure class="my-10 rounded-2xl overflow-hidden border border-base-200 bg-white shadow-sm">
+                                <picture>
+                                    <source srcset="{{BASE_PATH}}assets/images/intelligent-document-processing-routing-map.avif" type="image/avif">
+                                    <source srcset="{{BASE_PATH}}assets/images/intelligent-document-processing-routing-map.webp" type="image/webp">
+                                    <img src="{{BASE_PATH}}assets/images/intelligent-document-processing-routing-map.png" alt="Document routing map showing intake files, read fields, check rules, send to owner, and common document queues" width="1600" height="893" loading="lazy" decoding="async" class="w-full h-auto">
+                                </picture>
+                                <figcaption class="p-4 text-sm text-base-content/60">A strong IDP workflow turns document reading into reviewed business action, not just extracted text.</figcaption>
+                            </figure>
+
+                            <h2 id="choose-first" class="text-3xl md:text-4xl font-black mt-12 mb-5">How to Choose the First IDP Workflow</h2>
+                            <p>
+                                The first intelligent document processing workflow should be frequent, visible, and easy to review. Look for a document type that arrives often, contains predictable fields, creates delays today, and has a clear owner. If the workflow has no owner, no rules, and no review path, AI will expose the confusion instead of fixing it.
+                            </p>
+                            <p>
+                                Good first candidates usually have high volume and medium risk. Invoice intake, customer forms, vendor documents, support attachments, employee forms, order paperwork, or compliance evidence can work well because the business already understands what should happen next. Highly sensitive documents can still be automated later, but they need stronger review and governance.
+                            </p>
+                            <p>
+                                Avoid starting with the hardest document in the company. Complex contracts, regulated records, handwritten documents, multi-party legal packets, and rare edge cases may be important, but they are usually poor first pilots. They require deeper rules and more careful testing. Start where the document workflow is annoying, repeated, and measurable.
+                            </p>
+                            <p>
+                                A practical scoring model looks at volume, field clarity, business risk, review effort, system access, and measurable value. If a document type scores high on volume, high on field clarity, low to medium on risk, and easy on review, it is a strong candidate for the first IDP pilot.
+                            </p>
+
+                            <h2 id="document-workflows" class="text-3xl md:text-4xl font-black mt-12 mb-5">12 Business Document Workflows to Automate First</h2>
+                            <p>
+                                Intelligent document processing becomes easier to plan when you look at specific business workflows instead of the abstract idea of document AI. The following use cases are common because they combine repeated documents, clear fields, defined owners, and visible delays. They are not all equal. The right starting point depends on your industry, systems, risk tolerance, and review capacity.
+                            </p>
+
+                            <h3 id="invoice-intake" class="text-2xl md:text-3xl font-black mt-10 mb-4">1. Invoice Intake and AP Document Processing</h3>
+                            <p>
+                                Invoice intake is one of the most practical IDP workflows because invoices are frequent and field-based. The AI can identify the supplier, invoice number, invoice date, due date, currency, subtotal, tax, total, purchase order reference, line items, payment terms, and bank details. It can compare the invoice to vendor records, purchase orders, receipts, and approval rules.
+                            </p>
+                            <p>
+                                The best first version does not automatically pay invoices. It prepares the accounts payable review packet. It flags duplicates, missing purchase orders, mismatched totals, changed bank details, unclear tax, and vendors that need review. Finance keeps control, but the manual opening, reading, keying, and routing work is reduced.
+                            </p>
+
+                            <h3 id="purchase-orders" class="text-2xl md:text-3xl font-black mt-10 mb-4">2. Purchase Orders, Order Forms, and Sales Paperwork</h3>
+                            <p>
+                                Purchase orders and customer order forms often arrive as PDFs, scans, email attachments, or portal uploads. Staff may need to read product codes, quantities, shipping details, buyer information, delivery dates, special instructions, and contract references before creating or updating orders.
+                            </p>
+                            <p>
+                                IDP can extract the order details, check whether fields are complete, compare product codes against a catalog, detect conflicting delivery instructions, and route the order to sales operations or fulfillment. A strong workflow links the source document to the created record so the team can trace every field back to the original file.
+                            </p>
+
+                            <h3 id="contract-review" class="text-2xl md:text-3xl font-black mt-10 mb-4">3. Contracts and Agreement Review Packets</h3>
+                            <p>
+                                Contracts are riskier than invoices because the important information is often buried in language, not just fields. Intelligent document processing can still help by extracting parties, dates, renewal terms, termination notice periods, payment terms, liability limits, confidentiality obligations, signatures, missing exhibits, and unusual clauses.
+                            </p>
+                            <p>
+                                The system should not approve legal terms on its own. A safer workflow creates a review packet for legal, finance, sales, or leadership. The AI can summarize what needs attention, compare extracted terms against internal policy, and highlight the source paragraphs. Humans decide whether the language is acceptable.
+                            </p>
+
+                            <h3 id="customer-onboarding" class="text-2xl md:text-3xl font-black mt-10 mb-4">4. Customer Onboarding Forms and Applications</h3>
+                            <p>
+                                Customer onboarding often includes forms, identity details, business information, tax documents, certificates, agreements, uploaded evidence, and internal review steps. Manual handling creates delays when documents are incomplete or sent to the wrong person.
+                            </p>
+                            <p>
+                                IDP can classify each file, extract required fields, check whether the onboarding packet is complete, identify missing documents, and route the account to the right review queue. It can also prepare a customer follow-up request when information is missing, while keeping final approval with the team.
+                            </p>
+
+                            <h3 id="claims-applications" class="text-2xl md:text-3xl font-black mt-10 mb-4">5. Claims, Applications, and Case Files</h3>
+                            <p>
+                                Claims and application workflows are document-heavy by nature. A case may include forms, letters, receipts, photos, statements, IDs, attachments, emails, and supporting evidence. The first challenge is often knowing what has been submitted and what is still missing.
+                            </p>
+                            <p>
+                                AI document processing can create a case inventory, classify files, extract key dates and amounts, summarize supporting evidence, flag missing requirements, and route the case to a reviewer. This improves case preparation without letting AI make the final eligibility or approval decision.
+                            </p>
+
+                            <h3 id="email-attachments" class="text-2xl md:text-3xl font-black mt-10 mb-4">6. Email Attachment Sorting</h3>
+                            <p>
+                                Many companies do not have a document intake system. They have an inbox. Documents arrive as attachments with vague subject lines, forwarded threads, partial context, and inconsistent file names. Someone has to open each file and decide where it belongs.
+                            </p>
+                            <p>
+                                An IDP workflow can monitor an approved inbox, classify attachments, rename files, extract enough context to create a work item, and route the result to finance, sales, support, HR, legal, or operations. This is often a practical first pilot because it improves the front door of document work.
+                            </p>
+
+                            <h3 id="compliance-audit" class="text-2xl md:text-3xl font-black mt-10 mb-4">7. Compliance and Audit Document Collection</h3>
+                            <p>
+                                Compliance work often depends on collecting the right evidence from the right people. The documents may include policies, certificates, screenshots, approvals, logs, signed forms, reports, training records, vendor attestations, and renewal documents.
+                            </p>
+                            <p>
+                                Intelligent document processing can classify evidence, extract dates, identify owners, check expiration, flag missing approvals, and prepare audit packets. The review team still decides whether the evidence is acceptable, but the system reduces chasing, renaming, sorting, and manual tracking.
+                            </p>
+
+                            <h3 id="hr-documents" class="text-2xl md:text-3xl font-black mt-10 mb-4">8. HR and Employee Documents</h3>
+                            <p>
+                                HR teams process resumes, onboarding forms, policy acknowledgments, employee requests, training records, certifications, leave documents, and offboarding paperwork. These workflows need careful privacy controls because employee information can be sensitive.
+                            </p>
+                            <p>
+                                IDP can classify employee documents, detect missing signatures, extract effective dates, prepare onboarding checklists, route forms to the right owner, and keep records organized. Access should be limited, and any hiring, disciplinary, payroll, or sensitive employment decision should remain human-controlled.
+                            </p>
+
+                            <h3 id="vendor-documents" class="text-2xl md:text-3xl font-black mt-10 mb-4">9. Vendor and Supplier Document Intake</h3>
+                            <p>
+                                Vendor onboarding and supplier management require documents such as tax forms, insurance certificates, bank letters, service agreements, product data sheets, compliance records, and signed terms. These files often arrive at different times and in different formats.
+                            </p>
+                            <p>
+                                IDP can extract vendor names, document type, effective dates, expiration dates, insurance limits, payment details, required approvals, and missing items. It can route high-risk changes, such as changed bank details, to extra review before any system update is made.
+                            </p>
+
+                            <h3 id="logistics-documents" class="text-2xl md:text-3xl font-black mt-10 mb-4">10. Shipping, Logistics, and Delivery Documents</h3>
+                            <p>
+                                Logistics workflows may include bills of lading, packing lists, delivery notes, customs documents, proof of delivery, purchase documents, photos, carrier messages, and exception notes. The documents affect fulfillment, billing, claims, and customer communication.
+                            </p>
+                            <p>
+                                AI document processing can extract shipment references, delivery dates, carrier names, quantities, addresses, exceptions, signatures, and mismatch signals. It can route exceptions to operations, trigger customer updates, and link documents to the correct order or shipment record.
+                            </p>
+
+                            <h3 id="financial-packages" class="text-2xl md:text-3xl font-black mt-10 mb-4">11. Financial Statement and Report Package Preparation</h3>
+                            <p>
+                                Finance and leadership teams often prepare report packages from statements, exports, supporting documents, reconciliations, approval notes, and management comments. The work is partly data handling and partly review preparation.
+                            </p>
+                            <p>
+                                IDP can help collect the right files, identify missing statements, extract period dates, summarize attached reports, route questions, and prepare a review checklist. The final interpretation belongs to finance, but the document assembly and review readiness can be automated.
+                            </p>
+
+                            <h3 id="quality-feedback" class="text-2xl md:text-3xl font-black mt-10 mb-4">12. Document Quality Reporting and Feedback Loops</h3>
+                            <p>
+                                A mature document automation workflow should report where documents break. Which suppliers submit incomplete invoices? Which customers miss the same onboarding field? Which contract templates create the most legal review? Which form questions cause confusion? Which teams send files to the wrong inbox?
+                            </p>
+                            <p>
+                                IDP can turn document errors into process intelligence. By tracking missing fields, correction rates, low-confidence extraction, exception reasons, routing errors, and reviewer changes, the business learns which templates, instructions, portals, and internal rules need improvement.
+                            </p>
+
+                            <div id="checkup-mid" class="my-10 rounded-2xl border border-primary/20 bg-white p-6 md:p-8 shadow-sm">
+                                <p class="text-sm font-bold uppercase tracking-wide text-primary mb-3">Build a controlled document pilot</p>
+                                <h2 class="text-2xl md:text-3xl font-black mb-3">Want AI document processing without messy records?</h2>
+                                <p class="text-base-content/75 mb-5">We can map your document intake, choose the first workflow, define validation rules, and build an IDP pilot with human review.</p>
+                                <form class="grid gap-3 sm:grid-cols-[1fr_auto]" data-lead-capture="ai-checkup">
+                                    <input type="email" name="email" class="input input-bordered w-full" placeholder="Work email" required>
+                                    <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
+                                    <button type="submit" class="btn btn-primary whitespace-normal h-auto min-h-12">Plan My Pilot</button>
+                                </form>
+                                <p class="mt-3 text-sm text-base-content/60">We will reply with a practical first-workflow recommendation.</p>
+                            </div>
+
+                            <h2 id="risks" class="text-3xl md:text-4xl font-black mt-12 mb-5">Intelligent Document Processing Risks to Control</h2>
+                            <p>
+                                The first risk is wrong extraction. If the AI reads a total, date, address, clause, or account number incorrectly, the downstream workflow can make the wrong decision. This is why source references, confidence levels, and review thresholds matter. The reviewer should be able to see where the extracted answer came from.
+                            </p>
+                            <p>
+                                The second risk is missing context. A document may look complete but still need information from an email thread, order record, vendor profile, contract history, or support case. IDP should connect to business context carefully instead of reading the file in isolation.
+                            </p>
+                            <p>
+                                The third risk is bad routing. A correctly read document can still create a mess if it goes to the wrong owner. Routing should be based on document type, business unit, customer, vendor, amount, urgency, exception reason, and approval rules. When routing confidence is low, the file should go to a review queue rather than disappearing into the wrong process.
+                            </p>
+                            <p>
+                                The fourth risk is privacy and permissions. Documents may contain financial data, personal information, health details, employment records, contracts, or customer data. The workflow needs access controls, retention rules, and clear boundaries around which data the AI can read, store, and write.
+                            </p>
+                            <p>
+                                The fifth risk is over-automation. It is tempting to let IDP approve, reject, post, email, and archive everything once extraction looks good in a demo. Production workflows need slower expansion. Start with preparation and routing, then add write actions only after review quality is proven.
+                            </p>
+
+                            <figure class="my-10 rounded-2xl overflow-hidden border border-base-200 bg-white shadow-sm">
+                                <picture>
+                                    <source srcset="{{BASE_PATH}}assets/images/intelligent-document-processing-scorecard.avif" type="image/avif">
+                                    <source srcset="{{BASE_PATH}}assets/images/intelligent-document-processing-scorecard.webp" type="image/webp">
+                                    <img src="{{BASE_PATH}}assets/images/intelligent-document-processing-scorecard.png" alt="Document processing scorecard comparing invoices, intake forms, contracts, and regulated records by volume, risk, review, and pilot fit" width="1600" height="893" loading="lazy" decoding="async" class="w-full h-auto">
+                                </picture>
+                                <figcaption class="p-4 text-sm text-base-content/60">Use a document scorecard to choose a realistic first IDP workflow before expanding to higher-risk files.</figcaption>
+                            </figure>
+
+                            <h2 id="guardrails" class="text-3xl md:text-4xl font-black mt-12 mb-5">Guardrails That Make IDP Safe Enough for Business Work</h2>
+                            <p>
+                                Confidence thresholds are the first guardrail. The workflow should know which fields can move forward automatically and which fields require review. A high-confidence document type with simple fields may only need spot checks. A contract clause, bank detail, employee document, or regulated record should require stronger review even when the AI sounds confident.
+                            </p>
+                            <p>
+                                Source linking is the second guardrail. Reviewers should be able to click from an extracted field back to the source page, line, table, or paragraph. If the system cannot show where an answer came from, reviewers will not trust it. Source links also make audits easier because the decision can be traced to the original document.
+                            </p>
+                            <p>
+                                Exception queues are the third guardrail. Not every file should follow the happy path. Missing pages, unreadable scans, duplicate documents, unexpected document types, mismatched totals, changed bank details, expired certificates, unusual contract terms, and conflicting customer information should all create clear exceptions with owners.
+                            </p>
+                            <p>
+                                Permission limits are the fourth guardrail. A document-reading workflow should not automatically gain broad access to every system. Give it only the access required for the pilot. Read access should be separated from write access. Posting to an ERP, CRM, HR system, or contract repository should usually require stronger validation than creating a review task.
+                            </p>
+                            <p>
+                                Audit trails are the fifth guardrail. The business should know when the document arrived, how it was classified, which fields were extracted, which validations passed, who reviewed it, what corrections were made, which system was updated, and why exceptions were routed. Without that trail, the system becomes hard to trust when something goes wrong.
+                            </p>
+                            <p>
+                                Human review is not a failure of AI. It is the mechanism that makes document automation usable for real business work. The right design reduces unnecessary reading and typing while keeping people in charge of decisions that have financial, legal, customer, or compliance impact.
+                            </p>
+
+                            <h2 id="implementation-plan" class="text-3xl md:text-4xl font-black mt-12 mb-5">A Practical 90-Day Intelligent Document Processing Plan</h2>
+                            <p>
+                                In the first thirty days, map the document workflow before touching tools. Identify where documents arrive, who opens them, what fields are copied, which systems are updated, what goes wrong, what must be reviewed, and how long the work currently takes. Collect real sample documents, including messy examples. The messy files matter because they reveal the actual production risk.
+                            </p>
+                            <p>
+                                Choose one pilot document type. Write the target output clearly: document classification, fields to extract, validation checks, routing rules, exception types, review owner, and system update. Decide which actions the workflow can take automatically and which actions need approval. This is where an AI automation agency or internal automation lead should push for specificity.
+                            </p>
+                            <p>
+                                In days thirty to sixty, build the controlled pilot. Connect the intake source, create the extraction model or prompt workflow, define confidence thresholds, build the review screen or queue, and connect only the systems needed for the first workflow. Test with real samples, not just perfect demo documents. Track every wrong extraction and every confusing review state.
+                            </p>
+                            <p>
+                                In days sixty to ninety, launch to a limited queue. Run the workflow with human review, measure corrections, and compare output against manual handling. Expand only after the team trusts the extracted fields, routing decisions, and exception handling. If the first workflow still creates too much cleanup, fix it before adding more document types.
+                            </p>
+                            <h3 class="text-2xl md:text-3xl font-black mt-8 mb-4">The Minimum Useful IDP Pilot</h3>
+                            <p>
+                                The minimum useful IDP pilot handles one document type, one intake source, one review queue, and one downstream update. For example, it may read invoices from a finance inbox, extract header fields and line items, check for duplicates and purchase order references, route exceptions to AP, and prepare approved records for posting.
+                            </p>
+                            <p>
+                                That narrow pilot is enough to prove whether the workflow can save time and improve control. It also shows which documents are too messy, which rules are unclear, and which system integrations need better data.
+                            </p>
+                            <h4 class="text-xl md:text-2xl font-black mt-7 mb-3">What to Avoid in the First Build</h4>
+                            <p>
+                                Avoid trying to process every document type at once. Avoid giving the workflow broad write access before extraction quality is reviewed. Avoid auto-approving high-value invoices, legal obligations, employment decisions, regulated records, or sensitive customer documents. Avoid measuring success only by files processed if reviewers still spend the same time correcting errors.
+                            </p>
+                            <h5 class="text-lg md:text-xl font-black mt-6 mb-3">Questions to Answer Before Launch</h5>
+                            <ul>
+                                <li>Which document type is the pilot responsible for?</li>
+                                <li>Which fields must be extracted, and which are optional?</li>
+                                <li>Which fields require source highlights or reviewer approval?</li>
+                                <li>Which validation rules must pass before routing or system updates?</li>
+                                <li>Which exceptions require a person, and who owns that queue?</li>
+                                <li>How will corrections, failed documents, and routing mistakes be reviewed?</li>
+                            </ul>
+
+                            <h2 id="measure-results" class="text-3xl md:text-4xl font-black mt-12 mb-5">How to Measure IDP Results</h2>
+                            <p>
+                                Measure intelligent document processing by business outcomes, not only by extraction accuracy. Useful metrics include cycle time, documents processed, straight-through percentage, extraction correction rate, missing field rate, exception rate, duplicate rate, average review time, routing accuracy, system update accuracy, and audit completeness.
+                            </p>
+                            <p>
+                                Review time is especially important. If the AI extracts fields but reviewers must re-read the entire document, the workflow is not strong enough. The review experience should make it faster to confirm or correct fields than to process the document manually.
+                            </p>
+                            <p>
+                                Track exception reasons. A high exception rate may mean the AI is weak, but it may also mean the documents are bad. Maybe vendors submit incomplete invoices. Maybe customers misunderstand a form. Maybe internal instructions are unclear. IDP should expose those patterns so the business can fix upstream process problems.
+                            </p>
+                            <p>
+                                Also track trust. Do teams use the extracted data? Do they accept routing decisions? Do they correct the same field repeatedly? Do they bypass the system because it creates more work? Adoption is a real metric because document automation only works when the people responsible for the process trust the workflow.
+                            </p>
+
+                            <h2 id="when-to-hire" class="text-3xl md:text-4xl font-black mt-12 mb-5">When to Hire an AI Automation Agency for IDP</h2>
+                            <p>
+                                Basic document tools can be useful when the workflow is simple and the business only needs extraction from a few predictable forms. An AI automation agency becomes more useful when document work touches multiple systems, custom routing, human review, approvals, exceptions, compliance needs, or data quality problems.
+                            </p>
+                            <p>
+                                A good agency should not start by selling a generic document AI demo. It should map the document workflow, identify the first pilot, define extraction fields, write validation rules, design human review, connect the right systems, and set up measurement. The agency should also be willing to say when the document process needs cleanup before automation expands.
+                            </p>
+                            <p>
+                                The strongest partner will understand that IDP is part of business process automation. Reading a file is useful. Turning that file into a controlled, reviewed, measurable business action is where the value appears.
+                            </p>
+
+                            <h2 id="final-checklist" class="text-3xl md:text-4xl font-black mt-12 mb-5">Final Checklist: Build IDP Without Losing Control</h2>
+                            <ul>
+                                <li>Choose one frequent document workflow before expanding to every file type.</li>
+                                <li>Define the exact fields, rules, routing paths, exceptions, and review owners.</li>
+                                <li>Use confidence thresholds, source links, exception queues, permissions, and audit trails.</li>
+                                <li>Keep humans responsible for financial, legal, regulated, employment, and sensitive customer decisions.</li>
+                                <li>Measure cycle time, correction rate, routing accuracy, review effort, and staff trust.</li>
+                                <li>Improve upstream document quality instead of only tuning the AI.</li>
+                            </ul>
+                            <p>
+                                Intelligent document processing is valuable when it makes document-heavy work clearer. It should reduce manual reading, reduce copying, reduce lost attachments, and improve routing. It should also make errors easier to catch, not harder to see.
+                            </p>
+                            <p>
+                                The best IDP implementation feels practical. Documents arrive through known channels, AI reads and extracts the right fields, rules validate the data, exceptions go to the right person, reviewers see the source, and approved records update the right systems. That is how AI document processing becomes real operations improvement instead of another disconnected tool.
+                            </p>
+
+                            <div id="checkup" class="my-10 rounded-2xl border border-primary/20 bg-primary/5 p-6 md:p-8">
+                                <p class="text-sm font-bold uppercase tracking-wide text-primary mb-3">Free IDP workflow review</p>
+                                <h2 class="text-2xl md:text-3xl font-black mb-3">Get a first-pass recommendation for your document workflow.</h2>
+                                <p class="text-base-content/75 mb-5">Send your email and we will reply with a practical view of which document workflow should become your first intelligent document processing pilot.</p>
+                                <form class="grid gap-3 sm:grid-cols-[1fr_auto]" data-lead-capture="ai-checkup">
+                                    <input type="email" name="email" class="input input-bordered w-full" placeholder="Work email" required>
+                                    <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
+                                    <button type="submit" class="btn btn-primary whitespace-normal h-auto min-h-12">Get My Recommendation</button>
+                                </form>
+                                <p class="mt-3 text-sm text-base-content/60">No spam. We use this to reply with the recommendation.</p>
+                            </div>
+
+                            <h2 id="faq" class="text-3xl md:text-4xl font-black mt-12 mb-6">FAQ: Intelligent Document Processing</h2>
+                            <div class="space-y-4">
+                                <div class="collapse collapse-plus bg-white border border-base-200 shadow-sm">
+                                    <input type="radio" name="intelligent-document-processing-faq" checked>
+                                    <h3 class="collapse-title text-lg font-bold">What is intelligent document processing?</h3>
+                                    <div class="collapse-content">
+                                        <p>Intelligent document processing is the use of AI, rules, workflow automation, and human review to classify documents, extract fields, validate information, route work, and update business systems.</p>
+                                    </div>
+                                </div>
+                                <div class="collapse collapse-plus bg-white border border-base-200 shadow-sm">
+                                    <input type="radio" name="intelligent-document-processing-faq">
+                                    <h3 class="collapse-title text-lg font-bold">How is IDP different from OCR?</h3>
+                                    <div class="collapse-content">
+                                        <p>OCR reads text from a document. IDP uses that text with document classification, field extraction, validation, routing, exception handling, human review, and system updates.</p>
+                                    </div>
+                                </div>
+                                <div class="collapse collapse-plus bg-white border border-base-200 shadow-sm">
+                                    <input type="radio" name="intelligent-document-processing-faq">
+                                    <h3 class="collapse-title text-lg font-bold">What documents should we automate first?</h3>
+                                    <div class="collapse-content">
+                                        <p>Start with a frequent document type that has clear fields, clear owners, medium or low risk, and an easy review path. Invoices, intake forms, order documents, vendor packets, and support attachments are common first pilots.</p>
+                                    </div>
+                                </div>
+                                <div class="collapse collapse-plus bg-white border border-base-200 shadow-sm">
+                                    <input type="radio" name="intelligent-document-processing-faq">
+                                    <h3 class="collapse-title text-lg font-bold">Can AI approve documents automatically?</h3>
+                                    <div class="collapse-content">
+                                        <p>Some low-risk document steps may be automated after testing, but sensitive approvals should keep human review. Financial, legal, regulated, HR, and high-value decisions need stricter controls and audit trails.</p>
+                                    </div>
+                                </div>
+                                <div class="collapse collapse-plus bg-white border border-base-200 shadow-sm">
+                                    <input type="radio" name="intelligent-document-processing-faq">
+                                    <h3 class="collapse-title text-lg font-bold">Can Go Expandia build an IDP workflow?</h3>
+                                    <div class="collapse-content">
+                                        <p>Yes. Go Expandia can map the document workflow, define extraction fields and validation rules, build the review process, connect business systems, and launch a controlled intelligent document processing pilot.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-12 rounded-2xl border border-base-200 bg-white p-6 md:p-8 shadow-sm">
+                                <h2 class="text-2xl md:text-3xl font-black mb-3">About Bailey Roque</h2>
+                                <p class="text-base-content/75 mb-0">
+                                    Bailey Roque writes for Go Expandia on AI automation, AI agent development, workflow design, AI consulting, and practical rollout models for business teams.
+                                </p>
+                            </div>
+                        </div>
+
+                        <aside class="lg:sticky lg:top-24 space-y-5">
+                            <div class="buzz-card p-5 bg-white shadow-xl border border-primary/15">
+                                <p class="text-sm font-bold uppercase tracking-wide text-primary mb-2">Free document check</p>
+                                <h2 class="text-2xl font-black mb-2">Which document workflow first?</h2>
+                                <p class="text-sm text-base-content/70 mb-4">Drop your email and we will send a first-pass recommendation for your first IDP pilot.</p>
+                                <form class="space-y-3" data-lead-capture="ai-checkup">
+                                    <input type="email" name="email" class="input input-bordered w-full" placeholder="Work email" required>
+                                    <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
+                                    <button type="submit" class="btn btn-primary w-full whitespace-normal h-auto min-h-12">Get Free Check</button>
+                                    <p class="text-xs text-base-content/60">No spam. We use this to reply with the recommendation.</p>
+                                </form>
+                            </div>
+                            <div class="buzz-card p-6 bg-white shadow-xl border border-base-200">
+                                <h2 class="text-2xl font-black mb-4">Article contents</h2>
+                                <ul class="space-y-3 text-sm font-semibold">
+                                    <li><a href="#quick-answer" class="hover:text-primary">Quick answer</a></li>
+                                    <li><a href="#what-is" class="hover:text-primary">What IDP means</a></li>
+                                    <li><a href="#how-ai-reads" class="hover:text-primary">How AI reads documents</a></li>
+                                    <li><a href="#document-workflows" class="hover:text-primary">12 workflows</a></li>
+                                    <li><a href="#risks" class="hover:text-primary">Risks</a></li>
+                                    <li><a href="#implementation-plan" class="hover:text-primary">90-day plan</a></li>
+                                    <li><a href="#faq" class="hover:text-primary">FAQ</a></li>
+                                </ul>
+                            </div>
+                            <div class="buzz-card p-6 bg-primary text-white shadow-xl">
+                                <p class="text-sm font-bold uppercase tracking-wide opacity-80 mb-3">Need implementation?</p>
+                                <h2 class="text-2xl font-black mb-3">Build the first IDP pilot.</h2>
+                                <p class="text-white/85 mb-5">We can map intake, define extraction rules, connect systems, and launch document automation with human review.</p>
+                                <a href="{{BASE_PATH}}contact.html" class="btn bg-white text-primary border-0 hover:bg-white/90 w-full sm:w-auto">Book a Call</a>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-spacing bg-white">
+                <div class="container mx-auto container-padding max-w-6xl">
+                    <div class="text-center mb-10">
+                        <p class="text-sm font-bold uppercase tracking-wide text-primary mb-3">Related posts and services</p>
+                        <h2 class="text-3xl md:text-4xl font-black">Keep planning your AI document automation roadmap</h2>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <a href="{{BASE_PATH}}blog/invoice-automation-with-ai.html" class="group p-6 rounded-lg border border-base-200 bg-white shadow-sm hover:border-primary/30 hover:shadow-xl transition-all">
+                            <p class="text-xs font-bold uppercase tracking-wide text-primary mb-3">AP guide</p>
+                            <h3 class="text-xl font-black mb-3 group-hover:text-primary transition-colors">Invoice Automation With AI</h3>
+                            <p class="text-base-content/70">See how document processing supports AP intake, matching, approvals, and ERP preparation.</p>
+                        </a>
+                        <a href="{{BASE_PATH}}blog/business-process-automation-with-ai.html" class="group p-6 rounded-lg border border-base-200 bg-white shadow-sm hover:border-primary/30 hover:shadow-xl transition-all">
+                            <p class="text-xs font-bold uppercase tracking-wide text-primary mb-3">Process guide</p>
+                            <h3 class="text-xl font-black mb-3 group-hover:text-primary transition-colors">Business Process Automation With AI</h3>
+                            <p class="text-base-content/70">Plan how AI moves repeated business work through systems, review, and reporting.</p>
+                        </a>
+                        <a href="{{BASE_PATH}}custom-ai-solutions.html" class="group p-6 rounded-lg border border-base-200 bg-white shadow-sm hover:border-primary/30 hover:shadow-xl transition-all">
+                            <p class="text-xs font-bold uppercase tracking-wide text-primary mb-3">Main service</p>
+                            <h3 class="text-xl font-black mb-3 group-hover:text-primary transition-colors">Custom AI Solutions</h3>
+                            <p class="text-base-content/70">Build custom AI workflows for document-heavy operations, integrations, and review paths.</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-spacing bg-buzz-warm">
+                <div class="container mx-auto container-padding text-center max-w-4xl">
+                    <h2 class="text-4xl md:text-5xl font-black mb-6">Ready to Build a Controlled IDP Workflow?</h2>
+                    <p class="text-xl text-base-content/80 mb-8">Go Expandia helps companies choose the right document workflow, design safe AI document processing, and launch automation with practical human review.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="{{BASE_PATH}}contact.html" class="btn btn-primary btn-lg buzz-button w-full sm:w-auto whitespace-normal h-auto min-h-14 px-4 text-center leading-tight">Start the Conversation</a>
+                        <a href="{{BASE_PATH}}ai-automation-agency.html" class="btn btn-outline btn-lg border-primary text-primary hover:bg-primary hover:text-white w-full sm:w-auto whitespace-normal h-auto min-h-14 px-4 text-center leading-tight">See AI Automation Agency</a>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "@id": "https://www.goexpandia.com/blog/intelligent-document-processing.html#blogposting",
+        "headline": "Intelligent Document Processing: How AI Reads, Routes, and Reviews Business Documents",
+        "description": "A practical guide to AI document processing, routing, human review, integrations, controls, and rollout planning.",
+        "inLanguage": "en",
+        "wordCount": 4919,
+        "articleSection": "Business Process Automation",
+        "keywords": "intelligent document processing, IDP, AI document processing, document automation, document processing AI, business process automation, AI automation agency",
+        "image": [
+            {
+                "@type": "ImageObject",
+                "url": "https://www.goexpandia.com/assets/images/intelligent-document-processing-hero.png",
+                "width": 1600,
+                "height": 893
+            },
+            {
+                "@type": "ImageObject",
+                "url": "https://www.goexpandia.com/assets/images/intelligent-document-processing-routing-map.png",
+                "width": 1600,
+                "height": 893
+            },
+            {
+                "@type": "ImageObject",
+                "url": "https://www.goexpandia.com/assets/images/intelligent-document-processing-scorecard.png",
+                "width": 1600,
+                "height": 893
+            }
+        ],
+        "author": {
+            "@type": "Person",
+            "name": "Bailey Roque",
+            "url": "https://www.goexpandia.com/about.html"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Go Expandia",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.goexpandia.com/go-expandia-logo.png",
+                "width": 512,
+                "height": 512
+            }
+        },
+        "datePublished": "2026-05-20",
+        "dateModified": "2026-05-20",
+        "mainEntityOfPage": "https://www.goexpandia.com/blog/intelligent-document-processing.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is intelligent document processing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Intelligent document processing is the use of AI, rules, workflow automation, and human review to classify documents, extract fields, validate information, route work, and update business systems."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How is IDP different from OCR?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "OCR reads text from a document. IDP uses that text with document classification, field extraction, validation, routing, exception handling, human review, and system updates."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What documents should we automate first?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Start with a frequent document type that has clear fields, clear owners, medium or low risk, and an easy review path. Invoices, intake forms, order documents, vendor packets, and support attachments are common first pilots."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can AI approve documents automatically?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Some low-risk document steps may be automated after testing, but sensitive approvals should keep human review. Financial, legal, regulated, HR, and high-value decisions need stricter controls and audit trails."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can Go Expandia build an IDP workflow?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Go Expandia can map the document workflow, define extraction fields and validation rules, build the review process, connect business systems, and launch a controlled intelligent document processing pilot."
+                }
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.goexpandia.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://www.goexpandia.com/blog/index.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Intelligent Document Processing",
+                "item": "https://www.goexpandia.com/blog/intelligent-document-processing.html"
+            }
+        ]
+    }
+    </script>
+
+    {{FOOTER_INCLUDE}}
+</body>
+</html>

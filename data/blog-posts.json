@@ -22,6 +22,102 @@
     }
   },
   "posts": {
+    "ai-chatbot-for-website": {
+      "title": "AI Chatbot for Website: Bot or AI Agent?",
+      "description": "Learn when an AI chatbot for website support is enough, when you need an AI agent, and how to choose the right workflow safely.",
+      "excerpt": "A practical guide to deciding whether your website needs a simple AI chatbot, a controlled AI agent, or a human handoff workflow.",
+      "keywords": "AI chatbot for website, website AI chatbot, AI chatbot, AI agent, chatbot vs AI agent, AI automation agency, AI agent development",
+      "category": "ai-automation",
+      "badge": "Chatbot Guide",
+      "readTime": "18 min read",
+      "image": "assets/images/ai-chatbot-for-website-hero.png",
+      "published": "2026-05-20",
+      "modified": "2026-05-20"
+    },
+    "crm-automation-with-ai": {
+      "title": "CRM Automation With AI: Clean Data and Follow-Up",
+      "description": "Learn how CRM automation with AI cleans data, speeds follow-up, improves handoffs, and keeps sales, support, and operations aligned.",
+      "excerpt": "A practical guide to CRM automation with AI for cleaner records, faster follow-up, better sales handoffs, and safer workflow automation.",
+      "keywords": "CRM automation with AI, CRM automation, AI CRM automation, sales CRM automation, CRM data cleanup, AI workflow automation, AI automation agency",
+      "category": "ai-automation",
+      "badge": "CRM Guide",
+      "readTime": "18 min read",
+      "image": "assets/images/crm-automation-with-ai-hero.png",
+      "published": "2026-05-20",
+      "modified": "2026-05-20"
+    },
+    "intelligent-document-processing": {
+      "title": "Intelligent Document Processing Guide",
+      "description": "Learn how intelligent document processing uses AI to read, route, review, validate, and automate business documents with human controls.",
+      "excerpt": "A practical guide to intelligent document processing for business teams that want AI to read documents, route work, review exceptions, and update systems safely.",
+      "keywords": "intelligent document processing, IDP, AI document processing, document automation, document processing AI, business process automation, AI automation agency",
+      "category": "business-process-automation",
+      "badge": "Document AI Guide",
+      "readTime": "18 min read",
+      "image": "assets/images/intelligent-document-processing-hero.png",
+      "published": "2026-05-20",
+      "modified": "2026-05-20"
+    },
+    "ai-voice-agent": {
+      "title": "AI Voice Agent: Use Cases, Risks, Plan",
+      "description": "Learn AI voice agent use cases, risks, and an implementation plan for automating calls, booking, lead intake, support triage, reminders, and escalation.",
+      "excerpt": "A practical guide to AI voice agent use cases, risks, guardrails, and rollout planning for business call workflows.",
+      "keywords": "AI voice agent, AI voice agents, voice AI agent, AI phone agent, AI call automation, AI voice automation, AI automation agency, AI agent development",
+      "category": "ai-automation",
+      "badge": "Voice Guide",
+      "readTime": "18 min read",
+      "image": "assets/images/ai-voice-agent-use-cases-hero.png",
+      "published": "2026-05-20",
+      "modified": "2026-05-20"
+    },
+    "ai-project-manager-workflows": {
+      "title": "AI Project Manager: What to Automate First",
+      "description": "Learn what an AI project manager should automate first in project workflows, from intake and action items to status reporting, blockers, risks, and handoffs.",
+      "excerpt": "A practical guide to using an AI project manager for project workflows without losing ownership, scope control, or human judgment.",
+      "keywords": "AI project manager, AI project management, project workflow automation, AI project management tools, AI automation agency, workflow automation, AI agents",
+      "category": "ai-automation",
+      "badge": "PM Guide",
+      "readTime": "18 min read",
+      "image": "assets/images/ai-project-manager-workflows-hero.png",
+      "published": "2026-05-20",
+      "modified": "2026-05-20"
+    },
+    "ai-email-assistant-for-business": {
+      "title": "AI Email Assistant for Business: 12 Use Cases",
+      "description": "See 12 AI email assistant use cases that save business time, including inbox triage, reply drafts, meeting follow-up, routing, CRM updates, and reporting.",
+      "excerpt": "A practical guide to using an AI email assistant for business without losing quality, context, customer trust, or human review.",
+      "keywords": "AI email assistant for business, AI email assistant, email automation, AI email automation, business email assistant, AI automation agency, workflow automation",
+      "category": "ai-automation",
+      "badge": "Email Guide",
+      "readTime": "18 min read",
+      "image": "assets/images/ai-email-assistant-business-hero.png",
+      "published": "2026-05-20",
+      "modified": "2026-05-20"
+    },
+    "ai-receptionist": {
+      "title": "AI Receptionist: Calls, Booking, Lead Intake",
+      "description": "Learn how an AI receptionist can automate call answering, booking, lead intake, routing, reminders, and follow-up without hurting customer quality.",
+      "excerpt": "A practical guide to automating receptionist workflows while keeping call quality, booking accuracy, lead routing, and human review under control.",
+      "keywords": "AI receptionist, AI receptionist automation, AI phone receptionist, AI call answering, AI booking automation, lead intake automation, AI automation agency",
+      "category": "ai-automation",
+      "badge": "Reception Guide",
+      "readTime": "18 min read",
+      "image": "assets/images/ai-receptionist-call-booking-hero.png",
+      "published": "2026-05-20",
+      "modified": "2026-05-20"
+    },
+    "ai-lead-generation": {
+      "title": "AI Lead Generation: 15 Workflows to Automate",
+      "description": "See 15 AI lead generation workflows to automate without damaging sales quality, from intake and enrichment to routing, nurture, CRM, and reporting.",
+      "excerpt": "A practical guide to automating lead generation workflows while protecting lead quality, sales trust, CRM hygiene, and human review.",
+      "keywords": "AI lead generation, AI lead generation automation, lead generation automation, AI sales automation, AI automation agency, AI sales agent, CRM automation",
+      "category": "ai-automation",
+      "badge": "Lead Gen Guide",
+      "readTime": "18 min read",
+      "image": "assets/images/ai-lead-generation-workflows-hero.png",
+      "published": "2026-05-20",
+      "modified": "2026-05-20"
+    },
     "ai-automation-agency-near-me": {
       "title": "AI Automation Agency Near Me: 15-Point Checklist",
       "description": "Use this AI automation agency near me checklist to choose a local AI partner for workflow automation, AI agents, privacy, ROI, and support.",

@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="expandia">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Voice Agent: Use Cases, Risks, Plan | Go Expandia</title>
+    <meta name="description" content="Learn AI voice agent use cases, risks, and an implementation plan for automating calls, booking, lead intake, support triage, reminders, and escalation.">
+    <meta name="keywords" content="AI voice agent, AI voice agents, voice AI agent, AI phone agent, AI call automation, AI voice automation, AI automation agency, AI agent development">
+    <link rel="canonical" href="https://www.goexpandia.com/blog/ai-voice-agent.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="AI Voice Agent: Use Cases, Risks, Plan | Go Expandia" />
+    <meta property="og:description" content="Learn AI voice agent use cases, risks, and an implementation plan for automating calls, booking, lead intake, support triage, reminders, and escalation." />
+    <meta property="og:url" content="https://www.goexpandia.com/blog/ai-voice-agent.html" />
+    <meta property="og:image" content="https://www.goexpandia.com/assets/images/ai-voice-agent-use-cases-hero.png">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="893">
+    <meta property="article:published_time" content="2026-05-20">
+    <meta property="article:modified_time" content="2026-05-20">
+    <meta property="article:author" content="Bailey Roque">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Voice Agent: Use Cases, Risks, Plan | Go Expandia" />
+    <meta name="twitter:description" content="Learn AI voice agent use cases, risks, and an implementation plan for automating calls, booking, lead intake, support triage, reminders, and escalation." />
+    <meta name="twitter:image" content="https://www.goexpandia.com/assets/images/ai-voice-agent-use-cases-hero.png">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link href="../dist/css/output.css" rel="stylesheet">
+    <style>
+        .article-prose p { margin-bottom: 1.25rem; line-height: 1.8; }
+        .article-prose ul, .article-prose ol { margin: 1rem 0 1.5rem; padding-left: 1.5rem; }
+        .article-prose li { margin-bottom: 0.65rem; line-height: 1.7; }
+        .article-prose h2, .article-prose h3, .article-prose h4, .article-prose h5 { scroll-margin-top: 6rem; }
+    </style>
+
+    <meta property="twitter:url" content="https://www.goexpandia.com/blog/ai-voice-agent.html" />
+    <meta property="article:section" content="AI Automation">
+    <meta name="category" content="AI Automation">
+    <meta property="article:tag" content="AI voice agent, AI voice agents, voice AI agent, AI phone agent, AI call automation, AI voice automation, AI automation agency, AI agent development">
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Go Expandia",
+    "url": "https://www.goexpandia.com",
+    "logo": "https://www.goexpandia.com/go-expandia-logo.png",
+    "email": "hello@goexpandia.com",
+    "sameAs": [
+      "https://www.linkedin.com/company/103769699/"
+    ],
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "hello@goexpandia.com",
+        "areaServed": [
+          "EU",
+          "UK",
+          "US",
+          "MEA",
+          "APAC"
+        ],
+        "availableLanguage": [
+          "en"
+        ]
+      },
+      {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "email": "hello@goexpandia.com",
+        "areaServed": [
+          "EU",
+          "UK",
+          "US",
+          "MEA",
+          "APAC"
+        ],
+        "availableLanguage": [
+          "en"
+        ]
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": "https://www.goexpandia.com/blog/ai-voice-agent.html#blogposting",
+    "headline": "AI Voice Agent: Use Cases, Risks, and Implementation Plan",
+    "description": "A practical guide to AI voice agent use cases, risks, guardrails, and implementation planning for business call workflows.",
+    "inLanguage": "en",
+    "wordCount": 4561,
+    "articleSection": "AI Automation",
+    "keywords": "AI voice agent, AI voice agents, voice AI agent, AI phone agent, AI call automation, AI voice automation, AI automation agency, AI agent development",
+    "image": [
+      {
+        "@type": "ImageObject",
+        "url": "https://www.goexpandia.com/assets/images/ai-voice-agent-use-cases-hero.png",
+        "width": 1600,
+        "height": 893
+      },
+      {
+        "@type": "ImageObject",
+        "url": "https://www.goexpandia.com/assets/images/ai-voice-agent-implementation-map.png",
+        "width": 1600,
+        "height": 893
+      },
+      {
+        "@type": "ImageObject",
+        "url": "https://www.goexpandia.com/assets/images/ai-voice-agent-risk-scorecard.png",
+        "width": 1600,
+        "height": 893
+      }
+    ],
+    "author": {
+      "@type": "Person",
+      "name": "Bailey Roque",
+      "url": "https://www.goexpandia.com/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Go Expandia",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.goexpandia.com/go-expandia-logo.png",
+        "width": 512,
+        "height": 512
+      }
+    },
+    "datePublished": "2026-05-20",
+    "dateModified": "2026-05-20",
+    "mainEntityOfPage": "https://www.goexpandia.com/blog/ai-voice-agent.html",
+    "url": "https://www.goexpandia.com/blog/ai-voice-agent.html",
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "Go Expandia Blog",
+      "url": "https://www.goexpandia.com/blog/"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "AI Automation"
+      },
+      {
+        "@type": "Thing",
+        "name": "AI automation"
+      },
+      {
+        "@type": "Thing",
+        "name": "Business operations"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is an AI voice agent?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An AI voice agent is an AI-powered phone workflow that can understand callers, ask questions, answer approved requests, book appointments, create summaries, update systems, and escalate complex calls to humans."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What AI voice agent use case should I automate first?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start with a frequent, lower-risk workflow such as missed-call capture, after-hours intake, booking requests, lead qualification, reminder calls, or support triage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the biggest AI voice agent risks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The main risks are wrong promises, poor escalation, privacy mistakes, weak integrations, caller frustration, unclear consent, and giving the agent too much scope before call quality is proven."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can an AI voice agent replace human phone staff?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Usually the best use is support, not full replacement. Voice agents can handle routine intake, booking, routing, reminders, and summaries while humans handle judgment, sensitive conversations, and exceptions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Go Expandia build an AI voice agent?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Go Expandia can map the call workflow, choose the first voice agent use case, design guardrails, connect systems, test real scenarios, and launch a controlled rollout."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.goexpandia.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://www.goexpandia.com/blog/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "AI Voice Agent",
+        "item": "https://www.goexpandia.com/blog/ai-voice-agent.html"
+      }
+    ]
+  }
+]
+</script>
+
+
+    <!-- Clarity tracking code for https://goexpandia.com/ -->
+<script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "w4fzun70vv");
+</script>
+</head>
+<body class="bg-base-100 text-base-content overflow-x-hidden">
+    <!-- Navigation -->
+<nav class="navbar bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-30 border-b border-gray-100">
+    <div class="w-full max-w-7xl mx-auto px-4 lg:px-8 flex items-center justify-between h-16" style="max-width: min(80rem, calc(100vw - 2rem));">
+        <a href="../index.html" class="flex-shrink-0">
+            <img src="../go-expandia-logo.png" alt="Go Expandia" width="920" height="259" decoding="async" class="h-12 md:h-14 w-auto">
+        </a>
+
+        <div class="hidden lg:flex items-center gap-1">
+            <a href="../our-business-model.html"
+                class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50">Our Business Model</a>
+
+            <div class="relative" id="services-dropdown">
+                <button onclick="toggleDropdown('services-menu')"
+                    class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
+                    Services
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="services-menu"
+                    class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden max-h-[78vh] overflow-y-auto"
+                    style="width: min(760px, calc(100vw - 2rem));">
+                    <div class="p-6 md:p-7">
+                        <a href="../solutions.html" class="inline-flex items-center gap-2 mb-5 group">
+                            <span class="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
+                                <i data-lucide="sparkles" class="w-4 h-4"></i>
+                            </span>
+                            <h3 class="text-sm font-bold text-primary uppercase tracking-wider group-hover:text-primary/80 transition-colors">
+                                AI Agency Services
+                            </h3>
+                        </a>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <li>
+                                <a href="../ai-automation-agency.html" class="block rounded-xl border border-gray-100 p-4 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                                    <span class="block text-base font-bold text-gray-900">AI Automation Agency</span>
+                                    <p class="mt-1 text-sm text-gray-600">Automate workflows, handoffs, reporting, and repetitive operations.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../ai-consulting-services.html" class="block rounded-xl border border-gray-100 p-4 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                                    <span class="block text-base font-bold text-gray-900">AI Consulting Services</span>
+                                    <p class="mt-1 text-sm text-gray-600">Prioritize use cases, roadmap delivery, and reduce implementation risk.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../ai-agent-development.html" class="block rounded-xl border border-gray-100 p-4 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                                    <span class="block text-base font-bold text-gray-900">AI Agent Development</span>
+                                    <p class="mt-1 text-sm text-gray-600">Build practical agents, copilots, and assistants for business workflows.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../custom-ai-solutions-for-businesses.html" class="block rounded-xl border border-gray-100 p-4 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                                    <span class="block text-base font-bold text-gray-900">Custom AI Solutions</span>
+                                    <p class="mt-1 text-sm text-gray-600">Build tailored AI systems, dashboards, agents, and internal tools.</p>
+                                </a>
+                            </li>
+                            <li class="md:col-span-2">
+                                <a href="../solutions.html" class="block rounded-xl border border-gray-100 p-4 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                                    <span class="block text-base font-bold text-gray-900">All Services</span>
+                                    <p class="mt-1 text-sm text-gray-600">See automation, consulting, agents, custom AI, and the full delivery workflow.</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative" id="company-dropdown">
+                <button onclick="toggleDropdown('company-menu')"
+                    class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
+                    Company
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="company-menu"
+                    class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden max-h-[78vh] overflow-y-auto"
+                    style="width: min(760px, calc(100vw - 2rem));">
+                    <div class="p-6 md:p-7">
+                        <a href="../about.html" class="inline-flex items-center gap-2 mb-5 group">
+                            <span class="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
+                                <i data-lucide="building-2" class="w-4 h-4"></i>
+                            </span>
+                            <h3 class="text-sm font-bold text-primary uppercase tracking-wider group-hover:text-primary/80 transition-colors">
+                                Company
+                            </h3>
+                        </a>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <li>
+                                <a href="../about.html" class="block rounded-xl border border-gray-100 p-4 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                                    <span class="block text-base font-bold text-gray-900">About Us</span>
+                                    <p class="mt-1 text-sm text-gray-600">Who we are and what we do.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../service-areas.html" class="block rounded-xl border border-gray-100 p-4 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                                    <span class="block text-base font-bold text-gray-900">Service Locations</span>
+                                    <p class="mt-1 text-sm text-gray-600">Major cities where we deliver remote AI agency work.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../vision-mission.html" class="block rounded-xl border border-gray-100 p-4 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                                    <span class="block text-base font-bold text-gray-900">Vision &amp; Mission</span>
+                                    <p class="mt-1 text-sm text-gray-600">Our direction, mission, and long-term goals.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../our-ethical-principles.html" class="block rounded-xl border border-gray-100 p-4 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                                    <span class="block text-base font-bold text-gray-900">Ethics &amp; Values</span>
+                                    <p class="mt-1 text-sm text-gray-600">How we operate and make decisions.</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+            <a href="../contact.html"
+                class="btn btn-primary btn-sm lg:btn-md shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-shadow hidden sm:inline-flex">Contact</a>
+
+            <div class="lg:hidden relative">
+                <button onclick="toggleMobileMenu()" class="btn btn-ghost btn-sm">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <div id="mobile-menu"
+                    class="hidden fixed top-16 right-0 max-h-[500px] w-80 bg-white shadow-2xl z-[999] overflow-y-auto overscroll-contain border-l border-gray-100 rounded-bl-2xl">
+                    <ul class="menu p-3 w-full text-xs">
+                        <li><a href="../our-business-model.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">Our Business Model</a></li>
+                        <li><a href="../solutions.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">Services</a></li>
+                        <li class="mt-2">
+                            <span class="text-[10px] font-bold text-primary uppercase tracking-wider px-2 py-1 bg-primary/5 rounded-lg mb-1">AI Agency Services</span>
+                            <ul class="pl-0 space-y-0.5">
+                                <li><a href="../ai-automation-agency.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">AI Automation Agency</a></li>
+                                <li><a href="../ai-consulting-services.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">AI Consulting Services</a></li>
+                                <li><a href="../ai-agent-development.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">AI Agent Development</a></li>
+                                <li><a href="../custom-ai-solutions-for-businesses.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">Custom AI Solutions</a></li>
+                                <li><a href="../solutions.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">All Services</a></li>
+                            </ul>
+                        </li>
+                        <li class="mt-4 pt-2 border-t border-gray-100">
+                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider px-2 py-1 bg-gray-50 rounded-lg mb-1">Company</span>
+                            <ul class="pl-0 space-y-0.5">
+                                <li><a href="../about.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">About Us</a></li>
+                                <li><a href="../service-areas.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">Service Locations</a></li>
+                                <li><a href="../contact.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">Contact</a></li>
+                            </ul>
+                        </li>
+                        <li class="mt-2 pt-2 border-t border-gray-50">
+                            <a href="../contact.html"
+                                class="btn btn-primary btn-sm w-full text-xs min-h-0 h-9 font-bold shadow-sm">Talk to Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+
+        if (!menu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.hideWidget();
+        } else {
+            document.body.style.overflow = '';
+            if (typeof Tawk_API !== 'undefined') Tawk_API.showWidget();
+        }
+    }
+
+    function toggleDropdown(menuId) {
+        const allMenus = ['services-menu', 'company-menu'];
+        allMenus.forEach(id => {
+            const menu = document.getElementById(id);
+            if (menu && id !== menuId) {
+                menu.classList.add('hidden');
+            }
+        });
+        const menu = document.getElementById(menuId);
+        if (menu) {
+            menu.classList.toggle('hidden');
+        }
+    }
+
+    document.addEventListener('click', function (e) {
+        const servicesDropdown = document.getElementById('services-dropdown');
+        const companyDropdown = document.getElementById('company-dropdown');
+
+        if (servicesDropdown && !servicesDropdown.contains(e.target)) {
+            document.getElementById('services-menu')?.classList.add('hidden');
+        }
+        if (companyDropdown && !companyDropdown.contains(e.target)) {
+            document.getElementById('company-menu')?.classList.add('hidden');
+        }
+    });
+</script>
+
+
+    <main>
+        <article class="article-prose">
+            <section class="bg-buzz-warm section-spacing overflow-hidden">
+                <div class="container mx-auto container-padding">
+                    <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
+                        <div>
+                            <nav class="hidden md:block text-sm breadcrumbs mb-6" aria-label="Breadcrumb">
+                                <ol class="flex flex-wrap gap-2 text-base-content/60">
+                                    <li><a class="hover:text-primary" href="../index.html">Home</a></li>
+                                    <li>/</li>
+                                    <li><a class="hover:text-primary" href="../blog/index.html">Blog</a></li>
+                                    <li>/</li>
+                                    <li class="text-base-content">AI voice agent</li>
+                                </ol>
+                            </nav>
+                            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-bold text-sm mb-6">
+                                <span class="w-2.5 h-2.5 rounded-full bg-primary" aria-hidden="true"></span>
+                                Voice AI implementation guide
+                            </div>
+                            <h1 class="text-3xl sm:text-4xl md:text-6xl font-black leading-tight mb-6 break-words">
+                                AI Voice Agent: Use Cases, Risks, and Implementation Plan
+                            </h1>
+                            <p class="lead text-xl md:text-2xl text-base-content/80 mb-8 leading-relaxed">
+                                An AI voice agent can answer calls, qualify leads, book appointments, route support, and handle routine phone work. The value comes from choosing the right call workflows and putting strict guardrails around anything sensitive.
+                            </p>
+                            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm font-semibold text-base-content/70 mb-8">
+                                <address class="not-italic">By <a href="../about.html" rel="author" class="text-primary hover:text-primary/80">Bailey Roque</a></address>
+                                <span aria-hidden="true">|</span>
+                                <time datetime="2026-05-20">Updated May 20, 2026</time>
+                                <span aria-hidden="true">|</span>
+                                <span>18 min read</span>
+                                <span aria-hidden="true">|</span>
+                                <a href="../blog/categories/ai-automation.html" class="text-primary hover:text-primary/80">AI Automation</a>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <a href="../contact.html" class="btn btn-primary btn-lg buzz-button w-full sm:w-auto whitespace-normal h-auto min-h-14 px-4 text-center leading-tight">Map My Voice Workflow</a>
+                                <a href="../ai-agent-development.html" class="btn btn-outline btn-lg border-primary text-primary hover:bg-primary hover:text-white w-full sm:w-auto whitespace-normal h-auto min-h-14 px-4 text-center leading-tight">See AI Agent Development</a>
+                            </div>
+                        </div>
+                        <div class="buzz-card bg-white shadow-2xl overflow-hidden border border-primary/10">
+                            <picture>
+                                <source srcset="../assets/images/ai-voice-agent-use-cases-hero.avif" type="image/avif">
+                                <source srcset="../assets/images/ai-voice-agent-use-cases-hero.webp" type="image/webp">
+                                <img src="../assets/images/ai-voice-agent-use-cases-hero.png" alt="AI voice agent workflow showing call start, understanding, action, escalation, and human review" width="1600" height="893" loading="eager" fetchpriority="high" decoding="async" class="w-full h-auto object-cover">
+                            </picture>
+                            <div class="p-6">
+                                <p class="text-sm font-bold text-primary mb-2">Best first pilot</p>
+                                <p class="text-base-content/70">Start with missed-call capture, booking requests, lead intake, or reminders before automating complex conversations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-12 bg-white border-y border-base-200">
+                <div class="container mx-auto container-padding">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div class="p-5 rounded-xl bg-base-100 border border-base-200">
+                            <p class="text-sm text-base-content/60">Primary keyword</p>
+                            <p class="font-bold">AI voice agent</p>
+                        </div>
+                        <div class="p-5 rounded-xl bg-base-100 border border-base-200">
+                            <p class="text-sm text-base-content/60">Search intent</p>
+                            <p class="font-bold">Buyer guide</p>
+                        </div>
+                        <div class="p-5 rounded-xl bg-base-100 border border-base-200">
+                            <p class="text-sm text-base-content/60">Best first workflow</p>
+                            <p class="font-bold">Missed-call capture</p>
+                        </div>
+                        <div class="p-5 rounded-xl bg-base-100 border border-base-200">
+                            <p class="text-sm text-base-content/60">Main service</p>
+                            <p class="font-bold">AI Agent Development</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-spacing bg-base-100">
+                <div class="container mx-auto container-padding">
+                    <div class="grid lg:grid-cols-[0.72fr_0.28fr] gap-10 items-start">
+                        <div class="max-w-4xl min-w-0" style="min-width: 0; max-width: 100%;">
+                            <div class="buzz-card p-6 md:p-8 bg-primary/5 border border-primary/15 mb-10">
+                                <h2 class="text-3xl font-black mb-4">TL;DR</h2>
+                                <p class="text-lg text-base-content/80">
+                                    An AI voice agent is best used for repeated, rule-based phone workflows: missed-call capture, after-hours intake, appointment booking, lead qualification, support triage, account status checks, payment or billing intake, reminders, surveys, internal helpdesk calls, multilingual routing, and escalation summaries. The main risks are wrong promises, poor escalation, privacy mistakes, caller frustration, weak integrations, and unclear accountability. Start with one call type, write strict rules, connect only the systems needed, keep humans in review, and measure call quality before expanding.
+                                </p>
+                            </div>
+
+                            <p>
+                                An AI voice agent can be useful when phones are creating delays, missed leads, inconsistent intake, or too much repeated work for staff. It can answer routine calls, ask approved questions, book appointments, summarize conversations, update systems, and route callers to the right human when the conversation needs judgment.
+                            </p>
+                            <p>
+                                It can also create problems quickly. A weak voice agent can frustrate callers, misunderstand urgency, promise the wrong thing, collect incomplete details, or make the company sound less trustworthy. Voice is more sensitive than a form or chat because the caller expects a real-time conversation and may be upset, rushed, or confused.
+                            </p>
+                            <p>
+                                This guide explains practical AI voice agent use cases, the risks to control, and a rollout plan for implementation. It is written for business owners, operations teams, sales leaders, support managers, local service companies, agencies, clinics, and B2B teams that want call automation without losing customer trust.
+                            </p>
+
+                            <h2 id="quick-answer" class="text-3xl md:text-4xl font-black mt-12 mb-5">Quick Answer: Use AI Voice Agents for Repeated Calls First</h2>
+                            <p>
+                                The best first AI voice agent workflows are repeated, easy to classify, and easy to review. Missed-call capture, after-hours intake, booking requests, lead qualification, reminder calls, and basic support triage are usually safer first pilots than complaints, refunds, emergencies, negotiations, or complex account decisions.
+                            </p>
+                            <p>
+                                The voice agent should prepare a clean handoff. A good call outcome includes who called, why they called, urgency, required follow-up, requested service, booking status, escalation reason, and the system update. The goal is not a voice bot that guesses everything. The goal is faster response, cleaner intake, and better routing.
+                            </p>
+                            <p>
+                                If you are unsure where to start, map your call types for two weeks. Count missed calls, after-hours calls, booking requests, lead inquiries, support questions, billing questions, and escalations. The first pilot should be the highest-volume workflow with the clearest rules and lowest customer risk.
+                            </p>
+
+                            <div class="my-8 w-full max-w-full overflow-x-auto rounded-2xl border border-base-200 bg-white shadow-sm" style="max-width: 100%; overflow-x: auto;">
+                                <table class="table min-w-[900px]" style="min-width: 900px; width: 100%;">
+                                    <thead class="bg-primary/5 text-base-content">
+                                        <tr>
+                                            <th class="text-sm font-black uppercase tracking-wide">Voice workflow</th>
+                                            <th class="text-sm font-black uppercase tracking-wide">Good automation</th>
+                                            <th class="text-sm font-black uppercase tracking-wide">Bad automation</th>
+                                            <th class="text-sm font-black uppercase tracking-wide">Best control</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="font-bold">Call intake</td>
+                                            <td>Captures need, caller, urgency, and next step.</td>
+                                            <td>Asks vague questions and loses context.</td>
+                                            <td>Use a required intake packet.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-bold">Booking</td>
+                                            <td>Books approved appointment types only.</td>
+                                            <td>Books anyone into any calendar slot.</td>
+                                            <td>Use service and eligibility rules.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-bold">Support triage</td>
+                                            <td>Summarizes issue and routes to support.</td>
+                                            <td>Pretends to solve problems it cannot solve.</td>
+                                            <td>Escalate uncertainty and upset callers.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-bold">Outbound calls</td>
+                                            <td>Handles reminders and confirmations with clear consent.</td>
+                                            <td>Cold-calls without context or permission.</td>
+                                            <td>Use approved lists and opt-out handling.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h2 id="what-is" class="text-3xl md:text-4xl font-black mt-12 mb-5">What an AI Voice Agent Actually Does</h2>
+                            <p>
+                                An AI voice agent is an AI-powered phone or voice workflow that can listen, respond, ask questions, call APIs, update systems, and hand off conversations. It may use speech recognition, a language model, a voice model, business rules, integrations, and logging to handle specific call types.
+                            </p>
+                            <p>
+                                The useful part is not just the voice. The useful part is the workflow behind the voice. A production AI voice agent needs approved scripts, call-type rules, escalation criteria, calendar or CRM access, privacy controls, recording rules, call summaries, testing, and monitoring. Without those pieces, the demo may sound polished but the real business workflow will fail.
+                            </p>
+                            <p>
+                                A strong voice agent is narrow and honest. It knows what it can handle, what it should ask, what it should never promise, and when to bring in a person. It should be able to say that it will take details for the team rather than pretending it can solve every situation.
+                            </p>
+
+                            <h2 id="where-it-fits" class="text-3xl md:text-4xl font-black mt-12 mb-5">Where an AI Voice Agent Fits in the Operations Stack</h2>
+                            <p>
+                                A voice agent should not become a separate phone island. It should connect calls to the systems the business already uses: phone system, CRM, calendar, help desk, billing tool, order system, internal task manager, and reporting dashboard. The call is the trigger. The business value comes from the handoff after the call.
+                            </p>
+                            <p>
+                                A practical setup has five parts. First, the call is routed to the voice workflow. Second, the agent identifies the call type and asks approved questions. Third, it takes an action such as booking, creating a task, opening a ticket, or preparing a callback. Fourth, it escalates anything outside scope. Fifth, it writes a clear summary and quality data for review.
+                            </p>
+                            <p>
+                                This structure keeps the voice agent accountable. If the caller asks for something sensitive, the agent stops. If the calendar has no availability, it explains the next step. If the CRM record may already exist, it flags a possible match. If the confidence is low, it routes to a human.
+                            </p>
+
+                            <h2 id="choose-first" class="text-3xl md:text-4xl font-black mt-12 mb-5">How to Choose the First AI Voice Agent Use Case</h2>
+                            <p>
+                                Choose the first use case by call volume, clarity, customer risk, integration effort, and review ease. A good first call workflow happens often, follows a repeatable pattern, uses information you can access, and has a clear escalation path. A weak first workflow requires emotional judgment, policy interpretation, pricing negotiation, or complex troubleshooting.
+                            </p>
+                            <p>
+                                The first pilot should have a measurable result. Useful metrics include missed-call recovery, booking accuracy, lead completeness, support routing accuracy, callback speed, abandoned-call reduction, and call summary quality. "More AI" is not a metric. "More answered calls" is not enough if callers are frustrated or staff do not trust the summaries.
+                            </p>
+                            <p>
+                                Start where automation reduces obvious waste. If staff spend hours returning routine calls, start with missed-call capture. If appointments are booked manually all day, start with booking. If support gets the same intake questions repeatedly, start with support triage. Pick one workflow and make it good.
+                            </p>
+
+                            <h2 id="voice-agent-vs-ivr" class="text-3xl md:text-4xl font-black mt-12 mb-5">AI Voice Agent vs IVR vs AI Receptionist</h2>
+                            <p>
+                                An AI voice agent is different from a traditional IVR menu. An IVR usually asks callers to press numbers or follow a rigid tree. It can route calls, but it struggles when callers describe a problem in natural language. A voice agent can listen to the caller, classify the request, ask follow-up questions, call business systems, and prepare a structured handoff.
+                            </p>
+                            <p>
+                                It is also related to, but not identical to, an AI receptionist. An AI receptionist is usually focused on front-desk work: answering calls, booking appointments, capturing leads, and routing common requests. An AI voice agent can include those workflows, but it may also support outbound reminders, internal helpdesk calls, account status checks, payment intake, survey calls, or specific operational call flows.
+                            </p>
+                            <p>
+                                The difference matters because the first implementation should match the job. If the business only needs basic routing, a simple phone tree may be enough. If the business needs conversational intake, calendar checks, CRM summaries, and escalation rules, a voice agent makes more sense. If the goal is front-desk coverage, the project may be best framed as an AI receptionist with clear call-handling rules.
+                            </p>
+                            <p>
+                                Do not choose the technology first. Choose the call outcome first. What should happen after a successful call? A booked appointment, a qualified lead, a support ticket, a callback task, a payment follow-up, or an escalation summary? Once that outcome is clear, the right combination of voice AI, workflow automation, integrations, and human review becomes easier to design.
+                            </p>
+
+                            <div id="checkup-top" class="my-10 rounded-2xl border border-primary/20 bg-primary/5 p-6 md:p-8">
+                                <p class="text-sm font-bold uppercase tracking-wide text-primary mb-3">Free voice workflow check</p>
+                                <h2 class="text-2xl md:text-3xl font-black mb-3">Find your first AI voice agent workflow.</h2>
+                                <p class="text-base-content/75 mb-5">Drop your email and we will send a first-pass recommendation for the safest voice workflow to automate first.</p>
+                                <form class="grid gap-3 sm:grid-cols-[1fr_auto]" data-lead-capture="ai-checkup">
+                                    <input type="email" name="email" class="input input-bordered w-full" placeholder="Work email" required>
+                                    <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
+                                    <button type="submit" class="btn btn-primary whitespace-normal h-auto min-h-12">Get Free Check</button>
+                                </form>
+                                <p class="mt-3 text-sm text-base-content/60">No spam. We use this to reply with the recommendation.</p>
+                            </div>
+
+                            <h2 id="missed-calls" class="text-3xl md:text-4xl font-black mt-12 mb-5">1. Missed-Call Capture</h2>
+                            <p>
+                                Missed-call capture is often the safest first AI voice agent use case. The caller tries to reach the business, nobody answers, and the agent calls back or sends the caller into a short intake path. It can collect the caller's name, reason for calling, urgency, preferred callback time, and whether they are a new or existing customer.
+                            </p>
+                            <p>
+                                This workflow does not need to solve the whole customer problem. It needs to prevent the lead or request from disappearing. The voice agent can create a task, summarize the call, and route it to the correct owner.
+                            </p>
+                            <p>
+                                The guardrail is honesty. The agent should not imply that a person is already reviewing the request if nobody is. It should collect useful information and set the right expectation for follow-up.
+                            </p>
+
+                            <h2 id="after-hours" class="text-3xl md:text-4xl font-black mt-12 mb-5">2. After-Hours Intake</h2>
+                            <p>
+                                After-hours calls are another practical use case. Many businesses receive high-intent calls outside working hours but have no clean capture process. An AI voice agent can answer, explain availability, collect the request, classify urgency, and offer a booking or callback path.
+                            </p>
+                            <p>
+                                The workflow should include emergency or urgent-call rules when relevant. If a caller describes something outside the safe scope, the agent should provide the approved escalation instruction or route to the right human path.
+                            </p>
+                            <p>
+                                Measure the workflow by recovered calls, booked appointments, accepted leads, completed callbacks, and caller complaints. A system that captures calls but creates confusion is not ready to expand.
+                            </p>
+
+                            <h2 id="booking" class="text-3xl md:text-4xl font-black mt-12 mb-5">3. Appointment Booking and Rescheduling</h2>
+                            <p>
+                                Booking is a high-value AI voice agent workflow because it is repetitive and measurable. The agent can ask qualification questions, confirm service type, check availability, book the correct appointment, send confirmation, and collect missing details.
+                            </p>
+                            <p>
+                                The booking rules need to be exact. Which appointment types can be booked automatically? Which require approval? What calendar should be used? What buffer time is required? Which locations or service areas are valid? These rules should be written before the agent handles real callers.
+                            </p>
+                            <p>
+                                Rescheduling can be automated too, but policies matter. The agent should confirm identity, find the appointment, explain available options, and update the calendar only when the caller clearly agrees.
+                            </p>
+
+                            <figure class="my-10 rounded-2xl overflow-hidden border border-base-200 bg-white shadow-sm">
+                                <picture>
+                                    <source srcset="../assets/images/ai-voice-agent-implementation-map.avif" type="image/avif">
+                                    <source srcset="../assets/images/ai-voice-agent-implementation-map.webp" type="image/webp">
+                                    <img src="../assets/images/ai-voice-agent-implementation-map.png" alt="AI voice agent implementation map showing use cases, guardrails, systems, and quality review" width="1600" height="893" loading="lazy" decoding="async" class="w-full h-auto">
+                                </picture>
+                                <figcaption class="p-4 text-sm text-base-content/60">A controlled AI voice workflow starts with use cases, rules, systems, and review before expanding to more complex calls.</figcaption>
+                            </figure>
+
+                            <h2 id="lead-qualification" class="text-3xl md:text-4xl font-black mt-12 mb-5">4. Lead Qualification and Sales Routing</h2>
+                            <p>
+                                AI voice agents can qualify inbound sales calls by asking a short set of approved questions. The agent can capture the caller's problem, company, role, timeline, location, budget signal, service interest, and urgency. It can then route the lead to the right owner.
+                            </p>
+                            <p>
+                                The agent should not decide strategic fit alone. It can label a lead as strong fit, possible fit, or needs review, then explain why. Sales should still approve important routing decisions, especially for large accounts, complex requests, or unclear needs.
+                            </p>
+                            <p>
+                                This workflow saves time because sales receives a structured call summary instead of a vague voicemail. It also improves CRM hygiene when the call creates or updates the right record.
+                            </p>
+
+                            <h2 id="support-triage" class="text-3xl md:text-4xl font-black mt-12 mb-5">5. Customer Support Triage</h2>
+                            <p>
+                                Support triage is useful when callers repeat the same intake details. The voice agent can identify the customer, summarize the issue, classify severity, ask for missing information, and create a support ticket. It can route urgent or upset callers to a human.
+                            </p>
+                            <p>
+                                The agent should not pretend to fix problems it cannot fix. It can provide approved basic guidance, but its main job is to collect the right information and get the request into the correct queue.
+                            </p>
+                            <p>
+                                A good support triage handoff includes customer name, account, issue summary, affected product or service, urgency, attempted steps, preferred contact method, and escalation reason.
+                            </p>
+
+                            <h2 id="status-checks" class="text-3xl md:text-4xl font-black mt-12 mb-5">6. Order, Appointment, or Account Status Checks</h2>
+                            <p>
+                                Many calls ask for basic status: order updates, appointment time, project status, service window, document status, or account information. A voice agent can answer these calls when it has reliable access to the correct system and strict identity rules.
+                            </p>
+                            <p>
+                                The risk is data accuracy. If the connected system is outdated, the voice agent will repeat outdated information. The workflow should show what source was used and route uncertain cases to staff.
+                            </p>
+                            <p>
+                                Identity checks matter. The agent should not reveal sensitive account details without approved verification. Start with low-risk status information before expanding to anything private.
+                            </p>
+
+                            <div id="checkup-mid" class="my-10 rounded-2xl border border-primary/20 bg-white p-6 md:p-8 shadow-sm">
+                                <p class="text-sm font-bold uppercase tracking-wide text-primary mb-3">Build a controlled voice pilot</p>
+                                <h2 class="text-2xl md:text-3xl font-black mb-3">Want voice automation without caller frustration?</h2>
+                                <p class="text-base-content/75 mb-5">We can map your call flow, choose the first use case, define escalation rules, and build an AI voice agent pilot with human review.</p>
+                                <form class="grid gap-3 sm:grid-cols-[1fr_auto]" data-lead-capture="ai-checkup">
+                                    <input type="email" name="email" class="input input-bordered w-full" placeholder="Work email" required>
+                                    <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
+                                    <button type="submit" class="btn btn-primary whitespace-normal h-auto min-h-12">Plan My Pilot</button>
+                                </form>
+                                <p class="mt-3 text-sm text-base-content/60">We will reply with a practical first-workflow recommendation.</p>
+                            </div>
+
+                            <h2 id="billing-intake" class="text-3xl md:text-4xl font-black mt-12 mb-5">7. Billing and Payment Intake</h2>
+                            <p>
+                                Billing calls often need careful intake rather than full automation. The voice agent can classify the question, collect invoice number, account details, payment status, missing documents, and requested next step. It can then route the case to finance.
+                            </p>
+                            <p>
+                                Payment and billing workflows require strong controls. The agent should not negotiate disputes, approve refunds, change terms, or take sensitive payment data unless the business has a compliant, approved process.
+                            </p>
+                            <p>
+                                The safer first workflow is intake and routing. Finance receives a clean summary, and the caller gets a clear expectation for follow-up.
+                            </p>
+
+                            <h2 id="reminders" class="text-3xl md:text-4xl font-black mt-12 mb-5">8. Outbound Reminders and Confirmations</h2>
+                            <p>
+                                AI voice agents can make outbound reminder calls for appointments, deliveries, document requests, renewals, and scheduled follow-ups. This can reduce no-shows and manual reminder work when the call list is approved.
+                            </p>
+                            <p>
+                                Consent and opt-out handling matter. The business should know who can be called, what message is approved, when calls can be made, and how a caller can stop future reminders. Do not use a voice agent for aggressive outbound campaigns without a compliant process.
+                            </p>
+                            <p>
+                                A reminder call should be short. It should confirm the appointment or action, collect a simple response, and route exceptions to staff.
+                            </p>
+
+                            <h2 id="surveys" class="text-3xl md:text-4xl font-black mt-12 mb-5">9. Feedback and Satisfaction Calls</h2>
+                            <p>
+                                Feedback calls can be automated when the questions are short and the caller has a clear reason to respond. The voice agent can ask about satisfaction, unresolved issues, service quality, or next-step interest, then summarize the response.
+                            </p>
+                            <p>
+                                This workflow is useful because feedback often stays unstructured. The agent can categorize comments, flag complaints, identify follow-up needs, and report recurring themes.
+                            </p>
+                            <p>
+                                The risk is tone. A robotic feedback call can feel dismissive after a poor experience. If the caller sounds upset or mentions a serious problem, the workflow should escalate to a person.
+                            </p>
+
+                            <h2 id="internal-helpdesk" class="text-3xl md:text-4xl font-black mt-12 mb-5">10. Internal Helpdesk and Employee Requests</h2>
+                            <p>
+                                Voice agents can also support internal workflows. Employees may call for IT help, facility issues, HR process questions, equipment requests, or operations support. The agent can collect the issue, classify it, create a ticket, and route it to the right team.
+                            </p>
+                            <p>
+                                Internal workflows are often safer than customer-facing workflows because the business can train employees on what the voice agent handles. Still, sensitive HR, payroll, legal, or security issues should escalate.
+                            </p>
+                            <p>
+                                This use case saves time when phone requests are currently turned into manual notes or informal chat messages. It creates a cleaner queue and fewer lost requests.
+                            </p>
+
+                            <h2 id="language-routing" class="text-3xl md:text-4xl font-black mt-12 mb-5">11. Language Detection and Routing</h2>
+                            <p>
+                                A voice agent can detect caller language, capture the basic request, and route the caller to the right team or callback path. This can improve access when the business receives calls from customers who do not all use the same language.
+                            </p>
+                            <p>
+                                Translation should be treated carefully. The agent should show uncertainty and avoid making sensitive commitments across languages unless the business has approved the workflow. For important matters, it may be better to collect the request and schedule a callback with the right person.
+                            </p>
+                            <p>
+                                The best first version is routing and intake, not complex negotiation or advice. That improves caller experience without overextending the system.
+                            </p>
+
+                            <h2 id="escalation-summaries" class="text-3xl md:text-4xl font-black mt-12 mb-5">12. Escalation Summaries for Human Handoff</h2>
+                            <p>
+                                Even when the voice agent cannot handle the full call, it can still improve the human handoff. It can collect the caller's name, reason, urgency, account, prior steps, and emotional tone, then send a summary to the person taking over.
+                            </p>
+                            <p>
+                                This is especially useful for complex support, complaints, billing disputes, urgent callbacks, and sales calls that need a specialist. The human starts with context instead of asking the caller to repeat everything.
+                            </p>
+                            <p>
+                                The handoff should be fast. If the agent knows it cannot help, it should not keep the caller in a long loop. A clean escalation is part of a good voice agent design.
+                            </p>
+
+                            <figure class="my-10 rounded-2xl overflow-hidden border border-base-200 bg-white shadow-sm">
+                                <picture>
+                                    <source srcset="../assets/images/ai-voice-agent-risk-scorecard.avif" type="image/avif">
+                                    <source srcset="../assets/images/ai-voice-agent-risk-scorecard.webp" type="image/webp">
+                                    <img src="../assets/images/ai-voice-agent-risk-scorecard.png" alt="AI voice agent risk scorecard comparing missed-call capture, booking requests, support triage, and complaints" width="1600" height="893" loading="lazy" decoding="async" class="w-full h-auto">
+                                </picture>
+                                <figcaption class="p-4 text-sm text-base-content/60">Use a scorecard before choosing the first AI voice agent workflow.</figcaption>
+                            </figure>
+
+                            <h2 id="risks" class="text-3xl md:text-4xl font-black mt-12 mb-5">AI Voice Agent Risks to Control</h2>
+                            <p>
+                                The first risk is wrong promises. A voice agent must not invent pricing, timelines, policies, eligibility, refunds, or technical answers. It should use approved knowledge and escalate when the answer is missing.
+                            </p>
+                            <p>
+                                The second risk is poor escalation. If callers cannot reach a person when they need one, the system will damage trust. Escalation rules should include upset callers, emergencies, sensitive topics, unclear requests, repeated failures, and explicit requests for a human.
+                            </p>
+                            <p>
+                                The third risk is privacy and consent. Voice workflows may involve recordings, personal data, account details, and outbound calls. The business needs a clear policy for disclosure, storage, access, retention, and opt-out handling.
+                            </p>
+                            <p>
+                                The fourth risk is integration failure. If the calendar, CRM, ticket system, or status database is wrong, the voice agent will produce wrong outcomes. System reliability is part of call quality.
+                            </p>
+                            <p>
+                                The fifth risk is caller experience. Latency, interruptions, awkward phrasing, repeated questions, and unclear handoff can make callers angry. Voice agents need real call testing, not only script review.
+                            </p>
+
+                            <h2 id="guardrails" class="text-3xl md:text-4xl font-black mt-12 mb-5">Guardrails That Keep Voice Automation Safe</h2>
+                            <p>
+                                Start with scope. Define exactly which call types the agent can handle and which it must escalate. A voice agent that tries to handle every call will fail more often than a narrow agent that handles one workflow well.
+                            </p>
+                            <p>
+                                Use approved scripts and knowledge. The agent should know business hours, service descriptions, booking rules, intake questions, escalation instructions, and approved responses. It should not improvise company policy.
+                            </p>
+                            <p>
+                                Keep human review for sensitive cases. Pricing, legal or medical issues, refunds, complaints, contracts, emergencies, and emotional calls should route to people. The AI can summarize the situation, but it should not own the decision.
+                            </p>
+                            <p>
+                                Review calls regularly. During the pilot, sample recordings or transcripts, compare summaries against the actual call, inspect failed calls, and track where callers ask for a human. Use those findings to improve the workflow.
+                            </p>
+
+                            <h2 id="what-not-to-automate" class="text-3xl md:text-4xl font-black mt-12 mb-5">What Not to Automate First</h2>
+                            <p>
+                                Some call types should not be the first AI voice agent pilot. Complaints, emergencies, refund disputes, pricing negotiations, legal or medical advice, account cancellations, angry customers, and complex troubleshooting all require stronger human judgment. The voice agent can collect context and route the caller, but it should not own the resolution.
+                            </p>
+                            <p>
+                                Avoid starting with open-ended outbound sales calls. Voice agents can support reminders and confirmations, but cold outbound calling creates brand, consent, compliance, and quality risks. If outbound is part of the roadmap, start with approved customer lists, clear opt-out handling, and narrow scripts that do not make claims or pressure the caller.
+                            </p>
+                            <p>
+                                Also avoid automating call types where the business itself does not have clear rules. If employees disagree on who qualifies, what can be booked, which calls are urgent, or what should be promised, the voice agent will not solve the disagreement. It will make the inconsistency more visible.
+                            </p>
+
+                            <h2 id="security-consent" class="text-3xl md:text-4xl font-black mt-12 mb-5">Security, Consent, and Data Controls</h2>
+                            <p>
+                                Voice workflows often touch sensitive information, so security and consent need to be designed before launch. Decide whether calls are recorded, how callers are informed, where transcripts are stored, who can access summaries, how long records are retained, and which data should never be collected by the agent.
+                            </p>
+                            <p>
+                                In the United States, outbound calls using AI-generated voices should be treated as covered by artificial or prerecorded voice rules under FCC and TCPA guidance. Before any outbound pilot, confirm prior consent, disclosure, opt-out handling, call timing, and state-specific requirements with the business owner responsible for compliance.
+                            </p>
+                            <p>
+                                Permissions should be narrow. A booking agent may need calendar access and basic customer contact fields. It does not need access to finance records. A support triage agent may need account status and ticket history. It does not need access to private internal notes unrelated to support.
+                            </p>
+                            <p>
+                                Write down what the agent can say and what it cannot say. It should not read sensitive account details aloud unless the caller is verified and the workflow is approved. It should not collect payment card details unless the business has a compliant process. It should not forward recordings or transcripts to broad internal channels.
+                            </p>
+                            <p>
+                                Auditability matters. Keep a record of the call summary, actions taken, system updates, escalation reason, and human corrections. That audit trail helps the team investigate mistakes, improve the workflow, and maintain accountability as the voice agent expands.
+                            </p>
+
+                            <h2 id="implementation-plan" class="text-3xl md:text-4xl font-black mt-12 mb-5">A Practical 90-Day AI Voice Agent Implementation Plan</h2>
+                            <p>
+                                In the first thirty days, map call types and choose the first workflow. Review call logs, missed calls, after-hours volume, booking requests, support calls, lead calls, and escalation patterns. Write the first use case: trigger, caller type, questions, allowed actions, escalation rules, systems, and success metric.
+                            </p>
+                            <p>
+                                In days thirty to sixty, build a controlled pilot. Connect only the phone system and business systems required for the workflow. Write approved scripts, test edge cases, define call recording and data retention rules, and run internal test calls before real callers use it.
+                            </p>
+                            <p>
+                                In days sixty to ninety, launch to a limited call type, time window, or phone line. Review call summaries, escalation quality, caller drop-off, booking accuracy, lead completeness, and staff trust. Expand only when the workflow proves it can improve response time without hurting caller experience.
+                            </p>
+                            <h3 class="text-2xl md:text-3xl font-black mt-8 mb-4">The Minimum Useful AI Voice Agent</h3>
+                            <p>
+                                The minimum useful voice agent has one call type, one clear goal, one system update, and one escalation path. For example, it can answer missed calls, collect the caller's reason and urgency, offer a callback window, create a CRM task, and escalate urgent cases. That is enough to prove value without automating the entire phone system.
+                            </p>
+                            <h4 class="text-xl md:text-2xl font-black mt-7 mb-3">What to Avoid in the First Build</h4>
+                            <p>
+                                Avoid broad call handling, complaint resolution, policy disputes, payment decisions, complex troubleshooting, emergency guidance, and automatic outbound calling without consent controls. Also avoid giving the agent write access to many systems before call quality is proven.
+                            </p>
+                            <h5 class="text-lg md:text-xl font-black mt-6 mb-3">Questions to Answer Before Launch</h5>
+                            <ul>
+                                <li>Which call type is the pilot responsible for?</li>
+                                <li>Which topics require immediate human escalation?</li>
+                                <li>Which scripts, policies, and knowledge sources are approved?</li>
+                                <li>Which systems can the voice agent read or update?</li>
+                                <li>How will call quality, failed calls, and caller complaints be reviewed?</li>
+                            </ul>
+
+                            <h2 id="measure-results" class="text-3xl md:text-4xl font-black mt-12 mb-5">How to Measure AI Voice Agent Results</h2>
+                            <p>
+                                Measure AI voice agents by business movement and caller experience. Useful metrics include answer rate, missed-call recovery, booking accuracy, lead completeness, escalation rate, support routing accuracy, abandoned-call rate, average handling time, callback speed, and caller complaint rate.
+                            </p>
+                            <p>
+                                Also measure staff trust. Do employees use the call summaries? Do they accept the routing? Do they have to replay calls because the summary is weak? Do they find the agent's intake complete? Staff adoption is a strong signal that the workflow is useful.
+                            </p>
+                            <p>
+                                Track exceptions. Every failed call should improve the system: better stop rules, clearer scripts, improved integration, stronger knowledge, or faster human handoff. Voice automation should improve through real call review, not guesswork.
+                            </p>
+
+                            <h2 id="when-to-hire" class="text-3xl md:text-4xl font-black mt-12 mb-5">When to Hire an AI Automation Agency</h2>
+                            <p>
+                                A simple voice tool can handle basic demos. An AI automation agency becomes useful when the voice agent needs to connect to calendars, CRM, ticketing, support, lead routing, reporting, approval paths, and custom business rules.
+                            </p>
+                            <p>
+                                A good agency should map the call workflow, choose the first use case, write guardrails, connect systems, test real call scenarios, define review metrics, and support rollout. It should not sell a generic voice bot and leave the team with unclear escalation rules.
+                            </p>
+                            <p>
+                                The agency should also say when not to automate yet. If booking rules are unclear, call categories are undocumented, data is unreliable, or there is no human handoff path, the first step may be workflow cleanup.
+                            </p>
+
+                            <h2 id="final-checklist" class="text-3xl md:text-4xl font-black mt-12 mb-5">Final Checklist: Build an AI Voice Agent Without Losing Trust</h2>
+                            <ul>
+                                <li>Start with one repeated call workflow, not every phone call.</li>
+                                <li>Use AI to capture intake, book approved appointments, route support, summarize calls, and create handoffs.</li>
+                                <li>Keep humans responsible for pricing, complaints, emergencies, sensitive advice, and complex decisions.</li>
+                                <li>Use approved scripts, clear stop rules, consent controls, and data retention policies.</li>
+                                <li>Connect only the systems needed for the pilot.</li>
+                                <li>Measure caller experience, staff trust, business outcomes, and failed-call patterns.</li>
+                            </ul>
+                            <p>
+                                An AI voice agent should make phone operations faster and clearer. It should answer repeated calls, collect better information, route work to the right owner, and escalate when judgment matters. If it makes callers repeat themselves or traps them in a bad conversation, the workflow needs repair.
+                            </p>
+                            <p>
+                                Start narrow, test with real calls, keep review in place, and expand only after the voice agent proves it can protect both speed and trust.
+                            </p>
+                            <p>
+                                The implementation should feel boring before it feels ambitious. A narrow voice workflow with clear scripts, reliable system updates, and fast human escalation will outperform a broad agent that sounds impressive but fails on real callers. Treat the first pilot as an operations project, not a novelty. The best signal is not that the agent can talk for a long time. The best signal is that staff receive better call summaries, callers reach the right next step, and exceptions are handled without drama.
+                            </p>
+
+                            <div id="checkup" class="my-10 rounded-2xl border border-primary/20 bg-primary/5 p-6 md:p-8">
+                                <p class="text-sm font-bold uppercase tracking-wide text-primary mb-3">Free AI voice workflow review</p>
+                                <h2 class="text-2xl md:text-3xl font-black mb-3">Get a first-pass recommendation for your voice workflow.</h2>
+                                <p class="text-base-content/75 mb-5">Send your email and we will reply with a practical view of which call workflow should become your first AI voice agent pilot.</p>
+                                <form class="grid gap-3 sm:grid-cols-[1fr_auto]" data-lead-capture="ai-checkup">
+                                    <input type="email" name="email" class="input input-bordered w-full" placeholder="Work email" required>
+                                    <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
+                                    <button type="submit" class="btn btn-primary whitespace-normal h-auto min-h-12">Get My Recommendation</button>
+                                </form>
+                                <p class="mt-3 text-sm text-base-content/60">No spam. We use this to reply with the recommendation.</p>
+                            </div>
+
+                            <h2 id="faq" class="text-3xl md:text-4xl font-black mt-12 mb-6">FAQ: AI Voice Agent</h2>
+                            <div class="space-y-4">
+                                <div class="collapse collapse-plus bg-white border border-base-200 shadow-sm">
+                                    <input type="radio" name="ai-voice-agent-faq" checked>
+                                    <h3 class="collapse-title text-lg font-bold">What is an AI voice agent?</h3>
+                                    <div class="collapse-content">
+                                        <p>An AI voice agent is an AI-powered phone workflow that can understand callers, ask questions, answer approved requests, book appointments, create summaries, update systems, and escalate complex calls to humans.</p>
+                                    </div>
+                                </div>
+                                <div class="collapse collapse-plus bg-white border border-base-200 shadow-sm">
+                                    <input type="radio" name="ai-voice-agent-faq">
+                                    <h3 class="collapse-title text-lg font-bold">What AI voice agent use case should I automate first?</h3>
+                                    <div class="collapse-content">
+                                        <p>Start with a frequent, lower-risk workflow such as missed-call capture, after-hours intake, booking requests, lead qualification, reminder calls, or support triage.</p>
+                                    </div>
+                                </div>
+                                <div class="collapse collapse-plus bg-white border border-base-200 shadow-sm">
+                                    <input type="radio" name="ai-voice-agent-faq">
+                                    <h3 class="collapse-title text-lg font-bold">What are the biggest AI voice agent risks?</h3>
+                                    <div class="collapse-content">
+                                        <p>The main risks are wrong promises, poor escalation, privacy mistakes, weak integrations, caller frustration, unclear consent, and giving the agent too much scope before call quality is proven.</p>
+                                    </div>
+                                </div>
+                                <div class="collapse collapse-plus bg-white border border-base-200 shadow-sm">
+                                    <input type="radio" name="ai-voice-agent-faq">
+                                    <h3 class="collapse-title text-lg font-bold">Can an AI voice agent replace human phone staff?</h3>
+                                    <div class="collapse-content">
+                                        <p>Usually the best use is support, not full replacement. Voice agents can handle routine intake, booking, routing, reminders, and summaries while humans handle judgment, sensitive conversations, and exceptions.</p>
+                                    </div>
+                                </div>
+                                <div class="collapse collapse-plus bg-white border border-base-200 shadow-sm">
+                                    <input type="radio" name="ai-voice-agent-faq">
+                                    <h3 class="collapse-title text-lg font-bold">Can Go Expandia build an AI voice agent?</h3>
+                                    <div class="collapse-content">
+                                        <p>Yes. Go Expandia can map the call workflow, choose the first voice agent use case, design guardrails, connect systems, test real scenarios, and launch a controlled rollout.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-12 rounded-2xl border border-base-200 bg-white p-6 md:p-8 shadow-sm">
+                                <h2 class="text-2xl md:text-3xl font-black mb-3">About Bailey Roque</h2>
+                                <p class="text-base-content/75 mb-0">
+                                    Bailey Roque writes for Go Expandia on AI automation, AI agent development, workflow design, AI consulting, and practical rollout models for business teams.
+                                </p>
+                            </div>
+                        </div>
+
+                        <aside class="lg:sticky lg:top-24 space-y-5">
+                            <div class="buzz-card p-5 bg-white shadow-xl border border-primary/15">
+                                <p class="text-sm font-bold uppercase tracking-wide text-primary mb-2">Free voice check</p>
+                                <h2 class="text-2xl font-black mb-2">Which call workflow first?</h2>
+                                <p class="text-sm text-base-content/70 mb-4">Drop your email and we will send a first-pass recommendation for your first AI voice agent pilot.</p>
+                                <form class="space-y-3" data-lead-capture="ai-checkup">
+                                    <input type="email" name="email" class="input input-bordered w-full" placeholder="Work email" required>
+                                    <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
+                                    <button type="submit" class="btn btn-primary w-full whitespace-normal h-auto min-h-12">Get Free Check</button>
+                                    <p class="text-xs text-base-content/60">No spam. We use this to reply with the recommendation.</p>
+                                </form>
+                            </div>
+                            <div class="buzz-card p-6 bg-white shadow-xl border border-base-200">
+                                <h2 class="text-2xl font-black mb-4">Article contents</h2>
+                                <ul class="space-y-3 text-sm font-semibold">
+                                    <li><a href="#quick-answer" class="hover:text-primary">Quick answer</a></li>
+                                    <li><a href="#what-is" class="hover:text-primary">What it does</a></li>
+                                    <li><a href="#missed-calls" class="hover:text-primary">12 use cases</a></li>
+                                    <li><a href="#risks" class="hover:text-primary">Risks</a></li>
+                                    <li><a href="#implementation-plan" class="hover:text-primary">90-day plan</a></li>
+                                    <li><a href="#measure-results" class="hover:text-primary">Measurement</a></li>
+                                    <li><a href="#faq" class="hover:text-primary">FAQ</a></li>
+                                </ul>
+                            </div>
+                            <div class="buzz-card p-6 bg-primary text-white shadow-xl">
+                                <p class="text-sm font-bold uppercase tracking-wide opacity-80 mb-3">Need implementation?</p>
+                                <h2 class="text-2xl font-black mb-3">Build the first AI voice pilot.</h2>
+                                <p class="text-white/85 mb-5">We can map call flow, define guardrails, connect systems, and launch a controlled voice agent pilot.</p>
+                                <a href="../contact.html" class="btn bg-white text-primary border-0 hover:bg-white/90 w-full sm:w-auto">Book a Call</a>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-spacing bg-white">
+                <div class="container mx-auto container-padding max-w-6xl">
+                    <div class="text-center mb-10">
+                        <p class="text-sm font-bold uppercase tracking-wide text-primary mb-3">Related posts and services</p>
+                        <h2 class="text-3xl md:text-4xl font-black">Keep planning your AI call automation roadmap</h2>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <a href="../blog/ai-receptionist.html" class="group p-6 rounded-lg border border-base-200 bg-white shadow-sm hover:border-primary/30 hover:shadow-xl transition-all">
+                            <p class="text-xs font-bold uppercase tracking-wide text-primary mb-3">Reception guide</p>
+                            <h3 class="text-xl font-black mb-3 group-hover:text-primary transition-colors">AI Receptionist</h3>
+                            <p class="text-base-content/70">See how to automate calls, booking, and lead intake with safer escalation.</p>
+                        </a>
+                        <a href="../blog/ai-lead-generation.html" class="group p-6 rounded-lg border border-base-200 bg-white shadow-sm hover:border-primary/30 hover:shadow-xl transition-all">
+                            <p class="text-xs font-bold uppercase tracking-wide text-primary mb-3">Lead guide</p>
+                            <h3 class="text-xl font-black mb-3 group-hover:text-primary transition-colors">AI Lead Generation</h3>
+                            <p class="text-base-content/70">Compare lead workflows that can be automated without lowering sales quality.</p>
+                        </a>
+                        <a href="../ai-agent-development.html" class="group p-6 rounded-lg border border-base-200 bg-white shadow-sm hover:border-primary/30 hover:shadow-xl transition-all">
+                            <p class="text-xs font-bold uppercase tracking-wide text-primary mb-3">Main service</p>
+                            <h3 class="text-xl font-black mb-3 group-hover:text-primary transition-colors">AI Agent Development</h3>
+                            <p class="text-base-content/70">Build controlled AI agents with integrations, guardrails, and human review.</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-spacing bg-buzz-warm">
+                <div class="container mx-auto container-padding text-center max-w-4xl">
+                    <h2 class="text-4xl md:text-5xl font-black mb-6">Ready to Build a Controlled AI Voice Agent?</h2>
+                    <p class="text-xl text-base-content/80 mb-8">Go Expandia helps companies choose the right call workflow, design safe escalation, and launch AI voice automation that staff and callers can trust.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../contact.html" class="btn btn-primary btn-lg buzz-button w-full sm:w-auto whitespace-normal h-auto min-h-14 px-4 text-center leading-tight">Start the Conversation</a>
+                        <a href="../ai-automation-agency.html" class="btn btn-outline btn-lg border-primary text-primary hover:bg-primary hover:text-white w-full sm:w-auto whitespace-normal h-auto min-h-14 px-4 text-center leading-tight">See AI Automation Agency</a>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+
+
+
+
+    <!-- Footer -->
+<footer class="footer-gradient text-white">
+    <div class="border-b border-white/10">
+        <div class="container mx-auto container-padding py-12">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div class="text-center lg:text-left">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-2">Stay Ahead with Go Expandia</h3>
+                    <p class="text-white/80">Learn how companies use AI agency services to automate work and build useful AI systems.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+                    <form id="newsletter-form" class="flex gap-4 w-full" action="../contact.html#contact-form" method="GET">
+                        <input type="email" name="email" placeholder="Enter your email" class="footer-newsletter-input" required>
+                        <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
+                        <input type="text" name="math" inputmode="numeric" pattern="[0-9]+" placeholder="30+31=" class="input input-bordered w-24 sm:w-28" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto container-padding py-16">
+        <div class="grid md:grid-cols-12 gap-8 mb-16">
+            <div class="md:col-span-4">
+                <div class="flex items-center gap-3 mb-6">
+                    <img src="../go-expandia-logo.png" alt="Go Expandia" width="920" height="259" loading="lazy" decoding="async" class="h-14 w-auto brightness-0 invert">
+                </div>
+                <p class="text-white/80 mb-6 text-lg">
+                    AI agency for businesses. Automation, consulting, AI agents, and custom AI solutions.
+                </p>
+                <div class="flex gap-4">
+                    <a href="https://www.linkedin.com/company/103769699/" class="footer-social-icon group" target="_blank" rel="noopener noreferrer">
+                        <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="md:col-span-2">
+                <h4 class="text-lg font-bold mb-6">Services</h4>
+                <ul class="space-y-4 text-white/80">
+                    <li><a href="../solutions.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>All Services</a></li>
+                    <li><a href="../ai-automation-agency.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>AI Automation Agency</a></li>
+                    <li><a href="../ai-consulting-services.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>AI Consulting Services</a></li>
+                    <li><a href="../ai-agent-development.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>AI Agent Development</a></li>
+                    <li><a href="../custom-ai-solutions-for-businesses.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>Custom AI Solutions</a></li>
+                    <li><a href="../ai-support.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>AI Support</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-2">
+                <h4 class="text-lg font-bold mb-6">Company</h4>
+                <ul class="space-y-4 text-white/80">
+                    <li><a href="../about.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>About Us</a></li>
+                    <li><a href="../service-areas.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>Service Locations</a></li>
+                    <li><a href="../contact.html" class="footer-link hover:text-primary transition-colors flex items-center gap-2"><span class="footer-link-dot"></span>Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-4">
+                <h4 class="text-lg font-bold mb-6">Get in Touch</h4>
+                <div class="footer-contact-card">
+                    <p class="text-white/80 mb-6">Need help choosing the right AI agency path? We can start with one service and keep it simple.</p>
+                    <a href="../contact.html" class="btn btn-primary w-full mb-6">Talk to Us</a>
+                    <div class="space-y-4">
+                        <a href="mailto:hello@goexpandia.com" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            hello@goexpandia.com
+                        </a>
+                        <a href="mailto:hello@goexpandia.com" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            Email to Schedule
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/60">
+            <div class="text-sm">&copy; 2026 Go Expandia. All rights reserved.</div>
+            <div class="flex gap-6 text-sm items-center">
+                <span class="text-white/60 text-xs">Part of Remova Inc.</span>
+                <a href="../privacy-policy.html" class="hover:text-primary transition-colors">Privacy Policy</a>
+                <a href="../terms-of-service.html" class="hover:text-primary transition-colors">Terms of Service</a>
+                <a href="../cookie-policy.html" class="hover:text-primary transition-colors">Cookie Policy</a>
+            </div>
+        </div>
+        <div class="mt-4 text-xs text-white/60 text-center">
+            Authorized domains: www.goexpandia.com www.expandia.ch
+        </div>
+    </div>
+</footer>
+<script src="../dist/js/contact.js?v=20260514-checkup"></script>
+
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+            window.lucide.createIcons();
+        }
+
+        // FAQ Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.collapse');
+            faqItems.forEach(item => {
+                const title = item.querySelector('.collapse-title');
+                const content = item.querySelector('.collapse-content');
+                const input = item.querySelector('input[type="radio"], input[type="checkbox"]');
+
+                if (title && content) {
+                    // Initially hide all content except the first one
+                    if (!input || !input.checked) {
+                        content.style.display = 'none';
+                    }
+
+                    title.style.cursor = 'pointer';
+                    title.addEventListener('click', function() {
+                        const isOpen = content.style.display !== 'none';
+
+                        // Close all other FAQs if using radio buttons
+                        if (input && input.type === 'radio') {
+                            const allItems = document.querySelectorAll('.collapse');
+                            allItems.forEach(otherItem => {
+                                const otherContent = otherItem.querySelector('.collapse-content');
+                                const otherInput = otherItem.querySelector('input[type="radio"]');
+                                if (otherContent && otherItem !== item) {
+                                    otherContent.style.display = 'none';
+                                    if (otherInput) otherInput.checked = false;
+                                }
+                            });
+                        }
+
+                        // Toggle current item
+                        content.style.display = isOpen ? 'none' : 'block';
+                        if (input) input.checked = !isOpen;
+                    });
+                }
+            });
+        });
+    </script>
+
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/145104780.js"></script>
+    <!-- End of HubSpot Embed Code -->
+</body>
+</html>

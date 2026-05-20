@@ -37,6 +37,12 @@
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://www.goexpandia.com/blog/ai-chatbot-for-website.html</loc>
+        <lastmod>2026-05-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://www.goexpandia.com/blog/ai-consulting-company.html</loc>
         <lastmod>2025-12-04</lastmod>
         <changefreq>weekly</changefreq>
@@ -49,8 +55,38 @@
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://www.goexpandia.com/blog/ai-email-assistant-for-business.html</loc>
+        <lastmod>2026-05-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.goexpandia.com/blog/ai-lead-generation.html</loc>
+        <lastmod>2026-05-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.goexpandia.com/blog/ai-project-manager-workflows.html</loc>
+        <lastmod>2026-05-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.goexpandia.com/blog/ai-receptionist.html</loc>
+        <lastmod>2026-05-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://www.goexpandia.com/blog/ai-sales-agent-workflows.html</loc>
         <lastmod>2026-04-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.goexpandia.com/blog/ai-voice-agent.html</loc>
+        <lastmod>2026-05-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -86,33 +122,45 @@
     </url>
     <url>
         <loc>https://www.goexpandia.com/blog/categories/ai-automation.html</loc>
-        <lastmod>2026-05-18</lastmod>
+        <lastmod>2026-05-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.goexpandia.com/blog/categories/ai-consulting.html</loc>
-        <lastmod>2026-05-18</lastmod>
+        <lastmod>2026-05-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.goexpandia.com/blog/categories/ai-tools.html</loc>
-        <lastmod>2026-05-18</lastmod>
+        <lastmod>2026-05-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.goexpandia.com/blog/categories/business-process-automation.html</loc>
-        <lastmod>2026-05-18</lastmod>
+        <lastmod>2026-05-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.goexpandia.com/blog/crm-automation-with-ai.html</loc>
+        <lastmod>2026-05-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.goexpandia.com/blog/</loc>
-        <lastmod>2026-05-18</lastmod>
+        <lastmod>2026-05-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.goexpandia.com/blog/intelligent-document-processing.html</loc>
+        <lastmod>2026-05-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.goexpandia.com/blog/invoice-automation-with-ai.html</loc>
