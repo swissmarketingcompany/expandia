@@ -29,7 +29,7 @@
         .article-prose li { margin-bottom: 0.65rem; line-height: 1.7; }
         .article-prose h2, .article-prose h3, .article-prose h4, .article-prose h5 { scroll-margin-top: 6rem; }
     </style>
-
+    
     <meta property="twitter:url" content="https://www.goexpandia.com/blog/ai-project-manager-workflows.html" />
     <meta property="article:section" content="AI Automation">
     <meta name="category" content="AI Automation">
@@ -495,11 +495,11 @@
                 <div class="container mx-auto container-padding">
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                         <div class="p-5 rounded-xl bg-base-100 border border-base-200">
-                            <p class="text-sm text-base-content/60">Primary keyword</p>
+                            <p class="text-sm text-base-content/60">Topic</p>
                             <p class="font-bold">AI project manager</p>
                         </div>
                         <div class="p-5 rounded-xl bg-base-100 border border-base-200">
-                            <p class="text-sm text-base-content/60">Search intent</p>
+                            <p class="text-sm text-base-content/60">Reader need</p>
                             <p class="font-bold">Workflow guide</p>
                         </div>
                         <div class="p-5 rounded-xl bg-base-100 border border-base-200">
@@ -1061,9 +1061,9 @@
         </article>
     </main>
 
-
-
-
+    
+    
+    
 
     <!-- Footer -->
 <footer class="footer-gradient text-white">
@@ -1170,7 +1170,7 @@
         if (window.lucide && typeof window.lucide.createIcons === 'function') {
             window.lucide.createIcons();
         }
-
+        
         // FAQ Toggle Functionality
         document.addEventListener('DOMContentLoaded', function() {
             const faqItems = document.querySelectorAll('.collapse');
@@ -1178,17 +1178,17 @@
                 const title = item.querySelector('.collapse-title');
                 const content = item.querySelector('.collapse-content');
                 const input = item.querySelector('input[type="radio"], input[type="checkbox"]');
-
+                
                 if (title && content) {
                     // Initially hide all content except the first one
                     if (!input || !input.checked) {
                         content.style.display = 'none';
                     }
-
+                    
                     title.style.cursor = 'pointer';
                     title.addEventListener('click', function() {
                         const isOpen = content.style.display !== 'none';
-
+                        
                         // Close all other FAQs if using radio buttons
                         if (input && input.type === 'radio') {
                             const allItems = document.querySelectorAll('.collapse');
@@ -1201,7 +1201,7 @@
                                 }
                             });
                         }
-
+                        
                         // Toggle current item
                         content.style.display = isOpen ? 'none' : 'block';
                         if (input) input.checked = !isOpen;

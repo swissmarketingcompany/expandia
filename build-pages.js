@@ -6435,7 +6435,8 @@ function generateSitemap() {
         'san-diego-ai-agency.html', 'dallas-ai-agency.html', 'jacksonville-ai-agency.html', 'fort-worth-ai-agency.html',
         'san-jose-ai-agency.html', 'austin-ai-agency.html', 'charlotte-ai-agency.html', 'columbus-ai-agency.html',
         'toronto-ai-agency.html', 'montreal-ai-agency.html', 'sydney-ai-agency.html', 'melbourne-ai-agency.html',
-        'vision-mission.html', 'our-ethical-principles.html'
+        'vision-mission.html', 'our-ethical-principles.html',
+        'privacy-policy.html', 'terms-of-service.html', 'cookie-policy.html'
     ];
 
     const legacyStaticPages = new Set(Object.keys(LEGACY_REDIRECT_TARGETS).map(page => `${page}.html`));
