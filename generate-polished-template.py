@@ -35,8 +35,6 @@ template_content = f"""<!DOCTYPE html>
     
     <!-- Hreflang Links -->
     <link rel="alternate" hreflang="en" href="https://www.goexpandia.com/{{{{PAGE_URL_EN}}}}">
-    <link rel="alternate" hreflang="de" href="https://www.goexpandia.com/{{{{PAGE_URL_DE}}}}">
-    <link rel="alternate" hreflang="fr" href="https://www.goexpandia.com/{{{{PAGE_URL_FR}}}}">
     <link rel="alternate" hreflang="x-default" href="https://www.goexpandia.com/{{{{PAGE_URL_EN}}}}">
     
     <!-- Open Graph Meta Tags -->

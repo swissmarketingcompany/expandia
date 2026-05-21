@@ -123,19 +123,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const statusEl = leadForm.querySelector('[data-lead-status]');
             const btn = leadForm.querySelector('button[type="submit"]');
             const originalText = btn ? btn.textContent : 'Submit';
-            const leadSource = leadForm.dataset.leadCapture || 'blog lead capture';
-            const isChecklistRequest = leadSource.includes('checklist');
-            const offerName = isChecklistRequest ? 'AI Automation Agency Checklist' : 'AI Automation Checkup';
-            const successMessage = isChecklistRequest
-                ? 'Thanks. We will send your checklist shortly.'
-                : 'Thanks. We will send your checkup shortly.';
-            const requestLine = isChecklistRequest
-                ? 'Request: Visitor asked for the AI automation agency checklist and practical first-pass review path.'
-                : 'Request: Visitor asked for a quick first-pass review of what their team should automate first.';
 
             if (formData.get('website')) {
                 leadForm.reset();
-                if (statusEl) statusEl.textContent = successMessage;
+                if (statusEl) statusEl.textContent = 'Thanks. We will send your checkup shortly.';
                 return;
             }
 
@@ -148,10 +139,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const payload = {
                 email: formData.get('email'),
                 message: [
-                    `Free ${offerName} Request`,
-                    `Source: ${leadSource}`,
+                    'Free AI Automation Checkup Request',
+                    `Source: ${leadForm.dataset.leadCapture || 'blog lead capture'}`,
                     `Page: ${window.location.href}`,
-                    requestLine
+                    'Request: Visitor asked for a quick first-pass review of what their team should automate first.'
                 ].join('\n'),
                 to: DESTINATION_EMAIL
             };
@@ -167,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (resp.ok) {
                     leadForm.reset();
-                    if (statusEl) statusEl.textContent = successMessage;
+                    if (statusEl) statusEl.textContent = 'Thanks. We will send your checkup shortly.';
                     if (btn) btn.textContent = 'Sent';
                 } else {
                     if (statusEl) statusEl.textContent = data.message || 'Submission failed. Please try again.';

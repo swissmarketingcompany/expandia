@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initialize all functionality
     function init() {
-        setupLanguageSwitching();
+        setupEnglishOnlyLanguageState();
         setupHeroButtons();
         setupVideoFacade();
         setupSolutionButtons();
@@ -351,297 +351,60 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Language switching functions - STANDARDIZED FOR MULTILINGUAL SUPPORT
+// Language handling is intentionally English-only. Legacy multilingual helpers
+// remain as safe shims because older generated markup may still reference them.
 function switchToEnglish() {
     localStorage.setItem('expandia_language_preference', 'en');
+
     const path = window.location.pathname;
-    const isOnEnglish = !path.includes('/de/') && !path.includes('/fr/') && !path.endsWith('/de') && !path.endsWith('/fr');
-    if (isOnEnglish) {
-        console.log('Already on English version');
-        return;
-    }
+    const legacyLanguagePath = /^\/(?:de|fr)(?:\/|$)/;
+    if (!legacyLanguagePath.test(path)) return;
 
-    let pageName = path.split('/').pop() || 'index.html';
-    if (pageName === '' || pageName === 'fr' || pageName === 'de') pageName = 'index.html';
-
-    const baseURL = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1);
-    if (path.includes('/de/') || path.includes('/fr/')) {
-        window.location.href = baseURL + '../' + pageName;
-    } else {
-        window.location.href = baseURL + pageName;
-    }
+    const englishPath = path.replace(legacyLanguagePath, '/') || '/';
+    window.location.href = `${window.location.origin}${englishPath}${window.location.search}${window.location.hash}`;
 }
 
 function switchToGerman() {
-    localStorage.setItem('expandia_language_preference', 'de');
-    const path = window.location.pathname;
-    const isOnGerman = path.includes('/de/') || path.endsWith('/de');
-    if (isOnGerman) {
-        console.log('Already on German version');
-        return;
-    }
-
-    let pageName = path.split('/').pop() || 'index.html';
-    if (pageName === '' || pageName === 'fr' || pageName === 'de') pageName = 'index.html';
-
-    const baseURL = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1);
-    if (path.includes('/fr/')) {
-        window.location.href = baseURL + '../de/' + pageName;
-    } else if (path.includes('/de/')) {
-        window.location.href = baseURL + pageName; // fallback if somehow buggy
-    } else {
-        window.location.href = baseURL + 'de/' + pageName;
-    }
+    switchToEnglish();
 }
 
 function switchToFrench() {
-    localStorage.setItem('expandia_language_preference', 'fr');
-    const path = window.location.pathname;
-    const isOnFrench = path.includes('/fr/') || path.endsWith('/fr');
-    if (isOnFrench) {
-        console.log('Already on French version');
-        return;
-    }
-
-    let pageName = path.split('/').pop() || 'index.html';
-    if (pageName === '' || pageName === 'fr' || pageName === 'de') pageName = 'index.html';
-
-    const baseURL = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1);
-    if (path.includes('/de/')) {
-        window.location.href = baseURL + '../fr/' + pageName;
-    } else if (path.includes('/fr/')) {
-        window.location.href = baseURL + pageName; // fallback
-    } else {
-        window.location.href = baseURL + 'fr/' + pageName;
-    }
+    switchToEnglish();
 }
 
-// Geolocation-based language detection
 function detectUserLocation() {
-    // Check if user has manually selected a language before
-    const userLanguagePreference = localStorage.getItem('expandia_language_preference');
-    if (userLanguagePreference) {
-        return; // Don't auto-redirect if user has made a choice
-    }
-
-    // Avoid redirect loops by checking if we just redirected
-    const lastRedirect = sessionStorage.getItem('expandia_last_redirect');
-    const now = Date.now();
-    if (lastRedirect && (now - parseInt(lastRedirect)) < 5000) {
-        return;
-    }
-
-    // Check if we're already on the correct page to avoid redirect loops
-    const currentPath = window.location.pathname;
-    const isOnGerman = currentPath.startsWith('/de/') || currentPath === '/de';
-    const isOnFrench = currentPath.startsWith('/fr/') || currentPath === '/fr';
-
-    // Add a small delay to ensure page is loaded
-    setTimeout(() => {
-        // Try multiple geolocation methods
-        detectLocationByIP()
-            .then(country => {
-
-                // Language-specific countries/regions
-                const germanCountries = ['DE', 'AT', 'CH']; // Germany, Austria, Switzerland
-                const frenchCountries = ['FR', 'BE', 'CA', 'LU', 'MC', 'SN', 'CI']; // France, Belgium, Canada, Luxembourg, Monaco, etc.
-
-                const shouldShowGerman = germanCountries.includes(country);
-                const shouldShowFrench = frenchCountries.includes(country);
-
-                // Show notification and redirect based on location
-                if (shouldShowGerman && !isOnGerman) {
-                    showLanguageNotification('German', () => {
-                        sessionStorage.setItem('expandia_last_redirect', Date.now().toString());
-                        switchToGerman();
-                    });
-                } else if (shouldShowFrench && !isOnFrench) {
-                    showLanguageNotification('French', () => {
-                        sessionStorage.setItem('expandia_last_redirect', Date.now().toString());
-                        switchToFrench();
-                    });
-                    showLanguageNotification('French', () => {
-                        sessionStorage.setItem('expandia_last_redirect', Date.now().toString());
-                        switchToFrench();
-                    });
-                } else if (!shouldShowGerman && !shouldShowFrench && (isOnGerman || isOnFrench)) {
-                    showLanguageNotification('English', () => {
-                        sessionStorage.setItem('expandia_last_redirect', Date.now().toString());
-                        switchToEnglish();
-                    });
-                } else {
-                    // User is on correct language version
-                }
-            })
-            .catch(error => {
-                // Fallback to browser language detection
-                const browserLang = navigator.language || navigator.userLanguage;
-                const isGermanBrowser = browserLang.startsWith('de');
-                const isFrenchBrowser = browserLang.startsWith('fr');
-
-                if (isGermanBrowser && !isOnGerman) {
-                    showLanguageNotification('German', () => {
-                        sessionStorage.setItem('expandia_last_redirect', Date.now().toString());
-                        switchToGerman();
-                    });
-                } else if (isFrenchBrowser && !isOnFrench) {
-                    showLanguageNotification('French', () => {
-                        sessionStorage.setItem('expandia_last_redirect', Date.now().toString());
-                        switchToFrench();
-                    });
-                }
-            });
-    }, 1000); // 1 second delay
+    switchToEnglish();
 }
 
-// Show language notification banner
 function showLanguageNotification(suggestedLanguage, redirectCallback) {
-    const banner = document.createElement('div');
-    banner.className = 'fixed top-0 left-0 right-0 bg-primary text-white p-4 z-50 shadow-lg';
-
-    let message = '';
-    let acceptText = '';
-    let declineText = '';
-
-    if (suggestedLanguage === 'German') {
-        message = 'Es sieht so aus, als würden Sie aus einem deutschsprachigen Land zugreifen. Möchten Sie die deutsche Version anzeigen?';
-        acceptText = 'Ja, Deutsch';
-        declineText = 'Nein, English beibehalten';
-    } else if (suggestedLanguage === 'French') {
-        message = 'Il semble que vous accédiez depuis un pays francophone. Voulez-vous voir la version française ?';
-        acceptText = 'Oui, Français';
-        declineText = 'Non, garder l\'anglais';
-    } else {
-        message = 'Use English version?';
-        acceptText = 'Yes, English';
-        declineText = 'No';
-    }
-
-    const flag = suggestedLanguage === 'German' ? '🇩🇪' : suggestedLanguage === 'French' ? '🇫🇷' : '🇺🇸';
-
-    banner.innerHTML = `
-        <div class="container mx-auto flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <span class="text-xl">${flag}</span>
-                <span>${message}</span>
-            </div>
-            <div class="flex gap-2">
-                <button id="accept-language" class="btn btn-sm btn-primary">
-                    ${acceptText}
-                </button>
-                <button id="decline-language" class="btn btn-sm btn-ghost">
-                    ${declineText}
-                </button>
-            </div>
-        </div>
-    `;
-
-    document.body.prepend(banner);
-
-    // Add event listeners
-    document.getElementById('accept-language').addEventListener('click', () => {
-        banner.remove();
+    if (typeof redirectCallback === 'function') {
         redirectCallback();
-    });
-
-    document.getElementById('decline-language').addEventListener('click', () => {
-        banner.remove();
-        // Save user preference to not show again
-        let pref = 'en';
-        if (suggestedLanguage === 'German') pref = 'en';
-        // The logic in original code was: if suggested is Turkish (so currently NOT Turkish), decline means keep English (or whatever it is).
-        // Actually the original code hardcoded: localStorage.setItem('expandia_language_preference', suggestedLanguage === 'Turkish' ? 'en' : 'tr');
-        // This is a bit simplistic. It should probably save the CURRENT language as preference.
-
-        // Let's improve this: save the CURRENT detected language as preference.
-        const currentPath = window.location.pathname;
-        if (currentPath.startsWith('/de/')) pref = 'de';
-        else if (currentPath.startsWith('/fr/')) pref = 'fr';
-        else pref = 'en';
-
-        localStorage.setItem('expandia_language_preference', pref);
-    });
-
-    // Auto-hide after 10 seconds
-    setTimeout(() => {
-        if (banner.parentElement) {
-            banner.remove();
-        }
-    }, 10000);
-}
-
-// Detect location using IP geolocation API
-async function detectLocationByIP() {
-    try {
-        // Try multiple free geolocation services
-        const services = [
-            'https://ipapi.co/country_code/',
-            'https://ipinfo.io/country',
-            'https://api.country.is/'
-        ];
-
-        for (const service of services) {
-            try {
-                const response = await fetch(service, {
-                    timeout: 3000,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    if (service.includes('country.is')) {
-                        const data = await response.json();
-                        return data.country;
-                    } else {
-                        const countryCode = await response.text();
-                        return countryCode.trim().toUpperCase();
-                    }
-                }
-            } catch (error) {
-                continue;
-            }
-        }
-
-        throw new Error('All geolocation services failed');
-    } catch (error) {
-        throw error;
     }
 }
 
-// Setup language switching event listeners
-function setupLanguageSwitching() {
-    // Handle language switch clicks
+async function detectLocationByIP() {
+    return 'EN';
+}
+
+function setupEnglishOnlyLanguageState() {
+    localStorage.setItem('expandia_language_preference', 'en');
+
     document.querySelectorAll('.lang-switch').forEach(link => {
         link.addEventListener('click', function (e) {
-            const lang = this.getAttribute('data-lang');
-            // Save user's language preference
-            localStorage.setItem('expandia_language_preference', lang);
+            e.preventDefault();
+            switchToEnglish();
         });
     });
 
-    // Update flag display
     const currentFlag = document.getElementById('current-flag');
     if (currentFlag) {
-
-        const isOnGerman = window.location.pathname.startsWith('/de/') || window.location.pathname === '/de';
-        const isOnFrench = window.location.pathname.startsWith('/fr/') || window.location.pathname === '/fr';
-
-        if (isOnGerman) {
-            currentFlag.textContent = '🇩🇪';
-        } else if (isOnFrench) {
-            currentFlag.textContent = '🇫🇷';
-        } else {
-            currentFlag.textContent = '🇺🇸';
-        }
+        currentFlag.textContent = 'EN';
     }
 
-    // Run geolocation detection on page load
-    detectUserLocation();
-
-    // Add debug function to clear language preferences (available in console)
     window.clearLanguagePreference = function () {
         localStorage.removeItem('expandia_language_preference');
         sessionStorage.removeItem('expandia_last_redirect');
     };
+
+    switchToEnglish();
 }

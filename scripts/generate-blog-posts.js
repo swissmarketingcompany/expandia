@@ -3,7 +3,7 @@ const path = require('path');
 const services = require('../data/services.json');
 const serviceContent = require('../data/service-content.json');
 
-const languages = ['en', 'de', 'fr', 'tr'];
+const languages = ['en'];
 
 const blogTopics = [
     // AI & IT Management Playbooks (priority order)
