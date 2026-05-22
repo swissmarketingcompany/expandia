@@ -695,6 +695,21 @@ const PAGE_METADATA_OVERRIDES = {
         description: 'We build AI systems with transparency, privacy boundaries, verifiable analysis, and responsible implementation.',
         keywords: 'AI ethics, responsible AI delivery, data handling, business AI governance'
     },
+    'privacy-policy': {
+        title: 'Privacy Policy | Go Expandia',
+        description: 'How Go Expandia handles personal data, project data, analytics, cookies, AI data boundaries, retention, subprocessors, and privacy rights.',
+        keywords: 'Go Expandia privacy policy, AI agency privacy, data handling, cookies, personal data'
+    },
+    'terms-of-service': {
+        title: 'Terms of Service | Go Expandia',
+        description: 'Terms for using the Go Expandia website and general terms for AI consulting, automation, agent development, and custom AI solution discussions.',
+        keywords: 'Go Expandia terms, terms of service, AI agency terms, website terms'
+    },
+    'cookie-policy': {
+        title: 'Cookie Policy | Go Expandia',
+        description: 'How Go Expandia uses cookies, analytics, chat, form, and marketing technologies on the website.',
+        keywords: 'Go Expandia cookie policy, cookies, analytics, Microsoft Clarity, Google Analytics, HubSpot'
+    },
     'city-locations': {
         title: 'AI Agency Locations | Go Expandia',
         description: 'See where we deliver AI agency services including automation, consulting, AI agents, and custom AI solutions.',
@@ -2394,6 +2409,11 @@ function buildGenericServiceBlueprint(service, lang = 'en') {
     const faqItems = ((service.faq && service.faq.length ? service.faq : categoryContent.faq || [])).slice(0, 4);
     const serviceProblems = service.problems || SERVICE_PROBLEMS[service.id] || [];
     const processSteps = service.process_steps || SERVICE_PROCESSES[service.category] || SERVICE_PROCESSES['custom-software'];
+    const deliverables = service.deliverables || benefits
+        .slice(0, 3)
+        .map(item => item.title)
+        .filter(Boolean)
+        .join(', ');
 
     const rawSections = [
         // Section 1: Problems
@@ -2410,14 +2430,14 @@ function buildGenericServiceBlueprint(service, lang = 'en') {
             type: 'cards',
             id: 'capabilities',
             sectionClass: 'bg-base-100',
-            heading: 'What you get',
-            intro: heroDescription,
+            heading: 'Scope, fit, and buying model',
+            intro: 'A quick view of the practical deliverables, commercial shape, and best-fit use case.',
             gridClass: 'md:grid-cols-2',
             cards: [
-                { title: 'What this service is', description: heroDescription, borderClass: 'border-primary' },
-                { title: 'How you buy it', description: service.commercial_model || 'We scope the work around the business need.', borderClass: 'border-secondary' },
-                { title: 'Starting price', description: service.starting_price || 'Custom quote', borderClass: 'border-accent' },
-                { title: 'Good fit if', description: service.good_fit || `You need ${service.name.toLowerCase()} done properly, in plain English, with no wasted motion.`, borderClass: 'border-neutral' }
+                { title: 'Deliverables', description: deliverables || 'Clear scope, implementation work, testing, handover, and the supporting workflow details.', borderClass: 'border-primary' },
+                { title: 'Engagement model', description: service.commercial_model || 'We scope the work around the business need.', borderClass: 'border-secondary' },
+                { title: 'Pricing shape', description: service.starting_price || 'Custom quote', borderClass: 'border-accent' },
+                { title: 'Best fit', description: service.good_fit || `You need ${service.name.toLowerCase()} done properly, in plain English, with no wasted motion.`, borderClass: 'border-neutral' }
             ]
         },
         // Section 3: Benefits / Why choose us
@@ -6540,10 +6560,25 @@ function buildLegacyRedirectRules() {
         { source: '/blog/revenue-operations-optimization-strategies.html', target: '/blog/what-is-revops.html' },
         { source: '/city-locations.html', target: '/service-areas.html' }
     ];
+    const forcedRedirectSources = new Set();
 
     forcedLegacyPaths.forEach(({ source, target }) => {
         const safeTarget = source.startsWith('/blog/') ? '/solutions.html' : target;
+        forcedRedirectSources.add(source);
         lines.push(`${source}  ${safeTarget}  301!`);
+    });
+
+    legacyBlogPosts.forEach((article) => {
+        if (!article || !article.url) return;
+        const source = `/blog/${article.url}`;
+        if (forcedRedirectSources.has(source)) return;
+        lines.push(`${source}  /blog/index.html  301`);
+    });
+
+    REMOVED_BLOG_POST_SLUGS.forEach((slug) => {
+        const source = `/blog/${slug}.html`;
+        if (forcedRedirectSources.has(source)) return;
+        lines.push(`${source}  /blog/index.html  301`);
     });
 
     lines.push('');
@@ -6715,6 +6750,9 @@ buildPage('contact', 'contact', 'en');
 buildPage('onboarding', 'onboarding', 'en');
 buildPage('vision-mission', 'vision-mission', 'en');
 buildPage('our-ethical-principles', 'our-ethical-principles', 'en');
+buildPage('privacy-policy', 'privacy-policy', 'en');
+buildPage('terms-of-service', 'terms-of-service', 'en');
+buildPage('cookie-policy', 'cookie-policy', 'en');
 buildPage('barcelona-ai-services', 'barcelona-ai-services', 'en');
 buildPage('london-ai-agency', 'london-ai-agency', 'en');
 buildPage('paris-ai-agency', 'paris-ai-agency', 'en');
