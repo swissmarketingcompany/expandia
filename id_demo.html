@@ -735,8 +735,7 @@
         const assistantConfig = {
             apiBaseUrl: 'https://api.retellai.com',
             publicKey: 'public_key_8d2cf45cdddeeb08f58cf',
-            agentId: 'agent_e9098599ceed24393e1236eeec',
-            agentVersion: 0
+            agentId: 'agent_e9098599ceed24393e1236eeec'
         };
         const demoCustomerData = {
             musteri_adi: 'Demo Müşteri',
@@ -874,7 +873,6 @@
                 },
                 body: JSON.stringify({
                     agent_id: assistantConfig.agentId,
-                    agent_version: assistantConfig.agentVersion,
                     metadata: {
                         source: 'goexpandia_id_demo',
                         demo_customer: demoCustomerData.musteri_adi
