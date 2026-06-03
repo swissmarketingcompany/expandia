@@ -1,4 +1,13 @@
 <!-- Private AI Agent Demo -->
+<style>
+    html.id-demo-page iframe[src*="tawk.to"],
+    html.id-demo-page .tawk-min-container,
+    html.id-demo-page .tawk-iframe-container {
+        display: none !important;
+        visibility: hidden !important;
+    }
+</style>
+
 <section id="demo-lock-screen" class="min-h-screen bg-buzz-warm flex items-center py-16">
     <div class="container mx-auto container-padding">
         <div class="max-w-2xl mx-auto buzz-card p-8 md:p-10 border border-primary/10">
@@ -125,7 +134,7 @@
                             <p class="text-sm font-bold uppercase tracking-wider text-primary mb-2">Agent 2</p>
                             <h2 class="text-3xl font-black mb-3">Self-service chatbot agent</h2>
                             <p class="text-base-content/70 leading-relaxed">
-                                A self-service chat agent for customer questions, routing, and first-response support. Open the widget and start the demo conversation.
+                                A self-service chat agent for customer questions, routing, and first-response support. Open the demo assistant and start the conversation.
                             </p>
                         </div>
                     </div>
@@ -163,23 +172,58 @@
         const passwordStatus = document.getElementById('id-demo-password-status');
         const chatbotButton = document.getElementById('open-chatbot-demo');
         const chatbotStatus = document.getElementById('chatbot-demo-status');
+        let assistantWidgetLoaded = false;
+
+        document.documentElement.classList.add('id-demo-page');
 
         function isUnlocked() {
             return window.sessionStorage.getItem(sessionKey) === 'true';
         }
 
-        function showDemo() {
-            lockScreen.classList.add('hidden');
-            demoContent.classList.remove('hidden');
-            if (window.Tawk_API && typeof window.Tawk_API.showWidget === 'function') {
-                window.Tawk_API.showWidget();
+        function hideDefaultSiteChat() {
+            if (window.Tawk_API && typeof window.Tawk_API.hideWidget === 'function') {
+                window.Tawk_API.hideWidget();
             }
         }
 
+        function showDemo() {
+            lockScreen.classList.add('hidden');
+            demoContent.classList.remove('hidden');
+            hideDefaultSiteChat();
+        }
+
         function hideChatWidget() {
-            if (!isUnlocked() && window.Tawk_API && typeof window.Tawk_API.hideWidget === 'function') {
-                window.Tawk_API.hideWidget();
+            hideDefaultSiteChat();
+        }
+
+        function loadAssistantWidget() {
+            if (assistantWidgetLoaded || document.getElementById('id-demo-assistant-widget')) {
+                return false;
             }
+
+            const widgetScript = document.createElement('script');
+            widgetScript.id = 'id-demo-assistant-widget';
+            widgetScript.src = 'https://dashboard.retellai.com/retell-widget-v2.js';
+            widgetScript.type = 'module';
+            widgetScript.dataset.publicKey = 'public_key_8d2cf45cdddeeb08f58cf';
+            widgetScript.dataset.agentId = 'agent_e9098599ceed24393e1236eeec';
+            widgetScript.dataset.title = 'Self-service Assistant';
+            widgetScript.dataset.fabText = 'Chat Demo';
+            widgetScript.dataset.botName = 'Self-service agent';
+            widgetScript.dataset.popupMessage = 'Start the private self-service demo.';
+            widgetScript.dataset.showAiPopup = 'false';
+            widgetScript.dataset.autoOpen = 'true';
+            widgetScript.dataset.color = '#cb102c';
+            widgetScript.addEventListener('load', function () {
+                assistantWidgetLoaded = true;
+                chatbotStatus.textContent = 'The demo assistant is ready. Use the chat window at the bottom right.';
+            });
+            widgetScript.addEventListener('error', function () {
+                chatbotStatus.textContent = 'The demo assistant could not load. Try refreshing this page.';
+            });
+
+            document.head.appendChild(widgetScript);
+            return true;
         }
 
         async function hashValue(value) {
@@ -192,7 +236,7 @@
         const previousTawkOnLoad = window.Tawk_API.onLoad;
         window.Tawk_API.onLoad = function () {
             if (typeof previousTawkOnLoad === 'function') previousTawkOnLoad();
-            hideChatWidget();
+            hideDefaultSiteChat();
         };
 
         if (isUnlocked()) {
@@ -223,15 +267,13 @@
         });
 
         chatbotButton.addEventListener('click', function () {
-            chatbotStatus.textContent = '';
-
-            if (!window.Tawk_API || typeof window.Tawk_API.maximize !== 'function') {
-                chatbotStatus.textContent = 'Chatbot is still loading. Try again in a moment.';
+            hideDefaultSiteChat();
+            if (!loadAssistantWidget()) {
+                chatbotStatus.textContent = 'The demo assistant is already loaded. Use the chat window at the bottom right.';
                 return;
             }
 
-            window.Tawk_API.showWidget();
-            window.Tawk_API.maximize();
+            chatbotStatus.textContent = 'Loading the demo assistant...';
         });
     })();
 </script>
