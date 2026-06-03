@@ -685,6 +685,12 @@ const PAGE_METADATA_OVERRIDES = {
         description: 'Talk to Go Expandia about AI automation, AI consulting, AI agent development, or custom AI solutions for your business.',
         keywords: 'contact AI agency, start AI automation project, AI consulting contact, AI agent development contact'
     },
+    id_demo: {
+        title: 'Private AI Agent Demo | Go Expandia',
+        description: 'Private Go Expandia AI agent demo page for the outbound ödeme sözü hatırlatma agent and self-service chatbot agent.',
+        keywords: 'private AI agent demo, ödeme sözü hatırlatma agent, self-service chatbot agent',
+        robots: 'noindex, nofollow, noarchive, nosnippet, noimageindex'
+    },
     'vision-mission': {
         title: 'Vision & Mission | Go Expandia',
         description: 'See how Go Expandia turns a practical AI adoption model into a clear vision, mission, and operating approach for B2B companies.',
@@ -3164,6 +3170,7 @@ function buildPage(templateName, outputName, lang = 'en') {
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, pageMetadata.title);
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, pageMetadata.description);
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, pageMetadata.keywords);
+    htmlTemplate = htmlTemplate.replace(/<meta name="robots" content="[^"]*">/i, `<meta name="robots" content="${escapeHtmlAttr(pageMetadata.robots || 'index, follow')}">`);
     htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, canonicalUrl);
 
     // Schema - Aggregated
@@ -6747,6 +6754,7 @@ buildPage('about', 'about', 'en');
 buildPage('our-business-model', 'our-business-model', 'en');
 buildPage('solutions', 'solutions', 'en');
 buildPage('contact', 'contact', 'en');
+buildPage('id_demo', 'id_demo', 'en');
 buildPage('onboarding', 'onboarding', 'en');
 buildPage('vision-mission', 'vision-mission', 'en');
 buildPage('our-ethical-principles', 'our-ethical-principles', 'en');
