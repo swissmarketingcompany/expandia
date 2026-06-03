@@ -3174,7 +3174,7 @@ function buildPage(templateName, outputName, lang = 'en') {
         }
 
         .id-demo-chat-message-user .id-demo-chat-bubble {
-            background: #111827;
+            background: #1f4b99;
             color: #ffffff;
         }
 
@@ -3208,6 +3208,33 @@ function buildPage(templateName, outputName, lang = 'en') {
             padding: 0 14px;
             background: #ffffff;
             color: #111827;
+        }
+
+        .id-demo-support-icon {
+            background: rgba(31, 75, 153, 0.1);
+            color: #1f4b99;
+        }
+
+        .id-demo-support-kicker {
+            color: #1f4b99;
+        }
+
+        .id-demo-support-note {
+            border-color: rgba(31, 75, 153, 0.2);
+            background: rgba(31, 75, 153, 0.1);
+        }
+
+        #open-chatbot-demo,
+        #id-demo-chat-submit {
+            border-color: #1f4b99;
+            background: #1f4b99;
+            color: #ffffff;
+        }
+
+        #open-chatbot-demo:hover,
+        #id-demo-chat-submit:hover {
+            border-color: #173a78;
+            background: #173a78;
         }
 
         @media (max-width: 640px) {

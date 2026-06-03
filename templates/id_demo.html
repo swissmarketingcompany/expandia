@@ -136,8 +136,53 @@
                             <p class="text-base-content">Ödeme planımı ve hesabımla ilgili bilgi almak istiyorum.</p>
                         </div>
                         <div class="rounded-xl bg-primary/10 border border-primary/20 p-4">
-                            <p class="text-sm font-bold text-primary mb-2">Chatbot agent</p>
+                            <p class="text-sm font-bold text-primary mb-2">Dijital Asistan</p>
                             <p class="text-base-content">Merhaba, size self-servis destek akışında yardımcı olabilirim.</p>
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl border border-base-300 p-5 md:p-6 mb-8">
+                        <div class="flex items-center gap-3 mb-5">
+                            <div class="w-10 h-10 rounded-xl id-demo-support-icon flex items-center justify-center">
+                                <i data-lucide="badge-check" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold uppercase tracking-wider id-demo-support-kicker">Demo müşteri verisi</p>
+                                <p class="font-black text-lg">Demo müşteri dosyası yüklü</p>
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-3 text-sm mb-5">
+                            <div class="rounded-xl bg-base-200 p-3">
+                                <p class="font-bold">Kimlik doğrulama</p>
+                                <p class="text-base-content/60 mt-1">Doğum: Demo doğum tarihi, demo il</p>
+                                <p class="text-base-content/60">Baba adı ilk iki harf: XX</p>
+                            </div>
+                            <div class="rounded-xl bg-base-200 p-3">
+                                <p class="font-bold">Dosya durumu</p>
+                                <p class="text-base-content/60 mt-1">Güncel bakiye: Demo bakiye</p>
+                                <p class="text-base-content/60">Aşama: Demo dosya aşaması</p>
+                            </div>
+                            <div class="rounded-xl bg-base-200 p-3">
+                                <p class="font-bold">Birim bilgisi</p>
+                                <p class="text-base-content/60 mt-1">Demo İdari Takip Birimi</p>
+                                <p class="text-base-content/60">Demo birim telefonu</p>
+                            </div>
+                            <div class="rounded-xl bg-base-200 p-3">
+                                <p class="font-bold">Ödeme ve itiraz</p>
+                                <p class="text-base-content/60 mt-1">IBAN: Demo ödeme IBAN bilgisi</p>
+                                <p class="text-base-content/60">demo-itiraz@example.invalid</p>
+                            </div>
+                        </div>
+
+                        <div class="rounded-xl border id-demo-support-note p-4">
+                            <p class="font-bold mb-2">Chatbot ile deneyebilecekleriniz</p>
+                            <ul class="list-disc pl-5 text-sm text-base-content/70 space-y-1">
+                                <li>Kimlik doğrulama sonrası bakiye ve dosya aşamasını sorma</li>
+                                <li>Ödeme yapmak için IBAN ve birim telefonu isteme</li>
+                                <li>Dosyaya itiraz etmek için gerekli e-posta adresini öğrenme</li>
+                                <li>Ödeme planı veya temsilci yönlendirme senaryosunu test etme</li>
+                            </ul>
                         </div>
                     </div>
 
@@ -160,8 +205,8 @@
                     <i data-lucide="messages-square" class="w-6 h-6"></i>
                 </div>
                 <div>
-                    <h3 id="id-demo-chat-title" class="text-lg font-black leading-tight">Self-service chatbot demo</h3>
-                    <p id="id-demo-chat-connection" class="text-sm text-base-content/60">Ready for a demo conversation.</p>
+                    <h3 id="id-demo-chat-title" class="text-lg font-black leading-tight">İlhan &amp; Duman Destek</h3>
+                    <p id="id-demo-chat-connection" class="text-sm text-base-content/60">Demo müşteri dosyası hazır.</p>
                 </div>
             </div>
             <button id="close-chatbot-demo" type="button" class="id-demo-icon-button" aria-label="Close chat demo">
@@ -189,7 +234,20 @@
         const assistantConfig = {
             apiBaseUrl: 'https://api.retellai.com',
             publicKey: 'public_key_8d2cf45cdddeeb08f58cf',
-            agentId: 'agent_e9098599ceed24393e1236eeec'
+            agentId: 'agent_e9098599ceed24393e1236eeec',
+            agentVersion: 0
+        };
+        const demoCustomerData = {
+            musteri_adi: 'Demo Müşteri',
+            dogum_tarihi: 'Demo doğum tarihi',
+            dogum_yeri: 'Demo il',
+            baba_adi_ilk_iki_harf: 'XX',
+            guncel_bakiye: 'Demo bakiye',
+            dosya_asamasi: 'Demo dosya aşaması',
+            birim_adi: 'Demo İdari Takip Birimi',
+            birim_telefonu: 'Demo birim telefonu',
+            iban_bilgisi: 'Demo ödeme IBAN bilgisi',
+            itiraz_mail_adresi: 'demo-itiraz@example.invalid'
         };
         const lockScreen = document.getElementById('demo-lock-screen');
         const demoContent = document.getElementById('id-demo-content');
@@ -238,7 +296,7 @@
 
             const label = document.createElement('div');
             label.className = 'id-demo-chat-label';
-            label.textContent = role === 'user' ? 'You' : 'Assistant';
+            label.textContent = role === 'user' ? 'You' : 'Dijital Asistan';
 
             const text = document.createElement('div');
             text.textContent = content;
@@ -252,7 +310,7 @@
 
         function ensureIntroMessage() {
             if (chatMessages.childElementCount > 0) return;
-            appendChatMessage('agent', 'Merhaba. Self-servis destek demosu hazır. Nasıl yardımcı olabilirim?');
+            appendChatMessage('agent', 'Merhaba. Dijital Asistan demosu hazır. Bakiye, dosya aşaması, ödeme bilgisi veya itiraz süreci için yardımcı olabilirim.');
         }
 
         function openChatPanel() {
@@ -261,7 +319,7 @@
             chatOverlay.classList.add('is-open');
             chatOverlay.setAttribute('aria-hidden', 'false');
             chatbotStatus.textContent = 'The chatbot demo is open.';
-            chatConnection.textContent = chatId ? 'Connected to the demo assistant.' : 'Ready for a demo conversation.';
+            chatConnection.textContent = chatId ? 'Connected to the demo assistant.' : 'Demo müşteri dosyası hazır.';
             window.setTimeout(function () {
                 chatInput.focus();
             }, 60);
@@ -278,7 +336,7 @@
             chatInput.disabled = isBusy;
             chatSubmit.disabled = isBusy;
             chatSubmit.querySelector('span').textContent = isBusy ? 'Sending...' : 'Send';
-            chatConnection.textContent = isBusy ? 'Waiting for the assistant...' : (chatId ? 'Connected to the demo assistant.' : 'Ready for a demo conversation.');
+            chatConnection.textContent = isBusy ? 'Waiting for the assistant...' : (chatId ? 'Connected to the demo assistant.' : 'Demo müşteri dosyası hazır.');
         }
 
         async function readJsonResponse(response) {
@@ -315,9 +373,12 @@
                 },
                 body: JSON.stringify({
                     agent_id: assistantConfig.agentId,
+                    agent_version: assistantConfig.agentVersion,
                     metadata: {
-                        source: 'goexpandia_id_demo'
-                    }
+                        source: 'goexpandia_id_demo',
+                        demo_customer: demoCustomerData.musteri_adi
+                    },
+                    retell_llm_dynamic_variables: demoCustomerData
                 })
             });
             const payload = await readJsonResponse(response);
