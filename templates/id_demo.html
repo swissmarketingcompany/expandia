@@ -156,7 +156,7 @@
                             <div class="rounded-xl bg-base-200 p-3">
                                 <p class="font-bold">Kimlik doğrulama</p>
                                 <p class="text-base-content/60 mt-1">Doğum: Demo doğum tarihi, demo il</p>
-                                <p class="text-base-content/60">Baba adı ilk iki harf: XX</p>
+                                <p class="text-base-content/60">Baba adı ilk iki harf: ME</p>
                             </div>
                             <div class="rounded-xl bg-base-200 p-3">
                                 <p class="font-bold">Dosya durumu</p>
@@ -240,7 +240,7 @@
             musteri_adi: 'Demo Müşteri',
             dogum_tarihi: 'Demo doğum tarihi',
             dogum_yeri: 'Demo il',
-            baba_adi_ilk_iki_harf: 'XX',
+            baba_adi_ilk_iki_harf: 'ME',
             guncel_bakiye: 'Demo bakiye',
             dosya_asamasi: 'Demo dosya aşaması',
             birim_adi: 'Demo İdari Takip Birimi',
@@ -307,14 +307,8 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
-        function ensureIntroMessage() {
-            if (chatMessages.childElementCount > 0) return;
-            appendChatMessage('agent', 'Merhaba. Dijital Asistan demosu hazır. Bakiye, dosya aşaması, ödeme bilgisi veya itiraz süreci için yardımcı olabilirim.');
-        }
-
         function openChatPanel() {
             hideDefaultSiteChat();
-            ensureIntroMessage();
             chatOverlay.classList.add('is-open');
             chatOverlay.setAttribute('aria-hidden', 'false');
             chatbotStatus.textContent = 'The chatbot demo is open.';
