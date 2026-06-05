@@ -7,6 +7,18 @@
 # Canonical blog URL
 /blog/ai-automation-agency-near-me/  /blog/ai-automation-agency-near-me.html  301!
 
+# Localized AI market guide redirects
+/blog/london-ai-automation-agency-search-data-guide.html  /blog/london-ai-automation-agency-what-to-automate-first.html  301!
+/blog/new-york-ai-agents-business-search-data-guide.html  /blog/new-york-ai-agents-what-to-automate-first.html  301!
+/blog/berlin-ai-automation-agency-search-data-guide.html  /blog/berlin-ai-automation-agency-practical-workflows.html  301!
+/blog/paris-ai-consulting-automation-search-data-guide.html  /blog/paris-ai-consulting-automation-pilot.html  301!
+/blog/amsterdam-ai-workflow-automation-search-data-guide.html  /blog/amsterdam-ai-workflow-automation-use-cases.html  301!
+/blog/austin-ai-automation-sales-search-data-guide.html  /blog/austin-ai-automation-saas-growth-workflows.html  301!
+/blog/houston-ai-document-automation-search-data-guide.html  /blog/houston-ai-document-operations-automation.html  301!
+/blog/chicago-business-process-automation-ai-search-data-guide.html  /blog/chicago-business-process-automation-ai-workflows.html  301!
+/blog/zurich-ai-agents-governance-search-data-guide.html  /blog/zurich-ai-agents-governed-automation.html  301!
+/blog/barcelona-ai-automation-agency-search-data-guide.html  /blog/barcelona-ai-automation-agency-multilingual-workflows.html  301!
+
 # Removed low-priority city pages: redirect to city locations index
 /baghdad.html  /solutions.html  301
 /b2b-lead-generation-baghdad.html  /solutions.html  301

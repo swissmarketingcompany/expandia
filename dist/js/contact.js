@@ -40,10 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // B. MATH CAPTCHA CHECK
-            // HTML says "30+31=". The answer must be 61.
+            // The visible security question is 30 + 31. The answer must be 61.
             const mathAnswer = formData.get('math');
             if (mathAnswer !== '61') {
-                if (statusEl) statusEl.textContent = 'Please solve the math question correctly (30+31).';
+                if (statusEl) statusEl.textContent = 'Please solve the security question correctly.';
                 return;
             }
             
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // B. MATH CHECK
             const mathAnswer = formData.get('math');
             if (mathAnswer !== '61') {
-                alert('Please solve the math question correctly (30+31).');
+                alert('Please solve the security question correctly.');
                 return;
             }
             
