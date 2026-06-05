@@ -19,6 +19,11 @@
       "label": "AI Tools",
       "description": "Tool comparisons and software selection guides for companies evaluating AI automation platforms, document AI, agents, reporting, and workflow builders.",
       "keywords": "AI tools, AI automation tools, workflow tools, AI software, business automation tools"
+    },
+    "localized-ai-markets": {
+      "label": "Localized AI Markets",
+      "description": "City-specific AI automation, AI consulting, AI agents, and workflow automation guides backed by search-intent research and current adoption sources.",
+      "keywords": "local AI automation agency, AI consulting city guide, AI agents local market, AI workflow automation local SEO"
     }
   },
   "posts": {
@@ -309,6 +314,126 @@
       "image": "assets/images/ai-consulting-company-rollout-dashboard.png",
       "published": "2026-01-06",
       "modified": "2026-01-06"
+    },
+    "london-ai-automation-agency-search-data-guide": {
+      "title": "AI Automation Agency London: Search-Data Guide for Local Business Teams",
+      "description": "A localized London AI automation agency guide using search-intent clusters, UK adoption data, workflow priorities, and practical rollout planning.",
+      "excerpt": "A London-focused guide to AI automation agency search intent, local adoption data, first workflows, buyer checks, and rollout planning.",
+      "keywords": "ai automation agency london, ai consulting london, ai agents london, workflow automation london, custom ai solutions london, AI automation agency, AI consulting services, AI agent development, custom AI solutions",
+      "category": "localized-ai-markets",
+      "badge": "London Guide",
+      "readTime": "20 min read",
+      "image": "assets/images/ai-automation-agency-near-me-hero.png",
+      "published": "2026-06-05",
+      "modified": "2026-06-05"
+    },
+    "new-york-ai-agents-business-search-data-guide": {
+      "title": "AI Agents New York: Search-Data Guide for Sales, Support, and Operations",
+      "description": "A New York AI agents guide using search-intent clusters, U.S. Census AI adoption data, workflow examples, and agency evaluation criteria.",
+      "excerpt": "A New York-focused guide to AI agent search intent, practical workflows, U.S. adoption data, and agency selection.",
+      "keywords": "ai agents new york, ai automation agency new york, ai consulting new york, sales AI agent new york, customer support AI agent, AI automation agency, AI consulting services, AI agent development, custom AI solutions",
+      "category": "localized-ai-markets",
+      "badge": "New York Guide",
+      "readTime": "20 min read",
+      "image": "assets/images/ai-agents-for-business-hero.png",
+      "published": "2026-06-05",
+      "modified": "2026-06-05"
+    },
+    "berlin-ai-automation-agency-search-data-guide": {
+      "title": "AI Automation Agency Berlin: Search-Data Guide for B2B and Mittelstand Teams",
+      "description": "A Berlin AI automation agency guide with EU adoption data, localized search-intent clusters, governance needs, and workflow priorities.",
+      "excerpt": "A Berlin-focused guide for choosing AI automation workflows, protecting governance, and turning local demand into measurable pilots.",
+      "keywords": "ai automation agency berlin, ki automatisierung berlin, ai consulting berlin, ki agentur berlin, ai agents berlin, AI automation agency, AI consulting services, AI agent development, custom AI solutions",
+      "category": "localized-ai-markets",
+      "badge": "Berlin Guide",
+      "readTime": "20 min read",
+      "image": "assets/images/ai-agent-human-approval.png",
+      "published": "2026-06-05",
+      "modified": "2026-06-05"
+    },
+    "paris-ai-consulting-automation-search-data-guide": {
+      "title": "AI Consulting Paris: Search-Data Guide for Automation Planning and Rollout",
+      "description": "A Paris AI consulting guide using EU adoption data, localized keyword clusters, workflow selection, and a practical 90-day AI roadmap.",
+      "excerpt": "A Paris-focused AI consulting and automation guide for choosing useful pilots, reducing risk, and linking search intent to rollout.",
+      "keywords": "ai consulting paris, agence ia paris, ai automation paris, consultant ia paris, custom ai solutions paris, AI automation agency, AI consulting services, AI agent development, custom AI solutions",
+      "category": "localized-ai-markets",
+      "badge": "Paris Guide",
+      "readTime": "20 min read",
+      "image": "assets/images/ai-consulting-company-evaluation-map.png",
+      "published": "2026-06-05",
+      "modified": "2026-06-05"
+    },
+    "amsterdam-ai-workflow-automation-search-data-guide": {
+      "title": "AI Workflow Automation Amsterdam: Search-Data Guide for Service and SaaS Teams",
+      "description": "An Amsterdam AI workflow automation guide with EU adoption context, local search-intent clusters, use cases, and rollout planning.",
+      "excerpt": "An Amsterdam-focused guide to AI workflow automation for SaaS, logistics, service, and operations teams.",
+      "keywords": "ai workflow automation amsterdam, ai automation agency amsterdam, ai consulting amsterdam, ai agents amsterdam, business automation amsterdam, AI automation agency, AI consulting services, AI agent development, custom AI solutions",
+      "category": "localized-ai-markets",
+      "badge": "Amsterdam Guide",
+      "readTime": "20 min read",
+      "image": "assets/images/ai-workflows-practical-guide-hero.png",
+      "published": "2026-06-05",
+      "modified": "2026-06-05"
+    },
+    "austin-ai-automation-sales-search-data-guide": {
+      "title": "AI Automation Austin: Search-Data Guide for SaaS and Growth Teams",
+      "description": "An Austin AI automation guide using U.S. Census adoption data, search-intent clusters, sales workflow examples, and rollout checks.",
+      "excerpt": "An Austin-focused guide to AI automation for SaaS, RevOps, lead follow-up, sales agents, and workflow rollout.",
+      "keywords": "ai automation agency austin, ai automation austin, ai consulting austin, ai sales agent austin, RevOps automation AI, AI automation agency, AI consulting services, AI agent development, custom AI solutions",
+      "category": "localized-ai-markets",
+      "badge": "Austin Guide",
+      "readTime": "20 min read",
+      "image": "assets/images/ai-sales-agent-workflows-hero.png",
+      "published": "2026-06-05",
+      "modified": "2026-06-05"
+    },
+    "houston-ai-document-automation-search-data-guide": {
+      "title": "AI Automation Houston: Search-Data Guide for Documents, Operations, and B2B Service",
+      "description": "A Houston AI automation guide with U.S. adoption data, search-intent clusters, document automation use cases, and implementation checks.",
+      "excerpt": "A Houston-focused guide to AI document automation, operations workflows, and controlled AI rollout for B2B teams.",
+      "keywords": "ai automation agency houston, document automation AI houston, invoice automation AI houston, ai consulting houston, business process automation houston, AI automation agency, AI consulting services, AI agent development, custom AI solutions",
+      "category": "localized-ai-markets",
+      "badge": "Houston Guide",
+      "readTime": "20 min read",
+      "image": "assets/images/intelligent-document-processing-hero.png",
+      "published": "2026-06-05",
+      "modified": "2026-06-05"
+    },
+    "chicago-business-process-automation-ai-search-data-guide": {
+      "title": "Business Process Automation Chicago: Search-Data Guide for AI Workflows",
+      "description": "A Chicago business process automation guide with U.S. AI adoption data, local search-intent clusters, workflow examples, and ROI planning.",
+      "excerpt": "A Chicago-focused guide to AI business process automation for back office, distribution, support, and operations teams.",
+      "keywords": "business process automation chicago, ai automation agency chicago, workflow automation chicago, ai consulting chicago, customer service automation chicago, AI automation agency, AI consulting services, AI agent development, custom AI solutions",
+      "category": "localized-ai-markets",
+      "badge": "Chicago Guide",
+      "readTime": "20 min read",
+      "image": "assets/images/ai-automation-roi-dashboard.png",
+      "published": "2026-06-05",
+      "modified": "2026-06-05"
+    },
+    "zurich-ai-agents-governance-search-data-guide": {
+      "title": "AI Agents Zurich: Search-Data Guide for Governed Automation",
+      "description": "A Zurich AI agents guide using Swiss AI adoption sources, localized search-intent clusters, governance controls, and rollout planning.",
+      "excerpt": "A Zurich-focused guide to governed AI agents for finance, consulting, regulated services, and operational teams.",
+      "keywords": "ai agents zurich, ai consulting zurich, ai automation zurich, ki agentur zurich, custom ai solutions zurich, AI automation agency, AI consulting services, AI agent development, custom AI solutions",
+      "category": "localized-ai-markets",
+      "badge": "Zurich Guide",
+      "readTime": "20 min read",
+      "image": "assets/images/ai-agent-human-approval.png",
+      "published": "2026-06-05",
+      "modified": "2026-06-05"
+    },
+    "barcelona-ai-automation-agency-search-data-guide": {
+      "title": "AI Automation Agency Barcelona: Search-Data Guide for Service and Tourism Teams",
+      "description": "A Barcelona AI automation agency guide using EU adoption data, localized search-intent clusters, multilingual workflows, and rollout planning.",
+      "excerpt": "A Barcelona-focused guide to AI automation for tourism, agencies, local services, booking, intake, and customer operations.",
+      "keywords": "ai automation agency barcelona, ai agency barcelona, ai consulting barcelona, ai services barcelona, ai receptionist barcelona, AI automation agency, AI consulting services, AI agent development, custom AI solutions",
+      "category": "localized-ai-markets",
+      "badge": "Barcelona Guide",
+      "readTime": "20 min read",
+      "image": "assets/images/ai-receptionist-call-booking-hero.png",
+      "published": "2026-06-05",
+      "modified": "2026-06-05"
     }
   }
 }
