@@ -3,6 +3,21 @@
 const fs = require('fs');
 const path = require('path');
 const ANKARA_LONGITUDE_CUTOFF = 32.8597;
+const LOCALIZED_AI_MARKET_REDIRECTS = {
+    'london-ai-automation-agency-search-data-guide': 'london-ai-automation-agency-what-to-automate-first',
+    'new-york-ai-agents-business-search-data-guide': 'new-york-ai-agents-what-to-automate-first',
+    'berlin-ai-automation-agency-search-data-guide': 'berlin-ai-automation-agency-practical-workflows',
+    'paris-ai-consulting-automation-search-data-guide': 'paris-ai-consulting-automation-pilot',
+    'amsterdam-ai-workflow-automation-search-data-guide': 'amsterdam-ai-workflow-automation-use-cases',
+    'austin-ai-automation-sales-search-data-guide': 'austin-ai-automation-saas-growth-workflows',
+    'houston-ai-document-automation-search-data-guide': 'houston-ai-document-operations-automation',
+    'chicago-business-process-automation-ai-search-data-guide': 'chicago-business-process-automation-ai-workflows',
+    'zurich-ai-agents-governance-search-data-guide': 'zurich-ai-agents-governed-automation',
+    'barcelona-ai-automation-agency-search-data-guide': 'barcelona-ai-automation-agency-multilingual-workflows'
+};
+const LOCALIZED_AI_MARKET_REDIRECT_PATHS = new Set(
+    Object.keys(LOCALIZED_AI_MARKET_REDIRECTS).map(slug => `blog/${slug}.html`)
+);
 const RETIRED_EAST_OF_ANKARA_CITY_SLUGS = [
     'jeddah',
     'busan',
@@ -6685,7 +6700,8 @@ function generateSitemap() {
     //     });
     // });
 
-    const blogPages = collectHtmlFilesRecursive('blog');
+    const blogPages = collectHtmlFilesRecursive('blog')
+        .filter(page => !LOCALIZED_AI_MARKET_REDIRECT_PATHS.has(page));
 
     const allPages = [...new Set([...filteredStaticPages, ...solutionPages, ...localizedPages, ...broadCityPages, ...blogPages])];
 
@@ -6864,6 +6880,41 @@ function writeRedirectsFile() {
     console.log(`✅ Wrote legacy redirect rules to ${redirectsPath}`);
 }
 
+function renderStaticRedirectPage(sourceSlug, targetSlug) {
+    const targetPath = `/blog/${targetSlug}.html`;
+    const targetUrl = `https://www.goexpandia.com${targetPath}`;
+    return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    <meta http-equiv="refresh" content="0; url=${targetPath}">
+    <link rel="canonical" href="${targetUrl}">
+    <title>Redirecting | Go Expandia</title>
+</head>
+<body>
+    <p>This article has moved to <a href="${targetPath}">${targetUrl}</a>.</p>
+    <script>window.location.replace('${targetPath}');</script>
+</body>
+</html>
+`;
+}
+
+function writeLocalizedAiMarketRedirectPages() {
+    const blogDir = 'blog';
+    if (!fs.existsSync(blogDir)) {
+        fs.mkdirSync(blogDir, { recursive: true });
+    }
+
+    Object.entries(LOCALIZED_AI_MARKET_REDIRECTS).forEach(([sourceSlug, targetSlug]) => {
+        const outputPath = path.join(blogDir, `${sourceSlug}.html`);
+        fs.writeFileSync(outputPath, renderStaticRedirectPage(sourceSlug, targetSlug), 'utf8');
+    });
+
+    console.log(`✅ Wrote ${Object.keys(LOCALIZED_AI_MARKET_REDIRECTS).length} localized AI market redirect pages`);
+}
+
 function cleanupLegacyRedirectOutputs() {
     const languages = ['en'];
 
@@ -7027,6 +7078,7 @@ buildServiceAreasPage();
 normalizeLanguageSwitchPlaceholders();
 ensureClarityTrackingOnPublishedPages();
 ensureHubSpotEmbedOnPublishedPages();
+writeLocalizedAiMarketRedirectPages();
 generateSitemap();
 cleanupLegacyRedirectOutputs();
 writeRedirectsFile();
