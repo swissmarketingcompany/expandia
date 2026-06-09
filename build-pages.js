@@ -6642,7 +6642,7 @@ function generateSitemap() {
     // List of static pages
     const staticPages = [
         'index.html', 'about.html', 'our-business-model.html', 'solutions.html', 'contact.html',
-        'service-areas.html', 'barcelona-ai-services.html',
+        'service-areas.html', 'barcelona-ai-services.html', 'solar-satellite-offer-automatisation.html',
         'london-ai-agency.html', 'paris-ai-agency.html', 'berlin-ai-agency.html', 'madrid-ai-agency.html',
         'amsterdam-ai-agency.html', 'milan-ai-agency.html', 'zurich-ai-agency.html', 'stockholm-ai-agency.html',
         'dublin-ai-agency.html', 'lisbon-ai-agency.html',
@@ -6996,6 +6996,7 @@ buildPage('privacy-policy', 'privacy-policy', 'en');
 buildPage('terms-of-service', 'terms-of-service', 'en');
 buildPage('cookie-policy', 'cookie-policy', 'en');
 buildPage('barcelona-ai-services', 'barcelona-ai-services', 'en');
+buildPage('solar-satellite-offer-automatisation', 'solar-satellite-offer-automatisation', 'en');
 buildPage('london-ai-agency', 'london-ai-agency', 'en');
 buildPage('paris-ai-agency', 'paris-ai-agency', 'en');
 buildPage('berlin-ai-agency', 'berlin-ai-agency', 'en');
