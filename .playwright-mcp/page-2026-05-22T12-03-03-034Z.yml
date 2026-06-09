@@ -1,0 +1,554 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "Goodfirms" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img [ref=e7]
+      - navigation [ref=e17]:
+        - list [ref=e18]:
+          - listitem [ref=e19]:
+            - button "Find By Services" [ref=e20] [cursor=pointer]
+          - listitem [ref=e21]:
+            - button "Find By Solutions" [ref=e22] [cursor=pointer]
+          - listitem [ref=e23]:
+            - button "Resources" [ref=e24] [cursor=pointer]
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - link "Write a Review" [ref=e27] [cursor=pointer]:
+            - /url: https://myaccount.goodfirms.co/review
+          - link "Sign In" [ref=e28] [cursor=pointer]:
+            - /url: https://myaccount.goodfirms.co/users/login
+          - link "Get Listed" [ref=e29] [cursor=pointer]:
+            - /url: /get-listed
+        - generic [ref=e31]:
+          - button "Tab search button" [ref=e32] [cursor=pointer]
+          - text: No result found Please try with different keywords
+  - main [ref=e33]:
+    - generic [ref=e36]:
+      - generic [ref=e37]:
+        - generic [ref=e38]:
+          - heading "Be visible on Google and AI Search with Goodfirms" [level=1] [ref=e39]
+          - paragraph [ref=e40]: Clients don’t just rely on Google search - they ask AI. Goodfirms boosts your visibility across Google Search and AI platforms like GPT, Gemini, and Perplexity. We strategically position you as a brand that AI recommends.
+        - generic [ref=e41]:
+          - link "List your company for free" [ref=e42] [cursor=pointer]:
+            - /url: https://myaccount.goodfirms.co/users/register
+          - link "Learn how AI search works" [ref=e43] [cursor=pointer]:
+            - /url: "#ai-trust-section"
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - generic [ref=e46]: 10+ yrs
+          - generic [ref=e47]: Years of research
+        - generic [ref=e48]:
+          - generic [ref=e49]: 160+
+          - generic [ref=e50]: Countries reached
+        - generic [ref=e51]:
+          - generic [ref=e52]: 10M+
+          - generic [ref=e53]: Monthly users
+    - iframe [ref=e58]:
+      - generic [active] [ref=f1e1]:
+        - generic "YouTube Video Player" [ref=f1e3]
+        - generic [ref=f1e5]:
+          - generic:
+            - generic:
+              - button "Play video" [ref=f1e10] [cursor=pointer]:
+                - generic [ref=f1e13]:
+                  - img
+              - button "Hide player controls" [ref=f1e14] [cursor=pointer]
+              - generic [ref=f1e16]:
+                - generic [ref=f1e21]:
+                  - generic [ref=f1e22]:
+                    - link "Is Your Business Invisible to AI? Get Listed on Goodfirms Today!" [ref=f1e23] [cursor=pointer]:
+                      - /url: https://www.youtube.com/watch?v=2XmiomAelC4
+                    - link "Goodfirms" [ref=f1e24] [cursor=pointer]:
+                      - /url: /channel/UCV-9k28NcKzZTgPk0ov2PuQ
+                      - generic [ref=f1e25]: Goodfirms
+                  - generic [ref=f1e26]:
+                    - button "thumbnail-image" [ref=f1e27] [cursor=pointer]:
+                      - img "thumbnail-image" [ref=f1e28]
+                    - generic [ref=f1e30]:
+                      - generic: Goodfirms
+                      - generic: 262 subscribers
+                - generic [ref=f1e31]:
+                  - button "Share" [ref=f1e34] [cursor=pointer]:
+                    - generic [ref=f1e38]:
+                      - img
+                  - link "Watch on YouTube" [ref=f1e45] [cursor=pointer]:
+                    - /url: https://www.youtube.com/watch?v=2XmiomAelC4
+                    - generic [ref=f1e48]:
+                      - text: Watch on
+                      - img [ref=f1e50]:
+                        - generic [ref=f1e52]:
+                          - img
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - heading "The market shift you can’t ignore" [level=2] [ref=e62]
+        - paragraph [ref=e63]: AI-powered search is transforming how businesses are discovered. Relying on Google rankings alone is no longer enough to stay visible.
+      - generic [ref=e64]:
+        - generic [ref=e65]:
+          - heading "67% of clients" [level=3] [ref=e66]
+          - paragraph [ref=e67]: Now use AI assistants like Gemini and GPT to find service providers & get business recommendations.
+        - generic [ref=e68]:
+          - heading "3x growth" [level=3] [ref=e69]
+          - paragraph [ref=e70]: Increase in AI-driven search queries year over year, as businesses without AI visibility miss qualified leads.
+        - generic [ref=e71]:
+          - heading "Zero visibility" [level=3] [ref=e72]
+          - paragraph [ref=e73]: Most companies have zero visibility in AI, resulting in lost leads and revenue.
+      - generic [ref=e74]:
+        - generic [ref=e75]:
+          - heading "Why isn’t your business visible in AI search?" [level=2] [ref=e76]
+          - list [ref=e77]:
+            - listitem [ref=e78]:
+              - generic [ref=e80]:
+                - heading "Lack of structured information" [level=3] [ref=e81]
+                - paragraph [ref=e82]: AI models rely on well-structured, and verified data to understand and confidently reference your business.
+            - listitem [ref=e83]:
+              - generic [ref=e85]:
+                - heading "Missing trust signals" [level=3] [ref=e86]
+                - paragraph [ref=e87]: Without verified reviews, ratings, and credentials, AI tools are less likely to recommend your services.
+            - listitem [ref=e88]:
+              - generic [ref=e90]:
+                - heading "Competitors are already visible" [level=3] [ref=e91]
+                - paragraph [ref=e92]: Businesses listed on Goodfirms are gaining visibility in AI-driven search, while your business remain unseen.
+        - img "Example AI Search Query" [ref=e93]
+    - generic [ref=e95]:
+      - generic [ref=e96]:
+        - 'heading "Goodfirms: Built for AI trust and visibility" [level=2] [ref=e97]'
+        - paragraph [ref=e98]: Goodfirms builds the foundation that helps AI platforms understand, trust, and reference your business, not just index it like a traditional search engine.
+      - generic [ref=e99]:
+        - img "AI Confidence Score" [ref=e100]
+        - list [ref=e101]:
+          - listitem [ref=e102]:
+            - heading "Structured data architecture" [level=3] [ref=e103]
+            - paragraph [ref=e104]: Your business information is organized in AI-readable formats, covering services, reviews, credentials, and company details that AI models can confidently process.
+          - listitem [ref=e105]:
+            - heading "Verified trust signals" [level=3] [ref=e106]
+            - paragraph [ref=e107]: Our verification process and review ecosystem establish the authority signals AI tools rely on when recommending service providers.
+          - listitem [ref=e108]:
+            - heading "Multi-platform AI distribution" [level=3] [ref=e109]
+            - paragraph [ref=e110]: Your Goodfirms profile is distributed as a trusted authority signal across AI platforms like GPT, Gemini, Perplexity, and other emerging AI platforms through our trusted data partnerships.
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - heading "Traditional SEO visibility" [level=3] [ref=e113]
+          - paragraph [ref=e114]: Strengthen and maintain your Google presence with optimized profiles and authoritative signals.
+          - list [ref=e115]:
+            - listitem [ref=e116]:
+              - img [ref=e117]
+              - generic [ref=e120]: Schema markup
+            - listitem [ref=e121]:
+              - img [ref=e122]
+              - generic [ref=e125]: High-authority backlinks
+            - listitem [ref=e126]:
+              - img [ref=e127]
+              - generic [ref=e130]: Keyword-optimized listings
+        - generic [ref=e131]:
+          - heading "AI visibility" [level=3] [ref=e132]
+          - paragraph [ref=e133]: Improve your chances of being cited by AI platforms that recommend service providers.
+          - list [ref=e134]:
+            - listitem [ref=e135]:
+              - img [ref=e136]
+              - generic [ref=e139]: Structured data feeds
+            - listitem [ref=e140]:
+              - img [ref=e141]
+              - generic [ref=e144]: AI-readable company profiles
+            - listitem [ref=e145]:
+              - img [ref=e146]
+              - generic [ref=e149]: Verified business credentials
+        - generic [ref=e150]:
+          - heading "Dual visibility" [level=3] [ref=e151]
+          - paragraph [ref=e152]: Stay visible across both traditional search and AI-powered discovery.
+          - list [ref=e153]:
+            - listitem [ref=e154]:
+              - img [ref=e155]
+              - generic [ref=e158]: Broader lead coverage
+            - listitem [ref=e159]:
+              - img [ref=e160]
+              - generic [ref=e163]: Long-term discoverability
+            - listitem [ref=e164]:
+              - img [ref=e165]
+              - generic [ref=e168]: Visibility across evolving search channels
+    - generic [ref=e170]:
+      - generic [ref=e171]:
+        - heading "Why AI models trust Goodfirms data" [level=2] [ref=e172]
+        - paragraph [ref=e173]: Built with AI-readiness at its core, our platform ensures maximum visibility across major AI platforms.
+      - generic [ref=e174]:
+        - generic [ref=e175]:
+          - generic [ref=e176]:
+            - img [ref=e177]
+            - heading "Advanced schema markup" [level=3] [ref=e180]
+          - paragraph [ref=e181]: Every listing uses structured schema.org markup, including organization, local business, review, and aggregate rating schemas that AI models can easily interpret.
+          - code [ref=e183]: "\"@type\": \"Organization\", \"Name\": \"Your Company\" \"aggregateRating\": { \"ratingValue\": \"4.8\", \"reviewCount\": \"156\" }"
+        - generic [ref=e184]:
+          - generic [ref=e185]:
+            - img [ref=e186]
+            - heading "Consistent structured data" [level=3] [ref=e189]
+          - paragraph [ref=e190]: Business details, services, reviews, and credentials are presented in standardized formats, reducing ambiguity and improving AI understanding.
+          - generic [ref=e191]:
+            - generic [ref=e192]:
+              - generic [ref=e193]:
+                - generic [ref=e194]: Your AI Visibility Score
+                - generic [ref=e195]: 78%
+              - generic [ref=e196]:
+                - generic [ref=e197]: Industry Average
+                - generic [ref=e198]: 34%
+            - generic [ref=e201]:
+              - generic [ref=e202]: Profile Complete100%
+              - generic [ref=e203]: Reviews156
+              - generic [ref=e204]: Citations43
+        - generic [ref=e205]:
+          - generic [ref=e206]:
+            - img [ref=e207]
+            - heading "Verification badges" [level=3] [ref=e210]
+          - paragraph [ref=e211]: Each company profile goes through a multi-level verification process, creating trust indicators that AI systems rely on when evaluating sources.
+          - generic [ref=e212]:
+            - generic [ref=e213]:
+              - img [ref=e214]
+              - paragraph [ref=e216]: Verified
+            - generic [ref=e217]:
+              - img [ref=e218]
+              - paragraph [ref=e220]: Top Rated
+            - generic [ref=e221]:
+              - img [ref=e222]
+              - paragraph [ref=e224]: Certified
+        - generic [ref=e225]:
+          - generic [ref=e226]:
+            - img [ref=e227]
+            - heading "Authority-building signals" [level=3] [ref=e230]
+          - paragraph [ref=e231]: Ratings, reviews, profile completeness, and platform credibility combine to position your business as a reliable and authoritative source.
+          - list [ref=e232]:
+            - listitem [ref=e233]:
+              - generic [ref=e234]:
+                - img [ref=e235]
+                - text: Domain Rating
+              - generic [ref=e237]: 86/100
+            - listitem [ref=e238]:
+              - generic [ref=e239]:
+                - img [ref=e240]
+                - text: Trust Source
+              - generic [ref=e242]: 98/100
+            - listitem [ref=e243]:
+              - generic [ref=e244]:
+                - img [ref=e245]
+                - text: Backlink Profile
+              - generic [ref=e247]: Strong
+    - generic [ref=e249]:
+      - generic [ref=e250]:
+        - heading "Choose your visibility level" [level=2] [ref=e251]
+        - paragraph [ref=e252]: Boost your free profile on Goodfirms with these sponsorship plans for optimal exposure.
+      - generic [ref=e253]:
+        - generic [ref=e254]:
+          - generic [ref=e255]:
+            - heading "Goodfirms Pro" [level=3] [ref=e256]
+            - generic [ref=e257]:
+              - generic [ref=e258]: $1500
+              - generic [ref=e259]: /Year
+          - link "Pay now" [ref=e260] [cursor=pointer]:
+            - /url: https://billing.zohosecure.com/subscribe/7d4e0bf71dd28526ea95318ab38dcf506a2bba0f6b053217afe8ded60e8a6aa6/GFR?cf_category=All Categories
+          - paragraph [ref=e262]: Build visibility & establish viable business presence.
+          - generic [ref=e263]:
+            - generic [ref=e264]:
+              - img [ref=e265]
+              - generic [ref=e268]: Access powerful advanced features to enhance your profile.
+            - generic [ref=e269]:
+              - img [ref=e270]
+              - generic [ref=e273]: Gain detailed traffic analysis for better insights.
+            - generic [ref=e274]:
+              - img [ref=e275]
+              - generic [ref=e278]: Customize your landing page to reflect your brand.
+            - generic [ref=e279]:
+              - img [ref=e280]
+              - generic [ref=e283]: Improve your ranking within a single category.
+        - generic [ref=e284]:
+          - generic [ref=e285]:
+            - heading "Goodfirms Pro+" [level=3] [ref=e286]
+            - generic [ref=e287]:
+              - generic [ref=e288]: $2000
+              - generic [ref=e289]: /Year
+          - link "Pay now" [ref=e290] [cursor=pointer]:
+            - /url: https://billing.zohosecure.com/subscribe/7d4e0bf71dd28526ea95318ab38dcf506a2bba0f6b053217afe8ded60e8a6aa6/PAdv?cf_category=All Categories
+          - paragraph [ref=e292]: Expand visibility further to reach broader audiences.
+          - generic [ref=e293]:
+            - generic [ref=e294]:
+              - img [ref=e295]
+              - generic [ref=e298]: Includes all Pro benefits.
+            - generic [ref=e299]:
+              - img [ref=e300]
+              - generic [ref=e303]: Enhance reach on targeted local directories
+            - generic [ref=e304]:
+              - img [ref=e305]
+              - generic [ref=e308]: Receive premium customer support for faster assistance.
+            - generic [ref=e309]:
+              - img [ref=e310]
+              - generic [ref=e313]: Boost your ranking across multiple categories.
+        - generic [ref=e314]:
+          - generic [ref=e315]:
+            - heading "Goodfirms Sponsors" [level=3] [ref=e316]
+            - generic [ref=e318]: Pricing Available on Request
+          - link "Get a Quote" [ref=e319] [cursor=pointer]:
+            - /url: "#sponsorship-form"
+          - paragraph [ref=e321]: Maximize exposure to drive qualified leads.
+          - generic [ref=e322]:
+            - generic [ref=e323]:
+              - img [ref=e324]
+              - generic [ref=e327]: Includes all Pro+ benefits.
+            - generic [ref=e328]:
+              - img [ref=e329]
+              - generic [ref=e332]: Secure priority placement based on your chosen plan.
+            - generic [ref=e333]:
+              - img [ref=e334]
+              - generic [ref=e337]: Feature your profile in the FREE listings for added visibility.
+            - generic [ref=e338]:
+              - img [ref=e339]
+              - generic [ref=e342]: Expand your global reach without location restrictions.
+    - generic [ref=e343]:
+      - generic [ref=e344]:
+        - generic [ref=e345]:
+          - heading "Businesses already gaining AI visibility" [level=2] [ref=e346]
+          - paragraph [ref=e347]: Join thousands of companies generating quality leads through AI-powered search.
+        - generic [ref=e348]:
+          - generic [ref=e349]:
+            - generic [ref=e350]: 26K+
+            - generic [ref=e351]: Business Listed
+          - generic [ref=e352]:
+            - generic [ref=e353]: 22K+
+            - generic [ref=e354]: AI Citations
+          - generic [ref=e355]:
+            - generic [ref=e356]: 87%
+            - generic [ref=e357]: See Leads in 30 days
+        - generic [ref=e358]:
+          - generic [ref=e359]:
+            - blockquote [ref=e360]:
+              - paragraph [ref=e361]: Goodfirms has been a valuable trust signal for Pagepro. Many of our clients are CTOs or product owners who need quick ways to validate a potential partner. They often tell us they've checked platforms like Goodfirms before sending a message.
+              - paragraph [ref=e362]: Being listed, reviewed, and recognized on Goodfirms reassures potential clients that we're not just another dev shop, but a specialized Next.js & Sanity team with a proven track record.
+            - generic [ref=e363]:
+              - img "Chris Lojniewski" [ref=e365]
+              - generic [ref=e366]:
+                - generic [ref=e367]: Chris Lojniewski
+                - generic [ref=e368]: CEO, PagePro
+          - generic [ref=e369]:
+            - blockquote [ref=e370]:
+              - paragraph [ref=e371]: One of the leading platforms, Goodfirms is helping various brands in increasing their visibility among potential customers. Additionally, it offers a trust factor for our customers also. Showcasing genuine reviews, Goodfirms enhances the credibility of our company.
+              - paragraph [ref=e372]: I personally recommend Goodfirms to everybody. It's a genuine source of information. And for this, we are very thankful to this platform.
+            - generic [ref=e373]:
+              - img "Mr. Vivek Khatri" [ref=e375]
+              - generic [ref=e376]:
+                - generic [ref=e377]: Mr. Vivek Khatri
+                - generic [ref=e378]: Director & Co-Founder, Emizen tech pvt ltd
+          - generic [ref=e379]:
+            - blockquote [ref=e380]:
+              - paragraph [ref=e381]: We are currently in the early stages of establishing our presence in the market, with our primary focus on building brand visibility.
+              - paragraph [ref=e382]: In just the first 30 days, we've achieved over 100 impressions and more than 80 website visits, which is a strong indicator of growing interest and the potential to convert that momentum into meaningful business opportunities
+            - generic [ref=e383]:
+              - img "Rushikesh Lavalekar" [ref=e385]
+              - generic [ref=e386]:
+                - generic [ref=e387]: Rushikesh Lavalekar
+                - generic [ref=e388]: CEO, Right Path
+          - generic [ref=e389]:
+            - blockquote [ref=e390]:
+              - paragraph [ref=e391]: We see Goodfirms not only as a lead generation tool but also as a strategic channel that enhances our brand reputation. By showcasing verified reviews and highlighting our expertise, the platform builds trust with potential clients even before the first conversation takes place. For us, this has translated into stronger business relationships and an ongoing flow of opportunities in key markets.
+              - paragraph [ref=e392]: That's why we continue to rely on this fantastic platform; it's a valuable part of our growth strategy.
+            - generic [ref=e393]:
+              - img "Javier M. Rubio" [ref=e395]
+              - generic [ref=e396]:
+                - generic [ref=e397]: Javier M. Rubio
+                - generic [ref=e398]: CEO & Co-Founder, Techunting
+      - generic [ref=e400]:
+        - heading "Trusted by leading companies" [level=2] [ref=e402]
+        - generic [ref=e404]:
+          - img "creatio" [ref=e405]
+          - img "instinctools" [ref=e406]
+          - img "openxcell" [ref=e407]
+          - img "sdlc" [ref=e408]
+          - img "search-bloom" [ref=e409]
+          - img "semrush" [ref=e410]
+          - img "smartsites" [ref=e411]
+          - img "utility" [ref=e412]
+          - img "webfx" [ref=e413]
+    - generic [ref=e415]:
+      - heading "Frequently Asked Questions" [level=2] [ref=e417]
+      - generic [ref=e418]:
+        - group [ref=e420]:
+          - generic "How can potential clients find my Goodfirms profile?" [ref=e421] [cursor=pointer]:
+            - generic [ref=e422]:
+              - heading "How can potential clients find my Goodfirms profile?" [level=3] [ref=e423]
+              - img [ref=e425]
+          - generic [ref=e428]: Once your company is listed on Goodfirms, potential clients can find your profile through the Goodfirms directory, category listings, research pages, search results with relevant filters, and (if optimized) through Google and other search engines. Your profile includes company details, reviews, portfolio, and services, which help prospects evaluate you.
+        - group [ref=e430]:
+          - generic "What does it mean to be visible in AI search?" [ref=e431] [cursor=pointer]:
+            - generic [ref=e432]:
+              - heading "What does it mean to be visible in AI search?" [level=3] [ref=e433]
+              - img [ref=e435]
+        - group [ref=e438]:
+          - generic "How is AI search visibility different from traditional SEO?" [ref=e439] [cursor=pointer]:
+            - generic [ref=e440]:
+              - heading "How is AI search visibility different from traditional SEO?" [level=3] [ref=e441]
+              - img [ref=e443]
+        - group [ref=e446]:
+          - generic "Will my free Goodfirms profile appear in AI search results?" [ref=e447] [cursor=pointer]:
+            - generic [ref=e448]:
+              - heading "Will my free Goodfirms profile appear in AI search results?" [level=3] [ref=e449]
+              - img [ref=e451]
+        - group [ref=e454]:
+          - generic "How long does it take to see results from AI visibility?" [ref=e455] [cursor=pointer]:
+            - generic [ref=e456]:
+              - heading "How long does it take to see results from AI visibility?" [level=3] [ref=e457]
+              - img [ref=e459]
+        - group [ref=e462]:
+          - generic "Who can sign up for the Goodfirms Sponsor Plan?" [ref=e463] [cursor=pointer]:
+            - generic [ref=e464]:
+              - heading "Who can sign up for the Goodfirms Sponsor Plan?" [level=3] [ref=e465]
+              - img [ref=e467]
+        - group [ref=e470]:
+          - generic "What are the different levels of sponsorship and featured listings?" [ref=e471] [cursor=pointer]:
+            - generic [ref=e472]:
+              - heading "What are the different levels of sponsorship and featured listings?" [level=3] [ref=e473]
+              - img [ref=e475]
+        - group [ref=e478]:
+          - generic "What do I get with a Goodfirms Pro subscription?" [ref=e479] [cursor=pointer]:
+            - generic [ref=e480]:
+              - heading "What do I get with a Goodfirms Pro subscription?" [level=3] [ref=e481]
+              - img [ref=e483]
+        - group [ref=e486]:
+          - generic "What are the benefits of a sponsorship plan other than top rankings?" [ref=e487] [cursor=pointer]:
+            - generic [ref=e488]:
+              - heading "What are the benefits of a sponsorship plan other than top rankings?" [level=3] [ref=e489]
+              - img [ref=e491]
+        - group [ref=e494]:
+          - generic "How is Goodfirms' sponsorship plan different from other review platforms?" [ref=e495] [cursor=pointer]:
+            - generic [ref=e496]:
+              - heading "How is Goodfirms' sponsorship plan different from other review platforms?" [level=3] [ref=e497]
+              - img [ref=e499]
+    - generic [ref=e502]:
+      - generic [ref=e503]:
+        - heading "Ready to improve your AI search visibility?" [level=2] [ref=e504]
+        - paragraph [ref=e505]: Submit a request to explore sponsorship options on Goodfirms.
+      - generic [ref=e506]:
+        - generic [ref=e507]:
+          - generic [ref=e508]: Select organisation type*
+          - generic [ref=e509]:
+            - generic [ref=e510] [cursor=pointer]:
+              - radio "Services" [checked] [ref=e511]
+              - text: Services
+            - generic [ref=e512] [cursor=pointer]:
+              - radio "Software" [ref=e513]
+              - text: Software
+        - generic [ref=e514]:
+          - generic [ref=e515]:
+            - generic [ref=e516]: Full name*
+            - textbox "Full name*" [ref=e517]:
+              - /placeholder: Enter your full name
+          - generic [ref=e518]:
+            - generic [ref=e519]: Email address*
+            - textbox "Email address*" [ref=e520]:
+              - /placeholder: Enter your email address
+        - generic [ref=e521]:
+          - generic [ref=e522]:
+            - generic [ref=e523]: Select Company*
+            - textbox "Type at least 2 characters…" [ref=e525]
+          - generic [ref=e526]:
+            - generic [ref=e527]: Preferred sponsorship category*(up to 5)
+            - button "Select category" [ref=e529] [cursor=pointer]:
+              - generic [ref=e530]: Select category
+              - img [ref=e531]
+        - generic [ref=e533]:
+          - generic [ref=e534]: Describe your request in detail*
+          - textbox "Describe your request in detail*" [ref=e535]:
+            - /placeholder: Enter request details
+        - button "Submit Request" [ref=e537] [cursor=pointer]
+    - generic [ref=e539]:
+      - heading "Need more clarity?" [level=2] [ref=e541]
+      - generic [ref=e542]:
+        - link "Schedule a demo" [ref=e543] [cursor=pointer]:
+          - /url: https://calendly.com/connect-with-goodfirms-team
+          - img [ref=e544]
+          - text: Schedule a demo
+        - link "Contact sales" [ref=e546] [cursor=pointer]:
+          - /url: /contact-us
+          - img [ref=e547]
+          - text: Contact sales
+  - contentinfo [ref=e549]:
+    - generic [ref=e552]:
+      - generic [ref=e553]:
+        - link "goodfirms footer logo" [ref=e555] [cursor=pointer]:
+          - /url: /
+          - img "Goodfirms" [ref=e556]
+        - generic [ref=e557]:
+          - generic [ref=e558]: ALPHAZERO TECHNOLOGIES INC
+          - text: 205 E Harmon Ave APT 904
+          - text: Las Vegas, NV 89169
+          - text: United States
+        - generic [ref=e559]:
+          - link "Goodfirms Linkedin" [ref=e560] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/goodfirms
+            - img "Goodfirms Linkedin" [ref=e561]
+          - link "Goodfirms Facebook" [ref=e562] [cursor=pointer]:
+            - /url: https://www.facebook.com/goodfirms
+            - img "Goodfirms Facebook" [ref=e563]
+          - link "Goodfirms Twitter" [ref=e564] [cursor=pointer]:
+            - /url: https://x.com/Goodfirms
+            - img "Goodfirms Twitter" [ref=e565]
+          - link "Goodfirms Instagram" [ref=e566] [cursor=pointer]:
+            - /url: https://www.instagram.com/goodfirms_/
+            - img "Goodfirms Instagram" [ref=e567]
+          - link "Goodfirms Youtube" [ref=e568] [cursor=pointer]:
+            - /url: https://www.youtube.com/@Goodfirms
+            - img "Goodfirms Youtube" [ref=e569]
+        - generic [ref=e570]:
+          - link "Privacy" [ref=e571] [cursor=pointer]:
+            - /url: /privacy
+          - link "Terms of use" [ref=e572] [cursor=pointer]:
+            - /url: /terms-of-use
+      - generic [ref=e573]:
+        - generic [ref=e574]: About
+        - list [ref=e575]:
+          - listitem [ref=e576]:
+            - link "Why Goodfirms" [ref=e577] [cursor=pointer]:
+              - /url: /why-goodfirms
+          - listitem [ref=e578]:
+            - link "Glossary" [ref=e579] [cursor=pointer]:
+              - /url: /technology-glossary
+          - listitem [ref=e580]:
+            - link "Blogs" [ref=e581] [cursor=pointer]:
+              - /url: /blog
+          - listitem [ref=e582]:
+            - link "Help Center" [ref=e583] [cursor=pointer]:
+              - /url: https://help.goodfirms.co/
+          - listitem [ref=e584]:
+            - link "Press Releases" [ref=e585] [cursor=pointer]:
+              - /url: /press-releases
+      - generic [ref=e586]:
+        - generic [ref=e587]: For User
+        - list [ref=e588]:
+          - listitem [ref=e589]:
+            - link "Research Methodology" [ref=e590] [cursor=pointer]:
+              - /url: /research-methodology
+          - listitem [ref=e591]:
+            - link "Find Services" [ref=e592] [cursor=pointer]:
+              - /url: /directories
+          - listitem [ref=e593]:
+            - link "Find Software" [ref=e594] [cursor=pointer]:
+              - /url: /directories/software
+          - listitem [ref=e595]:
+            - link "Insights" [ref=e596] [cursor=pointer]:
+              - /url: /research
+          - listitem [ref=e597]:
+            - link "Write a Review" [ref=e598] [cursor=pointer]:
+              - /url: https://myaccount.goodfirms.co/review
+          - listitem [ref=e599]:
+            - link "Post a Project" [ref=e600] [cursor=pointer]:
+              - /url: /company-recommendation
+      - generic [ref=e601]:
+        - generic [ref=e602]: For Business
+        - list [ref=e603]:
+          - listitem [ref=e604]:
+            - link "Get Listed" [ref=e605] [cursor=pointer]:
+              - /url: /get-listed
+          - listitem [ref=e606]:
+            - link "Vendor Login" [ref=e607] [cursor=pointer]:
+              - /url: https://myaccount.goodfirms.co/users/login
+          - listitem [ref=e608]:
+            - link "Sponsorship Pricing" [ref=e609] [cursor=pointer]:
+              - /url: /sponsors
+          - listitem [ref=e610]:
+            - link "Contact Us" [ref=e611] [cursor=pointer]:
+              - /url: /contact-us
+    - generic [ref=e612]: Copyright © Goodfirms 2026 | All rights reserved

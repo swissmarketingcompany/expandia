@@ -1,0 +1,373 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "Go Expandia" [ref=e4] [cursor=pointer]:
+        - /url: ../index.html
+        - img "Go Expandia" [ref=e5]
+      - generic [ref=e6]:
+        - link "Our Business Model" [ref=e7] [cursor=pointer]:
+          - /url: ../our-business-model.html
+        - link "Blog" [ref=e8] [cursor=pointer]:
+          - /url: ../blog/index.html
+        - button "Services" [ref=e10] [cursor=pointer]:
+          - text: Services
+          - img [ref=e11]
+        - button "Company" [ref=e14] [cursor=pointer]:
+          - text: Company
+          - img [ref=e15]
+      - link "Contact" [ref=e18] [cursor=pointer]:
+        - /url: ../contact.html
+  - main [ref=e19]:
+    - article [ref=e20]:
+      - generic [ref=e23]:
+        - generic [ref=e24]:
+          - navigation "Breadcrumb" [ref=e25]:
+            - list [ref=e26]:
+              - listitem [ref=e27]:
+                - link "Home" [ref=e28] [cursor=pointer]:
+                  - /url: ../index.html
+              - listitem [ref=e29]: /
+              - listitem [ref=e30]:
+                - link "Blog" [ref=e31] [cursor=pointer]:
+                  - /url: ../blog/
+              - listitem [ref=e32]: /
+              - listitem [ref=e33]: London AI automation guide
+          - generic [ref=e34]: London Guide - practical automation guide
+          - 'heading "AI Automation Agency in London: What to Automate First and How to Choose the Right Partner" [level=1] [ref=e36]'
+          - paragraph [ref=e37]: If your London team is comparing AI automation partners, start with the workflow, not the technology. This guide shows what to automate first, where a local pilot can create visible value, and how to choose a partner who can build with human review, clean handoffs, and measurable operating results.
+          - generic [ref=e38]:
+            - generic [ref=e39]:
+              - text: By
+              - link "Bailey Roque" [ref=e40] [cursor=pointer]:
+                - /url: ../about.html
+            - generic [ref=e41]: "|"
+            - time [ref=e42]: Updated June 5, 2026
+            - generic [ref=e43]: "|"
+            - generic [ref=e44]: 14 min read
+            - generic [ref=e45]: "|"
+            - link "Localized AI Markets" [ref=e46] [cursor=pointer]:
+              - /url: ../blog/categories/localized-ai-markets.html
+          - generic [ref=e47]:
+            - link "Book a 20-minute AI workflow review" [ref=e48] [cursor=pointer]:
+              - /url: ../contact.html
+            - link "See London AI Services" [ref=e49] [cursor=pointer]:
+              - /url: ../london-ai-agency.html
+        - figure "A practical view of how AI automation should move from intake to draft, review, approval, and system update." [ref=e50]:
+          - img "AI automation agency planning dashboard for London business teams" [ref=e51]
+          - generic [ref=e52]: A practical view of how AI automation should move from intake to draft, review, approval, and system update.
+      - generic [ref=e55]:
+        - generic [ref=e56]:
+          - paragraph [ref=e57]: Main question
+          - paragraph [ref=e58]: What should we automate first?
+        - generic [ref=e59]:
+          - paragraph [ref=e60]: Market
+          - paragraph [ref=e61]: London, United Kingdom
+        - generic [ref=e62]:
+          - paragraph [ref=e63]: Best first pilot
+          - paragraph [ref=e64]: client intake
+        - generic [ref=e65]:
+          - paragraph [ref=e66]: Goal
+          - paragraph [ref=e67]: Measured workflow lift
+      - generic [ref=e70]:
+        - generic [ref=e71]:
+          - generic [ref=e72]:
+            - heading "Quick Take" [level=2] [ref=e73]
+            - paragraph [ref=e74]: For London, the strongest first AI automation project is client intake, email triage, meeting follow-up, CRM updates, and reporting for professional services teams. It is specific enough to scope, frequent enough to matter, and controlled enough for a pilot with human review. The right partner should help you choose that first workflow before talking about models, agents, or complex architecture.
+          - heading "The Real Buying Question in London" [level=2] [ref=e75]
+          - paragraph [ref=e76]: "Most teams do not need another general AI explanation. They need to know where AI can remove repeated work without creating new operational risk. A useful London AI automation conversation starts with the handoff that slows the business down: an enquiry that waits in an inbox, a document that needs manual extraction, a CRM record that is never complete, or a customer request that moves between teams without context."
+          - paragraph [ref=e77]: "That is why the first question should be practical: \"Which workflow can we improve in the next 30 to 60 days, using real examples from our business, with a named owner and a clear approval rule?\" If the partner cannot answer that question in plain business language, the project is likely to become a generic demo."
+          - paragraph [ref=e78]: For London, the most relevant teams are often professional services, financial services, real estate, B2B agencies, operations-heavy SMEs. They tend to have enough volume for automation to matter, but enough client, customer, finance, or compliance sensitivity that the first build still needs human review and careful rollout.
+          - generic [ref=e79]:
+            - heading "What Current Market Data Says" [level=3] [ref=e80]
+            - list [ref=e81]:
+              - listitem [ref=e82]:
+                - link "UK Department for Science, Innovation and Technology AI Adoption Research" [ref=e83] [cursor=pointer]:
+                  - /url: https://www.gov.uk/government/publications/ai-adoption-research/ai-adoption-research
+                - text: ": UK DSIT research reported that around 1 in 6 UK businesses, or 16%, currently use at least one AI technology, while London businesses were more likely to be using AI at 20% versus 16% overall."
+          - heading "Why London Needs a Local AI Automation Angle" [level=2] [ref=e84]
+          - paragraph [ref=e85]: London teams often have strong demand for AI but fragmented ownership across finance, sales, client service, compliance, and operations.
+          - paragraph [ref=e86]: "The adoption data above does not mean every company in London should buy the same AI tool. It means enough competitors, suppliers, and clients are experimenting with AI that leadership needs a grounded answer: which operating workflow should we improve first, and what delivery model gives us a useful result without losing control?"
+          - paragraph [ref=e87]: The answer depends on sector and operating maturity. In London, a practical first pilot usually lives close to customer communication, operational documents, CRM data, reporting, or cross-team coordination. Those are the places where repeated work is visible, the baseline can be measured, and quality can still be reviewed by a person before the workflow expands.
+          - paragraph [ref=e88]: The rollout should also fit the way the team already works. If the current process runs through email, CRM, spreadsheets, shared drives, and weekly manager reviews, the pilot should improve those handoffs first. A useful automation feels like a cleaner operating rhythm, not a separate AI portal people have to remember to open every day.
+          - 'figure "A practical workflow map: intake, context retrieval, first draft, human review, and system update." [ref=e89]':
+            - img "AI workflow automation map from intake to human approval and system update" [ref=e90]
+            - generic [ref=e91]: "A practical workflow map: intake, context retrieval, first draft, human review, and system update."
+          - heading "What to Automate First in London" [level=2] [ref=e92]
+          - paragraph [ref=e93]: The strongest first workflow for London is client intake, email triage, meeting follow-up, CRM updates, and reporting for professional services teams. It has the right mix of volume, business relevance, and manageable risk. The workflow is frequent enough to matter, but it can still be controlled with human review, source links, and limited permissions.
+          - paragraph [ref=e94]: A good first project happens often, has a clear input and output, uses examples from previous work, has a named owner, and creates a measurable result such as faster response time, fewer missed follow-ups, cleaner CRM records, shorter document handling time, or more complete weekly reporting. Avoid broad ideas like "automate our whole company" until one real workflow is working.
+          - generic [ref=e95]:
+            - paragraph [ref=e96]: Practical example
+            - 'heading "Example: a London professional services firm" [level=2] [ref=e97]'
+            - paragraph [ref=e98]: A 45-person advisory firm with partners around the City, Shoreditch, and Canary Wharf receives referrals, web enquiries, and follow-up requests across partner inboxes. The slow part is not expertise. The slow part is turning every message into a clear brief, CRM record, owner assignment, and client-ready next step.
+            - generic [ref=e99]:
+              - generic [ref=e100]:
+                - heading "Before automation" [level=3] [ref=e101]
+                - list [ref=e102]:
+                  - listitem [ref=e103]: A referral lands in a partner inbox and waits until the partner forwards it.
+                  - listitem [ref=e104]: An assistant searches old proposals, LinkedIn notes, and CRM history by hand.
+                  - listitem [ref=e105]: The first reply depends on who is available, so quality and speed vary.
+                  - listitem [ref=e106]: CRM fields are updated after the fact, if they are updated at all.
+              - generic [ref=e107]:
+                - heading "After a controlled pilot" [level=3] [ref=e108]
+                - list [ref=e109]:
+                  - listitem [ref=e110]: AI classifies the enquiry, extracts company context, and drafts a one-page internal brief.
+                  - listitem [ref=e111]: The workflow suggests an owner, creates a task, and flags missing information.
+                  - listitem [ref=e112]: A human reviews the draft reply before anything goes to the prospect.
+                  - listitem [ref=e113]: CRM fields, source links, and follow-up dates are updated as part of the same workflow.
+            - heading "What Go Expandia would deliver first" [level=3] [ref=e114]
+            - list [ref=e115]:
+              - listitem [ref=e116]: Workflow map from enquiry to approved reply
+              - listitem [ref=e117]: CRM field list and routing rules
+              - listitem [ref=e118]: AI brief and email draft templates
+              - listitem [ref=e119]: Human review and escalation rules
+              - listitem [ref=e120]: Pilot dashboard for response time, completion rate, and CRM completeness
+          - generic [ref=e121]:
+            - generic [ref=e122]:
+              - paragraph [ref=e123]: Start here
+              - heading "Client intake and qualification" [level=3] [ref=e124]
+              - paragraph [ref=e125]: Turn form fills, calls, and email enquiries into structured records, priority scores, next steps, and routed tasks.
+              - paragraph [ref=e126]:
+                - strong [ref=e127]: "Build first:"
+                - text: "Start with one inbound source and create a structured London record: owner, urgency, summary, missing information, and next action."
+            - generic [ref=e128]:
+              - paragraph [ref=e129]: High volume
+              - heading "Knowledge retrieval for client teams" [level=3] [ref=e130]
+              - paragraph [ref=e131]: Connect policies, proposals, service documents, and previous work so teams can find answers without searching across folders.
+              - paragraph [ref=e132]:
+                - strong [ref=e133]: "Build first:"
+                - text: Connect only approved documents first, show source links with every answer, and keep external sending behind human approval.
+            - generic [ref=e134]:
+              - paragraph [ref=e135]: Good pilot
+              - heading "Finance and admin automation" [level=3] [ref=e136]
+              - paragraph [ref=e137]: Summarize invoices, check approval rules, prepare exception queues, and update accounting or project systems.
+              - paragraph [ref=e138]:
+                - strong [ref=e139]: "Build first:"
+                - text: Extract fields, compare them with simple approval rules, and send exceptions to a named finance or operations owner.
+            - generic [ref=e140]:
+              - paragraph [ref=e141]: Control point
+              - heading "Sales follow-up and CRM hygiene" [level=3] [ref=e142]
+              - paragraph [ref=e143]: Draft follow-up, enrich account notes, flag stalled opportunities, and keep CRM fields current after calls.
+              - paragraph [ref=e144]:
+                - strong [ref=e145]: "Build first:"
+                - text: Use call notes and CRM context to draft follow-up, update fields, and flag stale opportunities before the week closes.
+            - generic [ref=e146]:
+              - paragraph [ref=e147]: Scale later
+              - heading "Executive reporting" [level=3] [ref=e148]
+              - paragraph [ref=e149]: Pull updates from CRM, support, finance, and project tools into a weekly operating summary for leadership review.
+              - paragraph [ref=e150]:
+                - strong [ref=e151]: "Build first:"
+                - text: Pull updates from named systems into one weekly operating brief with sources, open risks, and decisions needed.
+          - heading "AI Automation Agency vs Tool for London Companies" [level=2] [ref=e152]
+          - paragraph [ref=e153]: A tool can be enough when the workflow is documented, low risk, and mostly contained in one system. An agency is a better fit when the workflow crosses teams, systems, approvals, sensitive data, or customer-facing communication.
+          - paragraph [ref=e154]: For London, the agency route is most useful when the business needs discovery, workflow design, integrations, AI agent behavior, permission controls, documentation, training, and support in one delivery path. A good partner should also be willing to say when a workflow is not ready for automation yet.
+          - table [ref=e156]:
+            - rowgroup [ref=e157]:
+              - row "Decision Use a tool when Use an agency when" [ref=e158]:
+                - columnheader "Decision" [ref=e159]
+                - columnheader "Use a tool when" [ref=e160]
+                - columnheader "Use an agency when" [ref=e161]
+            - rowgroup [ref=e162]:
+              - row "Workflow clarity The process is documented and stable. The process needs mapping, redesign, or cross-team agreement." [ref=e163]:
+                - cell "Workflow clarity" [ref=e164]
+                - cell "The process is documented and stable." [ref=e165]
+                - cell "The process needs mapping, redesign, or cross-team agreement." [ref=e166]
+              - row "Data and systems One system contains most of the needed data. Data lives across CRM, email, documents, support, finance, and spreadsheets." [ref=e167]:
+                - cell "Data and systems" [ref=e168]
+                - cell "One system contains most of the needed data." [ref=e169]
+                - cell "Data lives across CRM, email, documents, support, finance, and spreadsheets." [ref=e170]
+              - row "Risk Wrong outputs are low impact and easy to fix. Outputs touch customers, compliance, pricing, finance, or reputation." [ref=e171]:
+                - cell "Risk" [ref=e172]
+                - cell "Wrong outputs are low impact and easy to fix." [ref=e173]
+                - cell "Outputs touch customers, compliance, pricing, finance, or reputation." [ref=e174]
+              - row "Rollout The team can configure, test, document, and maintain the system internally. The team needs implementation support, training, monitoring, and iteration." [ref=e175]:
+                - cell "Rollout" [ref=e176]
+                - cell "The team can configure, test, document, and maintain the system internally." [ref=e177]
+                - cell "The team needs implementation support, training, monitoring, and iteration." [ref=e178]
+          - heading "A 90-Day AI Automation Plan for London" [level=2] [ref=e179]
+          - list [ref=e180]:
+            - listitem [ref=e181]:
+              - strong [ref=e182]: "Days 1 to 30:"
+              - text: collect real workflow examples, name the owner, identify source systems, map edge cases, and rank use cases by value, risk, data readiness, and effort.
+            - listitem [ref=e183]:
+              - strong [ref=e184]: "Days 31 to 60:"
+              - text: build the smallest useful pilot with controlled inputs, source retrieval or system connections, review states, and baseline measurement.
+            - listitem [ref=e185]:
+              - strong [ref=e186]: "Days 61 to 90:"
+              - text: train users, collect corrections, document exceptions, compare results with the baseline, and decide whether to expand or tighten the workflow.
+          - 'figure "Measure the pilot with operating metrics: response time, handling time, rework, backlog, adoption, and exception rate." [ref=e187]':
+            - img "AI automation ROI dashboard showing time saved and rollout progress" [ref=e188]
+            - generic [ref=e189]: "Measure the pilot with operating metrics: response time, handling time, rework, backlog, adoption, and exception rate."
+          - heading "How to Measure Impact Without Inflating Claims" [level=2] [ref=e190]
+          - paragraph [ref=e191]: "The most credible AI automation measurement is operational. Start with a baseline: request volume, task time, queue size, missing information, late follow-ups, rework, and current response time. After launch, compare the same metrics instead of relying on vague productivity claims."
+          - paragraph [ref=e192]: Useful pilot measures include minutes saved per completed item, response time, first-draft quality, approval rate, exception rate, CRM completeness, document turnaround time, and user adoption. If the pilot saves time but creates more corrections, the workflow needs better context or narrower permissions before it expands.
+          - heading "Buyer Checklist for London Teams" [level=2] [ref=e193]
+          - paragraph [ref=e194]: Use this checklist before hiring an AI automation agency in London. It keeps the buying conversation concrete and reduces the risk of paying for a generic AI demo.
+          - list [ref=e195]:
+            - listitem [ref=e196]: Can the agency explain your London workflow in plain business language before proposing a tool?
+            - listitem [ref=e197]: Does the agency ask for real examples, edge cases, approval rules, and owner names?
+            - listitem [ref=e198]: Can it show how AI output will be reviewed, logged, corrected, and improved?
+            - listitem [ref=e199]: Does it know when to use a workflow automation, an AI agent, a knowledge assistant, or a custom AI system?
+            - listitem [ref=e200]: Does it define success as an operating metric, not only a model capability?
+            - listitem [ref=e201]: Can it connect to the systems your team already uses without forcing a full rebuild?
+            - listitem [ref=e202]: Does it include documentation, training, support, and a phased plan for the next decision?
+          - heading "How to Use This Guide With Your Team" [level=2] [ref=e203]
+          - paragraph [ref=e204]: Use this guide as a working agenda for a London AI automation discussion. Bring one workflow example, one recent customer or internal request, one source document, and one metric that shows the cost of the manual process.
+          - paragraph [ref=e205]: If the workflow has enough volume and the team can provide real examples, Go Expandia can help map the process, design the automation, build the AI workflow or agent, train users, and support the system after launch. The aim is to remove repeated work while keeping quality, data handling, and accountability under control.
+          - generic [ref=e206]:
+            - paragraph [ref=e207]: Local AI automation next step
+            - heading "Want to find the best AI workflow for London?" [level=2] [ref=e208]
+            - paragraph [ref=e209]: Go Expandia can review your current workflow, identify the strongest pilot, and show what a practical AI automation or AI agent build would look like.
+            - generic [ref=e210]:
+              - link "Book a 20-minute AI workflow review" [ref=e211] [cursor=pointer]:
+                - /url: ../contact.html
+              - link "Send us your workflow" [ref=e212] [cursor=pointer]:
+                - /url: ../contact.html
+          - heading "Relevant Go Expandia Services" [level=2] [ref=e213]
+          - generic [ref=e214]:
+            - link "AI Automation Agency Best when the workflow is known and the team needs implementation, integrations, testing, rollout, and support." [ref=e215] [cursor=pointer]:
+              - /url: ../ai-automation-agency.html
+              - paragraph [ref=e216]: AI Automation Agency
+              - paragraph [ref=e217]: Best when the workflow is known and the team needs implementation, integrations, testing, rollout, and support.
+            - link "AI Consulting Services Best when leaders need to choose the right use case, estimate effort, define controls, and shape the roadmap before build." [ref=e218] [cursor=pointer]:
+              - /url: ../ai-consulting-services.html
+              - paragraph [ref=e219]: AI Consulting Services
+              - paragraph [ref=e220]: Best when leaders need to choose the right use case, estimate effort, define controls, and shape the roadmap before build.
+            - link "AI Agent Development Best for controlled agents that read context, draft outputs, use approved tools, and wait for human review where needed." [ref=e221] [cursor=pointer]:
+              - /url: ../ai-agent-development.html
+              - paragraph [ref=e222]: AI Agent Development
+              - paragraph [ref=e223]: Best for controlled agents that read context, draft outputs, use approved tools, and wait for human review where needed.
+            - link "Custom AI Solutions Best when off-the-shelf tools cannot fit the data model, approval flow, dashboards, permissions, or system connections." [ref=e224] [cursor=pointer]:
+              - /url: ../custom-ai-solutions-for-businesses.html
+              - paragraph [ref=e225]: Custom AI Solutions
+              - paragraph [ref=e226]: Best when off-the-shelf tools cannot fit the data model, approval flow, dashboards, permissions, or system connections.
+          - heading "FAQ" [level=2] [ref=e227]
+          - generic [ref=e228]:
+            - generic [ref=e229]:
+              - heading "What should London companies automate first?" [level=3] [ref=e230]
+              - paragraph [ref=e231]: Start with client intake, email triage, meeting follow-up, CRM updates, and reporting for professional services teams. It is specific enough to scope, common enough to matter, and practical enough to test with human review.
+            - generic [ref=e232]:
+              - heading "Should we buy a tool or work with an AI automation agency?" [level=3] [ref=e233]
+              - paragraph [ref=e234]: Buy a tool when the process is already clear, low risk, and mostly contained in one system. Work with an agency when the workflow crosses teams, approvals, sensitive data, customer communication, or systems that need careful integration.
+            - generic [ref=e235]:
+              - heading "Should we build an AI agent or a simple automation?" [level=3] [ref=e236]
+              - paragraph [ref=e237]: Use a simple automation when rules are stable and outputs are predictable. Use an AI agent when the workflow needs reasoning, retrieval, tool use, summarization, or multi-step task handling with human approval.
+            - generic [ref=e238]:
+              - heading "Can Go Expandia support local teams in London?" [level=3] [ref=e239]
+              - paragraph [ref=e240]: Yes. Go Expandia supports AI consulting, automation, agent development, custom AI systems, training, and support for teams that want a practical implementation path.
+        - complementary [ref=e241]:
+          - generic [ref=e242]:
+            - heading "Local focus" [level=2] [ref=e243]
+            - paragraph [ref=e244]: London AI automation, AI consulting, AI agents, and workflow rollout.
+            - link "Book a workflow review" [ref=e245] [cursor=pointer]:
+              - /url: ../contact.html
+          - generic [ref=e246]:
+            - heading "Jump to" [level=2] [ref=e247]
+            - list [ref=e248]:
+              - listitem [ref=e249]:
+                - link "Buying question" [ref=e250] [cursor=pointer]:
+                  - /url: "#buyer-question"
+              - listitem [ref=e251]:
+                - link "Local AI demand" [ref=e252] [cursor=pointer]:
+                  - /url: "#local-ai-demand"
+              - listitem [ref=e253]:
+                - link "What to automate" [ref=e254] [cursor=pointer]:
+                  - /url: "#what-to-automate-first"
+              - listitem [ref=e255]:
+                - link "Practical example" [ref=e256] [cursor=pointer]:
+                  - /url: "#local-example"
+              - listitem [ref=e257]:
+                - link "Agency vs tool" [ref=e258] [cursor=pointer]:
+                  - /url: "#agency-vs-tool"
+              - listitem [ref=e259]:
+                - link "90-day plan" [ref=e260] [cursor=pointer]:
+                  - /url: "#ninety-day-plan"
+              - listitem [ref=e261]:
+                - link "Buyer checklist" [ref=e262] [cursor=pointer]:
+                  - /url: "#buyer-checklist"
+  - contentinfo [ref=e263]:
+    - generic [ref=e266]:
+      - generic [ref=e267]:
+        - heading "Stay Ahead with Go Expandia" [level=3] [ref=e268]
+        - paragraph [ref=e269]: Learn how companies use AI agency services to automate work and build useful AI systems.
+      - generic [ref=e271]:
+        - textbox "Enter your email" [ref=e272]
+        - button "Subscribe" [ref=e273] [cursor=pointer]
+    - generic [ref=e274]:
+      - generic [ref=e275]:
+        - generic [ref=e276]:
+          - img "Go Expandia" [ref=e278]
+          - paragraph [ref=e279]: AI agency for businesses. Automation, consulting, AI agents, and custom AI solutions.
+          - link "Go Expandia on LinkedIn" [ref=e281] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/103769699/
+            - img [ref=e282]
+        - generic [ref=e284]:
+          - heading "Services" [level=4] [ref=e285]
+          - list [ref=e286]:
+            - listitem [ref=e287]:
+              - link "All Services" [ref=e288] [cursor=pointer]:
+                - /url: ../solutions.html
+                - text: All Services
+            - listitem [ref=e290]:
+              - link "AI Automation Agency" [ref=e291] [cursor=pointer]:
+                - /url: ../ai-automation-agency.html
+                - text: AI Automation Agency
+            - listitem [ref=e293]:
+              - link "AI Consulting Services" [ref=e294] [cursor=pointer]:
+                - /url: ../ai-consulting-services.html
+                - text: AI Consulting Services
+            - listitem [ref=e296]:
+              - link "AI Agent Development" [ref=e297] [cursor=pointer]:
+                - /url: ../ai-agent-development.html
+                - text: AI Agent Development
+            - listitem [ref=e299]:
+              - link "Custom AI Solutions" [ref=e300] [cursor=pointer]:
+                - /url: ../custom-ai-solutions-for-businesses.html
+                - text: Custom AI Solutions
+            - listitem [ref=e302]:
+              - link "AI Support" [ref=e303] [cursor=pointer]:
+                - /url: ../ai-support.html
+                - text: AI Support
+        - generic [ref=e305]:
+          - heading "Company" [level=4] [ref=e306]
+          - list [ref=e307]:
+            - listitem [ref=e308]:
+              - link "About Us" [ref=e309] [cursor=pointer]:
+                - /url: ../about.html
+                - text: About Us
+            - listitem [ref=e311]:
+              - link "Service Locations" [ref=e312] [cursor=pointer]:
+                - /url: ../service-areas.html
+                - text: Service Locations
+            - listitem [ref=e314]:
+              - link "Blog" [ref=e315] [cursor=pointer]:
+                - /url: ../blog/index.html
+                - text: Blog
+            - listitem [ref=e317]:
+              - link "Contact Us" [ref=e318] [cursor=pointer]:
+                - /url: ../contact.html
+                - text: Contact Us
+        - generic [ref=e320]:
+          - heading "Get in Touch" [level=4] [ref=e321]
+          - generic [ref=e322]:
+            - paragraph [ref=e323]: Need help choosing the right AI agency path? We can start with one service and keep it simple.
+            - link "Talk to Us" [ref=e324] [cursor=pointer]:
+              - /url: ../contact.html
+            - generic [ref=e325]:
+              - link "hello@goexpandia.com" [ref=e326] [cursor=pointer]:
+                - /url: mailto:hello@goexpandia.com
+                - img [ref=e327]
+                - text: hello@goexpandia.com
+              - link "Book a workflow review" [ref=e329] [cursor=pointer]:
+                - /url: ../contact.html
+                - img [ref=e330]
+                - text: Book a workflow review
+      - generic [ref=e332]:
+        - generic [ref=e333]: © 2026 Go Expandia. All rights reserved.
+        - generic [ref=e334]:
+          - generic [ref=e335]: Part of Remova Inc.
+          - link "Privacy Policy" [ref=e336] [cursor=pointer]:
+            - /url: ../privacy-policy.html
+          - link "Terms of Service" [ref=e337] [cursor=pointer]:
+            - /url: ../terms-of-service.html
+          - link "Cookie Policy" [ref=e338] [cursor=pointer]:
+            - /url: ../cookie-policy.html
