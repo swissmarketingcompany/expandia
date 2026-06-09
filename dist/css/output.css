@@ -5346,6 +5346,10 @@ details.collapse summary::-webkit-details-marker{
   display: none;
 }
 
+.aspect-\[16\/9\]{
+  aspect-ratio: 16/9;
+}
+
 .aspect-\[4\/3\]{
   aspect-ratio: 4/3;
 }
@@ -5598,10 +5602,6 @@ details.collapse summary::-webkit-details-marker{
   width: 20rem;
 }
 
-.w-9{
-  width: 2.25rem;
-}
-
 .w-96{
   width: 24rem;
 }
@@ -5620,6 +5620,10 @@ details.collapse summary::-webkit-details-marker{
 
 .min-w-0{
   min-width: 0px;
+}
+
+.min-w-12{
+  min-width: 3rem;
 }
 
 .min-w-\[760px\]{
@@ -7087,6 +7091,10 @@ html {
 
 /* FAQ Enhancements */
 
+.collapse:not(td):not(tr):not(colgroup) {
+  visibility: visible;
+}
+
 .collapse-title {
   transition: all 0.2s ease;
 }
@@ -7096,13 +7104,25 @@ html {
   transform: translateX(4px);
 }
 
-.collapse input[type="checkbox"]:checked~.collapse-title {
+.collapse input[type="checkbox"]:checked~.collapse-title,
+.collapse input[type="radio"]:checked~.collapse-title,
+.collapse.collapse-open .collapse-title {
   color: hsl(var(--p));
   font-weight: 600;
 }
 
 .collapse-content {
   transition: all 0.3s ease;
+}
+
+.collapse.collapse-open {
+  grid-template-rows: max-content 1fr;
+}
+
+.collapse.collapse-open>.collapse-content {
+  visibility: visible;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
 }
 
 /* Logo Carousel Styles */
@@ -7748,6 +7768,24 @@ body>footer.footer-gradient{
   }
 }
 
+.marker\:text-lg *::marker{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.marker\:text-primary *::marker{
+  color: var(--fallback-p,oklch(var(--p)/var(--tw-text-opacity, 1)));
+}
+
+.marker\:text-lg::marker{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.marker\:text-primary::marker{
+  color: var(--fallback-p,oklch(var(--p)/var(--tw-text-opacity, 1)));
+}
+
 .hover\:-translate-y-2:hover{
   --tw-translate-y: -0.5rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -8122,6 +8160,10 @@ body>footer.footer-gradient{
 
   .lg\:hidden{
     display: none;
+  }
+
+  .lg\:aspect-square{
+    aspect-ratio: 1 / 1;
   }
 
   .lg\:w-auto{

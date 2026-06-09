@@ -1,25 +1,84 @@
 document.addEventListener('DOMContentLoaded', () => {
     const DESTINATION_EMAIL = 'hello@goexpandia.com';
 
-    // --- 1. FAQ Functionality (Keep existing) ---
-    const faqItems = document.querySelectorAll('.collapse input[type="checkbox"]');
-    faqItems.forEach(faqInput => {
-        const collapseElement = faqInput.closest('.collapse');
-        const titleElement = collapseElement?.querySelector('.collapse-title');
-        
-        if (titleElement) {
-            titleElement.style.cursor = 'pointer';
-            titleElement.addEventListener('click', (e) => {
-                e.preventDefault();
-                faqInput.checked = !faqInput.checked;
-                faqItems.forEach(otherInput => {
-                    if (otherInput !== faqInput) {
-                        otherInput.checked = false;
+    // --- 1. FAQ functionality ---
+    function setupFaqCollapses() {
+        const collapseItems = Array.from(document.querySelectorAll('.collapse'));
+
+        const setItemOpen = (item, isOpen) => {
+            const input = item.querySelector('input[type="checkbox"], input[type="radio"]');
+            const title = item.querySelector('.collapse-title');
+
+            if (input) {
+                input.checked = isOpen;
+            }
+
+            item.classList.toggle('collapse-open', isOpen);
+            item.classList.toggle('collapse-close', !isOpen);
+
+            if (title) {
+                title.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            }
+        };
+
+        const closeRadioSiblings = (activeInput) => {
+            if (!activeInput || activeInput.type !== 'radio' || !activeInput.name) return;
+
+            document.querySelectorAll('.collapse input[type="radio"]').forEach(otherInput => {
+                if (otherInput.name !== activeInput.name) return;
+
+                if (otherInput !== activeInput) {
+                    const otherItem = otherInput.closest('.collapse');
+                    if (otherItem) {
+                        setItemOpen(otherItem, false);
                     }
-                });
+                }
             });
-        }
-    });
+        };
+
+        collapseItems.forEach(item => {
+            const input = item.querySelector('input[type="checkbox"], input[type="radio"]');
+            const title = item.querySelector('.collapse-title');
+
+            if (!input || !title) return;
+
+            title.style.cursor = 'pointer';
+            title.setAttribute('role', 'button');
+            title.setAttribute('tabindex', '0');
+
+            input.addEventListener('change', () => {
+                if (input.type === 'radio' && input.checked) {
+                    closeRadioSiblings(input);
+                }
+                setItemOpen(item, input.checked);
+            });
+
+            title.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                if (input.type === 'radio') {
+                    if (!input.checked) {
+                        input.checked = true;
+                        closeRadioSiblings(input);
+                        setItemOpen(item, true);
+                    }
+                    return;
+                }
+
+                setItemOpen(item, !input.checked);
+            });
+
+            title.addEventListener('keydown', (e) => {
+                if (e.key !== 'Enter' && e.key !== ' ') return;
+                e.preventDefault();
+                title.click();
+            });
+
+            setItemOpen(item, input.checked);
+        });
+    }
+
+    setupFaqCollapses();
 
     // --- 2. Contact Form Handler ---
     const contactForm = document.getElementById('expandia-contact-form');

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const faqItems = document.querySelectorAll('.collapse');
     
     faqItems.forEach(item => {
-        const checkbox = item.querySelector('input[type="checkbox"]');
+        const checkbox = item.querySelector('input[type="checkbox"], input[type="radio"]');
         const title = item.querySelector('.collapse-title');
         
         if (checkbox && title) {
@@ -12,8 +12,17 @@ document.addEventListener('DOMContentLoaded', function() {
             title.addEventListener('click', function(e) {
                 e.preventDefault();
                 
-                // Toggle the checkbox
-                checkbox.checked = !checkbox.checked;
+                if (checkbox.type === 'radio') {
+                    document.querySelectorAll(`.collapse input[type="radio"][name="${checkbox.name}"]`).forEach(otherInput => {
+                        if (otherInput !== checkbox) {
+                            otherInput.checked = false;
+                            updateCollapseState(otherInput.closest('.collapse'), false);
+                        }
+                    });
+                    checkbox.checked = true;
+                } else {
+                    checkbox.checked = !checkbox.checked;
+                }
                 
                 // Update visual state
                 updateCollapseState(item, checkbox.checked);
@@ -95,5 +104,9 @@ style.textContent = `
     .collapse input[type="checkbox"] {
         display: none;
     }
+
+    .collapse input[type="radio"] {
+        display: none;
+    }
 `;
-document.head.appendChild(style); 
+document.head.appendChild(style);
