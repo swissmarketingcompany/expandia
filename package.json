@@ -11,8 +11,7 @@
     "generate:barcelona-ai-images": "node scripts/generate-barcelona-ai-images.mjs",
     "indexnow:submit": "node scripts/submit-indexnow.js",
     "test": "echo 'No tests specified'",
-    "audit:placeholders": "node scripts/audit-generated-placeholders.js",
-    "audit:city-content": "node scripts/audit-city-landing-content.js"
+    "audit:placeholders": "node scripts/audit-generated-placeholders.js"
   },
   "engines": {
     "node": ">=18.0.0",

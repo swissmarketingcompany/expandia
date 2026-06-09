@@ -50,12 +50,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 e.preventDefault();
                 // Navigate to solutions page with specific anchor
                 const solutionAnchors = [
-                    '#lead-generation',
-                    '#sales-development',
-                    '#outbound-marketing',
-                    '#appointment-setting',
-                    '#cold-emailing',
-                    '#business-development'
+                    '#services',
+                    '#delivery-workflow',
+                    '#pricing'
                 ];
 
                 if (solutionAnchors[index]) {
@@ -114,10 +111,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl" onclick="this.parentElement.parentElement.remove()">
                     ×
                 </button>
-                <h3 class="text-2xl font-bold mb-4 text-primary">Sales Development Demo</h3>
+                <h3 class="text-2xl font-bold mb-4 text-primary">AI Workflow Demo</h3>
                 <div class="space-y-4">
                     <div class="flex justify-between items-center">
-                        <span class="text-gray-600">Lead Generation Speed:</span>
+                        <span class="text-gray-600">Workflow Response Time:</span>
                         <span class="font-semibold text-primary">2.3 days avg</span>
                     </div>
                     <div class="flex justify-between items-center">
@@ -125,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <span class="font-semibold text-primary">94.2%</span>
                     </div>
                     <div class="flex justify-between items-center">
-                        <span class="text-gray-600">Qualified Leads:</span>
+                        <span class="text-gray-600">Reviewed Requests:</span>
                         <span class="font-semibold text-primary">1,247</span>
                     </div>
                     <div class="flex justify-between items-center">

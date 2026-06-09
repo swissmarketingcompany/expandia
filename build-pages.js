@@ -1,5 +1,3 @@
-
-
 const fs = require('fs');
 const path = require('path');
 const ANKARA_LONGITUDE_CUTOFF = 32.8597;
@@ -204,15 +202,11 @@ const RETIRED_CONSERVATIVE_TRIM_CITY_SLUGS = [
 ];
 const rawCities = require('./data/cities-top250.json');
 const cities = rawCities.filter((city) => Number(city.lng) <= ANKARA_LONGITUDE_CUTOFF);
-const industries = require('./data/industries.json');
 const services = require('./data/services.json');
 const serviceContent = require('./data/service-content.json');
 const serviceAreas = require('./data/service-areas.json');
-const glossary = require('./data/glossary.json');
 const metadata = require('./data/metadata.json');
 const { createHTMLTemplate, generateOrganizationSchema, generateBreadcrumbSchema } = require('./scripts/utils/template-engine');
-const { blogTopics } = require('./scripts/generate-blog-posts');
-const legacyBlogPosts = require('./data/legacy-blog-posts.json');
 const blogCatalog = require('./data/blog-posts.json');
 
 // Helper to extract schemas from content and remove them to avoid duplicates in body
@@ -231,14 +225,7 @@ function extractAndRemoveSchemas(content, templateName) {
             if (Array.isArray(schemaJson)) {
                 extractedSchemas = extractedSchemas.concat(schemaJson);
             } else {
-                // Check if this is a Service schema with nested Organization in provider
-                // We'll extract it but mark it specially so deduplication knows to handle it
-                if (schemaJson["@type"] === "Service" && schemaJson.provider && schemaJson.provider["@type"] === "Organization") {
-                    // Don't extract the nested Organization separately
-                    extractedSchemas.push(schemaJson);
-                } else {
-                    extractedSchemas.push(schemaJson);
-                }
+                extractedSchemas.push(schemaJson);
             }
         } catch (e) {
             console.warn(`⚠️ Failed to parse schema in ${templateName}: ${e.message}`);
@@ -281,7 +268,6 @@ if (!fs.existsSync(footerPath)) {
 
 const navigationEN = fs.readFileSync(headerPath, 'utf8');
 const footerEN = fs.readFileSync(footerPath, 'utf8');
-const latestBlogPosts = '';
 
 console.log(`✅ Successfully loaded header`);
 console.log(`✅ Successfully loaded footer`);
@@ -322,300 +308,17 @@ if (RETIRED_CONSERVATIVE_TRIM_CITY_SLUGS.length > 0) {
     console.log(`🧹 Retiring ${RETIRED_CONSERVATIVE_TRIM_CITY_SLUGS.length} conservative-trim city slugs for cleanup/redirects.`);
 }
 
-// Function to generate unique SEO content for each city
-function generateUniqueCityContent(cityName, countryName, regionName) {
-    // Categorize cities for targeted messaging
-    const techHubs = ['San Francisco', 'Austin', 'Seattle', 'Berlin', 'Singapore', 'Tokyo', 'Bengaluru'];
-    const financialCenters = ['New York', 'London', 'Hong Kong', 'Frankfurt', 'Zurich', 'Dubai'];
-    const industrialCities = ['Detroit', 'Stuttgart', 'Turin', 'Manchester'];
-
-    const isTechHub = techHubs.includes(cityName);
-    const isFinancial = financialCenters.includes(cityName);
-    const isIndustrial = industrialCities.includes(cityName);
-
-    // Content variations centered on the 5-step AI business model
-    const templates = [
-        {
-            p1: `${cityName} is a high-momentum market in ${regionName}, where teams are under pressure to reduce manual work and move decisions faster. Companies in ${countryName} need practical AI implementation, not vague innovation projects.`,
-            p2: `Our model in ${cityName} is simple: AI Opportunity Review, AI Plan, Build & Setup, Training, and Support. This gives leadership a clear path from analysis to execution, without adding process overhead.`,
-            p3: `Instead of forcing long transformation programs, we sequence implementation into manageable service steps so teams in ${cityName} can start with one priority workflow and expand with confidence.`,
-            p4: `This approach helps ${cityName} companies create measurable operational gains while keeping governance, rollout pace, and team adoption under control across ${countryName}.`
-        },
-        {
-            p1: `${cityName} is an important commercial center in ${regionName}. To stay competitive in ${countryName}, teams need repeatable AI execution with accountable milestones.`,
-            p2: `The 5-step model used in ${cityName} starts with a data-backed review, then a scoped plan, then build and setup, followed by workforce training and ongoing support.`,
-            p3: `This structure makes budgets easier to control and keeps stakeholders aligned on what gets implemented first, what gets deferred, and how success is measured.`,
-            p4: `For companies in ${cityName}, it means AI delivery becomes an operational program with clear ownership rather than scattered one-off initiatives.`
-        },
-        {
-            p1: `${cityName} combines established operations with growing pressure for automation. Businesses in ${regionName} need a delivery model that is both fast and controllable.`,
-            p2: `Our five services for ${cityName} teams map directly to execution stages: identify opportunities, set priorities, implement systems, train teams, and keep outcomes stable with support.`,
-            p3: `The model is built for cross-functional organizations where finance, operations, sales, and IT must coordinate around one AI roadmap in ${countryName}.`,
-            p4: `By using staged implementation, companies in ${cityName} can reduce risk, improve adoption, and scale AI capabilities in a way that makes commercial sense.`
-        },
-        {
-            p1: `The pace of change in ${cityName} is high, and teams in ${regionName} need practical AI leverage without long planning cycles.`,
-            p2: `Our business model for ${cityName} focuses on five clear services that move companies from “what should we automate?” to “this is now running in production.”`,
-            p3: `Every step has a defined output, so leaders in ${countryName} can track progress, control scope, and connect implementation work to operational KPIs.`,
-            p4: `This keeps AI adoption realistic for growing teams in ${cityName} while still enabling enterprise-level process improvements.`
-        },
-        {
-            p1: `${cityName} has strong growth potential in ${regionName}, but execution quality determines whether AI investments produce real business impact.`,
-            p2: `For companies in ${countryName}, the most effective approach is phased: review opportunities, design a prioritized plan, implement workflows, train users, and sustain results with ongoing support.`,
-            p3: `This is the operating model we use with teams in ${cityName} so delivery stays measurable and aligned with commercial goals.`,
-            p4: `As priorities evolve, the same five-service framework helps ${cityName} organizations expand implementation without losing focus or implementation quality.`
-        }
-    ];
-
-    // Select template based on city characteristics
-    let templateIndex;
-    if (isTechHub) {
-        templateIndex = 0; // More tech-focused language
-    } else if (isFinancial) {
-        templateIndex = 1; // More formal, business-focused
-    } else if (isIndustrial) {
-        templateIndex = 2; // Industrial transformation focus
-    } else {
-        // Use hash of city name for consistent but varied selection
-        const hash = cityName.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-        templateIndex = hash % templates.length;
-    }
-
-    const selectedTemplate = templates[templateIndex];
-
-    return `
-                <div class="prose prose-lg max-w-none text-base-content/80">
-                    <p class="mb-4">
-                        ${selectedTemplate.p1}
-                    </p>
-                    
-                    <p class="mb-4">
-                        ${selectedTemplate.p2}
-                    </p>
-                    
-                    <p class="mb-4">
-                        ${selectedTemplate.p3}
-                    </p>
-                    
-                    <p class="mb-4">
-                        ${selectedTemplate.p4}
-                    </p>
-                </div>`;
-}
-
-const LOCALIZED_CATEGORY_COPY = {
+const CATEGORY_COPY = {
     en: {
         'ai-solutions': { label: 'AI Support for Companies', promise: 'find the best places to use AI, make a clear plan, and help teams use it well.' },
         'custom-software': { label: 'AI Delivery and Support', promise: 'build the tools and workflows around AI, then keep them working.' }
-    },
-    de: {
-        'ai-solutions': { label: 'KI-Lösungen', promise: 'reduzieren Sie operative Personalkosten und beschleunigen Sie Entscheidungen mit sicherer Unternehmens-KI.' },
-        'custom-software': { label: 'Individuelle Softwareentwicklung', promise: 'modernisieren Sie komplexe Strukturen und bauen Sie maßgeschneiderte Business-Intelligence- und Engineering-Software.' }
-    },
-    fr: {
-        'ai-solutions': { label: 'Solutions IA', promise: 'réduisez les coûts opérationnels et accélérez la prise de décision avec une IA d’entreprise sécurisée.' },
-        'custom-software': { label: 'Développement logiciel sur mesure', promise: 'modernisez des structures lourdes et créez des logiciels métiers et d’ingénierie adaptés à vos besoins.' }
     }
 };
 
-function getLocalizedCategoryMeta(category, lang = 'en') {
-    return (LOCALIZED_CATEGORY_COPY[lang] && LOCALIZED_CATEGORY_COPY[lang][category]) ||
-        LOCALIZED_CATEGORY_COPY.en[category] ||
+function getCategoryMeta(category) {
+    return CATEGORY_COPY.en[category] ||
         SERVICE_CATEGORIES[category] ||
         { label: 'Solutions', promise: 'deliver secure, scalable infrastructure.' };
-}
-
-const CITY_LANDING_COPY = {
-    en: {
-        breadcrumbHome: 'Home',
-        breadcrumbLocations: 'Locations',
-        heroTitle: 'AI Services for Business Teams',
-        heroButton: 'Get Free Analysis',
-        heroSecondary: 'Explore 5 Services',
-        whyTitle: 'Why {{CITY_NAME}}?',
-        whyBody: '{{CITY_NAME}} sits in the {{REGION_NAME}} market, where teams need a practical AI rollout model they can execute step by step.',
-        localHeading: 'Built for local teams with a clear 5-step model',
-        cardTitle: 'Five simple services',
-        cardSubtitles: { ai: 'From review to support', software: 'Execution you can measure' },
-        servicesTitle: 'Start AI delivery in {{CITY_NAME}}',
-        servicesBody: 'Pick your first service, then expand with the same model as your operations grow.',
-        seoHeading: 'AI delivery in {{CITY_NAME}}, {{COUNTRY_NAME}}',
-        faqTitle: 'Frequently Asked Questions',
-        faqBody: 'Common questions from teams evaluating our 5-service AI model.',
-        faq: [
-            { q: 'How quickly can we start Service 1 (Review)?', a: 'Most teams can start with the AI Opportunity Review after a short kickoff and data handover alignment.' },
-            { q: 'Can we start from a later service instead?', a: 'Yes. If you already have analysis and priorities, we can begin with planning, build and setup, training, or support.' },
-            { q: 'Do you deliver remotely for teams in {{CITY_NAME}}?', a: 'Yes. The model is built for remote-first delivery with structured milestones and regular working sessions.' },
-            { q: 'How do you keep implementation compliant and secure?', a: 'Security controls, access boundaries, and data handling requirements are integrated into each service stage.' }
-        ]
-    },
-    de: {
-        breadcrumbHome: 'Startseite',
-        breadcrumbLocations: 'Standorte',
-        heroTitle: 'Unternehmenslösungen',
-        heroButton: 'Kostenlose Analyse anfordern',
-        heroSecondary: 'Kategorien ansehen',
-        whyTitle: 'Warum {{CITY_NAME}}?',
-        whyBody: '{{CITY_NAME}} liegt im Markt von {{REGION_NAME}}, wo Teams sichere KI-Systeme, schnellere Automatisierung und skalierbare Software brauchen.',
-        localHeading: 'Für lokale Umsetzung, nach globalen Standards',
-        cardTitle: 'Zwei Kernkategorien',
-        cardSubtitles: { ai: 'Automatisierung und Kontrolle', software: 'Entwicklung und Integration' },
-        servicesTitle: 'Lösungen für {{CITY_NAME}}',
-        servicesBody: 'Wählen Sie die Kategorie, die aktuell am wichtigsten ist, und erweitern Sie bei Bedarf Schritt für Schritt.',
-        seoHeading: 'Unternehmensumsetzung in {{CITY_NAME}}, {{COUNTRY_NAME}}',
-        faqTitle: 'Häufig gestellte Fragen',
-        faqBody: 'Häufige Fragen von Teams, die KI- und Software-Services bewerten.',
-        faq: [
-            { q: 'Wie schnell können Sie starten?', a: 'In der Regel beginnen wir nach der ersten Analyse und Scope-Abstimmung und gehen dann zügig in die Umsetzung.' },
-            { q: 'Welche Arten von Projekten unterstützen Sie?', a: 'Wir arbeiten an Infrastruktur, KI-Automatisierung, Systemintegrationen, internen Tools, Portalen und Modernisierungsvorhaben.' },
-            { q: 'Bieten Sie Remote-Umsetzung an?', a: 'Ja. Unser Delivery-Modell ist für Remote-Implementierung, Monitoring und Support über Regionen hinweg ausgelegt.' },
-            { q: 'Wie gehen Sie mit Compliance um?', a: 'Wir berücksichtigen Datenschutz, Logging, Zugriffskontrolle und Recovery-Anforderungen als Teil der Umsetzung.' }
-        ]
-    },
-    fr: {
-        breadcrumbHome: 'Accueil',
-        breadcrumbLocations: 'Villes',
-        heroTitle: 'Solutions d’entreprise',
-        heroButton: 'Obtenir une analyse gratuite',
-        heroSecondary: 'Découvrir les catégories',
-        whyTitle: 'Pourquoi {{CITY_NAME}} ?',
-        whyBody: '{{CITY_NAME}} se situe sur le marché de {{REGION_NAME}}, où les équipes ont besoin de systèmes IA sécurisés, d’automatisation plus rapide et de logiciels capables de suivre leur croissance.',
-        localHeading: 'Pensé pour une exécution locale, selon des standards globaux',
-        cardTitle: 'Deux catégories clés',
-        cardSubtitles: { ai: 'Automatisation et contrôle', software: 'Développement et intégration' },
-        servicesTitle: 'Solutions pour {{CITY_NAME}}',
-        servicesBody: 'Choisissez la catégorie la plus prioritaire aujourd’hui, puis faites évoluer la stack au rythme de votre activité.',
-        seoHeading: 'Déploiement d’entreprise à {{CITY_NAME}}, {{COUNTRY_NAME}}',
-        faqTitle: 'Questions fréquentes',
-        faqBody: 'Les questions les plus courantes des équipes qui évaluent des services IA et logiciels sur mesure.',
-        faq: [
-            { q: 'Sous quel délai pouvez-vous démarrer ?', a: 'Nous commençons généralement après l’analyse initiale et la validation du périmètre, puis passons rapidement à l’exécution.' },
-            { q: 'Quels types de projets prenez-vous en charge ?', a: 'Nous intervenons sur l’infrastructure, l’automatisation IA, les intégrations systèmes, les outils internes, les portails et les projets de modernisation.' },
-            { q: 'Proposez-vous une exécution à distance ?', a: 'Oui. Notre modèle de delivery est conçu pour l’implémentation à distance, la supervision et le support multi-régions.' },
-            { q: 'Comment gérez-vous la conformité ?', a: 'Nous intégrons la protection des données, le logging, le contrôle d’accès et les besoins de reprise dans la conception.' }
-        ]
-    }
-};
-
-const SERVICE_CITY_COPY = {
-    en: {
-        getConsultation: 'Get Free Consultation',
-        howItWorks: 'How It Works',
-        marketStats: 'Market Stats',
-        marketSize: 'Market Size',
-        marketFocus: 'Market Focus',
-        currentlyTaking: 'Currently taking projects in {{COUNTRY_NAME}}',
-        challenges: 'Challenges in {{CITY_NAME}}',
-        solution: 'Our {{SERVICE_NAME}} Solution',
-        faqTitle: 'Frequently Asked Questions',
-        nearbyTitle: 'Also Serving These Areas Near {{CITY_NAME}}'
-    },
-    de: {
-        getConsultation: 'Kostenlose Beratung',
-        howItWorks: 'So funktioniert es',
-        marketStats: 'Marktdaten',
-        marketSize: 'Marktgröße',
-        marketFocus: 'Marktfokus',
-        currentlyTaking: 'Aktuell verfügbar für Projekte in {{COUNTRY_NAME}}',
-        challenges: 'Herausforderungen in {{CITY_NAME}}',
-        solution: 'Unsere {{SERVICE_NAME}}-Lösung',
-        faqTitle: 'Häufig gestellte Fragen',
-        nearbyTitle: 'Auch aktiv in diesen Gebieten nahe {{CITY_NAME}}'
-    },
-    fr: {
-        getConsultation: 'Obtenir une consultation gratuite',
-        howItWorks: 'Comment ça marche',
-        marketStats: 'Données du marché',
-        marketSize: 'Taille du marché',
-        marketFocus: 'Focus du marché',
-        currentlyTaking: 'Nous prenons actuellement des projets dans {{COUNTRY_NAME}}',
-        challenges: 'Défis à {{CITY_NAME}}',
-        solution: 'Notre solution {{SERVICE_NAME}}',
-        faqTitle: 'Questions fréquentes',
-        nearbyTitle: 'Nous intervenons aussi dans ces zones près de {{CITY_NAME}}'
-    }
-};
-
-function getCityPageCopy(lang = 'en') {
-    return CITY_LANDING_COPY[lang] || CITY_LANDING_COPY.en;
-}
-
-function getServiceCityCopy(lang = 'en') {
-    return SERVICE_CITY_COPY[lang] || SERVICE_CITY_COPY.en;
-}
-
-function generateLocalizedCityContent(cityName, countryName, regionName, lang = 'en') {
-    if (lang === 'en') {
-        return generateUniqueCityContent(cityName, countryName, regionName);
-    }
-
-    const templates = {
-        de: [
-            `${cityName} ist ein dynamischer Wirtschaftsstandort in ${regionName}, in dem Unternehmen Technologie gezielt einsetzen, um sich einen Wettbewerbsvorteil zu verschaffen.`,
-            `Go Expandia liefert für ${cityName} sichere KI-Integration und maßgeschneiderte Software, die auf die Anforderungen von Unternehmen in ${countryName} zugeschnitten ist.`,
-            `Von der schnellen Bereitstellung bis zur laufenden Optimierung helfen wir Unternehmen in ${cityName}, interne Abläufe zu beschleunigen und ihre Systeme belastbar zu skalieren.`,
-            `Mit Go Expandia erhalten ${cityName}-Unternehmen eine technische Partnerschaft, die auf langfristige Stabilität, Compliance und Wachstum ausgelegt ist.`
-        ],
-        fr: [
-            `${cityName} représente un environnement économique dynamique dans ${regionName}, où les entreprises utilisent la technologie pour gagner en compétitivité.`,
-            `Go Expandia fournit à ${cityName} une intégration IA sécurisée et des logiciels sur mesure adaptés aux besoins des entreprises de ${countryName}.`,
-            `Du déploiement rapide à l’optimisation continue, nous aidons les entreprises de ${cityName} à accélérer leurs opérations et à faire évoluer leurs systèmes de façon fiable.`,
-            `Avec Go Expandia, les entreprises de ${cityName} bénéficient d’un partenaire technique pensé pour la stabilité, la conformité et la croissance à long terme.`
-        ]
-    };
-
-    const selected = templates[lang] || templates.de;
-    return `
-                <div class="prose prose-lg max-w-none text-base-content/80">
-                    <p class="mb-4">${selected[0]}</p>
-                    <p class="mb-4">${selected[1]}</p>
-                    <p class="mb-4">${selected[2]}</p>
-                    <p class="mb-4">${selected[3]}</p>
-                </div>`;
-}
-
-function replaceCityLandingCopy(content, lang = 'en') {
-    const copy = getCityPageCopy(lang);
-    return content
-        .replace(/Home/g, copy.breadcrumbHome)
-        .replace(/Locations/g, copy.breadcrumbLocations)
-        .replace(/Enterprise Solutions/g, copy.heroTitle)
-        .replace(/Get Free Analysis/g, copy.heroButton)
-        .replace(/Explore Categories/g, copy.heroSecondary)
-        .replace(/Why \{\{CITY_NAME\}\}\?/g, copy.whyTitle)
-        .replace(/\{\{CITY_NAME\}\} sits in the \{\{REGION_NAME\}\} market, where teams need secure AI systems, faster automation, and software that can scale with their operations\./g, copy.whyBody)
-        .replace(/Built for local delivery, global standards/g, copy.localHeading)
-        .replace(/Two core categories/g, copy.cardTitle)
-        .replace(/Automation and control/g, copy.cardSubtitles.ai)
-        .replace(/Build and integration/g, copy.cardSubtitles.software)
-        .replace(/Solutions for \{\{CITY_NAME\}\}/g, copy.servicesTitle)
-        .replace(/Choose the category that matches your current priority and expand as your operations grow\./g, copy.servicesBody)
-        .replace(/Enterprise delivery in \{\{CITY_NAME\}\}, \{\{COUNTRY_NAME\}\}/g, copy.seoHeading)
-        .replace(/Frequently Asked Questions/g, copy.faqTitle)
-        .replace(/Common questions from teams evaluating AI and custom software delivery\./g, copy.faqBody)
-        .replace(/How quickly can you start\?/g, copy.faq[0].q)
-        .replace(/We can usually begin after the initial discovery and scope review, then move quickly into implementation\./g, copy.faq[0].a)
-        .replace(/What kinds of projects do you support\?/g, copy.faq[1].q)
-        .replace(/We work on infrastructure, AI automation, system integrations, internal tools, portals, and modernization projects\./g, copy.faq[1].a)
-        .replace(/Do you provide remote delivery\?/g, copy.faq[2].q)
-        .replace(/Yes\. Our delivery model is designed for remote implementation, monitoring, and support across regions\./g, copy.faq[2].a)
-        .replace(/How do you handle compliance\?/g, copy.faq[3].q)
-        .replace(/We account for data protection, logging, access control, and recovery requirements as part of the build\./g, copy.faq[3].a);
-}
-
-function replaceServiceCityCopy(content, lang = 'en') {
-    const copy = getServiceCityCopy(lang);
-    return content
-        .replace(/Get Free Consultation/g, copy.getConsultation)
-        .replace(/How It Works/g, copy.howItWorks)
-        .replace(/Market Stats/g, copy.marketStats)
-        .replace(/Market Size/g, copy.marketSize)
-        .replace(/Market Focus/g, copy.marketFocus)
-        .replace(/Currently taking projects in \{\{COUNTRY_NAME\}\}/g, copy.currentlyTaking)
-        .replace(/Challenges in \{\{CITY_NAME\}\}/g, copy.challenges)
-        .replace(/Our \{\{SERVICE_NAME\}\} Solution/g, copy.solution)
-        .replace(/Frequently Asked Questions/g, copy.faqTitle)
-        .replace(/Also Serving These Areas Near \{\{CITY_NAME\}\}/g, copy.nearbyTitle);
 }
 
 const BUSINESS_MODEL_DEFAULT_KEYWORDS = 'AI agency, AI automation agency, AI consulting services, AI agent development, custom AI solutions for businesses, business AI automation';
@@ -722,11 +425,6 @@ const PAGE_METADATA_OVERRIDES = {
         description: 'How Go Expandia uses cookies, analytics, chat, form, and marketing technologies on the website.',
         keywords: 'Go Expandia cookie policy, cookies, analytics, Microsoft Clarity, Google Analytics, HubSpot'
     },
-    'city-locations': {
-        title: 'AI Agency Locations | Go Expandia',
-        description: 'See where we deliver AI agency services including automation, consulting, AI agents, and custom AI solutions.',
-        keywords: 'AI agency locations, AI automation by city, AI consulting by city, AI agent development locations'
-    },
     'service-areas': {
         title: 'Service Areas | AI Agency Locations | Go Expandia',
         description: 'Explore Go Expandia service areas across 50 major cities in Europe, the United States, Canada, and Australia for AI automation, consulting, agents, and custom AI solutions.',
@@ -756,14 +454,7 @@ function toCanonicalPath(outputName) {
 }
 
 function getPageMetadata(templateName, lang = 'en') {
-    // Get base metadata from JSON
-    const baseMeta = metadata[templateName] || metadata['index'];
-
-    // Check for translations in JSON
-    let resolvedMeta = baseMeta;
-    if (baseMeta.translations && baseMeta.translations[lang]) {
-        resolvedMeta = { ...baseMeta, ...baseMeta.translations[lang] };
-    }
+    let resolvedMeta = metadata[templateName] || metadata['index'];
 
     const overrideMeta = PAGE_METADATA_OVERRIDES[templateName];
     if (overrideMeta) {
@@ -845,7 +536,7 @@ function cleanHtmlText(value) {
 }
 
 function slugToReadableTitle(slug) {
-    const acronyms = new Set(['ai', 'it', 'b2b', 'seo', 'crm', 'cpq', 'rag', 'm365', 'revops', 'finops', 'uk', 'us']);
+    const acronyms = new Set(['ai', 'it', 'b2b', 'seo', 'crm', 'cpq', 'rag', 'm365', 'finops', 'uk', 'us']);
     return String(slug || '')
         .split('-')
         .filter(Boolean)
@@ -1027,16 +718,14 @@ function buildBlogListingPage({ outputName, categoryKey = '' }) {
         .replace(/\{\{BLOG_POST_CARDS\}\}/g, renderBlogPostCards(posts))
         .replace(/\{\{BASE_PATH\}\}/g, basePath);
 
-    let nav = navigationEN.replace(/\s*data-i18n="[^"]*"/g, '');
-    let foot = footerEN.replace(/\s*data-i18n="[^"]*"/g, '');
+    let nav = navigationEN;
+    let foot = footerEN;
     nav = nav.replace(/\{\{BASE_PATH\}\}/g, basePath)
         .replace(/\{\{LOGO_PATH\}\}/g, `${basePath}go-expandia-logo.png`)
         .replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html')
-        .replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, 'our-ethical-principles.html')
-        .replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, './');
+        .replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, 'our-ethical-principles.html');
     foot = foot.replace(/\{\{BASE_PATH\}\}/g, basePath)
-        .replace(/\{\{LOGO_PATH\}\}/g, `${basePath}go-expandia-logo.png`)
-        .replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, './');
+        .replace(/\{\{LOGO_PATH\}\}/g, `${basePath}go-expandia-logo.png`);
 
     let html = createHTMLTemplate('en');
     html = html.replace(/\{\{BASE_PATH\}\}/g, basePath)
@@ -1047,10 +736,7 @@ function buildBlogListingPage({ outputName, categoryKey = '' }) {
         .replace(/\{\{PAGE_DESCRIPTION\}\}/g, pageDescription)
         .replace(/\{\{PAGE_KEYWORDS\}\}/g, pageKeywords)
         .replace(/\{\{CANONICAL_URL\}\}/g, canonicalUrl)
-        .replace(/\{\{PAGE_URL_EN\}\}/g, canonicalPath)
-        .replace(/\{\{PAGE_URL_TR\}\}/g, '')
-        .replace(/\{\{PAGE_URL_DE\}\}/g, '')
-        .replace(/\{\{PAGE_URL_FR\}\}/g, '');
+        .replace(/\{\{PAGE_URL_EN\}\}/g, canonicalPath);
 
     const itemList = posts.map((post, index) => ({
         "@type": "ListItem",
@@ -1154,209 +840,7 @@ const SERVICE_CATEGORIES = {
     }
 };
 
-const CITY_MODEL_SERVICES = [
-    {
-        slug: 'ai-opportunity-review',
-        title: '1. AI Opportunity Review',
-        summary: 'Find high-impact automation opportunities using your real operating data.',
-        icon: 'search-check'
-    },
-    {
-        slug: 'ai-plan',
-        title: '2. AI Plan',
-        summary: 'Define priorities, timeline, ownership, and KPI targets before implementation.',
-        icon: 'map'
-    },
-    {
-        slug: 'ai-build-setup',
-        title: '3. Build & Setup',
-        summary: 'Implement AI workflows and integrations that match your operating model.',
-        icon: 'wrench'
-    },
-    {
-        slug: 'ai-training',
-        title: '4. Training',
-        summary: 'Train teams so adoption is consistent and operationally useful.',
-        icon: 'graduation-cap'
-    },
-    {
-        slug: 'ai-support',
-        title: '5. Support',
-        summary: 'Maintain, optimize, and expand the AI system as priorities evolve.',
-        icon: 'life-buoy'
-    }
-];
-
 const SOLUTION_PAGE_BLUEPRINTS = {
-    'managed-it-services': {
-        category: 'it-solutions',
-        hero: {
-            badge: 'Secure. Compliant. Enterprise-grade.',
-            titlePrefix: 'IT Solutions',
-            titleSuffix: 'That Keep Teams Online',
-            description: 'We build secure, uninterrupted, and plug-and-play cloud and network infrastructure for companies that need reliability, protection, and support.',
-            image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80',
-            alt: 'Enterprise IT infrastructure',
-            primaryCtaText: 'Get Free IT Audit',
-            primaryCtaLink: 'contact.html',
-            secondaryCtaText: 'Explore Capabilities',
-            secondaryCtaLink: '#capabilities'
-        },
-        sections: [
-            {
-                type: 'cards',
-                id: 'capabilities',
-                sectionClass: 'bg-base-100',
-                heading: 'Everything Your IT Stack Needs',
-                intro: 'From Microsoft 365 management to disaster recovery, we cover the full operating layer.',
-                gridClass: 'md:grid-cols-2',
-                cards: [
-                    { title: 'Microsoft 365 & Workspace Management', description: 'End-to-end setup, licensing, and administration for your corporate email and office stack.', borderClass: 'border-primary' },
-                    { title: 'Cloud Architecture & Azure Transition', description: 'Migrate on-premise servers to secure and scalable Azure or AWS environments.', borderClass: 'border-secondary' },
-                    { title: 'Endpoint Security', description: 'Centralized protection for corporate laptops, desktops, and mobile devices.', borderClass: 'border-accent' },
-                    { title: 'Advanced Email Security', description: 'Automated defense against phishing, ransomware, spoofing, and spam attacks.', borderClass: 'border-primary' },
-                    { title: 'Zero Trust Architecture', description: 'Strong authentication and access controls that reduce internal and external attack paths.', borderClass: 'border-secondary' },
-                    { title: 'Disaster Recovery & Business Continuity', description: 'Backups and restore workflows designed to recover data in seconds, not days.', borderClass: 'border-neutral' },
-                    { title: 'Continuous Vulnerability Scanning', description: 'Autonomous scanning that identifies security flaws before attackers do.', borderClass: 'border-primary' },
-                    { title: 'GDPR Compliance Infrastructure', description: 'Logging and technical controls aligned with European and local privacy standards.', borderClass: 'border-secondary' },
-                    { title: 'Secure Network & VPN Setup', description: 'High-speed, encrypted connectivity for remote teams and branch offices.', borderClass: 'border-accent' },
-                    { title: '24/7 IT Support & Monitoring', description: 'Remote helpdesk and monitoring that responds instantly when issues appear.', borderClass: 'border-neutral' }
-                ]
-            },
-            {
-                type: 'split',
-                id: 'why-choose-us',
-                sectionClass: 'bg-base-200',
-                heading: 'Infrastructure the Business Can Depend On',
-                bullets: [
-                    { icon: 'shield-check', title: 'Enterprise security by default', description: 'We harden the stack from day one, not after problems show up.' },
-                    { icon: 'clock-3', title: 'Fast deployment', description: 'We move quickly from assessment to implementation so your team can operate without delay.' },
-                    { icon: 'headphones', title: 'Always-on support', description: '24/7 monitoring and a support path that actually resolves issues.' }
-                ],
-                image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
-                alt: 'Managed IT support'
-            }
-        ],
-        cta: {
-            heading: 'Need a secure IT foundation?',
-            description: 'We can design the stack, migrate the systems, and keep them running.',
-            buttonText: 'Book the IT Audit'
-        }
-    },
-    'ai-content-infrastructure': {
-        category: 'ai-solutions',
-        hero: {
-            badge: 'AI automation with data control',
-            titlePrefix: 'AI Solutions',
-            titleSuffix: 'for Enterprise Teams',
-            description: 'We reduce operational headcount costs and speed up decisions by deploying secure AI systems that fit your workflows and data rules.',
-            image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
-            alt: 'Enterprise AI infrastructure',
-            primaryCtaText: 'Build AI Infrastructure',
-            primaryCtaLink: '#infrastructure',
-            secondaryCtaText: 'See AI Automation',
-            secondaryCtaLink: '#automation'
-        },
-        sections: [
-            {
-                type: 'split',
-                id: 'infrastructure',
-                sectionClass: 'bg-white',
-                heading: 'Corporate AI infrastructure, built for your company',
-                intro: 'We set up company-specific AI workspaces, on-premise models, and AI safety layers so your teams can work with confidence.',
-                leftCards: [
-                    { title: 'Corporate AI Infrastructure Setup', description: 'Secure workspaces connected to your workflow.' },
-                    { title: 'AI Data Security Layer', description: 'Stop sensitive data from training external LLMs.', id: 'security-layer' }
-                ],
-                image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80',
-                alt: 'AI operations dashboard'
-            },
-            {
-                type: 'cards',
-                id: 'automation',
-                sectionClass: 'bg-base-100',
-                heading: 'What AI can automate',
-                intro: 'We focus on systems that actually reduce manual work and improve decision speed.',
-                gridClass: 'md:grid-cols-2 lg:grid-cols-3',
-                cards: [
-                    { title: 'Agentic AI Development', description: 'Autonomous agents that execute tasks in ERP and CRM systems under company rules.' },
-                    { title: 'Smart Factory Optimization', description: 'Analyze IoT and SCADA data to reduce idle time and energy waste.' },
-                    { title: 'Sales & Marketing Automation', description: 'Instant lead qualification, proposals, and faster sales-cycle execution.' },
-                    { title: 'Customer Service Automation', description: 'Voice and chat assistants that handle routine dealer and customer questions.' },
-                    { title: 'Data Silo Automation', description: 'Capture PDFs, Excel sheets, and email data into ERP and CRM systems automatically.' },
-                    { title: 'Operational Load Reduction', description: 'Offload repetitive paperwork and manual processing to AI-enabled workflows.' }
-                ]
-            }
-        ],
-        cta: {
-            heading: 'Ready for AI that fits your operations?',
-            description: 'We build secure AI systems that improve speed without sacrificing control.',
-            buttonText: 'Talk to an AI Architect'
-        }
-    },
-    'custom-software-development': {
-        category: 'custom-software',
-        hero: {
-            badge: 'Modern systems for modern teams',
-            titlePrefix: 'Custom Software',
-            titleSuffix: 'Built Around Your Company',
-            description: 'We design and build business software that connects your systems, removes manual work, and gives teams the interfaces they need to move faster.',
-            image: './assets/images/expandia managed operations.png',
-            alt: 'Custom software development',
-            primaryCtaText: 'Discuss Your Build',
-            primaryCtaLink: 'contact.html',
-            secondaryCtaText: 'View Capabilities',
-            secondaryCtaLink: '#capabilities'
-        },
-        sections: [
-            {
-                type: 'cards',
-                id: 'capabilities',
-                sectionClass: 'bg-base-100',
-                heading: 'What We Build',
-                intro: 'Custom software, integrations, dashboards, portals, and internal tools that fit your processes instead of forcing new ones.',
-                gridClass: 'md:grid-cols-2 lg:grid-cols-3',
-                cards: [
-                    { id: 'erp-crm-integrations', title: 'ERP / CRM Integrations', description: 'Connect SAP, Salesforce, Odoo, and other systems into a single reliable workflow.' },
-                    { title: 'Digital Engineering', description: 'Algorithms and engineering software that accelerate prototyping and R&D.' },
-                    { title: 'Dealer & Customer Portals', description: 'Self-service platforms for orders, stock, service requests, and account access.' },
-                    { title: 'Human-in-the-Loop QA', description: 'AI-speed testing with expert review for data, content, and critical workflows.' },
-                    { id: 'legacy-modernization', title: 'Legacy Modernization', description: 'Move old software onto modern cloud architecture without losing data or continuity.' },
-                    { id: 'bi-dashboards', title: 'BI Dashboards & Internal Apps', description: 'Real-time reporting interfaces and operational apps for teams in the field and office.' },
-                    { id: 'internal-applications', title: 'Internal Operational Applications', description: 'Mobile and web apps for technicians, sales teams, and back-office operations.' },
-                    { title: 'Corporate Website Development', description: 'Fast, structured corporate websites built to support marketing and sales operations.' },
-                    { title: 'MVP Development', description: 'Build a working prototype in weeks to validate new business ideas before scaling.' }
-                ]
-            },
-            {
-                type: 'split',
-                id: 'data-architecture',
-                sectionClass: 'bg-base-200',
-                heading: 'Custom Data Architecture',
-                intro: 'Clean, categorize, and structure your company data so future AI integrations can use it safely and effectively.',
-                bullets: [
-                    { icon: 'database', title: 'Database design and normalization', description: 'Model data for maintainability and operational clarity.' },
-                    { icon: 'workflow', title: 'Data cleansing and transformation pipelines', description: 'Prepare fragmented data for reliable use across systems.' },
-                    { icon: 'layout-dashboard', title: 'ERP / CRM-ready schema planning', description: 'Structure tables and relationships around business workflows.' },
-                    { icon: 'shield-check', title: 'AI-ready data governance', description: 'Create the control layer needed for safe future AI use.' }
-                ],
-                panel: {
-                    title: 'Build path',
-                    description: 'We start with your operational pain points, map the workflow, then ship the smallest reliable version first.',
-                    steps: [
-                        'Discovery and process mapping',
-                        'Architecture and integration design',
-                        'Build, test, and launch'
-                    ]
-                }
-            }
-        ],
-        cta: {
-            heading: 'Ready to build the software your team actually needs?',
-            description: 'We can modernize what you have or design the new system from scratch.',
-            buttonText: 'Start the Project'
-        }
-    },
     'ai-opportunity-review': {
         category: 'ai-solutions',
         hero: {
@@ -1533,7 +1017,7 @@ function renderSolutionSplitSection(section) {
                         </div>
                     </div>`).join('');
 
-    const leftCardsHtml = (section.leftCards || []).map((item, index) => `
+    const leftCardsHtml = (section.leftCards || []).map((item) => `
                         <div${item.id ? ` id="${item.id}"` : ''} class="p-6 bg-base-100 rounded-2xl">
                             <h3 class="font-bold mb-2">${item.title}</h3>
                             <p class="text-sm text-base-content/60">${item.description}</p>
@@ -1594,7 +1078,7 @@ function renderSolutionPageCTA(section) {
 }
 
 function renderSolutionProblemsSection(section) {
-    const itemsHtml = section.problems.map((problem, index) => `
+    const itemsHtml = section.problems.map((problem) => `
         <div class="flex items-start gap-4 p-6 bg-white rounded-2xl shadow-sm border border-red-100">
             <div class="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center flex-shrink-0">
                 <i data-lucide="${problem.icon || 'alert-circle'}" class="w-5 h-5 text-red-500"></i>
@@ -2230,153 +1714,7 @@ function parseBenefitText(text) {
     return { title: text.replace(/\*\*/g, ''), description: '' };
 }
 
-const SERVICE_PROBLEMS = {
-    'microsoft-365-workspace-management': [
-        { icon: 'mail-x', title: 'Email chaos across devices', description: 'Your team uses personal emails or outdated inboxes. Licenses are untracked, access is inconsistent.' },
-        { icon: 'key-round', title: 'No control over who has access', description: 'Former employees still have active accounts. Nobody knows the full list of licenses in use.' },
-        { icon: 'cloud-off', title: 'Files stored in the wrong place', description: 'Documents live on local drives, USB sticks, or personal cloud accounts instead of a secure shared space.' }
-    ],
-    'cloud-architecture-azure-transition': [
-        { icon: 'server-crash', title: 'You still run physical servers', description: 'Hardware failures, maintenance costs, and the risk of losing everything if a server dies.' },
-        { icon: 'trending-up', title: 'Scaling is slow and expensive', description: 'Every time your business grows, you have to buy more hardware. It costs too much and takes too long.' },
-        { icon: 'shield-off', title: 'Backups are unreliable', description: 'Your data lives in one place. If something goes wrong, recovery is slow or impossible.' }
-    ],
-    'endpoint-security': [
-        { icon: 'laptop-2', title: 'Devices are unprotected', description: 'Staff laptops and phones have no centralized protection. One infected device can compromise the whole network.' },
-        { icon: 'wifi-off', title: 'Remote workers create blind spots', description: 'When people work from home or travel, you have no visibility into what threats they face.' },
-        { icon: 'eye-off', title: 'No alert when something goes wrong', description: 'You find out about security incidents days or weeks later, long after damage has been done.' }
-    ],
-    'advanced-email-security': [
-        { icon: 'fish', title: 'Phishing emails reach inboxes', description: 'Realistic fake emails trick staff into clicking dangerous links or sharing passwords.' },
-        { icon: 'mail-warning', title: 'Ransomware delivered by email', description: 'Attachments carry malware that can lock your files and demand payment to restore access.' },
-        { icon: 'user-x', title: 'Emails impersonating your company', description: 'Attackers send emails pretending to be you, damaging your reputation with clients and suppliers.' }
-    ],
-    'zero-trust-architecture': [
-        { icon: 'unlock', title: 'Too much internal access', description: 'Employees can access files and systems they do not need for their job, creating unnecessary risk.' },
-        { icon: 'user-check', title: 'Weak or shared passwords', description: 'Accounts rely on simple passwords or one password used across multiple systems.' },
-        { icon: 'network', title: 'No verification for internal traffic', description: 'Once inside the network, anything goes. An attacker or malware spreads without challenge.' }
-    ],
-    'disaster-recovery-business-continuity': [
-        { icon: 'zap-off', title: 'No backup plan for outages', description: 'If power fails, a server crashes, or ransomware hits, your team cannot work and data may be gone.' },
-        { icon: 'clock', title: 'Recovery takes days', description: 'When incidents happen, restoring systems takes so long the business loses significant revenue.' },
-        { icon: 'archive-x', title: 'Backups exist but have never been tested', description: 'You have backups, but nobody knows if they actually work until it is too late.' }
-    ],
-    'continuous-vulnerability-scanning': [
-        { icon: 'binoculars', title: 'You only find problems after an attack', description: 'Security gaps go unnoticed until a hacker exploits them and your data is already compromised.' },
-        { icon: 'git-branch', title: 'New software creates new risks', description: 'Every software update or new tool can introduce vulnerabilities that are invisible without scanning.' },
-        { icon: 'siren', title: 'No early warning system', description: 'There is no automated way to know when something is wrong before it becomes a serious incident.' }
-    ],
-    'gdpr-compliance-infrastructure': [
-        { icon: 'file-warning', title: 'You handle personal data without proper controls', description: 'Customer and employee data is stored in ways that do not meet legal requirements.' },
-        { icon: 'scale', title: 'Risk of fines', description: 'GDPR violations can result in significant penalties. Without the right infrastructure, you are exposed.' },
-        { icon: 'clipboard-x', title: 'No audit trail for data access', description: 'You cannot show regulators or clients who accessed what data or when.' }
-    ],
-    'secure-network-vpn-setup': [
-        { icon: 'wifi', title: 'Staff connect on unsecured networks', description: 'Remote workers use public Wi-Fi or home routers with no protection, exposing company data.' },
-        { icon: 'split', title: 'No separation between office locations', description: 'Branch offices connect directly to the main network with no security boundaries between them.' },
-        { icon: 'lock-open', title: 'Sensitive systems are reachable from anywhere', description: 'Without a VPN, internal tools and servers are exposed to the open internet.' }
-    ],
-    'it-support-monitoring': [
-        { icon: 'phone-off', title: 'Support is slow when things break', description: 'When IT problems happen, nobody responds quickly and your team loses hours waiting for a fix.' },
-        { icon: 'eye-off', title: 'Problems are invisible until users complain', description: 'There is no system watching your infrastructure 24/7 to catch issues before they affect your team.' },
-        { icon: 'headphones', title: 'No dedicated IT contact', description: 'Staff have no clear person or service to call when they need help with a technology problem.' }
-    ],
-    'corporate-ai-infrastructure-setup': [
-        { icon: 'shield-alert', title: 'Staff use public AI tools with company data', description: 'Employees paste sensitive internal documents into ChatGPT and similar tools with no oversight.' },
-        { icon: 'git-merge', title: 'No AI integrated into your workflows', description: 'Your team uses AI as individuals with no connection to your actual business systems or processes.' },
-        { icon: 'building-2', title: 'Generic AI does not know your business', description: 'Public tools have no knowledge of your products, clients, or internal processes, limiting their value.' }
-    ],
-    'on-premise-ai-setup': [
-        { icon: 'cloud-off', title: 'Sensitive data cannot go to the cloud', description: 'Legal, financial, or industrial data that must stay on your servers cannot be used with public AI.' },
-        { icon: 'server', title: 'Regulatory restrictions apply', description: 'Your industry or country has rules about where data can be processed and stored.' },
-        { icon: 'wifi-off', title: 'No internet access in your environment', description: 'Air-gapped facilities or high-security environments cannot connect to external AI services.' }
-    ],
-    'ai-data-security-layer': [
-        { icon: 'leak', title: 'Confidential data leaks into AI models', description: 'When staff use public AI tools, your client data and trade secrets may be used to train external systems.' },
-        { icon: 'user-x', title: 'No policy enforcement', description: 'There is no technical barrier stopping employees from sending sensitive files to external AI platforms.' },
-        { icon: 'eye', title: 'No visibility into AI usage', description: 'You have no way to see what your team is sharing with external AI tools or what risks that creates.' }
-    ],
-    'agentic-ai-development': [
-        { icon: 'repeat', title: 'Repetitive tasks consume your team', description: 'Staff manually update records, send follow-ups, and process the same type of data entry every day.' },
-        { icon: 'layers', title: 'Workflows span too many systems', description: 'A single process touches five different tools and requires manual steps between each one.' },
-        { icon: 'clock', title: 'Delays cost you business', description: 'Slow human-driven processes mean leads go cold, approvals take too long, and deadlines are missed.' }
-    ],
-    'smart-factory-optimization': [
-        { icon: 'activity', title: 'Machines sit idle without warning', description: 'You only know a machine has a problem when it has already stopped or produced defective output.' },
-        { icon: 'zap', title: 'High energy costs with no clear reason', description: 'Energy consumption is high but there is no data to show what is consuming the most or when.' },
-        { icon: 'bar-chart', title: 'Production planning is guesswork', description: 'Scheduling is based on experience rather than real data from your machines and production line.' }
-    ],
-    'sales-marketing-automation': [
-        { icon: 'inbox', title: 'Inbound leads go cold', description: 'Leads come in but nobody follows up fast enough. By the time sales contacts them, the interest is gone.' },
-        { icon: 'file-text', title: 'Proposals take too long to prepare', description: 'Assembling a proposal requires hours of manual work that delays the whole sales cycle.' },
-        { icon: 'funnel', title: 'No clear view of your pipeline', description: 'You have no reliable way to see which leads are progressing and which have been forgotten.' }
-    ],
-    'customer-service-automation': [
-        { icon: 'clock-3', title: 'Customers wait too long for answers', description: 'Simple questions about opening hours, order status, or pricing require a human to respond every time.' },
-        { icon: 'headphones', title: 'Support team overwhelmed with routine queries', description: 'Your team spends most of the day answering the same questions instead of handling complex issues.' },
-        { icon: 'moon', title: 'No support outside business hours', description: 'Customers from other time zones or urgent weekend needs get no response until the next working day.' }
-    ],
-    'data-silos-automation': [
-        { icon: 'database-zap', title: 'Data lives in dozens of different places', description: 'Emails, spreadsheets, PDFs, and forms all contain different pieces of the same data with no connection.' },
-        { icon: 'keyboard', title: 'Staff re-enter data manually', description: 'Information is typed into one system, then retyped into another. Mistakes are common and time is wasted.' },
-        { icon: 'search-x', title: 'No single source of truth', description: 'Different departments have different versions of the same data, causing confusion and wrong decisions.' }
-    ],
-    'operational-load-reduction': [
-        { icon: 'hourglass', title: 'Too much time on low-value work', description: 'Your team spends hours every day on tasks that do not require skill or judgment — just time.' },
-        { icon: 'users', title: 'Headcount grows faster than revenue', description: 'As the business scales, the amount of manual work grows at the same rate as customer volume.' },
-        { icon: 'frown', title: 'Good people are stuck doing bad work', description: 'Talented staff spend most of their time on paperwork and admin instead of the work they were hired to do.' }
-    ],
-    'custom-erp-crm-integrations': [
-        { icon: 'plug-zap', title: 'Your tools do not talk to each other', description: 'Your CRM has one version of customer data, your accounting system has another. Neither is complete.' },
-        { icon: 'copy', title: 'Same data entered in multiple systems', description: 'Every order, client, or invoice is entered by hand into two or three different platforms.' },
-        { icon: 'alert-triangle', title: 'Errors from manual data transfer', description: 'When humans copy data between systems, mistakes happen. Wrong prices, wrong names, wrong addresses.' }
-    ],
-    'digital-engineering-rd-software': [
-        { icon: 'calculator', title: 'Engineers rely on generic tools', description: 'Your team uses Excel or off-the-shelf software to do work that needs a custom calculation or simulation tool.' },
-        { icon: 'timer', title: 'R&D processes are slow', description: 'Design iterations take longer than they should because the tools do not match the specific workflow.' },
-        { icon: 'refresh-ccw', title: 'No way to automate test cycles', description: 'Every test run requires manual setup, making it hard to run experiments quickly at scale.' }
-    ],
-    'b2b-dealer-customer-portals': [
-        { icon: 'phone', title: 'Dealers call for everything', description: 'Dealers and clients contact your team to check prices, availability, and order status multiple times a day.' },
-        { icon: 'folders', title: 'Orders come in by email and phone', description: 'There is no system for clients to place orders themselves, so everything goes through your staff.' },
-        { icon: 'user-cog', title: 'Account management is entirely manual', description: 'Updating customer details, raising invoices, and tracking service requests all happen by hand.' }
-    ],
-    'human-in-the-loop-ai-testing': [
-        { icon: 'bot', title: 'Automated testing misses nuanced errors', description: 'Scripts and tools can check for obvious failures but miss context errors, tone problems, and edge cases.' },
-        { icon: 'files', title: 'QA is a bottleneck before every release', description: 'Manual review of large datasets or content batches takes weeks, delaying projects and launches.' },
-        { icon: 'x-circle', title: 'Mistakes reach clients', description: 'Without a robust review process, errors in data, content, or outputs damage your reputation.' }
-    ],
-    'legacy-system-modernization': [
-        { icon: 'server-crash', title: 'Old software is slow and unreliable', description: 'Your system crashes, runs slowly, and is built on technology that vendors no longer support.' },
-        { icon: 'lock', title: 'You cannot add new features', description: 'The existing system is so rigid that adding even small improvements takes months and huge cost.' },
-        { icon: 'hard-drive', title: 'Data is trapped in an old format', description: 'Years of valuable business data sits inside a system that cannot easily export or connect to modern tools.' }
-    ],
-    'enterprise-bi-dashboards': [
-        { icon: 'table-2', title: 'Reports live in spreadsheets', description: 'Every Monday someone manually pulls numbers from three systems and puts them into a spreadsheet.' },
-        { icon: 'timer', title: 'Decisions wait for data', description: 'Managers ask for a number and get it two days later after someone has had time to run the report.' },
-        { icon: 'puzzle', title: 'Data from different sources does not match', description: 'Sales says one revenue figure, finance says another. Nobody is sure which is correct.' }
-    ],
-    'internal-operational-applications': [
-        { icon: 'clipboard-list', title: 'Field staff use paper', description: 'Technicians, delivery workers, or inspectors fill in paper forms that then have to be re-entered into a computer.' },
-        { icon: 'wifi-off', title: 'No mobile access to company systems', description: 'Staff in the warehouse or on site cannot access the tools they need from their phone or tablet.' },
-        { icon: 'layers-3', title: 'Fragmented tools for internal processes', description: 'Different departments use different apps that do not connect, creating gaps in operational data.' }
-    ],
-    'corporate-website-development': [
-        { icon: 'turtle', title: 'Your website is slow', description: 'Pages take more than 3 seconds to load, losing visitors before they even see what you do.' },
-        { icon: 'search', title: 'Visitors cannot find you', description: 'Your site does not rank in search results for the things your customers are looking for.' },
-        { icon: 'mouse-pointer-x', title: 'No one takes action on your site', description: 'People visit but do not call, fill out a form, or enquire. The site does not convert visitors into leads.' }
-    ],
-    'mvp-development-corporate-spinoff': [
-        { icon: 'piggy-bank', title: 'Afraid to invest before validating', description: 'You have a new business idea but do not want to build the full product before knowing users want it.' },
-        { icon: 'clock', title: 'Time to market is too slow', description: 'By the time a full product is built, the market opportunity may have already moved on.' },
-        { icon: 'git-fork', title: 'Hard to get budget for unproven ideas', description: 'Stakeholders want proof the idea works before committing resources to a full development cycle.' }
-    ],
-    'custom-data-architecture-database-design': [
-        { icon: 'database-zap', title: 'Your data is a mess', description: 'Duplicate records, inconsistent formats, and missing values make your data unreliable for any serious use.' },
-        { icon: 'ban', title: 'AI tools cannot use your data', description: 'You want to use AI but your data is too fragmented and unstructured to feed into any model.' },
-        { icon: 'activity', title: 'Reports are slow and inaccurate', description: 'Queries take too long to run because the database was never designed for how it is actually being used.' }
-    ]
-};
+const SERVICE_PROBLEMS = {};
 
 const SERVICE_PROCESSES = {
     'ai-solutions': [
@@ -2392,15 +1730,15 @@ const SERVICE_PROCESSES = {
 };
 
 function buildGenericServiceBlueprint(service, lang = 'en') {
-    const categoryMeta = getLocalizedCategoryMeta(service.category, lang);
-    const categoryContentKey = service.category === 'custom-software' ? 'custom-software-development' : service.category;
+    const categoryMeta = getCategoryMeta(service.category);
+    const categoryContentKey = service.category;
     const categoryContent = serviceContent[categoryContentKey] && (serviceContent[categoryContentKey][lang] || serviceContent[categoryContentKey].en);
     if (!categoryMeta || !categoryContent) {
         return null;
     }
 
     const heroImageMap = {
-        'ai-solutions': './assets/images/revops_infrastructure_dashboard.png',
+        'ai-solutions': './assets/images/ai-workflow-dashboard.png',
         'custom-software': './assets/images/expandia managed operations.png'
     };
 
@@ -2534,268 +1872,9 @@ function buildGenericServiceBlueprint(service, lang = 'en') {
     };
 }
 
-const LEGACY_LEAD_GEN_AGENCY = ['b2b', 'lead', 'generation', 'agency'].join('-');
-
-const LEGACY_REDIRECT_ONLY_PAGES = new Set([
-    'cold-calling-services',
-    'direct-market-growth',
-    'managed-it-services',
-    'ai-content-infrastructure',
-    'custom-software-development',
-    'services',
-    'case-studies',
-    LEGACY_LEAD_GEN_AGENCY,
-    'crm-management',
-    'fractional-bizdev-team',
-    'inbound-lead-generation',
-    'outbound-lead-generation',
-    'outbound-marketing-agency',
-    'lead-generation-service',
-    'prospect-finding-service',
-    'appointment-setting-service',
-    'cold-email-agency',
-    'sales-protection-services',
-    'outsourced-sales-team-service',
-    'email-automation',
-    'email-marketing-management',
-    'speed-to-lead',
-    'secure-email-workplace-setup',
-    'schutzdienstleistungen',
-    'export-marketing-consulting',
-    'international-market-entry',
-    'distributor-finding',
-    'overseas-sales-consulting',
-    'europe-market-entry',
-    'corporate-digital-gifting',
-    'usa-pr-service',
-    'market-foundation-program',
-    'market-accelerator-program',
-    'part-time-lead-generation-team'
-]);
-
-const LEGACY_REDIRECT_TARGETS = {
-    'managed-it-services': 'solutions',
-    'ai-content-infrastructure': 'solutions',
-    'custom-software-development': 'solutions',
-    'services': 'solutions',
-    'case-studies': 'solutions',
-    [LEGACY_LEAD_GEN_AGENCY]: 'solutions',
-    'crm-management': 'custom-software-development',
-    'fractional-bizdev-team': 'solutions',
-    'inbound-lead-generation': 'solutions',
-    'outbound-lead-generation': 'solutions',
-    'outbound-marketing-agency': 'solutions',
-    'lead-generation-service': 'solutions',
-    'prospect-finding-service': 'solutions',
-    'appointment-setting-service': 'solutions',
-    'cold-email-agency': 'solutions',
-    'sales-protection-services': 'solutions',
-    'outsourced-sales-team-service': 'solutions',
-    'email-automation': 'ai-content-infrastructure',
-    'email-marketing-management': 'ai-content-infrastructure',
-    'speed-to-lead': 'solutions',
-    'secure-email-workplace-setup': 'solutions',
-    'schutzdienstleistungen': 'managed-it-services',
-    'export-marketing-consulting': 'solutions',
-    'international-market-entry': 'solutions',
-    'distributor-finding': 'solutions',
-    'overseas-sales-consulting': 'solutions',
-    'europe-market-entry': 'solutions',
-    'corporate-digital-gifting': 'solutions',
-    'usa-pr-service': 'solutions',
-    'market-foundation-program': 'solutions',
-    'market-accelerator-program': 'solutions',
-    'part-time-lead-generation-team': 'solutions'
-};
-
-const LEGACY_DELETED_SERVICE_PAGES = new Set([
-  "agentic-ai-development",
-  "ai-data-security-layer",
-  "ai-creative-studio",
-  "corporate-ai-infrastructure-setup",
-  "customer-service-automation",
-  "data-silos-automation",
-  "b2b-dealer-customer-portals",
-  "appointment-setting-service",
-  "cold-email-agency",
-  "cold-email-infrastructure",
-  "corporate-digital-gifting",
-  "corporate-website-development",
-  "crm-management",
-  "custom-data-architecture-database-design",
-  "custom-erp-crm-integrations",
-  "distributor-finding",
-  "digital-engineering-rd-software",
-  "email-automation",
-  "email-deliverability-checkup",
-  "email-marketing-management",
-  "email-security",
-  "enterprise-bi-dashboards",
-  "europe-market-entry",
-  "export-marketing-consulting",
-  "fractional-bizdev-team",
-  "growth-programs",
-  "human-in-the-loop-ai-testing",
-  "image-content-engine",
-  "inbound-lead-generation",
-  "internal-operational-applications",
-  "international-market-entry",
-  "legacy-system-modernization",
-  "lead-generation-service",
-  "lead-generation-services",
-  "lost-lead-reactivation",
-  "managed-services",
-  "market-accelerator-program",
-  "market-foundation-program",
-  "markt-beschleuniger-programm",
-  "markt-grundlagen-programm",
-  "mvp-development-corporate-spinoff",
-  "on-premise-ai-setup",
-  "onboarding",
-  "operational-load-reduction",
-  "unternehmens-digitale-geschenke",
-  "outbound-lead-generation",
-  "outbound-marketing-agency",
-  "outreach-software-management",
-  "outsourced-sales-team-service",
-  "overseas-sales-consulting",
-  "part-time-lead-generation-team",
-  "prospect-finding-service",
-  "recruitment",
-  "revops-crm-setup",
-  "revops-infrastructure",
-  "sales-development-agency",
-  "sales-marketing-automation",
-  "sales-protection-services",
-  "schutzdienstleistungen",
-  "secure-email-workplace-setup",
-  "smart-factory-optimization",
-  "speed-to-lead",
-  "teilzeit-bizdev-team",
-  "turnkey-growth-infrastructure",
-  "turnkey-it-infrastructure",
-  "usa-pr-dienst",
-  "usa-pr-service",
-  "verified-lead-list",
-  "video-content-engine",
-  "vulnerability-assessments",
-  "website-care-plans",
-  "website-care-services",
-  "written-content-engine"
-]);
-const LEGACY_DELETED_SERVICE_TARGETS = {
-  "agentic-ai-development": "solutions",
-  "ai-data-security-layer": "solutions",
-  "ai-creative-studio": "ai-content-infrastructure",
-  "appointment-setting-service": "solutions",
-  "b2b-dealer-customer-portals": "solutions",
-  "cold-email-agency": "solutions",
-  "cold-email-infrastructure": "solutions",
-  "corporate-ai-infrastructure-setup": "solutions",
-  "corporate-digital-gifting": "solutions",
-  "corporate-website-development": "solutions",
-  "crm-management": "custom-software-development",
-  "custom-data-architecture-database-design": "solutions",
-  "custom-erp-crm-integrations": "solutions",
-  "customer-service-automation": "solutions",
-  "data-silos-automation": "solutions",
-  "distributor-finding": "solutions",
-  "digital-engineering-rd-software": "solutions",
-  "email-automation": "solutions",
-  "email-deliverability-checkup": "solutions",
-  "email-marketing-management": "solutions",
-  "email-security": "solutions",
-  "enterprise-bi-dashboards": "solutions",
-  "europe-market-entry": "solutions",
-  "export-marketing-consulting": "solutions",
-  "fractional-bizdev-team": "solutions",
-  "growth-programs": "solutions",
-  "image-content-engine": "ai-content-infrastructure",
-  "inbound-lead-generation": "solutions",
-  "internal-operational-applications": "solutions",
-  "international-market-entry": "solutions",
-  "legacy-system-modernization": "solutions",
-  "lead-generation-service": "solutions",
-  "lead-generation-services": "solutions",
-  "lost-lead-reactivation": "ai-content-infrastructure",
-  "managed-services": "solutions",
-  "market-accelerator-program": "solutions",
-  "market-foundation-program": "solutions",
-  "markt-beschleuniger-programm": "solutions",
-  "markt-grundlagen-programm": "solutions",
-  "onboarding": "solutions",
-  "on-premise-ai-setup": "solutions",
-  "operational-load-reduction": "solutions",
-  "unternehmens-digitale-geschenke": "solutions",
-  "outbound-lead-generation": "solutions",
-  "outbound-marketing-agency": "solutions",
-  "outreach-software-management": "solutions",
-  "outsourced-sales-team-service": "solutions",
-  "overseas-sales-consulting": "solutions",
-  "part-time-lead-generation-team": "solutions",
-  "prospect-finding-service": "solutions",
-  "recruitment": "solutions",
-  "revops-crm-setup": "ai-content-infrastructure",
-  "revops-infrastructure": "ai-content-infrastructure",
-  "sales-development-agency": "solutions",
-  "sales-marketing-automation": "solutions",
-  "sales-protection-services": "solutions",
-  "schutzdienstleistungen": "solutions",
-  "secure-email-workplace-setup": "solutions",
-  "smart-factory-optimization": "solutions",
-  "speed-to-lead": "solutions",
-  "teilzeit-bizdev-team": "solutions",
-  "turnkey-growth-infrastructure": "solutions",
-  "turnkey-it-infrastructure": "solutions",
-  "usa-pr-dienst": "solutions",
-  "usa-pr-service": "solutions",
-  "verified-lead-list": "ai-content-infrastructure",
-  "video-content-engine": "ai-content-infrastructure",
-  "vulnerability-assessments": "solutions",
-  "website-care-plans": "solutions",
-  "website-care-services": "solutions",
-  "written-content-engine": "ai-content-infrastructure"
-};
-LEGACY_DELETED_SERVICE_PAGES.forEach((page) => LEGACY_REDIRECT_ONLY_PAGES.add(page));
-Object.entries(LEGACY_DELETED_SERVICE_TARGETS).forEach(([source, target]) => {
-    LEGACY_REDIRECT_TARGETS[source] = target;
-});
-Object.keys(LEGACY_REDIRECT_TARGETS).forEach((source) => {
-    if (source !== 'solutions') {
-        LEGACY_REDIRECT_TARGETS[source] = 'solutions';
-    }
-});
-delete LEGACY_REDIRECT_TARGETS.solutions;
-
-const REACTIVATED_SERVICE_PAGES = [];
-
-REACTIVATED_SERVICE_PAGES.forEach((slug) => {
-    LEGACY_REDIRECT_ONLY_PAGES.delete(slug);
-    delete LEGACY_REDIRECT_TARGETS[slug];
-});
-
-const DECOMMISSIONED_IT_SERVICE_PAGES = [
-    'microsoft-365-workspace-management',
-    'cloud-architecture-azure-transition',
-    'endpoint-security',
-    'advanced-email-security',
-    'zero-trust-architecture',
-    'disaster-recovery-business-continuity',
-    'continuous-vulnerability-scanning',
-    'gdpr-compliance-infrastructure',
-    'secure-network-vpn-setup',
-    'it-support-monitoring'
-];
-
-DECOMMISSIONED_IT_SERVICE_PAGES.forEach((slug) => {
-    LEGACY_REDIRECT_ONLY_PAGES.add(slug);
-    LEGACY_REDIRECT_TARGETS[slug] = 'solutions';
-});
-
-const REMOVED_BLOG_POST_SLUGS = new Set([
-    'b2b-growth-trends-2025',
-    'b2b-growth-trends-2026'
-]);
+const LEGACY_REDIRECT_ONLY_PAGES = new Set();
+const LEGACY_REDIRECT_TARGETS = {};
+const REMOVED_BLOG_POST_SLUGS = new Set();
 
 const RETIRED_CITY_SLUGS = new Set([
     'south-gloucestershire',
@@ -2809,26 +1888,7 @@ const RETIRED_CITY_SLUGS = new Set([
 ]);
 const RETIRED_CITY_REDIRECT_TARGET = 'solutions';
 
-const LEGACY_CATEGORY_ANCHORS = {
-    'managed-it-services': '',
-    'vulnerability-assessments': '',
-    'email-security': '',
-    'website-care-plans': '#custom-software',
-    'website-care-services': '#custom-software',
-    'revops-crm-setup': '#custom-software',
-    'ai-content-infrastructure': '#ai-solutions',
-    'custom-software-development': '#custom-software',
-    'b2b-dealer-customer-portals': '#custom-software',
-    'corporate-website-development': '#custom-software',
-    'custom-data-architecture-database-design': '#custom-software',
-    'custom-erp-crm-integrations': '#custom-software',
-    'digital-engineering-rd-software': '#custom-software',
-    'enterprise-bi-dashboards': '#custom-software',
-    'human-in-the-loop-ai-testing': '#custom-software',
-    'internal-operational-applications': '#custom-software',
-    'legacy-system-modernization': '#custom-software',
-    'mvp-development-corporate-spinoff': '#custom-software'
-};
+const LEGACY_CATEGORY_ANCHORS = {};
 
 function rewriteLegacyHrefTargets(html) {
     return html.replace(/href=(["'])([^"']+)\1/g, (match, quote, url) => {
@@ -2859,23 +1919,7 @@ function rewriteLegacyHrefTargets(html) {
     });
 }
 
-const serviceMapping = {
-    'managed-it-services': 'it-solutions',
-    'email-security': 'it-solutions',
-    'turnkey-it-infrastructure': 'it-solutions',
-    'ai-content-infrastructure': 'ai-solutions',
-    'website-care-plans': 'custom-software',
-    'vulnerability-assessments': 'it-solutions',
-    'revops-crm-setup': 'custom-software',
-    'lost-lead-reactivation': 'ai-solutions',
-    'ai-creative-studio': 'ai-solutions',
-    'recruitment': 'custom-software',
-    'market-foundation-program': 'custom-software',
-    'market-accelerator-program': 'custom-software',
-    'part-time-lead-generation-team': 'custom-software',
-    'lead-generation-service': 'custom-software',
-    'custom-software-development': 'custom-software'
-};
+const serviceMapping = {};
 
 function getActiveStates(templateName) {
     const activeStates = {
@@ -2887,7 +1931,6 @@ function getActiveStates(templateName) {
 
         'vision-mission': { 'COMPANY_ACTIVE': 'text-primary', 'VISION_MOBILE_ACTIVE': 'class="font-semibold text-primary"', 'VISION_ITEM_ACTIVE': 'bg-primary/10 border border-primary/20' },
         'our-ethical-principles': { 'COMPANY_ACTIVE': 'text-primary', 'ETHICS_MOBILE_ACTIVE': 'class="font-semibold text-primary"', 'ETHICS_ITEM_ACTIVE': 'bg-primary/10 border border-primary/20' },
-        'city-locations': { 'SOLUTIONS_ACTIVE': 'text-primary' },
         'service-areas': { 'COMPANY_ACTIVE': 'text-primary' },
         'london-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' },
         'paris-ai-agency': { 'COMPANY_ACTIVE': 'text-primary' },
@@ -2964,18 +2007,13 @@ function buildPage(templateName, outputName, lang = 'en') {
     }
 
     const templatePath = `templates/${templateName}.html`;
-    let filePath = templatePath;
     if (!fs.existsSync(templatePath)) {
-        const fallbackPath = `templates/${templateName}.html`;
-        if (!fs.existsSync(fallbackPath)) {
-            console.warn(`Template not found: ${templatePath}`);
-            return;
-        }
-        filePath = fallbackPath;
+        console.warn(`Template not found: ${templatePath}`);
+        return;
     }
 
-    const rawTemplateContent = fs.readFileSync(filePath, 'utf8');
-    const res = extractAndRemoveSchemas(rawTemplateContent, filePath);
+    const rawTemplateContent = fs.readFileSync(templatePath, 'utf8');
+    const res = extractAndRemoveSchemas(rawTemplateContent, templatePath);
     let content = res.cleanContent;
     const extractedSchemas = res.extractedSchemas;
 
@@ -3166,11 +2204,6 @@ function buildPage(templateName, outputName, lang = 'en') {
 </head>`);
     }
 
-    // Clean up data-i18n attributes as we handle translation on build
-    content = content.replace(/\s*data-i18n="[^"]*"/g, '');
-    pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
-    pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
-
     // Calculate dynamic base path based on output depth
     const depth = outputName.split('/').length - 1;
     let relativePrefix = '';
@@ -3186,16 +2219,13 @@ function buildPage(templateName, outputName, lang = 'en') {
 
     const logoPath = basePath + 'go-expandia-logo.png';
     htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
-    const turkishServicesPath = './';
 
     pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, navPath);
     pageNavigation = pageNavigation.replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html');
     pageNavigation = pageNavigation.replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, 'our-ethical-principles.html');
     pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
-    pageNavigation = pageNavigation.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
     pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, navPath);
     pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
-    pageFooter = pageFooter.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
     content = content.replace(/\{\{BASE_PATH\}\}/g, basePath);
 
     // Flag logic
@@ -3306,75 +2336,7 @@ function buildPage(templateName, outputName, lang = 'en') {
     // Hreflang Tags in HEAD
     const pageUrlEn = outputName === 'index' ? '' : `${outputName}.html`;
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, pageUrlEn);
-    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, '');
-    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, '');
-    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, '');
 
-
-    // Dynamic Blog Index Injection
-    if (templateName === 'blog-index') {
-        const newArticles = blogTopics.map(topic => ({
-            title: topic.title['en'],
-            tags: `${topic.serviceId} business b2b`,
-            url: `${topic.slug}.html`,
-            excerpt: topic.title['en'], // Simplified excerpt
-            badge: "New",
-            readTime: "5 min read"
-        }));
-
-        const featuredPlaybookUrls = new Set([
-            'ai-governance-operating-model-playbook.html',
-            'ai-service-desk-copilot-playbook.html',
-            'ai-change-management-adoption-playbook.html',
-            'enterprise-rag-knowledge-ops-playbook.html',
-            'ai-finops-cost-control-playbook.html',
-            'zero-trust-identity-management-playbook.html',
-            'incident-response-automation-itops-playbook.html',
-            'microsoft-365-device-security-playbook.html',
-            'it-service-management-modernization-playbook.html'
-        ]);
-
-        const isLeadGenerationArticle = (article) => {
-            const haystack = `${article.title || ''} ${article.url || ''} ${article.tags || ''} ${article.excerpt || ''}`.toLowerCase();
-            return (
-                haystack.includes('lead generation') ||
-                haystack.includes('lead-gen') ||
-                haystack.includes('lead scoring') ||
-                haystack.includes('speed-to-lead') ||
-                haystack.includes('pipeline generation')
-            );
-        };
-
-        const existingBlogTemplateSlugs = new Set(
-            fs.existsSync('templates/blog')
-                ? fs.readdirSync('templates/blog')
-                    .filter(file => file.endsWith('.html'))
-                    .map(file => file)
-                : []
-        );
-        const removedBlogPostFiles = new Set([...REMOVED_BLOG_POST_SLUGS].map(slug => `${slug}.html`));
-
-        // Keep new AI/IT management playbooks first and remove lead-generation focused posts.
-        const filteredNewArticles = newArticles.filter(
-            article => (
-                !isLeadGenerationArticle(article) &&
-                !featuredPlaybookUrls.has(article.url) &&
-                !removedBlogPostFiles.has(article.url) &&
-                article.url &&
-                existingBlogTemplateSlugs.has(article.url)
-            )
-        );
-        // Prevent 404 cards in blog index by only listing legacy entries that still have a real blog template.
-        const filteredLegacyArticles = legacyBlogPosts.filter(article =>
-            !isLeadGenerationArticle(article) &&
-            !removedBlogPostFiles.has(article.url) &&
-            article.url &&
-            existingBlogTemplateSlugs.has(article.url)
-        );
-        const combinedArticles = [...filteredNewArticles, ...filteredLegacyArticles];
-
-        htmlTemplate = htmlTemplate.replace('{{BLOG_ARTICLES_JSON}}', JSON.stringify(combinedArticles));
-    }
 
     htmlTemplate = rewriteLegacyHrefTargets(htmlTemplate);
 
@@ -3415,10 +2377,6 @@ function buildSolutionPage(templateName, outputName, lang = 'en') {
     let pageNavigation = navigationEN;
     let pageFooter = footerEN;
 
-    content = content.replace(/\s*data-i18n="[^"]*"/g, '');
-    pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
-    pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
-
     const depth = outputName.split('/').length - 1;
     let relativePrefix = '';
     for (let i = 0; i < depth; i++) {
@@ -3434,10 +2392,8 @@ function buildSolutionPage(templateName, outputName, lang = 'en') {
     pageNavigation = pageNavigation.replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html');
     pageNavigation = pageNavigation.replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, 'our-ethical-principles.html');
     pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
-    pageNavigation = pageNavigation.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, './');
     pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, navPath);
     pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
-    pageFooter = pageFooter.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, './');
     content = content.replace(/\{\{BASE_PATH\}\}/g, basePath);
 
     content = content
@@ -3528,9 +2484,6 @@ function buildSolutionPage(templateName, outputName, lang = 'en') {
 
     htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, JSON.stringify(finalSchemas, null, 2));
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, `${outputName}.html`);
-    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, '');
-    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, '');
-    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, '');
     htmlTemplate = clearUnresolvedTemplateTokens(htmlTemplate);
 
     htmlTemplate = rewriteLegacyHrefTargets(htmlTemplate);
@@ -3573,10 +2526,6 @@ function buildBlogPost(templateName, outputName) {
     let content = res.cleanContent;
     const extractedSchemas = res.extractedSchemas;
 
-    // Clean i18n
-    nav = nav.replace(/\s*data-i18n="[^"]*"/g, '');
-    foot = foot.replace(/\s*data-i18n="[^"]*"/g, '');
-
     // Apply navPath to nav/foot BEFORE merging
     nav = nav.replace(/\{\{BASE_PATH\}\}/g, navPath);
     foot = foot.replace(/\{\{BASE_PATH\}\}/g, navPath);
@@ -3584,10 +2533,6 @@ function buildBlogPost(templateName, outputName) {
     // Process includes
     content = content.replace('{{HEADER_INCLUDE}}', nav);
     content = content.replace('{{FOOTER_INCLUDE}}', foot);
-
-    // Turkish services path
-    const turkishServicesPath = './';
-    content = content.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
 
     // Flag logic
     const currentFlag = 'EN';
@@ -3713,12 +2658,6 @@ function buildBlogPost(templateName, outputName) {
         '<div class="card bg-base-200 hover:shadow-lg transition-shadow">\n                <div class="card-body">\n                    <span class="badge badge-primary mb-2">Article</span>\n                    <h4 class="card-title'
     );
 
-    // Fix badge "Low" to proper category
-    content = content.replace(
-        /<span class="badge badge-secondary mb-2">Low<\/span>/g,
-        '<span class="badge badge-secondary mb-2">Lead Generation</span>'
-    );
-
     // Normalize stray template/markdown artifacts if present.
     content = content
         .replace(/\{\{CITY_NAME\}\}/g, 'your market')
@@ -3787,960 +2726,15 @@ function buildBlogPosts() {
     console.log(`✅ Total Blog Posts Built: ${totalBuilt}`);
 }
 
-// Helper: Haversine distance
-function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
-    var R = 6371; // Radius of the earth in km
-    var dLat = deg2rad(lat2 - lat1);
-    var dLon = deg2rad(lon2 - lon1);
-    var a =
-        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-        Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
-        Math.sin(dLon / 2) * Math.sin(dLon / 2);
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    var d = R * c; // Distance in km
-    return d;
-}
-
-function deg2rad(deg) {
-    return deg * (Math.PI / 180);
-}
-
-function sanitizeLandmark(landmark, cityName) {
-    const value = (landmark || '').trim();
-    const generic = new Set(['City Center', 'Central Business District', 'the city center', 'City centre']);
-    if (!value || generic.has(value)) {
-        return `${cityName} business hub`;
-    }
-    return value;
-}
-
-function buildServiceFocusedContent(serviceName) {
-    const serviceLower = serviceName.toLowerCase();
-    return {
-        intro: [
-            `Businesses in {{CITY_NAME}} need ${serviceLower} that is measurable, fast to deploy, and aligned with local buying behavior in {{COUNTRY_NAME}}.`,
-            `Our team builds and manages a practical ${serviceLower} system so your team can focus on pipeline, delivery, and client growth instead of tool friction.`,
-            `We tailor implementation, reporting, and optimization for {{CITY_NAME}} so you can scale with predictable execution and clear ROI.`
-        ],
-        pain_points: [
-            `Inconsistent execution and unclear ownership across ${serviceLower} workflows in {{CITY_NAME}}.`,
-            `Low visibility into performance signals, making it hard to improve conversion outcomes in {{COUNTRY_NAME}}.`,
-            `Too much manual work and fragmented tooling that slows growth and increases operating cost.`
-        ],
-        benefits: [
-            `**Operational Clarity:** We map and standardize your ${serviceLower} workflow for consistent delivery in {{CITY_NAME}}.`,
-            `**Faster Iteration:** Continuous testing and optimization improves quality, speed, and conversion performance over time.`,
-            `**Measurable Results:** Clear dashboards and reporting tie activity to pipeline and revenue outcomes in {{COUNTRY_NAME}}.`
-        ],
-        faq: [
-            {
-                q: `What is included in your ${serviceName} setup for {{CITY_NAME}} businesses?`,
-                a: `We provide setup, implementation, workflow design, KPI tracking, and ongoing optimization tailored to your team, market, and goals in {{CITY_NAME}}.`
-            },
-            {
-                q: `How long does it take to launch and see first results in {{CITY_NAME}}?`,
-                a: `Most clients launch the core system quickly, then see progressive improvement as we optimize targeting, messaging, and execution quality.`
-            },
-            {
-                q: `Can you adapt the program for our sector in {{COUNTRY_NAME}}?`,
-                a: `Yes. We tailor strategy, operations, and reporting to your ICP, sales motion, and compliance needs in {{COUNTRY_NAME}}.`
-            }
-        ]
-    };
-}
-
-function getServiceContentFor(service, lang = 'en') {
-    const byId = serviceContent[service.id] && serviceContent[service.id][lang];
-    if (byId) return byId;
-
-    const categoryKey = service.category || serviceMapping[service.id];
-    const byCategory = categoryKey && serviceContent[categoryKey] && serviceContent[categoryKey][lang];
-    if (byCategory) return byCategory;
-
-    const categoryFallback = categoryKey && serviceContent[categoryKey] && serviceContent[categoryKey]['en'];
-    if (categoryFallback) return categoryFallback;
-
-    return null;
-}
-
-function normalizeServiceContent(service, contentData) {
-    if (!contentData) return buildServiceFocusedContent(service.name);
-    return contentData;
-}
-
 
 function clearUnresolvedTemplateTokens(html) {
     return html.replace(/\{\{[^{}]+\}\}/g, '');
 }
 
-function removeEmptyNearbySection(content) {
-    return content.replace(/\n<!-- Nearby Cities -->[\s\S]*?<\/section>\s*/g, '\n');
-}
 
 
+const PRIORITY_SERVICE_CITY_PATHS = new Set();
 
-// Whitelist for high-potential Service x City pages (derived from SEO opportunity list)
-// Note: non-service pages (blog/contact/solutions/etc.) are handled by other build steps.
-const PRIORITY_SERVICE_CITY_PATHS = new Set([
-    'microsoft-365-workspace-management-london',
-    'cloud-architecture-azure-transition-zurich',
-    'endpoint-security-new-york',
-    'advanced-email-security-dubai',
-    'zero-trust-architecture-berlin',
-    'disaster-recovery-business-continuity-istanbul',
-    'continuous-vulnerability-scanning-frankfurt',
-    'gdpr-compliance-infrastructure-amsterdam',
-    'secure-network-vpn-setup-barcelona',
-    'it-support-monitoring-chicago',
-    'corporate-ai-infrastructure-setup-london',
-    'on-premise-ai-setup-zurich',
-    'ai-data-security-layer-berlin',
-    'agentic-ai-development-paris',
-    'smart-factory-optimization-stuttgart',
-    'sales-marketing-automation-new-york',
-    'customer-service-automation-dallas',
-    'data-silos-automation-madrid',
-    'operational-load-reduction-amsterdam',
-    'custom-erp-crm-integrations-london',
-    'digital-engineering-rd-software-zurich',
-    'b2b-dealer-customer-portals-paris',
-    'human-in-the-loop-ai-testing-berlin',
-    'legacy-system-modernization-chicago',
-    'enterprise-bi-dashboards-new-york',
-    'internal-operational-applications-istanbul',
-    'corporate-website-development-amsterdam',
-    'mvp-development-corporate-spinoff-dubai',
-    'custom-data-architecture-database-design-frankfurt'
-]);
-
-// -------------------------------------------------------------------------
-// NEW: Build Service x City Pages (Multi-Language)
-// -------------------------------------------------------------------------
-function buildServiceCityPages() {
-    console.log('\n🏗️  Building Service x City Landing Pages (EN Only)...');
-
-    // Read the mega template
-    const templateContent = fs.readFileSync('templates/city-landing.html', 'utf8');
-    let pageCount = 0;
-    const languages = ['en'];
-
-    languages.forEach(lang => {
-        services.forEach(service => {
-            // Get content for specific language, fallback to category content or EN if missing
-            const rawContentData = getServiceContentFor(service, lang);
-            const contentData = normalizeServiceContent(service, rawContentData);
-
-            if (!contentData) {
-                console.warn(`No content found for service ID: ${service.id} (Lang: ${lang})`);
-                return;
-            }
-
-            cities.forEach(cityData => {
-                const city = cityData.city;
-                const country = cityData.country;
-
-                // Replace dynamic parts in slug
-                let slug = service.slug_pattern.replace('{{CITY_SLUG}}', normalizeCitySlug(cityData.slug));
-
-                const categoryMeta = getLocalizedCategoryMeta(service.category, lang);
-
-                // Determine title/desc based on language
-                let titleTemplate = service.title_template;
-                let descTemplate = service.description_template;
-
-                if (lang !== 'en' && service.translations && service.translations[lang]) {
-                    titleTemplate = service.translations[lang].title_template;
-                    descTemplate = service.translations[lang].description_template;
-                }
-
-                // Replace dynamic parts in title/desc
-                const title = titleTemplate
-                    .replace('{{CITY_NAME}}', city)
-                    .replace('{{COUNTRY_NAME}}', country);
-
-                const description = descTemplate
-                    .replace('{{CITY_NAME}}', city)
-                    .replace('{{COUNTRY_NAME}}', country);
-
-                // Construct Content Blocks
-                const intro = contentData.intro.map(p => `<p>${p.replace(/\{\{CITY_NAME\}\}/g, city).replace(/\{\{COUNTRY_NAME\}\}/g, country)}</p>`).join('\n');
-
-                const painPoints = contentData.pain_points.map(point => `
-                    <div class="flex gap-3 items-start">
-                        <span class="text-error text-xl">⚠️</span>
-                        <p>${point.replace(/\{\{CITY_NAME\}\}/g, city).replace(/\{\{COUNTRY_NAME\}\}/g, country)}</p>
-                    </div>
-                `).join('');
-
-                const benefits = contentData.benefits.map(benefit => {
-                    // Split bold text
-                    const parts = benefit.split('**');
-                    if (parts.length === 3) {
-                        return `
-                        <div class="flex gap-3">
-                            <span class="text-secondary text-xl">✓</span>
-                            <p><strong class="text-secondary-content">${parts[1]}</strong> ${parts[2].replace(/\{\{CITY_NAME\}\}/g, city).replace(/\{\{COUNTRY_NAME\}\}/g, country)}</p>
-                        </div>`;
-                    }
-                    return `<p>${benefit.replace(/\{\{CITY_NAME\}\}/g, city).replace(/\{\{COUNTRY_NAME\}\}/g, country)}</p>`;
-                }).join('');
-
-                const faq = contentData.faq.map(item => `
-                    <div class="collapse collapse-plus bg-base-200">
-                        <input type="checkbox" /> 
-                        <div class="collapse-title text-xl font-medium">
-                            ${item.q.replace(/\{\{CITY_NAME\}\}/g, city).replace(/\{\{COUNTRY_NAME\}\}/g, country)}
-                        </div>
-                        <div class="collapse-content"> 
-                            <p>${item.a.replace(/\{\{CITY_NAME\}\}/g, city).replace(/\{\{COUNTRY_NAME\}\}/g, country)}</p>
-                        </div>
-                    </div>
-                `).join('');
-
-                // Calculate Nearby Cities (same logic as before)
-                const nearby = cities
-                    .filter(c => c.slug !== cityData.slug && c.lat && c.lng && cityData.lat && cityData.lng)
-                    .map(c => ({
-                        ...c,
-                        distance: getDistanceFromLatLonInKm(cityData.lat, cityData.lng, c.lat, c.lng)
-                    }))
-                    .sort((a, b) => a.distance - b.distance)
-                    .slice(0, 5);
-
-                const nearbyLinks = nearby.map(c => {
-                    const nearbySlug = service.slug_pattern.replace('{{CITY_SLUG}}', normalizeCitySlug(c.slug));
-                    return `<a href="./${nearbySlug}.html" class="link link-hover hover:text-primary transition-colors">${c.city}</a>`;
-                }).join(' • ');
-
-                const generatedPath = slug;
-                if (!PRIORITY_SERVICE_CITY_PATHS.has(generatedPath)) {
-                    return;
-                }
-
-                // Build HTML
-                let htmlTemplate = createHTMLTemplate(lang);
-                const res = extractAndRemoveSchemas(templateContent, `city-landing-template`);
-                let content = res.cleanContent;
-                const extractedSchemas = res.extractedSchemas;
-                const basePath = './';
-
-                // Replacements
-                content = content.replace(/\{\{SERVICE_NAME\}\}/g, service.name);
-                content = content.replace(/\{\{SERVICE_ICON\}\}/g, service.icon);
-                content = content.replace(/\{\{CITY_NAME\}\}/g, city);
-                content = content.replace(/\{\{COUNTRY_NAME\}\}/g, country);
-                content = content.replace(/\{\{BASE_PATH\}\}/g, basePath);
-                content = content.replace('{{INTRO_TEXT}}', intro);
-                content = content.replace('{{PAIN_POINTS_LIST}}', painPoints);
-                content = content.replace('{{BENEFITS_LIST}}', benefits);
-                content = content.replace('{{FAQ_LIST}}', faq);
-                content = content.replace('{{NEARBY_CITIES_LINKS}}', nearbyLinks);
-                content = content.replace(/\{\{SERVICE_CATEGORY\}\}/g, categoryMeta.label);
-                content = content.replace(/\{\{SERVICE_CATEGORY_PROMISE\}\}/g, categoryMeta.promise);
-                content = content.replace(/\{\{CITY_POPULATION\}\}/g, 'established');
-                content = content.replace(/\{\{CITY_LANDMARK\}\}/g, sanitizeLandmark(cityData.landmark, city));
-
-                if (!nearbyLinks.trim()) {
-                    content = content.replace(/\n<!-- Nearby Cities CTA -->[\s\S]*?<\/section>\n\n/, '\n');
-                }
-                content = replaceServiceCityCopy(content, lang);
-
-                // Navigation/Footer
-                let pageNavigation = navigationEN;
-                let pageFooter = footerEN;
-
-                // Clean i18n
-                pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
-                pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
-
-                const logoPath = 'go-expandia-logo.png';
-                htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
-                const turkishServicesPath = './';
-
-                pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
-                pageNavigation = pageNavigation.replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html');
-                pageNavigation = pageNavigation.replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, 'our-ethical-principles.html');
-                pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
-                pageNavigation = pageNavigation.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
-                pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
-                pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
-                pageFooter = pageFooter.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
-
-                // Flag logic
-                pageNavigation = pageNavigation.replace(/<span id="current-flag">.*?<\/span>/g, `<span id="current-flag">EN</span>`);
-
-                htmlTemplate = htmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
-                htmlTemplate = htmlTemplate.replace('{{MAIN_CONTENT}}', content);
-                htmlTemplate = htmlTemplate.replace('{{FOOTER}}', pageFooter);
-
-                // Metadata & Schema
-                htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, title);
-                htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, description);
-                htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, `${service.name} ${city}, ${categoryMeta.label} ${city}, ${country} enterprise solutions`);
-
-                const canonicalSlug = `${slug}.html`;
-                htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.goexpandia.com/${canonicalSlug}`);
-
-                // Hreflang logic
-                htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, `${slug}.html`);
-                htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, ``);
-                htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, ``);
-                htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, ``);
-
-                const serviceSchema = {
-                    "@context": "https://schema.org",
-                    "@type": "Service",
-                    "name": `${service.name} in ${city}`,
-                    "provider": "Go Expandia",
-                    "areaServed": {
-                        "@type": "City",
-                        "name": city,
-                        "address": {
-                            "@type": "PostalAddress",
-                            "addressCountry": country
-                        }
-                    },
-                    "description": description
-                };
-
-                const faqSchema = {
-                    "@context": "https://schema.org",
-                    "@type": "FAQPage",
-                    "mainEntity": contentData.faq.map(item => ({
-                        "@type": "Question",
-                        "name": item.q.replace(/\{\{CITY_NAME\}\}/g, city).replace(/\{\{COUNTRY_NAME\}\}/g, country),
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": item.a.replace(/\{\{CITY_NAME\}\}/g, city).replace(/\{\{COUNTRY_NAME\}\}/g, country)
-                        }
-                    }))
-                };
-
-                // Schema - Aggregated
-                const orgSchema = generateOrganizationSchema();
-                let finalSchemas = [orgSchema, serviceSchema, faqSchema];
-
-                extractedSchemas.forEach(s => {
-                    if (s["@type"] === "Organization" || s["@type"] === "Service" || s["@type"] === "FAQPage") return;
-                    finalSchemas.push(s);
-                });
-
-                htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, JSON.stringify(finalSchemas, null, 2));
-
-                // Write File
-                const outputPath = `${slug}.html`;
-
-                // Ensure dir exists
-                const dir = path.dirname(outputPath);
-                if (!fs.existsSync(dir)) {
-                    fs.mkdirSync(dir, { recursive: true });
-                }
-
-                fs.writeFileSync(outputPath, htmlTemplate, 'utf8');
-                pageCount++;
-            });
-        });
-    });
-    console.log(`✅ Built ${pageCount} Service x City pages.`);
-}
-
-// -------------------------------------------------------------------------
-// NEW: Build City Landing Pages (Refactored) - B2B/Corporate/Manufacturing Focus
-// -------------------------------------------------------------------------
-
-// Region-based content for unique city pages
-const regionContent = {
-    'DACH': {
-        targetHeadline: 'Corporate Enterprises & Industrial Manufacturers',
-        industries: ['Industrial Manufacturing', 'Engineering Companies', 'Corporate Enterprises', 'Automotive Suppliers', 'Machinery & Equipment', 'Chemicals & Materials', 'Logistics & Supply Chain', 'Business Services', 'Wholesale & Distribution', 'Construction & Infrastructure'],
-        insights: [
-            { title: 'Industrial Precision', text: 'Our approach matches the DACH region\'s emphasis on quality and precision. We identify decision-makers who value long-term partnerships over transactional relationships.' },
-            { title: 'Cross-Border Expertise', text: 'Navigate the German, Austrian, and Swiss markets effectively with campaigns tailored to local business cultures and procurement processes.' },
-            { title: 'Mid-Market Focus', text: 'Reach the Mittelstand—the backbone of DACH manufacturing. Our campaigns connect you with privately-owned, export-oriented companies.' },
-            { title: 'Multi-Language Campaigns', text: 'German-language outreach combined with English for international divisions. We adapt messaging to regional business expectations.' }
-        ],
-        marketStats: [
-            { stat: '3M+', desc: 'B2B companies across DACH region' },
-            { stat: '€2.1T', desc: 'Combined manufacturing output' },
-            { stat: '68%', desc: 'Companies actively seeking suppliers' }
-        ],
-        marketContext: 'The DACH region represents one of Europe\'s most mature B2B markets, with strong demand for quality-focused suppliers and service providers.',
-        serviceIntro: 'Our B2B lead generation methodology is designed for the complex, relationship-driven sales cycles typical of corporate and industrial buyers across Germany, Austria, and Switzerland.'
-    },
-    'Western Europe': {
-        targetHeadline: 'B2B Companies & Corporate Enterprises',
-        industries: ['Corporate Services', 'Manufacturing Companies', 'Business Consulting', 'Logistics & Freight', 'Industrial Equipment', 'Construction & Engineering', 'Telecommunications', 'Energy & Utilities', 'Retail & Wholesale', 'Professional Services'],
-        insights: [
-            { title: 'Enterprise Connections', text: 'Access decision-makers at corporate headquarters and regional offices across Western European markets.' },
-            { title: 'Cross-Border Campaigns', text: 'Expand from one market to multiple countries with campaigns that respect local business practices and languages.' },
-            { title: 'Procurement Expertise', text: 'We understand formal procurement processes and help you position effectively in competitive tender situations.' },
-            { title: 'Quality Over Quantity', text: 'Focus on qualified meetings with buyers who have budget and authority, not just contact lists.' }
-        ],
-        marketStats: [
-            { stat: '5M+', desc: 'Active B2B enterprises' },
-            { stat: '€4.2T', desc: 'Annual B2B commerce value' },
-            { stat: '72%', desc: 'Digital procurement adoption' }
-        ],
-        marketContext: 'Western Europe offers mature B2B markets with sophisticated buyers who expect professional, value-driven sales approaches and clear ROI.',
-        serviceIntro: 'From the UK to the Benelux, our lead generation services help you connect with corporate buyers and industrial decision-makers across Western Europe\'s diverse markets.'
-    },
-    'Scandinavia': {
-        targetHeadline: 'Industrial Companies & Corporate Groups',
-        industries: ['Maritime & Shipping', 'Energy & Clean Tech', 'Industrial Manufacturing', 'Engineering Services', 'Forest & Paper Products', 'Corporate Enterprises', 'Telecommunications', 'Construction & Real Estate', 'Business Services', 'Healthcare Industry'],
-        insights: [
-            { title: 'Sustainability Focus', text: 'Scandinavian buyers prioritize sustainable practices. We help position your offering around long-term value and environmental responsibility.' },
-            { title: 'Direct Communication', text: 'Nordic business culture values straightforward communication. Our outreach reflects this—clear, honest, and results-oriented.' },
-            { title: 'Innovation-Driven', text: 'Connect with companies at the forefront of industrial innovation, from clean energy to advanced manufacturing.' },
-            { title: 'Regional Expansion', text: 'Use Scandinavia as a springboard to Nordic and Baltic markets with integrated campaign strategies.' }
-        ],
-        marketStats: [
-            { stat: '800K+', desc: 'B2B companies in the Nordics' },
-            { stat: '€890B', desc: 'Combined GDP' },
-            { stat: '85%', desc: 'Digital business adoption' }
-        ],
-        marketContext: 'The Nordic region combines industrial heritage with technology leadership, creating opportunities for B2B providers who can deliver innovation and reliability.',
-        serviceIntro: 'Reach industrial manufacturers, corporate groups, and service providers across Norway, Sweden, Denmark, and Finland with campaigns tailored to Nordic business values.'
-    },
-    'Turkey': {
-        targetHeadline: 'Manufacturing Companies & Corporate Groups',
-        industries: ['Manufacturing & Production', 'Textile & Apparel', 'Automotive Industry', 'Construction & Building Materials', 'Food & Beverage Production', 'Corporate Enterprises', 'Logistics & Export', 'Industrial Machinery', 'Wholesale & Trading', 'Business Services'],
-        insights: [
-            { title: 'Manufacturing Hub', text: 'Turkey is a major manufacturing center for Europe and the Middle East. Connect with producers seeking international partners and suppliers.' },
-            { title: 'Export-Oriented', text: 'Reach companies actively exporting to Europe, MENA, and beyond—businesses that understand international B2B relationships.' },
-            { title: 'Growing Corporate Sector', text: 'Turkish corporate groups are expanding rapidly. Position your services to support their growth ambitions.' },
-            { title: 'Local & International', text: 'Campaigns in Turkish and English to reach both domestic industrial players and internationally-focused enterprises.' }
-        ],
-        marketStats: [
-            { stat: '1.2M+', desc: 'Active industrial companies' },
-            { stat: '€210B', desc: 'Annual manufacturing output' },
-            { stat: '45%', desc: 'Export-oriented businesses' }
-        ],
-        marketContext: 'Turkey\'s strategic position bridges European and Asian markets, with a strong manufacturing base and growing corporate sector seeking B2B partnerships.',
-        serviceIntro: 'Connect with Turkish manufacturers, corporate groups, and export-oriented businesses through campaigns that understand the local business landscape.'
-    },
-    'Eastern Europe': {
-        targetHeadline: 'Industrial Manufacturers & Growing Enterprises',
-        industries: ['Manufacturing & Assembly', 'Automotive Suppliers', 'IT & Business Services', 'Logistics & Warehousing', 'Construction & Development', 'Industrial Equipment', 'Corporate Services', 'Wholesale & Distribution', 'Energy & Utilities', 'Agriculture & Food Processing'],
-        insights: [
-            { title: 'Manufacturing Growth', text: 'Eastern Europe has emerged as a manufacturing powerhouse. Connect with companies expanding production and seeking suppliers.' },
-            { title: 'Cost-Competitive Quality', text: 'Reach enterprises that combine competitive costs with European quality standards—attractive partners for Western companies.' },
-            { title: 'EU Integration', text: 'Companies in EU member states follow familiar procurement practices, making cross-border B2B relationships straightforward.' },
-            { title: 'Nearshoring Hub', text: 'As companies nearshore operations to Eastern Europe, new B2B opportunities emerge across the supply chain.' }
-        ],
-        marketStats: [
-            { stat: '2M+', desc: 'B2B enterprises' },
-            { stat: '€580B', desc: 'Regional GDP' },
-            { stat: '7.2%', desc: 'Average growth rate' }
-        ],
-        marketContext: 'Eastern Europe continues to grow as a B2B hub, with expanding manufacturing capacity and increasingly sophisticated corporate buyers.',
-        serviceIntro: 'Tap into Eastern Europe\'s growing industrial base and corporate sector with lead generation campaigns designed for emerging market dynamics.'
-    },
-    'Southern Europe': {
-        targetHeadline: 'Corporate Enterprises & Industrial Companies',
-        industries: ['Manufacturing & Production', 'Fashion & Luxury Goods', 'Food & Beverage', 'Construction & Real Estate', 'Corporate Services', 'Automotive & Machinery', 'Tourism Infrastructure', 'Logistics & Transport', 'Wholesale & Retail', 'Professional Services'],
-        insights: [
-            { title: 'Relationship-Driven', text: 'Southern European business culture emphasizes personal relationships. Our approach builds trust before pushing for meetings.' },
-            { title: 'Industry Clusters', text: 'Connect with companies in regional industry clusters—from Italian manufacturing to Spanish construction.' },
-            { title: 'Mediterranean Markets', text: 'Reach buyers across Italy, Spain, Portugal, and Greece with campaigns adapted to local business practices.' },
-            { title: 'Export Champions', text: 'Many Southern European companies are export leaders in their sectors—ideal partners for international B2B relationships.' }
-        ],
-        marketStats: [
-            { stat: '3.5M+', desc: 'Active B2B companies' },
-            { stat: '€2.8T', desc: 'Combined GDP' },
-            { stat: '58%', desc: 'Export-active businesses' }
-        ],
-        marketContext: 'Southern Europe combines industrial tradition with entrepreneurial energy, offering diverse B2B opportunities across manufacturing and services.',
-        serviceIntro: 'From Italian manufacturing to Spanish corporate enterprises, we help you connect with decision-makers across Southern Europe\'s diverse B2B landscape.'
-    },
-    'North America': {
-        targetHeadline: 'B2B Enterprises & Corporate Companies',
-        industries: ['Corporate Enterprises', 'Manufacturing & Production', 'Business Services', 'Industrial Equipment', 'Construction & Engineering', 'Logistics & Distribution', 'Healthcare Industry', 'Energy & Utilities', 'Telecommunications', 'Professional Services'],
-        insights: [
-            { title: 'Enterprise Scale', text: 'Access decision-makers at large enterprises and mid-market companies across the US and Canada.' },
-            { title: 'Competitive Markets', text: 'Stand out in competitive North American markets with targeted, personalized outreach that cuts through the noise.' },
-            { title: 'Time Zone Coverage', text: 'Campaign execution aligned with North American business hours for optimal engagement and response rates.' },
-            { title: 'Cross-Border Expansion', text: 'Use North America as your launchpad for global expansion or target specific regional markets.' }
-        ],
-        marketStats: [
-            { stat: '6M+', desc: 'B2B companies' },
-            { stat: '$25T', desc: 'Annual B2B commerce' },
-            { stat: '78%', desc: 'Digital buying preference' }
-        ],
-        marketContext: 'North America represents the world\'s largest B2B market, with sophisticated buyers who expect data-driven, value-focused sales approaches.',
-        serviceIntro: 'Reach corporate buyers and industrial decision-makers across the United States and Canada with campaigns that match American business expectations.'
-    }
-};
-
-// Default content for regions not explicitly defined
-const defaultRegionContent = {
-    targetHeadline: 'B2B Companies & Corporate Enterprises',
-    industries: ['Corporate Enterprises', 'Manufacturing Companies', 'Business Services', 'Industrial Suppliers', 'Logistics & Distribution', 'Construction & Engineering', 'Professional Services', 'Wholesale & Trading', 'Technology Companies', 'Energy & Utilities'],
-    insights: [
-        { title: 'Global Reach', text: 'Connect with B2B decision-makers worldwide through targeted, professional outreach campaigns.' },
-        { title: 'Industry Expertise', text: 'Our team understands B2B sales cycles and helps position your offering for enterprise and mid-market buyers.' },
-        { title: 'Quality Meetings', text: 'Focus on qualified conversations with buyers who have budget, authority, and genuine interest.' },
-        { title: 'Scalable Approach', text: 'Start with targeted campaigns and scale as you identify successful patterns and markets.' }
-    ],
-    marketStats: [
-        { stat: '100M+', desc: 'B2B companies globally' },
-        { stat: '$50T+', desc: 'Global B2B commerce' },
-        { stat: '65%', desc: 'Prefer digital engagement' }
-    ],
-    marketContext: 'B2B markets worldwide are increasingly open to professional outreach from qualified providers offering clear value propositions.',
-    serviceIntro: 'Our lead generation services help B2B companies connect with corporate and industrial buyers across diverse global markets.'
-};
-
-function buildCityPages() {
-    console.log('\n🏗️  Building City Landing Pages (B2B/Corporate/Manufacturing Focus)...');
-
-    const templateContent = fs.readFileSync('templates/city-landing.html', 'utf8');
-
-    cities.forEach(cityData => {
-        const lang = 'en'; // Currently only EN for cities
-        const city = cityData.city;
-        const country = cityData.country;
-        const region = cityData.region || 'Global';
-        const slug = cityData.slug;
-        const image = cityData.image || './assets/local/default-city.jpg';
-
-        // Get region-specific content
-        const regionData = regionContent[region] || defaultRegionContent;
-
-        // SEO-optimized metadata - Short titles (50-60 chars) and descriptions (150-155 chars)
-        const title = `B2B Lead Generation ${city} | Go Expandia`;
-        const description = `Professional B2B lead generation in ${city}. We help ${region} companies generate qualified meetings with corporate buyers. Proven results.`;
-        const keywords = `B2B lead generation ${city}, corporate sales ${city}, ${country} B2B agency, appointment setting ${city}`;
-
-        let htmlTemplate = createHTMLTemplate(lang);
-        const res = extractAndRemoveSchemas(templateContent, `templates/city-landing.html`);
-        let content = res.cleanContent;
-        const extractedSchemas = res.extractedSchemas;
-
-        // Calculate Nearby Cities
-        const nearby = cities
-            .filter(c => c.slug !== slug && c.lat && c.lng && cityData.lat && cityData.lng)
-            .map(c => ({
-                ...c,
-                distance: getDistanceFromLatLonInKm(cityData.lat, cityData.lng, c.lat, c.lng)
-            }))
-            .sort((a, b) => a.distance - b.distance)
-            .slice(0, 4);
-
-        const nearbyHtml = nearby.map(c => {
-            const nearbySlug = normalizeCitySlug(c.slug);
-            return `
-            <a href="${nearbySlug}.html" class="block p-4 rounded-lg border border-base-300 hover:border-primary transition-all group bg-base-100">
-                <div class="font-bold text-lg group-hover:text-primary">${c.city}</div>
-                <div class="text-sm text-base-content/60">${c.country}</div>
-                <div class="text-xs text-base-content/40 mt-1">${Math.round(c.distance)} km away</div>
-            </a>
-        `;
-        }).join('');
-
-        // Generate Service Links for this City
-        const serviceLinksHtml = services.map(service => {
-            const serviceSlug = service.slug_pattern.replace('{{CITY_SLUG}}', normalizeCitySlug(cityData.slug));
-            return `
-            <a href="${serviceSlug}.html" class="flex items-center gap-4 p-4 rounded-xl bg-base-100 border border-base-300 hover:border-primary hover:shadow-md transition-all group">
-                <div class="text-2xl"><i data-lucide="${service.icon}"></i></div>
-                <div>
-                    <h3 class="font-bold group-hover:text-primary transition-colors">${service.name}</h3>
-                    <p class="text-xs text-base-content/60">Available globally</p>
-                </div>
-            </a>`;
-        }).join('');
-
-        // Intro paragraph (unique per region, mentions city)
-        const introParagraph = `We help B2B companies reach corporate enterprises, manufacturers, and industrial buyers across ${region}. Whether you're targeting decision-makers in ${city} or expanding across ${country}, our lead generation services deliver qualified sales meetings with buyers who have genuine interest and budget.`;
-
-        // Common replacements
-        const basePath = './';
-
-        // Replace all placeholders
-        content = content.replace(/\{\{CITY_NAME\}\}/g, city);
-        content = content.replace(/\{\{COUNTRY_NAME\}\}/g, country);
-        content = content.replace(/\{\{REGION_NAME\}\}/g, region);
-        content = content.replace(/\{\{SERVICE_LINKS\}\}/g, serviceLinksHtml);
-        content = content.replace(/\{\{HERO_IMAGE\}\}/g, image);
-        content = content.replace(/\{\{CITY_SLUG\}\}/g, slug);
-        content = content.replace(/\{\{NEARBY_CITIES\}\}/g, nearbyHtml);
-        content = content.replace(/\{\{BASE_PATH\}\}/g, basePath);
-
-        if (!nearbyHtml.trim()) {
-            content = removeEmptyNearbySection(content);
-        }
-        content = content.replace(/\{\{LATEST_BLOG_POSTS\}\}/g, latestBlogPosts.replace(/\{\{BASE_PATH\}\}/g, basePath));
-        content = content.replace(/\{\{FOOTER\}\}/g, '');
-
-        // Dynamic content from region
-        content = content.replace(/\{\{TARGET_HEADLINE\}\}/g, regionData.targetHeadline);
-        content = content.replace(/\{\{INTRO_PARAGRAPH\}\}/g, introParagraph);
-        content = content.replace(/\{\{SERVICE_INTRO\}\}/g, regionData.serviceIntro);
-
-        // 10 Target Industries
-        regionData.industries.forEach((industry, i) => {
-            content = content.replace(`{{TARGET_INDUSTRY_${i + 1}}}`, industry);
-        });
-
-        // 4 Insights
-        regionData.insights.forEach((insight, i) => {
-            content = content.replace(`{{INSIGHT_TITLE_${i + 1}}}`, insight.title);
-            content = content.replace(`{{INSIGHT_TEXT_${i + 1}}}`, insight.text);
-        });
-
-        // 3 Market Stats
-        regionData.marketStats.forEach((stat, i) => {
-            content = content.replace(`{{MARKET_STAT_${i + 1}}}`, stat.stat);
-            content = content.replace(`{{MARKET_STAT_DESC_${i + 1}}}`, stat.desc);
-        });
-        content = content.replace(/\{\{MARKET_CONTEXT\}\}/g, regionData.marketContext);
-
-        // Navigation and Footer (EN)
-        let pageNavigation = navigationEN;
-        let pageFooter = footerEN;
-
-        // Common replacements
-        const logoPath = 'go-expandia-logo.png';
-        htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
-
-        pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
-        pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
-        pageNavigation = pageNavigation.replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html');
-        pageNavigation = pageNavigation.replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, 'our-ethical-principles.html');
-        pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
-        pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
-
-        // Inject Content
-        htmlTemplate = htmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
-        htmlTemplate = htmlTemplate.replace('{{MAIN_CONTENT}}', content);
-        htmlTemplate = htmlTemplate.replace('{{FOOTER}}', pageFooter);
-
-        // Metadata
-        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, title);
-        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, description);
-        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, keywords);
-        htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.goexpandia.com/${slug}.html`);
-
-        // Hreflang URLs
-        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, `${slug}.html`);
-        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, `${slug}.html`);
-        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, '');
-        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, '');
-
-        // Enhanced Schema for City Page (B2B/Corporate focus)
-        const schema = {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": `B2B Lead Generation Services in ${city}`,
-            "provider": "Go Expandia",
-            "areaServed": {
-                "@type": "City",
-                "name": city,
-                "address": {
-                    "@type": "PostalAddress",
-                    "addressCountry": country
-                }
-            },
-            "description": description,
-            "audience": {
-                "@type": "BusinessAudience",
-                "audienceType": "B2B companies, corporate enterprises, manufacturers"
-            },
-            "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "B2B Sales Services",
-                "itemListElement": [
-                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Outbound Lead Generation" } },
-                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Appointment Setting" } },
-                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Account-Based Marketing" } },
-                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "B2B List Building" } }
-                ]
-            }
-        };
-
-        // Schema - Aggregated
-        const orgSchema = generateOrganizationSchema();
-        let finalSchemas = [orgSchema, schema];
-
-        extractedSchemas.forEach(s => {
-            if (s["@type"] === "Organization" || s["@type"] === "Service") return;
-            finalSchemas.push(s);
-        });
-
-        htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, JSON.stringify(finalSchemas, null, 2));
-        htmlTemplate = clearUnresolvedTemplateTokens(htmlTemplate);
-
-        // Write file
-        fs.writeFileSync(`${slug}.html`, htmlTemplate, 'utf8');
-    });
-    console.log(`✅ Built ${cities.length} city pages with region-specific B2B content.`);
-}
-
-
-// -------------------------------------------------------------------------
-// NEW: Build Industry Pages
-// -------------------------------------------------------------------------
-// -------------------------------------------------------------------------
-// REMOVED: Build Industry Landing Pages
-// These generic industry pages have been removed in favor of city-specific pages
-// -------------------------------------------------------------------------
-/*
-function buildIndustryPages() {
-    console.log('\n🏗️  Building Industry Pages...');
-
-    const templateContent = fs.readFileSync('templates/industry-landing.html', 'utf8');
-
-    industries.forEach(industryData => {
-        const lang = 'en';
-        const name = industryData.name;
-        const slug = industryData.slug;
-        const image = industryData.image || './assets/local/default-industry.jpg';
-        const title = industryData.title;
-        const description = industryData.description;
-        const keywords = `B2B lead generation ${name}, lead generation agency ${name}, appointment setting ${name}`;
-
-        let htmlTemplate = createHTMLTemplate(lang);
-        let content = templateContent;
-
-        // Replace placeholders in content
-        content = content.replace(/\{\{INDUSTRY_NAME\}\}/g, name);
-        content = content.replace(/\{\{HERO_IMAGE\}\}/g, image);
-
-        // Navigation and Footer (EN)
-        let pageNavigation = navigationEN;
-        let pageFooter = footerEN;
-
-        // Common replacements
-        const basePath = './';
-        const logoPath = 'go-expandia-logo.png';
-
-        pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
-        pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
-        pageNavigation = pageNavigation.replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html');
-        pageNavigation = pageNavigation.replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, 'our-ethical-principles.html');
-        pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
-        pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
-
-        // Inject Content
-        htmlTemplate = htmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
-        htmlTemplate = htmlTemplate.replace('{{MAIN_CONTENT}}', content);
-        htmlTemplate = htmlTemplate.replace('{{FOOTER}}', pageFooter);
-
-        // Metadata
-        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, title);
-        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, description);
-        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, keywords);
-        htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.goexpandia.com/${slug}.html`);
-
-        // Hreflang URLs
-        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, `${slug}.html`);
-        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, `${slug}.html`);
-        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, '');
-        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, '');
-
-        // Schema
-        const schema = {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": `B2B Lead Generation for ${name}`,
-            "provider": { "@type": "Organization", "name": "Go Expandia", "url": "https://www.goexpandia.com" },
-            "description": description,
-            "audience": {
-                "@type": "Audience",
-                "audienceType": name
-            }
-        };
-        htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, JSON.stringify(schema, null, 2));
-
-        // Write file
-        fs.writeFileSync(`${slug}.html`, htmlTemplate, 'utf8');
-    });
-    console.log(`✅ Built ${industries.length} industry pages.`);
-}
-*/
-
-
-// -------------------------------------------------------------------------
-// NEW: Build City Locations Page (Map)
-// -------------------------------------------------------------------------
-function buildCityLocationsPage() {
-    console.log('\n🏗️  Building City Locations Page...');
-
-    const templateContent = fs.readFileSync('templates/city-locations.html', 'utf8');
-    const lang = 'en';
-
-    // Prepare Head Content (Leaflet CSS)
-    const headContent = `
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-          crossorigin=""/>
-    <style>
-        #map { height: 80vh; width: 100%; z-index: 1; }
-        .city-marker { cursor: pointer; transition: all 0.3s ease; }
-        .city-marker:hover { transform: scale(1.2); z-index: 1000; }
-        .custom-popup { font-family: inherit; }
-        .custom-popup h3 { color: #f9c23c; font-weight: bold; margin-bottom: 0.5rem; }
-        .custom-popup a { color: #e86100; text-decoration: none; font-weight: 600; }
-        .custom-popup a:hover { text-decoration: underline; }
-        .map-container { position: relative; width: 100%; }
-        .map-legend { position: absolute; top: 20px; right: 20px; background: white; padding: 1rem; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); z-index: 1000; max-width: 200px; }
-        .legend-item { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
-        .legend-color { width: 20px; height: 20px; border-radius: 50%; }
-    </style>`;
-
-    // Prepare Script Content (Leaflet JS + Logic)
-    // Transform cities data for JS and prepend main office (Delaware)
-    const mainOffice = {
-        name: 'Delaware Main Office',
-        country: 'United States',
-        lat: 39.7391,
-        lng: -75.5398,
-        url: './contact.html',
-        region: 'Main Office',
-        isMainOffice: true
-    };
-    const citiesForJs = [
-        mainOffice,
-        ...cities.map(c => ({
-            name: c.city,
-            country: c.country || '',
-            lat: c.lat || 0,
-            lng: c.lng || 0,
-            url: `./${normalizeCitySlug(c.city)}.html`,
-            region: c.region || 'Global',
-            isMainOffice: false
-        }))
-    ];
-
-    const scriptContent = `
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-            crossorigin=""></script>
-    <script>
-        const cities = ${JSON.stringify(citiesForJs)};
-        
-        // Initialize map
-        const map = L.map('map').setView([50, 10], 3);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors',
-            maxZoom: 18
-        }).addTo(map);
-        
-        const regionColors = {
-            'Main Office': '#111827',
-            'DACH': '#cb102c',
-            'Western Europe': '#e86100',
-            'Southern Europe': '#ff6b35',
-            'Scandinavia': '#4a90e2',
-            'Eastern Europe': '#9b59b6',
-            'North America': '#e74c3c',
-            'Western Asia': '#16a085',
-            'Europe': '#95a5a6'
-        };
-
-        function createCustomIcon(color, isMainOffice = false) {
-            if (isMainOffice) {
-                return L.divIcon({
-                    className: 'city-marker',
-                    html: \`<div style="width: 24px; height: 24px; background-color: \${color}; border: 3px solid white; border-radius: 0.4rem; box-shadow: 0 2px 10px rgba(0,0,0,0.35); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; font-weight: 700;">★</div>\`,
-                    iconSize: [24, 24],
-                    iconAnchor: [12, 12]
-                });
-            }
-            return L.divIcon({
-                className: 'city-marker',
-                html: \`<div style="width: 20px; height: 20px; background-color: \${color}; border: 3px solid white; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.3); transition: all 0.3s ease;"></div>\`,
-                iconSize: [20, 20],
-                iconAnchor: [10, 10]
-            });
-        }
-
-        cities.forEach(city => {
-            if(city.lat === 0 && city.lng === 0) return;
-            const color = regionColors[city.region] || '#ff6b35';
-            const icon = createCustomIcon(color, city.isMainOffice);
-            const marker = L.marker([city.lat, city.lng], { icon: icon }).addTo(map);
-            const ctaLabel = city.isMainOffice ? 'Contact Main Office →' : 'View Services →';
-            const subtitle = city.isMainOffice ? 'Main Office • Delaware' : city.region;
-            
-            const popupContent = \`
-                <div class="custom-popup">
-                    <h3>\${city.name}</h3>
-                    <p style="margin: 0.25rem 0; color: #666;">\${city.country}</p>
-                    <p style="margin: 0.25rem 0 0.5rem; color: #666;">\${subtitle}</p>
-                    <a href="\${city.url}" style="display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; background-color: #f9c23c; color: #000; border-radius: 0.25rem; font-weight: 600; text-decoration: none;">\${ctaLabel}</a>
-                </div>
-            \`;
-            marker.bindPopup(popupContent);
-            marker.on('mouseover', function() { this.openPopup(); });
-        });
-
-        const cityListContainer = document.getElementById('city-list');
-        const mainOffice = cities.find(city => city.isMainOffice);
-        const regularCities = cities.filter(city => !city.isMainOffice).sort((a, b) => a.name.localeCompare(b.name));
-        const orderedCities = mainOffice ? [mainOffice, ...regularCities] : regularCities;
-
-        orderedCities.forEach(city => {
-            const cityCard = document.createElement('a');
-            cityCard.href = city.url;
-            cityCard.className = city.isMainOffice
-                ? 'buzz-card p-4 border-2 border-primary/40 bg-primary/5 hover:scale-105 transition-transform cursor-pointer'
-                : 'buzz-card p-4 hover:scale-105 transition-transform cursor-pointer';
-            const listSubtitle = city.isMainOffice ? 'United States • Main Office (Delaware)' : \`\${city.country} • \${city.region}\`;
-            const markerDot = city.isMainOffice
-                ? \`<div class="w-4 h-4 rounded-md flex items-center justify-center text-[10px] font-bold text-white" style="background-color: \${regionColors[city.region] || '#111827'};">★</div>\`
-                : \`<div class="w-3 h-3 rounded-full" style="background-color: \${regionColors[city.region] || '#ff6b35'};"></div>\`;
-            cityCard.innerHTML = \`
-                <div class="flex items-center gap-3">
-                    \${markerDot}
-                    <div>
-                        <h3 class="font-semibold">\${city.name}</h3>
-                        <p class="text-sm text-base-content/60">\${listSubtitle}</p>
-                    </div>
-                </div>
-            \`;
-            cityListContainer.appendChild(cityCard);
-        });
-    </script>`;
-
-    let htmlTemplate = createHTMLTemplate(lang, headContent, scriptContent);
-    let content = templateContent.replace('{{CITY_COUNT}}', cities.length);
-
-    // Navigation/Footer replacements... (standard)
-    let pageNavigation = navigationEN;
-    let pageFooter = footerEN;
-    const basePath = './';
-    const logoPath = 'go-expandia-logo.png';
-    htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
-    pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
-    pageNavigation = pageNavigation.replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html');
-    pageNavigation = pageNavigation.replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, 'our-ethical-principles.html');
-    pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
-    pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
-    pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
-
-    htmlTemplate = htmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
-    htmlTemplate = htmlTemplate.replace('{{MAIN_CONTENT}}', content);
-    htmlTemplate = htmlTemplate.replace('{{FOOTER}}', pageFooter);
-
-    const pageMetadata = getPageMetadata('city-locations', lang);
-    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, pageMetadata.title);
-    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, pageMetadata.description);
-    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, pageMetadata.keywords);
-    htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, 'https://www.goexpandia.com/city-locations.html');
-    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, 'city-locations.html');
-    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, '');
-    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, '');
-    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, '');
-    htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, '{}'); // TODO: Add schema
-    htmlTemplate = clearUnresolvedTemplateTokens(htmlTemplate);
-    htmlTemplate = rewriteLegacyHrefTargets(htmlTemplate);
-
-    fs.writeFileSync('city-locations.html', htmlTemplate, 'utf8');
-    console.log(`✅ Built city-locations.html`);
-}
 
 function formatServiceAreaMeta(area) {
     return [area.state, area.country].filter(Boolean).join(', ');
@@ -5304,10 +3298,8 @@ function buildServiceAreasPage() {
     pageNavigation = pageNavigation.replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html');
     pageNavigation = pageNavigation.replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, 'our-ethical-principles.html');
     pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
-    pageNavigation = pageNavigation.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, './');
     pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
     pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
-    pageFooter = pageFooter.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, './');
 
     htmlTemplate = htmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
     htmlTemplate = htmlTemplate.replace('{{MAIN_CONTENT}}', content);
@@ -5319,9 +3311,6 @@ function buildServiceAreasPage() {
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, pageMetadata.keywords);
     htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, 'https://www.goexpandia.com/service-areas.html');
     htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, 'service-areas.html');
-    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, '');
-    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, '');
-    htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, '');
 
     const serviceAreaSchema = [
         generateOrganizationSchema(),
@@ -5608,450 +3597,6 @@ function normalizeGeneratedLinks() {
     });
 }
 
-// -------------------------------------------------------------------------
-// NEW: Generate Dynamic Sitemap
-// -------------------------------------------------------------------------
-// -------------------------------------------------------------------------
-// NEW: Build Glossary Pages
-// -------------------------------------------------------------------------
-function buildGlossaryTerms() {
-    console.log('\n📖 Building Glossary Term Pages...');
-
-    const templateContent = fs.readFileSync('templates/glossary-term.html', 'utf8');
-    const languages = ['en'];
-
-    languages.forEach(lang => {
-        const glossaryIndexUrl = lang === 'en' ? 'glossary.html' : 'glossary.html'; // Relative path handling below
-
-        glossary.forEach(termData => {
-            let termName = termData.term;
-            let definition = termData.definition;
-
-            // Handle Translation
-            if (lang !== 'en' && termData.translations && termData.translations[lang]) {
-                termName = termData.translations[lang].term;
-                definition = termData.translations[lang].definition;
-            }
-
-            // Fallback for missing translation
-            if (!termName) termName = termData.term;
-            if (!definition) definition = termData.definition;
-
-            let htmlTemplate = createHTMLTemplate(lang);
-            const res = extractAndRemoveSchemas(templateContent, `templates/glossary-term.html`);
-            let content = res.cleanContent;
-            const extractedSchemas = res.extractedSchemas;
-
-            // Common Replacements
-            content = content.replace(/\{\{TERM_NAME\}\}/g, termName);
-            content = content.replace(/\{\{TERM_DEFINITION\}\}/g, definition);
-            content = content.replace(/\{\{TERM_CATEGORY\}\}/g, termData.category);
-
-            // Labels
-            const labels = {
-                en: { glossary: 'Glossary', related: 'Related Terms', ctaTitle: 'Ready to Scale?', ctaDesc: 'Let us help you implement these strategies.', ctaBtn: 'Get Started' },
-                de: { glossary: 'Glossar', related: 'Verwandte Begriffe', ctaTitle: 'Bereit zu skalieren?', ctaDesc: 'Lassen Sie uns Ihnen bei der Umsetzung helfen.', ctaBtn: 'Loslegen' },
-                fr: { glossary: 'Glossaire', related: 'Termes Connexes', ctaTitle: 'Prêt à évoluer ?', ctaDesc: 'Laissez-nous vous aider à mettre en œuvre ces stratégies.', ctaBtn: 'Commencer' },
-                tr: { glossary: 'Sözlük', related: 'İlgili Terimler', ctaTitle: 'Büyümeye Hazır mısınız?', ctaDesc: 'Bu stratejileri uygulamanıza yardımcı olalım.', ctaBtn: 'Hemen Başla' }
-            };
-            const label = labels[lang] || labels['en'];
-
-            content = content.replace(/\{\{GLOSSARY_LABEL\}\}/g, label.glossary);
-            content = content.replace(/\{\{RELATED_TERMS_LABEL\}\}/g, label.related);
-            content = content.replace(/\{\{CTA_TITLE\}\}/g, label.ctaTitle);
-            content = content.replace(/\{\{CTA_DESCRIPTION\}\}/g, label.ctaDesc);
-            content = content.replace(/\{\{CTA_BUTTON\}\}/g, label.ctaBtn);
-
-            // Related Terms Logic (Random 3 from same category or random)
-            const related = glossary
-                .filter(t => t.slug !== termData.slug)
-                .sort(() => 0.5 - Math.random())
-                .slice(0, 3);
-
-            const relatedHtml = related.map(t => {
-                let rName = t.term;
-                let rDef = t.definition;
-                if (lang !== 'en' && t.translations && t.translations[lang]) {
-                    rName = t.translations[lang].term;
-                    rDef = t.translations[lang].definition;
-                }
-                const link = `./${t.slug}.html`; // Glossary structure is flat per lang folder
-                return `
-                <a href="${link}" class="buzz-card p-6 block hover:border-primary transition-colors group">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-primary">${rName}</h3>
-                    <p class="text-sm text-base-content/60 line-clamp-3">${rDef}</p>
-                </a>`;
-            }).join('');
-            content = content.replace(/\{\{RELATED_TERMS_LIST\}\}/g, relatedHtml);
-
-
-            // Navigation/Footer
-            let pageNavigation = navigationEN;
-            let pageFooter = footerEN;
-
-            // Clean i18n
-            pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
-            pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
-
-            const basePath = '../';
-            const logoPath = '../go-expandia-logo.png';
-            htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
-            const turkishServicesPath = '../tr/';
-
-            pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
-            pageNavigation = pageNavigation.replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html');
-            pageNavigation = pageNavigation.replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, 'our-ethical-principles.html');
-            pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
-            pageNavigation = pageNavigation.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
-            pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
-            pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
-            pageFooter = pageFooter.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
-
-            content = content.replace(/\{\{GLOSSARY_INDEX_URL\}\}/g, './index.html'); // Points to index inside glossary folder
-
-            htmlTemplate = htmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
-            htmlTemplate = htmlTemplate.replace('{{MAIN_CONTENT}}', content);
-            htmlTemplate = htmlTemplate.replace('{{FOOTER}}', pageFooter);
-
-            // Metadata
-            const pageTitle = `${termName} | AI Business Glossary | Go Expandia`;
-            const pageDesc = `Plain-language definition of ${termName} for teams using AI to improve revenue, costs, cash flow, and operations.`;
-
-            htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, pageTitle);
-            htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, pageDesc);
-            htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, `${termName} definition, AI glossary, business AI terms, AI operations glossary`);
-
-            const canonicalSlug = `glossary/${termData.slug}.html`;
-            htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.goexpandia.com/${canonicalSlug}`);
-
-            // Hreflang
-            htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, `glossary/${termData.slug}.html`);
-            // TR glossary pages are not published; point to EN glossary URL to avoid hreflang 404s.
-            htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, `glossary/${termData.slug}.html`);
-            htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, ``);
-            htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, ``);
-
-            // Schema
-            const definedTermSchema = {
-                "@context": "https://schema.org",
-                "@type": "DefinedTerm",
-                "name": termName,
-                "description": definition,
-                "inDefinedTermSet": "https://www.goexpandia.com/glossary"
-            };
-
-            const faqSchema = {
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                "mainEntity": [{
-                    "@type": "Question",
-                    "name": `What is ${termName}?`,
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": definition
-                    }
-                }]
-            };
-
-            // Schema - Aggregated
-            const orgSchema = generateOrganizationSchema();
-            let finalSchemas = [orgSchema, definedTermSchema, faqSchema];
-
-            extractedSchemas.forEach(s => {
-                if (s["@type"] === "Organization" || s["@type"] === "DefinedTerm" || s["@type"] === "FAQPage") return;
-                finalSchemas.push(s);
-            });
-
-            htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, JSON.stringify(finalSchemas, null, 2));
-
-            // Write File
-            let outputDir = 'glossary';
-
-            if (!fs.existsSync(outputDir)) {
-                fs.mkdirSync(outputDir, { recursive: true });
-            }
-
-            htmlTemplate = rewriteLegacyHrefTargets(htmlTemplate);
-            fs.writeFileSync(`${outputDir}/${termData.slug}.html`, htmlTemplate, 'utf8');
-        });
-    });
-    console.log(`✅ Built ${glossary.length * languages.length} Glossary Term pages.`);
-}
-
-function buildGlossaryIndex() {
-    console.log('\n📖 Building Glossary Index Pages...');
-
-    const templateContent = fs.readFileSync('templates/glossary-index.html', 'utf8');
-    const languages = ['en'];
-
-    languages.forEach(lang => {
-        let htmlTemplate = createHTMLTemplate(lang);
-        let content = templateContent;
-
-        const labels = {
-            en: {
-                glossary: 'Glossary',
-                title: 'AI Business Glossary',
-                desc: 'Simple definitions for AI terms used in business operations, automation, and delivery.',
-                ctaTitle: 'Ready to Scale?', ctaDesc: 'Let us help you implement these strategies.', ctaBtn: 'Get Started'
-            },
-            de: {
-                glossary: 'Glossar',
-                title: 'Business & Tech Glossar',
-                desc: 'Umfassende Definitionen für Schlüsselbegriffe in B2B-Marketing, Vertrieb und Technologie.',
-                ctaTitle: 'Bereit zu skalieren?', ctaDesc: 'Lassen Sie uns Ihnen bei der Umsetzung helfen.', ctaBtn: 'Loslegen'
-            },
-            fr: {
-                glossary: 'Glossaire',
-                title: 'Glossaire Business & Tech',
-                desc: 'Définitions complètes des termes clés du marketing B2B, des ventes et de la technologie.',
-                ctaTitle: 'Prêt à évoluer ?', ctaDesc: 'Laissez-nous vous aider à mettre en œuvre ces stratégies.', ctaBtn: 'Commencer'
-            },
-            tr: {
-                glossary: 'Sözlük',
-                title: 'İş ve Teknoloji Sözlüğü',
-                desc: 'B2B pazarlama, satış ve teknoloji alanındaki temel terimler için kapsamlı tanımlar.',
-                ctaTitle: 'Büyümeye Hazır mısınız?', ctaDesc: 'Bu stratejileri uygulamanıza yardımcı olalım.', ctaBtn: 'Hemen Başla'
-            }
-        };
-        const label = labels[lang] || labels['en'];
-
-        content = content.replace(/\{\{GLOSSARY_LABEL\}\}/g, label.glossary);
-        content = content.replace(/\{\{PAGE_TITLE_TEXT\}\}/g, label.title);
-        content = content.replace(/\{\{PAGE_DESCRIPTION_TEXT\}\}/g, label.desc);
-        content = content.replace(/\{\{CTA_TITLE\}\}/g, label.ctaTitle);
-        content = content.replace(/\{\{CTA_DESCRIPTION\}\}/g, label.ctaDesc);
-        content = content.replace(/\{\{CTA_BUTTON\}\}/g, label.ctaBtn);
-
-        // Build List
-        // Group by letter or just list? For 2000 pages, we need grouping. But for now with 6 terms, just a list is fine.
-        // Let's do a simple grid of cards.
-        const listHtml = glossary.map(termData => {
-            let termName = termData.term;
-            let definition = termData.definition;
-            if (lang !== 'en' && termData.translations && termData.translations[lang]) {
-                termName = termData.translations[lang].term;
-                definition = termData.translations[lang].definition;
-            }
-            if (!termName) termName = termData.term;
-            if (!definition) definition = termData.definition;
-
-            const link = `./${termData.slug}.html`;
-
-            return `
-             <a href="${link}" class="buzz-card p-6 block hover:border-primary transition-colors group" data-category="${termData.category}">
-                <div class="text-sm text-primary mb-2 font-semibold tracking-wide">${termData.category}</div>
-                <h3 class="font-bold text-xl mb-3 group-hover:text-primary">${termName}</h3>
-                <p class="text-base-content/70 line-clamp-3">${definition}</p>
-             </a>
-             `;
-        }).join('');
-
-        content = content.replace(/\{\{GLOSSARY_LIST\}\}/g, listHtml);
-
-        // Navigation/Footer
-        let pageNavigation = navigationEN;
-        let pageFooter = footerEN;
-
-        pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
-        pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
-
-        const basePath = '../';
-        const logoPath = '../go-expandia-logo.png';
-        htmlTemplate = htmlTemplate.replace(/\{\{BASE_PATH\}\}/g, basePath);
-        const turkishServicesPath = '../tr/';
-
-        pageNavigation = pageNavigation.replace(/\{\{BASE_PATH\}\}/g, basePath);
-        pageNavigation = pageNavigation.replace(/\{\{VISION_MISSION_PAGE\}\}/g, 'vision-mission.html');
-        pageNavigation = pageNavigation.replace(/\{\{ETHICAL_PRINCIPLES_PAGE\}\}/g, 'our-ethical-principles.html');
-        pageNavigation = pageNavigation.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
-        pageNavigation = pageNavigation.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
-        pageFooter = pageFooter.replace(/\{\{BASE_PATH\}\}/g, basePath);
-        pageFooter = pageFooter.replace(/\{\{LOGO_PATH\}\}/g, logoPath);
-        pageFooter = pageFooter.replace(/\{\{TURKISH_SERVICES_PATH\}\}/g, turkishServicesPath);
-
-        htmlTemplate = htmlTemplate.replace('{{NAVIGATION}}', pageNavigation);
-        htmlTemplate = htmlTemplate.replace('{{MAIN_CONTENT}}', content);
-        htmlTemplate = htmlTemplate.replace('{{FOOTER}}', pageFooter);
-
-        // Metadata
-        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_TITLE\}\}/g, label.title + ' | Go Expandia');
-        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_DESCRIPTION\}\}/g, label.desc);
-        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_KEYWORDS\}\}/g, 'AI glossary, AI terms, business AI definitions, automation glossary');
-
-        const canonicalSlug = `glossary/index.html`;
-        htmlTemplate = htmlTemplate.replace(/\{\{CANONICAL_URL\}\}/g, `https://www.goexpandia.com/${canonicalSlug}`);
-
-        // Hreflang
-        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_EN\}\}/g, `glossary/index.html`);
-        // TR glossary index is not published; point to EN glossary index to avoid hreflang 404.
-        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_TR\}\}/g, `glossary/index.html`);
-        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_DE\}\}/g, ``);
-        htmlTemplate = htmlTemplate.replace(/\{\{PAGE_URL_FR\}\}/g, ``);
-
-        // Schema
-        htmlTemplate = htmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, '{}');
-
-        // Write File
-        let outputDir = 'glossary';
-
-        if (!fs.existsSync(outputDir)) {
-            fs.mkdirSync(outputDir, { recursive: true });
-        }
-
-        htmlTemplate = rewriteLegacyHrefTargets(htmlTemplate);
-        fs.writeFileSync(`${outputDir}/index.html`, htmlTemplate, 'utf8');
-    });
-    console.log(`✅ Built Glossary Index pages.`);
-}
-
-// -------------------------------------------------------------------------
-// BUILD CITY LANDING PAGES (5-step AI business model)
-// -------------------------------------------------------------------------
-function buildCityLandingPages() {
-    console.log('\n🏙️  Building Generic City Landing Pages (EN Only)...');
-
-    // Use filtered city list (west of Ankara cutoff)
-    const top250Cities = cities;
-    const templateContent = fs.readFileSync('templates/city-landing.html', 'utf8');
-
-    const languages = ['en'];
-    let pageCount = 0;
-
-    languages.forEach(lang => {
-        top250Cities.forEach(cityData => {
-            const city = cityData.city;
-            const country = cityData.country;
-            const region = cityData.region || 'Europe';
-            const landmark = cityData.landmark || 'the city center';
-
-            // Generate clean city slug from city name
-            const citySlug = normalizeCitySlug(cityData.city);
-
-            // Build page title and description
-            const title = `AI Support Services in ${city} | 5 Simple Services | Go Expandia`;
-            const description = `We help companies in ${city} with 5 simple AI services: review, plan, build & setup, training, and support.`;
-
-            // Create page content
-            const { cleanContent: content, extractedSchemas } = extractAndRemoveSchemas(templateContent, `templates/city-landing.html`);
-            let htmlTemplate = content;
-
-            // Replace placeholders
-            htmlTemplate = htmlTemplate.replace(/{{PAGE_TITLE}}/g, title);
-            htmlTemplate = htmlTemplate.replace(/{{PAGE_DESCRIPTION}}/g, description);
-            htmlTemplate = htmlTemplate.replace(/{{CITY_NAME}}/g, city);
-            htmlTemplate = htmlTemplate.replace(/{{COUNTRY_NAME}}/g, country);
-            htmlTemplate = htmlTemplate.replace(/{{REGION_NAME}}/g, region);
-            htmlTemplate = htmlTemplate.replace(/{{LANDMARK}}/g, landmark);
-            const basePath = './';
-            htmlTemplate = htmlTemplate.replace(/{{BASE_PATH}}/g, basePath);
-            htmlTemplate = htmlTemplate.replace(/{{VISION_MISSION_PAGE}}/g, 'vision-mission.html');
-            htmlTemplate = htmlTemplate.replace(/{{ETHICAL_PRINCIPLES_PAGE}}/g, 'our-ethical-principles.html');
-            htmlTemplate = htmlTemplate.replace(/\{\{\s*LATEST_BLOG_POSTS\s*\}\}/g, latestBlogPosts.replace(/{{BASE_PATH}}/g, basePath));
-            htmlTemplate = htmlTemplate.replace(/\{\{\s*FOOTER\s*\}\}/g, '');
-
-            // Generate and insert unique SEO content
-            const uniqueContent = generateLocalizedCityContent(city, country, region, lang);
-            htmlTemplate = htmlTemplate.replace(/{{UNIQUE_SEO_CONTENT}}/g, uniqueContent);
-            const categoryCardsHtml = CITY_MODEL_SERVICES.map(serviceStep => {
-                return `
-                    <a href="${basePath}${serviceStep.slug}.html" class="buzz-card p-8 bg-white shadow-lg hover:shadow-xl transition-all block">
-                        <div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-                            <i data-lucide="${serviceStep.icon}" class="w-6 h-6 text-primary"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3">${serviceStep.title}</h3>
-                        <p class="text-base-content/70 mb-0">${serviceStep.summary}</p>
-                    </a>`;
-            }).join('');
-            htmlTemplate = htmlTemplate.replace(/{{SERVICE_LINKS}}/g, categoryCardsHtml);
-            htmlTemplate = replaceCityLandingCopy(htmlTemplate, lang);
-
-            // Schema.org - Use proper schema generator
-            const orgSchema = generateOrganizationSchema();
-            const cityCopy = getCityPageCopy(lang);
-
-            const faqSchema = {
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                "mainEntity": cityCopy.faq.map(item => ({
-                    "@type": "Question",
-                    "name": item.q.replace(/\{\{CITY_NAME\}\}/g, city).replace(/\{\{COUNTRY_NAME\}\}/g, country).replace(/\{\{REGION_NAME\}\}/g, region),
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": item.a.replace(/\{\{CITY_NAME\}\}/g, city).replace(/\{\{COUNTRY_NAME\}\}/g, country).replace(/\{\{REGION_NAME\}\}/g, region)
-                    }
-                }))
-            };
-
-            // Aggregate all schemas
-            let finalSchemas = [orgSchema, faqSchema];
-            extractedSchemas.forEach(s => {
-                if (s["@type"] === "Organization" || s["@type"] === "FAQPage") return;
-                finalSchemas.push(s);
-            });
-
-            // Create proper HTML template with head
-            let fullHtmlTemplate = createHTMLTemplate(lang);
-            fullHtmlTemplate = fullHtmlTemplate.replace(/\{\{\s*MAIN_CONTENT\s*\}\}/g, htmlTemplate);
-            fullHtmlTemplate = fullHtmlTemplate.replace(/\{\{SCHEMA_MARKUP\}\}/g, JSON.stringify(finalSchemas, null, 2));
-
-            // Hero image
-            const heroImage = `./assets/local/default-city.jpg`;
-            fullHtmlTemplate = fullHtmlTemplate.replace(/{{HERO_IMAGE}}/g, heroImage);
-
-            // Navigation/Footer (Simple placeholder replacement)
-            let pageNavigation = navigationEN;
-            let pageFooter = footerEN;
-
-            // Clean i18n
-            pageNavigation = pageNavigation.replace(/\s*data-i18n="[^"]*"/g, '');
-            pageFooter = pageFooter.replace(/\s*data-i18n="[^"]*"/g, '');
-
-            const logoPath = 'go-expandia-logo.png';
-            pageNavigation = pageNavigation.replace(/{{BASE_PATH}}/g, basePath);
-            pageNavigation = pageNavigation.replace(/{{VISION_MISSION_PAGE}}/g, 'vision-mission.html');
-            pageNavigation = pageNavigation.replace(/{{ETHICAL_PRINCIPLES_PAGE}}/g, 'our-ethical-principles.html');
-            pageNavigation = pageNavigation.replace(/{{LOGO_PATH}}/g, logoPath);
-            pageFooter = pageFooter.replace(/{{BASE_PATH}}/g, basePath);
-            pageFooter = pageFooter.replace(/{{LOGO_PATH}}/g, logoPath);
-
-            // Replace placeholders
-            fullHtmlTemplate = fullHtmlTemplate.replace(/\{\{\s*NAVIGATION\s*\}\}/g, pageNavigation);
-            fullHtmlTemplate = fullHtmlTemplate.replace(/\{\{\s*FOOTER\s*\}\}/g, pageFooter);
-            fullHtmlTemplate = fullHtmlTemplate.replace(/{{BASE_PATH}}/g, basePath);
-            fullHtmlTemplate = fullHtmlTemplate.replace(/{{LOGO_PATH}}/g, logoPath);
-
-            // Metadata
-            fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_TITLE}}/g, title);
-            fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_DESCRIPTION}}/g, description);
-            fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_KEYWORDS}}/g, `AI support services ${city}, AI opportunity review ${city}, AI build and setup ${city}, AI training ${city}, AI support ${city}`);
-
-            // Canonical URL
-            const canonicalSlug = `${citySlug}.html`;
-            fullHtmlTemplate = fullHtmlTemplate.replace(/{{CANONICAL_URL}}/g, `https://www.goexpandia.com/${canonicalSlug}`);
-
-            // Hreflang
-            fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_URL_EN}}/g, `${citySlug}.html`);
-            fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_URL_DE}}/g, ``);
-            fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_URL_FR}}/g, ``);
-            fullHtmlTemplate = fullHtmlTemplate.replace(/{{PAGE_URL_TR}}/g, ``);
-
-            // Safety net: remove any unresolved {{TOKEN}} placeholders before writing.
-            fullHtmlTemplate = clearUnresolvedTemplateTokens(fullHtmlTemplate);
-            fullHtmlTemplate = rewriteLegacyHrefTargets(fullHtmlTemplate);
-
-            // Output path
-            const outputPath = `${citySlug}.html`;
-
-            // Write file
-            fs.writeFileSync(outputPath, fullHtmlTemplate, 'utf8');
-            pageCount++;
-        });
-    });
-
-    console.log(`✅ Built ${pageCount} generic city landing pages.`);
-}
-
 function collectHtmlFilesRecursive(rootDir) {
     const results = [];
     if (!fs.existsSync(rootDir)) return results;
@@ -6138,16 +3683,10 @@ function generateSitemap() {
         solutionPages.push(`${service.id}.html`);
     });
 
-    // City landing pages have been decommissioned.
-    const broadCityPages = [];
-
-    // REMOVED: Industry Pages - buildIndustryPages() function is disabled
-    // const industryPages = industries.map(i => `${i.slug}.html`);
-
     const blogPages = collectHtmlFilesRecursive('blog')
         .filter(page => !LOCALIZED_AI_MARKET_REDIRECT_PATHS.has(page));
 
-    const allPages = [...new Set([...filteredStaticPages, ...solutionPages, ...broadCityPages, ...blogPages])];
+    const allPages = [...new Set([...filteredStaticPages, ...solutionPages, ...blogPages])];
 
     let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
@@ -6172,58 +3711,13 @@ function generateSitemap() {
 }
 
 function buildLegacyRedirectRules() {
-    const languages = ['en'];
     const lines = [
-        '# 301 Redirects for Deprecated Legacy Service URLs',
+        '# 301 Redirects for Retired URLs',
         '# Generated by build-pages.js. Keep these redirects long-term.',
         ''
     ];
 
-    const forcedLegacyPaths = [
-        { source: '/cold-calling-services.html', target: '/ai-opportunity-review.html' },
-        { source: '/direct-market-growth.html', target: '/solutions.html' },
-        { source: '/blog/why-speed-to-lead-matters.html', target: '/blog/index.html' },
-        { source: '/blog/mastering-cold-email-deliverability.html', target: '/blog/cross-channel-lead-generation-guide.html' },
-        { source: '/blog/psychological-triggers-sales.html', target: '/blog/marketing-psychology-guide.html' },
-        { source: '/blog/sales-psychology-cialdini-principles-in-b2b.html', target: '/blog/marketing-psychology-guide.html' },
-        { source: '/blog/lead-generation-strategies.html', target: '/blog/lead-generation-strategies-2026-complete-guide.html' },
-        { source: '/blog/cross-channel-lead-generation-complete-guide.html', target: '/blog/cross-channel-lead-generation-guide.html' },
-        { source: '/blog/digital-transformation-sales-operations.html', target: '/blog/pipeline-generation-complete-guide.html' },
-        { source: '/blog/data-driven-sales-forecasting-methods.html', target: '/blog/pipeline-generation-complete-guide.html' },
-        { source: '/blog/ai-lead-scoring-for-b2b-saas.html', target: '/blog/lead-scoring-saas-complete-guide.html' },
-        { source: '/blog/ai-sales-forecasting-pipeline-accuracy.html', target: '/blog/pipeline-generation-complete-guide.html' },
-        { source: '/blog/b2b-customer-acquisition-guide.html', target: '/blog/what-is-business-development-complete-guide.html' },
-        { source: '/blog/b2b-growth-trends-2025.html', target: '/blog/index.html' },
-        { source: '/blog/b2b-growth-trends-2026.html', target: '/blog/index.html' },
-        { source: '/blog/sales-process-optimization-guide.html', target: '/blog/proposal-cpq-guide.html' },
-        { source: '/blog/sales-process-engineering-optimization.html', target: '/blog/proposal-cpq-guide.html' },
-        { source: '/blog/lead-nurturing-conversion.html', target: '/blog/cross-channel-lead-generation-guide.html' },
-        { source: '/blog/ai-pricing-optimization-dynamic-discounts.html', target: '/blog/proposal-cpq-guide.html' },
-        { source: '/blog/habit-formation-sales-process-compliance.html', target: '/blog/proposal-cpq-guide.html' },
-        { source: '/blog/ai-cold-email-personalization-at-scale.html', target: '/blog/cross-channel-lead-generation-guide.html' },
-        { source: '/blog/marketing-automation-lead-generation.html', target: '/blog/lead-generation-strategies-2026-complete-guide.html' },
-        { source: '/blog/social-media-lead-generation.html', target: '/blog/cross-channel-lead-generation-guide.html' },
-        { source: '/blog/advanced-negotiation-strategies-complex-deals.html', target: '/blog/sales-agent-europe-guide.html' },
-        { source: '/blog/sales-as-a-service-guide.html', target: '/blog/outsourced-sales-management-europe-guide.html' },
-        { source: '/blog/email-personalization-at-scale.html', target: '/blog/cross-channel-lead-generation-guide.html' },
-        { source: '/blog/pricing-pilot-design-and-fees.html', target: '/blog/proposal-cpq-guide.html' },
-        { source: '/blog/revenue-operations-optimization-strategies.html', target: '/blog/what-is-revops.html' },
-        { source: '/city-locations.html', target: '/service-areas.html' }
-    ];
     const forcedRedirectSources = new Set();
-
-    forcedLegacyPaths.forEach(({ source, target }) => {
-        const safeTarget = source.startsWith('/blog/') ? '/solutions.html' : target;
-        forcedRedirectSources.add(source);
-        lines.push(`${source}  ${safeTarget}  301!`);
-    });
-
-    legacyBlogPosts.forEach((article) => {
-        if (!article || !article.url) return;
-        const source = `/blog/${article.url}`;
-        if (forcedRedirectSources.has(source)) return;
-        lines.push(`${source}  /blog/index.html  301`);
-    });
 
     REMOVED_BLOG_POST_SLUGS.forEach((slug) => {
         const source = `/blog/${slug}.html`;
@@ -6237,11 +3731,9 @@ function buildLegacyRedirectRules() {
         if (!source || source === target) {
             return;
         }
-        languages.forEach(lang => {
-            const sourcePath = `/${source}.html`;
-            const targetPath = `/${target}.html`;
-            lines.push(`${sourcePath}  ${targetPath}  301`);
-        });
+        const sourcePath = `/${source}.html`;
+        const targetPath = `/${target}.html`;
+        lines.push(`${sourcePath}  ${targetPath}  301`);
     });
 
     cities.forEach(city => {
@@ -6254,11 +3746,9 @@ function buildLegacyRedirectRules() {
 
         legacySlugs.forEach((legacySlug) => {
             if (!legacySlug) return;
-            languages.forEach(lang => {
-                const sourcePath = `/${legacySlug}.html`;
-                const targetPath = `/solutions.html`;
-                lines.push(`${sourcePath}  ${targetPath}  301`);
-            });
+            const sourcePath = `/${legacySlug}.html`;
+            const targetPath = `/solutions.html`;
+            lines.push(`${sourcePath}  ${targetPath}  301`);
         });
     });
 
@@ -6270,19 +3760,15 @@ function buildLegacyRedirectRules() {
 
         if (!matchedCity) return;
 
-        languages.forEach(lang => {
-            const sourcePath = `/${sourceSlug}.html`;
-            const targetPath = `/solutions.html`;
-            lines.push(`${sourcePath}  ${targetPath}  301`);
-        });
+        const sourcePath = `/${sourceSlug}.html`;
+        const targetPath = `/solutions.html`;
+        lines.push(`${sourcePath}  ${targetPath}  301`);
     });
 
     RETIRED_CITY_SLUGS.forEach((slug) => {
-        languages.forEach((lang) => {
-            const sourcePath = `/${slug}.html`;
-            const targetPath = `/${RETIRED_CITY_REDIRECT_TARGET}.html`;
-            lines.push(`${sourcePath}  ${targetPath}  301`);
-        });
+        const sourcePath = `/${slug}.html`;
+        const targetPath = `/${RETIRED_CITY_REDIRECT_TARGET}.html`;
+        lines.push(`${sourcePath}  ${targetPath}  301`);
     });
 
     return lines.join('\n') + '\n';
@@ -6290,39 +3776,24 @@ function buildLegacyRedirectRules() {
 
 function writeRedirectsFile() {
     const redirectsPath = '_redirects';
-    const legacyBlockStart = '# BEGIN AUTO-GENERATED LEGACY SERVICE REDIRECTS';
-    const legacyBlockEnd = '# END AUTO-GENERATED LEGACY SERVICE REDIRECTS';
+    const legacyBlockStart = '# BEGIN AUTO-GENERATED REDIRECTS';
+    const legacyBlockEnd = '# END AUTO-GENERATED REDIRECTS';
     const generatedBlock = `${legacyBlockStart}\n${buildLegacyRedirectRules()}${legacyBlockEnd}\n`;
 
     let existing = '';
     if (fs.existsSync(redirectsPath)) {
         existing = fs.readFileSync(redirectsPath, 'utf8');
+        const oldLegacyBlockRegex = new RegExp(`# BEGIN AUTO-GENERATED LEGACY SERVICE REDIRECTS[\\s\\S]*?# END AUTO-GENERATED LEGACY SERVICE REDIRECTS\\n?`, 'm');
         const legacyBlockRegex = new RegExp(`${legacyBlockStart}[\\s\\S]*?${legacyBlockEnd}\\n?`, 'm');
-        existing = existing.replace(legacyBlockRegex, '').trimEnd();
-        existing = existing
-            .split('\n')
-            .map((line) => {
-                if (!line.trim() || line.trimStart().startsWith('#')) return line;
-                const parts = line.trim().split(/\s+/);
-                if (parts.length < 3) return line;
-
-                const [source, target, ...rest] = parts;
-                const isLegacyB2BCity = /^\/b2b-lead-generation-/.test(source);
-                const pointsToCityIndex = target === '/city-locations.html';
-
-                if (!isLegacyB2BCity && !pointsToCityIndex) return line;
-
-                return `${source}  /solutions.html  ${rest.join(' ')}`;
-            })
-            .join('\n');
+        existing = existing.replace(oldLegacyBlockRegex, '').replace(legacyBlockRegex, '').trimEnd();
     }
 
     const nextContent = `${existing}\n\n${generatedBlock}`.trimStart();
     fs.writeFileSync(redirectsPath, nextContent, 'utf8');
-    console.log(`✅ Wrote legacy redirect rules to ${redirectsPath}`);
+    console.log(`✅ Wrote redirect rules to ${redirectsPath}`);
 }
 
-function renderStaticRedirectPage(sourceSlug, targetSlug) {
+function renderStaticRedirectPage(targetSlug) {
     const targetPath = `/blog/${targetSlug}.html`;
     const targetUrl = `https://www.goexpandia.com${targetPath}`;
     return `<!DOCTYPE html>
@@ -6351,15 +3822,13 @@ function writeLocalizedAiMarketRedirectPages() {
 
     Object.entries(LOCALIZED_AI_MARKET_REDIRECTS).forEach(([sourceSlug, targetSlug]) => {
         const outputPath = path.join(blogDir, `${sourceSlug}.html`);
-        fs.writeFileSync(outputPath, renderStaticRedirectPage(sourceSlug, targetSlug), 'utf8');
+        fs.writeFileSync(outputPath, renderStaticRedirectPage(targetSlug), 'utf8');
     });
 
     console.log(`✅ Wrote ${Object.keys(LOCALIZED_AI_MARKET_REDIRECTS).length} localized AI market redirect pages`);
 }
 
 function cleanupLegacyRedirectOutputs() {
-    const languages = ['en'];
-
     REMOVED_BLOG_POST_SLUGS.forEach((slug) => {
         const filePath = `blog/${slug}.html`;
         if (fs.existsSync(filePath)) {
@@ -6367,19 +3836,11 @@ function cleanupLegacyRedirectOutputs() {
         }
     });
 
-    ['city-locations.html'].forEach((filePath) => {
+    LEGACY_REDIRECT_ONLY_PAGES.forEach(page => {
+        const filePath = `${page}.html`;
         if (fs.existsSync(filePath)) {
             fs.unlinkSync(filePath);
         }
-    });
-
-    LEGACY_REDIRECT_ONLY_PAGES.forEach(page => {
-        languages.forEach(lang => {
-            const filePath = lang === 'en' ? `${page}.html` : `${lang}/${page}.html`;
-            if (fs.existsSync(filePath)) {
-                fs.unlinkSync(filePath);
-            }
-        });
     });
 
     cities.forEach(city => {
@@ -6392,31 +3853,25 @@ function cleanupLegacyRedirectOutputs() {
 
         legacySlugs.forEach((legacySlug) => {
             if (!legacySlug) return;
-            languages.forEach(lang => {
-                const filePath = lang === 'en' ? `${legacySlug}.html` : `${lang}/${legacySlug}.html`;
-                if (fs.existsSync(filePath)) {
-                    fs.unlinkSync(filePath);
-                }
-            });
+            const filePath = `${legacySlug}.html`;
+            if (fs.existsSync(filePath)) {
+                fs.unlinkSync(filePath);
+            }
         });
     });
 
     PRIORITY_SERVICE_CITY_PATHS.forEach(sourceSlug => {
-        languages.forEach(lang => {
-            const filePath = lang === 'en' ? `${sourceSlug}.html` : `${lang}/${sourceSlug}.html`;
-            if (fs.existsSync(filePath)) {
-                fs.unlinkSync(filePath);
-            }
-        });
+        const filePath = `${sourceSlug}.html`;
+        if (fs.existsSync(filePath)) {
+            fs.unlinkSync(filePath);
+        }
     });
 
     RETIRED_CITY_SLUGS.forEach((slug) => {
-        languages.forEach((lang) => {
-            const filePath = lang === 'en' ? `${slug}.html` : `${lang}/${slug}.html`;
-            if (fs.existsSync(filePath)) {
-                fs.unlinkSync(filePath);
-            }
-        });
+        const filePath = `${slug}.html`;
+        if (fs.existsSync(filePath)) {
+            fs.unlinkSync(filePath);
+        }
     });
 }
 
@@ -6431,7 +3886,6 @@ buildPage('our-business-model', 'our-business-model', 'en');
 buildPage('solutions', 'solutions', 'en');
 buildPage('contact', 'contact', 'en');
 buildPage('id_demo', 'id_demo', 'en');
-buildPage('onboarding', 'onboarding', 'en');
 buildPage('vision-mission', 'vision-mission', 'en');
 buildPage('our-ethical-principles', 'our-ethical-principles', 'en');
 buildPage('privacy-policy', 'privacy-policy', 'en');
@@ -6506,17 +3960,6 @@ services.forEach(service => buildSolutionPage(service.id, service.id, 'en'));
 buildBlogPosts();
 buildBlogListingPages();
 
-// City landing pages are decommissioned.
-// buildCityLandingPages();
-// Deprecated for SEO migration: city pages now live on clean city slugs.
-// buildCityPages();
-// REMOVED: Industry landing pages - focusing on city-specific pages only
-// buildIndustryPages();
-// RETIRED: Service x City pages and legacy lead-gen city pages are no longer generated
-// buildServiceCityPages();
-// REMOVED: Service x Industry x City pages - too complex, focusing on Service x City only
-// buildServiceIndustryCityPages();
-// buildCityLocationsPage();
 buildServiceAreasPage();
 normalizeGeneratedLinks();
 ensureClarityTrackingOnPublishedPages();
