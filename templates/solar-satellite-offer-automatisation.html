@@ -1,10 +1,54 @@
 <!-- Solar Satellite Offer Automatisation Hero -->
+<style>
+    html.solar-satellite-offer-page iframe[src*="tawk.to"],
+    html.solar-satellite-offer-page .tawk-min-container,
+    html.solar-satellite-offer-page .tawk-button,
+    html.solar-satellite-offer-page .tawk-iframe-container {
+        display: none !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
+</style>
+<script>
+    (function () {
+        document.documentElement.classList.add('solar-satellite-offer-page');
+        window.Tawk_API = window.Tawk_API || {};
+        const previousTawkOnLoad = window.Tawk_API.onLoad;
+
+        function hideSolarOfferChat() {
+            if (typeof previousTawkOnLoad === 'function') {
+                previousTawkOnLoad();
+            }
+            if (window.Tawk_API && typeof window.Tawk_API.hideWidget === 'function') {
+                window.Tawk_API.hideWidget();
+            }
+            document
+                .querySelectorAll('iframe[src*="tawk.to"], .tawk-min-container, .tawk-button, .tawk-iframe-container')
+                .forEach(function (element) {
+                    element.style.setProperty('display', 'none', 'important');
+                    element.style.setProperty('visibility', 'hidden', 'important');
+                    element.style.setProperty('pointer-events', 'none', 'important');
+                });
+        }
+
+        window.Tawk_API.onLoad = hideSolarOfferChat;
+        document.addEventListener('DOMContentLoaded', function () {
+            hideSolarOfferChat();
+            new MutationObserver(hideSolarOfferChat).observe(document.body, { childList: true, subtree: true });
+        });
+        window.addEventListener('load', function () {
+            hideSolarOfferChat();
+            setTimeout(hideSolarOfferChat, 500);
+            setTimeout(hideSolarOfferChat, 1500);
+        });
+    }());
+</script>
 <section class="section-spacing bg-buzz-warm relative overflow-hidden">
     <div class="absolute top-20 right-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
     <div class="absolute bottom-10 left-10 w-48 h-48 bg-primary/10 rounded-full blur-2xl"></div>
 
     <div class="container mx-auto container-padding relative z-10">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="grid lg:grid-cols-2 gap-12 items-center lg:items-start">
             <div class="text-left animate-fade-in">
                 <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold mb-6">
                     <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
@@ -37,27 +81,13 @@
                 </div>
             </div>
 
-            <div class="relative">
+            <div class="relative w-full max-w-[480px] mx-auto lg:mr-0">
                 <div class="absolute -inset-4 bg-primary/20 rounded-[2rem] blur-2xl"></div>
                 <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-white/60 bg-white">
-                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&amp;q=80"
-                        alt="Rooftop solar panels photographed from above" class="w-full h-72 md:h-96 object-cover">
-                    <div class="p-6 bg-white">
-                        <div class="grid grid-cols-3 gap-3 text-center">
-                            <div class="rounded-2xl bg-primary/10 p-4">
-                                <p class="text-2xl font-black text-primary">100s</p>
-                                <p class="text-xs font-bold text-base-content/70">Offers</p>
-                            </div>
-                            <div class="rounded-2xl bg-base-100 p-4">
-                                <p class="text-2xl font-black text-primary">AI</p>
-                                <p class="text-xs font-bold text-base-content/70">PV Visuals</p>
-                            </div>
-                            <div class="rounded-2xl bg-base-100 p-4">
-                                <p class="text-2xl font-black text-primary">1</p>
-                                <p class="text-xs font-bold text-base-content/70">Location</p>
-                            </div>
-                        </div>
-                    </div>
+                    <img src="{{BASE_PATH}}assets/images/solar-satellite-offer-automation-hero.webp"
+                        alt="Satellite scan, AI solar design, 3D roof view, and automated solar offer proposal workflow"
+                        width="1254" height="1254" fetchpriority="high" decoding="async"
+                        class="w-full h-auto object-contain">
                 </div>
             </div>
         </div>
