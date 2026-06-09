@@ -62,8 +62,8 @@
                     We help solar companies find leads from automated satellite photos and create automatic offers using AI.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 mb-12">
-                    <a href="#example-gallery" class="btn btn-primary btn-lg buzz-button shadow-lg shadow-primary/25">
-                        Download Example B2C and B2B Offers
+                    <a href="{{BASE_PATH}}assets/offers/acme-energy-us-solar-proposal.pdf" download class="btn btn-primary btn-lg buzz-button shadow-lg shadow-primary/25">
+                        Download Example Offer
                     </a>
                     <a href="#workflow" class="btn btn-lg btn-outline border-primary text-primary hover:bg-primary hover:text-white">
                         See How It Works
@@ -282,40 +282,53 @@
                 <span class="text-base-content">Gallery</span>
             </h2>
             <p class="text-xl text-base-content/80 max-w-3xl mx-auto">
-                The gallery is ready for three PDFs and five image examples. The current cards are placeholders until final assets are uploaded.
+                Download an example solar offer with roof visuals, system sizing, production estimates, and proposal formatting.
             </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <a href="{{BASE_PATH}}assets/offers/acme-energy-us-solar-proposal.pdf" download class="buzz-card overflow-hidden bg-white shadow-xl border border-primary group hover:-translate-y-1 transition-all duration-300">
+                <div class="aspect-[4/3] bg-primary/10 flex items-center justify-center">
+                    <i data-lucide="file-down" class="w-16 h-16 text-primary group-hover:scale-110 transition-transform"></i>
+                </div>
+                <div class="p-5"><h3 class="font-bold text-lg">Example Solar Offer PDF</h3><p class="text-sm text-base-content/60">Download the Acme Energy sample proposal.</p></div>
+            </a>
             <div class="buzz-card overflow-hidden bg-white shadow-xl border border-base-200">
                 <div class="aspect-[4/3] bg-base-200 flex items-center justify-center">
                     <i data-lucide="file-text" class="w-16 h-16 text-primary"></i>
                 </div>
-                <div class="p-5"><h3 class="font-bold text-lg">B2C Example PDF</h3><p class="text-sm text-base-content/60">Placeholder PDF preview.</p></div>
+                <div class="p-5"><h3 class="font-bold text-lg">B2B Example PDF</h3><p class="text-sm text-base-content/60">Commercial offer format available on request.</p></div>
             </div>
             <div class="buzz-card overflow-hidden bg-white shadow-xl border border-base-200">
                 <div class="aspect-[4/3] bg-base-200 flex items-center justify-center">
                     <i data-lucide="file-text" class="w-16 h-16 text-primary"></i>
                 </div>
-                <div class="p-5"><h3 class="font-bold text-lg">B2B Example PDF</h3><p class="text-sm text-base-content/60">Placeholder PDF preview.</p></div>
-            </div>
-            <div class="buzz-card overflow-hidden bg-white shadow-xl border border-base-200">
-                <div class="aspect-[4/3] bg-base-200 flex items-center justify-center">
-                    <i data-lucide="file-text" class="w-16 h-16 text-primary"></i>
-                </div>
-                <div class="p-5"><h3 class="font-bold text-lg">Batch Report PDF</h3><p class="text-sm text-base-content/60">Placeholder PDF preview.</p></div>
+                <div class="p-5"><h3 class="font-bold text-lg">Batch Report PDF</h3><p class="text-sm text-base-content/60">Regional batch format available on request.</p></div>
             </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            <div class="buzz-card overflow-hidden bg-white shadow-xl border border-base-200">
-                <div class="aspect-square bg-buzz-warm flex items-center justify-center"><i data-lucide="home" class="w-12 h-12 text-primary"></i></div>
-                <div class="p-4"><h3 class="font-bold">Roof Image 1</h3><p class="text-sm text-base-content/60">Placeholder image.</p></div>
-            </div>
-            <div class="buzz-card overflow-hidden bg-white shadow-xl border border-base-200">
-                <div class="aspect-square bg-buzz-warm flex items-center justify-center"><i data-lucide="scan-line" class="w-12 h-12 text-primary"></i></div>
-                <div class="p-4"><h3 class="font-bold">Roof Image 2</h3><p class="text-sm text-base-content/60">Placeholder image.</p></div>
-            </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+            <a href="{{BASE_PATH}}assets/images/solar-satellite-before-after-implementation.webp" target="_blank" rel="noopener" class="buzz-card overflow-hidden bg-white shadow-xl border border-base-200 group hover:-translate-y-1 transition-all duration-300">
+                <div class="aspect-[16/10] bg-white overflow-hidden">
+                    <img src="{{BASE_PATH}}assets/images/solar-satellite-before-after-implementation.webp"
+                        alt="Satellite photo compared with AI generated solar implementation"
+                        width="1756" height="1054" loading="lazy" decoding="async"
+                        class="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-300">
+                </div>
+                <div class="p-4"><h3 class="font-bold">Satellite to AI PV Visual</h3><p class="text-sm text-base-content/60">Before and after roof implementation example.</p></div>
+            </a>
+            <a href="{{BASE_PATH}}assets/images/solar-satellite-roof-crop-analysis.webp" target="_blank" rel="noopener" class="buzz-card overflow-hidden bg-white shadow-xl border border-base-200 group hover:-translate-y-1 transition-all duration-300">
+                <div class="aspect-[16/10] bg-white overflow-hidden">
+                    <img src="{{BASE_PATH}}assets/images/solar-satellite-roof-crop-analysis.webp"
+                        alt="Marked roof crop and raw crop used for solar roof analysis"
+                        width="2254" height="1276" loading="lazy" decoding="async"
+                        class="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-300">
+                </div>
+                <div class="p-4"><h3 class="font-bold">Roof Crop Analysis</h3><p class="text-sm text-base-content/60">Marked and raw satellite crop used during review.</p></div>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="buzz-card overflow-hidden bg-white shadow-xl border border-base-200">
                 <div class="aspect-square bg-buzz-warm flex items-center justify-center"><i data-lucide="sun" class="w-12 h-12 text-primary"></i></div>
                 <div class="p-4"><h3 class="font-bold">PV Visual</h3><p class="text-sm text-base-content/60">Placeholder image.</p></div>
@@ -407,10 +420,10 @@
     <div class="container mx-auto container-padding text-center relative z-10">
         <h2 class="text-4xl md:text-5xl font-black mb-8 text-white">See what an AI-automated solar offer looks like</h2>
         <p class="text-xl mb-12 text-white/90 max-w-2xl mx-auto leading-relaxed">
-            Download example B2C and B2B solar offers with roof visuals, calculations, and proposal formatting.
+            Download an example solar offer with roof visuals, calculations, and proposal formatting.
         </p>
-        <a href="#example-gallery" class="btn btn-lg bg-white text-primary hover:bg-white/90 border-none px-10 md:px-16 shadow-2xl whitespace-normal h-auto min-h-14">
-            Download Example B2C and B2B Offers
+        <a href="{{BASE_PATH}}assets/offers/acme-energy-us-solar-proposal.pdf" download class="btn btn-lg bg-white text-primary hover:bg-white/90 border-none px-10 md:px-16 shadow-2xl whitespace-normal h-auto min-h-14">
+            Download Example Offer
         </a>
     </div>
 

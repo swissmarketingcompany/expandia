@@ -5338,6 +5338,10 @@ details.collapse summary::-webkit-details-marker{
   display: none;
 }
 
+.aspect-\[16\/10\]{
+  aspect-ratio: 16/10;
+}
+
 .aspect-\[16\/9\]{
   aspect-ratio: 16/9;
 }
@@ -7679,6 +7683,11 @@ body>footer.footer-gradient{
 
 .marker\:text-primary::marker{
   color: var(--fallback-p,oklch(var(--p)/var(--tw-text-opacity, 1)));
+}
+
+.hover\:-translate-y-1:hover{
+  --tw-translate-y: -0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .hover\:-translate-y-2:hover{
