@@ -257,6 +257,77 @@
     </div>
 </section>
 
+<!-- References -->
+<section id="example-gallery" class="section-spacing bg-base-100">
+    <div class="container mx-auto container-padding">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-black mb-6">
+                <span class="gradient-header">References</span>
+            </h2>
+            <p class="text-xl text-base-content/80 max-w-3xl mx-auto">
+                Download an example solar offer and neighborhood batch report with roof visuals, system sizing, production estimates, and proposal formatting.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div id="example-offer-download" class="buzz-card overflow-hidden bg-white shadow-xl border border-primary">
+                <div class="aspect-[4/3] bg-buzz-warm overflow-hidden">
+                    <img src="{{BASE_PATH}}assets/images/acme-energy-us-solar-proposal-preview.png"
+                        alt="Acme Energy solar offer PDF preview"
+                        width="1191" height="1684" loading="lazy" decoding="async"
+                        class="w-full h-full object-contain">
+                </div>
+                <div class="p-5">
+                    <h3 class="font-bold text-lg mb-2">Example Solar Offer PDF</h3>
+                    <p class="text-sm text-base-content/60 mb-4">Enter a corporate email to download the Acme Energy sample proposal.</p>
+                    <form class="space-y-3" data-lead-capture="solar example offer download"
+                        data-lead-title="Solar Example Offer Download Request"
+                        data-require-corporate-email="true"
+                        data-download-url="{{BASE_PATH}}assets/offers/acme-energy-us-solar-proposal.pdf"
+                        data-success-message="Thanks. Your download is opening now.">
+                        <input name="email" type="email" class="input input-bordered w-full" placeholder="Corporate email" required>
+                        <input name="company" type="text" class="input input-bordered w-full" placeholder="Company name">
+                        <input name="request" type="hidden" value="Visitor requested the Acme Energy example solar offer PDF.">
+                        <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
+                        <button type="submit" class="btn btn-primary w-full">Download Example Offer</button>
+                        <p data-lead-status class="text-sm text-base-content/60 min-h-5"></p>
+                    </form>
+                </div>
+            </div>
+            <a href="{{BASE_PATH}}assets/offers/acme-energy-mock-us-neighborhood-batch-report.pdf" download class="buzz-card overflow-hidden bg-white shadow-xl border border-primary group hover:-translate-y-1 transition-all duration-300">
+                <div class="aspect-[4/3] bg-white overflow-hidden">
+                    <img src="{{BASE_PATH}}assets/images/acme-energy-mock-us-neighborhood-batch-report.png"
+                        alt="Mock solar API neighborhood batch report preview"
+                        width="2042" height="1588" loading="lazy" decoding="async"
+                        class="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-300">
+                </div>
+                <div class="p-5"><h3 class="font-bold text-lg">Batch Report PDF</h3><p class="text-sm text-base-content/60">Download the mock neighborhood batch report.</p></div>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+            <a href="{{BASE_PATH}}assets/images/solar-satellite-before-after-implementation.webp" target="_blank" rel="noopener" class="buzz-card overflow-hidden bg-white shadow-xl border border-base-200 group hover:-translate-y-1 transition-all duration-300">
+                <div class="aspect-[16/10] bg-white overflow-hidden">
+                    <img src="{{BASE_PATH}}assets/images/solar-satellite-before-after-implementation.webp"
+                        alt="Satellite photo compared with AI generated solar implementation"
+                        width="1756" height="1054" loading="lazy" decoding="async"
+                        class="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-300">
+                </div>
+                <div class="p-4"><h3 class="font-bold">Satellite to AI PV Visual</h3><p class="text-sm text-base-content/60">Before and after roof implementation example.</p></div>
+            </a>
+            <a href="{{BASE_PATH}}assets/images/solar-satellite-roof-crop-analysis.webp" target="_blank" rel="noopener" class="buzz-card overflow-hidden bg-white shadow-xl border border-base-200 group hover:-translate-y-1 transition-all duration-300">
+                <div class="aspect-[16/10] bg-white overflow-hidden">
+                    <img src="{{BASE_PATH}}assets/images/solar-satellite-roof-crop-analysis.webp"
+                        alt="Marked roof crop and raw crop used for solar roof analysis"
+                        width="2254" height="1276" loading="lazy" decoding="async"
+                        class="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-300">
+                </div>
+                <div class="p-4"><h3 class="font-bold">Roof Crop Analysis</h3><p class="text-sm text-base-content/60">Marked and raw satellite crop used during review.</p></div>
+            </a>
+        </div>
+    </div>
+</section>
+
 <!-- Problems -->
 <section class="section-spacing bg-buzz-light">
     <div class="container mx-auto container-padding">
@@ -361,78 +432,6 @@
                 </p>
                 <a href="{{BASE_PATH}}contact.html" class="btn bg-white text-primary hover:bg-white/90 border-none w-full">Ask for Pricing</a>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- Gallery -->
-<section id="example-gallery" class="section-spacing bg-base-100">
-    <div class="container mx-auto container-padding">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-6xl font-black mb-6">
-                <span class="gradient-header">Example Offer</span><br>
-                <span class="text-base-content">Gallery</span>
-            </h2>
-            <p class="text-xl text-base-content/80 max-w-3xl mx-auto">
-                Download an example solar offer and neighborhood batch report with roof visuals, system sizing, production estimates, and proposal formatting.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <div id="example-offer-download" class="buzz-card overflow-hidden bg-white shadow-xl border border-primary">
-                <div class="aspect-[4/3] bg-buzz-warm overflow-hidden">
-                    <img src="{{BASE_PATH}}assets/images/acme-energy-us-solar-proposal-preview.png"
-                        alt="Acme Energy solar offer PDF preview"
-                        width="1191" height="1684" loading="lazy" decoding="async"
-                        class="w-full h-full object-contain">
-                </div>
-                <div class="p-5">
-                    <h3 class="font-bold text-lg mb-2">Example Solar Offer PDF</h3>
-                    <p class="text-sm text-base-content/60 mb-4">Enter a corporate email to download the Acme Energy sample proposal.</p>
-                    <form class="space-y-3" data-lead-capture="solar example offer download"
-                        data-lead-title="Solar Example Offer Download Request"
-                        data-require-corporate-email="true"
-                        data-download-url="{{BASE_PATH}}assets/offers/acme-energy-us-solar-proposal.pdf"
-                        data-success-message="Thanks. Your download is opening now.">
-                        <input name="email" type="email" class="input input-bordered w-full" placeholder="Corporate email" required>
-                        <input name="company" type="text" class="input input-bordered w-full" placeholder="Company name">
-                        <input name="request" type="hidden" value="Visitor requested the Acme Energy example solar offer PDF.">
-                        <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
-                        <button type="submit" class="btn btn-primary w-full">Download Example Offer</button>
-                        <p data-lead-status class="text-sm text-base-content/60 min-h-5"></p>
-                    </form>
-                </div>
-            </div>
-            <a href="{{BASE_PATH}}assets/offers/acme-energy-mock-us-neighborhood-batch-report.pdf" download class="buzz-card overflow-hidden bg-white shadow-xl border border-primary group hover:-translate-y-1 transition-all duration-300">
-                <div class="aspect-[4/3] bg-white overflow-hidden">
-                    <img src="{{BASE_PATH}}assets/images/acme-energy-mock-us-neighborhood-batch-report.png"
-                        alt="Mock solar API neighborhood batch report preview"
-                        width="2042" height="1588" loading="lazy" decoding="async"
-                        class="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-300">
-                </div>
-                <div class="p-5"><h3 class="font-bold text-lg">Batch Report PDF</h3><p class="text-sm text-base-content/60">Download the mock neighborhood batch report.</p></div>
-            </a>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-            <a href="{{BASE_PATH}}assets/images/solar-satellite-before-after-implementation.webp" target="_blank" rel="noopener" class="buzz-card overflow-hidden bg-white shadow-xl border border-base-200 group hover:-translate-y-1 transition-all duration-300">
-                <div class="aspect-[16/10] bg-white overflow-hidden">
-                    <img src="{{BASE_PATH}}assets/images/solar-satellite-before-after-implementation.webp"
-                        alt="Satellite photo compared with AI generated solar implementation"
-                        width="1756" height="1054" loading="lazy" decoding="async"
-                        class="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-300">
-                </div>
-                <div class="p-4"><h3 class="font-bold">Satellite to AI PV Visual</h3><p class="text-sm text-base-content/60">Before and after roof implementation example.</p></div>
-            </a>
-            <a href="{{BASE_PATH}}assets/images/solar-satellite-roof-crop-analysis.webp" target="_blank" rel="noopener" class="buzz-card overflow-hidden bg-white shadow-xl border border-base-200 group hover:-translate-y-1 transition-all duration-300">
-                <div class="aspect-[16/10] bg-white overflow-hidden">
-                    <img src="{{BASE_PATH}}assets/images/solar-satellite-roof-crop-analysis.webp"
-                        alt="Marked roof crop and raw crop used for solar roof analysis"
-                        width="2254" height="1276" loading="lazy" decoding="async"
-                        class="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-300">
-                </div>
-                <div class="p-4"><h3 class="font-bold">Roof Crop Analysis</h3><p class="text-sm text-base-content/60">Marked and raw satellite crop used during review.</p></div>
-            </a>
         </div>
     </div>
 </section>
