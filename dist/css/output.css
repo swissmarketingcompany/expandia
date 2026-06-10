@@ -5710,6 +5710,10 @@ details.collapse summary::-webkit-details-marker{
   flex-shrink: 0;
 }
 
+.shrink-0{
+  flex-shrink: 0;
+}
+
 .grow{
   flex-grow: 1;
 }
@@ -6366,6 +6370,11 @@ details.collapse summary::-webkit-details-marker{
 .py-4{
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.py-5{
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .py-8{
@@ -8088,6 +8097,14 @@ body>footer.footer-gradient{
     align-items: flex-start;
   }
 
+  .lg\:items-center{
+    align-items: center;
+  }
+
+  .lg\:justify-between{
+    justify-content: space-between;
+  }
+
   .lg\:p-12{
     padding: 3rem;
   }
@@ -8122,6 +8139,14 @@ body>footer.footer-gradient{
 }
 
 @media (min-width: 1280px){
+  .xl\:col-span-1{
+    grid-column: span 1 / span 1;
+  }
+
+  .xl\:grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .xl\:gap-16{
     gap: 4rem;
   }

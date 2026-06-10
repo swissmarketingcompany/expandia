@@ -118,90 +118,102 @@
     </div>
 </section>
 
-<!-- Remote Solar Analysis -->
+<!-- Offer Flow -->
 <section class="section-spacing bg-base-100">
     <div class="container mx-auto container-padding">
-        <div class="space-y-8">
-            <div class="overflow-hidden rounded-3xl bg-white shadow-xl border border-base-200">
+        <div class="text-center mb-14">
+            <p class="text-sm font-bold uppercase tracking-wider text-primary mb-4">Offer flow</p>
+            <h2 class="text-4xl md:text-6xl font-black mb-5">
+                <span class="gradient-header">From location</span><br>
+                <span class="text-base-content">to ready-to-review offers</span>
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+            <div class="buzz-card overflow-hidden bg-white shadow-xl border border-base-200">
                 <img src="{{BASE_PATH}}assets/images/solar-analysis-neighborhood-potential.png"
                     alt="Neighborhood satellite solar potential map with roof heat overlays and suggested panel placements"
                     width="1448" height="1086" loading="lazy" decoding="async"
-                    class="w-full h-auto object-contain">
+                    class="w-full aspect-[4/3] object-cover">
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center font-black">1</span>
+                        <h3 class="font-black text-xl">Location</h3>
+                    </div>
+                    <p class="text-base-content/70">Choose the town, postal area, sales territory, or commercial zone.</p>
+                </div>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div class="overflow-hidden rounded-3xl bg-white shadow-xl border border-base-200">
-                    <img src="{{BASE_PATH}}assets/images/solar-analysis-roof-selection.png"
-                        alt="Aerial roof selection with outline and suggested solar panel area"
-                        width="1448" height="1086" loading="lazy" decoding="async"
-                        class="w-full h-auto object-contain">
+            <div class="buzz-card overflow-hidden bg-white shadow-xl border border-base-200">
+                <img src="{{BASE_PATH}}assets/images/solar-analysis-roof-selection.png"
+                    alt="Aerial roof selection with outline and suggested solar panel area"
+                    width="1448" height="1086" loading="lazy" decoding="async"
+                    class="w-full aspect-[4/3] object-cover">
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center font-black">2</span>
+                        <h3 class="font-black text-xl">Research</h3>
+                    </div>
+                    <p class="text-base-content/70">We find relevant addresses and screen roof potential from available imagery.</p>
                 </div>
-                <div class="overflow-hidden rounded-3xl bg-white shadow-xl border border-base-200">
-                    <img src="{{BASE_PATH}}assets/images/solar-analysis-rooftop-metrics.png"
-                        alt="Solar rooftop metrics including usable sunlight, roof area, pitch, azimuth, and annual shading"
-                        width="1448" height="1086" loading="lazy" decoding="async"
-                        class="w-full h-auto object-contain">
+            </div>
+
+            <div class="buzz-card overflow-hidden bg-white shadow-xl border border-base-200">
+                <img src="{{BASE_PATH}}assets/images/solar-analysis-rooftop-metrics.png"
+                    alt="Solar rooftop metrics including usable sunlight, roof area, pitch, azimuth, and annual shading"
+                    width="1448" height="1086" loading="lazy" decoding="async"
+                    class="w-full aspect-[4/3] object-cover">
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center font-black">3</span>
+                        <h3 class="font-black text-xl">Real solar data</h3>
+                    </div>
+                    <p class="text-base-content/70">Potential, fit, and practical offer assumptions are calculated for each qualified roof.</p>
                 </div>
-                <div class="overflow-hidden rounded-3xl bg-white shadow-xl border border-base-200">
-                    <img src="{{BASE_PATH}}assets/images/solar-analysis-array-layout.png"
-                        alt="Solar panel array layout preview over a large residential roof"
-                        width="1448" height="1086" loading="lazy" decoding="async"
-                        class="w-full h-auto object-contain">
+            </div>
+
+            <div class="buzz-card overflow-hidden bg-white shadow-xl border border-base-200">
+                <img src="{{BASE_PATH}}assets/images/solar-analysis-array-layout.png"
+                    alt="Solar panel array layout preview over a large residential roof"
+                    width="1448" height="1086" loading="lazy" decoding="async"
+                    class="w-full aspect-[4/3] object-cover">
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center font-black">4</span>
+                        <h3 class="font-black text-xl">AI-optimized roof photos</h3>
+                    </div>
+                    <p class="text-base-content/70">The offer includes visual roof previews with PV panels inserted for the proposal.</p>
                 </div>
-                <div class="overflow-hidden rounded-3xl bg-white shadow-xl border border-base-200">
-                    <img src="{{BASE_PATH}}assets/images/solar-analysis-shading-map.png"
-                        alt="Solar shading map with roof heat overlay and sunny to shady scale"
-                        width="1448" height="1086" loading="lazy" decoding="async"
-                        class="w-full h-auto object-contain">
+            </div>
+
+            <div class="buzz-card overflow-hidden bg-white shadow-xl border border-base-200 md:col-span-2 xl:col-span-1">
+                <img src="{{BASE_PATH}}assets/images/solar-analysis-shading-map.png"
+                    alt="Solar shading map with roof heat overlay and sunny to shady scale"
+                    width="1448" height="1086" loading="lazy" decoding="async"
+                    class="w-full aspect-[4/3] object-cover">
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center font-black">5</span>
+                        <h3 class="font-black text-xl">Automated offer creation</h3>
+                    </div>
+                    <p class="text-base-content/70">Each accepted lead becomes a quote draft ready for human review.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Main Offer -->
-<section class="section-spacing bg-base-100">
-    <div class="container mx-auto container-padding">
-        <div class="grid lg:grid-cols-2 gap-14 items-center">
+<!-- Compact CTA -->
+<section class="bg-primary text-white">
+    <div class="container mx-auto container-padding py-5">
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div>
-                <h2 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
-                    <span class="gradient-header">Give us a location.</span><br>
-                    <span class="text-base-content">We prepare hundreds of offers.</span>
-                </h2>
-                <p class="text-xl text-base-content/80 leading-relaxed mb-8">
+                <h2 class="text-2xl md:text-3xl font-black leading-tight">Give us a location. We prepare hundreds of offers.</h2>
+                <p class="text-sm md:text-base text-white/85 max-w-5xl">
                     We research real addresses, inspect roof photos, estimate solar potential, create AI-optimized PV visuals, and turn each qualified location into a ready-to-review solar quote.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#packages" class="btn btn-primary btn-lg buzz-button">See Pricing</a>
-                    <a href="#example-gallery" class="btn btn-outline btn-lg border-primary text-primary hover:bg-primary hover:text-white">View Examples</a>
-                </div>
             </div>
-
-            <div class="buzz-card p-8 bg-white shadow-xl border-t-4 border-primary">
-                <p class="text-sm font-bold uppercase tracking-wider text-primary mb-5">Offer flow</p>
-                <div class="space-y-4">
-                    <div class="flex gap-4 items-start">
-                        <span class="w-12 h-12 min-w-12 rounded-2xl bg-primary text-white flex items-center justify-center text-lg leading-none font-black flex-shrink-0">1</span>
-                        <div><h3 class="font-bold text-base-content">Location</h3><p class="text-sm text-base-content/65">Choose the town, postal area, sales territory, or commercial zone.</p></div>
-                    </div>
-                    <div class="flex gap-4 items-start">
-                        <span class="w-12 h-12 min-w-12 rounded-2xl bg-primary text-white flex items-center justify-center text-lg leading-none font-black flex-shrink-0">2</span>
-                        <div><h3 class="font-bold text-base-content">Research</h3><p class="text-sm text-base-content/65">We find relevant addresses and screen roof potential from available imagery.</p></div>
-                    </div>
-                    <div class="flex gap-4 items-start">
-                        <span class="w-12 h-12 min-w-12 rounded-2xl bg-primary text-white flex items-center justify-center text-lg leading-none font-black flex-shrink-0">3</span>
-                        <div><h3 class="font-bold text-base-content">Real solar data</h3><p class="text-sm text-base-content/65">Potential, fit, and practical offer assumptions are calculated for each qualified roof.</p></div>
-                    </div>
-                    <div class="flex gap-4 items-start">
-                        <span class="w-12 h-12 min-w-12 rounded-2xl bg-primary text-white flex items-center justify-center text-lg leading-none font-black flex-shrink-0">4</span>
-                        <div><h3 class="font-bold text-base-content">AI-optimized roof photos</h3><p class="text-sm text-base-content/65">The offer includes visual roof previews with PV panels inserted for the proposal.</p></div>
-                    </div>
-                    <div class="flex gap-4 items-start">
-                        <span class="w-12 h-12 min-w-12 rounded-2xl bg-primary text-white flex items-center justify-center text-lg leading-none font-black flex-shrink-0">5</span>
-                        <div><h3 class="font-bold text-base-content">Automated offer creation</h3><p class="text-sm text-base-content/65">Each accepted lead becomes a quote draft ready for human review.</p></div>
-                    </div>
-                </div>
-            </div>
+            <a href="#packages" class="btn bg-white text-primary hover:bg-white/90 border-none shrink-0">See Pricing</a>
         </div>
     </div>
 </section>
@@ -327,19 +339,13 @@
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <a href="{{BASE_PATH}}assets/offers/acme-energy-us-solar-proposal.pdf" download class="buzz-card overflow-hidden bg-white shadow-xl border border-primary group hover:-translate-y-1 transition-all duration-300">
                 <div class="aspect-[4/3] bg-primary/10 flex items-center justify-center">
                     <i data-lucide="file-down" class="w-16 h-16 text-primary group-hover:scale-110 transition-transform"></i>
                 </div>
                 <div class="p-5"><h3 class="font-bold text-lg">Example Solar Offer PDF</h3><p class="text-sm text-base-content/60">Download the Acme Energy sample proposal.</p></div>
             </a>
-            <div class="buzz-card overflow-hidden bg-white shadow-xl border border-base-200">
-                <div class="aspect-[4/3] bg-base-200 flex items-center justify-center">
-                    <i data-lucide="file-text" class="w-16 h-16 text-primary"></i>
-                </div>
-                <div class="p-5"><h3 class="font-bold text-lg">B2B Example PDF</h3><p class="text-sm text-base-content/60">Commercial offer format available on request.</p></div>
-            </div>
             <a href="{{BASE_PATH}}assets/offers/acme-energy-mock-us-neighborhood-batch-report.pdf" download class="buzz-card overflow-hidden bg-white shadow-xl border border-primary group hover:-translate-y-1 transition-all duration-300">
                 <div class="aspect-[4/3] bg-white overflow-hidden">
                     <img src="{{BASE_PATH}}assets/images/acme-energy-mock-us-neighborhood-batch-report.png"
@@ -370,21 +376,6 @@
                 </div>
                 <div class="p-4"><h3 class="font-bold">Roof Crop Analysis</h3><p class="text-sm text-base-content/60">Marked and raw satellite crop used during review.</p></div>
             </a>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="buzz-card overflow-hidden bg-white shadow-xl border border-base-200">
-                <div class="aspect-square bg-buzz-warm flex items-center justify-center"><i data-lucide="sun" class="w-12 h-12 text-primary"></i></div>
-                <div class="p-4"><h3 class="font-bold">PV Visual</h3><p class="text-sm text-base-content/60">Placeholder image.</p></div>
-            </div>
-            <div class="buzz-card overflow-hidden bg-white shadow-xl border border-base-200">
-                <div class="aspect-square bg-buzz-warm flex items-center justify-center"><i data-lucide="file-image" class="w-12 h-12 text-primary"></i></div>
-                <div class="p-4"><h3 class="font-bold">Offer Page</h3><p class="text-sm text-base-content/60">Placeholder image.</p></div>
-            </div>
-            <div class="buzz-card overflow-hidden bg-white shadow-xl border border-base-200 sm:col-span-2 lg:col-span-1">
-                <div class="aspect-[16/9] lg:aspect-square bg-buzz-warm flex items-center justify-center"><i data-lucide="map" class="w-12 h-12 text-primary"></i></div>
-                <div class="p-4"><h3 class="font-bold">Map View</h3><p class="text-sm text-base-content/60">Placeholder image.</p></div>
-            </div>
         </div>
     </div>
 </section>
