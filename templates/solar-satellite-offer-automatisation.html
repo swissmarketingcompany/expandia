@@ -199,6 +199,35 @@
                     <p class="text-base-content/70">Each accepted lead becomes a quote draft ready for human review.</p>
                 </div>
             </div>
+
+            <div class="buzz-card relative overflow-hidden bg-primary text-white shadow-xl md:col-span-2 xl:col-span-1">
+                <div class="absolute -top-16 -right-12 w-48 h-48 rounded-full bg-white/10 blur-2xl"></div>
+                <div class="absolute -bottom-20 -left-12 w-52 h-52 rounded-full bg-white/10 blur-2xl"></div>
+                <div class="relative h-full p-7 md:p-8 flex flex-col justify-center">
+                    <p class="text-sm font-bold uppercase tracking-wider text-white/70 mb-3">Ready for your first area?</p>
+                    <h3 class="text-3xl font-black leading-tight mb-3">Start creating solar offers at scale</h3>
+                    <p class="text-white/85 leading-relaxed mb-6">
+                        Enter your corporate email and we will contact you to plan the first automated offer batch.
+                    </p>
+                    <form class="space-y-3" data-lead-capture="solar offer flow cta"
+                        data-lead-title="Solar Offer Automation Start Request"
+                        data-require-corporate-email="true"
+                        data-success-message="Thanks. We will contact you about your first offer batch.">
+                        <label class="sr-only" for="solar-offer-flow-email">Corporate email</label>
+                        <input id="solar-offer-flow-email" name="email" type="email"
+                            class="input input-bordered w-full bg-white text-base-content border-white"
+                            placeholder="Corporate email" autocomplete="email" required>
+                        <input name="request" type="hidden"
+                            value="Visitor wants to start an automated solar offer batch.">
+                        <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
+                        <button type="submit"
+                            class="btn w-full bg-white text-primary hover:bg-white/90 border-none shadow-lg">
+                            Start now
+                        </button>
+                        <p data-lead-status class="min-h-5 text-sm text-white/80" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </section>
