@@ -484,7 +484,7 @@
                     We help solar companies find leads from automated satellite photos and create automatic offers using AI.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 mb-12">
-                    <a href="./assets/offers/acme-energy-us-solar-proposal.pdf" download class="btn btn-primary btn-lg buzz-button shadow-lg shadow-primary/25">
+                    <a href="#example-offer-download" class="btn btn-primary btn-lg buzz-button shadow-lg shadow-primary/25">
                         Download Example Offer
                     </a>
                     <a href="#workflow" class="btn btn-lg btn-outline border-primary text-primary hover:bg-primary hover:text-white">
@@ -625,17 +625,27 @@
     </div>
 </section>
 
-<!-- Compact CTA -->
-<section class="bg-primary text-white">
-    <div class="container mx-auto container-padding py-5">
-        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-            <div>
-                <h2 class="text-2xl md:text-3xl font-black leading-tight">Give us a location. We prepare hundreds of offers.</h2>
-                <p class="text-sm md:text-base text-white/85 max-w-5xl">
+<!-- Location CTA -->
+<section class="bg-primary text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute -top-24 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-28 right-16 w-80 h-80 bg-white rounded-full blur-3xl"></div>
+    </div>
+    <div class="container mx-auto container-padding py-12 md:py-14 relative z-10">
+        <div class="grid lg:grid-cols-[1fr_auto] gap-8 lg:items-center">
+            <div class="max-w-5xl">
+                <p class="text-sm font-bold uppercase tracking-wider text-white/70 mb-3">Start with one area</p>
+                <h2 class="text-3xl md:text-5xl font-black leading-tight mb-4 text-white">
+                    Give us a location. We prepare hundreds of offers.
+                </h2>
+                <p class="text-lg md:text-xl text-white/85 leading-relaxed">
                     We research real addresses, inspect roof photos, estimate solar potential, create AI-optimized PV visuals, and turn each qualified location into a ready-to-review solar quote.
                 </p>
             </div>
-            <a href="#packages" class="btn bg-white text-primary hover:bg-white/90 border-none shrink-0">See Pricing</a>
+            <div class="flex flex-col sm:flex-row lg:flex-col gap-3">
+                <a href="#packages" class="btn bg-white text-primary hover:bg-white/90 border-none min-w-44">See Pricing</a>
+                <a href="#example-offer-download" class="btn btn-outline border-white text-white hover:bg-white hover:text-primary min-w-44">Download Example</a>
+            </div>
         </div>
     </div>
 </section>
@@ -762,12 +772,30 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <a href="./assets/offers/acme-energy-us-solar-proposal.pdf" download class="buzz-card overflow-hidden bg-white shadow-xl border border-primary group hover:-translate-y-1 transition-all duration-300">
-                <div class="aspect-[4/3] bg-primary/10 flex items-center justify-center">
-                    <i data-lucide="file-down" class="w-16 h-16 text-primary group-hover:scale-110 transition-transform"></i>
+            <div id="example-offer-download" class="buzz-card overflow-hidden bg-white shadow-xl border border-primary">
+                <div class="aspect-[4/3] bg-buzz-warm overflow-hidden">
+                    <img src="./assets/images/acme-energy-us-solar-proposal-preview.png"
+                        alt="Acme Energy solar offer PDF preview"
+                        width="1191" height="1684" loading="lazy" decoding="async"
+                        class="w-full h-full object-contain">
                 </div>
-                <div class="p-5"><h3 class="font-bold text-lg">Example Solar Offer PDF</h3><p class="text-sm text-base-content/60">Download the Acme Energy sample proposal.</p></div>
-            </a>
+                <div class="p-5">
+                    <h3 class="font-bold text-lg mb-2">Example Solar Offer PDF</h3>
+                    <p class="text-sm text-base-content/60 mb-4">Enter a corporate email to download the Acme Energy sample proposal.</p>
+                    <form class="space-y-3" data-lead-capture="solar example offer download"
+                        data-lead-title="Solar Example Offer Download Request"
+                        data-require-corporate-email="true"
+                        data-download-url="./assets/offers/acme-energy-us-solar-proposal.pdf"
+                        data-success-message="Thanks. Your download is opening now.">
+                        <input name="email" type="email" class="input input-bordered w-full" placeholder="Corporate email" required>
+                        <input name="company" type="text" class="input input-bordered w-full" placeholder="Company name">
+                        <input name="request" type="hidden" value="Visitor requested the Acme Energy example solar offer PDF.">
+                        <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
+                        <button type="submit" class="btn btn-primary w-full">Download Example Offer</button>
+                        <p data-lead-status class="text-sm text-base-content/60 min-h-5"></p>
+                    </form>
+                </div>
+            </div>
             <a href="./assets/offers/acme-energy-mock-us-neighborhood-batch-report.pdf" download class="buzz-card overflow-hidden bg-white shadow-xl border border-primary group hover:-translate-y-1 transition-all duration-300">
                 <div class="aspect-[4/3] bg-white overflow-hidden">
                     <img src="./assets/images/acme-energy-mock-us-neighborhood-batch-report.png"
@@ -879,7 +907,7 @@
         <p class="text-xl mb-12 text-white/90 max-w-2xl mx-auto leading-relaxed">
             Download an example solar offer with roof visuals, calculations, and proposal formatting.
         </p>
-        <a href="./assets/offers/acme-energy-us-solar-proposal.pdf" download class="btn btn-lg bg-white text-primary hover:bg-white/90 border-none px-10 md:px-16 shadow-2xl whitespace-normal h-auto min-h-14">
+        <a href="#example-offer-download" class="btn btn-lg bg-white text-primary hover:bg-white/90 border-none px-10 md:px-16 shadow-2xl whitespace-normal h-auto min-h-14">
             Download Example Offer
         </a>
     </div>

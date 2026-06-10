@@ -5088,6 +5088,14 @@ details.collapse summary::-webkit-details-marker{
   right: 0px;
 }
 
+.-bottom-28{
+  bottom: -7rem;
+}
+
+.-top-24{
+  top: -6rem;
+}
+
 .bottom-0{
   bottom: 0px;
 }
@@ -5126,6 +5134,10 @@ details.collapse summary::-webkit-details-marker{
 
 .right-10{
   right: 2.5rem;
+}
+
+.right-16{
+  right: 4rem;
 }
 
 .right-20{
@@ -5342,10 +5354,6 @@ details.collapse summary::-webkit-details-marker{
   aspect-ratio: 16/10;
 }
 
-.aspect-\[16\/9\]{
-  aspect-ratio: 16/9;
-}
-
 .aspect-\[4\/3\]{
   aspect-ratio: 4/3;
 }
@@ -5444,6 +5452,10 @@ details.collapse summary::-webkit-details-marker{
 
 .h-8{
   height: 2rem;
+}
+
+.h-80{
+  height: 20rem;
 }
 
 .h-9{
@@ -5606,8 +5618,8 @@ details.collapse summary::-webkit-details-marker{
   min-width: 0px;
 }
 
-.min-w-12{
-  min-width: 3rem;
+.min-w-44{
+  min-width: 11rem;
 }
 
 .min-w-\[760px\]{
@@ -5814,10 +5826,6 @@ details.collapse summary::-webkit-details-marker{
 
 .gap-12{
   gap: 3rem;
-}
-
-.gap-14{
-  gap: 3.5rem;
 }
 
 .gap-16{
@@ -7958,6 +7966,11 @@ body>footer.footer-gradient{
     padding-right: 4rem;
   }
 
+  .md\:py-14{
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
   .md\:py-20{
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -8053,10 +8066,6 @@ body>footer.footer-gradient{
     display: none;
   }
 
-  .lg\:aspect-square{
-    aspect-ratio: 1 / 1;
-  }
-
   .lg\:w-auto{
     width: auto;
   }
@@ -8089,8 +8098,16 @@ body>footer.footer-gradient{
     grid-template-columns: 1.05fr 0.95fr;
   }
 
+  .lg\:grid-cols-\[1fr_auto\]{
+    grid-template-columns: 1fr auto;
+  }
+
   .lg\:flex-row{
     flex-direction: row;
+  }
+
+  .lg\:flex-col{
+    flex-direction: column;
   }
 
   .lg\:items-start{

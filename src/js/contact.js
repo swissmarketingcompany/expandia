@@ -173,6 +173,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const leadCaptureForms = document.querySelectorAll('form[data-lead-capture]');
+    const freeEmailDomains = new Set([
+        'gmail.com', 'googlemail.com', 'yahoo.com', 'hotmail.com', 'outlook.com',
+        'live.com', 'icloud.com', 'me.com', 'mac.com', 'aol.com', 'proton.me',
+        'protonmail.com', 'pm.me', 'gmx.com', 'gmx.net', 'mail.com', 'zoho.com',
+        'yandex.com', 'hey.com'
+    ]);
+
+    function isCorporateEmail(email) {
+        const domain = String(email || '').split('@')[1];
+        return Boolean(domain && domain.includes('.') && !freeEmailDomains.has(domain.toLowerCase()));
+    }
 
     leadCaptureForms.forEach((leadForm) => {
         leadForm.addEventListener('submit', async (e) => {
@@ -189,6 +200,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
+            const email = formData.get('email');
+            if (leadForm.dataset.requireCorporateEmail === 'true' && !isCorporateEmail(email)) {
+                if (statusEl) statusEl.textContent = 'Please use a corporate email address.';
+                return;
+            }
+
             if (statusEl) statusEl.textContent = 'Sending...';
             if (btn) {
                 btn.textContent = 'Sending...';
@@ -196,15 +213,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const payload = {
-                email: formData.get('email'),
+                email,
                 message: [
-                    'Free AI Automation Checkup Request',
+                    leadForm.dataset.leadTitle || 'Free AI Automation Checkup Request',
                     `Source: ${leadForm.dataset.leadCapture || 'blog lead capture'}`,
                     `Page: ${window.location.href}`,
-                    'Request: Visitor asked for a quick first-pass review of what their team should automate first.'
-                ].join('\n'),
+                    formData.get('company') ? `Company: ${formData.get('company')}` : '',
+                    formData.get('request') ? `Request: ${formData.get('request')}` : 'Request: Visitor asked for a quick first-pass review of what their team should automate first.'
+                ].filter(Boolean).join('\n'),
                 to: DESTINATION_EMAIL
             };
+
+            const downloadUrl = leadForm.dataset.downloadUrl;
+            const successMessage = leadForm.dataset.successMessage || 'Thanks. We will send your checkup shortly.';
 
             try {
                 const resp = await fetch('https://expandia-contact-form.omaycompany.workers.dev/', {
@@ -217,8 +238,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (resp.ok) {
                     leadForm.reset();
-                    if (statusEl) statusEl.textContent = 'Thanks. We will send your checkup shortly.';
-                    if (btn) btn.textContent = 'Sent';
+                    if (statusEl) statusEl.textContent = successMessage;
+                    if (btn) btn.textContent = downloadUrl ? 'Opening...' : 'Sent';
+
+                    if (downloadUrl) {
+                        window.setTimeout(() => {
+                            const downloadLink = document.createElement('a');
+                            downloadLink.href = downloadUrl;
+                            downloadLink.download = '';
+                            downloadLink.rel = 'noopener';
+                            document.body.appendChild(downloadLink);
+                            downloadLink.click();
+                            downloadLink.remove();
+                        }, 250);
+                    }
                 } else {
                     if (statusEl) statusEl.textContent = data.message || 'Submission failed. Please try again.';
                     if (btn) btn.textContent = originalText;
@@ -231,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (btn) {
                     window.setTimeout(() => {
                         btn.disabled = false;
-                        if (btn.textContent === 'Sent') {
+                        if (btn.textContent === 'Sent' || btn.textContent === 'Opening...') {
                             btn.textContent = originalText;
                         }
                     }, 2000);
