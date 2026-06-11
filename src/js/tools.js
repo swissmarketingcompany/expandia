@@ -551,18 +551,7 @@ const assessmentQuestions = [
         ]
     },
     
-    // Budget and Resources (5 questions)
-    {
-        category: 'budget',
-        question: 'What is your organization\'s budget range for AI initiatives?',
-        options: [
-            { text: '$500K+ - Substantial AI investment budget', score: 5 },
-            { text: '$250K-$500K - Good AI investment capacity', score: 4 },
-            { text: '$100K-$250K - Moderate AI budget available', score: 3 },
-            { text: '$50K-$100K - Limited AI budget', score: 2 },
-            { text: 'Under $50K - Very constrained budget', score: 1 }
-        ]
-    },
+    // Budget and Resources (4 questions)
     {
         category: 'budget',
         question: 'How does your organization typically fund technology projects?',
@@ -1053,4 +1042,4 @@ window.updateStaffHours = function(value) {
 
 window.updateHourlyCost = function(value) {
     document.getElementById('hourly-cost-display').textContent = value;
-}; 
+};

@@ -1781,12 +1781,11 @@ function buildGenericServiceBlueprint(service, lang = 'en') {
             id: 'capabilities',
             sectionClass: 'bg-base-100',
             heading: 'Scope, fit, and buying model',
-            intro: 'A quick view of the practical deliverables, commercial shape, and best-fit use case.',
+            intro: 'A quick view of the practical deliverables, engagement model, and best-fit use case.',
             gridClass: 'md:grid-cols-2',
             cards: [
                 { title: 'Deliverables', description: deliverables || 'Clear scope, implementation work, testing, handover, and the supporting workflow details.', borderClass: 'border-primary' },
                 { title: 'Engagement model', description: service.commercial_model || 'We scope the work around the business need.', borderClass: 'border-secondary' },
-                { title: 'Pricing shape', description: service.starting_price || 'Custom quote', borderClass: 'border-accent' },
                 { title: 'Best fit', description: service.good_fit || `You need ${service.name.toLowerCase()} done properly, in plain English, with no wasted motion.`, borderClass: 'border-neutral' }
             ]
         },

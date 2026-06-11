@@ -9,7 +9,6 @@
     "category": "ai-solutions",
     "badge": "Main Service",
     "commercial_model": "Project delivery or monthly automation partner",
-    "starting_price": "Projects start at EUR 8,000. Monthly automation work starts at EUR 4,000.",
     "good_fit": "Your team loses time to repeated admin, follow-up, reporting, handoffs, or tool-to-tool work.",
     "deliverables": "Workflow map, automation logic, system integrations, test cases, human-review rules, and launch support.",
     "outcomes": [
@@ -82,7 +81,6 @@
     "category": "ai-solutions",
     "badge": "Supporting Service",
     "commercial_model": "Fixed-fee consulting sprint or monthly advisory",
-    "starting_price": "Consulting sprints start at EUR 3,000.",
     "good_fit": "You know AI matters, but you need a serious plan before spending on tools or development.",
     "deliverables": "Use-case shortlist, readiness review, risk notes, budget shape, prioritized roadmap, and next-step scope.",
     "outcomes": [
@@ -155,7 +153,6 @@
     "category": "ai-solutions",
     "badge": "Supporting Service",
     "commercial_model": "Agent prototype, production build, or monthly improvement partner",
-    "starting_price": "Agent prototypes start at EUR 5,000. Production builds start at EUR 10,000.",
     "good_fit": "You want AI to carry out repeatable business tasks, not only answer one-off prompts.",
     "deliverables": "Agent job definition, instructions, tool connections, permission rules, logging, evaluation, and handoff.",
     "outcomes": [
@@ -228,7 +225,6 @@
     "category": "custom-software",
     "badge": "Supporting Service",
     "commercial_model": "Fixed-scope project or monthly AI product team",
-    "starting_price": "Custom AI solution projects start at EUR 10,000.",
     "good_fit": "Your use case is specific to your business and cannot be solved well by a generic AI tool.",
     "deliverables": "Use-case design, AI workflow or application build, integrations, dashboards or interfaces, testing, and handover.",
     "outcomes": [
@@ -301,7 +297,6 @@
     "category": "ai-solutions",
     "badge": "Service 1",
     "commercial_model": "Fixed-fee review",
-    "starting_price": "Starts at EUR 3,000",
     "good_fit": "You know AI matters, but you do not want to guess where to start.",
     "deliverables": "Data intake checklist, sensitive-data handling, department analysis, opportunity shortlist, and priority report.",
     "outcomes": [
@@ -374,7 +369,6 @@
     "category": "ai-solutions",
     "badge": "Service 2",
     "commercial_model": "Fixed-fee planning service",
-    "starting_price": "Starts at EUR 2,000",
     "good_fit": "You already have ideas, but you need a clear order, budget, and business model before building.",
     "deliverables": "Ranked roadmap, project sequence, budget model, ownership plan, risk notes, and first implementation scope.",
     "outcomes": [
@@ -447,7 +441,6 @@
     "category": "custom-software",
     "badge": "Service 3",
     "commercial_model": "Fixed-price project or monthly build partner",
-    "starting_price": "Projects start at EUR 8,000. Monthly work starts at EUR 4,000.",
     "good_fit": "You already know what should be built and want a team to set it up properly.",
     "deliverables": "Build scope, AI workflow implementation, integrations, testing, rollout support, and early iteration.",
     "outcomes": [
@@ -520,7 +513,6 @@
     "category": "ai-solutions",
     "badge": "Service 4",
     "commercial_model": "Standalone workshop or monthly training plan",
-    "starting_price": "Starts at EUR 1,500",
     "good_fit": "Your team has access to AI tools, but usage is weak, messy, or inconsistent.",
     "deliverables": "Role-based sessions, practical exercises, usage rules, prompt and workflow guidance, and adoption follow-up.",
     "outcomes": [
@@ -593,7 +585,6 @@
     "category": "custom-software",
     "badge": "Service 5",
     "commercial_model": "Monthly support or pay-as-you-go help",
-    "starting_price": "Starts at EUR 1,500 per month or EUR 150 per hour",
     "good_fit": "You already have AI tools or workflows and need reliable help to keep them useful.",
     "deliverables": "Issue triage, output tuning, workflow fixes, usage support, small improvements, and escalation help.",
     "outcomes": [
