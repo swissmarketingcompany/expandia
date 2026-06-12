@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+function initializeContactForms() {
     const DESTINATION_EMAIL = 'hello@goexpandia.com';
 
     // --- 1. FAQ functionality ---
@@ -336,4 +336,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeContactForms, { once: true });
+} else {
+    initializeContactForms();
+}
