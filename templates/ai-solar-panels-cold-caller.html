@@ -156,14 +156,14 @@
 </section>
 
 <!-- Product Proof -->
-<section id="demo" class="section-spacing bg-base-100">
+<section id="product-preview" class="section-spacing bg-base-100">
     <div class="container mx-auto container-padding">
         <div class="text-center mb-16">
             <h2 class="text-4xl md:text-6xl font-black mb-6"><span class="gradient-header">Product Preview</span></h2>
             <p class="text-xl text-base-content/80 max-w-3xl mx-auto">See the information the system captures from a solar call, how appointments are handed off, and how campaign outcomes become structured sales data.</p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
             <div class="buzz-card aspect-square bg-white shadow-xl border border-base-200 overflow-hidden">
                 <img src="{{BASE_PATH}}assets/images/ai-solar-cold-caller-transcript-workflow.png"
                     alt="Four-step AI solar call transcript workflow from introduction and questions to qualification summary and appointment handoff"
@@ -171,21 +171,11 @@
                     class="w-full h-full object-contain">
             </div>
 
-            <div class="buzz-card bg-white shadow-xl border border-base-200 p-6">
-                <div class="flex items-center justify-between mb-6">
-                    <div><p class="text-xs text-base-content/50 uppercase tracking-wider">Campaign dashboard</p><h3 class="font-black text-xl">Today’s call outcomes</h3></div>
-                    <i data-lucide="bar-chart-3" class="w-7 h-7 text-primary"></i>
-                </div>
-                <div class="grid grid-cols-2 gap-4 mb-6">
-                    <div class="rounded-2xl bg-base-100 p-4"><p class="text-sm text-base-content/60">Completed calls</p><p class="text-3xl font-black">128</p></div>
-                    <div class="rounded-2xl bg-base-100 p-4"><p class="text-sm text-base-content/60">Qualified</p><p class="text-3xl font-black text-primary">19</p></div>
-                    <div class="rounded-2xl bg-base-100 p-4"><p class="text-sm text-base-content/60">Appointments</p><p class="text-3xl font-black text-emerald-600">11</p></div>
-                    <div class="rounded-2xl bg-base-100 p-4"><p class="text-sm text-base-content/60">Opt-outs</p><p class="text-3xl font-black">7</p></div>
-                </div>
-                <div class="rounded-2xl border border-base-200 overflow-hidden">
-                    <div class="grid grid-cols-[1fr_auto] gap-3 p-4 border-b border-base-200"><div><p class="font-bold">Consultation booked</p><p class="text-sm text-base-content/60">Homeowner | $180-$250 bill</p></div><span class="text-xs font-bold text-emerald-700 bg-emerald-100 rounded-full px-3 py-1 self-center">CRM SYNCED</span></div>
-                    <div class="grid grid-cols-[1fr_auto] gap-3 p-4"><div><p class="font-bold">Human callback requested</p><p class="text-sm text-base-content/60">Commercial roof | Decision-maker</p></div><span class="text-xs font-bold text-primary bg-primary/10 rounded-full px-3 py-1 self-center">ROUTED</span></div>
-                </div>
+            <div class="buzz-card aspect-[16/10] bg-white shadow-xl border border-base-200 overflow-hidden">
+                <img src="{{BASE_PATH}}assets/images/ai-solar-cold-caller-campaign-dashboard.png"
+                    alt="AI solar cold-calling campaign dashboard showing completed calls, qualified prospects, appointments, opt-outs, call outcomes, and recent activity"
+                    width="1568" height="1003" loading="lazy" decoding="async"
+                    class="w-full h-full object-cover">
             </div>
         </div>
 
@@ -194,6 +184,84 @@
             <p class="text-base-content/70 mb-5">We will prepare the demonstration around your solar offer, qualification questions, and preferred handoff.</p>
             <a href="{{BASE_PATH}}contact.html" class="btn btn-primary">Request Demo</a>
         </div>
+    </div>
+</section>
+
+<!-- Demo Talks -->
+<section id="demo" class="section-spacing bg-buzz-warm">
+    <div class="container mx-auto container-padding">
+        <div class="text-center mb-14">
+            <p class="text-sm font-bold uppercase tracking-wider text-primary mb-4">Demo talks</p>
+            <h2 class="text-4xl md:text-6xl font-black mb-5">
+                <span class="gradient-header">Hear the AI caller</span><br>
+                <span class="text-base-content">handle key solar scenarios</span>
+            </h2>
+            <p class="text-xl text-base-content/75 max-w-3xl mx-auto">These sample conversations demonstrate disclosure, qualification, objection handling, data confirmation, and appointment booking.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <article class="buzz-card bg-white shadow-xl border border-base-200 p-6 md:p-8">
+                <div class="flex items-start gap-4 mb-5">
+                    <span class="w-11 h-11 shrink-0 rounded-xl bg-primary text-white flex items-center justify-center font-black">01</span>
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-wider text-primary mb-1">Scenario introduction</p>
+                        <h3 class="text-2xl font-black">Opening and qualification</h3>
+                    </div>
+                </div>
+                <p class="text-base-content/70 mb-5">The AI identifies itself, confirms the prospect, asks for permission to continue, and begins basic solar qualification.</p>
+                <audio controls preload="metadata" class="w-full" aria-label="Play scenario introduction demo">
+                    <source src="{{BASE_PATH}}assets/audio/solar-cold-caller/scenario-introduction.mp3" type="audio/mpeg">
+                    Your browser does not support the audio player.
+                </audio>
+            </article>
+
+            <article class="buzz-card bg-white shadow-xl border border-base-200 p-6 md:p-8">
+                <div class="flex items-start gap-4 mb-5">
+                    <span class="w-11 h-11 shrink-0 rounded-xl bg-primary text-white flex items-center justify-center font-black">02</span>
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-wider text-primary mb-1">Scenario objection</p>
+                        <h3 class="text-2xl font-black">Cost concern and no pressure</h3>
+                    </div>
+                </div>
+                <p class="text-base-content/70 mb-5">The prospect raises a cost objection. The AI acknowledges it, explains the low-commitment next step, and respects the preferred follow-up.</p>
+                <audio controls preload="metadata" class="w-full" aria-label="Play objection handling demo">
+                    <source src="{{BASE_PATH}}assets/audio/solar-cold-caller/scenario-objection.mp3" type="audio/mpeg">
+                    Your browser does not support the audio player.
+                </audio>
+            </article>
+
+            <article class="buzz-card bg-white shadow-xl border border-base-200 p-6 md:p-8">
+                <div class="flex items-start gap-4 mb-5">
+                    <span class="w-11 h-11 shrink-0 rounded-xl bg-primary text-white flex items-center justify-center font-black">03</span>
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-wider text-primary mb-1">Scenario address confirmation</p>
+                        <h3 class="text-2xl font-black">Correcting property details</h3>
+                    </div>
+                </div>
+                <p class="text-base-content/70 mb-5">The AI reads back the installation address, captures a corrected ZIP code, and confirms the property before continuing.</p>
+                <audio controls preload="metadata" class="w-full" aria-label="Play address confirmation demo">
+                    <source src="{{BASE_PATH}}assets/audio/solar-cold-caller/scenario-address-confirmation.mp3" type="audio/mpeg">
+                    Your browser does not support the audio player.
+                </audio>
+            </article>
+
+            <article class="buzz-card bg-white shadow-xl border border-base-200 p-6 md:p-8">
+                <div class="flex items-start gap-4 mb-5">
+                    <span class="w-11 h-11 shrink-0 rounded-xl bg-primary text-white flex items-center justify-center font-black">04</span>
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-wider text-primary mb-1">Scenario booking confirmation</p>
+                        <h3 class="text-2xl font-black">Selecting and confirming a time</h3>
+                    </div>
+                </div>
+                <p class="text-base-content/70 mb-5">The prospect chooses a time and call format. The AI repeats the appointment details and confirms the next action.</p>
+                <audio controls preload="metadata" class="w-full" aria-label="Play booking confirmation demo">
+                    <source src="{{BASE_PATH}}assets/audio/solar-cold-caller/scenario-booking-confirmation.mp3" type="audio/mpeg">
+                    Your browser does not support the audio player.
+                </audio>
+            </article>
+        </div>
+
+        <p class="text-center text-sm text-base-content/55 mt-8">Demo voices are synthetic and the names, addresses, and campaign details are fictional.</p>
     </div>
 </section>
 
