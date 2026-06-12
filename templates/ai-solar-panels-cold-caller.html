@@ -1,5 +1,14 @@
 <!-- AI Solar Panels Cold Caller -->
 <style>
+    html.ai-solar-cold-caller-page iframe[src*="tawk.to"],
+    html.ai-solar-cold-caller-page .tawk-min-container,
+    html.ai-solar-cold-caller-page .tawk-button,
+    html.ai-solar-cold-caller-page .tawk-iframe-container {
+        display: none !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
+
     .solar-caller-screen {
         background:
             radial-gradient(circle at 12% 15%, rgba(255, 193, 7, 0.14), transparent 28%),
@@ -13,6 +22,40 @@
         background: #fbbf24;
     }
 </style>
+<script>
+    (function () {
+        document.documentElement.classList.add('ai-solar-cold-caller-page');
+        window.Tawk_API = window.Tawk_API || {};
+        const previousTawkOnLoad = window.Tawk_API.onLoad;
+
+        function hideSolarCallerChat() {
+            if (typeof previousTawkOnLoad === 'function') {
+                previousTawkOnLoad();
+            }
+            if (window.Tawk_API && typeof window.Tawk_API.hideWidget === 'function') {
+                window.Tawk_API.hideWidget();
+            }
+            document
+                .querySelectorAll('iframe[src*="tawk.to"], .tawk-min-container, .tawk-button, .tawk-iframe-container')
+                .forEach(function (element) {
+                    element.style.setProperty('display', 'none', 'important');
+                    element.style.setProperty('visibility', 'hidden', 'important');
+                    element.style.setProperty('pointer-events', 'none', 'important');
+                });
+        }
+
+        window.Tawk_API.onLoad = hideSolarCallerChat;
+        document.addEventListener('DOMContentLoaded', function () {
+            hideSolarCallerChat();
+            new MutationObserver(hideSolarCallerChat).observe(document.body, { childList: true, subtree: true });
+        });
+        window.addEventListener('load', function () {
+            hideSolarCallerChat();
+            setTimeout(hideSolarCallerChat, 500);
+            setTimeout(hideSolarCallerChat, 1500);
+        });
+    }());
+</script>
 
 <!-- Hero -->
 <section class="section-spacing bg-buzz-warm relative overflow-hidden">
