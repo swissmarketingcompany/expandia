@@ -1,61 +1,4 @@
 <!-- AI Solar Panels Cold Caller -->
-<style>
-    html.ai-solar-cold-caller-page iframe[src*="tawk.to"],
-    html.ai-solar-cold-caller-page .tawk-min-container,
-    html.ai-solar-cold-caller-page .tawk-button,
-    html.ai-solar-cold-caller-page .tawk-iframe-container {
-        display: none !important;
-        visibility: hidden !important;
-        pointer-events: none !important;
-    }
-
-    .solar-caller-screen {
-        background:
-            radial-gradient(circle at 12% 15%, rgba(255, 193, 7, 0.14), transparent 28%),
-            linear-gradient(145deg, #0f172a 0%, #172033 100%);
-    }
-
-    .solar-caller-wave span {
-        display: block;
-        width: 4px;
-        border-radius: 999px;
-        background: #fbbf24;
-    }
-</style>
-<script>
-    (function () {
-        document.documentElement.classList.add('ai-solar-cold-caller-page');
-        window.Tawk_API = window.Tawk_API || {};
-        const previousTawkOnLoad = window.Tawk_API.onLoad;
-
-        function hideSolarCallerChat() {
-            if (typeof previousTawkOnLoad === 'function') {
-                previousTawkOnLoad();
-            }
-            if (window.Tawk_API && typeof window.Tawk_API.hideWidget === 'function') {
-                window.Tawk_API.hideWidget();
-            }
-            document
-                .querySelectorAll('iframe[src*="tawk.to"], .tawk-min-container, .tawk-button, .tawk-iframe-container')
-                .forEach(function (element) {
-                    element.style.setProperty('display', 'none', 'important');
-                    element.style.setProperty('visibility', 'hidden', 'important');
-                    element.style.setProperty('pointer-events', 'none', 'important');
-                });
-        }
-
-        window.Tawk_API.onLoad = hideSolarCallerChat;
-        document.addEventListener('DOMContentLoaded', function () {
-            hideSolarCallerChat();
-            new MutationObserver(hideSolarCallerChat).observe(document.body, { childList: true, subtree: true });
-        });
-        window.addEventListener('load', function () {
-            hideSolarCallerChat();
-            setTimeout(hideSolarCallerChat, 500);
-            setTimeout(hideSolarCallerChat, 1500);
-        });
-    }());
-</script>
 
 <!-- Hero -->
 <section class="section-spacing bg-buzz-warm relative overflow-hidden">
@@ -98,58 +41,16 @@
 
             <div class="relative w-full max-w-[540px] mx-auto lg:mr-0">
                 <div class="absolute -inset-4 bg-primary/20 rounded-[2rem] blur-2xl"></div>
-                <div class="solar-caller-screen relative rounded-3xl overflow-hidden shadow-2xl border border-white/20 text-white p-5 md:p-7">
-                    <div class="flex items-center justify-between pb-5 border-b border-white/10">
-                        <div>
-                            <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Live campaign</p>
-                            <p class="font-black text-lg">Residential Solar - California</p>
+                <div class="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border-2 border-dashed border-primary/35 bg-white/80 flex items-center justify-center p-8 text-center">
+                    <div>
+                        <div class="w-20 h-20 mx-auto rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-5">
+                            <i data-lucide="image" class="w-10 h-10"></i>
                         </div>
-                        <span class="inline-flex items-center gap-2 rounded-full bg-emerald-400/15 text-emerald-300 px-3 py-1 text-xs font-bold">
-                            <span class="w-2 h-2 rounded-full bg-emerald-300"></span>
-                            In call
-                        </span>
-                    </div>
-
-                    <div class="py-7 text-center">
-                        <div class="w-20 h-20 mx-auto rounded-full bg-primary text-slate-900 flex items-center justify-center mb-4 shadow-lg shadow-primary/20">
-                            <i data-lucide="phone-call" class="w-9 h-9"></i>
-                        </div>
-                        <p class="text-2xl font-black mb-1">Homeowner connected</p>
-                        <p class="text-white/55">02:18 conversation</p>
-                        <div class="solar-caller-wave h-12 mt-5 flex items-center justify-center gap-1.5" aria-hidden="true">
-                            <span class="h-3"></span><span class="h-7"></span><span class="h-5"></span><span class="h-10"></span>
-                            <span class="h-6"></span><span class="h-12"></span><span class="h-8"></span><span class="h-4"></span>
-                            <span class="h-9"></span><span class="h-5"></span><span class="h-11"></span><span class="h-6"></span>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-3 mb-4">
-                        <div class="rounded-2xl bg-white/10 border border-white/10 p-4">
-                            <p class="text-xs text-white/50 mb-1">Homeowner</p>
-                            <p class="font-bold text-emerald-300">Confirmed</p>
-                        </div>
-                        <div class="rounded-2xl bg-white/10 border border-white/10 p-4">
-                            <p class="text-xs text-white/50 mb-1">Interest</p>
-                            <p class="font-bold text-primary">Qualified</p>
-                        </div>
-                        <div class="rounded-2xl bg-white/10 border border-white/10 p-4">
-                            <p class="text-xs text-white/50 mb-1">Electric bill</p>
-                            <p class="font-bold">$180-$250</p>
-                        </div>
-                        <div class="rounded-2xl bg-white/10 border border-white/10 p-4">
-                            <p class="text-xs text-white/50 mb-1">Next step</p>
-                            <p class="font-bold">Book survey</p>
-                        </div>
-                    </div>
-
-                    <div class="rounded-2xl bg-white p-4 text-slate-900">
-                        <div class="flex items-center justify-between gap-3">
-                            <div>
-                                <p class="text-xs text-slate-500 mb-1">Appointment selected</p>
-                                <p class="font-black">Tuesday, 2:30 PM</p>
-                            </div>
-                            <span class="rounded-xl bg-emerald-100 text-emerald-700 px-3 py-2 text-xs font-black">BOOKED</span>
-                        </div>
+                        <p class="text-sm font-bold uppercase tracking-wider text-primary mb-2">Image placeholder</p>
+                        <p class="text-2xl font-black text-base-content mb-2">AI Solar Cold Caller Hero</p>
+                        <p class="text-base-content/60 max-w-sm">
+                            Replace with the final product image, call interface screenshot, or campaign visual.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -192,49 +93,48 @@
             </h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-            <div class="buzz-card p-7 bg-white shadow-xl border border-base-200">
-                <span class="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center font-black mb-5">1</span>
-                <h3 class="font-black text-xl mb-3">Lead list</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 items-stretch">
+            <div class="buzz-card h-full xl:h-[250px] p-6 bg-white shadow-xl border border-base-200">
+                <span class="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center font-black mb-4">1</span>
+                <h3 class="font-black text-xl mb-2">Lead list</h3>
                 <p class="text-base-content/70">Import approved residential or commercial solar prospects with source and permission records.</p>
             </div>
-            <div class="buzz-card p-7 bg-white shadow-xl border border-base-200">
-                <span class="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center font-black mb-5">2</span>
-                <h3 class="font-black text-xl mb-3">Compliance check</h3>
+            <div class="buzz-card h-full xl:h-[250px] p-6 bg-white shadow-xl border border-base-200">
+                <span class="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center font-black mb-4">2</span>
+                <h3 class="font-black text-xl mb-2">Compliance check</h3>
                 <p class="text-base-content/70">Apply campaign consent requirements, suppression lists, calling windows, disclosure, and recording rules.</p>
             </div>
-            <div class="buzz-card p-7 bg-white shadow-xl border border-base-200">
-                <span class="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center font-black mb-5">3</span>
-                <h3 class="font-black text-xl mb-3">Campaign setup</h3>
+            <div class="buzz-card h-full xl:h-[250px] p-6 bg-white shadow-xl border border-base-200">
+                <span class="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center font-black mb-4">3</span>
+                <h3 class="font-black text-xl mb-2">Campaign setup</h3>
                 <p class="text-base-content/70">Configure the solar offer, territory, qualification logic, objections, calendar, and handoff rules.</p>
             </div>
-            <div class="buzz-card p-7 bg-white shadow-xl border border-base-200">
-                <span class="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center font-black mb-5">4</span>
-                <h3 class="font-black text-xl mb-3">AI calling</h3>
+            <div class="buzz-card h-full xl:h-[250px] p-6 bg-white shadow-xl border border-base-200">
+                <span class="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center font-black mb-4">4</span>
+                <h3 class="font-black text-xl mb-2">AI calling</h3>
                 <p class="text-base-content/70">The voice agent follows the approved conversation path and records structured call outcomes.</p>
             </div>
-            <div class="buzz-card p-7 bg-white shadow-xl border border-base-200">
-                <span class="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center font-black mb-5">5</span>
-                <h3 class="font-black text-xl mb-3">Solar qualification</h3>
+            <div class="buzz-card h-full xl:h-[250px] p-6 bg-white shadow-xl border border-base-200">
+                <span class="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center font-black mb-4">5</span>
+                <h3 class="font-black text-xl mb-2">Solar qualification</h3>
                 <p class="text-base-content/70">Capture ownership, bill range, interest, roof context, timing, and the agreed next action.</p>
             </div>
-            <div class="buzz-card relative overflow-hidden bg-primary text-white shadow-xl">
-                <div class="relative h-full p-7 md:p-8 flex flex-col justify-center">
-                    <p class="text-sm font-bold uppercase tracking-wider text-white/70 mb-3">Ready for a controlled pilot?</p>
-                    <h3 class="text-3xl font-black leading-tight mb-3">Start your first solar calling campaign</h3>
-                    <p class="text-white/85 leading-relaxed mb-6">Enter your corporate email and we will map the lead source, calling rules, script, integrations, and pilot scope.</p>
-                    <form class="space-y-3" data-lead-capture="ai solar cold caller flow cta"
+            <div class="buzz-card h-full xl:h-[250px] relative overflow-hidden bg-primary text-white shadow-xl">
+                <div class="relative h-full p-5 flex flex-col justify-center">
+                    <p class="text-xs font-bold uppercase tracking-wider text-white/70 mb-2">Ready for a pilot?</p>
+                    <h3 class="text-xl font-black leading-tight mb-3">Start a solar calling campaign</h3>
+                    <form class="space-y-2" data-lead-capture="ai solar cold caller flow cta"
                         data-lead-title="AI Solar Cold Caller Pilot Request"
                         data-require-corporate-email="true"
                         data-success-message="Thanks. We will contact you about the AI Solar Cold Caller pilot.">
-                        <input name="email" type="email" class="input input-bordered w-full bg-white text-base-content border-white"
+                        <input name="email" type="email" class="input input-sm input-bordered w-full bg-white text-base-content border-white"
                             placeholder="Corporate email" autocomplete="email" required>
                         <input name="request" type="hidden" value="Visitor wants to discuss an AI Solar Panels Cold Caller pilot.">
                         <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
-                        <button type="submit" class="btn w-full bg-white text-primary hover:bg-white/90 border-none shadow-lg">
+                        <button type="submit" class="btn btn-sm w-full bg-white text-primary hover:bg-white/90 border-none shadow-lg">
                             Request a Demo
                         </button>
-                        <p data-lead-status class="min-h-5 text-sm text-white/80" aria-live="polite"></p>
+                        <p data-lead-status class="text-xs text-white/80" aria-live="polite"></p>
                     </form>
                 </div>
             </div>
