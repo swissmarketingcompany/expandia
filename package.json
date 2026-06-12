@@ -7,6 +7,8 @@
     "build:js": "mkdir -p dist/js && cp src/js/*.js dist/js/",
     "build:pages": "node build-pages.js",
     "build": "npm run build:css && npm run build:js && npm run build:pages",
+    "generate:solar-demo-voices": "node --env-file-if-exists=.env.local scripts/generate-solar-demo-audio.mjs --list-voices",
+    "generate:solar-demo-audio": "node --env-file-if-exists=.env.local scripts/generate-solar-demo-audio.mjs",
     "generate:nano-banana-blog-images": "node scripts/generate-nano-banana-blog-images.mjs",
     "generate:barcelona-ai-images": "node scripts/generate-barcelona-ai-images.mjs",
     "indexnow:submit": "node scripts/submit-indexnow.js",
