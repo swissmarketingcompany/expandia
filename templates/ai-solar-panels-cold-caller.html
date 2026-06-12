@@ -20,7 +20,7 @@
                     An AI voice agent that calls approved solar leads, qualifies interest, answers basic questions, and books appointments for your sales team.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 mb-12">
-                    <a href="#demo" class="btn btn-primary btn-lg buzz-button shadow-lg shadow-primary/25">
+                    <a href="#call-demo-request" class="btn btn-primary btn-lg buzz-button shadow-lg shadow-primary/25">
                         Request a Call Demo
                     </a>
                     <a href="#workflow" class="btn btn-lg btn-outline border-primary text-primary hover:bg-primary hover:text-white">
@@ -149,7 +149,7 @@
             </div>
             <div class="flex flex-col sm:flex-row lg:flex-col gap-3">
                 <a href="#packages" class="btn bg-white text-primary hover:bg-white/90 border-none min-w-44">See Packages</a>
-                <a href="#demo" class="btn btn-outline border-white text-white hover:bg-white hover:text-primary min-w-44">Request Demo</a>
+                <a href="#call-demo-request" class="btn btn-outline border-white text-white hover:bg-white hover:text-primary min-w-44">Request Demo</a>
             </div>
         </div>
     </div>
@@ -182,7 +182,7 @@
         <div class="mt-8 max-w-xl mx-auto buzz-card bg-buzz-warm border border-primary/20 p-7 text-center">
             <h3 class="text-2xl font-black mb-3">Request a tailored call demo</h3>
             <p class="text-base-content/70 mb-5">We will prepare the demonstration around your solar offer, qualification questions, and preferred handoff.</p>
-            <a href="{{BASE_PATH}}contact.html" class="btn btn-primary">Request Demo</a>
+            <a href="#call-demo-request" class="btn btn-primary">Request Demo</a>
         </div>
     </div>
 </section>
@@ -262,6 +262,105 @@
         </div>
 
         <p class="text-center text-sm text-base-content/55 mt-8">Demo voices are synthetic and the names, addresses, and campaign details are fictional.</p>
+    </div>
+</section>
+
+<!-- Call Demo Request -->
+<section id="call-demo-request" class="section-spacing bg-base-100">
+    <div class="container mx-auto container-padding">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+            <div>
+                <p class="text-sm font-bold uppercase tracking-wider text-primary mb-4">Request a call demo</p>
+                <h2 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
+                    <span class="gradient-header">Hear the AI caller</span><br>
+                    <span class="text-base-content">use your sales scenario</span>
+                </h2>
+                <p class="text-xl text-base-content/75 mb-8">Tell us about your solar campaign. We will prepare a focused demonstration around your market, qualification questions, objections, and appointment handoff.</p>
+                <div class="space-y-4">
+                    <div class="flex gap-3">
+                        <span class="w-10 h-10 shrink-0 rounded-full bg-primary/10 text-primary flex items-center justify-center font-black">1</span>
+                        <div><h3 class="font-black">Share your campaign</h3><p class="text-base-content/65">Lead type, territory, call volume, and current process.</p></div>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="w-10 h-10 shrink-0 rounded-full bg-primary/10 text-primary flex items-center justify-center font-black">2</span>
+                        <div><h3 class="font-black">We prepare the call flow</h3><p class="text-base-content/65">Introduction, qualification, objections, routing, and booking.</p></div>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="w-10 h-10 shrink-0 rounded-full bg-primary/10 text-primary flex items-center justify-center font-black">3</span>
+                        <div><h3 class="font-black">Review the tailored demo</h3><p class="text-base-content/65">See how the system could fit your team before discussing a pilot.</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buzz-card bg-white shadow-2xl border border-base-200 p-6 md:p-9">
+                <form class="space-y-5" data-lead-capture="ai solar cold caller call demo form"
+                    data-lead-title="AI Solar Cold Caller Demo Request"
+                    data-success-message="Thanks. We received your demo request and will contact you to prepare the call scenario.">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <label class="form-control w-full">
+                            <span class="label-text font-bold mb-2">Your name</span>
+                            <input name="name" type="text" class="input input-bordered w-full" placeholder="Full name" autocomplete="name" required>
+                        </label>
+                        <label class="form-control w-full">
+                            <span class="label-text font-bold mb-2">Company</span>
+                            <input name="company" type="text" class="input input-bordered w-full" placeholder="Solar company" autocomplete="organization" required>
+                        </label>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <label class="form-control w-full">
+                            <span class="label-text font-bold mb-2">Work email</span>
+                            <input name="email" type="email" class="input input-bordered w-full" placeholder="name@company.com" autocomplete="email" required>
+                        </label>
+                        <label class="form-control w-full">
+                            <span class="label-text font-bold mb-2">Phone number</span>
+                            <input name="phone" type="tel" class="input input-bordered w-full" placeholder="+1 555 000 0000" autocomplete="tel" required>
+                        </label>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <label class="form-control w-full">
+                            <span class="label-text font-bold mb-2">Solar market</span>
+                            <select name="market" class="select select-bordered w-full" required>
+                                <option value="" disabled selected>Select market</option>
+                                <option>Residential solar</option>
+                                <option>Commercial solar</option>
+                                <option>Residential and commercial</option>
+                                <option>Other solar campaign</option>
+                            </select>
+                        </label>
+                        <label class="form-control w-full">
+                            <span class="label-text font-bold mb-2">Expected monthly calls</span>
+                            <select name="monthly_calls" class="select select-bordered w-full" required>
+                                <option value="" disabled selected>Select volume</option>
+                                <option>Under 1,000 calls</option>
+                                <option>1,000-5,000 calls</option>
+                                <option>5,000-20,000 calls</option>
+                                <option>More than 20,000 calls</option>
+                                <option>Not sure yet</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <label class="form-control w-full">
+                        <span class="label-text font-bold mb-2">CRM or sales system <span class="font-normal text-base-content/50">(optional)</span></span>
+                        <input name="crm" type="text" class="input input-bordered w-full" placeholder="HubSpot, Salesforce, GoHighLevel, custom CRM...">
+                    </label>
+
+                    <label class="form-control w-full">
+                        <span class="label-text font-bold mb-2">What should the demo handle?</span>
+                        <textarea name="details" class="textarea textarea-bordered w-full" rows="5" placeholder="Share your lead source, qualification questions, common objections, territories, calendar handoff, or any specific scenario." required></textarea>
+                    </label>
+
+                    <input name="request" type="hidden" value="Visitor requested a tailored AI Solar Panels Cold Caller demonstration.">
+                    <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
+
+                    <button type="submit" class="btn btn-primary btn-lg w-full">Request My Call Demo</button>
+                    <p data-lead-status class="min-h-6 text-sm text-base-content/70" aria-live="polite"></p>
+                    <p class="text-xs text-base-content/50 text-center">We use these details only to respond to your demo request. No automatic calling campaign starts from this form.</p>
+                </form>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -380,7 +479,7 @@
     <div class="container mx-auto container-padding text-center relative z-10">
         <h2 class="text-4xl md:text-5xl font-black mb-8 text-white">Hear how the AI Solar Panels Cold Caller handles your sales conversation</h2>
         <p class="text-xl mb-12 text-white/90 max-w-2xl mx-auto leading-relaxed">Request a tailored demonstration using your solar offer, qualification questions, and preferred appointment handoff.</p>
-        <a href="{{BASE_PATH}}contact.html" class="btn btn-lg bg-white text-primary hover:bg-white/90 border-none px-10 md:px-16 shadow-2xl whitespace-normal h-auto min-h-14">Request a Pilot</a>
+        <a href="#call-demo-request" class="btn btn-lg bg-white text-primary hover:bg-white/90 border-none px-10 md:px-16 shadow-2xl whitespace-normal h-auto min-h-14">Request a Pilot</a>
     </div>
 
     <script type="application/ld+json">

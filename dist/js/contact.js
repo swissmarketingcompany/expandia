@@ -218,8 +218,14 @@ function initializeContactForms() {
                     leadForm.dataset.leadTitle || 'Free AI Automation Checkup Request',
                     `Source: ${leadForm.dataset.leadCapture || 'blog lead capture'}`,
                     `Page: ${window.location.href}`,
+                    formData.get('name') ? `Name: ${formData.get('name')}` : '',
                     formData.get('company') ? `Company: ${formData.get('company')}` : '',
-                    formData.get('request') ? `Request: ${formData.get('request')}` : 'Request: Visitor asked for a quick first-pass review of what their team should automate first.'
+                    formData.get('phone') ? `Phone: ${formData.get('phone')}` : '',
+                    formData.get('market') ? `Solar market: ${formData.get('market')}` : '',
+                    formData.get('monthly_calls') ? `Expected monthly calls: ${formData.get('monthly_calls')}` : '',
+                    formData.get('crm') ? `CRM or sales system: ${formData.get('crm')}` : '',
+                    formData.get('request') ? `Request: ${formData.get('request')}` : 'Request: Visitor asked for a quick first-pass review of what their team should automate first.',
+                    formData.get('details') ? `Details: ${formData.get('details')}` : ''
                 ].filter(Boolean).join('\n'),
                 to: DESTINATION_EMAIL
             };
