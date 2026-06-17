@@ -1,0 +1,349 @@
+- generic [ref=e4]:
+  - generic [ref=e7]:
+    - link "TechBehemoths Homepage" [ref=e8] [cursor=pointer]:
+      - /url: /
+      - img [ref=e9]
+    - navigation [ref=e12]:
+      - list [ref=e13]:
+        - listitem [ref=e14]:
+          - button "Companies" [ref=e15] [cursor=pointer]:
+            - text: Companies
+            - img [ref=e16]
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - paragraph: In Europe
+                        - list:
+                          - listitem:
+                            - link "United Kingdom":
+                              - /url: /companies/united-kingdom
+                          - listitem:
+                            - link "London":
+                              - /url: /companies/london
+                          - listitem:
+                            - link "Ukraine":
+                              - /url: /companies/ukraine
+                          - listitem:
+                            - link "Manchester":
+                              - /url: /companies/manchester
+                          - listitem:
+                            - link "Germany":
+                              - /url: /companies/germany
+                          - listitem:
+                            - link "Barcelona":
+                              - /url: /companies/barcelona
+                          - listitem:
+                            - link "Spain":
+                              - /url: /companies/spain
+                          - listitem:
+                            - link "Birmingham":
+                              - /url: /companies/birmingham
+                          - listitem:
+                            - link "Poland":
+                              - /url: /companies/poland
+                          - listitem:
+                            - link "Dublin":
+                              - /url: /companies/dublin
+                          - listitem:
+                            - link "Italy":
+                              - /url: /companies/italy
+                          - listitem:
+                            - link "Munich":
+                              - /url: /companies/munich
+                          - listitem:
+                            - link "Romania":
+                              - /url: /companies/romania
+                          - listitem:
+                            - link "Kyiv":
+                              - /url: /companies/kyiv
+                          - listitem:
+                            - link "Ireland":
+                              - /url: /companies/ireland
+                          - listitem:
+                            - link "Berlin":
+                              - /url: /companies/berlin
+                          - listitem:
+                            - link "France":
+                              - /url: /companies/france
+                          - listitem:
+                            - link "Amsterdam":
+                              - /url: /companies/amsterdam
+                          - listitem:
+                            - link "Netherlands":
+                              - /url: /companies/netherlands
+                          - listitem:
+                            - link "Glasgow":
+                              - /url: /companies/glasgow
+                          - listitem:
+                            - link "Russia":
+                              - /url: /companies/russia
+                          - listitem:
+                            - link "Madrid":
+                              - /url: /companies/madrid
+                          - listitem:
+                            - link "Belarus":
+                              - /url: /companies/belarus
+                          - listitem:
+                            - link "Minsk":
+                              - /url: /companies/minsk
+                          - listitem:
+                            - link "See all":
+                              - /url: /countries
+                          - listitem:
+                            - link "Lviv":
+                              - /url: /companies/lviv
+                    - generic:
+                      - generic:
+                        - paragraph: In Asia
+                        - list:
+                          - listitem:
+                            - link "India":
+                              - /url: /companies/india
+                          - listitem:
+                            - link "Ahmedabad":
+                              - /url: /companies/ahmedabad
+                          - listitem:
+                            - link "Pakistan":
+                              - /url: /companies/pakistan
+                          - listitem:
+                            - link "Dubai":
+                              - /url: /companies/dubai
+                          - listitem:
+                            - link "Bangladesh":
+                              - /url: /companies/bangladesh
+                          - listitem:
+                            - link "Dhaka":
+                              - /url: /companies/dhaka
+                          - listitem:
+                            - link "Singapore":
+                              - /url: /companies/singapore
+                          - listitem:
+                            - link "Noida":
+                              - /url: /companies/noida
+                          - listitem:
+                            - link "Philippines":
+                              - /url: /companies/philippines
+                          - listitem:
+                            - link "New Delhi":
+                              - /url: /companies/new-delhi
+                          - listitem:
+                            - link "Malaysia":
+                              - /url: /companies/malaysia
+                          - listitem:
+                            - link "Mumbai":
+                              - /url: /companies/mumbai
+                          - listitem:
+                            - link "See all":
+                              - /url: /countries
+                          - listitem:
+                            - link "Jaipur":
+                              - /url: /companies/jaipur
+                      - generic:
+                        - paragraph: In Latin America
+                        - list:
+                          - listitem:
+                            - link "Brazil":
+                              - /url: /companies/brazil
+                          - listitem:
+                            - link "São Paulo":
+                              - /url: /companies/sao-paulo
+                          - listitem:
+                            - link "Colombia":
+                              - /url: /companies/colombia
+                          - listitem:
+                            - link "Bogota":
+                              - /url: /companies/bogota
+                          - listitem:
+                            - link "Argentina":
+                              - /url: /companies/argentina
+                          - listitem:
+                            - link "Mexico City":
+                              - /url: /companies/mexico-city
+                          - listitem:
+                            - link "See all":
+                              - /url: /countries
+                          - listitem:
+                            - link "Buenos Aires":
+                              - /url: /companies/buenos-aires
+                    - generic:
+                      - generic:
+                        - paragraph: North America & Australia
+                        - list:
+                          - listitem:
+                            - link "United States":
+                              - /url: /companies/united-states
+                          - listitem:
+                            - link "New York":
+                              - /url: /companies/new-york
+                          - listitem:
+                            - link "Canada":
+                              - /url: /companies/canada
+                          - listitem:
+                            - link "Toronto":
+                              - /url: /companies/toronto
+                          - listitem:
+                            - link "Australia":
+                              - /url: /companies/australia
+                          - listitem:
+                            - link "Los Angeles":
+                              - /url: /companies/los-angeles
+                          - listitem:
+                            - link "Mexico":
+                              - /url: /companies/mexico
+                          - listitem:
+                            - link "Chicago":
+                              - /url: /companies/chicago
+                          - listitem:
+                            - link "New Zealand":
+                              - /url: /companies/new-zealand
+                          - listitem:
+                            - link "San Francisco":
+                              - /url: /companies/san-francisco
+                          - listitem:
+                            - link "Panama":
+                              - /url: /companies/panama
+                          - listitem:
+                            - link "Atlanta":
+                              - /url: /companies/atlanta
+                          - listitem:
+                            - link "Dominican Republic":
+                              - /url: /companies/dominican-republic
+                          - listitem:
+                            - link "Austin":
+                              - /url: /companies/austin
+                          - listitem:
+                            - link "El Salvador":
+                              - /url: /companies/el-salvador
+                          - listitem:
+                            - link "Houston":
+                              - /url: /companies/houston
+                          - listitem:
+                            - link "Nicaragua":
+                              - /url: /companies/nicaragua
+                          - listitem:
+                            - link "Miami":
+                              - /url: /companies/miami
+                          - listitem:
+                            - link "Honduras":
+                              - /url: /companies/honduras
+                          - listitem:
+                            - link "Denver":
+                              - /url: /companies/denver
+                          - listitem:
+                            - link "Guatemala":
+                              - /url: /companies/guatemala
+                          - listitem:
+                            - link "Dallas":
+                              - /url: /companies/dallas
+                          - listitem:
+                            - link "Puerto Rico":
+                              - /url: /companies/puerto-rico
+                          - listitem:
+                            - link "San Diego":
+                              - /url: /companies/san-diego
+                          - listitem:
+                            - link "See all":
+                              - /url: /countries
+                          - listitem:
+                            - link "Boston":
+                              - /url: /companies/boston
+                  - link "Discover All Agencies in the World":
+                    - /url: /companies
+        - listitem [ref=e18]:
+          - button "Services" [ref=e19] [cursor=pointer]:
+            - text: Services
+            - img [ref=e20]
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - paragraph: Industry
+                    - link "Web & Software Development":
+                      - /url: "#"
+                    - link "Design":
+                      - /url: "#"
+                    - link "Advertising":
+                      - /url: "#"
+                    - link "Business Services":
+                      - /url: "#"
+                - link "Discover All Services":
+                  - /url: /services
+        - listitem [ref=e22]:
+          - link "Awards 2025" [ref=e23] [cursor=pointer]:
+            - /url: /awards-2025
+        - listitem [ref=e24]:
+          - link "Submit project" [ref=e25] [cursor=pointer]:
+            - /url: /project-submission
+    - generic [ref=e26]:
+      - link "Log In" [ref=e27] [cursor=pointer]:
+        - /url: /login
+      - link "Get Listed" [ref=e28] [cursor=pointer]:
+        - /url: /companies/get-listed
+  - generic [ref=e123]:
+    - generic [ref=e124]:
+      - heading "Welcome to TechBehemoths" [level=3] [ref=e125]
+      - paragraph [ref=e126]: Complete all fields to get registered
+    - generic [ref=e129]:
+      - generic [ref=e130]:
+        - link "Register with LinkedIn" [ref=e131] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e132]
+          - generic [ref=e134]: Register with LinkedIn
+        - link "Register with Google" [ref=e135] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e136]
+          - generic [ref=e138]: Register with Google
+      - generic [ref=e140]: or
+      - generic [ref=e141]:
+        - generic [ref=e142]:
+          - img [ref=e143]
+          - paragraph [ref=e145]: Please use your real name. That's how we will address you.
+        - generic [ref=e147]:
+          - generic [ref=e148]: First Name
+          - textbox [ref=e149]
+        - generic [ref=e151]:
+          - generic [ref=e152]: Last Name
+          - textbox [ref=e153]
+        - generic [ref=e155]:
+          - generic [ref=e156]: Email Address
+          - textbox [ref=e157]
+        - generic [ref=e159]:
+          - generic [ref=e160]: Password
+          - textbox [ref=e161]
+        - generic [ref=e163]:
+          - generic [ref=e164]: Confirm Password
+          - textbox [ref=e165]
+      - button "Register" [disabled] [ref=e169]
+      - paragraph [ref=e170]:
+        - text: You already have an account?
+        - link "Log In" [ref=e171] [cursor=pointer]:
+          - /url: /login
+  - contentinfo [ref=e40]:
+    - generic [ref=e44]:
+      - paragraph [ref=e46]:
+        - strong [ref=e47]: Company
+        - img [ref=e48]
+      - paragraph [ref=e51]:
+        - strong [ref=e52]: Services
+        - img [ref=e53]
+      - paragraph [ref=e56]:
+        - strong [ref=e57]: Countries
+        - img [ref=e58]
+      - paragraph [ref=e61]:
+        - strong [ref=e62]: Cities
+        - img [ref=e63]
+      - paragraph [ref=e66]:
+        - strong [ref=e67]: Insights
+        - img [ref=e68]
+    - paragraph [ref=e73]:
+      - text: © Copyright 2026
+      - link "TechBehemoths" [ref=e74] [cursor=pointer]:
+        - /url: /
+      - text: . Made in Germany by
+      - link "Mobiteam GmbH" [ref=e75] [cursor=pointer]:
+        - /url: https://mobiteam.de/en/?utm_source=Tech-Behemoths&utm_medium=footer&utm_campaign=link

@@ -193,7 +193,7 @@
         }
 
         .id-demo-chat-message-user .id-demo-chat-bubble {
-            background: #111827;
+            background: #1f4b99;
             color: #ffffff;
         }
 
@@ -227,6 +227,33 @@
             padding: 0 14px;
             background: #ffffff;
             color: #111827;
+        }
+
+        .id-demo-support-icon {
+            background: rgba(31, 75, 153, 0.1);
+            color: #1f4b99;
+        }
+
+        .id-demo-support-kicker {
+            color: #1f4b99;
+        }
+
+        .id-demo-support-note {
+            border-color: rgba(31, 75, 153, 0.2);
+            background: rgba(31, 75, 153, 0.1);
+        }
+
+        #open-chatbot-demo,
+        #id-demo-chat-submit {
+            border-color: #1f4b99;
+            background: #1f4b99;
+            color: #ffffff;
+        }
+
+        #open-chatbot-demo:hover,
+        #id-demo-chat-submit:hover {
+            border-color: #173a78;
+            background: #173a78;
         }
 
         @media (max-width: 640px) {
@@ -276,6 +303,38 @@
                 class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50">Our Business Model</a>
             <a href="./blog/index.html"
                 class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50">Blog</a>
+
+            <div class="relative" id="products-dropdown">
+                <button onclick="toggleDropdown('products-menu')"
+                    class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
+                    Products
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="products-menu"
+                    class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden max-h-[78vh] overflow-y-auto"
+                    style="width: min(520px, calc(100vw - 2rem));">
+                    <div class="p-6 md:p-7">
+                        <div class="inline-flex items-center gap-2 mb-5">
+                            <span class="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                <i data-lucide="package" class="w-4 h-4"></i>
+                            </span>
+                            <h3 class="text-sm font-bold text-primary uppercase tracking-wider">
+                                Products
+                            </h3>
+                        </div>
+                        <ul class="grid grid-cols-1 gap-3">
+                            <li>
+                                <a href="./solar-satellite-offer-automatisation.html" class="block rounded-xl border border-gray-100 p-4 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                                    <span class="block text-base font-bold text-gray-900">Solar Satellite Offer Automatisation</span>
+                                    <p class="mt-1 text-sm text-gray-600">Find solar-ready properties from satellite photos and prepare offer batches with AI visuals.</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
             <div class="relative" id="services-dropdown">
                 <button onclick="toggleDropdown('services-menu')"
@@ -400,6 +459,12 @@
                     <ul class="menu p-3 w-full text-xs">
                         <li><a href="./our-business-model.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">Our Business Model</a></li>
                         <li><a href="./blog/index.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">Blog</a></li>
+                        <li class="mt-2">
+                            <span class="text-[10px] font-bold text-primary uppercase tracking-wider px-2 py-1 bg-primary/5 rounded-lg mb-1">Products</span>
+                            <ul class="pl-0 space-y-0.5">
+                                <li><a href="./solar-satellite-offer-automatisation.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">Solar Satellite Offer Automatisation</a></li>
+                            </ul>
+                        </li>
                         <li><a href="./solutions.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">Services</a></li>
                         <li class="mt-2">
                             <span class="text-[10px] font-bold text-primary uppercase tracking-wider px-2 py-1 bg-primary/5 rounded-lg mb-1">AI Agency Services</span>
@@ -445,7 +510,7 @@
     }
 
     function toggleDropdown(menuId) {
-        const allMenus = ['services-menu', 'company-menu'];
+        const allMenus = ['products-menu', 'services-menu', 'company-menu'];
         allMenus.forEach(id => {
             const menu = document.getElementById(id);
             if (menu && id !== menuId) {
@@ -459,9 +524,13 @@
     }
 
     document.addEventListener('click', function (e) {
+        const productsDropdown = document.getElementById('products-dropdown');
         const servicesDropdown = document.getElementById('services-dropdown');
         const companyDropdown = document.getElementById('company-dropdown');
 
+        if (productsDropdown && !productsDropdown.contains(e.target)) {
+            document.getElementById('products-menu')?.classList.add('hidden');
+        }
         if (servicesDropdown && !servicesDropdown.contains(e.target)) {
             document.getElementById('services-menu')?.classList.add('hidden');
         }
@@ -610,8 +679,20 @@
                             <p class="text-base-content">Ödeme planımı ve hesabımla ilgili bilgi almak istiyorum.</p>
                         </div>
                         <div class="rounded-xl bg-primary/10 border border-primary/20 p-4">
-                            <p class="text-sm font-bold text-primary mb-2">Chatbot agent</p>
+                            <p class="text-sm font-bold text-primary mb-2">Dijital Asistan</p>
                             <p class="text-base-content">Merhaba, size self-servis destek akışında yardımcı olabilirim.</p>
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl border border-base-300 p-5 md:p-6 mb-8">
+                        <div class="rounded-xl border id-demo-support-note p-4">
+                            <p class="font-bold mb-2">Chatbot ile deneyebilecekleriniz</p>
+                            <ul class="list-disc pl-5 text-sm text-base-content/70 space-y-1">
+                                <li>Kimlik doğrulama sonrası bakiye ve dosya aşamasını sorma</li>
+                                <li>Ödeme yapmak için IBAN ve birim telefonu isteme</li>
+                                <li>Dosyaya itiraz etmek için gerekli e-posta adresini öğrenme</li>
+                                <li>Ödeme planı veya temsilci yönlendirme senaryosunu test etme</li>
+                            </ul>
                         </div>
                     </div>
 
@@ -634,8 +715,8 @@
                     <i data-lucide="messages-square" class="w-6 h-6"></i>
                 </div>
                 <div>
-                    <h3 id="id-demo-chat-title" class="text-lg font-black leading-tight">Self-service chatbot demo</h3>
-                    <p id="id-demo-chat-connection" class="text-sm text-base-content/60">Ready for a demo conversation.</p>
+                    <h3 id="id-demo-chat-title" class="text-lg font-black leading-tight">İ &amp; D Destek</h3>
+                    <p id="id-demo-chat-connection" class="text-sm text-base-content/60">Demo müşteri dosyası hazır.</p>
                 </div>
             </div>
             <button id="close-chatbot-demo" type="button" class="id-demo-icon-button" aria-label="Close chat demo">
@@ -681,6 +762,45 @@
         const chatClose = document.getElementById('close-chatbot-demo');
         let chatId = '';
         let chatIsSending = false;
+        let lastAgentMessage = '';
+
+        function cleanAgentMessage(text) {
+            if (!text) return "";
+
+            const trimmed = String(text).trim();
+
+            if (trimmed.startsWith("{") && trimmed.endsWith("}")) {
+                try {
+                    const obj = JSON.parse(trimmed);
+
+                    if (obj.answer) {
+                        return obj.answer;
+                    }
+
+                    return "";
+                } catch (e) {
+                    return trimmed;
+                }
+            }
+
+            return trimmed;
+        }
+
+        function shouldSkipAgentMessage(text, lastAgentMessage) {
+            const t = String(text || "").trim();
+
+            if (!t) return true;
+
+            if (
+                lastAgentMessage &&
+                lastAgentMessage.includes("Güncel borç bakiyeniz") &&
+                t.includes("Güvenlik teyidiniz başarılı")
+            ) {
+                return true;
+            }
+
+            return false;
+        }
 
         function isUnlocked() {
             return window.sessionStorage.getItem(sessionKey) === 'true';
@@ -712,7 +832,7 @@
 
             const label = document.createElement('div');
             label.className = 'id-demo-chat-label';
-            label.textContent = role === 'user' ? 'You' : 'Assistant';
+            label.textContent = role === 'user' ? 'You' : 'Dijital Asistan';
 
             const text = document.createElement('div');
             text.textContent = content;
@@ -724,18 +844,12 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
-        function ensureIntroMessage() {
-            if (chatMessages.childElementCount > 0) return;
-            appendChatMessage('agent', 'Merhaba. Self-servis destek demosu hazır. Nasıl yardımcı olabilirim?');
-        }
-
         function openChatPanel() {
             hideDefaultSiteChat();
-            ensureIntroMessage();
             chatOverlay.classList.add('is-open');
             chatOverlay.setAttribute('aria-hidden', 'false');
             chatbotStatus.textContent = 'The chatbot demo is open.';
-            chatConnection.textContent = chatId ? 'Connected to the demo assistant.' : 'Ready for a demo conversation.';
+            chatConnection.textContent = chatId ? 'Connected to the demo assistant.' : 'Demo müşteri dosyası hazır.';
             window.setTimeout(function () {
                 chatInput.focus();
             }, 60);
@@ -752,7 +866,7 @@
             chatInput.disabled = isBusy;
             chatSubmit.disabled = isBusy;
             chatSubmit.querySelector('span').textContent = isBusy ? 'Sending...' : 'Send';
-            chatConnection.textContent = isBusy ? 'Waiting for the assistant...' : (chatId ? 'Connected to the demo assistant.' : 'Ready for a demo conversation.');
+            chatConnection.textContent = isBusy ? 'Waiting for the assistant...' : (chatId ? 'Connected to the demo assistant.' : 'Demo müşteri dosyası hazır.');
         }
 
         async function readJsonResponse(response) {
@@ -788,10 +902,7 @@
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    agent_id: assistantConfig.agentId,
-                    metadata: {
-                        source: 'goexpandia_id_demo'
-                    }
+                    agent_id: assistantConfig.agentId
                 })
             });
             const payload = await readJsonResponse(response);
@@ -855,7 +966,13 @@
                 return;
             }
 
-            renderedMessages.forEach(message => appendChatMessage('agent', message));
+            renderedMessages.forEach(message => {
+                const cleanText = cleanAgentMessage(message);
+                if (!shouldSkipAgentMessage(cleanText, lastAgentMessage)) {
+                    appendChatMessage('agent', cleanText);
+                    lastAgentMessage = cleanText;
+                }
+            });
         }
 
         async function hashValue(value) {
@@ -957,7 +1074,7 @@
                     <form id="newsletter-form" class="flex gap-4 w-full" action="./contact.html#contact-form" method="GET">
                         <input type="email" name="email" placeholder="Enter your email" class="footer-newsletter-input" required>
                         <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
-                        <input type="text" name="math" inputmode="numeric" pattern="[0-9]+" placeholder="30+31=" class="input input-bordered w-24 sm:w-28" required>
+                        <input type="hidden" name="math" value="61">
                         <button type="submit" class="btn btn-primary">Subscribe</button>
                     </form>
                 </div>
@@ -1017,11 +1134,11 @@
                             </svg>
                             hello@goexpandia.com
                         </a>
-                        <a href="mailto:hello@goexpandia.com" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
+                        <a href="./contact.html" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
-                            Email to Schedule
+                            Book a workflow review
                         </a>
                     </div>
                 </div>

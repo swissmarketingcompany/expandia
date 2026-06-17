@@ -1,25 +1,84 @@
 document.addEventListener('DOMContentLoaded', () => {
     const DESTINATION_EMAIL = 'hello@goexpandia.com';
 
-    // --- 1. FAQ Functionality (Keep existing) ---
-    const faqItems = document.querySelectorAll('.collapse input[type="checkbox"]');
-    faqItems.forEach(faqInput => {
-        const collapseElement = faqInput.closest('.collapse');
-        const titleElement = collapseElement?.querySelector('.collapse-title');
-        
-        if (titleElement) {
-            titleElement.style.cursor = 'pointer';
-            titleElement.addEventListener('click', (e) => {
-                e.preventDefault();
-                faqInput.checked = !faqInput.checked;
-                faqItems.forEach(otherInput => {
-                    if (otherInput !== faqInput) {
-                        otherInput.checked = false;
+    // --- 1. FAQ functionality ---
+    function setupFaqCollapses() {
+        const collapseItems = Array.from(document.querySelectorAll('.collapse'));
+
+        const setItemOpen = (item, isOpen) => {
+            const input = item.querySelector('input[type="checkbox"], input[type="radio"]');
+            const title = item.querySelector('.collapse-title');
+
+            if (input) {
+                input.checked = isOpen;
+            }
+
+            item.classList.toggle('collapse-open', isOpen);
+            item.classList.toggle('collapse-close', !isOpen);
+
+            if (title) {
+                title.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            }
+        };
+
+        const closeRadioSiblings = (activeInput) => {
+            if (!activeInput || activeInput.type !== 'radio' || !activeInput.name) return;
+
+            document.querySelectorAll('.collapse input[type="radio"]').forEach(otherInput => {
+                if (otherInput.name !== activeInput.name) return;
+
+                if (otherInput !== activeInput) {
+                    const otherItem = otherInput.closest('.collapse');
+                    if (otherItem) {
+                        setItemOpen(otherItem, false);
                     }
-                });
+                }
             });
-        }
-    });
+        };
+
+        collapseItems.forEach(item => {
+            const input = item.querySelector('input[type="checkbox"], input[type="radio"]');
+            const title = item.querySelector('.collapse-title');
+
+            if (!input || !title) return;
+
+            title.style.cursor = 'pointer';
+            title.setAttribute('role', 'button');
+            title.setAttribute('tabindex', '0');
+
+            input.addEventListener('change', () => {
+                if (input.type === 'radio' && input.checked) {
+                    closeRadioSiblings(input);
+                }
+                setItemOpen(item, input.checked);
+            });
+
+            title.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                if (input.type === 'radio') {
+                    if (!input.checked) {
+                        input.checked = true;
+                        closeRadioSiblings(input);
+                        setItemOpen(item, true);
+                    }
+                    return;
+                }
+
+                setItemOpen(item, !input.checked);
+            });
+
+            title.addEventListener('keydown', (e) => {
+                if (e.key !== 'Enter' && e.key !== ' ') return;
+                e.preventDefault();
+                title.click();
+            });
+
+            setItemOpen(item, input.checked);
+        });
+    }
+
+    setupFaqCollapses();
 
     // --- 2. Contact Form Handler ---
     const contactForm = document.getElementById('expandia-contact-form');
@@ -114,6 +173,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const leadCaptureForms = document.querySelectorAll('form[data-lead-capture]');
+    const freeEmailDomains = new Set([
+        'gmail.com', 'googlemail.com', 'yahoo.com', 'hotmail.com', 'outlook.com',
+        'live.com', 'icloud.com', 'me.com', 'mac.com', 'aol.com', 'proton.me',
+        'protonmail.com', 'pm.me', 'gmx.com', 'gmx.net', 'mail.com', 'zoho.com',
+        'yandex.com', 'hey.com'
+    ]);
+
+    function isCorporateEmail(email) {
+        const domain = String(email || '').split('@')[1];
+        return Boolean(domain && domain.includes('.') && !freeEmailDomains.has(domain.toLowerCase()));
+    }
 
     leadCaptureForms.forEach((leadForm) => {
         leadForm.addEventListener('submit', async (e) => {
@@ -130,6 +200,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
+            const email = formData.get('email');
+            if (leadForm.dataset.requireCorporateEmail === 'true' && !isCorporateEmail(email)) {
+                if (statusEl) statusEl.textContent = 'Please use a corporate email address.';
+                return;
+            }
+
             if (statusEl) statusEl.textContent = 'Sending...';
             if (btn) {
                 btn.textContent = 'Sending...';
@@ -137,15 +213,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const payload = {
-                email: formData.get('email'),
+                email,
                 message: [
-                    'Free AI Automation Checkup Request',
+                    leadForm.dataset.leadTitle || 'Free AI Automation Checkup Request',
                     `Source: ${leadForm.dataset.leadCapture || 'blog lead capture'}`,
                     `Page: ${window.location.href}`,
-                    'Request: Visitor asked for a quick first-pass review of what their team should automate first.'
-                ].join('\n'),
+                    formData.get('company') ? `Company: ${formData.get('company')}` : '',
+                    formData.get('request') ? `Request: ${formData.get('request')}` : 'Request: Visitor asked for a quick first-pass review of what their team should automate first.'
+                ].filter(Boolean).join('\n'),
                 to: DESTINATION_EMAIL
             };
+
+            const downloadUrl = leadForm.dataset.downloadUrl;
+            const successMessage = leadForm.dataset.successMessage || 'Thanks. We will send your checkup shortly.';
 
             try {
                 const resp = await fetch('https://expandia-contact-form.omaycompany.workers.dev/', {
@@ -158,8 +238,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (resp.ok) {
                     leadForm.reset();
-                    if (statusEl) statusEl.textContent = 'Thanks. We will send your checkup shortly.';
-                    if (btn) btn.textContent = 'Sent';
+                    if (statusEl) statusEl.textContent = successMessage;
+                    if (btn) btn.textContent = downloadUrl ? 'Opening...' : 'Sent';
+
+                    if (downloadUrl) {
+                        window.setTimeout(() => {
+                            const downloadLink = document.createElement('a');
+                            downloadLink.href = downloadUrl;
+                            downloadLink.download = '';
+                            downloadLink.rel = 'noopener';
+                            document.body.appendChild(downloadLink);
+                            downloadLink.click();
+                            downloadLink.remove();
+                        }, 250);
+                    }
                 } else {
                     if (statusEl) statusEl.textContent = data.message || 'Submission failed. Please try again.';
                     if (btn) btn.textContent = originalText;
@@ -172,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (btn) {
                     window.setTimeout(() => {
                         btn.disabled = false;
-                        if (btn.textContent === 'Sent') {
+                        if (btn.textContent === 'Sent' || btn.textContent === 'Opening...') {
                             btn.textContent = originalText;
                         }
                     }, 2000);

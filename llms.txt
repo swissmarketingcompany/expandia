@@ -35,9 +35,23 @@ Use this file as a curated map of the most important Go Expandia pages. It is ad
 ## Reference Resources
 
 - [Blog](https://www.goexpandia.com/blog/): Categorized guides on AI automation, AI consulting, business process automation, AI tools, and workflow software.
+- [Localized AI Markets](https://www.goexpandia.com/blog/categories/localized-ai-markets.html): City-specific AI automation, AI consulting, AI agent, and workflow automation guides with practical workflow examples and current adoption sources.
 - [Glossary](https://www.goexpandia.com/glossary/index.html): Definitions for business, technology, marketing, sales, cybersecurity, and operations terms.
 - [Sitemap](https://www.goexpandia.com/sitemap.xml): Complete machine-readable URL index for search crawlers and discovery tools.
 - [Robots](https://www.goexpandia.com/robots.txt): Crawler access rules for the site.
+
+## Localized AI Market Guides
+
+- [AI Automation Agency in London](https://www.goexpandia.com/blog/london-ai-automation-agency-what-to-automate-first.html): London guide for choosing the first AI automation workflow and evaluating the right implementation partner.
+- [AI Agents in New York](https://www.goexpandia.com/blog/new-york-ai-agents-what-to-automate-first.html): New York guide for practical AI agents across sales, support, client service, and operations.
+- [AI Automation Agency in Berlin](https://www.goexpandia.com/blog/berlin-ai-automation-agency-practical-workflows.html): Berlin guide for B2B and Mittelstand teams evaluating governed AI automation and workflow rollout.
+- [AI Consulting in Paris](https://www.goexpandia.com/blog/paris-ai-consulting-automation-pilot.html): Paris guide for planning a practical automation pilot with brand, legal, and management review.
+- [AI Workflow Automation in Amsterdam](https://www.goexpandia.com/blog/amsterdam-ai-workflow-automation-use-cases.html): Amsterdam guide for SaaS, logistics, service, and international operations teams.
+- [AI Automation in Austin](https://www.goexpandia.com/blog/austin-ai-automation-saas-growth-workflows.html): Austin guide for SaaS, RevOps, lead follow-up, CRM hygiene, and growth workflows.
+- [AI Automation in Houston](https://www.goexpandia.com/blog/houston-ai-document-operations-automation.html): Houston guide for document intake, invoice workflows, field operations, and B2B service teams.
+- [Business Process Automation in Chicago](https://www.goexpandia.com/blog/chicago-business-process-automation-ai-workflows.html): Chicago guide for AI workflow automation in back office, distribution, support, and operations teams.
+- [AI Agents in Zurich](https://www.goexpandia.com/blog/zurich-ai-agents-governed-automation.html): Zurich guide for governed AI agents, financial services, professional services, and regulated operations.
+- [AI Automation Agency in Barcelona](https://www.goexpandia.com/blog/barcelona-ai-automation-agency-multilingual-workflows.html): Barcelona guide for multilingual AI automation, service businesses, tourism, booking, and intake workflows.
 
 ## Optional
 

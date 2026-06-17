@@ -1,0 +1,439 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "Go Expandia" [ref=e4] [cursor=pointer]:
+        - /url: ../index.html
+        - img "Go Expandia" [ref=e5]
+      - generic [ref=e6]:
+        - link "Our Business Model" [ref=e7] [cursor=pointer]:
+          - /url: ../our-business-model.html
+        - link "Blog" [ref=e8] [cursor=pointer]:
+          - /url: ../blog/index.html
+        - button "Services" [ref=e10] [cursor=pointer]:
+          - text: Services
+          - img [ref=e11]
+        - button "Company" [ref=e14] [cursor=pointer]:
+          - text: Company
+          - img [ref=e15]
+      - link "Contact" [ref=e18] [cursor=pointer]:
+        - /url: ../contact.html
+  - main [ref=e19]:
+    - article [ref=e20]:
+      - generic [ref=e23]:
+        - generic [ref=e24]:
+          - navigation "Breadcrumb" [ref=e25]:
+            - list [ref=e26]:
+              - listitem [ref=e27]:
+                - link "Home" [ref=e28] [cursor=pointer]:
+                  - /url: ../index.html
+              - listitem [ref=e29]: /
+              - listitem [ref=e30]:
+                - link "Blog" [ref=e31] [cursor=pointer]:
+                  - /url: ../blog/index.html
+              - listitem [ref=e32]: /
+              - listitem [ref=e33]: AI chatbot for website
+          - generic [ref=e34]: Website AI decision guide
+          - 'heading "AI Chatbot for Website: When a Bot Is Enough and When You Need an AI Agent" [level=1] [ref=e36]'
+          - paragraph [ref=e37]: An AI chatbot for website visitors can answer common questions, capture leads, and reduce basic support load. You need an AI agent when the conversation must use tools, check business context, update systems, or route work with human review.
+          - generic [ref=e38]:
+            - generic [ref=e39]:
+              - text: By
+              - link "Bailey Roque" [ref=e40] [cursor=pointer]:
+                - /url: ../about.html
+            - generic [ref=e41]: "|"
+            - time [ref=e42]: Updated May 20, 2026
+            - generic [ref=e43]: "|"
+            - generic [ref=e44]: 18 min read
+            - generic [ref=e45]: "|"
+            - link "AI Automation" [ref=e46] [cursor=pointer]:
+              - /url: ../blog/categories/ai-automation.html
+          - generic [ref=e47]:
+            - link "Map My Website AI" [ref=e48] [cursor=pointer]:
+              - /url: ../contact.html
+            - link "See AI Agent Development" [ref=e49] [cursor=pointer]:
+              - /url: ../ai-agent-development.html
+        - generic [ref=e50]:
+          - img "AI chatbot for website decision path comparing a website bot with an AI agent" [ref=e52]
+          - generic [ref=e53]:
+            - paragraph [ref=e54]: Best first pilot
+            - paragraph [ref=e55]: Start with website FAQ, lead capture, or support triage before giving an AI agent system access.
+      - generic [ref=e58]:
+        - generic [ref=e59]:
+          - paragraph [ref=e60]: Focus
+          - paragraph [ref=e61]: AI chatbot for website
+        - generic [ref=e62]:
+          - paragraph [ref=e63]: Best for
+          - paragraph [ref=e64]: Teams choosing bot or agent
+        - generic [ref=e65]:
+          - paragraph [ref=e66]: Best first workflow
+          - paragraph [ref=e67]: FAQ and lead capture
+        - generic [ref=e68]:
+          - paragraph [ref=e69]: Main service
+          - paragraph [ref=e70]: AI Agent Development
+      - generic [ref=e73]:
+        - generic [ref=e74]:
+          - generic [ref=e75]:
+            - heading "TL;DR" [level=2] [ref=e76]
+            - paragraph [ref=e77]: A simple AI chatbot for website visitors is enough when the job is answering common questions, explaining services, collecting contact details, qualifying basic intent, showing links, or routing someone to a form. You need an AI agent when the workflow must check customer context, use tools, book appointments, update CRM records, open tickets, compare options, prepare quotes, trigger follow-up, or escalate based on business rules. The safest first rollout starts with a narrow website bot, measures conversation quality, adds human handoff, and only gives an AI agent system access after the rules, permissions, and review paths are clear.
+          - generic [ref=e78]:
+            - paragraph [ref=e79]: Free website AI check
+            - heading "Find out whether you need a chatbot or an AI agent." [level=2] [ref=e80]
+            - paragraph [ref=e81]: Drop your email and we will send a first-pass recommendation for the safest website AI workflow to build first.
+            - generic [ref=e82]:
+              - textbox "Work email" [ref=e83]
+              - button "Get Free Check" [ref=e84] [cursor=pointer]
+            - paragraph [ref=e85]: No spam. We use this to reply with the recommendation.
+          - paragraph [ref=e86]: An AI chatbot for website visitors can be a useful first step into AI automation. It can answer common questions, explain services, capture leads, reduce repetitive support conversations, and help visitors find the right page faster. For many companies, that is enough. The website does not need an autonomous system. It needs a clear, helpful assistant that answers well and hands off when the conversation becomes specific.
+          - paragraph [ref=e87]: The problem starts when a chatbot is expected to do agent work. A visitor asks whether they qualify for a service. A prospect wants a custom quote. A customer asks about an order. A user needs account-specific support. A buyer wants to book a meeting based on territory rules. A lead needs to be routed to the right CRM owner. A support issue needs a ticket, priority, and escalation reason. At that point, the conversation is no longer just a chat. It is a workflow.
+          - paragraph [ref=e88]: A website chatbot and an AI agent can look similar to the visitor because both may appear as a chat window. Underneath, they are different systems. A bot usually answers from approved knowledge, asks simple questions, and collects information. An AI agent can reason over context, use tools, call systems, draft actions, update records, and trigger workflows under guardrails.
+          - paragraph [ref=e89]: This guide explains when a simple bot is enough, when you need an AI agent, and how to choose a rollout path that protects customer experience. It is written for business owners, marketing teams, sales leaders, support teams, SaaS companies, agencies, local service businesses, and B2B operators who want useful website AI without creating customer confusion.
+          - 'heading "Quick Answer: Use a Bot for Answers, an Agent for Workflows" [level=2] [ref=e90]'
+          - paragraph [ref=e91]: Use an AI chatbot for website conversations when the visitor mostly needs information. That includes common questions, service explanations, pricing guidance that is already public, office hours, locations, product pages, content recommendations, lead capture, newsletter signup, and basic qualification questions.
+          - paragraph [ref=e92]: Use an AI agent when the visitor needs the system to take a controlled action. That includes booking, CRM updates, ticket creation, lead scoring, account lookup, document intake, quote preparation, order status checks, routing by territory, escalation, or follow-up based on the conversation.
+          - paragraph [ref=e93]: "The simplest decision rule is this: if the website AI only needs to answer and collect, a bot may be enough. If it must decide, act, update, route, or use private business data, treat it as an AI agent project with permissions, review, and audit trails."
+          - table [ref=e95]:
+            - rowgroup [ref=e96]:
+              - row "Website job Bot is enough when AI agent needed when Best control" [ref=e97]:
+                - columnheader "Website job" [ref=e98]
+                - columnheader "Bot is enough when" [ref=e99]
+                - columnheader "AI agent needed when" [ref=e100]
+                - columnheader "Best control" [ref=e101]
+            - rowgroup [ref=e102]:
+              - row "FAQ The answer is public, stable, and easy to cite. The answer depends on account context or policy interpretation. Use approved knowledge and source links." [ref=e103]:
+                - cell "FAQ" [ref=e104]
+                - cell "The answer is public, stable, and easy to cite." [ref=e105]
+                - cell "The answer depends on account context or policy interpretation." [ref=e106]
+                - cell "Use approved knowledge and source links." [ref=e107]
+              - row "Lead capture The bot collects name, email, company, and need. The workflow must score, enrich, and route the lead. Review routing and CRM writes first." [ref=e108]:
+                - cell "Lead capture" [ref=e109]
+                - cell "The bot collects name, email, company, and need." [ref=e110]
+                - cell "The workflow must score, enrich, and route the lead." [ref=e111]
+                - cell "Review routing and CRM writes first." [ref=e112]
+              - row "Booking The bot sends the visitor to a booking link. The system must choose appointment type, owner, and rules. Limit calendar access and allowed actions." [ref=e113]:
+                - cell "Booking" [ref=e114]
+                - cell "The bot sends the visitor to a booking link." [ref=e115]
+                - cell "The system must choose appointment type, owner, and rules." [ref=e116]
+                - cell "Limit calendar access and allowed actions." [ref=e117]
+              - row "Support The bot shares help articles and collects issue details. The workflow must create tickets, check account data, or escalate. Use severity rules and human handoff." [ref=e118]:
+                - cell "Support" [ref=e119]
+                - cell "The bot shares help articles and collects issue details." [ref=e120]
+                - cell "The workflow must create tickets, check account data, or escalate." [ref=e121]
+                - cell "Use severity rules and human handoff." [ref=e122]
+          - heading "What an AI Website Chatbot Actually Does" [level=2] [ref=e123]
+          - paragraph [ref=e124]: An AI website chatbot is a conversational interface that helps visitors get answers or complete simple steps on a website. It may use a knowledge base, page content, scripted flows, forms, basic qualification questions, and simple routing rules. Its job is to make the website easier to use.
+          - paragraph [ref=e125]: A good website chatbot can answer questions about services, pricing ranges, product features, delivery areas, appointment options, support policies, content, and next steps. It can ask visitors what they need, recommend pages, collect contact details, and hand off to a form or human team.
+          - paragraph [ref=e126]: The best simple bot is narrow and honest. It does not pretend to know private account data. It does not invent pricing. It does not promise timelines. It does not decide whether someone qualifies for a service unless the rules are public and simple. It answers from approved material and makes the next step easier.
+          - paragraph [ref=e127]: Many businesses should start here. A useful bot can reduce repetitive questions, improve conversion paths, and show which website content is unclear. It can also generate conversation data that helps the team decide whether an AI agent is worth building later.
+          - heading "What an AI Agent Does Differently" [level=2] [ref=e128]
+          - paragraph [ref=e129]: An AI agent is a workflow system that can use context, tools, rules, and integrations to complete controlled tasks. It may read the conversation, check the CRM, search internal knowledge, create a ticket, draft a reply, update a record, route a lead, book a meeting, or prepare a handoff packet.
+          - paragraph [ref=e130]: The word "agent" should not mean the AI can do anything it wants. A business-ready AI agent needs a defined job, approved tools, permission limits, stop rules, review paths, and logs. The agent should know what it can answer, what it can suggest, what it can update, and when it must ask a human.
+          - paragraph [ref=e131]: The difference is action. A chatbot may say, "You can book a consultation on this page." An AI agent may ask the visitor's need, check service fit, choose the right meeting type, look up availability, create a CRM record, draft a summary for the sales owner, and send the visitor to the right booking path.
+          - paragraph [ref=e132]: That power creates risk. If an agent uses the wrong rules, writes the wrong CRM field, creates duplicate tickets, or gives a visitor a false expectation, the business has a real workflow problem. That is why agent projects need more design than website chatbot installs.
+          - figure "Website AI should route conversations by complexity and risk, not by the most impressive demo." [ref=e133]:
+            - img "Bot versus AI agent map showing intent, answer, action, review, FAQ, lead capture, CRM update, and human handoff" [ref=e135]
+            - generic [ref=e136]: Website AI should route conversations by complexity and risk, not by the most impressive demo.
+          - heading "When a Simple Website Bot Is Enough" [level=2] [ref=e137]
+          - paragraph [ref=e138]: A simple bot is enough when the conversation is low-risk, public, repeatable, and easy to correct. The visitor needs help navigating information, not a system that makes decisions. In these cases, speed and clarity matter more than tool access.
+          - paragraph [ref=e139]: The first good use case is FAQ support. If visitors repeatedly ask what you do, who you serve, how pricing works at a high level, what happens after a call, where you operate, or how to contact support, a website bot can answer from approved content and link to the right page.
+          - paragraph [ref=e140]: The second use case is lead capture. A bot can ask who the visitor is, what they need, company size, timeline, budget signal, and preferred contact method. It can then send the information to a form or notify the team. If routing is simple, this may not require an agent.
+          - paragraph [ref=e141]: The third use case is page guidance. Visitors often land on the wrong page. A bot can ask whether they need AI automation, AI consulting services, AI agent development, or custom AI solutions for businesses, then point them to the right service page.
+          - paragraph [ref=e142]: The fourth use case is basic support intake. A bot can collect a description of the issue, ask for contact information, suggest help articles, and explain when the team will reply. If it does not need account lookup or ticket creation, a bot may be sufficient.
+          - paragraph [ref=e143]: The fifth use case is content recommendation. If a visitor is researching a topic, the bot can point them to practical blog posts, checklists, or service pages. This is useful for early-stage buyers who are not ready to talk yet.
+          - heading "When You Need an AI Agent Instead" [level=2] [ref=e144]
+          - paragraph [ref=e145]: You need an AI agent when the website conversation must become a business workflow. That usually means the system needs data access, tool use, routing logic, decision rules, or human review. The visitor is no longer only asking a question. They are asking the business to do something.
+          - paragraph [ref=e146]: Lead routing is a common example. A simple bot can collect a lead. An AI agent can classify the lead, enrich the company, check territory rules, score urgency, create or update the CRM record, assign an owner, and prepare a first follow-up draft. That requires more guardrails than a website FAQ bot.
+          - paragraph [ref=e147]: Support is another example. A simple bot can suggest help content. An AI agent can check the customer's account, summarize the issue, classify severity, create a ticket, attach conversation context, and escalate urgent cases. That workflow needs clear stop rules and access controls.
+          - paragraph [ref=e148]: Booking can also require an agent. Sending someone to a booking page is simple. Choosing the right appointment type, checking availability, verifying service area, matching the visitor to the right expert, and creating a CRM note is a workflow.
+          - paragraph [ref=e149]: Pricing and quote conversations often require an agent or human handoff. If the price depends on scope, usage, contract terms, integrations, compliance, or custom work, the website AI should collect information and prepare a handoff. It should not invent a quote.
+          - paragraph [ref=e150]: The moment the AI needs to update systems, read private data, trigger follow-up, or make a recommendation that affects the customer relationship, treat it as an agent workflow.
+          - heading "12 Website AI Workflows to Consider First" [level=2] [ref=e151]
+          - paragraph [ref=e152]: The right starting point depends on your site traffic, customer questions, sales process, support load, and risk tolerance. These 12 workflows show where a bot is enough, where an AI agent may be useful, and where human review should stay in control.
+          - heading "1. FAQ and Product Fit Questions" [level=3] [ref=e153]
+          - paragraph [ref=e154]: FAQ is the safest first workflow. The bot answers common questions from approved pages and gives visitors links to learn more. It can explain what the company does, what services exist, who the service is for, how the process works, and what the visitor should do next.
+          - paragraph [ref=e155]: This is usually a bot workflow, not an agent workflow. The bot should cite or link to source pages and hand off when the visitor asks for a specific promise, exception, or custom recommendation.
+          - heading "2. Lead Capture and Basic Qualification" [level=3] [ref=e156]
+          - paragraph [ref=e157]: A website chatbot can ask qualification questions that make forms easier to complete. It can capture name, email, company, role, problem, timeline, service interest, and preferred contact method. This reduces friction when the visitor is unsure which form to use.
+          - paragraph [ref=e158]: If the workflow only sends the lead to a team inbox, a bot may be enough. If it scores the lead, enriches the company, updates CRM fields, or routes to a specific owner, it should be designed as an AI agent workflow.
+          - heading "3. Service Recommendation" [level=3] [ref=e159]
+          - paragraph [ref=e160]: Many visitors do not know whether they need consulting, automation, agent development, or custom AI solutions. A bot can ask a few questions and recommend the right service page. This is helpful when the recommendation is based on simple, public rules.
+          - paragraph [ref=e161]: Use an AI agent when the recommendation depends on internal context, budget, tool stack, compliance needs, data access, or workflow risk. The agent can prepare a recommendation for review rather than acting like a final consultant.
+          - heading "4. Booking and Meeting Routing" [level=3] [ref=e162]
+          - paragraph [ref=e163]: A simple bot can point visitors to a booking link or ask whether they want to schedule a call. That may be enough for small teams with one calendar and one meeting type.
+          - paragraph [ref=e164]: Use an AI agent when booking depends on location, service fit, account owner, language, deal size, calendar rules, or support severity. The agent should only book approved meeting types and should log the reason for the booking.
+          - heading "5. Support Triage" [level=3] [ref=e165]
+          - paragraph [ref=e166]: Support triage starts with collecting the issue clearly. A bot can ask for the product, problem, urgency, account email, and screenshots. It can suggest public help articles and explain the next step.
+          - paragraph [ref=e167]: An AI agent becomes useful when the support workflow needs account lookup, ticket creation, severity classification, internal routing, or escalation. That workflow needs guardrails because frustrated customers should not get trapped in a bad conversation.
+          - heading "6. Order, Account, or Request Status" [level=3] [ref=e168]
+          - paragraph [ref=e169]: Status questions are tempting to automate because they are repetitive. A website bot can explain where to check status or collect information for a callback. It should not reveal private information without verification.
+          - paragraph [ref=e170]: An AI agent can answer status questions when it has approved access to reliable systems and identity checks. Start with low-risk status information before expanding to anything sensitive.
+          - heading "7. Pricing, Scope, and Quote Intake" [level=3] [ref=e171]
+          - paragraph [ref=e172]: A bot can explain public pricing ranges, packages, or how quotes are prepared. It can collect scope details and send them to the team. That is often enough for early-stage visitors.
+          - paragraph [ref=e173]: Do not let a website AI invent custom pricing. If pricing depends on scope, integrations, volume, risk, contract terms, or approval, use the AI to prepare a quote intake packet and route it to a person.
+          - heading "8. Technical Troubleshooting" [level=3] [ref=e174]
+          - paragraph [ref=e175]: A bot can guide visitors through public troubleshooting steps and link to help content. This works when the steps are safe, general, and easy to verify.
+          - paragraph [ref=e176]: An AI agent may be needed when troubleshooting requires logs, account configuration, product state, or internal tools. The agent should avoid destructive actions and escalate when confidence is low.
+          - heading "9. Website Knowledge Search" [level=3] [ref=e177]
+          - paragraph [ref=e178]: Many websites have useful pages that visitors cannot find. A bot can act as a guided search layer, summarizing relevant content and linking to the source. This is a strong low-risk use case.
+          - paragraph [ref=e179]: The key guardrail is citation. The bot should show where the answer came from. If the answer cannot be grounded in approved website content, it should say that and offer a human handoff.
+          - heading "10. CRM Updates and Lead Routing" [level=3] [ref=e180]
+          - paragraph [ref=e181]: CRM updates are agent work. The AI may need to create a lead, update company fields, assign an owner, write a conversation summary, and trigger follow-up. That is valuable, but it creates data quality risk.
+          - paragraph [ref=e182]: Start with suggested updates or limited fields. Record the source conversation, avoid duplicate records, and review routing logic before giving the agent broad write access.
+          - heading "11. Human Handoff and Escalation" [level=3] [ref=e183]
+          - paragraph [ref=e184]: Handoff is not a backup feature. It is a core part of safe website AI. The system should know when the visitor is upset, confused, high-value, urgent, or asking for something outside scope.
+          - paragraph [ref=e185]: A good handoff includes the conversation summary, visitor details, requested outcome, urgency, attempted answers, and reason for escalation. The human should not have to ask the visitor to repeat everything.
+          - heading "12. Conversation Quality Reporting" [level=3] [ref=e186]
+          - paragraph [ref=e187]: Website AI should teach the business what visitors do not understand. Track unanswered questions, repeated confusion, failed handoffs, low-rated answers, missing content, lead quality, and conversion paths.
+          - paragraph [ref=e188]: This reporting helps improve the website, not only the bot. If visitors keep asking the same question, the page may need clearer copy. If leads ask for a service you do not explain well, the service page may need repair.
+          - generic [ref=e189]:
+            - paragraph [ref=e190]: Build a controlled website AI pilot
+            - heading "Want a chatbot that does not become a dead-end widget?" [level=2] [ref=e191]
+            - paragraph [ref=e192]: We can map your website conversations, decide where a bot is enough, and design AI agent workflows where tool use and handoff matter.
+            - generic [ref=e193]:
+              - textbox "Work email" [ref=e194]
+              - button "Plan My Pilot" [ref=e195] [cursor=pointer]
+            - paragraph [ref=e196]: We will reply with a practical first-workflow recommendation.
+          - heading "Website AI Risks to Control" [level=2] [ref=e197]
+          - paragraph [ref=e198]: The first risk is wrong answers. A website bot can damage trust if it invents policies, pricing, timelines, availability, or service promises. Every answer should come from approved content or a defined workflow. If the source is missing, the bot should say so.
+          - paragraph [ref=e199]: The second risk is poor handoff. Visitors become frustrated when the AI keeps asking questions after it is clearly outside scope. Handoff rules should include explicit requests for a person, repeated failed answers, negative sentiment, urgent support, custom pricing, account-specific questions, and sensitive topics.
+          - paragraph [ref=e200]: The third risk is privacy. Website conversations may include personal data, business details, account questions, health information, legal questions, financial information, or confidential project details. The system needs clear disclosure, retention rules, access controls, and data minimization.
+          - paragraph [ref=e201]: For EU-facing sites, treat AI disclosure as a launch requirement. The EU AI Act Article 50 transparency obligations apply from August 2, 2026 and generally require people to be told when they are interacting directly with an AI system unless that is already obvious. Use a visible disclosure, a privacy link, and a clear human handoff instead of making the bot look like an unnamed staff member.
+          - paragraph [ref=e202]: The fourth risk is tool misuse. An AI agent that can update CRM, create tickets, book meetings, or send emails needs strict permissions. Tool access should be narrow, logged, and tested with real edge cases before expansion.
+          - paragraph [ref=e203]: The fifth risk is measuring the wrong thing. A high chat volume does not mean success. A long conversation does not mean value. Measure successful answers, qualified leads, handoff quality, visitor satisfaction, conversion movement, and the number of conversations that create useful next steps.
+          - figure "Score website AI conversations by complexity, risk, and system access before choosing a bot, agent, or human handoff." [ref=e204]:
+            - img "Website AI decision scorecard comparing FAQ answers, lead routing, and pricing exceptions by complexity, risk, system access, and best fit" [ref=e206]
+            - generic [ref=e207]: Score website AI conversations by complexity, risk, and system access before choosing a bot, agent, or human handoff.
+          - heading "Guardrails That Make Website AI Safe" [level=2] [ref=e208]
+          - paragraph [ref=e209]: Start with approved knowledge. The bot should answer from reviewed website pages, service descriptions, support articles, policy pages, and approved sales language. Do not let it improvise business commitments.
+          - paragraph [ref=e210]: Define scope by job. A FAQ bot answers questions. A lead bot collects details. A support triage bot gathers issue information. An AI agent books, routes, updates, or creates records. Mixing all of those jobs into one vague assistant makes testing harder.
+          - paragraph [ref=e211]: Use source links and citations where possible. Visitors and staff should be able to verify why the bot answered a certain way. Source grounding also shows the business which website pages need improvement.
+          - paragraph [ref=e212]: Keep human review for sensitive actions. Pricing exceptions, contract terms, refunds, legal or medical topics, complaints, account access, high-value leads, and system writes should be reviewed until the workflow is proven.
+          - paragraph [ref=e213]: Log decisions and handoffs. A production workflow should record what the visitor asked, what the AI answered, what source was used, when the conversation escalated, what system action was suggested or taken, and who owns follow-up.
+          - heading "A Practical 90-Day Website AI Implementation Plan" [level=2] [ref=e214]
+          - paragraph [ref=e215]: In the first thirty days, map website conversation intent. Review contact forms, live chat logs, sales notes, support tickets, analytics, search queries, and common questions. Group conversations into low-risk answers, lead capture, support triage, booking, account-specific questions, custom pricing, and human escalation.
+          - paragraph [ref=e216]: Choose the first workflow. Most businesses should start with FAQ plus lead capture or support triage. Define the knowledge sources, allowed answers, qualification questions, handoff rules, and metrics. Decide whether this first version is a bot, a bot plus forms, or a controlled AI agent.
+          - paragraph [ref=e217]: In days thirty to sixty, build and test the pilot. Write approved answer rules, connect the knowledge base, design the conversation flow, add forms, test mobile behavior, define handoff messages, and review edge cases. If an AI agent is involved, connect only the minimum tools needed.
+          - paragraph [ref=e218]: In days sixty to ninety, launch to a limited traffic path. Measure answer quality, lead quality, handoff completeness, failed questions, visitor satisfaction, and staff feedback. Expand only when the system answers reliably and the team trusts the handoff.
+          - heading "The Minimum Useful Website AI Pilot" [level=3] [ref=e219]
+          - paragraph [ref=e220]: The minimum useful pilot answers approved questions, captures visitor intent, collects contact details, recommends the right next page or form, and hands off cleanly when the request is outside scope. That is enough to prove value before building an agent with system access.
+          - heading "What to Avoid in the First Build" [level=4] [ref=e221]
+          - paragraph [ref=e222]: Avoid broad autonomous agents, automatic quotes, account-specific answers without verification, hidden CRM writes, unsupported claims, and chat experiences that trap visitors. Also avoid launching on every page before you understand which conversations the system handles well.
+          - heading "Questions to Answer Before Launch" [level=5] [ref=e223]
+          - list [ref=e224]:
+            - listitem [ref=e225]: Which website conversation is the pilot responsible for?
+            - listitem [ref=e226]: Which answers are approved, and which require human handoff?
+            - listitem [ref=e227]: Which data can be collected, stored, or passed to the team?
+            - listitem [ref=e228]: Which systems can the AI read or update?
+            - listitem [ref=e229]: What counts as a successful conversation?
+            - listitem [ref=e230]: How will failed answers, complaints, and handoff quality be reviewed?
+          - heading "How to Measure Whether the Bot or Agent Is Working" [level=2] [ref=e231]
+          - paragraph [ref=e232]: Measure website AI by outcome quality, not novelty. Useful metrics include successful answer rate, unsupported question rate, handoff rate, handoff completeness, lead capture rate, qualified lead rate, booking completion, support intake completeness, response speed, visitor rating, and staff acceptance.
+          - paragraph [ref=e233]: Review conversation transcripts. Look for repeated confusion, weak answers, overlong conversations, failed escalation, missing source links, and visitor questions that reveal content gaps. The transcript review should improve both the AI and the website.
+          - paragraph [ref=e234]: Track what happens after the chat. Did the lead convert? Did the support team receive enough detail? Did the visitor book the right meeting? Did the human owner understand the handoff? A chat that looks successful in the widget may still fail if the next team receives poor context.
+          - paragraph [ref=e235]: If the bot performs well on simple answers but fails on workflow tasks, that is a signal to add an AI agent for a narrow path. If the agent creates too many corrections or bad handoffs, reduce scope and strengthen review.
+          - 'heading "A Simple Decision Framework: Bot, Agent, or Human" [level=2] [ref=e236]'
+          - paragraph [ref=e237]: "Use three filters before choosing the technology: complexity, risk, and system access. Complexity asks whether the visitor needs a simple answer or a multi-step workflow. Risk asks what happens if the answer is wrong. System access asks whether the AI needs to read or update private tools such as CRM, help desk, calendar, billing, project management, or account databases."
+          - paragraph [ref=e238]: If complexity is low, risk is low, and system access is not needed, use a chatbot. A visitor asking what services you offer, where to find a case intake form, how to contact the team, or what happens after booking a call does not need an agent. The right answer is a clear bot with approved knowledge and good handoff.
+          - paragraph [ref=e239]: If complexity is medium, risk is medium, and system access is limited, use a controlled AI agent. A visitor who needs lead routing, appointment type selection, ticket creation, CRM enrichment, or support triage needs more than a content answer. The agent can prepare and route work, but the workflow should still limit what it can change.
+          - paragraph [ref=e240]: If complexity is high, risk is high, or the topic requires judgment, use human handoff with AI preparation. Custom pricing, legal questions, medical claims, complaints, refunds, contract exceptions, enterprise deal terms, and urgent account issues should not be fully automated from a public website chat. The AI can collect context and summarize the request, but a person should own the decision.
+          - paragraph [ref=e241]: This framework also helps avoid overbuying. Many teams ask for an AI agent when they actually need better website content and a simple lead bot. Other teams install a chatbot when they really need a workflow connected to CRM, support, and booking. The decision should follow the job, not the label on the software.
+          - paragraph [ref=e242]: The best production setup often combines all three paths. The bot handles public answers. The agent handles approved workflows. Humans handle exceptions. Visitors should not need to know which path is active. They should simply get a clear answer, a useful next step, or a clean handoff.
+          - heading "When to Hire an AI Automation Agency" [level=2] [ref=e243]
+          - paragraph [ref=e244]: You may not need an agency for a basic FAQ bot. Many website tools can handle simple answers, forms, and page recommendations. An AI automation agency becomes useful when the website AI needs workflow design, CRM integration, ticket creation, booking rules, custom knowledge retrieval, human review, reporting, or agent development.
+          - paragraph [ref=e245]: A good agency should ask what job the website AI is responsible for before recommending tools. It should help decide where a bot is enough, where an AI agent is justified, what data can be accessed, what actions require approval, and how the rollout will be measured.
+          - paragraph [ref=e246]: The agency should also protect the business from overbuilding. Sometimes the right first step is a better FAQ bot and a cleaner contact form. Sometimes the right step is an AI agent that connects chat to CRM and support. The correct answer depends on visitor intent, workflow complexity, and operational risk.
+          - 'heading "Final Checklist: Choose the Right Website AI" [level=2] [ref=e247]'
+          - list [ref=e248]:
+            - listitem [ref=e249]: Use a simple bot for public, low-risk answers and basic lead capture.
+            - listitem [ref=e250]: Use an AI agent when the workflow needs tools, CRM, tickets, booking, routing, or account context.
+            - listitem [ref=e251]: Keep humans involved for pricing exceptions, complaints, sensitive topics, and high-impact decisions.
+            - listitem [ref=e252]: Use approved knowledge, source links, handoff rules, and data retention controls.
+            - listitem [ref=e253]: Measure answer quality, lead quality, handoff completeness, and staff trust.
+            - listitem [ref=e254]: Expand from bot to agent only after the first workflow is reliable.
+          - paragraph [ref=e255]: An AI chatbot for website visitors should make the site easier to use. It should answer simple questions, capture intent, and route people to the right next step. It should not pretend to be a full business process.
+          - paragraph [ref=e256]: "An AI agent is the right choice when the website conversation needs to become controlled work: a CRM update, a support ticket, a booking, a quote intake, a handoff, or a follow-up workflow. Build that agent carefully, with clear permissions and review."
+          - generic [ref=e257]:
+            - paragraph [ref=e258]: Free website AI review
+            - heading "Get a first-pass recommendation for your website AI workflow." [level=2] [ref=e259]
+            - paragraph [ref=e260]: Send your email and we will reply with a practical view of whether your site needs a chatbot, an AI agent, or a human handoff workflow first.
+            - generic [ref=e261]:
+              - textbox "Work email" [ref=e262]
+              - button "Get My Recommendation" [ref=e263] [cursor=pointer]
+            - paragraph [ref=e264]: No spam. We use this to reply with the recommendation.
+          - 'heading "FAQ: AI Chatbot for Website" [level=2] [ref=e265]'
+          - generic [ref=e266]:
+            - generic [ref=e267]:
+              - radio [checked] [ref=e268]
+              - heading "What is an AI chatbot for website visitors? −" [level=3] [ref=e269] [cursor=pointer]
+              - paragraph [ref=e271]: An AI chatbot for website visitors is a conversational assistant that answers approved questions, recommends pages, captures lead details, and routes visitors to the right next step.
+            - generic [ref=e272]:
+              - radio [ref=e273] [cursor=pointer]
+              - heading "When is a simple website chatbot enough? +" [level=3] [ref=e274] [cursor=pointer]
+            - generic [ref=e275]:
+              - radio [ref=e276] [cursor=pointer]
+              - heading "When do I need an AI agent instead of a chatbot? +" [level=3] [ref=e277] [cursor=pointer]
+            - generic [ref=e278]:
+              - radio [ref=e279] [cursor=pointer]
+              - heading "Should a website AI chatbot give prices? +" [level=3] [ref=e280] [cursor=pointer]
+            - generic [ref=e281]:
+              - radio [ref=e282] [cursor=pointer]
+              - heading "Can Go Expandia build website AI agents? +" [level=3] [ref=e283] [cursor=pointer]
+          - generic [ref=e284]:
+            - heading "About Bailey Roque" [level=2] [ref=e285]
+            - paragraph [ref=e286]: Bailey Roque writes for Go Expandia on AI automation, AI agent development, workflow design, AI consulting, and practical rollout models for business teams.
+        - complementary [ref=e287]:
+          - generic [ref=e288]:
+            - paragraph [ref=e289]: Free website AI check
+            - heading "Bot or agent first?" [level=2] [ref=e290]
+            - paragraph [ref=e291]: Drop your email and we will send a first-pass recommendation for your first website AI workflow.
+            - generic [ref=e292]:
+              - textbox "Work email" [ref=e293]
+              - button "Get Free Check" [ref=e294] [cursor=pointer]
+              - paragraph [ref=e295]: No spam. We use this to reply with the recommendation.
+          - generic [ref=e296]:
+            - heading "Article contents" [level=2] [ref=e297]
+            - list [ref=e298]:
+              - listitem [ref=e299]:
+                - link "Quick answer" [ref=e300] [cursor=pointer]:
+                  - /url: "#quick-answer"
+              - listitem [ref=e301]:
+                - link "What a chatbot does" [ref=e302] [cursor=pointer]:
+                  - /url: "#what-is-chatbot"
+              - listitem [ref=e303]:
+                - link "What an agent does" [ref=e304] [cursor=pointer]:
+                  - /url: "#what-is-agent"
+              - listitem [ref=e305]:
+                - link "When bot is enough" [ref=e306] [cursor=pointer]:
+                  - /url: "#when-bot-enough"
+              - listitem [ref=e307]:
+                - link "When agent is needed" [ref=e308] [cursor=pointer]:
+                  - /url: "#when-agent-needed"
+              - listitem [ref=e309]:
+                - link "12 workflows" [ref=e310] [cursor=pointer]:
+                  - /url: "#workflows"
+              - listitem [ref=e311]:
+                - link "90-day plan" [ref=e312] [cursor=pointer]:
+                  - /url: "#implementation-plan"
+              - listitem [ref=e313]:
+                - link "FAQ" [ref=e314] [cursor=pointer]:
+                  - /url: "#faq"
+          - generic [ref=e315]:
+            - paragraph [ref=e316]: Need implementation?
+            - heading "Build the first website AI pilot." [level=2] [ref=e317]
+            - paragraph [ref=e318]: We can map visitor intent, design bot flows, build AI agents, and connect handoff workflows safely.
+            - link "Book a Call" [ref=e319] [cursor=pointer]:
+              - /url: ../contact.html
+      - generic [ref=e321]:
+        - generic [ref=e322]:
+          - paragraph [ref=e323]: Related posts and services
+          - heading "Keep planning your website AI roadmap" [level=2] [ref=e324]
+        - generic [ref=e325]:
+          - link "Support guide AI Customer Service Automation See what to automate in support without hurting quality, empathy, or escalation." [ref=e326] [cursor=pointer]:
+            - /url: ../blog/ai-customer-service-automation.html
+            - paragraph [ref=e327]: Support guide
+            - heading "AI Customer Service Automation" [level=3] [ref=e328]
+            - paragraph [ref=e329]: See what to automate in support without hurting quality, empathy, or escalation.
+          - link "Lead guide AI Lead Generation Compare lead workflows that can be automated without lowering sales quality." [ref=e330] [cursor=pointer]:
+            - /url: ../blog/ai-lead-generation.html
+            - paragraph [ref=e331]: Lead guide
+            - heading "AI Lead Generation" [level=3] [ref=e332]
+            - paragraph [ref=e333]: Compare lead workflows that can be automated without lowering sales quality.
+          - link "Main service AI Agent Development Build controlled AI agents with tool access, workflow rules, handoff, and human review." [ref=e334] [cursor=pointer]:
+            - /url: ../ai-agent-development.html
+            - paragraph [ref=e335]: Main service
+            - heading "AI Agent Development" [level=3] [ref=e336]
+            - paragraph [ref=e337]: Build controlled AI agents with tool access, workflow rules, handoff, and human review.
+      - generic [ref=e339]:
+        - heading "Ready to Build Website AI That Actually Helps?" [level=2] [ref=e340]
+        - paragraph [ref=e341]: Go Expandia helps companies decide when a chatbot is enough, when an AI agent is needed, and how to launch the first website AI workflow safely.
+        - generic [ref=e342]:
+          - link "Start the Conversation" [ref=e343] [cursor=pointer]:
+            - /url: ../contact.html
+          - link "See AI Automation Agency" [ref=e344] [cursor=pointer]:
+            - /url: ../ai-automation-agency.html
+  - contentinfo [ref=e345]:
+    - generic [ref=e348]:
+      - generic [ref=e349]:
+        - heading "Stay Ahead with Go Expandia" [level=3] [ref=e350]
+        - paragraph [ref=e351]: Learn how companies use AI agency services to automate work and build useful AI systems.
+      - generic [ref=e353]:
+        - textbox "Enter your email" [ref=e354]
+        - button "Subscribe" [ref=e355] [cursor=pointer]
+    - generic [ref=e356]:
+      - generic [ref=e357]:
+        - generic [ref=e358]:
+          - img "Go Expandia" [ref=e360]
+          - paragraph [ref=e361]: AI agency for businesses. Automation, consulting, AI agents, and custom AI solutions.
+          - link "Go Expandia on LinkedIn" [ref=e363] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/103769699/
+            - img [ref=e364]
+        - generic [ref=e366]:
+          - heading "Services" [level=4] [ref=e367]
+          - list [ref=e368]:
+            - listitem [ref=e369]:
+              - link "All Services" [ref=e370] [cursor=pointer]:
+                - /url: ../solutions.html
+                - text: All Services
+            - listitem [ref=e372]:
+              - link "AI Automation Agency" [ref=e373] [cursor=pointer]:
+                - /url: ../ai-automation-agency.html
+                - text: AI Automation Agency
+            - listitem [ref=e375]:
+              - link "AI Consulting Services" [ref=e376] [cursor=pointer]:
+                - /url: ../ai-consulting-services.html
+                - text: AI Consulting Services
+            - listitem [ref=e378]:
+              - link "AI Agent Development" [ref=e379] [cursor=pointer]:
+                - /url: ../ai-agent-development.html
+                - text: AI Agent Development
+            - listitem [ref=e381]:
+              - link "Custom AI Solutions" [ref=e382] [cursor=pointer]:
+                - /url: ../custom-ai-solutions-for-businesses.html
+                - text: Custom AI Solutions
+            - listitem [ref=e384]:
+              - link "AI Support" [ref=e385] [cursor=pointer]:
+                - /url: ../ai-support.html
+                - text: AI Support
+        - generic [ref=e387]:
+          - heading "Company" [level=4] [ref=e388]
+          - list [ref=e389]:
+            - listitem [ref=e390]:
+              - link "About Us" [ref=e391] [cursor=pointer]:
+                - /url: ../about.html
+                - text: About Us
+            - listitem [ref=e393]:
+              - link "Service Locations" [ref=e394] [cursor=pointer]:
+                - /url: ../service-areas.html
+                - text: Service Locations
+            - listitem [ref=e396]:
+              - link "Blog" [ref=e397] [cursor=pointer]:
+                - /url: ../blog/index.html
+                - text: Blog
+            - listitem [ref=e399]:
+              - link "Contact Us" [ref=e400] [cursor=pointer]:
+                - /url: ../contact.html
+                - text: Contact Us
+        - generic [ref=e402]:
+          - heading "Get in Touch" [level=4] [ref=e403]
+          - generic [ref=e404]:
+            - paragraph [ref=e405]: Need help choosing the right AI agency path? We can start with one service and keep it simple.
+            - link "Talk to Us" [ref=e406] [cursor=pointer]:
+              - /url: ../contact.html
+            - generic [ref=e407]:
+              - link "hello@goexpandia.com" [ref=e408] [cursor=pointer]:
+                - /url: mailto:hello@goexpandia.com
+                - img [ref=e409]
+                - text: hello@goexpandia.com
+              - link "Book a workflow review" [ref=e411] [cursor=pointer]:
+                - /url: ../contact.html
+                - img [ref=e412]
+                - text: Book a workflow review
+      - generic [ref=e414]:
+        - generic [ref=e415]: © 2026 Go Expandia. All rights reserved.
+        - generic [ref=e416]:
+          - generic [ref=e417]: Part of Remova Inc.
+          - link "Privacy Policy" [ref=e418] [cursor=pointer]:
+            - /url: ../privacy-policy.html
+          - link "Terms of Service" [ref=e419] [cursor=pointer]:
+            - /url: ../terms-of-service.html
+          - link "Cookie Policy" [ref=e420] [cursor=pointer]:
+            - /url: ../cookie-policy.html

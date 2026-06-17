@@ -247,6 +247,10 @@ html {
 }
 
 /* FAQ Enhancements */
+.collapse:not(td):not(tr):not(colgroup) {
+  visibility: visible;
+}
+
 .collapse-title {
   transition: all 0.2s ease;
 }
@@ -256,13 +260,24 @@ html {
   transform: translateX(4px);
 }
 
-.collapse input[type="checkbox"]:checked~.collapse-title {
+.collapse input[type="checkbox"]:checked~.collapse-title,
+.collapse input[type="radio"]:checked~.collapse-title,
+.collapse.collapse-open .collapse-title {
   color: hsl(var(--p));
   font-weight: 600;
 }
 
 .collapse-content {
   transition: all 0.3s ease;
+}
+
+.collapse.collapse-open {
+  grid-template-rows: max-content 1fr;
+}
+
+.collapse.collapse-open>.collapse-content {
+  visibility: visible;
+  min-height: fit-content;
 }
 
 /* Logo Carousel Styles */

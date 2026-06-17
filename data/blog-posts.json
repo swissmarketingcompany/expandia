@@ -19,6 +19,11 @@
       "label": "AI Tools",
       "description": "Tool comparisons and software selection guides for companies evaluating AI automation platforms, document AI, agents, reporting, and workflow builders.",
       "keywords": "AI tools, AI automation tools, workflow tools, AI software, business automation tools"
+    },
+    "localized-ai-markets": {
+      "label": "Localized AI Markets",
+      "description": "City-specific AI automation, AI consulting, AI agents, and workflow automation guides with practical workflow examples and current adoption sources.",
+      "keywords": "local AI automation agency, AI consulting city guide, AI agents local market, AI workflow automation"
     }
   },
   "posts": {
@@ -309,6 +314,126 @@
       "image": "assets/images/ai-consulting-company-rollout-dashboard.png",
       "published": "2026-01-06",
       "modified": "2026-01-06"
+    },
+    "london-ai-automation-agency-what-to-automate-first": {
+      "title": "AI Automation Agency in London: What to Automate First and How to Choose the Right Partner",
+      "description": "A practical London guide to choosing the first AI automation workflow, evaluating an agency partner, and planning a controlled pilot.",
+      "excerpt": "A London-focused guide to first AI automation workflows, local buyer realities, partner selection, and practical rollout planning.",
+      "keywords": "ai automation agency london, ai consulting london, ai agents london, workflow automation london, custom ai solutions london, AI automation agency, AI consulting services, AI agent development, custom AI solutions",
+      "category": "localized-ai-markets",
+      "badge": "London Guide",
+      "readTime": "14 min read",
+      "image": "assets/images/ai-automation-agency-near-me-hero.png",
+      "published": "2026-06-05",
+      "modified": "2026-06-05"
+    },
+    "new-york-ai-agents-what-to-automate-first": {
+      "title": "AI Agents in New York: What to Automate First and How to Choose the Right Partner",
+      "description": "A practical New York guide to choosing the first AI agent workflow, protecting quality, and evaluating a partner for sales, support, and operations.",
+      "excerpt": "A New York-focused guide to practical AI agents, first workflows, U.S. adoption context, and partner selection.",
+      "keywords": "ai agents new york, ai automation agency new york, ai consulting new york, sales AI agent new york, customer support AI agent, AI automation agency, AI consulting services, AI agent development, custom AI solutions",
+      "category": "localized-ai-markets",
+      "badge": "New York Guide",
+      "readTime": "14 min read",
+      "image": "assets/images/ai-agents-for-business-hero.png",
+      "published": "2026-06-05",
+      "modified": "2026-06-05"
+    },
+    "berlin-ai-automation-agency-practical-workflows": {
+      "title": "AI Automation Agency in Berlin: Practical Workflows for B2B and Mittelstand Teams",
+      "description": "A practical Berlin guide to choosing AI automation workflows, protecting governance, and planning measurable pilots for B2B and Mittelstand teams.",
+      "excerpt": "A Berlin-focused guide for choosing useful AI automation workflows, protecting governance, and planning measurable pilots.",
+      "keywords": "ai automation agency berlin, ki automatisierung berlin, ai consulting berlin, ki agentur berlin, ai agents berlin, AI automation agency, AI consulting services, AI agent development, custom AI solutions",
+      "category": "localized-ai-markets",
+      "badge": "Berlin Guide",
+      "readTime": "14 min read",
+      "image": "assets/images/ai-agent-human-approval.png",
+      "published": "2026-06-05",
+      "modified": "2026-06-05"
+    },
+    "paris-ai-consulting-automation-pilot": {
+      "title": "AI Consulting in Paris: How to Plan a Practical Automation Pilot",
+      "description": "A practical Paris guide to choosing an AI automation pilot, protecting brand and legal quality, and deciding when consulting should lead the build.",
+      "excerpt": "A Paris-focused AI consulting and automation guide for choosing useful pilots, reducing risk, and planning rollout.",
+      "keywords": "ai consulting paris, agence ia paris, ai automation paris, consultant ia paris, custom ai solutions paris, AI automation agency, AI consulting services, AI agent development, custom AI solutions",
+      "category": "localized-ai-markets",
+      "badge": "Paris Guide",
+      "readTime": "14 min read",
+      "image": "assets/images/ai-consulting-company-evaluation-map.png",
+      "published": "2026-06-05",
+      "modified": "2026-06-05"
+    },
+    "amsterdam-ai-workflow-automation-use-cases": {
+      "title": "AI Workflow Automation in Amsterdam: Practical Use Cases for Service and SaaS Teams",
+      "description": "A practical Amsterdam guide to choosing AI workflow automation use cases for service, SaaS, logistics support, and international operations.",
+      "excerpt": "An Amsterdam-focused guide to AI workflow automation for SaaS, logistics, service, and operations teams.",
+      "keywords": "ai workflow automation amsterdam, ai automation agency amsterdam, ai consulting amsterdam, ai agents amsterdam, business automation amsterdam, AI automation agency, AI consulting services, AI agent development, custom AI solutions",
+      "category": "localized-ai-markets",
+      "badge": "Amsterdam Guide",
+      "readTime": "14 min read",
+      "image": "assets/images/ai-workflows-practical-guide-hero.png",
+      "published": "2026-06-05",
+      "modified": "2026-06-05"
+    },
+    "austin-ai-automation-saas-growth-workflows": {
+      "title": "AI Automation in Austin: What SaaS and Growth Teams Should Automate First",
+      "description": "A practical Austin guide to AI automation for SaaS, RevOps, lead follow-up, CRM hygiene, sales handoffs, and controlled rollout.",
+      "excerpt": "An Austin-focused guide to AI automation for SaaS, RevOps, lead follow-up, sales handoffs, and workflow rollout.",
+      "keywords": "ai automation agency austin, ai automation austin, ai consulting austin, ai sales agent austin, RevOps automation AI, AI automation agency, AI consulting services, AI agent development, custom AI solutions",
+      "category": "localized-ai-markets",
+      "badge": "Austin Guide",
+      "readTime": "14 min read",
+      "image": "assets/images/ai-sales-agent-workflows-hero.png",
+      "published": "2026-06-05",
+      "modified": "2026-06-05"
+    },
+    "houston-ai-document-operations-automation": {
+      "title": "AI Automation in Houston: Document and Operations Workflows to Start With",
+      "description": "A practical Houston guide to AI automation for document intake, field updates, finance approvals, operations reporting, and B2B service teams.",
+      "excerpt": "A Houston-focused guide to AI document automation, operations workflows, and controlled rollout for B2B teams.",
+      "keywords": "ai automation agency houston, document automation AI houston, invoice automation AI houston, ai consulting houston, business process automation houston, AI automation agency, AI consulting services, AI agent development, custom AI solutions",
+      "category": "localized-ai-markets",
+      "badge": "Houston Guide",
+      "readTime": "14 min read",
+      "image": "assets/images/intelligent-document-processing-hero.png",
+      "published": "2026-06-05",
+      "modified": "2026-06-05"
+    },
+    "chicago-business-process-automation-ai-workflows": {
+      "title": "Business Process Automation in Chicago: Where AI Can Remove Back-Office Work",
+      "description": "A practical Chicago guide to AI business process automation for back office, distribution, support, approvals, and operations reporting.",
+      "excerpt": "A Chicago-focused guide to AI business process automation for back office, distribution, support, and operations teams.",
+      "keywords": "business process automation chicago, ai automation agency chicago, workflow automation chicago, ai consulting chicago, customer service automation chicago, AI automation agency, AI consulting services, AI agent development, custom AI solutions",
+      "category": "localized-ai-markets",
+      "badge": "Chicago Guide",
+      "readTime": "14 min read",
+      "image": "assets/images/ai-automation-roi-dashboard.png",
+      "published": "2026-06-05",
+      "modified": "2026-06-05"
+    },
+    "zurich-ai-agents-governed-automation": {
+      "title": "AI Agents in Zurich: Governed Automation for Finance and Professional Services",
+      "description": "A practical Zurich guide to governed AI agents for finance, consulting, regulated services, document review, and approval-controlled automation.",
+      "excerpt": "A Zurich-focused guide to governed AI agents for finance, consulting, regulated services, and operational teams.",
+      "keywords": "ai agents zurich, ai consulting zurich, ai automation zurich, ki agentur zurich, custom ai solutions zurich, AI automation agency, AI consulting services, AI agent development, custom AI solutions",
+      "category": "localized-ai-markets",
+      "badge": "Zurich Guide",
+      "readTime": "14 min read",
+      "image": "assets/images/ai-agent-human-approval.png",
+      "published": "2026-06-05",
+      "modified": "2026-06-05"
+    },
+    "barcelona-ai-automation-agency-multilingual-workflows": {
+      "title": "AI Automation Agency in Barcelona: Multilingual Workflows to Automate First",
+      "description": "A practical Barcelona guide to AI automation for multilingual intake, booking questions, customer follow-up, tourism services, and local operations.",
+      "excerpt": "A Barcelona-focused guide to AI automation for tourism, agencies, local services, booking, intake, and customer operations.",
+      "keywords": "ai automation agency barcelona, ai agency barcelona, ai consulting barcelona, ai services barcelona, ai receptionist barcelona, AI automation agency, AI consulting services, AI agent development, custom AI solutions",
+      "category": "localized-ai-markets",
+      "badge": "Barcelona Guide",
+      "readTime": "14 min read",
+      "image": "assets/images/ai-receptionist-call-booking-hero.png",
+      "published": "2026-06-05",
+      "modified": "2026-06-05"
     }
   }
 }

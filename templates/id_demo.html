@@ -136,8 +136,20 @@
                             <p class="text-base-content">Ödeme planımı ve hesabımla ilgili bilgi almak istiyorum.</p>
                         </div>
                         <div class="rounded-xl bg-primary/10 border border-primary/20 p-4">
-                            <p class="text-sm font-bold text-primary mb-2">Chatbot agent</p>
+                            <p class="text-sm font-bold text-primary mb-2">Dijital Asistan</p>
                             <p class="text-base-content">Merhaba, size self-servis destek akışında yardımcı olabilirim.</p>
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl border border-base-300 p-5 md:p-6 mb-8">
+                        <div class="rounded-xl border id-demo-support-note p-4">
+                            <p class="font-bold mb-2">Chatbot ile deneyebilecekleriniz</p>
+                            <ul class="list-disc pl-5 text-sm text-base-content/70 space-y-1">
+                                <li>Kimlik doğrulama sonrası bakiye ve dosya aşamasını sorma</li>
+                                <li>Ödeme yapmak için IBAN ve birim telefonu isteme</li>
+                                <li>Dosyaya itiraz etmek için gerekli e-posta adresini öğrenme</li>
+                                <li>Ödeme planı veya temsilci yönlendirme senaryosunu test etme</li>
+                            </ul>
                         </div>
                     </div>
 
@@ -160,8 +172,8 @@
                     <i data-lucide="messages-square" class="w-6 h-6"></i>
                 </div>
                 <div>
-                    <h3 id="id-demo-chat-title" class="text-lg font-black leading-tight">Self-service chatbot demo</h3>
-                    <p id="id-demo-chat-connection" class="text-sm text-base-content/60">Ready for a demo conversation.</p>
+                    <h3 id="id-demo-chat-title" class="text-lg font-black leading-tight">İ &amp; D Destek</h3>
+                    <p id="id-demo-chat-connection" class="text-sm text-base-content/60">Demo müşteri dosyası hazır.</p>
                 </div>
             </div>
             <button id="close-chatbot-demo" type="button" class="id-demo-icon-button" aria-label="Close chat demo">
@@ -207,6 +219,45 @@
         const chatClose = document.getElementById('close-chatbot-demo');
         let chatId = '';
         let chatIsSending = false;
+        let lastAgentMessage = '';
+
+        function cleanAgentMessage(text) {
+            if (!text) return "";
+
+            const trimmed = String(text).trim();
+
+            if (trimmed.startsWith("{") && trimmed.endsWith("}")) {
+                try {
+                    const obj = JSON.parse(trimmed);
+
+                    if (obj.answer) {
+                        return obj.answer;
+                    }
+
+                    return "";
+                } catch (e) {
+                    return trimmed;
+                }
+            }
+
+            return trimmed;
+        }
+
+        function shouldSkipAgentMessage(text, lastAgentMessage) {
+            const t = String(text || "").trim();
+
+            if (!t) return true;
+
+            if (
+                lastAgentMessage &&
+                lastAgentMessage.includes("Güncel borç bakiyeniz") &&
+                t.includes("Güvenlik teyidiniz başarılı")
+            ) {
+                return true;
+            }
+
+            return false;
+        }
 
         function isUnlocked() {
             return window.sessionStorage.getItem(sessionKey) === 'true';
@@ -238,7 +289,7 @@
 
             const label = document.createElement('div');
             label.className = 'id-demo-chat-label';
-            label.textContent = role === 'user' ? 'You' : 'Assistant';
+            label.textContent = role === 'user' ? 'You' : 'Dijital Asistan';
 
             const text = document.createElement('div');
             text.textContent = content;
@@ -250,18 +301,12 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
-        function ensureIntroMessage() {
-            if (chatMessages.childElementCount > 0) return;
-            appendChatMessage('agent', 'Merhaba. Self-servis destek demosu hazır. Nasıl yardımcı olabilirim?');
-        }
-
         function openChatPanel() {
             hideDefaultSiteChat();
-            ensureIntroMessage();
             chatOverlay.classList.add('is-open');
             chatOverlay.setAttribute('aria-hidden', 'false');
             chatbotStatus.textContent = 'The chatbot demo is open.';
-            chatConnection.textContent = chatId ? 'Connected to the demo assistant.' : 'Ready for a demo conversation.';
+            chatConnection.textContent = chatId ? 'Connected to the demo assistant.' : 'Demo müşteri dosyası hazır.';
             window.setTimeout(function () {
                 chatInput.focus();
             }, 60);
@@ -278,7 +323,7 @@
             chatInput.disabled = isBusy;
             chatSubmit.disabled = isBusy;
             chatSubmit.querySelector('span').textContent = isBusy ? 'Sending...' : 'Send';
-            chatConnection.textContent = isBusy ? 'Waiting for the assistant...' : (chatId ? 'Connected to the demo assistant.' : 'Ready for a demo conversation.');
+            chatConnection.textContent = isBusy ? 'Waiting for the assistant...' : (chatId ? 'Connected to the demo assistant.' : 'Demo müşteri dosyası hazır.');
         }
 
         async function readJsonResponse(response) {
@@ -314,10 +359,7 @@
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    agent_id: assistantConfig.agentId,
-                    metadata: {
-                        source: 'goexpandia_id_demo'
-                    }
+                    agent_id: assistantConfig.agentId
                 })
             });
             const payload = await readJsonResponse(response);
@@ -381,7 +423,13 @@
                 return;
             }
 
-            renderedMessages.forEach(message => appendChatMessage('agent', message));
+            renderedMessages.forEach(message => {
+                const cleanText = cleanAgentMessage(message);
+                if (!shouldSkipAgentMessage(cleanText, lastAgentMessage)) {
+                    appendChatMessage('agent', cleanText);
+                    lastAgentMessage = cleanText;
+                }
+            });
         }
 
         async function hashValue(value) {

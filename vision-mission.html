@@ -175,6 +175,38 @@
             <a href="./blog/index.html"
                 class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50">Blog</a>
 
+            <div class="relative" id="products-dropdown">
+                <button onclick="toggleDropdown('products-menu')"
+                    class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
+                    Products
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="products-menu"
+                    class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden max-h-[78vh] overflow-y-auto"
+                    style="width: min(520px, calc(100vw - 2rem));">
+                    <div class="p-6 md:p-7">
+                        <div class="inline-flex items-center gap-2 mb-5">
+                            <span class="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                <i data-lucide="package" class="w-4 h-4"></i>
+                            </span>
+                            <h3 class="text-sm font-bold text-primary uppercase tracking-wider">
+                                Products
+                            </h3>
+                        </div>
+                        <ul class="grid grid-cols-1 gap-3">
+                            <li>
+                                <a href="./solar-satellite-offer-automatisation.html" class="block rounded-xl border border-gray-100 p-4 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                                    <span class="block text-base font-bold text-gray-900">Solar Satellite Offer Automatisation</span>
+                                    <p class="mt-1 text-sm text-gray-600">Find solar-ready properties from satellite photos and prepare offer batches with AI visuals.</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
             <div class="relative" id="services-dropdown">
                 <button onclick="toggleDropdown('services-menu')"
                     class="px-4 py-2 text-sm font-bold text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
@@ -298,6 +330,12 @@
                     <ul class="menu p-3 w-full text-xs">
                         <li><a href="./our-business-model.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">Our Business Model</a></li>
                         <li><a href="./blog/index.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">Blog</a></li>
+                        <li class="mt-2">
+                            <span class="text-[10px] font-bold text-primary uppercase tracking-wider px-2 py-1 bg-primary/5 rounded-lg mb-1">Products</span>
+                            <ul class="pl-0 space-y-0.5">
+                                <li><a href="./solar-satellite-offer-automatisation.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">Solar Satellite Offer Automatisation</a></li>
+                            </ul>
+                        </li>
                         <li><a href="./solutions.html" class="py-2 px-3 rounded-lg hover:bg-gray-50">Services</a></li>
                         <li class="mt-2">
                             <span class="text-[10px] font-bold text-primary uppercase tracking-wider px-2 py-1 bg-primary/5 rounded-lg mb-1">AI Agency Services</span>
@@ -343,7 +381,7 @@
     }
 
     function toggleDropdown(menuId) {
-        const allMenus = ['services-menu', 'company-menu'];
+        const allMenus = ['products-menu', 'services-menu', 'company-menu'];
         allMenus.forEach(id => {
             const menu = document.getElementById(id);
             if (menu && id !== menuId) {
@@ -357,9 +395,13 @@
     }
 
     document.addEventListener('click', function (e) {
+        const productsDropdown = document.getElementById('products-dropdown');
         const servicesDropdown = document.getElementById('services-dropdown');
         const companyDropdown = document.getElementById('company-dropdown');
 
+        if (productsDropdown && !productsDropdown.contains(e.target)) {
+            document.getElementById('products-menu')?.classList.add('hidden');
+        }
         if (servicesDropdown && !servicesDropdown.contains(e.target)) {
             document.getElementById('services-menu')?.classList.add('hidden');
         }
@@ -403,7 +445,7 @@
             <div class="relative group">
                 <div class="absolute -inset-4 bg-primary/20 rounded-[2rem] blur-2xl group-hover:bg-primary/30 transition-colors duration-500"></div>
                 <div class="relative aspect-[4/5] bg-neutral rounded-3xl overflow-hidden shadow-2xl border border-white/10 group-hover:scale-[1.01] transition-transform duration-500">
-                    <img src="./assets/images/revops_infrastructure_dashboard.png" alt="Go Expandia AI workflow dashboard" class="absolute inset-0 w-full h-full object-cover">
+                    <img src="./assets/images/ai-workflow-dashboard.png" alt="Go Expandia AI workflow dashboard" class="absolute inset-0 w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black/28"></div>
                     <div class="absolute inset-0 flex items-center justify-center">
                         <div class="w-24 h-24 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border-2 border-white/40 shadow-2xl">
@@ -631,7 +673,7 @@
                     <form id="newsletter-form" class="flex gap-4 w-full" action="./contact.html#contact-form" method="GET">
                         <input type="email" name="email" placeholder="Enter your email" class="footer-newsletter-input" required>
                         <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
-                        <input type="text" name="math" inputmode="numeric" pattern="[0-9]+" placeholder="30+31=" class="input input-bordered w-24 sm:w-28" required>
+                        <input type="hidden" name="math" value="61">
                         <button type="submit" class="btn btn-primary">Subscribe</button>
                     </form>
                 </div>
@@ -691,11 +733,11 @@
                             </svg>
                             hello@goexpandia.com
                         </a>
-                        <a href="mailto:hello@goexpandia.com" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
+                        <a href="./contact.html" class="flex items-center gap-3 text-white/80 hover:text-primary transition-colors">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
-                            Email to Schedule
+                            Book a workflow review
                         </a>
                     </div>
                 </div>
