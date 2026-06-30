@@ -72,7 +72,7 @@ temp/
 
 # Local fal.ai image generation helpers (never commit)
 fal-image-jobs.local.json
-AI_IMAGE_GENERATION_FAL.mdVISUAL_README.md
+AI_IMAGE_GENERATION_FAL.md
 
 # Playwright CLI artifacts
 .playwright-cli/
@@ -80,3 +80,10 @@ AI_IMAGE_GENERATION_FAL.mdVISUAL_README.md
 # Local Codex/agent working files
 go-expandia-skills/
 output/
+
+# AI and Agent instructions / workspace configurations
+AGENTS.md
+.agents/
+.playwright-mcp/
+llms.txt
+
